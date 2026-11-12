@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MAQUETTE — Application de bureau de traduction juridique français ⇄ arabe
+  Écran 2 / 2 : TRADUCTION D'UN TEXTE (paragraphe)
+
+  Zones de texte source / cible, puis les étapes de l'algorithme :
+    1 Segmentation en phrases → 2 Découpage en mots → 3 Recherche dans le CSV →
+    4 Règles lexicales, grammaticales et sémantiques → 5 Reconstruction du paragraphe
+  En bas, les termes juridiques repérés reprennent l'enchaînement de l'écran 1
+  (Terme → Définition → Équivalent → Contextualisation → Ressources), en colonnes.
+
+  Notes techniques
+  - SVG 1.1 autonome : aucune police, image ou feuille de style externe.
+  - Les textes restent des textes (modifiables dans un éditeur vectoriel ou un éditeur de code).
+  - Texte arabe : chaque ligne est ancrée à droite (text-anchor="end") et encadrée par
+    la marque U+200F (&#x200F;) pour que la ponctuation se place correctement. Ces lignes
+    n'utilisent que des signes présents dans les polices arabes (. : ، chiffres).
+  - Les retours à la ligne des paragraphes sont fixes (une balise <text> par ligne).
+  - Couleurs : marine #0B1B3A · bleu #2459D6 / #1C47B3 · teinte #EEF4FF · ambre #B45309 ·
+    vert #15803D · texte #0F172A / #475569 / #64748B · filets #E2E8F0 · fond #F3F5F9.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1520" height="920" viewBox="0 0 1520 920" xml:lang="fr"
+     role="img" aria-labelledby="titre description"
+     font-family="'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', 'Geeza Pro', 'Noto Sans Arabic', 'Noto Naskh Arabic', Arial, sans-serif"
+     font-size="14" fill="#0F172A">
+  <title id="titre">Maquette — Écran 2 : traduction d'un texte juridique (français vers arabe)</title>
+  <desc id="description">Fenêtre d'application de bureau en mode Texte. À gauche, une zone de texte contient le paragraphe source en français, importé d'un document Word ; à droite, une zone de texte affiche sa traduction en arabe. En dessous, une bande résume les cinq étapes du traitement : segmentation en phrases, découpage en mots, recherche dans le glossaire CSV, règles linguistiques et reconstruction du paragraphe. Un tableau liste enfin les termes juridiques détectés avec, en colonnes, le terme, sa définition, son équivalent, sa contextualisation et ses ressources.</desc>
+
+  <defs>
+    <!-- Dégradés -->
+    <linearGradient id="g-fond" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EEF2F8"/>
+      <stop offset="1" stop-color="#DCE4F0"/>
+    </linearGradient>
+    <linearGradient id="g-or" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7CE62"/>
+      <stop offset="1" stop-color="#DFA126"/>
+    </linearGradient>
+    <linearGradient id="g-bandeau" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4ECFC"/>
+      <stop offset="1" stop-color="#F3F5F9"/>
+    </linearGradient>
+    <linearGradient id="g-primaire" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2F65E2"/>
+      <stop offset="1" stop-color="#1F50C8"/>
+    </linearGradient>
+
+    <!-- Ombres -->
+    <filter id="ombre-fenetre" x="-10%" y="-10%" width="120%" height="130%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="22" result="flou"/>
+      <feOffset in="flou" dy="18" result="decale"/>
+      <feFlood flood-color="#0B1B3A" flood-opacity="0.26" result="teinte"/>
+      <feComposite in="teinte" in2="decale" operator="in" result="ombre"/>
+      <feMerge><feMergeNode in="ombre"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ombre-carte" x="-10%" y="-10%" width="120%" height="125%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="flou"/>
+      <feOffset in="flou" dy="3" result="decale"/>
+      <feFlood flood-color="#0F172A" flood-opacity="0.07" result="teinte"/>
+      <feComposite in="teinte" in2="decale" operator="in" result="ombre"/>
+      <feMerge><feMergeNode in="ombre"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ombre-fine" x="-10%" y="-30%" width="120%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="flou"/>
+      <feOffset in="flou" dy="1" result="decale"/>
+      <feFlood flood-color="#0F172A" flood-opacity="0.16" result="teinte"/>
+      <feComposite in="teinte" in2="decale" operator="in" result="ombre"/>
+      <feMerge><feMergeNode in="ombre"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="decoupe-fenetre"><rect width="1440" height="840" rx="12"/></clipPath>
+
+    <!-- Icônes (grille 24 × 24, tracé au trait ; couleur et épaisseur données par <use>) -->
+    <symbol id="i-balance" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4v15.5M8 19.5h8M5.5 7h13"/>
+        <path d="M5.5 7L3 13a2.5 2.5 0 0 0 5 0zM18.5 7L16 13a2.5 2.5 0 0 0 5 0z"/>
+      </g>
+    </symbol>
+    <symbol id="i-echange" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 8h15M15.5 4.5L19 8l-3.5 3.5"/>
+        <path d="M20 16H5M8.5 12.5L5 16l3.5 3.5"/>
+      </g>
+    </symbol>
+    <symbol id="i-importer" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4v11M7.5 10.5L12 15l4.5-4.5"/>
+        <path d="M4.5 15.5v3A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5v-3"/>
+      </g>
+    </symbol>
+    <symbol id="i-exporter" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 15V4M7.5 8.5L12 4l4.5 4.5"/>
+        <path d="M4.5 15.5v3A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5v-3"/>
+      </g>
+    </symbol>
+    <symbol id="i-copier" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8.5" y="8.5" width="11" height="11" rx="2"/>
+        <path d="M15.5 8.5V6A1.5 1.5 0 0 0 14 4.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/>
+      </g>
+    </symbol>
+    <symbol id="i-fichier" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 3.5h6.5l5 5V19a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 19V5A1.5 1.5 0 0 1 7 3.5z"/>
+        <path d="M13.5 3.5v5h5M9 13h6M9 16.5h6"/>
+      </g>
+    </symbol>
+    <symbol id="i-terme" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7.5 3.5h10a1 1 0 0 1 1 1v15h-11a2 2 0 0 1-2-2v-12a2 2 0 0 1 2-2z"/>
+        <path d="M5.5 17.5a2 2 0 0 1 2-2h11M9.5 8h5"/>
+      </g>
+    </symbol>
+    <symbol id="i-texte" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 6.5h14M5 10.5h14M5 14.5h14M5 18.5h8"/>
+      </g>
+    </symbol>
+    <symbol id="i-chevron-bas" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10l5 5 5-5"/></g>
+    </symbol>
+    <symbol id="i-chevron-droite" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10 7l5 5-5 5"/></g>
+    </symbol>
+    <symbol id="i-croix" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7L7 17"/></g>
+    </symbol>
+    <symbol id="i-coche" viewBox="0 0 24 24">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 12.5l4.5 4.5 8.5-9.5"/></g>
+    </symbol>
+  </defs>
+
+  <!-- Fond de présentation -->
+  <rect width="1520" height="920" fill="url(#g-fond)"/>
+
+  <!-- ═══════════════════════ FENÊTRE DE L'APPLICATION (1440 × 840) ═══════════════════════ -->
+  <g transform="translate(40 34)">
+    <rect width="1440" height="840" rx="12" fill="#FFFFFF" filter="url(#ombre-fenetre)"/>
+
+    <g clip-path="url(#decoupe-fenetre)">
+
+      <!-- ─────────── Barre de titre : logo, menus, titre, boutons de fenêtre ─────────── -->
+      <g id="barre-titre">
+        <rect width="1440" height="44" fill="#0B1B3A"/>
+        <rect x="14" y="11" width="22" height="22" rx="6" fill="url(#g-or)"/>
+        <use xlink:href="#i-balance" x="16" y="13" width="18" height="18" stroke="#0B1B3A" stroke-width="2"/>
+        <text x="50" y="27" font-size="13" fill="#C3CEE4">Fichier<tspan dx="18">Édition</tspan><tspan dx="18">Affichage</tspan><tspan dx="18">Outils</tspan><tspan dx="18">Aide</tspan></text>
+        <text x="720" y="27" font-size="13" text-anchor="middle" fill="#9FB0D0"><tspan font-weight="600" fill="#F1F5FD">Traducteur juridique</tspan> — Français / Arabe</text>
+        <g fill="none" stroke="#C3CEE4" stroke-width="1.2" stroke-linecap="round">
+          <path d="M1320 22.5h10"/>
+          <rect x="1366.5" y="17.5" width="9" height="9" rx="1.2"/>
+          <path d="M1412.5 17.5l9 9M1421.5 17.5l-9 9"/>
+        </g>
+      </g>
+
+      <!-- ─────────── Barre d'outils : mode, sens de traduction, import / export ─────────── -->
+      <g id="barre-outils" transform="translate(0 44)">
+        <rect width="1440" height="68" fill="#FFFFFF"/>
+        <path d="M0 67.5H1440" stroke="#E2E8F0"/>
+
+        <!-- Sélecteur de mode : Terme | Texte (actif) -->
+        <g id="mode">
+          <rect x="24" y="14" width="248" height="40" rx="10" fill="#EEF2F7" stroke="#E2E8F0"/>
+          <rect x="148" y="17" width="121" height="34" rx="8" fill="#FFFFFF" filter="url(#ombre-fine)"/>
+          <use xlink:href="#i-terme" x="55" y="26" width="16" height="16" stroke="#64748B" stroke-width="2.1"/>
+          <text x="78" y="39" font-weight="600" fill="#475569">Terme</text>
+          <use xlink:href="#i-texte" x="178" y="26" width="16" height="16" stroke="#1C47B3" stroke-width="2.1"/>
+          <text x="201" y="39" font-weight="600" fill="#1C47B3">Texte</text>
+        </g>
+
+        <!-- Sens de traduction : Français ⇄ Arabe -->
+        <g id="langues">
+          <rect x="512" y="12" width="182" height="44" rx="10" fill="#FFFFFF" stroke="#D5DCE8"/>
+          <rect x="522" y="24" width="30" height="20" rx="6" fill="#EEF4FF"/>
+          <text x="537" y="38" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1C47B3">FR</text>
+          <text x="562" y="28" font-size="10" font-weight="600" letter-spacing="0.6" fill="#94A3B8">SOURCE</text>
+          <text x="562" y="46" font-weight="600">Français</text>
+          <use xlink:href="#i-chevron-bas" x="668" y="26" width="16" height="16" stroke="#94A3B8" stroke-width="2.2"/>
+
+          <circle cx="720" cy="34" r="17" fill="#EEF4FF" stroke="#C9D9FB"/>
+          <use xlink:href="#i-echange" x="711" y="25" width="18" height="18" stroke="#2459D6" stroke-width="2"/>
+
+          <rect x="746" y="12" width="182" height="44" rx="10" fill="#FFFFFF" stroke="#D5DCE8"/>
+          <rect x="756" y="24" width="30" height="20" rx="6" fill="#EEF4FF"/>
+          <text x="771" y="38" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1C47B3">AR</text>
+          <text x="796" y="28" font-size="10" font-weight="600" letter-spacing="0.6" fill="#94A3B8">CIBLE</text>
+          <text x="796" y="46" font-size="15" font-weight="600" xml:lang="ar">العربية</text>
+          <use xlink:href="#i-chevron-bas" x="902" y="26" width="16" height="16" stroke="#94A3B8" stroke-width="2.2"/>
+        </g>
+
+        <!-- Import / export de fichiers -->
+        <g id="fichiers">
+          <rect x="1100" y="12" width="152" height="44" rx="10" fill="#FFFFFF" stroke="#D5DCE8"/>
+          <use xlink:href="#i-importer" x="1112" y="24" width="20" height="20" stroke="#2459D6" stroke-width="1.9"/>
+          <text x="1142" y="31" font-weight="600">Importer</text>
+          <text x="1142" y="46" font-size="11" fill="#64748B">.txt · .docx · .doc</text>
+
+          <rect x="1264" y="12" width="152" height="44" rx="10" fill="#FFFFFF" stroke="#D5DCE8"/>
+          <use xlink:href="#i-exporter" x="1276" y="24" width="20" height="20" stroke="#2459D6" stroke-width="1.9"/>
+          <text x="1306" y="31" font-weight="600">Exporter</text>
+          <text x="1306" y="46" font-size="11" fill="#64748B">.txt · .docx · .doc</text>
+        </g>
+      </g>
+
+      <!-- ─────────────────────────── Zone de contenu ─────────────────────────── -->
+      <g id="contenu" transform="translate(0 112)">
+        <rect width="1440" height="698" fill="#F3F5F9"/>
+        <rect width="1440" height="156" fill="url(#g-bandeau)"/>
+
+        <!-- Zone de texte SOURCE (saisie, collage ou fichier importé) -->
+        <g id="zone-source" transform="translate(24 16)">
+          <rect width="684" height="296" rx="12" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#ombre-carte)"/>
+          <rect x="20" y="14" width="30" height="20" rx="6" fill="#EEF4FF"/>
+          <text x="35" y="28" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1C47B3">FR</text>
+          <text x="60" y="29.5" font-size="15" font-weight="600">Français <tspan dx="3" font-size="13" font-weight="400" fill="#64748B">texte source</tspan></text>
+
+          <!-- Fichier importé -->
+          <text x="454" y="28.5" font-size="12" text-anchor="end" fill="#94A3B8">Importé depuis</text>
+          <rect x="464" y="10" width="204" height="28" rx="14" fill="#F1F5F9" stroke="#E2E8F0"/>
+          <use xlink:href="#i-fichier" x="474" y="16" width="16" height="16" stroke="#2459D6" stroke-width="2"/>
+          <text x="496" y="28.5" font-size="12.5" fill="#334155">articles_106-107.docx</text>
+          <use xlink:href="#i-croix" x="648" y="18" width="12" height="12" stroke="#94A3B8" stroke-width="2.8"/>
+          <path d="M0 48.5H684" stroke="#EEF2F7"/>
+
+          <!-- Paragraphe source : les termes du glossaire sont colorés -->
+          <g font-size="17" fill="#1E293B">
+            <text x="24" y="84">Le <tspan fill="#B45309">contrat</tspan> fait la <tspan fill="#B45309">loi</tspan> des <tspan fill="#B45309">parties</tspan>. Il ne peut être révoqué, ni modifié que de</text>
+            <text x="24" y="112">leur <tspan fill="#B45309">consentement mutuel</tspan> ou pour les causes prévues par la <tspan fill="#B45309">loi</tspan>. Le <tspan fill="#B45309">contrat</tspan></text>
+            <text x="24" y="140">doit être exécuté conformément à son contenu, et de <tspan fill="#B45309">bonne foi</tspan>. Il oblige le</text>
+            <text x="24" y="168"><tspan fill="#B45309">contractant</tspan>, non seulement à ce qui y est exprimé, mais encore à tout ce</text>
+            <text x="24" y="196">que la <tspan fill="#B45309">loi</tspan>, l’<tspan fill="#B45309">usage</tspan> et l’<tspan fill="#B45309">équité</tspan> considèrent comme une suite nécessaire de ce</text>
+            <text x="24" y="224"><tspan fill="#B45309">contrat</tspan> d’après la nature de l’<tspan fill="#B45309">obligation</tspan>.</text>
+          </g>
+
+          <path d="M0 244.5H684" stroke="#EEF2F7"/>
+          <text x="24" y="275" font-size="13" fill="#64748B">4 phrases · 76 mots · 422 caractères</text>
+          <rect x="436" y="252" width="96" height="36" rx="9" fill="#FFFFFF" stroke="#D5DCE8"/>
+          <text x="484" y="274.5" font-size="13" font-weight="600" text-anchor="middle" fill="#334155">Effacer</text>
+          <rect x="540" y="252" width="128" height="36" rx="9" fill="url(#g-primaire)"/>
+          <use xlink:href="#i-echange" x="560" y="262" width="16" height="16" stroke="#FFFFFF" stroke-width="2.1"/>
+          <text x="584" y="275" font-size="13.5" font-weight="600" fill="#FFFFFF">Traduire</text>
+        </g>
+
+        <!-- Zone de texte CIBLE (traduction, écriture de droite à gauche) -->
+        <g id="zone-cible" transform="translate(732 16)">
+          <rect width="684" height="296" rx="12" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#ombre-carte)"/>
+          <rect x="1" y="49" width="682" height="195" fill="#F8FAFD"/>
+          <rect x="16" y="10" width="184" height="28" rx="14" fill="#ECFDF3" stroke="#BBF7D0"/>
+          <use xlink:href="#i-coche" x="27" y="17" width="14" height="14" stroke="#16A34A" stroke-width="2.8"/>
+          <text x="47" y="28.5" font-size="12.5" font-weight="600" fill="#15803D">Traduction terminée</text>
+          <rect x="634" y="14" width="30" height="20" rx="6" fill="#EEF4FF"/>
+          <text x="649" y="28" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1C47B3">AR</text>
+          <text x="624" y="30.5" font-size="16" font-weight="600" text-anchor="end" xml:lang="ar">&#x200F;العربية <tspan font-size="14" font-weight="400" fill="#64748B">النص المترجم</tspan>&#x200F;</text>
+          <path d="M0 48.5H684" stroke="#EEF2F7"/>
+
+          <!-- Paragraphe traduit : mêmes termes colorés que dans la source -->
+          <g font-size="19" text-anchor="end" fill="#1E293B" xml:lang="ar">
+            <text x="660" y="88">&#x200F;<tspan fill="#B45309">العقد</tspan> <tspan fill="#B45309">شريعة</tspan> <tspan fill="#B45309">المتعاقدين</tspan>. فلا يجوز نقضه، ولا تعديله إلا <tspan fill="#B45309">باتفاق الطرفين</tspan>، أو للأسباب&#x200F;</text>
+            <text x="660" y="122">&#x200F;التي يقررها <tspan fill="#B45309">القانون</tspan>. يجب تنفيذ <tspan fill="#B45309">العقد</tspan> طبقا لما اشتمل عليه <tspan fill="#B45309">وبحسن نية</tspan>. ولا يقتصر&#x200F;</text>
+            <text x="660" y="156">&#x200F;<tspan fill="#B45309">العقد</tspan> على إلزام <tspan fill="#B45309">المتعاقد</tspan> بما ورد فيه فحسب، بل يتناول أيضا ما هو من مستلزماته&#x200F;</text>
+            <text x="660" y="190">&#x200F;وفقا <tspan fill="#B45309">للقانون</tspan>، <tspan fill="#B45309">والعرف</tspan>، <tspan fill="#B45309">والعدالة</tspan>، بحسب طبيعة <tspan fill="#B45309">الالتزام</tspan>.&#x200F;</text>
+          </g>
+
+          <path d="M0 244.5H684" stroke="#EEF2F7"/>
+          <rect x="16" y="252" width="104" height="36" rx="9" fill="#FFFFFF" stroke="#D5DCE8"/>
+          <use xlink:href="#i-copier" x="32" y="262" width="16" height="16" stroke="#2459D6" stroke-width="2"/>
+          <text x="56" y="274.5" font-size="13" font-weight="600" fill="#334155">Copier</text>
+          <text x="660" y="275" font-size="13" text-anchor="end" fill="#64748B">4 phrases · 49 mots · 288 caractères</text>
+        </g>
+
+        <!-- Étapes du traitement (algorithme de traduction d'un texte) -->
+        <g id="etapes" transform="translate(24 326)">
+          <rect width="1392" height="60" rx="12" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#ombre-carte)"/>
+          <path d="M261.4 23l7 7-7 7M539.8 23l7 7-7 7M818.2 23l7 7-7 7M1096.6 23l7 7-7 7" fill="none" stroke="#B4C1D8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#2459D6">
+            <circle cx="32" cy="30" r="13"/>
+            <circle cx="310.4" cy="30" r="13"/>
+            <circle cx="588.8" cy="30" r="13"/>
+            <circle cx="867.2" cy="30" r="13"/>
+            <circle cx="1145.6" cy="30" r="13"/>
+          </g>
+          <g font-size="12.5" font-weight="700" text-anchor="middle" fill="#FFFFFF">
+            <text x="32" y="34.4">1</text>
+            <text x="310.4" y="34.4">2</text>
+            <text x="588.8" y="34.4">3</text>
+            <text x="867.2" y="34.4">4</text>
+            <text x="1145.6" y="34.4">5</text>
+          </g>
+          <g font-size="13.5" font-weight="600">
+            <text x="56" y="26.5">Segmentation en phrases</text>
+            <text x="334.4" y="26.5">Découpage en mots</text>
+            <text x="612.8" y="26.5">Recherche dans le CSV</text>
+            <text x="891.2" y="26.5">Règles linguistiques</text>
+            <text x="1169.6" y="26.5">Reconstruction</text>
+          </g>
+          <g font-size="12" fill="#64748B">
+            <text x="56" y="44">4 phrases détectées</text>
+            <text x="334.4" y="44">76 mots</text>
+            <text x="612.8" y="44">76 mots trouvés sur 76</text>
+            <text x="891.2" y="44">lexique, grammaire, sémantique</text>
+            <text x="1169.6" y="44">paragraphe et ponctuation</text>
+          </g>
+        </g>
+
+        <!-- Termes juridiques détectés : l'enchaînement de l'écran 1, en colonnes -->
+        <g id="termes" transform="translate(24 400)">
+          <rect width="1392" height="278" rx="12" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#ombre-carte)"/>
+          <text x="20" y="31" font-size="15" font-weight="600">Termes juridiques détectés<tspan dx="12" font-size="13" font-weight="400" fill="#64748B">9 termes · cliquez sur un terme coloré pour afficher sa fiche</tspan></text>
+          <text x="1346" y="31" font-size="13" font-weight="600" text-anchor="end" fill="#1C47B3">Afficher les 9 termes</text>
+          <use xlink:href="#i-chevron-droite" x="1352" y="19" width="16" height="16" stroke="#2459D6" stroke-width="2.2"/>
+
+          <!-- En-têtes des colonnes, ligne sélectionnée et filets -->
+          <rect x="1" y="48" width="1390" height="32" fill="#F8FAFC"/>
+          <rect x="1" y="81" width="1390" height="65" fill="#F5F8FF"/>
+          <rect x="1" y="81" width="3" height="65" fill="#2459D6"/>
+          <path d="M0 48.5H1392M0 80.5H1392M0 146.5H1392M0 212.5H1392M200.5 48V278M590.5 48V278M770.5 48V278M1150.5 48V278" fill="none" stroke="#EEF2F7"/>
+          <g fill="#DCE7FB">
+            <circle cx="28" cy="64" r="8"/>
+            <circle cx="224" cy="64" r="8"/>
+            <circle cx="614" cy="64" r="8"/>
+            <circle cx="794" cy="64" r="8"/>
+            <circle cx="1174" cy="64" r="8"/>
+          </g>
+          <g font-size="10" font-weight="700" text-anchor="middle" fill="#1C47B3">
+            <text x="28" y="67.6">1</text>
+            <text x="224" y="67.6">2</text>
+            <text x="614" y="67.6">3</text>
+            <text x="794" y="67.6">4</text>
+            <text x="1174" y="67.6">5</text>
+          </g>
+          <g font-size="11.5" font-weight="700" letter-spacing="0.6" fill="#64748B">
+            <text x="42" y="68.2">TERME</text>
+            <text x="238" y="68.2">DÉFINITION</text>
+            <text x="628" y="68.2">ÉQUIVALENT</text>
+            <text x="808" y="68.2">CONTEXTUALISATION</text>
+            <text x="1188" y="68.2">RESSOURCES</text>
+          </g>
+
+          <g id="ligne-1">
+            <text x="20" y="108" font-size="15" font-weight="700" fill="#1C47B3">contrat</text>
+            <text x="20" y="128" font-size="12.5" fill="#64748B">n. m. · 3 occurrences</text>
+            <text x="216" y="108" font-size="13" fill="#334155">Convention par laquelle une ou plusieurs personnes</text>
+            <text x="216" y="128" font-size="13" fill="#334155">s’obligent, envers une ou plusieurs autres, à donner…</text>
+            <text x="754" y="110" font-size="20" font-weight="700" text-anchor="end" fill="#1C47B3" xml:lang="ar">عقد</text>
+            <text x="754" y="130" font-size="13" text-anchor="end" fill="#64748B" xml:lang="ar">&#x200F;اسم مذكر، ج. عقود&#x200F;</text>
+            <text x="786" y="108" font-size="13" fill="#334155">Le <tspan font-weight="700" fill="#B45309">contrat</tspan> fait la loi des parties.</text>
+            <text x="1134" y="130" font-size="15.5" text-anchor="end" fill="#334155" xml:lang="ar">&#x200F;<tspan font-weight="700" fill="#B45309">العقد</tspan> شريعة المتعاقدين.&#x200F;</text>
+            <text x="1166" y="108" font-size="13" font-weight="600">Code civil, art. 54 et 106</text>
+            <text x="1166" y="128" font-size="12.5" fill="#64748B">Ord. n° 75-58 du 26 sept. 1975</text>
+          </g>
+          <g id="ligne-2">
+            <text x="20" y="174" font-size="15" font-weight="700" fill="#1C47B3">loi</text>
+            <text x="20" y="194" font-size="12.5" fill="#64748B">n. f. · 3 occurrences</text>
+            <text x="216" y="174" font-size="13" fill="#334155">Règle de droit écrite, générale et impersonnelle,</text>
+            <text x="216" y="194" font-size="13" fill="#334155">adoptée par le pouvoir législatif.</text>
+            <text x="754" y="176" font-size="20" font-weight="700" text-anchor="end" fill="#1C47B3" xml:lang="ar">قانون</text>
+            <text x="754" y="196" font-size="13" text-anchor="end" fill="#64748B" xml:lang="ar">&#x200F;اسم مذكر، ج. قوانين&#x200F;</text>
+            <text x="786" y="174" font-size="13" fill="#334155">… pour les causes prévues par la <tspan font-weight="700" fill="#B45309">loi</tspan>.</text>
+            <text x="1134" y="196" font-size="15.5" text-anchor="end" fill="#334155" xml:lang="ar">&#x200F;... للأسباب التي يقررها <tspan font-weight="700" fill="#B45309">القانون</tspan>.&#x200F;</text>
+            <text x="1166" y="174" font-size="13" font-weight="600">Code civil, art. 1er et 106</text>
+            <text x="1166" y="194" font-size="12.5" fill="#64748B">Ord. n° 75-58 du 26 sept. 1975</text>
+          </g>
+          <g id="ligne-3">
+            <text x="20" y="240" font-size="15" font-weight="700" fill="#1C47B3">bonne foi</text>
+            <text x="20" y="260" font-size="12.5" fill="#64748B">loc. n. f. · 1 occurrence</text>
+            <text x="216" y="240" font-size="13" fill="#334155">Loyauté et honnêteté attendues des parties dans la</text>
+            <text x="216" y="260" font-size="13" fill="#334155">conclusion et l’exécution d’un acte juridique.</text>
+            <text x="754" y="242" font-size="20" font-weight="700" text-anchor="end" fill="#1C47B3" xml:lang="ar">حسن النية</text>
+            <text x="754" y="262" font-size="13" text-anchor="end" fill="#64748B" xml:lang="ar">&#x200F;مركب إضافي&#x200F;</text>
+            <text x="786" y="240" font-size="13" fill="#334155">… conformément à son contenu, et de <tspan font-weight="700" fill="#B45309">bonne foi</tspan>.</text>
+            <text x="1134" y="262" font-size="15.5" text-anchor="end" fill="#334155" xml:lang="ar">&#x200F;... طبقا لما اشتمل عليه <tspan font-weight="700" fill="#B45309">وبحسن نية</tspan>.&#x200F;</text>
+            <text x="1166" y="240" font-size="13" font-weight="600">Code civil, art. 107</text>
+            <text x="1166" y="260" font-size="12.5" fill="#64748B">Ord. n° 75-58 du 26 sept. 1975</text>
+          </g>
+
+          <!-- Barre de défilement -->
+          <rect x="1381" y="86" width="4" height="186" rx="2" fill="#EEF2F7"/>
+          <rect x="1381" y="86" width="4" height="62" rx="2" fill="#CBD5E1"/>
+        </g>
+      </g>
+
+      <!-- ─────────── Barre d'état : glossaire CSV chargé, sens de traduction ─────────── -->
+      <g id="barre-etat" transform="translate(0 810)" font-size="12" fill="#64748B">
+        <rect width="1440" height="30" fill="#F8FAFC"/>
+        <path d="M0 0.5H1440" stroke="#E2E8F0"/>
+        <circle cx="29" cy="15" r="4" fill="#22C55E"/>
+        <text x="42" y="19.5" xml:space="preserve">Glossaire chargé : <tspan font-weight="600" fill="#334155">glossaire_juridique.csv</tspan>   <tspan fill="#CBD5E1">|</tspan>   2 480 entrées   <tspan fill="#CBD5E1">|</tspan>   UTF-8</text>
+        <text x="1416" y="19.5" text-anchor="end" xml:space="preserve">Sens : français › arabe   <tspan fill="#CBD5E1">|</tspan>   Prototype v0.1</text>
+      </g>
+    </g>
+
+    <rect x="0.5" y="0.5" width="1439" height="839" rx="11.5" fill="none" stroke="#0B1B3A" stroke-opacity="0.2"/>
+  </g>
+</svg>
