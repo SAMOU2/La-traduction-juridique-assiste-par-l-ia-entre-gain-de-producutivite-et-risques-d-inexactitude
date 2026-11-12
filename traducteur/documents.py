@@ -5,7 +5,10 @@ Aucune bibliothèque supplémentaire n'est nécessaire :
 * un fichier .docx est une archive ZIP qui contient le texte du document au
   format XML ;
 * un fichier .doc (Word 97 à 2003) est un fichier binaire « composé » : le
-  texte du document y est retrouvé grâce à sa table des morceaux de texte.
+  texte du document y est retrouvé grâce à sa table des morceaux de texte ;
+* certains fichiers nommés .doc sont en réalité une page web (HTML) ou un
+  fichier XML de Word 2003, que Word ouvre comme un document : leur texte est
+  extrait de la même façon.
 
 ``lire`` renvoie le texte d'un fichier, un paragraphe par ligne. ``ecrire``
 enregistre un texte dans un fichier .txt ou .docx (l'écriture de l'ancien
@@ -15,10 +18,13 @@ sont écrits de droite à gauche.
 
 from __future__ import annotations
 
+import email
 import io
 import struct
 import zipfile
+import zlib
 from collections.abc import Iterator
+from html.parser import HTMLParser
 from pathlib import Path
 from xml.etree import ElementTree
 from xml.sax.saxutils import escape
@@ -37,8 +43,15 @@ TAILLE_MAXIMALE = 64 * 1024 * 1024
 
 _W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 _MC = "{http://schemas.openxmlformats.org/markup-compatibility/2006}"
+# Fichiers XML de Word 2003 (« WordprocessingML ») et de Word 2007 en un seul fichier.
+_W2003 = "{http://schemas.microsoft.com/office/word/2003/wordml}"
+_WX = "{http://schemas.microsoft.com/office/word/2003/auxHint}"
+_AML = "{http://schemas.microsoft.com/aml/2001/core}"
+_PKG = "{http://schemas.microsoft.com/office/2006/xmlPackage}"
 _ZIP = b"PK\x03\x04"
 _OLE = b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1"
+#: Débuts des fichiers de Word 1 et 2 pour Windows et de Word pour DOS (avant 1993).
+_PREMIERS_WORD = (b"\x9b\xa5", b"\xdb\xa5", b"\xdc\xa5", b"\x31\xbe\x00\x00")
 _CONTROLE = regex.compile(r"[\x00-\x08\x0B\x0C\x0E-\x1F]")
 #: Caractères retirés d'un texte avant son enregistrement (un fichier XML, donc un document
 #: .docx, ne peut pas les contenir).
@@ -60,23 +73,40 @@ def lire(chemin: str | Path) -> str:
     except OSError as erreur:
         raise ErreurDocument(f"Impossible de lire le fichier « {chemin.name} » : {erreur.strerror or erreur}.") \
             from erreur
+    try:
+        texte = _lire_selon_le_format(brut, chemin)
+    except ErreurDocument:
+        raise
+    except Exception as erreur:  # garde-fou : un fichier abîmé ne doit jamais arrêter l'import sans message
+        raise ErreurDocument(f"« {chemin.name} » est endommagé : il ne peut pas être lu.") from erreur
+    lignes = [ligne.rstrip() for ligne in texte.replace("\r\n", "\n").replace("\r", "\n").split("\n")]
+    return "\n".join(lignes).strip("\n")
+
+
+def _lire_selon_le_format(brut: bytes, chemin: Path) -> str:
+    """Le format est reconnu d'après le début du contenu, et non d'après le nom du fichier."""
     if brut.startswith(_ZIP):
-        texte = _lire_docx(brut, chemin.name)
-    elif brut.startswith(_OLE):
-        texte = _lire_doc(brut, chemin.name)
-    elif brut.startswith(b"%PDF"):
+        return _lire_docx(brut, chemin.name)
+    if brut.startswith(_OLE):
+        return _lire_doc(brut, chemin.name)
+    if brut.startswith(b"%PDF"):
         raise ErreurDocument(f"« {chemin.name} » est un fichier PDF. Copiez son texte et collez-le dans la zone "
                              "de texte, ou enregistrez-le au format .docx ou .txt.")
-    elif brut.lstrip().startswith(b"{\\rtf"):
+    if brut.lstrip().startswith(b"{\\rtf"):
         raise ErreurDocument(f"« {chemin.name} » est au format RTF. Ouvrez-le dans Word et enregistrez-le au "
                              "format .docx ou .txt.")
-    else:
+    if brut.startswith(_PREMIERS_WORD) and _CONTROLE.search(brut[:512].decode("latin-1")):
+        raise ErreurDocument(f"« {chemin.name} » a été créé par une version très ancienne de Word (avant Word 97)."
+                             "\n\n" + _CONSEIL_DOCX)
+    # Un fichier .txt est toujours lu tel quel. Les autres peuvent être une page web ou un fichier XML
+    # de Word, enregistrés sous le nom d'un document.
+    texte = None if chemin.suffix.lower() == ".txt" else _lire_balisage(brut, chemin)
+    if texte is None:
         texte, _ = decoder(brut)
         if _CONTROLE.search(texte[:4000]):
             raise ErreurDocument(f"« {chemin.name} » n'est pas un fichier de texte. "
                                  "Les formats lus sont .txt, .docx et .doc.")
-    lignes = [ligne.rstrip() for ligne in texte.replace("\r\n", "\n").replace("\r", "\n").split("\n")]
-    return "\n".join(lignes).strip("\n")
+    return texte
 
 
 def _lire_docx(brut: bytes, nom: str) -> str:
@@ -90,7 +120,8 @@ def _lire_docx(brut: bytes, nom: str) -> str:
             if informations.file_size > TAILLE_MAXIMALE:
                 raise ErreurDocument(f"« {nom} » est trop volumineux pour être importé.")
             racine = ElementTree.fromstring(archive.read(informations))
-    except (zipfile.BadZipFile, ElementTree.ParseError, RuntimeError, NotImplementedError) as erreur:
+    except (zipfile.BadZipFile, zlib.error, EOFError, OSError, ElementTree.ParseError, LookupError, ValueError,
+            RuntimeError, NotImplementedError, struct.error) as erreur:
         raise ErreurDocument(f"« {nom} » est endommagé ou protégé : il ne peut pas être lu ({erreur}).") from erreur
     corps = racine.find(_W + "body")
     if corps is None:
@@ -98,43 +129,223 @@ def _lire_docx(brut: bytes, nom: str) -> str:
     return "\n".join(_paragraphes(corps))
 
 
-def _paragraphes(conteneur: ElementTree.Element) -> Iterator[str]:
-    """Texte des paragraphes d'un document, dans l'ordre ; une ligne de tableau donne une ligne de texte."""
+def _paragraphes(conteneur: ElementTree.Element, w: str = _W) -> Iterator[str]:
+    """Texte des paragraphes d'un document, dans l'ordre ; une ligne de tableau donne une ligne de texte.
+
+    ``w`` est l'espace de noms des éléments : celui des fichiers .docx, ou celui de Word 2003.
+    """
     for element in conteneur:
-        if element.tag == _W + "p":
-            yield _texte_du_paragraphe(element)
-        elif element.tag == _W + "tbl":
-            for rangee in element.findall(_W + "tr"):
-                yield "\t".join(" ".join(texte for texte in _paragraphes(cellule) if texte)
-                                for cellule in rangee.findall(_W + "tc"))
-        elif element.tag == _W + "sdt":
-            contenu = element.find(_W + "sdtContent")
+        if element.tag == w + "p":
+            yield _texte_du_paragraphe(element, w)
+        elif element.tag == w + "tbl":
+            for rangee in element.findall(w + "tr"):
+                yield "\t".join(" ".join(texte for texte in _paragraphes(cellule, w) if texte)
+                                for cellule in rangee.findall(w + "tc"))
+        elif element.tag == w + "sdt":
+            contenu = element.find(w + "sdtContent")
             if contenu is not None:
-                yield from _paragraphes(contenu)
-        elif element.tag in (_W + "ins", _W + "customXml", _W + "smartTag"):
-            yield from _paragraphes(element)
+                yield from _paragraphes(contenu, w)
+        elif (element.tag in (w + "ins", w + "customXml", w + "smartTag", _WX + "sect", _WX + "sub-section",
+                              _AML + "content")
+              or _est_une_insertion(element, w)):
+            yield from _paragraphes(element, w)
 
 
-def _texte_du_paragraphe(paragraphe: ElementTree.Element) -> str:
+def _est_une_insertion(element: ElementTree.Element, w: str) -> bool:
+    """Word 2003 : texte inséré pendant le suivi des modifications (les autres annotations sont ignorées)."""
+    return element.tag == _AML + "annotation" and element.get(w + "type") == "Word.Insertion"
+
+
+def _texte_du_paragraphe(paragraphe: ElementTree.Element, w: str = _W) -> str:
+    # Texte supprimé (suivi des modifications), mise en forme, copie de secours, notes de Word 2003.
+    ignores = (w + "del", w + "moveFrom", w + "pPr", w + "rPr", _MC + "Fallback", w + "footnote", w + "endnote")
     morceaux: list[str] = []
 
     def parcourir(element: ElementTree.Element) -> None:
         for enfant in element:
-            if enfant.tag == _W + "t":
+            if enfant.tag == w + "t":
                 morceaux.append(enfant.text or "")
-            elif enfant.tag == _W + "tab":
+            elif enfant.tag == w + "tab":
                 morceaux.append("\t")
-            elif enfant.tag in (_W + "br", _W + "cr"):
+            elif enfant.tag in (w + "br", w + "cr"):
                 morceaux.append("\n")
-            elif enfant.tag == _W + "noBreakHyphen":
+            elif enfant.tag == w + "noBreakHyphen":
                 morceaux.append("-")
-            elif enfant.tag in (_W + "del", _W + "moveFrom", _W + "pPr", _W + "rPr", _MC + "Fallback"):
-                continue  # texte supprimé (suivi des modifications), mise en forme, copie de secours
+            elif enfant.tag in ignores or (enfant.tag == _AML + "annotation" and not _est_une_insertion(enfant, w)):
+                continue  # une annotation qui n'est pas une insertion : commentaire, texte supprimé, signet
             else:
                 parcourir(enfant)
 
     parcourir(paragraphe)
     return "".join(morceaux)
+
+
+# ------------------------------------------------------------------ fichiers .doc qui sont du XML ou une page web
+_DEBUT_XML = regex.compile(r"<\?xml\b|<w:wordDocument\b|<pkg:package\b")
+_DEBUT_HTML = regex.compile(r"(?is)(?:<\?xml.*?\?>\s*)?(?:<!--.*?-->\s*)*(?:<!doctype\s+html|<html[\s>])")
+_BALISE = regex.compile(r"<[A-Za-z!]")
+# Une page web « en un seul fichier » commence comme un courriel : des lignes d'en-tête, dont « MIME-Version ».
+_ENTETE_MHTML = regex.compile(r"(?i)(?:[\w-]+:[^\n]*\n(?:[ \t][^\n]*\n)*){0,12}?MIME-Version:")
+_ENCODAGE_HTML = regex.compile(rb"(?i)charset\s*=\s*[\"']?\s*([\w.:-]+)")
+_BLANCS_HTML = regex.compile(r"[ \t\r\n\f]+")
+_ESPACES = regex.compile("[ \u00a0]{2,}")  # Word aligne les numéros de liste avec des espaces insécables
+#: Extensions pour lesquelles un fichier qui commence par une balise est lu comme une page web.
+_EXTENSIONS_DE_PAGE = frozenset({".doc", ".docx", ".dot", ".htm", ".html", ".xhtml"})
+
+
+def _lire_balisage(brut: bytes, chemin: Path) -> str | None:
+    """Texte d'un fichier XML de Word ou d'une page web ; ``None`` si le fichier n'en est pas un.
+
+    Des sites et des logiciels produisent des fichiers « .doc » qui sont en réalité une page web
+    (HTML, parfois en un seul fichier MHTML) ou un fichier XML de Word 2003. Word les ouvre comme
+    des documents ; sans ce traitement, l'application afficherait leurs balises.
+    """
+    if brut.startswith((b"\xff\xfe", b"\xfe\xff")):
+        debut = brut[:8192].decode("utf-16", errors="replace")
+    else:
+        debut = brut[:4096].decode("latin-1")
+    debut = debut.lstrip("\ufeff\xef\xbb\xbf \t\r\n")
+    if _DEBUT_XML.match(debut):
+        texte = _lire_xml_de_word(brut, chemin.name)
+        if texte is not None:
+            return texte
+    if _ENTETE_MHTML.match(debut):
+        for partie in email.message_from_bytes(brut).walk():
+            if partie.get_content_type() == "text/html":
+                page = partie.get_payload(decode=True)
+                if page:
+                    return _texte_de_page_web(page, chemin.name, partie.get_content_charset())
+    if _DEBUT_HTML.match(debut) or (chemin.suffix.lower() in _EXTENSIONS_DE_PAGE and _BALISE.match(debut)
+                                    and not debut.startswith("<?xml")):
+        return _texte_de_page_web(brut, chemin.name)
+    return None
+
+
+def _lire_xml_de_word(brut: bytes, nom: str) -> str | None:
+    """Texte d'un fichier XML de Word (2003, ou 2007 « en un seul fichier ») ; ``None`` pour un autre XML."""
+    try:
+        racine = ElementTree.fromstring(brut)
+    except (ElementTree.ParseError, LookupError, ValueError) as erreur:
+        if b"wordDocument" in brut[:4096] or b"xmlPackage" in brut[:4096]:
+            raise ErreurDocument(f"« {nom} » est endommagé : il ne peut pas être lu ({erreur}).") from erreur
+        return None
+    if racine.tag == _W2003 + "wordDocument":
+        corps = racine.find(_W2003 + "body")
+        if corps is None:
+            raise ErreurDocument(f"« {nom} » ne contient pas de texte.")
+        return "\n".join(_paragraphes(corps, _W2003))
+    if racine.tag == _PKG + "package":
+        for partie in racine.iter(_PKG + "part"):
+            if partie.get(_PKG + "name") == "/word/document.xml":
+                corps = partie.find(f"{_PKG}xmlData/{_W}document/{_W}body")
+                if corps is not None:
+                    return "\n".join(_paragraphes(corps))
+        raise ErreurDocument(f"« {nom} » n'est pas un document Word. Les formats lus sont .txt, .docx et .doc.")
+    return None
+
+
+class _TexteDePageWeb(HTMLParser):
+    """Retient le texte visible d'une page web : une ligne par paragraphe, titre ou rangée de tableau."""
+
+    _IGNORES = frozenset({"head", "script", "style", "title", "del", "xml", "noscript", "template", "object"})
+    _BLOCS = frozenset({
+        "address", "article", "aside", "blockquote", "body", "caption", "center", "dd", "details", "dir", "div",
+        "dl", "dt", "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6",
+        "header", "hr", "html", "li", "main", "menu", "nav", "ol", "p", "pre", "section", "summary", "table",
+        "tbody", "tfoot", "thead", "tr", "ul",
+    })
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.lignes: list[str] = []
+        self._ligne: list[str] = []
+        self._ignores = 0  # nombre d'éléments ouverts dont le contenu n'est pas du texte du document
+        self._preformate = 0
+        self._cellules = 0  # cellules déjà rencontrées dans la rangée de tableau en cours
+
+    def _finir_la_ligne(self) -> None:
+        self.lignes.append("".join(self._ligne))
+        self._ligne = []
+
+    def _limite_de_bloc(self, tag: str) -> None:
+        if tag in ("tr", "table"):
+            self._cellules = 0
+        if self._cellules:  # dans un tableau, une rangée reste sur une seule ligne
+            self._ligne.append(" ")
+        else:
+            self._finir_la_ligne()
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "body":
+            self._ignores = 0  # un <head> ou un <title> resté ouvert ne doit pas cacher le document
+        if tag in self._IGNORES:
+            self._ignores += 1
+        elif tag in ("td", "th"):
+            if self._cellules:
+                self._ligne.append("\t")
+            self._cellules += 1
+        elif tag == "br" or tag in self._BLOCS:
+            self._limite_de_bloc(tag)
+            if tag == "pre":
+                self._preformate += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in self._IGNORES:
+            self._ignores = max(0, self._ignores - 1)
+        elif tag in self._BLOCS:
+            self._limite_de_bloc(tag)
+            if tag == "pre":
+                self._preformate = max(0, self._preformate - 1)
+
+    def handle_data(self, data: str) -> None:
+        if self._ignores:
+            return
+        if not self._preformate:  # dans une page web, un retour à la ligne vaut une espace
+            self._ligne.append(_BLANCS_HTML.sub(" ", data))
+            return
+        premiere, *suivantes = data.split("\n")
+        self._ligne.append(premiere)
+        for ligne in suivantes:
+            self._finir_la_ligne()
+            self._ligne.append(ligne)
+
+    def close(self) -> None:
+        super().close()
+        self._finir_la_ligne()
+
+
+def _texte_de_page_web(brut: bytes, nom: str, encodage: str | None = None) -> str:
+    """Texte visible d'une page web. ``encodage`` est celui qu'annonce le fichier qui la contient."""
+    analyseur = _TexteDePageWeb()
+    try:
+        analyseur.feed(_decoder_la_page(brut, encodage))
+        analyseur.close()
+    except Exception as erreur:  # l'analyseur de Python peut échouer sur une page très mal formée
+        raise ErreurDocument(f"« {nom} » est endommagé : il ne peut pas être lu.\n\n" + _CONSEIL_DOCX) from erreur
+    lignes = []
+    for ligne in analyseur.lignes:
+        ligne = "\t".join(_ESPACES.sub(" ", cellule).strip() for cellule in ligne.split("\t"))
+        if ligne.strip():
+            lignes.append(ligne)
+    return "\n".join(lignes)
+
+
+def _decoder_la_page(brut: bytes, encodage: str | None) -> str:
+    """Décode une page web : UTF-8 si le contenu l'est, sinon l'encodage qu'elle annonce."""
+    if brut.startswith((b"\xef\xbb\xbf", b"\xff\xfe", b"\xfe\xff")):
+        return decoder(brut)[0]
+    try:
+        return brut.decode("utf-8")
+    except UnicodeDecodeError:
+        pass
+    annonce = _ENCODAGE_HTML.search(brut[:4096])
+    for nom in (encodage, annonce.group(1).decode("ascii") if annonce else None):
+        if nom:
+            try:
+                return brut.decode(nom, errors="replace")
+            except LookupError:
+                continue
+    return decoder(brut)[0]
 
 
 # ------------------------------------------------------------------ lecture de l'ancien format .doc
@@ -154,6 +365,8 @@ def _lire_doc(brut: bytes, nom: str) -> str:
     try:
         flux = _flux_ole(brut)
         document = flux.get("WordDocument")
+        if "EncryptedPackage" in flux:  # un fichier .docx protégé est rangé, chiffré, dans un fichier composé
+            raise ErreurDocument(f"« {nom} » est protégé par un mot de passe : il ne peut pas être lu.")
         if document is None:
             raise ErreurDocument(f"« {nom} » n'est pas un document Word. Les formats lus sont .txt, .docx et .doc.")
         identifiant, version = struct.unpack_from("<HH", document, 0)
@@ -166,13 +379,22 @@ def _lire_doc(brut: bytes, nom: str) -> str:
         if drapeaux & 0x0100:
             raise ErreurDocument(f"« {nom} » est protégé par un mot de passe : il ne peut pas être lu.")
         table = flux["1Table" if drapeaux & 0x0200 else "0Table"]
-        longueur_du_texte = struct.unpack_from("<I", document, 0x4C)[0]
+        # Longueurs des parties du texte, dans l'ordre : corps, notes de bas de page, en-têtes et pieds
+        # de page, macros, commentaires, notes de fin, zones de texte.
+        longueurs = struct.unpack_from("<7I", document, 0x4C)
         debut_clx, taille_clx = struct.unpack_from("<II", document, 0x01A2)
         texte = _texte_des_morceaux(document, table[debut_clx:debut_clx + taille_clx])
     except (struct.error, IndexError, KeyError, ValueError, OverflowError) as erreur:
         raise ErreurDocument(f"« {nom} » est endommagé : il ne peut pas être lu.\n\n" + _CONSEIL_DOCX) from erreur
-    # Le corps du document vient en premier ; notes, en-têtes et pieds de page suivent.
-    return _nettoyer_le_texte_de_word(texte[:longueur_du_texte])
+    # Le corps du document vient en premier. Le texte des zones de texte (cadres flottants) est rangé
+    # à part : il est ajouté à la fin. Notes, en-têtes et pieds de page ne sont pas repris.
+    corps = _nettoyer_le_texte_de_word(texte[:longueurs[0]])
+    debut_des_zones = sum(longueurs[:6])
+    zones = _nettoyer_le_texte_de_word(texte[debut_des_zones:debut_des_zones + longueurs[6]])
+    zones = "\n".join(ligne for ligne in zones.split("\n") if ligne.strip())
+    if not zones:
+        return corps
+    return f"{corps.rstrip(chr(10))}\n{zones}" if corps.strip() else zones
 
 
 def _texte_des_morceaux(document: bytes, clx: bytes) -> str:

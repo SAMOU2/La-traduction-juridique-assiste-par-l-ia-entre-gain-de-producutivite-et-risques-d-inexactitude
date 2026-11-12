@@ -163,8 +163,13 @@ Le résultat est une aide à la traduction. Il doit être complété et vérifi�
 
 - Seul le texte du corps du document est lu : un paragraphe par ligne, les cellules d'un
   tableau séparées par des tabulations. La mise en forme, les images, les en-têtes, les pieds de
-  page et les notes ne sont pas repris.
-- Un fichier `.doc` protégé par un mot de passe, créé avant Word 97 ou endommagé est refusé, avec
+  page et les notes ne sont pas repris. Dans un fichier `.doc`, le texte des zones de texte
+  (cadres flottants) est placé à la fin.
+- Le format est reconnu d'après le contenu du fichier, pas d'après son nom. Certains sites et
+  logiciels produisent des fichiers nommés `.doc` qui sont en réalité une page web (HTML) ou un
+  fichier XML de Word 2003 : leur texte est lu, sans les balises. Un fichier `.txt` est
+  toujours lu tel quel.
+- Un fichier Word protégé par un mot de passe, créé avant Word 97 ou endommagé est refusé, avec
   un message qui en donne la raison.
 - Les fichiers PDF et RTF ne sont pas lus : le message d'erreur indique comment les convertir.
 - Le nom proposé pour l'export est celui du fichier importé suivi de `_traduction`. Le fichier
@@ -290,7 +295,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 262 tests s'exécutent sans ouvrir de fenêtre.
+Les 278 tests s'exécutent sans ouvrir de fenêtre.
 
 ### Limites connues
 
@@ -313,13 +318,17 @@ Les 262 tests s'exécutent sans ouvrir de fenêtre.
   - quand le contexte ne permet pas de choisir entre deux entrées de même forme, la première
     entrée du glossaire est retenue et le tableau signale le terme comme ambigu. Un choix fait
     d'après le contexte peut aussi être faux : le tableau indique alors l'autre sens.
-- **Fichiers `.doc`.** Le lecteur a été essayé sur 133 fichiers d'exemple du projet Apache POI
-  (109 lus, 24 refusés avec un message : fichiers d'avant Word 97, protégés, endommagés ou
-  d'un autre type) et sur des copies abîmées de ces fichiers, sans arrêt brutal. Pour les 11
-  documents fournis aussi au format `.docx`, le texte lu est le même dans les deux formats.
-  Des documents en russe, en chinois et en hébreu sont lus correctement, mais aucun de ces
-  fichiers n'est en arabe : la lecture de l'arabe n'est vérifiée que par un fichier construit
-  pour les tests. Un document arabe réel reste à essayer.
+- **Fichiers `.doc`.** Le lecteur a été essayé sur 471 fichiers d'exemple des projets Apache POI
+  et LibreOffice : 362 sont lus (dont 47 sans texte dans le corps du document) et 109 sont
+  refusés avec un message (fichiers d'avant Word 97, protégés, endommagés ou d'un autre type).
+  Il a aussi été essayé sur 12 000 copies abîmées de fichiers `.doc` et `.docx`. Aucun de ces
+  essais n'a arrêté la lecture brutalement. Pour les 11 documents fournis aussi au format
+  `.docx`, le texte lu est le même dans les deux formats. Des documents en russe, en chinois et
+  en hébreu sont lus correctement.
+- **Fichiers `.doc` en arabe.** Cinq fichiers réels ont été essayés. Ce sont des pages web ou des
+  fichiers XML de Word 2003 enregistrés sous le nom `.doc` : le texte de leur corps est lu en
+  entier. Aucun fichier arabe au format binaire de Word 97 à 2003 n'a pu être essayé : ce cas
+  n'est vérifié que par un fichier construit pour les tests.
 - **Recherche d'un terme.** Les suggestions affichées pendant la saisie tiennent compte des
   accents ; la recherche lancée avec Entrée, non.
 - **Contenu.** Les équivalents, les définitions et les exemples affichés sont ceux du glossaire

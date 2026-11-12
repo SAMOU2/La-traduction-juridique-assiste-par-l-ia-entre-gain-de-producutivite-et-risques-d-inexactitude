@@ -1,5 +1,6 @@
 """Import et export des textes : fichiers .txt, .docx et .doc."""
 
+import quopri
 import struct
 import zipfile
 from xml.etree import ElementTree
@@ -97,6 +98,7 @@ def test_lecture_d_un_document_ecrit_par_word(tmp_path):
         ("texte.rtf", b"{\\rtf1 texte}", "format RTF"),
         ("image.txt", b"abc\x00\x01\x02def", "n'est pas un fichier de texte"),
         ("abime.docx", b"PK\x03\x04pas une archive", "endommagé"),
+        ("word2.doc", b"\xdb\xa5\x2d\x00" + bytes(60) + b"Texte", "avant Word 97"),
     ],
 )
 def test_fichiers_refuses(tmp_path, nom, contenu, message):
@@ -115,12 +117,14 @@ def test_un_classeur_n_est_pas_un_document_word(tmp_path):
 
 
 # ------------------------------------------------------------------ ancien format de Word (.doc)
-def fabriquer_doc(morceaux, *, corps=None, drapeaux=0, version=0x00C1, nom_du_flux="WordDocument") -> bytes:
+def fabriquer_doc(morceaux, *, corps=None, notes=0, zones=0, drapeaux=0, version=0x00C1,
+                  nom_du_flux="WordDocument") -> bytes:
     """Construit un petit fichier .doc (Word 97-2003) qui contient les morceaux de texte donnés.
 
     ``morceaux`` est une liste de couples (texte, compressé) : un morceau « compressé » est écrit sur
     un octet par caractère, les autres en UTF-16. ``corps`` est le nombre de caractères du corps du
-    document (par défaut : tout le texte). Le fichier suit le format des fichiers composés : un
+    document (par défaut : tout le texte) ; ``notes`` et ``zones`` sont ceux des notes de bas de page
+    et des zones de texte, qui suivent le corps. Le fichier suit le format des fichiers composés : un
     en-tête, une table d'allocation, un répertoire, le flux « WordDocument » et, rangé dans le
     mini-flux, le flux « 0Table » qui contient la table des morceaux.
     """
@@ -141,6 +145,8 @@ def fabriquer_doc(morceaux, *, corps=None, drapeaux=0, version=0x00C1, nom_du_fl
         position += len(texte)
         limites.append(position)
     struct.pack_into("<I", entete_word, 0x4C, position if corps is None else corps)
+    struct.pack_into("<I", entete_word, 0x50, notes)
+    struct.pack_into("<I", entete_word, 0x64, zones)
     table_des_morceaux = (b"".join(struct.pack("<I", limite) for limite in limites)
                           + b"".join(struct.pack("<HIH", 0, adresse, 0) for adresse in adresses))
     # Un bloc de mise en forme (type 1) précède la table des morceaux (type 2), comme dans un vrai fichier.
@@ -205,12 +211,25 @@ def test_lecture_d_un_document_doc(tmp_path):
     )
 
 
+def test_les_zones_de_texte_d_un_document_doc_sont_ajoutees_a_la_fin(tmp_path):
+    """Le texte des zones de texte est rangé après le corps et les notes : il est repris, les notes non."""
+    corps, note, zones = "Le contrat\x08 de vente.\r", "Note de bas de page\r", "Zone une\r\rعقد\x07بيع\x07\x07\r\r"
+    fichier = tmp_path / "zones.doc"
+    fichier.write_bytes(fabriquer_doc([(corps, True), (note, True), (zones, False), ("\r", True)],
+                                      corps=len(corps), notes=len(note), zones=len(zones)))
+    assert documents.lire(fichier) == "Le contrat de vente.\nZone une\nعقد\tبيع"
+    # Un document fait d'une seule zone de texte : son corps ne contient que l'ancre de la zone.
+    fichier.write_bytes(fabriquer_doc([("\x08\r", True), ("Texte de la zone\r\r", True)], corps=2, zones=18))
+    assert documents.lire(fichier) == "Texte de la zone"
+
+
 @pytest.mark.parametrize(
     ("options", "message"),
     [
         ({"drapeaux": 0x0100}, "protégé par un mot de passe"),
         ({"version": 0x0065}, "avant Word 97"),
         ({"nom_du_flux": "Workbook"}, "n'est pas un document Word"),
+        ({"nom_du_flux": "EncryptedPackage"}, "protégé par un mot de passe"),  # fichier .docx protégé
     ],
 )
 def test_documents_doc_refuses(tmp_path, options, message):
@@ -235,6 +254,23 @@ def test_un_fichier_doc_tronque_ne_fait_pas_planter_la_lecture(tmp_path):
     assert refuses > 50
 
 
+def test_un_fichier_docx_abime_ne_fait_pas_planter_la_lecture(tmp_path):
+    """Octets écrasés à différents endroits de l'archive : le texte est lu en entier, ou le fichier est refusé."""
+    texte = "\n".join(f"Paragraphe {numero} : le contrat fait la loi des parties." for numero in range(400))
+    documents.ecrire(tmp_path / "complet.docx", texte, "fr")
+    complet = (tmp_path / "complet.docx").read_bytes()
+    refuses = 0
+    for position in range(4, len(complet) - 8, 23):
+        fichier = tmp_path / "abime.docx"
+        fichier.write_bytes(complet[:position] + b"\xff" * 8 + complet[position + 8:])
+        try:
+            assert documents.lire(fichier) == texte
+        except ErreurDocument as erreur:
+            assert "endommagé" in str(erreur) or "n'est pas un document Word" in str(erreur)
+            refuses += 1
+    assert refuses > 20
+
+
 def test_erreurs_de_lecture_et_d_ecriture(tmp_path):
     with pytest.raises(ErreurDocument, match=r"absent\.txt"):
         documents.lire(tmp_path / "absent.txt")
@@ -247,3 +283,165 @@ def test_erreurs_de_lecture_et_d_ecriture(tmp_path):
 def test_nom_propose_pour_l_export():
     assert documents.nom_d_export("C:/textes/articles_106-107.docx") == "articles_106-107_traduction.docx"
     assert documents.nom_d_export(None, ".txt") == "traduction.txt"
+
+
+# ------------------------------------------------------------------ fichiers .doc qui ne sont pas au format de Word
+PAGE_DE_WORD = """<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=Content-Type content="text/html; charset={encodage}">
+<meta name=ProgId content=Word.Document>
+<title>Titre de la page</title>
+<!--[if gte mso 9]><xml><o:DocumentProperties><o:Author>Auteur</o:Author></o:DocumentProperties></xml><![endif]-->
+<style>
+<!-- p.MsoNormal {{margin:0cm; font-family:"Times New Roman";}} -->
+</style>
+</head>
+<body lang=FR style='tab-interval:35.4pt'>
+<div class=WordSection1>
+<h1>Article&nbsp;106</h1>
+<p class=MsoNormal>Le contrat fait la loi
+des parties.<o:p></o:p></p>
+<p class=MsoNormal dir=RTL style='text-align:right'><span lang=AR-SA>العقد شريعة
+المتعاقدين.</span><span dir=LTR></span><o:p></o:p></p>
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+<p class=MsoNormal><![if !supportLists]><span>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]>Premier point <del>supprimé</del>&amp; suite<br>ligne suivante</p>
+<table class=MsoTableGrid border=1>
+ <tr>
+  <td><p class=MsoNormal>contrat</p></td>
+  <td><p class=MsoNormal dir=RTL><span lang=AR-SA>عقد</span></p></td>
+ </tr>
+ <tr><td><p>vente</p></td><td><p>بيع</p></td></tr>
+</table>
+<script>alert("non")</script>
+</div>
+</body>
+</html>
+"""
+TEXTE_DE_LA_PAGE = ("Article\u00a0106\nLe contrat fait la loi des parties.\nالعقد شريعة المتعاقدين.\n"
+                    "1. Premier point & suite\nligne suivante\ncontrat\tعقد\nvente\tبيع")
+
+
+@pytest.mark.parametrize("encodage", ["utf-8", "windows-1256"])
+def test_un_fichier_doc_qui_est_une_page_web(tmp_path, encodage):
+    """Word et des sites enregistrent des pages web sous le nom « .doc » : on lit le texte, pas les balises."""
+    fichier = tmp_path / "page.doc"
+    fichier.write_bytes(PAGE_DE_WORD.format(encodage=encodage).encode(encodage))
+    assert documents.lire(fichier) == TEXTE_DE_LA_PAGE
+
+
+def test_une_page_web_en_francais_enregistree_par_un_ancien_word(tmp_path):
+    fichier = tmp_path / "page.doc"
+    fichier.write_bytes('<html><head><meta charset="windows-1252"></head><body><p>Équité, bonne foi</p></body>'
+                        "</html>".encode("cp1252"))
+    assert documents.lire(fichier) == "Équité, bonne foi"
+
+
+def test_un_tableau_exporte_par_un_site_sous_le_nom_doc(tmp_path):
+    """Sans balise <html> : le fichier est lu comme une page web parce qu'il se nomme « .doc »."""
+    fichier = tmp_path / "export.doc"
+    fichier.write_text("<table><tr><th>Terme</th><th>Équivalent</th></tr><tr><td>contrat</td><td>عقد</td></tr>"
+                       "</table>", encoding="utf-8")
+    assert documents.lire(fichier) == "Terme\tÉquivalent\ncontrat\tعقد"
+
+
+def test_un_fichier_txt_est_toujours_lu_tel_quel(tmp_path):
+    fichier = tmp_path / "page.txt"
+    fichier.write_text("<html><body><p>Texte</p></body></html>", encoding="utf-8")
+    assert documents.lire(fichier) == "<html><body><p>Texte</p></body></html>"
+
+
+def test_une_page_web_en_un_seul_fichier(tmp_path):
+    """Format MHTML (« page web à fichier unique » de Word) : la page est la première partie du fichier."""
+    page = ('<html><head><meta http-equiv=Content-Type content="text/html; charset=windows-1256"></head>'
+            "<body><p class=MsoNormal>العقد شريعة المتعاقدين.</p><p>Le contrat</p></body></html>")
+    contenu = (
+        b'MIME-Version: 1.0\r\nContent-Type: multipart/related; boundary="----=_Partie_01"\r\n\r\n'
+        b"This document is a Single File Web Page, also known as a Web Archive file.\r\n\r\n"
+        b"------=_Partie_01\r\nContent-Location: file:///C:/document.htm\r\n"
+        b'Content-Transfer-Encoding: quoted-printable\r\nContent-Type: text/html; charset="windows-1256"\r\n\r\n'
+        + quopri.encodestring(page.encode("cp1256")) +
+        b"\r\n------=_Partie_01\r\nContent-Location: file:///C:/image001.png\r\n"
+        b"Content-Transfer-Encoding: base64\r\nContent-Type: image/png\r\n\r\niVBORw0KGgo=\r\n\r\n"
+        b"------=_Partie_01--\r\n")
+    fichier = tmp_path / "archive.doc"
+    fichier.write_bytes(contenu)
+    assert documents.lire(fichier) == "العقد شريعة المتعاقدين.\nLe contrat"
+
+
+def test_une_page_web_tres_mal_formee_ne_fait_pas_planter_la_lecture(tmp_path):
+    """Selon la version de Python, la page est lue ou refusée ; dans les deux cas, pas d'arrêt brutal."""
+    fichier = tmp_path / "abime.doc"
+    for contenu in ("<html><body><p>Le contrat</p><![inconnu x]><p>fin", "<html><body><p>Le contrat</p><!", "<html"):
+        fichier.write_text(contenu, encoding="utf-8")
+        try:
+            texte = documents.lire(fichier)
+        except ErreurDocument as erreur:
+            assert "endommagé" in str(erreur)
+        else:
+            assert "<p>" not in texte
+
+
+WORD_2003 = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Word.Document"?>
+<w:wordDocument xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml"
+ xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint"
+ xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:o="urn:schemas-microsoft-com:office:office">
+<o:DocumentProperties><o:Title>Titre du fichier</o:Title></o:DocumentProperties>
+<w:styles><w:style w:type="paragraph"><w:name w:val="Normal"/></w:style></w:styles>
+<w:body><wx:sect>
+<w:p><w:pPr><w:bidi/></w:pPr><w:r><w:rPr><w:rtl/></w:rPr><w:t>العقد شريعة المتعاقدين.</w:t></w:r></w:p>
+<wx:sub-section>
+<w:p><w:r><w:t>Le contrat </w:t></w:r>
+ <aml:annotation aml:id="1" w:type="Word.Deletion"><aml:content><w:r><w:delText>ancien</w:delText></w:r>
+ </aml:content></aml:annotation>
+ <aml:annotation aml:id="2" w:type="Word.Insertion"><aml:content><w:r><w:t>nouveau</w:t></w:r></aml:content>
+ </aml:annotation>
+ <aml:annotation aml:id="3" w:type="Word.Comment"><aml:content><w:p><w:r><w:t>remarque</w:t></w:r></w:p>
+ </aml:content></aml:annotation>
+ <w:r><w:footnote><w:p><w:r><w:t>note</w:t></w:r></w:p></w:footnote></w:r>
+ <w:r><w:tab/><w:t>fin</w:t><w:br/><w:t>ligne</w:t></w:r></w:p>
+</wx:sub-section>
+<aml:annotation aml:id="4" w:type="Word.Insertion"><aml:content><w:p><w:r><w:t>Paragraphe ajouté</w:t></w:r></w:p>
+</aml:content></aml:annotation>
+<w:tbl><w:tr><w:tc><w:p><w:r><w:t>contrat</w:t></w:r></w:p></w:tc><w:tc><w:p><w:r><w:t>عقد</w:t></w:r></w:p></w:tc>
+</w:tr></w:tbl>
+<w:sectPr><w:hdr w:type="odd"><w:p><w:r><w:t>en-tête</w:t></w:r></w:p></w:hdr></w:sectPr>
+</wx:sect></w:body></w:wordDocument>
+"""
+
+
+@pytest.mark.parametrize("marque", [b"", b"\xef\xbb\xbf"])
+def test_un_fichier_doc_qui_est_du_xml_de_word_2003(tmp_path, marque):
+    """Texte supprimé, commentaire, note et en-tête ignorés ; texte inséré et tableau repris."""
+    fichier = tmp_path / "rapport.doc"
+    fichier.write_bytes(marque + WORD_2003.encode("utf-8"))
+    assert documents.lire(fichier) == ("العقد شريعة المتعاقدين.\nLe contrat nouveau\tfin\nligne\n"
+                                       "Paragraphe ajouté\ncontrat\tعقد")
+
+
+def test_un_document_word_2007_en_un_seul_fichier_xml(tmp_path):
+    w = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+    fichier = tmp_path / "document.xml"
+    fichier.write_text(
+        '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><?mso-application progid="Word.Document"?>'
+        '<pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">'
+        '<pkg:part pkg:name="/_rels/.rels"><pkg:xmlData><Relationships/></pkg:xmlData></pkg:part>'
+        f'<pkg:part pkg:name="/word/document.xml"><pkg:xmlData><w:document xmlns:w="{w}"><w:body>'
+        "<w:p><w:r><w:t>Le juge</w:t></w:r></w:p><w:p><w:r><w:t>القاضي</w:t></w:r></w:p>"
+        "</w:body></w:document></pkg:xmlData></pkg:part></pkg:package>", encoding="utf-8")
+    assert documents.lire(fichier) == "Le juge\nالقاضي"
+
+
+def test_un_fichier_xml_de_word_endommage_est_refuse(tmp_path):
+    fichier = tmp_path / "rapport.doc"
+    fichier.write_text(WORD_2003[:WORD_2003.index("<wx:sub-section>")], encoding="utf-8")
+    with pytest.raises(ErreurDocument, match="endommagé"):
+        documents.lire(fichier)
+
+
+def test_un_autre_fichier_xml_est_lu_comme_du_texte(tmp_path):
+    fichier = tmp_path / "donnees.doc"
+    fichier.write_text('<?xml version="1.0"?><racine><a>texte</a></racine>', encoding="utf-8")
+    assert documents.lire(fichier) == '<?xml version="1.0"?><racine><a>texte</a></racine>'
