@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PROPOSITION DE NOUVELLE INTERFACE — Traducteur juridique français ⇄ arabe
+  Écran « Terme » : RECHERCHE D'UN TERME
+
+  Enchaînement affiché (cinq champs côte à côte, dans une seule fiche) :
+    1 Terme → 2 Définition → 3 Équivalent → 4 Contextualisation → 5 Ressources
+  Sous la fiche : les expressions du glossaire qui contiennent le terme.
+  Le contenu vient du glossaire fourni (donnees/glossaire_juridique.csv), entrée « contrat ».
+
+  Notes techniques
+  - SVG 1.1 autonome : aucune police, image ou feuille de style externe.
+  - Les textes restent des textes (modifiables dans un éditeur de code ou un éditeur vectoriel).
+  - Police : Segoe UI (Windows). Les largeurs ont été calculées avec Selawik, de mêmes dimensions.
+  - Texte arabe : chaque ligne est ancrée par son bord droit (text-anchor="end") ou centrée, et placée
+    entre les marques U+202B et U+202C pour que la ponctuation et les mots latins se rangent
+    de droite à gauche.
+  - Couleurs : texte #101828 / #344054 / #667085 / #98A2B3 · bleu #2251CC / #1A3FA6 · teintes #F1F5FF /
+    #DFE8FF · filets #E1E6EE / #EDF0F5 · fond #F4F6F9 · marine #0F1F3D · ambre #B54708 / #FFFAEB / #FEDF89.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1520" height="972" viewBox="0 0 1520 972" xml:lang="fr" role="img"
+     aria-labelledby="titre description"
+     font-family="'Segoe UI', 'Selawik', 'Helvetica Neue', Helvetica, 'Noto Sans Arabic', 'Geeza Pro', Arial, 'Liberation Sans', 'Noto Sans', sans-serif"
+     font-size="13" fill="#101828">
+  <title id="titre">Proposition — Écran « Terme » : recherche d'un terme juridique (français vers arabe)</title>
+  <desc id="description">Fenêtre d'application de bureau. En haut, le sélecteur d'écran, le sens de traduction et la barre de recherche, qui contient le terme « contrat ». En dessous, une fiche présente cinq champs côte à côte : terme, définition, équivalent en arabe, contextualisation et ressources. Sous la fiche, la liste des expressions du glossaire qui contiennent le terme.</desc>
+
+  <defs>
+    <linearGradient id="g-fond" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDF0F5"/>
+      <stop offset="1" stop-color="#DFE4EC"/>
+    </linearGradient>
+    <filter id="ombre-fenetre" x="-10%" y="-10%" width="120%" height="130%"
+            color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="18"/>
+      <feOffset dy="14" result="flou"/>
+      <feFlood flood-color="#0F1F3D" flood-opacity="0.20"/>
+      <feComposite in2="flou" operator="in"/>
+    </filter>
+    <filter id="ombre-bouton" x="-20%" y="-30%" width="140%" height="180%"
+            color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.2"/>
+      <feOffset dy="1" result="flou"/>
+      <feFlood flood-color="#101828" flood-opacity="0.14"/>
+      <feComposite in2="flou" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="c-fenetre"><rect x="40" y="36" width="1440" height="892" rx="10"/></clipPath>
+    <!-- Icônes : traits de 1,5 px sur une grille de 16 px. La couleur est donnée à chaque emploi. -->
+    <symbol id="i-balance" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.8v10.4M5.5 13.2h5M3.4 4.6h9.2M3.4 4.6 1.8 8.6h3.2zM12.6 4.6 11 8.6h3.2zM1.8 8.6a1.6 1.6 0 0 0 3.2 0M11 8.6a1.6 1.6 0 0 0 3.2 0"/></g></symbol>
+    <symbol id="i-chevron-b" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6 8 10.5 12.5 6"/></g></symbol>
+    <symbol id="i-fiche" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="10" height="11" rx="1.5"/><path d="M5.5 5.5h5M5.5 8h5M5.5 10.5h3"/></g></symbol>
+    <symbol id="i-texte" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5h10M3 8h10M3 11.5h6"/></g></symbol>
+    <symbol id="i-fleche" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5"/></g></symbol>
+    <symbol id="i-echange" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 5.5H13M10.5 3 13 5.5 10.5 8M13.5 10.5H3M5.5 8 3 10.5 5.5 13"/></g></symbol>
+    <symbol id="i-loupe" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="4.25"/><path d="M10.2 10.2 13.5 13.5"/></g></symbol>
+    <symbol id="i-croix" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></g></symbol>
+    <symbol id="i-chevron-g" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5 5.5 8 10 12.5"/></g></symbol>
+    <symbol id="i-chevron-d" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5 10.5 8 6 12.5"/></g></symbol>
+    <symbol id="i-document" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5h-5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-7z"/><path d="M9.5 2.5v3h3M6 8.5h4M6 11h4"/></g></symbol>
+    <symbol id="i-copier" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 5.5V4A1.5 1.5 0 0 0 9 2.5H4A1.5 1.5 0 0 0 2.5 4v5A1.5 1.5 0 0 0 4 10.5h1.5"/></g></symbol>
+    <symbol id="i-lien" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3H13v3.5M13 3 7.5 8.5M11 9.5V12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h2.5"/></g></symbol>
+  </defs>
+
+  <!-- ═══ Fond et fenêtre ═══ -->
+  <rect x="0" y="0" width="1520" height="972" fill="url(#g-fond)"/>
+  <rect x="40" y="36" width="1440" height="892" rx="10" fill="#0F1F3D" filter="url(#ombre-fenetre)"/>
+  <rect x="40" y="36" width="1440" height="892" rx="10" fill="#F4F6F9"/>
+  <g clip-path="url(#c-fenetre)">
+
+    <!-- ═══ Barre de titre (dessinée par Windows) ═══ -->
+    <rect x="40" y="36" width="1440" height="32" fill="#FFFFFF"/>
+    <rect x="52" y="44" width="16" height="16" rx="4" fill="#0F1F3D"/>
+    <use xlink:href="#i-balance" x="54.5" y="46.5" width="11" height="11" stroke="#F4C95D" stroke-width="1.7"/>
+    <text x="76" y="56.5" font-size="12" fill="#101828">Traducteur juridique</text>
+    <g stroke="#344054" stroke-width="1" fill="none">
+      <path d="M1360 52.5h10"/>
+      <rect x="1406" y="47.5" width="10" height="10" rx="1.5"/>
+      <path d="M1452 47.5l10 10M1462 47.5l-10 10"/>
+    </g>
+
+    <!-- ═══ Barre de menus ; à droite, le glossaire chargé ═══ -->
+    <rect x="40" y="68" width="1440" height="34" fill="#FFFFFF"/>
+    <g font-size="13" fill="#344054">
+      <text x="56" y="89.5">Fichier</text>
+      <text x="115.32" y="89.5">Affichage</text>
+      <text x="191.42" y="89.5">Recherche</text>
+      <text x="272.84" y="89.5">Traduction</text>
+      <text x="356.33" y="89.5">Aide</text>
+    </g>
+    <rect x="1186.91" y="73" width="269.09" height="24" rx="12" fill="#F7F9FB" stroke="#E1E6EE"/>
+    <circle cx="1200.91" cy="85" r="3.5" fill="#12B76A"/>
+    <text x="1210.91" y="89.2" font-size="12"><tspan font-weight="600" fill="#101828">glossaire_juridique.csv</tspan><tspan fill="#667085"> · 1 000 entrées</tspan></text>
+    <use xlink:href="#i-chevron-b" x="1434" y="79" width="12" height="12" stroke="#667085" stroke-width="1.6"/>
+    <line x1="40" y1="102" x2="1480" y2="102" stroke="#E1E6EE"/>
+
+    <!-- ═══ Barre d'outils : sélecteur d'écran et sens de traduction ═══ -->
+    <rect x="64" y="116" width="200" height="44" rx="10" fill="#E6EAF0"/>
+    <rect x="68" y="120" width="96" height="36" rx="7" fill="#FFFFFF" filter="url(#ombre-bouton)"/>
+    <use xlink:href="#i-fiche" x="84.37" y="130" width="16" height="16" stroke="#1A3FA6" stroke-width="1.6"/>
+    <text x="107.37" y="142.8" font-size="13.5" font-weight="600" fill="#1A3FA6">Terme</text>
+    <use xlink:href="#i-texte" x="182.89" y="130" width="16" height="16" stroke="#667085" stroke-width="1.6"/>
+    <text x="205.89" y="142.8" font-size="13.5" font-weight="600" fill="#667085">Texte</text>
+    <rect x="280" y="116" width="209.3" height="44" rx="10" fill="#FFFFFF" stroke="#E1E6EE"/>
+    <text x="296" y="142.8" font-size="13.5" font-weight="600">Français</text>
+    <use xlink:href="#i-fleche" x="359.34" y="130" width="16" height="16" stroke="#98A2B3" stroke-width="1.6"/>
+    <text x="387.34" y="143.2" font-size="15.5" font-weight="600">&#x202B;العربية&#x202C;</text>
+    <line x1="445.3" y1="126" x2="445.3" y2="150" stroke="#E1E6EE"/>
+    <use xlink:href="#i-echange" x="458.3" y="129" width="18" height="18" stroke="#2251CC" stroke-width="1.6"/>
+
+    <!-- ═══ Barre de recherche ═══ -->
+    <rect x="502.3" y="113" width="956.7" height="50" rx="13" fill="#DFE8FF"/>
+    <rect x="505.3" y="116" width="950.7" height="44" rx="10" fill="#FFFFFF" stroke="#2251CC" stroke-width="1.5"/>
+    <use xlink:href="#i-loupe" x="519.3" y="129" width="18" height="18" stroke="#667085" stroke-width="1.5"/>
+    <rect x="1338" y="121" width="112" height="34" rx="8" fill="#2251CC"/>
+    <text x="1394" y="142.72" font-size="13.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Rechercher</text>
+    <text x="549.3" y="143.6" font-size="16">contrat</text>
+    <circle cx="1314" cy="138" r="9" fill="#F0F3F7"/>
+    <use xlink:href="#i-croix" x="1308.5" y="132.5" width="11" height="11" stroke="#667085" stroke-width="1.8"/>
+    <text x="1290" y="142.4" font-size="12.5" fill="#667085" text-anchor="end">1 terme · 23 expressions</text>
+    <line x1="602.17" y1="128" x2="602.17" y2="148" stroke="#101828" stroke-width="1.2"/>
+
+    <!-- ═══ Fiche du terme : les cinq champs de l'enchaînement ═══ -->
+    <clipPath id="c-fiche"><rect x="64" y="176" width="1392" height="430" rx="12"/></clipPath>
+    <rect x="64" y="176" width="1392" height="430" rx="12" fill="#FFFFFF"/>
+    <g clip-path="url(#c-fiche)">
+      <!-- Le champ 3 (équivalent) est mis en avant : fond teinté, filet bleu en haut -->
+      <rect x="628" y="176" width="264" height="430" fill="#F1F5FF"/>
+      <rect x="628" y="176" width="264" height="3" fill="#2251CC"/>
+      <g stroke="#EDF0F5">
+        <line x1="64" y1="226" x2="1456" y2="226"/>
+        <line x1="64" y1="562" x2="1456" y2="562"/>
+        <line x1="336" y1="226" x2="336" y2="606"/>
+        <line x1="628" y1="226" x2="628" y2="606" stroke="#DFE8FF"/>
+        <line x1="892" y1="226" x2="892" y2="606" stroke="#DFE8FF"/>
+        <line x1="1184" y1="226" x2="1184" y2="606"/>
+      </g>
+      <!-- En-tête : les cinq étapes, reliées par des flèches -->
+      <circle cx="99" cy="201" r="10.25" fill="#FFFFFF" stroke="#C2D3FF" stroke-width="1.5"/>
+      <text x="99" y="205.32" font-size="12" font-weight="600" fill="#2251CC" text-anchor="middle">1</text>
+      <text x="119" y="205.8" font-size="13.5" font-weight="600" fill="#101828">Terme</text>
+      <path d="M173.3 201.0H346M341.5 197.0l4.5 4-4.5 4" fill="none" stroke="#CBD3DF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="371" cy="201" r="10.25" fill="#FFFFFF" stroke="#C2D3FF" stroke-width="1.5"/>
+      <text x="371" y="205.32" font-size="12" font-weight="600" fill="#2251CC" text-anchor="middle">2</text>
+      <text x="391" y="205.8" font-size="13.5" font-weight="600" fill="#101828">Définition</text>
+      <path d="M468.8 201.0H638M633.5 197.0l4.5 4-4.5 4" fill="none" stroke="#CBD3DF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="663" cy="201" r="11" fill="#2251CC"/>
+      <text x="663" y="205.32" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">3</text>
+      <text x="683" y="205.8" font-size="13.5" font-weight="600" fill="#1A3FA6">Équivalent</text>
+      <path d="M763.7 201.0H902M897.5 197.0l4.5 4-4.5 4" fill="none" stroke="#CBD3DF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="927" cy="201" r="10.25" fill="#FFFFFF" stroke="#C2D3FF" stroke-width="1.5"/>
+      <text x="927" y="205.32" font-size="12" font-weight="600" fill="#2251CC" text-anchor="middle">4</text>
+      <text x="947" y="205.8" font-size="13.5" font-weight="600" fill="#101828">Contextualisation</text>
+      <path d="M1072.9 201.0H1194M1189.5 197.0l4.5 4-4.5 4" fill="none" stroke="#CBD3DF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="1219" cy="201" r="10.25" fill="#FFFFFF" stroke="#C2D3FF" stroke-width="1.5"/>
+      <text x="1219" y="205.32" font-size="12" font-weight="600" fill="#2251CC" text-anchor="middle">5</text>
+      <text x="1239" y="205.8" font-size="13.5" font-weight="600" fill="#101828">Ressources</text>
+
+      <!-- ═══ 1 · Terme ═══ -->
+      <text x="88" y="252" font-size="10.5" font-weight="600" fill="#667085" letter-spacing="0.7">FRANÇAIS · SOURCE</text>
+      <text x="88" y="294" font-size="34" font-weight="600" fill="#0F1F3D" letter-spacing="-0.4">contrat</text>
+      <text x="88" y="319" font-size="12.5" fill="#667085"><tspan font-style="italic">nom masculin</tspan> · pl. contrats</text>
+      <text x="88" y="354" font-size="10.5" font-weight="600" fill="#667085" letter-spacing="0.7">DOMAINE</text>
+      <text x="88" y="375" font-size="13" fill="#344054">Droit civil › Obligations</text>
+      <text x="88" y="406" font-size="10.5" font-weight="600" fill="#667085" letter-spacing="0.7">SYNONYMES</text>
+      <rect x="88" y="416" width="81" height="24" rx="6" fill="#F1F5FF" stroke="#DFE8FF"/>
+      <text x="128.5" y="432.38" font-size="12.5" fill="#1A3FA6" text-anchor="middle">convention</text>
+      <rect x="175" y="416" width="57" height="24" rx="6" fill="#F1F5FF" stroke="#DFE8FF"/>
+      <text x="203.5" y="432.38" font-size="12.5" fill="#1A3FA6" text-anchor="middle">accord</text>
+      <text x="88" y="468" font-size="10.5" font-weight="600" fill="#667085" letter-spacing="0.7">TERMES ASSOCIÉS</text>
+      <rect x="88" y="478" width="83" height="24" rx="6" fill="#F1F5FF" stroke="#DFE8FF"/>
+      <text x="129.5" y="494.38" font-size="12.5" fill="#1A3FA6" text-anchor="middle">contractant</text>
+      <rect x="177" y="478" width="96" height="24" rx="6" fill="#F7F9FB" stroke="#E1E6EE"/>
+      <text x="225" y="494.38" font-size="12.5" fill="#667085" text-anchor="middle">cocontractant</text>
+      <rect x="88" y="508" width="54" height="24" rx="6" fill="#F1F5FF" stroke="#DFE8FF"/>
+      <text x="115" y="524.38" font-size="12.5" fill="#1A3FA6" text-anchor="middle">clause</text>
+      <rect x="148" y="508" width="76" height="24" rx="6" fill="#F1F5FF" stroke="#DFE8FF"/>
+      <text x="186" y="524.38" font-size="12.5" fill="#1A3FA6" text-anchor="middle">obligation</text>
+      <!-- Pied : numéro de l'entrée et passage à l'entrée voisine -->
+      <use xlink:href="#i-fiche" x="88" y="576" width="16" height="16" stroke="#667085" stroke-width="1.5"/>
+      <text x="111" y="588.5" font-size="12" fill="#667085">Entrée 1 sur 1 000</text>
+      <rect x="256" y="571" width="26" height="26" rx="6" fill="#FFFFFF" stroke="#E1E6EE"/>
+      <use xlink:href="#i-chevron-g" x="263" y="578" width="12" height="12" stroke="#98A2B3" stroke-width="1.7"/>
+      <rect x="286" y="571" width="26" height="26" rx="6" fill="#FFFFFF" stroke="#E1E6EE"/>
+      <use xlink:href="#i-chevron-d" x="293" y="578" width="12" height="12" stroke="#344054" stroke-width="1.7"/>
+
+      <!-- ═══ 2 · Définition (français, puis arabe) ═══ -->
+      <text x="360" y="252" font-size="10.5" font-weight="600" fill="#667085" letter-spacing="0.7">FRANÇAIS</text>
+      <g font-size="14">
+        <text x="360" y="276">Convention par laquelle une ou</text>
+        <text x="360" y="298">plusieurs personnes s’obligent, envers</text>
+        <text x="360" y="320">une ou plusieurs autres, à donner, à</text>
+        <text x="360" y="342">faire ou à ne pas faire quelque chose.</text>
+      </g>
+      <line x1="360" y1="364" x2="604" y2="364" stroke="#EDF0F5"/>
+      <text x="604" y="387" font-size="12.5" fill="#667085" text-anchor="end">&#x202B;العربية&#x202C;</text>
+      <g font-size="16.5" text-anchor="end">
+        <text x="604" y="417">&#x202B;اتفاق يلتزم بموجبه شخص أو عدة&#x202C;</text>
+        <text x="604" y="447">&#x202B;أشخاص نحو شخص أو عدة&#x202C;</text>
+        <text x="604" y="477">&#x202B;أشخاص آخرين بمنح أو فعل أو عدم&#x202C;</text>
+        <text x="604" y="507">&#x202B;فعل شيء ما.&#x202C;</text>
+      </g>
+      <!-- Pied : source de la définition, toujours affichée en entier -->
+      <use xlink:href="#i-document" x="360" y="576" width="16" height="16" stroke="#667085" stroke-width="1.5"/>
+      <text x="383" y="588.5" font-size="12" fill="#344054"><tspan fill="#667085">Source : </tspan><tspan font-weight="600">Code civil, art. 54</tspan></text>
+
+      <!-- ═══ 3 · Équivalent (champ centré) ═══ -->
+      <text x="760" y="252" font-size="10.5" font-weight="600" fill="#2251CC" letter-spacing="0.7" text-anchor="middle">ARABE · CIBLE</text>
+      <text x="760" y="368" font-size="58" font-weight="600" fill="#1A3FA6" text-anchor="middle">&#x202B;عقد&#x202C;</text>
+      <text x="760" y="408" font-size="14.5" fill="#344054" text-anchor="middle">&#x202B;اسم مذكر، ج. عقود&#x202C;</text>
+      <line x1="732" y1="440" x2="788" y2="440" stroke="#C2D3FF"/>
+      <text x="760" y="474" font-size="10.5" font-weight="600" fill="#667085" letter-spacing="0.7" text-anchor="middle">AUTRE ÉQUIVALENT</text>
+      <rect x="735.5" y="486" width="49" height="26" rx="6" fill="#F1F5FF" stroke="#DFE8FF"/>
+      <text x="760" y="503.2" font-size="14" fill="#1A3FA6" text-anchor="middle">&#x202B;اتفاق&#x202C;</text>
+      <use xlink:href="#i-copier" x="693.02" y="576" width="16" height="16" stroke="#2251CC" stroke-width="1.5"/>
+      <text x="716.02" y="588.5" font-size="12.5" font-weight="600" fill="#2251CC">Copier l’équivalent</text>
+
+      <!-- ═══ 4 · Contextualisation (exemples du glossaire, le terme en évidence) ═══ -->
+      <rect x="916" y="244" width="113" height="20" rx="6" fill="#F0F3F7"/>
+      <text x="972.5" y="258.02" font-size="11.5" fill="#344054" text-anchor="middle">Code civil, art. 106</text>
+      <g font-size="14">
+        <text x="916" y="286">Le <tspan font-weight="600" fill="#1A3FA6">contrat</tspan> fait la loi des parties.</text>
+      </g>
+      <g font-size="16.5" text-anchor="end">
+        <text x="1160" y="316">&#x202B;<tspan font-weight="600" fill="#1A3FA6">العقد</tspan> شريعة المتعاقدين.&#x202C;</text>
+      </g>
+      <line x1="916" y1="336" x2="1160" y2="336" stroke="#EDF0F5"/>
+      <rect x="916" y="352" width="113" height="20" rx="6" fill="#F0F3F7"/>
+      <text x="972.5" y="366.02" font-size="11.5" fill="#344054" text-anchor="middle">Code civil, art. 107</text>
+      <g font-size="14">
+        <text x="916" y="394">Le <tspan font-weight="600" fill="#1A3FA6">contrat</tspan> doit être exécuté</text>
+        <text x="916" y="416">conformément à son contenu, et de</text>
+        <text x="916" y="438">bonne foi.</text>
+      </g>
+      <g font-size="16.5" text-anchor="end">
+        <text x="1160" y="468">&#x202B;يجب تنفيذ <tspan font-weight="600" fill="#1A3FA6">العقد</tspan> طبقا لما اشتمل&#x202C;</text>
+        <text x="1160" y="498">&#x202B;عليه وبحسن نية.&#x202C;</text>
+      </g>
+      <use xlink:href="#i-texte" x="916" y="576" width="16" height="16" stroke="#667085" stroke-width="1.5"/>
+      <text x="939" y="588.5" font-size="12" fill="#667085">2 exemples dans le glossaire</text>
+
+      <!-- ═══ 5 · Ressources ═══ -->
+      <g font-size="13" font-weight="600">
+        <text x="1208" y="256">Code civil algérien</text>
+      </g>
+      <g font-size="12.5" fill="#667085">
+        <text x="1208" y="275">ordonnance n° 75-58 du 26 septembre</text>
+        <text x="1208" y="293">1975, art. 54, 106 et 107</text>
+      </g>
+      <line x1="1208" y1="305" x2="1432" y2="305" stroke="#EDF0F5"/>
+      <g font-size="15" font-weight="600" text-anchor="end">
+        <text x="1432" y="329">&#x202B;القانون المدني&#x202C;</text>
+      </g>
+      <g font-size="13.5" fill="#667085" text-anchor="end">
+        <text x="1432" y="353">&#x202B;الأمر رقم 75-58 المؤرخ في 26 سبتمبر&#x202C;</text>
+        <text x="1432" y="376">&#x202B;1975، المواد 54 و106 و107&#x202C;</text>
+      </g>
+      <line x1="1208" y1="388" x2="1432" y2="388" stroke="#EDF0F5"/>
+      <g font-size="13" font-weight="600">
+        <text x="1208" y="410">Journal officiel (JORADP) n° 78 du</text>
+        <text x="1208" y="429">30 septembre 1975</text>
+      </g>
+      <text x="1208" y="448" font-size="12.5" fill="#2251CC">www.joradp.dz</text>
+      <use xlink:href="#i-lien" x="1295.3" y="437.5" width="12" height="12" stroke="#2251CC" stroke-width="1.5"/>
+      <line x1="1208" y1="460" x2="1432" y2="460" stroke="#EDF0F5"/>
+      <g font-size="13" font-weight="600">
+        <text x="1208" y="482">G. Cornu (dir.)</text>
+      </g>
+      <g font-size="12.5" fill="#667085">
+        <text x="1208" y="501">Vocabulaire juridique, Association Henri</text>
+        <text x="1208" y="519">Capitant, PUF</text>
+      </g>
+      <use xlink:href="#i-copier" x="1208" y="576" width="16" height="16" stroke="#2251CC" stroke-width="1.5"/>
+      <text x="1231" y="588.5" font-size="12.5" font-weight="600" fill="#2251CC">Copier les références</text>
+    </g>
+    <rect x="64" y="176" width="1392" height="430" rx="12" fill="none" stroke="#E1E6EE"/>
+
+    <!-- ═══ Autres entrées du glossaire liées à la recherche (un clic ouvre la fiche) ═══ -->
+    <rect x="64" y="622" width="1392" height="260" rx="12" fill="#FFFFFF" stroke="#E1E6EE"/>
+    <text x="88" y="647.5" font-size="13.5" font-weight="600">Expressions avec « contrat »</text>
+    <rect x="278.75" y="634" width="25" height="18" rx="9" fill="#F0F3F7"/>
+    <text x="291.25" y="646.96" font-size="11" font-weight="600" fill="#344054" text-anchor="middle">23</text>
+    <text x="1432" y="647.5" font-size="12" fill="#667085" text-anchor="end">Cliquez sur une ligne pour ouvrir sa fiche</text>
+    <g stroke="#EDF0F5">
+      <line x1="64" y1="662" x2="1456" y2="662"/>
+      <line x1="412" y1="662" x2="412" y2="882"/>
+      <line x1="760" y1="662" x2="760" y2="882"/>
+      <line x1="1108" y1="662" x2="1108" y2="882"/>
+      <line x1="64" y1="698" x2="1456" y2="698"/>
+      <line x1="64" y1="734" x2="1456" y2="734"/>
+      <line x1="64" y1="770" x2="1456" y2="770"/>
+      <line x1="64" y1="806" x2="1456" y2="806"/>
+      <line x1="64" y1="842" x2="1456" y2="842"/>
+    </g>
+    <text x="88" y="684.8" font-size="13" fill="#101828">contrat de bail</text>
+    <text x="396" y="685.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد الإيجار&#x202C;</text>
+    <rect x="418" y="666" width="336" height="29" rx="6" fill="#F1F5FF"/>
+    <text x="428" y="684.8" font-size="13" fill="#1A3FA6">contrat de vente</text>
+    <text x="744" y="685.2" font-size="14.5" fill="#1A3FA6" text-anchor="end">&#x202B;عقد البيع&#x202C;</text>
+    <text x="776" y="684.8" font-size="13" fill="#101828">contrat solennel</text>
+    <text x="1092" y="685.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد شكلي&#x202C;</text>
+    <text x="1124" y="684.8" font-size="13" fill="#101828">contrat aléatoire</text>
+    <text x="1432" y="685.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد احتمالي&#x202C;</text>
+    <text x="88" y="720.8" font-size="13" fill="#101828">contrat de travail</text>
+    <text x="396" y="721.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد العمل&#x202C;</text>
+    <text x="428" y="720.8" font-size="13" fill="#101828">contrat d'adhésion</text>
+    <text x="744" y="721.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد الإذعان&#x202C;</text>
+    <text x="776" y="720.8" font-size="13" fill="#101828">contrat unilatéral</text>
+    <text x="1092" y="721.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد ملزم لجانب واحد&#x202C;</text>
+    <text x="1124" y="720.8" font-size="13" fill="#101828">contrat consensuel</text>
+    <text x="1432" y="721.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد رضائي&#x202C;</text>
+    <text x="88" y="756.8" font-size="13" fill="#101828">contrat d'assurance</text>
+    <text x="396" y="757.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد التأمين&#x202C;</text>
+    <text x="428" y="756.8" font-size="13" fill="#101828">contrat d'entreprise</text>
+    <text x="744" y="757.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد المقاولة&#x202C;</text>
+    <text x="776" y="756.8" font-size="13" fill="#101828">contrat de transport</text>
+    <text x="1092" y="757.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد النقل&#x202C;</text>
+    <text x="1124" y="756.8" font-size="13" fill="#101828">contrat électronique</text>
+    <text x="1432" y="757.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد إلكتروني&#x202C;</text>
+    <text x="88" y="792.8" font-size="13" fill="#101828">contrat administratif</text>
+    <text x="396" y="793.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد إداري&#x202C;</text>
+    <text x="428" y="792.8" font-size="13" fill="#101828">contrat synallagmatique</text>
+    <text x="744" y="793.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد ملزم للجانبين&#x202C;</text>
+    <text x="776" y="792.8" font-size="13" fill="#101828">contrat à titre onéreux</text>
+    <text x="1092" y="793.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد المعاوضة&#x202C;</text>
+    <text x="1124" y="792.8" font-size="13" fill="#101828">contrat à titre gratuit</text>
+    <text x="1432" y="793.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;عقد التبرع&#x202C;</text>
+    <text x="88" y="828.8" font-size="13" fill="#101828">contrat à durée déterminée</text>
+    <text x="396" y="829.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;العقد المحدد المدة&#x202C;</text>
+    <text x="428" y="828.8" font-size="13" fill="#101828">contrat à durée indétermin…</text>
+    <text x="744" y="829.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;العقد غير المحدد المدة&#x202C;</text>
+    <text x="776" y="828.8" font-size="13" fill="#101828">promesse de contrat</text>
+    <text x="1092" y="829.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;الوعد بالتعاقد&#x202C;</text>
+    <text x="1124" y="828.8" font-size="13" fill="#101828">exécution du contrat</text>
+    <text x="1432" y="829.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;تنفيذ العقد&#x202C;</text>
+    <text x="88" y="864.8" font-size="13" fill="#101828">conclusion du contrat</text>
+    <text x="396" y="865.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;إبرام العقد&#x202C;</text>
+    <text x="428" y="864.8" font-size="13" fill="#101828">effet relatif du contrat</text>
+    <text x="744" y="865.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;الأثر النسبي للعقد&#x202C;</text>
+    <text x="776" y="864.8" font-size="13" fill="#101828">force obligatoire du contrat</text>
+    <text x="1092" y="865.2" font-size="14.5" fill="#344054" text-anchor="end">&#x202B;القوة الملزمة للعقد&#x202C;</text>
+
+    <!-- ═══ Barre d'état ═══ -->
+    <rect x="40" y="902" width="1440" height="26" fill="#FFFFFF"/>
+    <line x1="40" y1="902" x2="1480" y2="902" stroke="#E1E6EE"/>
+    <g font-size="11.5" fill="#667085">
+      <text x="64" y="919.5">« contrat » : 24 entrées trouvées dans le glossaire.</text>
+      <text x="1456" y="919.5" text-anchor="end">Version 0.3</text>
+      <line x1="1380" y1="909" x2="1380" y2="921" stroke="#E1E6EE"/>
+      <text x="1368" y="919.5" text-anchor="end">arabe</text>
+      <use xlink:href="#i-fleche" x="1322.53" y="909.5" width="12" height="12" stroke="#667085" stroke-width="1.4"/>
+      <text x="1317.53" y="919.5" text-anchor="end">Sens : français</text>
+    </g>
+  </g>
+  <!-- Contour de la fenêtre -->
+  <rect x="40.5" y="36.5" width="1439" height="891" rx="10" fill="none" stroke="#C5CCD8"/>
+</svg>
