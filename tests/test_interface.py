@@ -52,7 +52,7 @@ def test_la_fenetre_s_ouvre_avec_le_glossaire_d_exemple(fenetre, avertissements)
     assert avertissements == []
     assert fenetre.windowTitle() == "Traducteur juridique — Français / Arabe"
     etat = _BALISE.sub("", fenetre.etat_glossaire.text()).replace("&nbsp;", " ")
-    assert "Glossaire chargé : glossaire_juridique.csv" in etat
+    assert "Glossaire chargé : glossaire_essai.csv" in etat
     assert "40 entrées" in etat and "UTF-8" in etat
     assert fenetre.etat_sens.text().startswith("Sens : français › arabe")
     assert "Prototype v0.2" in fenetre.etat_sens.text()
@@ -402,6 +402,39 @@ def test_le_terme_trop_long_est_ecrit_plus_petit(fenetre, application):
         assert carte.defilement.widget().width() <= carte.defilement.viewport().width()
 
 
+def test_les_expressions_cote_a_cote_ou_l_une_sous_l_autre(fenetre, application, tmp_path):
+    """Champ « Équivalent » : l'arabe passe sous le français quand les deux termes ne tiennent pas sur une ligne."""
+    fenetre.charger_glossaire(ecrire(tmp_path / "expressions.csv", (
+        "terme_fr;terme_ar\nfaute;خطأ\nfaute lourde;خطأ جسيم\n"
+        "responsabilité;مسؤولية\nresponsabilité du fait des choses;المسؤولية عن فعل الأشياء\n")))
+    page = fenetre.page
+
+    def expression():
+        application.processEvents()
+        ligne = page.carte_equivalent.findChild(LigneCliquable)
+        francais, arabe = ligne.findChildren(QLabel)
+        return ligne, francais.geometry(), arabe.geometry()
+
+    page.rechercher("faute")
+    ligne, francais, arabe = expression()
+    assert ligne.disposition.cote_a_cote(ligne.width())
+    assert francais.top() == arabe.top() and francais.right() < arabe.left()  # le français à gauche, l'arabe à droite
+    assert arabe.right() == ligne.contentsRect().right() - 4
+
+    page.rechercher("responsabilité")
+    ligne, francais, arabe = expression()
+    assert not ligne.disposition.cote_a_cote(ligne.width())
+    assert arabe.top() > francais.bottom() and francais.width() == arabe.width() == ligne.contentsRect().width() - 8
+
+    # Dans une fenêtre étroite, la ligne suit la largeur de la carte : rien ne dépasse.
+    largeur = francais.width()
+    fenetre.resize(1080, 620)
+    ligne, francais, arabe = expression()
+    assert francais.width() < largeur and arabe.top() > francais.bottom()
+    for carte in page.cartes:
+        assert carte.defilement.widget().width() <= carte.defilement.viewport().width()
+
+
 # ------------------------------------------------------------------ glossaire
 def ecrire(chemin, texte):
     chemin.write_text(texte, encoding="utf-8")
@@ -459,7 +492,7 @@ def test_le_dernier_glossaire_ouvert_est_repris_au_demarrage(application, reglag
     fichier.unlink()  # le fichier a disparu : retour au glossaire d'exemple, avec un avertissement
     fenetre = FenetrePrincipale(reglages=reglages)
     application.processEvents()
-    assert fenetre.glossaire.nom == "glossaire_juridique.csv"
+    assert fenetre.glossaire.nom == "glossaire_essai.csv"
     assert not reglages.contains("glossaire/chemin")
     assert len(avertissements) == 1 and "dernier.csv" in avertissements[0][1]
     fenetre.deleteLater()
@@ -478,7 +511,7 @@ def test_revenir_au_glossaire_d_exemple(fenetre, reglages, tmp_path):
     fenetre.charger_glossaire(fichier)
     assert reglages.contains("glossaire/chemin")
     fenetre.action_exemple.trigger()
-    assert fenetre.glossaire.nom == "glossaire_juridique.csv" and len(fenetre.glossaire) == 40
+    assert fenetre.glossaire.nom == "glossaire_essai.csv" and len(fenetre.glossaire) == 40
     assert not reglages.contains("glossaire/chemin")  # l'exemple est le glossaire par défaut
 
 
@@ -498,6 +531,6 @@ def test_sans_aucun_glossaire(application, reglages, avertissements, tmp_path, m
 
 def test_bilan_de_lecture(glossaire):
     bilan = FenetrePrincipale.bilan_de_lecture(glossaire)
-    assert bilan.splitlines()[0] == "glossaire_juridique.csv : 40 entrées."
+    assert bilan.splitlines()[0] == "glossaire_essai.csv : 40 entrées."
     assert "Encodage UTF-8, séparateur : point-virgule." in bilan
     assert "ignorée" not in bilan

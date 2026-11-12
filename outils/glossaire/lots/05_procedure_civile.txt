@@ -1,0 +1,121 @@
+## Procédure civile ## CPCA
+action | دعوى | ff | دعاوى | Droit de saisir un juge pour qu'il statue sur une prétention ; par extension, la demande en justice elle-même. | حق اللجوء إلى القاضي للفصل في ادعاء، ويطلق أيضا على المطالبة القضائية نفسها. | sf=action en justice
+instance | خصومة | ff | خصومات | Suite des actes de procédure qui va de la demande en justice jusqu'au jugement. | سلسلة الإجراءات الممتدة من المطالبة القضائية إلى صدور الحكم.
+procès | محاكمة | mf | محاكمات | Litige soumis à une juridiction ; déroulement de son examen par le juge. | نزاع معروض على جهة قضائية، وسير النظر فيه أمام القاضي.
+litige | نزاع | mm | نزاعات | Désaccord entre des personnes sur l'existence ou sur l'étendue d'un droit. | خلاف بين أشخاص حول وجود حق أو مداه. | sf=différend
+affaire | قضية | ff | قضايا | Litige ou poursuite soumis à une juridiction. | نزاع أو متابعة معروضة على جهة قضائية.
+dossier | ملف | mm | ملفات | Ensemble des pièces relatives à une affaire. | مجموع الوثائق المتعلقة بقضية.
+procédure | إجراء | fm | إجراءات | Ensemble des formalités à accomplir pour soumettre une prétention à un juge ; chacune de ces formalités. | مجموع الشكليات الواجب استيفاؤها لعرض ادعاء على القاضي، وكل شكلية منها.
+
+demande | طلب | fm | طلبات | Acte par lequel une personne soumet une prétention au juge. | عمل يعرض به شخص ادعاءه على القاضي.
+demande reconventionnelle | طلب مقابل | fa | طلبات مقابلة | Demande par laquelle le défendeur prétend obtenir un avantage autre que le simple rejet de la demande de son adversaire. | طلب يرمي به المدعى عليه إلى الحصول على منفعة غير مجرد رفض طلب خصمه.
+demande additionnelle | طلب إضافي | fa | طلبات إضافية | Demande par laquelle une partie modifie ses prétentions antérieures. | طلب يعدل به أحد الأطراف طلباته السابقة.
+demandeur | مدعٍ | mm | مدعون | Personne qui prend l'initiative d'un procès. | الشخص الذي يبادر برفع الدعوى.
+défendeur | المدعى عليه | mc | المدعى عليهم | Personne contre laquelle une demande en justice est formée. | الشخص الذي ترفع ضده الدعوى.
+intervention | تدخل | fm |  | Acte par lequel un tiers entre dans un procès déjà engagé, de lui-même ou à la demande d'une partie. | إجراء يدخل به شخص من الغير في خصومة قائمة، من تلقاء نفسه أو بطلب من أحد الأطراف.
+
+qualité | صفة | ff | صفات | Titre qui donne à une personne le pouvoir d'agir en justice ou d'accomplir un acte. | الصفة التي تخول الشخص سلطة التقاضي أو القيام بتصرف.
+intérêt | مصلحة | mf | مصالح | Avantage qu'une personne peut retirer d'une action en justice, et sans lequel sa demande n'est pas recevable. | المنفعة التي يمكن أن يجنيها الشخص من الدعوى، وبدونها لا يقبل طلبه.
+recevabilité | مقبولية | ff |  | Qualité de la demande qui remplit les conditions pour être examinée par le juge. | صفة الطلب الذي يستوفي شروط النظر فيه من القاضي.
+irrecevabilité | عدم القبول | fi |  | Sanction de la demande qui ne remplit pas les conditions pour être examinée par le juge. | جزاء الطلب الذي لا يستوفي شروط النظر فيه من القاضي.
+
+compétence | اختصاص | fm | اختصاصات | Aptitude d'une juridiction ou d'une autorité à connaître d'une affaire ou à prendre un acte. | صلاحية جهة قضائية أو سلطة للنظر في قضية أو لاتخاذ تصرف.
+compétence d'attribution | الاختصاص النوعي | fc |  | Compétence d'une juridiction déterminée par la nature de l'affaire. | اختصاص الجهة القضائية المحدد بحسب طبيعة القضية.
+compétence territoriale | الاختصاص الإقليمي | fc |  | Compétence d'une juridiction déterminée par un critère géographique, comme le domicile du défendeur. | اختصاص الجهة القضائية المحدد بمعيار جغرافي، كموطن المدعى عليه.
+incompétence | عدم الاختصاص | fi |  | Défaut d'aptitude d'une juridiction à connaître d'une affaire. | انعدام صلاحية الجهة القضائية للنظر في القضية.
+
+requête | عريضة | ff | عرائض | Écrit par lequel une personne saisit une juridiction et expose sa demande. | محرر يرفع به شخص دعواه إلى جهة قضائية ويعرض فيه طلبه.
+requête introductive d'instance | عريضة افتتاح الدعوى | fi |  | Écrit daté et signé, déposé au greffe, par lequel le demandeur engage le procès. | محرر مؤرخ وموقع يودع بأمانة الضبط ويرفع به المدعي دعواه.
+assignation | التكليف بالحضور | fc |  | Acte d'huissier par lequel une personne est invitée à comparaître devant une juridiction. | محرر يحرره المحضر القضائي ويدعى به شخص إلى المثول أمام جهة قضائية. | sf=citation
+mémoire | مذكرة | mf | مذكرات | Écrit dans lequel une partie expose ses demandes et ses arguments devant le juge. | محرر يعرض فيه أحد الأطراف طلباته وحججه أمام القاضي. | sf=conclusions
+plaidoirie | مرافعة | ff | مرافعات | Exposé oral des prétentions et des arguments d'une partie à l'audience. | عرض شفوي لطلبات أحد الأطراف وحججه في الجلسة.
+
+notification | تبليغ | fm | تبليغات | Formalité par laquelle un acte est porté à la connaissance d'une personne. | إجراء يحاط به شخص علما بمحرر.
+signification | تبليغ رسمي | fa |  | Notification d'un acte faite par un huissier de justice. | تبليغ محرر بواسطة محضر قضائي.
+comparution | مثول | fm |  | Fait de se présenter devant une juridiction. | الحضور أمام جهة قضائية. | sa=حضور
+représentation | تمثيل | fm |  | Fait d'agir au nom et pour le compte d'une autre personne, en justice ou dans un acte. | التصرف باسم شخص آخر ولحسابه، أمام القضاء أو في تصرف قانوني.
+renvoi | إحالة | mf |  | Décision par laquelle une juridiction transmet une affaire à une autre ; en droit international privé, désignation d'une autre loi par la règle de conflit étrangère. | قرار تحيل به جهة قضائية القضية إلى جهة أخرى، وفي القانون الدولي الخاص تعيين قاعدة الإسناد الأجنبية قانونا آخر.
+
+exception de procédure | دفع شكلي | fa | دفوع شكلية | Moyen de défense qui tend à faire déclarer la procédure irrégulière ou à en suspendre le cours, sans discuter le fond. | وسيلة دفاع ترمي إلى التصريح بعدم صحة الإجراءات أو إلى وقفها دون مناقشة الموضوع.
+défense au fond | دفع موضوعي | fa | دفوع موضوعية | Moyen par lequel le défendeur conteste le bien-fondé de la demande. | وسيلة ينازع بها المدعى عليه في تأسيس الطلب.
+fin de non-recevoir | الدفع بعدم القبول | fc |  | Moyen qui tend à faire déclarer la demande irrecevable sans examen au fond, pour défaut de qualité ou d'intérêt, prescription ou chose jugée. | وسيلة ترمي إلى التصريح بعدم قبول الطلب دون النظر في موضوعه، لانعدام الصفة أو المصلحة أو للتقادم أو لسبق الفصل.
+
+péremption d'instance | سقوط الخصومة | fi |  | Extinction de l'instance lorsque les parties n'accomplissent aucun acte pendant le délai fixé par la loi. | انقضاء الخصومة إذا لم يقم الأطراف بأي إجراء خلال المدة التي يحددها القانون.
+désistement d'instance | التنازل عن الخصومة | mc |  | Abandon de l'instance par le demandeur, qui garde le droit d'agir de nouveau. | تخلي المدعي عن الخصومة مع بقاء حقه في رفع الدعوى من جديد.
+radiation | شطب | fm |  | Mesure qui retire une affaire du rôle lorsque les parties ne font pas les diligences nécessaires. | تدبير تسحب به القضية من الجدول إذا لم يقم الأطراف بالإجراءات اللازمة.
+jonction d'instances | ضم الخصومات | fi |  | Mesure par laquelle le juge réunit plusieurs affaires liées pour les instruire et les juger ensemble. | تدبير يجمع به القاضي عدة قضايا مرتبطة للتحقيق والفصل فيها معا.
+sursis à statuer | إرجاء الفصل | mi |  | Décision par laquelle le juge suspend l'instance jusqu'à la survenance d'un événement. | قرار يوقف به القاضي الخصومة إلى حين وقوع حدث معين.
+
+jugement | حكم | mm | أحكام | Décision rendue par un tribunal ; au sens large, toute décision de justice. | مقرر قضائي يصدر عن محكمة، ويطلق بمعناه الواسع على كل مقرر قضائي.
+arrêt | قرار | mm | قرارات | Décision rendue par une cour, par la Cour suprême ou par le Conseil d'État. | مقرر قضائي يصدر عن مجلس قضائي أو عن المحكمة العليا أو عن مجلس الدولة.
+dispositif du jugement | منطوق الحكم | mi |  | Partie finale du jugement, qui contient la décision du juge. | الجزء الأخير من الحكم، ويتضمن ما قضى به القاضي.
+motivation | تسبيب | fm |  | Exposé des raisons de fait et de droit qui justifient une décision. | عرض الأسباب الواقعية والقانونية التي تبرر القرار.
+
+jugement contradictoire | حكم حضوري | ma | أحكام حضورية | Jugement rendu alors que les parties ont comparu ou ont été représentées. | حكم يصدر بعد حضور الأطراف أو تمثيلهم.
+jugement par défaut | حكم غيابي | ma | أحكام غيابية | Jugement rendu contre une partie qui n'a pas comparu. | حكم يصدر ضد طرف لم يحضر.
+jugement avant dire droit | حكم قبل الفصل في الموضوع | mc |  | Jugement qui ordonne une mesure d'instruction ou une mesure provisoire sans trancher le litige. | حكم يأمر بإجراء تحقيق أو بتدبير مؤقت دون الفصل في النزاع.
+jugement définitif | حكم نهائي | ma | أحكام نهائية | Jugement qui ne peut plus être attaqué par les voies de recours ordinaires. | حكم لم يعد قابلا للطعن فيه بالطرق العادية.
+
+référé | استعجال | mm |  | Procédure rapide qui permet d'obtenir du juge une mesure provisoire en cas d'urgence. | إجراء سريع يسمح بالحصول من القاضي على تدبير مؤقت في حالة الاستعجال.
+ordonnance de référé | أمر استعجالي | fa | أوامر استعجالية | Décision provisoire rendue en urgence par le juge des référés. | أمر مؤقت يصدره قاضي الاستعجال على وجه السرعة.
+ordonnance sur requête | أمر على عريضة | fc | أوامر على عرائض | Décision provisoire rendue sans débat contradictoire, à la demande d'une seule partie. | أمر مؤقت يصدر دون مواجهة بين الخصوم بطلب من طرف واحد.
+injonction de payer | أمر الأداء | fi | أوامر الأداء | Procédure simplifiée qui permet au créancier d'obtenir rapidement un titre contre son débiteur. | إجراء مبسط يسمح للدائن بالحصول سريعا على سند ضد مدينه.
+
+autorité de la chose jugée | حجية الشيء المقضي به | fc |  | Effet attaché au jugement, qui interdit de soumettre de nouveau au juge ce qui a déjà été tranché entre les mêmes parties. | أثر يترتب على الحكم ويمنع عرض ما سبق الفصل فيه بين الخصوم أنفسهم على القضاء من جديد.
+force de chose jugée | قوة الشيء المقضي به | fc |  | Qualité du jugement qui n'est plus susceptible d'un recours suspensif d'exécution. | صفة الحكم الذي لم يعد قابلا لطعن موقف للتنفيذ.
+formule exécutoire | الصيغة التنفيذية | fc |  | Formule apposée sur un acte ou sur un jugement, qui ordonne aux agents de la force publique d'en assurer l'exécution. | صيغة توضع على العقد أو الحكم تأمر أعوان القوة العمومية بتنفيذه.
+copie exécutoire | نسخة تنفيذية | fa | نسخ تنفيذية | Copie d'un jugement ou d'un acte revêtue de la formule exécutoire. | نسخة من الحكم أو من العقد ممهورة بالصيغة التنفيذية. | sf=grosse
+exécution provisoire | النفاذ المعجل | fc |  | Possibilité d'exécuter un jugement malgré l'exercice d'une voie de recours. | إمكانية تنفيذ الحكم رغم ممارسة طريق من طرق الطعن.
+astreinte | غرامة تهديدية | fa | غرامات تهديدية | Somme d'argent que le juge condamne le débiteur à payer par jour de retard, pour le contraindre à exécuter. | مبلغ مالي يحكم به القاضي على المدين عن كل يوم تأخير لحمله على التنفيذ.
+
+dépens | المصاريف القضائية | mcp |  | Frais du procès que la partie perdante doit en principe supporter. | مصاريف الدعوى التي يتحملها مبدئيا الطرف الخاسر. | sf=frais de justice
+honoraires | أتعاب | mmp |  | Rémunération due à un avocat ou à un autre membre d'une profession libérale. | المقابل المستحق للمحامي أو لغيره من أصحاب المهن الحرة.
+taxe judiciaire | رسم قضائي | fa | رسوم قضائية | Somme perçue par l'État à l'occasion d'une instance. | مبلغ تحصله الدولة بمناسبة رفع الدعوى.
+
+voie de recours | طريق الطعن | fi | طرق الطعن | Moyen offert par la loi pour faire réexaminer une décision de justice. | وسيلة يتيحها القانون لإعادة النظر في حكم قضائي.
+recours | طعن | mm | طعون | Acte par lequel une personne conteste une décision devant une autorité ou une juridiction. | عمل ينازع به شخص في قرار أمام سلطة أو جهة قضائية.
+appel | استئناف | mm | استئنافات | Voie de recours ordinaire qui tend à faire réformer ou annuler un jugement par la juridiction du second degré. | طريق طعن عادي يرمي إلى مراجعة حكم أو إلغائه من قبل جهة الدرجة الثانية.
+appelant | مستأنف | mm | مستأنفون | Partie qui forme un appel. | الطرف الذي يرفع الاستئناف.
+intimé | المستأنف عليه | mc |  | Partie contre laquelle un appel est formé. | الطرف الذي يرفع ضده الاستئناف.
+opposition | معارضة | ff | معارضات | Voie de recours ordinaire ouverte à la partie condamnée par défaut, qui ramène l'affaire devant le même juge. | طريق طعن عادي متاح للطرف المحكوم عليه غيابيا، يعيد القضية إلى القاضي نفسه.
+
+pourvoi en cassation | الطعن بالنقض | mc |  | Voie de recours extraordinaire portée devant la Cour suprême, qui vérifie si la décision attaquée a correctement appliqué le droit. | طريق طعن غير عادي يرفع أمام المحكمة العليا، التي تراقب صحة تطبيق القانون في القرار المطعون فيه.
+cassation | نقض | fm |  | Annulation d'une décision de justice par la Cour suprême pour violation du droit. | إلغاء حكم قضائي من قبل المحكمة العليا لمخالفته القانون.
+tierce opposition | اعتراض الغير الخارج عن الخصومة | fi |  | Voie de recours ouverte à une personne qui n'était pas partie à un jugement et à qui celui-ci porte préjudice. | طريق طعن متاح لمن لم يكن طرفا في الحكم وألحق به ضررا.
+recours en rétractation | التماس إعادة النظر | mi |  | Voie de recours extraordinaire par laquelle on demande au juge de revenir sur sa décision, notamment en cas de fraude ou de pièce fausse. | طريق طعن غير عادي يطلب به من القاضي الرجوع عن حكمه، ولا سيما في حالة الغش أو تزوير وثيقة.
+effet suspensif | أثر موقف | ma |  | Effet d'un recours qui empêche l'exécution de la décision attaquée. | أثر الطعن الذي يمنع تنفيذ الحكم المطعون فيه.
+effet dévolutif | الأثر الناقل | mc |  | Effet de l'appel, qui soumet à la juridiction du second degré l'ensemble du litige jugé en première instance. | أثر الاستئناف الذي يطرح على جهة الدرجة الثانية مجمل النزاع المفصول فيه ابتدائيا.
+
+principe du contradictoire | مبدأ الوجاهية | mi |  | Principe selon lequel chaque partie doit pouvoir connaître et discuter les arguments et les pièces de son adversaire. | مبدأ يقضي بتمكين كل طرف من الاطلاع على حجج خصمه ووثائقه ومناقشتها.
+droits de la défense | حقوق الدفاع | mip |  | Ensemble des garanties qui permettent à une personne de se défendre dans un procès. | مجموع الضمانات التي تمكن الشخص من الدفاع عن نفسه في المحاكمة.
+procès équitable | محاكمة عادلة | ma |  | Procès conduit devant un juge indépendant et impartial, dans un délai raisonnable et dans le respect des droits de la défense. | محاكمة تجري أمام قاض مستقل ومحايد، في أجل معقول ومع احترام حقوق الدفاع.
+
+mesure d'instruction | إجراء التحقيق | fi | إجراءات التحقيق | Mesure ordonnée par le juge pour établir les faits : expertise, enquête, visite des lieux. | تدبير يأمر به القاضي لإثبات الوقائع، كالخبرة والتحقيق والانتقال إلى الأماكن.
+expertise | خبرة | ff | خبرات | Mesure par laquelle le juge charge un technicien de l'éclairer sur une question de fait. | تدبير يكلف به القاضي فنيا بتنويره في مسألة واقعية.
+enquête | تحقيق | fm | تحقيقات | Recherche d'informations menée par une autorité ; en procédure civile, audition de témoins. | بحث عن المعلومات تقوم به سلطة، وفي الإجراءات المدنية سماع الشهود.
+constat | معاينة | mf | معاينات | Document dans lequel un huissier ou un agent décrit ce qu'il a personnellement observé. | وثيقة يصف فيها المحضر القضائي أو العون ما عاينه بنفسه.
+procès-verbal | محضر | mm | محاضر | Acte écrit par lequel un agent habilité relate ce qu'il a fait, vu ou entendu dans l'exercice de ses fonctions. | محرر يدون فيه عون مؤهل ما قام به أو شاهده أو سمعه أثناء ممارسة مهامه.
+
+## Procédure civile | Voies d'exécution ## CPCA
+exécution forcée | تنفيذ جبري | fa |  | Exécution d'une obligation ou d'un jugement obtenue par la contrainte, au besoin avec le concours de la force publique. | تنفيذ الالتزام أو الحكم قهرا، وبمساعدة القوة العمومية عند الاقتضاء.
+titre exécutoire | سند تنفيذي | ma | سندات تنفيذية | Acte qui permet au créancier de recourir à l'exécution forcée : jugement, acte notarié revêtu de la formule exécutoire. | محرر يخول الدائن اللجوء إلى التنفيذ الجبري، كالحكم والعقد التوثيقي الممهور بالصيغة التنفيذية.
+commandement de payer | التكليف بالوفاء | mc |  | Acte d'huissier qui met le débiteur en demeure de payer avant l'exécution forcée. | محرر يحرره المحضر القضائي ويعذر به المدين بالوفاء قبل التنفيذ الجبري.
+force publique | القوة العمومية | fc |  | Ensemble des agents armés mis à la disposition des autorités pour assurer l'exécution des lois et des décisions de justice. | مجموع الأعوان المسلحين الموضوعين تحت تصرف السلطات لضمان تنفيذ القوانين والأحكام القضائية.
+contrainte par corps | الإكراه البدني | fc |  | Emprisonnement d'un débiteur destiné à le contraindre à payer certaines dettes, notamment les amendes. | حبس المدين لحمله على أداء بعض الديون، ولا سيما الغرامات.
+
+saisie | حجز | fm | حجوز | Mesure par laquelle un créancier fait placer sous main de justice un bien de son débiteur, pour garantir ou obtenir son paiement. | إجراء يضع به الدائن مالا لمدينه تحت يد القضاء لضمان استيفاء حقه أو لتحصيله.
+saisie conservatoire | حجز تحفظي | fa | حجوز تحفظية | Saisie qui rend un bien du débiteur indisponible, pour l'empêcher d'en disposer. | حجز يجعل مال المدين غير قابل للتصرف فيه لمنعه من ذلك.
+saisie-exécution | حجز تنفيذي | fa | حجوز تنفيذية | Saisie qui aboutit à la vente des biens du débiteur au profit du créancier. | حجز ينتهي ببيع أموال المدين لفائدة الدائن. | pf=saisies-exécutions
+saisie-arrêt | حجز ما للمدين لدى الغير | fc |  | Saisie des sommes ou des biens que le débiteur détient entre les mains d'un tiers. | حجز المبالغ أو الأموال المستحقة للمدين في ذمة الغير.
+saisie immobilière | حجز عقاري | fa | حجوز عقارية | Saisie d'un immeuble du débiteur en vue de sa vente aux enchères. | حجز عقار للمدين قصد بيعه بالمزاد العلني.
+mesure conservatoire | تدبير تحفظي | fa | تدابير تحفظية | Mesure destinée à sauvegarder un droit ou un bien en attendant une décision définitive. | تدبير يرمي إلى حفظ حق أو مال في انتظار حكم نهائي.
+
+créancier saisissant | الدائن الحاجز | mc |  | Créancier qui fait pratiquer une saisie. | الدائن الذي يوقع الحجز.
+tiers saisi | المحجوز لديه | mc |  | Tiers entre les mains duquel la saisie est pratiquée. | الغير الذي يوقع الحجز بين يديه.
+insaisissabilité | عدم القابلية للحجز | fc |  | Caractère des biens que la loi interdit de saisir. | صفة الأموال التي يمنع القانون حجزها.
+mainlevée | رفع اليد | fi |  | Acte qui met fin à une saisie, à une opposition ou à une sûreté. | تصرف ينهي حجزا أو معارضة أو تأمينا.
+séquestre judiciaire | حراسة قضائية | ma |  | Mesure par laquelle le juge confie à un tiers la garde d'un bien litigieux. | تدبير يسند به القاضي إلى الغير حراسة مال متنازع عليه.
+
+vente aux enchères | البيع بالمزاد العلني | fc |  | Vente publique dans laquelle le bien est attribué à la personne qui offre le prix le plus élevé. | بيع علني يرسو فيه المال على من يعرض أعلى ثمن. | sf=adjudication
+adjudicataire | الراسي عليه المزاد | mc |  | Personne à qui le bien est attribué dans une vente aux enchères. | الشخص الذي يرسو عليه المزاد.
+expulsion | طرد | fm |  | Mesure qui contraint une personne à quitter un lieu qu'elle occupe sans droit ; en droit des étrangers, éloignement du territoire. | تدبير يجبر به شخص على مغادرة مكان يشغله بغير حق، وفي قانون الأجانب الإبعاد عن الإقليم.

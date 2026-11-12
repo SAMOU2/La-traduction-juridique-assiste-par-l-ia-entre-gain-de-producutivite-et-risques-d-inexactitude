@@ -1,0 +1,45 @@
+## Droit du travail ## TRAVAIL
+droit du travail | قانون العمل | mi |  | Ensemble des règles qui régissent les relations entre les employeurs et les travailleurs salariés. | مجموع القواعد التي تحكم العلاقات بين المستخدمين والعمال الأجراء.
+relation de travail | علاقة العمل | fi | علاقات العمل | Lien juridique qui naît du contrat de travail entre le travailleur et l'employeur. | الرابطة القانونية التي تنشأ بعقد العمل بين العامل والمستخدم.
+travailleur | عامل | mm | عمال | Personne qui fournit un travail manuel ou intellectuel pour le compte d'un employeur, moyennant un salaire. | شخص يؤدي عملا يدويا أو فكريا لحساب مستخدم مقابل أجر. | sf=salarié
+employeur | مستخدم | mm | مستخدمون | Personne physique ou morale qui emploie un ou plusieurs travailleurs. | شخص طبيعي أو معنوي يشغل عاملا أو أكثر. | sa=صاحب العمل
+lien de subordination | رابطة التبعية | mi |  | Autorité de l'employeur sur le travailleur, qui caractérise le contrat de travail. | سلطة المستخدم على العامل، وهي ما يميز عقد العمل.
+
+contrat à durée indéterminée | العقد غير المحدد المدة | mc |  | Contrat de travail conclu sans limitation de durée ; c'est la forme normale de la relation de travail. | عقد عمل يبرم دون تحديد مدته، وهو الشكل العادي لعلاقة العمل. | sf=CDI
+contrat à durée déterminée | العقد المحدد المدة | mc |  | Contrat de travail conclu pour une durée limitée, dans les cas prévus par la loi. | عقد عمل يبرم لمدة محدودة في الحالات التي ينص عليها القانون. | sf=CDD
+période d'essai | فترة التجربة | fi |  | Période initiale du contrat pendant laquelle chaque partie peut y mettre fin sans indemnité ni préavis. | الفترة الأولى من العقد التي يجوز خلالها لكل طرف إنهاؤه دون تعويض ولا إشعار مسبق. | sa=المدة التجريبية
+règlement intérieur | نظام داخلي | ma | أنظمة داخلية | Document par lequel l'employeur fixe les règles d'organisation du travail, d'hygiène, de sécurité et de discipline. | وثيقة يحدد فيها المستخدم قواعد تنظيم العمل والوقاية الصحية والأمن والانضباط.
+
+salaire | أجر | mm | أجور | Somme que l'employeur verse au travailleur en contrepartie de son travail. | مبلغ يدفعه المستخدم للعامل مقابل عمله. | sf=rémunération
+salaire national minimum garanti | الأجر الوطني الأدنى المضمون | mc |  | Salaire le plus bas qu'un employeur puisse verser, fixé par décret. | أدنى أجر يجوز للمستخدم دفعه، ويحدد بمرسوم. | sf=SNMG
+heures supplémentaires | الساعات الإضافية | fcp |  | Heures de travail accomplies au-delà de la durée légale et payées à un taux majoré. | ساعات العمل المنجزة زيادة على المدة القانونية والمدفوعة بأجر مرفوع.
+congé annuel | عطلة سنوية | ma |  | Repos payé auquel tout travailleur a droit chaque année. | راحة مدفوعة الأجر يستحقها كل عامل في كل سنة. | sf=congé payé
+
+licenciement | تسريح | mm |  | Rupture du contrat de travail décidée par l'employeur. | إنهاء عقد العمل بقرار من المستخدم.
+licenciement abusif | تسريح تعسفي | ma |  | Licenciement prononcé sans motif valable ou en violation de la procédure. | تسريح يتقرر دون سبب مشروع أو خرقا للإجراءات.
+préavis | إشعار مسبق | ma |  | Délai qui doit s'écouler entre l'annonce de la rupture du contrat et la fin effective de celui-ci. | المهلة الواجب انقضاؤها بين الإعلان عن إنهاء العقد وانتهائه الفعلي. | sf=délai-congé
+certificat de travail | شهادة العمل | mi | شهادات العمل | Document que l'employeur remet au travailleur à la fin du contrat et qui indique la durée et la nature de l'emploi. | وثيقة يسلمها المستخدم للعامل عند نهاية العقد تبين مدة العمل وطبيعته.
+
+syndicat | نقابة | mf | نقابات | Organisation qui défend les intérêts professionnels de ses membres. | منظمة تدافع عن المصالح المهنية لأعضائها. | sf=organisation syndicale
+délégué du personnel | مندوب المستخدمين | mi | مندوبو المستخدمين | Travailleur élu par ses collègues pour les représenter auprès de l'employeur. | عامل ينتخبه زملاؤه لتمثيلهم لدى المستخدم.
+convention collective | اتفاقية جماعية | fa | اتفاقيات جماعية | Accord écrit conclu entre employeurs et syndicats sur les conditions d'emploi et de travail. | اتفاق مكتوب يبرم بين المستخدمين والنقابات حول شروط التشغيل والعمل.
+grève | إضراب | fm | إضرابات | Arrêt collectif et concerté du travail pour appuyer des revendications professionnelles. | توقف جماعي ومتفق عليه عن العمل لدعم مطالب مهنية.
+droit de grève | حق الإضراب | mi |  | Droit reconnu aux travailleurs de cesser collectivement le travail, dans le cadre fixé par la loi. | حق معترف به للعمال في التوقف الجماعي عن العمل في الإطار الذي يحدده القانون.
+
+conciliation | مصالحة | ff |  | Recherche d'un accord amiable entre les parties avec l'aide d'un tiers. | سعي إلى اتفاق ودي بين الطرفين بمساعدة شخص من الغير.
+bureau de conciliation | مكتب المصالحة | mi |  | Organe devant lequel tout conflit individuel de travail doit être porté avant la saisine du tribunal. | هيئة يجب عرض كل نزاع فردي في العمل عليها قبل رفع الدعوى أمام المحكمة.
+inspection du travail | مفتشية العمل | fi |  | Administration chargée de contrôler l'application de la législation du travail. | إدارة مكلفة بمراقبة تطبيق تشريع العمل.
+inspecteur du travail | مفتش العمل | mi | مفتشو العمل | Fonctionnaire qui contrôle l'application de la législation du travail dans les entreprises. | موظف يراقب تطبيق تشريع العمل في المؤسسات.
+section sociale | القسم الاجتماعي | fc |  | Section du tribunal qui juge les litiges du travail et de la sécurité sociale. | قسم في المحكمة يفصل في منازعات العمل والضمان الاجتماعي.
+
+## Droit de la sécurité sociale ## SECU
+sécurité sociale | الضمان الاجتماعي | fc |  | Système public qui protège les travailleurs et leur famille contre la maladie, l'accident, la vieillesse et le chômage. | نظام عمومي يحمي العمال وأسرهم من المرض والحوادث والشيخوخة والبطالة.
+assuré social | المؤمن له اجتماعيا | mc |  | Personne affiliée à la sécurité sociale. | شخص منتسب إلى الضمان الاجتماعي.
+cotisation | اشتراك | fm | اشتراكات | Somme versée par l'employeur et par le travailleur pour financer la sécurité sociale. | مبلغ يدفعه المستخدم والعامل لتمويل الضمان الاجتماعي.
+prestation | أداء | fm | أداءات | Ce qu'une personne doit fournir à une autre ; en sécurité sociale, somme ou service accordé à l'assuré. | ما يلتزم شخص بتقديمه لغيره، وفي الضمان الاجتماعي المبلغ أو الخدمة الممنوحة للمؤمن له.
+ayant droit | ذو الحق | mi | ذوو الحقوق | Personne qui tient son droit d'une autre, comme le conjoint ou l'enfant de l'assuré. | شخص يستمد حقه من غيره، كزوج المؤمن له أو ولده. | pf=ayants droit
+
+accident du travail | حادث العمل | mi | حوادث العمل | Accident survenu par le fait ou à l'occasion du travail. | حادث يقع بسبب العمل أو بمناسبته.
+maladie professionnelle | مرض مهني | fa | أمراض مهنية | Maladie causée par l'exercice habituel d'une profession. | مرض ناتج عن الممارسة المعتادة لمهنة.
+retraite | تقاعد | fm |  | Situation du travailleur qui cesse son activité et perçoit une pension. | وضعية العامل الذي ينهي نشاطه ويتقاضى معاشا.
+pension de retraite | معاش التقاعد | fi | معاشات التقاعد | Somme versée périodiquement au travailleur retraité. | مبلغ يدفع دوريا للعامل المتقاعد.

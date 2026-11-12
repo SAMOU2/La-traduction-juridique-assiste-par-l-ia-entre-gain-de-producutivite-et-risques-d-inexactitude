@@ -25,7 +25,19 @@ from dataclasses import dataclass, field
 import regex
 
 from .glossaire import Contexte, Entree, Glossaire
-from .langues import AR, FR, LANGUES, TANWIN_KASRA, autre_langue, cle_souple, cle_stricte, sans_article_arabe
+from .langues import (
+    AR,
+    FR,
+    LANGUES,
+    TANWIN_KASRA,
+    autre_langue,
+    cle_souple,
+    cle_stricte,
+    memes_accents,
+    porte_des_accents,
+    sans_article_arabe,
+    sans_article_francais,
+)
 from .segmentation import PONCTUATION, Jeton, Phrase, compter, decouper_en_mots, segmenter_en_phrases
 from .surlignage import positions_du_terme
 
@@ -69,6 +81,9 @@ _DE = frozenset({"de", "d'"})
 _DETERMINANTS_DEFINIS = frozenset({"au", "aux", "ce", "cet", "cette", "ces"})
 _DETERMINANTS_PLURIELS = frozenset({"les", "des", "aux", "ces", "ses", "leurs", "mes", "tes", "nos", "vos",
                                     "plusieurs", "quelques"})
+#: Après un de ces mots, le nom est au singulier : « cours » dans « au cours de » n'est pas le pluriel de « cour ».
+_DETERMINANTS_SINGULIERS = frozenset({"le", "la", "l'", "un", "une", "au", "du", "ce", "cet", "cette", "mon", "ma",
+                                      "ton", "ta", "son", "sa", "notre", "votre", "leur", "chaque", "aucun", "aucune"})
 _VOYELLES = frozenset("aàâäeéèêëiîïoôöuùûüyœæ")
 #: Mots à « h » aspiré : pas d'élision (« le huis clos », « la hausse »).
 _H_ASPIRES = ("hausse", "haut", "hasard", "harcèlement", "handicap", "hiérarchie", "honte", "hors", "huis", "huit",
@@ -245,8 +260,13 @@ class Traducteur:
         self._longueur = dict.fromkeys(LANGUES, 1)
         #: Premiers mots des expressions de plusieurs mots : évite de chercher une expression à chaque mot.
         self._amorces: dict[str, set[str]] = {langue: set() for langue in LANGUES}
+        #: Vrai si le glossaire écrit les accents du français. Dans un texte lui aussi accentué, les
+        #: accents comptent alors : « cause » n'est pas « causé », ni « condamne » « condamné ».
+        self._glossaire_accentue = any(porte_des_accents(forme) for entree in glossaire.entrees
+                                       for forme in (*entree.formes(FR), *entree.synonymes_fr))
+        self._accents_comptent = False
         # Résultats déjà calculés (un même mot revient souvent dans un texte).
-        self._lectures: dict[tuple[str, str], _Lecture | None] = {}
+        self._lectures: dict[tuple[str, str, bool], _Lecture | None] = {}
         self._debuts: dict[tuple[str, str], bool] = {}
         self._champs: dict[tuple[Entree, str], tuple[set[str], set[str]]] = {}
         for entree in glossaire.entrees:
@@ -279,6 +299,8 @@ class Traducteur:
         """Traduit ``texte``, écrit dans la langue ``source``, vers l'autre langue."""
         cible = autre_langue(source)
         resultat = Traduction(source=source, cible=cible, texte_source=texte)
+        # Un texte français sans aucun accent (saisie rapide, majuscules) est comparé sans les accents.
+        self._accents_comptent = source == FR and self._glossaire_accentue and porte_des_accents(texte)
 
         # Étapes 1 à 3 : phrases, mots, recherche dans le glossaire.
         for rang, phrase in enumerate(segmenter_en_phrases(texte)):
@@ -338,11 +360,15 @@ class Traducteur:
                 continue
             lecture, longueur = None, 0
             maximum = self._longueur[langue] if self._commence_une_expression(jetons[rang].texte, langue) else 1
+            apres_un_singulier = (langue == FR and rang > 0
+                                  and _minuscule(jetons[rang - 1]) in _DETERMINANTS_SINGULIERS)
             for longueur in range(min(maximum, len(jetons) - rang), 0, -1):
                 groupe = jetons[rang:rang + longueur]
                 if not groupe[-1].est_mot or any(jeton.nature == PONCTUATION for jeton in groupe):
                     continue
                 lecture = self._lire(texte[groupe[0].debut:groupe[-1].fin], langue)
+                if lecture is not None and apres_un_singulier:
+                    lecture = _au_singulier(lecture)
                 if lecture is not None:
                     break
             if lecture is None:
@@ -400,17 +426,18 @@ class Traducteur:
 
     def _lire(self, forme: str, langue: str) -> _Lecture | None:
         """Cherche une forme du texte dans le glossaire, telle quelle puis sous des formes voisines."""
-        if (forme, langue) not in self._lectures:
-            self._lectures[forme, langue] = self._chercher(forme, langue)
-        return self._lectures[forme, langue]
+        cle = (forme, langue, self._accents_comptent)
+        if cle not in self._lectures:
+            self._lectures[cle] = self._chercher(forme, langue)
+        return self._lectures[cle]
 
     def _chercher(self, forme: str, langue: str) -> _Lecture | None:
         if langue == FR:
-            entrees = self.glossaire.reconnaitre(forme, FR)
+            entrees = self._reconnaitre_en_francais(forme)
             if entrees:
                 return _Lecture(entrees)
             for singulier in _singuliers(forme):
-                entrees = self.glossaire.reconnaitre(singulier, FR)
+                entrees = self._reconnaitre_en_francais(singulier)
                 if entrees:
                     return _Lecture(entrees, pluriel=True)
             return None
@@ -438,6 +465,14 @@ class Traducteur:
                 if entrees:
                     return _Lecture(entrees, particules=particules, defini=_est_defini(reste), pluriel=True)
         return None
+
+    def _reconnaitre_en_francais(self, forme: str) -> list[tuple[Entree, str]]:
+        """Entrées désignées par une forme française ; les accents comptent si le texte en porte."""
+        entrees = self.glossaire.reconnaitre(forme, FR)
+        if not self._accents_comptent:
+            return entrees
+        return [(entree, nature) for entree, nature in entrees
+                if any(memes_accents(forme, reference) for reference in _formes_du_glossaire(entree, nature))]
 
     # ------------------------------------------------------------------ étape 4 : règles
     def _departager_les_homonymes(self, resultat: Traduction) -> None:
@@ -632,6 +667,27 @@ def _singuliers(forme: str) -> list[str]:
             choix.append([mot])
     formes = [" ".join(mots) for mots in itertools.islice(itertools.product(*choix), 12)]
     return [candidate for candidate in formes if candidate != forme]
+
+
+def _formes_du_glossaire(entree: Entree, nature: str) -> list[str]:
+    """Formes françaises d'une entrée auxquelles comparer une forme du texte, selon la façon dont elle est reconnue.
+
+    Chaque forme est donnée telle qu'elle est écrite dans le glossaire, puis sans l'article qui la précède
+    parfois (« le Parlement ») : la recherche l'ignore aussi.
+    """
+    if nature == "synonyme":
+        formes = entree.synonymes_fr
+    else:
+        formes = [entree.pluriel_fr] if nature == "pluriel" else [entree.terme_fr]
+    return [*formes, *(sans_article_francais(cle_stricte(forme)) for forme in formes)]
+
+
+def _au_singulier(lecture: _Lecture) -> _Lecture | None:
+    """Lecture d'une forme placée après un déterminant singulier : les lectures au pluriel sont écartées."""
+    if lecture.pluriel:
+        return None
+    entrees = [(entree, nature) for entree, nature in lecture.entrees if nature != "pluriel"]
+    return _Lecture(entrees) if entrees else None
 
 
 def _determinants_francais(jetons: list[Jeton], occurrences: list[Occurrence]) -> set[int]:
@@ -834,6 +890,11 @@ def _genre(entree: Entree, glossaire: Glossaire) -> str:
     return ""
 
 
+def _est_un_pluriel(entree: Entree) -> bool:
+    """Indique si le terme français de l'entrée est lui-même un pluriel (« biens », « droits de l'homme »)."""
+    return "plur" in entree.categorie_fr.casefold()
+
+
 def _commence_par_une_voyelle(terme: str) -> bool:
     minuscule = terme.casefold()
     if minuscule[:1] == "h":
@@ -860,7 +921,10 @@ def _rendre_en_francais(occurrence: Occurrence, glossaire: Glossaire) -> str:
     """Écrit en français le terme d'une occurrence relevée dans un texte arabe."""
     entree = occurrence.entree
     terme = entree.terme_fr
-    if occurrence.pluriel:
+    pluriel = occurrence.pluriel
+    if _est_un_pluriel(entree):
+        pluriel = True  # le terme du glossaire est déjà au pluriel : il n'y a pas de règle à appliquer
+    elif pluriel:
         terme = entree.pluriel_fr or _pluriel_francais(terme)
         occurrence.regles.append("pluriel")
     genre = _genre(entree, glossaire)
@@ -869,7 +933,7 @@ def _rendre_en_francais(occurrence: Occurrence, glossaire: Glossaire) -> str:
     determinant = ""
     if occurrence.possessif:
         personne = _PERSONNES[occurrence.possessif]
-        if occurrence.pluriel:
+        if pluriel:
             determinant = {"3s": "ses ", "3p": "leurs ", "1p": "nos ", "2p": "vos "}[personne]
         elif personne == "3s":
             determinant = "son " if genre == "m" or voyelle else ("sa " if genre == "f" else "")
@@ -878,7 +942,7 @@ def _rendre_en_francais(occurrence: Occurrence, glossaire: Glossaire) -> str:
         if determinant:
             occurrence.regles.append("possessif")
     elif occurrence.defini:
-        if occurrence.pluriel:
+        if pluriel:
             determinant = "les "
         elif voyelle:
             determinant = "l’"
@@ -887,7 +951,7 @@ def _rendre_en_francais(occurrence: Occurrence, glossaire: Glossaire) -> str:
         if determinant and not occurrence.complement:
             occurrence.regles.append("article")
     elif occurrence.indefini:
-        determinant = "des " if occurrence.pluriel else {"m": "un ", "f": "une "}.get(genre, "")
+        determinant = "des " if pluriel else {"m": "un ", "f": "une "}.get(genre, "")
         if determinant:
             occurrence.regles.append("indefini")
 

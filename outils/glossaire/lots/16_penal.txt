@@ -1,0 +1,90 @@
+## Droit pénal ## CP
+infraction | جريمة | ff | جرائم | Comportement interdit par la loi pénale et puni d'une peine ; elle est crime, délit ou contravention selon sa gravité. | سلوك يمنعه قانون العقوبات ويعاقب عليه، وهو جناية أو جنحة أو مخالفة بحسب خطورته.
+crime | جناية | mf | جنايات | Infraction la plus grave, jugée par le tribunal criminel. | أخطر الجرائم، تفصل فيها محكمة الجنايات.
+délit | جنحة | mf | جنح | Infraction de gravité moyenne, punie d'une peine d'emprisonnement ou d'amende. | جريمة متوسطة الخطورة يعاقب عليها بالحبس أو بالغرامة.
+contravention | مخالفة | ff | مخالفات | Infraction la moins grave, punie d'une amende ou d'un emprisonnement de courte durée. | أخف الجرائم، يعاقب عليها بغرامة أو بحبس قصير المدة.
+légalité des délits et des peines | شرعية الجرائم والعقوبات | fc |  | Principe selon lequel il n'y a ni infraction ni peine sans loi. | مبدأ يقضي بأن لا جريمة ولا عقوبة إلا بنص.
+
+élément légal | الركن الشرعي | mc |  | Texte de loi qui définit l'infraction et fixe la peine. | النص القانوني الذي يعرف الجريمة ويحدد عقوبتها.
+élément matériel | الركن المادي | mc |  | Acte ou abstention qui réalise concrètement l'infraction. | الفعل أو الامتناع الذي تتحقق به الجريمة ماديا.
+élément moral | الركن المعنوي | mc |  | Intention ou imprudence de l'auteur, nécessaire pour que l'infraction soit constituée. | قصد الفاعل أو إهماله اللازم لقيام الجريمة.
+intention criminelle | القصد الجنائي | fc |  | Volonté d'accomplir un acte en sachant que la loi pénale l'interdit. | إرادة ارتكاب الفعل مع العلم بأن قانون العقوبات يمنعه. | sf=dol pénal
+préméditation | سبق الإصرار | fi |  | Dessein, formé avant l'action, de commettre une infraction. | عقد العزم قبل ارتكاب الفعل على ارتكاب الجريمة.
+tentative | محاولة | ff | محاولات | Commencement d'exécution d'une infraction, interrompu par une cause indépendante de la volonté de son auteur. | بدء في تنفيذ الجريمة يوقف لسبب خارج عن إرادة مرتكبها. | sa=شروع
+récidive | عود | fm |  | Situation de la personne déjà condamnée qui commet une nouvelle infraction ; elle aggrave la peine. | حالة من سبق الحكم عليه ثم ارتكب جريمة جديدة، وهي تشدد العقوبة.
+
+auteur | فاعل | mm | فاعلون | Personne qui commet elle-même l'infraction. | الشخص الذي يرتكب الجريمة بنفسه.
+complice | شريك | mm | شركاء | Personne qui aide l'auteur d'une infraction ou la facilite sans l'accomplir elle-même. | شخص يساعد مرتكب الجريمة أو يسهل له ارتكابها دون أن ينفذها بنفسه.
+délinquant | جانح | mm | جانحون | Personne qui a commis une infraction. | شخص ارتكب جريمة. | sa=مجرم
+responsabilité pénale | مسؤولية جزائية | fa |  | Obligation de répondre de ses infractions et de subir la peine prévue par la loi. | الالتزام بتحمل تبعة الجرائم وبالخضوع للعقوبة المقررة قانونا.
+
+fait justificatif | فعل مبرر | ma | أفعال مبررة | Circonstance qui retire à un acte son caractère d'infraction : ordre de la loi, légitime défense. | ظرف يزيل عن الفعل صفة الجريمة، كأمر القانون والدفاع المشروع. | sa=سبب الإباحة
+légitime défense | الدفاع المشروع | fc |  | Riposte nécessaire et proportionnée à une agression actuelle et injuste, qui supprime la responsabilité pénale. | رد لازم ومتناسب على اعتداء حال وغير مشروع، تنتفي به المسؤولية الجزائية. | sa=الدفاع الشرعي
+état de nécessité | حالة الضرورة | mi |  | Situation de la personne qui commet une infraction pour éviter un danger grave et imminent. | حالة من يرتكب جريمة لتفادي خطر جسيم ووشيك.
+
+peine | عقوبة | ff | عقوبات | Sanction infligée par le juge pénal à l'auteur d'une infraction. | جزاء يوقعه القاضي الجزائي على مرتكب الجريمة.
+peine complémentaire | عقوبة تكميلية | fa | عقوبات تكميلية | Peine qui s'ajoute à la peine principale, comme l'interdiction d'exercer une profession. | عقوبة تضاف إلى العقوبة الأصلية، كالمنع من ممارسة مهنة.
+peine de mort | عقوبة الإعدام | fi |  | Peine qui consiste à priver le condamné de la vie. | عقوبة تتمثل في إزهاق روح المحكوم عليه. | sf=peine capitale
+réclusion | سجن | fm |  | Peine privative de liberté prononcée en matière criminelle, à temps ou à perpétuité. | عقوبة سالبة للحرية يحكم بها في الجنايات، مؤقتة أو مؤبدة.
+réclusion à perpétuité | السجن المؤبد | fc |  | Réclusion prononcée pour toute la vie du condamné. | سجن يحكم به لمدى حياة المحكوم عليه.
+emprisonnement | حبس | mm |  | Peine privative de liberté prononcée en matière de délit ou de contravention. | عقوبة سالبة للحرية يحكم بها في الجنح والمخالفات.
+
+amende | غرامة | ff | غرامات | Peine qui oblige le condamné à verser une somme d'argent au Trésor. | عقوبة تلزم المحكوم عليه بدفع مبلغ من المال للخزينة.
+confiscation | مصادرة | ff |  | Transfert définitif à l'État d'un bien qui a servi à l'infraction ou qui en provient. | أيلولة مال استعمل في الجريمة أو تحصل منها إلى الدولة نهائيا.
+travail d'intérêt général | العمل للنفع العام | mc |  | Peine qui remplace l'emprisonnement par un travail non rémunéré au profit de la collectivité. | عقوبة تستبدل الحبس بعمل دون أجر لفائدة المجموعة.
+mesure de sûreté | تدبير الأمن | fi | تدابير الأمن | Mesure de prévention prise à l'égard d'une personne dangereuse, sans caractère de punition. | تدبير وقائي يتخذ تجاه شخص خطير وليس له طابع العقاب.
+
+circonstances atténuantes | الظروف المخففة | fcp |  | Faits qui permettent au juge de prononcer une peine inférieure à celle que prévoit la loi. | وقائع تجيز للقاضي النزول بالعقوبة عن الحد المقرر قانونا.
+circonstances aggravantes | الظروف المشددة | fcp |  | Faits prévus par la loi qui entraînent une peine plus lourde. | وقائع ينص عليها القانون ويترتب عليها تشديد العقوبة.
+sursis | وقف التنفيذ | mi |  | Mesure qui dispense le condamné d'exécuter sa peine s'il ne commet pas de nouvelle infraction pendant un délai d'épreuve. | تدبير يعفي المحكوم عليه من تنفيذ عقوبته إذا لم يرتكب جريمة جديدة خلال مدة الاختبار.
+
+droit de grâce | حق العفو | mi |  | Pouvoir du président de la République de dispenser un condamné d'exécuter tout ou partie de sa peine. | سلطة رئيس الجمهورية في إعفاء المحكوم عليه من تنفيذ عقوبته كلها أو بعضها.
+amnistie | عفو شامل | fa |  | Mesure votée par le Parlement, qui efface le caractère délictueux de certains faits. | تدبير يصادق عليه البرلمان ويمحو الصفة الإجرامية عن بعض الأفعال.
+réhabilitation | رد الاعتبار | fi |  | Mesure qui efface une condamnation et rétablit le condamné dans ses droits. | تدبير يمحو الإدانة ويعيد للمحكوم عليه حقوقه.
+casier judiciaire | صحيفة السوابق القضائية | mi |  | Relevé des condamnations pénales prononcées contre une personne. | بيان بأحكام الإدانة الجزائية الصادرة ضد شخص.
+
+## Droit pénal | Exécution des peines ## PENITENTIAIRE
+établissement pénitentiaire | مؤسسة عقابية | ma | مؤسسات عقابية | Lieu où sont détenues les personnes condamnées ou placées en détention provisoire. | مكان يحبس فيه المحكوم عليهم والموضوعون رهن الحبس المؤقت. | sf=prison
+libération conditionnelle | الإفراج المشروط | fc |  | Remise en liberté anticipée d'un condamné qui présente des gages sérieux de bonne conduite. | إخلاء سبيل المحكوم عليه قبل انقضاء عقوبته إذا قدم ضمانات جدية للاستقامة.
+juge de l'application des peines | قاضي تطبيق العقوبات | mi | قضاة تطبيق العقوبات | Magistrat chargé de suivre l'exécution des peines et d'en adapter les modalités. | قاض مكلف بمتابعة تنفيذ العقوبات وتكييف كيفياتها.
+
+## Droit pénal | Infractions ## CP
+homicide volontaire | القتل العمد | mc |  | Fait de donner volontairement la mort à autrui. | إزهاق روح إنسان عمدا. | sf=meurtre
+homicide involontaire | القتل الخطأ | mc |  | Fait de causer la mort d'autrui par maladresse, imprudence, inattention ou négligence. | التسبب في موت إنسان برعونة أو عدم احتياط أو عدم انتباه أو إهمال.
+coups et blessures volontaires | الضرب والجرح العمدي | mcp |  | Violences exercées volontairement sur une personne. | أعمال عنف ترتكب عمدا على شخص. | sf=violences volontaires
+menace | تهديد | fm | تهديدات | Fait d'annoncer à une personne le mal qu'on veut lui faire, pour l'intimider. | إنذار شخص بشر يراد إلحاقه به قصد تخويفه.
+enlèvement | اختطاف | mm |  | Fait d'emmener une personne par la force ou par la ruse et de la retenir contre son gré. | أخذ شخص بالقوة أو بالحيلة واحتجازه رغما عنه.
+
+viol | اغتصاب | mm |  | Acte sexuel imposé à une personne par la violence, la contrainte, la menace ou la surprise. | فعل جنسي يفرض على شخص بالعنف أو الإكراه أو التهديد أو المباغتة.
+harcèlement sexuel | التحرش الجنسي | mc |  | Fait d'user de son autorité ou de pressions répétées pour obtenir des faveurs de nature sexuelle. | استغلال السلطة أو الضغط المتكرر للحصول على رغبات ذات طابع جنسي.
+traite des personnes | الاتجار بالأشخاص | fc |  | Recrutement, transport ou hébergement de personnes par la contrainte ou la tromperie, en vue de leur exploitation. | تجنيد أشخاص أو نقلهم أو إيواؤهم بالإكراه أو الخداع قصد استغلالهم.
+abandon de famille | ترك الأسرة | mi |  | Fait de délaisser sa famille ou de ne pas payer la pension alimentaire fixée par le juge. | هجر الأسرة أو الامتناع عن دفع النفقة التي حكم بها القاضي.
+violation de domicile | انتهاك حرمة المنزل | fi |  | Fait de s'introduire dans le domicile d'autrui sans son accord et hors des cas prévus par la loi. | الدخول إلى منزل الغير دون رضاه وفي غير الحالات التي ينص عليها القانون.
+
+diffamation | قذف | fm |  | Allégation d'un fait qui porte atteinte à l'honneur ou à la considération d'une personne. | ادعاء واقعة من شأنها المساس بشرف شخص أو اعتباره.
+injure | سب | fm |  | Expression outrageante ou méprisante qui ne renferme l'imputation d'aucun fait. | تعبير مشين أو عبارة تحقير لا تنطوي على إسناد أية واقعة.
+outrage | إهانة | mf |  | Parole, geste ou écrit qui porte atteinte à la dignité d'un agent public dans l'exercice de ses fonctions. | قول أو إشارة أو كتابة تمس بكرامة عون عمومي أثناء تأدية مهامه.
+
+vol | سرقة | mf | سرقات | Soustraction frauduleuse d'une chose appartenant à autrui. | اختلاس شيء مملوك للغير بنية تملكه.
+escroquerie | نصب | fm |  | Fait d'obtenir la remise d'un bien en trompant la victime par des manœuvres frauduleuses. | الحصول على تسليم مال بخداع الضحية بوسائل احتيالية. | sa=احتيال
+abus de confiance | خيانة الأمانة | mi |  | Détournement d'un bien remis à charge de le rendre ou d'en faire un usage déterminé. | اختلاس مال سلم على أن يرد أو يستعمل في غرض معين.
+recel | إخفاء الأشياء المسروقة | mi |  | Fait de détenir ou de dissimuler une chose en sachant qu'elle provient d'un crime ou d'un délit. | حيازة شيء أو إخفاؤه مع العلم بأنه متحصل من جناية أو جنحة.
+fraude | غش | fm |  | Acte de mauvaise foi accompli pour tromper ou pour échapper à la loi. | تصرف بسوء نية يقصد به الخداع أو التهرب من القانون.
+
+faux en écriture | التزوير في المحررات | mc |  | Altération frauduleuse de la vérité dans un écrit, de nature à causer un préjudice. | تغيير الحقيقة في محرر بطريق الغش تغييرا من شأنه إحداث ضرر.
+usage de faux | استعمال المزور | mi |  | Fait de se servir sciemment d'un document falsifié. | استعمال وثيقة مزورة مع العلم بتزويرها.
+faux témoignage | شهادة الزور | mi |  | Déclaration mensongère faite sous serment devant une juridiction. | تصريح كاذب يدلى به بعد أداء اليمين أمام جهة قضائية.
+émission de chèque sans provision | إصدار شيك بدون رصيد | fc |  | Fait de remettre un chèque en sachant que le compte ne contient pas la somme nécessaire. | تسليم شيك مع العلم بأن الحساب لا يتضمن المبلغ اللازم.
+banqueroute | تفليس | fm |  | Infraction du commerçant en cessation des paiements qui a commis des fautes de gestion ou des fraudes. | جريمة يرتكبها التاجر المتوقف عن الدفع إذا ارتكب أخطاء في التسيير أو أعمال غش.
+
+terrorisme | إرهاب | mm |  | Actes de violence commis pour semer la terreur dans la population et porter atteinte à la sécurité de l'État. | أعمال عنف ترتكب لبث الرعب في أوساط السكان والمساس بأمن الدولة.
+association de malfaiteurs | جمعية الأشرار | fi |  | Groupement formé en vue de préparer des crimes ou des délits. | جماعة تؤلف بغرض الإعداد لجنايات أو جنح.
+trafic de stupéfiants | الاتجار بالمخدرات | mc |  | Production, transport ou vente illicites de substances classées comme stupéfiants. | إنتاج مواد مصنفة مخدرات أو نقلها أو بيعها بطريقة غير مشروعة.
+blanchiment d'argent | تبييض الأموال | mi |  | Fait de dissimuler l'origine illicite de fonds en les réintroduisant dans des activités légales. | إخفاء المصدر غير المشروع لأموال بإعادة إدخالها في أنشطة مشروعة.
+
+## Droit pénal | Infractions | Corruption ## CORRUPTION
+corruption | رشوة | ff |  | Fait pour un agent public de solliciter ou d'accepter un avantage indu pour accomplir ou ne pas accomplir un acte de sa fonction, ou fait de le lui proposer. | طلب موظف عمومي مزية غير مستحقة أو قبولها ليؤدي عملا من واجباته أو يمتنع عنه، أو عرضها عليه. | sa=فساد
+détournement de deniers publics | اختلاس الأموال العمومية | mi |  | Fait pour un agent public de s'approprier ou de dissiper les fonds qui lui ont été confiés en raison de ses fonctions. | استيلاء عون عمومي على الأموال التي عهد بها إليه بحكم وظيفته أو تبديدها.
+trafic d'influence | استغلال النفوذ | mi |  | Fait de monnayer son influence, réelle ou supposée, auprès d'une autorité pour obtenir une décision favorable. | المتاجرة بنفوذ حقيقي أو مفترض لدى سلطة للحصول على قرار في صالح الغير.
+abus de fonction | إساءة استغلال الوظيفة | mi |  | Fait pour un agent public d'accomplir ou de ne pas accomplir un acte en violation des lois, afin d'obtenir un avantage indu. | قيام عون عمومي بعمل أو امتناعه عنه خرقا للقوانين بغرض الحصول على مزية غير مستحقة.
+enrichissement illicite | الإثراء غير المشروع | mc |  | Augmentation importante du patrimoine d'un agent public, qu'il ne peut pas justifier par ses revenus légitimes. | زيادة معتبرة في الذمة المالية لعون عمومي لا يستطيع تبريرها بمداخيله المشروعة.

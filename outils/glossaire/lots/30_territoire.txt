@@ -1,0 +1,33 @@
+## Droit de l'environnement ## ENVIRONNEMENT
+environnement | بيئة | mf |  | Ensemble des ressources naturelles, des êtres vivants et des lieux où ils vivent. | مجموع الموارد الطبيعية والكائنات الحية والأماكن التي تعيش فيها.
+protection de l'environnement | حماية البيئة | fi |  | Ensemble des mesures destinées à prévenir et à réparer les atteintes à l'environnement. | مجموع التدابير الرامية إلى الوقاية من الأضرار اللاحقة بالبيئة وإصلاحها.
+développement durable | تنمية مستدامة | ma |  | Développement qui répond aux besoins du présent sans compromettre ceux des générations futures. | تنمية تلبي حاجات الحاضر دون المساس بحاجات الأجيال القادمة.
+pollution | تلوث | fm |  | Modification de l'environnement nuisible à la santé, aux êtres vivants ou aux biens. | تغير في البيئة يضر بالصحة أو بالكائنات الحية أو بالأموال.
+étude d'impact | دراسة التأثير | fi | دراسات التأثير | Étude préalable des effets d'un projet sur l'environnement. | دراسة مسبقة لآثار المشروع على البيئة.
+
+## Droit de l'urbanisme ## URBANISME
+urbanisme | تعمير | mm |  | Ensemble des règles relatives à l'occupation des sols et à l'aménagement des villes. | مجموع القواعد المتعلقة بشغل الأراضي وتهيئة المدن.
+permis de construire | رخصة البناء | mi | رخص البناء | Autorisation administrative exigée avant toute construction nouvelle ou transformation d'un bâtiment. | ترخيص إداري يشترط قبل كل بناء جديد أو تغيير في بناية.
+permis de démolir | رخصة الهدم | mi |  | Autorisation administrative exigée avant la démolition d'un bâtiment. | ترخيص إداري يشترط قبل هدم بناية.
+certificat de conformité | شهادة المطابقة | mi | شهادات المطابقة | Document qui atteste que les travaux réalisés sont conformes au permis de construire. | وثيقة تثبت مطابقة الأشغال المنجزة لرخصة البناء.
+lotissement | تجزئة | mf | تجزئات | Division d'un terrain en lots destinés à la construction. | تقسيم أرض إلى قطع معدة للبناء.
+
+## Droit de la nationalité ## NATIONALITE
+nationalité | جنسية | ff | جنسيات | Lien juridique et politique qui rattache une personne à un État. | رابطة قانونية وسياسية تربط الشخص بدولة.
+nationalité d'origine | جنسية أصلية | fa |  | Nationalité attribuée à la naissance, par la filiation ou par le lieu de naissance. | جنسية تثبت للشخص منذ ولادته بالنسب أو بمكان الولادة.
+naturalisation | تجنس | fm |  | Octroi de la nationalité à un étranger qui la demande, par décision de l'autorité publique. | منح الجنسية لأجنبي يطلبها بقرار من السلطة العمومية.
+déchéance de la nationalité | التجريد من الجنسية | fc |  | Retrait de la nationalité, prononcé à titre de sanction dans les cas prévus par la loi. | سحب الجنسية على سبيل الجزاء في الحالات التي ينص عليها القانون.
+apatride | عديم الجنسية | mi | عديمو الجنسية | Personne qu'aucun État ne considère comme son ressortissant. | شخص لا تعتبره أية دولة من رعاياها.
+
+## Droit de la nationalité | Condition des étrangers ## ETRANGERS
+étranger | أجنبي | mm | أجانب | Personne qui n'a pas la nationalité de l'État où elle se trouve. | شخص لا يحمل جنسية الدولة التي يوجد فيها.
+visa | تأشيرة | mf | تأشيرات | Autorisation d'entrer sur le territoire d'un État, apposée sur le passeport. | ترخيص بدخول إقليم دولة يوضع على جواز السفر.
+passeport | جواز السفر | mi | جوازات السفر | Document délivré par un État à ses ressortissants pour leur permettre de voyager à l'étranger. | وثيقة تسلمها الدولة لرعاياها للسماح لهم بالسفر إلى الخارج.
+
+## Droit maritime ## MARITIME
+navire | سفينة | mf | سفن | Bâtiment de mer affecté à la navigation maritime. | عمارة بحرية مخصصة للملاحة البحرية.
+armateur | مجهز | mm | مجهزون | Personne qui exploite un navire en son nom, qu'elle en soit ou non propriétaire. | شخص يستغل السفينة باسمه سواء أكان مالكا لها أم لا.
+capitaine | ربان | mm | ربابنة | Personne qui commande le navire et représente l'armateur. | الشخص الذي يقود السفينة ويمثل المجهز.
+port | ميناء | mm | موانئ | Lieu aménagé sur la côte pour recevoir les navires et leurs marchandises. | مكان مهيأ على الساحل لاستقبال السفن وبضائعها.
+transport maritime | نقل بحري | ma |  | Déplacement de marchandises ou de passagers par mer. | نقل البضائع أو المسافرين بطريق البحر.
+connaissement | وثيقة الشحن | mi | وثائق الشحن | Document remis par le transporteur maritime, qui constate la prise en charge des marchandises. | وثيقة يسلمها الناقل البحري تثبت استلامه البضائع. | sa=سند الشحن

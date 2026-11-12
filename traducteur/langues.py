@@ -30,6 +30,8 @@ _LETTRE_LATINE = regex.compile(r"\p{Latin}")
 # Signes diacritiques arabes : tanwin, voyelles brèves, chadda, soukoun, alif suscrit.
 _DIACRITIQUES_ARABES = regex.compile(r"[\u064B-\u065F\u0670]")
 _ESPACES = regex.compile(r"\s+")
+# Lettre latine suivie d'un accent, dans un texte décomposé (forme NFD).
+_LETTRE_ACCENTUEE = regex.compile(r"\p{Latin}\p{Mn}")
 # Article défini « ال » au début d'un mot d'au moins quatre lettres.
 _ARTICLE_ARABE = regex.compile(r"(?<![\p{L}\p{N}])ال(?=\p{Arabic}{2})")
 # Article ou préposition élidée au début d'une expression française (« le contrat », « l'usage »).
@@ -106,6 +108,38 @@ def cle_souple(texte: str) -> str:
     texte = unicodedata.normalize("NFD", cle_stricte(texte))
     texte = "".join(caractere for caractere in texte if unicodedata.category(caractere) != "Mn")
     return _ESPACES.sub(" ", texte.translate(_VARIANTES)).strip()
+
+
+def porte_des_accents(texte: str) -> bool:
+    """Indique si un texte contient au moins une lettre latine accentuée (ou une cédille)."""
+    return bool(_LETTRE_ACCENTUEE.search(unicodedata.normalize("NFD", texte)))
+
+
+def memes_accents(forme: str, reference: str) -> bool:
+    """Compare deux formes françaises sans ignorer les accents : « cause » n'est pas « causé ».
+
+    Les majuscules, les apostrophes et les ligatures (« œ ») ne comptent pas. Une
+    majuscule peut ne pas porter son accent : « Etat » et « EQUITE » valent
+    « État » et « équité ».
+    """
+    forme, reference = _pour_les_accents(forme), _pour_les_accents(reference)
+    if len(forme) != len(reference):
+        return False
+    return all(lettre.casefold() == attendue.casefold()
+               or _majuscule_sans_accent(lettre, attendue) or _majuscule_sans_accent(attendue, lettre)
+               for lettre, attendue in zip(forme, reference, strict=True))
+
+
+def _majuscule_sans_accent(lettre: str, autre: str) -> bool:
+    """Vrai si ``lettre`` est une majuscule sans accent et ``autre`` la même lettre, accentuée ou non."""
+    return lettre.isupper() and cle_souple(lettre) == lettre.casefold() == cle_souple(autre)
+
+
+def _pour_les_accents(texte: str) -> str:
+    texte = unicodedata.normalize("NFC", texte).translate(_UNIFICATION)
+    for ligature, lettres in (("œ", "oe"), ("Œ", "OE"), ("æ", "ae"), ("Æ", "AE")):
+        texte = texte.replace(ligature, lettres)
+    return _ESPACES.sub(" ", texte).strip()
 
 
 def sans_article_arabe(cle: str) -> str:

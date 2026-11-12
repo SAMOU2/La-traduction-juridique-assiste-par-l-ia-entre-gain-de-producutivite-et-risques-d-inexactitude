@@ -1,0 +1,74 @@
+## Droit civil | Droits réels ## CIVIL
+biens | أموال | mmp |  | Choses et droits qui ont une valeur pécuniaire et peuvent faire l'objet d'une appropriation. | الأشياء والحقوق التي لها قيمة مالية وتقبل التملك.
+bien meuble | منقول | mm | منقولات | Bien qui peut être déplacé sans dommage. | مال يمكن نقله من مكانه دون تلف. | sf=meuble
+bien immeuble | عقار | mm | عقارات | Bien fixe, qui ne peut pas être déplacé sans dommage : le sol et ce qui y est attaché. | مال مستقر بحيزه لا يمكن نقله منه دون تلف، كالأرض وما اتصل بها. | sf=immeuble
+chose fongible | شيء مثلي | fa | أشياء مثلية | Chose qui peut être remplacée par une autre de même espèce et de même qualité. | شيء يقوم بعضه مقام بعض عند الوفاء.
+fruits | ثمار | mmp |  | Biens qu'une chose produit à intervalles réguliers sans que sa substance diminue : récoltes, loyers, intérêts. | ما ينتجه الشيء بصفة دورية دون نقص في أصله، كالمحاصيل وبدلات الإيجار والفوائد.
+
+droit réel | حق عيني | ma | حقوق عينية | Droit qui porte directement sur une chose. | حق يرد مباشرة على شيء.
+droit personnel | حق شخصي | ma | حقوق شخصية | Droit d'exiger une prestation d'une personne. | حق في مطالبة شخص بأداء معين. | sf=droit de créance
+droit de propriété | حق الملكية | mi |  | Droit de jouir et de disposer des choses, pourvu qu'on n'en fasse pas un usage prohibé par les lois ou par les règlements. | حق التمتع والتصرف في الأشياء بشرط ألا يستعمل استعمالا تحرمه القوانين والأنظمة.
+propriétaire | مالك | mm | ملاك | Personne titulaire du droit de propriété sur un bien. | الشخص صاحب حق الملكية على مال.
+titre de propriété | سند الملكية | mi | سندات الملكية | Écrit qui établit le droit de propriété d'une personne sur un bien. | محرر يثبت حق ملكية شخص على مال.
+transfert de propriété | نقل الملكية | mi |  | Passage du droit de propriété d'une personne à une autre. | انتقال حق الملكية من شخص إلى آخر.
+
+copropriété | ملكية مشتركة | fa |  | Propriété d'un immeuble bâti répartie entre plusieurs personnes, par lots comprenant une partie privative et une quote-part des parties communes. | ملكية عقار مبني موزعة بين عدة أشخاص حصصا تشمل جزءا خاصا ونصيبا في الأجزاء المشتركة.
+indivision | شيوع | fm |  | Situation dans laquelle plusieurs personnes sont propriétaires d'un même bien sans que leurs parts soient matériellement divisées. | حالة يملك فيها عدة أشخاص مالا واحدا دون أن تفرز حصة كل منهم. | sa=ملكية شائعة
+indivisaire | الشريك في الشيوع | mc | الشركاء في الشيوع | Personne qui est propriétaire d'un bien en indivision avec d'autres. | شخص يملك مالا على الشيوع مع غيره.
+partage | قسمة | mf |  | Opération qui met fin à l'indivision en attribuant sa part à chacun. | عملية تنهي الشيوع بتخصيص كل شريك بنصيبه.
+
+usufruit | حق الانتفاع | mi |  | Droit d'utiliser un bien appartenant à autrui et d'en percevoir les fruits, à charge d'en conserver la substance. | حق استعمال مال مملوك للغير واستغلاله بشرط المحافظة على أصله.
+usufruitier | منتفع | mm | منتفعون | Personne titulaire d'un usufruit. | الشخص صاحب حق الانتفاع.
+nue-propriété | ملكية الرقبة | fi |  | Droit du propriétaire dont le bien est grevé d'un usufruit. | حق المالك الذي يكون ماله محملا بحق انتفاع.
+droit d'usage | حق الاستعمال | mi |  | Droit de se servir d'une chose appartenant à autrui, dans la limite de ses besoins. | حق استعمال شيء مملوك للغير في حدود حاجة صاحب الحق.
+droit d'habitation | حق السكنى | mi |  | Droit d'occuper un logement appartenant à autrui, pour soi et pour sa famille. | حق شغل مسكن مملوك للغير لصاحب الحق وأسرته.
+
+servitude | حق الارتفاق | fi | حقوق الارتفاق | Charge imposée à un immeuble au profit d'un autre immeuble appartenant à un propriétaire différent. | تكليف يفرض على عقار لفائدة عقار آخر يملكه شخص غير مالك الأول. | sa=ارتفاق
+fonds dominant | العقار المرتفق | mc |  | Immeuble au profit duquel une servitude est établie. | العقار الذي تقرر الارتفاق لفائدته.
+fonds servant | العقار المرتفق به | mc |  | Immeuble qui supporte la charge d'une servitude. | العقار الذي يتحمل عبء الارتفاق.
+droit de passage | حق المرور | mi |  | Servitude qui permet au propriétaire d'un terrain enclavé de traverser le terrain voisin pour rejoindre la voie publique. | ارتفاق يسمح لمالك الأرض المحصورة بالمرور في الأرض المجاورة للوصول إلى الطريق العام.
+trouble de voisinage | مضار الجوار | mi |  | Gêne qui dépasse les inconvénients normaux du voisinage et engage la responsabilité de son auteur. | ضرر يتجاوز الحد المألوف في علاقات الجوار ويرتب مسؤولية محدثه.
+
+possession | حيازة | ff |  | Exercice de fait d'un droit sur une chose, avec l'intention de se comporter comme son titulaire. | السيطرة الفعلية على شيء بنية الظهور بمظهر صاحب الحق عليه.
+possesseur | حائز | mm | حائزون | Personne qui exerce la possession d'une chose. | الشخص الذي يحوز شيئا.
+prescription acquisitive | تقادم مكسب | fa |  | Acquisition d'un droit réel par une possession prolongée pendant le temps fixé par la loi. | اكتساب حق عيني بحيازة تستمر المدة التي يحددها القانون. | sf=usucapion
+action possessoire | دعوى الحيازة | fi | دعاوى الحيازة | Action qui protège la possession contre les troubles, sans discuter le droit de propriété. | دعوى تحمي الحيازة من التعرض دون البحث في حق الملكية.
+revendication | دعوى الاستحقاق | fi |  | Action par laquelle le propriétaire réclame la restitution de son bien à celui qui le détient. | دعوى يطالب بها المالك من يحوز ماله برده إليه. | sf=action en revendication
+
+accession | التصاق | fm |  | Extension du droit de propriété à ce qui s'unit ou s'incorpore à la chose. | امتداد حق الملكية إلى ما يتصل بالشيء أو يندمج فيه.
+occupation | استيلاء | fm |  | Acquisition de la propriété d'une chose sans maître par celui qui en prend possession. | اكتساب ملكية شيء لا مالك له بوضع اليد عليه.
+préemption | شفعة | ff |  | Droit de se substituer à l'acheteur d'un immeuble dans les cas prévus par la loi. | رخصة تجيز الحلول محل مشتري العقار في الأحوال التي ينص عليها القانون. | sf=chefâa
+
+## Droit civil | Droits réels | Biens wakfs ## WAKF
+waqf | وقف | mm | أوقاف | Bien soustrait à l'appropriation privée à perpétuité, dont l'usufruit est affecté à une œuvre pieuse ou d'intérêt général. | حبس المال عن التملك على وجه التأبيد والتصدق بمنفعته على جهة بر أو نفع عام. | sf=wakf, habous
+
+## Droit civil | Sûretés ## CIVIL
+sûreté | تأمين | fm | تأمينات | Garantie accordée au créancier pour assurer le paiement de sa créance. | ضمان يمنح للدائن لتأمين استيفاء دينه.
+sûreté réelle | تأمين عيني | fa | تأمينات عينية | Sûreté qui affecte un bien au paiement de la dette. | تأمين يخصص مالا معينا لوفاء الدين.
+sûreté personnelle | تأمين شخصي | fa | تأمينات شخصية | Sûreté qui résulte de l'engagement d'une autre personne aux côtés du débiteur. | تأمين ينشأ عن التزام شخص آخر إلى جانب المدين.
+cautionnement | كفالة | mf | كفالات | Contrat par lequel une personne garantit l'exécution d'une obligation, en s'engageant envers le créancier à payer si le débiteur ne le fait pas. | عقد يكفل به شخص تنفيذ التزام بأن يتعهد للدائن بالوفاء إذا لم يف به المدين.
+caution | كفيل | fm | كفلاء | Personne qui s'engage à payer la dette d'autrui si le débiteur ne paie pas. | شخص يتعهد بوفاء دين غيره إذا لم يف به المدين.
+
+hypothèque | رهن رسمي | fa | رهون رسمية | Sûreté réelle constituée sur un immeuble sans que le débiteur en soit dépossédé. | تأمين عيني يرد على عقار دون أن تنتقل حيازته من المدين.
+inscription hypothécaire | قيد الرهن | fi |  | Formalité de publicité qui rend l'hypothèque opposable aux tiers et fixe son rang. | إجراء شهر يجعل الرهن نافذا في حق الغير ويحدد مرتبته.
+nantissement | رهن حيازي | ma | رهون حيازية | Sûreté par laquelle le débiteur remet un bien au créancier ou à un tiers en garantie de sa dette. | تأمين يسلم به المدين مالا إلى الدائن أو إلى الغير ضمانا لدينه. | sf=gage
+privilège | حق الامتياز | mi | حقوق الامتياز | Droit que la loi accorde à un créancier d'être payé avant les autres, en raison de la qualité de sa créance. | أولوية يقررها القانون لدين معين مراعاة لصفته.
+
+droit de préférence | حق التقدم | mi |  | Droit d'un créancier d'être payé avant les autres sur le prix d'un bien. | حق الدائن في استيفاء دينه من ثمن المال قبل غيره. | sa=حق الأفضلية
+droit de suite | حق التتبع | mi |  | Droit du créancier de saisir le bien grevé entre les mains de toute personne qui le détient. | حق الدائن في حجز المال المحمل بالتأمين في يد أي شخص يحوزه.
+créancier hypothécaire | دائن مرتهن | ma | دائنون مرتهنون | Créancier dont la créance est garantie par une hypothèque. | دائن يضمن دينه رهن رسمي.
+créancier chirographaire | دائن عادي | ma | دائنون عاديون | Créancier qui ne dispose d'aucune sûreté particulière. | دائن ليس له أي تأمين خاص.
+
+## Droit foncier ## FONCIER
+cadastre | مسح الأراضي | mi |  | Recensement et délimitation des propriétés foncières d'une commune. | إحصاء الملكيات العقارية في البلدية وتحديد حدودها.
+livre foncier | السجل العقاري | mc |  | Registre public qui décrit la situation juridique de chaque immeuble. | سجل عمومي يبين الوضعية القانونية لكل عقار.
+livret foncier | الدفتر العقاري | mc |  | Titre remis au propriétaire après l'immatriculation de son immeuble au livre foncier. | سند يسلم للمالك بعد ترقيم عقاره في السجل العقاري.
+conservation foncière | المحافظة العقارية | fc |  | Service chargé de la publicité des droits réels immobiliers. | مصلحة مكلفة بشهر الحقوق العينية العقارية.
+conservateur foncier | محافظ عقاري | ma | محافظون عقاريون | Fonctionnaire qui tient le livre foncier et assure la publicité des actes relatifs aux immeubles. | موظف يمسك السجل العقاري ويتولى شهر العقود المتعلقة بالعقارات.
+publicité foncière | الشهر العقاري | fc |  | Ensemble des formalités qui portent à la connaissance du public les droits existant sur les immeubles. | مجموع الإجراءات التي تعلن بها للجمهور الحقوق الواردة على العقارات.
+
+certificat de possession | شهادة الحيازة | mi |  | Titre délivré par le président de l'assemblée populaire communale à la personne qui possède un terrain non cadastré, dans les conditions fixées par la loi. | سند يسلمه رئيس المجلس الشعبي البلدي لمن يحوز أرضا لم يشملها المسح وفق الشروط التي يحددها القانون.
+acte de notoriété | عقد الشهرة | mi |  | Acte notarié qui constate une possession ou un fait connu de tous. | عقد توثيقي يثبت حيازة أو واقعة معلومة لدى الجميع.
+terre agricole | أرض فلاحية | fa | أراضٍ فلاحية | Terrain qui produit, par l'intervention de l'homme, des récoltes destinées à la consommation ou à la transformation. | أرض تنتج بتدخل الإنسان محاصيل تستهلك أو تحول.
+promotion immobilière | الترقية العقارية | fc |  | Activité qui consiste à réaliser des immeubles en vue de les vendre ou de les louer. | نشاط يتمثل في إنجاز عقارات قصد بيعها أو تأجيرها.
+vente sur plans | البيع على التصاميم | fc |  | Vente d'un immeuble à construire, dont le prix est payé au fur et à mesure de l'avancement des travaux. | بيع عقار قبل إنجازه يدفع ثمنه حسب تقدم الأشغال.

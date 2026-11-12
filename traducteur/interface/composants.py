@@ -8,7 +8,6 @@ from PySide6.QtCore import QPoint, QRect, QSize, Qt, Signal
 from PySide6.QtGui import QColor, QFont, QFontMetrics, QFontMetricsF, QPainter, QPen
 from PySide6.QtWidgets import (
     QFrame,
-    QHBoxLayout,
     QLabel,
     QLayout,
     QPushButton,
@@ -205,6 +204,107 @@ class DispositionFluide(QLayout):
         return y + hauteur_ligne - rectangle.y() + marges.bottom()
 
 
+class DispositionBilingue(QLayout):
+    """Deux textes côte à côte s'ils tiennent sur une ligne, sinon l'un sous l'autre.
+
+    Sert aux expressions du champ « Équivalent » : le terme français à gauche,
+    le terme arabe à droite. Quand la place manque (carte étroite, termes
+    longs), le second texte passe sous le premier et chacun dispose de toute la
+    largeur : la ligne ne demande jamais plus de place que son mot le plus long.
+    """
+
+    def __init__(self, parent: QWidget | None = None, espace_h: int = 10, espace_v: int = 2) -> None:
+        super().__init__(parent)
+        self._elements: list = []
+        self._espace_h = espace_h
+        self._espace_v = espace_v
+
+    # --- méthodes demandées par Qt -------------------------------------------------
+    def addItem(self, element) -> None:  # noqa: N802 (nom imposé par Qt)
+        self._elements.append(element)
+
+    def count(self) -> int:
+        return len(self._elements)
+
+    def itemAt(self, index: int):  # noqa: N802
+        return self._elements[index] if 0 <= index < len(self._elements) else None
+
+    def takeAt(self, index: int):  # noqa: N802
+        return self._elements.pop(index) if 0 <= index < len(self._elements) else None
+
+    def expandingDirections(self) -> Qt.Orientation:  # noqa: N802
+        return Qt.Orientation(0)
+
+    def hasHeightForWidth(self) -> bool:  # noqa: N802
+        return True
+
+    def heightForWidth(self, largeur: int) -> int:  # noqa: N802
+        return self._disposer(QRect(0, 0, largeur, 0), appliquer=False)
+
+    def setGeometry(self, rectangle: QRect) -> None:  # noqa: N802
+        super().setGeometry(rectangle)
+        self._disposer(rectangle, appliquer=True)
+
+    def sizeHint(self) -> QSize:  # noqa: N802
+        marges = self.contentsMargins()
+        tailles = [self._taille_sur_une_ligne(element) for element in self._elements]
+        largeur = sum(taille.width() for taille in tailles) + self._espace_h * max(len(tailles) - 1, 0)
+        hauteur = max((taille.height() for taille in tailles), default=0)
+        return QSize(largeur + marges.left() + marges.right(), hauteur + marges.top() + marges.bottom())
+
+    def minimumSize(self) -> QSize:  # noqa: N802
+        marges = self.contentsMargins()
+        largeur = max((element.minimumSize().width() for element in self._elements), default=0)
+        hauteur = max((self._taille_sur_une_ligne(element).height() for element in self._elements), default=0)
+        return QSize(largeur + marges.left() + marges.right(), hauteur + marges.top() + marges.bottom())
+
+    # --- calcul des positions ---------------------------------------------------------
+    def cote_a_cote(self, largeur: int) -> bool:
+        """Indique si les textes tiennent sur une seule ligne dans ``largeur`` pixels (marges comprises)."""
+        marges = self.contentsMargins()
+        naturelle = sum(self._taille_sur_une_ligne(element).width() for element in self._elements)
+        naturelle += self._espace_h * max(len(self._elements) - 1, 0)
+        return naturelle <= largeur - marges.left() - marges.right()
+
+    @staticmethod
+    def _taille_sur_une_ligne(element) -> QSize:
+        """Taille d'un élément écrit sur une seule ligne, sans retour à la ligne."""
+        widget = element.widget()
+        if isinstance(widget, QLabel) and widget.textFormat() == Qt.TextFormat.PlainText:
+            widget.ensurePolished()
+            marges = widget.contentsMargins()
+            cadre = widget.fontMetrics().boundingRect(QRect(0, 0, 100000, 1000), 0, widget.text())
+            return QSize(cadre.width() + marges.left() + marges.right() + 1,
+                         cadre.height() + marges.top() + marges.bottom())
+        return element.sizeHint()
+
+    def _disposer(self, rectangle: QRect, appliquer: bool) -> int:
+        marges = self.contentsMargins()
+        zone = rectangle.adjusted(marges.left(), marges.top(), -marges.right(), -marges.bottom())
+        largeur = max(zone.width(), 1)
+        if self.cote_a_cote(rectangle.width()):
+            tailles = [self._taille_sur_une_ligne(element) for element in self._elements]
+            hauteur = max((taille.height() for taille in tailles), default=0)
+            if appliquer:
+                # Le premier élément à gauche, le dernier à droite, quel que soit le sens d'écriture.
+                x = zone.x()
+                for rang, (element, taille) in enumerate(zip(self._elements, tailles, strict=True)):
+                    if rang and rang == len(self._elements) - 1:
+                        x = zone.x() + largeur - taille.width()
+                    element.setGeometry(QRect(x, zone.y(), taille.width(), hauteur))
+                    x += taille.width() + self._espace_h
+        else:
+            y = zone.y()
+            for element in self._elements:
+                hauteur_element = (element.heightForWidth(largeur) if element.hasHeightForWidth()
+                                   else element.sizeHint().height())
+                if appliquer:
+                    element.setGeometry(QRect(zone.x(), y, largeur, hauteur_element))
+                y += hauteur_element + self._espace_v
+            hauteur = max(y - self._espace_v - zone.y(), 0)
+        return hauteur + marges.top() + marges.bottom()
+
+
 class Fleche(QWidget):
     """Trait terminé par une pointe : relie le titre d'un champ au champ suivant."""
 
@@ -239,9 +339,8 @@ class LigneCliquable(QFrame):
         super().__init__(parent)
         self.setObjectName("ligneExpression")
         self.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.disposition = QHBoxLayout(self)
+        self.disposition = DispositionBilingue(self)
         self.disposition.setContentsMargins(4, 9, 4, 9)
-        self.disposition.setSpacing(10)
 
     def mouseReleaseEvent(self, evenement) -> None:  # noqa: N802
         if evenement.button() == Qt.MouseButton.LeftButton and self.rect().contains(evenement.position().toPoint()):

@@ -1,0 +1,38 @@
+## Droit de la consommation ## CONSOMMATION
+consommateur | مستهلك | mm | مستهلكون | Personne qui acquiert un bien ou un service pour ses besoins propres, et non pour une activité professionnelle. | شخص يقتني سلعة أو خدمة لتلبية حاجاته الخاصة وليس لنشاط مهني.
+protection du consommateur | حماية المستهلك | fi |  | Ensemble des règles qui garantissent la sécurité, l'information et les intérêts du consommateur. | مجموع القواعد التي تضمن أمن المستهلك وإعلامه ومصالحه.
+service | خدمة | mf | خدمات | Prestation fournie à une personne, autre que la remise d'un bien. | كل أداء يقدم لشخص غير تسليم سلعة.
+étiquetage | وسم | mm |  | Mentions, marques et images qui figurent sur un produit ou sur son emballage. | البيانات والعلامات والصور التي تظهر على المنتوج أو على غلافه.
+droit de rétractation | حق العدول | mi |  | Droit du consommateur de revenir sur son achat dans un délai fixé, sans avoir à se justifier. | حق المستهلك في التراجع عن اقتناء المنتوج خلال أجل محدد دون تقديم مبرر.
+publicité trompeuse | إشهار تضليلي | fa |  | Publicité qui induit le consommateur en erreur sur un produit ou un service. | إشهار يوقع المستهلك في الغلط بشأن منتوج أو خدمة.
+
+## Droit de la concurrence ## CONCURRENCE
+concurrence | منافسة | ff |  | Compétition entre des entreprises qui offrent les mêmes biens ou services sur un marché. | تسابق بين مؤسسات تعرض السلع أو الخدمات نفسها في السوق.
+marché | سوق | mf | أسواق | Lieu, réel ou non, où se rencontrent l'offre et la demande d'un bien ou d'un service. | مكان حقيقي أو افتراضي يلتقي فيه العرض والطلب على سلعة أو خدمة.
+Conseil de la concurrence | مجلس المنافسة | mi |  | Autorité administrative chargée de veiller au respect des règles de la concurrence. | سلطة إدارية مكلفة بالسهر على احترام قواعد المنافسة.
+entente illicite | اتفاق محظور | fa | اتفاقات محظورة | Accord entre entreprises qui a pour objet ou pour effet de fausser la concurrence. | اتفاق بين مؤسسات يهدف إلى الإخلال بالمنافسة أو يؤدي إليه.
+abus de position dominante | التعسف في وضعية الهيمنة | mc |  | Fait pour une entreprise d'exploiter sa puissance sur un marché pour fausser la concurrence. | استغلال مؤسسة قوتها في السوق للإخلال بالمنافسة.
+monopole | احتكار | mm | احتكارات | Situation dans laquelle un seul vendeur offre un bien ou un service sur un marché. | وضعية ينفرد فيها بائع واحد بعرض سلعة أو خدمة في السوق.
+
+## Propriété intellectuelle ## PI
+propriété intellectuelle | ملكية فكرية | fa |  | Ensemble des droits sur les créations de l'esprit : œuvres, inventions, marques. | مجموع الحقوق الواردة على إبداعات الفكر، كالمصنفات والاختراعات والعلامات.
+propriété industrielle | ملكية صناعية | fa |  | Branche de la propriété intellectuelle qui protège les brevets, les marques, les dessins et les modèles. | فرع من الملكية الفكرية يحمي براءات الاختراع والعلامات والرسوم والنماذج.
+contrefaçon | تقليد | fm |  | Atteinte portée à un droit de propriété intellectuelle, comme la reproduction d'une marque sans autorisation. | مساس بحق من حقوق الملكية الفكرية، كنسخ علامة دون ترخيص.
+redevance | إتاوة | ff | إتاوات | Somme versée périodiquement en contrepartie d'un droit d'exploitation ou d'usage. | مبلغ يدفع دوريا مقابل حق في الاستغلال أو الاستعمال.
+
+droit d'auteur | حق المؤلف | mi | حقوق المؤلف | Droit exclusif de l'auteur sur son œuvre, qui comprend des droits moraux et des droits patrimoniaux. | حق استئثاري للمؤلف على مصنفه يشمل حقوقا معنوية وحقوقا مادية.
+auteur | مؤلف | mm | مؤلفون | Personne qui a créé une œuvre littéraire ou artistique. | الشخص الذي أبدع مصنفا أدبيا أو فنيا.
+œuvre | مصنف | fm | مصنفات | Création littéraire ou artistique originale, protégée par le droit d'auteur. | إبداع أدبي أو فني أصلي يحميه حق المؤلف.
+
+brevet d'invention | براءة الاختراع | mi | براءات الاختراع | Titre qui confère à l'inventeur un droit exclusif d'exploiter son invention pendant une durée limitée. | سند يمنح المخترع حقا استئثاريا في استغلال اختراعه لمدة محدودة. | sf=brevet
+invention | اختراع | fm | اختراعات | Idée nouvelle qui apporte une solution technique à un problème. | فكرة جديدة تأتي بحل تقني لمشكل.
+marque | علامة | ff | علامات | Signe qui distingue les produits ou les services d'une entreprise de ceux des autres. | رمز يميز سلع مؤسسة أو خدماتها عن سلع غيرها وخدماته.
+
+## Droit du numérique ## NUMERIQUE
+données à caractère personnel | المعطيات ذات الطابع الشخصي | fcp |  | Informations relatives à une personne physique identifiée ou identifiable. | معلومات تتعلق بشخص طبيعي معرف أو قابل للتعرف عليه. | sf=données personnelles
+traitement des données | معالجة المعطيات | mi |  | Opération effectuée sur des données : collecte, enregistrement, conservation, communication. | كل عملية تجرى على المعطيات، كالجمع والتسجيل والحفظ والإرسال.
+responsable du traitement | المسؤول عن المعالجة | mc |  | Personne qui détermine les finalités et les moyens d'un traitement de données. | الشخص الذي يحدد أغراض معالجة المعطيات ووسائلها.
+
+commerce électronique | تجارة إلكترونية | ma |  | Vente de biens ou de services à distance par voie de communications électroniques. | بيع السلع أو الخدمات عن بعد عن طريق الاتصالات الإلكترونية.
+contrat électronique | عقد إلكتروني | ma | عقود إلكترونية | Contrat conclu à distance par un moyen de communication électronique. | عقد يبرم عن بعد بوسيلة اتصال إلكتروني.
+signature électronique | توقيع إلكتروني | fa | توقيعات إلكترونية | Données électroniques jointes à un document, qui permettent d'identifier le signataire. | بيانات إلكترونية ترفق بوثيقة وتسمح بالتعرف على الموقع.

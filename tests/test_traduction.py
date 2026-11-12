@@ -143,8 +143,38 @@ def test_une_phrase_sans_terme_est_recopiee_telle_quelle(traducteur, texte, lang
         assert traduction.texte == texte
 
 
-def test_les_accents_et_les_majuscules_sont_ignores(traducteur):
+def test_un_texte_sans_accent_est_compare_sans_les_accents(traducteur):
     assert balise(traducteur.traduire("LA NULLITE ET L'EQUITE", FR)) == "[البطلان] {ET} [العدالة]"
+    assert balise(traducteur.traduire("la nullite du contrat et l'equite", FR)) == "[بطلان] [العقد] {et} [العدالة]"
+
+
+def test_dans_un_texte_accentue_les_accents_comptent():
+    """« cause » n'est pas « causé », ni « condamne » « condamné » : ce ne sont pas les mêmes mots."""
+    traducteur = Traducteur(glossaire_de(
+        "terme_fr;terme_ar;categorie_fr;pluriel_fr;pluriel_ar\n"
+        "cause;سبب;nom féminin;causes;أسباب\n"
+        "condamné;المحكوم عليه;nom masculin;;\n"
+        "grève;إضراب;nom féminin;;\n"
+        "tribunal;محكمة;nom masculin;;\n"
+        "État;دولة;nom masculin;;\n"
+        "équité;عدالة;nom féminin;;\n"))
+    assert balise(traducteur.traduire("Le tribunal condamne l'État ; le condamné.", FR)) == (
+        "[المحكمة] {condamne} [الدولة]؛ [المحكوم عليه].")
+    assert balise(traducteur.traduire("Le dommage causé, les dommages causés et un bien grevé.", FR)) == (
+        "{Le} {dommage} {causé}, {les} {dommages} {causés} {et} {un} {bien} {grevé}.")
+    assert balise(traducteur.traduire("La cause, les causes et la grève générale.", FR)) == (
+        "[السبب]، [الأسباب] {et} [الإضراب] {générale}.")
+    # Une majuscule peut ne pas porter son accent ; une minuscule doit le porter.
+    assert balise(traducteur.traduire("L'Etat, l'EQUITE et l'équité, mais pas l'equite.", FR)) == (
+        "[الدولة]، [العدالة] {et} [العدالة]، {mais} {pas} {l'}{equite}.")
+    # Dans un texte sans aucun accent, la comparaison reste tolérante : le verbe est pris pour le nom.
+    assert balise(traducteur.traduire("Le tribunal condamne.", FR)) == "[المحكمة] [المحكوم عليه]."
+
+
+def test_un_glossaire_ecrit_sans_accents_est_compare_sans_les_accents():
+    traducteur = Traducteur(glossaire_de("terme_fr;terme_ar\npropriete;ملكية\nequite;عدالة\n"))
+    assert balise(traducteur.traduire("La propriété et l'équité sont protégées.", FR)) == (
+        "[الملكية] {et} [العدالة] {sont} {protégées}.")
 
 
 # ------------------------------------------------------------------ homonymes
@@ -229,6 +259,49 @@ def test_pluriel_deduit_quand_la_colonne_est_vide():
     assert balise(traducteur.traduire("Les tribunaux et des jugements.", FR)) == "[المحكمة] {et} [حكم]."
     traduction = traducteur.traduire("Des voies de recours.", FR)
     assert [terme.entree.terme_fr for terme in traduction.termes] == ["voie de recours"]
+
+
+def test_un_terme_francais_deja_au_pluriel():
+    """« biens », « arrhes » : la catégorie indique un pluriel, donc « les », « des », « ses »."""
+    traducteur = Traducteur(glossaire_de(
+        "terme_fr;terme_ar;categorie_fr;categorie_ar\n"
+        "biens;أموال;nom masculin pluriel;اسم مذكر\n"
+        "arrhes;عربون;nom féminin pluriel;اسم مذكر\n"
+        "droits de l'homme;حقوق الإنسان;locution nominale (masculin pluriel);مركب إضافي\n"
+        "débiteur;مدين;nom masculin;اسم مذكر\n"))
+    traduction = traducteur.traduire("الأموال وحقوق الإنسان.", AR)
+    assert balise(traduction) == "[Les biens] {و} [les droits de l'homme]."
+    assert traduction.regles["pluriel"] == 0  # le terme est écrit tel qu'il figure dans le glossaire
+    assert balise(traducteur.traduire("أمواله وأموالهم وأموال المدين.", AR)) == (
+        "[Ses biens] {و} [leurs biens] {و} [les biens] [du débiteur].")
+    assert balise(traducteur.traduire("دفع المدين عربونا، ثم العربون.", AR)) == (
+        "{دفع} [le débiteur] [des arrhes], {ثم} [les arrhes].")
+    # Vers l'arabe, le terme est repris tel quel : il n'a pas d'autre pluriel.
+    assert balise(traducteur.traduire("Les biens du débiteur et les droits de l'homme.", FR)) == (
+        "[أموال] [المدين] {et} [حقوق الإنسان].")
+
+
+def test_apres_un_determinant_singulier_un_mot_n_est_pas_un_pluriel():
+    """« cours » est le pluriel de « cour » dans « les cours », pas dans « au cours de »."""
+    traducteur = Traducteur(glossaire_de(
+        "terme_fr;terme_ar;categorie_fr;categorie_ar;pluriel_fr;pluriel_ar\n"
+        "cour;مجلس قضائي;nom féminin;مركب وصفي;cours;مجالس قضائية\n"
+        "tribunal;محكمة;nom masculin;اسم مؤنث;tribunaux;محاكم\n"
+        "audience;جلسة;nom féminin;اسم مؤنث;audiences;جلسات\n"
+        "prix;ثمن;nom masculin;اسم مذكر;prix;أثمان\n"))
+    assert balise(traducteur.traduire("Les cours et les tribunaux.", FR)) == "[المجالس القضائية] {et} [المحاكم]."
+    assert balise(traducteur.traduire("Au cours de l'audience.", FR)) == "{Au} {cours} {de} [الجلسة]."
+    assert balise(traducteur.traduire("Le cours des audiences ; son cours.", FR)) == (
+        "{Le} {cours} [جلسات]؛ {son} {cours}.")
+    # Un mot qui s'écrit de la même façon au singulier et au pluriel reste reconnu.
+    assert balise(traducteur.traduire("Le prix et les prix.", FR)) == "[الثمن] {et} [الأثمان]."
+    # Sans déterminant devant lui, le mot est lu comme un pluriel.
+    assert balise(traducteur.traduire("En cours d'audience.", FR)) == "{En} [مجالس قضائية] [للجلسة]."
+
+    # Même contrôle quand le pluriel est déduit par la règle générale (colonne « pluriel_fr » vide).
+    traducteur = Traducteur(glossaire_de("terme_fr;terme_ar\ncour;مجلس قضائي\n"))
+    assert balise(traducteur.traduire("Au cours de l'année.", FR)) == "{Au} {cours} {de} {l'}{année}."
+    assert [terme.entree.terme_fr for terme in traducteur.traduire("Les cours.", FR).termes] == ["cour"]
 
 
 def test_exemple_de_plusieurs_phrases():

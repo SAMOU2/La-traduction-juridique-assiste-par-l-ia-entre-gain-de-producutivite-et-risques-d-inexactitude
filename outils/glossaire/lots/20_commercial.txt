@@ -1,0 +1,64 @@
+## Droit commercial ## COMMERCE
+commerçant | تاجر | mm | تجار | Personne physique ou morale qui accomplit des actes de commerce et en fait sa profession habituelle. | كل شخص طبيعي أو معنوي يباشر عملا تجاريا ويتخذه مهنة معتادة له.
+acte de commerce | عمل تجاري | ma | أعمال تجارية | Acte que la loi répute commercial par son objet, par sa forme ou parce qu'un commerçant l'accomplit pour les besoins de son commerce. | عمل يعده القانون تجاريا بحسب موضوعه أو بحسب شكله أو لأن تاجرا قام به لحاجات تجارته.
+registre du commerce | السجل التجاري | mc |  | Registre public où sont inscrits les commerçants et les sociétés commerciales. | سجل عمومي يقيد فيه التجار والشركات التجارية.
+fonds de commerce | محل تجاري | ma | محلات تجارية | Ensemble des biens mobiliers affectés à l'exercice d'une activité commerciale, dont la clientèle est l'élément essentiel. | مجموع الأموال المنقولة المخصصة لممارسة نشاط تجاري، وأهم عناصره الزبائن.
+bail commercial | إيجار تجاري | ma | إيجارات تجارية | Bail d'un local où le locataire exploite un fonds de commerce. | إيجار مكان يستغل فيه المستأجر محلا تجاريا.
+
+entreprise | مؤسسة | ff | مؤسسات | Unité économique organisée pour produire ou vendre des biens ou des services. | وحدة اقتصادية منظمة لإنتاج السلع أو الخدمات أو بيعها.
+comptabilité | محاسبة | ff |  | Enregistrement chiffré et ordonné des opérations d'une entreprise. | تسجيل عمليات المؤسسة بالأرقام تسجيلا منظما.
+concurrence déloyale | المنافسة غير المشروعة | fc |  | Usage de procédés contraires aux usages honnêtes du commerce pour détourner la clientèle d'un concurrent. | استعمال وسائل مخالفة للأعراف التجارية النزيهة لتحويل زبائن منافس.
+agent commercial | وكيل تجاري | ma | وكلاء تجاريون | Mandataire indépendant chargé de négocier et de conclure des contrats au nom et pour le compte d'un commerçant. | وكيل مستقل مكلف بالتفاوض وإبرام العقود باسم تاجر ولحسابه.
+courtier | سمسار | mm | سماسرة | Intermédiaire qui met en relation des personnes désireuses de conclure un contrat. | وسيط يقرب بين أشخاص يرغبون في إبرام عقد.
+
+## Droit commercial ## CPCA+ORGJUD
+tribunal commercial spécialisé | المحكمة التجارية المتخصصة | mc |  | Juridiction compétente pour certains litiges commerciaux, comme ceux des sociétés, des banques ou du commerce international. | جهة قضائية تختص ببعض المنازعات التجارية، كمنازعات الشركات والبنوك والتجارة الدولية.
+
+## Droit commercial | Sociétés ## COMMERCE
+société | شركة | ff | شركات | Contrat par lequel deux ou plusieurs personnes mettent en commun des apports en vue de partager les bénéfices ; personne morale née de ce contrat. | عقد يلتزم بمقتضاه شخصان أو أكثر بتقديم حصص قصد اقتسام الأرباح، وكذلك الشخص المعنوي الناشئ عن هذا العقد.
+société commerciale | شركة تجارية | fa | شركات تجارية | Société que la loi répute commerciale par sa forme ou par son objet. | شركة يعدها القانون تجارية بحسب شكلها أو موضوعها.
+société par actions | شركة المساهمة | fi | شركات المساهمة | Société dont le capital est divisé en actions et dont les associés ne supportent les pertes qu'à concurrence de leurs apports. | شركة ينقسم رأس مالها إلى أسهم ولا يتحمل الشركاء فيها الخسائر إلا بقدر حصصهم. | sf=SPA, société anonyme
+société à responsabilité limitée | الشركة ذات المسؤولية المحدودة | fc |  | Société dont le capital est divisé en parts sociales et dont les associés ne supportent les pertes qu'à concurrence de leurs apports. | شركة ينقسم رأس مالها إلى حصص ولا يتحمل الشركاء فيها الخسائر إلا في حدود ما قدموه. | sf=SARL
+entreprise unipersonnelle à responsabilité limitée | المؤسسة ذات الشخص الوحيد وذات المسؤولية المحدودة | fc |  | Société à responsabilité limitée qui ne comporte qu'un seul associé. | شركة ذات مسؤولية محدودة لا تضم إلا شريكا واحدا. | sf=EURL
+société en nom collectif | شركة التضامن | fi |  | Société dont tous les associés ont la qualité de commerçant et répondent indéfiniment et solidairement des dettes sociales. | شركة يكتسب جميع الشركاء فيها صفة التاجر ويسألون عن ديونها من غير تحديد وبالتضامن. | sf=SNC
+
+associé | شريك | mm | شركاء | Membre d'une société, qui a fait un apport et participe aux bénéfices et aux pertes. | عضو في شركة قدم حصة ويشارك في الأرباح والخسائر.
+actionnaire | مساهم | mm | مساهمون | Titulaire d'actions d'une société. | صاحب أسهم في شركة.
+apport | حصة | mf | حصص | Bien, somme d'argent ou travail qu'un associé met à la disposition de la société. | مال أو نقد أو عمل يضعه الشريك تحت تصرف الشركة.
+part sociale | حصة الشريك | fi | حصص الشركاء | Titre qui représente le droit de l'associé dans une société autre qu'une société par actions. | سند يمثل حق الشريك في شركة غير شركة المساهمة.
+action | سهم | fm | أسهم | Titre négociable qui représente une fraction du capital d'une société par actions. | سند قابل للتداول يمثل جزءا من رأس مال شركة المساهمة.
+capital social | رأس المال | mi |  | Montant total des apports faits à la société par les associés. | مجموع الحصص التي قدمها الشركاء للشركة. | sf=capital
+
+bénéfice | ربح | mm | أرباح | Gain réalisé par une entreprise lorsque ses produits dépassent ses charges. | كسب تحققه المؤسسة عندما تزيد إيراداتها على أعبائها.
+dividende | ربح السهم | mi | أرباح الأسهم | Part des bénéfices distribuée à chaque actionnaire. | نصيب من الأرباح يوزع على كل مساهم.
+perte | خسارة | ff | خسائر | Résultat négatif d'une entreprise lorsque ses charges dépassent ses produits. | نتيجة سلبية للمؤسسة عندما تزيد أعباؤها على إيراداتها.
+
+gérant | مسير | mm | مسيرون | Personne chargée de diriger une société et de la représenter. | شخص مكلف بإدارة الشركة وتمثيلها.
+assemblée générale | جمعية عامة | fa | جمعيات عامة | Réunion des associés ou des actionnaires, qui prend les décisions les plus importantes de la société. | اجتماع الشركاء أو المساهمين الذي يتخذ أهم قرارات الشركة.
+conseil d'administration | مجلس الإدارة | mi |  | Organe collégial qui administre la société par actions. | هيئة جماعية تتولى إدارة شركة المساهمة.
+commissaire aux comptes | محافظ الحسابات | mi | محافظو الحسابات | Professionnel indépendant chargé de contrôler et de certifier les comptes d'une société. | مهني مستقل مكلف بمراقبة حسابات الشركة والمصادقة عليها. | sa=مندوب الحسابات
+siège social | مقر الشركة | mi |  | Lieu où se trouve la direction de la société et qui détermine son domicile. | المكان الذي توجد فيه إدارة الشركة ويتحدد به موطنها. | sa=المقر الاجتماعي
+
+fusion | اندماج | fm |  | Opération par laquelle deux ou plusieurs sociétés se réunissent pour n'en former qu'une seule. | عملية تتحد بها شركتان أو أكثر لتكون شركة واحدة.
+dissolution de la société | حل الشركة | fi |  | Fin de la société, suivie de sa liquidation. | انقضاء الشركة الذي تتبعه تصفيتها.
+liquidation | تصفية | ff |  | Ensemble des opérations qui consistent à vendre les biens, à payer les dettes et à partager ce qui reste. | مجموع العمليات المتمثلة في بيع الأموال ووفاء الديون وقسمة ما بقي.
+liquidateur | مصفٍ | mm |  | Personne chargée de la liquidation d'une société. | الشخص المكلف بتصفية الشركة.
+
+## Droit commercial | Effets de commerce ## COMMERCE
+effet de commerce | سند تجاري | ma | سندات تجارية | Titre négociable qui constate une créance de somme d'argent payable à court terme. | سند قابل للتداول يثبت دينا بمبلغ من النقود مستحق الوفاء في أجل قصير.
+lettre de change | سفتجة | ff | سفاتج | Titre par lequel le tireur donne au tiré l'ordre de payer une somme au bénéficiaire à une date déterminée. | سند يأمر به الساحب المسحوب عليه بأن يدفع مبلغا للمستفيد في تاريخ معين. | sf=traite | sa=كمبيالة
+billet à ordre | السند لأمر | mc |  | Titre par lequel une personne s'engage à payer une somme à une autre, ou à son ordre, à une date déterminée. | سند يتعهد به شخص بأن يدفع مبلغا لشخص آخر أو لأمره في تاريخ معين.
+chèque | شيك | mm | شيكات | Titre par lequel le tireur donne à sa banque l'ordre de payer à vue une somme au bénéficiaire. | سند يأمر به الساحب بنكه بأن يدفع مبلغا للمستفيد لدى الاطلاع.
+
+tireur | ساحب | mm |  | Personne qui émet une lettre de change ou un chèque. | الشخص الذي يصدر السفتجة أو الشيك.
+tiré | المسحوب عليه | mc |  | Personne à qui est donné l'ordre de payer une lettre de change ou un chèque. | الشخص الذي يوجه إليه الأمر بدفع قيمة السفتجة أو الشيك.
+bénéficiaire | مستفيد | mm | مستفيدون | Personne au profit de laquelle un titre est émis ou un droit est stipulé. | الشخص الذي يصدر السند لفائدته أو يشترط الحق لمصلحته.
+endossement | تظهير | mm |  | Mention portée au dos d'un titre, par laquelle son porteur le transmet à une autre personne. | بيان يوضع على ظهر السند ينقله به حامله إلى شخص آخر.
+provision | رصيد | fm |  | Somme disponible chez le tiré pour le paiement d'un chèque ou d'une lettre de change. | مبلغ موجود لدى المسحوب عليه لوفاء قيمة الشيك أو السفتجة. | sa=مقابل الوفاء
+
+## Droit commercial | Entreprises en difficulté ## COMMERCE
+faillite | إفلاس | fm |  | Procédure ouverte contre le commerçant en cessation des paiements, qui conduit à la vente de ses biens pour payer ses créanciers. | إجراء يفتح ضد التاجر المتوقف عن الدفع ويؤدي إلى بيع أمواله لوفاء ديون دائنيه.
+règlement judiciaire | تسوية قضائية | ma |  | Procédure ouverte contre le commerçant en cessation des paiements, qui lui permet de poursuivre son activité et de proposer un concordat à ses créanciers. | إجراء يفتح ضد التاجر المتوقف عن الدفع يسمح له بمواصلة نشاطه وباقتراح صلح على دائنيه.
+cessation des paiements | التوقف عن الدفع | fc |  | Situation du commerçant qui ne peut plus payer ses dettes exigibles. | حالة التاجر الذي أصبح عاجزا عن وفاء ديونه المستحقة.
+syndic | وكيل التفلسة | mi |  | Mandataire de justice chargé d'administrer les biens du débiteur en faillite ou en règlement judiciaire. | وكيل قضائي مكلف بإدارة أموال المدين المفلس أو الخاضع للتسوية القضائية. | sa=الوكيل المتصرف القضائي
+concordat | صلح قضائي | ma |  | Accord entre le débiteur et ses créanciers sur des délais de paiement ou des remises de dettes, homologué par le tribunal. | اتفاق بين المدين ودائنيه على آجال للوفاء أو على إبراء من جزء من الديون تصادق عليه المحكمة.

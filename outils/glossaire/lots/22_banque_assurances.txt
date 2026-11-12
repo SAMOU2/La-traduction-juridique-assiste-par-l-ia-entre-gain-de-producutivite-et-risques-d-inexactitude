@@ -1,0 +1,28 @@
+## Droit bancaire ## BANQUE
+banque | بنك | fm | بنوك | Personne morale habilitée à recevoir des fonds du public, à accorder des crédits et à gérer des moyens de paiement. | شخص معنوي مؤهل لتلقي الأموال من الجمهور ومنح القروض وتسيير وسائل الدفع. | sa=مصرف
+Banque d'Algérie | بنك الجزائر | fi |  | Banque centrale, qui émet la monnaie, conduit la politique monétaire et contrôle les banques. | البنك المركزي الذي يصدر النقد ويدير السياسة النقدية ويراقب البنوك.
+établissement financier | مؤسسة مالية | ma | مؤسسات مالية | Personne morale qui effectue des opérations de banque, sans pouvoir recevoir de fonds du public ni gérer de moyens de paiement. | شخص معنوي يقوم بعمليات مصرفية دون أن يحق له تلقي الأموال من الجمهور أو تسيير وسائل الدفع.
+monnaie | نقد | fm | نقود | Instrument de paiement ayant cours légal dans un État. | وسيلة دفع لها سعر قانوني في الدولة. | sa=عملة
+
+compte bancaire | حساب بنكي | ma | حسابات بنكية | Compte ouvert par une banque au nom d'un client pour enregistrer ses dépôts et ses retraits. | حساب يفتحه البنك باسم زبون لتسجيل إيداعاته وسحوباته.
+virement | تحويل | mm | تحويلات | Opération par laquelle une somme passe d'un compte à un autre. | عملية ينتقل بها مبلغ من حساب إلى حساب آخر.
+secret bancaire | سر بنكي | ma |  | Obligation de la banque de ne pas divulguer les informations relatives à ses clients. | التزام البنك بعدم إفشاء المعلومات المتعلقة بزبائنه. | sa=سر مصرفي
+
+crédit | ائتمان | mm |  | Opération par laquelle une personne met des fonds à la disposition d'une autre, ou s'engage à le faire, contre remboursement. | عملية يضع بها شخص أموالا تحت تصرف شخص آخر أو يتعهد بذلك مقابل ردها. | sa=قرض
+taux d'intérêt | سعر الفائدة | mi |  | Pourcentage appliqué à une somme prêtée pour calculer la rémunération du prêteur. | نسبة تطبق على المبلغ المقرض لحساب عائد المقرض. | sa=معدل الفائدة
+intérêts | فوائد | mfp |  | Somme due par l'emprunteur en plus du capital, en rémunération du prêt. | مبلغ يستحق على المقترض زيادة على رأس المال مقابل القرض.
+
+## Droit des assurances ## ASSURANCES
+assurance | تأمين | fm |  | Opération par laquelle l'assureur s'engage, contre une prime, à verser une prestation en cas de réalisation d'un risque. | عملية يتعهد بها المؤمن مقابل قسط بأن يؤدي مبلغا عند تحقق الخطر.
+contrat d'assurance | عقد التأمين | mi | عقود التأمين | Contrat par lequel l'assureur s'oblige, moyennant des primes, à verser à l'assuré ou au bénéficiaire une somme d'argent en cas de réalisation du risque prévu. | عقد يلتزم المؤمن بمقتضاه أن يؤدي إلى المؤمن له أو إلى المستفيد مبلغا من المال في حالة تحقق الخطر المبين في العقد، وذلك مقابل أقساط.
+police d'assurance | وثيقة التأمين | fi | وثائق التأمين | Écrit qui constate le contrat d'assurance et en fixe les conditions. | محرر يثبت عقد التأمين ويحدد شروطه.
+réassurance | إعادة التأمين | fi |  | Opération par laquelle un assureur fait garantir par un autre assureur une partie des risques qu'il a acceptés. | عملية يضمن بها مؤمن لدى مؤمن آخر جزءا من الأخطار التي قبلها.
+
+assureur | مؤمن | mm | مؤمنون | Société qui s'engage à couvrir un risque en contrepartie d'une prime. | شركة تتعهد بتغطية خطر مقابل قسط.
+assuré | المؤمن له | mc |  | Personne dont les biens, la responsabilité ou la vie sont couverts par un contrat d'assurance. | الشخص الذي يغطي عقد التأمين أمواله أو مسؤوليته أو حياته.
+souscripteur | مكتتب | mm | مكتتبون | Personne qui conclut le contrat d'assurance et s'engage à payer les primes. | الشخص الذي يبرم عقد التأمين ويلتزم بدفع الأقساط.
+
+prime | قسط | fm | أقساط | Somme que le souscripteur paie à l'assureur en contrepartie de la garantie. | مبلغ يدفعه المكتتب للمؤمن مقابل الضمان. | sf=prime d'assurance
+risque | خطر | mm | أخطار | Événement incertain dont la réalisation ne dépend pas de la seule volonté de l'assuré. | حادث غير محقق الوقوع لا يتوقف تحققه على إرادة المؤمن له وحدها.
+sinistre | حادث | mm | حوادث | Réalisation du risque garanti par le contrat d'assurance. | تحقق الخطر الذي يضمنه عقد التأمين.
+accident de la circulation | حادث المرور | mi | حوادث المرور | Accident causé par un véhicule sur une voie ouverte à la circulation. | حادث تتسبب فيه مركبة في طريق مفتوح لحركة المرور.

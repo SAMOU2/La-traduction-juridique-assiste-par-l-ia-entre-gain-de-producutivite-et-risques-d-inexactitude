@@ -81,7 +81,9 @@ python main.py
 - Saisir un terme, en français ou en arabe, puis appuyer sur Entrée. Si le terme est écrit dans
   l'autre langue, le sens de traduction s'inverse tout seul. Le bouton ⇄ l'inverse à la main.
 - Sous la barre de recherche, les entrées trouvées s'affichent sous forme de puces (huit au
-  plus). Cliquer sur une puce affiche cette entrée.
+  plus). Cliquer sur une puce affiche cette entrée. S'il y en a davantage, leur nombre est
+  indiqué (« et 16 autres ») : compléter la recherche, par exemple « contrat de » au lieu de
+  « contrat ».
 - Si rien n'est trouvé, l'application propose les termes dont l'écriture est proche.
 - Dans les champs, un clic sur une puce écrite en bleu ou sur une expression ouvre l'entrée
   correspondante.
@@ -134,6 +136,8 @@ ligne, ni modèle d'intelligence artificielle. Elle suit cinq étapes :
    - lexique : expression de plusieurs mots, synonyme ramené au terme du glossaire ;
    - grammaire : pluriel, article défini ou indéfini, complément du nom (« la nullité du
      contrat » ↔ « بطلان العقد »), possessif et particules collées au mot arabe (و، ب، ل…) ;
+     après « le », « la », « au », « du », « un », « son »…, un mot n'est pas lu comme un
+     pluriel (« cours », dans « au cours de », n'est pas le pluriel de « cour ») ;
    - sémantique : quand une forme correspond à plusieurs entrées (« droit » : « حق » ou
      « قانون »), le choix se fait d'après les autres termes de la phrase et du texte.
 5. **Reconstruction** : chaque phrase est récrite dans la langue cible, avec sa ponctuation.
@@ -148,6 +152,11 @@ Ce que cela donne :
   l'acheteur. » donne « بطلان عقد البيع protège المشتري. ».
 - L'ordre des mots n'est pas modifié. Les verbes ne sont pas conjugués et les adjectifs ne sont
   pas accordés.
+- Dans un texte français écrit avec ses accents, les accents comptent : « cause » n'est pas
+  « causé », ni « condamne » « condamné ». Une majuscule peut ne pas porter le sien (« Etat »).
+  Un texte sans aucun accent est comparé sans les accents.
+- Un mot courant qui s'écrit comme un terme du glossaire est traduit comme ce terme, même
+  quand il a un autre sens : voir les [limites connues](#limites-connues).
 - Une phrase où aucun terme n'est trouvé est recopiée telle quelle.
 - Pour traduire davantage, il faut enrichir le CSV : termes, pluriels, synonymes, exemples.
 
@@ -198,7 +207,7 @@ colonnes du tableau sont obligatoires.
 | Colonne | Écran « Terme » | Écran « Texte » |
 | --- | --- | --- |
 | `terme_fr`, `terme_ar` | ① Terme et ③ Équivalent, selon le sens de traduction | Mots et expressions cherchés dans le texte, et leur traduction |
-| `categorie_fr`, `categorie_ar` | Catégorie grammaticale, sous le terme | Si `categorie_fr` contient « masculin » ou « féminin », l'article français est écrit (« le », « la », « un », « une ») |
+| `categorie_fr`, `categorie_ar` | Catégorie grammaticale, sous le terme | Si `categorie_fr` contient « masculin » ou « féminin », l'article français est écrit (« le », « la », « un », « une »). Si elle contient « pluriel » (« biens », « droits de l'homme »), le terme est traité comme un pluriel (« les », « des », « ses »). |
 | `pluriel_fr`, `pluriel_ar` | Pluriel, sous le terme ; il sert aussi à la recherche | Reconnaissance et écriture du pluriel |
 | `domaine` | ① Terme, rubrique « Domaine » | — |
 | `synonymes_fr`, `synonymes_ar` | ① Terme, rubrique « Synonymes » ; ils servent aussi à la recherche | Un synonyme trouvé dans le texte est traduit comme le terme |
@@ -226,10 +235,31 @@ Le rappel du format se trouve aussi dans l'application : *Aide → Format du glo
 
 ### Le glossaire d'exemple
 
-`donnees/glossaire_juridique.csv` contient 40 entrées de droit civil. Il sert à essayer
-l'application et doit être remplacé par le glossaire du projet. Chaque entrée a une définition
-dans les deux langues, la source de cette définition et des ressources. Neuf entrées n'ont pas
-d'exemple : leur champ ④ reste vide.
+`donnees/glossaire_juridique.csv` contient **1 000 entrées**, dans le vocabulaire du droit
+algérien. Il sert à essayer l'application. **Son contenu n'a été relu ni par un juriste ni par
+un traducteur** : il doit être vérifié avant tout usage, ou remplacé par le glossaire du projet.
+
+Nombre d'entrées par domaine (premier domaine indiqué dans la colonne `domaine`) :
+
+| Domaine | Entrées |
+| --- | --- |
+| Droit civil (personnes, obligations, responsabilité, preuve, contrats, biens, sûretés) | 257 |
+| Procédure civile et voies d'exécution | 99 |
+| Sources du droit et notions générales | 74 |
+| Droit pénal | 71 |
+| Droit administratif | 59 |
+| Droit constitutionnel | 54 |
+| Droit de la famille et successions | 54 |
+| Organisation judiciaire | 49 |
+| Droit commercial (sociétés, effets de commerce, entreprises en difficulté) | 49 |
+| Procédure pénale | 47 |
+| Droit international public et privé, droits de l'homme, arbitrage et médiation | 40 |
+| Droit du travail et sécurité sociale | 37 |
+| Autres : fiscal, finances publiques, douanes, foncier, banque, assurances, propriété intellectuelle, consommation, concurrence, numérique, environnement, urbanisme, nationalité, maritime | 110 |
+
+#### Les 40 premières entrées
+
+Ce sont les entrées de droit civil des versions précédentes. Elles n'ont pas été modifiées.
 
 - **Extraits du Code civil algérien** (ordonnance n° 75-58 du 26 septembre 1975), en français
   et en arabe :
@@ -245,16 +275,70 @@ d'exemple : leur champ ④ reste vide.
   deux versions trouvées pour le début de l'article 124, et une virgule ajoutée dans
   l'intitulé de l'ordonnance.
 - **Définitions d'exemple.** Les 34 autres définitions, en français et en arabe, ont été
-  rédigées pour la démonstration. Elles ne viennent d'aucun dictionnaire juridique et doivent
-  être remplacées ou vérifiées. La source affichée pour 33 d'entre elles est « à vérifier
-  (définition d'exemple) » ; celle de « conclusion du contrat » est « D'après le Code civil,
-  art. 59 ».
-- **Autre contenu d'illustration.** Les couples de termes (français et arabe), les catégories
-  grammaticales, les pluriels, les domaines, les synonymes, les termes associés et les
-  ressources ont été rédigés pour la démonstration. Le *Vocabulaire juridique* de G. Cornu est
-  cité comme ouvrage à consulter : les définitions n'en sont pas tirées. La référence de la loi
-  n° 90-11 du 21 avril 1990 (entrée « contrat de travail ») n'a pas été vérifiée. L'ensemble
-  doit être contrôlé par un juriste ou un traducteur.
+  rédigées pour la démonstration. Elles ne viennent d'aucun dictionnaire juridique. La source
+  affichée pour 33 d'entre elles est « à vérifier (définition d'exemple) » ; celle de
+  « conclusion du contrat » est « D'après le Code civil, art. 59 ».
+- **Autre contenu d'illustration.** Les couples de termes, les catégories grammaticales, les
+  pluriels, les domaines, les synonymes, les termes associés et les ressources ont été rédigés
+  pour la démonstration.
+- Neuf de ces entrées n'ont pas d'exemple : leur champ ④ reste vide.
+
+#### Les 960 entrées suivantes
+
+Les entrées n° 41 à 1 000 ont été **rédigées de mémoire par un assistant d'intelligence
+artificielle**, sans dictionnaire juridique et sans relecture par un spécialiste. Tout leur
+contenu est à vérifier.
+
+- **Termes et équivalents.** Ce sont des noms et des groupes nominaux. Les équivalents suivent
+  autant que possible le vocabulaire des textes algériens (« cour » : « مجلس قضائي »,
+  « lettre de change » : « سفتجة », « wilaya » : « ولاية »). Un autre équivalent en usage est
+  parfois donné comme synonyme (« كمبيالة »).
+- **Définitions.** Elles sont courtes, dans les deux langues, et toutes portent la source
+  « à vérifier (définition d'exemple) ». Quelques-unes suivent de près la formulation d'un
+  code, écrite de mémoire (« droit de propriété », « mariage », « garde », « commerçant »…) :
+  elles n'ont pas été comparées au texte officiel et ne doivent pas être citées comme telles.
+- **Pas d'exemple.** Aucune de ces entrées n'a d'exemple : leur champ ④ reste vide.
+- **Ressources.** Chaque entrée renvoie au texte principal de son domaine (code, loi,
+  ordonnance ou convention internationale), sans numéro d'article, et le plus souvent au
+  Journal officiel ([www.joradp.dz](https://www.joradp.dz)). Les références de six codes
+  (civil, pénal, de commerce, de la famille, de procédure civile et administrative, de
+  procédure pénale) correspondent à celles que donne le site du ministère de la Justice
+  (droit.mjustice.gov.dz), d'après les extraits affichés par un moteur de recherche. Les
+  autres références (numéros et dates des lois, des ordonnances et des numéros du Journal
+  officiel) ont été écrites de mémoire. Aucune n'a été comparée au Journal officiel, et un
+  texte a pu être modifié ou remplacé depuis.
+- **Catégories, pluriels, synonymes, termes associés.** Rédigés de la même façon. Les termes
+  associés d'une entrée sont ses voisins dans le glossaire.
+
+#### Dans tout le glossaire
+
+- Le *Vocabulaire juridique* de G. Cornu est cité comme ouvrage à consulter (65 entrées) :
+  aucune définition n'en est tirée.
+- Quatre termes français et dix termes arabes désignent chacun deux entrées, par exemple
+  « action » (« دعوى » ou « سهم »), « auteur » (« فاعل » ou « مؤلف »), « قرار » (« décision » ou
+  « arrêt ») et « ولاية » (« wilaya » ou « tutelle »). L'écran « Terme » affiche une puce pour
+  chaque entrée. L'écran « Texte » choisit d'après le contexte et signale le terme quand il
+  hésite.
+
+#### Corriger le glossaire
+
+Le plus simple est de modifier `donnees/glossaire_juridique.csv` dans un tableur ou un éditeur
+de texte, puis de le recharger dans l'application (F5).
+
+Le dossier `outils/glossaire/` garde ce qui a servi à écrire les entrées n° 41 à 1 000 : des
+fichiers texte (`lots/`, une entrée par ligne) et le script `construire.py`, qui les vérifie
+et les assemble.
+
+```
+python outils/glossaire/construire.py            vérifie les lots, sans rien écrire
+python outils/glossaire/construire.py --ecrire   récrit le fichier CSV
+```
+
+**Attention :** ce script garde les 40 premières entrées du CSV et récrit toutes les
+suivantes à partir des lots. Une correction faite à la main dans le CSV après la 40e entrée
+est donc perdue si on le relance. Il faut choisir : corriger le CSV et ne plus utiliser le
+script, ou corriger les lots et relancer le script. Le format des lots est décrit au début de
+`construire.py`.
 
 ### Organisation du code
 
@@ -262,7 +346,7 @@ d'exemple : leur champ ④ reste vide.
 main.py                      lance l'application
 requirements.txt             bibliothèques nécessaires
 donnees/
-  glossaire_juridique.csv    glossaire d'exemple
+  glossaire_juridique.csv    glossaire d'exemple (1 000 entrées)
 traducteur/
   langues.py                 comparaison des mots : accents, variantes d'écriture de l'arabe
   glossaire.py               lecture du CSV et recherche des termes
@@ -279,7 +363,10 @@ traducteur/
     composants.py            puces, étiquettes, disposition des puces
     theme.py                 couleurs et feuille de style
     icones.py                icônes
+outils/
+  glossaire/                 construction du glossaire d'exemple : script et lots de termes
 tests/                       tests automatiques
+  donnees/                   petit glossaire de 40 entrées réservé aux tests
 docs/                        captures d'écran
 maquette/                    maquette SVG des deux écrans
 ```
@@ -295,7 +382,11 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 278 tests s'exécutent sans ouvrir de fenêtre.
+Les 327 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
+contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
+dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « contrat ») à mettre
+à jour quand il est enrichi.
 
 ### Limites connues
 
@@ -318,6 +409,25 @@ Les 278 tests s'exécutent sans ouvrir de fenêtre.
   - quand le contexte ne permet pas de choisir entre deux entrées de même forme, la première
     entrée du glossaire est retenue et le tableau signale le terme comme ambigu. Un choix fait
     d'après le contexte peut aussi être faux : le tableau indique alors l'autre sens.
+- **Un mot courant peut être pris pour un terme.** L'application ne connaît que l'écriture des
+  mots. Elle ne distingue pas un terme juridique d'un verbe ou d'un mot ordinaire qui s'écrit
+  de la même façon. Exemples avec le glossaire fourni :
+  - « celui qui cause un dommage » : le verbe « cause » est traduit par « سبب » ;
+  - « en tout état de cause » : « état » est traduit par « دولة » et « cause » par « سبب » ;
+  - « la mise en œuvre » : « œuvre » est traduit par « مصنف » ;
+  - « en cours d'examen » : « cours » est lu comme le pluriel de « cour » ;
+  - « من أجل » (pour) : « أجل » est traduit par « délai » ; « عدة أشخاص » (plusieurs
+    personnes) : « عدة » est traduit par « retraite légale » ;
+  - « دفع المشتري الثمن » (l'acheteur a payé le prix) : le verbe « دفع » est lu comme le nom
+    « paiement ».
+
+  Plus le glossaire est riche, plus ces confusions sont fréquentes. L'étiquette « Traduction
+  terminée » signifie seulement que tous les mots ont été trouvés dans le glossaire : elle
+  s'affiche aussi pour les deux derniers exemples. Chaque terme traduit est écrit en orange
+  et repris dans le tableau : ils sont à vérifier un par un.
+- **Texte long.** Avec le glossaire fourni, sur la machine d'essai (Linux, sans écran), un
+  texte de 2 000 mots est traduit et affiché en une seconde environ, un texte de 13 000 mots
+  en un peu plus de trois secondes. La fenêtre ne répond pas pendant ce temps.
 - **Fichiers `.doc`.** Le lecteur a été essayé sur 471 fichiers d'exemple des projets Apache POI
   et LibreOffice : 362 sont lus (dont 47 sans texte dans le corps du document) et 109 sont
   refusés avec un message (fichiers d'avant Word 97, protégés, endommagés ou d'un autre type).
@@ -332,7 +442,8 @@ Les 278 tests s'exécutent sans ouvrir de fenêtre.
 - **Recherche d'un terme.** Les suggestions affichées pendant la saisie tiennent compte des
   accents ; la recherche lancée avec Entrée, non.
 - **Contenu.** Les équivalents, les définitions et les exemples affichés sont ceux du glossaire
-  chargé. L'application ne les vérifie pas.
+  chargé. L'application ne les vérifie pas. Ceux du glossaire fourni sont à vérifier : voir
+  [Le glossaire d'exemple](#le-glossaire-dexemple).
 - **Petite fenêtre.** À la taille minimale (900 × 560), les zones de texte n'affichent que deux
   ou trois lignes et le tableau des termes une seule ligne ; il faut faire défiler.
 

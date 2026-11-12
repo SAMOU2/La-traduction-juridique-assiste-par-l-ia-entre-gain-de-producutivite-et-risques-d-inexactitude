@@ -56,6 +56,11 @@ def _tailles_du_terme(terme: str, langue: str) -> tuple[int, int]:
     return (moyenne if len(terme) <= 22 else petite), minimale
 
 
+def _nombre(valeur: int) -> str:
+    """Écrit un nombre à la française : 1 000."""
+    return f"{valeur:,}".replace(",", "\u202f")
+
+
 def _legende(langue: str, role: str) -> str:
     """« Langue source : français », « اللغة الهدف: العربية »…"""
     if langue == AR:
@@ -256,7 +261,7 @@ class CarteTerme(Carte):
             self._rangee_de_puces([self._puce_de_terme(terme, source) for terme in entree.termes_associes], source)
 
         total = len(self.glossaire) if self.glossaire is not None else entree.numero
-        self._pied_texte("tableau", f"Entrée n° {entree.numero} sur {total} du glossaire")
+        self._pied_texte("tableau", f"Entrée n° {_nombre(entree.numero)} sur {_nombre(total)} du glossaire")
 
     def _puce_de_synonyme(self, synonyme: str, langue: str) -> QWidget:
         autre = self.glossaire.par_terme(synonyme, langue) if self.glossaire is not None else None
@@ -318,10 +323,11 @@ class CarteEquivalent(Carte):
             liste.setSpacing(0)
             for expression in expressions:
                 # Le français reste à gauche et l'arabe à droite, quel que soit le sens de traduction.
+                # Si les deux termes ne tiennent pas sur une ligne, l'arabe passe sous le français.
                 ligne = LigneCliquable()
                 ligne.setToolTip("Ouvrir cette entrée du glossaire")
-                ligne.disposition.addWidget(etiquette(expression.terme_fr, "expression", FR, retour_ligne=True), 3)
-                ligne.disposition.addWidget(etiquette(expression.terme_ar, "expressionArabe", AR, retour_ligne=True), 2)
+                ligne.disposition.addWidget(etiquette(expression.terme_fr, "expression", FR, retour_ligne=True))
+                ligne.disposition.addWidget(etiquette(expression.terme_ar, "expressionArabe", AR, retour_ligne=True))
                 ligne.cliquee.connect(lambda autre=expression: self.entree_demandee.emit(autre))
                 liste.addWidget(ligne)
             self.corps.addLayout(liste)

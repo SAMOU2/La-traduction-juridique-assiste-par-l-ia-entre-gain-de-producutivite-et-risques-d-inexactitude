@@ -1,0 +1,146 @@
+## Droit civil | Obligations ## CIVIL
+offre | إيجاب | fm |  | Proposition ferme de conclure un contrat à des conditions déterminées. | عرض بات لإبرام عقد بشروط محددة.
+acceptation | قبول | fm |  | Manifestation de volonté par laquelle le destinataire de l'offre donne son accord. | تعبير عن الإرادة يوافق به من وجه إليه الإيجاب.
+volonté | إرادة | ff | إرادات | Faculté de décider et de s'engager, qui fonde l'acte juridique. | القدرة على اتخاذ القرار والالتزام، وهي أساس التصرف القانوني.
+autonomie de la volonté | سلطان الإرادة | fi |  | Principe selon lequel les personnes sont libres de s'engager et de fixer le contenu de leurs contrats. | مبدأ يقضي بأن الأشخاص أحرار في الالتزام وفي تحديد مضمون عقودهم.
+liberté contractuelle | الحرية التعاقدية | fc |  | Liberté de conclure ou non un contrat, de choisir son cocontractant et d'en fixer le contenu, dans les limites de la loi. | حرية إبرام العقد أو عدم إبرامه واختيار المتعاقد وتحديد مضمونه في حدود القانون.
+pourparlers | مفاوضات | mfp |  | Discussions qui précèdent la conclusion d'un contrat. | محادثات تسبق إبرام العقد. | sf=négociations
+promesse de contrat | الوعد بالتعاقد | fc |  | Contrat par lequel une partie s'engage à conclure plus tard un contrat déterminé. | عقد يلتزم به أحد الطرفين بإبرام عقد معين في المستقبل.
+promesse de vente | الوعد بالبيع | fc |  | Contrat par lequel le propriétaire s'engage à vendre son bien à une personne si celle-ci décide de l'acheter. | عقد يلتزم به المالك ببيع ماله لشخص إذا قرر هذا الأخير شراءه.
+
+contrat d'adhésion | عقد الإذعان | mi | عقود الإذعان | Contrat dont les clauses sont fixées à l'avance par une partie, l'autre ne pouvant que les accepter ou refuser de contracter. | عقد يضع أحد الطرفين شروطه مسبقا ولا يملك الطرف الآخر إلا قبولها أو رفض التعاقد.
+contrat synallagmatique | عقد ملزم للجانبين | mc | عقود ملزمة للجانبين | Contrat dans lequel les parties s'obligent réciproquement l'une envers l'autre. | عقد يلتزم فيه كل طرف تجاه الآخر على وجه التبادل.
+contrat unilatéral | عقد ملزم لجانب واحد | mc |  | Contrat dans lequel une seule partie s'oblige envers l'autre. | عقد يلتزم فيه طرف واحد تجاه الآخر.
+contrat à titre onéreux | عقد المعاوضة | mi | عقود المعاوضة | Contrat dans lequel chaque partie reçoit un avantage en contrepartie de celui qu'elle procure. | عقد يأخذ فيه كل طرف مقابلا لما يعطيه.
+contrat à titre gratuit | عقد التبرع | mi | عقود التبرع | Contrat dans lequel une partie procure un avantage à l'autre sans rien recevoir en retour. | عقد يمنح فيه أحد الطرفين منفعة للآخر دون مقابل.
+contrat aléatoire | عقد احتمالي | ma | عقود احتمالية | Contrat dont les effets dépendent d'un événement incertain. | عقد تتوقف آثاره على حادث غير محقق الوقوع. | sa=عقد الغرر
+contrat consensuel | عقد رضائي | ma | عقود رضائية | Contrat qui se forme par le seul échange des consentements. | عقد ينعقد بمجرد تبادل الرضا.
+contrat solennel | عقد شكلي | ma | عقود شكلية | Contrat dont la validité dépend du respect d'une forme imposée par la loi. | عقد تتوقف صحته على استيفاء شكل يفرضه القانون.
+
+vice du consentement | عيب الرضا | mi | عيوب الرضا | Défaut qui altère la volonté d'un contractant : erreur, dol, violence, lésion. | خلل يشوب إرادة المتعاقد، كالغلط والتدليس والإكراه والاستغلال.
+erreur | غلط | fm |  | Représentation inexacte de la réalité, qui a déterminé une partie à contracter. | تصور غير صحيح للواقع دفع المتعاقد إلى التعاقد.
+dol | تدليس | mm |  | Manœuvres ou mensonges d'une partie, destinés à tromper l'autre pour l'amener à contracter. | حيل أو أكاذيب يستعملها أحد الطرفين لتضليل الآخر وحمله على التعاقد.
+violence | إكراه | fm |  | Contrainte exercée sur une personne pour l'amener à contracter sous l'empire de la crainte. | ضغط يمارس على شخص لحمله على التعاقد تحت تأثير الرهبة. | sf=contrainte
+lésion | غبن | fm |  | Préjudice subi par une partie en raison d'un déséquilibre important entre les prestations au moment du contrat. | ضرر يلحق أحد الطرفين بسبب اختلال فادح بين الأداءات وقت التعاقد.
+objet | محل | mm |  | Ce sur quoi porte l'obligation ou le contrat : la chose ou la prestation promise. | ما يرد عليه الالتزام أو العقد، أي الشيء أو الأداء الموعود به.
+cause | سبب | fm | أسباب | Raison pour laquelle une partie s'engage ; elle doit être licite. | الباعث الذي يلتزم من أجله المتعاقد، ويجب أن يكون مشروعا.
+
+clause | بند | fm | بنود | Disposition particulière d'un contrat ou d'un autre acte. | حكم خاص من أحكام العقد أو أي تصرف آخر.
+clause abusive | شرط تعسفي | fa | شروط تعسفية | Clause qui crée, au détriment d'une partie, un déséquilibre manifeste entre les droits et les obligations des contractants. | شرط يحدث إخلالا ظاهرا بالتوازن بين حقوق المتعاقدين والتزاماتهم على حساب أحد الطرفين.
+clause pénale | شرط جزائي | fa | شروط جزائية | Clause qui fixe à l'avance la somme due en cas d'inexécution. | شرط يحدد مسبقا المبلغ المستحق عند عدم التنفيذ.
+clause résolutoire | الشرط الفاسخ الصريح | fc |  | Clause qui prévoit la résolution de plein droit du contrat en cas d'inexécution. | شرط يقضي بفسخ العقد بقوة القانون عند عدم التنفيذ.
+arrhes | عربون | fmp |  | Somme versée lors de la conclusion du contrat, qui permet à chaque partie de se dédire en la perdant ou en restituant le double. | مبلغ يدفع عند إبرام العقد ويخول كل طرف العدول عنه بفقده أو برد ضعفه.
+
+condition | شرط | fm | شروط | Événement futur et incertain dont dépend la naissance ou la disparition d'une obligation ; exigence posée par la loi ou par le contrat. | أمر مستقبل غير محقق الوقوع يتوقف عليه وجود الالتزام أو زواله، وكذلك ما يستلزمه القانون أو العقد.
+condition suspensive | شرط واقف | fa | شروط واقفة | Condition dont la réalisation fait naître l'obligation. | شرط يترتب على تحققه نشوء الالتزام.
+condition résolutoire | شرط فاسخ | fa | شروط فاسخة | Condition dont la réalisation fait disparaître l'obligation. | شرط يترتب على تحققه زوال الالتزام.
+terme suspensif | أجل واقف | ma |  | Événement futur et certain qui retarde l'exigibilité de l'obligation. | أمر مستقبل محقق الوقوع يؤخر استحقاق الالتزام.
+terme extinctif | أجل فاسخ | ma |  | Événement futur et certain qui met fin à l'obligation. | أمر مستقبل محقق الوقوع ينقضي به الالتزام.
+
+force obligatoire du contrat | القوة الملزمة للعقد | fc |  | Principe selon lequel le contrat s'impose aux parties comme la loi. | مبدأ يقضي بأن العقد يلزم الطرفين كما يلزمهما القانون.
+effet relatif du contrat | الأثر النسبي للعقد | mc |  | Principe selon lequel le contrat ne crée d'obligations qu'entre les parties. | مبدأ يقضي بأن العقد لا ينشئ التزامات إلا بين طرفيه.
+stipulation pour autrui | الاشتراط لمصلحة الغير | fc |  | Opération par laquelle une partie obtient de l'autre un engagement au profit d'un tiers. | عملية يحصل بها أحد الطرفين من الآخر على تعهد لفائدة شخص من الغير.
+imprévision | الظروف الطارئة | fc |  | Théorie qui permet au juge de réduire une obligation devenue excessivement lourde à la suite d'événements exceptionnels et imprévisibles. | نظرية تجيز للقاضي رد الالتزام المرهق إلى الحد المعقول بسبب حوادث استثنائية لم يكن في الوسع توقعها.
+
+inexécution | عدم التنفيذ | fi |  | Fait pour le débiteur de ne pas accomplir son obligation. | عدم قيام المدين بالتزامه.
+mise en demeure | إعذار | fm |  | Acte par lequel le créancier somme le débiteur d'exécuter son obligation. | إجراء يطلب به الدائن من المدين تنفيذ التزامه.
+exécution en nature | التنفيذ العيني | fc |  | Exécution de l'obligation telle qu'elle a été promise. | تنفيذ الالتزام بعين ما التزم به المدين.
+exécution par équivalent | التنفيذ بمقابل | fc |  | Remplacement de la prestation promise par des dommages-intérêts. | الاستعاضة عن الأداء الموعود به بتعويض.
+exception d'inexécution | الدفع بعدم التنفيذ | fc |  | Droit pour une partie de refuser d'exécuter son obligation tant que l'autre n'exécute pas la sienne. | حق أحد الطرفين في الامتناع عن تنفيذ التزامه ما دام الآخر لم ينفذ التزامه.
+force majeure | قوة قاهرة | fa |  | Événement imprévisible et irrésistible, étranger au débiteur, qui l'empêche d'exécuter son obligation et le libère. | حادث لا يمكن توقعه ولا دفعه، أجنبي عن المدين، يمنعه من تنفيذ التزامه ويبرئ ذمته.
+cas fortuit | حادث مفاجئ | ma |  | Événement imprévisible qui rend l'exécution impossible sans faute du débiteur. | حادث غير متوقع يجعل التنفيذ مستحيلا دون خطأ من المدين.
+
+résolution | فسخ | fm |  | Anéantissement rétroactif d'un contrat en raison de l'inexécution de ses obligations par une partie. | زوال العقد بأثر رجعي بسبب عدم تنفيذ أحد الطرفين التزاماته.
+résiliation | إنهاء | fm |  | Fin d'un contrat pour l'avenir seulement, à l'initiative d'une partie ou par accord. | انتهاء العقد بالنسبة إلى المستقبل فقط، بمبادرة أحد الطرفين أو باتفاقهما.
+annulation | إبطال | fm |  | Décision qui prononce la nullité d'un acte. | قرار يقضي ببطلان التصرف.
+nullité absolue | بطلان مطلق | fa |  | Nullité qui sanctionne la violation d'une règle d'intérêt général ; toute personne intéressée peut l'invoquer. | بطلان يترتب على مخالفة قاعدة تحمي المصلحة العامة، ولكل ذي مصلحة أن يتمسك به.
+nullité relative | بطلان نسبي | fa |  | Nullité qui protège une partie et que celle-ci seule peut invoquer. | بطلان مقرر لحماية أحد الطرفين، وله وحده أن يتمسك به. | sa=قابلية الإبطال
+confirmation | إجازة | ff |  | Acte par lequel une personne renonce à invoquer la nullité relative d'un acte. | تصرف يتنازل به الشخص عن التمسك بإبطال العقد.
+
+dette | دين | fm | ديون | Prestation que le débiteur doit au créancier, le plus souvent une somme d'argent. | الأداء الواجب على المدين للدائن، وهو في الغالب مبلغ من المال.
+créance | دين | fm | ديون | Droit du créancier d'exiger une prestation de son débiteur. | حق الدائن في مطالبة مدينه بأداء.
+exigibilité | استحقاق | fm |  | Caractère de la dette dont le paiement peut être réclamé immédiatement. | صفة الدين الذي تجوز المطالبة بوفائه حالا.
+échéance | أجل الاستحقاق | fi |  | Date à laquelle une dette doit être payée. | التاريخ الذي يجب فيه وفاء الدين.
+solidarité | تضامن | fm |  | Lien entre plusieurs débiteurs ou plusieurs créanciers, qui permet de réclamer ou de recevoir la totalité de la dette. | رابطة بين عدة مدينين أو عدة دائنين تسمح بالمطالبة بكل الدين أو باستيفائه كله.
+débiteur solidaire | مدين متضامن | ma | مدينون متضامنون | Débiteur tenu de toute la dette avec un ou plusieurs autres. | مدين ملزم بكل الدين مع مدين آخر أو أكثر. | sf=codébiteur
+
+obligation de moyens | الالتزام ببذل عناية | fc |  | Obligation par laquelle le débiteur s'engage à employer les moyens appropriés, sans garantir le résultat. | التزام يتعهد فيه المدين ببذل الجهد اللازم دون ضمان النتيجة.
+obligation de résultat | الالتزام بتحقيق نتيجة | fc |  | Obligation par laquelle le débiteur s'engage à atteindre un résultat déterminé. | التزام يتعهد فيه المدين بتحقيق نتيجة معينة.
+obligation naturelle | التزام طبيعي | fa |  | Obligation dont l'exécution ne peut pas être exigée en justice, mais dont le paiement volontaire est valable. | التزام لا يمكن المطالبة بتنفيذه أمام القضاء، غير أن الوفاء به اختيارا صحيح.
+
+paiement | وفاء | mm |  | Exécution de l'obligation, quel qu'en soit l'objet ; dans le langage courant, versement d'une somme d'argent. | تنفيذ الالتزام أيا كان محله، ويراد به في الاستعمال الشائع دفع مبلغ من المال. | sa=دفع
+quittance | مخالصة | ff | مخالصات | Écrit par lequel le créancier reconnaît avoir reçu le paiement. | محرر يقر فيه الدائن باستيفاء الدين.
+dation en paiement | الوفاء بمقابل | fc |  | Opération par laquelle le créancier accepte de recevoir autre chose que ce qui lui était dû. | عملية يقبل فيها الدائن استيفاء شيء غير الذي كان مستحقا له.
+novation | تجديد | fm |  | Remplacement d'une obligation par une obligation nouvelle, qui éteint la première. | استبدال التزام بالتزام جديد ينقضي به الأول.
+compensation | مقاصة | ff |  | Extinction de deux dettes réciproques jusqu'à concurrence de la plus faible. | انقضاء دينين متقابلين بقدر الأقل منهما.
+confusion | اتحاد الذمة | fi |  | Extinction de l'obligation lorsque les qualités de créancier et de débiteur se réunissent sur la même personne. | انقضاء الالتزام باجتماع صفتي الدائن والمدين في شخص واحد.
+remise de dette | الإبراء من الدين | fc |  | Acte par lequel le créancier libère volontairement le débiteur de tout ou partie de sa dette. | تصرف يحل به الدائن مدينه اختيارا من الدين كله أو بعضه. | sa=إبراء
+
+prescription | تقادم | fm |  | Effet du temps sur les droits : il les éteint ou permet de les acquérir. | أثر مرور الزمن في الحقوق، فهو يسقطها أو يكسبها.
+prescription extinctive | تقادم مسقط | fa |  | Extinction d'un droit par l'écoulement d'un certain temps pendant lequel son titulaire ne l'a pas exercé. | انقضاء الحق بمرور مدة معينة لم يستعمله صاحبه خلالها.
+interruption de la prescription | انقطاع التقادم | fi |  | Événement qui efface le délai déjà écoulé et fait courir un nouveau délai. | حادث يمحو المدة التي انقضت ويبدأ به سريان مدة جديدة.
+suspension de la prescription | وقف التقادم | fi |  | Arrêt temporaire du cours de la prescription, qui n'efface pas le délai déjà écoulé. | توقف سريان التقادم مؤقتا دون محو المدة التي انقضت.
+déchéance | سقوط الحق | fi |  | Perte d'un droit, à titre de sanction ou faute de l'avoir exercé dans le délai prévu. | فقدان الحق على سبيل الجزاء أو لعدم استعماله في الأجل المحدد.
+
+cession de créance | حوالة الحق | fi |  | Convention par laquelle le créancier transmet sa créance à un tiers. | اتفاق ينقل به الدائن حقه إلى شخص من الغير.
+cession de dette | حوالة الدين | fi |  | Convention par laquelle la dette est transférée du débiteur à une autre personne. | اتفاق ينتقل به الدين من المدين إلى شخص آخر.
+subrogation | حلول | fm |  | Remplacement d'une personne par une autre dans un rapport de droit, notamment du créancier par celui qui l'a payé. | قيام شخص مقام آخر في علاقة قانونية، كحلول الموفي محل الدائن.
+
+action oblique | الدعوى غير المباشرة | fc |  | Action par laquelle le créancier exerce, au nom de son débiteur, les droits que celui-ci néglige d'exercer. | دعوى يستعمل بها الدائن باسم مدينه الحقوق التي أهمل هذا الأخير استعمالها.
+action paulienne | الدعوى البولصية | fc |  | Action par laquelle le créancier fait déclarer inopposable à son égard un acte accompli par le débiteur en fraude de ses droits. | دعوى يطلب بها الدائن عدم نفاذ تصرف أبرمه المدين إضرارا بحقوقه. | sa=دعوى عدم نفاذ التصرف
+simulation | صورية | ff |  | Accord par lequel les parties cachent leur volonté réelle derrière un acte apparent. | اتفاق يخفي به الطرفان إرادتهما الحقيقية وراء تصرف ظاهر.
+droit de rétention | حق الحبس | mi |  | Droit pour le créancier de garder une chose appartenant à son débiteur jusqu'au paiement de ce qui lui est dû. | حق الدائن في إمساك شيء مملوك لمدينه إلى أن يستوفي ما هو مستحق له.
+
+enrichissement sans cause | الإثراء بلا سبب | mc |  | Avantage obtenu sans justification aux dépens d'autrui, qui oblige à indemniser la personne appauvrie. | منفعة ينالها شخص دون مبرر على حساب غيره، فيلزم بتعويض من افتقر.
+paiement de l'indu | دفع غير المستحق | mc |  | Paiement fait par erreur d'une somme qui n'était pas due ; celui qui l'a reçue doit la restituer. | وفاء مبلغ غير واجب عن غلط، ويلتزم من تسلمه برده.
+gestion d'affaires | فضالة | ff |  | Fait de se charger volontairement de l'affaire d'autrui sans y être tenu. | أن يتولى شخص عن قصد شأنا لغيره دون أن يكون ملزما بذلك.
+
+## Droit civil | Responsabilité civile ## CIVIL
+responsabilité civile | مسؤولية مدنية | fa |  | Obligation de réparer le dommage causé à autrui. | الالتزام بتعويض الضرر اللاحق بالغير.
+responsabilité contractuelle | مسؤولية عقدية | fa |  | Responsabilité née de l'inexécution d'un contrat. | مسؤولية تنشأ عن عدم تنفيذ العقد.
+responsabilité délictuelle | مسؤولية تقصيرية | fa |  | Responsabilité née d'un fait dommageable commis en dehors de tout contrat. | مسؤولية تنشأ عن فعل ضار وقع خارج أي عقد.
+lien de causalité | علاقة السببية | mi |  | Rapport de cause à effet entre la faute ou le fait générateur et le dommage. | رابطة السبب بالنتيجة بين الخطأ أو الفعل المولد والضرر.
+abus de droit | التعسف في استعمال الحق | mc |  | Faute qui consiste à exercer un droit dans le but de nuire ou en dépassant ses limites. | خطأ يتمثل في استعمال الحق بقصد الإضرار بالغير أو بتجاوز حدوده.
+
+victime | ضحية | ff | ضحايا | Personne qui subit un dommage ou une infraction. | شخص لحقه ضرر أو وقعت عليه جريمة. | sa=مضرور
+auteur du dommage | المسؤول عن الضرر | mc |  | Personne dont le fait a causé le dommage. | الشخص الذي أحدث فعله الضرر.
+dommage matériel | ضرر مادي | ma | أضرار مادية | Atteinte portée aux biens ou aux intérêts pécuniaires d'une personne. | مساس بأموال الشخص أو بمصالحه المالية.
+dommage moral | ضرر معنوي | ma | أضرار معنوية | Atteinte portée aux sentiments, à l'honneur ou à la réputation d'une personne. | مساس بمشاعر الشخص أو بشرفه أو بسمعته.
+dommage corporel | ضرر جسماني | ma | أضرار جسمانية | Atteinte portée à l'intégrité physique d'une personne. | مساس بالسلامة الجسدية للشخص.
+
+responsabilité du fait des choses | المسؤولية عن الأشياء | fc |  | Responsabilité de la personne qui a la garde d'une chose, pour le dommage que cette chose cause. | مسؤولية حارس الشيء عن الضرر الذي يحدثه ذلك الشيء.
+gardien de la chose | حارس الشيء | mi |  | Personne qui a le pouvoir d'usage, de direction et de contrôle sur une chose. | الشخص الذي له سلطة استعمال الشيء وتسييره ورقابته.
+responsabilité du fait d'autrui | المسؤولية عن فعل الغير | fc |  | Responsabilité d'une personne pour le dommage causé par ceux dont elle doit répondre. | مسؤولية الشخص عن الضرر الذي يحدثه من هو مسؤول عنهم.
+commettant | متبوع | mm |  | Personne qui a autorité sur une autre, le préposé, et qui répond des dommages que celui-ci cause dans ses fonctions. | شخص له سلطة على شخص آخر هو التابع، ويسأل عن الأضرار التي يحدثها هذا الأخير أثناء تأدية وظيفته.
+préposé | تابع | mm |  | Personne qui agit sous l'autorité et pour le compte d'un commettant. | شخص يعمل تحت سلطة المتبوع ولحسابه.
+
+faute lourde | خطأ جسيم | fa |  | Faute d'une gravité particulière, proche de l'intention de nuire. | خطأ بالغ الخطورة يقترب من قصد الإضرار.
+négligence | إهمال | fm |  | Manque de soin ou d'attention qui cause un dommage. | نقص في العناية أو الانتباه يسبب ضررا.
+imprudence | عدم الاحتياط | fi |  | Manque de précaution dans le comportement. | نقص في أخذ الحيطة في السلوك.
+
+## Droit civil | Preuve ## CIVIL+CPCA
+preuve | دليل | fm | أدلة | Élément qui établit la réalité d'un fait ou d'un acte ; démonstration de cette réalité. | عنصر يثبت حقيقة واقعة أو تصرف، وكذلك إقامة البرهان عليها. | sa=إثبات، بينة
+charge de la preuve | عبء الإثبات | fi |  | Obligation pour une partie de prouver ce qu'elle affirme. | التزام الخصم بإثبات ما يدعيه.
+moyen de preuve | وسيلة الإثبات | mi | وسائل الإثبات | Procédé admis par la loi pour établir un fait : écrit, témoignage, présomption, aveu, serment. | طريقة يقبلها القانون لإثبات واقعة، كالكتابة والشهادة والقرائن والإقرار واليمين.
+force probante | القوة الثبوتية | fc |  | Valeur qu'un mode de preuve possède pour convaincre le juge. | القيمة التي تكون لوسيلة الإثبات في إقناع القاضي.
+preuve par écrit | الإثبات بالكتابة | fc |  | Preuve qui résulte d'un écrit, authentique ou sous seing privé. | إثبات يستمد من محرر رسمي أو عرفي.
+commencement de preuve par écrit | مبدأ ثبوت بالكتابة | mc |  | Écrit émanant de la personne à laquelle on l'oppose, qui rend vraisemblable le fait allégué. | كتابة تصدر عن الخصم ويكون من شأنها أن تجعل الواقعة المدعى بها قريبة الاحتمال.
+
+acte authentique | عقد رسمي | ma | عقود رسمية | Acte reçu par un officier public ou par un fonctionnaire compétent, dans les formes prévues par la loi. | عقد يثبت فيه موظف أو ضابط عمومي ما تم لديه أو ما تلقاه من ذوي الشأن طبقا للأشكال القانونية. | sa=محرر رسمي
+acte sous seing privé | عقد عرفي | ma | عقود عرفية | Acte rédigé et signé par les parties elles-mêmes, sans l'intervention d'un officier public. | عقد يحرره الأطراف ويوقعونه بأنفسهم دون تدخل ضابط عمومي. | sa=محرر عرفي
+acte notarié | عقد توثيقي | ma | عقود توثيقية | Acte authentique reçu par un notaire. | عقد رسمي يتلقاه الموثق.
+signature | توقيع | fm | توقيعات | Signe personnel par lequel une personne approuve un écrit et s'engage. | علامة شخصية يوافق بها الشخص على محرر ويلتزم بمضمونه.
+date certaine | تاريخ ثابت | fa |  | Date d'un acte sous seing privé que les tiers ne peuvent plus contester. | تاريخ العقد العرفي الذي لم يعد للغير أن ينازع فيه.
+copie | نسخة | ff | نسخ | Reproduction d'un acte original. | صورة منقولة عن أصل المحرر.
+légalisation de signature | التصديق على التوقيع | fc |  | Formalité par laquelle une autorité atteste l'authenticité d'une signature. | إجراء تشهد به سلطة على صحة توقيع.
+
+témoignage | شهادة | mf | شهادات | Déclaration d'une personne sur des faits qu'elle a personnellement constatés. | تصريح شخص بوقائع عاينها بنفسه.
+témoin | شاهد | mm | شهود | Personne qui déclare en justice ce qu'elle a vu ou entendu, ou qui assiste à la rédaction d'un acte. | شخص يدلي أمام القضاء بما رآه أو سمعه، أو يحضر تحرير عقد.
+aveu | إقرار | mm |  | Déclaration par laquelle une personne reconnaît pour vrai un fait qui lui est défavorable. | تصريح يعترف به الشخص بواقعة ليست في صالحه. | sa=اعتراف
+serment | يمين | mf | أيمان | Affirmation solennelle de la vérité d'un fait, ou engagement de remplir fidèlement une mission. | تأكيد رسمي لصحة واقعة أو تعهد بأداء مهمة بأمانة.
+serment décisoire | يمين حاسمة | ma |  | Serment qu'une partie défère à l'autre pour en faire dépendre l'issue du litige. | يمين يوجهها أحد الخصمين إلى الآخر ليحسم بها النزاع.
+
+présomption | قرينة | ff | قرائن | Conséquence que la loi ou le juge tire d'un fait connu pour établir un fait inconnu. | نتيجة يستخلصها القانون أو القاضي من واقعة معلومة لإثبات واقعة مجهولة.
+présomption légale | قرينة قانونية | fa | قرائن قانونية | Présomption établie par la loi, qui dispense de preuve celui au profit duquel elle existe. | قرينة يقررها القانون وتعفي من تقررت لمصلحته من الإثبات.
+inscription de faux | الطعن بالتزوير | fc |  | Procédure qui permet de contester la sincérité d'un acte authentique. | إجراء يسمح بالمنازعة في صحة عقد رسمي.
+vérification d'écriture | مضاهاة الخطوط | fi |  | Procédure par laquelle le juge vérifie si un acte sous seing privé émane bien de celui à qui on l'attribue. | إجراء يتحقق به القاضي من صدور العقد العرفي ممن ينسب إليه.

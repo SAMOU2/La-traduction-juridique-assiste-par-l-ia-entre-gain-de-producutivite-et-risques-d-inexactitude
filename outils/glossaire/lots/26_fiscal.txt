@@ -1,0 +1,33 @@
+## Droit fiscal ## FISCAL
+impôt | ضريبة | mf | ضرائب | Prélèvement obligatoire et sans contrepartie directe, perçu par l'État et les collectivités pour couvrir les charges publiques. | اقتطاع إجباري دون مقابل مباشر تحصله الدولة والجماعات المحلية لتغطية الأعباء العمومية.
+taxe | رسم | fm | رسوم | Prélèvement perçu à l'occasion d'un service rendu ou d'une opération. | اقتطاع يحصل بمناسبة أداء خدمة أو إجراء عملية.
+contribuable | المكلف بالضريبة | mc |  | Personne tenue de payer l'impôt. | الشخص الملزم بدفع الضريبة.
+assiette de l'impôt | وعاء الضريبة | fi |  | Base sur laquelle l'impôt est calculé. | الأساس الذي تحسب عليه الضريبة.
+revenu | دخل | mm | مداخيل | Ensemble des sommes perçues par une personne pendant une période. | مجموع المبالغ التي يتقاضاها الشخص خلال فترة معينة.
+
+impôt sur le revenu global | الضريبة على الدخل الإجمالي | mc |  | Impôt annuel sur l'ensemble des revenus des personnes physiques. | ضريبة سنوية على مجموع مداخيل الأشخاص الطبيعيين. | sf=IRG
+taxe sur la valeur ajoutée | الرسم على القيمة المضافة | fc |  | Impôt indirect sur la consommation, perçu à chaque étape de la vente d'un bien ou d'un service. | ضريبة غير مباشرة على الاستهلاك تحصل في كل مرحلة من مراحل بيع السلعة أو الخدمة. | sf=TVA
+
+administration fiscale | الإدارة الجبائية | fc |  | Service de l'État chargé d'établir et de recouvrer les impôts. | مصلحة الدولة المكلفة بتأسيس الضرائب وتحصيلها. | sf=fisc
+déclaration fiscale | تصريح جبائي | fa | تصريحات جبائية | Document par lequel le contribuable fait connaître à l'administration les éléments servant au calcul de l'impôt. | وثيقة يبلغ بها المكلف بالضريبة الإدارة بالعناصر المعتمدة في حساب الضريبة.
+exonération | إعفاء | fm | إعفاءات | Dispense de payer tout ou partie d'un impôt, accordée par la loi. | إسقاط دفع الضريبة كلها أو بعضها بنص القانون.
+recouvrement | تحصيل | mm |  | Ensemble des opérations par lesquelles l'administration obtient le paiement d'une somme due. | مجموع العمليات التي تستوفي بها الإدارة مبلغا مستحقا.
+fraude fiscale | غش جبائي | fa |  | Fait de se soustraire à l'impôt par des procédés illégaux. | التملص من الضريبة بوسائل غير قانونية.
+contentieux fiscal | المنازعات الجبائية | mc |  | Ensemble des litiges entre le contribuable et l'administration fiscale. | مجموع النزاعات القائمة بين المكلف بالضريبة والإدارة الجبائية.
+
+## Finances publiques ## FINANCES
+finances publiques | المالية العمومية | fcp |  | Ressources et charges de l'État et des autres personnes publiques ; règles qui les régissent. | موارد الدولة والأشخاص العمومية الأخرى وأعباؤها، والقواعد التي تحكمها.
+loi de finances | قانون المالية | fi | قوانين المالية | Loi qui prévoit et autorise, pour chaque année, l'ensemble des ressources et des charges de l'État. | قانون يقدر ويرخص لكل سنة مجموع موارد الدولة وأعبائها.
+budget | ميزانية | mf | ميزانيات | Acte qui prévoit et autorise les recettes et les dépenses d'une personne publique pour une année. | وثيقة تقدر وترخص إيرادات شخص عمومي ونفقاته لسنة.
+recette publique | إيراد عمومي | fa | إيرادات عمومية | Somme perçue par une personne publique, comme le produit des impôts. | مبلغ يحصله شخص عمومي، كحصيلة الضرائب.
+dépense publique | نفقة عمومية | fa | نفقات عمومية | Somme payée par une personne publique pour assurer ses missions. | مبلغ يدفعه شخص عمومي لأداء مهامه.
+Trésor public | الخزينة العمومية | mc |  | Service de l'État qui encaisse les recettes publiques et paie les dépenses publiques. | مصلحة الدولة التي تقبض الإيرادات العمومية وتدفع النفقات العمومية.
+comptable public | محاسب عمومي | ma | محاسبون عموميون | Agent chargé d'encaisser les recettes, de payer les dépenses et de conserver les fonds publics. | عون مكلف بقبض الإيرادات ودفع النفقات وحفظ الأموال العمومية.
+
+## Droit douanier ## DOUANES
+administration des douanes | إدارة الجمارك | fi |  | Administration chargée de contrôler les marchandises qui entrent sur le territoire ou en sortent et de percevoir les droits de douane. | إدارة مكلفة بمراقبة البضائع الداخلة إلى الإقليم أو الخارجة منه وبتحصيل الحقوق الجمركية. | sf=douane
+droits de douane | الحقوق الجمركية | mcp |  | Impôts perçus sur les marchandises lors de leur passage à la frontière. | ضرائب تحصل على البضائع عند عبورها الحدود.
+marchandise | بضاعة | ff | بضائع | Bien meuble qui fait l'objet d'un commerce ou d'un transport. | مال منقول يكون محلا للتجارة أو للنقل.
+importation | استيراد | fm |  | Entrée de marchandises étrangères sur le territoire national. | إدخال بضائع أجنبية إلى التراب الوطني.
+exportation | تصدير | fm |  | Sortie de marchandises du territoire national vers l'étranger. | إخراج بضائع من التراب الوطني إلى الخارج.
+contrebande | تهريب | fm |  | Importation ou exportation de marchandises en dehors des bureaux de douane ou en fraude des règles douanières. | استيراد البضائع أو تصديرها خارج مكاتب الجمارك أو بمخالفة القواعد الجمركية.

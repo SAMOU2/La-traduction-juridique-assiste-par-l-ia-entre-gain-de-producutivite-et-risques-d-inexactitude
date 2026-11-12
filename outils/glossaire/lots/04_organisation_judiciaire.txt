@@ -1,0 +1,57 @@
+## Organisation judiciaire ## ORGJUD
+juridiction | جهة قضائية | fa | جهات قضائية | Organe institué pour trancher les litiges en appliquant le droit : tribunal, cour. | هيئة منشأة للفصل في النزاعات بتطبيق القانون، كالمحكمة والمجلس القضائي.
+tribunal | محكمة | mf | محاكم | Juridiction du premier degré, qui juge les affaires pour la première fois. | جهة قضائية من الدرجة الأولى تنظر في القضايا لأول مرة.
+cour | مجلس قضائي | fa | مجالس قضائية | En Algérie, juridiction du second degré, qui statue sur les appels formés contre les jugements des tribunaux. | في الجزائر، جهة قضائية من الدرجة الثانية تفصل في استئناف أحكام المحاكم. | sf=cour d'appel
+Cour suprême | المحكمة العليا | fc |  | Plus haute juridiction de l'ordre judiciaire ; elle contrôle la bonne application du droit par les cours et les tribunaux. | أعلى جهة قضائية في النظام القضائي العادي، تراقب حسن تطبيق القانون من قبل المجالس القضائية والمحاكم.
+chambre | غرفة | ff | غرف | Formation de jugement d'une cour ou de la Cour suprême ; assemblée parlementaire. | تشكيلة حكم في مجلس قضائي أو في المحكمة العليا، ومجلس من مجلسي البرلمان.
+section | قسم | fm | أقسام | Formation d'un tribunal spécialisée dans une matière : section civile, section sociale, section des affaires familiales. | تشكيلة في المحكمة متخصصة في مادة معينة، كالقسم المدني والقسم الاجتماعي وقسم شؤون الأسرة.
+
+Conseil d'État | مجلس الدولة | mi |  | Plus haute juridiction de l'ordre administratif. | أعلى جهة قضائية في النظام القضائي الإداري.
+tribunal administratif | محكمة إدارية | ma | محاكم إدارية | Juridiction du premier degré compétente pour les litiges administratifs. | جهة قضائية من الدرجة الأولى تختص بالمنازعات الإدارية.
+tribunal administratif d'appel | المحكمة الإدارية للاستئناف | mc |  | Juridiction du second degré de l'ordre administratif, créée après la révision constitutionnelle de 2020. | جهة قضائية من الدرجة الثانية في النظام القضائي الإداري، أنشئت بعد التعديل الدستوري لسنة 2020.
+tribunal des conflits | محكمة التنازع | mi |  | Juridiction qui règle les conflits de compétence entre l'ordre judiciaire et l'ordre administratif. | جهة قضائية تفصل في تنازع الاختصاص بين النظام القضائي العادي والنظام القضائي الإداري.
+
+tribunal criminel | محكمة الجنايات | mi |  | Juridiction compétente pour juger les crimes. | جهة قضائية تختص بالفصل في الجنايات.
+tribunal militaire | محكمة عسكرية | ma | محاكم عسكرية | Juridiction spécialisée qui juge les infractions d'ordre militaire. | جهة قضائية متخصصة تفصل في الجرائم العسكرية.
+pôle pénal spécialisé | قطب جزائي متخصص | ma | أقطاب جزائية متخصصة | Juridiction à compétence territoriale étendue, chargée de certaines infractions graves ou complexes. | جهة قضائية ذات اختصاص إقليمي موسع تتولى بعض الجرائم الخطيرة أو المعقدة.
+
+double degré de juridiction | التقاضي على درجتين | mc |  | Principe qui permet de faire juger une affaire une seconde fois par une juridiction supérieure. | مبدأ يسمح بعرض القضية مرة ثانية على جهة قضائية أعلى.
+ressort | دائرة الاختصاص | mi |  | Étendue territoriale dans laquelle une juridiction exerce sa compétence. | النطاق الإقليمي الذي تمارس فيه الجهة القضائية اختصاصها.
+audience | جلسة | ff | جلسات | Séance au cours de laquelle une juridiction entend les parties et rend ses décisions. | حصة تستمع فيها الجهة القضائية إلى الأطراف وتصدر أحكامها.
+huis clos | جلسة سرية | ma |  | Audience tenue hors la présence du public. | جلسة تنعقد دون حضور الجمهور.
+
+justice | عدل | fm |  | Idéal qui consiste à rendre à chacun ce qui lui est dû ; institution chargée de juger. | مثل أعلى يقتضي إعطاء كل ذي حق حقه، والمؤسسة المكلفة بالفصل في النزاعات.
+magistrature | قضاء | fm |  | Corps des magistrats ; fonction de juger. | سلك القضاة، ووظيفة الفصل في النزاعات.
+indépendance de la justice | استقلالية القضاء | fi |  | Principe selon lequel le juge n'obéit qu'à la loi, à l'abri de toute pression. | مبدأ يقضي بأن القاضي لا يخضع إلا للقانون بمنأى عن أي ضغط.
+impartialité | حياد | fm |  | Absence de parti pris, exigée de tout juge. | انعدام التحيز، وهو واجب على كل قاض.
+inamovibilité | عدم القابلية للنقل | fc |  | Garantie selon laquelle un magistrat du siège ne peut pas être déplacé sans son consentement. | ضمانة تقضي بأن قاضي الحكم لا ينقل دون موافقته.
+récusation | رد القاضي | fi |  | Procédure par laquelle une partie demande qu'un juge soupçonné de partialité soit écarté de l'affaire. | إجراء يطلب به أحد الأطراف إبعاد قاض يشتبه في عدم حياده عن القضية.
+déni de justice | إنكار العدالة | mi |  | Refus d'un juge de statuer sur une affaire dont il est saisi. | امتناع القاضي عن الفصل في قضية معروضة عليه.
+
+magistrat du siège | قاضي الحكم | mi | قضاة الحكم | Magistrat chargé de juger, par opposition au magistrat du parquet. | قاض مكلف بالفصل في القضايا، مقابل قاضي النيابة.
+magistrat du parquet | قاضي النيابة | mi | قضاة النيابة | Magistrat chargé de requérir l'application de la loi au nom de la société. | قاض مكلف بطلب تطبيق القانون باسم المجتمع.
+ministère public | النيابة العامة | mc |  | Corps de magistrats chargé de défendre l'intérêt de la société et d'exercer l'action publique. | هيئة قضاة مكلفة بالدفاع عن مصلحة المجتمع ومباشرة الدعوى العمومية. | sf=parquet
+procureur de la République | وكيل الجمهورية | mi | وكلاء الجمهورية | Magistrat qui représente le ministère public auprès du tribunal. | قاض يمثل النيابة العامة لدى المحكمة.
+procureur général | النائب العام | mc | النواب العامون | Magistrat qui dirige le ministère public auprès de la cour. | قاض يرأس النيابة العامة لدى المجلس القضائي.
+
+président du tribunal | رئيس المحكمة | mi | رؤساء المحاكم | Magistrat qui dirige le tribunal et y exerce des pouvoirs propres, notamment en référé. | قاض يسير المحكمة ويمارس فيها صلاحيات خاصة، ولا سيما في الاستعجال.
+conseiller | مستشار | mm | مستشارون | Magistrat du siège d'une cour, de la Cour suprême ou du Conseil d'État. | قاضي حكم في مجلس قضائي أو في المحكمة العليا أو في مجلس الدولة.
+assesseur | مساعد | mm | مساعدون | Personne qui siège aux côtés du président d'une juridiction, sans être nécessairement magistrat. | شخص يجلس إلى جانب رئيس الجهة القضائية وقد لا يكون قاضيا.
+juré | محلف | mm | محلفون | Citoyen appelé à siéger au tribunal criminel aux côtés des magistrats. | مواطن يدعى للجلوس في محكمة الجنايات إلى جانب القضاة.
+juge des référés | قاضي الاستعجال | mi | قضاة الاستعجال | Juge qui ordonne en urgence des mesures provisoires, sans trancher le fond du litige. | قاض يأمر على وجه الاستعجال بتدابير مؤقتة دون الفصل في أصل النزاع.
+
+avocat | محامٍ | mm | محامون | Auxiliaire de justice qui conseille ses clients, les assiste et les représente devant les juridictions. | مساعد للعدالة يقدم المشورة لموكليه ويساعدهم ويمثلهم أمام الجهات القضائية.
+barreau | منظمة المحامين | mi |  | Organisation professionnelle qui regroupe les avocats d'un même ressort. | تنظيم مهني يضم محامي دائرة اختصاص واحدة. | sf=ordre des avocats
+bâtonnier | نقيب المحامين | mi | نقباء المحامين | Avocat élu par ses confrères pour diriger le barreau et le représenter. | محام ينتخبه زملاؤه لتسيير المنظمة وتمثيلها.
+assistance judiciaire | المساعدة القضائية | fc |  | Aide accordée aux personnes dont les ressources sont insuffisantes, pour qu'elles fassent valoir leurs droits en justice sans avancer les frais. | مساعدة تمنح لمن لا تكفي موارده للمطالبة بحقوقه أمام القضاء دون تسبيق المصاريف.
+justiciable | متقاضٍ | mm | متقاضون | Personne qui peut être entendue ou appelée devant une juridiction. | شخص يمكن أن يسمع أو يدعى أمام جهة قضائية.
+
+auxiliaire de justice | مساعد العدالة | mi | مساعدو العدالة | Professionnel qui concourt au fonctionnement de la justice sans être magistrat : avocat, huissier, expert. | مهني يساهم في سير العدالة دون أن يكون قاضيا، كالمحامي والمحضر القضائي والخبير.
+officier public | ضابط عمومي | ma | ضباط عموميون | Personne à qui l'autorité publique délègue le pouvoir d'établir des actes authentiques. | شخص تفوضه السلطة العمومية صلاحية تحرير العقود الرسمية.
+greffier | أمين الضبط | mi | أمناء الضبط | Fonctionnaire qui assiste le juge, tient les registres et conserve les actes de la juridiction. | موظف يساعد القاضي ويمسك السجلات ويحفظ محررات الجهة القضائية. | sa=كاتب الضبط
+greffe | أمانة الضبط | mi |  | Service d'une juridiction qui conserve les dossiers et délivre les copies des décisions. | مصلحة في الجهة القضائية تحفظ الملفات وتسلم نسخ الأحكام. | sa=كتابة الضبط
+huissier de justice | محضر قضائي | ma | محضرون قضائيون | Officier public chargé de signifier les actes et d'exécuter les décisions de justice. | ضابط عمومي مكلف بتبليغ المحررات وتنفيذ الأحكام القضائية.
+notaire | موثق | mm | موثقون | Officier public chargé de recevoir les actes auxquels les parties doivent ou veulent donner la forme authentique. | ضابط عمومي مكلف بتلقي العقود التي يوجب القانون أو يرغب الأطراف في إعطائها الصبغة الرسمية.
+commissaire-priseur | محافظ البيع بالمزايدة | mc |  | Officier public chargé d'estimer les biens meubles et de les vendre aux enchères publiques. | ضابط عمومي مكلف بتقييم المنقولات وبيعها بالمزاد العلني.
+expert judiciaire | خبير قضائي | ma | خبراء قضائيون | Technicien désigné par le juge pour donner un avis sur une question de fait. | فني يعينه القاضي لإبداء رأيه في مسألة واقعية.
+traducteur-interprète officiel | مترجم رسمي | ma | مترجمون رسميون | Officier public habilité à traduire des documents et à servir d'interprète devant les juridictions. | ضابط عمومي مؤهل لترجمة الوثائق وللترجمة الشفوية أمام الجهات القضائية. | sa=ترجمان رسمي | pf=traducteurs-interprètes officiels
