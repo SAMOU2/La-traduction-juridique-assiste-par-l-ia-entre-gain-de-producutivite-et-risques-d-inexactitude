@@ -1,0 +1,76 @@
+## Sources du droit ## CONSTITUTION+CORNU
+constitution | دستور | fm | دساتير | Loi fondamentale de l'État : elle organise les pouvoirs publics et garantit les droits et libertés. | القانون الأساسي للدولة، ينظم السلطات العمومية ويضمن الحقوق والحريات.
+loi organique | قانون عضوي | fa | قوانين عضوية | Loi qui précise l'organisation et le fonctionnement des pouvoirs publics dans les matières fixées par la Constitution ; elle est adoptée selon une procédure renforcée. | قانون يحدد تنظيم السلطات العمومية وسيرها في المجالات التي عينها الدستور، ويصادق عليه وفق إجراءات مشددة.
+loi ordinaire | قانون عادي | fa | قوانين عادية | Loi adoptée par le Parlement selon la procédure législative normale. | قانون يصادق عليه البرلمان وفق الإجراءات التشريعية العادية.
+législation | تشريع | fm | تشريعات | Ensemble des lois en vigueur dans un État ou dans une matière. | مجموع القوانين السارية في دولة أو في مادة معينة.
+réglementation | تنظيم | fm | تنظيمات | Ensemble des textes de portée générale pris par le pouvoir exécutif (décrets, arrêtés). | مجموع النصوص ذات الطابع العام التي تصدرها السلطة التنفيذية، كالمراسيم والقرارات.
+
+décret | مرسوم | mm | مراسيم | Acte réglementaire ou individuel signé par le président de la République ou par le Premier ministre. | نص تنظيمي أو فردي يوقعه رئيس الجمهورية أو الوزير الأول.
+décret présidentiel | مرسوم رئاسي | ma | مراسيم رئاسية | Décret signé par le président de la République. | مرسوم يوقعه رئيس الجمهورية.
+décret exécutif | مرسوم تنفيذي | ma | مراسيم تنفيذية | Décret signé par le Premier ministre pour l'application des lois et des règlements. | مرسوم يوقعه الوزير الأول لتطبيق القوانين والتنظيمات.
+arrêté ministériel | قرار وزاري | ma | قرارات وزارية | Décision réglementaire ou individuelle prise par un ministre. | قرار تنظيمي أو فردي يتخذه وزير.
+arrêté interministériel | قرار وزاري مشترك | ma | قرارات وزارية مشتركة | Arrêté signé conjointement par plusieurs ministres. | قرار يوقعه عدة وزراء بصفة مشتركة.
+circulaire | منشور | fm | مناشير | Instruction écrite adressée par une autorité administrative à ses services pour l'application des textes. | تعليمة مكتوبة توجهها سلطة إدارية إلى مصالحها لتطبيق النصوص. | sa=تعليمة
+
+code | تقنين | mm | تقنينات | Recueil organisé des règles de droit applicables à une matière. | مجموعة منظمة من القواعد القانونية المطبقة في مادة معينة. | sa=مدونة
+texte | نص | mm | نصوص | Écrit qui énonce une règle de droit ; par extension, la loi ou le règlement lui-même. | محرر يتضمن قاعدة قانونية، ويطلق أيضا على القانون أو التنظيم نفسه.
+disposition | حكم | fm | أحكام | Règle énoncée par un article ou par un alinéa d'un texte. | قاعدة تنص عليها مادة أو فقرة من نص قانوني.
+alinéa | فقرة | mf | فقرات | Subdivision d'un article, qui commence à la ligne. | جزء من المادة يبدأ بسطر جديد.
+préambule | ديباجة | mf | ديباجات | Texte placé en tête d'une constitution ou d'un traité, qui en expose les principes et les objectifs. | نص يتصدر الدستور أو المعاهدة ويعرض مبادئه وأهدافه.
+
+projet de loi | مشروع القانون | mi | مشاريع القوانين | Texte de loi préparé par le Gouvernement et soumis au Parlement. | نص قانوني تعده الحكومة وتعرضه على البرلمان.
+proposition de loi | اقتراح القانون | fi | اقتراحات القوانين | Texte de loi déposé à l'initiative de membres du Parlement. | نص قانوني يبادر به أعضاء في البرلمان.
+exposé des motifs | عرض الأسباب | mi |  | Texte qui accompagne un projet de loi et en explique les raisons et les objectifs. | نص يرافق مشروع القانون ويشرح دوافعه وأهدافه.
+amendement | تعديل | mm | تعديلات | Modification proposée ou apportée à un texte en discussion ou en vigueur. | تغيير يقترح إدخاله أو يدخل على نص قيد المناقشة أو ساري المفعول.
+promulgation | إصدار | fm |  | Acte par lequel le chef de l'État constate l'adoption d'une loi et ordonne son exécution. | عمل يثبت به رئيس الدولة المصادقة على القانون ويأمر بتنفيذه.
+publication | نشر | fm |  | Fait de porter un texte à la connaissance du public, notamment par son insertion au Journal officiel. | إعلام الجمهور بالنص، ولا سيما بإدراجه في الجريدة الرسمية.
+
+entrée en vigueur | دخول حيز التنفيذ | fi |  | Moment à partir duquel un texte devient obligatoire. | الوقت الذي يصبح فيه النص ملزما.
+abrogation | إلغاء | fm |  | Suppression d'une règle de droit pour l'avenir, par une règle nouvelle. | إزالة قاعدة قانونية بالنسبة إلى المستقبل بموجب قاعدة جديدة.
+rétroactivité | رجعية | ff |  | Application d'une règle à des faits antérieurs à son entrée en vigueur. | تطبيق القاعدة على وقائع سابقة لدخولها حيز التنفيذ.
+non-rétroactivité de la loi | عدم رجعية القانون | fi |  | Principe selon lequel la loi ne dispose que pour l'avenir. | مبدأ يقضي بأن القانون لا يسري إلا على المستقبل.
+dérogation | استثناء | fm | استثناءات | Exception apportée à une règle dans un cas particulier. | خروج عن القاعدة في حالة خاصة.
+
+source du droit | مصدر القانون | fi | مصادر القانون | Origine de la règle de droit : loi, principes du droit musulman, coutume, jurisprudence. | الأصل الذي تستمد منه القاعدة القانونية، كالتشريع ومبادئ الشريعة الإسلامية والعرف والاجتهاد القضائي.
+droit musulman | الشريعة الإسلامية | mc |  | Ensemble des règles tirées du Coran, de la Sunna et des autres sources du fiqh ; selon le Code civil, le juge y recourt en l'absence de disposition légale. | مجموع الأحكام المستمدة من القرآن والسنة وسائر مصادر الفقه، ويحكم القاضي بمقتضاها عند انعدام النص التشريعي وفقا للقانون المدني.
+jurisprudence | اجتهاد قضائي | fa |  | Ensemble des décisions rendues par les juridictions ; solution qui s'en dégage sur une question de droit. | مجموع الأحكام والقرارات الصادرة عن الجهات القضائية، والحل المستخلص منها في مسألة قانونية.
+doctrine | فقه | fm |  | Ensemble des opinions des auteurs qui étudient et commentent le droit. | مجموع آراء المؤلفين الذين يدرسون القانون ويعلقون عليه.
+principes généraux du droit | المبادئ العامة للقانون | mcp |  | Règles non écrites que le juge dégage et qui s'imposent à l'administration ou complètent la loi. | قواعد غير مكتوبة يستخلصها القاضي، تلتزم بها الإدارة أو تكمل القانون.
+
+règle | قاعدة | ff | قواعد | Prescription générale qui s'impose à ceux qu'elle vise. | حكم عام يلزم المخاطبين به. | sf=norme
+règle de droit | قاعدة قانونية | fa | قواعد قانونية | Règle de conduite générale, abstraite et obligatoire, dont l'autorité publique assure le respect. | قاعدة سلوك عامة ومجردة وملزمة، تكفل السلطة العامة احترامها.
+règle impérative | قاعدة آمرة | fa | قواعد آمرة | Règle à laquelle les particuliers ne peuvent pas déroger par un accord. | قاعدة لا يجوز للأفراد الاتفاق على مخالفتها.
+règle supplétive | قاعدة مكملة | fa | قواعد مكملة | Règle qui ne s'applique que si les parties n'ont rien prévu d'autre. | قاعدة لا تطبق إلا إذا لم يتفق الأطراف على خلافها.
+principe | مبدأ | mm | مبادئ | Règle générale dont découlent d'autres règles et qui guide leur interprétation. | قاعدة عامة تتفرع عنها قواعد أخرى ويسترشد بها في تفسيرها.
+hiérarchie des normes | تدرج القواعد القانونية | fi |  | Classement des règles de droit, dans lequel chaque règle doit respecter celles qui lui sont supérieures. | ترتيب القواعد القانونية بحيث تخضع كل قاعدة لما يعلوها.
+
+ordre public | النظام العام | mc |  | Ensemble des règles impératives qui protègent les intérêts essentiels de la société et auxquelles aucune convention ne peut déroger. | مجموع القواعد الآمرة التي تحمي المصالح الأساسية للمجتمع ولا يجوز الاتفاق على مخالفتها.
+bonnes mœurs | الآداب العامة | fcp |  | Règles de morale sociale tenues pour essentielles, auxquelles les conventions ne peuvent pas déroger. | قواعد الأخلاق الاجتماعية الأساسية التي لا يجوز الاتفاق على مخالفتها.
+légalité | شرعية | ff |  | Conformité à la loi ; principe selon lequel les autorités publiques doivent respecter le droit. | المطابقة للقانون، ومبدأ يوجب على السلطات العامة احترام القانون. | sa=مشروعية
+sécurité juridique | الأمن القانوني | fc |  | Principe selon lequel le droit doit être accessible, stable et prévisible. | مبدأ يقضي بأن يكون القانون ميسور المعرفة ومستقرا ويمكن توقعه.
+État de droit | دولة القانون | mi |  | État dans lequel les pouvoirs publics sont eux-mêmes soumis au droit, sous le contrôle du juge. | دولة تخضع فيها السلطات العمومية نفسها للقانون تحت رقابة القضاء.
+sanction | جزاء | fm | جزاءات | Conséquence que le droit attache à la violation d'une règle : peine, nullité, réparation. | الأثر الذي يرتبه القانون على مخالفة القاعدة، كالعقوبة أو البطلان أو التعويض.
+
+interprétation | تفسير | fm | تفسيرات | Opération qui consiste à préciser le sens et la portée d'un texte ou d'un acte. | عملية تحديد معنى النص أو التصرف ونطاقه.
+qualification | تكييف | fm |  | Opération qui consiste à ranger un fait ou un acte dans une catégorie juridique pour lui appliquer le régime correspondant. | عملية إدراج واقعة أو تصرف ضمن فئة قانونية لتطبيق أحكامها عليه.
+analogie | قياس | fm |  | Raisonnement qui étend une règle à un cas voisin que le texte n'a pas prévu. | استدلال يمد حكم قاعدة إلى حالة مشابهة لم يرد بشأنها نص.
+vide juridique | فراغ قانوني | ma |  | Absence de règle applicable à une situation donnée. | انعدام قاعدة تطبق على حالة معينة.
+
+droit positif | القانون الوضعي | mc |  | Ensemble des règles de droit en vigueur dans un État à un moment donné. | مجموع القواعد القانونية السارية في دولة معينة في وقت معين.
+droit naturel | القانون الطبيعي | mc |  | Ensemble de principes de justice tenus pour supérieurs aux lois écrites. | مجموعة مبادئ عدل تعد أسمى من القوانين المكتوبة.
+droit comparé | القانون المقارن | mc |  | Étude comparative des systèmes juridiques de différents pays. | الدراسة المقارنة للأنظمة القانونية لمختلف البلدان.
+
+droit public | القانون العام | mc |  | Branche du droit qui régit l'organisation de l'État et ses rapports avec les particuliers. | فرع القانون الذي ينظم الدولة وعلاقاتها بالأفراد.
+droit privé | القانون الخاص | mc |  | Branche du droit qui régit les rapports entre les particuliers. | فرع القانون الذي ينظم العلاقات بين الأفراد.
+droit civil | القانون المدني | mc |  | Branche du droit privé qui régit les personnes, les biens, les obligations et les contrats. | فرع من القانون الخاص ينظم الأشخاص والأموال والالتزامات والعقود.
+droit pénal | القانون الجنائي | mc |  | Branche du droit qui définit les infractions et fixe les peines applicables. | فرع القانون الذي يحدد الجرائم ويقرر العقوبات المطبقة عليها.
+droit commercial | القانون التجاري | mc |  | Branche du droit privé applicable aux commerçants et aux actes de commerce. | فرع من القانون الخاص يطبق على التجار وعلى الأعمال التجارية.
+droit administratif | القانون الإداري | mc |  | Branche du droit public qui régit l'organisation et l'activité de l'administration. | فرع من القانون العام ينظم الإدارة ونشاطها.
+droit constitutionnel | القانون الدستوري | mc |  | Branche du droit public qui étudie la Constitution, les institutions politiques et les libertés. | فرع من القانون العام يدرس الدستور والمؤسسات السياسية والحريات.
+
+convention | اتفاقية | ff | اتفاقيات | Accord de volontés destiné à produire des effets de droit ; désigne aussi un traité international. | توافق إرادات يقصد به إحداث آثار قانونية، ويطلق أيضا على المعاهدة الدولية.
+accord | اتفاق | mm | اتفاقات | Rencontre des volontés de deux ou plusieurs personnes sur un même objet. | تلاقي إرادتي شخصين أو أكثر على موضوع واحد.
+acte juridique | تصرف قانوني | ma | تصرفات قانونية | Manifestation de volonté destinée à produire des effets de droit. | تعبير عن الإرادة يقصد به إحداث آثار قانونية.
+fait juridique | واقعة قانونية | ma | وقائع قانونية | Événement, voulu ou non, auquel la loi attache des effets de droit. | حدث إرادي أو غير إرادي يرتب عليه القانون آثارا قانونية.
+délai | أجل | mm | آجال | Temps accordé par la loi, par le juge ou par le contrat pour accomplir un acte. | المدة التي يمنحها القانون أو القاضي أو العقد للقيام بعمل. | sa=ميعاد، مهلة
+formalité | شكلية | ff | شكليات | Opération exigée par la loi pour la validité, la preuve ou la publicité d'un acte. | إجراء يوجبه القانون لصحة التصرف أو لإثباته أو لشهره.

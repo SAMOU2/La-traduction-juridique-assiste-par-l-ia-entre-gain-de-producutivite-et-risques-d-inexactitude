@@ -1,0 +1,46 @@
+## Droit civil | Personnes ## CIVIL
+personne | شخص | fm | أشخاص | Être titulaire de droits et d'obligations : personne physique ou personne morale. | كائن يتمتع بالحقوق ويتحمل الالتزامات، وهو الشخص الطبيعي أو الشخص المعنوي.
+personne physique | شخص طبيعي | fa | أشخاص طبيعيون | Être humain, titulaire de droits et d'obligations. | الإنسان باعتباره صاحب حقوق والتزامات.
+personne morale | شخص معنوي | fa | أشخاص معنوية | Groupement doté de la personnalité juridique : État, société, association. | مجموعة تتمتع بالشخصية القانونية، كالدولة والشركة والجمعية. | sa=شخص اعتباري
+personnalité juridique | الشخصية القانونية | fc |  | Aptitude à être titulaire de droits et d'obligations. | صلاحية اكتساب الحقوق وتحمل الالتزامات.
+patrimoine | ذمة مالية | ma | ذمم مالية | Ensemble des biens et des dettes d'une personne, considéré comme un tout. | مجموع ما للشخص من أموال وما عليه من ديون، باعتباره وحدة.
+représentant légal | ممثل قانوني | ma | ممثلون قانونيون | Personne que la loi charge d'agir au nom d'un incapable ou d'une personne morale. | شخص يكلفه القانون بالتصرف باسم عديم الأهلية أو الشخص المعنوي.
+association | جمعية | ff | جمعيات | Groupement de personnes réunies dans un but non lucratif. | تجمع أشخاص يجتمعون لغرض غير مربح.
+
+capacité de jouissance | أهلية الوجوب | fi |  | Aptitude à être titulaire de droits. | صلاحية الشخص لاكتساب الحقوق.
+capacité d'exercice | أهلية الأداء | fi |  | Aptitude à exercer soi-même ses droits et à s'obliger. | صلاحية الشخص لمباشرة حقوقه بنفسه وللالتزام.
+incapacité | عدم الأهلية | fi |  | État d'une personne que la loi prive de la jouissance ou de l'exercice de certains droits. | حالة الشخص الذي يحرمه القانون من التمتع ببعض الحقوق أو من مباشرتها.
+incapable | عديم الأهلية | mi | عديمو الأهلية | Personne que la loi prive de l'exercice de ses droits en raison de son âge ou de l'altération de ses facultés. | شخص يحرمه القانون من مباشرة حقوقه بسبب سنه أو اختلال قواه العقلية.
+discernement | تمييز | mm |  | Aptitude à comprendre la portée de ses actes. | القدرة على إدراك نتائج الأفعال.
+
+majorité | رشد | fm |  | Âge à partir duquel une personne est pleinement capable d'exercer ses droits : dix-neuf ans révolus selon le Code civil algérien. | السن التي يصبح الشخص ببلوغها كامل الأهلية لمباشرة حقوقه، وهي تسع عشرة سنة كاملة وفقا للقانون المدني الجزائري. | sa=سن الرشد
+majeur | راشد | mm | راشدون | Personne qui a atteint l'âge de la majorité. | شخص بلغ سن الرشد.
+mineur | قاصر | mm | قصر | Personne qui n'a pas atteint l'âge de la majorité. | شخص لم يبلغ سن الرشد.
+émancipation | ترشيد | fm |  | Acte qui confère à un mineur la capacité d'accomplir certains actes avant sa majorité. | تصرف يمنح القاصر أهلية القيام ببعض التصرفات قبل بلوغه سن الرشد.
+
+nom de famille | لقب | mm | ألقاب | Nom qui désigne une personne avec son prénom et qu'elle tient de sa famille. | الاسم العائلي الذي يعرف به الشخص مع اسمه الشخصي.
+domicile | موطن | mm |  | Lieu où une personne a sa résidence principale. | المحل الذي يوجد فيه السكن الرئيسي للشخص.
+domicile élu | موطن مختار | ma |  | Domicile choisi pour l'exécution d'un acte ou pour les besoins d'une procédure. | موطن يختار لتنفيذ تصرف قانوني أو لحاجات إجراءات معينة.
+résidence | إقامة | ff |  | Lieu où une personne demeure de fait. | المكان الذي يقيم فيه الشخص فعلا.
+
+droits de la personnalité | الحقوق الملازمة للشخصية | mcp |  | Droits attachés à toute personne : droit au nom, à l'honneur, à l'image, au respect de la vie privée. | حقوق لصيقة بكل شخص، كالحق في الاسم والشرف والصورة واحترام الحياة الخاصة.
+vie privée | الحياة الخاصة | fc |  | Part de l'existence d'une personne qu'elle peut tenir à l'abri des regards et des intrusions. | مجال من حياة الشخص يحق له صونه من الاطلاع والتدخل.
+
+## Droit civil | Personnes | État civil ## ETATCIVIL
+état civil | الحالة المدنية | mc |  | Situation de la personne dans la famille et dans la société ; service public qui enregistre les naissances, les mariages et les décès. | وضعية الشخص في الأسرة والمجتمع، والمرفق العمومي الذي يسجل الولادات وعقود الزواج والوفيات.
+officier de l'état civil | ضابط الحالة المدنية | mi | ضباط الحالة المدنية | Autorité chargée de dresser et de conserver les actes de l'état civil. | السلطة المكلفة بتحرير عقود الحالة المدنية وحفظها.
+acte de naissance | شهادة الميلاد | mi | شهادات الميلاد | Acte de l'état civil qui constate la naissance d'une personne. | وثيقة من وثائق الحالة المدنية تثبت ولادة شخص. | sa=عقد الميلاد
+acte de décès | شهادة الوفاة | mi | شهادات الوفاة | Acte de l'état civil qui constate le décès d'une personne. | وثيقة من وثائق الحالة المدنية تثبت وفاة شخص. | sa=عقد الوفاة
+livret de famille | الدفتر العائلي | mc |  | Document remis aux époux, qui réunit les extraits des actes de l'état civil de la famille. | وثيقة تسلم للزوجين وتجمع مستخرجات عقود الحالة المدنية للأسرة.
+
+naissance | ولادة | ff | ولادات | Venue au monde d'un enfant ; point de départ de la personnalité juridique. | مجيء الولد إلى الحياة، وهي بداية الشخصية القانونية.
+décès | وفاة | mf | وفيات | Mort d'une personne, qui met fin à sa personnalité juridique. | موت الشخص، وبه تنتهي شخصيته القانونية.
+disparu | مفقود | mm | مفقودون | Personne dont on ignore où elle se trouve et si elle est en vie, et qu'un jugement a déclarée telle. | شخص لا يعرف مكانه ولا حياته من مماته، ويعتبر مفقودا بحكم.
+absent | غائب | mm | غائبون | Personne qu'un cas de force majeure empêche de revenir à son domicile ou de gérer ses affaires. | شخص منعته ظروف قاهرة من الرجوع إلى محل إقامته أو من إدارة شؤونه.
+
+## Droit de la famille | Protection des incapables ## FAMILLE
+tutelle | ولاية | ff |  | Charge de protéger la personne et les biens d'un mineur ou d'un incapable. | مهمة حماية القاصر أو عديم الأهلية في نفسه وماله.
+tuteur | ولي | mm | أولياء | Personne que la loi charge de représenter un mineur et d'administrer ses biens : le père, puis la mère. | الشخص الذي يكلفه القانون بتمثيل القاصر وإدارة أمواله، وهو الأب ثم الأم.
+tuteur testamentaire | وصي | mm | أوصياء | Personne désignée par le père ou par le grand-père pour veiller sur l'enfant mineur après son décès. | شخص يعينه الأب أو الجد لرعاية الولد القاصر بعد وفاته.
+curateur | مقدم | mm | مقدمون | Personne désignée par le tribunal pour représenter un incapable qui n'a ni tuteur ni tuteur testamentaire. | شخص تعينه المحكمة لتمثيل عديم الأهلية الذي ليس له ولي ولا وصي.
+interdiction judiciaire | حجر | fm |  | Mesure judiciaire qui prive une personne majeure de l'exercice de ses droits en raison de l'altération de ses facultés mentales. | تدبير قضائي يحرم الراشد من مباشرة حقوقه بسبب اختلال قواه العقلية.

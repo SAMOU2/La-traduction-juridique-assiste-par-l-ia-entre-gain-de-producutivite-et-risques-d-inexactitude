@@ -1,0 +1,64 @@
+## Droit constitutionnel ## CONSTITUTION
+État | دولة | mf | دول | Personne morale de droit public qui exerce la souveraineté sur un territoire et sur une population. | شخص معنوي عام يمارس السيادة على إقليم وشعب.
+souveraineté | سيادة | ff |  | Pouvoir suprême de l'État, qui n'est soumis à aucun autre ; la souveraineté nationale appartient au peuple. | السلطة العليا للدولة التي لا تخضع لأي سلطة أخرى، والسيادة الوطنية ملك للشعب.
+nation | أمة | ff | أمم | Communauté humaine unie par une histoire commune et par la volonté de vivre ensemble, que l'État représente. | جماعة بشرية يجمعها تاريخ مشترك وإرادة العيش معا، وتمثلها الدولة.
+peuple | شعب | mm | شعوب | Ensemble des citoyens d'un État, titulaire de la souveraineté. | مجموع مواطني الدولة، وهو صاحب السيادة.
+territoire | إقليم | mm | أقاليم | Espace terrestre, maritime et aérien sur lequel l'État exerce sa souveraineté. | المجال البري والبحري والجوي الذي تمارس عليه الدولة سيادتها.
+république | جمهورية | ff | جمهوريات | Forme d'État dans laquelle le chef de l'État est élu pour une durée limitée. | شكل للدولة ينتخب فيه رئيسها لمدة محدودة.
+démocratie | ديمقراطية | ff |  | Régime politique dans lequel le pouvoir appartient au peuple, qui l'exerce directement ou par ses représentants. | نظام سياسي تكون فيه السلطة للشعب، يمارسها مباشرة أو بواسطة ممثليه.
+
+citoyen | مواطن | mm | مواطنون | Personne qui a la nationalité d'un État et y jouit des droits civiques et politiques. | شخص يحمل جنسية الدولة ويتمتع فيها بالحقوق المدنية والسياسية.
+citoyenneté | مواطنة | ff |  | Qualité de citoyen, avec les droits et les devoirs qui s'y attachent. | صفة المواطن وما يرتبط بها من حقوق وواجبات.
+
+séparation des pouvoirs | الفصل بين السلطات | fc |  | Principe qui confie les fonctions législative, exécutive et judiciaire à des organes distincts. | مبدأ يقضي بإسناد الوظائف التشريعية والتنفيذية والقضائية إلى هيئات مستقلة عن بعضها.
+pouvoir législatif | السلطة التشريعية | mc |  | Pouvoir d'élaborer et de voter la loi, exercé par le Parlement. | سلطة إعداد القانون والتصويت عليه، ويمارسها البرلمان.
+pouvoir exécutif | السلطة التنفيذية | mc |  | Pouvoir chargé d'exécuter les lois et de diriger l'administration. | السلطة المكلفة بتنفيذ القوانين وتسيير الإدارة.
+pouvoir judiciaire | السلطة القضائية | mc |  | Pouvoir de trancher les litiges en appliquant le droit, exercé par des juges indépendants. | سلطة الفصل في النزاعات بتطبيق القانون، ويمارسها قضاة مستقلون.
+pouvoir réglementaire | السلطة التنظيمية | mc |  | Pouvoir d'édicter des règles générales par décret ou par arrêté. | سلطة وضع قواعد عامة بموجب مراسيم أو قرارات.
+pouvoir constituant | السلطة التأسيسية | mc |  | Pouvoir d'établir ou de réviser la Constitution. | سلطة وضع الدستور أو تعديله.
+
+président de la République | رئيس الجمهورية | mi | رؤساء الجمهورية | Chef de l'État, élu au suffrage universel direct ; il incarne l'unité de la Nation et veille au respect de la Constitution. | رئيس الدولة المنتخب بالاقتراع العام المباشر، يجسد وحدة الأمة ويسهر على احترام الدستور.
+chef de l'État | رئيس الدولة | mi | رؤساء الدول | Personne qui occupe la plus haute fonction de l'État et le représente. | الشخص الذي يتولى أعلى منصب في الدولة ويمثلها.
+Premier ministre | الوزير الأول | mc |  | Membre du Gouvernement qui en dirige et en coordonne l'action. | عضو الحكومة الذي يوجه عملها وينسقه.
+gouvernement | حكومة | mf | حكومات | Organe collégial composé du Premier ministre et des ministres, chargé de conduire la politique de l'État. | هيئة جماعية تتكون من الوزير الأول والوزراء، مكلفة بتسيير سياسة الدولة.
+ministre | وزير | mm | وزراء | Membre du Gouvernement placé à la tête d'un département ministériel. | عضو في الحكومة يتولى إدارة قطاع وزاري.
+ministère | وزارة | mf | وزارات | Ensemble des services de l'État placés sous l'autorité d'un ministre. | مجموع مصالح الدولة الموضوعة تحت سلطة وزير.
+Conseil des ministres | مجلس الوزراء | mi |  | Réunion des membres du Gouvernement sous la présidence du président de la République. | اجتماع أعضاء الحكومة برئاسة رئيس الجمهورية.
+
+Parlement | برلمان | mm | برلمانات | Institution qui vote la loi et contrôle l'action du Gouvernement ; en Algérie, il comprend deux chambres. | مؤسسة تصوت على القانون وتراقب عمل الحكومة، وتتكون في الجزائر من غرفتين.
+Assemblée populaire nationale | المجلس الشعبي الوطني | fc |  | Première chambre du Parlement algérien, dont les députés sont élus au suffrage universel direct. | الغرفة الأولى للبرلمان الجزائري، ينتخب نوابها بالاقتراع العام المباشر.
+Conseil de la Nation | مجلس الأمة | mi |  | Seconde chambre du Parlement algérien. | الغرفة الثانية للبرلمان الجزائري.
+député | نائب | mm | نواب | Membre élu de l'Assemblée populaire nationale. | عضو منتخب في المجلس الشعبي الوطني.
+session | دورة | ff | دورات | Période pendant laquelle une assemblée se réunit pour délibérer. | الفترة التي يجتمع خلالها مجلس للتداول.
+immunité parlementaire | حصانة برلمانية | fa |  | Protection qui met le parlementaire à l'abri des poursuites pour les actes liés à l'exercice de son mandat. | حماية تقي عضو البرلمان من المتابعة عن الأعمال المرتبطة بممارسة عهدته.
+motion de censure | ملتمس الرقابة | fi |  | Texte par lequel les députés mettent en cause la responsabilité du Gouvernement ; son adoption entraîne la démission de celui-ci. | نص يثير به النواب مسؤولية الحكومة، ويترتب على المصادقة عليه استقالتها.
+
+vote | تصويت | mm |  | Acte par lequel un électeur ou un membre d'une assemblée exprime son choix. | عمل يعبر به الناخب أو عضو المجلس عن اختياره.
+quorum | نصاب | mm |  | Nombre minimal de membres présents exigé pour qu'une assemblée délibère valablement. | الحد الأدنى من الأعضاء الحاضرين اللازم لصحة مداولات المجلس.
+majorité | أغلبية | ff |  | Nombre de voix supérieur à celui des autres, qui emporte la décision ; groupe qui le réunit. | عدد الأصوات الذي يفوق غيره فيحسم القرار، والمجموعة التي تحوزه.
+majorité absolue | أغلبية مطلقة | fa |  | Plus de la moitié des suffrages exprimés ou du nombre des membres. | أكثر من نصف الأصوات المعبر عنها أو من عدد الأعضاء.
+
+élection | انتخاب | fm | انتخابات | Choix, par un vote, de la personne chargée d'exercer une fonction. | اختيار شخص لتولي وظيفة عن طريق التصويت.
+électeur | ناخب | mm | ناخبون | Personne qui a le droit de vote et qui est inscrite sur une liste électorale. | شخص له حق التصويت ومسجل في قائمة انتخابية.
+candidat | مترشح | mm | مترشحون | Personne qui se présente à une élection, à un concours ou à l'attribution d'un marché. | شخص يتقدم لانتخاب أو لمسابقة أو لنيل صفقة.
+liste électorale | قائمة انتخابية | fa | قوائم انتخابية | Liste officielle des électeurs d'une commune. | القائمة الرسمية لناخبي بلدية.
+suffrage universel | الاقتراع العام | mc |  | Système dans lequel tous les citoyens majeurs ont le droit de vote. | نظام يكون فيه حق التصويت لجميع المواطنين الراشدين.
+scrutin | اقتراع | mm |  | Ensemble des opérations de vote ; mode de calcul des résultats d'une élection. | مجموع عمليات التصويت، وطريقة حساب نتائج الانتخاب.
+référendum | استفتاء | mm | استفتاءات | Vote par lequel le peuple approuve ou rejette directement un texte. | تصويت يوافق به الشعب مباشرة على نص أو يرفضه.
+mandat électif | عهدة انتخابية | ma | عهدات انتخابية | Fonction que les électeurs confient à un élu pour une durée déterminée. | مهمة يسندها الناخبون إلى منتخب لمدة محددة.
+parti politique | حزب سياسي | ma | أحزاب سياسية | Groupement de citoyens constitué pour participer à la vie politique et accéder à l'exercice du pouvoir par les élections. | تجمع مواطنين يؤسس للمشاركة في الحياة السياسية والوصول إلى ممارسة السلطة عن طريق الانتخابات.
+Autorité nationale indépendante des élections | السلطة الوطنية المستقلة للانتخابات | fc |  | Institution chargée d'organiser et de surveiller les opérations électorales en Algérie. | مؤسسة مكلفة بتنظيم العمليات الانتخابية ومراقبتها في الجزائر.
+
+Cour constitutionnelle | المحكمة الدستورية | fc |  | Institution indépendante chargée de veiller au respect de la Constitution. | مؤسسة مستقلة مكلفة بضمان احترام الدستور.
+contrôle de constitutionnalité | الرقابة على دستورية القوانين | mc |  | Vérification de la conformité des lois et des traités à la Constitution. | التحقق من مطابقة القوانين والمعاهدات للدستور.
+exception d'inconstitutionnalité | الدفع بعدم الدستورية | fc |  | Moyen par lequel une partie à un procès soutient que la disposition dont dépend l'issue du litige porte atteinte aux droits et libertés garantis par la Constitution. | وسيلة يدعي بها أحد أطراف المحاكمة أن الحكم الذي يتوقف عليه مآل النزاع ينتهك الحقوق والحريات التي يضمنها الدستور.
+constitutionnalité | دستورية | ff |  | Conformité d'un texte à la Constitution. | مطابقة النص للدستور.
+révision constitutionnelle | تعديل دستوري | fa | تعديلات دستورية | Modification du texte de la Constitution selon la procédure qu'elle prévoit. | تغيير نص الدستور وفق الإجراءات التي يحددها.
+saisine | إخطار | fm |  | Acte par lequel une autorité ou une personne porte une question devant un organe compétent. | عمل تعرض به سلطة أو شخص مسألة على هيئة مختصة.
+
+état d'urgence | حالة الطوارئ | mi |  | Régime d'exception qui étend les pouvoirs des autorités en cas de nécessité impérieuse. | نظام استثنائي يوسع صلاحيات السلطات عند الضرورة الملحة.
+état de siège | حالة الحصار | mi |  | Régime d'exception qui transfère certains pouvoirs de police à l'autorité militaire. | نظام استثنائي تنقل بموجبه بعض صلاحيات الشرطة إلى السلطة العسكرية.
+état d'exception | الحالة الاستثنائية | mc |  | Régime décidé par le président de la République lorsque le pays est menacé d'un péril imminent. | نظام يقرره رئيس الجمهورية إذا كانت البلاد مهددة بخطر داهم.
+
+Cour des comptes | مجلس المحاسبة | fi |  | Institution supérieure de contrôle des finances de l'État, des collectivités territoriales et des services publics. | المؤسسة العليا للرقابة على أموال الدولة والجماعات المحلية والمرافق العمومية.
+Conseil supérieur de la magistrature | المجلس الأعلى للقضاء | mc |  | Organe qui garantit l'indépendance de la justice et gère la carrière des magistrats. | هيئة تضمن استقلالية القضاء وتسير المسار المهني للقضاة.

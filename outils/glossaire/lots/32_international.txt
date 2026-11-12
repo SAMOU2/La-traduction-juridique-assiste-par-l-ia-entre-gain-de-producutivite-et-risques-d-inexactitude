@@ -1,0 +1,55 @@
+## Droit international public ## DIP
+droit international public | القانون الدولي العام | mc |  | Ensemble des règles qui régissent les relations entre les États et les organisations internationales. | مجموع القواعد التي تحكم العلاقات بين الدول والمنظمات الدولية.
+traité | معاهدة | mf | معاهدات | Accord écrit conclu entre des États et régi par le droit international. | اتفاق مكتوب يبرم بين دول ويخضع للقانون الدولي.
+convention internationale | اتفاقية دولية | fa | اتفاقيات دولية | Traité qui fixe des règles communes à plusieurs États. | معاهدة تضع قواعد مشتركة بين عدة دول.
+protocole | بروتوكول | mm | بروتوكولات | Accord qui complète ou modifie un traité. | اتفاق يكمل معاهدة أو يعدلها.
+
+ratification | تصديق | fm |  | Acte par lequel un État confirme son consentement à être lié par un traité. | إجراء تؤكد به الدولة رضاها بالالتزام بمعاهدة.
+adhésion | انضمام | fm |  | Acte par lequel un État devient partie à un traité qu'il n'a pas signé. | إجراء تصبح به الدولة طرفا في معاهدة لم توقع عليها.
+réserve | تحفظ | fm | تحفظات | Déclaration par laquelle un État exclut ou modifie l'effet de certaines dispositions d'un traité à son égard. | إعلان تستبعد به الدولة أثر بعض أحكام المعاهدة أو تعدله بالنسبة إليها.
+
+organisation internationale | منظمة دولية | fa | منظمات دولية | Groupement d'États créé par un traité et doté d'organes permanents. | تجمع دول ينشأ بمعاهدة وله أجهزة دائمة.
+Organisation des Nations Unies | منظمة الأمم المتحدة | fi |  | Organisation internationale fondée en 1945 pour maintenir la paix et la sécurité internationales. | منظمة دولية تأسست سنة 1945 لحفظ السلم والأمن الدوليين. | sf=ONU, Nations Unies
+Conseil de sécurité | مجلس الأمن | mi |  | Organe des Nations Unies responsable du maintien de la paix et de la sécurité internationales. | جهاز في الأمم المتحدة مسؤول عن حفظ السلم والأمن الدوليين.
+Cour internationale de Justice | محكمة العدل الدولية | fi |  | Organe judiciaire principal des Nations Unies, qui règle les différends entre États. | الجهاز القضائي الرئيسي للأمم المتحدة، يفصل في النزاعات بين الدول.
+
+## Droit international public | Relations diplomatiques ## DIPLOMATIE
+immunité diplomatique | حصانة دبلوماسية | fa |  | Protection qui soustrait les agents diplomatiques à la juridiction de l'État où ils exercent. | حماية تعفي المبعوثين الدبلوماسيين من الخضوع لقضاء الدولة التي يعملون فيها.
+ambassade | سفارة | ff | سفارات | Mission diplomatique permanente d'un État auprès d'un autre État. | بعثة دبلوماسية دائمة لدولة لدى دولة أخرى.
+ambassadeur | سفير | mm | سفراء | Chef d'une mission diplomatique. | رئيس بعثة دبلوماسية.
+consulat | قنصلية | mf | قنصليات | Service d'un État à l'étranger, chargé de protéger ses ressortissants et de leur délivrer des documents. | مصلحة تابعة لدولة في الخارج مكلفة بحماية رعاياها وتسليمهم الوثائق.
+
+## Droit international public | Droit international humanitaire ## DIH
+droit international humanitaire | القانون الدولي الإنساني | mc |  | Règles qui protègent, en temps de conflit armé, les personnes qui ne participent pas aux combats. | قواعد تحمي في زمن النزاع المسلح الأشخاص الذين لا يشاركون في القتال.
+crime de guerre | جريمة الحرب | mi | جرائم الحرب | Violation grave des lois et coutumes de la guerre. | انتهاك جسيم لقوانين الحرب وأعرافها.
+crime contre l'humanité | الجريمة ضد الإنسانية | mc | الجرائم ضد الإنسانية | Acte inhumain commis dans le cadre d'une attaque généralisée ou systématique contre une population civile. | فعل غير إنساني يرتكب في إطار هجوم واسع أو منهجي على سكان مدنيين.
+génocide | إبادة جماعية | ma |  | Actes commis dans l'intention de détruire un groupe national, ethnique, racial ou religieux. | أفعال ترتكب بقصد إهلاك جماعة قومية أو إثنية أو عرقية أو دينية.
+réfugié | لاجئ | mm | لاجئون | Personne qui a fui son pays parce qu'elle craint d'y être persécutée. | شخص فر من بلده خوفا من التعرض فيه للاضطهاد.
+
+## Droits de l'homme ## DH+CONSTITUTION
+droits de l'homme | حقوق الإنسان | mip |  | Droits reconnus à toute personne en raison de sa seule qualité d'être humain. | الحقوق المعترف بها لكل شخص لمجرد كونه إنسانا.
+libertés fondamentales | الحريات الأساسية | fcp |  | Libertés garanties par la Constitution et par les traités, que la loi doit respecter. | حريات يضمنها الدستور والمعاهدات ويجب على القانون احترامها.
+dignité humaine | كرامة إنسانية | fa |  | Valeur attachée à toute personne, qui interdit de la traiter de manière dégradante. | قيمة لصيقة بكل شخص تمنع معاملته معاملة مهينة.
+égalité devant la loi | المساواة أمام القانون | fc |  | Principe selon lequel la loi est la même pour tous. | مبدأ يقضي بأن القانون واحد بالنسبة إلى الجميع.
+non-discrimination | عدم التمييز | fi |  | Interdiction de traiter différemment des personnes en raison de leur origine, de leur sexe ou de leurs opinions. | منع التفريق في المعاملة بين الأشخاص بسبب أصلهم أو جنسهم أو آرائهم.
+
+liberté d'expression | حرية التعبير | fi |  | Liberté de faire connaître ses idées et ses opinions par tout moyen. | حرية الشخص في إبداء أفكاره وآرائه بكل وسيلة.
+liberté de circulation | حرية التنقل | fi |  | Liberté de se déplacer sur le territoire, d'y choisir sa résidence, d'en sortir et d'y revenir. | حرية التنقل في التراب الوطني واختيار موطن الإقامة فيه والخروج منه والعودة إليه.
+torture | تعذيب | fm |  | Fait d'infliger volontairement à une personne des souffrances aiguës, physiques ou mentales. | إلحاق ألم شديد جسدي أو عقلي بشخص عمدا.
+
+## Droit international privé ## CIVIL+CPCA
+droit international privé | القانون الدولي الخاص | mc |  | Règles applicables aux relations privées qui présentent un élément étranger. | القواعد المطبقة على العلاقات الخاصة المشتملة على عنصر أجنبي.
+conflit de lois | تنازع القوانين | mi |  | Situation dans laquelle les lois de plusieurs États peuvent s'appliquer à un même rapport de droit. | حالة يحتمل فيها تطبيق قوانين عدة دول على علاقة قانونية واحدة.
+loi applicable | القانون الواجب التطبيق | fc |  | Loi désignée pour régir un rapport de droit qui comporte un élément étranger. | القانون الذي يعين ليحكم علاقة قانونية تشتمل على عنصر أجنبي.
+exequatur | الأمر بالتنفيذ | mc |  | Décision par laquelle un tribunal autorise l'exécution, sur le territoire national, d'un jugement étranger ou d'une sentence arbitrale. | قرار ترخص به المحكمة بتنفيذ حكم أجنبي أو حكم تحكيم في التراب الوطني.
+
+## Modes alternatifs de règlement des litiges ## CPCA+ARBITRAGE
+médiation | وساطة | ff |  | Procédure par laquelle un tiers neutre aide les parties à trouver elles-mêmes une solution à leur litige. | إجراء يساعد به شخص محايد من الغير الطرفين على إيجاد حل لنزاعهما بأنفسهما.
+médiateur | وسيط | mm | وسطاء | Tiers neutre chargé d'aider les parties à trouver un accord. | شخص محايد من الغير مكلف بمساعدة الطرفين على التوصل إلى اتفاق.
+
+arbitrage | تحكيم | mm |  | Mode de règlement d'un litige par des personnes privées que les parties ont choisies pour le trancher. | طريقة لحل النزاع بواسطة أشخاص خواص يختارهم الطرفان للفصل فيه.
+arbitre | محكم | mm | محكمون | Personne privée choisie par les parties pour trancher leur litige. | شخص من الخواص يختاره الطرفان للفصل في نزاعهما.
+tribunal arbitral | محكمة التحكيم | mi |  | Arbitre unique ou collège d'arbitres chargé de trancher le litige. | محكم واحد أو هيئة محكمين مكلفة بالفصل في النزاع.
+convention d'arbitrage | اتفاقية التحكيم | fi |  | Accord par lequel les parties décident de soumettre leur litige à l'arbitrage. | اتفاق يقرر به الطرفان عرض نزاعهما على التحكيم.
+clause compromissoire | شرط التحكيم | fi |  | Clause d'un contrat par laquelle les parties s'engagent à soumettre à l'arbitrage les litiges qui pourraient naître de ce contrat. | بند في العقد يلتزم به الطرفان بعرض النزاعات التي قد تنشأ عن هذا العقد على التحكيم.
+sentence arbitrale | حكم التحكيم | fi | أحكام التحكيم | Décision rendue par le tribunal arbitral. | القرار الذي تصدره محكمة التحكيم.

@@ -1,0 +1,76 @@
+## Droit administratif ## CPCA+CONSTITUTION
+administration | إدارة | ff | إدارات | Ensemble des services publics placés sous l'autorité du Gouvernement ou des collectivités territoriales. | مجموع المرافق العمومية الموضوعة تحت سلطة الحكومة أو الجماعات المحلية.
+autorité administrative | سلطة إدارية | fa | سلطات إدارية | Organe de l'administration qui a le pouvoir de prendre des décisions. | هيئة إدارية لها سلطة اتخاذ القرارات.
+service public | مرفق عام | ma | مرافق عامة | Activité d'intérêt général assurée ou contrôlée par une personne publique. | نشاط ذو منفعة عامة تتولاه هيئة عمومية أو تشرف عليه.
+établissement public | مؤسسة عمومية | ma | مؤسسات عمومية | Personne morale de droit public chargée de gérer un service public. | شخص معنوي عام مكلف بتسيير مرفق عام.
+intérêt général | المصلحة العامة | mc |  | Intérêt de l'ensemble de la collectivité, qui justifie l'action de l'administration. | مصلحة المجموعة الوطنية كلها، وهي مبرر عمل الإدارة.
+puissance publique | السلطة العامة | fc |  | Ensemble des prérogatives dont l'administration dispose pour faire prévaloir l'intérêt général. | مجموع الامتيازات التي تملكها الإدارة لتغليب المصلحة العامة.
+
+acte administratif | قرار إداري | ma | قرارات إدارية | Décision prise par une autorité administrative, qui modifie la situation juridique des personnes qu'elle vise. | قرار تتخذه سلطة إدارية ويغير المركز القانوني للمعنيين به. | sf=décision administrative
+contrat administratif | عقد إداري | ma | عقود إدارية | Contrat conclu par une personne publique pour l'exécution d'un service public et soumis à des règles particulières. | عقد تبرمه هيئة عمومية لتنفيذ مرفق عام ويخضع لقواعد خاصة.
+décision | قرار | fm | قرارات | Acte par lequel une autorité tranche une question ou arrête une mesure. | عمل تفصل به سلطة في مسألة أو تقرر به تدبيرا. | sa=مقرر
+police administrative | الضبط الإداري | fc |  | Activité de l'administration qui vise à prévenir les atteintes à l'ordre public. | نشاط الإدارة الرامي إلى الوقاية من المساس بالنظام العام.
+pouvoir discrétionnaire | سلطة تقديرية | ma |  | Liberté laissée à l'administration ou au juge de choisir entre plusieurs décisions légales. | حرية تترك للإدارة أو للقاضي في الاختيار بين عدة قرارات مشروعة.
+
+autorisation | ترخيص | fm | تراخيص | Acte par lequel une autorité permet l'exercice d'une activité ou l'accomplissement d'un acte. | عمل تسمح به سلطة بممارسة نشاط أو بالقيام بتصرف.
+permis | رخصة | mf | رخص | Autorisation administrative délivrée à une personne pour exercer une activité ou accomplir un acte, comme le permis de construire. | ترخيص إداري يسلم لشخص لممارسة نشاط أو للقيام بعمل، مثل رخصة البناء.
+agrément | اعتماد | mm | اعتمادات | Accord donné par une autorité à l'exercice d'une activité ou à la désignation d'une personne. | موافقة تمنحها سلطة لممارسة نشاط أو لتعيين شخص.
+
+décentralisation | لامركزية | ff |  | Transfert de compétences de l'État à des collectivités élues, dotées de la personnalité morale. | نقل صلاحيات من الدولة إلى جماعات منتخبة تتمتع بالشخصية المعنوية.
+déconcentration | عدم التركيز | fi |  | Délégation de pouvoirs de décision à des représentants locaux de l'État, qui restent soumis à l'autorité hiérarchique. | تفويض سلطة اتخاذ القرار إلى ممثلين محليين للدولة يبقون خاضعين للسلطة الرئاسية.
+tutelle administrative | الوصاية الإدارية | fc |  | Contrôle exercé par l'État sur les collectivités territoriales et sur les établissements publics. | رقابة تمارسها الدولة على الجماعات المحلية والمؤسسات العمومية.
+pouvoir hiérarchique | السلطة الرئاسية | mc |  | Pouvoir du supérieur de donner des ordres à ses subordonnés et de réformer leurs décisions. | سلطة الرئيس في إصدار الأوامر إلى مرؤوسيه وتعديل قراراتهم.
+délégation | تفويض | fm | تفويضات | Acte par lequel le titulaire d'une compétence en confie l'exercice à une autre autorité. | عمل يسند به صاحب الاختصاص ممارسته إلى سلطة أخرى.
+
+## Droit administratif | Collectivités territoriales ## CONSTITUTION
+collectivité territoriale | جماعة محلية | fa | جماعات محلية | Personne morale de droit public qui administre une partie du territoire : la commune et la wilaya. | شخص معنوي عام يدير جزءا من الإقليم، وهي البلدية والولاية. | sf=collectivité locale | sa=جماعة إقليمية
+commune | بلدية | ff | بلديات | Collectivité territoriale de base, administrée par une assemblée élue. | الجماعة المحلية القاعدية، يديرها مجلس منتخب.
+wilaya | ولاية | ff | ولايات | Collectivité territoriale et circonscription administrative de l'État, placée sous l'autorité d'un wali. | جماعة محلية ودائرة إدارية للدولة، يشرف عليها والٍ.
+daïra | دائرة | ff | دوائر | Circonscription administrative qui regroupe plusieurs communes au sein d'une wilaya. | قسم إداري يضم عدة بلديات داخل الولاية.
+wali | والٍ | mm | ولاة | Représentant de l'État et délégué du Gouvernement dans la wilaya. | ممثل الدولة ومندوب الحكومة في الولاية.
+
+assemblée populaire communale | المجلس الشعبي البلدي | fc |  | Assemblée élue qui règle par ses délibérations les affaires de la commune. | مجلس منتخب يعالج شؤون البلدية بمداولاته.
+assemblée populaire de wilaya | المجلس الشعبي الولائي | fc |  | Assemblée élue qui délibère sur les affaires de la wilaya. | مجلس منتخب يتداول في شؤون الولاية.
+président de l'assemblée populaire communale | رئيس المجلس الشعبي البلدي | mi |  | Élu qui dirige la commune et y représente l'État ; il tient le rôle du maire. | منتخب يسير البلدية ويمثل الدولة فيها. | sf=maire
+délibération | مداولة | ff | مداولات | Décision adoptée par une assemblée après discussion ; examen d'une affaire par les juges avant le jugement. | قرار يتخذه مجلس بعد المناقشة، وكذلك دراسة القضاة للقضية قبل الحكم.
+
+## Droit administratif | Fonction publique ## FONCTIONPUBLIQUE
+fonction publique | الوظيفة العمومية | fc |  | Ensemble des agents permanents de l'administration et des règles qui leur sont applicables. | مجموع الأعوان الدائمين في الإدارة والقواعد المطبقة عليهم.
+fonctionnaire | موظف | mm | موظفون | Agent nommé dans un emploi public permanent et titularisé dans un grade. | عون معين في وظيفة عمومية دائمة ومرسم في رتبة.
+agent public | عون عمومي | ma | أعوان عموميون | Personne employée par une administration ou par un organisme public. | شخص يعمل لدى إدارة أو هيئة عمومية.
+statut | قانون أساسي | ma | قوانين أساسية | Ensemble des règles qui fixent la situation d'une catégorie de personnes ou l'organisation d'une personne morale. | مجموع القواعد التي تحدد وضعية فئة من الأشخاص أو تنظيم شخص معنوي.
+grade | رتبة | mf | رتب | Titre qui donne au fonctionnaire vocation à occuper certains emplois. | صفة تخول الموظف شغل وظائف معينة.
+titularisation | ترسيم | fm |  | Acte qui confère au stagiaire la qualité de fonctionnaire. | عمل يكسب المتربص صفة الموظف.
+
+sanction disciplinaire | عقوبة تأديبية | fa | عقوبات تأديبية | Mesure prise contre un agent ou un salarié qui a manqué à ses obligations professionnelles. | تدبير يتخذ ضد عون أو عامل أخل بواجباته المهنية.
+révocation | عزل | fm |  | Sanction qui exclut définitivement un fonctionnaire ; retrait d'un pouvoir ou d'une libéralité. | عقوبة تقصي الموظف نهائيا، وكذلك سحب سلطة أو تبرع.
+détachement | انتداب | mm |  | Position du fonctionnaire placé hors de son corps d'origine, où il conserve ses droits. | وضعية الموظف الموضوع خارج سلكه الأصلي مع احتفاظه بحقوقه فيه.
+démission | استقالة | ff | استقالات | Acte par lequel une personne renonce volontairement à ses fonctions ou à son emploi. | تصرف يتخلى به الشخص بإرادته عن مهامه أو عن منصب عمله.
+
+## Droit administratif | Marchés publics ## MARCHES
+marché public | صفقة عمومية | ma | صفقات عمومية | Contrat écrit conclu à titre onéreux par un service contractant pour des travaux, des fournitures, des services ou des études. | عقد مكتوب تبرمه بمقابل مصلحة متعاقدة لإنجاز أشغال أو اقتناء لوازم أو خدمات أو دراسات.
+appel d'offres | طلب العروض | mi |  | Procédure qui met plusieurs candidats en concurrence pour attribuer un marché à la meilleure offre. | إجراء يضع عدة مترشحين في منافسة لمنح الصفقة لأحسن عرض. | sa=مناقصة
+cahier des charges | دفتر الشروط | mi | دفاتر الشروط | Document qui fixe les conditions de passation et d'exécution d'un marché ou d'une concession. | وثيقة تحدد شروط إبرام الصفقة أو الامتياز وتنفيذهما.
+service contractant | مصلحة متعاقدة | ma | مصالح متعاقدة | Administration ou organisme public qui conclut un marché public. | إدارة أو هيئة عمومية تبرم صفقة عمومية.
+soumissionnaire | متعهد | mm | متعهدون | Candidat qui dépose une offre pour obtenir un marché public. | مترشح يودع عرضا للحصول على صفقة عمومية.
+avenant | ملحق | mm | ملاحق | Acte écrit qui modifie ou complète un contrat en cours. | محرر مكتوب يعدل عقدا ساريا أو يتممه.
+
+concession | امتياز | fm | امتيازات | Contrat par lequel une personne publique confie à une autre l'exploitation d'un service public ou d'un bien public. | عقد تعهد به هيئة عمومية إلى غيرها باستغلال مرفق عام أو ملك عمومي.
+délégation de service public | تفويض المرفق العام | fi |  | Contrat qui confie la gestion d'un service public à un délégataire rémunéré par l'exploitation du service. | عقد يسند تسيير مرفق عام إلى مفوض له يتقاضى مقابله من استغلال المرفق.
+
+## Droit administratif | Domaine public ## DOMAINE+EXPROPRIATION
+domaine public | الأملاك الوطنية العمومية | mc |  | Ensemble des biens des personnes publiques affectés à l'usage du public ou à un service public ; ils sont inaliénables et imprescriptibles. | مجموع أملاك الأشخاص العمومية المخصصة لاستعمال الجمهور أو لمرفق عام، وهي غير قابلة للتصرف فيها ولا للتقادم.
+domaine privé | الأملاك الوطنية الخاصة | mc |  | Biens des personnes publiques qui ne sont affectés ni à l'usage du public ni à un service public. | أملاك الأشخاص العمومية غير المخصصة لاستعمال الجمهور ولا لمرفق عام.
+utilité publique | المنفعة العمومية | fc |  | Caractère d'une opération dont les avantages pour la collectivité justifient une atteinte à la propriété privée. | صفة العملية التي تبرر منافعها للمجموعة المساس بالملكية الخاصة.
+expropriation | نزع الملكية | fi |  | Procédure par laquelle l'administration oblige un propriétaire à lui céder son bien pour cause d'utilité publique, contre une indemnité juste et préalable. | إجراء تلزم به الإدارة المالك بالتنازل لها عن ملكه من أجل المنفعة العمومية مقابل تعويض عادل ومسبق.
+réquisition | تسخير | fm |  | Mesure par laquelle l'autorité impose à une personne de fournir un bien ou un service dans un but d'intérêt général. | تدبير تفرض به السلطة على شخص تقديم مال أو خدمة تحقيقا للمصلحة العامة.
+
+## Droit administratif | Contentieux administratif ## CPCA
+contentieux administratif | المنازعات الإدارية | mc |  | Ensemble des litiges nés de l'activité de l'administration et des règles qui permettent de les juger. | مجموع النزاعات الناشئة عن نشاط الإدارة والقواعد التي تحكم الفصل فيها.
+recours pour excès de pouvoir | دعوى تجاوز السلطة | mi |  | Recours par lequel on demande au juge administratif d'annuler un acte administratif illégal. | طعن يطلب به من القاضي الإداري إلغاء قرار إداري غير مشروع. | sf=recours en annulation | sa=دعوى الإلغاء
+excès de pouvoir | تجاوز السلطة | mi |  | Illégalité commise par une autorité administrative dans l'exercice de ses pouvoirs. | عدم مشروعية ترتكبها سلطة إدارية في ممارسة صلاحياتها.
+détournement de pouvoir | الانحراف بالسلطة | mc |  | Vice de l'acte administratif pris dans un but autre que celui pour lequel le pouvoir a été conféré. | عيب يشوب القرار الإداري المتخذ لغاية غير التي منحت السلطة من أجلها.
+recours gracieux | تظلم ولائي | ma |  | Demande adressée à l'auteur d'une décision administrative pour qu'il la retire ou la modifie. | طلب يوجه إلى مصدر القرار الإداري لسحبه أو تعديله.
+recours hiérarchique | تظلم رئاسي | ma |  | Demande adressée au supérieur de l'auteur d'une décision administrative pour qu'il la réforme. | طلب يوجه إلى رئيس مصدر القرار الإداري لتعديله.
+responsabilité administrative | مسؤولية إدارية | fa |  | Obligation pour l'administration de réparer les dommages causés par son activité. | التزام الإدارة بتعويض الأضرار الناجمة عن نشاطها.
+voie de fait | تعدٍ | fm |  | Atteinte grave portée par l'administration à la propriété ou à une liberté, par un acte manifestement étranger à ses pouvoirs. | مساس جسيم من الإدارة بالملكية أو بحرية من الحريات بعمل يخرج بوضوح عن صلاحياتها.

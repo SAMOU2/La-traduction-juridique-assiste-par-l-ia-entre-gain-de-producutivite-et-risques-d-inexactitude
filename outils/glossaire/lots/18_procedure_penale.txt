@@ -1,0 +1,57 @@
+## Procédure pénale ## CPP
+action publique | الدعوى العمومية | fc |  | Action exercée au nom de la société pour faire constater une infraction et punir son auteur. | دعوى تباشر باسم المجتمع لإثبات الجريمة ومعاقبة مرتكبها.
+action civile | الدعوى المدنية | fc |  | Action de la victime d'une infraction en réparation du dommage que celle-ci lui a causé. | دعوى ضحية الجريمة للمطالبة بتعويض الضرر الذي لحقها منها.
+partie civile | طرف مدني | fa | أطراف مدنية | Victime qui demande réparation de son préjudice devant le juge pénal. | ضحية تطالب بتعويض ضررها أمام القاضي الجزائي.
+constitution de partie civile | الادعاء المدني | fc |  | Acte par lequel la victime se joint au procès pénal ou le déclenche pour obtenir réparation. | إجراء تنضم به الضحية إلى الدعوى الجزائية أو تحركها للحصول على التعويض.
+prescription de l'action publique | تقادم الدعوى العمومية | fi |  | Extinction du droit de poursuivre une infraction après l'écoulement du délai fixé par la loi. | انقضاء حق متابعة الجريمة بمرور الأجل الذي يحدده القانون.
+
+plainte | شكوى | ff | شكاوى | Acte par lequel la victime d'une infraction la porte à la connaissance de l'autorité. | إجراء تبلغ به ضحية الجريمة السلطة بوقوعها.
+plaignant | شاكٍ | mm |  | Personne qui dépose une plainte. | الشخص الذي يقدم شكوى.
+dénonciation | بلاغ | fm | بلاغات | Acte par lequel une personne informe l'autorité d'une infraction dont elle n'est pas la victime. | إجراء يخبر به شخص السلطة بجريمة لم يكن ضحية لها.
+poursuite | متابعة | ff | متابعات | Ensemble des actes par lesquels le ministère public saisit la justice pénale d'une infraction. | مجموع الإجراءات التي ترفع بها النيابة العامة أمر الجريمة إلى القضاء الجزائي.
+classement sans suite | حفظ الملف | mi |  | Décision du procureur de ne pas poursuivre. | قرار وكيل الجمهورية بعدم المتابعة.
+médiation pénale | الوساطة الجزائية | fc |  | Procédure par laquelle le procureur propose à l'auteur et à la victime d'une infraction de régler le litige par un accord. | إجراء يقترح به وكيل الجمهورية على مرتكب الجريمة وضحيتها تسوية النزاع باتفاق بينهما.
+
+police judiciaire | الشرطة القضائية | fc |  | Autorité chargée de constater les infractions, d'en rassembler les preuves et d'en rechercher les auteurs. | سلطة مكلفة بمعاينة الجرائم وجمع أدلتها والبحث عن مرتكبيها. | sa=الضبطية القضائية
+officier de police judiciaire | ضابط الشرطة القضائية | mi | ضباط الشرطة القضائية | Agent habilité à constater les infractions, à recevoir les plaintes et à mener les enquêtes. | عون مؤهل لمعاينة الجرائم وتلقي الشكاوى وإجراء التحريات.
+enquête préliminaire | التحقيق الابتدائي | fc |  | Enquête menée par la police judiciaire, d'office ou sur instruction du procureur, avant toute poursuite. | تحريات تقوم بها الشرطة القضائية من تلقاء نفسها أو بتعليمات من وكيل الجمهورية قبل أي متابعة. | sa=التحريات الأولية
+flagrant délit | التلبس بالجريمة | mc |  | Infraction qui se commet actuellement ou qui vient de se commettre. | جريمة ترتكب في الحال أو ارتكبت منذ وقت قريب.
+garde à vue | التوقيف للنظر | fc |  | Mesure par laquelle un officier de police judiciaire retient une personne pour les besoins de l'enquête, pendant une durée limitée par la loi. | تدبير يحتجز به ضابط الشرطة القضائية شخصا لمقتضيات التحقيق لمدة يحددها القانون.
+
+perquisition | تفتيش | fm |  | Recherche, dans un lieu clos, d'objets ou de documents utiles à la manifestation de la vérité. | بحث في مكان مغلق عن أشياء أو وثائق تفيد في إظهار الحقيقة.
+interrogatoire | استجواب | mm | استجوابات | Questions posées par un magistrat ou par un enquêteur à la personne mise en cause. | أسئلة يطرحها قاض أو محقق على الشخص المشتبه فيه أو المتهم.
+audition | سماع | fm |  | Fait de recueillir les déclarations d'une personne. | تلقي تصريحات شخص.
+commission rogatoire | إنابة قضائية | fa | إنابات قضائية | Acte par lequel un juge charge un autre juge ou un officier de police judiciaire d'accomplir à sa place un acte d'instruction. | إجراء يكلف به قاض قاضيا آخر أو ضابطا للشرطة القضائية بالقيام بإجراء تحقيق مكانه.
+pièce à conviction | دليل الإقناع | fi | أدلة الإقناع | Objet saisi et présenté à la juridiction comme preuve de l'infraction. | شيء محجوز يعرض على الجهة القضائية دليلا على الجريمة.
+
+suspect | المشتبه فيه | mc |  | Personne soupçonnée d'avoir commis une infraction. | شخص يشتبه في ارتكابه جريمة.
+inculpé | متهم | mm | متهمون | Personne contre laquelle une instruction est ouverte ou qui est poursuivie devant une juridiction pénale. | شخص فتح ضده تحقيق قضائي أو يتابع أمام جهة قضائية جزائية. | sf=prévenu, accusé
+inculpation | اتهام | fm |  | Acte par lequel le juge d'instruction notifie à une personne les faits qui lui sont reprochés. | إجراء يبلغ به قاضي التحقيق شخصا بالوقائع المنسوبة إليه. | sf=accusation
+présomption d'innocence | قرينة البراءة | fi |  | Principe selon lequel toute personne est tenue pour innocente tant qu'une juridiction n'a pas établi sa culpabilité. | مبدأ يقضي بأن كل شخص يعتبر بريئا ما لم تثبت جهة قضائية إدانته.
+intime conviction | الاقتناع الشخصي | fc |  | Principe selon lequel le juge pénal apprécie librement la valeur des preuves. | مبدأ يقدر بموجبه القاضي الجزائي قيمة الأدلة بكل حرية.
+
+juge d'instruction | قاضي التحقيق | mi | قضاة التحقيق | Magistrat chargé de rechercher les preuves d'une infraction et de décider de la suite à donner. | قاض مكلف بالبحث عن أدلة الجريمة وتقرير ما يتخذ بشأنها.
+instruction | تحقيق قضائي | fa |  | Phase de la procédure pénale au cours de laquelle le juge d'instruction rassemble les preuves et décide s'il y a lieu de renvoyer l'inculpé devant une juridiction de jugement. | مرحلة من الإجراءات الجزائية يجمع فيها قاضي التحقيق الأدلة ويقرر ما إذا كان هناك وجه لإحالة المتهم على جهة الحكم. | sf=information judiciaire
+secret de l'instruction | سرية التحقيق | mi |  | Règle qui interdit de divulguer les actes de l'enquête et de l'instruction. | قاعدة تمنع إفشاء إجراءات التحري والتحقيق.
+chambre d'accusation | غرفة الاتهام | fi |  | Chambre de la cour qui contrôle l'instruction et statue sur les appels formés contre les ordonnances du juge d'instruction. | غرفة في المجلس القضائي تراقب التحقيق وتفصل في استئناف أوامر قاضي التحقيق.
+
+mandat d'arrêt | الأمر بالقبض | mc |  | Ordre donné à la force publique de rechercher une personne et de la conduire dans un établissement pénitentiaire. | أمر يصدر إلى القوة العمومية بالبحث عن شخص وسوقه إلى مؤسسة عقابية.
+mandat d'amener | الأمر بالإحضار | mc |  | Ordre donné à la force publique de conduire immédiatement une personne devant le juge. | أمر يصدر إلى القوة العمومية باقتياد شخص ومثوله فورا أمام القاضي.
+mandat de dépôt | أمر الإيداع | mi |  | Ordre donné au chef de l'établissement pénitentiaire de recevoir et de détenir l'inculpé. | أمر يصدر إلى رئيس المؤسسة العقابية باستلام المتهم وحبسه.
+détention provisoire | الحبس المؤقت | fc |  | Mesure exceptionnelle qui consiste à incarcérer l'inculpé avant son jugement. | تدبير استثنائي يتمثل في حبس المتهم قبل محاكمته.
+contrôle judiciaire | الرقابة القضائية | mc |  | Mesure qui laisse l'inculpé en liberté tout en le soumettant à des obligations fixées par le juge. | تدبير يبقى به المتهم طليقا مع إخضاعه لالتزامات يحددها القاضي.
+mise en liberté | إفراج | fm |  | Décision qui met fin à la détention provisoire. | قرار ينهي الحبس المؤقت.
+interdiction de sortie du territoire national | المنع من مغادرة التراب الوطني | fc |  | Mesure qui interdit à une personne de quitter le pays pour les besoins d'une enquête ou d'une instruction. | تدبير يمنع به شخص من مغادرة البلاد لمقتضيات التحري أو التحقيق.
+
+ordonnance de non-lieu | الأمر بألا وجه للمتابعة | fc |  | Décision par laquelle le juge d'instruction déclare qu'il n'y a pas lieu de poursuivre. | قرار يصرح به قاضي التحقيق بأنه لا وجه لمتابعة المتهم. | sf=non-lieu
+ordonnance de renvoi | أمر الإحالة | fi |  | Décision par laquelle le juge d'instruction renvoie l'inculpé devant la juridiction de jugement. | قرار يحيل به قاضي التحقيق المتهم على جهة الحكم.
+citation directe | التكليف المباشر بالحضور | fc |  | Acte par lequel le ministère public ou la victime convoque directement une personne devant la juridiction de jugement. | إجراء تستدعي به النيابة العامة أو الضحية شخصا مباشرة أمام جهة الحكم.
+comparution immédiate | المثول الفوري | fc |  | Procédure qui permet de juger sans délai l'auteur d'un délit flagrant. | إجراء يسمح بمحاكمة مرتكب الجنحة المتلبس بها دون تأخير.
+
+condamnation | إدانة | ff |  | Décision par laquelle une juridiction déclare une personne coupable et prononce une peine. | قرار تصرح به جهة قضائية بأن الشخص مذنب وتنطق بالعقوبة.
+condamné | المحكوم عليه | mc |  | Personne déclarée coupable par une décision de justice. | شخص صرح حكم قضائي بإدانته.
+acquittement | براءة | mf |  | Décision qui déclare l'accusé non coupable. | قرار يصرح بأن المتهم غير مذنب. | sf=relaxe
+juge des mineurs | قاضي الأحداث | mi | قضاة الأحداث | Magistrat spécialisé dans les affaires concernant les enfants délinquants ou en danger. | قاض متخصص في قضايا الأطفال الجانحين أو الموجودين في خطر.
+
+extradition | تسليم المجرمين | fi |  | Procédure par laquelle un État remet à un autre État une personne que celui-ci poursuit ou a condamnée. | إجراء تسلم به دولة إلى دولة أخرى شخصا متابعا أو محكوما عليه فيها.
+entraide judiciaire | التعاون القضائي | fc |  | Assistance que les autorités judiciaires de différents États se prêtent pour les besoins d'une procédure. | مساعدة تتبادلها السلطات القضائية لدول مختلفة لحاجات إجراءات معينة.

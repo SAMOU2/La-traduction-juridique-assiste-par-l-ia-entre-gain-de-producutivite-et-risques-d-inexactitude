@@ -1,0 +1,38 @@
+## Droit civil | Contrats spéciaux ## CIVIL
+chose | شيء | fm | أشياء | Objet matériel sur lequel un droit peut porter. | كل شيء مادي يصلح أن يكون محلا لحق.
+délivrance | تسليم | fm |  | Mise de la chose vendue à la disposition de l'acheteur. | وضع المبيع تحت تصرف المشتري.
+garantie | ضمان | fm | ضمانات | Obligation de protéger le cocontractant contre un risque ; sûreté qui assure le paiement d'une dette. | التزام بحماية المتعاقد الآخر من خطر معين، وكذلك التأمين الذي يكفل وفاء الدين.
+garantie d'éviction | ضمان الاستحقاق | fi |  | Obligation du vendeur de protéger l'acheteur contre toute personne qui revendiquerait un droit sur la chose vendue. | التزام البائع بحماية المشتري من كل من يدعي حقا على المبيع.
+vice caché | عيب خفي | ma | عيوب خفية | Défaut de la chose vendue, non apparent lors de la vente, qui la rend impropre à l'usage attendu. | عيب في المبيع غير ظاهر وقت البيع يجعله غير صالح للاستعمال المقصود.
+
+vente à crédit | البيع بالتقسيط | fc |  | Vente dont le prix est payé par versements échelonnés. | بيع يدفع ثمنه على أقساط.
+acompte | تسبيق | mm | تسبيقات | Paiement partiel fait à valoir sur le prix. | دفع جزئي يحسب من الثمن.
+facture | فاتورة | ff | فواتير | Écrit qui constate une vente ou une prestation et en indique le prix. | محرر يثبت بيعا أو أداء خدمة ويبين ثمنه.
+échange | مقايضة | mf |  | Contrat par lequel les parties se transfèrent réciproquement la propriété d'un bien autre que de l'argent. | عقد يلتزم به كل من المتعاقدين أن ينقل إلى الآخر ملكية مال غير النقود.
+
+sous-location | الإيجار الفرعي | fc |  | Contrat par lequel le locataire donne lui-même en location tout ou partie de la chose louée. | عقد يؤجر به المستأجر العين المؤجرة كلها أو بعضها. | sa=إيجار من الباطن
+rente viagère | المرتب مدى الحياة | fc |  | Somme versée périodiquement à une personne jusqu'à son décès. | مبلغ يدفع دوريا لشخص إلى غاية وفاته.
+transaction | صلح | fm |  | Contrat par lequel les parties terminent un litige ou le préviennent par des concessions réciproques. | عقد ينهي به الطرفان نزاعا قائما أو يتوقيان به نزاعا محتملا بتنازل كل منهما عن جزء من ادعائه.
+
+prêt | قرض | mm | قروض | Contrat par lequel une personne remet une chose ou une somme à une autre, qui doit la restituer. | عقد يسلم به شخص شيئا أو مبلغا لشخص آخر يلتزم برده.
+prêt à usage | عارية | mf |  | Contrat par lequel le prêteur remet gratuitement une chose à l'emprunteur pour qu'il s'en serve, à charge de la restituer. | عقد يسلم به المعير شيئا للمستعير دون مقابل ليستعمله ثم يرده. | sf=commodat
+prêt de consommation | قرض استهلاكي | ma |  | Prêt de choses qui se consomment par l'usage, à charge d'en rendre autant de même espèce et de même qualité. | قرض أشياء تستهلك بالاستعمال، على أن يرد مثلها نوعا وصفة.
+prêteur | مقرض | mm | مقرضون | Personne qui remet une chose ou une somme à titre de prêt. | شخص يسلم شيئا أو مبلغا على سبيل القرض.
+emprunteur | مقترض | mm | مقترضون | Personne qui reçoit une chose ou une somme à titre de prêt et doit la restituer. | شخص يتسلم شيئا أو مبلغا على سبيل القرض ويلتزم برده.
+
+dépôt | وديعة | mf | ودائع | Contrat par lequel le dépositaire reçoit une chose à charge de la garder et de la restituer. | عقد يتسلم به المودع لديه شيئا على أن يحفظه ثم يرده.
+déposant | مودع | mm | مودعون | Personne qui remet une chose en dépôt. | شخص يسلم شيئا على سبيل الوديعة.
+dépositaire | المودع لديه | mc |  | Personne qui reçoit une chose en dépôt et doit la garder. | شخص يتسلم شيئا على سبيل الوديعة ويلتزم بحفظه.
+
+mandat | وكالة | mf | وكالات | Contrat par lequel le mandant charge le mandataire d'accomplir un acte en son nom et pour son compte. | عقد يفوض به الموكل الوكيل في القيام بعمل باسمه ولحسابه.
+mandant | موكل | mm | موكلون | Personne qui donne à une autre le pouvoir d'agir en son nom. | شخص يمنح غيره سلطة التصرف باسمه.
+mandataire | وكيل | mm | وكلاء | Personne qui reçoit le pouvoir d'agir au nom d'une autre. | شخص يتلقى سلطة التصرف باسم غيره.
+procuration | توكيل | fm | توكيلات | Écrit par lequel une personne donne à une autre le pouvoir d'agir en son nom. | محرر يمنح به شخص غيره سلطة التصرف باسمه.
+
+contrat d'entreprise | عقد المقاولة | mi | عقود المقاولة | Contrat par lequel l'entrepreneur s'engage à exécuter un ouvrage ou un travail moyennant un prix. | عقد يتعهد بمقتضاه المقاول أن يصنع شيئا أو أن يؤدي عملا مقابل أجر.
+entrepreneur | مقاول | mm | مقاولون | Personne qui s'engage à réaliser un ouvrage pour le compte du maître de l'ouvrage. | شخص يتعهد بإنجاز عمل لحساب رب العمل.
+maître de l'ouvrage | رب العمل | mi |  | Personne pour le compte de laquelle un ouvrage est réalisé. | الشخص الذي ينجز العمل لحسابه.
+sous-traitance | المقاولة الفرعية | fc |  | Opération par laquelle un entrepreneur confie à un autre l'exécution d'une partie du contrat. | عملية يعهد بها المقاول إلى مقاول آخر بتنفيذ جزء من العقد. | sa=مناولة
+
+contrat de transport | عقد النقل | mi | عقود النقل | Contrat par lequel le transporteur s'engage à déplacer une personne ou une chose d'un lieu à un autre moyennant un prix. | عقد يلتزم به الناقل بنقل شخص أو شيء من مكان إلى آخر مقابل أجر.
+transporteur | ناقل | mm | ناقلون | Personne qui s'engage à déplacer des personnes ou des marchandises. | شخص يلتزم بنقل الأشخاص أو البضائع.

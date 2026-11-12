@@ -1,0 +1,59 @@
+## Droit de la famille ## FAMILLE
+famille | أسرة | ff | أسر | Cellule de base de la société, formée de personnes unies par le mariage et par la parenté. | الخلية الأساسية للمجتمع، تتكون من أشخاص تجمع بينهم صلة الزوجية وصلة القرابة.
+parenté | قرابة | ff |  | Lien qui unit des personnes descendant les unes des autres ou d'un ancêtre commun. | الصلة التي تجمع بين أشخاص ينحدر بعضهم من بعض أو من أصل مشترك.
+alliance | مصاهرة | ff |  | Lien que le mariage crée entre un époux et les parents de l'autre. | الصلة التي ينشئها الزواج بين أحد الزوجين وأقارب الآخر.
+ascendants | أصول | mmp |  | Personnes dont une autre descend : père, mère, grands-parents. | الأشخاص الذين ينحدر منهم شخص آخر، كالأب والأم والأجداد.
+descendants | فروع | mmp |  | Personnes qui descendent d'une autre : enfants, petits-enfants. | الأشخاص الذين ينحدرون من شخص آخر، كالأولاد وأولاد الأولاد.
+enfant | ولد | mm | أولاد | Fils ou fille d'une personne ; personne mineure. | ابن الشخص أو ابنته، وكذلك الشخص القاصر. | sa=طفل
+
+mariage | زواج | mm |  | Contrat consensuel passé entre un homme et une femme dans les formes légales, qui a notamment pour but de fonder une famille. | عقد رضائي يتم بين رجل وامرأة على الوجه الشرعي، من أهدافه تكوين أسرة.
+acte de mariage | عقد الزواج | mi | عقود الزواج | Acte qui constate le mariage, dressé par un notaire ou par un officier de l'état civil. | عقد يثبت الزواج يحرره موثق أو ضابط الحالة المدنية.
+fiançailles | خطبة | ffp |  | Promesse de mariage, que chacune des deux parties peut rompre. | وعد بالزواج يجوز لكل من الطرفين العدول عنه.
+époux | زوج | mm | أزواج | Homme uni à une femme par le mariage ; au pluriel, les deux conjoints. | الرجل المرتبط بامرأة بعقد الزواج، ويطلق بصيغة المثنى على الزوجين معا. | sf=mari, conjoint
+épouse | زوجة | ff | زوجات | Femme unie à un homme par le mariage. | المرأة المرتبطة برجل بعقد الزواج.
+dot | صداق | fm |  | Bien que l'époux verse à l'épouse en raison du mariage et qui lui appartient en propre. | ما يدفعه الزوج للزوجة بمناسبة الزواج، وهو ملك لها. | sa=مهر
+
+régime matrimonial | النظام المالي للزوجين | mc |  | Règles qui fixent le sort des biens des époux ; en droit algérien, chaque époux conserve son propre patrimoine. | القواعد التي تحكم أموال الزوجين، وفي القانون الجزائري لكل من الزوجين ذمة مالية مستقلة.
+polygamie | تعدد الزوجات | fi |  | Fait pour un homme d'être marié à plusieurs épouses, dans les limites et aux conditions fixées par la loi. | زواج الرجل بأكثر من امرأة في الحدود وبالشروط التي يقررها القانون.
+empêchement au mariage | مانع الزواج | mi | موانع الزواج | Situation qui interdit le mariage entre deux personnes, comme la parenté. | حالة تمنع الزواج بين شخصين، كالقرابة.
+
+dissolution du mariage | انحلال الزواج | fi |  | Fin du mariage par le divorce ou par le décès de l'un des époux. | انتهاء الزواج بالطلاق أو بوفاة أحد الزوجين.
+divorce | طلاق | mm |  | Dissolution du mariage par la volonté de l'époux, par consentement mutuel ou à la demande de l'épouse dans les cas prévus par la loi. | حل عقد الزواج بإرادة الزوج أو بتراضي الزوجين أو بطلب من الزوجة في الحالات التي يحددها القانون.
+divorce par consentement mutuel | الطلاق بالتراضي | mc |  | Divorce demandé d'un commun accord par les deux époux. | طلاق يطلبه الزوجان باتفاقهما.
+khol'â | خلع | mm |  | Séparation que l'épouse obtient sans l'accord de l'époux, moyennant le versement d'une somme. | فراق تحصل عليه الزوجة دون موافقة الزوج مقابل مال تدفعه. | sf=kholâ, khol
+retraite légale | عدة | ff |  | Délai que la femme divorcée ou veuve doit observer avant de pouvoir se remarier. | المدة التي تتربصها المرأة المطلقة أو المتوفى عنها زوجها قبل أن يحل لها الزواج من جديد. | sf=idda
+
+pension alimentaire | نفقة | ff | نفقات | Somme versée pour subvenir aux besoins d'un conjoint, d'un enfant ou d'un parent. | مبلغ يدفع لسد حاجات الزوج أو الولد أو القريب.
+obligation alimentaire | الالتزام بالنفقة | fc |  | Obligation de fournir à un proche dans le besoin ce qui est nécessaire à sa vie. | التزام بتقديم ما يلزم لمعيشة قريب محتاج.
+garde | حضانة | ff |  | Entretien, scolarisation et éducation de l'enfant, ainsi que sauvegarde de sa santé et de sa moralité. | رعاية الولد وتعليمه والقيام بتربيته والسهر على حمايته وحفظه صحة وخلقا. | sf=hadana, droit de garde
+droit de visite | حق الزيارة | mi |  | Droit du parent qui n'a pas la garde de voir son enfant. | حق الوالد غير الحاضن في رؤية ولده.
+section des affaires familiales | قسم شؤون الأسرة | fi |  | Section du tribunal compétente pour le mariage, le divorce, la garde, la pension alimentaire et les successions. | قسم في المحكمة يختص بقضايا الزواج والطلاق والحضانة والنفقة والتركات.
+
+filiation | نسب | fm |  | Lien juridique qui unit un enfant à son père et à sa mère. | الرابطة القانونية التي تصل الولد بأبيه وأمه.
+désaveu de paternité | نفي النسب | mi |  | Action par laquelle le mari conteste être le père de l'enfant de son épouse. | دعوى ينكر بها الزوج أبوته لولد زوجته.
+kafala | كفالة | ff |  | Engagement de prendre bénévolement en charge l'entretien, l'éducation et la protection d'un enfant mineur, comme le ferait un père pour son fils. | التزام على وجه التبرع بالقيام بولد قاصر من نفقة وتربية ورعاية قيام الأب بابنه. | sf=recueil légal
+adoption | تبنٍ | fm |  | Création d'un lien de filiation entre deux personnes sans lien de sang ; le droit algérien l'interdit. | إنشاء رابطة نسب بين شخصين لا تجمعهما قرابة دم، ويمنعه القانون الجزائري.
+
+## Droit de la famille | Successions ## FAMILLE
+succession | تركة | ff | تركات | Ensemble des biens laissés par une personne à son décès ; transmission de ces biens à ses héritiers. | مجموع ما يتركه الشخص من أموال عند وفاته، وانتقال هذه الأموال إلى ورثته.
+héritage | ميراث | mm | مواريث | Biens transmis par voie de succession ; droit d'y prendre part. | الأموال المنتقلة بطريق الإرث، والحق في نيل نصيب منها. | sa=إرث
+ouverture de la succession | افتتاح التركة | fi |  | Moment où les biens du défunt sont transmis à ses héritiers : le jour du décès. | الوقت الذي تنتقل فيه أموال المتوفى إلى ورثته، وهو يوم الوفاة.
+partage successoral | قسمة التركة | mi |  | Répartition des biens de la succession entre les héritiers. | توزيع أموال التركة على الورثة.
+frédha | فريضة | ff |  | Acte notarié qui établit la liste des héritiers d'un défunt et la part de chacun. | عقد توثيقي يحصي ورثة المتوفى ويبين نصيب كل منهم.
+quote-part | نصيب | fm | أنصبة | Part qui revient à chacun dans un partage ou dans une chose commune. | الحصة التي تعود لكل واحد في القسمة أو في الشيء المشترك. | pf=quotes-parts
+
+héritier | وارث | mm | ورثة | Personne que la loi appelle à recueillir la succession d'un défunt. | شخص يدعوه القانون إلى أخذ نصيب من تركة المتوفى.
+défunt | مورث | mm |  | Personne décédée dont la succession est ouverte. | الشخص المتوفى الذي افتتحت تركته. | sf=de cujus
+héritiers réservataires | ذوو الفروض | mip |  | Héritiers dont la part dans la succession est fixée par la loi. | الورثة الذين حددت أنصبتهم في التركة شرعا. | sa=أصحاب الفروض
+héritier universel | عاصب | mm | عصبة | Héritier qui recueille toute la succession s'il est seul, ou ce qui en reste après le prélèvement des parts des héritiers réservataires. | وارث يستحق التركة كلها عند انفراده، أو ما بقي منها بعد أخذ ذوي الفروض حقوقهم.
+tanzil | تنزيل | mm |  | Institution qui fait venir les petits-enfants à la succession de leur grand-parent, à la place de leur père ou de leur mère décédé avant lui. | نظام يحل به الأحفاد محل أبيهم أو أمهم المتوفى قبل الجد في تركة هذا الأخير. | sf=héritage par substitution
+indignité successorale | المنع من الميراث | fc |  | Exclusion d'un héritier de la succession en raison d'une faute grave, comme l'homicide du défunt. | حرمان الوارث من التركة بسبب فعل خطير، كقتل المورث.
+
+libéralité | تبرع | fm | تبرعات | Acte par lequel une personne procure à une autre un avantage sans contrepartie : donation, testament. | تصرف يمنح به شخص غيره منفعة دون مقابل، كالهبة والوصية.
+testament | وصية | mf | وصايا | Acte par lequel une personne dispose de tout ou partie de ses biens pour le temps qui suivra son décès, dans la limite du tiers. | تصرف يوصي به الشخص بكل أمواله أو بعضها لما بعد وفاته، في حدود الثلث. | sf=legs
+testateur | موصٍ | mm |  | Personne qui fait un testament. | الشخص الذي يوصي.
+légataire | الموصى له | mc |  | Personne désignée par un testament pour recevoir un bien. | الشخص الذي عين في الوصية ليأخذ مالا.
+donation | هبة | ff | هبات | Contrat par lequel une personne transfère gratuitement à une autre la propriété d'un bien. | عقد يملك به شخص غيره مالا دون عوض.
+donateur | واهب | mm | واهبون | Personne qui fait une donation. | الشخص الذي يهب.
+donataire | الموهوب له | mc |  | Personne qui reçoit une donation. | الشخص الذي يتلقى الهبة.
+renonciation | تنازل | fm |  | Acte par lequel une personne abandonne volontairement un droit. | تصرف يتخلى به الشخص عن حق بإرادته.
