@@ -18,13 +18,37 @@ for dossier in (RACINE, RACINE / "tests"):
 
 from traducteur.glossaire import Glossaire  # noqa: E402
 
-GLOSSAIRE_EXEMPLE = RACINE / "donnees" / "glossaire_juridique.csv"
+#: Glossaire fourni avec l'application : celui qu'elle ouvre au démarrage.
+GLOSSAIRE_FOURNI = RACINE / "donnees" / "glossaire_juridique.csv"
+#: Petit glossaire réservé aux tests : 40 entrées de droit civil. La plupart des tests l'utilisent,
+#: pour que leurs résultats ne changent pas quand le glossaire fourni est enrichi ou remplacé.
+GLOSSAIRE_D_ESSAI = RACINE / "tests" / "donnees" / "glossaire_essai.csv"
 
 
 @pytest.fixture(scope="session")
 def glossaire() -> Glossaire:
-    """Le glossaire d'exemple fourni avec le projet."""
-    return Glossaire.charger(GLOSSAIRE_EXEMPLE)
+    """Le glossaire d'essai (40 entrées)."""
+    return Glossaire.charger(GLOSSAIRE_D_ESSAI)
+
+
+@pytest.fixture(scope="session")
+def glossaire_fourni() -> Glossaire:
+    """Le glossaire fourni avec l'application."""
+    return Glossaire.charger(GLOSSAIRE_FOURNI)
+
+
+@pytest.fixture(autouse=True)
+def glossaire_de_demarrage(monkeypatch):
+    """Pendant les tests, l'application démarre avec le glossaire d'essai.
+
+    Un test qui porte sur le glossaire fourni le demande par son chemin :
+    ``FenetrePrincipale(GLOSSAIRE_FOURNI, reglages)``.
+    """
+    try:
+        from traducteur.interface import fenetre
+    except ImportError:  # PySide6 n'est pas installé : les tests de l'interface sont ignorés
+        return
+    monkeypatch.setattr(fenetre, "GLOSSAIRE_EXEMPLE", GLOSSAIRE_D_ESSAI)
 
 
 # ------------------------------------------------------------------ interface (tests sans écran)
@@ -56,7 +80,7 @@ def avertissements(monkeypatch):
 
 @pytest.fixture
 def fenetre(application, reglages, avertissements):
-    """La fenêtre de l'application, ouverte avec le glossaire d'exemple."""
+    """La fenêtre de l'application, ouverte avec le glossaire d'essai."""
     from traducteur.interface.fenetre import FenetrePrincipale
 
     fenetre = FenetrePrincipale(reglages=reglages)

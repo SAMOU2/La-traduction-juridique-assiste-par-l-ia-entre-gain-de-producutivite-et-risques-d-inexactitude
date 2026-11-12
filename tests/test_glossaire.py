@@ -13,7 +13,7 @@ def termes(entrees, langue=FR):
 # ------------------------------------------------------------------ glossaire d'exemple
 def test_le_glossaire_d_exemple_se_charge(glossaire):
     assert len(glossaire) == 40
-    assert glossaire.nom == "glossaire_juridique.csv"
+    assert glossaire.nom == "glossaire_essai.csv"
     assert glossaire.encodage == "UTF-8"
     assert glossaire.separateur == ";"
     assert glossaire.colonnes == list(COLONNES)  # toutes les colonnes, dans l'ordre documenté

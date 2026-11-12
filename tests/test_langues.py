@@ -12,6 +12,8 @@ from traducteur.langues import (
     contient_arabe,
     deviner_langue,
     est_rtl,
+    memes_accents,
+    porte_des_accents,
 )
 
 
@@ -44,6 +46,33 @@ def test_cle_souple_supprime_les_accents():
 )
 def test_cle_souple_unifie_les_variantes_arabes(avec_variante, sans_variante):
     assert cle_souple(avec_variante) == cle_souple(sans_variante)
+
+
+def test_porte_des_accents():
+    assert porte_des_accents("défendeur") and porte_des_accents("façon") and porte_des_accents("NOËL")
+    assert not porte_des_accents("le contrat de vente") and not porte_des_accents("œuvre")
+    assert not porte_des_accents("الْعَقْدُ")  # les voyelles arabes ne sont pas des accents
+
+
+@pytest.mark.parametrize(
+    ("forme", "reference"),
+    [
+        ("causé", "causé"), ("Contrat  de vente", "contrat de vente"), ("l’oeuvre", "l'œuvre"),
+        # Une majuscule peut ne pas porter son accent.
+        ("Etat", "État"), ("EQUITE", "équité"), ("REPUBLIQUE", "république"), ("État", "Etat"),
+    ],
+)
+def test_memes_accents(forme, reference):
+    assert memes_accents(forme, reference)
+
+
+@pytest.mark.parametrize(
+    ("forme", "reference"),
+    [("cause", "causé"), ("causé", "cause"), ("grevé", "grève"), ("condamne", "condamné"), ("etat", "État"),
+     ("État", "etat"), ("contrat", "contrats")],
+)
+def test_accents_differents(forme, reference):
+    assert not memes_accents(forme, reference)
 
 
 def test_deviner_langue():
