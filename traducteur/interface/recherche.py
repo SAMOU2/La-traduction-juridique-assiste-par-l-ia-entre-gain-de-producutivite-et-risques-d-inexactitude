@@ -33,6 +33,8 @@ NOMBRE_EXEMPLES = 5
 
 _INVITES = {FR: "Saisir un terme juridique…", AR: "أدخل مصطلحا قانونيا…"}
 _AUCUN_GLOSSAIRE = "Aucun glossaire n’est chargé : ouvrez un fichier CSV (menu Fichier → Ouvrir un glossaire)."
+#: Affiché quand un terme n'a ni entrée ni terme proche dans le glossaire.
+_TERME_A_AJOUTER = "Pour obtenir sa fiche, ajoutez ce terme au fichier CSV, puis rechargez le glossaire (F5)."
 
 
 class PageRecherche(QWidget):
@@ -305,4 +307,7 @@ class PageRecherche(QWidget):
                 bouton = puce(self.glossaire.libelle(entree, self.source))
                 bouton.clicked.connect(lambda _=False, cible=entree: self.ouvrir(cible))
                 self.rangee_resultats.addWidget(bouton)
+            if not proches:
+                # Les fiches viennent du fichier CSV, et de lui seul : on le rappelle.
+                self._ajouter_texte(_TERME_A_AJOUTER)
         self._afficher_entree(None)

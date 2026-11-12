@@ -43,6 +43,22 @@ FEUILLE_DE_STYLE = f"""
 #boutonGlossaire:hover {{ background: #F8FAFC; border-color: #B8C4D6; }}
 #boutonGlossaire:pressed {{ background: #EEF2F7; }}
 
+/* ---------- Sélecteur d'écran (Terme / Texte) et boutons de la barre d'outils ---------- */
+#selecteurMode {{ background: #EEF2F7; border: 1px solid {FILET}; border-radius: 10px; }}
+QPushButton[classe="mode"] {{
+    background: transparent; border: 1px solid transparent; border-radius: 8px;
+    color: {TEXTE_2}; font-size: 14px; font-weight: 600; padding: 0 16px;
+}}
+QPushButton[classe="mode"]:hover {{ color: {BLEU_FONCE}; }}
+QPushButton[classe="mode"]:checked {{ background: #FFFFFF; border-color: #DDE3EC; color: {BLEU_FONCE}; }}
+QPushButton[classe="outil"] {{
+    background: #FFFFFF; color: {TEXTE}; border: 1px solid #D5DCE8; border-radius: 10px;
+    padding: 0 14px; font-size: 13px; font-weight: 600;
+}}
+QPushButton[classe="outil"]:hover {{ background: #F8FAFC; border-color: #B8C4D6; }}
+QPushButton[classe="outil"]:pressed {{ background: #EEF2F7; }}
+QPushButton[classe="outil"]:disabled {{ color: {TEXTE_4}; border-color: {FILET}; }}
+
 /* ---------- Barre de recherche ---------- */
 #barreRecherche {{ background: #FFFFFF; border: 2px solid {BLEU}; border-radius: 14px; }}
 #champRecherche {{
@@ -118,9 +134,80 @@ QPushButton[classe="lien"] {{
 QPushButton[classe="lien"]:hover {{ color: {BLEU}; text-decoration: underline; }}
 QPushButton[classe="lien"]:disabled {{ color: {TEXTE_4}; }}
 
+/* ---------- Écran « Traduction d'un texte » : zones de texte ---------- */
+#panneauTexte, #bandeEtapes, #panneauTermes {{ background: #FFFFFF; border: 1px solid {FILET}; border-radius: 12px; }}
+#filetPanneau {{ background: #EEF2F7; border: none; }}
+#zoneTexte {{
+    background: transparent; border: none; color: #1E293B; font-size: 17px;
+    selection-background-color: {BLEU}; selection-color: #FFFFFF;
+}}
+#zoneTexte[arabe="true"] {{ font-size: 19px; }}
+#centre QLabel[classe="titrePanneau"] {{ font-size: 15px; font-weight: 600; }}
+#centre QLabel[classe="sousTitrePanneau"] {{ color: {TEXTE_3}; font-size: 13px; }}
+#centre QLabel[classe="decompte"] {{ color: {TEXTE_3}; font-size: 13px; }}
+#centre QLabel[classe="aide"] {{ color: {TEXTE_3}; font-size: 12px; }}
+QPushButton[classe="secondaire"] {{
+    background: #FFFFFF; color: {TEXTE}; border: 1px solid #D5DCE8; border-radius: 8px;
+    padding: 0 16px; font-size: 14px; font-weight: 600;
+}}
+QPushButton[classe="secondaire"]:hover {{ background: #F8FAFC; border-color: #B8C4D6; }}
+QPushButton[classe="secondaire"]:pressed {{ background: #EEF2F7; }}
+QPushButton[classe="secondaire"]:disabled {{ color: {TEXTE_4}; border-color: {FILET}; }}
+QPushButton[classe="principal"] {{
+    background: {BLEU}; color: #FFFFFF; border: none; border-radius: 8px;
+    padding: 0 18px; font-size: 14px; font-weight: 600;
+}}
+QPushButton[classe="principal"]:hover {{ background: {BLEU_FONCE}; }}
+QPushButton[classe="principal"]:pressed {{ background: #163A94; }}
+QPushButton[classe="principal"]:disabled {{ background: #A9BDEB; }}
+#centre QLabel[classe="badge"] {{
+    border-radius: 13px; padding: 0 12px; font-size: 12px; font-weight: 600;
+    background: #F1F5F9; color: {TEXTE_3}; border: 1px solid {FILET};
+}}
+#centre QLabel[classe="badge"][etat="termine"] {{ background: #ECFDF3; color: {VERT}; border-color: #BBE7CB; }}
+#centre QLabel[classe="badge"][etat="partiel"] {{ background: #FFF7ED; color: {AMBRE}; border-color: #FCD9B0; }}
+#fichierImporte {{ background: #F1F5F9; border: 1px solid {FILET}; border-radius: 14px; }}
+#centre QLabel[classe="nomFichier"] {{ color: #334155; font-size: 12px; }}
+#fermerFichier {{ background: transparent; border: none; border-radius: 9px; }}
+#fermerFichier:hover {{ background: #E2E8F0; }}
+
+/* ---------- Écran « Traduction d'un texte » : étapes de l'algorithme ---------- */
+#centre QLabel[classe="numeroEtape"] {{
+    background: {BLEU}; color: #FFFFFF; border-radius: 13px; font-size: 12px; font-weight: 700;
+}}
+#centre QLabel[classe="numeroEtape"][faite="false"] {{ background: #CBD5E1; }}
+#centre QLabel[classe="titreEtape"] {{ font-size: 13px; font-weight: 600; }}
+#centre QLabel[classe="detailEtape"] {{ color: {TEXTE_3}; font-size: 12px; }}
+
+/* ---------- Écran « Traduction d'un texte » : termes relevés ---------- */
+#centre QLabel[classe="titreTermes"] {{ font-size: 15px; font-weight: 600; }}
+#enteteTermes {{ background: #F8FAFC; border: none; border-top: 1px solid #EEF2F7; border-bottom: 1px solid #EEF2F7; }}
+#centre QLabel[classe="numeroColonne"] {{
+    background: #DCE7FB; color: {BLEU_FONCE}; border-radius: 8px; font-size: 10px; font-weight: 700;
+}}
+#centre QLabel[classe="titreColonne"] {{ color: {TEXTE_3}; font-size: 11px; font-weight: 700; }}
+#ligneTerme {{ background: transparent; border: none; border-bottom: 1px solid #EEF2F7; }}
+#ligneTerme:hover {{ background: #F7F9FF; }}
+#celluleTerme {{ background: transparent; border: none; border-right: 1px solid #EEF2F7; }}
+#celluleTerme[derniere="true"] {{ border-right: none; }}
+QPushButton[classe="lienTerme"] {{
+    background: transparent; border: none; color: {BLEU_FONCE};
+    font-size: 15px; font-weight: 700; text-align: left; padding: 0;
+}}
+QPushButton[classe="lienTerme"][arabe="true"] {{ font-size: 18px; text-align: right; }}
+QPushButton[classe="lienTerme"]:hover {{ color: {BLEU}; text-decoration: underline; }}
+#centre QLabel[classe="celluleTexte"] {{ color: {TEXTE}; font-size: 13px; }}
+#centre QLabel[classe="celluleArabe"] {{ color: {TEXTE}; font-size: 15px; }}
+#centre QLabel[classe="celluleEquivalent"] {{ color: {BLEU_FONCE}; font-size: 15px; font-weight: 700; }}
+#centre QLabel[classe="celluleEquivalentArabe"] {{ color: {BLEU_FONCE}; font-size: 19px; font-weight: 700; }}
+#centre QLabel[classe="celluleDetail"] {{ color: {TEXTE_3}; font-size: 12px; }}
+#centre QLabel[classe="celluleAlerte"] {{ color: {AMBRE}; font-size: 12px; }}
+
 /* ---------- Zones défilantes ---------- */
-QScrollArea#corpsCarte, QScrollArea#defilementCartes {{ background: transparent; border: none; }}
-QWidget#contenuCarte, QWidget#rangeeCartes {{ background: transparent; }}
+QScrollArea#corpsCarte, QScrollArea#defilementCartes, QScrollArea#defilementTermes {{
+    background: transparent; border: none;
+}}
+QWidget#contenuCarte, QWidget#rangeeCartes, QWidget#lignesTermes {{ background: transparent; }}
 QScrollBar:vertical {{ background: transparent; width: 10px; margin: 4px 2px 4px 0; }}
 QScrollBar::handle:vertical {{ background: #CBD5E1; border-radius: 4px; min-height: 28px; }}
 QScrollBar::handle:vertical:hover {{ background: #94A3B8; }}

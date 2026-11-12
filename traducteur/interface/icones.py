@@ -23,6 +23,15 @@ TRACES = {
     "tableau": '<rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M4 10h16M4 14.5h16M10 5v14"/>',
     "texte": '<path d="M5 6.5h14M5 10.5h14M5 14.5h14M5 18.5h8"/>',
     "coche": '<path d="M5.5 12.5l4.5 4.5 8.5-9.5"/>',
+    "terme": '<path d="M7.5 3.5h10a1 1 0 0 1 1 1v15h-11a2 2 0 0 1-2-2v-12a2 2 0 0 1 2-2z"/>'
+             '<path d="M5.5 17.5a2 2 0 0 1 2-2h11M9.5 8h5"/>',
+    "importer": '<path d="M12 4v11M7.5 10.5L12 15l4.5-4.5"/>'
+                '<path d="M4.5 15.5v3A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5v-3"/>',
+    "exporter": '<path d="M12 15V4M7.5 8.5L12 4l4.5 4.5"/>'
+                '<path d="M4.5 15.5v3A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5v-3"/>',
+    "chevron": '<path d="M10 7l5 5-5 5"/>',
+    "croix": '<path d="M7 7l10 10M17 7L7 17"/>',
+    "alerte": '<path d="M12 4.5L3.5 19h17z"/><path d="M12 10.5v4M12 17v.2"/>',
 }
 
 _GABARIT = (
@@ -69,6 +78,17 @@ def icone(nom: str, couleur: str, taille: int = 18, epaisseur: float = 2.0) -> Q
     resultat = QIcon()
     for rapport in (1.0, 2.0, 3.0):
         resultat.addPixmap(_rendre(svg, taille, rapport))
+    return resultat
+
+
+def icone_a_deux_etats(nom: str, couleur: str, couleur_cochee: str, taille: int = 18,
+                       epaisseur: float = 2.0) -> QIcon:
+    """Icône d'un bouton à cocher : une couleur au repos, une autre quand le bouton est coché."""
+    resultat = QIcon()
+    for teinte, etat in ((couleur, QIcon.State.Off), (couleur_cochee, QIcon.State.On)):
+        svg = _GABARIT.format(couleur=teinte, epaisseur=epaisseur, trace=TRACES[nom])
+        for rapport in (1.0, 2.0, 3.0):
+            resultat.addPixmap(_rendre(svg, taille, rapport), QIcon.Mode.Normal, etat)
     return resultat
 
 

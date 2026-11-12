@@ -72,6 +72,10 @@ def contient_arabe(texte: str) -> bool:
     return bool(_LETTRE_ARABE.search(texte))
 
 
+def contient_latin(texte: str) -> bool:
+    return bool(_LETTRE_LATINE.search(texte))
+
+
 def deviner_langue(texte: str) -> str | None:
     """Devine la langue d'un texte d'après son écriture (arabe ou latine)."""
     arabe = len(_LETTRE_ARABE.findall(texte))
