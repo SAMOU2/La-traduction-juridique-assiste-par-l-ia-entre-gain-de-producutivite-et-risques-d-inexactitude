@@ -10,6 +10,39 @@ from PySide6.QtWidgets import QApplication
 from . import NOM_APPLICATION, __version__
 
 
+def liaison_qt_instable(version_de_python: tuple[int, ...] = sys.version_info[:2]) -> bool:
+    """Détecte un défaut de PySide6 observé avec PySide6 6.12.0 et Python 3.11.
+
+    Avec ces versions, chaque appel d'une méthode de Qt qui ne renvoie rien retire à tort une
+    référence à l'objet ``None`` de Python. Au bout de quelques milliers d'appels, Python
+    s'arrête brutalement (« Fatal Python error: none_dealloc ») et l'application se ferme.
+    À partir de Python 3.12, ``None`` ne peut plus être détruit : le défaut est sans effet.
+
+    Le défaut est mesuré, et non déduit du numéro de version de PySide6 : on appelle une
+    méthode sans résultat et on regarde si le nombre de références à ``None`` a baissé.
+    """
+    if version_de_python >= (3, 12) or not hasattr(sys, "getrefcount"):
+        return False
+    from PySide6.QtCore import QSize
+
+    essais = 64
+    taille = QSize()
+    avant = sys.getrefcount(None)
+    for _ in range(essais):
+        taille.setWidth(0)
+    return sys.getrefcount(None) - avant <= -essais // 2
+
+
+AVERTISSEMENT_LIAISON = (
+    "Cette installation associe Python {python} et PySide6 {pyside}. Avec ces deux versions, "
+    "l’application peut se fermer brutalement pendant l’utilisation.\n\n"
+    "Pour corriger, fermez l’application, puis lancez dans un terminal, depuis le dossier du projet :\n\n"
+    "    python -m pip install -r requirements.txt\n\n"
+    "Cette commande installe une version de PySide6 qui convient. "
+    "Installer une version récente de Python (3.12 ou plus) règle aussi le problème."
+)
+
+
 def main(arguments: list[str] | None = None) -> int:
     """Ouvre la fenêtre principale. Un chemin de glossaire CSV peut être passé en argument."""
     arguments = list(sys.argv if arguments is None else arguments)
@@ -37,4 +70,10 @@ def main(arguments: list[str] | None = None) -> int:
     chemins = [argument for argument in application.arguments()[1:] if not argument.startswith("-")]
     fenetre = FenetrePrincipale(chemins[0] if chemins else None)
     fenetre.show()
+    if liaison_qt_instable():
+        import PySide6
+        from PySide6.QtWidgets import QMessageBox
+
+        QMessageBox.warning(fenetre, NOM_APPLICATION, AVERTISSEMENT_LIAISON.format(
+            python=".".join(map(str, sys.version_info[:2])), pyside=PySide6.__version__))
     return application.exec()

@@ -253,6 +253,8 @@ class EtiquetteCourte(QLabel):
     """Étiquette sur une seule ligne : un texte trop long est abrégé par « … ».
 
     Le texte complet reste disponible dans l'infobulle et par ``texte_complet``.
+    L'étiquette peut aussi recevoir des formes plus courtes du même texte : elle
+    affiche alors la première qui tient dans la largeur (voir ``definir_texte``).
     """
 
     def __init__(self, texte: str = "", classe: str = "", parent: QWidget | None = None) -> None:
@@ -260,16 +262,30 @@ class EtiquetteCourte(QLabel):
         self.setTextFormat(Qt.TextFormat.PlainText)
         if classe:
             self.setProperty("classe", classe)
-        self._complet = texte
+        self._formes: tuple[str, ...] = (texte,)
         self._abreger()
 
     def texte_complet(self) -> str:
-        return self._complet
+        return self._formes[0]
+
+    def definir_texte(self, texte: str, *formes_courtes: str) -> None:
+        """Change le texte de l'étiquette.
+
+        ``formes_courtes`` donne des textes plus courts, essayés dans l'ordre quand
+        le texte complet ne tient pas dans la largeur : « 83 mots trouvés sur 84 »,
+        puis « 83 sur 84 ». Si aucune forme ne tient, la dernière est abrégée par
+        « … » ; une dernière forme vide permet de ne rien afficher.
+        """
+        formes = (texte, *formes_courtes)
+        if formes != self._formes:
+            self._formes = formes
+            self._abreger()
+            self.updateGeometry()
 
     def sizeHint(self) -> QSize:  # noqa: N802
         self.ensurePolished()
         marges = self.contentsMargins()
-        largeur = self.fontMetrics().horizontalAdvance(self._complet) + marges.left() + marges.right() + 4
+        largeur = self.fontMetrics().horizontalAdvance(self._formes[0]) + marges.left() + marges.right() + 4
         return QSize(largeur, super().sizeHint().height())
 
     def minimumSizeHint(self) -> QSize:  # noqa: N802
@@ -282,10 +298,13 @@ class EtiquetteCourte(QLabel):
     def _abreger(self) -> None:
         self.ensurePolished()
         largeur = max(self.contentsRect().width(), 0)
-        visible = self.fontMetrics().elidedText(self._complet, Qt.TextElideMode.ElideRight, largeur)
+        metrique = self.fontMetrics()
+        visible = next((forme for forme in self._formes if metrique.horizontalAdvance(forme) <= largeur), None)
+        if visible is None:
+            visible = metrique.elidedText(self._formes[-1], Qt.TextElideMode.ElideRight, largeur)
         if visible != self.text():
             self.setText(visible)
-        self.setToolTip(infobulle(self._complet) if visible != self._complet else "")
+        self.setToolTip(infobulle(self._formes[0]) if visible != self._formes[0] else "")
 
 
 class TermeAjuste(QLabel):

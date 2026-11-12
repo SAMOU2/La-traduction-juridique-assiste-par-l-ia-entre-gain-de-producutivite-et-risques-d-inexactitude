@@ -3,7 +3,10 @@
 
 # Interface graphique (Qt). « Essentials » contient les modules de base de PySide6
 # (QtCore, QtGui, QtWidgets, QtSvg) : c'est suffisant ici et plus léger à télécharger.
-PySide6-Essentials>=6.7
+PySide6-Essentials>=6.7; python_version >= "3.12"
+# Avec Python 3.10 ou 3.11, on reste avant la version 6.12 : avec Python 3.11, PySide6 6.12.0
+# arrête brutalement l'application (« Fatal Python error: none_dealloc »).
+PySide6-Essentials>=6.7,<6.12; python_version < "3.12"
 
 # Expressions régulières avec prise en charge des écritures (\p{Arabic}, \p{Latin}).
 regex>=2023.8.8

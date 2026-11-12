@@ -63,7 +63,7 @@ def _legende(langue: str, role: str) -> str:
     return f"Langue {role} : {NOM_EN_FRANCAIS[FR]}"
 
 
-def _categorie(entree: Entree, langue: str) -> str:
+def categorie_et_pluriel(entree: Entree, langue: str) -> str:
     """« nom masculin · pl. contrats » ou « اسم مذكر، ج. عقود »."""
     categorie, pluriel = entree.categorie(langue), entree.pluriel(langue)
     if langue == AR:
@@ -359,7 +359,7 @@ class CarteContexte(Carte):
             for langue in (source, cible):
                 phrase = contexte.texte(langue)
                 if phrase:
-                    label = etiquette(_phrase_surlignee(phrase, entree, langue),
+                    label = etiquette(phrase_surlignee(phrase, entree, langue),
                                       "texteArabe" if langue == AR else "texte", langue,
                                       retour_ligne=True, selectionnable=True, riche=True)
                     bloc.addWidget(label)
@@ -395,7 +395,7 @@ class CarteRessources(Carte):
             dans_la_vignette.addWidget(icone_fixe(_icone_de_ressource(ressource), theme.BLEU_FONCE, 18),
                                        0, Qt.AlignmentFlag.AlignCenter)
             ligne.addWidget(vignette, 0, Qt.AlignmentFlag.AlignTop)
-            label = etiquette(_ressource_en_html(ressource, langue), "ressourceArabe" if langue == AR else "ressource",
+            label = etiquette(ressource_en_html(ressource, langue), "ressourceArabe" if langue == AR else "ressource",
                               langue, retour_ligne=True, riche=True)
             label.setTextInteractionFlags(Qt.TextInteractionFlag.TextBrowserInteraction)
             label.setOpenExternalLinks(True)
@@ -431,13 +431,13 @@ def _panneau_du_terme(entree: Entree, langue: str, role: str, classe: str, *, ac
     terme = entree.terme(langue)
     bloc.addWidget(TermeAjuste(terme, classe, langue, *_tailles_du_terme(terme, langue)))
 
-    categorie = _categorie(entree, langue)
+    categorie = categorie_et_pluriel(entree, langue)
     if categorie:
         bloc.addWidget(etiquette(categorie, "categorie", langue, retour_ligne=True))
     return panneau
 
 
-def _phrase_surlignee(phrase: str, entree: Entree, langue: str) -> str:
+def phrase_surlignee(phrase: str, entree: Entree, langue: str) -> str:
     """Phrase d'exemple en HTML, le terme de l'entrée mis en évidence."""
     morceaux, position = [], 0
     for debut, fin in positions_du_terme(phrase, entree, langue):
@@ -454,7 +454,7 @@ def _paragraphe(html: str, langue: str) -> str:
     return f'<p dir="ltr" align="left" style="margin: 0;">{html}</p>'
 
 
-def _ressource_en_html(ressource: str, langue: str) -> str:
+def ressource_en_html(ressource: str, langue: str) -> str:
     """Référence en HTML : première partie en gras, adresses web cliquables."""
     virgule = "،" if langue == AR else ","
     titre, separation, suite = ressource.partition(virgule)

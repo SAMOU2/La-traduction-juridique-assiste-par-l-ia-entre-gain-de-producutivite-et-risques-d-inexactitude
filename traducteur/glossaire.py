@@ -24,7 +24,17 @@ from pathlib import Path
 
 import regex
 
-from .langues import FR, LANGUES, autre_langue, cle_souple, cle_stricte, cles_de_recherche, contient_arabe
+from .langues import (
+    AR,
+    FR,
+    LANGUES,
+    autre_langue,
+    cle_souple,
+    cle_stricte,
+    cles_de_recherche,
+    contient_arabe,
+    sans_article_arabe,
+)
 
 #: Séparateur des valeurs multiples à l'intérieur d'une cellule (« a | b | c »).
 SEPARATEUR_LISTE = "|"
@@ -239,6 +249,7 @@ class Glossaire:
         self._souple: dict[str, dict[str, list[Entree]]] = {langue: {} for langue in LANGUES}
         self._cles_du_terme: dict[str, dict[Entree, tuple[str, ...]]] = {langue: {} for langue in LANGUES}
         self._cles_des_synonymes: dict[str, dict[Entree, frozenset[str]]] = {langue: {} for langue in LANGUES}
+        self._par_synonyme: dict[str, dict[str, list[Entree]]] = {langue: {} for langue in LANGUES}
         self._indexer()
 
     # ------------------------------------------------------------------ lecture
@@ -366,6 +377,8 @@ class Glossaire:
                 self._cles_des_synonymes[langue][entree] = frozenset(
                     cle for synonyme in entree.synonymes(langue) for cle in cles_de_recherche(synonyme, langue)
                 )
+                for cle in self._cles_des_synonymes[langue][entree]:
+                    self._ajouter(self._par_synonyme[langue], cle, entree)
                 for forme in entree.formes(langue):
                     self._ajouter(self._strict[langue], cle_stricte(forme), entree)
                     for cle in cles_de_recherche(forme, langue):
@@ -401,6 +414,34 @@ class Glossaire:
                 if entree not in resultat:
                     resultat.append(entree)
         return sorted(resultat, key=lambda entree: entree.numero)
+
+    def reconnaitre(self, forme: str, langue: str) -> list[tuple[Entree, str]]:
+        """Entrées désignées par une forme relevée dans un texte, avec la façon dont elles sont reconnues.
+
+        La forme est comparée au terme de chaque entrée (``"terme"``), à son
+        pluriel (``"pluriel"``) et, si rien ne correspond, à ses synonymes
+        (``"synonyme"``). Contrairement à ``trouver``, un article français
+        placé devant la forme n'est pas ignoré : la traduction d'un texte le
+        traite à part. L'article arabe, collé au mot, est ignoré.
+        """
+        trouvees = list(self._strict[langue].get(cle_stricte(forme), ()))
+        cle = cle_souple(forme)
+        cles = (cle, sans_article_arabe(cle)) if langue == AR else (cle,)
+        if not trouvees:
+            for candidate in cles:
+                for entree in self._souple[langue].get(candidate, ()):
+                    if entree not in trouvees:
+                        trouvees.append(entree)
+        if trouvees:
+            trouvees.sort(key=lambda entree: entree.numero)
+            return [(entree, "terme" if any(candidate in self._cles_du_terme[langue][entree] for candidate in cles)
+                     else "pluriel") for entree in trouvees]
+        synonymes: list[Entree] = []
+        for candidate in cles:
+            for entree in self._par_synonyme[langue].get(candidate, ()):
+                if entree not in synonymes:
+                    synonymes.append(entree)
+        return [(entree, "synonyme") for entree in sorted(synonymes, key=lambda entree: entree.numero)]
 
     def par_terme(self, terme: str, langue: str) -> Entree | None:
         """Première entrée dont le terme (ou son pluriel) est exactement ``terme``."""

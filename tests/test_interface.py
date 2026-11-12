@@ -6,10 +6,10 @@ import pytest
 
 pytest.importorskip("PySide6")
 
-from PySide6.QtCore import QSettings, Qt
+from PySide6.QtCore import Qt
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtTest import QTest
-from PySide6.QtWidgets import QApplication, QLabel, QPushButton
+from PySide6.QtWidgets import QLabel, QPushButton
 
 from traducteur.interface import fenetre as module_fenetre
 from traducteur.interface.composants import (
@@ -23,36 +23,6 @@ from traducteur.interface.fenetre import FenetrePrincipale
 from traducteur.langues import AR, FR
 
 _BALISE = re.compile(r"<[^>]+>")
-
-
-@pytest.fixture(scope="session")
-def application():
-    return QApplication.instance() or QApplication([])
-
-
-@pytest.fixture
-def reglages(tmp_path):
-    return QSettings(str(tmp_path / "reglages.ini"), QSettings.Format.IniFormat)
-
-
-@pytest.fixture
-def avertissements(monkeypatch):
-    """Remplace les boîtes de dialogue par une simple liste de messages."""
-    messages: list[tuple[str, str]] = []
-    monkeypatch.setattr(FenetrePrincipale, "_boite", lambda self, icone, titre, texte: messages.append((titre, texte)))
-    return messages
-
-
-@pytest.fixture
-def fenetre(application, reglages, avertissements):
-    fenetre = FenetrePrincipale(reglages=reglages)
-    fenetre.resize(1440, 860)
-    fenetre.show()
-    application.processEvents()
-    yield fenetre
-    fenetre.close()
-    fenetre.deleteLater()
-    application.processEvents()
 
 
 def textes(widget) -> list[str]:
@@ -85,7 +55,7 @@ def test_la_fenetre_s_ouvre_avec_le_glossaire_d_exemple(fenetre, avertissements)
     assert "Glossaire chargé : glossaire_juridique.csv" in etat
     assert "40 entrées" in etat and "UTF-8" in etat
     assert fenetre.etat_sens.text().startswith("Sens : français › arabe")
-    assert "Prototype v0.1" in fenetre.etat_sens.text()
+    assert "Prototype v0.2" in fenetre.etat_sens.text()
     assert fenetre.pastille_source.nom.text() == "Français"
     assert fenetre.pastille_cible.nom.text() == "العربية"
 
@@ -248,8 +218,11 @@ def test_aucun_resultat_propose_les_termes_proches(fenetre):
     page.zone_resultats.findChild(QPushButton).click()
     assert page.entree.terme_fr == "contrat" and page.champ.text() == "contrat"
 
+    # Ni entrée ni terme proche : l'écran rappelle que les fiches viennent du fichier CSV.
     page.rechercher("xyz")
-    assert textes(page.zone_resultats) == ["Aucune entrée du glossaire ne correspond à « xyz »."]
+    assert textes(page.zone_resultats) == [
+        "Aucune entrée du glossaire ne correspond à « xyz ».",
+        "Pour obtenir sa fiche, ajoutez ce terme au fichier CSV, puis rechargez le glossaire (F5)."]
     assert puces(page.zone_resultats) == []
 
 
@@ -273,13 +246,23 @@ def test_les_puces_et_les_expressions_ouvrent_l_entree(fenetre):
     assert page.entree.terme_fr == "contrat de bail"
 
 
-def test_entree_sans_definition_ni_exemple_ni_ressource(fenetre):
+def test_entree_sans_definition_ni_exemple_ni_ressource(fenetre, tmp_path):
+    """Un glossaire réduit aux deux colonnes de termes : les champs 2, 4 et 5 le signalent."""
+    fichier = tmp_path / "deux_colonnes.csv"
+    fichier.write_text("terme_fr;terme_ar\ncapacité;أهلية\n", encoding="utf-8")
+    assert fenetre.charger_glossaire(fichier)
     page = fenetre.page
     page.rechercher("capacité")
     assert "Aucune définition dans le glossaire pour ce terme." in textes(page.carte_definition)
     assert "Aucun exemple dans le glossaire pour ce terme." in textes(page.carte_contexte)
     assert "Aucune ressource dans le glossaire pour ce terme." in textes(page.carte_ressources)
     assert grand_terme(page.carte_equivalent) == "أهلية"
+
+
+def test_chaque_entree_de_l_exemple_a_une_definition_et_des_ressources(glossaire):
+    for entree in glossaire.entrees:
+        assert entree.definition_fr and entree.definition_ar and entree.source_definition, entree.terme_fr
+        assert entree.ressources, entree.terme_fr
 
 
 def test_copier_l_equivalent_et_les_references(fenetre):

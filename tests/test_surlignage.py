@@ -51,14 +51,18 @@ def test_reperage_en_arabe(phrase, champs, attendu):
     assert reperes(phrase, AR, **champs) == attendu
 
 
-def test_tous_les_exemples_du_glossaire_contiennent_leur_terme_en_arabe(glossaire):
-    for entree in glossaire.entrees:
-        for contexte in entree.contextes:
-            assert positions_du_terme(contexte.ar, entree, AR), (entree.terme_ar, contexte.ar)
+def test_exemples_du_glossaire_en_arabe(glossaire):
+    """Le terme arabe est repéré dans tous les exemples, sauf un.
+
+    L'article 106 rend « consentement mutuel » par « اتفاق الطرفين » : le mot « رضا » n'y figure pas.
+    """
+    sans_repere = [entree.terme_ar for entree in glossaire.entrees for contexte in entree.contextes
+                   if not positions_du_terme(contexte.ar, entree, AR)]
+    assert sans_repere == ["رضا"]
 
 
 def test_exemples_du_glossaire_en_francais(glossaire):
-    """Seule l'expression « exécution du contrat » n'apparaît pas telle quelle (tournure verbale dans le texte)."""
+    """Trois exemples emploient une autre tournure que le terme : « exécuté », « réparer », « capable »."""
     sans_repere = [entree.terme_fr for entree in glossaire.entrees for contexte in entree.contextes
                    if not positions_du_terme(contexte.fr, entree, FR)]
-    assert sans_repere == ["exécution du contrat"]
+    assert sans_repere == ["exécution du contrat", "réparation", "capacité"]
