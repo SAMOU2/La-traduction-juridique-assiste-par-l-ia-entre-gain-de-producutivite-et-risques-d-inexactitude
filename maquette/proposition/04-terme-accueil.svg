@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PROPOSITION DE NOUVELLE INTERFACE — Traducteur juridique français ⇄ arabe
+  Écran « Terme » : À L'OUVERTURE DE L'APPLICATION
+
+  Enchaînement affiché (cinq champs côte à côte, dans une seule fiche) :
+    1 Terme → 2 Définition → 3 Équivalent → 4 Contextualisation → 5 Ressources
+  Aucune fiche : le panneau rappelle l'enchaînement et invite à chercher un terme.
+
+  Notes techniques
+  - SVG 1.1 autonome : aucune police, image ou feuille de style externe.
+  - Les textes restent des textes (modifiables dans un éditeur de code ou un éditeur vectoriel).
+  - Police : Segoe UI (Windows). Les largeurs ont été calculées avec Selawik, de mêmes dimensions.
+  - Texte arabe : chaque ligne est ancrée par son bord droit (text-anchor="end") ou centrée, et placée
+    entre les marques U+202B et U+202C pour que la ponctuation et les mots latins se rangent
+    de droite à gauche.
+  - Couleurs : texte #101828 / #344054 / #667085 / #98A2B3 · bleu #2251CC / #1A3FA6 · teintes #F1F5FF /
+    #DFE8FF · filets #E1E6EE / #EDF0F5 · fond #F4F6F9 · marine #0F1F3D · ambre #B54708 / #FFFAEB / #FEDF89.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1520" height="972" viewBox="0 0 1520 972" xml:lang="fr" role="img"
+     aria-labelledby="titre description"
+     font-family="'Segoe UI', 'Selawik', 'Helvetica Neue', Helvetica, 'Noto Sans Arabic', 'Geeza Pro', Arial, 'Liberation Sans', 'Noto Sans', sans-serif"
+     font-size="13" fill="#101828">
+  <title id="titre">Proposition — Écran « Terme » : à l'ouverture de l'application</title>
+  <desc id="description">Fenêtre d'application de bureau, avant toute recherche. Un panneau rappelle les cinq champs de l'enchaînement, invite à saisir un terme en français ou en arabe et propose cinq termes d'exemple. En bas, quatre raccourcis clavier.</desc>
+
+  <defs>
+    <linearGradient id="g-fond" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDF0F5"/>
+      <stop offset="1" stop-color="#DFE4EC"/>
+    </linearGradient>
+    <filter id="ombre-fenetre" x="-10%" y="-10%" width="120%" height="130%"
+            color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="18"/>
+      <feOffset dy="14" result="flou"/>
+      <feFlood flood-color="#0F1F3D" flood-opacity="0.20"/>
+      <feComposite in2="flou" operator="in"/>
+    </filter>
+    <filter id="ombre-bouton" x="-20%" y="-30%" width="140%" height="180%"
+            color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.2"/>
+      <feOffset dy="1" result="flou"/>
+      <feFlood flood-color="#101828" flood-opacity="0.14"/>
+      <feComposite in2="flou" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="c-fenetre"><rect x="40" y="36" width="1440" height="892" rx="10"/></clipPath>
+    <!-- Icônes : traits de 1,5 px sur une grille de 16 px. La couleur est donnée à chaque emploi. -->
+    <symbol id="i-balance" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.8v10.4M5.5 13.2h5M3.4 4.6h9.2M3.4 4.6 1.8 8.6h3.2zM12.6 4.6 11 8.6h3.2zM1.8 8.6a1.6 1.6 0 0 0 3.2 0M11 8.6a1.6 1.6 0 0 0 3.2 0"/></g></symbol>
+    <symbol id="i-chevron-b" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6 8 10.5 12.5 6"/></g></symbol>
+    <symbol id="i-fiche" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2.5" width="10" height="11" rx="1.5"/><path d="M5.5 5.5h5M5.5 8h5M5.5 10.5h3"/></g></symbol>
+    <symbol id="i-texte" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5h10M3 8h10M3 11.5h6"/></g></symbol>
+    <symbol id="i-fleche" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9.5 4.5 13 8l-3.5 3.5"/></g></symbol>
+    <symbol id="i-echange" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 5.5H13M10.5 3 13 5.5 10.5 8M13.5 10.5H3M5.5 8 3 10.5 5.5 13"/></g></symbol>
+    <symbol id="i-loupe" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="4.25"/><path d="M10.2 10.2 13.5 13.5"/></g></symbol>
+  </defs>
+
+  <!-- ═══ Fond et fenêtre ═══ -->
+  <rect x="0" y="0" width="1520" height="972" fill="url(#g-fond)"/>
+  <rect x="40" y="36" width="1440" height="892" rx="10" fill="#0F1F3D" filter="url(#ombre-fenetre)"/>
+  <rect x="40" y="36" width="1440" height="892" rx="10" fill="#F4F6F9"/>
+  <g clip-path="url(#c-fenetre)">
+
+    <!-- ═══ Barre de titre (dessinée par Windows) ═══ -->
+    <rect x="40" y="36" width="1440" height="32" fill="#FFFFFF"/>
+    <rect x="52" y="44" width="16" height="16" rx="4" fill="#0F1F3D"/>
+    <use xlink:href="#i-balance" x="54.5" y="46.5" width="11" height="11" stroke="#F4C95D" stroke-width="1.7"/>
+    <text x="76" y="56.5" font-size="12" fill="#101828">Traducteur juridique</text>
+    <g stroke="#344054" stroke-width="1" fill="none">
+      <path d="M1360 52.5h10"/>
+      <rect x="1406" y="47.5" width="10" height="10" rx="1.5"/>
+      <path d="M1452 47.5l10 10M1462 47.5l-10 10"/>
+    </g>
+
+    <!-- ═══ Barre de menus ; à droite, le glossaire chargé ═══ -->
+    <rect x="40" y="68" width="1440" height="34" fill="#FFFFFF"/>
+    <g font-size="13" fill="#344054">
+      <text x="56" y="89.5">Fichier</text>
+      <text x="115.32" y="89.5">Affichage</text>
+      <text x="191.42" y="89.5">Recherche</text>
+      <text x="272.84" y="89.5">Traduction</text>
+      <text x="356.33" y="89.5">Aide</text>
+    </g>
+    <rect x="1186.91" y="73" width="269.09" height="24" rx="12" fill="#F7F9FB" stroke="#E1E6EE"/>
+    <circle cx="1200.91" cy="85" r="3.5" fill="#12B76A"/>
+    <text x="1210.91" y="89.2" font-size="12"><tspan font-weight="600" fill="#101828">glossaire_juridique.csv</tspan><tspan fill="#667085"> · 1 000 entrées</tspan></text>
+    <use xlink:href="#i-chevron-b" x="1434" y="79" width="12" height="12" stroke="#667085" stroke-width="1.6"/>
+    <line x1="40" y1="102" x2="1480" y2="102" stroke="#E1E6EE"/>
+
+    <!-- ═══ Barre d'outils : sélecteur d'écran et sens de traduction ═══ -->
+    <rect x="64" y="116" width="200" height="44" rx="10" fill="#E6EAF0"/>
+    <rect x="68" y="120" width="96" height="36" rx="7" fill="#FFFFFF" filter="url(#ombre-bouton)"/>
+    <use xlink:href="#i-fiche" x="84.37" y="130" width="16" height="16" stroke="#1A3FA6" stroke-width="1.6"/>
+    <text x="107.37" y="142.8" font-size="13.5" font-weight="600" fill="#1A3FA6">Terme</text>
+    <use xlink:href="#i-texte" x="182.89" y="130" width="16" height="16" stroke="#667085" stroke-width="1.6"/>
+    <text x="205.89" y="142.8" font-size="13.5" font-weight="600" fill="#667085">Texte</text>
+    <rect x="280" y="116" width="209.3" height="44" rx="10" fill="#FFFFFF" stroke="#E1E6EE"/>
+    <text x="296" y="142.8" font-size="13.5" font-weight="600">Français</text>
+    <use xlink:href="#i-fleche" x="359.34" y="130" width="16" height="16" stroke="#98A2B3" stroke-width="1.6"/>
+    <text x="387.34" y="143.2" font-size="15.5" font-weight="600">&#x202B;العربية&#x202C;</text>
+    <line x1="445.3" y1="126" x2="445.3" y2="150" stroke="#E1E6EE"/>
+    <use xlink:href="#i-echange" x="458.3" y="129" width="18" height="18" stroke="#2251CC" stroke-width="1.6"/>
+
+    <!-- ═══ Barre de recherche ═══ -->
+    <rect x="502.3" y="113" width="956.7" height="50" rx="13" fill="#DFE8FF"/>
+    <rect x="505.3" y="116" width="950.7" height="44" rx="10" fill="#FFFFFF" stroke="#2251CC" stroke-width="1.5"/>
+    <use xlink:href="#i-loupe" x="519.3" y="129" width="18" height="18" stroke="#667085" stroke-width="1.5"/>
+    <rect x="1338" y="121" width="112" height="34" rx="8" fill="#2251CC"/>
+    <text x="1394" y="142.72" font-size="13.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">Rechercher</text>
+    <text x="549.3" y="143.6" font-size="16" fill="#98A2B3">Saisir un terme juridique, en français ou en arabe…</text>
+    <line x1="546.8" y1="128" x2="546.8" y2="148" stroke="#101828" stroke-width="1.2"/>
+
+    <!-- ═══ Panneau d'accueil : l'enchaînement est rappelé en haut, le message est au centre ═══ -->
+    <rect x="64" y="176" width="1392" height="710" rx="12" fill="#FFFFFF" stroke="#E1E6EE"/>
+    <circle cx="99" cy="205" r="10.25" fill="#FFFFFF" stroke="#C2D3FF" stroke-width="1.5"/>
+    <text x="99" y="209.32" font-size="12" font-weight="600" fill="#2251CC" text-anchor="middle">1</text>
+    <text x="119" y="209.8" font-size="13.5" font-weight="600" fill="#101828">Terme</text>
+    <text x="119" y="230" font-size="12" fill="#667085">catégorie, domaine, synonymes</text>
+    <path d="M173.3 205.0H346M341.5 201.0l4.5 4-4.5 4" fill="none" stroke="#CBD3DF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="371" cy="205" r="10.25" fill="#FFFFFF" stroke="#C2D3FF" stroke-width="1.5"/>
+    <text x="371" y="209.32" font-size="12" font-weight="600" fill="#2251CC" text-anchor="middle">2</text>
+    <text x="391" y="209.8" font-size="13.5" font-weight="600" fill="#101828">Définition</text>
+    <text x="391" y="230" font-size="12" fill="#667085">en français et en arabe, avec sa source</text>
+    <path d="M468.8 205.0H638M633.5 201.0l4.5 4-4.5 4" fill="none" stroke="#CBD3DF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="663" cy="205" r="11" fill="#2251CC"/>
+    <text x="663" y="209.32" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="683" y="209.8" font-size="13.5" font-weight="600" fill="#1A3FA6">Équivalent</text>
+    <text x="683" y="230" font-size="12" fill="#667085">dans la langue cible</text>
+    <path d="M763.7 205.0H902M897.5 201.0l4.5 4-4.5 4" fill="none" stroke="#CBD3DF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="927" cy="205" r="10.25" fill="#FFFFFF" stroke="#C2D3FF" stroke-width="1.5"/>
+    <text x="927" y="209.32" font-size="12" font-weight="600" fill="#2251CC" text-anchor="middle">4</text>
+    <text x="947" y="209.8" font-size="13.5" font-weight="600" fill="#101828">Contextualisation</text>
+    <text x="947" y="230" font-size="12" fill="#667085">exemples d’emploi dans les deux langues</text>
+    <path d="M1072.9 205.0H1194M1189.5 201.0l4.5 4-4.5 4" fill="none" stroke="#CBD3DF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="1219" cy="205" r="10.25" fill="#FFFFFF" stroke="#C2D3FF" stroke-width="1.5"/>
+    <text x="1219" y="209.32" font-size="12" font-weight="600" fill="#2251CC" text-anchor="middle">5</text>
+    <text x="1239" y="209.8" font-size="13.5" font-weight="600" fill="#101828">Ressources</text>
+    <text x="1239" y="230" font-size="12" fill="#667085">textes de loi, ouvrages, sites officiels</text>
+    <line x1="64" y1="256" x2="1456" y2="256" stroke="#EDF0F5"/>
+    <line x1="64" y1="838" x2="1456" y2="838" stroke="#EDF0F5"/>
+    <circle cx="760" cy="440" r="32" fill="#F1F5FF" stroke="#DFE8FF"/>
+    <use xlink:href="#i-loupe" x="746" y="426" width="28" height="28" stroke="#2251CC" stroke-width="1.4"/>
+    <text x="760" y="522" font-size="24" font-weight="600" fill="#0F1F3D" text-anchor="middle" letter-spacing="-0.2">Recherchez un terme juridique</text>
+    <g font-size="14" fill="#667085" text-anchor="middle">
+      <text x="760" y="552">Saisissez un terme en français ou en arabe, puis appuyez sur Entrée.</text>
+      <text x="760" y="574">Le sens de traduction s’adapte à la langue du terme.</text>
+    </g>
+    <text x="760" y="618" font-size="10.5" font-weight="600" fill="#667085" letter-spacing="0.7" text-anchor="middle">PAR EXEMPLE</text>
+    <rect x="524.5" y="630" width="70" height="30" rx="8" fill="#F1F5FF" stroke="#DFE8FF"/>
+    <text x="559.5" y="649.8" font-size="13.5" fill="#1A3FA6" text-anchor="middle">contrat</text>
+    <rect x="602.5" y="630" width="124" height="30" rx="8" fill="#F1F5FF" stroke="#DFE8FF"/>
+    <text x="664.5" y="649.8" font-size="13.5" fill="#1A3FA6" text-anchor="middle">soumissionnaire</text>
+    <rect x="734.5" y="630" width="56" height="30" rx="8" fill="#F1F5FF" stroke="#DFE8FF"/>
+    <text x="762.5" y="649.8" font-size="13.5" fill="#1A3FA6" text-anchor="middle">offre</text>
+    <rect x="798.5" y="630" width="102" height="30" rx="8" fill="#F1F5FF" stroke="#DFE8FF"/>
+    <text x="849.5" y="649.8" font-size="13.5" fill="#1A3FA6" text-anchor="middle">livret foncier</text>
+    <rect x="908.5" y="630" width="87" height="30" rx="8" fill="#F1F5FF" stroke="#DFE8FF"/>
+    <text x="952" y="649.8" font-size="13.5" fill="#1A3FA6" text-anchor="middle">dividende</text>
+    <!-- Pied du panneau -->
+    <rect x="344.35" y="851" width="47.61" height="22" rx="5" fill="#F7F9FB" stroke="#E1E6EE"/>
+    <text x="368.16" y="866.2" font-size="11.5" font-weight="600" fill="#344054" text-anchor="middle">Ctrl+F</text>
+    <text x="399.96" y="866.5" font-size="12.5" fill="#667085">aller à la barre de recherche</text>
+    <rect x="588.95" y="851" width="45.27" height="22" rx="5" fill="#F7F9FB" stroke="#E1E6EE"/>
+    <text x="611.59" y="866.2" font-size="11.5" font-weight="600" fill="#344054" text-anchor="middle">Ctrl+I</text>
+    <text x="642.22" y="866.5" font-size="12.5" fill="#667085">inverser le sens de traduction</text>
+    <rect x="839.57" y="851" width="48.24" height="22" rx="5" fill="#F7F9FB" stroke="#E1E6EE"/>
+    <text x="863.69" y="866.2" font-size="11.5" font-weight="600" fill="#344054" text-anchor="middle">Ctrl+2</text>
+    <text x="895.81" y="866.5" font-size="12.5" fill="#667085">traduire un texte</text>
+    <rect x="1023.37" y="851" width="26.59" height="22" rx="5" fill="#F7F9FB" stroke="#E1E6EE"/>
+    <text x="1036.67" y="866.2" font-size="11.5" font-weight="600" fill="#344054" text-anchor="middle">F5</text>
+    <text x="1057.97" y="866.5" font-size="12.5" fill="#667085">recharger le glossaire</text>
+
+    <!-- ═══ Barre d'état ═══ -->
+    <rect x="40" y="902" width="1440" height="26" fill="#FFFFFF"/>
+    <line x1="40" y1="902" x2="1480" y2="902" stroke="#E1E6EE"/>
+    <g font-size="11.5" fill="#667085">
+      <text x="64" y="919.5">Glossaire chargé : 1 000 entrées.</text>
+      <text x="1456" y="919.5" text-anchor="end">Version 0.3</text>
+      <line x1="1380" y1="909" x2="1380" y2="921" stroke="#E1E6EE"/>
+      <text x="1368" y="919.5" text-anchor="end">arabe</text>
+      <use xlink:href="#i-fleche" x="1322.53" y="909.5" width="12" height="12" stroke="#667085" stroke-width="1.4"/>
+      <text x="1317.53" y="919.5" text-anchor="end">Sens : français</text>
+    </g>
+  </g>
+  <!-- Contour de la fenêtre -->
+  <rect x="40.5" y="36.5" width="1439" height="891" rx="10" fill="none" stroke="#C5CCD8"/>
+</svg>

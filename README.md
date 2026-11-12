@@ -7,6 +7,9 @@ Reverso ». Pour chaque terme, elle suit l'enchaînement :
 
 Le dépôt contient l'application (Python et PySide6) et sa [maquette](#maquette-de-lapplication-de-bureau).
 
+Une [proposition de nouvelle interface](#proposition-de-nouvelle-interface-à-valider) est à valider.
+Elle n'est pas encore programmée.
+
 ## L'application (version 0.2)
 
 L'application a deux écrans. On passe de l'un à l'autre avec le sélecteur **Terme | Texte**, en
@@ -365,10 +368,12 @@ traducteur/
     icones.py                icônes
 outils/
   glossaire/                 construction du glossaire d'exemple : script et lots de termes
+  maquette/                  script qui dessine la proposition de nouvelle interface
 tests/                       tests automatiques
   donnees/                   petit glossaire de 40 entrées réservé aux tests
 docs/                        captures d'écran
 maquette/                    maquette SVG des deux écrans
+  proposition/               proposition de nouvelle interface (à valider)
 ```
 
 Les modules placés directement dans `traducteur/` n'utilisent pas l'interface graphique, sauf
@@ -447,9 +452,105 @@ dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « con
 - **Petite fenêtre.** À la taille minimale (900 × 560), les zones de texte n'affichent que deux
   ou trois lignes et le tableau des termes une seule ligne ; il faut faire défiler.
 
+## Proposition de nouvelle interface (à valider)
+
+**Rien de ce qui suit n'est programmé.** Ce sont cinq dessins au format SVG. Ils montrent ce que
+l'application pourrait devenir. L'application actuelle est celle des captures du début de cette
+page.
+
+Les fichiers sont dans `maquette/proposition/`. Le fichier `index.html` du même dossier les
+affiche tous sur une page : il suffit de l'ouvrir dans un navigateur.
+
+### Écran « Terme »
+
+![Proposition, écran Terme : fiche du terme « contrat »](maquette/proposition/01-terme.svg)
+
+Les cinq champs de l'enchaînement sont réunis dans une seule fiche. L'équivalent est au centre.
+Les autres entrées du glossaire qui contiennent le terme sont listées sous la fiche.
+
+### Écran « Texte »
+
+![Proposition, écran Texte : traduction du texte d'exemple](maquette/proposition/02-texte.svg)
+
+Dans les deux zones, les termes du glossaire sont en bleu. Le mot absent du glossaire reste en
+français, en gris italique. Le tableau du bas reprend les cinq champs pour chaque terme trouvé.
+
+### Trois autres cas de l'écran « Terme »
+
+| Fichier | Ce qu'il montre |
+| --- | --- |
+| [`03-terme-deux-sens.svg`](maquette/proposition/03-terme-deux-sens.svg) | Le cas le plus courant : la définition porte la mention « À vérifier » et le glossaire ne donne pas d'exemple. Ici, le terme (« action ») a en plus deux sens. |
+| [`04-terme-accueil.svg`](maquette/proposition/04-terme-accueil.svg) | L'écran à l'ouverture de l'application, avant toute recherche. |
+| [`05-terme-introuvable.svg`](maquette/proposition/05-terme-introuvable.svg) | Le terme cherché n'est pas dans le glossaire. |
+
+### Défauts relevés dans la version 0.2 et correction proposée
+
+Les défauts ont été relevés sur des captures de l'application faites sous Linux, à trois tailles de
+fenêtre (1440 × 860, 1080 × 620 et 900 × 560). Sous Windows, l'aspect des caractères peut différer.
+
+| Défaut relevé | Proposition |
+| --- | --- |
+| À l'ouverture, cinq grandes boîtes presque vides. | Un seul panneau : rappel de l'enchaînement, invitation à chercher, cinq exemples. |
+| Trois barres empilées en haut de la fenêtre. Le sens de traduction est loin de la barre de recherche. | Les menus, puis une seule barre : choix de l'écran, sens de traduction, recherche. |
+| Le bouton en haut à droite change d'un écran à l'autre (« Ouvrir un glossaire… », ou « Importer » et « Exporter »). | Le glossaire chargé est toujours indiqué en haut à droite. « Importer », « Exporter » et « Traduire » sont dans la barre de l'écran « Texte ». |
+| Les puces de résultats occupent une à trois lignes et repoussent les champs vers le bas. Au-delà de huit résultats, il faut préciser la recherche. | Toutes les autres entrées trouvées sont listées sous la fiche, sur des lignes régulières. |
+| Les mêmes expressions figurent deux fois : en puces sous la recherche et dans le champ ③. | Une seule liste, sous la fiche. |
+| Champ ③ : la liste des expressions est coupée par le pied du champ ; il faut la faire défiler. | Le champ ③ ne contient plus que l'équivalent, sa catégorie, son pluriel et ses autres équivalents. |
+| Cinq cartes séparées, de même hauteur : certaines sont à moitié vides, une autre déborde. | Une seule fiche à cinq colonnes. La colonne ③, au centre, est mise en avant. |
+| La source de la définition est coupée : « à vérifier (définition d'exem… ». | La mention « À vérifier » s'affiche en entier, en orange, avec un signe. |
+| Champ ④ sans exemple (969 entrées sur 1 000) : une phrase grise en haut d'une grande boîte vide. | Un message centré, qui dit quelles colonnes du CSV remplir. |
+| Les lignes arabes sont plus espacées que les lignes françaises. Dans les expressions, l'arabe est écrit plus bas que le français. | Interlignes réguliers. Le français et l'arabe d'une même ligne sont alignés. |
+| Ressources : icône à gauche pour une référence française, à droite pour une référence arabe. | Une liste simple, sans icône ; les références arabes sont alignées à droite. |
+| Terme à deux sens : deux puces (« action (دعوى) », « action (سهم) ») mêlées aux autres résultats. | Un onglet par sens en haut de la fiche, et un avertissement. |
+| Terme introuvable : le message est une ligne grise sous la recherche ; les cinq boîtes vides restent affichées. | Un panneau avec le message et les termes proches. |
+| Écran « Texte » : dans un texte juridique, la plupart des mots sont écrits en orange. | Les termes sont en bleu. L'orange est réservé aux avertissements. |
+| L'étiquette d'état de la traduction passe à gauche ou à droite selon la langue. | Elle reste à droite et donne le nombre de mots trouvés. |
+| Tableau des termes : une ou deux rangées visibles ; les termes longs sont coupés. | Rangées de deux lignes : quatre rangées visibles. Un signe indique si la définition est à vérifier. |
+| Barre d'état : nom du fichier, nombre d'entrées, encodage, « Prototype ». | Un message court et le sens de traduction. |
+| Petite fenêtre (1080 × 620 et moins) : champs illisibles, une barre de défilement par champ. | **Non dessiné.** À traiter au moment de programmer. |
+
+### Ce que la proposition change dans l'usage
+
+À valider en même temps que l'aspect :
+
+- Les puces de résultats disparaissent. Le nombre de résultats s'affiche dans la barre de
+  recherche ; les autres entrées trouvées sont sous la fiche.
+- Les expressions quittent le champ ③. À leur place, le champ affiche les autres équivalents
+  (colonne des synonymes de la langue cible), que la version 0.2 ne montre pas dans ce champ.
+- Un terme à plusieurs sens s'ouvre avec un onglet par sens.
+- Deux boutons, dans le pied du champ ①, ouvrent l'entrée précédente et l'entrée suivante du
+  glossaire.
+- Le bouton « Traduire » passe de la zone du texte source à la barre d'outils.
+- L'étiquette « Traduction terminée » ou « partielle » donne aussi le nombre de mots trouvés.
+- Dans le tableau, la colonne ④ choisit, quand c'est possible, un passage du texte dont la
+  traduction contient l'équivalent.
+- Un clic sur le nom du glossaire, en haut à droite, sert à ouvrir un autre glossaire ou à le
+  recharger.
+
+### Ce qui n'est pas dessiné
+
+- le sens arabe → français ;
+- l'écran « Texte » avant la traduction ;
+- les petites fenêtres ;
+- les boîtes de dialogue (aide, format du glossaire, à propos).
+
+### Contenu des dessins
+
+Le contenu vient du glossaire fourni et de l'application : entrées « contrat » et « action », texte
+d'exemple de l'écran « Texte », sa traduction et les termes relevés. Trois éléments sont donnés à
+titre d'illustration : le nom du fichier importé, le numéro de version, et les passages de la
+colonne ④ du tableau, choisis à la main.
+
+Les dessins sont prévus pour la police Segoe UI de Windows. Ils ont été vérifiés dans Chromium avec
+la police Selawik, de mêmes dimensions ; ils n'ont pas été vérifiés sous Windows.
+
+Les cinq fichiers sont écrits par le script `outils/maquette/generer.py`. Ce script ne fait pas
+partie de l'application.
+
 ## Maquette de l'application de bureau
 
-Maquette SVG des deux écrans du prototype. Les deux écrans sont programmés (voir ci-dessus).
+Maquette SVG des deux écrans du prototype (version 0.1). Les deux écrans sont programmés (voir
+[L'application](#lapplication-version-02)).
 Une différence avec la maquette : dans l'application, les boutons **Importer** et **Exporter**
 ne figurent que sur l'écran « Texte » ; sur l'écran « Terme », ils sont remplacés par le bouton
 **Ouvrir un glossaire…**.
