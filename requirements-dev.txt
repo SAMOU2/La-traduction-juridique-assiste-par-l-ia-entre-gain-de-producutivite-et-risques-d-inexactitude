@@ -1,0 +1,3 @@
+# Pour lancer les tests : python -m pip install -r requirements-dev.txt, puis python -m pytest
+-r requirements.txt
+pytest>=7.4

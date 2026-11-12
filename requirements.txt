@@ -1,0 +1,9 @@
+# Bibliothèques nécessaires à l'application.
+# Installation : python -m pip install -r requirements.txt
+
+# Interface graphique (Qt). « Essentials » contient les modules de base de PySide6
+# (QtCore, QtGui, QtWidgets, QtSvg) : c'est suffisant ici et plus léger à télécharger.
+PySide6-Essentials>=6.7
+
+# Expressions régulières avec prise en charge des écritures (\p{Arabic}, \p{Latin}).
+regex>=2023.8.8
