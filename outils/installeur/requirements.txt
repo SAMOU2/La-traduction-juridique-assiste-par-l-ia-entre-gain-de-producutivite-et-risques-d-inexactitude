@@ -1,0 +1,11 @@
+# Outils qui fabriquent l'installeur Windows (voir construire.py), à installer avec Python 3.13, 64 bits :
+#
+#     python -m pip install -r outils/installeur/requirements.txt
+#
+# Les versions sont fixées : ce sont celles avec lesquelles l'installeur a été fabriqué et vérifié.
+# PySide6 6.11.3 est la version de Qt avec laquelle les tests de l'application sont lancés.
+PySide6-Essentials==6.11.3
+shiboken6==6.11.3
+regex==2026.11.9
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.10
