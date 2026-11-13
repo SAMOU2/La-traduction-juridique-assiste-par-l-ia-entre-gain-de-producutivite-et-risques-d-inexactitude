@@ -1,0 +1,25 @@
+# Phrases d'exemple du lot 30_territoire.txt : terme | phrase française | phrase arabe
+environnement | Toute personne a droit à un environnement sain. | لكل شخص الحق في بيئة سليمة.
+protection de l'environnement | La protection de l'environnement est un devoir de l'État et des citoyens. | حماية البيئة واجب على الدولة والمواطنين.
+développement durable | Le développement durable préserve les ressources des générations futures. | تحافظ التنمية المستدامة على موارد الأجيال القادمة.
+pollution | La pollution de l'eau nuit à la santé des habitants. | يضر تلوث الماء بصحة السكان.
+étude d'impact | Une étude d'impact est exigée avant la construction de l'usine. | تشترط دراسة التأثير قبل بناء المصنع.
+urbanisme | Le plan d'urbanisme fixe les zones constructibles. | يحدد مخطط التعمير المناطق القابلة للبناء.
+permis de construire | Aucune construction ne peut commencer sans permis de construire. | لا يجوز الشروع في أي بناء بدون رخصة البناء.
+permis de démolir | Le permis de démolir est exigé avant de détruire un bâtiment. | تشترط رخصة الهدم قبل هدم بناية.
+certificat de conformité | Le certificat de conformité est délivré à la fin des travaux. | تسلم شهادة المطابقة عند انتهاء الأشغال.
+lotissement | Le lotissement divise le terrain en plusieurs lots à bâtir. | تقسم التجزئة قطعة الأرض إلى عدة حصص للبناء.
+nationalité | La nationalité algérienne est définie par la loi. | الجنسية الجزائرية معرفة بالقانون.
+nationalité d'origine | L'enfant né d'un père algérien ou d'une mère algérienne a la nationalité d'origine. | يتمتع بالجنسية الأصلية الولد المولود من أب جزائري أو أم جزائرية.
+naturalisation | La naturalisation est accordée par décret présidentiel. | يمنح التجنس بمرسوم رئاسي.
+déchéance de la nationalité | La déchéance de la nationalité ne concerne que la personne qui a acquis la nationalité. | لا يطبق التجريد من الجنسية إلا على الشخص الذي اكتسب الجنسية.
+apatride | L'apatride n'a la nationalité d'aucun État. | عديم الجنسية لا يحمل جنسية أي دولة.
+étranger | L'étranger doit avoir une carte de séjour pour résider en Algérie. | يجب أن يحوز الأجنبي بطاقة إقامة ليقيم في الجزائر.
+visa | Le visa est délivré par le consulat. | تسلم القنصلية التأشيرة.
+passeport | Le passeport est valable dix ans. | جواز السفر صالح لمدة عشر سنوات.
+navire | Le navire porte un nom et une nationalité. | تحمل السفينة اسما وجنسية.
+armateur | L'armateur répond des fautes du capitaine. | يسأل المجهز عن أخطاء الربان.
+capitaine | Le capitaine commande le navire et son équipage. | يقود الربان السفينة وطاقمها.
+port | Le navire décharge sa cargaison dans le port d'Alger. | تفرغ السفينة حمولتها في ميناء الجزائر.
+transport maritime | Le transport maritime achemine la plus grande part des marchandises. | يتكفل النقل البحري بأكبر جزء من البضائع.
+connaissement | Le connaissement prouve que la marchandise a été reçue à bord du navire. | تثبت وثيقة الشحن استلام البضاعة على متن السفينة.

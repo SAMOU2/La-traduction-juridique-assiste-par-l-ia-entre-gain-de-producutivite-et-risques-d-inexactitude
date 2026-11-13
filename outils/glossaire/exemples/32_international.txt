@@ -1,0 +1,41 @@
+# Phrases d'exemple du lot 32_international.txt : terme | phrase française | phrase arabe
+droit international public | Le droit international public régit les rapports entre les États. | ينظم القانون الدولي العام العلاقات بين الدول.
+traité | Le traité ratifié par le président de la République est supérieur à la loi. | المعاهدة التي يصادق عليها رئيس الجمهورية تسمو على القانون.
+convention internationale | L'Algérie a signé une convention internationale sur les droits de l'enfant. | وقعت الجزائر اتفاقية دولية حول حقوق الطفل.
+protocole | Le protocole complète la convention sans la remplacer. | يكمل البروتوكول الاتفاقية دون أن يحل محلها.
+ratification | La ratification du traité est autorisée par le Parlement. | يرخص البرلمان بالتصديق على المعاهدة.
+adhésion | L'adhésion de l'État à la convention est déposée auprès du secrétaire général. | يودع انضمام الدولة إلى الاتفاقية لدى الأمين العام.
+réserve | L'État formule une réserve sur un article de la convention. | تبدي الدولة تحفظا على مادة من الاتفاقية.
+organisation internationale | L'organisation internationale est créée par un traité entre des États. | تنشأ المنظمة الدولية بمعاهدة بين الدول.
+Organisation des Nations Unies | L'Algérie est membre de l'Organisation des Nations Unies depuis 1962. | الجزائر عضو في منظمة الأمم المتحدة منذ سنة 1962.
+Conseil de sécurité | Le Conseil de sécurité compte quinze membres. | يتكون مجلس الأمن من خمسة عشر عضوا.
+Cour internationale de Justice | La Cour internationale de Justice siège à La Haye. | يوجد مقر محكمة العدل الدولية في لاهاي.
+immunité diplomatique | L'ambassadeur bénéficie de l'immunité diplomatique. | يتمتع السفير بالحصانة الدبلوماسية.
+ambassade | Les locaux de l'ambassade sont inviolables. | مباني السفارة مصونة لا تنتهك حرمتها.
+ambassadeur | L'ambassadeur représente son État auprès de l'État d'accueil. | يمثل السفير دولته لدى الدولة المستقبلة.
+consulat | Le consulat renouvelle le passeport des citoyens installés dans le pays. | تجدد القنصلية جواز السفر للمواطنين المقيمين في البلد.
+droit international humanitaire | Le droit international humanitaire protège les civils pendant la guerre. | يحمي القانون الدولي الإنساني المدنيين أثناء الحرب.
+crime de guerre | L'attaque volontaire d'un hôpital est un crime de guerre. | الهجوم المتعمد على مستشفى جريمة حرب.
+crime contre l'humanité | Le crime contre l'humanité ne se prescrit pas. | لا تتقادم الجريمة ضد الإنسانية.
+génocide | Le génocide vise à détruire un groupe national, ethnique ou religieux. | تهدف الإبادة الجماعية إلى إهلاك جماعة قومية أو إثنية أو دينية.
+réfugié | Le réfugié ne peut pas être renvoyé vers un pays où sa vie est en danger. | لا يجوز إعادة اللاجئ إلى بلد تكون حياته فيه في خطر.
+droits de l'homme | La constitution garantit les droits de l'homme. | يضمن الدستور حقوق الإنسان.
+libertés fondamentales | Les libertés fondamentales ne peuvent être limitées que par la loi. | لا يجوز تقييد الحريات الأساسية إلا بقانون.
+dignité humaine | La dignité humaine doit être respectée en toutes circonstances. | يجب احترام الكرامة الإنسانية في كل الظروف.
+égalité devant la loi | L'égalité devant la loi interdit de distinguer selon l'origine. | تمنع المساواة أمام القانون التفرقة بسبب الأصل.
+non-discrimination | Le principe de non-discrimination s'applique à l'embauche. | يطبق مبدأ عدم التمييز عند التوظيف.
+liberté d'expression | La constitution protège la liberté d'expression. | يحمي الدستور حرية التعبير.
+liberté de circulation | Le citoyen jouit de la liberté de circulation sur le territoire national. | يتمتع المواطن بحرية التنقل في الإقليم الوطني.
+torture | La torture est interdite et punie par la loi. | يمنع التعذيب ويعاقب عليه القانون.
+droit international privé | Le droit international privé désigne le juge compétent et la loi applicable. | يعين القانون الدولي الخاص القاضي المختص والقانون الواجب التطبيق.
+conflit de lois | Le conflit de lois naît lorsque le contrat a des liens avec plusieurs États. | ينشأ تنازع القوانين إذا كان للعقد روابط بعدة دول.
+loi applicable | Les parties choisissent la loi applicable à leur contrat. | يختار الأطراف القانون الواجب التطبيق على عقدهم.
+exequatur | Un jugement étranger ne peut être exécuté en Algérie qu'après exequatur. | لا يجوز تنفيذ حكم أجنبي في الجزائر إلا بعد الأمر بالتنفيذ.
+médiation | Le juge propose la médiation aux parties. | يعرض القاضي الوساطة على الأطراف.
+médiateur | Le médiateur aide les parties à trouver une solution. | يساعد الوسيط الأطراف على إيجاد حل.
+arbitrage | Les parties soumettent leur litige à l'arbitrage. | يعرض الأطراف نزاعهم على التحكيم.
+arbitre | L'arbitre doit être indépendant des parties. | يجب أن يكون المحكم مستقلا عن الأطراف.
+tribunal arbitral | Le tribunal arbitral est composé de trois arbitres. | تتشكل محكمة التحكيم من ثلاثة محكمين.
+convention d'arbitrage | La convention d'arbitrage doit être écrite. | يجب أن تكون اتفاقية التحكيم مكتوبة.
+clause compromissoire | La clause compromissoire figure dans le contrat principal. | يرد شرط التحكيم في العقد الأصلي.
+sentence arbitrale | La sentence arbitrale est exécutée après l'ordonnance du président du tribunal. | ينفذ حكم التحكيم بعد أمر رئيس المحكمة.
