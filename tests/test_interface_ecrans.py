@@ -5,7 +5,7 @@
 * « Paramètres » règle le glossaire, l'affichage et l'adresse du service informatique.
 * Le « Centre d'aide » remplace le menu « Aide » : il prépare un message pour le service informatique.
 * Les étapes de l'enchaînement s'allument l'une après l'autre quand un résultat s'affiche.
-* L'écran de démarrage montre le logo entre deux rangées de tirets animés.
+* L'écran de démarrage montre le logo entre deux rangées de tirets animés, sur un fond uni, et rien d'autre.
 """
 
 import pytest
@@ -508,7 +508,11 @@ def test_la_palette_des_tirets_tourne_en_boucle():
 def test_l_ecran_de_demarrage_montre_le_logo_entre_deux_rangees_de_tirets(application):
     ecran = EcranDemarrage()
     assert (ecran.width(), ecran.height()) == (EcranDemarrage.LARGEUR, EcranDemarrage.HAUTEUR)
+    # Une fenêtre plate : pas de bordure, et pas d'ombre demandée au système.
     assert ecran.windowFlags() & Qt.WindowType.FramelessWindowHint
+    assert ecran.windowFlags() & Qt.WindowType.NoDropShadowWindowHint
+    # Le logo est au milieu de la fenêtre, en hauteur comme en largeur.
+    assert ecran.height() / 2 == EcranDemarrage.MILIEU
     tirets = ecran.tirets(0.0)
     assert len(tirets) == 2 * EcranDemarrage.TIRETS
     milieu = ecran.width() / 2
@@ -551,19 +555,48 @@ def test_les_tirets_bougent_et_changent_de_couleur(application):
     ecran.deleteLater()
 
 
-def test_l_image_de_l_ecran_de_demarrage(application):
+def test_l_ecran_de_demarrage_est_plat_le_logo_et_les_tirets_sur_un_fond_uni(application):
     ecran = EcranDemarrage()
     ecran.show()
     application.processEvents()
     image = ecran.grab().toImage()
     echelle = image.devicePixelRatio()
+    fond, carre = QColor(EcranDemarrage.FOND), QColor(EcranDemarrage.FOND_DU_LOGO)
+    milieu, hauteur, demi_logo = ecran.width() // 2, EcranDemarrage.MILIEU, EcranDemarrage.COTE_DU_LOGO // 2
 
     def couleur(x: float, y: float) -> QColor:
         return QColor(image.pixel(int(x * echelle), int(y * echelle)))
 
-    # Fond sombre ; au centre, la balance dorée du logo.
-    assert couleur(20, 20).lightness() < 60
-    milieu, hauteur = ecran.width() // 2, EcranDemarrage.MILIEU
+    def couleurs(gauche: float, haut: float, droite: float, bas: float) -> set[str]:
+        """Toutes les couleurs d'un rectangle de la fenêtre."""
+        colonnes = range(int(gauche * echelle), int(droite * echelle))
+        lignes = range(int(haut * echelle), int(bas * echelle))
+        return {QColor(valeur).name() for valeur in {image.pixel(x, y) for x in colonnes for y in lignes}}
+
+    def entre_le_fond_et_le_carre(teinte: QColor) -> bool:
+        composantes = zip(fond.getRgb()[:3], carre.getRgb()[:3], teinte.getRgb()[:3], strict=True)
+        return all(min(a, b) <= valeur <= max(a, b) for a, b, valeur in composantes)
+
+    # Le fond est sombre et d'une seule couleur. Au-dessus et au-dessous du logo, la fenêtre ne montre rien
+    # d'autre : ni dégradé, ni lueur, ni bordure, ni nom de l'application, ni « Chargement… ».
+    assert fond.lightness() < 60
+    assert couleurs(0, 0, ecran.width(), hauteur - demi_logo - 1) == {fond.name()}
+    assert couleurs(0, hauteur + demi_logo + 1, ecran.width(), ecran.height()) == {fond.name()}
+    # À la hauteur du logo, le fond va jusqu'aux bords de la fenêtre.
+    assert couleurs(0, hauteur - demi_logo, 20, hauteur + demi_logo) == {fond.name()}
+    assert couleurs(ecran.width() - 20, hauteur - demi_logo, ecran.width(), hauteur + demi_logo) == {fond.name()}
+    # Entre le logo et les premiers tirets : le fond, sans lueur autour du logo.
+    for cote in (-1, 1):
+        gauche, droite = sorted((milieu + cote * (demi_logo + 2), milieu + cote * (demi_logo + 18)))
+        assert couleurs(gauche, hauteur - demi_logo, droite, hauteur + demi_logo) == {fond.name()}
+
+    # Le logo : un carré d'une seule couleur, sans contour. Du fond au carré, aucune autre teinte.
+    assert carre != fond
+    assert couleurs(milieu - 16, hauteur - demi_logo + 2, milieu + 16, hauteur - 30) == {carre.name()}
+    for distance in range(demi_logo - 8, demi_logo + 8):
+        for teinte in (couleur(milieu, hauteur - distance), couleur(milieu - distance, hauteur)):
+            assert entre_le_fond_et_le_carre(teinte), (distance, teinte.name())
+    # Au centre du carré, la balance dorée.
     dores = [couleur(x, y) for x in range(milieu - 30, milieu + 30, 2) for y in range(hauteur - 30, hauteur + 30, 2)]
     assert any(teinte.red() > 200 and teinte.green() > 150 and teinte.blue() < 140 for teinte in dores)
     # De chaque côté du logo, des tirets de couleur vive.
