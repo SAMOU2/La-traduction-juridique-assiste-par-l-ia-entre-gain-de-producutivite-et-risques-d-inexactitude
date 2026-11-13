@@ -697,8 +697,18 @@ def test_le_dernier_glossaire_ouvert_est_repris_au_demarrage(application, reglag
     application.processEvents()
     assert fenetre.glossaire.nom == "glossaire_essai.csv"
     assert not reglages.contains("glossaire/chemin")
+    # L'avertissement attend que la fenêtre soit affichée : il ne passe pas devant l'écran de démarrage.
+    assert avertissements == []
+    fenetre.show()
+    application.processEvents()
     assert len(avertissements) == 1 and "dernier.csv" in avertissements[0][1]
     assert avertissements[0][0] == "Glossaire non chargé"
+    # Il n'est affiché qu'une fois.
+    fenetre.hide()
+    fenetre.show()
+    application.processEvents()
+    assert len(avertissements) == 1
+    fenetre.close()
     fenetre.deleteLater()
 
 

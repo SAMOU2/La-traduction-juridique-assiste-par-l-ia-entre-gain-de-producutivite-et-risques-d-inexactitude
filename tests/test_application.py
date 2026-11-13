@@ -91,6 +91,24 @@ def test_l_application_s_ouvre_sur_l_ecran_de_demarrage(request, reglages, avert
     ecran.deleteLater()
 
 
+def test_un_glossaire_introuvable_est_signale_apres_l_ecran_de_demarrage(request, reglages, avertissements,
+                                                                         monkeypatch, tmp_path):
+    from traducteur.interface.demarrage import EcranDemarrage
+
+    qt = request.getfixturevalue("application")
+    monkeypatch.setattr(EcranDemarrage, "DUREE_MINIMALE", 300)
+    reglages.setValue("glossaire/chemin", str(tmp_path / "disparu.csv"))
+    fenetre, ecran = application.ouvrir(qt, reglages=reglages)
+    qt.processEvents()
+    assert ecran.isVisible() and avertissements == []  # rien ne passe devant le logo animé
+    QTest.qWait(700)
+    assert fenetre.isVisible() and [titre for titre, _ in avertissements] == ["Glossaire non chargé"]
+    assert "disparu.csv" in avertissements[0][1] and len(fenetre.glossaire) == 40  # le glossaire fourni est repris
+    fenetre.close()
+    fenetre.deleteLater()
+    ecran.deleteLater()
+
+
 def test_l_ecran_de_demarrage_peut_etre_desactive(request, reglages, avertissements):
     qt = request.getfixturevalue("application")
     reglages.setValue("affichage/ecran_de_demarrage", False)

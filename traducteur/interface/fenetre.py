@@ -187,6 +187,8 @@ class FenetrePrincipale(QMainWindow):
         self.reglages = reglages if reglages is not None else QSettings()
         self.glossaire: Glossaire | None = None
         self.mode = MODE_TERME
+        #: Erreurs de lecture du glossaire au démarrage, à signaler quand la fenêtre s'affiche.
+        self._erreurs_au_demarrage: list[str] = []
         animation.definir_actives(self.reglages.value(CLE_ANIMATIONS, True, bool))
 
         self.setWindowTitle(NOM_APPLICATION)
@@ -430,8 +432,13 @@ class FenetrePrincipale(QMainWindow):
             break
         else:
             self._installer(None)
-        if erreurs:
-            # Le message est affiché une fois la fenêtre ouverte.
+        # Le message est affiché une fois la fenêtre ouverte, après l'écran de démarrage : voir ``showEvent``.
+        self._erreurs_au_demarrage = erreurs
+
+    def showEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        super().showEvent(evenement)
+        if self._erreurs_au_demarrage:
+            erreurs, self._erreurs_au_demarrage = self._erreurs_au_demarrage, []
             QTimer.singleShot(0, lambda: self._avertir("Glossaire non chargé", "\n\n".join(erreurs)))
 
     def glossaire_fourni(self) -> bool:
