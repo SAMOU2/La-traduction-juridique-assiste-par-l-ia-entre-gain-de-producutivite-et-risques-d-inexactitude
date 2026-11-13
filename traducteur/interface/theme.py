@@ -79,6 +79,17 @@ def palette() -> QPalette:
     return couleurs
 
 
+def appliquer(application) -> None:
+    """Prépare l'application : style « Fusion » de Qt et palette claire.
+
+    L'interface est dessinée par sa feuille de style. Le style « Fusion » lui donne le même
+    rendu sur tous les systèmes : les styles propres à Windows ou à macOS dessinent à leur
+    façon certains éléments (menus, cadres, barres de défilement).
+    """
+    application.setStyle("Fusion")
+    application.setPalette(palette())
+
+
 FEUILLE_DE_STYLE = f"""
 #centre {{ background: {FOND}; }}
 #zoneDefilante {{ background: transparent; border: none; }}

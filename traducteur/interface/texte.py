@@ -94,11 +94,13 @@ EXEMPLES = {
 }
 
 _ROLES = {"source": "texte source", "cible": "traduction"}
+#: Textes gris des zones vides, écrits dans la langue de la zone (une phrase française écrite
+#: de droite à gauche aurait son point final du mauvais côté).
 _INVITES = {
     FR: "Saisissez, collez ou importez le texte à traduire…",
-    AR: "أدخل النص المراد ترجمته أو الصقه أو استورده…",
+    AR: "أدخل النص المراد ترجمته أو الصقه أو استورده...",
 }
-_INVITE_CIBLE = "La traduction s’affichera ici."
+_INVITES_CIBLE = {FR: "La traduction s’affichera ici.", AR: "ستظهر الترجمة هنا."}
 _AUCUN_GLOSSAIRE = "Aucun glossaire n’est chargé : ouvrez un fichier CSV (menu Fichier → Ouvrir un glossaire)."
 _TEXTE_MODIFIE = "Le texte source a changé : cliquez sur « Traduire » pour mettre la traduction à jour."
 #: Rappelé sous les états « Traduction terminée » et « Traduction partielle ».
@@ -170,7 +172,7 @@ class ChampTexte(QTextEdit):
     def definir_langue(self, langue: str) -> None:
         """Fixe la langue du texte : sens d'écriture, taille des caractères, hauteur des lignes."""
         self.langue = langue
-        self.setLayoutDirection(direction(langue))
+        # Seul le texte change de sens : la barre de défilement reste à droite de la zone.
         option = self.document().defaultTextOption()
         option.setTextDirection(direction(langue))
         self.document().setDefaultTextOption(option)
@@ -434,7 +436,7 @@ class ZoneTexte(QWidget):
         self.pied = QHBoxLayout(cadre_du_pied)
         self.pied.setContentsMargins(theme.MARGE, 0, theme.MARGE, 0)
         self.pied.setSpacing(16)
-        self.decompte = EtiquetteCourte("", "decompte")
+        self.decompte = EtiquetteCourte("", "decompte", forme_minimale=True)
         self.pied.addWidget(self.decompte, 1)
         ensemble.addWidget(cadre_du_pied)
         self.definir_langue(FR)
@@ -667,6 +669,7 @@ class LigneTerme(QAbstractButton):
         self.libelle = entree.terme(source)
         self.categorie = entree.categorie(source)
         self.occurrences = compte(len(terme.occurrences), "occurrence")
+        self.occurrences_en_bref = f"{nombre(len(terme.occurrences))} occ."
         # ② Définition : dans la langue du texte ; à défaut, dans l'autre langue.
         self.langue_definition = next((langue for langue in (source, cible) if entree.definition(langue)), source)
         self.definition = entree.definition(self.langue_definition)
@@ -675,6 +678,7 @@ class LigneTerme(QAbstractButton):
         # ③ Équivalent ; s'il y a plusieurs sens, la seconde ligne le signale à la place de la grammaire.
         self.equivalent = entree.terme(cible)
         self.grammaire = categorie_et_pluriel(entree, cible)
+        self.categorie_cible = entree.categorie(cible)
         self.incertain = terme.incertain
         autres = " / ".join(autre.terme(cible) for autre in terme.autres_candidats)
         self.alerte = "" if not autres else (f"Ambigu : aussi « {autres} »" if terme.incertain
@@ -701,9 +705,7 @@ class LigneTerme(QAbstractButton):
     # ------------------------------------------------------------------ textes ajustés à la largeur
     def _cases(self) -> list[tuple[int, int]]:
         """Abscisse et largeur utile de chaque case (marges retirées)."""
-        bornes = bornes_des_colonnes(self.width(), COLONNES)
-        return [(bornes[rang] + theme.MARGE, max(bornes[rang + 1] - bornes[rang] - 2 * theme.MARGE, 10))
-                for rang in range(len(COLONNES))]
+        return cases_du_tableau(self.width())
 
     def _police_de_definition(self):
         return police(self.font(), 15 if self.langue_definition == AR else 13)
@@ -728,6 +730,40 @@ class LigneTerme(QAbstractButton):
             repere = (evidences_source[0][0] / max(len(texte_source), 1)) if evidences_source else 0.0
             self._passages.append((self.cible, *extrait_autour(texte_cible, evidences_cible,
                                                                self._police_de_passage(self.cible), largeur, repere)))
+
+    def _polices_du_terme(self):
+        """Sous le terme : la police de la catégorie et celle du nombre d'occurrences."""
+        if self.source == AR:
+            return police(self.font(), 14), police(self.font(), 12)
+        return police(self.font(), 12, italique=True), police(self.font(), 12)
+
+    def sous_le_terme(self, place: float | None = None) -> tuple[str, str]:
+        """Sous le terme : sa catégorie et son nombre d'occurrences, tels qu'ils sont affichés.
+
+        Quand la case est étroite, « occurrences » est abrégé, puis la catégorie est retirée.
+        """
+        if place is None:
+            place = self._cases()[0][1]
+        de_categorie, du_nombre = self._polices_du_terme()
+        separateur = 3 * largeur_du_texte(" ", du_nombre) + largeur_du_texte("·", du_nombre)
+        formes = [(self.categorie, self.occurrences), (self.categorie, self.occurrences_en_bref),
+                  ("", self.occurrences), ("", self.occurrences_en_bref)]
+        for categorie, occurrences in formes:
+            largeur = largeur_du_texte(occurrences, du_nombre)
+            if categorie:
+                largeur += largeur_du_texte(categorie, de_categorie) + separateur
+            if largeur <= place:
+                return categorie, occurrences
+        return formes[-1]
+
+    def grammaire_affichee(self, place: float | None = None) -> str:
+        """Sous l'équivalent : sa catégorie et son pluriel ; la catégorie seule si le pluriel ne tient pas."""
+        if place is None:
+            place = self._cases()[2][1]
+        de_grammaire = police(self.font(), 13 if self.cible == AR else 12)
+        if self.categorie_cible and largeur_du_texte(self.grammaire, de_grammaire) > place:
+            return self.categorie_cible
+        return self.grammaire
 
     def lignes_de_definition(self) -> list[str]:
         """La définition telle qu'elle est affichée : deux lignes au plus."""
@@ -796,26 +832,31 @@ class LigneTerme(QAbstractButton):
             dessiner_ligne(peintre, QRectF(x, 0, place, hauteur), texte, police_du_texte, couleur, langue=langue,
                            alignement=alignement, base=ligne_de_base, evidences=evidences)
 
+        def ecrire_la_categorie(x: float, place: float, ligne_de_base: float, categorie: str, suite: str) -> None:
+            """En français : la catégorie grammaticale en italique (comme sur la fiche), puis sa suite."""
+            de_categorie, de_suite = police(base, 12, italique=True), police(base, 12)
+            categorie = abreger(categorie, de_categorie, max(place - largeur_du_texte(suite, de_suite), 40))
+            ecrire(x, place, ligne_de_base, categorie, de_categorie, theme.TEXTE_3)
+            decalage = largeur_du_texte(categorie, de_categorie)
+            ecrire(x + decalage, place - decalage, ligne_de_base, abreger(suite, de_suite, place - decalage),
+                   de_suite, theme.TEXTE_3)
+
         # ① Terme, catégorie et nombre d'occurrences
         x, place = cases[0]
+        categorie, occurrences = self.sous_le_terme(place)
         if self.source == AR:
             du_terme = police(base, 17, gras=True)
             ecrire(x, place, 28, abreger(self.libelle, du_terme, place), du_terme, theme.BLEU_FONCE, langue=AR)
-            de_categorie, du_nombre = police(base, 14), police(base, 12)
-            categorie = abreger(self.categorie, de_categorie, place * 0.55)
+            de_categorie, du_nombre = self._polices_du_terme()
             ecrire(x, place, 49, categorie, de_categorie, theme.TEXTE_3, langue=AR)
-            reste = place - (largeur_du_texte(categorie, de_categorie) + 8 if categorie else 0)
-            suite = self.occurrences + (" ·" if categorie else "")
+            reste = place - (largeur_du_texte(categorie, de_categorie) + largeur_du_texte(" ", du_nombre)
+                             if categorie else 0)
+            suite = occurrences + (" ·" if categorie else "")
             ecrire(x, reste, 49, abreger(suite, du_nombre, reste), du_nombre, theme.TEXTE_3, alignement=droite)
         else:
             du_terme = police(base, 14, gras=True)
             ecrire(x, place, 26, abreger(self.libelle, du_terme, place), du_terme, theme.BLEU_FONCE)
-            de_categorie, du_nombre = police(base, 12, italique=True), police(base, 12)
-            suite = (" · " if self.categorie else "") + self.occurrences
-            categorie = abreger(self.categorie, de_categorie, max(place - largeur_du_texte(suite, du_nombre), 40))
-            ecrire(x, place, 45, categorie, de_categorie, theme.TEXTE_3)
-            decalage = largeur_du_texte(categorie, de_categorie)
-            ecrire(x + decalage, place - decalage, 45, suite, du_nombre, theme.TEXTE_3)
+            ecrire_la_categorie(x, place, 45, categorie, (" · " if categorie else "") + occurrences)
 
         # ② Définition : un signe dit si elle est à vérifier, puis deux lignes au plus
         x, place = cases[1]
@@ -842,8 +883,13 @@ class LigneTerme(QAbstractButton):
                    theme.AMBRE if self.incertain else theme.TEXTE_3, alignement=cote)
         elif self.grammaire:
             de_grammaire = police(base, 13 if self.cible == AR else 12)
-            ecrire(x, place, ligne_basse, abreger(self.grammaire, de_grammaire, place), de_grammaire, theme.TEXTE_3,
-                   langue=self.cible)
+            grammaire = self.grammaire_affichee(place)
+            if self.cible == AR or not self.categorie_cible:
+                ecrire(x, place, ligne_basse, abreger(grammaire, de_grammaire, place), de_grammaire, theme.TEXTE_3,
+                       langue=self.cible)
+            else:
+                ecrire_la_categorie(x, place, ligne_basse, self.categorie_cible,
+                                    grammaire[len(self.categorie_cible):])
 
         # ④ Contextualisation : le passage du texte, puis sa traduction
         x, place = cases[3]
@@ -877,6 +923,23 @@ class LigneTerme(QAbstractButton):
         du_detail = police(base, 13 if arabe else 12)
         ecrire(x, place, 48 if arabe else 45, abreger(self.detail_ressource, du_detail, place - 8, par_le_debut=True),
                du_detail, theme.TEXTE_3, langue=self.langue_ressource)
+
+
+def cases_du_tableau(largeur: int) -> list[tuple[int, int]]:
+    """Abscisse et largeur utile de chaque case du tableau, marges retirées.
+
+    Les bords du tableau gardent la marge des panneaux ; entre deux colonnes, la marge est
+    réduite quand le tableau est étroit, pour laisser plus de place aux textes.
+    """
+    bornes = bornes_des_colonnes(largeur, COLONNES)
+    interieure = theme.MARGE if largeur >= 1240 else 18 if largeur >= 1040 else 14
+    dernier = len(COLONNES) - 1
+    cases = []
+    for rang in range(len(COLONNES)):
+        gauche = bornes[rang] + (theme.MARGE if rang == 0 else interieure)
+        droite = bornes[rang + 1] - (theme.MARGE if rang == dernier else interieure)
+        cases.append((gauche, max(droite - gauche, 10)))
+    return cases
 
 
 def dessiner_le_fond(peintre: QPainter, largeur: int, haut: int, hauteur: int, *, survol: bool = False) -> None:
@@ -920,8 +983,9 @@ class EnteteColonnes(QWidget):
                 peintre.drawLine(borne, 0, borne, self.height())
         du_numero = police(self.font(), 10, gras=True)
         du_titre = police(self.font(), 11, gras=True, espacement=0.6)
+        cases = cases_du_tableau(self.width())
         for rang, titre in enumerate(self.titres):
-            gauche = bornes[rang] + theme.MARGE
+            gauche, largeur_utile = cases[rang]
             accent = rang == 2  # l'équivalent est le champ mis en avant
             centre = QPointF(gauche + 8, 15)
             if accent:
@@ -934,7 +998,7 @@ class EnteteColonnes(QWidget):
                 peintre.drawEllipse(centre, 7.25, 7.25)
             dessiner_ligne(peintre, QRectF(gauche, 7, 16, 16), str(rang + 1), du_numero,
                            theme.SURFACE if accent else theme.BLEU, alignement=Qt.AlignmentFlag.AlignHCenter)
-            place = bornes[rang + 1] - gauche - 23 - 6
+            place = largeur_utile - 23
             dessiner_ligne(peintre, QRectF(gauche + 23, 0, place, self.height()),
                            abreger(titre.upper(), du_titre, place), du_titre,
                            theme.BLEU_FONCE if accent else theme.TEXTE_3, base=18.8)
@@ -1141,7 +1205,6 @@ class PageTexte(QWidget):
         self.panneau_cible = ZoneTexte("cible")
         self.zone_cible = self.panneau_cible.zone
         self.zone_cible.setReadOnly(True)
-        self.zone_cible.definir_invite(_INVITE_CIBLE)
         self.badge = Badge()
         self.panneau_cible.entete.addWidget(self.badge)
 
@@ -1198,11 +1261,13 @@ class PageTexte(QWidget):
         self.outils = QWidget()
         ligne = QHBoxLayout(self.outils)
         ligne.setContentsMargins(0, 0, 0, 0)
-        ligne.setSpacing(12)
+        ligne.setSpacing(0)
+        # Le rappel des formats occupe la place libre ; il disparaît quand elle manque.
         self.aide_outils = EtiquetteCourte("", "aideOutils")
         self.aide_outils.definir_texte("Import : .txt, .docx, .doc · Export : .docx, .txt", "")
         self.aide_outils.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
         self.aide_outils.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
+        self.aide_outils.setContentsMargins(0, 0, 16, 0)
         self.bouton_importer = _bouton("Importer", "contour", 116, 38, "importer",
                                        "Importer un texte : fichier .txt, .docx ou .doc (Ctrl+Maj+O)")
         self.bouton_importer.clicked.connect(lambda: self.importer())
@@ -1213,9 +1278,10 @@ class PageTexte(QWidget):
                                        "Traduire le texte (Ctrl+Entrée)")
         self.bouton_traduire.clicked.connect(lambda: self.traduire())
         ligne.addWidget(self.aide_outils, 1)
-        ligne.addSpacing(4)
         ligne.addWidget(self.bouton_importer)
+        ligne.addSpacing(12)
         ligne.addWidget(self.bouton_exporter)
+        ligne.addSpacing(12)
         ligne.addWidget(self.bouton_traduire)
 
     # ------------------------------------------------------------------ glossaire et sens
@@ -1249,6 +1315,7 @@ class PageTexte(QWidget):
         self.panneau_source.definir_langue(self.source)
         self.panneau_cible.definir_langue(self.cible)
         self.zone_source.definir_invite(_INVITES[self.source])
+        self.zone_cible.definir_invite(_INVITES_CIBLE[self.cible])
 
     # ------------------------------------------------------------------ texte source
     def texte(self) -> str:

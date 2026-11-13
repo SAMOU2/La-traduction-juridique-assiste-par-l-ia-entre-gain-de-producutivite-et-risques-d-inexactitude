@@ -43,6 +43,22 @@ AVERTISSEMENT_LIAISON = (
 )
 
 
+def installer_les_textes_de_qt(application: QApplication) -> bool:
+    """Met en français les textes fournis par Qt lui-même.
+
+    Il s'agit surtout du menu contextuel des zones de texte (« Annuler », « Copier »,
+    « Coller »…) et du nom des touches dans les raccourcis (« Maj »). Renvoie ``False`` si
+    l'installation de Qt ne contient pas ces textes : ils restent alors en anglais.
+    """
+    from PySide6.QtCore import QLibraryInfo, QLocale, QTranslator
+
+    textes = QTranslator(application)
+    dossier = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
+    if not textes.load(QLocale(QLocale.Language.French), "qtbase", "_", dossier):
+        return False
+    return application.installTranslator(textes)
+
+
 def main(arguments: list[str] | None = None) -> int:
     """Ouvre la fenêtre principale. Un chemin de glossaire CSV peut être passé en argument."""
     arguments = list(sys.argv if arguments is None else arguments)
@@ -65,15 +81,17 @@ def main(arguments: list[str] | None = None) -> int:
     except AttributeError:
         pass
 
+    from .interface import boites, theme
     from .interface.fenetre import FenetrePrincipale
 
+    theme.appliquer(application)
+    installer_les_textes_de_qt(application)
     chemins = [argument for argument in application.arguments()[1:] if not argument.startswith("-")]
     fenetre = FenetrePrincipale(chemins[0] if chemins else None)
     fenetre.show()
     if liaison_qt_instable():
         import PySide6
-        from PySide6.QtWidgets import QMessageBox
 
-        QMessageBox.warning(fenetre, NOM_APPLICATION, AVERTISSEMENT_LIAISON.format(
+        boites.afficher(fenetre, boites.ALERTE, "Installation à corriger", AVERTISSEMENT_LIAISON.format(
             python=".".join(map(str, sys.version_info[:2])), pyside=PySide6.__version__))
     return application.exec()

@@ -455,15 +455,18 @@ class EtiquetteCourte(QLabel):
     L'étiquette peut aussi recevoir des formes plus courtes du même texte : elle
     affiche alors la première qui tient dans la largeur (voir ``definir_texte``).
     Avec ``par_le_debut``, c'est le début du texte qui est abrégé, mot par mot.
+    Avec ``forme_minimale``, la forme la plus courte n'est jamais abrégée : sa largeur est
+    la largeur minimale de l'étiquette.
     """
 
     def __init__(self, texte: str = "", classe: str = "", parent: QWidget | None = None, *,
-                 par_le_debut: bool = False) -> None:
+                 par_le_debut: bool = False, forme_minimale: bool = False) -> None:
         super().__init__(parent)
         self.setTextFormat(Qt.TextFormat.PlainText)
         if classe:
             self.setProperty("classe", classe)
         self._par_le_debut = par_le_debut
+        self._forme_minimale = forme_minimale
         self._formes: tuple[str, ...] = (texte,)
         self._abreger()
 
@@ -491,7 +494,15 @@ class EtiquetteCourte(QLabel):
         return QSize(largeur, super().sizeHint().height())
 
     def minimumSizeHint(self) -> QSize:  # noqa: N802
-        return QSize(0 if self._formes[-1] == "" else 24, super().minimumSizeHint().height())
+        if self._formes[-1] == "":
+            largeur = 0
+        elif self._forme_minimale:
+            self.ensurePolished()
+            marges = self.contentsMargins()
+            largeur = self.fontMetrics().horizontalAdvance(self._formes[-1]) + marges.left() + marges.right() + 2
+        else:
+            largeur = 24
+        return QSize(largeur, super().minimumSizeHint().height())
 
     def resizeEvent(self, evenement) -> None:  # noqa: N802
         super().resizeEvent(evenement)

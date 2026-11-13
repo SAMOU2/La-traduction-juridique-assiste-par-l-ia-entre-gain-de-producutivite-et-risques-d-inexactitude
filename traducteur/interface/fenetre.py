@@ -11,7 +11,7 @@ from html import escape
 from pathlib import Path
 
 from PySide6.QtCore import QElapsedTimer, QSettings, QSize, Qt, QTimer
-from PySide6.QtGui import QAction, QActionGroup, QKeySequence
+from PySide6.QtGui import QAction, QActionGroup, QKeySequence, QPixmap, QShortcut
 from PySide6.QtWidgets import (
     QButtonGroup,
     QFileDialog,
@@ -374,8 +374,19 @@ class FenetrePrincipale(QMainWindow):
         menu_glossaire.addAction(self.action_format)
         self.indicateur.setMenu(menu_glossaire)
 
+    def _ajouter_menu(self, titre: str, lettre: str) -> QMenu:
+        """Ajoute un menu à la barre ; « Alt » + ``lettre`` l'ouvre.
+
+        Le titre ne contient pas de « & » : selon le style, Qt soulignerait en permanence une
+        lettre du titre, ce que la proposition ne montre pas. Le raccourci est donc créé à part.
+        """
+        menu = self.menus.addMenu(titre)
+        raccourci = QShortcut(QKeySequence(f"Alt+{lettre}"), self)
+        raccourci.activated.connect(lambda: self.menus.setActiveAction(menu.menuAction()))
+        return menu
+
     def _creer_menus(self) -> None:
-        menu_fichier = self.menus.addMenu("&Fichier")
+        menu_fichier = self._ajouter_menu("Fichier", "F")
         self.action_ouvrir = QAction("&Ouvrir un glossaire…", self)
         self.action_ouvrir.setShortcut(QKeySequence.StandardKey.Open)
         self.action_ouvrir.triggered.connect(self.ouvrir_glossaire)
@@ -402,7 +413,7 @@ class FenetrePrincipale(QMainWindow):
         action_quitter.triggered.connect(self.close)
         menu_fichier.addAction(action_quitter)
 
-        menu_affichage = self.menus.addMenu("Aff&ichage")
+        menu_affichage = self._ajouter_menu("Affichage", "I")
         groupe = QActionGroup(self)
         self.actions_mode: dict[str, QAction] = {}
         for mode, libelle, raccourci in ((MODE_TERME, "Recherche d’un &terme", "Ctrl+1"),
@@ -420,7 +431,7 @@ class FenetrePrincipale(QMainWindow):
         self.action_inverser.triggered.connect(self.inverser_le_sens)
         menu_affichage.addAction(self.action_inverser)
 
-        menu_recherche = self.menus.addMenu("&Recherche")
+        menu_recherche = self._ajouter_menu("Recherche", "R")
         action_champ = QAction("&Aller à la barre de recherche", self)
         action_champ.setShortcut(QKeySequence.StandardKey.Find)
         action_champ.triggered.connect(self._aller_a_la_recherche)
@@ -429,7 +440,7 @@ class FenetrePrincipale(QMainWindow):
         action_effacer_recherche.triggered.connect(self._effacer_la_recherche)
         menu_recherche.addAction(action_effacer_recherche)
 
-        menu_traduction = self.menus.addMenu("&Traduction")
+        menu_traduction = self._ajouter_menu("Traduction", "T")
         # Le raccourci Ctrl+Entrée est géré par l'écran « Texte » : il est seulement rappelé ici.
         action_traduire = QAction("&Traduire le texte\tCtrl+Entrée", self)
         action_traduire.triggered.connect(self._traduire_le_texte)
@@ -446,7 +457,7 @@ class FenetrePrincipale(QMainWindow):
         action_effacer.triggered.connect(self._effacer_le_texte)
         menu_traduction.addAction(action_effacer)
 
-        menu_aide = self.menus.addMenu("&Aide")
+        menu_aide = self._ajouter_menu("Aide", "A")
         self.action_format = QAction("&Format du glossaire CSV", self)
         self.action_format.triggered.connect(self.afficher_format)
         menu_aide.addAction(self.action_format)
@@ -565,9 +576,9 @@ class FenetrePrincipale(QMainWindow):
     def _avertir(self, titre: str, texte: str) -> None:
         self._boite(boites.ALERTE, titre, texte)
 
-    def _boite(self, genre: str, titre: str, texte: str) -> None:
+    def _boite(self, genre: str, titre: str, texte: str, image: QPixmap | None = None) -> None:
         """Boîte de message. Le texte est affiché tel quel (un nom de fichier peut contenir « & » ou « < »)."""
-        boites.afficher(self, genre, titre, texte)
+        boites.afficher(self, genre, titre, texte, image=image)
 
     # ------------------------------------------------------------------ écrans
     def page_courante(self) -> PageRecherche | PageTexte:
@@ -688,15 +699,13 @@ class FenetrePrincipale(QMainWindow):
         )
 
     def afficher_a_propos(self) -> None:
-        boites.afficher(
-            self, boites.INFORMATION, f"À propos de {NOM_APPLICATION}",
-            f"<b>{escape(NOM_APPLICATION)}</b> — version {escape(__version__)}<br><br>"
-            "Traduction juridique français ⇄ arabe à l’aide d’un glossaire CSV :<br>"
-            "recherche d’un terme (terme, définition, équivalent, contextualisation, ressources) "
-            "et traduction d’un texte.<br><br>"
-            "Les équivalents proposés viennent du glossaire chargé ; ils doivent être "
-            "vérifiés par le traducteur.",
-            image=icones.logo(40), riche=True)
+        self._boite(
+            boites.INFORMATION, NOM_APPLICATION,
+            f"Version {__version__}\n\n"
+            "Traduction juridique français ⇄ arabe à l’aide d’un glossaire CSV : recherche d’un terme "
+            "(terme, définition, équivalent, contextualisation, ressources) et traduction d’un texte.\n\n"
+            "Les équivalents proposés viennent du glossaire chargé ; ils doivent être vérifiés par le traducteur.",
+            image=icones.logo(40))
 
 
 __all__ = ["GLOSSAIRE_EXEMPLE", "MODE_TERME", "MODE_TEXTE", "BarreEtat", "FenetrePrincipale", "IndicateurGlossaire",
