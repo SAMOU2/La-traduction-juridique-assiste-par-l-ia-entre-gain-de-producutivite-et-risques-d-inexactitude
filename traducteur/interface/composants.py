@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ..langues import AR, FR, est_rtl
+from ..langues import AR, FR, deviner_langue, est_rtl
 from . import dessin, icones, theme
 
 #: Marque invisible qui force l'écriture de droite à gauche d'une ligne arabe,
@@ -54,9 +54,27 @@ def alignement(langue: str) -> Qt.AlignmentFlag:
     return DROITE if est_rtl(langue) else GAUCHE
 
 
-def infobulle(texte: str) -> str:
-    """Texte d'une infobulle. Les signes « < » et « & » y sont affichés tels quels."""
-    return f"<qt>{escape(texte)}</qt>" if texte else ""
+def infobulle(*paragraphes: str, espace: int = 6) -> str:
+    """Texte d'une infobulle, en un ou plusieurs paragraphes séparés par ``espace`` pixels.
+
+    Les signes « < » et « & » y sont affichés tels quels. Chaque paragraphe est écrit dans le
+    sens de sa langue : dans une infobulle écrite de gauche à droite, une phrase arabe aurait
+    son point final du mauvais côté.
+    """
+    paragraphes = tuple(texte for texte in paragraphes if texte)
+    if not paragraphes:
+        return ""
+    if len(paragraphes) == 1 and deviner_langue(paragraphes[0]) != AR:
+        return f"<qt>{escape(paragraphes[0])}</qt>"
+    morceaux = []
+    for rang, texte in enumerate(paragraphes):
+        marge = f"margin: {espace if rang else 0}px 0 0 0;"
+        if deviner_langue(texte) == AR:
+            morceaux.append(f'<p dir="rtl" align="right" style="{marge} font-size: 14px;">'
+                            f"{MARQUE_RTL}{escape(texte)}</p>")
+        else:
+            morceaux.append(f'<p dir="ltr" align="left" style="{marge}">{escape(texte)}</p>')
+    return "<qt>" + "".join(morceaux) + "</qt>"
 
 
 def paragraphe(html: str, langue: str, interligne: int, style: str = "") -> str:

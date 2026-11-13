@@ -788,16 +788,15 @@ class LigneTerme(QAbstractButton):
             source = entree.source_definition
             mention = ("Définition à vérifier : elle n’est reprise d’aucune source citée." if self.a_verifier
                        else f"Source : {source}")
-            return f"<qt>{escape(self.definition)}<br><br>{escape(mention)}</qt>"
+            return infobulle(self.definition, mention, espace=10)
         if colonne == 2 and self.alerte:
             detail = ("Le contexte n’a pas permis de choisir entre les sens de ce terme : vérifiez l’équivalent."
                       if self.incertain else "Ce terme a d’autres sens dans le glossaire.")
-            return f"<qt>{escape(self.alerte)}<br>{escape(detail)}</qt>"
+            return infobulle(self.alerte, detail, espace=2)
         if colonne == 3:
-            lignes = [texte.strip() for texte in (self.passage_source[0], self.passage_cible[0]) if texte.strip()]
-            return "<qt>" + "<br><br>".join(escape(ligne) for ligne in lignes) + "</qt>"
+            return infobulle(self.passage_source[0].strip(), self.passage_cible[0].strip(), espace=10)
         if colonne == 4 and entree.ressources:
-            return "<qt>" + "<br>".join(escape(ressource) for ressource in entree.ressources) + "</qt>"
+            return infobulle(*entree.ressources)
         return infobulle(f"Ouvrir la fiche de « {self.libelle} »")
 
     def colonne_a(self, x: float) -> int:

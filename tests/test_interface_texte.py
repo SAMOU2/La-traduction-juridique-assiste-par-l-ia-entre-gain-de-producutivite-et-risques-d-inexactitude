@@ -17,6 +17,7 @@ from test_documents import fabriquer_doc
 from traducteur import documents
 from traducteur.interface import theme
 from traducteur.interface.composants import MARQUE_RTL, bornes_des_colonnes
+from traducteur.interface.dessin import extrait_autour, police, sur_une_ligne
 from traducteur.interface.fenetre import MODE_TERME, MODE_TEXTE, FenetrePrincipale
 from traducteur.interface.texte import COLONNES, ETAPES, EXEMPLES, cases_du_tableau
 from traducteur.langues import AR, FR
@@ -203,8 +204,13 @@ def test_le_tableau_des_termes(page):
     assert ligne.infobulle(0) == "<qt>Ouvrir la fiche de « contrat »</qt>"
     assert "à donner, à faire ou à ne pas faire quelque chose." in ligne.infobulle(1)
     assert "Source : Code civil, art. 54" in ligne.infobulle(1)
-    assert ligne.infobulle(3) == f"<qt>{ARTICLE_106}<br><br>{ARTICLE_106_AR}</qt>"
-    assert ligne.infobulle(4).count("<br>") == 3 and "Vocabulaire juridique" in ligne.infobulle(4)
+    # Chaque paragraphe d'une infobulle est écrit dans le sens de sa langue.
+    assert ligne.infobulle(3) == (
+        f'<qt><p dir="ltr" align="left" style="margin: 0px 0 0 0;">{ARTICLE_106}</p>'
+        f'<p dir="rtl" align="right" style="margin: 10px 0 0 0; font-size: 14px;">{MARQUE_RTL}{ARTICLE_106_AR}</p>'
+        "</qt>")
+    assert ligne.infobulle(4).count("<p ") == 4 and "Vocabulaire juridique" in ligne.infobulle(4)
+    assert ligne.infobulle(4).count('dir="rtl"') == 1  # la référence écrite en arabe
 
     # « loi » : sa définition n'est reprise d'aucune source citée.
     loi = tableau.lignes_affichees()[1]
@@ -229,6 +235,29 @@ def test_les_textes_du_tableau_s_ajustent_a_la_largeur(page):
     passages = ligne.passages_affiches()
     assert [langue for langue, _ in passages] == [FR, AR]
     assert "contrat" in passages[0][1] and "العقد" in passages[1][1]
+
+
+def test_un_passage_ecrit_sur_une_ligne_garde_son_terme_en_evidence(application):
+    """Un texte collé depuis un tableau contient des tabulations : le terme reste en évidence au bon endroit."""
+    texte = "  Le\t\tcontrat   de \t vente est nul.  "
+    terme = (texte.index("contrat"), texte.index("vente") + len("vente"))
+    ligne, evidences = sur_une_ligne(texte, [terme])
+    assert ligne == "Le contrat de vente est nul."
+    assert [ligne[debut:fin] for debut, fin in evidences] == ["contrat de vente"]
+    # Un texte déjà propre est rendu tel quel, avec les espaces insécables du français.
+    assert sur_une_ligne("prix\u00a0: 1\u202f000 DA", [(0, 4)]) == ("prix\u00a0: 1\u202f000 DA", [(0, 4)])
+
+    police_du_passage = police(application.font(), 13)
+    # Assez de place : la phrase entière.
+    passage, evidences = extrait_autour(texte, [terme], police_du_passage, 2000)
+    assert passage == "Le contrat de vente est nul."
+    assert [passage[debut:fin] for debut, fin in evidences] == ["contrat de vente"]
+    # Peu de place : le passage est pris autour du terme ; « … » marque chaque côté coupé.
+    phrase = "Selon la loi, \t le contrat de vente oblige le vendeur à livrer la chose vendue à l'acheteur."
+    debut = phrase.index("vendeur")
+    passage, evidences = extrait_autour(phrase, [(debut, debut + len("vendeur"))], police_du_passage, 170)
+    assert passage.startswith("… ") and passage.endswith("…") and "\t" not in passage
+    assert [passage[debut:fin] for debut, fin in evidences] == ["vendeur"]
 
 
 @pytest.mark.parametrize("largeur", [852, 1032, 1392, 1900])

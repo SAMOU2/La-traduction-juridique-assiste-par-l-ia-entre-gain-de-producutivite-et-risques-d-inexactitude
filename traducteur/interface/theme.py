@@ -212,11 +212,9 @@ QLabel[classe="capitales"] {{ color: {TEXTE_3}; font-size: 11px; font-weight: 60
 QLabel[classe="capitalesBleu"] {{ color: {BLEU}; font-size: 11px; font-weight: 600; }}
 QLabel[classe="titrePanneau"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
 QLabel[classe="aidePanneau"] {{ color: {TEXTE_3}; font-size: 12px; }}
-QLabel[classe="legende"] {{ color: {TEXTE_3}; font-size: 12px; }}
 QLabel[classe="discret"] {{ color: {TEXTE_3}; font-size: 13px; }}
 
 /* ---------- Fiche d'un terme ---------- */
-#bandeSens {{ background: {GRIS_50}; border: none; border-bottom: 1px solid {FILET_DOUX}; }}
 QLabel[classe="alerteSens"] {{ color: {AMBRE}; font-size: 12px; }}
 QLabel[classe="terme"] {{ color: {MARINE}; font-weight: 600; }}
 QLabel[classe="equivalent"] {{ color: {BLEU_FONCE}; font-weight: 600; }}

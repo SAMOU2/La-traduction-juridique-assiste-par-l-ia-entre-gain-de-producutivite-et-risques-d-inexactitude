@@ -16,6 +16,8 @@ from ..langues import AR, FR
 from . import theme
 
 _MOT = regex.compile(r"\S+")
+#: Ce qui ne peut pas rester tel quel dans un texte écrit sur une ligne.
+_ESPACES_A_REDUIRE = regex.compile(r"\s{2,}|[\t\n\r\f\v]|^\s|\s$")
 _FIN_DE_COUPE = " ,;:،؛"
 
 
@@ -142,6 +144,34 @@ def couper_en_lignes(texte: str, police_du_texte: QFont, largeur: float, lignes:
     return resultat, abrege
 
 
+def sur_une_ligne(texte: str, evidences: Sequence[tuple[int, int]] = ()) -> tuple[str, list[tuple[int, int]]]:
+    """Prépare un texte à être écrit sur une seule ligne.
+
+    Les tabulations, les retours à la ligne et les suites d'espaces deviennent une espace ; les
+    espaces du début et de la fin sont retirées. Renvoie le texte et les positions (début, fin)
+    des passages en évidence, reportées dans ce nouveau texte.
+    """
+    if not _ESPACES_A_REDUIRE.search(texte):
+        return texte, list(evidences)
+    positions, caracteres, espace_en_attente = [], [], ""
+    for caractere in texte:
+        if caractere.isspace():
+            positions.append(len(caracteres) + (1 if espace_en_attente else 0))
+            if caracteres:
+                # Une espace seule est gardée telle quelle (espace insécable comprise).
+                espace_en_attente = " " if espace_en_attente or caractere in "\t\n\r\f\v" else caractere
+            continue
+        if espace_en_attente:
+            caracteres.append(espace_en_attente)
+            espace_en_attente = ""
+        positions.append(len(caracteres))
+        caracteres.append(caractere)
+    limite = len(caracteres)
+    positions.append(limite)
+    reportees = [(min(positions[debut], limite), min(positions[fin], limite)) for debut, fin in evidences]
+    return "".join(caracteres), [(debut, fin) for debut, fin in reportees if fin > debut]
+
+
 def extrait_autour(texte: str, evidences: Sequence[tuple[int, int]], police_du_texte: QFont, largeur: float,
                    repere: float = 0.0) -> tuple[str, list[tuple[int, int]]]:
     """Passage d'une phrase qui tient sur une ligne, pris autour de son premier passage en évidence.
@@ -152,7 +182,7 @@ def extrait_autour(texte: str, evidences: Sequence[tuple[int, int]], police_du_t
 
     Renvoie le passage et la position des passages en évidence dans ce passage.
     """
-    texte = " ".join(texte.split()) if "\n" in texte or "\t" in texte else texte
+    texte, evidences = sur_une_ligne(texte, evidences)
     normale = QFontMetricsF(police_du_texte)
     grasse = QFontMetricsF(police(police_du_texte, police_du_texte.pixelSize(), gras=True))
 
