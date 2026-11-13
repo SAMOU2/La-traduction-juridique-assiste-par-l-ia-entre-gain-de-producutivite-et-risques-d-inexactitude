@@ -1,0 +1,50 @@
+# Phrases d'exemple du lot 20_commercial.txt : terme | phrase française | phrase arabe
+commerçant | Le commerçant tient une comptabilité régulière. | يمسك التاجر محاسبة منتظمة.
+acte de commerce | L'achat de marchandises pour les revendre est un acte de commerce. | شراء البضائع لإعادة بيعها عمل تجاري.
+registre du commerce | Le commerçant s'inscrit au registre du commerce avant de commencer son activité. | يقيد التاجر نفسه في السجل التجاري قبل بدء نشاطه.
+fonds de commerce | La clientèle est l'élément essentiel du fonds de commerce. | الزبائن هم العنصر الأساسي في المحل التجاري.
+bail commercial | Le bail commercial est conclu par acte authentique. | يبرم الإيجار التجاري بعقد رسمي.
+entreprise | L'entreprise emploie cinquante personnes. | تشغل المؤسسة خمسين شخصا.
+comptabilité | La comptabilité enregistre toutes les opérations de l'entreprise. | تسجل المحاسبة جميع عمليات المؤسسة.
+concurrence déloyale | Imiter la marque d'un concurrent est un cas de concurrence déloyale. | تقليد علامة منافس حالة من حالات المنافسة غير المشروعة.
+agent commercial | L'agent commercial négocie des contrats au nom de l'entreprise. | يتفاوض الوكيل التجاري على العقود باسم المؤسسة.
+courtier | Le courtier rapproche le vendeur et l'acheteur. | يقرب السمسار بين البائع والمشتري.
+tribunal commercial spécialisé | Le tribunal commercial spécialisé connaît des litiges entre les sociétés commerciales. | تختص المحكمة التجارية المتخصصة بالنزاعات بين الشركات التجارية.
+société | La société est constituée par deux associés au moins. | تتكون الشركة من شريكين على الأقل.
+société commerciale | La société commerciale acquiert la personnalité morale par son immatriculation au registre du commerce. | تكتسب الشركة التجارية الشخصية المعنوية بقيدها في السجل التجاري.
+société par actions | La société par actions compte au moins sept actionnaires. | لا يقل عدد المساهمين في شركة المساهمة عن سبعة.
+société à responsabilité limitée | Dans la société à responsabilité limitée, les associés ne supportent les pertes que dans la limite de leurs apports. | في الشركة ذات المسؤولية المحدودة، لا يتحمل الشركاء الخسائر إلا في حدود حصصهم.
+entreprise unipersonnelle à responsabilité limitée | L'entreprise unipersonnelle à responsabilité limitée ne compte qu'un seul associé. | لا تضم المؤسسة ذات الشخص الوحيد وذات المسؤولية المحدودة إلا شريكا واحدا.
+société en nom collectif | Dans la société en nom collectif, les associés répondent solidairement des dettes. | في شركة التضامن، يسأل الشركاء بالتضامن عن الديون.
+associé | Chaque associé participe aux bénéfices et aux pertes. | يساهم كل شريك في الأرباح والخسائر.
+actionnaire | L'actionnaire participe au vote de l'assemblée générale. | يشارك المساهم في تصويت الجمعية العامة.
+apport | L'apport peut être fait en argent ou en nature. | يمكن أن تكون الحصة نقدية أو عينية.
+part sociale | La part sociale ne peut être cédée à un tiers qu'avec le consentement des associés. | لا يجوز التنازل عن حصة الشريك للغير إلا برضا الشركاء.
+action = سهم | L'action est librement négociable. | السهم قابل للتداول بحرية.
+capital social | Le capital social de la société par actions ne peut être inférieur à un million de dinars. | لا يجوز أن يقل رأس المال في شركة المساهمة عن مليون دينار.
+bénéfice | Le bénéfice est réparti entre les associés. | يوزع الربح على الشركاء.
+dividende | L'assemblée générale fixe le montant du dividende. | تحدد الجمعية العامة مبلغ ربح السهم.
+perte | La société a enregistré une perte cette année. | سجلت الشركة خسارة هذه السنة.
+gérant | Le gérant représente la société à l'égard des tiers. | يمثل المسير الشركة تجاه الغير.
+assemblée générale | L'assemblée générale approuve les comptes de l'année. | تصادق الجمعية العامة على حسابات السنة.
+conseil d'administration | Le conseil d'administration élit son président. | ينتخب مجلس الإدارة رئيسه.
+commissaire aux comptes | Le commissaire aux comptes certifie la régularité des comptes. | يشهد محافظ الحسابات بانتظام الحسابات.
+siège social | Le siège social est indiqué dans les statuts. | يذكر مقر الشركة في القانون الأساسي.
+fusion | La fusion réunit deux sociétés en une seule. | يجمع الاندماج شركتين في شركة واحدة.
+dissolution de la société | La dissolution de la société est décidée par les associés. | يقرر الشركاء حل الشركة.
+liquidation | La liquidation commence dès la dissolution de la société. | تبدأ التصفية بمجرد حل الشركة.
+liquidateur | Le liquidateur vend les biens et paie les créanciers. | يبيع المصفي الأموال ويوفي الدائنين حقوقهم.
+effet de commerce | La lettre de change est un effet de commerce. | السفتجة سند تجاري.
+lettre de change | La lettre de change indique la somme à payer et la date de l'échéance. | تتضمن السفتجة المبلغ الواجب دفعه وتاريخ أجل الاستحقاق.
+billet à ordre | Par le billet à ordre, le souscripteur s'engage à payer une somme à une date fixée. | يتعهد المكتتب بموجب السند لأمر بدفع مبلغ في تاريخ محدد.
+chèque | Le chèque est payable à vue. | الشيك واجب الدفع لدى الاطلاع.
+tireur | Le tireur signe le chèque. | يوقع الساحب الشيك.
+tiré | Le tiré paie le chèque sur présentation. | يدفع المسحوب عليه قيمة الشيك عند تقديمه.
+bénéficiaire | Le bénéficiaire présente le chèque à sa banque. | يقدم المستفيد الشيك إلى بنكه.
+endossement | L'endossement transmet tous les droits attachés à la lettre de change. | ينقل التظهير جميع الحقوق الناتجة عن السفتجة.
+provision | La provision doit exister au moment où le chèque est émis. | يجب أن يكون الرصيد موجودا وقت إصدار الشيك.
+faillite | Le tribunal prononce la faillite du commerçant qui a cessé ses paiements. | تحكم المحكمة بإفلاس التاجر الذي توقف عن الدفع.
+règlement judiciaire | Le règlement judiciaire permet au commerçant de poursuivre son activité. | تسمح التسوية القضائية للتاجر بمواصلة نشاطه.
+cessation des paiements | Le commerçant déclare la cessation des paiements dans les quinze jours. | يصرح التاجر بالتوقف عن الدفع في أجل خمسة عشر يوما.
+syndic | Le syndic administre les biens du débiteur pendant la procédure. | يدير وكيل التفلسة أموال المدين أثناء الإجراءات.
+concordat | Le concordat est voté par les créanciers puis homologué par le tribunal. | يصوت الدائنون على الصلح القضائي ثم تصادق عليه المحكمة.
