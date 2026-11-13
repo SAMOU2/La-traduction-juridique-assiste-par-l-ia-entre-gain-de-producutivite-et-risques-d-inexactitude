@@ -2,13 +2,15 @@
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Iterator, Sequence
+from contextlib import contextmanager
 from html import escape
 
 from PySide6.QtCore import QPoint, QPointF, QRect, QRectF, QSize, Qt
 from PySide6.QtGui import QColor, QFont, QFontMetricsF, QPainter, QPainterPath, QPen
 from PySide6.QtWidgets import (
     QAbstractButton,
+    QApplication,
     QBoxLayout,
     QFrame,
     QLabel,
@@ -53,6 +55,20 @@ def direction(langue: str) -> Qt.LayoutDirection:
 def alignement(langue: str) -> Qt.AlignmentFlag:
     """Alignement horizontal du texte d'une langue : à droite pour l'arabe."""
     return DROITE if est_rtl(langue) else GAUCHE
+
+
+@contextmanager
+def sablier() -> Iterator[None]:
+    """Affiche le pointeur d'attente pendant une opération qui peut durer (texte long).
+
+    La fenêtre ne répond pas pendant l'opération : le pointeur le fait savoir. Il est rétabli
+    dans tous les cas, même si l'opération échoue.
+    """
+    QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
+    try:
+        yield
+    finally:
+        QApplication.restoreOverrideCursor()
 
 
 def infobulle(*paragraphes: str, espace: int = 6) -> str:

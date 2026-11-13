@@ -71,6 +71,7 @@ from .composants import (
     infobulle,
     nombre,
     repeindre,
+    sablier,
     separateur,
 )
 from .dessin import abreger, dessiner_ligne, dessiner_numero, largeur_du_texte, melanger, police
@@ -932,7 +933,8 @@ class PageTexte(QWidget):
             if langue is not None and langue != self.source:
                 self.definir_sens(langue)
                 self.message.emit(f"Texte écrit en {NOM_EN_FRANCAIS[langue]} : le sens de traduction a été inversé.")
-        self._afficher(self.traducteur.traduire(texte, self.source))
+        with sablier():
+            self._afficher(self.traducteur.traduire(texte, self.source))
 
     def _afficher(self, traduction: Traduction | None) -> None:
         """Affiche une traduction, ou l'état initial si ``traduction`` est vide."""

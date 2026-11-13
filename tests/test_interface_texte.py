@@ -357,6 +357,42 @@ def test_ouvrir_et_refermer_les_cartes(page, application):
     assert panneau.bouton_tout.text() == "Tout développer"
 
 
+def test_le_pointeur_d_attente_s_affiche_pendant_une_operation_longue(page, monkeypatch):
+    """Traduire un long texte ou ouvrir toutes les cartes peut durer : le pointeur d'attente l'indique."""
+    pointeurs = []
+
+    def relever() -> None:
+        pointeur = QGuiApplication.overrideCursor()
+        pointeurs.append(None if pointeur is None else pointeur.shape())
+
+    # Pendant la traduction.
+    traduire_vraiment = page.traducteur.traduire
+    monkeypatch.setattr(page.traducteur, "traduire", lambda *arguments: (relever(), traduire_vraiment(*arguments))[1])
+    page.inserer_un_exemple()
+    page.traduire()
+    assert pointeurs == [Qt.CursorShape.WaitCursor] and QGuiApplication.overrideCursor() is None
+    assert page.traduction is not None and len(page.termes.cartes) > 2
+    # Pendant « Tout développer ».
+    derniere = page.termes.cartes[-1]
+    ouvrir_vraiment = derniere.definir_ouverte
+    monkeypatch.setattr(derniere, "definir_ouverte",
+                        lambda ouverte, **options: (relever(), ouvrir_vraiment(ouverte, **options))[1])
+    page.termes.bouton_tout.click()
+    assert pointeurs == [Qt.CursorShape.WaitCursor] * 2 and QGuiApplication.overrideCursor() is None
+    assert page.termes.tout_ouvert()
+
+
+def test_le_pointeur_est_retabli_si_la_traduction_echoue(page, monkeypatch):
+    def echouer(*arguments):
+        raise RuntimeError("panne")
+
+    monkeypatch.setattr(page.traducteur, "traduire", echouer)
+    page.inserer_un_exemple()
+    with pytest.raises(RuntimeError):
+        page.traduire()
+    assert QGuiApplication.overrideCursor() is None
+
+
 def test_un_seul_terme_n_a_pas_de_bouton_tout_developper(page):
     traduire(page, "Le juge.")
     assert termes_des_cartes(page) == ["juge"] and page.termes.cartes[0].ouverte

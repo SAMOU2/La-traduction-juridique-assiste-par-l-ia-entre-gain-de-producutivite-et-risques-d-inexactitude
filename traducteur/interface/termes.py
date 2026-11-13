@@ -45,6 +45,7 @@ from .composants import (
     paragraphe,
     pastille,
     puce_neutre,
+    sablier,
     separateur,
 )
 from .dessin import abreger, dessiner_ligne, dessiner_numero, largeur_du_texte, police
@@ -603,9 +604,14 @@ class PanneauTermes(Panneau):
         return bool(self.cartes) and all(carte.ouverte for carte in self.cartes)
 
     def definir_tout(self, ouvert: bool) -> None:
-        """Ouvre ou referme toutes les cartes d'un coup (sans animation)."""
-        for carte in self.cartes:
-            carte.definir_ouverte(ouvert, animer=False)
+        """Ouvre ou referme toutes les cartes d'un coup (sans animation).
+
+        Le contenu d'une carte n'est construit qu'à sa première ouverture : les ouvrir toutes
+        prend plusieurs secondes quand le texte compte des centaines de termes.
+        """
+        with sablier():
+            for carte in self.cartes:
+                carte.definir_ouverte(ouvert, animer=False)
         if not ouvert:
             self.defilement.revenir_en_haut()
 

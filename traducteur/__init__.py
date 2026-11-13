@@ -9,5 +9,5 @@ Le paquet est organisé en deux parties :
 * l'interface de bureau (PySide6 / Qt), dans le sous-paquet ``interface``.
 """
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 NOM_APPLICATION = "Traducteur juridique"
