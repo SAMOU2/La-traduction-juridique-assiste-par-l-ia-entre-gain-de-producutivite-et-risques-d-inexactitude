@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from PySide6.QtCore import QByteArray, Qt
+from PySide6.QtCore import QByteArray, QRectF, Qt
 from PySide6.QtGui import QGuiApplication, QIcon, QPainter, QPixmap
 from PySide6.QtSvg import QSvgRenderer
 
@@ -49,13 +49,14 @@ def _rapport_ecran() -> float:
     return ecran.devicePixelRatio() if ecran else 1.0
 
 
-def _rendre(svg: str, taille: int, rapport: float) -> QPixmap:
+def _rendre(svg: str, taille: int, rapport: float, marge: int = 0) -> QPixmap:
+    """Dessine un SVG carré ; ``marge`` ajoute une bande transparente à sa droite."""
     cote = max(1, round(taille * rapport))
-    image = QPixmap(cote, cote)
+    image = QPixmap(cote + round(marge * rapport), cote)
     image.fill(Qt.GlobalColor.transparent)
     peintre = QPainter(image)
     peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
-    QSvgRenderer(QByteArray(svg.encode("utf-8"))).render(peintre)
+    QSvgRenderer(QByteArray(svg.encode("utf-8"))).render(peintre, QRectF(0, 0, cote, cote))
     peintre.end()
     image.setDevicePixelRatio(rapport)
     return image
@@ -71,10 +72,12 @@ def image(nom: str, couleur: str, taille: int = 16, epaisseur: float = 1.5) -> Q
 
 
 def icone(nom: str, couleur: str, taille: int = 16, epaisseur: float = 1.5, *,
-          couleur_inactive: str | None = None) -> QIcon:
+          couleur_inactive: str | None = None, marge: int = 0) -> QIcon:
     """Icône pour un bouton, préparée pour les écrans de densité 1×, 2× et 3×.
 
-    ``couleur_inactive`` est la couleur de l'icône quand le bouton est désactivé.
+    ``couleur_inactive`` est la couleur de l'icône quand le bouton est désactivé. ``marge``
+    éloigne l'icône du libellé du bouton : Qt ne laisse que 4 pixels entre les deux. La
+    taille d'icône du bouton doit alors être ``taille + marge`` × ``taille``.
     """
     resultat = QIcon()
     teintes = [(couleur, QIcon.Mode.Normal)]
@@ -83,18 +86,18 @@ def icone(nom: str, couleur: str, taille: int = 16, epaisseur: float = 1.5, *,
     for teinte, mode in teintes:
         svg = _svg(nom, teinte, epaisseur)
         for rapport in (1.0, 2.0, 3.0):
-            resultat.addPixmap(_rendre(svg, taille, rapport), mode)
+            resultat.addPixmap(_rendre(svg, taille, rapport, marge), mode)
     return resultat
 
 
 def icone_a_deux_etats(nom: str, couleur: str, couleur_cochee: str, taille: int = 16,
-                       epaisseur: float = 1.5) -> QIcon:
+                       epaisseur: float = 1.5, *, marge: int = 0) -> QIcon:
     """Icône d'un bouton à cocher : une couleur au repos, une autre quand le bouton est coché."""
     resultat = QIcon()
     for teinte, etat in ((couleur, QIcon.State.Off), (couleur_cochee, QIcon.State.On)):
         svg = _svg(nom, teinte, epaisseur)
         for rapport in (1.0, 2.0, 3.0):
-            resultat.addPixmap(_rendre(svg, taille, rapport), QIcon.Mode.Normal, etat)
+            resultat.addPixmap(_rendre(svg, taille, rapport, marge), QIcon.Mode.Normal, etat)
     return resultat
 
 

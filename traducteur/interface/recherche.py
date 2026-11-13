@@ -42,7 +42,6 @@ from .composants import (
     icone_fixe,
     puce,
     repeindre,
-    rond,
     vider,
 )
 from .fiche import PROPORTIONS, EnteteEtapes, Fiche, ListeEntrees
@@ -50,7 +49,10 @@ from .fiche import PROPORTIONS, EnteteEtapes, Fiche, ListeEntrees
 #: Nombre de termes du glossaire proposés comme exemples avant la première recherche.
 NOMBRE_EXEMPLES = 5
 
-_INVITES = {FR: "Saisir un terme juridique, en français ou en arabe…", AR: "أدخل مصطلحا قانونيا، بالعربية أو بالفرنسية…"}
+_INVITES = {
+    FR: "Saisir un terme juridique, en français ou en arabe…",
+    AR: "أدخل مصطلحا قانونيا، بالعربية أو بالفرنسية…",
+}
 _AUCUN_GLOSSAIRE = "Aucun glossaire n’est chargé : ouvrez un fichier CSV (menu Fichier → Ouvrir un glossaire)."
 #: Rappel affiché quand un terme n'est pas dans le glossaire : les fiches viennent du fichier CSV, et de lui seul.
 _TERME_A_AJOUTER = "Pour obtenir sa fiche, ajoutez ce terme au fichier CSV, puis rechargez le glossaire (F5)."

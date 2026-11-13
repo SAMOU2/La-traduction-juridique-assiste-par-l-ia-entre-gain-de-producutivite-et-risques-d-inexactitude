@@ -1,46 +1,53 @@
-"""Écran de traduction d'un texte (écran 2 de la maquette).
+"""Écran « Texte » : traduction d'un texte à l'aide du glossaire.
 
-Deux zones de texte côte à côte (texte source, texte traduit), la bande des
-cinq étapes de l'algorithme, puis le tableau des termes du glossaire relevés
-dans le texte, avec pour chacun l'enchaînement de l'écran de recherche :
-terme, définition, équivalent, contextualisation, ressources.
+De haut en bas : le texte source et sa traduction, côte à côte dans un même panneau ; la
+bande des cinq étapes du traitement ; le tableau des termes du glossaire relevés dans le
+texte, qui reprend en colonnes l'enchaînement de l'écran « Terme » :
+
+① Terme → ② Définition → ③ Équivalent → ④ Contextualisation → ⑤ Ressources
+
+Les boutons « Importer », « Exporter » et « Traduire » appartiennent à cet écran ; la
+fenêtre les place dans la barre d'outils.
 """
 
 from __future__ import annotations
 
+from collections.abc import Sequence
+from dataclasses import dataclass
 from html import escape
 from pathlib import Path
+from types import MappingProxyType
 
-from PySide6.QtCore import QStandardPaths, Qt, QTimer, Signal
+from PySide6.QtCore import QEvent, QPointF, QRectF, QSize, QStandardPaths, Qt, QTimer, Signal
 from PySide6.QtGui import (
     QColor,
     QGuiApplication,
     QKeySequence,
+    QPainter,
+    QPen,
     QShortcut,
     QTextBlockFormat,
     QTextCharFormat,
     QTextCursor,
 )
 from PySide6.QtWidgets import (
+    QAbstractButton,
     QFileDialog,
     QFrame,
     QHBoxLayout,
-    QLabel,
-    QMessageBox,
     QPushButton,
-    QScrollArea,
     QSizePolicy,
     QTextEdit,
     QToolButton,
+    QToolTip,
     QVBoxLayout,
     QWidget,
 )
 
 from .. import documents
-from ..glossaire import Entree, Glossaire
+from ..glossaire import Glossaire
 from ..langues import (
     AR,
-    CODE,
     FR,
     NOM_EN_FRANCAIS,
     NOM_NATIF,
@@ -50,21 +57,27 @@ from ..langues import (
     deviner_langue,
 )
 from ..segmentation import compter
-from ..surlignage import positions_du_terme
 from ..traduction import SOURCE, TERME, TermeDetecte, Traducteur, Traduction
-from . import icones, theme
-from .cartes import categorie_et_pluriel, phrase_surlignee, ressource_en_html
+from . import boites, icones, theme
 from .composants import (
-    DROITE,
     MARQUE_RTL,
     EtiquetteCourte,
+    Panneau,
+    ZoneDefilante,
+    bornes_des_colonnes,
+    compte,
     direction,
     etiquette,
     icone_fixe,
     infobulle,
-    pastille_langue,
-    vider,
+    nombre,
+    pastille,
+    repeindre,
+    separateur,
 )
+from .dessin import abreger, couper_en_lignes, dessiner_ligne, extrait_autour, largeur_du_texte, police
+from .fiche import ETAPES as CHAMPS
+from .fiche import categorie_et_pluriel, mention_a_verifier
 
 #: Texte proposé par « Insérer un exemple » : les articles 106 et 107 du Code civil (phrases reprises
 #: des exemples du glossaire fourni), puis une phrase qui n'y figure pas, traduite mot à mot.
@@ -80,177 +93,126 @@ EXEMPLES = {
          "بطلان عقد البيع يحمي المشتري."),
 }
 
-_ROLES = {
-    "source": {FR: "texte source", AR: "النص المصدر"},
-    "cible": {FR: "texte traduit", AR: "النص المترجم"},
-}
+_ROLES = {"source": "texte source", "cible": "traduction"}
 _INVITES = {
     FR: "Saisissez, collez ou importez le texte à traduire…",
     AR: "أدخل النص المراد ترجمته أو الصقه أو استورده…",
 }
+_INVITE_CIBLE = "La traduction s’affichera ici."
 _AUCUN_GLOSSAIRE = "Aucun glossaire n’est chargé : ouvrez un fichier CSV (menu Fichier → Ouvrir un glossaire)."
-#: Rappel affiché sous une traduction partielle : forme longue, forme courte, puis rien si la place manque.
-_AIDE_GRIS = ("En gris : mots absents du glossaire, à traduire", "En gris : mots à traduire", "")
+_TEXTE_MODIFIE = "Le texte source a changé : cliquez sur « Traduire » pour mettre la traduction à jour."
+#: Rappelé sous les états « Traduction terminée » et « Traduction partielle ».
+_A_RELIRE = "Le traducteur ne connaît que les termes du glossaire : relisez et complétez la traduction."
 
-#: Les cinq étapes de l'algorithme : (titre, titre court, description, description courte).
-#: La description est affichée avant la traduction ; les formes courtes servent quand la place manque.
+#: Les cinq étapes du traitement : (nom, nom court, ce que fait l'étape).
 ETAPES = (
-    ("Segmentation en phrases", "Segmentation", "le texte est découpé en phrases", "phrase par phrase"),
-    ("Découpage en mots", "Découpage", "chaque phrase est découpée en mots", "mot par mot"),
-    ("Recherche dans le CSV", "Recherche", "phrases, expressions et mots du glossaire", "dans le glossaire"),
-    ("Règles linguistiques", "Règles", "lexique, grammaire, sémantique", "3 familles"),
-    ("Reconstruction", "Reconstruction", "paragraphe et ponctuation", "du paragraphe"),
+    ("Segmentation", "Segmentation", "Le texte est découpé en phrases."),
+    ("Découpage", "Découpage", "Chaque phrase est découpée en mots."),
+    ("Recherche dans le CSV", "Recherche",
+     "Les phrases, puis les expressions, puis les mots sont cherchés dans le glossaire."),
+    ("Règles linguistiques", "Règles",
+     "Lexique, grammaire, sémantique : synonymes, pluriel, article, complément du nom, choix entre plusieurs sens."),
+    ("Reconstruction", "Reconstruction", "Chaque phrase est récrite dans la langue cible, avec sa ponctuation."),
 )
-#: Colonnes du tableau des termes et largeurs relatives (celles de la maquette).
-COLONNES = (("Terme", 200), ("Définition", 390), ("Équivalent", 180), ("Contextualisation", 380), ("Ressources", 242))
+#: Largeurs relatives des colonnes du tableau des termes (celles de la proposition).
+COLONNES = (224, 340, 208, 320, 300)
 
 #: Hauteur d'une ligne des zones de texte, en pixels, selon la langue. Une hauteur fixe garde des
 #: lignes régulières quand une même ligne mêle des mots français et des mots arabes.
-INTERLIGNE = {FR: 28, AR: 34}
-_LONGUEUR_DEFINITION = 170
-#: Longueur maximale d'un exemple dans le tableau (l'arabe est écrit plus grand).
-_LONGUEUR_EXEMPLE = {FR: 110, AR: 90}
-#: Couleur des mots absents du glossaire dans le texte traduit.
-_GRIS = "#8A97AA"
-
-
-def _nombre(valeur: int, singulier: str, pluriel: str | None = None) -> str:
-    """« 1 phrase », « 4 phrases », « 2 480 mots »."""
-    nombre = f"{valeur:,}".replace(",", "\u202f")
-    return f"{nombre} {singulier if valeur < 2 else (pluriel or singulier + 's')}"
+INTERLIGNE = {FR: 26, AR: 32}
+#: Espace entre deux paragraphes des zones de texte.
+ESPACE_ENTRE_PARAGRAPHES = 8
+#: Couleur des termes du glossaire, et couleur des mots absents du glossaire, dans les deux zones de texte.
+COULEUR_TERME = theme.BLEU
+COULEUR_ABSENT = theme.TEXTE_4
 
 
 def _decompte(phrases: int, mots: int, caracteres: int) -> tuple[str, str, str]:
     """Décompte d'un texte, du plus long au plus court : « 4 phrases · 76 mots · 422 caractères », …, « 76 mots »."""
-    elements = (_nombre(phrases, "phrase"), _nombre(mots, "mot"), _nombre(caracteres, "caractère"))
+    elements = (compte(phrases, "phrase"), compte(mots, "mot"), compte(caracteres, "caractère"))
     return " · ".join(elements), " · ".join(elements[:2]), elements[1]
 
 
-def _abrege(texte: str, longueur: int) -> str:
-    """Coupe un texte trop long à la fin d'un mot et ajoute « … »."""
-    if len(texte) <= longueur:
-        return texte
-    coupe = texte.rfind(" ", 0, longueur)
-    return texte[:coupe if coupe > longueur // 2 else longueur].rstrip(" ,;:،؛") + "…"
-
-
-def _extrait(phrase: str, entree: Entree, langue: str) -> str:
-    """Passage d'une phrase d'exemple autour du terme : « … pour les causes prévues par la loi. »"""
-    longueur = _LONGUEUR_EXEMPLE[langue]
-    if len(phrase) <= longueur:
-        return phrase
-    positions = positions_du_terme(phrase, entree, langue)
-    centre = (positions[0][0] + positions[0][1]) // 2 if positions else 0
-    debut = max(0, min(centre - longueur // 2, len(phrase) - longueur))
-    fin = min(len(phrase), debut + longueur)
-    if debut > 0:
-        espace = phrase.find(" ", debut)
-        debut = espace + 1 if 0 <= espace < centre else debut
-    if fin < len(phrase):
-        espace = phrase.rfind(" ", debut, fin)
-        fin = espace if espace > centre else fin
-    return ("… " if debut > 0 else "") + phrase[debut:fin].strip() + (" …" if fin < len(phrase) else "")
-
-
-def _filet() -> QFrame:
-    filet = QFrame()
-    filet.setObjectName("filetPanneau")
-    filet.setFixedHeight(1)
-    return filet
-
-
-def _repeindre(widget: QWidget) -> None:
-    """Applique de nouveau la feuille de style après le changement d'une propriété."""
-    widget.style().unpolish(widget)
-    widget.style().polish(widget)
-    widget.update()
+def _bouton(texte: str, classe: str, largeur: int, hauteur: int, nom_icone: str = "", info: str = "") -> QPushButton:
+    """Bouton de l'écran : « principal » (plein) ou « contour »."""
+    bouton = QPushButton(texte)
+    bouton.setProperty("classe", classe)
+    if nom_icone:
+        couleur = theme.SURFACE if classe == "principal" else theme.TEXTE_2
+        bouton.setIcon(icones.icone(nom_icone, couleur, 16, 1.6, marge=3,
+                                    couleur_inactive=theme.SURFACE if classe == "principal" else theme.TEXTE_4))
+        bouton.setIconSize(QSize(19, 16))
+    bouton.setFixedSize(largeur, hauteur)
+    bouton.setCursor(Qt.CursorShape.PointingHandCursor)
+    if info:
+        bouton.setToolTip(info)
+    return bouton
 
 
 # ====================================================================== zones de texte
-class PanneauTexte(QFrame):
-    """Une zone de texte encadrée : en-tête (langue), texte, pied (décompte et boutons)."""
+class ChampTexte(QTextEdit):
+    """Zone de saisie d'un texte : marges de la proposition, lignes de hauteur fixe."""
 
-    def __init__(self, role: str, parent: QWidget | None = None) -> None:
+    MARGE_HAUTE = 10
+
+    def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
-        self.setObjectName("panneauTexte")
-        self.role = role
+        self.setObjectName("zoneTexte")
+        self.setFrameShape(QFrame.Shape.NoFrame)
+        self.setAcceptRichText(False)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.document().setDocumentMargin(self.MARGE_HAUTE)
+        cote = theme.MARGE - self.MARGE_HAUTE
+        self.setViewportMargins(cote, 0, cote, 0)
         self.langue = FR
-        ensemble = QVBoxLayout(self)
-        ensemble.setContentsMargins(1, 1, 1, 1)
-        ensemble.setSpacing(0)
-
-        self.entete = QWidget()
-        self.entete.setFixedHeight(46)
-        ligne = QHBoxLayout(self.entete)
-        ligne.setContentsMargins(20, 0, 16, 0)
-        ligne.setSpacing(8)
-        self.pastille = pastille_langue(FR)
-        self.nom = etiquette("", "titrePanneau")
-        self.legende = etiquette("", "sousTitrePanneau")
-        ligne.addWidget(self.pastille)
-        ligne.addWidget(self.nom)
-        ligne.addWidget(self.legende)
-        ligne.addStretch(1)
-        #: Emplacement libre à la fin de l'en-tête (fichier importé, état de la traduction).
-        self.complement = QHBoxLayout()
-        self.complement.setSpacing(8)
-        ligne.addLayout(self.complement)
-        ensemble.addWidget(self.entete)
-        ensemble.addWidget(_filet())
-
-        self.zone = QTextEdit()
-        self.zone.setObjectName("zoneTexte")
-        self.zone.setFrameShape(QFrame.Shape.NoFrame)
-        self.zone.setAcceptRichText(False)
-        self.zone.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.zone.document().setDocumentMargin(18)
-        self.zone.setMinimumHeight(60)
-        ensemble.addWidget(self.zone, 1)
-        ensemble.addWidget(_filet())
-
-        cadre_du_pied = QWidget()
-        cadre_du_pied.setFixedHeight(52)
-        self.pied = QHBoxLayout(cadre_du_pied)
-        self.pied.setContentsMargins(20, 0, 16, 0)
-        self.pied.setSpacing(8)
-        ensemble.addWidget(cadre_du_pied)
-        self.definir_langue(FR)
+        self._invite = ""
 
     def definir_langue(self, langue: str) -> None:
-        """Fixe la langue du panneau : libellés de l'en-tête et sens d'écriture du texte."""
+        """Fixe la langue du texte : sens d'écriture, taille des caractères, hauteur des lignes."""
         self.langue = langue
-        self.pastille.setText(CODE[langue])
-        self.nom.setText(NOM_NATIF[langue])
-        self.legende.setText(_ROLES[self.role][langue])
-        self.entete.setLayoutDirection(direction(langue))
-        self.zone.setLayoutDirection(direction(langue))
-        option = self.zone.document().defaultTextOption()
+        self.setLayoutDirection(direction(langue))
+        option = self.document().defaultTextOption()
         option.setTextDirection(direction(langue))
-        self.zone.document().setDefaultTextOption(option)
-        if self.zone.property("arabe") != (langue == AR):
-            self.zone.setProperty("arabe", langue == AR)
-            _repeindre(self.zone)
+        self.document().setDefaultTextOption(option)
+        if self.property("arabe") != (langue == AR):
+            self.setProperty("arabe", langue == AR)
+            repeindre(self)
         self.appliquer_l_interligne()
 
+    def definir_invite(self, texte: str) -> None:
+        """Texte gris affiché tant que la zone est vide."""
+        self._invite = texte
+        self.setAccessibleDescription(texte)
+        self.viewport().update()
+
+    def invite(self) -> str:
+        return self._invite
+
     def appliquer_l_interligne(self) -> None:
-        """Espace les lignes du texte (à refaire après chaque remplacement du texte)."""
-        curseur = QTextCursor(self.zone.document())
+        """Espace les lignes et les paragraphes du texte (à refaire après chaque remplacement du texte)."""
+        document = self.document()
+        # Cette mise en forme ne doit pas pouvoir être annulée par Ctrl+Z.
+        annulation = document.isUndoRedoEnabled()
+        document.setUndoRedoEnabled(False)
+        curseur = QTextCursor(document)
         curseur.select(QTextCursor.SelectionType.Document)
         mise_en_forme = QTextBlockFormat()
         mise_en_forme.setLineHeight(INTERLIGNE[self.langue], QTextBlockFormat.LineHeightTypes.FixedHeight.value)
+        mise_en_forme.setBottomMargin(ESPACE_ENTRE_PARAGRAPHES)
         curseur.mergeBlockFormat(mise_en_forme)
+        document.setUndoRedoEnabled(annulation)
 
     def orienter_les_paragraphes(self) -> None:
         """Écrit dans son propre sens un paragraphe resté entièrement dans l'autre langue.
 
         Dans une traduction partielle, un paragraphe dont aucun mot n'a été traduit ne contient
-        que l'écriture de l'autre langue. Affiché dans le sens d'écriture du panneau, il aurait
+        que l'écriture de l'autre langue. Affiché dans le sens d'écriture de la zone, il aurait
         son point final du mauvais côté.
         """
         dans_la_langue, dans_l_autre = ((contient_arabe, contient_latin) if self.langue == AR
                                         else (contient_latin, contient_arabe))
         sens_inverse = direction(autre_langue(self.langue))
-        bloc = self.zone.document().begin()
+        bloc = self.document().begin()
         while bloc.isValid():
             texte = bloc.text()
             if dans_l_autre(texte) and not dans_la_langue(texte):
@@ -259,334 +221,868 @@ class PanneauTexte(QFrame):
                 QTextCursor(bloc).mergeBlockFormat(mise_en_forme)
             bloc = bloc.next()
 
+    def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        super().paintEvent(evenement)
+        if not self._invite or not self.document().isEmpty():
+            return
+        # L'invite est écrite sur la ligne de base de la première ligne du texte.
+        peintre = QPainter(self.viewport())
+        marge = self.MARGE_HAUTE
+        cadre = QRectF(marge, marge, self.viewport().width() - 2 * marge, INTERLIGNE[self.langue])
+        dessiner_ligne(peintre, cadre, abreger(self._invite, self.font(), cadre.width()), self.font(),
+                       theme.TEXTE_4, langue=self.langue, base=INTERLIGNE[self.langue] * 0.8)
 
-# ====================================================================== étapes de l'algorithme
-class Etape(QWidget):
-    """Une étape de l'algorithme : numéro, titre et résultat de l'étape.
 
-    Le titre et le résultat ont une forme longue et une forme courte ; la forme
-    courte est affichée quand la forme longue ne tient pas dans la largeur
-    (c'est ``EtiquetteCourte`` qui choisit).
+class Badge(QWidget):
+    """État de la traduction, dans une pastille : une icône et un texte.
+
+    Le texte a plusieurs formes, de la plus longue à la plus courte. La pastille affiche la
+    première qui tient dans la largeur reçue, et se place à droite de cette largeur.
     """
 
-    def __init__(self, numero: int, titre: str, titre_court: str, description: str, description_courte: str = "",
-                 parent: QWidget | None = None) -> None:
-        super().__init__(parent)
-        self.description = description
-        self._titres = (titre, titre_court)
-        self._descriptions = (description, description_courte or description)
-        self._resultats = self._descriptions
-        ligne = QHBoxLayout(self)
-        ligne.setContentsMargins(0, 0, 0, 0)
-        ligne.setSpacing(10)
-        self.numero = QLabel(str(numero))
-        self.numero.setProperty("classe", "numeroEtape")
-        self.numero.setProperty("faite", False)
-        self.numero.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.numero.setFixedSize(26, 26)
-        ligne.addWidget(self.numero)
-        colonne = QVBoxLayout()
-        colonne.setContentsMargins(0, 0, 0, 0)
-        colonne.setSpacing(1)
-        self.titre = EtiquetteCourte("", "titreEtape")
-        self.titre.definir_texte(titre, titre_court)
-        self.detail = EtiquetteCourte(description, "detailEtape")
-        colonne.addStretch(1)
-        colonne.addWidget(self.titre)
-        colonne.addWidget(self.detail)
-        colonne.addStretch(1)
-        ligne.addLayout(colonne, 1)
-        # L'infobulle est celle de l'étape entière, pas celle de chaque étiquette.
-        for label in (self.numero, self.titre, self.detail):
-            label.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
-        self.afficher(None)
-
-    def afficher(self, resultat: str | None, court: str = "", explication: str = "") -> None:
-        """Affiche le résultat de l'étape ; ``None`` remet la description d'origine.
-
-        ``court`` est la forme abrégée du résultat (« 31 sur 41 » pour « 31 mots trouvés sur 41 »).
-        """
-        self._resultats = self._descriptions if resultat is None else (resultat, court or resultat)
-        if self.numero.property("faite") != (resultat is not None):
-            self.numero.setProperty("faite", resultat is not None)
-            _repeindre(self.numero)
-        self.detail.definir_texte(*self._resultats)
-        lignes = [self._titres[0], self._resultats[0], *([explication] if explication else [])]
-        self.setToolTip("<qt>" + "<br>".join(escape(ligne).replace("\n", "<br>") for ligne in lignes) + "</qt>")
-
-    def resultat(self) -> str:
-        """Le résultat de l'étape, dans sa forme longue."""
-        return self._resultats[0]
-
-    def largeur_minimale(self) -> int:
-        """Largeur qu'il faut à l'étape pour afficher son titre et son résultat dans leur forme courte."""
-        largeurs = []
-        for label, (_, court) in ((self.titre, self._titres), (self.detail, self._resultats)):
-            label.ensurePolished()
-            largeurs.append(label.fontMetrics().horizontalAdvance(court))
-        return self.numero.width() + self.layout().spacing() + max(largeurs)
-
-
-class BandeEtapes(QFrame):
-    """Bande des cinq étapes : segmentation, découpage, recherche, règles, reconstruction."""
+    HAUTEUR = 24
+    #: état -> (fond, filet, couleur du texte, icône)
+    ASPECTS = MappingProxyType({
+        "attente": (theme.GRIS_100, theme.FILET, theme.TEXTE_3, "information"),
+        "partiel": (theme.AMBRE_50, theme.AMBRE_200, theme.AMBRE, "alerte"),
+        "termine": (theme.VERT_50, theme.VERT_200, theme.VERT, "coche"),
+    })
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
-        self.setObjectName("bandeEtapes")
-        self.setFixedHeight(60)
+        self.setFixedHeight(self.HAUTEUR)
+        self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        self.etat = "attente"
+        self._formes: tuple[str, ...] = ("",)
+        self.hide()
+
+    def definir(self, etat: str, *formes: str, explication: str = "") -> None:
+        """Change l'état affiché ; sans texte, la pastille est cachée."""
+        self.etat = etat
+        self._formes = tuple(formes) or ("",)
+        self.setToolTip(infobulle(explication))
+        self.setAccessibleName(self._formes[0])
+        self.setVisible(bool(self._formes[0]))
+        self.updateGeometry()
+        self.update()
+
+    def texte(self) -> str:
+        """Le texte de l'état, dans sa forme longue."""
+        return self._formes[0]
+
+    def texte_affiche(self) -> str:
+        """La forme du texte qui tient dans la largeur de la pastille."""
+        return next((forme for forme in self._formes if self._largeur(forme) <= self.width()), self._formes[-1])
+
+    def _largeur(self, forme: str) -> int:
+        return round(10 + 14 + 7 + largeur_du_texte(forme, police(self.font(), 12, gras=True)) + 16)
+
+    def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
+        return QSize(self._largeur(self._formes[0]), self.HAUTEUR)
+
+    def minimumSizeHint(self) -> QSize:  # noqa: N802
+        return QSize(self._largeur(self._formes[-1]), self.HAUTEUR)
+
+    def paintEvent(self, evenement) -> None:  # noqa: N802
+        fond, filet, couleur, nom_icone = self.ASPECTS[self.etat]
+        texte = self.texte_affiche()
+        largeur = min(self._largeur(texte), self.width())
+        gauche = self.width() - largeur
+        peintre = QPainter(self)
+        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
+        peintre.setPen(QPen(QColor(filet), 1))
+        peintre.setBrush(QColor(fond))
+        peintre.drawRoundedRect(QRectF(gauche + 0.5, 0.5, largeur - 1, self.height() - 1), 11.5, 11.5)
+        peintre.drawPixmap(QPointF(gauche + 9, 5), icones.image(nom_icone, couleur, 14, 1.6))
+        dessiner_ligne(peintre, QRectF(gauche + 30, 0, largeur - 30 - 8, self.height()), texte,
+                       police(self.font(), 12, gras=True), couleur, base=16.4)
+
+
+class RappelFichier(QFrame):
+    """Rappel du fichier importé, dans l'en-tête du texte source : nom du fichier et bouton pour l'oublier."""
+
+    #: Le bouton « × » a été cliqué.
+    fermeture = Signal()
+
+    def __init__(self, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        self.setObjectName("fichierImporte")
+        self.setFixedHeight(24)
+        self.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         ligne = QHBoxLayout(self)
-        ligne.setContentsMargins(18, 0, 18, 0)
-        ligne.setSpacing(8)
-        self.etapes: list[Etape] = []
-        self.chevrons: list[QLabel] = []
-        for rang, (titre, titre_court, description, description_courte) in enumerate(ETAPES):
-            if rang:
-                self.chevrons.append(icone_fixe("chevron", "#B4C1D8", 18))
-                ligne.addWidget(self.chevrons[-1])
-            etape = Etape(rang + 1, titre, titre_court, description, description_courte)
-            self.etapes.append(etape)
-            ligne.addWidget(etape, 1)
+        ligne.setContentsMargins(9, 0, 4, 0)
+        ligne.setSpacing(7)
+        ligne.addWidget(icone_fixe("document", theme.TEXTE_3, 14))
+        self.nom = EtiquetteCourte("", "nomFichier")
+        self.nom.setMaximumWidth(220)
+        ligne.addWidget(self.nom)
+        self.bouton_fermer = QToolButton()
+        self.bouton_fermer.setObjectName("fermerFichier")
+        self.bouton_fermer.setIcon(icones.icone("croix", theme.TEXTE_3, 12, 1.7))
+        self.bouton_fermer.setIconSize(QSize(12, 12))
+        self.bouton_fermer.setFixedSize(18, 18)
+        self.bouton_fermer.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.bouton_fermer.setToolTip("Effacer le texte importé")
+        self.bouton_fermer.clicked.connect(self.fermeture)
+        ligne.addWidget(self.bouton_fermer)
 
-    def resizeEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
-        super().resizeEvent(evenement)
-        self._placer_les_chevrons()
 
-    def _placer_les_chevrons(self) -> None:
-        """Retire les chevrons quand, avec eux, la forme courte des étapes ne tient plus dans la bande.
+class Legende(QWidget):
+    """Légende sur une ligne, alignée à droite : des repères suivis de leur libellé.
 
-        La décision ne dépend que de la largeur de la bande et des textes, jamais de la place
-        qu'occupent les étapes : afficher ou retirer les chevrons ne la remet donc pas en cause.
-        """
-        disposition = self.layout()
-        marges = disposition.contentsMargins()
-        largeur = self.width() - marges.left() - marges.right() - disposition.spacing() * (len(self.etapes) - 1)
-        chevrons = sum(chevron.width() + disposition.spacing() for chevron in self.chevrons)
-        par_etape = (largeur - chevrons) // len(self.etapes)
-        visibles = all(etape.largeur_minimale() <= par_etape for etape in self.etapes)
-        for chevron in self.chevrons:
-            chevron.setVisible(visibles)
+    Un repère est un point de couleur ou une icône. Si la largeur manque, les repères les
+    moins importants sont retirés.
+    """
 
+    ECART = 18
+
+    def __init__(self, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        self.setFixedHeight(20)
+        self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        #: (icône ou « point », couleur, libellé, importance : 0 pour le plus important)
+        self._reperes: list[tuple[str, str, str, int]] = []
+
+    def definir(self, reperes: Sequence[tuple[str, str, str, int]]) -> None:
+        self._reperes = list(reperes)
+        self.setVisible(bool(self._reperes))
+        self.setAccessibleName(" ; ".join(libelle for _, _, libelle, _ in self._reperes))
+        self.updateGeometry()
+        self.update()
+
+    def libelles(self) -> list[str]:
+        """Les libellés de la légende (tous, même ceux que la largeur ne permet pas d'afficher)."""
+        return [libelle for _, _, libelle, _ in self._reperes]
+
+    def _largeur_du_repere(self, repere: tuple[str, str, str, int]) -> float:
+        genre, _, libelle, _ = repere
+        return (8 + 7 if genre == "point" else 14 + 6) + largeur_du_texte(libelle, police(self.font(), 12))
+
+    def _largeur(self, reperes: Sequence[tuple[str, str, str, int]]) -> int:
+        if not reperes:
+            return 0
+        return round(sum(self._largeur_du_repere(repere) for repere in reperes) + self.ECART * (len(reperes) - 1)) + 1
+
+    def reperes_affiches(self) -> list[tuple[str, str, str, int]]:
+        """Les repères qui tiennent dans la largeur : les moins importants sont retirés d'abord."""
+        visibles = list(self._reperes)
+        while visibles and self._largeur(visibles) > self.width():
+            visibles.remove(max(visibles, key=lambda repere: repere[3]))
+        return visibles
+
+    def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
+        return QSize(self._largeur(self._reperes), 20)
+
+    def minimumSizeHint(self) -> QSize:  # noqa: N802
+        return QSize(0, 20)
+
+    def paintEvent(self, evenement) -> None:  # noqa: N802
+        visibles = self.reperes_affiches()
+        peintre = QPainter(self)
+        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
+        x = float(self.width() - self._largeur(visibles))
+        milieu = self.height() / 2
+        for repere in visibles:
+            genre, couleur, libelle, _ = repere
+            if genre == "point":
+                peintre.setPen(Qt.PenStyle.NoPen)
+                peintre.setBrush(QColor(couleur))
+                peintre.drawEllipse(QPointF(x + 4, milieu), 4, 4)
+                decalage = 15
+            else:
+                peintre.drawPixmap(QPointF(x, milieu - 7), icones.image(genre, couleur, 14, 1.6))
+                decalage = 20
+            largeur = self._largeur_du_repere(repere)
+            dessiner_ligne(peintre, QRectF(x + decalage, 0, largeur - decalage + 2, self.height()), libelle,
+                           police(self.font(), 12), theme.TEXTE_3, base=milieu + 4.2)
+            x += largeur + self.ECART
+
+
+class ZoneTexte(QWidget):
+    """Une moitié du panneau des textes : en-tête (langue), texte, pied (décompte et bouton)."""
+
+    HAUTEUR_ENTETE, HAUTEUR_PIED = 40, 44
+
+    def __init__(self, role: str, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        self.role = role
+        self.langue = FR
+        ensemble = QVBoxLayout(self)
+        ensemble.setContentsMargins(0, 0, 0, 0)
+        ensemble.setSpacing(0)
+
+        cadre_de_l_entete = QWidget()
+        cadre_de_l_entete.setFixedHeight(self.HAUTEUR_ENTETE)
+        self.entete = QHBoxLayout(cadre_de_l_entete)
+        self.entete.setContentsMargins(theme.MARGE, 0, theme.MARGE, 0)
+        self.entete.setSpacing(8)
+        self.nom = etiquette("", "nomLangue")
+        self.legende = etiquette(_ROLES[role], "roleZone")
+        self.entete.addWidget(self.nom)
+        self.entete.addWidget(self.legende)
+        self.entete.addStretch(1)
+        ensemble.addWidget(cadre_de_l_entete)
+        ensemble.addWidget(separateur())
+
+        self.zone = ChampTexte()
+        self.zone.setMinimumHeight(56)
+        ensemble.addWidget(self.zone, 1)
+        ensemble.addWidget(separateur())
+
+        cadre_du_pied = QWidget()
+        cadre_du_pied.setFixedHeight(self.HAUTEUR_PIED)
+        self.pied = QHBoxLayout(cadre_du_pied)
+        self.pied.setContentsMargins(theme.MARGE, 0, theme.MARGE, 0)
+        self.pied.setSpacing(16)
+        self.decompte = EtiquetteCourte("", "decompte")
+        self.pied.addWidget(self.decompte, 1)
+        ensemble.addWidget(cadre_du_pied)
+        self.definir_langue(FR)
+
+    def definir_langue(self, langue: str) -> None:
+        """Fixe la langue de la zone : nom de la langue dans l'en-tête, sens d'écriture du texte."""
+        self.langue = langue
+        self.nom.setText(NOM_NATIF[langue])
+        if self.nom.property("arabe") != (langue == AR):
+            self.nom.setProperty("arabe", langue == AR)
+            repeindre(self.nom)
+        self.zone.definir_langue(langue)
+
+
+# ====================================================================== étapes du traitement
+@dataclass
+class Etape:
+    """Une étape du traitement et, après une traduction, son résultat."""
+
+    nom: str
+    nom_court: str
+    description: str
+    resultat: str = ""
+    resultat_court: str = ""
+    #: Détail du résultat, donné dans l'infobulle (mots absents, règles appliquées…).
+    explication: str = ""
+
+
+class BandeEtapes(QWidget):
+    """Bande des cinq étapes du traitement, sur une ligne : numéro, nom, résultat.
+
+    Les étapes occupent leur largeur propre et l'espace restant est réparti entre elles. Quand
+    la place manque, les noms puis les résultats prennent leur forme courte.
+    """
+
+    HAUTEUR = 44
+    #: Espace minimal entre deux étapes (un chevron y est dessiné).
+    ECART_MINIMAL = 26
+
+    def __init__(self, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        self.setFixedHeight(self.HAUTEUR)
+        self.etapes = [Etape(nom, nom_court, description) for nom, nom_court, description in ETAPES]
+        self.faite = False
+        self.setAccessibleName("Étapes du traitement")
+        self.afficher(None)
+
+    # ------------------------------------------------------------------ résultats
     def afficher(self, traduction: Traduction | None) -> None:
-        self._afficher(traduction)
-        self._placer_les_chevrons()
+        """Affiche le résultat de chaque étape ; sans traduction, seuls les noms des étapes sont affichés."""
+        self.faite = traduction is not None
+        for etape in self.etapes:
+            etape.resultat = etape.resultat_court = etape.explication = ""
+        if traduction is not None:
+            self._renseigner(traduction)
+        self.setAccessibleDescription(" ; ".join(
+            f"{etape.nom} : {etape.resultat}" if etape.resultat else etape.nom for etape in self.etapes))
+        self.update()
 
-    def _afficher(self, traduction: Traduction | None) -> None:
-        if traduction is None:
-            for etape in self.etapes:
-                etape.afficher(None)
-            return
+    def _renseigner(self, traduction: Traduction) -> None:
+        segmentation, decoupage, recherche, regles, reconstruction = self.etapes
         phrases = len(traduction.phrases)
-        self.etapes[0].afficher(_nombre(phrases, "phrase détectée", "phrases détectées"), _nombre(phrases, "phrase"))
-        self.etapes[1].afficher(_nombre(traduction.mots, "mot"))
-        absents = ""
+        segmentation.resultat, segmentation.resultat_court = compte(phrases, "phrase"), nombre(phrases)
+        decoupage.resultat, decoupage.resultat_court = compte(traduction.mots, "mot"), nombre(traduction.mots)
+
+        recherche.resultat = f"{compte(traduction.mots_reconnus, 'mot')} sur {nombre(traduction.mots)}"
+        recherche.resultat_court = f"{nombre(traduction.mots_reconnus)} / {nombre(traduction.mots)}"
         if traduction.mots_absents:
             visibles = traduction.mots_absents[:40]
-            absents = ("Mots absents du glossaire : " + ", ".join(visibles)
-                       + ("…" if len(traduction.mots_absents) > len(visibles) else "."))
-        trouves = "trouvé" if traduction.mots_reconnus < 2 else "trouvés"
-        self.etapes[2].afficher(f"{_nombre(traduction.mots_reconnus, 'mot')} {trouves} sur {traduction.mots}",
-                                f"{traduction.mots_reconnus} sur {traduction.mots}", absents)
-        regles = sum(traduction.regles.values())
+            recherche.explication = ("Mots absents du glossaire : " + ", ".join(visibles)
+                                     + ("…" if len(traduction.mots_absents) > len(visibles) else "."))
+        else:
+            recherche.explication = "Tous les mots du texte ont été trouvés dans le glossaire."
+
+        appliquees = sum(traduction.regles.values())
+        regles.resultat = ("aucune appliquée" if not appliquees
+                           else f"{nombre(appliquees)} appliquée{'s' if appliquees > 1 else ''}")
+        regles.resultat_court = nombre(appliquees)
         details = []
         for famille, lignes in traduction.regles_par_famille().items():
-            details.extend(f"{famille.capitalize()} — {libelle} : {nombre}" for libelle, nombre in lignes)
-        self.etapes[3].afficher(_nombre(regles, "règle appliquée", "règles appliquées") if regles
-                                else "aucune règle appliquée", _nombre(regles, "règle"), "\n".join(details))
+            details.extend(f"{famille.capitalize()} — {libelle} : {nombre_de_fois}"
+                           for libelle, nombre_de_fois in lignes)
+        regles.explication = "\n".join(details)
+
         reprises = traduction.phrases_attestees
-        self.etapes[4].afficher(
-            _nombre(phrases, "phrase reconstruite", "phrases reconstruites"), _nombre(phrases, "phrase"),
-            f"{_nombre(reprises, 'phrase reprise', 'phrases reprises')} des exemples du glossaire, "
-            f"{_nombre(phrases - reprises, 'phrase traduite', 'phrases traduites')} mot à mot.")
+        reconstruction.resultat, reconstruction.resultat_court = compte(phrases, "phrase"), nombre(phrases)
+        reconstruction.explication = (
+            f"{compte(reprises, 'phrase reprise', 'phrases reprises')} des exemples du glossaire, "
+            f"{compte(phrases - reprises, 'phrase traduite', 'phrases traduites')} mot à mot.")
+
+    # ------------------------------------------------------------------ mise en place
+    def _polices(self):
+        return police(self.font(), 13, gras=True), police(self.font(), 13)
+
+    def _formes(self) -> list[list[tuple[str, str]]]:
+        """Les textes des cinq étapes (nom, résultat), de la forme la plus longue à la plus courte."""
+        etapes = self.etapes
+        formes = [[(etape.nom, etape.resultat) for etape in etapes],
+                  [(etape.nom_court, etape.resultat) for etape in etapes],
+                  [(etape.nom_court, etape.resultat_court) for etape in etapes],
+                  [(etape.nom_court, "") for etape in etapes]]
+        return [forme for rang, forme in enumerate(formes) if forme not in formes[:rang]]
+
+    def _largeurs(self, forme: Sequence[tuple[str, str]]) -> list[float]:
+        gras, normal = self._polices()
+        return [20 + 10 + largeur_du_texte(nom, gras)
+                + (4 + largeur_du_texte(" " + resultat, normal) if resultat else 0) for nom, resultat in forme]
+
+    def disposition(self) -> tuple[list[tuple[str, str]], list[float], float]:
+        """Les textes affichés (nom, résultat), l'abscisse de chaque étape et l'espace entre deux étapes."""
+        place = self.width() - 2 * theme.MARGE
+        formes = self._formes()
+        choisie = next((forme for forme in formes
+                        if sum(self._largeurs(forme)) + self.ECART_MINIMAL * (len(forme) - 1) <= place), formes[-1])
+        largeurs = self._largeurs(choisie)
+        ecart = max((place - sum(largeurs)) / (len(choisie) - 1), 4.0)
+        abscisses, x = [], float(theme.MARGE)
+        for largeur in largeurs:
+            abscisses.append(x)
+            x += largeur + ecart
+        return choisie, abscisses, ecart
+
+    def textes_affiches(self) -> list[tuple[str, str]]:
+        """Pour chaque étape, le nom et le résultat tels qu'ils sont affichés."""
+        return self.disposition()[0]
+
+    def infobulle(self, rang: int) -> str:
+        """Texte de l'infobulle d'une étape : son nom, ce qu'elle fait, son résultat."""
+        etape = self.etapes[rang]
+        lignes = [f"<b>{rang + 1}. {escape(etape.nom)}</b>", escape(etape.description)]
+        if etape.resultat:
+            lignes.append(f"Résultat : {escape(etape.resultat)}.")
+        if etape.explication:
+            lignes.append(escape(etape.explication).replace("\n", "<br>"))
+        return "<qt>" + "<br>".join(lignes) + "</qt>"
+
+    def etape_a(self, x: float) -> int | None:
+        """Rang de l'étape dessinée à l'abscisse ``x``."""
+        textes, abscisses, _ = self.disposition()
+        for rang, (gauche, largeur) in enumerate(zip(abscisses, self._largeurs(textes), strict=True)):
+            if gauche - 4 <= x <= gauche + largeur + 4:
+                return rang
+        return None
+
+    def event(self, evenement) -> bool:
+        if evenement.type() == QEvent.Type.ToolTip:
+            rang = self.etape_a(evenement.pos().x())
+            if rang is None:
+                QToolTip.hideText()
+                evenement.ignore()
+            else:
+                QToolTip.showText(evenement.globalPos(), self.infobulle(rang), self)
+            return True
+        return super().event(evenement)
+
+    def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        peintre = QPainter(self)
+        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
+        peintre.setPen(QPen(QColor(theme.FILET), 1))
+        peintre.setBrush(QColor(theme.SURFACE))
+        peintre.drawRoundedRect(QRectF(self.rect()).adjusted(0.5, 0.5, -0.5, -0.5), 10, 10)
+        gras, normal = self._polices()
+        textes, abscisses, ecart = self.disposition()
+        chevron = icones.image("chevron-d", theme.TEXTE_4, 14, 1.5) if ecart >= 20 else None
+        for rang, ((nom, resultat), x) in enumerate(zip(textes, abscisses, strict=True)):
+            if rang and chevron is not None:
+                peintre.drawPixmap(QPointF(x - ecart / 2 - 7, 15), chevron)
+            peintre.setPen(Qt.PenStyle.NoPen)
+            peintre.setBrush(QColor(theme.GRIS_100))
+            peintre.drawRoundedRect(QRectF(x, 12, 20, 20), 6, 6)
+            dessiner_ligne(peintre, QRectF(x, 12, 20, 20), str(rang + 1), police(self.font(), 12, gras=True),
+                           theme.TEXTE_2 if self.faite else theme.TEXTE_4, alignement=Qt.AlignmentFlag.AlignHCenter)
+            largeur_du_nom = largeur_du_texte(nom, gras)
+            dessiner_ligne(peintre, QRectF(x + 30, 0, largeur_du_nom + 2, self.height()), nom, gras,
+                           theme.TEXTE if self.faite else theme.TEXTE_3, base=26.5)
+            if resultat:
+                cadre = QRectF(x + 30 + largeur_du_nom + 4, 0, largeur_du_texte(" " + resultat, normal) + 2,
+                               self.height())
+                dessiner_ligne(peintre, cadre, " " + resultat, normal, theme.TEXTE_3, base=26.5)
 
 
 # ====================================================================== tableau des termes
-class LigneTerme(QFrame):
-    """Une ligne du tableau : terme, définition, équivalent, contextualisation, ressources."""
+def passage_du_terme(terme: TermeDetecte, traduction: Traduction) \
+        -> tuple[tuple[str, list[tuple[int, int]]], tuple[str, list[tuple[int, int]]]]:
+    """Le passage du texte qui illustre un terme : une phrase du texte source et sa traduction.
 
-    ouverture = Signal(object)
+    Renvoie, pour chacune, son texte et les positions (début, fin) du terme à mettre en
+    évidence. Parmi les phrases où le terme figure, on retient la première dont la traduction
+    contient l'équivalent du terme ; à défaut, la première phrase.
+    """
+    choix = None
+    for occurrence in terme.occurrences:
+        phrase = traduction.phrases[occurrence.phrase]
+        evidences, position = [], 0
+        for morceau in phrase.morceaux:
+            if morceau.nature == TERME and morceau.entree is terme.entree:
+                evidences.append((position, position + len(morceau.texte)))
+            position += len(morceau.texte)
+        if choix is None or evidences:
+            choix = (phrase, evidences)
+        if evidences:
+            break
+    phrase, evidences_cible = choix
+    debut = phrase.source.debut
+    evidences_source = [(occurrence.debut - debut, occurrence.fin - debut)
+                        for occurrence in phrase.occurrences if occurrence.entree is terme.entree]
+    return (phrase.source.texte, evidences_source), (phrase.texte, evidences_cible)
+
+
+class LigneTerme(QAbstractButton):
+    """Une ligne du tableau : terme, définition, équivalent, contextualisation, ressources.
+
+    La ligne est dessinée directement : chaque texte est abrégé à la largeur exacte de sa case.
+    Un clic ouvre la fiche du terme.
+    """
+
+    HAUTEUR = 62
 
     def __init__(self, terme: TermeDetecte, traduction: Traduction, parent: QWidget | None = None) -> None:
         super().__init__(parent)
-        self.setObjectName("ligneTerme")
-        self.terme = terme
-        entree, source, cible = terme.entree, traduction.source, traduction.cible
-        ligne = QHBoxLayout(self)
-        ligne.setContentsMargins(0, 0, 0, 0)
-        ligne.setSpacing(0)
-        self.cellules: list[QVBoxLayout] = []
-        for rang, (_, largeur) in enumerate(COLONNES):
-            cadre = QFrame()
-            cadre.setObjectName("celluleTerme")
-            cadre.setProperty("derniere", rang == len(COLONNES) - 1)
-            cadre.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
-            cellule = QVBoxLayout(cadre)
-            cellule.setContentsMargins(20, 11, 12, 11)
-            cellule.setSpacing(3)
-            self.cellules.append(cellule)
-            ligne.addWidget(cadre, largeur)
+        self.detecte = terme
+        entree = self.entree = terme.entree
+        source = self.source = traduction.source
+        cible = self.cible = traduction.cible
+        self.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.setAttribute(Qt.WidgetAttribute.WA_Hover)
+        self.setFixedHeight(self.HAUTEUR)
 
-        # 1. Terme
-        self.bouton = QPushButton(entree.terme(source).replace("&", "&&"))
-        self.bouton.setProperty("classe", "lienTerme")
-        self.bouton.setProperty("arabe", source == AR)
-        self.bouton.setLayoutDirection(direction(source))
-        self.bouton.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.bouton.setToolTip("Afficher la fiche de ce terme")
-        self.bouton.clicked.connect(lambda: self.ouverture.emit(entree))
-        self.cellules[0].addWidget(self.bouton)
-        occurrences = _nombre(len(terme.occurrences), "occurrence")
-        categorie = entree.categorie(source)
-        if source == AR:
-            # La catégorie arabe et le nombre d'occurrences, écrit en français, sont sur deux lignes.
-            if categorie:
-                self.cellules[0].addWidget(etiquette(categorie, "celluleDetail", AR, retour_ligne=True))
-            label = etiquette(occurrences, "celluleDetail")
-            label.setAlignment(DROITE | Qt.AlignmentFlag.AlignTop)
-            self.cellules[0].addWidget(label)
-        else:
-            self.cellules[0].addWidget(etiquette(f"{categorie} · {occurrences}" if categorie else occurrences,
-                                                 "celluleDetail", FR, retour_ligne=True))
-
-        # 2. Définition
-        definition = entree.definition(source)
-        if definition:
-            label = etiquette(_abrege(definition, _LONGUEUR_DEFINITION),
-                              "celluleArabe" if source == AR else "celluleTexte", source, retour_ligne=True)
-            if len(definition) > _LONGUEUR_DEFINITION:
-                label.setToolTip(infobulle(definition))
-            self.cellules[1].addWidget(label)
-        else:
-            self.cellules[1].addWidget(etiquette("—", "celluleDetail"))
-
-        # 3. Équivalent
-        self.cellules[2].addWidget(etiquette(
-            entree.terme(cible), "celluleEquivalentArabe" if cible == AR else "celluleEquivalent", cible,
-            retour_ligne=True, selectionnable=True))
-        detail = categorie_et_pluriel(entree, cible)
-        if detail:
-            self.cellules[2].addWidget(etiquette(detail, "celluleDetail", cible, retour_ligne=True))
+        # ① Terme
+        self.libelle = entree.terme(source)
+        self.categorie = entree.categorie(source)
+        self.occurrences = compte(len(terme.occurrences), "occurrence")
+        # ② Définition : dans la langue du texte ; à défaut, dans l'autre langue.
+        self.langue_definition = next((langue for langue in (source, cible) if entree.definition(langue)), source)
+        self.definition = entree.definition(self.langue_definition)
+        #: Vrai si la définition n'est reprise d'aucune source citée.
+        self.a_verifier = not entree.source_definition or mention_a_verifier(entree.source_definition) is not None
+        # ③ Équivalent ; s'il y a plusieurs sens, la seconde ligne le signale à la place de la grammaire.
+        self.equivalent = entree.terme(cible)
+        self.grammaire = categorie_et_pluriel(entree, cible)
+        self.incertain = terme.incertain
         autres = " / ".join(autre.terme(cible) for autre in terme.autres_candidats)
-        if autres:
-            texte = f"Ambigu : aussi « {autres} »" if terme.incertain else f"Autre sens : « {autres} »"
-            self.cellules[2].addWidget(etiquette(texte, "celluleAlerte" if terme.incertain else "celluleDetail",
-                                                 retour_ligne=True))
+        self.alerte = "" if not autres else (f"Ambigu : aussi « {autres} »" if terme.incertain
+                                             else f"Autre sens : « {autres} »")
+        # ④ Contextualisation : la phrase du texte et sa traduction.
+        self.passage_source, self.passage_cible = passage_du_terme(terme, traduction)
+        # ⑤ Ressources : la première référence écrite dans la langue du texte ; à défaut, la première.
+        self.ressource = next((ressource for ressource in entree.ressources
+                               if (deviner_langue(ressource) or FR) == source),
+                              entree.ressources[0] if entree.ressources else "")
+        self.langue_ressource = deviner_langue(self.ressource) or FR
+        titre, virgule, detail = self.ressource.partition("،" if self.langue_ressource == AR else ",")
+        self.titre_ressource, self.detail_ressource = (titre.strip(), detail.strip()) if virgule else (self.ressource,
+                                                                                                    "")
+        self.autres_ressources = max(len(entree.ressources) - 1, 0)
 
-        # 4. Contextualisation : un exemple du glossaire, sinon la phrase du texte où figure le terme.
-        phrase_du_texte = traduction.phrases[terme.occurrences[0].phrase]
-        exemple = phrase_du_texte.attestation or (entree.contextes[0] if entree.contextes else None)
-        if exemple is not None and exemple.texte(source):
-            for langue in (source, cible):
-                if exemple.texte(langue):
-                    self.cellules[3].addWidget(etiquette(
-                        phrase_surlignee(_extrait(exemple.texte(langue), entree, langue), entree, langue),
-                        "celluleArabe" if langue == AR else "celluleTexte", langue, retour_ligne=True, riche=True))
+        self.setText(f"{self.libelle} — {self.equivalent}")
+        self.setAccessibleDescription(self.definition)
+        self._ajuste_pour = -1
+        self._lignes_de_definition: list[str] = []
+        self._definition_abregee = False
+        self._passages: list[tuple[str, str, list[tuple[int, int]]]] = []
+
+    # ------------------------------------------------------------------ textes ajustés à la largeur
+    def _cases(self) -> list[tuple[int, int]]:
+        """Abscisse et largeur utile de chaque case (marges retirées)."""
+        bornes = bornes_des_colonnes(self.width(), COLONNES)
+        return [(bornes[rang] + theme.MARGE, max(bornes[rang + 1] - bornes[rang] - 2 * theme.MARGE, 10))
+                for rang in range(len(COLONNES))]
+
+    def _police_de_definition(self):
+        return police(self.font(), 15 if self.langue_definition == AR else 13)
+
+    def _police_de_passage(self, langue: str):
+        return police(self.font(), 14 if langue == AR else 13)
+
+    def ajuster(self) -> None:
+        """Coupe la définition en deux lignes et choisit les passages qui tiennent dans leur case."""
+        if self._ajuste_pour == self.width():
+            return
+        self._ajuste_pour = self.width()
+        cases = self._cases()
+        self._lignes_de_definition, self._definition_abregee = couper_en_lignes(
+            self.definition, self._police_de_definition(), cases[1][1] - 22, 2)
+        largeur = cases[3][1]
+        (texte_source, evidences_source), (texte_cible, evidences_cible) = self.passage_source, self.passage_cible
+        self._passages = [(self.source, *extrait_autour(texte_source, evidences_source,
+                                                        self._police_de_passage(self.source), largeur))]
+        if texte_cible.strip():
+            # Sans équivalent à mettre en évidence, le passage est pris au même endroit de la phrase.
+            repere = (evidences_source[0][0] / max(len(texte_source), 1)) if evidences_source else 0.0
+            self._passages.append((self.cible, *extrait_autour(texte_cible, evidences_cible,
+                                                               self._police_de_passage(self.cible), largeur, repere)))
+
+    def lignes_de_definition(self) -> list[str]:
+        """La définition telle qu'elle est affichée : deux lignes au plus."""
+        self.ajuster()
+        return list(self._lignes_de_definition)
+
+    def passages_affiches(self) -> list[tuple[str, str]]:
+        """Les passages affichés dans la colonne « Contextualisation » : (langue, texte)."""
+        self.ajuster()
+        return [(langue, texte) for langue, texte, _ in self._passages]
+
+    def resizeEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        super().resizeEvent(evenement)
+        self.ajuster()
+
+    # ------------------------------------------------------------------ infobulles
+    def infobulle(self, colonne: int) -> str:
+        """Texte de l'infobulle d'une case : ce que la case abrège ou ne peut pas montrer."""
+        entree = self.entree
+        if colonne == 1 and self.definition:
+            source = entree.source_definition
+            mention = ("Définition à vérifier : elle n’est reprise d’aucune source citée." if self.a_verifier
+                       else f"Source : {source}")
+            return f"<qt>{escape(self.definition)}<br><br>{escape(mention)}</qt>"
+        if colonne == 2 and self.alerte:
+            detail = ("Le contexte n’a pas permis de choisir entre les sens de ce terme : vérifiez l’équivalent."
+                      if self.incertain else "Ce terme a d’autres sens dans le glossaire.")
+            return f"<qt>{escape(self.alerte)}<br>{escape(detail)}</qt>"
+        if colonne == 3:
+            lignes = [texte.strip() for texte in (self.passage_source[0], self.passage_cible[0]) if texte.strip()]
+            return "<qt>" + "<br><br>".join(escape(ligne) for ligne in lignes) + "</qt>"
+        if colonne == 4 and entree.ressources:
+            return "<qt>" + "<br>".join(escape(ressource) for ressource in entree.ressources) + "</qt>"
+        return infobulle(f"Ouvrir la fiche de « {self.libelle} »")
+
+    def colonne_a(self, x: float) -> int:
+        bornes = bornes_des_colonnes(self.width(), COLONNES)
+        return next((rang for rang in range(len(COLONNES)) if x < bornes[rang + 1]), len(COLONNES) - 1)
+
+    def event(self, evenement) -> bool:
+        if evenement.type() == QEvent.Type.ToolTip:
+            QToolTip.showText(evenement.globalPos(), self.infobulle(self.colonne_a(evenement.pos().x())), self)
+            return True
+        return super().event(evenement)
+
+    # ------------------------------------------------------------------ dessin
+    def paintEvent(self, evenement) -> None:  # noqa: N802
+        self.ajuster()
+        peintre = QPainter(self)
+        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
+        largeur, hauteur = self.width(), self.height()
+        survol = self.underMouse() or self.hasFocus()
+        dessiner_le_fond(peintre, largeur, 0, hauteur, survol=survol)
+        peintre.setPen(QColor(theme.FILET_DOUX))
+        peintre.drawLine(0, hauteur - 1, largeur, hauteur - 1)
+        if self.hasFocus():
+            peintre.setPen(QPen(QColor(theme.BLEU_200), 1))
+            peintre.setBrush(Qt.BrushStyle.NoBrush)
+            peintre.drawRect(QRectF(0.5, 0.5, largeur - 1, hauteur - 2))
+        base = self.font()
+        cases = self._cases()
+        droite = Qt.AlignmentFlag.AlignRight
+
+        def ecrire(x: float, place: float, ligne_de_base: float, texte: str, police_du_texte, couleur: str, *,
+                   langue: str = FR, alignement=None, evidences=()) -> None:
+            dessiner_ligne(peintre, QRectF(x, 0, place, hauteur), texte, police_du_texte, couleur, langue=langue,
+                           alignement=alignement, base=ligne_de_base, evidences=evidences)
+
+        # ① Terme, catégorie et nombre d'occurrences
+        x, place = cases[0]
+        if self.source == AR:
+            du_terme = police(base, 17, gras=True)
+            ecrire(x, place, 28, abreger(self.libelle, du_terme, place), du_terme, theme.BLEU_FONCE, langue=AR)
+            de_categorie, du_nombre = police(base, 14), police(base, 12)
+            categorie = abreger(self.categorie, de_categorie, place * 0.55)
+            ecrire(x, place, 49, categorie, de_categorie, theme.TEXTE_3, langue=AR)
+            reste = place - (largeur_du_texte(categorie, de_categorie) + 8 if categorie else 0)
+            suite = self.occurrences + (" ·" if categorie else "")
+            ecrire(x, reste, 49, abreger(suite, du_nombre, reste), du_nombre, theme.TEXTE_3, alignement=droite)
         else:
-            self.cellules[3].addWidget(etiquette(
-                phrase_surlignee(_extrait(phrase_du_texte.source.texte, entree, source), entree, source),
-                "celluleArabe" if source == AR else "celluleTexte", source, retour_ligne=True, riche=True))
+            du_terme = police(base, 14, gras=True)
+            ecrire(x, place, 26, abreger(self.libelle, du_terme, place), du_terme, theme.BLEU_FONCE)
+            de_categorie, du_nombre = police(base, 12, italique=True), police(base, 12)
+            suite = (" · " if self.categorie else "") + self.occurrences
+            categorie = abreger(self.categorie, de_categorie, max(place - largeur_du_texte(suite, du_nombre), 40))
+            ecrire(x, place, 45, categorie, de_categorie, theme.TEXTE_3)
+            decalage = largeur_du_texte(categorie, de_categorie)
+            ecrire(x + decalage, place - decalage, 45, suite, du_nombre, theme.TEXTE_3)
 
-        # 5. Ressources : la première référence, et le nombre des autres.
-        if entree.ressources:
-            premiere = entree.ressources[0]
-            langue = deviner_langue(premiere) or FR
-            label = etiquette(ressource_en_html(premiere, langue), "celluleArabe" if langue == AR else "celluleTexte",
-                              langue, retour_ligne=True, riche=True)
-            label.setTextInteractionFlags(Qt.TextInteractionFlag.TextBrowserInteraction)
-            label.setOpenExternalLinks(True)
-            self.cellules[4].addWidget(label)
-            if len(entree.ressources) > 1:
-                reste = len(entree.ressources) - 1
-                self.cellules[4].addWidget(etiquette(
-                    "+ 1 autre référence" if reste == 1 else f"+ {reste} autres références", "celluleDetail"))
+        # ② Définition : un signe dit si elle est à vérifier, puis deux lignes au plus
+        x, place = cases[1]
+        if self.definition:
+            signe = ("alerte", theme.AMBRE) if self.a_verifier else ("document", theme.TEXTE_3)
+            peintre.drawPixmap(QPointF(x, 15), icones.image(*signe, 14, 1.6))
+            arabe = self.langue_definition == AR
+            for rang, ligne in enumerate(self._lignes_de_definition):
+                ecrire(x + 22, place - 22, (26 + 22 * rang) if arabe else (26 + 19 * rang), ligne,
+                       self._police_de_definition(), theme.TEXTE_2, langue=self.langue_definition)
         else:
-            self.cellules[4].addWidget(etiquette("—", "celluleDetail"))
-        for cellule in self.cellules:
-            cellule.addStretch(1)
+            ecrire(x, place, 26, "Aucune définition", police(base, 13), theme.TEXTE_4)
+
+        # ③ Équivalent ; dessous, sa grammaire, ou l'avertissement s'il y a plusieurs sens
+        x, place = cases[2]
+        cote = droite if self.cible == AR else Qt.AlignmentFlag.AlignLeft
+        de_l_equivalent = police(base, 17 if self.cible == AR else 14, gras=True)
+        ligne_basse = 49 if self.cible == AR else 45
+        ecrire(x, place, 29 if self.cible == AR else 26, abreger(self.equivalent, de_l_equivalent, place),
+               de_l_equivalent, theme.BLEU_FONCE, langue=self.cible)
+        if self.alerte:
+            de_l_alerte = police(base, 12, gras=self.incertain)
+            ecrire(x, place, ligne_basse, abreger(self.alerte, de_l_alerte, place), de_l_alerte,
+                   theme.AMBRE if self.incertain else theme.TEXTE_3, alignement=cote)
+        elif self.grammaire:
+            de_grammaire = police(base, 13 if self.cible == AR else 12)
+            ecrire(x, place, ligne_basse, abreger(self.grammaire, de_grammaire, place), de_grammaire, theme.TEXTE_3,
+                   langue=self.cible)
+
+        # ④ Contextualisation : le passage du texte, puis sa traduction
+        x, place = cases[3]
+        for rang, (langue, texte, evidences) in enumerate(self._passages):
+            ligne_de_base = (27 if langue == AR else 26) if rang == 0 else (48 if langue == AR else 46)
+            ecrire(x, place, ligne_de_base, texte, self._police_de_passage(langue), theme.TEXTE_2, langue=langue,
+                   evidences=evidences)
+
+        # ⑤ Ressources : la référence, le nombre des autres références, puis le détail (début abrégé)
+        x, place = cases[4]
+        if not self.ressource:
+            ecrire(x, place, 26, "Aucune ressource", police(base, 13), theme.TEXTE_4)
+            return
+        arabe = self.langue_ressource == AR
+        reserve = 0
+        if self.autres_ressources:
+            autres = f"+{self.autres_ressources}"
+            de_pastille = police(base, 11, gras=True)
+            reserve = max(round(largeur_du_texte(autres, de_pastille)) + 12, 22)
+            cadre = QRectF(x if arabe else x + place - reserve, 13, reserve, 18)
+            peintre.setPen(Qt.PenStyle.NoPen)
+            peintre.setBrush(QColor(theme.GRIS_100))
+            peintre.drawRoundedRect(cadre, 9, 9)
+            dessiner_ligne(peintre, cadre, autres, de_pastille, theme.TEXTE_2,
+                           alignement=Qt.AlignmentFlag.AlignHCenter)
+            reserve += 8
+        du_titre = police(base, 15 if arabe else 13, gras=True)
+        ecrire(x + (reserve if arabe else 0), place - reserve, 27 if arabe else 26,
+               abreger(self.titre_ressource, du_titre, place - reserve), du_titre, theme.TEXTE,
+               langue=self.langue_ressource)
+        du_detail = police(base, 13 if arabe else 12)
+        ecrire(x, place, 48 if arabe else 45, abreger(self.detail_ressource, du_detail, place - 8, par_le_debut=True),
+               du_detail, theme.TEXTE_3, langue=self.langue_ressource)
 
 
-class PanneauTermes(QFrame):
-    """Tableau des termes du glossaire relevés dans le texte."""
+def dessiner_le_fond(peintre: QPainter, largeur: int, haut: int, hauteur: int, *, survol: bool = False) -> None:
+    """Fond d'une ligne du tableau : colonne « Équivalent » teintée, filets entre les colonnes."""
+    bornes = bornes_des_colonnes(largeur, COLONNES)
+    peintre.fillRect(0, haut, largeur, hauteur, QColor(theme.GRIS_50 if survol else theme.SURFACE))
+    peintre.fillRect(bornes[2], haut, bornes[3] - bornes[2], hauteur,
+                     QColor(theme.BLEU_50 if survol else theme.TEINTE_TABLEAU))
+    peintre.setPen(QColor(theme.FILET_DOUX))
+    for borne in bornes[1:-1]:
+        peintre.drawLine(borne, haut, borne, haut + hauteur)
 
+
+class EnteteColonnes(QWidget):
+    """Ligne de titres du tableau : les cinq champs de l'enchaînement, numérotés."""
+
+    HAUTEUR = 30
+
+    def __init__(self, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        self.setFixedHeight(self.HAUTEUR)
+        self.titres = list(CHAMPS)
+        #: Les filets entre les colonnes ne sont dessinés que s'il y a des lignes dessous.
+        self.filets = False
+        self.setAccessibleName(" ; ".join(CHAMPS))
+
+    def definir_filets(self, visibles: bool) -> None:
+        self.filets = visibles
+        self.update()
+
+    def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        peintre = QPainter(self)
+        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
+        peintre.fillRect(self.rect(), QColor(theme.GRIS_50))
+        bornes = bornes_des_colonnes(self.width(), COLONNES)
+        peintre.setPen(QColor(theme.FILET_DOUX))
+        peintre.drawLine(0, 0, self.width(), 0)
+        peintre.drawLine(0, self.height() - 1, self.width(), self.height() - 1)
+        if self.filets:
+            for borne in bornes[1:-1]:
+                peintre.drawLine(borne, 0, borne, self.height())
+        du_numero = police(self.font(), 10, gras=True)
+        du_titre = police(self.font(), 11, gras=True, espacement=0.6)
+        for rang, titre in enumerate(self.titres):
+            gauche = bornes[rang] + theme.MARGE
+            accent = rang == 2  # l'équivalent est le champ mis en avant
+            centre = QPointF(gauche + 8, 15)
+            if accent:
+                peintre.setPen(Qt.PenStyle.NoPen)
+                peintre.setBrush(QColor(theme.BLEU))
+                peintre.drawEllipse(centre, 8, 8)
+            else:
+                peintre.setPen(QPen(QColor(theme.BLEU_200), 1.5))
+                peintre.setBrush(QColor(theme.SURFACE))
+                peintre.drawEllipse(centre, 7.25, 7.25)
+            dessiner_ligne(peintre, QRectF(gauche, 7, 16, 16), str(rang + 1), du_numero,
+                           theme.SURFACE if accent else theme.BLEU, alignement=Qt.AlignmentFlag.AlignHCenter)
+            place = bornes[rang + 1] - gauche - 23 - 6
+            dessiner_ligne(peintre, QRectF(gauche + 23, 0, place, self.height()),
+                           abreger(titre.upper(), du_titre, place), du_titre,
+                           theme.BLEU_FONCE if accent else theme.TEXTE_3, base=18.8)
+
+
+class LignesTermes(QWidget):
+    """Les lignes du tableau, ou un message centré quand il n'y a aucun terme à montrer."""
+
+    #: Demande d'ouverture de la fiche d'une entrée (clic sur une ligne).
     ouverture = Signal(object)
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
-        self.setObjectName("panneauTermes")
+        self.lignes: list[LigneTerme] = []
+        self.titre_du_message = self.texte_du_message = ""
+
+    def definir(self, traduction: Traduction | None) -> None:
+        for ligne in self.lignes:
+            ligne.setParent(None)
+            ligne.deleteLater()
+        self.lignes = []
+        for terme in (traduction.termes if traduction is not None else []):
+            ligne = LigneTerme(terme, traduction, self)
+            ligne.clicked.connect(lambda _=False, entree=terme.entree: self.ouverture.emit(entree))
+            ligne.show()
+            self.lignes.append(ligne)
+        self._placer()
+        self.updateGeometry()
+        self.update()
+
+    def definir_message(self, titre: str, texte: str) -> None:
+        """Message affiché quand le tableau n'a pas de ligne."""
+        self.titre_du_message, self.texte_du_message = titre, texte
+        self.update()
+
+    def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
+        return QSize(max(self.width(), 400), len(self.lignes) * LigneTerme.HAUTEUR)
+
+    def minimumSizeHint(self) -> QSize:  # noqa: N802
+        return QSize(200, len(self.lignes) * LigneTerme.HAUTEUR)
+
+    def resizeEvent(self, evenement) -> None:  # noqa: N802
+        super().resizeEvent(evenement)
+        self._placer()
+
+    def _placer(self) -> None:
+        for rang, ligne in enumerate(self.lignes):
+            ligne.setGeometry(0, rang * LigneTerme.HAUTEUR, self.width(), LigneTerme.HAUTEUR)
+
+    def paintEvent(self, evenement) -> None:  # noqa: N802
+        peintre = QPainter(self)
+        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
+        if self.lignes:
+            # Sous la dernière ligne, les colonnes se prolongent jusqu'au bas du panneau.
+            haut = len(self.lignes) * LigneTerme.HAUTEUR
+            if haut < self.height():
+                dessiner_le_fond(peintre, self.width(), haut, self.height() - haut)
+            return
+        # Aucun terme : une icône dans un disque (si la hauteur le permet), un titre, une explication.
+        du_titre, du_texte = police(self.font(), 13, gras=True), police(self.font(), 13)
+        place = self.width() - 2 * theme.MARGE
+        avec_disque = self.height() >= 124
+        hauteur = (40 + 14 if avec_disque else 0) + 20 + 4 + 20
+        y = max((self.height() - hauteur) / 2 - 4, 4)
+        if avec_disque:
+            centre = QPointF(self.width() / 2, y + 20)
+            peintre.setPen(Qt.PenStyle.NoPen)
+            peintre.setBrush(QColor(theme.GRIS_100))
+            peintre.drawEllipse(centre, 20, 20)
+            peintre.drawPixmap(QPointF(centre.x() - 9, centre.y() - 9), icones.image("texte", theme.TEXTE_4, 18))
+            y += 54
+        centre_h = Qt.AlignmentFlag.AlignHCenter
+        dessiner_ligne(peintre, QRectF(theme.MARGE, y, place, 20), abreger(self.titre_du_message, du_titre, place),
+                       du_titre, theme.TEXTE_2, alignement=centre_h)
+        dessiner_ligne(peintre, QRectF(theme.MARGE, y + 24, place, 20), abreger(self.texte_du_message, du_texte, place),
+                       du_texte, theme.TEXTE_3, alignement=centre_h)
+
+
+class TableauTermes(Panneau):
+    """Tableau des termes du glossaire relevés dans le texte."""
+
+    #: Demande d'ouverture de la fiche d'une entrée (clic sur une ligne).
+    ouverture = Signal(object)
+
+    HAUTEUR_DU_TITRE = 42
+
+    def __init__(self, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
         ensemble = QVBoxLayout(self)
-        ensemble.setContentsMargins(1, 1, 1, 1)
+        ensemble.setContentsMargins(0, 0, 0, 0)
         ensemble.setSpacing(0)
 
         titre = QWidget()
-        titre.setFixedHeight(44)
+        titre.setFixedHeight(self.HAUTEUR_DU_TITRE)
         ligne = QHBoxLayout(titre)
-        ligne.setContentsMargins(20, 0, 16, 0)
+        ligne.setContentsMargins(theme.MARGE, 0, theme.MARGE, 0)
         ligne.setSpacing(12)
-        ligne.addWidget(etiquette("Termes juridiques détectés", "titreTermes"))
-        self.resume = EtiquetteCourte("", "decompte")
-        ligne.addWidget(self.resume, 1)
+        self.titre = etiquette("Termes juridiques détectés", "titrePanneau")
+        self.nombre = pastille()
+        self.aide = EtiquetteCourte("", "aidePanneau")
+        self.aide.definir_texte("Cliquez sur un terme pour ouvrir sa fiche", "")
+        self.aide.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
+        self.legende = Legende()
+        ligne.addWidget(self.titre)
+        ligne.addWidget(self.nombre)
+        ligne.addWidget(self.aide, 1)
+        ligne.addWidget(self.legende)
         ensemble.addWidget(titre)
 
-        entete = QFrame()
-        entete.setObjectName("enteteTermes")
-        entete.setFixedHeight(32)
-        colonnes = QHBoxLayout(entete)
-        colonnes.setContentsMargins(0, 0, 10, 0)  # largeur de la barre de défilement des lignes
-        colonnes.setSpacing(0)
-        for rang, (nom, largeur) in enumerate(COLONNES):
-            cellule = QWidget()
-            cellule.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
-            dans_la_cellule = QHBoxLayout(cellule)
-            dans_la_cellule.setContentsMargins(20, 0, 8, 0)
-            dans_la_cellule.setSpacing(8)
-            numero = QLabel(str(rang + 1))
-            numero.setProperty("classe", "numeroColonne")
-            numero.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            numero.setFixedSize(16, 16)
-            dans_la_cellule.addWidget(numero)
-            dans_la_cellule.addWidget(EtiquetteCourte(nom.upper(), "titreColonne"), 1)
-            colonnes.addWidget(cellule, largeur)
-        ensemble.addWidget(entete)
-
-        self.defilement = QScrollArea()
-        self.defilement.setObjectName("defilementTermes")
-        self.defilement.setWidgetResizable(True)
-        self.defilement.setFrameShape(QFrame.Shape.NoFrame)
-        self.defilement.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.defilement.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
-        contenu = QWidget()
-        contenu.setObjectName("lignesTermes")
-        self.lignes = QVBoxLayout(contenu)
-        self.lignes.setContentsMargins(0, 0, 0, 0)
-        self.lignes.setSpacing(0)
-        self.defilement.setWidget(contenu)
+        self.entete = EnteteColonnes()
+        ensemble.addWidget(self.entete)
+        self.contenu = LignesTermes()
+        self.contenu.ouverture.connect(self.ouverture)
+        self.defilement = ZoneDefilante()
+        self.defilement.definir_contenu(self.contenu)
         ensemble.addWidget(self.defilement, 1)
-        self.setMinimumHeight(132)
+        self.setMinimumHeight(self.HAUTEUR_DU_TITRE + EnteteColonnes.HAUTEUR + LigneTerme.HAUTEUR + 4)
         self.afficher(None)
 
-    def afficher(self, traduction: Traduction | None) -> None:
-        vider(self.lignes)
-        if traduction is None or not traduction.termes:
-            self.resume.definir_texte("" if traduction is None else "aucun terme du glossaire dans ce texte")
-            message = etiquette(
-                "Les termes du glossaire relevés dans le texte s’afficheront ici après la traduction."
-                if traduction is None else "Aucun terme du glossaire n’a été relevé dans ce texte.",
-                "discret", retour_ligne=True)
-            message.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            message.setContentsMargins(20, 18, 20, 18)
-            self.lignes.addWidget(message)
+    def afficher(self, traduction: Traduction | None, *, sans_glossaire: bool = False) -> None:
+        """Affiche les termes relevés par une traduction ; sans traduction, un message d'attente."""
+        termes = traduction.termes if traduction is not None else []
+        self.contenu.definir(traduction)
+        if sans_glossaire:
+            self.contenu.definir_message("Aucun glossaire n’est chargé",
+                                         "Ouvrez un fichier CSV : menu Fichier → Ouvrir un glossaire.")
+        elif traduction is None:
+            self.contenu.definir_message("Les termes juridiques du texte s’afficheront ici",
+                                         "Saisissez ou importez un texte, puis cliquez sur « Traduire ».")
         else:
-            self.resume.definir_texte(f"{_nombre(len(traduction.termes), 'terme')} · "
-                                      "cliquez sur un terme pour afficher sa fiche")
-            for terme in traduction.termes:
-                ligne = LigneTerme(terme, traduction)
-                ligne.ouverture.connect(self.ouverture)
-                self.lignes.addWidget(ligne)
-        self.lignes.addStretch(1)
-        self.defilement.verticalScrollBar().setValue(0)
+            self.contenu.definir_message("Aucun terme du glossaire dans ce texte",
+                                         "Aucun mot de ce texte ne figure parmi les termes du glossaire.")
+        self.nombre.setText(nombre(len(termes)))
+        self.nombre.setVisible(traduction is not None)
+        self.aide.setVisible(bool(termes))
+        self.entete.definir_filets(bool(termes))
+        # La légende ne cite que les signes présents dans le tableau.
+        lignes = self.contenu.lignes
+        reperes = []
+        if any(ligne.definition and ligne.a_verifier for ligne in lignes):
+            reperes.append(("alerte", theme.AMBRE, "Définition à vérifier", 0))
+        if any(ligne.definition and not ligne.a_verifier for ligne in lignes):
+            reperes.append(("document", theme.TEXTE_3, "Source citée", 1))
+        self.legende.definir(reperes)
+        self.defilement.revenir_en_haut()
 
     def lignes_affichees(self) -> list[LigneTerme]:
-        return [self.lignes.itemAt(rang).widget() for rang in range(self.lignes.count())
-                if isinstance(self.lignes.itemAt(rang).widget(), LigneTerme)]
+        return list(self.contenu.lignes)
 
 
 # ====================================================================== l'écran
@@ -595,9 +1091,11 @@ class PageTexte(QWidget):
 
     #: Le sens de traduction a changé ; le signal porte la nouvelle langue source.
     sens_change = Signal(str)
-    #: Message court à afficher dans la barre d'état.
+    #: Message passager à afficher dans la barre d'état (une confirmation, par exemple).
     message = Signal(str)
-    #: Demande d'affichage de la fiche d'une entrée du glossaire (écran de recherche).
+    #: État de l'écran, affiché dans la barre d'état tant qu'il ne change pas (vide : rien à signaler).
+    etat_change = Signal(str)
+    #: Demande d'affichage de la fiche d'une entrée du glossaire (écran « Terme »).
     entree_demandee = Signal(object)
     #: Une traduction vient d'être affichée ou effacée.
     traduction_changee = Signal()
@@ -608,16 +1106,15 @@ class PageTexte(QWidget):
         self.traducteur: Traducteur | None = None
         self.traduction: Traduction | None = None
         self.source = FR
+        self.etat = ""
         #: Fichier d'où vient le texte source, s'il a été importé.
         self.fichier: Path | None = None
         self._modification_interne = False
 
-        page = QVBoxLayout(self)
-        page.setContentsMargins(24, 18, 24, 16)
-        page.setSpacing(14)
+        self._creer_les_outils()
 
         # ---------------------------------------------------------- texte source
-        self.panneau_source = PanneauTexte("source")
+        self.panneau_source = ZoneTexte("source")
         self.zone_source = self.panneau_source.zone
         self.zone_source.textChanged.connect(self._texte_modifie)
         self.lien_exemple = QPushButton("Insérer un exemple")
@@ -625,69 +1122,65 @@ class PageTexte(QWidget):
         self.lien_exemple.setCursor(Qt.CursorShape.PointingHandCursor)
         self.lien_exemple.setToolTip("Remplir la zone avec un texte d’exemple (articles 106 et 107 du Code civil)")
         self.lien_exemple.clicked.connect(self.inserer_un_exemple)
-        self.panneau_source.complement.addWidget(self.lien_exemple)
-        self.fichier_importe = self._creer_le_rappel_du_fichier()
-        self.panneau_source.complement.addWidget(self.fichier_importe)
+        self.panneau_source.entete.addWidget(self.lien_exemple)
+        self.importe_de = EtiquetteCourte("", "decompte")
+        self.importe_de.definir_texte("Importé de", "")
+        self.importe_de.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+        self.panneau_source.entete.addWidget(self.importe_de)
+        self.fichier_importe = RappelFichier()
+        self.fichier_importe.fermeture.connect(self.effacer)
+        self.nom_du_fichier = self.fichier_importe.nom
+        self.panneau_source.entete.addWidget(self.fichier_importe)
 
-        self.decompte_source = EtiquetteCourte("", "decompte")
-        self.bouton_effacer = QPushButton("Effacer")
-        self.bouton_effacer.setProperty("classe", "secondaire")
-        self.bouton_effacer.setFixedHeight(36)
-        self.bouton_effacer.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.decompte_source = self.panneau_source.decompte
+        self.bouton_effacer = _bouton("Effacer", "contour", 84, 30, info="Effacer le texte et sa traduction")
         self.bouton_effacer.clicked.connect(self.effacer)
-        self.bouton_traduire = QPushButton("Traduire")
-        self.bouton_traduire.setProperty("classe", "principal")
-        self.bouton_traduire.setIcon(icones.icone("echange", "#FFFFFF", 18))
-        self.bouton_traduire.setFixedHeight(36)
-        self.bouton_traduire.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.bouton_traduire.setToolTip("Traduire le texte (Ctrl+Entrée)")
-        self.bouton_traduire.clicked.connect(self.traduire)
-        self.panneau_source.pied.addWidget(self.decompte_source, 1)
         self.panneau_source.pied.addWidget(self.bouton_effacer)
-        self.panneau_source.pied.addWidget(self.bouton_traduire)
 
-        # ---------------------------------------------------------- texte traduit
-        self.panneau_cible = PanneauTexte("cible")
+        # ---------------------------------------------------------- traduction
+        self.panneau_cible = ZoneTexte("cible")
         self.zone_cible = self.panneau_cible.zone
         self.zone_cible.setReadOnly(True)
-        self.zone_cible.setPlaceholderText("La traduction s’affichera ici.")
-        self.etat = QLabel()
-        self.etat.setProperty("classe", "badge")
-        self.etat.setFixedHeight(26)
-        self.panneau_cible.complement.addWidget(self.etat)
+        self.zone_cible.definir_invite(_INVITE_CIBLE)
+        self.badge = Badge()
+        self.panneau_cible.entete.addWidget(self.badge)
 
-        self.bouton_copier = QPushButton("Copier")
-        self.bouton_copier.setProperty("classe", "secondaire")
-        self.bouton_copier.setIcon(icones.icone("copier", theme.BLEU_FONCE, 18))
-        self.bouton_copier.setFixedHeight(36)
-        self.bouton_copier.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.bouton_copier.setToolTip("Copier la traduction dans le presse-papiers")
+        self.decompte_cible = self.panneau_cible.decompte
+        self.legende = Legende()
+        self.bouton_copier = _bouton("Copier", "contour", 96, 30, "copier",
+                                     "Copier la traduction dans le presse-papiers")
         self.bouton_copier.clicked.connect(self.copier)
         self._retour_copier = QTimer(self)
         self._retour_copier.setSingleShot(True)
         self._retour_copier.setInterval(1600)
         self._retour_copier.timeout.connect(lambda: self.bouton_copier.setText("Copier"))
-        # Ce rappel ne reçoit que la place laissée par le décompte ; il disparaît si elle ne suffit pas.
-        self.aide = EtiquetteCourte("", "aide")
-        self.aide.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
-        self.decompte_cible = EtiquetteCourte("", "decompte")
-        self.decompte_cible.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+        self.panneau_cible.pied.addWidget(self.legende)
         self.panneau_cible.pied.addWidget(self.bouton_copier)
-        self.panneau_cible.pied.addWidget(self.aide, 1)
-        self.panneau_cible.pied.addWidget(self.decompte_cible)
 
-        textes = QHBoxLayout()
-        textes.setSpacing(24)
+        # Les deux zones partagent un panneau ; un filet vertical les sépare.
+        self.panneau = Panneau()
+        textes = QHBoxLayout(self.panneau)
+        textes.setContentsMargins(0, 0, 0, 0)
+        textes.setSpacing(0)
+        filet = QFrame()
+        filet.setObjectName("filetVertical")
+        filet.setFixedWidth(1)
         textes.addWidget(self.panneau_source, 1)
+        textes.addWidget(filet)
         textes.addWidget(self.panneau_cible, 1)
-        page.addLayout(textes, 5)
 
         # ---------------------------------------------------------- étapes et termes
         self.bande = BandeEtapes()
-        page.addWidget(self.bande)
-        self.termes = PanneauTermes()
+        self.termes = TableauTermes()
         self.termes.ouverture.connect(self.entree_demandee)
-        page.addWidget(self.termes, 4)
+
+        page = QVBoxLayout(self)
+        page.setContentsMargins(theme.MARGE, 0, theme.MARGE, 16)
+        page.setSpacing(16)
+        # Hauteurs de la proposition : 296 pour les textes, 338 pour le tableau.
+        page.addWidget(self.panneau, 148)
+        page.addWidget(self.bande)
+        page.addWidget(self.termes, 169)
 
         raccourci = QShortcut(QKeySequence("Ctrl+Return"), self)
         raccourci.setContext(Qt.ShortcutContext.WidgetWithChildrenShortcut)
@@ -700,29 +1193,30 @@ class PageTexte(QWidget):
         self._appliquer_sens()
         self._afficher(None)
 
-    def _creer_le_rappel_du_fichier(self) -> QFrame:
-        """Étiquette « fichier importé » de l'en-tête : nom du fichier et bouton pour l'oublier."""
-        cadre = QFrame()
-        cadre.setObjectName("fichierImporte")
-        cadre.setFixedHeight(28)
-        cadre.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        ligne = QHBoxLayout(cadre)
-        ligne.setContentsMargins(10, 0, 5, 0)
-        ligne.setSpacing(6)
-        ligne.addWidget(icone_fixe("fichier", theme.BLEU, 16))
-        self.nom_du_fichier = EtiquetteCourte("", "nomFichier")
-        self.nom_du_fichier.setMaximumWidth(190)
-        ligne.addWidget(self.nom_du_fichier)
-        fermer = QToolButton()
-        fermer.setObjectName("fermerFichier")
-        fermer.setIcon(icones.icone("croix", theme.TEXTE_3, 12, 2.6))
-        fermer.setFixedSize(18, 18)
-        fermer.setCursor(Qt.CursorShape.PointingHandCursor)
-        fermer.setToolTip("Effacer le texte importé")
-        fermer.clicked.connect(self.effacer)
-        ligne.addWidget(fermer)
-        cadre.hide()
-        return cadre
+    def _creer_les_outils(self) -> None:
+        """Les commandes que la fenêtre place dans la barre d'outils : importer, exporter, traduire."""
+        self.outils = QWidget()
+        ligne = QHBoxLayout(self.outils)
+        ligne.setContentsMargins(0, 0, 0, 0)
+        ligne.setSpacing(12)
+        self.aide_outils = EtiquetteCourte("", "aideOutils")
+        self.aide_outils.definir_texte("Import : .txt, .docx, .doc · Export : .docx, .txt", "")
+        self.aide_outils.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+        self.aide_outils.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
+        self.bouton_importer = _bouton("Importer", "contour", 116, 38, "importer",
+                                       "Importer un texte : fichier .txt, .docx ou .doc (Ctrl+Maj+O)")
+        self.bouton_importer.clicked.connect(lambda: self.importer())
+        self.bouton_exporter = _bouton("Exporter", "contour", 116, 38, "exporter",
+                                       "Exporter la traduction : fichier .docx ou .txt (Ctrl+E)")
+        self.bouton_exporter.clicked.connect(lambda: self.exporter())
+        self.bouton_traduire = _bouton("Traduire", "principal", 132, 38, "echange",
+                                       "Traduire le texte (Ctrl+Entrée)")
+        self.bouton_traduire.clicked.connect(lambda: self.traduire())
+        ligne.addWidget(self.aide_outils, 1)
+        ligne.addSpacing(4)
+        ligne.addWidget(self.bouton_importer)
+        ligne.addWidget(self.bouton_exporter)
+        ligne.addWidget(self.bouton_traduire)
 
     # ------------------------------------------------------------------ glossaire et sens
     @property
@@ -733,7 +1227,7 @@ class PageTexte(QWidget):
         """Change de glossaire ; la traduction affichée est refaite avec le nouveau glossaire."""
         self.glossaire = glossaire
         self.traducteur = Traducteur(glossaire) if glossaire is not None and len(glossaire) else None
-        if self.traduction is not None:
+        if self.traduction is not None and self.traducteur is not None:
             self.traduire(deviner=False)
         else:
             self._afficher(None)
@@ -754,7 +1248,7 @@ class PageTexte(QWidget):
     def _appliquer_sens(self) -> None:
         self.panneau_source.definir_langue(self.source)
         self.panneau_cible.definir_langue(self.cible)
-        self.zone_source.setPlaceholderText(_INVITES[self.source])
+        self.zone_source.definir_invite(_INVITES[self.source])
 
     # ------------------------------------------------------------------ texte source
     def texte(self) -> str:
@@ -766,7 +1260,7 @@ class PageTexte(QWidget):
         self._modification_interne = True
         try:
             self.zone_source.setPlainText(texte)
-            self.panneau_source.appliquer_l_interligne()
+            self.zone_source.appliquer_l_interligne()
         finally:
             self._modification_interne = False
         self.fichier = fichier
@@ -785,12 +1279,24 @@ class PageTexte(QWidget):
         self._decompte_differe.start()
         if self._modification_interne:
             return
-        self.lien_exemple.setVisible(not self.texte().strip() and self.fichier is None)
+        self._actualiser_l_entete_source()
         if self.traduction is not None and self.traduction.texte_source != self.texte():
             # Le texte ne correspond plus à la traduction affichée.
             self.zone_source.setExtraSelections([])
-            self._definir_etat("Texte modifié", "attente",
-                               "Le texte source a changé : cliquez sur « Traduire » pour mettre la traduction à jour.")
+            self.badge.definir("attente", "Texte modifié · traduction à refaire", "Texte modifié",
+                               explication=_TEXTE_MODIFIE)
+            self._definir_etat(_TEXTE_MODIFIE)
+
+    def _actualiser_l_entete_source(self) -> None:
+        """En-tête du texte source : le fichier importé, ou le lien « Insérer un exemple » si la zone est vide."""
+        vide = not self.texte().strip()
+        self.lien_exemple.setVisible(vide and self.fichier is None)
+        self.importe_de.setVisible(self.fichier is not None)
+        self.fichier_importe.setVisible(self.fichier is not None)
+        self.bouton_effacer.setEnabled(not vide or self.fichier is not None or self.traduction is not None)
+        if self.fichier is not None:
+            self.nom_du_fichier.definir_texte(self.fichier.name)
+            self.fichier_importe.setToolTip(infobulle(f"Texte importé depuis {self.fichier}"))
 
     def _afficher_le_decompte_source(self) -> None:
         self.decompte_source.definir_texte(*_decompte(*compter(self.texte())))
@@ -800,7 +1306,7 @@ class PageTexte(QWidget):
         """Traduit le texte source et affiche le résultat.
 
         Si le texte est écrit dans l'autre langue, le sens de traduction est
-        d'abord inversé (comme sur l'écran de recherche).
+        d'abord inversé (comme sur l'écran « Terme »).
 
         ``deviner`` ne peut être donné que par son nom : un bouton relié à cette
         méthode lui passerait sinon son état (« coché » ou non) à la place.
@@ -820,62 +1326,68 @@ class PageTexte(QWidget):
                 self.definir_sens(langue)
                 self.message.emit(f"Texte écrit en {NOM_EN_FRANCAIS[langue]} : le sens de traduction a été inversé.")
         self._afficher(self.traducteur.traduire(texte, self.source))
-        resultat = self.traduction
-        self.message.emit(f"Traduction : {_nombre(resultat.mots_reconnus, 'mot')} sur {resultat.mots} "
-                          f"{'trouvé' if resultat.mots_reconnus < 2 else 'trouvés'} dans le glossaire.")
 
     def _afficher(self, traduction: Traduction | None) -> None:
         """Affiche une traduction, ou l'état initial si ``traduction`` est vide."""
         self.traduction = traduction
         self._afficher_le_decompte_source()
-        self.lien_exemple.setVisible(not self.texte().strip() and self.fichier is None)
-        self.fichier_importe.setVisible(self.fichier is not None)
-        if self.fichier is not None:
-            self.nom_du_fichier.definir_texte(self.fichier.name)
-            self.fichier_importe.setToolTip(infobulle(f"Texte importé depuis {self.fichier}"))
+        self._actualiser_l_entete_source()
         self.bande.afficher(traduction)
-        self.termes.afficher(traduction)
+        self.termes.afficher(traduction, sans_glossaire=self.traducteur is None)
         self.bouton_copier.setEnabled(traduction is not None)
+        self.bouton_exporter.setEnabled(traduction is not None)
         if traduction is None:
             self.zone_source.setExtraSelections([])
             self.zone_cible.clear()
             self.decompte_cible.definir_texte("")
-            self.aide.definir_texte("")
+            self.legende.definir([])
             if self.traducteur is None:
-                self._definir_etat("Aucun glossaire", "partiel", _AUCUN_GLOSSAIRE)
+                self.badge.definir("partiel", "Aucun glossaire chargé", "Aucun glossaire", explication=_AUCUN_GLOSSAIRE)
+                self._definir_etat(_AUCUN_GLOSSAIRE)
             else:
-                self._definir_etat("", "attente")
+                self.badge.definir("attente")
+                self._definir_etat("")
         else:
             self._surligner_les_termes(traduction)
             self.zone_cible.setHtml(self._html(traduction))
-            self.panneau_cible.appliquer_l_interligne()
-            self.panneau_cible.orienter_les_paragraphes()
+            self.zone_cible.appliquer_l_interligne()
+            self.zone_cible.orienter_les_paragraphes()
             self.decompte_cible.definir_texte(*_decompte(*traduction.decompte_cible()))
-            restants = traduction.mots - traduction.mots_reconnus
-            if traduction.complete:
-                self._definir_etat("Traduction terminée", "termine",
-                                   "Tous les mots du texte ont été trouvés dans le glossaire.")
-                self.aide.definir_texte("")
-            elif not traduction.mots_reconnus:
-                self._definir_etat("Aucun mot trouvé", "partiel",
-                                   "Aucun mot de ce texte ne figure dans le glossaire : le texte est recopié tel quel.")
-                self.aide.definir_texte(*_AIDE_GRIS)
-            else:
-                self._definir_etat(
-                    "Traduction partielle", "partiel",
-                    f"{_nombre(restants, 'mot')} sur {traduction.mots} ne "
-                    f"{'figure' if restants < 2 else 'figurent'} pas dans le glossaire : "
-                    f"{'il reste' if restants < 2 else 'ils restent'} à traduire.")
-                self.aide.definir_texte(*_AIDE_GRIS)
+            self._afficher_le_bilan(traduction)
         self.traduction_changee.emit()
 
-    def _definir_etat(self, texte: str, etat: str, explication: str = "") -> None:
-        self.etat.setText(texte)
-        self.etat.setVisible(bool(texte))
-        self.etat.setToolTip(infobulle(explication))
-        if self.etat.property("etat") != etat:
-            self.etat.setProperty("etat", etat)
-            _repeindre(self.etat)
+    def _afficher_le_bilan(self, traduction: Traduction) -> None:
+        """État de la traduction (pastille de l'en-tête), légende du pied et barre d'état."""
+        mots, trouves = traduction.mots, traduction.mots_reconnus
+        restants = mots - trouves
+        decompte = f"{compte(trouves, 'mot')} sur {nombre(mots)} {'trouvé' if trouves < 2 else 'trouvés'}"
+        court = f"{nombre(trouves)} / {nombre(mots)}"
+        reperes = []
+        if any(morceau.nature == TERME for morceau in traduction.morceaux):
+            reperes.append(("point", COULEUR_TERME, "terme du glossaire", 1))
+        if traduction.complete:
+            self.badge.definir(
+                "termine", f"Traduction terminée · {decompte}", f"Traduction terminée · {court}", "Traduction terminée",
+                explication=f"Tous les mots du texte ont été trouvés dans le glossaire. {_A_RELIRE}")
+        elif not trouves:
+            self.badge.definir(
+                "partiel", "Aucun mot trouvé dans le glossaire", "Aucun mot trouvé",
+                explication="Aucun mot de ce texte ne figure dans le glossaire : le texte est recopié tel quel.")
+        else:
+            self.badge.definir(
+                "partiel", f"Traduction partielle · {decompte}", f"Traduction partielle · {court}",
+                "Traduction partielle",
+                explication=f"{compte(restants, 'mot')} sur {nombre(mots)} ne "
+                            f"{'figure' if restants < 2 else 'figurent'} pas dans le glossaire : "
+                            f"{'il reste' if restants < 2 else 'ils restent'} à traduire. {_A_RELIRE}")
+        if restants:
+            reperes.append(("point", COULEUR_ABSENT, "mot absent, à traduire", 0))
+        self.legende.definir(reperes)
+        self._definir_etat(f"Traduction : {decompte} dans le glossaire.")
+
+    def _definir_etat(self, texte: str) -> None:
+        self.etat = texte
+        self.etat_change.emit(texte)
 
     def _surligner_les_termes(self, traduction: Traduction) -> None:
         """Colore, dans le texte source, les termes trouvés dans le glossaire."""
@@ -887,7 +1399,7 @@ class PageTexte(QWidget):
             return indice + sum(1 for rang in decalages if rang < indice)
 
         couleur = QTextCharFormat()
-        couleur.setForeground(QColor(theme.AMBRE))
+        couleur.setForeground(QColor(COULEUR_TERME))
         selections = []
         for occurrence in traduction.occurrences:
             curseur = QTextCursor(self.zone_source.document())
@@ -900,14 +1412,14 @@ class PageTexte(QWidget):
         self.zone_source.setExtraSelections(selections)
 
     def _html(self, traduction: Traduction) -> str:
-        """Texte traduit : termes du glossaire en couleur, mots non traduits en gris."""
+        """Texte traduit : termes du glossaire en bleu, mots non traduits en gris italique."""
         morceaux = []
         for morceau in traduction.morceaux:
             texte = escape(morceau.texte)
             if morceau.nature == TERME:
-                texte = f'<span style="color: {theme.AMBRE};">{texte}</span>'
+                texte = f'<span style="color: {COULEUR_TERME};">{texte}</span>'
             elif morceau.nature == SOURCE:
-                texte = f'<span style="color: {_GRIS};">{texte}</span>'
+                texte = f'<span style="color: {COULEUR_ABSENT}; font-style: italic;">{texte}</span>'
             morceaux.append(texte)
         sens = "rtl" if traduction.cible == AR else "ltr"
         marque = MARQUE_RTL if traduction.cible == AR else ""
@@ -971,6 +1483,4 @@ class PageTexte(QWidget):
         return True
 
     def _avertir(self, titre: str, texte: str) -> None:
-        boite = QMessageBox(QMessageBox.Icon.Warning, titre, texte, QMessageBox.StandardButton.Ok, self)
-        boite.setTextFormat(Qt.TextFormat.PlainText)
-        boite.exec()
+        boites.afficher(self.window(), "alerte", titre, texte)

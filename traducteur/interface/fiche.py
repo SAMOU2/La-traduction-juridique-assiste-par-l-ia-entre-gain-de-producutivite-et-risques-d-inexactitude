@@ -13,7 +13,7 @@ from collections.abc import Sequence
 from html import escape
 
 import regex
-from PySide6.QtCore import QObject, QPointF, QRectF, QSize, Qt, QTimer, Signal
+from PySide6.QtCore import QEvent, QObject, QPointF, QRectF, QSize, Qt, QTimer, Signal
 from PySide6.QtGui import QColor, QFont, QGuiApplication, QPainter, QPen
 from PySide6.QtWidgets import (
     QAbstractButton,
@@ -152,7 +152,8 @@ def _tailles_du_terme(terme: str, langue: str, role: str) -> tuple[int, int]:
     grand que le terme, et l'arabe un peu plus grand que le français.
     """
     if role == "cible":
-        paliers = ((8, 58), (16, 42), (28, 32), (999, 26)) if langue == AR else ((10, 44), (18, 32), (30, 25), (999, 21))
+        paliers = (((8, 58), (16, 42), (28, 32), (999, 26)) if langue == AR
+                   else ((10, 44), (18, 32), (30, 25), (999, 21)))
     else:
         paliers = ((10, 40), (18, 30), (999, 24)) if langue == AR else ((12, 34), (22, 26), (999, 21))
     maximale = next(taille for limite, taille in paliers if len(terme) <= limite)
@@ -377,8 +378,9 @@ class Colonne(QObject):
         self.source = FR
         self.corps = QWidget()
         self.disposition = QVBoxLayout(self.corps)
-        self.disposition.setContentsMargins(theme.MARGE, self.marge_haute, theme.MARGE, 16)
         self.disposition.setSpacing(0)
+        self._reserve = -1
+        self.definir_reserve(0)
         self.pied = QWidget()
         self.ligne_du_pied = QHBoxLayout(self.pied)
         self.ligne_du_pied.setContentsMargins(theme.MARGE, 0, theme.MARGE, 0)
@@ -387,6 +389,18 @@ class Colonne(QObject):
     def widgets(self) -> tuple[QWidget, QWidget]:
         """Le corps et le pied de la colonne."""
         return self.corps, self.pied
+
+    # ------------------------------------------------------------------ hauteur
+    def hauteur_naturelle(self, largeur: int) -> int:
+        """Hauteur qu'il faut au contenu de la colonne, pour une largeur donnée."""
+        return self.disposition.heightForWidth(largeur) - self._reserve
+
+    def definir_reserve(self, reserve: int) -> None:
+        """Laisse ``reserve`` pixels vides au bas de la colonne (voir ``Fiche._centrer_dans_la_vue``)."""
+        reserve = max(reserve, 0)
+        if reserve != self._reserve:
+            self._reserve = reserve
+            self.disposition.setContentsMargins(theme.MARGE, self.marge_haute, theme.MARGE, 16 + reserve)
 
     # ------------------------------------------------------------------ affichage
     def afficher(self, glossaire: Glossaire | None, entree: Entree | None, source: str) -> None:
@@ -753,6 +767,7 @@ class Fiche(Panneau):
         self.defilement = ZoneDefilante()
         self.defilement.definir_contenu(self._rangee)
         self.defilement.setMinimumHeight(HAUTEUR_MINIMALE_DU_CORPS)
+        self.defilement.viewport().installEventFilter(self)
 
         ensemble = QVBoxLayout(self)
         ensemble.setContentsMargins(0, 0, 0, 0)
@@ -770,9 +785,36 @@ class Fiche(Panneau):
             colonne.afficher(glossaire, entree, source)
         self.onglets.afficher(sens, entree, source)
         self.defilement.revenir_en_haut()
+        self._centrer_dans_la_vue()
         self.update()
 
     # ------------------------------------------------------------------ hauteurs
+    def eventFilter(self, objet, evenement) -> bool:  # noqa: N802 (nom imposé par Qt)
+        if objet is self.defilement.viewport() and evenement.type() == QEvent.Type.Resize:
+            self._centrer_dans_la_vue()
+        return False
+
+    def _hauteurs_naturelles(self, largeur: int) -> list[int]:
+        """Hauteur qu'il faut à chaque colonne, pour une fiche de ``largeur`` pixels."""
+        bornes = bornes_des_colonnes(max(largeur, LARGEUR_MINIMALE), PROPORTIONS)
+        return [colonne.hauteur_naturelle(bornes[rang + 1] - bornes[rang])
+                for rang, colonne in enumerate(self.colonnes)]
+
+    def _centrer_dans_la_vue(self) -> None:
+        """Limite la hauteur utile de chaque colonne à la partie visible du corps.
+
+        Les cinq colonnes défilent d'un bloc : elles ont toutes la hauteur de la plus haute.
+        Un contenu centré en hauteur (l'équivalent, le message d'un champ vide) serait placé
+        au milieu de cette hauteur, parfois hors de la vue. Le bas de chaque colonne reçoit
+        donc une réserve vide : son contenu se place dans la partie visible, ou dans la
+        hauteur qu'il lui faut si elle est plus grande.
+        """
+        visible = self.defilement.viewport().height()
+        naturelles = self._hauteurs_naturelles(self.width())
+        rangee = max(visible, *naturelles)
+        for colonne, naturelle in zip(self.colonnes, naturelles, strict=True):
+            colonne.definir_reserve(rangee - max(visible, naturelle))
+
     def _hauteur_fixe(self) -> int:
         """Hauteur de tout ce qui entoure le corps : onglets, en-tête, pied."""
         return (HAUTEUR_ONGLETS if not self.onglets.isHidden() else 0) + HAUTEUR_ENTETE + HAUTEUR_PIED
@@ -786,7 +828,7 @@ class Fiche(Panneau):
 
     def hauteur_du_contenu(self, largeur: int) -> int:
         """Hauteur qu'il faut à la fiche pour afficher ses cinq colonnes sans défilement."""
-        return self._hauteur_fixe() + self._rangee.layout().heightForWidth(max(largeur, LARGEUR_MINIMALE))
+        return self._hauteur_fixe() + max(self._hauteurs_naturelles(largeur))
 
     # ------------------------------------------------------------------ dessin
     def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)

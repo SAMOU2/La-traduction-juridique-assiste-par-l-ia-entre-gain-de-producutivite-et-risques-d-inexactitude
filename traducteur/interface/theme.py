@@ -124,8 +124,7 @@ QPushButton[classe="mode"]:focus {{ color: {BLEU_FONCE}; }}
 QLabel[classe="langueSens"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
 QLabel[classe="langueSens"][arabe="true"] {{ font-size: 16px; }}
 #boutonInverser {{
-    background: transparent; border: none; border-left: 1px solid {FILET};
-    border-top-right-radius: 9px; border-bottom-right-radius: 9px;
+    background: transparent; border: none; border-top-right-radius: 9px; border-bottom-right-radius: 9px;
 }}
 #boutonInverser:hover, #boutonInverser:focus {{ background: {BLEU_50}; }}
 #boutonInverser:pressed {{ background: {BLEU_100}; }}
@@ -160,7 +159,9 @@ QPushButton[classe="lien"] {{
     background: transparent; border: none; color: {BLEU};
     font-size: 13px; font-weight: 600; text-align: left; padding: 2px 0;
 }}
-QPushButton[classe="lien"]:hover, QPushButton[classe="lien"]:focus {{ color: {BLEU_FONCE}; text-decoration: underline; }}
+QPushButton[classe="lien"]:hover, QPushButton[classe="lien"]:focus {{
+    color: {BLEU_FONCE}; text-decoration: underline;
+}}
 QPushButton[classe="lien"]:disabled {{ color: {TEXTE_4}; }}
 QToolButton[classe="voisine"] {{ background: {SURFACE}; border: 1px solid {FILET}; border-radius: 6px; }}
 QToolButton[classe="voisine"]:hover {{ background: {GRIS_50}; border-color: {GRIS_300}; }}
@@ -174,7 +175,9 @@ QPushButton[classe="puce"] {{
     padding: 0 9px; font-size: 13px;
 }}
 QPushButton[classe="puce"][arabe="true"] {{ font-size: 14px; }}
-QPushButton[classe="puce"]:hover, QPushButton[classe="puce"]:focus {{ background: {BLEU_100}; border-color: {BLEU_200}; }}
+QPushButton[classe="puce"]:hover, QPushButton[classe="puce"]:focus {{
+    background: {BLEU_100}; border-color: {BLEU_200};
+}}
 QLabel[classe="puceNeutre"] {{
     background: {GRIS_50}; color: {TEXTE_3}; border: 1px solid {FILET}; border-radius: 6px;
     padding: 0 9px; font-size: 13px;
@@ -251,23 +254,6 @@ QLabel[classe="decompte"] {{ color: {TEXTE_3}; font-size: 12px; }}
 QLabel[classe="nomFichier"] {{ color: {TEXTE_2}; font-size: 12px; }}
 #fermerFichier {{ background: transparent; border: none; border-radius: 4px; }}
 #fermerFichier:hover, #fermerFichier:focus {{ background: {FILET}; }}
-#badge {{ background: {GRIS_100}; border: 1px solid {FILET}; border-radius: 12px; }}
-#badge QLabel {{ color: {TEXTE_3}; font-size: 12px; font-weight: 600; }}
-#badge[etat="termine"] {{ background: {VERT_50}; border-color: {VERT_200}; }}
-#badge[etat="termine"] QLabel {{ color: {VERT}; }}
-#badge[etat="partiel"] {{ background: {AMBRE_50}; border-color: {AMBRE_200}; }}
-#badge[etat="partiel"] QLabel {{ color: {AMBRE}; }}
-#pointLegende {{ background: {BLEU}; border: none; border-radius: 4px; }}
-#pointLegende[absent="true"] {{ background: {TEXTE_3}; }}
-
-/* ---------- Écran « Texte » : étapes du traitement ---------- */
-QLabel[classe="numeroEtape"] {{
-    background: {GRIS_100}; color: {TEXTE_2}; border-radius: 6px; font-size: 12px; font-weight: 600;
-}}
-QLabel[classe="numeroEtape"][faite="false"] {{ color: {TEXTE_4}; }}
-QLabel[classe="titreEtape"] {{ color: {TEXTE}; font-size: 13px; font-weight: 600; }}
-QLabel[classe="titreEtape"][faite="false"] {{ color: {TEXTE_2}; }}
-QLabel[classe="resultatEtape"] {{ color: {TEXTE_3}; font-size: 13px; }}
 
 /* ---------- Barres de défilement ---------- */
 QScrollBar:vertical {{ background: transparent; width: {LARGEUR_BARRE}px; margin: 4px 3px 4px 3px; }}
