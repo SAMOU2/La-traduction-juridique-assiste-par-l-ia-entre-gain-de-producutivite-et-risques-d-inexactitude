@@ -1,26 +1,28 @@
-"""Fenêtre principale : barre de menus, barre d'outils, les deux écrans, barre d'état.
+"""Fenêtre principale : barre latérale, barre de menus, barre d'outils, écrans, barre d'état.
 
-Les deux écrans sont « Terme » (``PageRecherche``) et « Texte » (``PageTexte``). Chacun garde
-son propre sens de traduction. La barre d'outils affiche le sens de l'écran visible et ses
-commandes : la barre de recherche, ou l'import, l'export et la traduction d'un texte.
+La barre latérale (à gauche) choisit l'écran : « Terme » (``PageRecherche``), « Texte »
+(``PageTexte``), « Paramètres », « Description de la plateforme », « Centre d'aide ». Les deux
+premiers sont les écrans de travail : chacun garde son propre sens de traduction, et la barre
+d'outils affiche ses commandes (la barre de recherche, ou l'import, l'export et la traduction
+d'un texte). Pour les autres écrans, la barre d'outils affiche le titre de l'écran.
+
+Le glossaire est chargé à l'ouverture de la fenêtre ; l'écran « Paramètres » permet d'en
+choisir un autre.
 """
 
 from __future__ import annotations
 
-from html import escape
 from pathlib import Path
 
 from PySide6.QtCore import QElapsedTimer, QSettings, QSize, Qt, QTimer
 from PySide6.QtGui import QAction, QActionGroup, QKeySequence, QPixmap, QShortcut
 from PySide6.QtWidgets import (
-    QButtonGroup,
     QFileDialog,
     QFrame,
     QHBoxLayout,
     QMainWindow,
     QMenu,
     QMenuBar,
-    QPushButton,
     QSizePolicy,
     QStackedWidget,
     QToolButton,
@@ -28,28 +30,31 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from .. import NOM_APPLICATION, __version__
+from .. import NOM_APPLICATION
 from ..glossaire import ErreurGlossaire, Glossaire
 from ..langues import AR, NOM_EN_FRANCAIS, NOM_NATIF, autre_langue
-from . import boites, icones, theme
+from . import animation, boites, icones, theme
 from .composants import EtiquetteCourte, compte, espace_souple, etiquette, icone_fixe, repeindre
+from .navigation import (
+    ECRANS,
+    MODE_AIDE,
+    MODE_DESCRIPTION,
+    MODE_PARAMETRES,
+    MODE_TERME,
+    MODE_TEXTE,
+    BarreLaterale,
+)
+from .pages import CLE_ANIMATIONS, PageAide, PageDescription, PageParametres
 from .recherche import PageRecherche
 from .texte import PageTexte
 
-#: Glossaire d'exemple fourni avec le projet (dossier « donnees » à la racine).
+#: Glossaire fourni avec le projet (dossier « donnees » à la racine).
 GLOSSAIRE_EXEMPLE = Path(__file__).resolve().parents[2] / "donnees" / "glossaire_juridique.csv"
-
-#: Les deux écrans de l'application.
-MODE_TERME = "terme"
-MODE_TEXTE = "texte"
 
 _CLE_GLOSSAIRE = "glossaire/chemin"
 _SEPARATEURS = {"\t": "tabulation", ";": "point-virgule", ",": "virgule"}
-
-
-def version_courte() -> str:
-    """« 0.3 » pour la version « 0.3.0 »."""
-    return ".".join(__version__.split(".")[:2])
+#: Les écrans de travail : ils ont un sens de traduction et des commandes dans la barre d'outils.
+_ECRANS_DE_TRAVAIL = (MODE_TERME, MODE_TEXTE)
 
 
 def _filet_vertical(hauteur: int) -> QFrame:
@@ -59,95 +64,7 @@ def _filet_vertical(hauteur: int) -> QFrame:
     return filet
 
 
-# ====================================================================== barre de menus : le glossaire chargé
-class IndicateurGlossaire(QPushButton):
-    """Rappel du glossaire chargé, à droite de la barre de menus : nom du fichier et nombre d'entrées.
-
-    Un clic ouvre un menu : ouvrir un autre glossaire, le recharger, revenir au glossaire d'exemple.
-    """
-
-    def __init__(self, parent: QWidget | None = None) -> None:
-        super().__init__(parent)
-        self.setObjectName("indicateurGlossaire")
-        self.setFixedHeight(24)
-        self.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
-        ligne = QHBoxLayout(self)
-        ligne.setContentsMargins(10, 0, 10, 0)
-        ligne.setSpacing(0)
-        self.point = QFrame()
-        self.point.setObjectName("pointGlossaire")
-        self.point.setFixedSize(7, 7)
-        self.nom = EtiquetteCourte("", "glossaireNom")
-        self.nom.setMaximumWidth(280)
-        self.detail = etiquette("", "glossaireDetail")
-        self.chevron = icone_fixe("chevron-b", theme.TEXTE_3, 12, 1.6)
-        ligne.addWidget(self.point)
-        ligne.addSpacing(7)
-        ligne.addWidget(self.nom)
-        ligne.addWidget(self.detail)
-        ligne.addSpacing(8)
-        ligne.addWidget(self.chevron)
-        # Les clics traversent les étiquettes : c'est le bouton qui les reçoit.
-        for element in (self.point, self.nom, self.detail, self.chevron):
-            element.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
-
-    def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
-        return QSize(self.layout().sizeHint().width(), 24)
-
-    def minimumSizeHint(self) -> QSize:  # noqa: N802
-        return QSize(self.layout().minimumSize().width(), 24)
-
-    def afficher(self, glossaire: Glossaire | None) -> None:
-        """Affiche le nom et la taille du glossaire chargé."""
-        absent = glossaire is None
-        if self.point.property("absent") != absent:
-            self.point.setProperty("absent", absent)
-            repeindre(self.point)
-        if absent:
-            self.nom.definir_texte("Aucun glossaire chargé")
-            self.detail.setText("")
-            self.setToolTip("Ouvrir un fichier CSV")
-        else:
-            self.nom.definir_texte(glossaire.nom)
-            self.detail.setText(f" · {compte(len(glossaire), 'entrée')}")
-            separateur = _SEPARATEURS.get(glossaire.separateur, glossaire.separateur)
-            lignes = [str(glossaire.chemin)] if glossaire.chemin else []
-            lignes.append(f"Encodage {glossaire.encodage}, séparateur : {separateur}")
-            self.setToolTip("<qt>" + "<br>".join(escape(ligne) for ligne in lignes) + "</qt>")
-        self.setAccessibleName(f"Glossaire : {self.nom.texte_complet()}{self.detail.text()}")
-        self.updateGeometry()
-
-
 # ====================================================================== barre d'outils
-class SelecteurMode(QFrame):
-    """Choix de l'écran : « Terme » ou « Texte »."""
-
-    def __init__(self, parent: QWidget | None = None) -> None:
-        super().__init__(parent)
-        self.setObjectName("selecteurMode")
-        self.setFixedSize(200, 44)
-        ligne = QHBoxLayout(self)
-        ligne.setContentsMargins(4, 4, 4, 4)
-        ligne.setSpacing(0)
-        self.groupe = QButtonGroup(self)
-        self.boutons: dict[str, QPushButton] = {}
-        for mode, libelle, nom_icone, info in (
-                (MODE_TERME, "Terme", "fiche", "Recherche d’un terme (Ctrl+1)"),
-                (MODE_TEXTE, "Texte", "texte", "Traduction d’un texte (Ctrl+2)")):
-            bouton = QPushButton(libelle)
-            bouton.setProperty("classe", "mode")
-            bouton.setCheckable(True)
-            bouton.setIcon(icones.icone_a_deux_etats(nom_icone, theme.TEXTE_3, theme.BLEU_FONCE, 16, 1.6, marge=3))
-            bouton.setIconSize(QSize(19, 16))
-            bouton.setFixedSize(96, 36)
-            bouton.setCursor(Qt.CursorShape.PointingHandCursor)
-            bouton.setToolTip(info)
-            self.groupe.addButton(bouton)
-            self.boutons[mode] = bouton
-            ligne.addWidget(bouton)
-
-
 class SelecteurSens(QFrame):
     """Sens de traduction : langue source, flèche, langue cible, et bouton d'inversion."""
 
@@ -189,9 +106,28 @@ class SelecteurSens(QFrame):
         self.updateGeometry()
 
 
+class TitreDePage(QWidget):
+    """Titre d'un écran d'information, affiché dans la barre d'outils : un titre et une ligne d'explication."""
+
+    def __init__(self, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        colonne = QVBoxLayout(self)
+        colonne.setContentsMargins(0, 2, 0, 0)
+        colonne.setSpacing(1)
+        self.titre = etiquette("", "titrePage")
+        self.sous_titre = EtiquetteCourte("", "sousTitrePage")
+        colonne.addWidget(self.titre)
+        colonne.addWidget(self.sous_titre)
+        colonne.addStretch(1)
+
+    def definir(self, titre: str, sous_titre: str) -> None:
+        self.titre.setText(titre)
+        self.sous_titre.definir_texte(sous_titre)
+
+
 # ====================================================================== barre d'état
 class BarreEtat(QFrame):
-    """Barre d'état : à gauche, l'état de l'écran ou un message passager ; à droite, le sens et la version."""
+    """Barre d'état : l'état de l'écran affiché (le résultat d'une recherche…) ou un message passager."""
 
     #: Un message passager plus jeune que ce délai (en millisecondes) n'est pas remplacé par un changement d'état.
     DELAI_DE_GARDE = 400
@@ -206,20 +142,6 @@ class BarreEtat(QFrame):
         self.message = EtiquetteCourte("", "etat")
         self.message.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
         ligne.addWidget(self.message, 1)
-        ligne.addSpacing(16)
-        # « français → arabe » : la flèche est dessinée (ce signe manque dans certaines polices).
-        self.sens_source = etiquette("", "etat")
-        self.sens_cible = etiquette("", "etat")
-        ligne.addWidget(self.sens_source)
-        ligne.addSpacing(5)
-        ligne.addWidget(icone_fixe("fleche", theme.TEXTE_3, 12, 1.4))
-        ligne.addSpacing(5)
-        ligne.addWidget(self.sens_cible)
-        ligne.addSpacing(12)
-        ligne.addWidget(_filet_vertical(12))
-        ligne.addSpacing(12)
-        self.version = etiquette(f"Version {version_courte()}", "etat")
-        ligne.addWidget(self.version)
         self._etat = ""
         self._passager = ""
         self._age = QElapsedTimer()
@@ -250,19 +172,11 @@ class BarreEtat(QFrame):
         self.message.definir_texte(self._passager or self._etat)
 
     def texte(self) -> str:
-        """Le texte affiché à gauche (non abrégé)."""
+        """Le texte affiché (non abrégé)."""
         return self.message.texte_complet()
 
     def etat(self) -> str:
         return self._etat
-
-    def definir_sens(self, source: str) -> None:
-        self.sens_source.setText(f"Sens : {NOM_EN_FRANCAIS[source]}")
-        self.sens_cible.setText(NOM_EN_FRANCAIS[autre_langue(source)])
-
-    def sens(self) -> str:
-        """Le sens affiché, en toutes lettres : « Sens : français → arabe »."""
-        return f"{self.sens_source.text()} → {self.sens_cible.text()}"
 
 
 # ====================================================================== la fenêtre
@@ -274,6 +188,7 @@ class FenetrePrincipale(QMainWindow):
         self.reglages = reglages if reglages is not None else QSettings()
         self.glossaire: Glossaire | None = None
         self.mode = MODE_TERME
+        animation.definir_actives(self.reglages.value(CLE_ANIMATIONS, True, bool))
 
         self.setWindowTitle(NOM_APPLICATION)
         self.setWindowIcon(icones.icone_application())
@@ -283,37 +198,57 @@ class FenetrePrincipale(QMainWindow):
 
         self.page = PageRecherche()
         self.page_texte = PageTexte()
+        self.page_parametres = PageParametres(self.reglages)
+        self.page_description = PageDescription()
+        self.page_aide = PageAide(self.reglages)
+        self.pages: dict[str, QWidget] = {
+            MODE_TERME: self.page, MODE_TEXTE: self.page_texte, MODE_PARAMETRES: self.page_parametres,
+            MODE_DESCRIPTION: self.page_description, MODE_AIDE: self.page_aide}
         self.pile = QStackedWidget()
-        self.pile.addWidget(self.page)
-        self.pile.addWidget(self.page_texte)
+        for page in self.pages.values():
+            self.pile.addWidget(page)
+        self.rail = BarreLaterale()
+        self.rail.choisi.connect(self.definir_mode)
         self.barre_etat = BarreEtat()
 
         centre = QWidget()
         centre.setObjectName("centre")
         centre.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
-        ensemble = QVBoxLayout(centre)
-        ensemble.setContentsMargins(0, 0, 0, 0)
-        ensemble.setSpacing(0)
-        ensemble.addWidget(self._creer_barre_outils())
-        ensemble.addWidget(self.pile, 1)
-        ensemble.addWidget(self.barre_etat)
+        rangee = QHBoxLayout(centre)
+        rangee.setContentsMargins(0, 0, 0, 0)
+        rangee.setSpacing(0)
+        rangee.addWidget(self.rail)
+        colonne = QVBoxLayout()
+        colonne.setContentsMargins(0, 0, 0, 0)
+        colonne.setSpacing(0)
+        colonne.addWidget(self._creer_barre_menus())
+        colonne.addWidget(self._creer_barre_outils())
+        colonne.addWidget(self.pile, 1)
+        colonne.addWidget(self.barre_etat)
+        rangee.addLayout(colonne, 1)
         self.setCentralWidget(centre)
-        self._creer_barre_menus()
 
         for page in (self.page, self.page_texte):
             page.sens_change.connect(self._sens_change)
-            page.message.connect(self.barre_etat.afficher_message)
             page.etat_change.connect(self._etat_change)
-        self.page.glossaire_demande.connect(self.ouvrir_glossaire)
+        for page in self.pages.values():
+            page.message.connect(self.barre_etat.afficher_message)
+        self.page.glossaire_demande.connect(lambda: self.definir_mode(MODE_PARAMETRES))
         self.page_texte.entree_demandee.connect(self.afficher_la_fiche)
         self.page_texte.traduction_changee.connect(self._actualiser_les_actions)
+        self.page_parametres.glossaire_a_choisir.connect(self.ouvrir_glossaire)
+        self.page_parametres.glossaire_a_recharger.connect(self.recharger_glossaire)
+        self.page_parametres.glossaire_fourni_demande.connect(lambda: self.charger_glossaire(GLOSSAIRE_EXEMPLE))
+        self.page_parametres.animations_changees.connect(animation.definir_actives)
+        self.page_parametres.adresse_changee.connect(self.page_aide.definir_adresse)
+        self.page_aide.parametres_demandes.connect(lambda: self.definir_mode(MODE_PARAMETRES))
         self._taille_initiale()
         self._charger_au_demarrage(chemin_glossaire)
         self.definir_mode(MODE_TERME)
 
     # ------------------------------------------------------------------ construction
     def _creer_barre_outils(self) -> QWidget:
-        """Sélecteur d'écran, sens de traduction, puis les commandes de l'écran visible."""
+        """Le sens de traduction, puis les commandes de l'écran affiché (ou son titre)."""
         barre = QWidget()
         barre.setObjectName("barreOutils")
         barre.setFixedHeight(74)
@@ -322,16 +257,20 @@ class FenetrePrincipale(QMainWindow):
         ligne.setContentsMargins(theme.MARGE, 11, theme.MARGE - 3, 13)
         ligne.setSpacing(0)
 
-        self.selecteur = SelecteurMode()
-        self.boutons_mode = self.selecteur.boutons
-        for mode, bouton in self.boutons_mode.items():
-            bouton.clicked.connect(lambda _=False, choix=mode: self.definir_mode(choix))
         self.sens = SelecteurSens()
         self.etiquette_source, self.etiquette_cible = self.sens.source, self.sens.cible
         self.bouton_inverser = self.sens.bouton_inverser
         self.bouton_inverser.clicked.connect(self.inverser_le_sens)
+        # Le sens et l'espace qui le suit disparaissent ensemble sur les écrans d'information.
+        self.cadre_sens = QWidget()
+        dans_le_cadre = QHBoxLayout(self.cadre_sens)
+        dans_le_cadre.setContentsMargins(0, 0, 0, 0)
+        dans_le_cadre.setSpacing(0)
+        dans_le_cadre.addWidget(self.sens)
+        # L'espace se resserre un peu si la fenêtre est étroite et la police du système large.
+        espace_souple(dans_le_cadre, 13, 5)
 
-        # Les commandes appartiennent aux écrans ; la barre d'outils montre celles de l'écran visible.
+        # Les commandes appartiennent aux écrans ; la barre d'outils montre celles de l'écran affiché.
         self.outils = QStackedWidget()
         self.outils.setFixedHeight(50)
         self.outils.addWidget(self.page.barre)
@@ -340,19 +279,17 @@ class FenetrePrincipale(QMainWindow):
         dans_le_cadre.setContentsMargins(3, 0, 3, 0)
         dans_le_cadre.addWidget(self.page_texte.outils)
         self.outils.addWidget(cadre)
+        self.titre_de_page = TitreDePage()
+        self.outils.addWidget(self.titre_de_page)
         self.bouton_importer = self.page_texte.bouton_importer
         self.bouton_exporter = self.page_texte.bouton_exporter
 
-        # Les espaces se resserrent un peu si la fenêtre est étroite et la police du système large.
-        ligne.addWidget(self.selecteur)
-        espace_souple(ligne, 16, 8)
-        ligne.addWidget(self.sens)
-        espace_souple(ligne, 13, 5)
+        ligne.addWidget(self.cadre_sens)
         ligne.addWidget(self.outils, 1)
         return barre
 
-    def _creer_barre_menus(self) -> None:
-        """Barre de menus ; à droite, le glossaire chargé."""
+    def _creer_barre_menus(self) -> QWidget:
+        """Barre de menus, au-dessus de la barre d'outils."""
         cadre = QFrame()
         cadre.setObjectName("barreMenus")
         cadre.setFixedHeight(35)
@@ -360,46 +297,40 @@ class FenetrePrincipale(QMainWindow):
         ligne.setContentsMargins(5, 0, theme.MARGE, 1)
         ligne.setSpacing(12)
         self.menus = QMenuBar()
+        self.menus.setNativeMenuBar(False)
         self.menus.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
-        self.indicateur = IndicateurGlossaire()
+        #: Les menus, par titre.
+        self.menus_par_titre: dict[str, QMenu] = {}
         ligne.addWidget(self.menus, 0, Qt.AlignmentFlag.AlignVCenter)
         ligne.addStretch(1)
-        ligne.addWidget(self.indicateur, 0, Qt.AlignmentFlag.AlignVCenter)
-        self.setMenuWidget(cadre)
         self._creer_menus()
-
-        menu_glossaire = QMenu(self.indicateur)
-        for action in (self.action_ouvrir, self.action_recharger, self.action_exemple):
-            menu_glossaire.addAction(action)
-        menu_glossaire.addSeparator()
-        menu_glossaire.addAction(self.action_format)
-        self.indicateur.setMenu(menu_glossaire)
+        return cadre
 
     def _ajouter_menu(self, titre: str, lettre: str) -> QMenu:
         """Ajoute un menu à la barre ; « Alt » + ``lettre`` l'ouvre.
 
         Le titre ne contient pas de « & » : selon le style, Qt soulignerait en permanence une
-        lettre du titre, ce que la proposition ne montre pas. Le raccourci est donc créé à part.
+        lettre du titre. Le raccourci est donc créé à part.
         """
         menu = self.menus.addMenu(titre)
+        self.menus_par_titre[titre] = menu
+        action = menu.menuAction()
         raccourci = QShortcut(QKeySequence(f"Alt+{lettre}"), self)
-        raccourci.activated.connect(lambda: self.menus.setActiveAction(menu.menuAction()))
+        raccourci.activated.connect(lambda: self.menus.setActiveAction(action))
         return menu
 
     def _creer_menus(self) -> None:
-        menu_fichier = self._ajouter_menu("Fichier", "F")
-        self.action_ouvrir = QAction("&Ouvrir un glossaire…", self)
+        # Le glossaire est chargé à l'ouverture : ces commandes n'ont pas de menu. Elles sont
+        # proposées par l'écran « Paramètres » et gardent leur raccourci.
+        self.action_ouvrir = QAction("Choisir un autre glossaire…", self)
         self.action_ouvrir.setShortcut(QKeySequence.StandardKey.Open)
         self.action_ouvrir.triggered.connect(self.ouvrir_glossaire)
-        menu_fichier.addAction(self.action_ouvrir)
-        self.action_recharger = QAction("&Recharger le glossaire", self)
+        self.action_recharger = QAction("Recharger le glossaire", self)
         self.action_recharger.setShortcut(QKeySequence("F5"))
         self.action_recharger.triggered.connect(self.recharger_glossaire)
-        menu_fichier.addAction(self.action_recharger)
-        self.action_exemple = QAction("Revenir au glossaire d’&exemple", self)
-        self.action_exemple.triggered.connect(lambda: self.charger_glossaire(GLOSSAIRE_EXEMPLE))
-        menu_fichier.addAction(self.action_exemple)
-        menu_fichier.addSeparator()
+        self.addActions([self.action_ouvrir, self.action_recharger])
+
+        menu_fichier = self._ajouter_menu("Fichier", "F")
         self.action_importer = QAction("&Importer un texte…", self)
         self.action_importer.setShortcut(QKeySequence("Ctrl+Shift+O"))
         self.action_importer.triggered.connect(self.importer_un_texte)
@@ -417,9 +348,13 @@ class FenetrePrincipale(QMainWindow):
         menu_affichage = self._ajouter_menu("Affichage", "I")
         groupe = QActionGroup(self)
         self.actions_mode: dict[str, QAction] = {}
-        for mode, libelle, raccourci in ((MODE_TERME, "Recherche d’un &terme", "Ctrl+1"),
-                                         (MODE_TEXTE, "Traduction d’un te&xte", "Ctrl+2")):
-            action = QAction(libelle, self)
+        libelles = {MODE_TERME: "Recherche d’un &terme", MODE_TEXTE: "Traduction d’un te&xte",
+                    MODE_PARAMETRES: "&Paramètres", MODE_DESCRIPTION: "&Description de la plateforme",
+                    MODE_AIDE: "&Centre d’aide"}
+        for mode, (_, _, _, raccourci) in ECRANS.items():
+            if mode == MODE_PARAMETRES:
+                menu_affichage.addSeparator()
+            action = QAction(libelles[mode], self)
             action.setCheckable(True)
             action.setShortcut(QKeySequence(raccourci))
             action.triggered.connect(lambda _=False, choix=mode: self.definir_mode(choix))
@@ -458,19 +393,8 @@ class FenetrePrincipale(QMainWindow):
         action_effacer.triggered.connect(self._effacer_le_texte)
         menu_traduction.addAction(action_effacer)
 
-        menu_aide = self._ajouter_menu("Aide", "A")
-        self.action_format = QAction("&Format du glossaire CSV", self)
-        self.action_format.triggered.connect(self.afficher_format)
-        menu_aide.addAction(self.action_format)
-        action_fonctionnement = QAction("&Traduction d’un texte : fonctionnement", self)
-        action_fonctionnement.triggered.connect(self.afficher_fonctionnement)
-        menu_aide.addAction(action_fonctionnement)
-        action_a_propos = QAction("À &propos", self)
-        action_a_propos.triggered.connect(self.afficher_a_propos)
-        menu_aide.addAction(action_a_propos)
-
     def _taille_initiale(self) -> None:
-        """Taille de la proposition (1440 × 860), réduite si l'écran est plus petit ; fenêtre centrée."""
+        """Taille de départ (1440 × 860), réduite si l'écran est plus petit ; fenêtre centrée."""
         largeur, hauteur = 1440, 860
         ecran = self.screen().availableGeometry() if self.screen() is not None else None
         if ecran is None:
@@ -485,7 +409,7 @@ class FenetrePrincipale(QMainWindow):
 
     # ------------------------------------------------------------------ glossaire
     def _charger_au_demarrage(self, chemin: str | Path | None) -> None:
-        """Charge le glossaire demandé, sinon le dernier glossaire ouvert, sinon l'exemple."""
+        """Charge le glossaire demandé, sinon le dernier glossaire choisi, sinon le glossaire fourni."""
         essais: list[tuple[Path, str]] = []
         if chemin:
             essais.append((Path(chemin), "demande"))
@@ -511,16 +435,23 @@ class FenetrePrincipale(QMainWindow):
             # Le message est affiché une fois la fenêtre ouverte.
             QTimer.singleShot(0, lambda: self._avertir("Glossaire non chargé", "\n\n".join(erreurs)))
 
+    def glossaire_fourni(self) -> bool:
+        """Vrai si le glossaire chargé est celui qui est livré avec l'application."""
+        return (self.glossaire is not None and self.glossaire.chemin is not None
+                and self.glossaire.chemin.resolve() == GLOSSAIRE_EXEMPLE)
+
     def _installer(self, glossaire: Glossaire | None, *, memoriser: bool = False) -> None:
         self.glossaire = glossaire
-        self.indicateur.afficher(glossaire)
         self.page.definir_glossaire(glossaire)
         self.page_texte.definir_glossaire(glossaire)
+        self.page_parametres.afficher_glossaire(glossaire, self.glossaire_fourni())
+        self.page_description.definir_glossaire(glossaire)
+        self.page_aide.definir_glossaire(glossaire)
         self.action_recharger.setEnabled(glossaire is not None and glossaire.chemin is not None)
         if glossaire is not None and memoriser and glossaire.chemin is not None:
             chemin = glossaire.chemin.resolve()
             if chemin == GLOSSAIRE_EXEMPLE:
-                self.reglages.remove(_CLE_GLOSSAIRE)  # l'exemple est déjà le glossaire par défaut
+                self.reglages.remove(_CLE_GLOSSAIRE)  # le glossaire fourni est déjà le glossaire par défaut
             else:
                 self.reglages.setValue(_CLE_GLOSSAIRE, str(chemin))
         self._actualiser_l_etat()
@@ -544,7 +475,7 @@ class FenetrePrincipale(QMainWindow):
         """Demande un fichier CSV à l'utilisateur, puis le charge."""
         depart = str(self.glossaire.chemin.parent) if self.glossaire and self.glossaire.chemin else ""
         chemin, _ = QFileDialog.getOpenFileName(
-            self, "Ouvrir un glossaire", depart, "Glossaire CSV (*.csv *.tsv *.txt);;Tous les fichiers (*)")
+            self, "Choisir un glossaire", depart, "Glossaire CSV (*.csv *.tsv *.txt);;Tous les fichiers (*)")
         if chemin:
             self.charger_glossaire(chemin, bilan=True)
 
@@ -582,21 +513,37 @@ class FenetrePrincipale(QMainWindow):
         boites.afficher(self, genre, titre, texte, image=image)
 
     # ------------------------------------------------------------------ écrans
-    def page_courante(self) -> PageRecherche | PageTexte:
-        """L'écran visible."""
-        return self.page if self.mode == MODE_TERME else self.page_texte
+    def page_courante(self) -> QWidget:
+        """L'écran affiché."""
+        return self.pages[self.mode]
+
+    def ecran_de_travail(self) -> PageRecherche | PageTexte | None:
+        """L'écran affiché si c'est « Terme » ou « Texte » ; sinon ``None``."""
+        return self.pages[self.mode] if self.mode in _ECRANS_DE_TRAVAIL else None
 
     def definir_mode(self, mode: str) -> None:
-        """Affiche l'écran « Terme » (recherche d'un terme) ou l'écran « Texte » (traduction d'un texte)."""
+        """Affiche un écran, désigné par son nom : ``MODE_TERME``, ``MODE_TEXTE``, ``MODE_PARAMETRES``…"""
         self.mode = mode
-        self.pile.setCurrentWidget(self.page_courante())
-        self.outils.setCurrentIndex(0 if mode == MODE_TERME else 1)
-        self.boutons_mode[mode].setChecked(True)
+        page = self.pages[mode]
+        self.pile.setCurrentWidget(page)
+        travail = mode in _ECRANS_DE_TRAVAIL
+        self.cadre_sens.setVisible(travail)
+        self.outils.setCurrentIndex(_ECRANS_DE_TRAVAIL.index(mode) if travail else 2)
+        if travail:
+            self.sens.afficher(page.source)
+        else:
+            self.titre_de_page.definir(page.TITRE, page.SOUS_TITRE)
+        self.rail.definir(mode)
         self.actions_mode[mode].setChecked(True)
-        self._afficher_sens(self.page_courante().source)
+        self.action_inverser.setEnabled(travail)
         self._actualiser_les_actions()
         self._actualiser_l_etat()
-        (self.page.champ if mode == MODE_TERME else self.page_texte.zone_source).setFocus()
+        if mode == MODE_TERME:
+            self.page.champ.setFocus()
+        elif mode == MODE_TEXTE:
+            self.page_texte.zone_source.setFocus()
+        else:
+            page.setFocus()  # les flèches du clavier font défiler la page
 
     def afficher_la_fiche(self, entree) -> None:
         """Ouvre, sur l'écran « Terme », la fiche d'un terme relevé dans un texte."""
@@ -605,24 +552,22 @@ class FenetrePrincipale(QMainWindow):
         self.page.ouvrir(entree)
 
     def inverser_le_sens(self) -> None:
-        self.page_courante().inverser()
+        ecran = self.ecran_de_travail()
+        if ecran is not None:
+            ecran.inverser()
 
     def _sens_change(self, source: str) -> None:
         if self.sender() is self.page_courante():
-            self._afficher_sens(source)
+            self.sens.afficher(source)
 
     def _etat_change(self, _texte: str) -> None:
         if self.sender() is self.page_courante():
             self._actualiser_l_etat()
 
     def _actualiser_l_etat(self) -> None:
-        """Barre d'état : l'état de l'écran visible ; s'il n'a rien à signaler, le glossaire chargé."""
-        self.barre_etat.definir_etat(self.page_courante().etat or self.etat_du_glossaire())
-
-    def etat_du_glossaire(self) -> str:
-        if self.glossaire is None:
-            return "Aucun glossaire chargé."
-        return f"Glossaire chargé : {compte(len(self.glossaire), 'entrée')}."
+        """Barre d'état : ce que l'écran affiché a à signaler (le résultat d'une recherche, par exemple)."""
+        ecran = self.ecran_de_travail()
+        self.barre_etat.definir_etat(ecran.etat if ecran is not None else "")
 
     def _actualiser_les_actions(self) -> None:
         """Active l'export et la copie seulement s'il y a une traduction."""
@@ -651,11 +596,7 @@ class FenetrePrincipale(QMainWindow):
         self.definir_mode(MODE_TEXTE)
         self.page_texte.effacer()
 
-    # ------------------------------------------------------------------ autres actions
-    def _afficher_sens(self, source: str) -> None:
-        self.sens.afficher(source)
-        self.barre_etat.definir_sens(source)
-
+    # ------------------------------------------------------------------ recherche
     def _aller_a_la_recherche(self) -> None:
         self.definir_mode(MODE_TERME)
         self.page.champ.setFocus()
@@ -665,49 +606,6 @@ class FenetrePrincipale(QMainWindow):
         self.definir_mode(MODE_TERME)
         self.page.effacer()
 
-    def afficher_format(self) -> None:
-        self._informer(
-            "Format du glossaire CSV",
-            "Le glossaire est un fichier CSV : une ligne par terme, la première ligne donne le nom des colonnes.\n\n"
-            "Colonnes obligatoires :\n"
-            "    terme_fr, terme_ar\n\n"
-            "Colonnes facultatives :\n"
-            "    categorie_fr, categorie_ar, pluriel_fr, pluriel_ar, domaine,\n"
-            "    synonymes_fr, synonymes_ar, termes_associes,\n"
-            "    definition_fr, definition_ar, source_definition,\n"
-            "    contexte_fr, contexte_ar, source_contexte, ressources\n\n"
-            "Dans une cellule, plusieurs valeurs se séparent par une barre verticale : convention | accord.\n\n"
-            "Depuis Excel : Enregistrer sous → « CSV UTF-8 (délimité par des virgules) ». "
-            "Le séparateur (point-virgule, virgule ou tabulation) est reconnu automatiquement.",
-        )
 
-    def afficher_fonctionnement(self) -> None:
-        self._informer(
-            "Traduction d’un texte : fonctionnement",
-            "Le texte est traduit à l’aide du glossaire, en cinq étapes :\n\n"
-            "1. Segmentation : le texte est découpé en phrases.\n"
-            "2. Découpage : chaque phrase est découpée en mots.\n"
-            "3. Recherche dans le CSV : la phrase entière est cherchée parmi les exemples du glossaire, "
-            "puis les expressions les plus longues, puis les mots un par un.\n"
-            "4. Règles linguistiques : synonymes, pluriel, article, complément du nom, choix entre "
-            "plusieurs équivalents d’après le contexte.\n"
-            "5. Reconstruction : chaque phrase est récrite dans la langue cible, avec sa ponctuation.\n\n"
-            "Une phrase qui figure parmi les exemples du glossaire est remplacée par la traduction de "
-            "l’exemple. Les autres phrases sont traduites mot à mot : les termes du glossaire sont "
-            "traduits (en bleu), les autres mots restent dans la langue source (en gris) et l’ordre "
-            "des mots n’est pas modifié.\n\n"
-            "Le résultat est une aide : il doit être complété et vérifié par le traducteur.",
-        )
-
-    def afficher_a_propos(self) -> None:
-        self._boite(
-            boites.INFORMATION, NOM_APPLICATION,
-            f"Version {__version__}\n\n"
-            "Traduction juridique français ⇄ arabe à l’aide d’un glossaire CSV : recherche d’un terme "
-            "(terme, définition, équivalent, contextualisation, ressources) et traduction d’un texte.\n\n"
-            "Les équivalents proposés viennent du glossaire chargé ; ils doivent être vérifiés par le traducteur.",
-            image=icones.logo(40))
-
-
-__all__ = ["GLOSSAIRE_EXEMPLE", "MODE_TERME", "MODE_TEXTE", "BarreEtat", "FenetrePrincipale", "IndicateurGlossaire",
-           "SelecteurMode", "SelecteurSens", "version_courte"]
+__all__ = ["GLOSSAIRE_EXEMPLE", "MODE_AIDE", "MODE_DESCRIPTION", "MODE_PARAMETRES", "MODE_TERME", "MODE_TEXTE",
+           "BarreEtat", "FenetrePrincipale", "SelecteurSens", "TitreDePage"]

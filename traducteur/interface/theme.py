@@ -1,8 +1,8 @@
 """Couleurs, palette et feuille de style de l'interface.
 
-Les valeurs sont celles de la proposition d'interface (dossier ``maquette/proposition``).
-Les tailles de caractères sont données en pixels entiers : les demi-pixels des dessins
-(13,5 px, 16,5 px…) sont arrondis.
+La plupart des valeurs sont celles de la proposition d'interface (dossier
+``maquette/proposition``). Les tailles de caractères sont données en pixels entiers : les
+demi-pixels des dessins (13,5 px, 16,5 px…) sont arrondis.
 """
 
 from PySide6.QtGui import QColor, QPalette
@@ -30,6 +30,18 @@ VERT_50 = "#ECFDF3"
 VERT_200 = "#ABEFC6"
 VERT_VIF = "#12B76A"
 MARINE = "#0F1F3D"
+#: Couleur d'une étape allumée (enchaînement d'un terme, étapes du traitement d'un texte), et
+#: couleur de l'écran choisi dans la barre latérale : un doré vif, celui de la balance du logo.
+OR = "#FFB703"
+OR_FONCE = "#E39A00"
+OR_50 = "#FFF7E0"
+#: Barre latérale : fond, bouton survolé, bouton de l'écran affiché, icônes.
+RAIL = "#0B1730"
+RAIL_SURVOL = "#17284A"
+RAIL_ACTIF = "#1E325C"
+RAIL_FILET = "#22345A"
+RAIL_ICONE = "#9DAECB"
+RAIL_ICONE_SURVOL = "#FFFFFF"
 GRIS_50 = "#F7F9FB"
 GRIS_100 = "#F0F3F7"
 GRIS_200 = "#E6EAF0"
@@ -97,7 +109,7 @@ FEUILLE_DE_STYLE = f"""
 #separateurBleu {{ background: {BLEU_200}; border: none; }}
 #filetVertical {{ background: {FILET}; border: none; }}
 
-/* ---------- Barre de menus ; à droite, le glossaire chargé ---------- */
+/* ---------- Barre de menus ---------- */
 #barreMenus {{ background: {SURFACE}; border: none; border-bottom: 1px solid {FILET}; }}
 QMenuBar {{ background: transparent; border: none; color: {TEXTE_2}; font-size: 13px; }}
 QMenuBar::item {{ background: transparent; padding: 6px 11px; border-radius: 6px; }}
@@ -110,28 +122,11 @@ QMenu::item:selected {{ background: {BLEU_50}; color: {BLEU_FONCE}; }}
 QMenu::item:disabled {{ color: {TEXTE_4}; }}
 QMenu::separator {{ height: 1px; background: {FILET_DOUX}; margin: 5px 6px; }}
 QMenu::indicator {{ width: 14px; height: 14px; margin-left: 6px; }}
-#indicateurGlossaire {{
-    background: {GRIS_50}; border: 1px solid {FILET}; border-radius: 12px; padding: 0; text-align: left;
-}}
-#indicateurGlossaire:hover, #indicateurGlossaire:pressed, #indicateurGlossaire:focus {{
-    background: {GRIS_100}; border-color: {GRIS_300};
-}}
-#indicateurGlossaire::menu-indicator {{ image: none; width: 0; height: 0; }}
-#pointGlossaire {{ background: {VERT_VIF}; border: none; border-radius: 3px; }}
-#pointGlossaire[absent="true"] {{ background: {AMBRE}; }}
-QLabel[classe="glossaireNom"] {{ color: {TEXTE}; font-size: 12px; font-weight: 600; }}
-QLabel[classe="glossaireDetail"] {{ color: {TEXTE_3}; font-size: 12px; }}
 
-/* ---------- Barre d'outils : écran, sens de traduction ---------- */
-#selecteurMode {{ background: {GRIS_200}; border: none; border-radius: 10px; }}
-QPushButton[classe="mode"] {{
-    background: transparent; border: none; border-radius: 7px;
-    color: {TEXTE_3}; font-size: 14px; font-weight: 600; padding: 0 6px;
-}}
-QPushButton[classe="mode"]:hover {{ color: {TEXTE_2}; }}
-QPushButton[classe="mode"]:checked {{ background: {SURFACE}; color: {BLEU_FONCE}; }}
-QPushButton[classe="mode"]:focus {{ color: {BLEU_FONCE}; }}
+/* ---------- Barre d'outils : sens de traduction, titre d'un écran d'information ---------- */
 #sens {{ background: {SURFACE}; border: 1px solid {FILET}; border-radius: 10px; }}
+QLabel[classe="titrePage"] {{ color: {MARINE}; font-size: 19px; font-weight: 600; }}
+QLabel[classe="sousTitrePage"] {{ color: {TEXTE_3}; font-size: 13px; }}
 QLabel[classe="langueSens"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
 QLabel[classe="langueSens"][arabe="true"] {{ font-size: 16px; }}
 #boutonInverser {{
@@ -248,6 +243,39 @@ QLabel[classe="touche"] {{
     padding: 0 6px; font-size: 12px; font-weight: 600;
 }}
 QLabel[classe="raccourci"] {{ color: {TEXTE_3}; font-size: 13px; }}
+
+/* ---------- Écran « Texte » : informations sur les termes ---------- */
+QLabel[classe="equivalentCarte"] {{ color: {BLEU_FONCE}; font-size: 19px; font-weight: 600; }}
+QLabel[classe="equivalentCarte"][arabe="true"] {{ font-size: 24px; }}
+QLabel[classe="sousTitre"] {{ color: {TEXTE_3}; font-size: 12px; font-weight: 600; }}
+QLabel[classe="alerteCarte"] {{ color: {AMBRE}; font-size: 13px; }}
+QPushButton[classe="sourceLien"] {{
+    background: {BLEU_50}; color: {BLEU_FONCE}; border: 1px solid {BLEU_100}; border-radius: 6px;
+    padding: 0 8px; font-size: 12px; text-align: left;
+}}
+QPushButton[classe="sourceLien"]:hover, QPushButton[classe="sourceLien"]:focus {{
+    background: {BLEU_100}; border-color: {BLEU_200};
+}}
+
+/* ---------- Écrans d'information : paramètres, description, centre d'aide ---------- */
+QLabel[classe="titreCarte"] {{ color: {TEXTE}; font-size: 16px; font-weight: 600; }}
+QLabel[classe="texteCarte"] {{ color: {TEXTE_2}; font-size: 14px; }}
+QLabel[classe="noteCarte"] {{ color: {TEXTE_3}; font-size: 13px; }}
+QLabel[classe="noteCarte"][erreur="true"] {{ color: {AMBRE}; }}
+QLabel[classe="question"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
+#cadreGlossaire {{ background: {GRIS_50}; border: 1px solid {FILET}; border-radius: 10px; }}
+#pointGlossaire {{ background: {VERT_VIF}; border: none; border-radius: 4px; }}
+#pointGlossaire[absent="true"] {{ background: {AMBRE}; }}
+QLabel[classe="nomGlossaire"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
+QLabel[classe="tailleGlossaire"] {{ color: {TEXTE_2}; font-size: 13px; font-weight: 600; }}
+#pointListe {{ background: {GRIS_300}; border: none; border-radius: 3px; }}
+#rondEcran {{ background: {BLEU_50}; border: 1px solid {BLEU_100}; border-radius: 18px; }}
+#rondContact {{ background: {BLEU_50}; border: 1px solid {BLEU_100}; border-radius: 22px; }}
+#champAdresse {{
+    background: {SURFACE}; color: {TEXTE}; border: 1px solid {FILET}; border-radius: 8px;
+    padding: 0 12px; font-size: 14px; selection-background-color: {BLEU}; selection-color: {SURFACE};
+}}
+#champAdresse:focus {{ border-color: {BLEU}; }}
 
 /* ---------- Écran « Texte » : zones de texte ---------- */
 #zoneTexte {{

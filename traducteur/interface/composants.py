@@ -5,9 +5,10 @@ from __future__ import annotations
 from collections.abc import Sequence
 from html import escape
 
-from PySide6.QtCore import QPoint, QRect, QRectF, QSize, Qt
+from PySide6.QtCore import QPoint, QPointF, QRect, QRectF, QSize, Qt
 from PySide6.QtGui import QColor, QFont, QFontMetricsF, QPainter, QPainterPath, QPen
 from PySide6.QtWidgets import (
+    QAbstractButton,
     QBoxLayout,
     QFrame,
     QLabel,
@@ -218,6 +219,66 @@ def vider(disposition: QLayout) -> None:
         elif sous_disposition is not None:
             vider(sous_disposition)
             sous_disposition.deleteLater()
+
+
+class Numero(QWidget):
+    """Numéro d'une étape, dans un disque qui peut s'allumer (voir ``animation.Allumage``)."""
+
+    #: Marge gardée autour du disque pour le halo.
+    MARGE = 6
+
+    def __init__(self, numero: int, parent: QWidget | None = None, *, rayon: int = 10, carre: bool = False) -> None:
+        super().__init__(parent)
+        self.numero = numero
+        self._rayon, self._carre = rayon, carre
+        self.niveau, self.halo = 0.0, 0.0
+        cote = 2 * (rayon + self.MARGE)
+        self.setFixedSize(cote, cote)
+        self.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
+
+    def definir(self, niveau: float, halo: float = 0.0) -> None:
+        """Fixe le niveau d'allumage (0 : éteint, 1 : allumé) et l'intensité du halo."""
+        if (niveau, halo) != (self.niveau, self.halo):
+            self.niveau, self.halo = niveau, halo
+            self.update()
+
+    def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        peintre = QPainter(self)
+        taille = 12 if self._rayon >= 10 else 11 if self._rayon >= 9 else 10
+        dessin.dessiner_numero(peintre, QPointF(self.width() / 2, self.height() / 2), self._rayon,
+                               str(self.numero), dessin.police(self.font(), taille, gras=True),
+                               self.niveau, self.halo, carre=self._carre)
+
+
+class Interrupteur(QAbstractButton):
+    """Interrupteur à deux positions (un réglage activé ou non)."""
+
+    LARGEUR, HAUTEUR = 40, 22
+
+    def __init__(self, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        self.setCheckable(True)
+        self.setFixedSize(self.LARGEUR, self.HAUTEUR)
+        self.setCursor(Qt.CursorShape.PointingHandCursor)
+
+    def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
+        return QSize(self.LARGEUR, self.HAUTEUR)
+
+    def paintEvent(self, evenement) -> None:  # noqa: N802
+        peintre = QPainter(self)
+        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
+        active = self.isChecked()
+        peintre.setPen(Qt.PenStyle.NoPen)
+        peintre.setBrush(QColor(theme.BLEU if active else theme.GRIS_300))
+        peintre.drawRoundedRect(QRectF(0, 0, self.width(), self.height()), self.height() / 2, self.height() / 2)
+        peintre.setBrush(QColor(theme.SURFACE))
+        x = self.width() - self.height() / 2 if active else self.height() / 2
+        peintre.drawEllipse(QPointF(x, self.height() / 2), self.height() / 2 - 3, self.height() / 2 - 3)
+        if self.hasFocus():
+            peintre.setPen(QPen(QColor(theme.BLEU_200), 2))
+            peintre.setBrush(Qt.BrushStyle.NoBrush)
+            peintre.drawRoundedRect(QRectF(1, 1, self.width() - 2, self.height() - 2), self.height() / 2 - 1,
+                                    self.height() / 2 - 1)
 
 
 # ====================================================================== panneaux

@@ -29,6 +29,13 @@ TRACES = {
     "lien": '<path d="M9.5 3H13v3.5M13 3 7.5 8.5M11 9.5V12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h2.5"/>',
     "texte": '<path d="M3 4.5h10M3 8h10M3 11.5h6"/>',
     "fiche": '<rect x="3" y="2.5" width="10" height="11" rx="1.5"/><path d="M5.5 5.5h5M5.5 8h5M5.5 10.5h3"/>',
+    "chevron-h": '<path d="M3.5 10 8 5.5 12.5 10"/>',
+    "reglages": '<path d="M2.5 4.5h4M9.5 4.5h4M2.5 8h7M12.5 8h1M2.5 11.5h1M6.5 11.5h7"/>'
+                '<circle cx="8" cy="4.5" r="1.5"/><circle cx="11" cy="8" r="1.5"/><circle cx="5" cy="11.5" r="1.5"/>',
+    "aide": '<circle cx="8" cy="8" r="5.75"/><path d="M6.4 6.5a1.7 1.7 0 1 1 2.6 1.45c-.6.4-1 .75-1 1.4M8 11.1v.1"/>',
+    "enveloppe": '<rect x="2.5" y="4" width="11" height="8.5" rx="1.5"/><path d="M3 5.2l5 3.6 5-3.6"/>',
+    "dossier": '<path d="M2.5 5a1 1 0 0 1 1-1h2.7l1.3 1.5h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1z"/>',
+    "recharger": '<path d="M13 8a5 5 0 1 1-1.5-3.55M13.2 2.6v2.9h-2.9"/>',
 }
 
 _GABARIT = (

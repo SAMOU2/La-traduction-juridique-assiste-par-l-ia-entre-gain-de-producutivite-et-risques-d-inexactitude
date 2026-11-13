@@ -10,7 +10,7 @@ from collections.abc import Sequence
 
 import regex
 from PySide6.QtCore import QPointF, QRectF, Qt
-from PySide6.QtGui import QColor, QFont, QFontMetricsF, QPainter, QTextCharFormat, QTextLayout, QTextOption
+from PySide6.QtGui import QColor, QFont, QFontMetricsF, QPainter, QPen, QTextCharFormat, QTextLayout, QTextOption
 
 from ..langues import AR, FR
 from . import theme
@@ -35,6 +35,50 @@ def police(base: QFont, taille: int, *, gras: bool = False, italique: bool = Fal
 
 def largeur_du_texte(texte: str, police_du_texte: QFont) -> float:
     return QFontMetricsF(police_du_texte).horizontalAdvance(texte)
+
+
+def melanger(depart: str, arrivee: str, part: float) -> QColor:
+    """Couleur située entre deux couleurs : ``part`` vaut 0 pour la première, 1 pour la seconde."""
+    part = min(max(part, 0.0), 1.0)
+    debut, fin = QColor(depart), QColor(arrivee)
+    return QColor(round(debut.red() + (fin.red() - debut.red()) * part),
+                  round(debut.green() + (fin.green() - debut.green()) * part),
+                  round(debut.blue() + (fin.blue() - debut.blue()) * part))
+
+
+def dessiner_numero(peintre: QPainter, centre: QPointF, rayon: float, texte: str, police_du_numero: QFont,
+                    niveau: float, halo: float = 0.0, *, carre: bool = False) -> None:
+    """Dessine le numéro d'une étape, plus ou moins allumé.
+
+    ``niveau`` va de 0 (étape éteinte : cercle gris) à 1 (étape allumée : disque doré) ;
+    ``halo`` (0 à 1) ajoute un anneau lumineux autour du numéro, au moment où il s'allume.
+    Avec ``carre``, le numéro est dans un carré aux angles arrondis.
+    """
+    peintre.save()
+    peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
+    arrondi = rayon * 0.6 if carre else rayon
+
+    def forme(marge: float) -> None:
+        cadre = QRectF(centre.x() - rayon - marge, centre.y() - rayon - marge,
+                       2 * (rayon + marge), 2 * (rayon + marge))
+        peintre.drawRoundedRect(cadre, arrondi + marge, arrondi + marge)
+
+    if halo > 0.0:
+        peintre.setPen(Qt.PenStyle.NoPen)
+        for marge, opacite in ((2.0 + 7.0 * halo, 0.20), (1.0 + 3.5 * halo, 0.34)):
+            lueur = QColor(theme.OR)
+            lueur.setAlphaF(opacite * halo)
+            peintre.setBrush(lueur)
+            forme(marge)
+    bord = melanger(theme.GRIS_300, theme.OR_FONCE, niveau)
+    peintre.setPen(QPen(bord, 1.25))
+    peintre.setBrush(melanger(theme.SURFACE, theme.OR, niveau))
+    forme(-0.625)
+    peintre.setFont(police_du_numero)
+    peintre.setPen(melanger(theme.TEXTE_4, theme.MARINE, niveau))
+    peintre.drawText(QRectF(centre.x() - rayon, centre.y() - rayon, 2 * rayon, 2 * rayon),
+                     Qt.AlignmentFlag.AlignCenter, texte)
+    peintre.restore()
 
 
 def abreger(texte: str, police_du_texte: QFont, largeur: float, *, par_le_debut: bool = False) -> str:

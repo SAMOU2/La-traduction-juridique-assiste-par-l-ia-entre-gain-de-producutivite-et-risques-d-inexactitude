@@ -27,10 +27,12 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from ..contextes import PROPRE, Emploi, emplois
 from ..glossaire import Entree, Glossaire
 from ..langues import AR, FR, NOM_EN_FRANCAIS, autre_langue, cle_souple, deviner_langue
 from ..surlignage import positions_du_terme
 from . import icones, theme
+from .animation import Allumage
 from .composants import (
     ESPACE_INVISIBLE,
     DispositionColonnes,
@@ -55,14 +57,14 @@ from .composants import (
     separateur,
     vider,
 )
-from .dessin import abreger, dessiner_ligne, largeur_du_texte, police
+from .dessin import abreger, dessiner_ligne, dessiner_numero, largeur_du_texte, melanger, police
 
 #: Les cinq champs de l'enchaînement.
 ETAPES = ("Terme", "Définition", "Équivalent", "Contextualisation", "Ressources")
 #: Largeurs relatives des cinq colonnes (celles de la proposition, pour une fiche de 1 392 pixels).
 PROPORTIONS = (272, 292, 264, 292, 272)
 #: En dessous de cette largeur, la fiche garde sa largeur et défile horizontalement.
-LARGEUR_MINIMALE = 1000
+LARGEUR_MINIMALE = 960
 HAUTEUR_ONGLETS, HAUTEUR_ENTETE, HAUTEUR_PIED = 38, 50, 44
 #: Hauteur du corps de la fiche dans la fenêtre de référence (1440 × 860), et hauteur minimale.
 HAUTEUR_DU_CORPS, HAUTEUR_MINIMALE_DU_CORPS = 336, 150
@@ -168,6 +170,9 @@ class EnteteEtapes(QWidget):
 
     Chaque étape est placée au début de sa colonne. ``legendes`` ajoute une ligne sous chaque
     titre : pour chaque étape, les formes du texte, de la plus longue à la plus courte.
+
+    Une étape est éteinte (grise) ou allumée (dorée). ``allumer`` allume, l'une après l'autre,
+    les étapes que le glossaire renseigne pour le terme affiché.
     """
 
     def __init__(self, legendes: Sequence[Sequence[str]] = (), parent: QWidget | None = None) -> None:
@@ -176,6 +181,18 @@ class EnteteEtapes(QWidget):
         self._legendes = [tuple(formes) for formes in legendes]
         self.setFixedHeight(80 if legendes else HAUTEUR_ENTETE)
         self.setAccessibleName(" → ".join(ETAPES))
+        self.allumage = Allumage(len(ETAPES), self)
+        self.allumage.change.connect(self.update)
+
+    def allumer(self, etapes: Sequence[bool], *, animer: bool = True) -> None:
+        """Allume les étapes renseignées (vrai), dans l'ordre ; les autres restent éteintes."""
+        self.allumage.definir(etapes, animer=animer)
+        allumees = [titre for titre, allumee in zip(ETAPES, etapes, strict=True) if allumee]
+        self.setAccessibleDescription("Étapes renseignées : " + ", ".join(allumees) if allumees else "")
+
+    def etapes_allumees(self) -> list[bool]:
+        """Pour chaque étape : vrai si elle est allumée (ou le sera à la fin de l'animation)."""
+        return self.allumage.allumees()
 
     def legendes_affichees(self) -> list[str]:
         """La légende de chaque étape, dans la forme qui tient dans sa colonne."""
@@ -199,33 +216,25 @@ class EnteteEtapes(QWidget):
         for rang, titre in enumerate(ETAPES):
             gauche = bornes[rang] + theme.MARGE
             accent = rang == 2  # l'équivalent est le champ mis en avant
-            centre = QPointF(gauche + 11, milieu)
-            if accent:
-                peintre.setPen(Qt.PenStyle.NoPen)
-                peintre.setBrush(QColor(theme.BLEU))
-                peintre.drawEllipse(centre, 11, 11)
-            else:
-                peintre.setPen(QPen(QColor(theme.BLEU_200), 1.5))
-                peintre.setBrush(QColor(theme.SURFACE))
-                peintre.drawEllipse(centre, 10.25, 10.25)
-            peintre.setFont(police_numero)
-            peintre.setPen(QColor(theme.SURFACE if accent else theme.BLEU))
-            peintre.drawText(QRectF(gauche, milieu - 11, 22, 22), Qt.AlignmentFlag.AlignCenter, str(rang + 1))
+            niveau = self.allumage.niveau(rang)
+            dessiner_numero(peintre, QPointF(gauche + 11, milieu), 11, str(rang + 1), police_numero, niveau,
+                            self.allumage.halo(rang))
 
             x_titre = gauche + 31
             place = bornes[rang + 1] - x_titre - 4
             titre = abreger(titre, police_titre, place)
             dessiner_ligne(peintre, QRectF(x_titre, milieu - 12, place, 24), titre, police_titre,
-                           theme.BLEU_FONCE if accent else theme.TEXTE)
+                           melanger(theme.TEXTE_3, theme.BLEU_FONCE if accent else theme.TEXTE, niveau).name())
             if legendes:
                 dessiner_ligne(peintre, QRectF(x_titre, milieu + 12, place, 20), legendes[rang],
                                police(self.font(), 12), theme.TEXTE_3)
             if rang < len(ETAPES) - 1:
-                # Flèche vers l'étape suivante : du titre jusqu'au numéro de la colonne voisine.
+                # Flèche vers l'étape suivante : du titre jusqu'au numéro de la colonne voisine. Elle
+                # se colore quand l'étape suivante s'allume.
                 debut = x_titre + largeur_du_texte(titre, police_titre) + 14
                 fin = bornes[rang + 1] + theme.MARGE - 14
                 if fin - debut >= 12:
-                    stylo = QPen(QColor("#CBD3DF"), 1.25)
+                    stylo = QPen(melanger("#CBD3DF", theme.OR_FONCE, self.allumage.niveau(rang + 1)), 1.25)
                     stylo.setCapStyle(Qt.PenCapStyle.RoundCap)
                     stylo.setJoinStyle(Qt.PenJoinStyle.RoundJoin)
                     peintre.setPen(stylo)
@@ -658,40 +667,105 @@ class ColonneEquivalent(Colonne):
         return element
 
 
+class LienCourt(QPushButton):
+    """Lien sur une ligne : un libellé trop long est abrégé par « … » (le texte complet reste dans l'infobulle)."""
+
+    def __init__(self, texte: str, classe: str, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        self.texte_complet = texte
+        self.setProperty("classe", classe)
+        self.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
+        self._abreger()
+
+    def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
+        self.ensurePolished()
+        return QSize(self.fontMetrics().horizontalAdvance(self.texte_complet) + 18, 20)
+
+    def minimumSizeHint(self) -> QSize:  # noqa: N802
+        return QSize(40, 20)
+
+    def resizeEvent(self, evenement) -> None:  # noqa: N802
+        super().resizeEvent(evenement)
+        self._abreger()
+
+    def _abreger(self) -> None:
+        self.ensurePolished()
+        visible = self.fontMetrics().elidedText(self.texte_complet, Qt.TextElideMode.ElideRight,
+                                                max(self.width() - 16, 0))
+        # Dans le libellé d'un bouton, « & » annonce un raccourci clavier : on le double pour l'afficher.
+        self.setText(visible.replace("&", "&&"))
+
+
 class ColonneContexte(Colonne):
-    """④ Des exemples d'emploi du terme dans les deux langues ; le terme y est mis en évidence."""
+    """④ Des phrases qui emploient le terme, dans les deux langues ; le terme y est mis en évidence.
+
+    Les exemples de l'entrée viennent d'abord. S'il en manque, la colonne les complète par des
+    phrases d'autres entrées du glossaire (exemples, définitions) qui emploient le terme : voir
+    ``traducteur.contextes``.
+    """
 
     marge_haute = 18
 
+    def __init__(self, parent: QObject | None = None) -> None:
+        super().__init__(parent)
+        #: Les contextes affichés.
+        self.emplois: list[Emploi] = []
+
+    def afficher(self, glossaire: Glossaire | None, entree: Entree | None, source: str) -> None:
+        self.emplois = emplois(glossaire, entree) if entree is not None else []
+        super().afficher(glossaire, entree, source)
+
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
         corps = self.disposition
-        if not entree.contextes:
+        if not self.emplois:
             self._vide("texte", "Aucun exemple pour ce terme",
                        "Ajoutez-en dans les colonnes contexte_fr et contexte_ar du fichier CSV, "
                        "puis rechargez le glossaire (F5).")
             return
-        for rang, contexte in enumerate(entree.contextes):
+        for rang, emploi in enumerate(self.emplois):
             if rang:
                 corps.addSpacing(14)
                 corps.addWidget(separateur())
                 corps.addSpacing(16)
-            if contexte.source:
-                reference = etiquette(contexte.source, "sourceExemple")
+            provenance = emploi.provenance(source)
+            if provenance and emploi.origine == PROPRE:
+                reference = etiquette(provenance, "sourceExemple")
                 reference.setFixedHeight(20)
                 reference.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
-                corps.addWidget(reference, 0, Qt.AlignmentFlag.AlignRight if deviner_langue(contexte.source) == AR
+                corps.addWidget(reference, 0, Qt.AlignmentFlag.AlignRight if deviner_langue(provenance) == AR
                                 else Qt.AlignmentFlag.AlignLeft)
                 corps.addSpacing(5)
+            elif provenance:
+                # La phrase vient d'une autre entrée : le lien ouvre cette entrée.
+                lien = LienCourt(provenance, "sourceLien")
+                lien.setFixedHeight(20)
+                lien.setToolTip(infobulle(f"Phrase trouvée dans l’entrée « {emploi.entree.terme(source)} » : "
+                                          "cliquez pour ouvrir cette entrée."))
+                lien.clicked.connect(lambda _=False, cible=emploi.entree: self.entree_demandee.emit(cible))
+                corps.addWidget(lien, 0, Qt.AlignmentFlag.AlignLeft)
+                corps.addSpacing(5)
             for langue in (source, cible):
-                phrase = contexte.texte(langue)
+                phrase = emploi.texte(langue)
                 if phrase:
                     corps.addWidget(etiquette(phrase_surlignee(phrase, entree, langue), "definition", langue,
                                               retour_ligne=True, selectionnable=True, riche=True))
                     corps.addSpacing(2)
         corps.addStretch(1)
+        propres = sum(1 for emploi in self.emplois if emploi.origine == PROPRE)
+        trouves = len(self.emplois) - propres
+        if not trouves:
+            bilan = (f"{compte(propres, 'exemple')} dans le glossaire",)
+        elif not propres:
+            bilan = (f"{compte(trouves, 'contexte trouvé', 'contextes trouvés')} dans le glossaire",
+                     compte(trouves, "contexte trouvé", "contextes trouvés"))
+        else:
+            bilan = (f"{compte(propres, 'exemple')} · {compte(trouves, 'autre emploi', 'autres emplois')} "
+                     "dans le glossaire", f"{compte(propres, 'exemple')} · {compte(trouves, 'autre', 'autres')}")
         self.ligne_du_pied.addWidget(icone_fixe("texte", theme.TEXTE_3))
-        self.ligne_du_pied.addWidget(
-            EtiquetteCourte(f"{compte(len(entree.contextes), 'exemple')} dans le glossaire", "pied"), 1)
+        mention = EtiquetteCourte("", "pied")
+        mention.definir_texte(*bilan)
+        self.ligne_du_pied.addWidget(mention, 1)
 
 
 class ColonneRessources(Colonne):
@@ -794,7 +868,16 @@ class Fiche(Panneau):
         self.onglets.afficher(sens, entree, source)
         self.defilement.revenir_en_haut()
         self._centrer_dans_la_vue()
+        self.entete.allumer(self.etapes_renseignees())
         self.update()
+
+    def etapes_renseignees(self) -> list[bool]:
+        """Pour chacune des cinq étapes : vrai si le glossaire la renseigne pour l'entrée affichée."""
+        entree = self.entree
+        if entree is None:
+            return [False] * len(ETAPES)
+        return [True, bool(entree.definition_fr or entree.definition_ar), True,
+                bool(self.colonne_contexte.emplois), bool(entree.ressources)]
 
     # ------------------------------------------------------------------ hauteurs
     def eventFilter(self, objet, evenement) -> bool:  # noqa: N802 (nom imposé par Qt)

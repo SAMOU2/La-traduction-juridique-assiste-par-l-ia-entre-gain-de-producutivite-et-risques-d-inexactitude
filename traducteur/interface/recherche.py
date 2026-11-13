@@ -53,7 +53,7 @@ _INVITES = {
     FR: "Saisir un terme juridique, en français ou en arabe…",
     AR: "أدخل مصطلحا قانونيا، بالعربية أو بالفرنسية...",
 }
-_AUCUN_GLOSSAIRE = "Aucun glossaire n’est chargé : ouvrez un fichier CSV (menu Fichier → Ouvrir un glossaire)."
+_AUCUN_GLOSSAIRE = "Aucun glossaire n’est chargé : choisissez un fichier CSV dans « Paramètres »."
 #: Rappel affiché quand un terme n'est pas dans le glossaire : les fiches viennent du fichier CSV, et de lui seul.
 _TERME_A_AJOUTER = "Pour obtenir sa fiche, ajoutez ce terme au fichier CSV, puis rechargez le glossaire (F5)."
 
@@ -70,7 +70,7 @@ RACCOURCIS = (
     ("Ctrl+F", "aller à la barre de recherche"),
     ("Ctrl+I", "inverser le sens de traduction"),
     ("Ctrl+2", "traduire un texte"),
-    ("F5", "recharger le glossaire"),
+    ("F1", "centre d’aide"),
 )
 
 
@@ -222,7 +222,7 @@ class PanneauAccueil(Panneau):
         self._zone_puces = QWidget()
         self._rangee_puces = DispositionFluide(self._zone_puces, 8, 8, centre=True)
         centre.addWidget(self._zone_puces)
-        self.bouton_glossaire = QPushButton("Ouvrir un glossaire…")
+        self.bouton_glossaire = QPushButton("Ouvrir les paramètres")
         self.bouton_glossaire.setProperty("classe", "principal")
         self.bouton_glossaire.setCursor(Qt.CursorShape.PointingHandCursor)
         self.bouton_glossaire.setFixedHeight(38)
@@ -263,12 +263,12 @@ class PanneauAccueil(Panneau):
         self._conseiller(_TERME_A_AJOUTER)
 
     def afficher_sans_glossaire(self) -> None:
-        """Aucun glossaire n'est chargé : il faut d'abord ouvrir un fichier CSV."""
+        """Aucun glossaire n'est chargé : il faut d'abord choisir un fichier CSV, dans « Paramètres »."""
         self._composer(True, "Aucun glossaire n’est chargé",
                        ("Les fiches viennent d’un fichier CSV : une ligne par terme, en français et en arabe.",
-                        "Ouvrez un glossaire pour chercher un terme."), "", (), FR)
+                        "Choisissez un glossaire dans « Paramètres » pour chercher un terme."), "", (), FR)
         self.bouton_glossaire.show()
-        self._conseiller("Le format du fichier est décrit dans le menu Aide → Format du glossaire CSV.")
+        self._conseiller("Le format du fichier est décrit dans le centre d’aide.")
 
     def _conseiller(self, texte: str) -> None:
         self.conseil.definir_texte(texte)
