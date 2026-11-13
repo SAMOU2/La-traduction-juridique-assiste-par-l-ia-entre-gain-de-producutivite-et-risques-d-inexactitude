@@ -268,3 +268,12 @@ def test_la_fabrication_refuse_de_demarrer_ailleurs_que_sous_windows(monkeypatch
     assert construire.main() == 1
     assert "sous Windows" in capsys.readouterr().out
     assert not (Path(construire.TRAVAIL) / "resume.md").exists()
+
+
+def test_la_fabrication_refuse_un_dossier_au_chemin_trop_long(monkeypatch, capsys):
+    """Windows limite un chemin à 260 caractères : le dossier de l'application doit y tenir."""
+    monkeypatch.setattr(sys, "platform", "win32")
+    monkeypatch.setattr(sys, "argv", ["construire.py"])
+    monkeypatch.setattr(construire, "TRAVAIL", Path("C:/", "x" * construire.CHEMIN_MAXIMAL, "build", "installeur"))
+    assert construire.main() == 1
+    assert "trop long pour Windows" in capsys.readouterr().out

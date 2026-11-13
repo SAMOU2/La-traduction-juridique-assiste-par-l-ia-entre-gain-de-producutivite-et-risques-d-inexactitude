@@ -60,6 +60,9 @@ ANCIENNE_VERSION = "0.0.1"
 ADRESSE_DE_WIX = "https://github.com/wixtoolset/wix3/releases/download/wix3141rtm/wix314-binaries.zip"
 #: Durée maximale du contrôle du programme, en secondes (le contrôle lui-même s'arrête après 60 secondes).
 DELAI_DU_CONTROLE = 180
+#: Longueur maximale du chemin du dossier de travail. Windows limite un chemin à 260 caractères, et le
+#: dossier de l'application en ajoute une centaine (…\dist\TraducteurJuridique\_internal\PySide6\plugins\…).
+CHEMIN_MAXIMAL = 140
 #: Bibliothèques de Microsoft qui ne font pas partie de Windows : le dossier de l'application doit les contenir.
 A_FOURNIR = ("vcruntime", "msvcp", "concrt", "vcomp", "vccorlib", "vcamp", "msvcr", "mfc", "atl1", "ucrtbased")
 
@@ -495,6 +498,10 @@ def essayer_l_installation(wix: pathlib.Path, installeur: pathlib.Path, resume: 
 def construire(essai: bool) -> pathlib.Path:
     if sys.platform != "win32":
         raise Echec("0-depart", "L'installeur se fabrique sous Windows : ce script ne fonctionne pas sur ce système.")
+    if len(str(TRAVAIL)) > CHEMIN_MAXIMAL:
+        raise Echec("0-depart", f"Le chemin du projet est trop long pour Windows ({len(str(RACINE))} caractères) : "
+                                "copiez le dossier du projet à un endroit au chemin court, par exemple C:\\tj, "
+                                "puis relancez ce script depuis cette copie.", str(RACINE))
     shutil.rmtree(TRAVAIL, ignore_errors=True)
     TRAVAIL.mkdir(parents=True)
     resume = Resume()
