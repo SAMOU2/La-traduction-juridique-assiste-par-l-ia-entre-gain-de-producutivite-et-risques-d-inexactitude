@@ -60,9 +60,10 @@ def notes(fichier: str, version: str, essai: bool, branche: str, commit: str, ve
         "",
         "- L’installeur est fait pour Windows 10 et Windows 11 (64 bits).",
         "- Il n’y a rien d’autre à installer : Python est dans l’installeur.",
-        "- Si Windows affiche « Windows a protégé votre ordinateur », cliquez sur « Informations "
-        "complémentaires », puis sur « Exécuter quand même ». Ce message apparaît parce que l’installeur "
-        "n’est pas signé.",
+        "- L’installeur n’est pas signé : le navigateur, puis Windows, peuvent afficher un avertissement. "
+        "Si le navigateur demande une confirmation avant de garder le fichier, choisissez « Conserver ». "
+        "Si Windows affiche « Windows a protégé votre ordinateur », cliquez sur « Informations "
+        "complémentaires », puis sur « Exécuter quand même ».",
         f"- Pour désinstaller : Paramètres de Windows → Applications → {NOM_APPLICATION} → Désinstaller.",
         "",
         "## Vérifications faites pendant la fabrication",

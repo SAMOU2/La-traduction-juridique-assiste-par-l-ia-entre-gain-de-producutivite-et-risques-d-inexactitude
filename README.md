@@ -130,13 +130,14 @@ du menu Démarrer.
 - Il ne demande pas les droits d'administrateur. L'application s'installe dans le dossier de
   l'utilisateur (`AppData\Local\Programs\Traducteur juridique`), pour le seul compte Windows
   qui lance l'installeur.
-- **Windows peut afficher « Windows a protégé votre ordinateur »**, parce que l'installeur
-  n'est pas signé. Cliquer sur « Informations complémentaires », puis sur « Exécuter quand
-  même ».
+- **L'installeur n'est pas signé : le navigateur, puis Windows, peuvent afficher un
+  avertissement.** Si le navigateur demande une confirmation avant de garder le fichier,
+  choisir « Conserver ». Si Windows affiche « Windows a protégé votre ordinateur », cliquer sur
+  « Informations complémentaires », puis sur « Exécuter quand même ».
 - Pour installer une nouvelle version, télécharger le nouvel installeur et le lancer : il
   remplace la version installée. Les réglages de l'application sont conservés.
-- Pour désinstaller : Paramètres de Windows → Applications → Applications installées →
-  Traducteur juridique → Désinstaller.
+- Pour désinstaller : Paramètres de Windows → Applications → Applications installées (sous
+  Windows 10 : « Applications et fonctionnalités ») → Traducteur juridique → Désinstaller.
 
 L'installeur a été essayé automatiquement, sans personne devant l'écran : voir
 [Fabrication de l'installeur Windows](#fabrication-de-linstalleur-windows) et les
@@ -724,8 +725,8 @@ toute seule quand l'application ou l'installeur change :
   chaque fabrication. Elle sert à essayer un travail avant de le fusionner dans `main` ; elle
   est retirée quand ce travail est fusionné.
 
-Elle se lance aussi à la main : onglet « Actions » du dépôt, « Installeur Windows », bouton
-« Run workflow ».
+Elle se lance aussi à la main, une fois ce fichier présent sur la branche `main` : onglet
+« Actions » du dépôt, « Installeur Windows », bouton « Run workflow ».
 
 Le script `outils/installeur/construire.py` fait tout le travail, en sept étapes :
 
@@ -795,9 +796,10 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
     les écrans de l'installeur (« Bienvenue », « Prêt à installer », « Terminé ») : ces écrans,
     et la case « Ouvrir Traducteur juridique maintenant » du dernier, n'ont jamais été
     affichés.
-  - Il n'est pas signé. Windows peut afficher « Windows a protégé votre ordinateur » : il faut
-    cliquer sur « Informations complémentaires », puis sur « Exécuter quand même ». Ce message
-    n'a pas été observé : il ne s'affiche que pour un fichier téléchargé, lancé à la main.
+  - Il n'est pas signé. Le navigateur peut demander une confirmation avant de garder le
+    fichier, et Windows peut afficher « Windows a protégé votre ordinateur » : voir
+    [Installation](#installation). Ces avertissements n'ont pas été observés : ils ne
+    s'affichent que pour un fichier téléchargé, puis lancé à la main.
   - Pendant la fabrication, Microsoft Defender analyse l'installeur et ne signale rien. Un
     autre antivirus, ou une mise à jour de Defender, peut réagir autrement.
   - Il installe l'application pour le seul compte Windows qui le lance, et seulement sous

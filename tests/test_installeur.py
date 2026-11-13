@@ -269,7 +269,8 @@ def test_la_page_de_telechargement_explique_l_installation():
                           "- Installeur : 30 Mo\n", "https://exemple.org/fabrication/1")
     assert "Téléchargez le fichier **Traducteur-juridique-1.2.3.msi**" in texte
     assert "**Suivant**, puis sur **Installer**, puis sur **Terminer**" in texte
-    assert "Exécuter quand même" in texte and "Python est dans l’installeur" in texte
+    assert "Exécuter quand même" in texte and "« Conserver »" in texte
+    assert "Python est dans l’installeur" in texte
     assert "- Installeur : 30 Mo" in texte and "commit `0123456`" in texte
     assert "[Journal de la fabrication](https://exemple.org/fabrication/1)" in texte
     assert "essai" not in texte
@@ -377,12 +378,13 @@ def test_une_erreur_de_fabrication_s_affiche_sur_la_page_de_github(monkeypatch, 
     assert capsys.readouterr().out == ""
 
 
-def test_la_fabrication_refuse_de_demarrer_ailleurs_que_sous_windows(monkeypatch, capsys):
+def test_la_fabrication_refuse_de_demarrer_ailleurs_que_sous_windows(monkeypatch, capsys, tmp_path):
     monkeypatch.setattr(sys, "platform", "linux")
     monkeypatch.setattr(sys, "argv", ["construire.py"])
+    monkeypatch.setattr(construire, "TRAVAIL", tmp_path / "installeur")
     assert construire.main() == 1
     assert "sous Windows" in capsys.readouterr().out
-    assert not (Path(construire.TRAVAIL) / "resume.md").exists()
+    assert not (tmp_path / "installeur").exists()  # rien n'a été fabriqué
 
 
 def test_la_fabrication_refuse_un_dossier_au_chemin_trop_long(monkeypatch, capsys):

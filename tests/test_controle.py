@@ -141,9 +141,10 @@ def test_l_ecran_de_demarrage_est_photographie_sur_l_ecran_de_l_ordinateur(appli
 def test_sans_ecran_il_n_y_a_pas_d_image_de_l_ecran_de_demarrage(application, tmp_path, monkeypatch):
     from traducteur.interface.demarrage import EcranDemarrage
 
+    if application.platformName() not in controle.AFFICHAGES_SANS_ECRAN:
+        pytest.skip("ces tests sont lancés avec un écran")
     monkeypatch.setattr(EcranDemarrage, "DUREE_MINIMALE", 600)
     monkeypatch.setattr(controle, "MOMENT_DE_L_IMAGE_DU_DEMARRAGE", 100)
-    assert application.platformName() in controle.AFFICHAGES_SANS_ECRAN
     suivi = controle.Controle(application, tmp_path)
     suivi.demarrer()
     _attendre_la_fin(suivi)
