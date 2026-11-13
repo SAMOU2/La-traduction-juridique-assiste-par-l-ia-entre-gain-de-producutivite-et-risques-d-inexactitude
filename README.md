@@ -737,8 +737,7 @@ version 0.4 s'en écarte sur les points suivants :
 
 L'application actuelle est celle des captures du début de cette page.
 
-Les fichiers sont dans `maquette/proposition/`. Le fichier `index.html` du même dossier les
-affiche tous sur une page : il suffit de l'ouvrir dans un navigateur.
+Les fichiers sont dans `maquette/proposition/`.
 
 ### Écran « Terme »
 
@@ -829,7 +828,7 @@ partie de l'application.
 ## Maquette de l'application de bureau
 
 Maquette SVG des deux écrans du prototype (version 0.1). Les deux écrans sont programmés (voir
-[L'application](#lapplication-version-04)). L'application actuelle ne ressemble plus à cette
+[L'application](#lapplication-version-05)). L'application actuelle ne ressemble plus à cette
 maquette : elle est gardée pour mémoire.
 
 ### Écran 1 — Recherche d'un terme
