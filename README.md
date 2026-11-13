@@ -9,10 +9,25 @@ Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont p
 [proposition d'interface](#la-proposition-dinterface) et la
 [première maquette](#maquette-de-lapplication-de-bureau).
 
-## L'application (version 0.4)
+## L'application (version 0.5)
 
-La version 0.4 change la présentation de l'application. Elle comprend la version 0.3, qui n'a
-pas été publiée à part.
+La version 0.5 remplit le champ ④ **Contextualisation** pour tout le glossaire fourni :
+
+- **chacune des 1 000 entrées a sa phrase d'exemple**, en français et en arabe. Dans la
+  version 0.4, 31 entrées seulement en avaient une ;
+- 969 de ces phrases ont été **rédigées par un assistant d'intelligence artificielle**. Ce ne
+  sont pas des citations de textes officiels, et aucun juriste ne les a relues. L'application
+  les signale par la mention **À vérifier**. Les 31 autres entrées citent le Code civil, avec
+  le numéro de l'article ;
+- quand le champ ④ est complété par une phrase d'une autre entrée, une phrase qui cite sa
+  source passe avant une phrase à vérifier.
+
+![Fiche du terme « testament » : sa phrase d'exemple et celle d'une autre entrée, à vérifier](docs/apercu-contexte.png)
+
+Le détail est dans [Le glossaire d'exemple](#le-glossaire-dexemple).
+
+La présentation reste celle de la version 0.4. Cette version comprenait la version 0.3, qui
+n'a pas été publiée à part. Elle avait apporté ceci :
 
 - la **fiche d'un terme** suit la [proposition d'interface](#la-proposition-dinterface) : les
   cinq champs côte à côte dans une seule fiche, l'équivalent au centre, les autres résultats
@@ -27,8 +42,8 @@ pas été publiée à part.
   fenêtre. Seul un fichier choisi par l'utilisateur est nommé, dans « Paramètres » ;
 - sur l'écran « Texte », le texte et sa traduction sont **à gauche**, les informations sur les
   termes **à droite**, avec toutes les références écrites en entier ;
-- le champ ④ **Contextualisation** cherche des phrases dans tout le glossaire, et plus
-  seulement dans la ligne du terme ;
+- le champ ④ cherche des phrases dans tout le glossaire, et plus seulement dans la ligne du
+  terme ;
 - le menu « Aide » est remplacé par le **Centre d'aide**, qui prépare un message pour le
   service informatique.
 
@@ -56,7 +71,9 @@ version 0.2.
 ![Centre d'aide](docs/apercu-aide.png)
 
 *Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
-l'autre. L'adresse affichée dans le centre d'aide est un exemple.*
+l'autre. L'adresse affichée dans le centre d'aide est un exemple. Les captures des écrans
+« Terme », « Texte », « Paramètres » et de l'écran de démarrage datent de la version 0.4 : ces
+écrans s'affichent de la même façon dans la version 0.5.*
 
 ### Ce qui est fait, ce qui reste à faire
 
@@ -68,7 +85,8 @@ l'autre. L'adresse affichée dans le centre d'aide est un exemple.*
 | Import de fichiers `.txt`, `.docx`, `.doc` | Fait |
 | Export de la traduction en `.docx` ou `.txt` | Fait. L'export au format `.doc` n'est pas proposé ; Word ouvre les fichiers `.docx`. |
 | Écran de démarrage, barre latérale, étapes qui s'allument, écrans « Paramètres », « Description de la plateforme » et « Centre d'aide » | Fait (version 0.4). Rien de cela n'a été essayé sous Windows : voir les [limites connues](#limites-connues). |
-| Contextes cherchés dans tout le glossaire | Fait. Avec le glossaire fourni, 360 entrées sur 1 000 ont au moins une phrase d'exemple ; les 640 autres n'en ont pas : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
+| Contextes cherchés dans tout le glossaire | Fait. |
+| Une phrase d'exemple pour chaque entrée du glossaire fourni | Fait (version 0.5) : 1 000 entrées sur 1 000. 969 phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
 | Fichier `.exe` pour Windows | À faire |
 
@@ -159,17 +177,30 @@ Les mêmes écrans sont dans le menu *Affichage*.
 (colonnes `contexte_fr` et `contexte_ar`). S'il y en a moins de deux, l'application cherche dans
 tout le glossaire d'autres phrases qui emploient le terme : les exemples et les définitions des
 autres entrées. Une phrase n'est retenue que si elle contient le terme en français **et** son
-équivalent en arabe. Une étiquette dit d'où vient la phrase, par exemple *Définition de
-« acheteur »* ; un clic sur cette étiquette ouvre l'entrée en question.
+équivalent en arabe. Parmi les exemples des autres entrées, ceux qui ne sont pas « à vérifier »
+passent d'abord. Une étiquette dit d'où vient la phrase, par exemple *Exemple de « testateur »*
+ou *Définition de « acheteur »* ; un clic sur cette étiquette ouvre l'entrée en question.
+
+Au-dessus de chaque phrase, le champ ④ écrit sa source (« Code civil, art. 106 »), ou la
+mention **À vérifier** quand le glossaire ne la reprend d'aucun texte.
 
 **Les cinq champs sont remplis avec le contenu du glossaire, et rien d'autre.** Un terme qui
 n'est pas dans le glossaire n'a pas de fiche. Quand le glossaire n'a ni définition, ni phrase, ni
 ressource pour un terme, le champ correspondant le dit et son étape reste grise. Pour compléter
 le glossaire : voir [Corriger le glossaire](#corriger-le-glossaire).
 
-Dans le champ ②, la mention **À vérifier** signale une définition sans source : la colonne
-`source_definition` est vide, ou commence par « à vérifier ». C'est le cas de 993 des
-1 000 définitions du glossaire fourni.
+**La mention « À vérifier ».** Elle est écrite en orange, à côté d'un point d'exclamation.
+
+- Dans le champ ②, elle signale une définition sans source : la colonne `source_definition`
+  est vide, ou commence par « à vérifier ». C'est le cas de 993 des 1 000 définitions du
+  glossaire fourni.
+- Dans le champ ④, elle signale une phrase d'exemple dont la colonne `source_contexte`
+  commence par « à vérifier » : c'est le cas de 969 des 1 002 phrases d'exemple du glossaire
+  fourni. Elle signale aussi une définition sans source, quand cette définition sert de
+  contexte à un autre terme. Une phrase d'exemple dont la colonne `source_contexte` est vide
+  s'affiche sans source et sans mention.
+- Après le contrôle d'une définition ou d'une phrase, écrire sa source dans le glossaire
+  (« Code de la famille, art. 4 ») : la source s'affiche à la place de la mention.
 
 La recherche ne tient pas compte des majuscules, des accents, d'un article placé devant le terme
 (« le contrat », « العقد »), des signes diacritiques arabes ni des variantes d'écriture de la
@@ -197,7 +228,7 @@ les informations sur les termes juridiques du texte.
    - « Texte modifié » quand le texte source a changé depuis la dernière traduction.
 6. Entre les deux zones, les cinq étapes du traitement s'allument en doré et donnent chacune
    leur résultat (« 83 / 84 » pour la recherche). Laisser le pointeur sur une étape affiche le
-   détail : règles appliquées, mots non trouvés.
+   détail : règles appliquées, mots non trouvés, phrases reprises d'un exemple du glossaire.
 7. À droite, le panneau « Termes juridiques détectés » contient **une carte par terme** du
    glossaire relevé dans le texte. La première carte est ouverte.
    - Un clic sur l'en-tête d'une carte l'ouvre ou la referme. **Tout développer** ouvre toutes
@@ -206,7 +237,8 @@ les informations sur les termes juridiques du texte.
    - Une carte ouverte suit l'enchaînement : ① le terme, sa catégorie et son nombre
      d'occurrences ; ② sa définition dans les deux langues, avec sa source ou la mention
      « À vérifier » ; ③ son équivalent ; ④ la phrase du texte où il figure et sa traduction,
-     puis jusqu'à deux phrases du glossaire ; ⑤ **toutes** ses références, écrites en entier.
+     puis jusqu'à deux phrases du glossaire, avec leur source ou la mention « À vérifier » ;
+     ⑤ **toutes** ses références, écrites en entier.
    - Quand le contexte n'a pas permis de choisir entre deux sens d'un terme, sa carte le
      signale en orange.
    - Le lien *Ouvrir la fiche du terme* affiche le terme sur l'écran « Terme ».
@@ -266,7 +298,9 @@ ligne, ni modèle d'intelligence artificielle. Elle suit cinq étapes :
 Ce que cela donne :
 
 - Une phrase identique à un exemple du glossaire (colonnes `contexte_fr` et `contexte_ar`) reçoit
-  la traduction de cet exemple.
+  la traduction de cet exemple. Quand cet exemple porte la mention « à vérifier », la
+  traduction n'est pas plus sûre que lui : l'étape 5 et l'étiquette de résultat l'indiquent
+  quand on y laisse le pointeur (« dont 1 d'un exemple à vérifier »).
 - Les autres phrases sont traduites mot à mot. Les termes du glossaire sont traduits ; les
   autres mots (verbes, mots grammaticaux, mots absents du CSV) restent dans la langue source, en
   gris italique. Exemple avec le glossaire fourni : « La nullité du contrat de vente protège
@@ -337,7 +371,7 @@ colonnes du tableau sont obligatoires.
 | `synonymes_fr`, `synonymes_ar` | Ceux de la langue source : ① Terme, rubrique « Synonymes ». Ceux de la langue cible : ③ Équivalent, rubrique « Autres équivalents ». Ils servent aussi à la recherche. | Un synonyme trouvé dans le texte est traduit comme le terme |
 | `termes_associes` | ① Terme, rubrique « Termes associés » | Choix entre deux entrées de même forme |
 | `definition_fr`, `definition_ar`, `source_definition` | ② Définition. Si `source_definition` est vide ou commence par « à vérifier », la définition porte la mention « À vérifier ». | ② dans la carte du terme, avec le même avertissement |
-| `contexte_fr`, `contexte_ar`, `source_contexte` | ④ Contextualisation. Ces phrases servent aussi de contexte aux autres termes qu'elles emploient. | Une phrase du texte identique à un exemple reçoit la traduction de cet exemple. Dans la carte du terme : ④, après la phrase du texte. |
+| `contexte_fr`, `contexte_ar`, `source_contexte` | ④ Contextualisation. Ces phrases servent aussi de contexte aux autres termes qu'elles emploient. Si `source_contexte` commence par « à vérifier », la phrase porte la mention « À vérifier ». | Une phrase du texte identique à un exemple reçoit la traduction de cet exemple. Dans la carte du terme : ④, après la phrase du texte, avec la même mention. |
 | `ressources` | ⑤ Ressources | ⑤ dans la carte du terme : toutes les références, en entier |
 
 - Dans une cellule, plusieurs valeurs se séparent par une barre verticale : `convention | accord`.
@@ -384,14 +418,15 @@ Nombre d'entrées par domaine (premier domaine indiqué dans la colonne `domaine
 
 #### Les 40 premières entrées
 
-Ce sont les entrées de droit civil des versions précédentes. Elles n'ont pas été modifiées.
+Ce sont les entrées de droit civil des premières versions. La version 0.5 a ajouté une phrase
+d'exemple à neuf d'entre elles ; le reste n'a pas été modifié.
 
 - **Extraits du Code civil algérien** (ordonnance n° 75-58 du 26 septembre 1975), en français
   et en arabe :
   - les définitions de « contrat » (art. 54), « vente » et « contrat de vente » (art. 351),
     « bail » et « contrat de bail » (art. 467) et « propriété » (art. 674) ;
-  - tous les exemples : articles 1er, 40, 55, 59, 102, 106, 107, 124, 188, 351 et 467, et
-    l'intitulé de l'ordonnance.
+  - les exemples de 31 entrées : articles 1er, 40, 55, 59, 102, 106, 107, 124, 188, 351 et
+    467, et l'intitulé de l'ordonnance.
 
   Ces textes ont été relevés sur des sites web juridiques et n'ont pas été comparés au Journal
   officiel : ils sont à vérifier avant d'être cités. Les articles longs sont découpés en
@@ -406,8 +441,11 @@ Ce sont les entrées de droit civil des versions précédentes. Elles n'ont pas 
 - **Autre contenu d'illustration.** Les couples de termes, les catégories grammaticales, les
   pluriels, les domaines, les synonymes, les termes associés et les ressources ont été rédigés
   pour la démonstration.
-- Neuf de ces entrées n'ont pas d'exemple à elles. Leur champ ④ affiche une phrase d'une autre
-  entrée qui emploie le terme.
+- Neuf de ces entrées n'avaient pas d'exemple à elles : « contrat de vente », « contrat de
+  bail », « contrat de travail », « conclusion du contrat », « droit », « mauvaise foi »,
+  « responsabilité », « article » et « Journal officiel ». Elles ont reçu une phrase rédigée
+  par l'assistant, comme les 960 entrées suivantes. Ces neuf phrases sont écrites directement
+  dans le fichier CSV.
 
 #### Les 960 entrées suivantes
 
@@ -423,9 +461,8 @@ contenu est à vérifier.
   « à vérifier (définition d'exemple) ». Quelques-unes suivent de près la formulation d'un
   code, écrite de mémoire (« droit de propriété », « mariage », « garde », « commerçant »…) :
   elles n'ont pas été comparées au texte officiel et ne doivent pas être citées comme telles.
-- **Pas d'exemple.** Aucune de ces entrées n'a d'exemple à elle. Pour 320 d'entre elles, le
-  champ ④ affiche une phrase d'une autre entrée qui emploie le terme. Pour les 640 autres, il
-  indique « Aucun exemple pour ce terme ».
+- **Phrases d'exemple (version 0.5).** Chaque entrée a une phrase, en français et en arabe.
+  Voir [Les phrases d'exemple](#les-phrases-dexemple).
 - **Ressources.** Chaque entrée renvoie au texte principal de son domaine (code, loi,
   ordonnance ou convention internationale), sans numéro d'article, et le plus souvent au
   Journal officiel ([www.joradp.dz](https://www.joradp.dz)). Les références de six codes
@@ -438,13 +475,44 @@ contenu est à vérifier.
 - **Catégories, pluriels, synonymes, termes associés.** Rédigés de la même façon. Les termes
   associés d'une entrée sont ses voisins dans le glossaire.
 
+#### Les phrases d'exemple
+
+Le glossaire contient 1 002 phrases d'exemple : une par entrée, deux pour « contrat » et
+« équité ».
+
+- **33 phrases citent le Code civil**, dans 31 des 40 premières entrées. Leur source est le
+  numéro de l'article, ou l'intitulé du code. Elles sont décrites plus haut.
+- **969 phrases ont été rédigées par un assistant d'intelligence artificielle**, de mémoire,
+  pour montrer l'emploi du terme. Leur source dans le glossaire est « à vérifier (phrase
+  d'exemple) », et l'application affiche la mention **À vérifier**.
+  - Chaque phrase est courte (122 caractères au plus en français), au présent, et emploie le
+    terme en français et son équivalent en arabe. La phrase arabe traduit la phrase française
+    avec les équivalents du glossaire.
+  - Beaucoup de phrases énoncent une règle du droit algérien, parfois avec un chiffre : un
+    délai, un âge, un montant, une durée (« La garde à vue ne peut dépasser quarante-huit
+    heures. »). **Ces règles et ces chiffres ont été écrits de mémoire. Ils n'ont été comparés
+    à aucun texte officiel**, et un texte a pu être modifié depuis. Une phrase peut aussi
+    simplifier une règle qui a des exceptions.
+  - Ce qui a été contrôlé par programme (script `construire.py`, tests) : le terme figure dans la phrase
+    française et son équivalent dans la phrase arabe ; aucune phrase ne sert deux fois ; quand
+    la phrase française emploie un autre terme du glossaire, la phrase arabe emploie son
+    équivalent ou un de ses synonymes.
+  - Ce qui n'a pas été fait : **aucun juriste et aucun traducteur n'a relu ces phrases.**
+    L'assistant les a relues lui-même une fois. Cette relecture ne remplace pas celle d'un
+    spécialiste.
+- **Ce qu'affiche le champ ④.** 549 entrées affichent une phrase et 451 en affichent deux.
+  Pour 449 entrées, la seconde phrase vient d'une autre entrée qui emploie le terme : 354 fois
+  son exemple (16 citent le Code civil, 338 sont à vérifier) et 95 fois sa définition (toutes
+  à vérifier).
+- **Traduction d'un texte.** Une phrase du texte identique à un exemple reçoit la traduction de
+  cet exemple. Les 969 phrases rédigées servent donc aussi de traductions toutes faites :
+  l'application le signale (étape 5 et étiquette de résultat, au survol).
+- Dans quatre citations du Code civil, le terme de l'entrée n'est pas mis en évidence dans une
+  des deux langues, parce que l'article emploie un autre mot ou une autre forme : « exécution
+  du contrat », « réparation » et « capacité » en français, « consentement » en arabe.
+
 #### Dans tout le glossaire
 
-- **Contextes.** 31 entrées ont leurs propres exemples. 329 autres reçoivent une ou deux
-  phrases d'une autre entrée : en tout, 360 entrées sur 1 000 affichent au moins une phrase
-  dans le champ ④, et 640 n'en affichent aucune. Les phrases prises ailleurs sont presque
-  toutes des définitions d'autres termes (554 définitions, 20 exemples) : elles sont à
-  vérifier comme le reste. Elles n'ont pas été relues une par une.
 - Le *Vocabulaire juridique* de G. Cornu est cité comme ouvrage à consulter (65 entrées) :
   aucune définition n'en est tirée.
 - Quatre termes français et dix termes arabes désignent chacun deux entrées, par exemple
@@ -459,24 +527,38 @@ Le plus simple est de modifier `donnees/glossaire_juridique.csv` dans un tableur
 de texte, puis de le recharger dans l'application : « Paramètres », bouton **Recharger** (ou
 F5).
 
-Pour qu'un terme ait une phrase dans le champ ④, remplir les colonnes `contexte_fr` et
-`contexte_ar` de sa ligne. La phrase française doit contenir le terme, et la phrase arabe son
-équivalent.
+Pour corriger la phrase d'un terme, modifier les colonnes `contexte_fr` et `contexte_ar` de sa
+ligne. La phrase française doit contenir le terme, et la phrase arabe son équivalent. Une fois
+la phrase vérifiée, remplacer « à vérifier (phrase d'exemple) » par sa source dans la colonne
+`source_contexte` (par exemple « Code de la famille, art. 4 ») : la mention « À vérifier »
+disparaît de l'application.
 
-Le dossier `outils/glossaire/` garde ce qui a servi à écrire les entrées n° 41 à 1 000 : des
-fichiers texte (`lots/`, une entrée par ligne) et le script `construire.py`, qui les vérifie
-et les assemble.
+Le dossier `outils/glossaire/` garde ce qui a servi à écrire les entrées n° 41 à 1 000 :
+
+- `lots/` : les entrées, une par ligne (19 fichiers texte, un par domaine) ;
+- `exemples/` : les phrases d'exemple, une par ligne, dans un fichier du même nom que le lot :
+  `terme français | phrase française | phrase arabe` ;
+- `construire.py` : le script qui vérifie ces fichiers et les assemble.
 
 ```
-python outils/glossaire/construire.py            vérifie les lots, sans rien écrire
-python outils/glossaire/construire.py --ecrire   récrit le fichier CSV
+python outils/glossaire/construire.py               vérifie les lots et les exemples, sans rien écrire ;
+                                                    dit si le fichier CSV leur correspond
+python outils/glossaire/construire.py --ecrire      récrit le fichier CSV
+python outils/glossaire/construire.py --manquants   liste les entrées qui n'ont pas de phrase d'exemple
+python outils/glossaire/construire.py --coherence   liste les phrases à relire (voir ci-dessous)
 ```
+
+Le script refuse une phrase d'exemple qui ne contient pas le terme dans les deux langues, qui
+sert déjà à une autre entrée, qui dépasse 170 caractères ou qui ne finit pas par un point.
+L'option `--coherence` liste les phrases où un autre terme du glossaire figure en français
+sans que son équivalent figure en arabe : ce n'est pas toujours une erreur, chaque phrase
+listée est à relire.
 
 **Attention :** ce script garde les 40 premières entrées du CSV et récrit toutes les
-suivantes à partir des lots. Une correction faite à la main dans le CSV après la 40e entrée
-est donc perdue si on le relance. Il faut choisir : corriger le CSV et ne plus utiliser le
-script, ou corriger les lots et relancer le script. Le format des lots est décrit au début de
-`construire.py`.
+suivantes à partir des lots et des exemples. Une correction faite à la main dans le CSV après
+la 40e entrée est donc perdue si on le relance. Il faut choisir : corriger le CSV et ne plus
+utiliser le script, ou corriger les lots et les exemples et relancer le script. Le format des
+fichiers est décrit au début de `construire.py`.
 
 ### Organisation du code
 
@@ -510,7 +592,7 @@ traducteur/
     theme.py                 couleurs et feuille de style
     icones.py                icônes
 outils/
-  glossaire/                 construction du glossaire d'exemple : script et lots de termes
+  glossaire/                 construction du glossaire d'exemple : script, lots de termes, phrases d'exemple
   maquette/                  script qui dessine la proposition d'interface
 tests/                       tests automatiques
   donnees/                   petit glossaire de 40 entrées réservé aux tests
@@ -530,11 +612,20 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 419 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 439 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « contrat ») à mettre
 à jour quand il est enrichi.
+
+Ces tests demandent que chaque entrée du glossaire fourni ait une phrase d'exemple, et que
+chaque phrase ait une source ou la mention « à vérifier ». Ils ne comptent pas les phrases « à
+vérifier » : écrire la source d'une phrase dans le fichier CSV ne les fait pas échouer. Une
+phrase qui garde la mention doit contenir le terme en français et son équivalent en arabe.
+
+Les tests de `tests/test_outil_glossaire.py` lancent le script
+`outils/glossaire/construire.py` sur des copies des fichiers : il doit accepter les lots et
+les phrases d'exemple fournis, et refuser une phrase d'exemple mal écrite.
 
 Les tests de l'interface vérifient ce que chaque écran affiche et ce que fait chaque commande.
 Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des captures (voir les
@@ -544,9 +635,9 @@ Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des 
 
 - **Systèmes essayés.** Les tests ont été exécutés sous Linux, sans écran, avec Python 3.11
   (PySide6 6.7 et 6.11) et Python 3.15 (PySide6 6.12). Aucun test n'a été exécuté sous Windows ni
-  sous macOS. Les captures de cette page ont été produites sans écran. **La version 0.4 n'a pas
-  été essayée sur un écran réel** : l'écran de démarrage (fenêtre sans bordure, animation), la
-  barre latérale et l'allumage des étapes sont à contrôler sous Windows.
+  sous macOS. Les captures de cette page ont été produites sans écran. **Les versions 0.4 et
+  0.5 n'ont pas été essayées sur un écran réel** : l'écran de démarrage (fenêtre sans bordure,
+  animation), la barre latérale et l'allumage des étapes sont à contrôler sous Windows.
 - **PySide6 6.12 avec Python 3.11.** Avec ces deux versions, l'application se ferme brutalement
   après quelques milliers d'opérations (« Fatal Python error: none_dealloc »). `requirements.txt`
   installe donc une version antérieure de PySide6 avec Python 3.10 et 3.11 (Python 3.10 n'a pas
@@ -598,10 +689,18 @@ Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des 
   n'est vérifié que par un fichier construit pour les tests.
 - **Recherche d'un terme.** Les suggestions affichées pendant la saisie tiennent compte des
   accents ; la recherche lancée avec Entrée, non.
-- **Contextes cherchés dans le glossaire.** Une phrase est retenue quand elle contient le terme
-  en français et son équivalent en arabe. Cela écarte les autres sens d'un mot, mais ne prouve
-  pas que la phrase illustre bien le terme : c'est le plus souvent la définition d'un autre
-  terme. Avec le glossaire fourni, 640 entrées sur 1 000 n'ont aucune phrase.
+- **Phrases d'exemple du glossaire fourni.** 969 phrases sur 1 002 ont été rédigées par un
+  assistant d'intelligence artificielle et n'ont été relues par aucun juriste. Elles peuvent
+  contenir une erreur de droit, un chiffre faux ou périmé, ou une tournure arabe maladroite.
+  L'application les marque « À vérifier » ; elle ne les vérifie pas. Voir
+  [Les phrases d'exemple](#les-phrases-dexemple).
+- **Contextes cherchés dans le glossaire.** Une phrase d'une autre entrée est retenue quand
+  elle contient le terme en français et son équivalent en arabe. Cela écarte les autres sens
+  d'un mot, mais ne prouve pas que la phrase illustre bien le terme : elle a été écrite pour
+  un autre terme, ou c'est la définition d'un autre terme.
+- **Mention « À vérifier » dans une colonne étroite.** Sur la fiche, quand la place manque à
+  côté de l'étiquette *Exemple de « … »*, la mention se réduit à son point d'exclamation
+  orange ; le texte s'affiche quand on y laisse le pointeur.
 - **Message au service informatique.** L'application demande au système d'ouvrir le logiciel
   de messagerie de l'ordinateur ; elle n'envoie rien elle-même. Cela n'a été essayé avec aucun
   logiciel de messagerie. Si le système répond qu'il ne peut pas ouvrir le message, l'adresse

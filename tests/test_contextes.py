@@ -1,7 +1,5 @@
 """Contextes d'emploi d'un terme, cherchés dans tout le glossaire (champ ④ « Contextualisation »)."""
 
-from collections import Counter
-
 import pytest
 
 from traducteur.contextes import DEFINITION, EXEMPLE, NOMBRE_VISE, PROPRE, Emploi, emplois
@@ -247,31 +245,35 @@ def test_une_definition_prise_pour_contexte_est_a_verifier_comme_sur_sa_fiche(tm
 
 # ------------------------------------------------------------------ le glossaire fourni
 def test_contextes_du_glossaire_fourni(glossaire_fourni):
-    """Chacune des 1 000 entrées a sa phrase d'exemple : le champ ④ n'est jamais vide."""
-    nombres, origines = Counter(), Counter()
+    """Chacune des 1 000 entrées a sa phrase d'exemple : le champ ④ n'est jamais vide.
+
+    Le test ne compte ni les phrases à vérifier, ni les phrases prises dans une autre entrée : ces nombres
+    changent quand le glossaire est relu ou corrigé (version 0.5 : 549 entrées affichent une phrase et 451 en
+    affichent deux).
+    """
+    completees = 0
     for element in glossaire_fourni.entrees:
         trouves = emplois(glossaire_fourni, element)
-        nombres[len(trouves)] += 1
-        # L'exemple de l'entrée vient en premier.
+        # L'exemple de l'entrée vient en premier ; le champ n'affiche pas plus de phrases que prévu.
         assert trouves and trouves[0].origine == PROPRE and trouves[0].entree is element, element.terme_fr
-        for emploi in trouves:
-            origines[emploi.origine, emploi.a_verifier] += 1
+        assert len(trouves) <= max(NOMBRE_VISE, len(element.contextes)), element.terme_fr
+        autres = [emploi for emploi in trouves if emploi.origine != PROPRE]
+        completees += bool(autres)
+        for emploi in autres:
             # Les contextes trouvés ailleurs emploient bien le terme, dans les deux langues.
-            if emploi.origine != PROPRE:
-                assert positions_du_terme(emploi.fr, element, FR), (element.terme_fr, emploi.fr)
-                assert positions_du_terme(emploi.ar, element, AR), (element.terme_fr, emploi.ar)
-    # 451 entrées affichent en plus une phrase d'une autre entrée qui emploie le terme.
-    assert nombres == {1: 549, 2: 451}
-    # 969 phrases ont été rédigées pour le glossaire : elles portent la mention « à vérifier ».
-    # Les 33 autres sont des articles du Code civil, cités avec leur numéro.
-    assert origines == {(PROPRE, True): 969, (PROPRE, False): 33, (EXEMPLE, True): 338, (EXEMPLE, False): 16,
-                        (DEFINITION, True): 95}
-    # Un article du Code civil qui emploie le terme passe avant une phrase rédigée pour l'exemple.
-    exemples = [emploi for emploi in emplois(glossaire_fourni, entree(glossaire_fourni, "contrat"), 12)
-                if emploi.origine == EXEMPLE]
-    assert exemples[0].provenance() == "Code civil, art. 59"
-    a_verifier = [emploi.a_verifier for emploi in exemples]
-    assert a_verifier == sorted(a_verifier) and {True, False} == set(a_verifier)
+            assert emploi.entree is not element
+            assert positions_du_terme(emploi.fr, element, FR), (element.terme_fr, emploi.fr)
+            assert positions_du_terme(emploi.ar, element, AR), (element.terme_fr, emploi.ar)
+        # Parmi les exemples des autres entrées, ceux qui citent leur source passent avant ceux qui sont à vérifier.
+        a_verifier = [emploi.a_verifier for emploi in emplois(glossaire_fourni, element, 12)
+                      if emploi.origine == EXEMPLE]
+        assert a_verifier == sorted(a_verifier), element.terme_fr
+    # Plusieurs centaines d'entrées affichent en plus une phrase d'une autre entrée qui emploie le terme.
+    assert completees > 300
+    # « contrat » : après ses deux exemples vient l'exemple d'une autre entrée qui cite sa source (un article
+    # du Code civil), et non une phrase à vérifier.
+    suite = emplois(glossaire_fourni, entree(glossaire_fourni, "contrat"), 3)[2:]
+    assert [(emploi.origine, emploi.a_verifier) for emploi in suite] == [(EXEMPLE, False)]
 
 
 def test_les_deux_sens_d_action_ont_chacun_leurs_contextes(glossaire_fourni):

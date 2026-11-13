@@ -3,7 +3,8 @@
 
 Emploi, depuis le dossier du projet :
 
-    python outils/glossaire/construire.py            vérifie les lots, sans rien écrire
+    python outils/glossaire/construire.py            vérifie les lots et les exemples, sans rien écrire ;
+                                                     dit si le fichier CSV leur correspond
     python outils/glossaire/construire.py --ecrire   récrit le fichier CSV
 
 Les 40 premières entrées du CSV sont gardées telles quelles. Toutes les suivantes sont récrites à partir des
@@ -666,9 +667,20 @@ def construire() -> int:
         print(f"\n{len(erreurs)} ERREUR(S) :")
         print("\n".join(erreurs))
         return 1
+    # Le CSV actuel est-il celui que donnent les lots et les exemples ? Sinon, il a été corrigé à la main,
+    # ou bien un lot a changé depuis la dernière écriture.
+    actuelles, prevues = CSV.read_text(encoding="utf-8-sig").splitlines(), sortie.getvalue().splitlines()
+    differentes = sum(1 for actuelle, prevue in zip(actuelles, prevues, strict=False) if actuelle != prevue)
+    differentes += abs(len(actuelles) - len(prevues))
     if "--ecrire" in sys.argv:
         CSV.write_bytes(b"\xef\xbb\xbf" + sortie.getvalue().encode("utf-8"))
-        print("écrit :", CSV)
+        print(f"écrit : {CSV} ({differentes} ligne(s) modifiée(s))")
+    elif differentes:
+        print(f"\nLe fichier CSV diffère des lots et des exemples : {differentes} ligne(s). L'option --ecrire le "
+              f"récrit ;\nune correction faite à la main dans le CSV après la {ENTREES_D_ORIGINE}e entrée serait "
+              "alors perdue.")
+    else:
+        print("Le fichier CSV correspond aux lots et aux exemples.")
     return 0
 
 
