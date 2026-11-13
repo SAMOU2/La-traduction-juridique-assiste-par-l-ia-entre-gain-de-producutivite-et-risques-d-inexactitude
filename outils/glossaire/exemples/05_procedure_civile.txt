@@ -1,0 +1,100 @@
+# Phrases d'exemple du lot 05_procedure_civile.txt : terme | phrase française | phrase arabe
+action = دعوى | L'action est recevable lorsque le demandeur a qualité et intérêt pour agir. | تقبل الدعوى إذا كانت للمدعي صفة ومصلحة في التقاضي.
+instance | L'instance est interrompue par le décès de l'une des parties. | تنقطع الخصومة بوفاة أحد الأطراف.
+procès | Le procès se déroule en audience publique. | تجري المحاكمة في جلسة علنية.
+litige | Le juge tranche le litige qui lui est soumis. | يفصل القاضي في النزاع المعروض عليه.
+affaire | L'affaire est inscrite au rôle de l'audience du matin. | تسجل القضية في جدول جلسة الصباح.
+dossier | Le greffier remet une copie du dossier à l'avocat. | يسلم أمين الضبط نسخة من الملف إلى المحامي.
+procédure | La procédure devant le tribunal est écrite. | الإجراءات أمام المحكمة كتابية.
+demande | Le juge ne statue que sur la demande dont il est saisi. | لا يفصل القاضي إلا في الطلب المعروض عليه.
+demande reconventionnelle | La demande reconventionnelle est présentée par le défendeur en réponse à la demande principale. | يقدم الطلب المقابل من المدعى عليه ردا على الطلب الأصلي.
+demande additionnelle | La demande additionnelle modifie les prétentions initiales du demandeur. | يعدل الطلب الإضافي الطلبات الأصلية للمدعي.
+demandeur | Le demandeur doit prouver les faits qu'il invoque. | على المدعي أن يثبت الوقائع التي يدعيها.
+défendeur | Le défendeur est convoqué à l'audience par voie d'huissier. | يستدعى المدعى عليه إلى الجلسة عن طريق محضر قضائي.
+intervention | L'intervention d'un tiers est recevable s'il a intérêt à agir. | يقبل تدخل الغير إذا كانت له مصلحة في ذلك.
+qualité | Le juge relève d'office le défaut de qualité du demandeur. | يثير القاضي تلقائيا انعدام الصفة في المدعي.
+intérêt | Une personne ne peut agir devant le juge que si elle a un intérêt légitime. | لا يجوز لشخص أن يتقاضى أمام القاضي إلا إذا كانت له مصلحة مشروعة.
+recevabilité | Le juge examine la recevabilité de la demande avant le fond. | ينظر القاضي في مقبولية الطلب قبل الموضوع.
+irrecevabilité | Le défaut d'intérêt du demandeur entraîne l'irrecevabilité. | يترتب على انعدام مصلحة المدعي الحكم بعدم القبول.
+compétence | La compétence du tribunal est fixée par la loi. | يحدد القانون اختصاص المحكمة.
+compétence d'attribution | La compétence d'attribution est d'ordre public. | الاختصاص النوعي من النظام العام.
+compétence territoriale | La compétence territoriale appartient au tribunal du domicile du défendeur. | يؤول الاختصاص الإقليمي إلى محكمة موطن المدعى عليه.
+incompétence | L'incompétence doit être soulevée avant toute défense au fond. | يجب إثارة عدم الاختصاص قبل أي دفع موضوعي.
+requête | La requête est signée par l'avocat du demandeur. | يوقع العريضة محامي المدعي.
+requête introductive d'instance | La requête introductive d'instance expose les faits et les demandes. | تتضمن عريضة افتتاح الدعوى عرضا للوقائع والطلبات.
+assignation | L'assignation est remise au défendeur vingt jours au moins avant l'audience. | يسلم التكليف بالحضور إلى المدعى عليه عشرين يوما على الأقل قبل الجلسة.
+mémoire | L'avocat dépose un mémoire en réponse. | يودع المحامي مذكرة جوابية.
+plaidoirie | La plaidoirie de l'avocat a duré une heure. | دامت مرافعة المحامي ساعة.
+notification | La notification fait courir le délai de recours. | يبدأ سريان أجل الطعن من تاريخ التبليغ.
+signification | La signification du jugement est faite par huissier de justice. | يتم التبليغ الرسمي للحكم بواسطة محضر قضائي.
+comparution | La comparution personnelle des parties peut être ordonnée par le juge. | يجوز للقاضي أن يأمر بمثول الأطراف شخصيا.
+représentation | La représentation des parties par un avocat est obligatoire devant la cour. | تمثيل الأطراف بمحامٍ وجوبي أمام المجلس القضائي.
+renvoi | Le juge ordonne le renvoi de l'affaire devant la juridiction compétente. | يأمر القاضي بإحالة القضية على الجهة القضائية المختصة.
+exception de procédure | Toute exception de procédure est présentée dès le début de l'instance. | يقدم كل دفع شكلي في بداية الخصومة.
+défense au fond | La défense au fond peut être présentée à tout moment de l'instance. | يجوز تقديم الدفع الموضوعي في أي مرحلة من الخصومة.
+fin de non-recevoir | La prescription peut être invoquée par une fin de non-recevoir. | يجوز التمسك بالتقادم عن طريق الدفع بعدم القبول.
+péremption d'instance | La péremption d'instance est acquise après deux ans sans diligence des parties. | يتحقق سقوط الخصومة بمرور سنتين دون قيام الأطراف بأي إجراء.
+désistement d'instance | Le désistement d'instance ne vaut pas renonciation au droit. | لا يعني التنازل عن الخصومة التنازل عن الحق.
+radiation | Le juge prononce la radiation de l'affaire lorsque le demandeur ne se présente pas. | يأمر القاضي بشطب القضية إذا لم يحضر المدعي.
+jonction d'instances | Le juge ordonne la jonction d'instances lorsque les affaires sont liées. | يأمر القاضي بضم الخصومات إذا كانت القضايا مرتبطة.
+sursis à statuer | Le juge ordonne le sursis à statuer jusqu'à la décision du juge pénal. | يأمر القاضي بإرجاء الفصل إلى غاية صدور قرار القاضي الجزائي.
+jugement | Le jugement est prononcé en audience publique. | ينطق بالحكم في جلسة علنية.
+arrêt | L'arrêt de la cour confirme le jugement attaqué. | يؤيد قرار المجلس القضائي الحكم المطعون فيه.
+dispositif du jugement | Le dispositif du jugement est lu à l'audience. | يتلى منطوق الحكم في الجلسة.
+motivation | L'absence de motivation entraîne la cassation de la décision. | يترتب على انعدام التسبيب نقض القرار.
+jugement contradictoire | Le jugement contradictoire n'est pas susceptible d'opposition. | الحكم الحضوري غير قابل للمعارضة.
+jugement par défaut | Le jugement par défaut peut être attaqué par la voie de l'opposition. | يجوز الطعن في الحكم الغيابي عن طريق المعارضة.
+jugement avant dire droit | Le juge ordonne une expertise par un jugement avant dire droit. | يأمر القاضي بإجراء خبرة بموجب حكم قبل الفصل في الموضوع.
+jugement définitif | Le jugement définitif n'est plus susceptible d'appel. | الحكم النهائي غير قابل للاستئناف.
+référé | Le président du tribunal statue en référé dans les plus brefs délais. | يفصل رئيس المحكمة في مادة الاستعجال في أقرب الآجال.
+ordonnance de référé | L'ordonnance de référé est exécutoire malgré l'appel. | الأمر الاستعجالي نافذ رغم الاستئناف.
+ordonnance sur requête | L'ordonnance sur requête est rendue sans débat contradictoire. | يصدر الأمر على عريضة دون مرافعة حضورية.
+injonction de payer | Le créancier obtient une injonction de payer pour une créance constatée par écrit. | يحصل الدائن على أمر الأداء من أجل دين ثابت بالكتابة.
+autorité de la chose jugée | Le défendeur oppose l'autorité de la chose jugée à la nouvelle demande. | يتمسك المدعى عليه بحجية الشيء المقضي به في مواجهة الطلب الجديد.
+force de chose jugée | Le jugement qui n'est plus susceptible de recours ordinaire a force de chose jugée. | يحوز الحكم الذي لم يعد قابلا لطعن عادي قوة الشيء المقضي به.
+formule exécutoire | Le greffier appose la formule exécutoire sur la copie du jugement. | يضع أمين الضبط الصيغة التنفيذية على نسخة الحكم.
+copie exécutoire | Une seule copie exécutoire est délivrée à chaque partie. | تسلم نسخة تنفيذية واحدة لكل طرف.
+exécution provisoire | Le juge ordonne l'exécution provisoire du jugement malgré l'appel. | يأمر القاضي بالنفاذ المعجل للحكم رغم الاستئناف.
+astreinte | Le juge condamne le débiteur à une astreinte par jour de retard. | يحكم القاضي على المدين بغرامة تهديدية عن كل يوم تأخير.
+dépens | La partie perdante est condamnée aux dépens. | يحكم على الطرف الخاسر بالمصاريف القضائية.
+honoraires | Les honoraires de l'avocat sont fixés en accord avec le client. | تحدد أتعاب المحامي باتفاق مع الموكل.
+taxe judiciaire | La taxe judiciaire est payée lorsque la requête est déposée au greffe. | يدفع الرسم القضائي عند إيداع العريضة لدى أمانة الضبط.
+voie de recours | Le jugement indique la voie de recours ouverte aux parties. | يبين الحكم طريق الطعن المتاح للأطراف.
+recours | Le recours est formé dans un délai d'un mois. | يرفع الطعن في أجل شهر واحد.
+appel | L'appel est formé dans le délai d'un mois à compter de la signification du jugement. | يرفع الاستئناف في أجل شهر واحد من تاريخ التبليغ الرسمي للحكم.
+appelant | L'appelant expose ses griefs contre le jugement. | يعرض المستأنف أوجه نقده للحكم.
+intimé | L'intimé conclut au rejet de l'appel. | يلتمس المستأنف عليه رفض الاستئناف.
+opposition | L'opposition est portée devant le tribunal qui a rendu le jugement par défaut. | ترفع المعارضة أمام المحكمة التي أصدرت الحكم الغيابي.
+pourvoi en cassation | Le pourvoi en cassation est formé devant la Cour suprême dans un délai de deux mois. | يرفع الطعن بالنقض أمام المحكمة العليا في أجل شهرين.
+cassation | La cassation de l'arrêt entraîne le renvoi de l'affaire devant une autre cour. | يترتب على نقض القرار إحالة القضية على مجلس قضائي آخر.
+tierce opposition | La tierce opposition est ouverte à toute personne qui n'était pas partie au jugement. | يجوز اعتراض الغير الخارج عن الخصومة لكل شخص لم يكن طرفا في الحكم.
+recours en rétractation | Le recours en rétractation est fondé sur la découverte d'une pièce décisive. | يؤسس التماس إعادة النظر على اكتشاف وثيقة حاسمة.
+effet suspensif | L'appel a un effet suspensif. | للاستئناف أثر موقف.
+effet dévolutif | Par l'effet dévolutif, la cour rejuge l'affaire en fait et en droit. | بموجب الأثر الناقل، يفصل المجلس القضائي في القضية من جديد من حيث الوقائع والقانون.
+principe du contradictoire | Le juge fait respecter le principe du contradictoire. | يسهر القاضي على احترام مبدأ الوجاهية.
+droits de la défense | Les droits de la défense sont garantis devant toutes les juridictions. | حقوق الدفاع مضمونة أمام جميع الجهات القضائية.
+procès équitable | Toute personne a droit à un procès équitable. | لكل شخص الحق في محاكمة عادلة.
+mesure d'instruction | Le juge peut ordonner d'office toute mesure d'instruction. | يجوز للقاضي أن يأمر تلقائيا بأي إجراء من إجراءات التحقيق.
+expertise | L'expertise porte sur l'évaluation du dommage. | تتعلق الخبرة بتقدير الضرر.
+enquête | Le juge ordonne une enquête pour entendre les témoins. | يأمر القاضي بإجراء تحقيق لسماع الشهود.
+constat | L'huissier de justice dresse un constat des dégâts. | يحرر المحضر القضائي معاينة للأضرار.
+procès-verbal | Le procès-verbal est signé par le juge et le greffier. | يوقع المحضر القاضي وأمين الضبط.
+exécution forcée | À défaut de paiement volontaire, le créancier recourt à l'exécution forcée. | إذا لم يتم الوفاء اختياريا، يلجأ الدائن إلى التنفيذ الجبري.
+titre exécutoire | L'exécution forcée suppose un titre exécutoire. | لا يجوز التنفيذ الجبري إلا بسند تنفيذي.
+commandement de payer | L'huissier de justice remet au débiteur un commandement de payer dans un délai de quinze jours. | يسلم المحضر القضائي إلى المدين التكليف بالوفاء في أجل خمسة عشر يوما.
+force publique | L'huissier de justice requiert le concours de la force publique. | يطلب المحضر القضائي مساعدة القوة العمومية.
+contrainte par corps | La contrainte par corps garantit le paiement des amendes. | يضمن الإكراه البدني دفع الغرامات.
+saisie | La saisie rend les biens du débiteur indisponibles. | يجعل الحجز أموال المدين غير قابلة للتصرف فيها.
+saisie conservatoire | Le juge autorise une saisie conservatoire sur les meubles du débiteur. | يرخص القاضي بحجز تحفظي على منقولات المدين.
+saisie-exécution | La saisie-exécution aboutit à la vente des biens saisis. | ينتهي الحجز التنفيذي ببيع الأموال المحجوزة.
+saisie-arrêt | La saisie-arrêt porte sur les sommes déposées à la banque. | يقع حجز ما للمدين لدى الغير على المبالغ المودعة في البنك.
+saisie immobilière | La saisie immobilière est publiée à la conservation foncière. | يشهر الحجز العقاري في المحافظة العقارية.
+mesure conservatoire | Le juge ordonne une mesure conservatoire pour protéger les droits du créancier. | يأمر القاضي بتدبير تحفظي لحماية حقوق الدائن.
+créancier saisissant | Le créancier saisissant est payé sur le prix de la vente. | يستوفي الدائن الحاجز حقه من ثمن البيع.
+tiers saisi | Le tiers saisi déclare les sommes qu'il doit au débiteur. | يصرح المحجوز لديه بالمبالغ التي في ذمته للمدين.
+insaisissabilité | L'insaisissabilité protège les biens nécessaires à la vie du débiteur. | تحمي عدم القابلية للحجز الأموال الضرورية لمعيشة المدين.
+mainlevée | Le juge ordonne la mainlevée de la saisie. | يأمر القاضي برفع اليد عن الحجز.
+séquestre judiciaire | Le bien litigieux est placé sous séquestre judiciaire. | يوضع المال المتنازع عليه تحت الحراسة القضائية.
+vente aux enchères | La vente aux enchères est annoncée par voie d'affichage. | يعلن عن البيع بالمزاد العلني عن طريق التعليق.
+adjudicataire | L'adjudicataire paie le prix dans le délai fixé. | يدفع الراسي عليه المزاد الثمن في الأجل المحدد.
+expulsion | Le jugement ordonne l'expulsion de l'occupant sans titre. | يأمر الحكم بطرد الشاغل بدون سند.
