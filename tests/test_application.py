@@ -8,6 +8,7 @@ pytest.importorskip("PySide6")
 
 import PySide6
 from PySide6.QtCore import QCoreApplication
+from PySide6.QtTest import QTest
 from PySide6.QtWidgets import QLineEdit
 
 from traducteur import application
@@ -69,3 +70,53 @@ def test_les_textes_de_qt_sont_mis_en_francais(request):
         # Les autres tests gardent les textes d'origine de Qt.
         qt.removeTranslator(textes)
         textes.deleteLater()
+
+
+# ------------------------------------------------------------------ ouverture de l'application
+def test_l_application_s_ouvre_sur_l_ecran_de_demarrage(request, reglages, avertissements, monkeypatch):
+    from traducteur.interface.demarrage import EcranDemarrage
+
+    qt = request.getfixturevalue("application")
+    monkeypatch.setattr(EcranDemarrage, "DUREE_MINIMALE", 300)
+    fenetre, ecran = application.ouvrir(qt, reglages=reglages)
+    # Le logo animé est affiché ; la fenêtre, déjà construite avec son glossaire, attend derrière lui.
+    assert isinstance(ecran, EcranDemarrage) and ecran.isVisible()
+    assert not fenetre.isVisible() and len(fenetre.glossaire) == 40
+    QTest.qWait(700)
+    # Puis l'écran de démarrage laisse la place à la fenêtre.
+    assert fenetre.isVisible() and not ecran.isVisible()
+    assert avertissements == []
+    fenetre.close()
+    fenetre.deleteLater()
+    ecran.deleteLater()
+
+
+def test_l_ecran_de_demarrage_peut_etre_desactive(request, reglages, avertissements):
+    qt = request.getfixturevalue("application")
+    reglages.setValue("affichage/ecran_de_demarrage", False)
+    fenetre, ecran = application.ouvrir(qt, reglages=reglages)
+    assert ecran is None and fenetre.isVisible()
+    fenetre.close()
+    fenetre.deleteLater()
+
+
+def test_le_glossaire_demande_au_lancement_est_charge(request, reglages, avertissements, tmp_path):
+    qt = request.getfixturevalue("application")
+    reglages.setValue("affichage/ecran_de_demarrage", False)
+    fichier = tmp_path / "choisi.csv"
+    fichier.write_text("terme_fr;terme_ar\ntribunal;محكمة\n", encoding="utf-8")
+    fenetre, _ = application.ouvrir(qt, str(fichier), reglages)
+    assert fenetre.glossaire.nom == "choisi.csv" and len(fenetre.glossaire) == 1
+    fenetre.close()
+    fenetre.deleteLater()
+
+
+def test_l_installation_a_corriger_est_signalee_a_l_ouverture(request, reglages, avertissements, monkeypatch):
+    qt = request.getfixturevalue("application")
+    reglages.setValue("affichage/ecran_de_demarrage", False)
+    monkeypatch.setattr(application, "liaison_qt_instable", lambda: True)
+    fenetre, _ = application.ouvrir(qt, reglages=reglages)
+    assert [titre for titre, _ in avertissements] == ["Installation à corriger"]
+    assert "python -m pip install -r requirements.txt" in avertissements[0][1]
+    fenetre.close()
+    fenetre.deleteLater()

@@ -193,9 +193,12 @@ def fenetre_fournie(application, reglages, avertissements, monkeypatch):
 
 def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, avertissements):
     assert avertissements == []
-    assert fenetre_fournie.indicateur.nom.texte_complet() == "glossaire_juridique.csv"
-    assert fenetre_fournie.indicateur.detail.text() == " · 1\u202f000 entrées"
-    assert fenetre_fournie.barre_etat.texte() == "Glossaire chargé : 1\u202f000 entrées."
+    # Le glossaire est chargé à l'ouverture ; l'écran « Paramètres » le présente.
+    parametres = fenetre_fournie.page_parametres
+    assert parametres.nom_du_glossaire.texte_complet() == "glossaire_juridique.csv"
+    assert parametres.taille_du_glossaire.text() == "1\u202f000 entrées"
+    assert fenetre_fournie.barre_etat.texte() == ""
+    assert fenetre_fournie.page_description.note.text().endswith("glossaire de 1\u202f000 entrées")
 
     page = fenetre_fournie.page
     assert len(page.accueil.puces) == 5  # termes proposés à l'accueil
@@ -205,6 +208,15 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert page.fiche.colonne_terme.rang.texte_complet() == "Entrée 1 sur 1\u202f000"
     assert page.liste.titre.texte_complet() == "Expressions avec « contrat »"
     assert page.liste.nombre.text() == "23" and len(page.liste.entrees()) == 23
+    assert page.fiche.entete.etapes_allumees() == [True] * 5
+
+    # « loi organique » n'est employée dans aucune phrase du glossaire : l'étape 4 reste éteinte.
+    page.rechercher("loi organique")
+    assert page.fiche.colonne_contexte.emplois == []
+    assert page.fiche.entete.etapes_allumees() == [True, True, True, False, True]
+    # « consentement » n'a qu'un exemple : une définition du glossaire qui emploie le terme le complète.
+    page.rechercher("consentement")
+    assert [emploi.origine for emploi in page.fiche.colonne_contexte.emplois] == ["propre", "definition"]
 
     # « droit » : deux entrées de même forme (un onglet chacune), puis les expressions.
     page.rechercher("droit")
@@ -239,8 +251,12 @@ def test_ecran_texte_avec_le_glossaire_fourni(fenetre_fournie, application):
         "contrat", "loi", "partie", "consentement", "cause", "bonne foi", "contractant", "usage", "équité",
         "obligation", "nullité", "contrat de vente", "acheteur"]
     assert traduction.texte.endswith("بطلان عقد البيع protège المشتري.")
-    # L'écran en rend compte : état de la traduction, tableau des termes, barre d'état.
+    # L'écran en rend compte : état de la traduction, une carte par terme, barre d'état.
     assert page.badge.texte() == "Traduction partielle · 83 mots sur 84 trouvés"
-    assert page.termes.nombre.text() == "13" and len(page.termes.lignes_affichees()) == 13
-    assert page.termes.legende.libelles() == ["Définition à vérifier", "Source citée"]
+    assert page.termes.nombre.text() == "13" and len(page.termes.cartes) == 13
+    # Chaque terme a au moins un contexte (son passage du texte) et toutes ses références.
+    for carte in page.termes.cartes:
+        assert carte.passage_source[0] and carte.etapes_renseignees() == [True] * 5
+        assert carte.ressources == carte.entree.ressources and carte.ressources
+    assert [carte.a_verifier for carte in page.termes.cartes[:2]] == [False, True]  # « contrat », puis « loi »
     assert fenetre_fournie.barre_etat.etat() == "Traduction : 83 mots sur 84 trouvés dans le glossaire."

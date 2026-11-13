@@ -383,6 +383,12 @@ class PageParametres(PageInformation):
         """L'adresse enregistrée du service informatique (vide si elle n'est pas renseignée)."""
         return self.reglages.value(CLE_ADRESSE, "", str)
 
+    def montrer_l_adresse(self) -> None:
+        """Fait défiler la page jusqu'au champ de l'adresse et y place le curseur."""
+        self.defilement.ensureWidgetVisible(self.carte_service)
+        self.champ_adresse.setFocus()
+        self.champ_adresse.selectAll()
+
     def enregistrer_l_adresse(self) -> bool:
         """Enregistre l'adresse saisie, si elle a la forme d'une adresse électronique (ou si elle est vide)."""
         adresse = self.champ_adresse.text().strip()

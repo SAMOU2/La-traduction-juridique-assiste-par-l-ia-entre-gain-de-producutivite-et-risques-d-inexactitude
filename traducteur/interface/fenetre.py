@@ -240,7 +240,7 @@ class FenetrePrincipale(QMainWindow):
         self.page_parametres.glossaire_fourni_demande.connect(lambda: self.charger_glossaire(GLOSSAIRE_EXEMPLE))
         self.page_parametres.animations_changees.connect(animation.definir_actives)
         self.page_parametres.adresse_changee.connect(self.page_aide.definir_adresse)
-        self.page_aide.parametres_demandes.connect(lambda: self.definir_mode(MODE_PARAMETRES))
+        self.page_aide.parametres_demandes.connect(self.indiquer_l_adresse)
         self._taille_initiale()
         self._charger_au_demarrage(chemin_glossaire)
         self.definir_mode(MODE_TERME)
@@ -541,6 +541,11 @@ class FenetrePrincipale(QMainWindow):
             self.page_texte.zone_source.setFocus()
         else:
             page.setFocus()  # les flèches du clavier font défiler la page
+
+    def indiquer_l_adresse(self) -> None:
+        """Ouvre « Paramètres » sur le champ de l'adresse du service informatique."""
+        self.definir_mode(MODE_PARAMETRES)
+        self.page_parametres.montrer_l_adresse()
 
     def afficher_la_fiche(self, entree) -> None:
         """Ouvre, sur l'écran « Terme », la fiche d'un terme relevé dans un texte."""
