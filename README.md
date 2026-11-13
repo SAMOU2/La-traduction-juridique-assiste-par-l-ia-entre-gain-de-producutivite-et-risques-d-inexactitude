@@ -11,8 +11,12 @@ Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont p
 
 ## L'application (version 0.4)
 
-La version 0.4 change la présentation de l'application :
+La version 0.4 change la présentation de l'application. Elle comprend la version 0.3, qui n'a
+pas été publiée à part.
 
+- la **fiche d'un terme** suit la [proposition d'interface](#la-proposition-dinterface) : les
+  cinq champs côte à côte dans une seule fiche, l'équivalent au centre, les autres résultats
+  listés sous la fiche ;
 - un **écran de démarrage** animé s'affiche pendant l'ouverture ;
 - une **barre latérale** sombre, à gauche, donne accès aux cinq écrans : « Terme », « Texte »,
   « Paramètres », « Description de la plateforme » et « Centre d'aide » ;
@@ -20,7 +24,7 @@ La version 0.4 change la présentation de l'application :
   s'affiche ;
 - le **glossaire est chargé automatiquement** à l'ouverture : il n'y a plus de bouton pour
   l'ouvrir. Le nom du fichier, son encodage et le numéro de version ne sont plus écrits dans la
-  fenêtre ;
+  fenêtre. Seul un fichier choisi par l'utilisateur est nommé, dans « Paramètres » ;
 - sur l'écran « Texte », le texte et sa traduction sont **à gauche**, les informations sur les
   termes **à droite**, avec toutes les références écrites en entier ;
 - le champ ④ **Contextualisation** cherche des phrases dans tout le glossaire, et plus
@@ -215,7 +219,8 @@ Chaque écran garde son propre sens de traduction.
 
 **Paramètres**
 
-- *Glossaire* : le nom du glossaire chargé et son nombre d'entrées.
+- *Glossaire* : le glossaire chargé (« Glossaire juridique » pour le glossaire fourni, le nom
+  du fichier pour un autre) et son nombre d'entrées.
   - **Choisir un autre fichier…** charge un autre fichier CSV. L'application le rouvrira au
     prochain lancement.
   - **Recharger** relit le fichier après une modification.

@@ -473,8 +473,8 @@ class FenetrePrincipale(QMainWindow):
         if bilan:
             self._informer("Glossaire chargé", self.bilan_de_lecture(glossaire))
         else:
-            self.barre_etat.afficher_message(
-                f"Glossaire chargé : {glossaire.nom}, {compte(len(glossaire), 'entrée')}.", 4000)
+            nom = "glossaire fourni" if self.glossaire_fourni() else glossaire.nom
+            self.barre_etat.afficher_message(f"Glossaire chargé : {nom}, {compte(len(glossaire), 'entrée')}.", 4000)
         return True
 
     def ouvrir_glossaire(self) -> None:

@@ -668,7 +668,7 @@ def test_un_fichier_invalide_ne_remplace_pas_le_glossaire(fenetre, reglages, ave
     assert avertissements[-1][0] == "Glossaire non chargé" and "CSV UTF-8" in avertissements[-1][1]
     assert avertissements[-1][1].startswith("casse.csv\n\n")
     assert not reglages.contains("glossaire/chemin")
-    assert fenetre.page_parametres.nom_du_glossaire.texte_complet() == "glossaire_essai.csv"
+    assert fenetre.page_parametres.nom_du_glossaire.texte_complet() == "Glossaire juridique"  # le glossaire fourni
 
 
 def test_recharger_le_glossaire_garde_l_entree_affichee(fenetre, tmp_path):
@@ -723,12 +723,17 @@ def test_glossaire_donne_au_lancement(application, reglages, avertissements, tmp
 def test_revenir_au_glossaire_fourni(fenetre, reglages, tmp_path):
     parametres = fenetre.page_parametres
     assert not parametres.bouton_fourni.isEnabled()  # le glossaire fourni est déjà chargé
-    assert parametres.dossier_du_glossaire.texte_complet() == "Glossaire fourni avec l’application"
+    assert parametres.nom_du_glossaire.texte_complet() == "Glossaire juridique"
+    assert parametres.dossier_du_glossaire.texte_complet() == "Fourni avec l’application"
     fichier = ecrire(tmp_path / "autre.csv", "terme_fr;terme_ar\ntribunal;محكمة\n")
     fenetre.charger_glossaire(fichier)
     assert reglages.contains("glossaire/chemin") and parametres.bouton_fourni.isEnabled()
+    assert parametres.nom_du_glossaire.texte_complet() == "autre.csv"  # un fichier choisi garde son nom
+    assert fenetre.barre_etat.texte() == "Glossaire chargé : autre.csv, 1 entrée."
     parametres.bouton_fourni.click()
     assert fenetre.glossaire.nom == "glossaire_essai.csv" and len(fenetre.glossaire) == 40
+    assert parametres.nom_du_glossaire.texte_complet() == "Glossaire juridique"
+    assert fenetre.barre_etat.texte() == "Glossaire chargé : glossaire fourni, 40 entrées."
     assert not reglages.contains("glossaire/chemin")  # le glossaire fourni est le glossaire par défaut
     assert not parametres.bouton_fourni.isEnabled()
 

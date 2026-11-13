@@ -153,8 +153,9 @@ def test_les_ecrans_d_information_tiennent_dans_une_petite_fenetre(fenetre, appl
 def test_les_parametres_presentent_le_glossaire_charge(fenetre):
     parametres = fenetre.page_parametres
     assert [carte.titre.text() for carte in parametres.cartes] == ["Glossaire", "Affichage", "Service informatique"]
-    assert parametres.nom_du_glossaire.texte_complet() == "glossaire_essai.csv"
-    assert parametres.dossier_du_glossaire.texte_complet() == "Glossaire fourni avec l’application"
+    # Le glossaire fourni est désigné par ce qu'il est : le nom de son fichier n'est pas affiché.
+    assert parametres.nom_du_glossaire.texte_complet() == "Glossaire juridique"
+    assert parametres.dossier_du_glossaire.texte_complet() == "Fourni avec l’application"
     assert parametres.taille_du_glossaire.text() == "40 entrées"
     assert [bouton.text() for bouton in (parametres.bouton_choisir, parametres.bouton_recharger,
                                          parametres.bouton_fourni)] == [

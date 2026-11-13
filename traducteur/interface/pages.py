@@ -69,6 +69,8 @@ TRAITEMENT = (
                              "d’après le contexte."),
     ("Reconstruction", "Chaque phrase est récrite dans la langue cible, avec sa ponctuation."),
 )
+#: Nom affiché pour le glossaire livré avec l'application, à la place du nom de son fichier.
+NOM_DU_GLOSSAIRE_FOURNI = "Glossaire juridique"
 #: Questions fréquentes du centre d'aide : (question, paragraphes de la réponse).
 QUESTIONS = (
     ("Comment chercher un terme ?",
@@ -373,9 +375,10 @@ class PageParametres(PageInformation):
                                                     "ou traduire un texte.")
             self.taille_du_glossaire.setText("")
         else:
-            self.nom_du_glossaire.definir_texte(glossaire.nom)
+            # Le glossaire fourni est désigné par ce qu'il est ; un fichier choisi, par son nom et son dossier.
+            self.nom_du_glossaire.definir_texte(NOM_DU_GLOSSAIRE_FOURNI if fourni else glossaire.nom)
             self.dossier_du_glossaire.definir_texte(
-                "Glossaire fourni avec l’application" if fourni
+                "Fourni avec l’application" if fourni
                 else str(glossaire.chemin.parent) if glossaire.chemin else "")
             self.taille_du_glossaire.setText(compte(len(glossaire), "entrée"))
         self.bouton_choisir.setText("Choisir un fichier…" if absent else "Choisir un autre fichier…")

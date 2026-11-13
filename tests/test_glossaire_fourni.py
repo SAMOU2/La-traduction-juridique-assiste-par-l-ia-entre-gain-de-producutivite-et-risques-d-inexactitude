@@ -195,7 +195,8 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert avertissements == []
     # Le glossaire est chargé à l'ouverture ; l'écran « Paramètres » le présente.
     parametres = fenetre_fournie.page_parametres
-    assert parametres.nom_du_glossaire.texte_complet() == "glossaire_juridique.csv"
+    assert parametres.nom_du_glossaire.texte_complet() == "Glossaire juridique"
+    assert parametres.dossier_du_glossaire.texte_complet() == "Fourni avec l’application"
     assert parametres.taille_du_glossaire.text() == "1\u202f000 entrées"
     assert fenetre_fournie.barre_etat.texte() == ""
     assert "glossaire de 1\u202f000 entrées" in fenetre_fournie.page_description.presentation.text()
