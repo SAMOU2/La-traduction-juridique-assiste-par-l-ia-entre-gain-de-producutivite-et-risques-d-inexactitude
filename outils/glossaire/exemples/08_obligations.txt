@@ -1,0 +1,122 @@
+# Phrases d'exemple du lot 08_obligations.txt : terme | phrase française | phrase arabe
+offre | L'offre faite avec un délai ne peut être retirée avant l'expiration de ce délai. | لا يجوز الرجوع في الإيجاب المقترن بأجل قبل انقضاء هذا الأجل.
+acceptation | Le contrat se forme dès que l'acceptation rencontre l'offre. | ينعقد العقد بمجرد تطابق القبول مع الإيجاب.
+volonté | La volonté peut être exprimée par la parole, par l'écrit ou par un geste. | يكون التعبير عن الإرادة باللفظ أو بالكتابة أو بالإشارة.
+autonomie de la volonté | L'autonomie de la volonté permet aux parties de fixer librement le contenu du contrat. | يسمح سلطان الإرادة للأطراف بتحديد مضمون العقد بحرية.
+liberté contractuelle | La liberté contractuelle s'exerce dans le respect de l'ordre public. | تمارس الحرية التعاقدية في حدود احترام النظام العام.
+pourparlers | Les pourparlers doivent être menés de bonne foi. | يجب أن تجرى المفاوضات بحسن النية.
+promesse de contrat | La promesse de contrat précise les éléments essentiels du contrat envisagé et le délai de sa conclusion. | يعين الوعد بالتعاقد المسائل الجوهرية للعقد المراد إبرامه والأجل الذي يجب إبرامه فيه.
+promesse de vente | La promesse de vente portant sur un immeuble doit être passée en la forme authentique. | يجب أن يحرر الوعد بالبيع الوارد على عقار في الشكل الرسمي.
+contrat d'adhésion | Dans un contrat d'adhésion, le doute s'interprète en faveur de la partie adhérente. | في عقد الإذعان، يفسر الشك لمصلحة الطرف المذعن.
+contrat synallagmatique | La vente est un contrat synallagmatique. | البيع عقد ملزم للجانبين.
+contrat unilatéral | La donation est un contrat unilatéral. | الهبة عقد ملزم لجانب واحد.
+contrat à titre onéreux | Le bail est un contrat à titre onéreux. | الإيجار عقد من عقود المعاوضة.
+contrat à titre gratuit | Le prêt à usage est un contrat à titre gratuit. | عارية الاستعمال عقد من عقود التبرع.
+contrat aléatoire | Le contrat d'assurance est un contrat aléatoire. | عقد التأمين عقد احتمالي.
+contrat consensuel | Le contrat consensuel se forme par le seul accord des parties. | ينعقد العقد الرضائي بمجرد اتفاق الأطراف.
+contrat solennel | La vente d'immeuble est un contrat solennel. | بيع العقار عقد شكلي.
+vice du consentement | Le dol est un vice du consentement qui rend le contrat annulable. | التدليس عيب من عيوب الرضا يجعل العقد قابلا للإبطال.
+erreur | Le contrat peut être annulé pour erreur essentielle. | يجوز إبطال العقد للغلط الجوهري.
+dol | Le silence gardé volontairement sur un fait peut constituer un dol. | يعتبر السكوت عمدا عن واقعة تدليسا.
+violence | Le contrat conclu sous l'empire de la violence est annulable. | العقد المبرم تحت سلطان الإكراه قابل للإبطال.
+lésion | Le vendeur d'un immeuble peut invoquer une lésion de plus du cinquième. | يجوز لبائع العقار أن يتمسك بغبن يزيد على الخمس.
+objet | L'objet de l'obligation doit être possible et licite. | يجب أن يكون محل الالتزام ممكنا ومشروعا.
+cause | Le contrat est nul si sa cause est contraire à l'ordre public. | يكون العقد باطلا إذا كان سببه مخالفا للنظام العام.
+clause | Chaque clause du contrat s'interprète à la lumière des autres. | يفسر كل بند من العقد في ضوء البنود الأخرى.
+clause abusive | Le juge peut dispenser la partie adhérente de toute clause abusive d'un contrat d'adhésion. | للقاضي أن يعفي الطرف المذعن من كل شرط تعسفي في عقد الإذعان.
+clause pénale | Le juge peut réduire le montant de la clause pénale s'il est excessif. | يجوز للقاضي أن يخفض مبلغ الشرط الجزائي إذا كان مفرطا.
+clause résolutoire | La clause résolutoire met fin au contrat sans intervention du juge. | ينهي الشرط الفاسخ الصريح العقد دون تدخل القاضي.
+arrhes | Celui qui a versé les arrhes les perd s'il renonce au contrat. | يفقد من دفع العربون ما دفعه إذا عدل عن العقد.
+condition | L'obligation dépend d'une condition lorsque son existence est liée à un événement futur et incertain. | يكون الالتزام معلقا على شرط إذا كان وجوده مرتبطا بأمر مستقبل وغير محقق.
+condition suspensive | La vente est conclue sous la condition suspensive de l'obtention du prêt. | يبرم البيع تحت شرط واقف هو الحصول على القرض.
+condition résolutoire | La réalisation de la condition résolutoire éteint l'obligation. | يزول الالتزام بتحقق الشرط الفاسخ.
+terme suspensif | Le créancier ne peut pas exiger le paiement avant l'arrivée du terme suspensif. | لا يجوز للدائن أن يطالب بالوفاء قبل حلول الأجل الواقف.
+terme extinctif | Le bail prend fin à l'arrivée du terme extinctif. | ينتهي الإيجار بحلول الأجل الفاسخ.
+force obligatoire du contrat | En vertu de la force obligatoire du contrat, une partie ne peut pas le modifier seule. | بمقتضى القوة الملزمة للعقد، لا يجوز لأحد الطرفين تعديله بمفرده.
+effet relatif du contrat | Selon l'effet relatif du contrat, le contrat n'oblige pas les tiers. | طبقا للأثر النسبي للعقد، لا يلزم العقد الغير.
+stipulation pour autrui | L'assurance sur la vie est une stipulation pour autrui. | التأمين على الحياة صورة من صور الاشتراط لمصلحة الغير.
+imprévision | En cas d'imprévision, le juge peut réduire l'obligation devenue excessive. | في حالة الظروف الطارئة، يجوز للقاضي أن يرد الالتزام المرهق إلى الحد المعقول.
+inexécution | En cas d'inexécution, le créancier peut demander réparation. | في حالة عدم التنفيذ، يجوز للدائن أن يطلب التعويض.
+mise en demeure | La mise en demeure est adressée au débiteur par un huissier de justice. | يوجه الإعذار إلى المدين بواسطة محضر قضائي.
+exécution en nature | Le créancier peut exiger l'exécution en nature lorsqu'elle est possible. | يجوز للدائن أن يطالب بالتنفيذ العيني متى كان ممكنا.
+exécution par équivalent | Si l'exécution en nature est impossible, le juge ordonne l'exécution par équivalent. | إذا استحال التنفيذ العيني، يحكم القاضي بالتنفيذ بمقابل.
+exception d'inexécution | L'acheteur invoque l'exception d'inexécution tant que la chose n'est pas livrée. | يتمسك المشتري بالدفع بعدم التنفيذ ما دام الشيء لم يسلم.
+force majeure | Le débiteur est libéré lorsque l'inexécution est due à la force majeure. | تبرأ ذمة المدين إذا كان عدم التنفيذ راجعا إلى قوة قاهرة.
+cas fortuit | Le gardien de la chose n'est pas responsable si le dommage résulte d'un cas fortuit. | يعفى حارس الشيء من المسؤولية إذا كان الضرر ناتجا عن حادث مفاجئ.
+résolution | Le créancier peut demander la résolution du contrat pour inexécution. | يجوز للدائن أن يطلب فسخ العقد لعدم التنفيذ.
+résiliation | La résiliation du bail prend effet à la fin du préavis. | ينتج إنهاء الإيجار أثره عند نهاية مدة الإشعار المسبق.
+annulation | L'action en annulation se prescrit par cinq ans. | تسقط دعوى الإبطال بالتقادم بمرور خمس سنوات.
+nullité absolue | La nullité absolue peut être soulevée d'office par le juge. | يجوز للقاضي أن يثير البطلان المطلق من تلقاء نفسه.
+nullité relative | La nullité relative ne peut être invoquée que par la partie que la loi protège. | لا يتمسك بالبطلان النسبي إلا الطرف الذي يحميه القانون.
+confirmation | La confirmation fait disparaître le droit de demander l'annulation. | يزول حق طلب الإبطال بالإجازة.
+dette | La dette est payée au domicile du débiteur. | يوفى الدين في موطن المدين.
+créance | Le créancier prouve l'existence de sa créance par un écrit. | يثبت الدائن وجود دينه بالكتابة.
+exigibilité | L'exigibilité de la dette permet au créancier d'en réclamer le paiement. | يسمح استحقاق الدين للدائن بالمطالبة بالوفاء.
+échéance | Le débiteur doit payer à l'échéance. | يجب على المدين الوفاء عند أجل الاستحقاق.
+solidarité | La solidarité entre les débiteurs ne se présume pas. | التضامن بين المدينين لا يفترض.
+débiteur solidaire | Le créancier peut réclamer toute la dette à un seul débiteur solidaire. | يجوز للدائن أن يطالب بكل الدين أي مدين متضامن.
+obligation de moyens | Le médecin est tenu d'une obligation de moyens. | يقع على الطبيب الالتزام ببذل عناية.
+obligation de résultat | Le transporteur est tenu d'une obligation de résultat. | يقع على الناقل الالتزام بتحقيق نتيجة.
+obligation naturelle | Le débiteur ne peut pas être contraint d'exécuter une obligation naturelle. | لا يجبر المدين على تنفيذ التزام طبيعي.
+paiement | Le paiement éteint la dette. | ينقضي الدين بالوفاء.
+quittance | Le débiteur qui paie a droit à une quittance. | للمدين الذي يوفي الدين الحق في مخالصة.
+dation en paiement | La dation en paiement suppose que le créancier accepte une autre chose que celle qui était due. | يفترض الوفاء بمقابل أن يقبل الدائن شيئا آخر غير الشيء المستحق.
+novation | La novation remplace l'ancienne obligation par une obligation nouvelle. | يحل بالتجديد التزام جديد محل الالتزام القديم.
+compensation | La compensation éteint les deux dettes jusqu'au montant de la plus faible. | ينقضي الدينان بالمقاصة بقدر الأقل منهما.
+confusion | Il y a confusion lorsque le débiteur hérite de son créancier. | يتحقق اتحاد الذمة إذا ورث المدين دائنه.
+remise de dette | La remise de dette libère le débiteur. | يبرئ الإبراء من الدين ذمة المدين.
+prescription | La prescription ne court pas contre le mineur qui n'a pas de représentant légal. | لا يسري التقادم في حق القاصر الذي ليس له ممثل قانوني.
+prescription extinctive | La prescription extinctive est de quinze ans, sauf si la loi fixe un autre délai. | مدة التقادم المسقط خمس عشرة سنة، ما لم يحدد القانون أجلا آخر.
+interruption de la prescription | L'interruption de la prescription fait courir un nouveau délai. | يترتب على انقطاع التقادم بدء سريان أجل جديد.
+suspension de la prescription | La suspension de la prescription dure tant que l'empêchement existe. | يستمر وقف التقادم ما دام المانع قائما.
+déchéance | Le non-respect du délai entraîne la déchéance. | يترتب على عدم احترام الأجل سقوط الحق.
+cession de créance | La cession de créance n'est opposable au débiteur que s'il l'a acceptée ou si elle lui a été notifiée. | لا يحتج بحوالة الحق على المدين إلا إذا قبلها أو أخبر بها.
+cession de dette | La cession de dette n'est opposable au créancier que s'il l'approuve. | لا تكون حوالة الدين نافذة في حق الدائن إلا إذا أقرها.
+subrogation | Par la subrogation, celui qui a payé prend la place du créancier. | بالحلول، يحل من وفى الدين محل الدائن.
+action oblique | Par l'action oblique, le créancier exerce les droits de son débiteur. | يستعمل الدائن بالدعوى غير المباشرة حقوق مدينه.
+action paulienne | L'action paulienne protège le créancier contre la fraude du débiteur. | تحمي الدعوى البولصية الدائن من غش المدين.
+simulation | En cas de simulation, les tiers de bonne foi peuvent se prévaloir du contrat apparent. | في حالة الصورية، يجوز للغير حسن النية أن يتمسك بالعقد الظاهر.
+droit de rétention | Le garagiste exerce son droit de rétention sur le véhicule jusqu'au paiement. | يمارس صاحب المرأب حق الحبس على المركبة إلى غاية الوفاء.
+enrichissement sans cause | L'action fondée sur l'enrichissement sans cause tend à indemniser l'appauvri. | ترمي الدعوى المؤسسة على الإثراء بلا سبب إلى تعويض المفتقر.
+paiement de l'indu | En cas de paiement de l'indu, celui qui a reçu la somme doit la restituer. | في حالة دفع غير المستحق، يجب على من تسلم المبلغ أن يرده.
+gestion d'affaires | La gestion d'affaires oblige le maître à rembourser les dépenses utiles. | تلزم الفضالة رب العمل برد النفقات النافعة.
+responsabilité civile | L'assurance couvre la responsabilité civile du conducteur. | يغطي التأمين المسؤولية المدنية للسائق.
+responsabilité contractuelle | La responsabilité contractuelle suppose l'inexécution d'une obligation née du contrat. | تقوم المسؤولية العقدية في حالة عدم التنفيذ لالتزام ناشئ عن العقد.
+responsabilité délictuelle | La responsabilité délictuelle naît d'une faute qui entraîne un dommage pour autrui. | تنشأ المسؤولية التقصيرية عن خطأ يسبب ضررا للغير.
+lien de causalité | La victime doit prouver le lien de causalité entre la faute et le dommage. | على الضحية أن تثبت علاقة السببية بين الخطأ والضرر.
+abus de droit | L'exercice d'un droit dans le seul but de nuire à autrui est un abus de droit. | يعد استعمال الحق بقصد الإضرار بالغير فقط صورة من التعسف في استعمال الحق.
+victime | La victime a droit à la réparation intégrale de son dommage. | للضحية الحق في التعويض الكامل عن الضرر.
+auteur du dommage | L'auteur du dommage indemnise la victime. | يعوض المسؤول عن الضرر الضحية.
+dommage matériel | La destruction du véhicule est un dommage matériel. | إتلاف المركبة ضرر مادي.
+dommage moral | L'atteinte à l'honneur est un dommage moral. | المساس بالشرف ضرر معنوي.
+dommage corporel | La fracture subie par la victime est un dommage corporel. | الكسر الذي أصاب الضحية ضرر جسماني.
+responsabilité du fait des choses | La responsabilité du fait des choses pèse sur le gardien de la chose. | تقع المسؤولية عن الأشياء على حارس الشيء.
+gardien de la chose | Le gardien de la chose a sur elle un pouvoir de direction et de surveillance. | لحارس الشيء قدرة التسيير والرقابة عليه.
+responsabilité du fait d'autrui | La responsabilité du fait d'autrui s'applique à celui qui surveille un mineur. | تطبق المسؤولية عن فعل الغير على من يتولى رقابة قاصر.
+commettant | Le commettant répond du dommage causé par son préposé dans l'exercice de ses fonctions. | يكون المتبوع مسؤولا عن الضرر الذي يحدثه تابعه حال تأدية وظيفته.
+préposé | Le préposé agit sous l'autorité du commettant. | يعمل التابع تحت سلطة المتبوع.
+faute lourde | La clause qui exclut la responsabilité ne joue pas en cas de faute lourde. | لا يسري البند الذي يعفي من المسؤولية في حالة خطأ جسيم.
+négligence | L'accident est dû à la négligence du conducteur. | يرجع الحادث إلى إهمال السائق.
+imprudence | L'homicide involontaire peut résulter d'une imprudence. | يمكن أن ينتج القتل الخطأ عن عدم الاحتياط.
+preuve | Le demandeur apporte la preuve de son droit. | يقدم المدعي الدليل على حقه.
+charge de la preuve | La charge de la preuve pèse sur le créancier. | يقع عبء الإثبات على الدائن.
+moyen de preuve | L'écrit est le moyen de preuve le plus sûr. | الكتابة هي وسيلة الإثبات الأكثر أمانا.
+force probante | L'acte authentique a une force probante supérieure à celle de l'acte sous seing privé. | للعقد الرسمي القوة الثبوتية الأعلى مقارنة بالعقد العرفي.
+preuve par écrit | La preuve par écrit est exigée au-delà de cent mille dinars. | يشترط الإثبات بالكتابة إذا زادت القيمة على مائة ألف دينار.
+commencement de preuve par écrit | Une lettre signée du débiteur vaut commencement de preuve par écrit. | تعد الرسالة الموقعة من المدين مبدأ ثبوت بالكتابة.
+acte authentique | L'acte authentique fait foi jusqu'à inscription de faux. | يعتبر العقد الرسمي حجة إلى غاية الطعن بالتزوير.
+acte sous seing privé | L'acte sous seing privé est signé par les parties sans l'intervention d'un officier public. | يوقع الأطراف العقد العرفي دون تدخل ضابط عمومي.
+acte notarié | La vente d'un immeuble est constatée par un acte notarié. | يثبت بيع العقار بموجب عقد توثيقي.
+signature | Chaque partie appose sa signature au bas du contrat. | يضع كل طرف توقيعه في أسفل العقد.
+date certaine | L'acte sous seing privé a date certaine à compter de son enregistrement. | يكون للعقد العرفي تاريخ ثابت ابتداء من يوم تسجيله.
+copie | Le notaire délivre une copie du contrat à chaque partie. | يسلم الموثق نسخة من العقد لكل طرف.
+légalisation de signature | La légalisation de signature se fait à la commune. | يتم التصديق على التوقيع في البلدية.
+témoignage | Le juge apprécie librement le témoignage. | يقدر القاضي الشهادة بكل حرية.
+témoin | Le témoin prête serment de dire la vérité. | يؤدي الشاهد اليمين بأن يقول الحقيقة.
+aveu | L'aveu fait devant le juge fait pleine foi contre celui qui l'a fait. | الإقرار أمام القاضي حجة قاطعة على المقر.
+serment | Le juge peut déférer le serment à l'une des parties. | يجوز للقاضي أن يوجه اليمين إلى أحد الأطراف.
+serment décisoire | Le serment décisoire met fin au litige. | تنهي اليمين الحاسمة النزاع.
+présomption | Le juge peut fonder sa décision sur une présomption grave et précise. | يجوز للقاضي أن يؤسس قراره على قرينة قوية ودقيقة.
+présomption légale | La présomption légale dispense de toute autre preuve celui au profit duquel elle existe. | تغني القرينة القانونية من تقررت لمصلحته عن أي دليل آخر.
+inscription de faux | L'inscription de faux est dirigée contre un acte authentique. | يوجه الطعن بالتزوير ضد عقد رسمي.
+vérification d'écriture | Le juge ordonne une vérification d'écriture lorsqu'une partie conteste sa signature. | يأمر القاضي بمضاهاة الخطوط إذا أنكر أحد الأطراف توقيعه.
