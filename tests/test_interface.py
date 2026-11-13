@@ -1,5 +1,8 @@
 """Interface de bureau : fenêtre, barre de menus, écran « Terme », fiche (tests exécutés sans écran).
 
+La barre latérale, les écrans « Paramètres », « Description de la plateforme » et « Centre
+d'aide », l'allumage des étapes et l'écran de démarrage sont testés dans ``test_interface_ecrans.py``.
+
 La largeur d'un texte dépend de la police du système. Les tests ne comparent donc pas les textes
 abrégés ou raccourcis à une valeur exacte : ils vérifient leur forme (une des formes prévues,
 abrégée ou non), et les contenus complets.
@@ -21,8 +24,9 @@ from traducteur.interface import boites, theme
 from traducteur.interface import fenetre as module_fenetre
 from traducteur.interface.boites import BoiteMessage
 from traducteur.interface.composants import ESPACE_INVISIBLE, MARQUE_RTL, EtiquetteCourte
-from traducteur.interface.fenetre import MODE_TERME, MODE_TEXTE, BarreEtat, FenetrePrincipale
+from traducteur.interface.fenetre import MODE_PARAMETRES, MODE_TERME, MODE_TEXTE, BarreEtat, FenetrePrincipale
 from traducteur.interface.fiche import LARGEUR_MINIMALE
+from traducteur.interface.navigation import LARGEUR as LARGEUR_DU_RAIL
 from traducteur.interface.recherche import LEGENDES
 from traducteur.langues import AR, FR
 
@@ -66,22 +70,32 @@ def ecrire(chemin, texte):
 
 # ------------------------------------------------------------------ démarrage
 def test_la_fenetre_s_ouvre_avec_le_glossaire_d_exemple(fenetre, avertissements):
+    """Le glossaire est chargé à l'ouverture, sans aucune commande."""
     assert avertissements == []
     assert fenetre.windowTitle() == "Traducteur juridique"
     assert (fenetre.minimumWidth(), fenetre.minimumHeight()) == (900, 560)
-    # Barre de menus : à droite, le glossaire chargé.
-    assert fenetre.indicateur.nom.texte_complet() == "glossaire_essai.csv"
-    assert fenetre.indicateur.detail.text() == " · 40 entrées"
-    assert "Encodage UTF-8, séparateur : point-virgule" in fenetre.indicateur.toolTip()
-    # Barre d'outils : l'écran « Terme », le sens de traduction, la barre de recherche.
-    assert fenetre.mode == MODE_TERME and fenetre.boutons_mode[MODE_TERME].isChecked()
-    assert fenetre.etiquette_source.text() == "Français" and fenetre.etiquette_cible.text() == "العربية"
+    assert fenetre.glossaire.nom == "glossaire_essai.csv" and len(fenetre.glossaire) == 40
+    assert fenetre.glossaire_fourni()
+    # Barre d'outils : le sens de traduction, puis la barre de recherche de l'écran « Terme ».
+    assert fenetre.mode == MODE_TERME and fenetre.rail.boutons[MODE_TERME].isChecked()
+    assert fenetre.cadre_sens.isVisible()
+    assert fenetre.sens.source.text() == "Français" and fenetre.sens.cible.text() == "العربية"
     assert fenetre.outils.currentWidget() is fenetre.page.barre
     assert fenetre.page.champ.hasFocus()
-    # Barre d'état.
-    assert fenetre.barre_etat.texte() == "Glossaire chargé : 40 entrées."
-    assert fenetre.barre_etat.sens() == "Sens : français → arabe"
-    assert fenetre.barre_etat.version.text() == "Version 0.3"
+    # La barre d'état n'affiche que des messages : rien à signaler à l'ouverture.
+    assert fenetre.barre_etat.texte() == ""
+
+
+def test_la_fenetre_n_a_pas_de_libelle_technique(fenetre):
+    """Ni version, ni nom du glossaire, ni encodage, ni bouton de chargement dans la fenêtre de travail."""
+    for page in (fenetre.page, fenetre.page_texte):
+        visibles = textes(page) + [bouton.text() for bouton in page.findChildren(QPushButton)]
+        for texte in visibles:
+            assert "UTF-8" not in texte and "Version" not in texte and "version" not in texte, texte
+            assert "glossaire_essai" not in texte and "Ouvrir un glossaire" not in texte, texte
+    for nom in ("indicateur", "boutons_mode", "action_exemple"):
+        assert not hasattr(fenetre, nom)
+    assert not hasattr(fenetre.barre_etat, "version") and not hasattr(fenetre.barre_etat, "sens")
 
 
 def test_le_style_de_l_application(application, fenetre):
@@ -160,6 +174,7 @@ def test_recherche_d_un_terme_francais(fenetre):
     contenu = textes(fiche.colonne_contexte.corps)
     assert contenu[:3] == ["Code civil, art. 106", "Le contrat fait la loi des parties.", "العقد شريعة المتعاقدين."]
     assert textes(fiche.colonne_contexte.pied) == ["2 exemples dans le glossaire"]
+    assert [emploi.origine for emploi in fiche.colonne_contexte.emplois] == ["propre", "propre"]
     riches = [label.text() for label in fiche.colonne_contexte.corps.findChildren(QLabel) if "<span" in label.text()]
     assert len(riches) == 4
     assert any('font-weight: 600;">contrat</span>' in texte for texte in riches)
@@ -222,8 +237,7 @@ def test_un_terme_arabe_inverse_le_sens(fenetre):
     assert textes(page.fiche.colonne_equivalent.corps)[0] == "FRANÇAIS · CIBLE"
     # La colonne du terme arabe s'aligne à droite.
     assert page.fiche.colonne_terme.corps.layoutDirection() == Qt.LayoutDirection.RightToLeft
-    assert fenetre.barre_etat.sens() == "Sens : arabe → français"
-    assert fenetre.etiquette_source.text() == "العربية" and fenetre.etiquette_cible.text() == "Français"
+    assert fenetre.sens.source.text() == "العربية" and fenetre.sens.cible.text() == "Français"
     assert page.champ.placeholderText() == "أدخل مصطلحا قانونيا، بالعربية أو بالفرنسية..."
     assert page.champ.layoutDirection() == Qt.LayoutDirection.RightToLeft
     # Un message passager l'annonce ; l'état de l'écran reste le résultat de la recherche.
@@ -315,7 +329,7 @@ def test_effacer_la_recherche_revient_a_l_accueil(fenetre):
     assert page.entree is None and page.requete == "" and page.champ.text() == ""
     assert page.pile.currentWidget() is page.accueil and len(page.accueil.puces) == 5
     assert page.barre.texte_du_resume() == "" and not page.barre.effacer.isVisible()
-    assert fenetre.barre_etat.texte() == "Glossaire chargé : 40 entrées."
+    assert fenetre.barre_etat.texte() == ""
 
 
 def test_les_puces_et_les_fleches_ouvrent_une_autre_entree(fenetre):
@@ -434,14 +448,19 @@ def test_la_fiche_defile_dans_une_fenetre_etroite(fenetre, application):
     page = fenetre.page
     page.rechercher("contrat")
     barre = page.defilement_fiche.horizontalScrollBar()
+
+    def place(largeur: int) -> int:
+        """Largeur laissée à la fiche : la fenêtre, moins la barre latérale et les marges."""
+        return largeur - LARGEUR_DU_RAIL - 2 * theme.MARGE
+
     fenetre.resize(1080, 620)
     application.processEvents()
-    assert barre.maximum() == 0 and page.fiche.width() == 1080 - 2 * theme.MARGE  # les cinq champs tiennent
+    assert barre.maximum() == 0 and page.fiche.width() == place(1080)  # les cinq champs tiennent
     assert page.barre.resume.isVisible()
     fenetre.resize(900, 560)
     application.processEvents()
     # La fiche garde sa largeur minimale et défile ; le résumé laisse sa place au champ de saisie.
-    assert page.fiche.width() == LARGEUR_MINIMALE and barre.maximum() == LARGEUR_MINIMALE - (900 - 2 * theme.MARGE)
+    assert page.fiche.width() == LARGEUR_MINIMALE and barre.maximum() == LARGEUR_MINIMALE - place(900)
     assert not page.barre.resume.isVisible() and page.barre.texte_du_resume() == "1 terme · 5 expressions"
 
 
@@ -453,9 +472,8 @@ def test_les_signes_speciaux_du_glossaire_sont_affiches_tels_quels(fenetre, tmp_
         "Source <x> & y;Les dommages & intérêts <dus>.;Titre <b>x</b>, suite & fin\n"
         "droits & devoirs;حقوق وواجبات;;;;;;\n"))
     assert fenetre.charger_glossaire(fichier)
-    assert fenetre.indicateur.nom.texte_complet() == "a&b.csv"
-    assert fenetre.indicateur.nom.textFormat() == Qt.TextFormat.PlainText
-    assert "a&amp;b.csv" in fenetre.indicateur.toolTip()
+    nom = fenetre.page_parametres.nom_du_glossaire
+    assert nom.texte_complet() == "a&b.csv" and nom.textFormat() == Qt.TextFormat.PlainText
     page = fenetre.page
     page.rechercher("dommages & intérêts")
     fiche = page.fiche
@@ -594,14 +612,17 @@ def test_ouvrir_un_autre_glossaire(fenetre, reglages, avertissements, tmp_path):
                      "Français,Arabe,Remarque\ntribunal,محكمة,\nappel,استئناف,voie de recours\n")
     fenetre.page.rechercher("contrat")
     assert fenetre.charger_glossaire(fichier, bilan=True)
-    assert len(fenetre.glossaire) == 2
-    assert fenetre.indicateur.nom.texte_complet() == "mon_glossaire.csv"
-    assert fenetre.indicateur.detail.text() == " · 2 entrées"
-    assert "séparateur : virgule" in fenetre.indicateur.toolTip()
+    assert len(fenetre.glossaire) == 2 and not fenetre.glossaire_fourni()
     assert reglages.value("glossaire/chemin") == str(fichier.resolve())
+    # L'écran « Paramètres » décrit le glossaire chargé.
+    parametres = fenetre.page_parametres
+    assert parametres.nom_du_glossaire.texte_complet() == "mon_glossaire.csv"
+    assert parametres.dossier_du_glossaire.texte_complet() == str(tmp_path)
+    assert parametres.taille_du_glossaire.text() == "2 entrées"
+    assert parametres.bouton_fourni.isEnabled() and parametres.bouton_recharger.isEnabled()
     titre, bilan = avertissements[-1]
     assert titre == "Glossaire chargé"
-    assert "mon_glossaire.csv : 2 entrées." in bilan and "séparateur : virgule" in bilan
+    assert bilan.splitlines()[0] == "mon_glossaire.csv : 2 entrées."
     assert "Colonnes reconnues : terme_fr, terme_ar." in bilan
     assert "Colonnes ignorées (nom inconnu) : Remarque." in bilan
     # La recherche en cours est relancée dans le nouveau glossaire.
@@ -612,7 +633,7 @@ def test_ouvrir_un_autre_glossaire(fenetre, reglages, avertissements, tmp_path):
     assert grand_terme(fenetre.page.fiche.colonne_equivalent) == "محكمة"
 
 
-def test_ouvrir_un_glossaire_par_la_fenetre_de_choix_du_fichier(fenetre, avertissements, monkeypatch, tmp_path):
+def test_choisir_un_glossaire_dans_les_parametres(fenetre, avertissements, monkeypatch, tmp_path):
     fichier = ecrire(tmp_path / "choisi.csv", "terme_fr;terme_ar\ntribunal;محكمة\n")
     demandes = []
 
@@ -622,16 +643,17 @@ def test_ouvrir_un_glossaire_par_la_fenetre_de_choix_du_fichier(fenetre, avertis
 
     monkeypatch.setattr(QFileDialog, "getOpenFileName", staticmethod(choisir))
     dossier_du_glossaire = str(fenetre.glossaire.chemin.parent)
-    fenetre.action_ouvrir.trigger()  # Fichier → Ouvrir un glossaire (Ctrl+O)
+    fenetre.definir_mode(MODE_PARAMETRES)
+    fenetre.page_parametres.bouton_choisir.click()  # Paramètres → Choisir un autre fichier…
     titre, dossier, filtre = demandes[0]
-    assert titre == "Ouvrir un glossaire" and "*.csv" in filtre
+    assert titre == "Choisir un glossaire" and "*.csv" in filtre
     assert dossier == dossier_du_glossaire  # la fenêtre s'ouvre sur le dossier du glossaire chargé
     assert fenetre.glossaire.nom == "choisi.csv"
     assert avertissements[-1][0] == "Glossaire chargé"  # le bilan de lecture est affiché
 
     # Fenêtre fermée sans choisir de fichier : le glossaire ne change pas.
     monkeypatch.setattr(QFileDialog, "getOpenFileName", staticmethod(lambda *arguments: ("", "")))
-    fenetre.ouvrir_glossaire()
+    fenetre.action_ouvrir.trigger()  # le raccourci Ctrl+O ouvre la même fenêtre de choix
     assert fenetre.glossaire.nom == "choisi.csv" and len(avertissements) == 1
 
 
@@ -642,7 +664,7 @@ def test_un_fichier_invalide_ne_remplace_pas_le_glossaire(fenetre, reglages, ave
     assert avertissements[-1][0] == "Glossaire non chargé" and "CSV UTF-8" in avertissements[-1][1]
     assert avertissements[-1][1].startswith("casse.csv\n\n")
     assert not reglages.contains("glossaire/chemin")
-    assert fenetre.indicateur.nom.texte_complet() == "glossaire_essai.csv"
+    assert fenetre.page_parametres.nom_du_glossaire.texte_complet() == "glossaire_essai.csv"
 
 
 def test_recharger_le_glossaire_garde_l_entree_affichee(fenetre, tmp_path):
@@ -651,11 +673,11 @@ def test_recharger_le_glossaire_garde_l_entree_affichee(fenetre, tmp_path):
     fenetre.page.rechercher("droit")
     fenetre.page.fiche.onglets.onglets[1].click()
     ecrire(fichier, "terme_fr;terme_ar;definition_fr\ndroit;حق;\ndroit;قانون;Ensemble de règles\nloi;قانون;\n")
-    fenetre.action_recharger.trigger()
+    fenetre.page_parametres.bouton_recharger.click()  # Paramètres → Recharger (ou F5)
     assert len(fenetre.glossaire) == 3
     assert fenetre.page.entree.terme_ar == "قانون"
     assert "Ensemble de règles" in textes(fenetre.page.fiche.colonne_definition.corps)
-    assert fenetre.indicateur.detail.text() == " · 3 entrées"
+    assert fenetre.page_parametres.taille_du_glossaire.text() == "3 entrées"
     assert fenetre.barre_etat.texte() == "Glossaire chargé : g.csv, 3 entrées."  # message passager
 
 
@@ -684,13 +706,17 @@ def test_glossaire_donne_au_lancement(application, reglages, avertissements, tmp
     fenetre.deleteLater()
 
 
-def test_revenir_au_glossaire_d_exemple(fenetre, reglages, tmp_path):
+def test_revenir_au_glossaire_fourni(fenetre, reglages, tmp_path):
+    parametres = fenetre.page_parametres
+    assert not parametres.bouton_fourni.isEnabled()  # le glossaire fourni est déjà chargé
+    assert parametres.dossier_du_glossaire.texte_complet() == "Glossaire fourni avec l’application"
     fichier = ecrire(tmp_path / "autre.csv", "terme_fr;terme_ar\ntribunal;محكمة\n")
     fenetre.charger_glossaire(fichier)
-    assert reglages.contains("glossaire/chemin")
-    fenetre.action_exemple.trigger()
+    assert reglages.contains("glossaire/chemin") and parametres.bouton_fourni.isEnabled()
+    parametres.bouton_fourni.click()
     assert fenetre.glossaire.nom == "glossaire_essai.csv" and len(fenetre.glossaire) == 40
-    assert not reglages.contains("glossaire/chemin")  # l'exemple est le glossaire par défaut
+    assert not reglages.contains("glossaire/chemin")  # le glossaire fourni est le glossaire par défaut
+    assert not parametres.bouton_fourni.isEnabled()
 
 
 def test_sans_aucun_glossaire(application, reglages, avertissements, tmp_path, monkeypatch):
@@ -699,24 +725,29 @@ def test_sans_aucun_glossaire(application, reglages, avertissements, tmp_path, m
     fenetre.show()
     application.processEvents()
     page = fenetre.page
-    assert fenetre.glossaire is None
-    assert fenetre.indicateur.nom.texte_complet() == "Aucun glossaire chargé" and fenetre.indicateur.detail.text() == ""
-    assert fenetre.barre_etat.texte() == "Aucun glossaire chargé."
+    assert fenetre.glossaire is None and not fenetre.glossaire_fourni()
     assert not fenetre.action_recharger.isEnabled()
     assert len(avertissements) == 1 and avertissements[0][0] == "Glossaire non chargé"
-    # L'accueil invite à ouvrir un fichier CSV.
+    # L'accueil renvoie à l'écran « Paramètres ».
     assert page.accueil.titre.text() == "Aucun glossaire n’est chargé"
     assert page.accueil.bouton_glossaire.isVisible() and page.accueil.puces == []
+    assert page.accueil.bouton_glossaire.text() == "Ouvrir les paramètres"
     page.rechercher("contrat")
     assert page.entree is None and page.accueil.titre.text() == "Aucun glossaire n’est chargé"
-    assert fenetre.barre_etat.etat().startswith("Aucun glossaire n’est chargé : ouvrez un fichier CSV")
+    assert fenetre.barre_etat.etat() == (
+        "Aucun glossaire n’est chargé : choisissez un fichier CSV dans « Paramètres ».")
+    page.accueil.bouton_glossaire.click()
+    assert fenetre.mode == MODE_PARAMETRES
+    parametres = fenetre.page_parametres
+    assert parametres.nom_du_glossaire.texte_complet() == "Aucun glossaire chargé"
+    assert parametres.taille_du_glossaire.text() == "" and not parametres.bouton_recharger.isEnabled()
 
-    # Le bouton de l'accueil ouvre la fenêtre de choix du fichier ; la recherche est relancée.
+    # Un fichier choisi dans « Paramètres » est chargé ; la recherche en attente est relancée.
     fichier = ecrire(tmp_path / "nouveau.csv", "terme_fr;terme_ar\ncontrat;عقد\n")
     monkeypatch.setattr(QFileDialog, "getOpenFileName", staticmethod(lambda *arguments: (str(fichier), "")))
-    page.accueil.bouton_glossaire.click()
+    parametres.bouton_choisir.click()
     assert fenetre.glossaire.nom == "nouveau.csv" and page.entree.terme_fr == "contrat"
-    assert fenetre.action_recharger.isEnabled()
+    assert fenetre.action_recharger.isEnabled() and parametres.bouton_recharger.isEnabled()
     fenetre.close()
     fenetre.deleteLater()
 
@@ -724,8 +755,8 @@ def test_sans_aucun_glossaire(application, reglages, avertissements, tmp_path, m
 def test_bilan_de_lecture(glossaire):
     bilan = FenetrePrincipale.bilan_de_lecture(glossaire)
     assert bilan.splitlines()[0] == "glossaire_essai.csv : 40 entrées."
-    assert "Encodage UTF-8, séparateur : point-virgule." in bilan
-    assert "ignorée" not in bilan
+    assert "Colonnes reconnues : terme_fr, terme_ar" in bilan
+    assert "ignorée" not in bilan and "UTF-8" not in bilan and "Encodage" not in bilan
 
 
 # ------------------------------------------------------------------ menus
@@ -733,34 +764,34 @@ def test_la_barre_de_menus(fenetre):
     def libelles(menu) -> list[str]:
         return [action.text().replace("&", "").split("\t")[0] for action in menu.actions() if not action.isSeparator()]
 
-    menus = {action.text(): action.menu() for action in fenetre.menus.actions()}
-    # Les titres ne contiennent pas de « & » : aucune lettre n'y est soulignée.
-    assert list(menus) == ["Fichier", "Affichage", "Recherche", "Traduction", "Aide"]
-    assert libelles(menus["Fichier"]) == [
-        "Ouvrir un glossaire…", "Recharger le glossaire", "Revenir au glossaire d’exemple",
-        "Importer un texte…", "Exporter la traduction…", "Quitter"]
+    # Les titres ne contiennent pas de « & » : aucune lettre n'y est soulignée. Il n'y a pas de menu « Aide ».
+    assert [action.text() for action in fenetre.menus.actions()] == ["Fichier", "Affichage", "Recherche", "Traduction"]
+    menus = fenetre.menus_par_titre
+    assert list(menus) == ["Fichier", "Affichage", "Recherche", "Traduction"]
+    # Le glossaire est chargé à l'ouverture : le menu « Fichier » n'a aucune commande pour le charger.
+    assert libelles(menus["Fichier"]) == ["Importer un texte…", "Exporter la traduction…", "Quitter"]
     assert libelles(menus["Affichage"]) == [
-        "Recherche d’un terme", "Traduction d’un texte", "Inverser le sens de traduction"]
+        "Recherche d’un terme", "Traduction d’un texte", "Paramètres", "Description de la plateforme",
+        "Centre d’aide", "Inverser le sens de traduction"]
     assert libelles(menus["Recherche"]) == ["Aller à la barre de recherche", "Effacer la recherche"]
     assert libelles(menus["Traduction"]) == [
         "Traduire le texte", "Copier la traduction", "Insérer un texte d’exemple", "Effacer le texte"]
-    assert libelles(menus["Aide"]) == ["Format du glossaire CSV", "Traduction d’un texte : fonctionnement", "À propos"]
-    # Le glossaire chargé, à droite de la barre, ouvre son propre menu.
-    assert libelles(fenetre.indicateur.menu()) == [
-        "Ouvrir un glossaire…", "Recharger le glossaire", "Revenir au glossaire d’exemple", "Format du glossaire CSV"]
+    # Hors des menus, deux raccourcis restent : choisir un autre glossaire, relire le fichier.
+    assert fenetre.action_ouvrir.shortcut().toString() == "Ctrl+O"
+    assert fenetre.action_recharger.shortcut().toString() == "F5"
+    assert fenetre.action_ouvrir in fenetre.actions() and fenetre.action_recharger in fenetre.actions()
 
 
 def test_alt_et_une_lettre_ouvrent_un_menu(fenetre, application):
     fenetre.activateWindow()
     if not QTest.qWaitForWindowActive(fenetre, 1000):
         pytest.skip("la fenêtre ne peut pas être activée dans cet environnement")
-    for lettre, titre in ((Qt.Key.Key_F, "Fichier"), (Qt.Key.Key_I, "Affichage"), (Qt.Key.Key_A, "Aide")):
+    for lettre, titre in ((Qt.Key.Key_F, "Fichier"), (Qt.Key.Key_I, "Affichage"), (Qt.Key.Key_T, "Traduction")):
         QTest.keyClick(application.focusWidget() or fenetre, lettre, Qt.KeyboardModifier.AltModifier)
         application.processEvents()
-        ouverts = [action.text() for action in fenetre.menus.actions() if action.menu().isVisible()]
-        assert ouverts == [titre]
-        for action in fenetre.menus.actions():
-            action.menu().close()
+        assert [nom for nom, menu in fenetre.menus_par_titre.items() if menu.isVisible()] == [titre]
+        for menu in fenetre.menus_par_titre.values():
+            menu.close()
         application.processEvents()
 
 
@@ -775,22 +806,6 @@ def test_le_menu_recherche(fenetre):
     fenetre.definir_mode(MODE_TEXTE)
     fenetre._effacer_la_recherche()
     assert fenetre.mode == MODE_TERME and fenetre.page.entree is None and fenetre.page.champ.text() == ""
-
-
-def test_le_menu_aide(fenetre, avertissements):
-    fenetre.afficher_format()
-    titre, texte = avertissements[-1]
-    assert titre == "Format du glossaire CSV"
-    assert "terme_fr, terme_ar" in texte and "source_contexte, ressources" in texte and "CSV UTF-8" in texte
-    fenetre.afficher_fonctionnement()
-    titre, texte = avertissements[-1]
-    assert titre == "Traduction d’un texte : fonctionnement"
-    assert "en cinq étapes" in texte and "5. Reconstruction" in texte and "vérifié par le traducteur" in texte
-    fenetre.afficher_a_propos()
-    titre, texte = avertissements[-1]
-    assert titre == "Traducteur juridique" and texte.startswith("Version 0.3.0\n\n")
-    assert "doivent être vérifiés par le traducteur" in texte
-    assert len(avertissements) == 3
 
 
 # ------------------------------------------------------------------ barre d'état
@@ -814,9 +829,6 @@ def test_la_barre_d_etat_affiche_l_etat_ou_un_message_passager(application):
     assert barre.texte() == "Références copiées"
     barre._retour.timeout.emit()
     assert barre.texte() == "« loi » : 1 entrée trouvée dans le glossaire."
-
-    barre.definir_sens(AR)
-    assert barre.sens() == "Sens : arabe → français"
     barre.deleteLater()
 
 
@@ -824,7 +836,9 @@ def test_la_barre_d_etat_suit_l_ecran_affiche(fenetre):
     fenetre.page.rechercher("contrat")
     assert fenetre.barre_etat.etat() == "« contrat » : 6 entrées trouvées dans le glossaire."
     fenetre.definir_mode(MODE_TEXTE)
-    assert fenetre.barre_etat.etat() == "Glossaire chargé : 40 entrées."  # l'écran « Texte » n'a rien à signaler
+    assert fenetre.barre_etat.etat() == ""  # l'écran « Texte » n'a rien à signaler
+    fenetre.definir_mode(MODE_PARAMETRES)
+    assert fenetre.barre_etat.etat() == ""
     fenetre.definir_mode(MODE_TERME)
     assert fenetre.barre_etat.etat() == "« contrat » : 6 entrées trouvées dans le glossaire."
 

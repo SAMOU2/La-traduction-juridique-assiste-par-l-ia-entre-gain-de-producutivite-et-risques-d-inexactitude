@@ -52,7 +52,6 @@ from .texte import PageTexte
 GLOSSAIRE_EXEMPLE = Path(__file__).resolve().parents[2] / "donnees" / "glossaire_juridique.csv"
 
 _CLE_GLOSSAIRE = "glossaire/chemin"
-_SEPARATEURS = {"\t": "tabulation", ";": "point-virgule", ",": "virgule"}
 #: Les écrans de travail : ils ont un sens de traduction et des commandes dans la barre d'outils.
 _ECRANS_DE_TRAVAIL = (MODE_TERME, MODE_TEXTE)
 
@@ -487,10 +486,8 @@ class FenetrePrincipale(QMainWindow):
     @staticmethod
     def bilan_de_lecture(glossaire: Glossaire) -> str:
         """Résumé de ce qui a été lu dans le fichier : entrées, colonnes reconnues ou ignorées."""
-        separateur = _SEPARATEURS.get(glossaire.separateur, glossaire.separateur)
         lignes = [
             f"{glossaire.nom} : {compte(len(glossaire), 'entrée')}.",
-            f"Encodage {glossaire.encodage}, séparateur : {separateur}.",
             "",
             "Colonnes reconnues : " + ", ".join(glossaire.colonnes) + ".",
         ]

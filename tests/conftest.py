@@ -52,6 +52,22 @@ def glossaire_de_demarrage(monkeypatch):
 
 
 # ------------------------------------------------------------------ interface (tests sans écran)
+@pytest.fixture(autouse=True)
+def sans_animation():
+    """Pendant les tests, les étapes prennent tout de suite leur état final : aucun test n'attend une animation.
+
+    Les tests de l'allumage lui-même le réactivent avec ``animation.definir_actives(True)``.
+    """
+    try:
+        from traducteur.interface import animation
+    except ImportError:  # PySide6 n'est pas installé
+        yield
+        return
+    animation.definir_actives(False)
+    yield
+    animation.definir_actives(True)
+
+
 @pytest.fixture(scope="session")
 def application():
     """L'application Qt, avec le style et les couleurs que « traducteur.application » lui donne."""
@@ -67,7 +83,9 @@ def application():
 def reglages(tmp_path):
     """Réglages de l'application rangés dans un fichier temporaire."""
     coeur = pytest.importorskip("PySide6.QtCore")
-    return coeur.QSettings(str(tmp_path / "reglages.ini"), coeur.QSettings.Format.IniFormat)
+    reglages = coeur.QSettings(str(tmp_path / "reglages.ini"), coeur.QSettings.Format.IniFormat)
+    reglages.setValue("affichage/animations", False)  # la fenêtre applique ce réglage à son ouverture
+    return reglages
 
 
 @pytest.fixture

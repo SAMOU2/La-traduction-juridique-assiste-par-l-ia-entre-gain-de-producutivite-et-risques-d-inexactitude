@@ -107,7 +107,7 @@ _A_RELIRE = "Le traducteur ne connaît que les termes du glossaire : relisez et 
 ETAPES = (
     ("Segmentation", "Segmentation", "Le texte est découpé en phrases."),
     ("Découpage", "Découpage", "Chaque phrase est découpée en mots."),
-    ("Recherche dans le CSV", "Recherche",
+    ("Recherche dans le glossaire", "Recherche",
      "Les phrases, puis les expressions, puis les mots sont cherchés dans le glossaire."),
     ("Règles linguistiques", "Règles",
      "Lexique, grammaire, sémantique : synonymes, pluriel, article, complément du nom, choix entre plusieurs sens."),
@@ -466,8 +466,9 @@ class BandeEtapes(QWidget):
     """Bande des cinq étapes du traitement : pour chacune, son numéro, son nom et, dessous, son résultat.
 
     Les étapes occupent leur largeur propre et l'espace restant est réparti entre elles. Quand
-    la place manque, les noms puis les résultats prennent leur forme courte ; dans une bande
-    très étroite, il ne reste que les numéros et les résultats.
+    la place manque, les noms puis les résultats prennent leur forme courte, puis chaque nom
+    passe sous son numéro ; dans une bande très étroite, il ne reste que les numéros et les
+    résultats.
 
     Après une traduction, les cinq étapes s'allument l'une après l'autre.
     """
@@ -475,6 +476,8 @@ class BandeEtapes(QWidget):
     HAUTEUR = 52
     #: Espace minimal entre deux étapes (un chevron y est dessiné).
     ECART_MINIMAL = 20
+    #: Espace minimal entre deux étapes quand leur nom est écrit sous leur numéro.
+    ECART_EMPILE = 10
     #: Marge à gauche et à droite de la bande.
     MARGE = 18
 
@@ -535,35 +538,62 @@ class BandeEtapes(QWidget):
 
     # ------------------------------------------------------------------ mise en place
     def _polices(self):
-        """Police du nom d'une étape, puis police de son résultat."""
-        return police(self.font(), 13, gras=True), police(self.font(), 12)
+        """Police du nom d'une étape, police de son résultat, police du nom dans la forme empilée."""
+        return police(self.font(), 13, gras=True), police(self.font(), 12), police(self.font(), 12)
 
-    def _formes(self) -> list[list[tuple[str, str]]]:
-        """Les textes des cinq étapes (nom, résultat), de la forme la plus longue à la plus courte."""
+    def _formes(self) -> list[tuple[bool, list[tuple[str, str]]]]:
+        """Les formes de la bande, de la plus large à la plus étroite.
+
+        Chaque forme donne sa disposition (empilée ou non) et, pour chaque étape, son nom et
+        son résultat. Dans la forme empilée, le nom passe sous le numéro : la bande garde ses
+        noms dans une colonne étroite.
+        """
         etapes = self.etapes
-        formes = [[(etape.nom, etape.resultat) for etape in etapes],
-                  [(etape.nom_court, etape.resultat) for etape in etapes],
-                  [(etape.nom_court, etape.resultat_court) for etape in etapes],
-                  [("", etape.resultat_court) for etape in etapes],
-                  [("", "") for etape in etapes]]
+        formes = [(False, [(etape.nom, etape.resultat) for etape in etapes]),
+                  (False, [(etape.nom_court, etape.resultat) for etape in etapes]),
+                  (False, [(etape.nom_court, etape.resultat_court) for etape in etapes]),
+                  (True, [(etape.nom_court, etape.resultat_court) for etape in etapes]),
+                  (False, [("", etape.resultat_court) for etape in etapes]),
+                  (False, [("", "") for etape in etapes])]
         return [forme for rang, forme in enumerate(formes) if forme not in formes[:rang]]
 
-    def _largeurs(self, forme: Sequence[tuple[str, str]]) -> list[float]:
-        """Largeur de chaque étape : le numéro, puis le nom au-dessus du résultat (ou le résultat seul)."""
-        gras, normal = self._polices()
+    def _largeurs(self, empilee: bool, forme: Sequence[tuple[str, str]]) -> list[float]:
+        """Largeur de chaque étape.
+
+        Disposition normale : le numéro, puis le nom au-dessus du résultat (ou le résultat seul).
+        Disposition empilée : le numéro et le résultat, au-dessus du nom.
+        """
+        gras, normal, petit = self._polices()
         largeurs = []
         for nom, resultat in forme:
-            textes = max(largeur_du_texte(nom, gras), largeur_du_texte(resultat, normal))
-            largeurs.append(20 + ((9 if nom else 6) + textes if nom or resultat else 0))
+            if empilee:
+                largeurs.append(max(20 + (6 + largeur_du_texte(resultat, normal) if resultat else 0),
+                                    largeur_du_texte(nom, petit)))
+            else:
+                textes = max(largeur_du_texte(nom, gras), largeur_du_texte(resultat, normal))
+                largeurs.append(20 + ((9 if nom else 6) + textes if nom or resultat else 0))
         return largeurs
+
+    def _forme_choisie(self) -> tuple[bool, list[tuple[str, str]]]:
+        """La première forme qui tient dans la largeur de la bande."""
+        place = self.width() - 2 * self.MARGE
+        formes = self._formes()
+        for empilee, forme in formes:
+            # Dans la forme empilée, les étapes peuvent se rapprocher : le chevron est alors omis.
+            ecart = self.ECART_EMPILE if empilee else self.ECART_MINIMAL
+            if sum(self._largeurs(empilee, forme)) + ecart * (len(forme) - 1) <= place:
+                return empilee, forme
+        return formes[-1]
+
+    def empilee(self) -> bool:
+        """Vrai si le nom de chaque étape est écrit sous son numéro (bande étroite)."""
+        return self._forme_choisie()[0]
 
     def disposition(self) -> tuple[list[tuple[str, str]], list[float], float]:
         """Les textes affichés (nom, résultat), l'abscisse de chaque étape et l'espace entre deux étapes."""
         place = self.width() - 2 * self.MARGE
-        formes = self._formes()
-        choisie = next((forme for forme in formes
-                        if sum(self._largeurs(forme)) + self.ECART_MINIMAL * (len(forme) - 1) <= place), formes[-1])
-        largeurs = self._largeurs(choisie)
+        empilee, choisie = self._forme_choisie()
+        largeurs = self._largeurs(empilee, choisie)
         ecart = max((place - sum(largeurs)) / (len(choisie) - 1), 4.0)
         abscisses, x = [], float(self.MARGE)
         for largeur in largeurs:
@@ -588,7 +618,8 @@ class BandeEtapes(QWidget):
     def etape_a(self, x: float) -> int | None:
         """Rang de l'étape dessinée à l'abscisse ``x``."""
         textes, abscisses, _ = self.disposition()
-        for rang, (gauche, largeur) in enumerate(zip(abscisses, self._largeurs(textes), strict=True)):
+        largeurs = self._largeurs(self.empilee(), textes)
+        for rang, (gauche, largeur) in enumerate(zip(abscisses, largeurs, strict=True)):
             if gauche - 4 <= x <= gauche + largeur + 4:
                 return rang
         return None
@@ -610,29 +641,39 @@ class BandeEtapes(QWidget):
         peintre.setPen(QPen(QColor(theme.FILET), 1))
         peintre.setBrush(QColor(theme.SURFACE))
         peintre.drawRoundedRect(QRectF(self.rect()).adjusted(0.5, 0.5, -0.5, -0.5), 10, 10)
-        gras, normal = self._polices()
+        gras, normal, petit = self._polices()
+        empilee = self.empilee()
         textes, abscisses, ecart = self.disposition()
         milieu = self.height() / 2
+        hauteur = self.height()
         for rang, ((nom, resultat), x) in enumerate(zip(textes, abscisses, strict=True)):
             niveau = self.allumage.niveau(rang)
             if rang and ecart >= 18:
                 # Le chevron qui mène à l'étape se colore quand elle s'allume.
                 couleur = melanger(theme.TEXTE_4, theme.OR_FONCE, niveau).name()
                 peintre.drawPixmap(QPointF(x - ecart / 2 - 7, milieu - 7), icones.image("chevron-d", couleur, 14, 1.5))
-            dessiner_numero(peintre, QPointF(x + 10, milieu), 10, str(rang + 1), police(self.font(), 12, gras=True),
-                            niveau, self.allumage.halo(rang), carre=True)
             couleur_du_nom = melanger(theme.TEXTE_3, theme.TEXTE, niveau).name()
-            if nom and resultat:
+            centre = QPointF(x + 10, milieu - 9 if empilee else milieu)
+            dessiner_numero(peintre, centre, 10, str(rang + 1), police(self.font(), 12, gras=True), niveau,
+                            self.allumage.halo(rang), carre=True)
+            if empilee:
+                # Bande étroite : le numéro et son résultat, puis le nom dessous.
+                if resultat:
+                    dessiner_ligne(peintre, QRectF(x + 26, 0, largeur_du_texte(resultat, normal) + 2, hauteur),
+                                   resultat, normal, theme.TEXTE_2, base=milieu - 4.5)
+                dessiner_ligne(peintre, QRectF(x, 0, largeur_du_texte(nom, petit) + 2, hauteur), nom, petit,
+                               couleur_du_nom, base=milieu + 18)
+            elif nom and resultat:
                 # Le nom de l'étape, et son résultat dessous.
-                dessiner_ligne(peintre, QRectF(x + 29, 0, largeur_du_texte(nom, gras) + 2, self.height()), nom, gras,
+                dessiner_ligne(peintre, QRectF(x + 29, 0, largeur_du_texte(nom, gras) + 2, hauteur), nom, gras,
                                couleur_du_nom, base=milieu - 4)
-                dessiner_ligne(peintre, QRectF(x + 29, 0, largeur_du_texte(resultat, normal) + 2, self.height()),
+                dessiner_ligne(peintre, QRectF(x + 29, 0, largeur_du_texte(resultat, normal) + 2, hauteur),
                                resultat, normal, theme.TEXTE_3, base=milieu + 13)
             elif nom:
-                dessiner_ligne(peintre, QRectF(x + 29, 0, largeur_du_texte(nom, gras) + 2, self.height()), nom, gras,
+                dessiner_ligne(peintre, QRectF(x + 29, 0, largeur_du_texte(nom, gras) + 2, hauteur), nom, gras,
                                couleur_du_nom, base=milieu + 4.5)
             elif resultat:
-                dessiner_ligne(peintre, QRectF(x + 26, 0, largeur_du_texte(resultat, normal) + 2, self.height()),
+                dessiner_ligne(peintre, QRectF(x + 26, 0, largeur_du_texte(resultat, normal) + 2, hauteur),
                                resultat, normal, theme.TEXTE_2, base=milieu + 4.5)
 
 
