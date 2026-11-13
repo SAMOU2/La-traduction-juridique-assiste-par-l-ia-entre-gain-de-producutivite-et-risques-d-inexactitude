@@ -9,7 +9,7 @@ légalité des délits et des peines | Le principe de légalité des délits et 
 élément moral | L'élément moral de l'infraction est l'intention de son auteur. | الركن المعنوي للجريمة هو قصد الفاعل.
 intention criminelle | L'intention criminelle est nécessaire pour qu'il y ait homicide volontaire. | يشترط القصد الجنائي لقيام القتل العمد.
 préméditation | La préméditation aggrave la peine de l'homicide volontaire. | يشدد سبق الإصرار عقوبة القتل العمد.
-tentative | La tentative de crime est punie comme le crime lui-même. | تعتبر محاولة الجناية كالجناية نفسها.
+tentative | La tentative de crime est considérée comme le crime lui-même. | تعتبر محاولة الجناية كالجناية نفسها.
 récidive | La récidive entraîne une peine plus lourde. | يترتب على العود عقوبة أشد.
 auteur = فاعل | L'auteur de l'infraction est celui qui l'a commise lui-même. | فاعل الجريمة هو من ارتكبها بنفسه.
 complice | Le complice encourt la même peine que l'auteur. | يعاقب الشريك بالعقوبة المقررة للفاعل.

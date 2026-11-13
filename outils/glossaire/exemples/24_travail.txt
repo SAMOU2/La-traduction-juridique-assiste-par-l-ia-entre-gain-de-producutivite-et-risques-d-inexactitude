@@ -13,7 +13,7 @@ salaire national minimum garanti | Aucun salaire ne peut être inférieur au sal
 heures supplémentaires | Les heures supplémentaires sont payées avec une majoration d'au moins cinquante pour cent. | تدفع الساعات الإضافية بزيادة لا تقل عن خمسين بالمائة.
 congé annuel | Le travailleur a droit à un congé annuel de trente jours. | للعامل الحق في عطلة سنوية مدتها ثلاثون يوما.
 licenciement | Le licenciement pour faute grave a lieu sans préavis. | يتم التسريح بسبب خطأ جسيم دون إشعار مسبق.
-licenciement abusif | En cas de licenciement abusif, le juge ordonne la réintégration du travailleur. | في حالة تسريح تعسفي، يأمر القاضي بإعادة إدماج العامل.
+licenciement abusif | En cas de licenciement abusif, le juge peut ordonner la réintégration du travailleur. | في حالة تسريح تعسفي، يجوز للقاضي أن يأمر بإعادة إدماج العامل.
 préavis | Le travailleur qui démissionne respecte un préavis. | يحترم العامل المستقيل مدة إشعار مسبق.
 certificat de travail | L'employeur remet un certificat de travail à la fin de la relation de travail. | يسلم المستخدم شهادة العمل عند انتهاء علاقة العمل.
 syndicat | Le syndicat défend les droits de ses adhérents. | تدافع النقابة عن حقوق منخرطيها.
