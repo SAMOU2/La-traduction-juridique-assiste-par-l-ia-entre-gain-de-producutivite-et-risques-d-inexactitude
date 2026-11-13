@@ -255,7 +255,7 @@ def test_le_centre_d_aide(fenetre, application):
     assert [question.text() for question in aide.questions] == [question for question, _ in pages.QUESTIONS] == [
         "Comment chercher un terme ?", "Comment traduire un texte ?",
         "Pourquoi des mots restent-ils dans la langue d’origine ?", "Que signifie la mention « À vérifier » ?",
-        "Comment utiliser un autre glossaire ?"]
+        "Comment compléter le glossaire ?", "Comment utiliser un autre glossaire ?"]
     contenu = textes(aide.carte_questions)
     for _, reponse in pages.QUESTIONS:
         for paragraphe in reponse:
@@ -350,10 +350,19 @@ def test_la_description_de_la_plateforme(fenetre, application):
     assert all(ligne.numero.niveau == 1.0 for ligne in description.etapes)  # dessinées allumées
     # Les cinq étapes du traitement d'un texte portent les noms de la bande de l'écran « Texte ».
     assert [ligne.titre.text() for ligne in description.traitement] == [nom for nom, _, _ in ETAPES_DU_TRAITEMENT]
-    # Au bas de la page : la version de l'application et la taille du glossaire.
-    assert description.note.text() == f"Traducteur juridique · version {__version__} · glossaire de 40 entrées"
-    contenu = " ".join(textes(description))
-    assert "L’application ne remplace pas le traducteur." in contenu
+    # La présentation cite la taille du glossaire chargé ; la page n'affiche pas de numéro de version.
+    contenu = textes(description)
+    assert contenu[1] == ("Aide à la traduction juridique entre le français et l’arabe, à partir d’un glossaire "
+                          "de 40 entrées.")
+    assert any(texte.startswith("L’application ne remplace pas le traducteur.") for texte in contenu)
+    assert not any(__version__ in texte or "ersion" in texte for texte in contenu)
+
+
+def test_la_description_sans_glossaire(application):
+    description = pages.PageDescription()
+    assert textes(description)[1] == (
+        "Aide à la traduction juridique entre le français et l’arabe, à partir d’un glossaire.")
+    description.deleteLater()
 
 
 # ------------------------------------------------------------------ allumage des étapes

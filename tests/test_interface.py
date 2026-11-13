@@ -308,10 +308,10 @@ def test_aucun_resultat_propose_les_termes_proches(fenetre):
     assert accueil.etiquette_puces.text() == "TERME PROCHE" and puces(accueil) == ["contrat"]
     assert page.barre.texte_du_resume() == "Aucun résultat"
     assert fenetre.barre_etat.texte() == "Aucune entrée du glossaire ne correspond à « contart »."
-    # Au pied du panneau, un conseil remplace les raccourcis : les fiches viennent du fichier CSV.
+    # Au pied du panneau, un conseil remplace les raccourcis : les fiches viennent du glossaire.
     assert accueil.conseil.isVisible() and not accueil.raccourcis.isVisible()
     assert accueil.conseil.texte_complet() == (
-        "Pour obtenir sa fiche, ajoutez ce terme au fichier CSV, puis rechargez le glossaire (F5).")
+        "Les fiches viennent du glossaire. Le centre d’aide explique comment le compléter.")
     accueil.puces[0].click()
     assert page.entree.terme_fr == "contrat" and page.champ.text() == "contrat"
 
@@ -357,10 +357,14 @@ def test_entree_sans_definition_ni_exemple_ni_ressource(fenetre, tmp_path):
     page.rechercher("capacité")
     fiche = page.fiche
     assert textes(fiche.colonne_terme.corps) == ["FRANÇAIS · SOURCE", "capacité"]
-    assert textes(fiche.colonne_definition.corps)[0] == "Aucune définition pour ce terme"
-    assert "definition_fr et definition_ar" in textes(fiche.colonne_definition.corps)[1]
-    assert textes(fiche.colonne_contexte.corps)[0] == "Aucun exemple pour ce terme"
-    assert textes(fiche.colonne_ressources.corps)[0] == "Aucune ressource pour ce terme"
+    # Les messages disent ce qui manque, sans nom de colonne ni de fichier.
+    assert textes(fiche.colonne_definition.corps) == [
+        "Aucune définition pour ce terme", "Le glossaire n’en donne pas encore."]
+    assert textes(fiche.colonne_contexte.corps) == [
+        "Aucun exemple pour ce terme", "Aucune phrase du glossaire n’emploie encore ce terme."]
+    assert textes(fiche.colonne_ressources.corps) == [
+        "Aucune ressource pour ce terme", "Le glossaire ne cite pas encore de référence."]
+    assert fiche.entete.etapes_allumees() == [True, False, True, False, False]
     assert textes(fiche.colonne_definition.pied) == [] and textes(fiche.colonne_contexte.pied) == []
     assert grand_terme(fiche.colonne_equivalent) == "أهلية"
     assert textes(fiche.colonne_equivalent.corps) == ["ARABE · CIBLE", "أهلية"]
@@ -741,6 +745,7 @@ def test_sans_aucun_glossaire(application, reglages, avertissements, tmp_path, m
     parametres = fenetre.page_parametres
     assert parametres.nom_du_glossaire.texte_complet() == "Aucun glossaire chargé"
     assert parametres.taille_du_glossaire.text() == "" and not parametres.bouton_recharger.isEnabled()
+    assert parametres.bouton_choisir.text() == "Choisir un fichier…"
 
     # Un fichier choisi dans « Paramètres » est chargé ; la recherche en attente est relancée.
     fichier = ecrire(tmp_path / "nouveau.csv", "terme_fr;terme_ar\ncontrat;عقد\n")
@@ -748,6 +753,7 @@ def test_sans_aucun_glossaire(application, reglages, avertissements, tmp_path, m
     parametres.bouton_choisir.click()
     assert fenetre.glossaire.nom == "nouveau.csv" and page.entree.terme_fr == "contrat"
     assert fenetre.action_recharger.isEnabled() and parametres.bouton_recharger.isEnabled()
+    assert parametres.bouton_choisir.text() == "Choisir un autre fichier…"
     fenetre.close()
     fenetre.deleteLater()
 

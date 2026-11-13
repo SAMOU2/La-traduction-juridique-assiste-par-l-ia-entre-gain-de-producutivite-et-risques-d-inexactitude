@@ -87,6 +87,13 @@ QUESTIONS = (
     ("Que signifie la mention « À vérifier » ?",
      ("Le glossaire ne cite pas de source pour cette définition. Contrôlez-la dans un texte officiel ou un "
       "dictionnaire juridique avant de la citer.",)),
+    ("Comment compléter le glossaire ?",
+     ("Le glossaire fourni est le fichier glossaire_juridique.csv, dans le dossier « donnees » de "
+      "l’application. Faites-en une copie et ouvrez la copie dans un tableur (Excel, LibreOffice).",
+      "Ajoutez une ligne par terme, ou remplissez les cellules vides : definition_fr et definition_ar pour la "
+      "définition, contexte_fr et contexte_ar pour un exemple, ressources pour les références.",
+      "Enregistrez le fichier, puis choisissez-le dans « Paramètres ». Après une autre modification, cliquez "
+      "sur « Recharger ».")),
     ("Comment utiliser un autre glossaire ?",
      ("Dans « Paramètres », choisissez un fichier CSV. Il contient une ligne par terme ; la première ligne "
       "donne le nom des colonnes. Les colonnes terme_fr et terme_ar sont obligatoires.",
@@ -371,6 +378,7 @@ class PageParametres(PageInformation):
                 "Glossaire fourni avec l’application" if fourni
                 else str(glossaire.chemin.parent) if glossaire.chemin else "")
             self.taille_du_glossaire.setText(compte(len(glossaire), "entrée"))
+        self.bouton_choisir.setText("Choisir un fichier…" if absent else "Choisir un autre fichier…")
         self.bouton_recharger.setEnabled(not absent and glossaire.chemin is not None)
         self.bouton_fourni.setEnabled(absent or not fourni)
 
@@ -427,8 +435,8 @@ class PageDescription(PageInformation):
         entete.addWidget(logo, 0, Qt.AlignmentFlag.AlignTop)
         textes = QVBoxLayout()
         textes.setSpacing(6)
-        textes.addWidget(_texte("Aide à la traduction juridique entre le français et l’arabe, à partir d’un "
-                                "glossaire."))
+        self.presentation = _texte("")
+        textes.addWidget(self.presentation)
         textes.addWidget(_texte("L’application ne remplace pas le traducteur. Pour chaque terme, elle réunit ce "
                                 "qu’il lui faut pour choisir un équivalent et le justifier.", "noteCarte",
                                 interligne=20))
@@ -466,9 +474,6 @@ class PageDescription(PageInformation):
                 "viennent du glossaire : l’application ne les vérifie pas.")):
             carte.ajouter(self._puce(texte), 12 if rang == 0 else 8)
 
-        self.note = etiquette("", "noteCarte")
-        self.note.setAlignment(Qt.AlignmentFlag.AlignHCenter)
-        self.colonne.addWidget(self.note)
         self.terminer()
         self.definir_glossaire(None)
 
@@ -505,11 +510,10 @@ class PageDescription(PageInformation):
         return element
 
     def definir_glossaire(self, glossaire: Glossaire | None) -> None:
-        """Rappelle, au bas de la page, la version de l'application et la taille du glossaire chargé."""
-        elements = [f"{NOM_APPLICATION} · version {__version__}"]
-        if glossaire is not None:
-            elements.append(f"glossaire de {compte(len(glossaire), 'entrée')}")
-        self.note.setText(" · ".join(elements))
+        """La présentation cite la taille du glossaire chargé."""
+        taille = f" de {compte(len(glossaire), 'entrée')}" if glossaire is not None else ""
+        phrase = f"Aide à la traduction juridique entre le français et l’arabe, à partir d’un glossaire{taille}."
+        self.presentation.setText(paragraphe(escape(phrase), FR, 22))
 
 
 # ====================================================================== centre d'aide

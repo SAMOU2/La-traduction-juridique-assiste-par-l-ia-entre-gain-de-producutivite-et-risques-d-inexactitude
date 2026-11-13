@@ -54,8 +54,8 @@ _INVITES = {
     AR: "أدخل مصطلحا قانونيا، بالعربية أو بالفرنسية...",
 }
 _AUCUN_GLOSSAIRE = "Aucun glossaire n’est chargé : choisissez un fichier CSV dans « Paramètres »."
-#: Rappel affiché quand un terme n'est pas dans le glossaire : les fiches viennent du fichier CSV, et de lui seul.
-_TERME_A_AJOUTER = "Pour obtenir sa fiche, ajoutez ce terme au fichier CSV, puis rechargez le glossaire (F5)."
+#: Rappel affiché quand un terme n'est pas dans le glossaire : les fiches viennent du glossaire, et de lui seul.
+_TERME_A_AJOUTER = "Les fiches viennent du glossaire. Le centre d’aide explique comment le compléter."
 
 #: Sous chaque étape du panneau d'accueil : ce que contient le champ (forme longue, forme courte).
 LEGENDES = (

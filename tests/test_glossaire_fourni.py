@@ -198,7 +198,7 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert parametres.nom_du_glossaire.texte_complet() == "glossaire_juridique.csv"
     assert parametres.taille_du_glossaire.text() == "1\u202f000 entrées"
     assert fenetre_fournie.barre_etat.texte() == ""
-    assert fenetre_fournie.page_description.note.text().endswith("glossaire de 1\u202f000 entrées")
+    assert "glossaire de 1\u202f000 entrées" in fenetre_fournie.page_description.presentation.text()
 
     page = fenetre_fournie.page
     assert len(page.accueil.puces) == 5  # termes proposés à l'accueil

@@ -570,9 +570,7 @@ class ColonneDefinition(Colonne):
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
         corps = self.disposition
         if not entree.definition_fr and not entree.definition_ar:
-            self._vide("document", "Aucune définition pour ce terme",
-                       "Ajoutez-la dans les colonnes definition_fr et definition_ar du fichier CSV, "
-                       "puis rechargez le glossaire (F5).")
+            self._vide("document", "Aucune définition pour ce terme", "Le glossaire n’en donne pas encore.")
             return
         for rang, langue in enumerate((source, cible)):
             if rang:
@@ -720,8 +718,7 @@ class ColonneContexte(Colonne):
         corps = self.disposition
         if not self.emplois:
             self._vide("texte", "Aucun exemple pour ce terme",
-                       "Ajoutez-en dans les colonnes contexte_fr et contexte_ar du fichier CSV, "
-                       "puis rechargez le glossaire (F5).")
+                       "Aucune phrase du glossaire n’emploie encore ce terme.")
             return
         for rang, emploi in enumerate(self.emplois):
             if rang:
@@ -777,7 +774,7 @@ class ColonneRessources(Colonne):
         corps = self.disposition
         if not entree.ressources:
             self._vide("document", "Aucune ressource pour ce terme",
-                       "Ajoutez-en dans la colonne ressources du fichier CSV, puis rechargez le glossaire (F5).")
+                       "Le glossaire ne cite pas encore de référence.")
             return
         for rang, ressource in enumerate(entree.ressources):
             if rang:
