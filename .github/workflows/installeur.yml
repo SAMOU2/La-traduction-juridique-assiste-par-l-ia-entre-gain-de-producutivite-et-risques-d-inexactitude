@@ -1,0 +1,75 @@
+# Fabrique l'installeur de l'application pour Windows (fichier .msi) sur une machine Windows de GitHub.
+#
+# La fabrication démarre toute seule quand l'application ou l'installeur change sur la branche principale
+# ou sur une branche de travail. Elle peut aussi être lancée à la main : onglet « Actions » du dépôt,
+# « Installeur Windows », bouton « Run workflow ».
+#
+# Tout le travail est fait par deux scripts du projet, qui fonctionnent aussi sur un ordinateur Windows :
+#   outils/installeur/construire.py   fabrique l'installeur, puis l'essaie (installation, contrôle de
+#                                     l'application installée, désinstallation, mise à jour) ;
+#   outils/installeur/publier.py      publie l'installeur sur la page « Releases » du dépôt.
+name: Installeur Windows
+
+on:
+  push:
+    branches:
+      - main
+      - 'arena/**'
+    paths:
+      - 'traducteur/**'
+      - 'donnees/**'
+      - 'main.py'
+      - 'outils/installeur/**'
+      - '.github/workflows/installeur.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write  # pour publier l'installeur sur la page « Releases »
+
+concurrency:
+  group: installeur-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  installeur:
+    name: Fabriquer, essayer et publier l'installeur
+    runs-on: windows-2025
+    timeout-minutes: 45
+    steps:
+      - name: Récupérer le projet
+        uses: actions/checkout@v7
+
+      - name: Installer Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          architecture: x64
+
+      - name: Installer les outils de fabrication
+        run: python -m pip install --disable-pip-version-check -r outils/installeur/requirements.txt
+
+      - name: Fabriquer l'installeur et l'essayer
+        run: python outils/installeur/construire.py --essayer-l-installation
+
+      - name: Garder l'installeur avec la fabrication
+        uses: actions/upload-artifact@v7
+        with:
+          path: build/installeur/*.msi
+          archive: false
+          if-no-files-found: error
+
+      - name: Garder les journaux
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: journaux
+          path: |
+            build/installeur/journaux/
+            build/installeur/controles/
+            build/installeur/resume.md
+          if-no-files-found: ignore
+
+      - name: Publier l'installeur
+        run: python outils/installeur/publier.py
+        env:
+          GH_TOKEN: ${{ github.token }}
