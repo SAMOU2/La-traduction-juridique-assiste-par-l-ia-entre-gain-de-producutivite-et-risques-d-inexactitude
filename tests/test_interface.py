@@ -365,8 +365,9 @@ def test_une_definition_sans_source_est_a_verifier(fenetre, tmp_path):
     assert textes(page.fiche.colonne_definition.corps)[-1] == "Pas de définition en arabe dans le glossaire."
     page.rechercher("vente")
     assert textes(page.fiche.colonne_definition.pied) == ["À vérifier"]
+    # Sans source dans le glossaire, la définition est aussi à vérifier (comme dans le tableau de l'écran « Texte »).
     page.rechercher("prêt")
-    assert textes(page.fiche.colonne_definition.pied) == []
+    assert textes(page.fiche.colonne_definition.pied) == ["À vérifier", "· source non indiquée"]
 
 
 def test_chaque_entree_de_l_exemple_a_une_definition_et_des_ressources(glossaire):

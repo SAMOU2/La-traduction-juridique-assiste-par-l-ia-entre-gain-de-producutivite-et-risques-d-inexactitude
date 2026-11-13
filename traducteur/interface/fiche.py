@@ -72,6 +72,8 @@ INTERLIGNE = {FR: 22, AR: 30}
 
 _ADRESSE = regex.compile(r"(?:https?://|www\.)[^\s<>«»]+[^\s<>«».,;:!?)]")
 _A_VERIFIER = "a verifier"
+#: Marge au-dessus du message d'un champ vide, la même dans toutes les colonnes.
+_MARGE_HAUTE_DU_MESSAGE = 20
 
 
 # ====================================================================== fonctions d'affichage
@@ -453,6 +455,8 @@ class Colonne(QObject):
 
     def _vide(self, nom_icone: str, titre: str, texte: str) -> None:
         """Message centré, affiché quand le glossaire ne donne rien pour ce champ."""
+        # Les colonnes n'ont pas la même marge haute : ce complément met leurs messages à la même hauteur.
+        self.disposition.addSpacing(_MARGE_HAUTE_DU_MESSAGE - self.marge_haute)
         self.disposition.addStretch(2)
         self.disposition.addWidget(rond("rondVide", 40, nom_icone, theme.TEXTE_4, 18), 0,
                                    Qt.AlignmentFlag.AlignHCenter)
@@ -577,10 +581,15 @@ class ColonneDefinition(Colonne):
                                           "discret", retour_ligne=True))
         corps.addStretch(1)
 
-        # Pied : la source de la définition, ou la mention « À vérifier ».
-        if not entree.source_definition:
-            return
-        detail = mention_a_verifier(entree.source_definition)
+        # Pied : la source de la définition, ou la mention « À vérifier » (comme dans le tableau
+        # de l'écran « Texte », une définition sans source citée est à vérifier).
+        if entree.source_definition:
+            detail = mention_a_verifier(entree.source_definition)
+            explication = "Cette définition n’est pas reprise d’un texte officiel : vérifiez-la avant de la citer."
+        else:
+            detail = "source non indiquée"
+            explication = ("Le glossaire n’indique pas la source de cette définition : "
+                           "vérifiez-la avant de la citer.")
         mention = QHBoxLayout()
         mention.setSpacing(4)
         if detail is None:
@@ -590,8 +599,7 @@ class ColonneDefinition(Colonne):
         else:
             self.ligne_du_pied.addWidget(icone_fixe("alerte", theme.AMBRE, 16, 1.6))
             a_verifier = etiquette("À vérifier", "piedAlerte")
-            a_verifier.setToolTip(infobulle("Cette définition n’est pas reprise d’un texte officiel : "
-                                            "vérifiez-la avant de la citer."))
+            a_verifier.setToolTip(infobulle(explication))
             mention.addWidget(a_verifier)
             self.source_de_la_definition = EtiquetteCourte("", "pied")
             if detail:
