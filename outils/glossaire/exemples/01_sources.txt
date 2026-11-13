@@ -14,7 +14,7 @@ code | Le code réunit les règles applicables à une même matière. | يجمع
 texte | Le juge applique le texte en vigueur au jour des faits. | يطبق القاضي النص الساري يوم وقوع الأفعال.
 disposition | Toute disposition contraire à la présente loi est abrogée. | يلغى كل حكم مخالف لهذا القانون.
 alinéa | Le deuxième alinéa de l'article prévoit une exception. | تنص الفقرة الثانية من المادة على استثناء.
-préambule | Le préambule fait partie intégrante de la constitution. | تشكل الديباجة جزءا لا يتجزأ من الدستور.
+préambule | Le préambule de la constitution rappelle l'histoire du pays. | تذكر ديباجة الدستور بتاريخ البلاد.
 projet de loi | Le Gouvernement dépose le projet de loi sur le bureau de l'Assemblée. | تودع الحكومة مشروع القانون لدى مكتب المجلس.
 proposition de loi | La proposition de loi est examinée par la commission compétente. | تدرس اللجنة المختصة اقتراح القانون.
 exposé des motifs | L'exposé des motifs présente les objectifs du projet de loi. | يبين عرض الأسباب أهداف مشروع القانون.

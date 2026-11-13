@@ -1,0 +1,60 @@
+# Phrases d'exemple du lot 03_administratif.txt : terme | phrase française | phrase arabe
+administration | L'administration doit répondre aux demandes des usagers dans un délai raisonnable. | يجب على الإدارة أن ترد على طلبات المرتفقين في أجل معقول.
+autorité administrative | Le permis est délivré par l'autorité administrative compétente. | تسلم الرخصة السلطة الإدارية المختصة.
+service public | La continuité du service public doit être assurée. | يجب ضمان استمرارية المرفق العام.
+établissement public | L'université est un établissement public doté de la personnalité morale. | الجامعة مؤسسة عمومية تتمتع بالشخصية المعنوية.
+intérêt général | L'administration agit dans l'intérêt général. | تعمل الإدارة لتحقيق المصلحة العامة.
+puissance publique | L'établissement dispose de prérogatives de puissance publique. | تتمتع المؤسسة بامتيازات السلطة العامة.
+acte administratif | L'acte administratif est exécutoire dès sa notification. | يكون القرار الإداري نافذا من تاريخ تبليغه.
+contrat administratif | Le litige né d'un contrat administratif relève du tribunal administratif. | تختص المحكمة الإدارية بالنزاع الناشئ عن عقد إداري.
+décision | La décision est notifiée à l'intéressé par lettre recommandée. | يبلغ القرار إلى المعني برسالة موصى عليها.
+police administrative | La police administrative vise à prévenir les atteintes à l'ordre public. | يهدف الضبط الإداري إلى الوقاية من المساس بالنظام العام.
+pouvoir discrétionnaire | L'administration dispose d'un pouvoir discrétionnaire pour accorder cette autorisation. | تتمتع الإدارة بسلطة تقديرية في منح هذا الترخيص.
+autorisation | L'ouverture de l'établissement est soumise à une autorisation préalable. | يخضع فتح المؤسسة لترخيص مسبق.
+permis | Le permis de construire est délivré par le président de l'assemblée populaire communale. | يسلم رخصة البناء رئيس المجلس الشعبي البلدي.
+agrément | L'association exerce son activité après avoir obtenu l'agrément. | تمارس الجمعية نشاطها بعد حصولها على الاعتماد.
+décentralisation | La décentralisation rapproche la décision du citoyen. | تقرب اللامركزية القرار من المواطن.
+déconcentration | La déconcentration confie des pouvoirs de décision au wali. | يمنح عدم التركيز سلطات اتخاذ القرار للوالي.
+tutelle administrative | La commune est soumise à la tutelle administrative du wali. | تخضع البلدية للوصاية الإدارية للوالي.
+pouvoir hiérarchique | Le ministre exerce le pouvoir hiérarchique sur les agents de son ministère. | يمارس الوزير السلطة الرئاسية على أعوان وزارته.
+délégation | Le directeur signe les décisions par délégation du ministre. | يوقع المدير القرارات بتفويض من الوزير.
+collectivité territoriale | Les collectivités territoriales de l'État sont la commune et la wilaya. | الجماعات المحلية للدولة هي البلدية والولاية.
+commune | La commune est la collectivité territoriale de base. | البلدية هي الجماعة المحلية القاعدية.
+wilaya | La wilaya est dotée d'une assemblée élue. | للولاية مجلس منتخب.
+daïra | La daïra regroupe plusieurs communes. | تضم الدائرة عدة بلديات.
+wali | Le wali représente l'État dans la wilaya. | يمثل الوالي الدولة في الولاية.
+assemblée populaire communale | L'assemblée populaire communale adopte le budget de la commune. | يصادق المجلس الشعبي البلدي على ميزانية البلدية.
+assemblée populaire de wilaya | L'assemblée populaire de wilaya délibère sur le développement local. | يتداول المجلس الشعبي الولائي في التنمية المحلية.
+président de l'assemblée populaire communale | Le président de l'assemblée populaire communale exécute les délibérations de l'assemblée. | ينفذ رئيس المجلس الشعبي البلدي مداولات المجلس.
+délibération | La délibération est transmise au wali dans les jours qui suivent la séance. | ترسل المداولة إلى الوالي في الأيام التي تلي الجلسة.
+fonction publique | L'accès à la fonction publique se fait par concours. | يتم الالتحاق بالوظيفة العمومية عن طريق المسابقة.
+fonctionnaire | Le fonctionnaire est tenu au secret professionnel. | يلتزم الموظف بالسر المهني.
+agent public | L'agent public sert l'intérêt général avec neutralité. | يخدم العون العمومي المصلحة العامة بحياد.
+statut | Le statut fixe les droits et les devoirs du fonctionnaire. | يحدد القانون الأساسي حقوق الموظف وواجباته.
+grade | Le fonctionnaire est nommé dans un grade de son corps. | يعين الموظف في رتبة من رتب سلكه.
+titularisation | La titularisation intervient à la fin du stage. | يتم الترسيم عند نهاية التربص.
+sanction disciplinaire | Aucune sanction disciplinaire ne peut être prononcée sans que l'agent ait été entendu. | لا يجوز توقيع أي عقوبة تأديبية دون سماع العون.
+révocation | La révocation est la sanction disciplinaire la plus grave. | العزل هو أشد عقوبة تأديبية.
+détachement | Le fonctionnaire en détachement conserve ses droits à l'avancement. | يحتفظ الموظف في حالة الانتداب بحقوقه في الترقية.
+démission | La démission ne produit effet qu'après son acceptation. | لا ترتب الاستقالة أثرها إلا بعد قبولها.
+marché public | Le marché public est conclu après une mise en concurrence. | تبرم الصفقة العمومية بعد الدعوة إلى المنافسة.
+appel d'offres | L'appel d'offres est publié dans la presse nationale. | ينشر طلب العروض في الصحافة الوطنية.
+cahier des charges | Le cahier des charges fixe les conditions d'exécution du marché public. | يحدد دفتر الشروط شروط تنفيذ الصفقة العمومية.
+service contractant | Le service contractant attribue le marché public au candidat le mieux classé. | تمنح المصلحة المتعاقدة الصفقة العمومية للمترشح الأحسن ترتيبا.
+soumissionnaire | Le soumissionnaire dépose son dossier sous pli fermé. | يودع المتعهد ملفه في ظرف مغلق.
+avenant | Les parties ont signé un avenant qui prolonge le délai d'exécution. | وقع الطرفان ملحقا يمدد أجل التنفيذ.
+concession | La concession est accordée pour une durée de trente ans. | يمنح الامتياز لمدة ثلاثين سنة.
+délégation de service public | La délégation de service public est conclue par convention. | يبرم تفويض المرفق العام بموجب اتفاقية.
+domaine public | Le domaine public est inaliénable et imprescriptible. | الأملاك الوطنية العمومية غير قابلة للتصرف ولا للتقادم.
+domaine privé | Un terrain du domaine privé de l'État peut être vendu. | يجوز بيع قطعة أرض من الأملاك الوطنية الخاصة التابعة للدولة.
+utilité publique | Le projet a été déclaré d'utilité publique. | صرح بالمنفعة العمومية للمشروع.
+expropriation | L'expropriation donne lieu à une indemnité juste et préalable. | يترتب على نزع الملكية تعويض عادل ومسبق.
+réquisition | La réquisition est ordonnée par écrit. | يؤمر بالتسخير كتابة.
+contentieux administratif | Le contentieux administratif relève des tribunaux administratifs. | تختص المحاكم الإدارية بالمنازعات الإدارية.
+recours pour excès de pouvoir | Le recours pour excès de pouvoir vise à faire annuler un acte administratif illégal. | ترمي دعوى تجاوز السلطة إلى إلغاء قرار إداري غير مشروع.
+excès de pouvoir | Le juge annule la décision entachée d'excès de pouvoir. | يلغي القاضي القرار المشوب بتجاوز السلطة.
+détournement de pouvoir | Le demandeur invoque un détournement de pouvoir. | يثير المدعي عيب الانحراف بالسلطة.
+recours gracieux | Le recours gracieux est adressé à l'autorité qui a pris la décision. | يوجه التظلم الولائي إلى السلطة التي أصدرت القرار.
+recours hiérarchique | Le recours hiérarchique est porté devant le supérieur de l'agent. | يرفع التظلم الرئاسي إلى رئيس العون.
+responsabilité administrative | La responsabilité administrative peut être engagée même sans faute. | يمكن أن تقوم المسؤولية الإدارية حتى بدون خطأ.
+voie de fait | Le juge ordonne à l'administration de mettre fin à la voie de fait. | يأمر القاضي الإدارة بوضع حد للتعدي.

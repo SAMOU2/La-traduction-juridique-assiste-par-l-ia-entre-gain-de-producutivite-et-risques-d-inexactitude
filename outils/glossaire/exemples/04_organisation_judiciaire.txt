@@ -1,0 +1,49 @@
+# Phrases d'exemple du lot 04_organisation_judiciaire.txt : terme | phrase française | phrase arabe
+juridiction | La juridiction vérifie d'abord sa compétence. | تتحقق الجهة القضائية من اختصاصها أولا.
+tribunal | Le tribunal statue sur la demande par un jugement susceptible d'appel. | تفصل المحكمة في الطلب بحكم قابل للاستئناف.
+cour | La cour statue sur les appels formés contre les jugements des tribunaux. | يفصل المجلس القضائي في الاستئنافات المرفوعة ضد أحكام المحاكم.
+Cour suprême | La Cour suprême contrôle l'application du droit par les juges du fond. | تراقب المحكمة العليا تطبيق قضاة الموضوع للقانون.
+chambre | L'affaire est renvoyée devant la chambre civile. | تحال القضية على الغرفة المدنية.
+section | La section sociale connaît de tout litige individuel de travail. | يختص القسم الاجتماعي بكل نزاع فردي في العمل.
+Conseil d'État | Le Conseil d'État est le juge de cassation des décisions rendues en matière administrative. | مجلس الدولة هو قاضي النقض في القرارات الصادرة في المادة الإدارية.
+tribunal administratif | Le tribunal administratif connaît des litiges auxquels la wilaya ou la commune est partie. | تختص المحكمة الإدارية بكل نزاع تكون الولاية أو البلدية طرفا فيه.
+tribunal administratif d'appel | Le tribunal administratif d'appel statue sur l'appel des jugements des tribunaux administratifs. | تفصل المحكمة الإدارية للاستئناف في استئناف أحكام المحاكم الإدارية.
+tribunal des conflits | Le tribunal des conflits désigne la juridiction compétente lorsque deux juridictions se déclarent incompétentes. | تحدد محكمة التنازع الجهة القضائية المختصة عندما تقضي جهتان قضائيتان بعدم اختصاصهما.
+tribunal criminel | Le tribunal criminel connaît des faits qualifiés de crimes. | تختص محكمة الجنايات بالأفعال الموصوفة بأنها جنايات.
+tribunal militaire | Le tribunal militaire connaît des infractions d'ordre militaire. | تختص المحكمة العسكرية بالجرائم ذات الطابع العسكري.
+pôle pénal spécialisé | Le dossier est transmis au pôle pénal spécialisé en raison de sa complexité. | يحال الملف على القطب الجزائي المتخصص بسبب تعقيده.
+double degré de juridiction | Le double degré de juridiction permet de faire rejuger l'affaire en appel. | يسمح التقاضي على درجتين بإعادة الفصل في القضية في الاستئناف.
+ressort | Le tribunal compétent est celui dans le ressort duquel se trouve l'immeuble. | المحكمة المختصة هي التي يقع العقار في دائرة اختصاصها.
+audience | L'audience est publique, sauf si la loi en dispose autrement. | الجلسة علنية ما لم ينص القانون على خلاف ذلك.
+huis clos | Le président ordonne le huis clos pour protéger la vie privée des parties. | يأمر الرئيس بعقد جلسة سرية حماية للحياة الخاصة للأطراف.
+justice | La justice est rendue au nom du peuple. | يصدر العدل أحكامه باسم الشعب.
+magistrature | La magistrature est un corps unique qui comprend les juges et les membres du parquet. | القضاء سلك واحد يضم قضاة الحكم وقضاة النيابة.
+indépendance de la justice | Le président de la République est garant de l'indépendance de la justice. | رئيس الجمهورية ضامن استقلالية القضاء.
+impartialité | L'impartialité du juge est une garantie du procès équitable. | حياد القاضي ضمانة من ضمانات المحاكمة العادلة.
+inamovibilité | L'inamovibilité protège le juge contre toute mutation qu'il n'a pas demandée. | تحمي عدم القابلية للنقل القاضي من كل نقل لم يطلبه.
+récusation | La demande de récusation est présentée avant la clôture des débats. | يقدم طلب رد القاضي قبل إقفال باب المرافعات.
+déni de justice | Le juge qui refuse de statuer commet un déni de justice. | يرتكب القاضي الذي يمتنع عن الفصل إنكار العدالة.
+magistrat du siège | Le magistrat du siège tranche le litige en toute indépendance. | يفصل قاضي الحكم في النزاع بكل استقلالية.
+magistrat du parquet | Le magistrat du parquet requiert à l'audience l'application de la loi. | يطلب قاضي النيابة في الجلسة تطبيق القانون.
+ministère public | Le ministère public exerce l'action publique et requiert l'application de la loi. | تباشر النيابة العامة الدعوى العمومية وتطلب تطبيق القانون.
+procureur de la République | Le procureur de la République reçoit les plaintes et décide de la suite à leur donner. | يتلقى وكيل الجمهورية الشكاوى ويقرر ما يتخذ بشأنها.
+procureur général | Le procureur général représente le ministère public auprès de la cour. | يمثل النائب العام النيابة العامة لدى المجلس القضائي.
+président du tribunal | Le président du tribunal répartit les affaires entre les sections. | يوزع رئيس المحكمة القضايا على الأقسام.
+conseiller | Le conseiller rapporteur présente son rapport à la chambre. | يعرض المستشار المقرر تقريره على الغرفة.
+assesseur | Le juge des mineurs siège avec deux assesseurs. | يجلس قاضي الأحداث مع مساعدين اثنين.
+juré | Le juré prête serment avant l'ouverture des débats. | يؤدي المحلف اليمين قبل افتتاح المرافعات.
+juge des référés | Le juge des référés ordonne une mesure provisoire sans toucher au fond du droit. | يأمر قاضي الاستعجال بتدبير مؤقت دون المساس بأصل الحق.
+avocat | L'avocat assiste son client à toutes les étapes de la procédure. | يساعد المحامي موكله في جميع مراحل الإجراءات.
+barreau | L'avocat est inscrit au tableau du barreau. | يسجل المحامي في جدول منظمة المحامين.
+bâtonnier | Le bâtonnier désigne un avocat pour assister le prévenu. | يعين نقيب المحامين محاميا لمساعدة المتهم.
+assistance judiciaire | L'assistance judiciaire dispense son bénéficiaire du paiement des frais. | تعفي المساعدة القضائية المستفيد منها من دفع المصاريف.
+justiciable | Le justiciable a le droit d'être jugé dans un délai raisonnable. | للمتقاضي الحق في أن يحاكم في أجل معقول.
+auxiliaire de justice | L'huissier de justice est un auxiliaire de justice. | المحضر القضائي مساعد العدالة.
+officier public | L'acte reçu par un officier public fait foi de sa date. | يكون العقد الذي يحرره ضابط عمومي حجة على تاريخه.
+greffier | Le greffier dresse le procès-verbal de l'audience. | يحرر أمين الضبط محضر الجلسة.
+greffe | La requête est déposée au greffe du tribunal. | تودع العريضة لدى أمانة الضبط بالمحكمة.
+huissier de justice | L'huissier de justice signifie le jugement à la partie condamnée. | يبلغ المحضر القضائي الحكم إلى الطرف المحكوم عليه.
+notaire | Le notaire rédige l'acte de vente et en conserve l'original. | يحرر الموثق عقد البيع ويحتفظ بأصله.
+commissaire-priseur | Le commissaire-priseur dirige la vente aux enchères des meubles saisis. | يشرف محافظ البيع بالمزايدة على البيع بالمزاد العلني للمنقولات المحجوزة.
+expert judiciaire | L'expert judiciaire dépose son rapport au greffe dans le délai fixé par le juge. | يودع الخبير القضائي تقريره لدى أمانة الضبط في الأجل الذي يحدده القاضي.
+traducteur-interprète officiel | Le traducteur-interprète officiel appose son sceau sur la traduction. | يضع المترجم الرسمي ختمه على الترجمة.
