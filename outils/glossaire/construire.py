@@ -504,8 +504,9 @@ def incoherences(anciennes: list[dict], nouvelles: list[dict]) -> list[str]:
         presents = {cle_souple(terme) for _, _, terme, _, present in trouves if present}
         absents: dict[str, list[str]] = collections.defaultdict(list)
         for depart, arrivee, terme, arabe, present in trouves:
-            # Un terme pris dans un terme plus long déjà traduit (« cour » dans « Cour suprême ») n'est pas signalé.
-            dans_un_autre = any(a <= depart and arrivee <= b and (a, b) != (depart, arrivee) for a, b in couverts)
+            # Un terme pris dans un terme déjà traduit (« cour » dans « Cour suprême », « intérêt » dans
+            # « intérêts ») n'est pas signalé.
+            dans_un_autre = any(a <= depart and arrivee <= b for a, b in couverts)
             if not present and not dans_un_autre and cle_souple(terme) not in presents:
                 if f"{terme} = {arabe}" not in absents[cle_souple(terme)]:
                     absents[cle_souple(terme)].append(f"{terme} = {arabe}")

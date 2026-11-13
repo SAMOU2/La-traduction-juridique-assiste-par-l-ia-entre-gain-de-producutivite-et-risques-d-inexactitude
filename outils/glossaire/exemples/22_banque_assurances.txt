@@ -1,0 +1,22 @@
+# Phrases d'exemple du lot 22_banque_assurances.txt : terme | phrase française | phrase arabe
+banque | La banque reçoit les dépôts du public et accorde des prêts. | يتلقى البنك ودائع الجمهور ويمنح القروض.
+Banque d'Algérie | La Banque d'Algérie émet la monnaie nationale. | يصدر بنك الجزائر النقد الوطني.
+établissement financier | L'établissement financier ne peut pas recevoir de fonds du public. | لا يجوز للمؤسسة المالية أن تتلقى الأموال من الجمهور.
+monnaie | Le dinar est la monnaie légale en Algérie. | الدينار هو النقد القانوني في الجزائر.
+compte bancaire | Le salaire est versé sur le compte bancaire du travailleur. | يدفع الأجر في الحساب البنكي للعامل.
+virement | La facture est payée par virement. | تدفع الفاتورة عن طريق تحويل.
+secret bancaire | Le secret bancaire ne peut pas être opposé au juge pénal. | لا يحتج بالسر البنكي في مواجهة القاضي الجزائي.
+crédit | La banque étudie le dossier avant d'accorder un crédit. | يدرس البنك الملف قبل منح ائتمان.
+taux d'intérêt | Le taux d'intérêt du prêt est fixé dans le contrat. | يحدد سعر الفائدة المطبق على القرض في العقد.
+intérêts | L'emprunteur rembourse la somme prêtée et les intérêts. | يسدد المقترض المبلغ المقترض والفوائد.
+assurance | L'assurance du véhicule est obligatoire. | التأمين على المركبة إلزامي.
+contrat d'assurance | Le contrat d'assurance est rédigé par écrit, en caractères apparents. | يحرر عقد التأمين كتابيا وبحروف واضحة.
+police d'assurance | La police d'assurance indique les risques garantis et le montant de la prime. | تبين وثيقة التأمين الأخطار المضمونة ومبلغ القسط.
+réassurance | Par la réassurance, l'assureur transfère à un autre une part des risques. | بإعادة التأمين، يحول المؤمن إلى غيره جزءا من الأخطار.
+assureur | L'assureur indemnise l'assuré après le sinistre. | يعوض المؤمن المؤمن له بعد الحادث.
+assuré | L'assuré déclare le sinistre dans un délai de sept jours. | يصرح المؤمن له بالحادث في أجل سبعة أيام.
+souscripteur | Le souscripteur signe le contrat d'assurance et paie la prime. | يوقع المكتتب عقد التأمين ويدفع القسط.
+prime | La prime est payée chaque année à la date convenue. | يدفع القسط كل سنة في التاريخ المتفق عليه.
+risque | Le contrat ne couvre pas le risque de guerre. | لا يغطي العقد خطر الحرب.
+sinistre | L'expert évalue les dommages causés par le sinistre. | يقدر الخبير الأضرار الناجمة عن الحادث.
+accident de la circulation | La victime d'un accident de la circulation est indemnisée par l'assureur du véhicule. | يعوض مؤمن المركبة ضحية حادث المرور.
