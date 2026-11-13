@@ -1,0 +1,37 @@
+# Phrases d'exemple du lot 07_personnes.txt : terme | phrase française | phrase arabe
+personne | Toute personne a droit au respect de son honneur. | لكل شخص الحق في احترام شرفه.
+personne physique | Le commerçant est une personne physique ou une personne morale. | التاجر شخص طبيعي أو شخص معنوي.
+personne morale | La personne morale a un patrimoine distinct de celui de ses membres. | للشخص المعنوي ذمة مالية مستقلة عن ذمة أعضائه.
+personnalité juridique | L'association acquiert la personnalité juridique dès sa création. | تكتسب الجمعية الشخصية القانونية بمجرد إنشائها.
+patrimoine | Le patrimoine d'une personne réunit ses biens et ses dettes. | تشمل الذمة المالية للشخص الأموال والديون.
+représentant légal | Le représentant légal signe le contrat au nom du mineur. | يوقع الممثل القانوني العقد باسم القاصر.
+association | L'association ne poursuit pas un but lucratif. | لا تسعى الجمعية إلى تحقيق الربح.
+capacité de jouissance | Toute personne a la capacité de jouissance dès la naissance. | تثبت أهلية الوجوب لكل شخص منذ الولادة.
+capacité d'exercice | La capacité d'exercice s'acquiert à dix-neuf ans révolus. | تكتسب أهلية الأداء ببلوغ تسع عشرة سنة كاملة.
+incapacité | L'incapacité est une cause de nullité du contrat. | عدم الأهلية سبب لبطلان العقد.
+incapable | L'incapable ne peut pas conclure seul un contrat. | لا يجوز لعديم الأهلية أن يبرم عقدا بمفرده.
+discernement | L'enfant de moins de treize ans est privé de discernement. | يعتبر الطفل الذي لم يبلغ ثلاث عشرة سنة فاقد التمييز.
+majorité = رشد | La majorité est fixée à dix-neuf ans révolus. | سن الرشد تسع عشرة سنة كاملة.
+majeur | Le majeur est pleinement capable d'exercer ses droits civils. | الراشد كامل الأهلية لمباشرة حقوقه المدنية.
+mineur | Le mineur est représenté par le tuteur. | يمثل الولي القاصر.
+émancipation | L'émancipation permet au mineur d'exercer le commerce. | يسمح الترشيد للقاصر بممارسة التجارة.
+nom de famille | L'enfant porte le nom de famille de son père. | يحمل الطفل لقب أبيه.
+domicile | Le domicile est le lieu où la personne a son habitation principale. | الموطن هو المحل الذي يوجد فيه السكن الرئيسي للشخص.
+domicile élu | Les parties peuvent choisir un domicile élu pour l'exécution du contrat. | يجوز للأطراف اختيار موطن مختار لتنفيذ العقد.
+résidence | L'étranger déclare son lieu de résidence aux autorités. | يصرح الأجنبي للسلطات بمكان الإقامة.
+droits de la personnalité | Celui qui subit une atteinte aux droits de la personnalité peut demander réparation. | لكل من وقع عليه اعتداء في حق من الحقوق الملازمة للشخصية أن يطلب التعويض.
+vie privée | La loi protège la vie privée du citoyen. | يحمي القانون الحياة الخاصة للمواطن.
+état civil | Les registres de l'état civil sont tenus dans chaque commune. | تمسك سجلات الحالة المدنية في كل بلدية.
+officier de l'état civil | L'officier de l'état civil enregistre la naissance dans les cinq jours. | يسجل ضابط الحالة المدنية الولادة في أجل خمسة أيام.
+acte de naissance | L'acte de naissance indique le jour, l'heure et le lieu de la naissance. | تبين شهادة الميلاد يوم الولادة وساعتها ومكانها.
+acte de décès | L'acte de décès est dressé par l'officier de l'état civil de la commune. | يحرر شهادة الوفاة ضابط الحالة المدنية للبلدية.
+livret de famille | Le livret de famille est remis aux époux lors du mariage. | يسلم الدفتر العائلي للزوجين عند الزواج.
+naissance | La naissance est déclarée à la commune du lieu où elle s'est produite. | يصرح بالولادة لدى بلدية المكان الذي وقعت فيه.
+décès | Le décès ouvre la succession. | تفتتح التركة بالوفاة.
+disparu | Le disparu est une personne dont on ignore où elle se trouve et si elle est en vie. | المفقود شخص لا يعرف مكانه ولا تعرف حياته أو موته.
+absent | L'absent est représenté par un curateur désigné par le juge. | يمثل الغائب مقدم يعينه القاضي.
+tutelle | La tutelle sur les biens du mineur appartient au père. | الولاية على أموال القاصر للأب.
+tuteur | Le tuteur gère les biens du mineur avec prudence. | يدير الولي أموال القاصر بحرص.
+tuteur testamentaire | Le tuteur testamentaire est désigné par le père ou par le grand-père. | يعين الوصي من قبل الأب أو الجد.
+curateur | Le tribunal nomme un curateur lorsque l'incapable n'a ni tuteur ni tuteur testamentaire. | تعين المحكمة مقدما إذا لم يكن لعديم الأهلية ولي أو وصي.
+interdiction judiciaire | L'interdiction judiciaire est prononcée par jugement à l'égard du dément. | يحكم بالحجر على المجنون بموجب حكم.
