@@ -17,6 +17,7 @@ from urllib.parse import parse_qs, unquote, urlsplit
 from PySide6.QtCore import QPoint, Qt
 from PySide6.QtGui import QColor, QGuiApplication
 from PySide6.QtTest import QTest
+from PySide6.QtWidgets import QPushButton
 from test_interface import textes
 
 from traducteur import __version__
@@ -147,6 +148,34 @@ def test_les_ecrans_d_information_tiennent_dans_une_petite_fenetre(fenetre, appl
         place = page.defilement.viewport().width()
         for carte in page.cartes:
             assert 300 < carte.width() <= place - 2 * theme.MARGE, mode
+
+
+@pytest.mark.parametrize("taille", [(1440, 860), (900, 560)])
+def test_aucun_bouton_n_est_plus_etroit_que_son_texte(fenetre, application, taille):
+    """Les largeurs prévues valent pour la police de Windows : avec une police plus large, le bouton s'élargit."""
+    fenetre.resize(*taille)
+    texte, recherche = fenetre.page_texte, fenetre.page
+    texte.inserer_un_exemple()
+    texte.traduire()
+    recherche.rechercher("contrat")
+    prevues = {recherche.barre.bouton: 112, texte.bouton_importer: 116, texte.bouton_exporter: 116,
+               texte.bouton_traduire: 132, texte.bouton_effacer: 84, texte.bouton_copier: 96}
+    for mode in (MODE_TERME, MODE_TEXTE):
+        fenetre.definir_mode(mode)
+        application.processEvents()
+        visibles = [bouton for bouton in prevues if bouton.isVisible()]
+        assert len(visibles) == (1 if mode == MODE_TERME else 5), mode
+        for bouton in visibles:
+            # La largeur demandée par le texte seul (sans la largeur prévue) : le bouton ne la coupe pas.
+            demandee = QPushButton.sizeHint(bouton).width()
+            assert bouton.width() >= max(prevues[bouton], demandee), (mode, bouton.text(), bouton.width(), demandee)
+    # Un bouton dont le texte s'allonge s'élargit avec lui (dans la grande fenêtre, où la place ne manque pas).
+    if taille[0] > 1000:
+        avant = texte.bouton_copier.width()
+        texte.bouton_copier.setText("Copier toute la traduction")
+        application.processEvents()
+        assert texte.bouton_copier.width() > avant
+        assert texte.bouton_copier.width() >= QPushButton.sizeHint(texte.bouton_copier).width()
 
 
 # ------------------------------------------------------------------ paramètres

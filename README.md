@@ -530,7 +530,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 417 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 419 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « contrat ») à mettre

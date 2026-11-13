@@ -61,6 +61,7 @@ from . import boites, icones, theme
 from .animation import Allumage
 from .composants import (
     MARQUE_RTL,
+    BoutonAjuste,
     EtiquetteCourte,
     Panneau,
     compte,
@@ -135,14 +136,13 @@ def _decompte(phrases: int, mots: int, caracteres: int) -> tuple[str, str, str]:
 
 def _bouton(texte: str, classe: str, largeur: int, hauteur: int, nom_icone: str = "", info: str = "") -> QPushButton:
     """Bouton de l'écran : « principal » (plein) ou « contour »."""
-    bouton = QPushButton(texte)
+    bouton = BoutonAjuste(texte, largeur, hauteur)
     bouton.setProperty("classe", classe)
     if nom_icone:
         couleur = theme.SURFACE if classe == "principal" else theme.TEXTE_2
         bouton.setIcon(icones.icone(nom_icone, couleur, 16, 1.6, marge=3,
                                     couleur_inactive=theme.SURFACE if classe == "principal" else theme.TEXTE_4))
         bouton.setIconSize(QSize(19, 16))
-    bouton.setFixedSize(largeur, hauteur)
     bouton.setCursor(Qt.CursorShape.PointingHandCursor)
     if info:
         bouton.setToolTip(info)

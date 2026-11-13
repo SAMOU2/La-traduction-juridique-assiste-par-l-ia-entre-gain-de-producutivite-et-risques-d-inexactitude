@@ -17,7 +17,7 @@ pytest.importorskip("PySide6")
 from PySide6.QtCore import QPoint, QStandardPaths, Qt
 from PySide6.QtGui import QGuiApplication, QTextCursor
 from PySide6.QtTest import QTest
-from PySide6.QtWidgets import QFileDialog, QLabel
+from PySide6.QtWidgets import QFileDialog, QLabel, QPushButton
 from test_documents import fabriquer_doc
 from test_interface import textes
 
@@ -974,12 +974,14 @@ def test_l_ecran_s_adapte_a_une_fenetre_etroite(fenetre, page, application):
     assert page.badge.texte() == longue
     # Le rappel des formats laisse sa place aux boutons ; les trois boutons restent entiers.
     assert page.aide_outils.text() == ""
-    assert fenetre.bouton_importer.width() == fenetre.bouton_exporter.width() == 116
-    assert page.bouton_traduire.width() == 132
+    for bouton, largeur_prevue in ((fenetre.bouton_importer, 116), (fenetre.bouton_exporter, 116),
+                                   (page.bouton_traduire, 132)):
+        assert bouton.width() == max(largeur_prevue, QPushButton.sizeHint(bouton).width()), bouton.text()
     assert page.bouton_traduire.mapTo(fenetre, page.bouton_traduire.rect().topRight()).x() <= 900 - theme.MARGE
     assert fenetre.cadre_sens.isVisible() and fenetre.sens.width() >= 200
     # La légende garde d'abord son repère le plus utile ; le décompte se réduit, sans être coupé.
     visibles = [libelle for _, _, libelle, _ in page.legende.reperes_affiches()]
     assert visibles in (["terme du glossaire", "mot absent, à traduire"], ["mot absent, à traduire"], [])
     assert page.decompte_cible.text() in ("5 phrases · 54 mots · 321 caractères", "5 phrases · 54 mots", "54 mots")
-    assert page.bouton_copier.width() == 96 and page.bouton_effacer.width() == 84
+    for bouton, largeur_prevue in ((page.bouton_copier, 96), (page.bouton_effacer, 84)):
+        assert bouton.width() == max(largeur_prevue, QPushButton.sizeHint(bouton).width()), bouton.text()

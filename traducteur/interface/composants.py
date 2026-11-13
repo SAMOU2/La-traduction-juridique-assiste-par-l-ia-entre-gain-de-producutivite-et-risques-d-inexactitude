@@ -57,6 +57,28 @@ def alignement(langue: str) -> Qt.AlignmentFlag:
     return DROITE if est_rtl(langue) else GAUCHE
 
 
+class BoutonAjuste(QPushButton):
+    """Bouton de largeur prévue, qui s'élargit si son texte en demande davantage.
+
+    Les largeurs sont prévues pour la police de Windows (Segoe UI). Avec une police plus large,
+    une largeur imposée couperait le texte du bouton : la largeur prévue n'est donc qu'un
+    minimum, et le bouton ne descend jamais sous la largeur de son texte.
+    """
+
+    def __init__(self, texte: str, largeur: int, hauteur: int, parent: QWidget | None = None) -> None:
+        super().__init__(texte, parent)
+        self._largeur_prevue = largeur
+        self.setFixedHeight(hauteur)
+        self.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+
+    def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
+        taille = super().sizeHint()
+        return QSize(max(self._largeur_prevue, taille.width()), taille.height())
+
+    def minimumSizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
+        return self.sizeHint()
+
+
 @contextmanager
 def sablier() -> Iterator[None]:
     """Affiche le pointeur d'attente pendant une opération qui peut durer (texte long).

@@ -32,6 +32,7 @@ from ..glossaire import Entree, Glossaire
 from ..langues import AR, FR, NOM_EN_FRANCAIS, autre_langue, cle_souple, deviner_langue
 from . import icones, theme
 from .composants import (
+    BoutonAjuste,
     DispositionFluide,
     EtiquetteCourte,
     Panneau,
@@ -114,10 +115,9 @@ class BarreRecherche(QWidget):
         self.effacer.hide()
         ligne.addWidget(self.effacer)
         ligne.addSpacing(3)
-        self.bouton = QPushButton("Rechercher")
+        self.bouton = BoutonAjuste("Rechercher", 112, 34)
         self.bouton.setProperty("classe", "principal")
         self.bouton.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.bouton.setFixedSize(112, 34)
         ligne.addWidget(self.bouton)
         self._texte_du_resume = ""
         self.champ.textChanged.connect(self._texte_change)
