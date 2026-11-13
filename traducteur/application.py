@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import sys
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import QLibraryInfo, QLocale, QSettings, Qt, QTranslator
 from PySide6.QtWidgets import QApplication
 
 from . import NOM_APPLICATION, __version__
@@ -43,8 +43,61 @@ AVERTISSEMENT_LIAISON = (
 )
 
 
+def installer_les_textes_de_qt(application: QApplication) -> QTranslator | None:
+    """Met en français les textes fournis par Qt lui-même.
+
+    Il s'agit surtout du menu contextuel des zones de texte (« Annuler », « Copier »,
+    « Coller »…) et du nom des touches dans les raccourcis (« Maj »). Renvoie les textes
+    installés, ou ``None`` si l'installation de Qt ne les contient pas : ils restent alors
+    en anglais.
+    """
+    textes = QTranslator(application)
+    dossier = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
+    if textes.load(QLocale(QLocale.Language.French), "qtbase", "_", dossier) and application.installTranslator(textes):
+        return textes
+    textes.deleteLater()
+    return None
+
+
+def ouvrir(application: QApplication, chemin_glossaire: str | None = None, reglages: QSettings | None = None):
+    """Affiche l'écran de démarrage (s'il est activé), construit la fenêtre principale, puis l'affiche.
+
+    Renvoie la fenêtre et l'écran de démarrage (``None`` s'il est désactivé dans les réglages).
+    La fenêtre s'affiche quand l'écran de démarrage a fini ; sans lui, tout de suite.
+    """
+    from .interface import boites
+    from .interface.demarrage import EcranDemarrage
+    from .interface.fenetre import FenetrePrincipale
+    from .interface.pages import CLE_ECRAN_DE_DEMARRAGE
+
+    reglages = reglages if reglages is not None else QSettings()
+    ecran = None
+    if reglages.value(CLE_ECRAN_DE_DEMARRAGE, True, bool):
+        ecran = EcranDemarrage()
+        ecran.show()
+        application.processEvents()  # l'écran est dessiné avant le chargement du glossaire
+    fenetre = FenetrePrincipale(chemin_glossaire, reglages=reglages)
+
+    def montrer() -> None:
+        fenetre.show()
+        fenetre.raise_()
+        fenetre.activateWindow()
+        if liaison_qt_instable():
+            import PySide6
+
+            boites.afficher(fenetre, boites.ALERTE, "Installation à corriger", AVERTISSEMENT_LIAISON.format(
+                python=".".join(map(str, sys.version_info[:2])), pyside=PySide6.__version__))
+
+    if ecran is None:
+        montrer()
+    else:
+        ecran.termine.connect(montrer)
+        ecran.passer_la_main()
+    return fenetre, ecran
+
+
 def main(arguments: list[str] | None = None) -> int:
-    """Ouvre la fenêtre principale. Un chemin de glossaire CSV peut être passé en argument."""
+    """Ouvre l'application. Un chemin de glossaire CSV peut être passé en argument."""
     arguments = list(sys.argv if arguments is None else arguments)
     if sys.platform == "win32":
         # Icône propre à l'application dans la barre des tâches de Windows.
@@ -65,15 +118,13 @@ def main(arguments: list[str] | None = None) -> int:
     except AttributeError:
         pass
 
-    from .interface.fenetre import FenetrePrincipale
+    from .interface import theme
 
+    theme.appliquer(application)
+    installer_les_textes_de_qt(application)
     chemins = [argument for argument in application.arguments()[1:] if not argument.startswith("-")]
-    fenetre = FenetrePrincipale(chemins[0] if chemins else None)
-    fenetre.show()
-    if liaison_qt_instable():
-        import PySide6
-        from PySide6.QtWidgets import QMessageBox
-
-        QMessageBox.warning(fenetre, NOM_APPLICATION, AVERTISSEMENT_LIAISON.format(
-            python=".".join(map(str, sys.version_info[:2])), pyside=PySide6.__version__))
-    return application.exec()
+    # La fenêtre et l'écran de démarrage doivent rester référencés tant que l'application tourne.
+    fenetre, ecran = ouvrir(application, chemins[0] if chemins else None)
+    resultat = application.exec()
+    del fenetre, ecran
+    return resultat

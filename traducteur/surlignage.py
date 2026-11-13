@@ -63,13 +63,19 @@ def _motif_francais(forme: str) -> str:
     return "".join(morceaux) + "s?" if morceaux else ""
 
 
-def positions_du_terme(phrase: str, entree: Entree, langue: str) -> list[tuple[int, int]]:
-    """Positions (début, fin) des occurrences du terme de ``entree`` dans ``phrase``."""
+def motif_du_terme(entree: Entree, langue: str) -> regex.Pattern | None:
+    """Expression qui repère le terme de ``entree`` (ou son pluriel) dans une phrase ; ``None`` sans terme."""
     construire = _motif_arabe if langue == AR else _motif_francais
     formes = sorted(entree.formes(langue), key=len, reverse=True)
     motifs = [motif for motif in map(construire, formes) if motif]
     if not motifs:
+        return None
+    return regex.compile(_LIMITE_GAUCHE + "(?:" + "|".join(motifs) + ")" + _LIMITE_DROITE, regex.IGNORECASE)
+
+
+def positions_du_terme(phrase: str, entree: Entree, langue: str) -> list[tuple[int, int]]:
+    """Positions (début, fin) des occurrences du terme de ``entree`` dans ``phrase``."""
+    expression = motif_du_terme(entree, langue)
+    if expression is None:
         return []
-    expression = regex.compile(_LIMITE_GAUCHE + "(?:" + "|".join(motifs) + ")" + _LIMITE_DROITE,
-                               regex.IGNORECASE)
     return [(trouve.start(), trouve.end()) for trouve in expression.finditer(phrase)]

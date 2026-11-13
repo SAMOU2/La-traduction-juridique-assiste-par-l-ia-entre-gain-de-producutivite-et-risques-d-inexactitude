@@ -192,37 +192,49 @@ def fenetre_fournie(application, reglages, avertissements, monkeypatch):
 
 
 def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, avertissements):
-    from test_interface import _BALISE, puces, textes
-
-    from traducteur.interface.composants import LigneCliquable
-
     assert avertissements == []
-    etat = _BALISE.sub("", fenetre_fournie.etat_glossaire.text()).replace("&nbsp;", " ")
-    assert "Glossaire chargé : glossaire_juridique.csv" in etat and "1\u202f000 entrées" in etat
+    # Le glossaire est chargé à l'ouverture ; l'écran « Paramètres » le présente.
+    parametres = fenetre_fournie.page_parametres
+    assert parametres.nom_du_glossaire.texte_complet() == "Glossaire juridique"
+    assert parametres.dossier_du_glossaire.texte_complet() == "Fourni avec l’application"
+    assert parametres.taille_du_glossaire.text() == "1\u202f000 entrées"
+    assert fenetre_fournie.barre_etat.texte() == ""
+    assert "glossaire de 1\u202f000 entrées" in fenetre_fournie.page_description.presentation.text()
 
     page = fenetre_fournie.page
-    assert len(puces(page.zone_resultats)) == 5  # termes proposés à l'accueil
+    assert len(page.accueil.puces) == 5  # termes proposés à l'accueil
     page.rechercher("contrat")
-    assert textes(page.zone_resultats) == ["24 entrées trouvées dans le glossaire :",
-                                           "et 16 autres : précisez la recherche."]
-    assert len(page.groupe_resultats.buttons()) == 8
-    assert "Entrée n° 1 sur 1\u202f000 du glossaire" in textes(page.carte_terme)
-    assert len(page.carte_equivalent.findChildren(LigneCliquable)) == 23
+    assert page.barre.texte_du_resume() == "1 terme · 23 expressions"
+    assert fenetre_fournie.barre_etat.etat() == "« contrat » : 24 entrées trouvées dans le glossaire."
+    assert page.fiche.colonne_terme.rang.texte_complet() == "Entrée 1 sur 1\u202f000"
+    assert page.liste.titre.texte_complet() == "Expressions avec « contrat »"
+    assert page.liste.nombre.text() == "23" and len(page.liste.entrees()) == 23
+    assert page.fiche.entete.etapes_allumees() == [True] * 5
 
-    # « droit » : deux entrées de même forme, puis les expressions.
+    # « loi organique » n'est employée dans aucune phrase du glossaire : l'étape 4 reste éteinte.
+    page.rechercher("loi organique")
+    assert page.fiche.colonne_contexte.emplois == []
+    assert page.fiche.entete.etapes_allumees() == [True, True, True, False, True]
+    # « consentement » n'a qu'un exemple : une définition du glossaire qui emploie le terme le complète.
+    page.rechercher("consentement")
+    assert [emploi.origine for emploi in page.fiche.colonne_contexte.emplois] == ["propre", "definition"]
+
+    # « droit » : deux entrées de même forme (un onglet chacune), puis les expressions.
     page.rechercher("droit")
-    assert [bouton.text() for bouton in page.groupe_resultats.buttons()][:3] == [
-        "droit (حق)", "droit (قانون)", "droit réel"]
+    assert [onglet.text() for onglet in page.fiche.onglets.onglets] == ["Sens 1 : حق", "Sens 2 : قانون"]
+    assert page.liste.entrees()[0].terme_fr == "droit réel"
 
     # Les suggestions pendant la saisie couvrent tout le glossaire (les homonymes une seule fois).
     assert page.suggestions.model().rowCount() == NOMBRE_D_ENTREES - 4
 
-    # Fenêtre étroite et longues expressions (« responsabilité du fait des choses ») : rien ne dépasse des cartes.
+    # Fenêtre étroite : la fiche garde ses cinq champs, la liste défile dans la place qui reste.
     page.rechercher("responsabilité")
     fenetre_fournie.resize(1080, 620)
     application.processEvents()
-    for carte in page.cartes:
-        assert carte.defilement.widget().width() <= carte.defilement.viewport().width()
+    assert page.defilement_fiche.horizontalScrollBar().maximum() == 0
+    assert page.fiche.height() >= page.fiche.hauteur_minimale()
+    assert page.liste.height() >= page.liste.hauteur_minimale()
+    assert page.liste.defilement.verticalScrollBar().maximum() > 0
 
 
 def test_ecran_texte_avec_le_glossaire_fourni(fenetre_fournie, application):
@@ -240,3 +252,12 @@ def test_ecran_texte_avec_le_glossaire_fourni(fenetre_fournie, application):
         "contrat", "loi", "partie", "consentement", "cause", "bonne foi", "contractant", "usage", "équité",
         "obligation", "nullité", "contrat de vente", "acheteur"]
     assert traduction.texte.endswith("بطلان عقد البيع protège المشتري.")
+    # L'écran en rend compte : état de la traduction, une carte par terme, barre d'état.
+    assert page.badge.texte() == "Traduction partielle · 83 mots sur 84 trouvés"
+    assert page.termes.nombre.text() == "13" and len(page.termes.cartes) == 13
+    # Chaque terme a au moins un contexte (son passage du texte) et toutes ses références.
+    for carte in page.termes.cartes:
+        assert carte.passage_source[0] and carte.etapes_renseignees() == [True] * 5
+        assert carte.ressources == carte.entree.ressources and carte.ressources
+    assert [carte.a_verifier for carte in page.termes.cartes[:2]] == [False, True]  # « contrat », puis « loi »
+    assert fenetre_fournie.barre_etat.etat() == "Traduction : 83 mots sur 84 trouvés dans le glossaire."

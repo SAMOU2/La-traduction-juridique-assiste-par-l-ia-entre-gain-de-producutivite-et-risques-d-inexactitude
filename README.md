@@ -5,15 +5,39 @@ Reverso ». Pour chaque terme, elle suit l'enchaînement :
 
 **① Terme → ② Définition → ③ Équivalent → ④ Contextualisation → ⑤ Ressources**
 
-Le dépôt contient l'application (Python et PySide6) et sa [maquette](#maquette-de-lapplication-de-bureau).
+Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont préparée : la
+[proposition d'interface](#la-proposition-dinterface) et la
+[première maquette](#maquette-de-lapplication-de-bureau).
 
-Une [proposition de nouvelle interface](#proposition-de-nouvelle-interface-à-valider) est à valider.
-Elle n'est pas encore programmée.
+## L'application (version 0.4)
 
-## L'application (version 0.2)
+La version 0.4 change la présentation de l'application. Elle comprend la version 0.3, qui n'a
+pas été publiée à part.
 
-L'application a deux écrans. On passe de l'un à l'autre avec le sélecteur **Terme | Texte**, en
-haut à gauche de la fenêtre (ou avec Ctrl+1 et Ctrl+2).
+- la **fiche d'un terme** suit la [proposition d'interface](#la-proposition-dinterface) : les
+  cinq champs côte à côte dans une seule fiche, l'équivalent au centre, les autres résultats
+  listés sous la fiche ;
+- un **écran de démarrage** animé s'affiche pendant l'ouverture ;
+- une **barre latérale** sombre, à gauche, donne accès aux cinq écrans : « Terme », « Texte »,
+  « Paramètres », « Description de la plateforme » et « Centre d'aide » ;
+- les **étapes** de l'enchaînement s'allument en doré, l'une après l'autre, quand un résultat
+  s'affiche ;
+- le **glossaire est chargé automatiquement** à l'ouverture : il n'y a plus de bouton pour
+  l'ouvrir. Le nom du fichier, son encodage et le numéro de version ne sont plus écrits dans la
+  fenêtre. Seul un fichier choisi par l'utilisateur est nommé, dans « Paramètres » ;
+- sur l'écran « Texte », le texte et sa traduction sont **à gauche**, les informations sur les
+  termes **à droite**, avec toutes les références écrites en entier ;
+- le champ ④ **Contextualisation** cherche des phrases dans tout le glossaire, et plus
+  seulement dans la ligne du terme ;
+- le menu « Aide » est remplacé par le **Centre d'aide**, qui prépare un message pour le
+  service informatique.
+
+La lecture du glossaire, la recherche d'un terme et la traduction d'un texte sont celles de la
+version 0.2.
+
+**Écran de démarrage** — le logo, entre deux rangées de tirets qui ondulent et changent de couleur :
+
+![Écran de démarrage](docs/apercu-demarrage.png)
 
 **Écran « Terme »** — recherche d'un terme dans le glossaire :
 
@@ -23,17 +47,29 @@ haut à gauche de la fenêtre (ou avec Ctrl+1 et Ctrl+2).
 
 ![Écran de traduction d'un texte](docs/apercu-texte.png)
 
-*Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à l'autre.*
+**Écran « Paramètres »** :
+
+![Écran des paramètres](docs/apercu-parametres.png)
+
+**Centre d'aide** :
+
+![Centre d'aide](docs/apercu-aide.png)
+
+*Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
+l'autre. L'adresse affichée dans le centre d'aide est un exemple.*
 
 ### Ce qui est fait, ce qui reste à faire
 
 | Fonctionnalité | État |
 | --- | --- |
-| Lecture du glossaire CSV | Fait |
-| Écran « Terme » : barre de recherche et cinq champs côte à côte | Fait, dans les deux sens (français → arabe et arabe → français) |
+| Lecture du glossaire CSV, chargé à l'ouverture de l'application | Fait |
+| Écran « Terme » : barre de recherche et fiche à cinq champs côte à côte | Fait, dans les deux sens (français → arabe et arabe → français) |
 | Écran « Texte » : zones de texte, segmentation en phrases, découpage en mots, recherche de chaque mot dans le CSV, règles lexicales, grammaticales et sémantiques, reconstruction du paragraphe | Fait, dans les deux sens. La traduction se limite au contenu du glossaire : voir [Comment le texte est traduit](#comment-le-texte-est-traduit). |
 | Import de fichiers `.txt`, `.docx`, `.doc` | Fait |
 | Export de la traduction en `.docx` ou `.txt` | Fait. L'export au format `.doc` n'est pas proposé ; Word ouvre les fichiers `.docx`. |
+| Écran de démarrage, barre latérale, étapes qui s'allument, écrans « Paramètres », « Description de la plateforme » et « Centre d'aide » | Fait (version 0.4). Rien de cela n'a été essayé sous Windows : voir les [limites connues](#limites-connues). |
+| Contextes cherchés dans tout le glossaire | Fait. Avec le glossaire fourni, 360 entrées sur 1 000 ont au moins une phrase d'exemple ; les 640 autres n'en ont pas : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
+| Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
 | Fichier `.exe` pour Windows | À faire |
 
 ### Installation
@@ -66,7 +102,11 @@ python main.py
 
 Ou, dans VS Code : ouvrir `main.py`, puis cliquer sur ▶ (« Exécuter le fichier Python »).
 
-L'application s'ouvre avec le glossaire d'exemple. Pour l'ouvrir avec un autre glossaire :
+L'écran de démarrage s'affiche environ deux secondes, puis la fenêtre s'ouvre. Un clic sur
+l'écran de démarrage le ferme dès que la fenêtre est prête. Il se désactive dans « Paramètres ».
+
+Le glossaire fourni est chargé automatiquement. Si un autre glossaire a été choisi dans
+« Paramètres », c'est lui qui est repris. Pour ouvrir l'application avec un glossaire précis :
 `python main.py chemin/vers/mon_glossaire.csv`.
 
 ### Mise à jour
@@ -79,25 +119,57 @@ python -m pip install -r requirements.txt
 python main.py
 ```
 
+### La barre latérale
+
+La barre sombre, à gauche de la fenêtre, contient une icône par écran. L'icône de l'écran
+affiché est dorée. Laisser le pointeur sur une icône affiche le nom de l'écran.
+
+| Icône | Écran | Raccourci |
+| --- | --- | --- |
+| Loupe | **Terme** : chercher un terme dans le glossaire | Ctrl+1 |
+| Feuille | **Texte** : traduire un texte | Ctrl+2 |
+| Curseurs | **Paramètres** : glossaire, affichage, adresse du service informatique | Ctrl+3 |
+| « i » | **Description de la plateforme** : ce que fait l'application, et comment | Ctrl+4 |
+| « ? », en bas | **Centre d'aide** : contact du service informatique, questions fréquentes | F1 |
+
+Les mêmes écrans sont dans le menu *Affichage*.
+
 ### Utiliser l'écran « Terme »
 
-- Saisir un terme, en français ou en arabe, puis appuyer sur Entrée. Si le terme est écrit dans
-  l'autre langue, le sens de traduction s'inverse tout seul. Le bouton ⇄ l'inverse à la main.
-- Sous la barre de recherche, les entrées trouvées s'affichent sous forme de puces (huit au
-  plus). Cliquer sur une puce affiche cette entrée. S'il y en a davantage, leur nombre est
-  indiqué (« et 16 autres ») : compléter la recherche, par exemple « contrat de » au lieu de
-  « contrat ».
+- Saisir un terme, en français ou en arabe, puis appuyer sur Entrée ou cliquer sur
+  **Rechercher**. Pendant la saisie, une liste propose les termes du glossaire qui contiennent
+  les lettres tapées. Si le terme est écrit dans l'autre langue, le sens de traduction
+  s'inverse tout seul. Le bouton ⇄ l'inverse à la main.
+- La **fiche** du terme réunit les cinq champs, côte à côte. L'équivalent est au centre, sur
+  fond bleu.
+- En haut de la fiche, les **cinq étapes s'allument en doré**, l'une après l'autre. Une étape
+  reste grise quand le glossaire n'a rien pour ce champ.
+- La barre de recherche indique ce qui a été trouvé (« 1 terme · 23 expressions »). Les autres
+  entrées trouvées sont listées **sous la fiche**. Un clic sur une ligne ouvre sa fiche.
+- Un terme qui a plusieurs sens (« action » : « دعوى » ou « سهم ») a un onglet par sens, en
+  haut de la fiche.
+- Dans la fiche, une puce écrite en bleu (synonyme, terme associé, autre équivalent) est une
+  autre entrée du glossaire : un clic l'ouvre. Les deux flèches placées en bas du champ ①
+  ouvrent l'entrée précédente et l'entrée suivante du glossaire.
+- **Copier l'équivalent** et **Copier les références** placent le texte dans le
+  presse-papiers. Dans le champ ⑤, un clic sur l'adresse d'un site l'ouvre dans le navigateur.
 - Si rien n'est trouvé, l'application propose les termes dont l'écriture est proche.
-- Dans les champs, un clic sur une puce écrite en bleu ou sur une expression ouvre l'entrée
-  correspondante.
-- *Fichier → Ouvrir un glossaire…* charge un autre fichier CSV. L'application le rouvrira au
-  prochain lancement. *Fichier → Recharger le glossaire* relit le fichier après une
-  modification.
 
-**Les cinq champs sont remplis avec le contenu du fichier CSV, et rien d'autre.** Un terme qui
-n'est pas dans le CSV n'a pas de fiche. Un terme dont la ligne n'a pas de définition, d'exemple
-ou de ressource a le champ correspondant vide. Pour compléter, modifier le fichier CSV, puis
-*Fichier → Recharger le glossaire* (F5).
+**Le champ ④ Contextualisation.** Il affiche d'abord les exemples écrits dans la ligne du terme
+(colonnes `contexte_fr` et `contexte_ar`). S'il y en a moins de deux, l'application cherche dans
+tout le glossaire d'autres phrases qui emploient le terme : les exemples et les définitions des
+autres entrées. Une phrase n'est retenue que si elle contient le terme en français **et** son
+équivalent en arabe. Une étiquette dit d'où vient la phrase, par exemple *Définition de
+« acheteur »* ; un clic sur cette étiquette ouvre l'entrée en question.
+
+**Les cinq champs sont remplis avec le contenu du glossaire, et rien d'autre.** Un terme qui
+n'est pas dans le glossaire n'a pas de fiche. Quand le glossaire n'a ni définition, ni phrase, ni
+ressource pour un terme, le champ correspondant le dit et son étape reste grise. Pour compléter
+le glossaire : voir [Corriger le glossaire](#corriger-le-glossaire).
+
+Dans le champ ②, la mention **À vérifier** signale une définition sans source : la colonne
+`source_definition` est vide, ou commence par « à vérifier ». C'est le cas de 993 des
+1 000 définitions du glossaire fourni.
 
 La recherche ne tient pas compte des majuscules, des accents, d'un article placé devant le terme
 (« le contrat », « العقد »), des signes diacritiques arabes ni des variantes d'écriture de la
@@ -105,26 +177,72 @@ hamza, du ta marbuta et de l'alif maqsura. Le pluriel est reconnu s'il figure da
 
 ### Utiliser l'écran « Texte »
 
-1. Cliquer sur **Texte**, en haut à gauche (ou Ctrl+2).
-2. Écrire ou coller le texte dans la zone de gauche. Le bouton **Importer** ouvre un fichier
-   `.txt`, `.docx` ou `.doc`. Le lien *Insérer un exemple* place un texte d'essai.
+À gauche, de haut en bas : le texte, les cinq étapes du traitement, la traduction. À droite :
+les informations sur les termes juridiques du texte.
+
+1. Cliquer sur l'icône **Texte** de la barre latérale (ou Ctrl+2). Les boutons **Importer**,
+   **Exporter** et **Traduire** s'affichent en haut à droite.
+2. Écrire ou coller le texte dans la zone du haut. **Importer** ouvre un fichier `.txt`,
+   `.docx` ou `.doc`. Le lien *Insérer un exemple* place un texte d'essai.
 3. Cliquer sur **Traduire** (ou Ctrl+Entrée). Un fichier importé est traduit tout de suite. Si
    le texte est écrit dans l'autre langue, le sens de traduction s'inverse tout seul.
-4. La traduction s'affiche dans la zone de droite :
-   - en orange, les termes du glossaire (dans les deux zones) ;
-   - en gris, les mots absents du glossaire : ils restent dans la langue source et sont à
-     traduire à la main.
-5. L'étiquette placée au-dessus de la traduction indique le résultat : « Traduction terminée »
-   (tous les mots ont été trouvés), « Traduction partielle », « Aucun mot trouvé », ou « Texte
-   modifié » quand le texte source a changé depuis la dernière traduction.
-6. La bande du milieu donne le résultat des cinq étapes. Laisser le pointeur sur une étape
-   affiche le détail (règles appliquées, mots non trouvés).
-7. Le tableau « Termes juridiques détectés » applique l'enchaînement ① à ⑤ à chaque terme du
-   glossaire relevé dans le texte. Un clic sur un terme ouvre sa fiche dans l'écran « Terme ».
+4. La traduction s'affiche dans la zone du bas, sous le texte :
+   - en bleu, les termes du glossaire (dans les deux zones) ;
+   - en gris italique, les mots absents du glossaire : ils restent dans la langue source et
+     sont à traduire à la main.
+5. L'étiquette placée au-dessus de la traduction indique le résultat :
+   - « Traduction terminée » (tous les mots ont été trouvés) ou « Traduction partielle », avec
+     le nombre de mots trouvés (« 83 mots sur 84 trouvés ») ;
+   - « Aucun mot trouvé dans le glossaire » ;
+   - « Texte modifié » quand le texte source a changé depuis la dernière traduction.
+6. Entre les deux zones, les cinq étapes du traitement s'allument en doré et donnent chacune
+   leur résultat (« 83 / 84 » pour la recherche). Laisser le pointeur sur une étape affiche le
+   détail : règles appliquées, mots non trouvés.
+7. À droite, le panneau « Termes juridiques détectés » contient **une carte par terme** du
+   glossaire relevé dans le texte. La première carte est ouverte.
+   - Un clic sur l'en-tête d'une carte l'ouvre ou la referme. **Tout développer** ouvre toutes
+     les cartes.
+   - Un clic sur un terme écrit en bleu, dans le texte ou dans la traduction, ouvre sa carte.
+   - Une carte ouverte suit l'enchaînement : ① le terme, sa catégorie et son nombre
+     d'occurrences ; ② sa définition dans les deux langues, avec sa source ou la mention
+     « À vérifier » ; ③ son équivalent ; ④ la phrase du texte où il figure et sa traduction,
+     puis jusqu'à deux phrases du glossaire ; ⑤ **toutes** ses références, écrites en entier.
+   - Quand le contexte n'a pas permis de choisir entre deux sens d'un terme, sa carte le
+     signale en orange.
+   - Le lien *Ouvrir la fiche du terme* affiche le terme sur l'écran « Terme ».
 8. **Copier** place la traduction dans le presse-papiers. **Exporter** l'enregistre dans un
-   fichier `.docx` ou `.txt`.
+   fichier `.docx` ou `.txt`. **Effacer** vide les deux zones.
 
 Chaque écran garde son propre sens de traduction.
+
+### Paramètres, description de la plateforme, centre d'aide
+
+**Paramètres**
+
+- *Glossaire* : le glossaire chargé (« Glossaire juridique » pour le glossaire fourni, le nom
+  du fichier pour un autre) et son nombre d'entrées.
+  - **Choisir un autre fichier…** charge un autre fichier CSV. L'application le rouvrira au
+    prochain lancement.
+  - **Recharger** relit le fichier après une modification.
+  - **Revenir au glossaire fourni** reprend `donnees/glossaire_juridique.csv`.
+- *Affichage* : deux interrupteurs, l'un pour les étapes animées, l'autre pour l'écran de
+  démarrage.
+- *Service informatique* : l'adresse électronique du service informatique. **Elle est vide à
+  l'installation.** Il faut la saisir une fois, puis cliquer sur **Enregistrer**.
+
+**Description de la plateforme** — ce que fait l'application, les cinq étapes de
+l'enchaînement, les deux écrans de travail, la façon dont un texte est traduit, et ce qu'il faut
+savoir avant de se fier à une traduction.
+
+**Centre d'aide**
+
+- **Écrire au service informatique** ouvre le logiciel de messagerie de l'ordinateur sur un
+  message déjà adressé. Le message indique la version de l'application, le système et le
+  glossaire utilisés : il reste à décrire le problème. L'application n'envoie rien elle-même.
+- Si aucun logiciel de messagerie ne répond, l'adresse est copiée dans le presse-papiers, pour
+  écrire depuis une autre messagerie. **Copier l'adresse** la copie directement.
+- Tant que l'adresse n'est pas saisie, le bouton renvoie à « Paramètres ».
+- Six questions fréquentes, puis la liste des raccourcis du clavier.
 
 ### Comment le texte est traduit
 
@@ -133,7 +251,7 @@ ligne, ni modèle d'intelligence artificielle. Elle suit cinq étapes :
 
 1. **Segmentation** : le texte est découpé en phrases.
 2. **Découpage** : chaque phrase est découpée en mots.
-3. **Recherche dans le CSV** : la phrase entière est cherchée parmi les exemples du glossaire,
+3. **Recherche dans le glossaire** : la phrase entière est cherchée parmi les exemples du glossaire,
    puis les expressions les plus longues (« contrat de vente »), puis les mots un par un.
 4. **Règles linguistiques** :
    - lexique : expression de plusieurs mots, synonyme ramené au terme du glossaire ;
@@ -151,7 +269,7 @@ Ce que cela donne :
   la traduction de cet exemple.
 - Les autres phrases sont traduites mot à mot. Les termes du glossaire sont traduits ; les
   autres mots (verbes, mots grammaticaux, mots absents du CSV) restent dans la langue source, en
-  gris. Exemple avec le glossaire fourni : « La nullité du contrat de vente protège
+  gris italique. Exemple avec le glossaire fourni : « La nullité du contrat de vente protège
   l'acheteur. » donne « بطلان عقد البيع protège المشتري. ».
 - L'ordre des mots n'est pas modifié. Les verbes ne sont pas conjugués et les adjectifs ne sont
   pas accordés.
@@ -185,22 +303,25 @@ Le résultat est une aide à la traduction. Il doit être complété et vérifi�
   un message qui en donne la raison.
 - Les fichiers PDF et RTF ne sont pas lus : le message d'erreur indique comment les convertir.
 - Le nom proposé pour l'export est celui du fichier importé suivi de `_traduction`. Le fichier
-  exporté contient le texte de la zone de droite, y compris les mots non traduits.
+  exporté contient le texte de la traduction, y compris les mots non traduits.
 
 ### Raccourcis
 
 | Raccourci | Action |
 | --- | --- |
 | Ctrl+1, Ctrl+2 | Afficher l'écran « Terme », l'écran « Texte » |
+| Ctrl+3, Ctrl+4 | Afficher « Paramètres », « Description de la plateforme » |
+| F1 | Afficher le centre d'aide |
 | Ctrl+I | Inverser le sens de traduction |
 | Ctrl+F | Aller à la barre de recherche |
 | Ctrl+Entrée | Traduire le texte |
 | Ctrl+Maj+C | Copier la traduction |
 | Ctrl+Maj+O | Importer un texte |
 | Ctrl+E | Exporter la traduction |
-| Ctrl+O | Ouvrir un glossaire |
+| Ctrl+O | Choisir un autre glossaire |
 | F5 | Recharger le glossaire |
 | Ctrl+Q | Quitter |
+| Alt+F, Alt+I, Alt+R, Alt+T | Ouvrir le menu Fichier, Affichage, Recherche, Traduction |
 
 ### Le glossaire CSV
 
@@ -210,14 +331,14 @@ colonnes du tableau sont obligatoires.
 | Colonne | Écran « Terme » | Écran « Texte » |
 | --- | --- | --- |
 | `terme_fr`, `terme_ar` | ① Terme et ③ Équivalent, selon le sens de traduction | Mots et expressions cherchés dans le texte, et leur traduction |
-| `categorie_fr`, `categorie_ar` | Catégorie grammaticale, sous le terme | Si `categorie_fr` contient « masculin » ou « féminin », l'article français est écrit (« le », « la », « un », « une »). Si elle contient « pluriel » (« biens », « droits de l'homme »), le terme est traité comme un pluriel (« les », « des », « ses »). |
-| `pluriel_fr`, `pluriel_ar` | Pluriel, sous le terme ; il sert aussi à la recherche | Reconnaissance et écriture du pluriel |
+| `categorie_fr`, `categorie_ar` | Catégorie grammaticale, sous le terme et sous l'équivalent | Si `categorie_fr` contient « masculin » ou « féminin », l'article français est écrit (« le », « la », « un », « une »). Si elle contient « pluriel » (« biens », « droits de l'homme »), le terme est traité comme un pluriel (« les », « des », « ses »). |
+| `pluriel_fr`, `pluriel_ar` | Pluriel, sous le terme et sous l'équivalent ; il sert aussi à la recherche | Reconnaissance et écriture du pluriel |
 | `domaine` | ① Terme, rubrique « Domaine » | — |
-| `synonymes_fr`, `synonymes_ar` | ① Terme, rubrique « Synonymes » ; ils servent aussi à la recherche | Un synonyme trouvé dans le texte est traduit comme le terme |
+| `synonymes_fr`, `synonymes_ar` | Ceux de la langue source : ① Terme, rubrique « Synonymes ». Ceux de la langue cible : ③ Équivalent, rubrique « Autres équivalents ». Ils servent aussi à la recherche. | Un synonyme trouvé dans le texte est traduit comme le terme |
 | `termes_associes` | ① Terme, rubrique « Termes associés » | Choix entre deux entrées de même forme |
-| `definition_fr`, `definition_ar`, `source_definition` | ② Définition | Colonne « Définition » du tableau |
-| `contexte_fr`, `contexte_ar`, `source_contexte` | ④ Contextualisation | Une phrase du texte identique à un exemple reçoit la traduction de cet exemple |
-| `ressources` | ⑤ Ressources | Colonne « Ressources » du tableau |
+| `definition_fr`, `definition_ar`, `source_definition` | ② Définition. Si `source_definition` est vide ou commence par « à vérifier », la définition porte la mention « À vérifier ». | ② dans la carte du terme, avec le même avertissement |
+| `contexte_fr`, `contexte_ar`, `source_contexte` | ④ Contextualisation. Ces phrases servent aussi de contexte aux autres termes qu'elles emploient. | Une phrase du texte identique à un exemple reçoit la traduction de cet exemple. Dans la carte du terme : ④, après la phrase du texte. |
+| `ressources` | ⑤ Ressources | ⑤ dans la carte du terme : toutes les références, en entier |
 
 - Dans une cellule, plusieurs valeurs se séparent par une barre verticale : `convention | accord`.
   Pour les exemples, le premier exemple français va avec le premier exemple arabe et la première
@@ -229,12 +350,13 @@ colonnes du tableau sont obligatoires.
 - D'autres noms de colonnes sont acceptés (« Français », « Arabe », « Définition »…). Un fichier
   sans ligne d'en-tête fonctionne aussi : la colonne arabe et la colonne française sont
   repérées d'après leur écriture.
-- Les lignes sans terme français ou sans terme arabe sont ignorées. Leur nombre est indiqué à
-  l'ouverture du fichier.
-- Les expressions du champ ③ ne viennent pas d'une colonne : ce sont les autres entrées du
-  glossaire qui contiennent le terme (« contrat de vente » pour « contrat »).
+- Les lignes sans terme français ou sans terme arabe sont ignorées. Leur nombre est indiqué
+  quand on choisit le fichier dans « Paramètres ».
+- La liste « Expressions avec… », sous la fiche, ne vient pas d'une colonne : ce sont les
+  autres entrées du glossaire qui contiennent le terme (« contrat de vente » pour « contrat »).
 
-Le rappel du format se trouve aussi dans l'application : *Aide → Format du glossaire CSV*.
+Le rappel du format se trouve aussi dans l'application : centre d'aide, question « Comment
+utiliser un autre glossaire ? ».
 
 ### Le glossaire d'exemple
 
@@ -284,7 +406,8 @@ Ce sont les entrées de droit civil des versions précédentes. Elles n'ont pas 
 - **Autre contenu d'illustration.** Les couples de termes, les catégories grammaticales, les
   pluriels, les domaines, les synonymes, les termes associés et les ressources ont été rédigés
   pour la démonstration.
-- Neuf de ces entrées n'ont pas d'exemple : leur champ ④ reste vide.
+- Neuf de ces entrées n'ont pas d'exemple à elles. Leur champ ④ affiche une phrase d'une autre
+  entrée qui emploie le terme.
 
 #### Les 960 entrées suivantes
 
@@ -300,7 +423,9 @@ contenu est à vérifier.
   « à vérifier (définition d'exemple) ». Quelques-unes suivent de près la formulation d'un
   code, écrite de mémoire (« droit de propriété », « mariage », « garde », « commerçant »…) :
   elles n'ont pas été comparées au texte officiel et ne doivent pas être citées comme telles.
-- **Pas d'exemple.** Aucune de ces entrées n'a d'exemple : leur champ ④ reste vide.
+- **Pas d'exemple.** Aucune de ces entrées n'a d'exemple à elle. Pour 320 d'entre elles, le
+  champ ④ affiche une phrase d'une autre entrée qui emploie le terme. Pour les 640 autres, il
+  indique « Aucun exemple pour ce terme ».
 - **Ressources.** Chaque entrée renvoie au texte principal de son domaine (code, loi,
   ordonnance ou convention internationale), sans numéro d'article, et le plus souvent au
   Journal officiel ([www.joradp.dz](https://www.joradp.dz)). Les références de six codes
@@ -315,18 +440,28 @@ contenu est à vérifier.
 
 #### Dans tout le glossaire
 
+- **Contextes.** 31 entrées ont leurs propres exemples. 329 autres reçoivent une ou deux
+  phrases d'une autre entrée : en tout, 360 entrées sur 1 000 affichent au moins une phrase
+  dans le champ ④, et 640 n'en affichent aucune. Les phrases prises ailleurs sont presque
+  toutes des définitions d'autres termes (554 définitions, 20 exemples) : elles sont à
+  vérifier comme le reste. Elles n'ont pas été relues une par une.
 - Le *Vocabulaire juridique* de G. Cornu est cité comme ouvrage à consulter (65 entrées) :
   aucune définition n'en est tirée.
 - Quatre termes français et dix termes arabes désignent chacun deux entrées, par exemple
   « action » (« دعوى » ou « سهم »), « auteur » (« فاعل » ou « مؤلف »), « قرار » (« décision » ou
-  « arrêt ») et « ولاية » (« wilaya » ou « tutelle »). L'écran « Terme » affiche une puce pour
+  « arrêt ») et « ولاية » (« wilaya » ou « tutelle »). L'écran « Terme » affiche un onglet pour
   chaque entrée. L'écran « Texte » choisit d'après le contexte et signale le terme quand il
   hésite.
 
 #### Corriger le glossaire
 
 Le plus simple est de modifier `donnees/glossaire_juridique.csv` dans un tableur ou un éditeur
-de texte, puis de le recharger dans l'application (F5).
+de texte, puis de le recharger dans l'application : « Paramètres », bouton **Recharger** (ou
+F5).
+
+Pour qu'un terme ait une phrase dans le champ ④, remplir les colonnes `contexte_fr` et
+`contexte_ar` de sa ligne. La phrase française doit contenir le terme, et la phrase arabe son
+équivalent.
 
 Le dossier `outils/glossaire/` garde ce qui a servi à écrire les entrées n° 41 à 1 000 : des
 fichiers texte (`lots/`, une entrée par ligne) et le script `construire.py`, qui les vérifie
@@ -353,27 +488,35 @@ donnees/
 traducteur/
   langues.py                 comparaison des mots : accents, variantes d'écriture de l'arabe
   glossaire.py               lecture du CSV et recherche des termes
-  surlignage.py              repérage du terme dans les exemples
+  contextes.py               phrases du glossaire qui emploient un terme (champ ④)
+  surlignage.py              repérage du terme dans une phrase
   segmentation.py            découpage d'un texte en phrases, puis en mots
   traduction.py              traduction d'un texte : recherche, règles, reconstruction
   documents.py               import et export des fichiers .txt, .docx et .doc
   application.py             démarrage de l'application
   interface/
-    fenetre.py               fenêtre : menus, barre d'outils, barre d'état
-    recherche.py             écran « Terme »
-    cartes.py                les cinq champs de l'écran « Terme »
-    texte.py                 écran « Texte »
-    composants.py            puces, étiquettes, disposition des puces
+    demarrage.py             écran de démarrage animé
+    fenetre.py               fenêtre : barre latérale, menus, barre d'outils, chargement du glossaire
+    navigation.py            barre latérale
+    recherche.py             écran « Terme » : barre de recherche, accueil, terme introuvable
+    fiche.py                 fiche d'un terme (les cinq champs) et liste placée sous la fiche
+    texte.py                 écran « Texte » : zones de texte, bande des étapes
+    termes.py                écran « Texte » : cartes des termes détectés
+    pages.py                 écrans « Paramètres », « Description de la plateforme », « Centre d'aide »
+    animation.py             allumage progressif des étapes
+    boites.py                fenêtres de message (glossaire chargé, erreurs)
+    composants.py            éléments communs : étiquettes, puces, panneaux, dispositions
+    dessin.py                écriture des textes dessinés (listes, en-têtes) : abréger, couper
     theme.py                 couleurs et feuille de style
     icones.py                icônes
 outils/
   glossaire/                 construction du glossaire d'exemple : script et lots de termes
-  maquette/                  script qui dessine la proposition de nouvelle interface
+  maquette/                  script qui dessine la proposition d'interface
 tests/                       tests automatiques
   donnees/                   petit glossaire de 40 entrées réservé aux tests
 docs/                        captures d'écran
-maquette/                    maquette SVG des deux écrans
-  proposition/               proposition de nouvelle interface (à valider)
+maquette/                    première maquette SVG des deux écrans (version 0.1)
+  proposition/               proposition d'interface (version 0.3)
 ```
 
 Les modules placés directement dans `traducteur/` n'utilisent pas l'interface graphique, sauf
@@ -387,17 +530,23 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 327 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 419 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « contrat ») à mettre
 à jour quand il est enrichi.
 
+Les tests de l'interface vérifient ce que chaque écran affiche et ce que fait chaque commande.
+Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des captures (voir les
+[limites connues](#limites-connues)).
+
 ### Limites connues
 
 - **Systèmes essayés.** Les tests ont été exécutés sous Linux, sans écran, avec Python 3.11
   (PySide6 6.7 et 6.11) et Python 3.15 (PySide6 6.12). Aucun test n'a été exécuté sous Windows ni
-  sous macOS.
+  sous macOS. Les captures de cette page ont été produites sans écran. **La version 0.4 n'a pas
+  été essayée sur un écran réel** : l'écran de démarrage (fenêtre sans bordure, animation), la
+  barre latérale et l'allumage des étapes sont à contrôler sous Windows.
 - **PySide6 6.12 avec Python 3.11.** Avec ces deux versions, l'application se ferme brutalement
   après quelques milliers d'opérations (« Fatal Python error: none_dealloc »). `requirements.txt`
   installe donc une version antérieure de PySide6 avec Python 3.10 et 3.11 (Python 3.10 n'a pas
@@ -412,8 +561,8 @@ dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « con
   - sans genre dans la colonne `categorie_fr`, l'article français n'est pas écrit devant une
     consonne ;
   - quand le contexte ne permet pas de choisir entre deux entrées de même forme, la première
-    entrée du glossaire est retenue et le tableau signale le terme comme ambigu. Un choix fait
-    d'après le contexte peut aussi être faux : le tableau indique alors l'autre sens.
+    entrée du glossaire est retenue et la carte du terme le signale comme ambigu. Un choix fait
+    d'après le contexte peut aussi être faux : la carte indique alors l'autre sens.
 - **Un mot courant peut être pris pour un terme.** L'application ne connaît que l'écriture des
   mots. Elle ne distingue pas un terme juridique d'un verbe ou d'un mot ordinaire qui s'écrit
   de la même façon. Exemples avec le glossaire fourni :
@@ -428,11 +577,14 @@ dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « con
 
   Plus le glossaire est riche, plus ces confusions sont fréquentes. L'étiquette « Traduction
   terminée » signifie seulement que tous les mots ont été trouvés dans le glossaire : elle
-  s'affiche aussi pour les deux derniers exemples. Chaque terme traduit est écrit en orange
-  et repris dans le tableau : ils sont à vérifier un par un.
+  s'affiche aussi pour les deux derniers exemples. Chaque terme traduit est écrit en bleu et a
+  sa carte dans le panneau de droite : ils sont à vérifier un par un.
 - **Texte long.** Avec le glossaire fourni, sur la machine d'essai (Linux, sans écran), un
-  texte de 2 000 mots est traduit et affiché en une seconde environ, un texte de 13 000 mots
-  en un peu plus de trois secondes. La fenêtre ne répond pas pendant ce temps.
+  texte de 2 000 mots est traduit et affiché en une demi-seconde environ, un texte de
+  13 000 mots en deux secondes environ. **Tout développer** est plus lent, parce qu'il
+  construit toutes les cartes : deux à trois secondes pour 115 termes, huit secondes pour
+  380 termes. La fenêtre ne répond pas pendant ce temps ; le pointeur d'attente s'affiche.
+  Quand des centaines de cartes sont ouvertes, changer la taille de la fenêtre est lent aussi.
 - **Fichiers `.doc`.** Le lecteur a été essayé sur 471 fichiers d'exemple des projets Apache POI
   et LibreOffice : 362 sont lus (dont 47 sans texte dans le corps du document) et 109 sont
   refusés avec un message (fichiers d'avant Word 97, protégés, endommagés ou d'un autre type).
@@ -446,17 +598,39 @@ dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « con
   n'est vérifié que par un fichier construit pour les tests.
 - **Recherche d'un terme.** Les suggestions affichées pendant la saisie tiennent compte des
   accents ; la recherche lancée avec Entrée, non.
+- **Contextes cherchés dans le glossaire.** Une phrase est retenue quand elle contient le terme
+  en français et son équivalent en arabe. Cela écarte les autres sens d'un mot, mais ne prouve
+  pas que la phrase illustre bien le terme : c'est le plus souvent la définition d'un autre
+  terme. Avec le glossaire fourni, 640 entrées sur 1 000 n'ont aucune phrase.
+- **Message au service informatique.** L'application demande au système d'ouvrir le logiciel
+  de messagerie de l'ordinateur ; elle n'envoie rien elle-même. Cela n'a été essayé avec aucun
+  logiciel de messagerie. Si le système répond qu'il ne peut pas ouvrir le message, l'adresse
+  est copiée dans le presse-papiers. L'adresse du service n'est pas connue de l'application :
+  elle est vide tant qu'elle n'a pas été saisie dans « Paramètres ».
 - **Contenu.** Les équivalents, les définitions et les exemples affichés sont ceux du glossaire
   chargé. L'application ne les vérifie pas. Ceux du glossaire fourni sont à vérifier : voir
   [Le glossaire d'exemple](#le-glossaire-dexemple).
-- **Petite fenêtre.** À la taille minimale (900 × 560), les zones de texte n'affichent que deux
-  ou trois lignes et le tableau des termes une seule ligne ; il faut faire défiler.
+- **Petite fenêtre.** À la taille minimale (900 × 560), la fiche d'un terme est plus large que
+  la fenêtre : une barre de défilement horizontale donne accès au champ ⑤. Sur l'écran
+  « Texte », chaque zone de texte n'affiche que trois lignes, et la bande des étapes ne garde
+  que les numéros et les résultats ; il faut faire défiler.
 
-## Proposition de nouvelle interface (à valider)
+## La proposition d'interface
 
-**Rien de ce qui suit n'est programmé.** Ce sont cinq dessins au format SVG. Ils montrent ce que
-l'application pourrait devenir. L'application actuelle est celle des captures du début de cette
-page.
+Ce sont cinq dessins au format SVG, faits avant la version 0.3 pour corriger les défauts de la
+version 0.2. **Ce ne sont pas des captures de l'application.** La version 0.3 les a suivis. La
+version 0.4 s'en écarte sur les points suivants :
+
+- le choix de l'écran passe de la barre du haut à la barre latérale ;
+- le nom du glossaire n'est plus affiché en haut à droite : le glossaire se choisit dans
+  « Paramètres » ;
+- sur l'écran « Texte », la traduction est sous le texte, et le tableau du bas est remplacé
+  par des cartes, à droite ;
+- les étapes renseignées sont dorées ;
+- la barre d'état n'affiche plus le sens de traduction ;
+- un champ vide ne nomme plus les colonnes du CSV à remplir : le centre d'aide les donne.
+
+L'application actuelle est celle des captures du début de cette page.
 
 Les fichiers sont dans `maquette/proposition/`. Le fichier `index.html` du même dossier les
 affiche tous sur une page : il suffit de l'ouvrir dans un navigateur.
@@ -511,7 +685,7 @@ fenêtre (1440 × 860, 1080 × 620 et 900 × 560). Sous Windows, l'aspect des ca
 
 ### Ce que la proposition change dans l'usage
 
-À valider en même temps que l'aspect :
+Par rapport à la version 0.2 :
 
 - Les puces de résultats disparaissent. Le nombre de résultats s'affiche dans la barre de
   recherche ; les autres entrées trouvées sont sous la fiche.
@@ -550,10 +724,8 @@ partie de l'application.
 ## Maquette de l'application de bureau
 
 Maquette SVG des deux écrans du prototype (version 0.1). Les deux écrans sont programmés (voir
-[L'application](#lapplication-version-02)).
-Une différence avec la maquette : dans l'application, les boutons **Importer** et **Exporter**
-ne figurent que sur l'écran « Texte » ; sur l'écran « Terme », ils sont remplacés par le bouton
-**Ouvrir un glossaire…**.
+[L'application](#lapplication-version-04)). L'application actuelle ne ressemble plus à cette
+maquette : elle est gardée pour mémoire.
 
 ### Écran 1 — Recherche d'un terme
 

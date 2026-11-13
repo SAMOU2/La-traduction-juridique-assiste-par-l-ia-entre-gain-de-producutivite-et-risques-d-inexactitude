@@ -1,237 +1,335 @@
-"""Couleurs et feuille de style de l'interface, reprises de la maquette."""
+"""Couleurs, palette et feuille de style de l'interface.
 
-MARINE = "#0B1B3A"
-BLEU = "#2459D6"
-BLEU_FONCE = "#1C47B3"
-BLEU_PALE = "#EEF4FF"
-AMBRE = "#B45309"
-VERT = "#15803D"
-TEXTE = "#0F172A"
-TEXTE_2 = "#475569"
-TEXTE_3 = "#64748B"
-TEXTE_4 = "#94A3B8"
-FILET = "#E2E8F0"
-FOND = "#F3F5F9"
+La plupart des valeurs sont celles de la proposition d'interface (dossier
+``maquette/proposition``). Les tailles de caractères sont données en pixels entiers : les
+demi-pixels des dessins (13,5 px, 16,5 px…) sont arrondis.
+"""
 
-#: Hauteur des puces, en pixels. Le rayon des angles ne doit pas dépasser la
-#: moitié de la hauteur, sinon Qt dessine des angles droits.
-HAUTEUR_PUCE = 28
-#: Taille des caractères et marge intérieure horizontale des puces, en pixels.
-TAILLE_PUCE = 13
-MARGE_PUCE = 12
+from PySide6.QtGui import QColor, QPalette
+
+# ------------------------------------------------------------------ couleurs
+FOND = "#F4F6F9"
+SURFACE = "#FFFFFF"
+FILET = "#E1E6EE"
+FILET_DOUX = "#EDF0F5"
+TEXTE = "#101828"  # texte principal
+TEXTE_2 = "#344054"  # texte courant secondaire
+TEXTE_3 = "#667085"  # légendes
+TEXTE_4 = "#98A2B3"  # texte estompé
+BLEU = "#2251CC"
+BLEU_FONCE = "#1A3FA6"
+BLEU_PRESSE = "#163690"
+BLEU_50 = "#F1F5FF"
+BLEU_100 = "#DFE8FF"
+BLEU_200 = "#C2D3FF"
+AMBRE = "#B54708"
+AMBRE_50 = "#FFFAEB"
+AMBRE_200 = "#FEDF89"
+VERT = "#067647"
+VERT_50 = "#ECFDF3"
+VERT_200 = "#ABEFC6"
+VERT_VIF = "#12B76A"
+MARINE = "#0F1F3D"
+#: Couleur d'une étape allumée (enchaînement d'un terme, étapes du traitement d'un texte), et
+#: couleur de l'écran choisi dans la barre latérale : un doré vif, celui de la balance du logo.
+OR = "#FFB703"
+OR_FONCE = "#E39A00"
+OR_50 = "#FFF7E0"
+#: Barre latérale : fond, bouton survolé, bouton de l'écran affiché, icônes.
+RAIL = "#0B1730"
+RAIL_SURVOL = "#17284A"
+RAIL_ACTIF = "#1E325C"
+RAIL_FILET = "#22345A"
+RAIL_ICONE = "#9DAECB"
+RAIL_ICONE_SURVOL = "#FFFFFF"
+GRIS_50 = "#F7F9FB"
+GRIS_100 = "#F0F3F7"
+GRIS_200 = "#E6EAF0"
+GRIS_300 = "#CDD3DD"
+#: Colonne « Équivalent » du tableau des termes : teinte au repos.
+TEINTE_TABLEAU = "#F7F9FF"
+
+# ------------------------------------------------------------------ dimensions communes
+#: Marge entre le bord de la fenêtre et les panneaux, et marge intérieure des panneaux.
+MARGE = 24
+#: Rayon des angles des panneaux.
+RAYON = 12
+#: Largeur réservée à une barre de défilement verticale.
+LARGEUR_BARRE = 10
+#: Hauteur des puces. Le rayon des angles ne doit pas dépasser la moitié de la hauteur,
+#: sinon Qt dessine des angles droits.
+HAUTEUR_PUCE = 24
+
+
+def palette() -> QPalette:
+    """Palette claire de l'application : les couleurs ne dépendent pas du thème du système."""
+    couleurs = QPalette()
+    for role, couleur in (
+            (QPalette.ColorRole.Window, FOND),
+            (QPalette.ColorRole.WindowText, TEXTE),
+            (QPalette.ColorRole.Base, SURFACE),
+            (QPalette.ColorRole.AlternateBase, GRIS_50),
+            (QPalette.ColorRole.Text, TEXTE),
+            (QPalette.ColorRole.Button, SURFACE),
+            (QPalette.ColorRole.ButtonText, TEXTE_2),
+            (QPalette.ColorRole.BrightText, SURFACE),
+            (QPalette.ColorRole.Highlight, BLEU),
+            (QPalette.ColorRole.HighlightedText, SURFACE),
+            (QPalette.ColorRole.Link, BLEU),
+            (QPalette.ColorRole.LinkVisited, BLEU_FONCE),
+            (QPalette.ColorRole.ToolTipBase, MARINE),
+            (QPalette.ColorRole.ToolTipText, SURFACE),
+            (QPalette.ColorRole.PlaceholderText, TEXTE_4),
+            (QPalette.ColorRole.Light, SURFACE),
+            (QPalette.ColorRole.Midlight, GRIS_100),
+            (QPalette.ColorRole.Mid, FILET),
+            (QPalette.ColorRole.Dark, GRIS_300),
+            (QPalette.ColorRole.Shadow, TEXTE_4)):
+        couleurs.setColor(role, QColor(couleur))
+    for role in (QPalette.ColorRole.WindowText, QPalette.ColorRole.Text, QPalette.ColorRole.ButtonText):
+        couleurs.setColor(QPalette.ColorGroup.Disabled, role, QColor(TEXTE_4))
+    return couleurs
+
+
+def appliquer(application) -> None:
+    """Prépare l'application : style « Fusion » de Qt et palette claire.
+
+    L'interface est dessinée par sa feuille de style. Le style « Fusion » lui donne le même
+    rendu sur tous les systèmes : les styles propres à Windows ou à macOS dessinent à leur
+    façon certains éléments (menus, cadres, barres de défilement).
+    """
+    application.setStyle("Fusion")
+    application.setPalette(palette())
+
 
 FEUILLE_DE_STYLE = f"""
 #centre {{ background: {FOND}; }}
-#centre QLabel {{ color: {TEXTE}; font-size: 14px; background: transparent; }}
+#zoneDefilante {{ background: transparent; border: none; }}
+#separateur {{ background: {FILET_DOUX}; border: none; }}
+#separateurBleu {{ background: {BLEU_200}; border: none; }}
+#filetVertical {{ background: {FILET}; border: none; }}
 
-/* ---------- Barre d'outils : sens de traduction, glossaire ---------- */
-#barreOutils {{ background: #FFFFFF; border: none; border-bottom: 1px solid {FILET}; }}
-#pastilleLangue {{ background: #FFFFFF; border: 1px solid #D5DCE8; border-radius: 10px; }}
-#centre QLabel[classe="codeLangue"] {{
-    background: {BLEU_PALE}; color: {BLEU_FONCE}; border-radius: 6px;
-    font-size: 11px; font-weight: 700; padding: 2px 6px;
+/* ---------- Barre de menus ---------- */
+#barreMenus {{ background: {SURFACE}; border: none; border-bottom: 1px solid {FILET}; }}
+QMenuBar {{ background: transparent; border: none; color: {TEXTE_2}; font-size: 13px; }}
+QMenuBar::item {{ background: transparent; padding: 6px 11px; border-radius: 6px; }}
+QMenuBar::item:selected, QMenuBar::item:pressed {{ background: {GRIS_100}; color: {TEXTE}; }}
+QMenu {{
+    background: {SURFACE}; color: {TEXTE}; border: 1px solid {FILET}; padding: 6px; font-size: 13px;
 }}
-#centre QLabel[classe="legende"] {{ color: {TEXTE_4}; font-size: 10px; font-weight: 600; }}
-#centre QLabel[classe="nomLangue"] {{ font-size: 15px; font-weight: 600; }}
-#boutonInverser {{ background: {BLEU_PALE}; border: 1px solid #C7D7FB; border-radius: 18px; }}
-#boutonInverser:hover {{ background: #DCE8FF; }}
-#boutonInverser:pressed {{ background: #C7D7FB; }}
-#boutonGlossaire {{
-    background: #FFFFFF; color: {TEXTE}; border: 1px solid #D5DCE8; border-radius: 10px;
-    padding: 0 14px; font-size: 13px; font-weight: 600;
-}}
-#boutonGlossaire:hover {{ background: #F8FAFC; border-color: #B8C4D6; }}
-#boutonGlossaire:pressed {{ background: #EEF2F7; }}
+QMenu::item {{ background: transparent; padding: 7px 28px 7px 12px; border-radius: 6px; }}
+QMenu::item:selected {{ background: {BLEU_50}; color: {BLEU_FONCE}; }}
+QMenu::item:disabled {{ color: {TEXTE_4}; }}
+QMenu::separator {{ height: 1px; background: {FILET_DOUX}; margin: 5px 6px; }}
+QMenu::indicator {{ width: 14px; height: 14px; margin-left: 6px; }}
 
-/* ---------- Sélecteur d'écran (Terme / Texte) et boutons de la barre d'outils ---------- */
-#selecteurMode {{ background: #EEF2F7; border: 1px solid {FILET}; border-radius: 10px; }}
-QPushButton[classe="mode"] {{
-    background: transparent; border: 1px solid transparent; border-radius: 8px;
-    color: {TEXTE_2}; font-size: 14px; font-weight: 600; padding: 0 16px;
+/* ---------- Barre d'outils : sens de traduction, titre d'un écran d'information ---------- */
+#sens {{ background: {SURFACE}; border: 1px solid {FILET}; border-radius: 10px; }}
+QLabel[classe="titrePage"] {{ color: {MARINE}; font-size: 19px; font-weight: 600; }}
+QLabel[classe="sousTitrePage"] {{ color: {TEXTE_3}; font-size: 13px; }}
+QLabel[classe="langueSens"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
+QLabel[classe="langueSens"][arabe="true"] {{ font-size: 16px; }}
+#boutonInverser {{
+    background: transparent; border: none; border-top-right-radius: 9px; border-bottom-right-radius: 9px;
 }}
-QPushButton[classe="mode"]:hover {{ color: {BLEU_FONCE}; }}
-QPushButton[classe="mode"]:checked {{ background: #FFFFFF; border-color: #DDE3EC; color: {BLEU_FONCE}; }}
-QPushButton[classe="outil"] {{
-    background: #FFFFFF; color: {TEXTE}; border: 1px solid #D5DCE8; border-radius: 10px;
-    padding: 0 14px; font-size: 13px; font-weight: 600;
-}}
-QPushButton[classe="outil"]:hover {{ background: #F8FAFC; border-color: #B8C4D6; }}
-QPushButton[classe="outil"]:pressed {{ background: #EEF2F7; }}
-QPushButton[classe="outil"]:disabled {{ color: {TEXTE_4}; border-color: {FILET}; }}
+#boutonInverser:hover, #boutonInverser:focus {{ background: {BLEU_50}; }}
+#boutonInverser:pressed {{ background: {BLEU_100}; }}
+QLabel[classe="aideOutils"] {{ color: {TEXTE_3}; font-size: 12px; }}
 
 /* ---------- Barre de recherche ---------- */
-#barreRecherche {{ background: #FFFFFF; border: 2px solid {BLEU}; border-radius: 14px; }}
 #champRecherche {{
-    background: transparent; border: none; color: {TEXTE}; font-size: 20px;
-    selection-background-color: {BLEU}; selection-color: #FFFFFF;
+    background: transparent; border: none; color: {TEXTE}; font-size: 16px; padding: 0;
+    selection-background-color: {BLEU}; selection-color: {SURFACE};
 }}
-#boutonRechercher {{
-    background: {BLEU}; color: #FFFFFF; border: none; border-radius: 10px;
-    padding: 0 22px; font-size: 15px; font-weight: 600;
-}}
-#boutonRechercher:hover {{ background: {BLEU_FONCE}; }}
-#boutonRechercher:pressed {{ background: #163A94; }}
-#centre QLabel[classe="resultats"] {{ color: {TEXTE_3}; font-size: 13px; }}
+QLabel[classe="resumeRecherche"] {{ color: {TEXTE_3}; font-size: 13px; }}
+#effacerRecherche {{ background: {GRIS_100}; border: none; border-radius: 9px; }}
+#effacerRecherche:hover, #effacerRecherche:focus {{ background: {FILET}; }}
 
-/* ---------- Puces ---------- */
-QPushButton[classe="puce"] {{
-    background: #FFFFFF; color: #334155; border: 1px solid #D5DCE8; border-radius: 13px;
-    padding: 0 {MARGE_PUCE}px; font-size: {TAILLE_PUCE}px;
-}}
-QPushButton[classe="puce"]:hover {{ background: {BLEU_PALE}; border-color: #A9C1F5; color: {BLEU_FONCE}; }}
-QPushButton[classe="puce"]:checked {{
-    background: {BLEU}; border-color: {BLEU}; color: #FFFFFF; font-weight: 600;
-}}
-QPushButton[classe="puceGrise"] {{
-    background: #F1F5F9; color: {BLEU_FONCE}; border: 1px solid {FILET}; border-radius: 13px;
-    padding: 0 {MARGE_PUCE}px; font-size: {TAILLE_PUCE}px;
-}}
-QPushButton[classe="puceGrise"]:hover {{ background: {BLEU_PALE}; border-color: #A9C1F5; color: {BLEU_FONCE}; }}
-#centre QLabel[classe="puceFixe"] {{
-    background: #F1F5F9; color: #334155; border: 1px solid {FILET}; border-radius: 13px;
-    padding: 0 {MARGE_PUCE}px; font-size: {TAILLE_PUCE}px;
-}}
-
-/* ---------- Enchaînement : Terme > Définition > Équivalent > Contextualisation > Ressources ---------- */
-#centre QLabel[classe="numero"] {{
-    background: {BLEU}; color: #FFFFFF; border-radius: 13px; font-size: 13px; font-weight: 700;
-}}
-#centre QLabel[classe="titreCarte"] {{ color: {MARINE}; font-size: 16px; font-weight: 700; }}
-
-/* ---------- Cartes ---------- */
-#carte {{ background: #FFFFFF; border: 1px solid {FILET}; border-radius: 14px; }}
-#carte[accent="true"] {{ border: 2px solid {BLEU}; }}
-#piedCarte {{ background: transparent; border: none; border-top: 1px solid {FILET}; }}
-#panneau {{ background: #F4F6FA; border: none; border-radius: 10px; }}
-#panneau[accent="true"] {{ background: {BLEU_PALE}; }}
-#exemple {{ background: #FBFCFE; border: 1px solid {FILET}; border-radius: 10px; }}
-#ligneExpression {{ background: transparent; border: none; border-bottom: 1px solid #EEF2F7; }}
-#ligneExpression:hover {{ background: #F5F8FF; }}
-#separateur {{ background: {FILET}; border: none; }}
-#vignette {{ background: {BLEU_PALE}; border: none; border-radius: 8px; }}
-
-#centre QLabel[classe="legendeLangue"] {{ color: {TEXTE_3}; font-size: 13px; }}
-#centre QLabel[classe="terme"] {{ color: {MARINE}; font-weight: 700; }}
-#centre QLabel[classe="equivalent"] {{ color: {BLEU_FONCE}; font-weight: 700; }}
-#centre QLabel[classe="categorie"] {{ color: {TEXTE_2}; font-size: 14px; }}
-#centre QLabel[classe="rubrique"] {{ color: {TEXTE_4}; font-size: 11px; font-weight: 700; }}
-#centre QLabel[classe="texte"] {{ color: {TEXTE}; font-size: 15px; }}
-#centre QLabel[classe="texteArabe"] {{ color: {TEXTE}; font-size: 17px; }}
-#centre QLabel[classe="expression"] {{ color: {TEXTE}; font-size: 14px; }}
-#centre QLabel[classe="expressionArabe"] {{ color: {TEXTE}; font-size: 16px; }}
-#centre QLabel[classe="sourceExemple"] {{
-    background: #EEF2F7; color: {TEXTE_2}; border-radius: 9px;
-    font-size: 11px; font-weight: 600; padding: 3px 9px;
-}}
-#centre QLabel[classe="ressource"] {{ color: {TEXTE_2}; font-size: 13px; }}
-#centre QLabel[classe="ressourceArabe"] {{ color: {TEXTE_2}; font-size: 15px; }}
-#centre QLabel[classe="discret"] {{ color: {TEXTE_3}; font-size: 13px; }}
-#centre QLabel[classe="pied"] {{ color: {TEXTE_3}; font-size: 12px; }}
-QPushButton[classe="lien"] {{
-    background: transparent; border: none; color: {BLEU_FONCE};
-    font-size: 13px; font-weight: 600; text-align: left; padding: 2px 0;
-}}
-QPushButton[classe="lien"]:hover {{ color: {BLEU}; text-decoration: underline; }}
-QPushButton[classe="lien"]:disabled {{ color: {TEXTE_4}; }}
-
-/* ---------- Écran « Traduction d'un texte » : zones de texte ---------- */
-#panneauTexte, #bandeEtapes, #panneauTermes {{ background: #FFFFFF; border: 1px solid {FILET}; border-radius: 12px; }}
-#filetPanneau {{ background: #EEF2F7; border: none; }}
-#zoneTexte {{
-    background: transparent; border: none; color: #1E293B; font-size: 17px;
-    selection-background-color: {BLEU}; selection-color: #FFFFFF;
-}}
-#zoneTexte[arabe="true"] {{ font-size: 19px; }}
-#centre QLabel[classe="titrePanneau"] {{ font-size: 15px; font-weight: 600; }}
-#centre QLabel[classe="sousTitrePanneau"] {{ color: {TEXTE_3}; font-size: 13px; }}
-#centre QLabel[classe="decompte"] {{ color: {TEXTE_3}; font-size: 13px; }}
-#centre QLabel[classe="aide"] {{ color: {TEXTE_3}; font-size: 12px; }}
-QPushButton[classe="secondaire"] {{
-    background: #FFFFFF; color: {TEXTE}; border: 1px solid #D5DCE8; border-radius: 8px;
+/* ---------- Boutons ---------- */
+QPushButton[classe="principal"] {{
+    background: {BLEU}; color: {SURFACE}; border: none; border-radius: 8px;
     padding: 0 16px; font-size: 14px; font-weight: 600;
 }}
-QPushButton[classe="secondaire"]:hover {{ background: #F8FAFC; border-color: #B8C4D6; }}
-QPushButton[classe="secondaire"]:pressed {{ background: #EEF2F7; }}
-QPushButton[classe="secondaire"]:disabled {{ color: {TEXTE_4}; border-color: {FILET}; }}
-QPushButton[classe="principal"] {{
-    background: {BLEU}; color: #FFFFFF; border: none; border-radius: 8px;
-    padding: 0 18px; font-size: 14px; font-weight: 600;
+QPushButton[classe="principal"]:hover, QPushButton[classe="principal"]:focus {{ background: {BLEU_FONCE}; }}
+QPushButton[classe="principal"]:pressed {{ background: {BLEU_PRESSE}; }}
+QPushButton[classe="principal"]:disabled {{ background: {BLEU_200}; }}
+QPushButton[classe="contour"] {{
+    background: {SURFACE}; color: {TEXTE_2}; border: 1px solid {FILET}; border-radius: 8px;
+    padding: 0 14px; font-size: 13px; font-weight: 600;
 }}
-QPushButton[classe="principal"]:hover {{ background: {BLEU_FONCE}; }}
-QPushButton[classe="principal"]:pressed {{ background: #163A94; }}
-QPushButton[classe="principal"]:disabled {{ background: #A9BDEB; }}
-#centre QLabel[classe="badge"] {{
-    border-radius: 13px; padding: 0 12px; font-size: 12px; font-weight: 600;
-    background: #F1F5F9; color: {TEXTE_3}; border: 1px solid {FILET};
+QPushButton[classe="contour"]:hover {{ background: {GRIS_50}; border-color: {GRIS_300}; }}
+QPushButton[classe="contour"]:focus {{ border-color: {BLEU_200}; }}
+QPushButton[classe="contour"]:pressed {{ background: {GRIS_100}; }}
+QPushButton[classe="contour"]:disabled {{ color: {TEXTE_4}; background: {GRIS_50}; }}
+QPushButton[classe="lien"] {{
+    background: transparent; border: none; color: {BLEU};
+    font-size: 13px; font-weight: 600; text-align: left; padding: 2px 0;
 }}
-#centre QLabel[classe="badge"][etat="termine"] {{ background: #ECFDF3; color: {VERT}; border-color: #BBE7CB; }}
-#centre QLabel[classe="badge"][etat="partiel"] {{ background: #FFF7ED; color: {AMBRE}; border-color: #FCD9B0; }}
-#fichierImporte {{ background: #F1F5F9; border: 1px solid {FILET}; border-radius: 14px; }}
-#centre QLabel[classe="nomFichier"] {{ color: #334155; font-size: 12px; }}
-#fermerFichier {{ background: transparent; border: none; border-radius: 9px; }}
-#fermerFichier:hover {{ background: #E2E8F0; }}
+QPushButton[classe="lien"]:hover, QPushButton[classe="lien"]:focus {{
+    color: {BLEU_FONCE}; text-decoration: underline;
+}}
+QPushButton[classe="lien"]:disabled {{ color: {TEXTE_4}; }}
+QToolButton[classe="voisine"] {{ background: {SURFACE}; border: 1px solid {FILET}; border-radius: 6px; }}
+QToolButton[classe="voisine"]:hover {{ background: {GRIS_50}; border-color: {GRIS_300}; }}
+QToolButton[classe="voisine"]:focus {{ border-color: {BLEU_200}; }}
+QToolButton[classe="voisine"]:pressed {{ background: {GRIS_100}; }}
+QToolButton[classe="voisine"]:disabled {{ background: {GRIS_50}; }}
 
-/* ---------- Écran « Traduction d'un texte » : étapes de l'algorithme ---------- */
-#centre QLabel[classe="numeroEtape"] {{
-    background: {BLEU}; color: #FFFFFF; border-radius: 13px; font-size: 12px; font-weight: 700;
+/* ---------- Puces et pastilles ---------- */
+QPushButton[classe="puce"] {{
+    background: {BLEU_50}; color: {BLEU_FONCE}; border: 1px solid {BLEU_100}; border-radius: 6px;
+    padding: 0 9px; font-size: 13px;
 }}
-#centre QLabel[classe="numeroEtape"][faite="false"] {{ background: #CBD5E1; }}
-#centre QLabel[classe="titreEtape"] {{ font-size: 13px; font-weight: 600; }}
-#centre QLabel[classe="detailEtape"] {{ color: {TEXTE_3}; font-size: 12px; }}
+QPushButton[classe="puce"][arabe="true"] {{ font-size: 14px; }}
+QPushButton[classe="puce"]:hover, QPushButton[classe="puce"]:focus {{
+    background: {BLEU_100}; border-color: {BLEU_200};
+}}
+QLabel[classe="puceNeutre"] {{
+    background: {GRIS_50}; color: {TEXTE_3}; border: 1px solid {FILET}; border-radius: 6px;
+    padding: 0 9px; font-size: 13px;
+}}
+QLabel[classe="puceNeutre"][arabe="true"] {{ font-size: 14px; }}
+QPushButton[classe="puceExemple"] {{
+    background: {BLEU_50}; color: {BLEU_FONCE}; border: 1px solid {BLEU_100}; border-radius: 8px;
+    padding: 0 13px; font-size: 14px;
+}}
+QPushButton[classe="puceExemple"][arabe="true"] {{ font-size: 16px; }}
+QPushButton[classe="puceExemple"]:hover, QPushButton[classe="puceExemple"]:focus {{
+    background: {BLEU_100}; border-color: {BLEU_200};
+}}
+QLabel[classe="pastille"] {{
+    background: {GRIS_100}; color: {TEXTE_2}; border-radius: 9px; padding: 0 6px;
+    font-size: 11px; font-weight: 600;
+}}
 
-/* ---------- Écran « Traduction d'un texte » : termes relevés ---------- */
-#centre QLabel[classe="titreTermes"] {{ font-size: 15px; font-weight: 600; }}
-#enteteTermes {{ background: #F8FAFC; border: none; border-top: 1px solid #EEF2F7; border-bottom: 1px solid #EEF2F7; }}
-#centre QLabel[classe="numeroColonne"] {{
-    background: #DCE7FB; color: {BLEU_FONCE}; border-radius: 8px; font-size: 10px; font-weight: 700;
-}}
-#centre QLabel[classe="titreColonne"] {{ color: {TEXTE_3}; font-size: 11px; font-weight: 700; }}
-#ligneTerme {{ background: transparent; border: none; border-bottom: 1px solid #EEF2F7; }}
-#ligneTerme:hover {{ background: #F7F9FF; }}
-#celluleTerme {{ background: transparent; border: none; border-right: 1px solid #EEF2F7; }}
-#celluleTerme[derniere="true"] {{ border-right: none; }}
-QPushButton[classe="lienTerme"] {{
-    background: transparent; border: none; color: {BLEU_FONCE};
-    font-size: 15px; font-weight: 700; text-align: left; padding: 0;
-}}
-QPushButton[classe="lienTerme"][arabe="true"] {{ font-size: 18px; text-align: right; }}
-QPushButton[classe="lienTerme"]:hover {{ color: {BLEU}; text-decoration: underline; }}
-#centre QLabel[classe="celluleTexte"] {{ color: {TEXTE}; font-size: 13px; }}
-#centre QLabel[classe="celluleArabe"] {{ color: {TEXTE}; font-size: 15px; }}
-#centre QLabel[classe="celluleEquivalent"] {{ color: {BLEU_FONCE}; font-size: 15px; font-weight: 700; }}
-#centre QLabel[classe="celluleEquivalentArabe"] {{ color: {BLEU_FONCE}; font-size: 19px; font-weight: 700; }}
-#centre QLabel[classe="celluleDetail"] {{ color: {TEXTE_3}; font-size: 12px; }}
-#centre QLabel[classe="celluleAlerte"] {{ color: {AMBRE}; font-size: 12px; }}
+/* ---------- Titres et légendes des panneaux ---------- */
+QLabel[classe="capitales"] {{ color: {TEXTE_3}; font-size: 11px; font-weight: 600; }}
+QLabel[classe="capitalesBleu"] {{ color: {BLEU}; font-size: 11px; font-weight: 600; }}
+QLabel[classe="titrePanneau"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
+QLabel[classe="aidePanneau"] {{ color: {TEXTE_3}; font-size: 12px; }}
+QLabel[classe="discret"] {{ color: {TEXTE_3}; font-size: 13px; }}
 
-/* ---------- Zones défilantes ---------- */
-QScrollArea#corpsCarte, QScrollArea#defilementCartes, QScrollArea#defilementTermes {{
-    background: transparent; border: none;
+/* ---------- Fiche d'un terme ---------- */
+QLabel[classe="alerteSens"] {{ color: {AMBRE}; font-size: 12px; }}
+QLabel[classe="terme"] {{ color: {MARINE}; font-weight: 600; }}
+QLabel[classe="equivalent"] {{ color: {BLEU_FONCE}; font-weight: 600; }}
+QLabel[classe="categorie"] {{ color: {TEXTE_3}; font-size: 13px; }}
+QLabel[classe="categorie"][arabe="true"] {{ font-size: 15px; }}
+QLabel[classe="grammaire"] {{ color: {TEXTE_2}; font-size: 13px; }}
+QLabel[classe="grammaire"][arabe="true"] {{ font-size: 15px; }}
+QLabel[classe="domaine"] {{ color: {TEXTE_2}; font-size: 13px; }}
+QLabel[classe="langueBloc"] {{ color: {TEXTE_3}; font-size: 13px; }}
+QLabel[classe="definition"] {{ color: {TEXTE}; font-size: 14px; }}
+QLabel[classe="definition"][arabe="true"] {{ font-size: 17px; }}
+QLabel[classe="sourceExemple"] {{
+    background: {GRIS_100}; color: {TEXTE_2}; border-radius: 6px; padding: 0 8px; font-size: 12px;
 }}
-QWidget#contenuCarte, QWidget#rangeeCartes, QWidget#lignesTermes {{ background: transparent; }}
-QScrollBar:vertical {{ background: transparent; width: 10px; margin: 4px 2px 4px 0; }}
-QScrollBar::handle:vertical {{ background: #CBD5E1; border-radius: 4px; min-height: 28px; }}
-QScrollBar::handle:vertical:hover {{ background: #94A3B8; }}
+QLabel[classe="ressource"] {{ color: {TEXTE_3}; font-size: 13px; }}
+QLabel[classe="ressource"][arabe="true"] {{ font-size: 14px; }}
+QLabel[classe="pied"] {{ color: {TEXTE_3}; font-size: 12px; }}
+QLabel[classe="piedFort"] {{ color: {TEXTE_2}; font-size: 12px; font-weight: 600; }}
+QLabel[classe="piedAlerte"] {{ color: {AMBRE}; font-size: 12px; font-weight: 600; }}
+#rondVide {{ background: {GRIS_100}; border: none; border-radius: 20px; }}
+QLabel[classe="videTitre"] {{ color: {TEXTE_2}; font-size: 13px; font-weight: 600; }}
+QLabel[classe="videTexte"] {{ color: {TEXTE_3}; font-size: 13px; }}
+
+/* ---------- Écran « Terme » sans fiche : accueil, terme introuvable ---------- */
+#rondAccueil {{ background: {BLEU_50}; border: 1px solid {BLEU_100}; border-radius: 32px; }}
+#rondAccueil[alerte="true"] {{ background: {AMBRE_50}; border-color: {AMBRE_200}; }}
+QLabel[classe="accueilTitre"] {{ color: {MARINE}; font-size: 24px; font-weight: 600; }}
+QLabel[classe="accueilTexte"] {{ color: {TEXTE_3}; font-size: 14px; }}
+QLabel[classe="touche"] {{
+    background: {GRIS_50}; color: {TEXTE_2}; border: 1px solid {FILET}; border-radius: 5px;
+    padding: 0 6px; font-size: 12px; font-weight: 600;
+}}
+QLabel[classe="raccourci"] {{ color: {TEXTE_3}; font-size: 13px; }}
+
+/* ---------- Écran « Texte » : informations sur les termes ---------- */
+QLabel[classe="equivalentCarte"] {{ color: {BLEU_FONCE}; font-size: 19px; font-weight: 600; }}
+QLabel[classe="equivalentCarte"][arabe="true"] {{ font-size: 24px; }}
+QLabel[classe="sousTitre"] {{ color: {TEXTE_3}; font-size: 12px; font-weight: 600; }}
+QLabel[classe="alerteCarte"] {{ color: {AMBRE}; font-size: 13px; }}
+QPushButton[classe="sourceLien"] {{
+    background: {BLEU_50}; color: {BLEU_FONCE}; border: 1px solid {BLEU_100}; border-radius: 6px;
+    padding: 0 8px; font-size: 12px; text-align: left;
+}}
+QPushButton[classe="sourceLien"]:hover, QPushButton[classe="sourceLien"]:focus {{
+    background: {BLEU_100}; border-color: {BLEU_200};
+}}
+
+/* ---------- Écrans d'information : paramètres, description, centre d'aide ---------- */
+QLabel[classe="titreCarte"] {{ color: {TEXTE}; font-size: 16px; font-weight: 600; }}
+QLabel[classe="texteCarte"] {{ color: {TEXTE_2}; font-size: 14px; }}
+QLabel[classe="noteCarte"] {{ color: {TEXTE_3}; font-size: 13px; }}
+QLabel[classe="noteCarte"][erreur="true"] {{ color: {AMBRE}; }}
+QLabel[classe="question"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
+#cadreGlossaire {{ background: {GRIS_50}; border: 1px solid {FILET}; border-radius: 10px; }}
+#pointGlossaire {{ background: {VERT_VIF}; border: none; border-radius: 4px; }}
+#pointGlossaire[absent="true"] {{ background: {AMBRE}; }}
+QLabel[classe="nomGlossaire"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
+QLabel[classe="tailleGlossaire"] {{ color: {TEXTE_2}; font-size: 13px; font-weight: 600; }}
+#pointListe {{ background: {GRIS_300}; border: none; border-radius: 3px; }}
+#rondEcran {{ background: {BLEU_50}; border: 1px solid {BLEU_100}; border-radius: 18px; }}
+#rondContact {{ background: {BLEU_50}; border: 1px solid {BLEU_100}; border-radius: 22px; }}
+#champAdresse {{
+    background: {SURFACE}; color: {TEXTE}; border: 1px solid {FILET}; border-radius: 8px;
+    padding: 0 12px; font-size: 14px; selection-background-color: {BLEU}; selection-color: {SURFACE};
+}}
+#champAdresse:focus {{ border-color: {BLEU}; }}
+
+/* ---------- Écran « Texte » : zones de texte ---------- */
+#zoneTexte {{
+    background: transparent; border: none; color: {TEXTE}; font-size: 15px;
+    selection-background-color: {BLEU}; selection-color: {SURFACE};
+}}
+#zoneTexte[arabe="true"] {{ font-size: 18px; }}
+QLabel[classe="nomLangue"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
+QLabel[classe="nomLangue"][arabe="true"] {{ font-size: 16px; }}
+QLabel[classe="roleZone"] {{ color: {TEXTE_3}; font-size: 13px; }}
+QLabel[classe="decompte"] {{ color: {TEXTE_3}; font-size: 12px; }}
+#fichierImporte {{ background: {GRIS_50}; border: 1px solid {FILET}; border-radius: 6px; }}
+QLabel[classe="nomFichier"] {{ color: {TEXTE_2}; font-size: 12px; }}
+#fermerFichier {{ background: transparent; border: none; border-radius: 4px; }}
+#fermerFichier:hover, #fermerFichier:focus {{ background: {FILET}; }}
+
+/* ---------- Barres de défilement ---------- */
+QScrollBar:vertical {{ background: transparent; width: {LARGEUR_BARRE}px; margin: 4px 3px 4px 3px; }}
+QScrollBar::handle:vertical {{ background: {GRIS_300}; border-radius: 2px; min-height: 28px; }}
+QScrollBar::handle:vertical:hover {{ background: {TEXTE_4}; }}
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{ height: 0; }}
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {{ background: transparent; }}
-QScrollBar[inactive="true"]::handle:vertical {{ background: transparent; }}
-QScrollBar:horizontal {{ background: transparent; height: 12px; margin: 4px 0 0 0; }}
-QScrollBar::handle:horizontal {{ background: #CBD5E1; border-radius: 4px; min-width: 40px; }}
-QScrollBar::handle:horizontal:hover {{ background: #94A3B8; }}
+QScrollBar:horizontal {{ background: transparent; height: 12px; margin: 5px 4px 3px 4px; }}
+QScrollBar::handle:horizontal {{ background: {GRIS_300}; border-radius: 2px; min-width: 40px; }}
+QScrollBar::handle:horizontal:hover {{ background: {TEXTE_4}; }}
 QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {{ width: 0; }}
 QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {{ background: transparent; }}
 
 /* ---------- Barre d'état ---------- */
-QStatusBar {{ background: #FFFFFF; color: {TEXTE_2}; border-top: 1px solid {FILET}; }}
-QStatusBar::item {{ border: none; }}
-QStatusBar QLabel {{ color: {TEXTE_3}; font-size: 12px; padding: 0 6px; }}
+#barreEtat {{ background: {SURFACE}; border: none; border-top: 1px solid {FILET}; }}
+QLabel[classe="etat"] {{ color: {TEXTE_3}; font-size: 12px; }}
+
+/* ---------- Infobulles ---------- */
+QToolTip {{
+    background: {MARINE}; color: {SURFACE}; border: 1px solid {MARINE}; padding: 4px 6px; font-size: 12px;
+}}
 """
 
 #: Liste des suggestions qui s'ouvre sous la barre de recherche pendant la saisie.
 STYLE_DES_SUGGESTIONS = f"""
 QAbstractItemView {{
-    background: #FFFFFF; color: {TEXTE}; border: 1px solid #D5DCE8;
+    background: {SURFACE}; color: {TEXTE}; border: 1px solid {FILET};
     font-size: 15px; padding: 4px; outline: 0;
 }}
-QAbstractItemView::item {{ padding: 6px 10px; border: none; }}
-QAbstractItemView::item:selected, QAbstractItemView::item:hover {{ background: {BLEU_PALE}; color: {BLEU_FONCE}; }}
+QAbstractItemView::item {{ padding: 6px 10px; border: none; border-radius: 6px; }}
+QAbstractItemView::item:selected, QAbstractItemView::item:hover {{ background: {BLEU_50}; color: {BLEU_FONCE}; }}
+"""
+
+#: Boîtes de message et fenêtres d'aide.
+STYLE_DES_BOITES = f"""
+#boite {{ background: {SURFACE}; }}
+#rondBoite {{ background: {BLEU_50}; border: 1px solid {BLEU_100}; border-radius: 20px; }}
+#rondBoite[alerte="true"] {{ background: {AMBRE_50}; border-color: {AMBRE_200}; }}
+QLabel[classe="boiteTitre"] {{ color: {TEXTE}; font-size: 16px; font-weight: 600; }}
+QLabel[classe="boiteTexte"] {{ color: {TEXTE_2}; font-size: 14px; }}
+#piedBoite {{ background: {GRIS_50}; border: none; border-top: 1px solid {FILET_DOUX}; }}
 """
