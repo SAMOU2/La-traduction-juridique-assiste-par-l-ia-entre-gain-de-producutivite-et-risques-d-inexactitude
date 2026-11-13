@@ -25,7 +25,7 @@ from traducteur.interface import fenetre as module_fenetre
 from traducteur.interface.boites import BoiteMessage
 from traducteur.interface.composants import ESPACE_INVISIBLE, MARQUE_RTL, EtiquetteCourte
 from traducteur.interface.fenetre import MODE_PARAMETRES, MODE_TERME, MODE_TEXTE, BarreEtat, FenetrePrincipale
-from traducteur.interface.fiche import LARGEUR_MINIMALE
+from traducteur.interface.fiche import LARGEUR_MINIMALE, LienCourt, LigneDeProvenance
 from traducteur.interface.navigation import LARGEUR as LARGEUR_DU_RAIL
 from traducteur.interface.recherche import LEGENDES
 from traducteur.langues import AR, FR
@@ -386,6 +386,95 @@ def test_une_definition_sans_source_est_a_verifier(fenetre, tmp_path):
     # Sans source dans le glossaire, la définition est aussi à vérifier (comme dans le tableau de l'écran « Texte »).
     page.rechercher("prêt")
     assert textes(page.fiche.colonne_definition.pied) == ["À vérifier", "· source non indiquée"]
+
+
+def test_une_phrase_d_exemple_a_verifier_est_signalee(fenetre, tmp_path):
+    """④ La mention « À vérifier » précède une phrase que le glossaire ne reprend d'aucun texte."""
+    fenetre.charger_glossaire(ecrire(tmp_path / "exemples.csv", (
+        "terme_fr;terme_ar;definition_fr;definition_ar;source_definition;contexte_fr;contexte_ar;source_contexte\n"
+        "bail;إيجار;;;;Le bail est écrit.;الإيجار مكتوب.;à vérifier (phrase d’exemple)\n"
+        "loyer;بدل الإيجار;;;;Le loyer est payé chaque mois.;يدفع بدل الإيجار كل شهر.;Code civil, art. 498\n"
+        "preneur;مستأجر;;;;Le preneur signe le bail.;يوقع المستأجر الإيجار.;À vérifier\n"
+        "caution;كفيل;;;;La caution paie la dette.;يوفي الكفيل الدين.;\n")))
+    page = fenetre.page
+    colonne = page.fiche.colonne_contexte
+
+    # L'exemple de l'entrée, puis celui d'une autre entrée : tous deux sont à vérifier.
+    page.rechercher("bail")
+    assert [(emploi.origine, emploi.a_verifier) for emploi in colonne.emplois] == [("propre", True), ("exemple", True)]
+    assert textes(colonne.corps) == [
+        "À vérifier", "· phrase d’exemple", "Le bail est écrit.", "الإيجار مكتوب.",
+        "À vérifier", "Le preneur signe le bail.", "يوقع المستأجر الإيجار."]
+    assert textes(colonne.pied) == ["1 exemple · 1 autre emploi dans le glossaire"]
+    # La mention « à vérifier » n'est jamais écrite comme une source.
+    assert not any("phrase d’exemple)" in texte for texte in textes(colonne.corps))
+    explications = {label.toolTip() for label in colonne.corps.findChildren(QLabel) if label.text() == "À vérifier"}
+    assert len(explications) == 1 and "vérifiez-la avant de la citer" in explications.pop()
+    # La phrase de l'autre entrée garde son lien : il nomme l'entrée et l'ouvre.
+    provenance, = colonne.corps.findChildren(LigneDeProvenance)
+    assert provenance.a_verifier() and provenance.lien.texte_complet == "Exemple de « preneur »"
+    assert provenance.icone.isVisible() and provenance.lien.width() >= provenance.lien.minimumSizeHint().width()
+    provenance.lien.click()
+    assert grand_terme(page.fiche.colonne_terme) == "preneur"
+    # Ici la mention est seule, sans précision : rien ne la suit.
+    assert textes(colonne.corps)[:3] == ["À vérifier", "Le preneur signe le bail.", "يوقع المستأجر الإيجار."]
+
+    # Une phrase qui cite sa source affiche cette source, sans mention.
+    page.rechercher("loyer")
+    assert textes(colonne.corps) == [
+        "Code civil, art. 498", "Le loyer est payé chaque mois.", "يدفع بدل الإيجار كل شهر."]
+    # Une phrase sans source reste sans étiquette, comme avant.
+    page.rechercher("caution")
+    assert textes(colonne.corps) == ["La caution paie la dette.", "يوفي الكفيل الدين."]
+
+
+def test_une_definition_prise_pour_contexte_porte_la_mention_de_sa_fiche(fenetre, tmp_path):
+    """④ Une définition d'une autre entrée : « À vérifier » si cette définition ne cite pas de source."""
+    fenetre.charger_glossaire(ecrire(tmp_path / "definitions.csv", (
+        "terme_fr;terme_ar;definition_fr;definition_ar;source_definition\n"
+        "vente;بيع;;;\n"
+        "vendeur;بائع;Partie à la vente.;طرف في البيع.;Code civil, art. 351\n"
+        "acheteur;مشترٍ;Autre partie à la vente.;الطرف الآخر في البيع.;\n")))
+    page = fenetre.page
+    page.rechercher("vente")
+    colonne = page.fiche.colonne_contexte
+    lignes = colonne.corps.findChildren(LigneDeProvenance)
+    assert [(ligne.lien.texte_complet, ligne.a_verifier()) for ligne in lignes] == [
+        ("Définition de « vendeur »", False), ("Définition de « acheteur »", True)]
+    assert textes(colonne.corps) == ["Partie à la vente.", "طرف في البيع.",
+                                     "À vérifier", "Autre partie à la vente.", "الطرف الآخر في البيع."]
+    assert textes(colonne.pied) == ["2 contextes trouvés dans le glossaire"]
+
+
+def test_la_ligne_de_provenance_garde_le_lien_lisible(application):
+    """Dans une colonne étroite, la mention se réduit à son icône avant que le lien ne soit abrégé."""
+    def ligne(largeur: int) -> LigneDeProvenance:
+        ligne = LigneDeProvenance(LienCourt("Exemple de « bail »", "sourceLien"), "Phrase à vérifier.")
+        ligne.resize(largeur, ligne.sizeHint().height())
+        ligne.show()
+        application.processEvents()
+        return ligne
+
+    large = ligne(600)
+    complet = large.lien.sizeHint().width()
+    assert large.sizeHint().width() > complet and large.minimumSizeHint().width() < complet
+    assert large.mots.isVisible() and large.lien.width() == complet and large.lien.text() == "Exemple de « bail »"
+    assert large.icone.x() >= large.lien.width() and large.mots.x() > large.icone.x()
+    assert large.icone.toolTip() == large.mots.toolTip() != ""
+    # Juste assez de place pour le lien et l'icône : les deux mots disparaissent, le lien reste entier.
+    juste = ligne(complet + LigneDeProvenance.ECART + LigneDeProvenance.ICONE)
+    assert not juste.mots.isVisible() and juste.icone.isVisible()
+    assert juste.lien.width() == complet and juste.lien.text() == "Exemple de « bail »"
+    # Plus étroit encore : le lien est abrégé, l'icône reste dans la ligne.
+    etroit = ligne(90)
+    assert etroit.lien.text().endswith("…") and etroit.lien.texte_complet == "Exemple de « bail »"
+    assert etroit.icone.x() + etroit.icone.width() <= etroit.width()
+    # Sans mention : le lien seul.
+    seul = LigneDeProvenance(LienCourt("Code civil, art. 107", "sourceLien"))
+    assert not seul.a_verifier() and seul.icone is None and seul.mots is None
+    assert seul.sizeHint().width() == seul.lien.sizeHint().width()
+    for widget in (large, juste, etroit, seul):
+        widget.deleteLater()
 
 
 def test_chaque_entree_de_l_exemple_a_une_definition_et_des_ressources(glossaire):

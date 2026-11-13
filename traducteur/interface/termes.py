@@ -25,7 +25,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ..contextes import PROPRE, Emploi, emplois
+from ..contextes import DEFINITION, PROPRE, Emploi, emplois
 from ..glossaire import Glossaire
 from ..langues import AR, FR, cle_souple, deviner_langue
 from ..traduction import TERME, TermeDetecte, Traduction
@@ -41,6 +41,7 @@ from .composants import (
     compte,
     etiquette,
     icone_fixe,
+    mention_a_controler,
     nombre,
     paragraphe,
     pastille,
@@ -405,7 +406,18 @@ class CarteTerme(QWidget):
             mention = EtiquetteCourte(titre, "sousTitre")
             if emploi.origine != PROPRE:
                 mention.setToolTip(f"Phrase trouvée dans l’entrée « {emploi.entree.terme(source)} » du glossaire.")
-            contenu.addWidget(mention)
+            if emploi.a_verifier:
+                # La phrase n'est reprise d'aucun texte cité : la mention « À vérifier » le dit, à droite du titre.
+                ligne = QHBoxLayout()
+                ligne.setContentsMargins(0, 0, 0, 0)
+                ligne.setSpacing(8)
+                ligne.addWidget(mention, 1)
+                ligne.addWidget(mention_a_controler(
+                    "Définition à vérifier : elle n’est reprise d’aucune source citée." if emploi.origine == DEFINITION
+                    else "Phrase d’exemple à vérifier : elle n’est reprise d’aucun texte officiel."))
+                contenu.addLayout(ligne)
+            else:
+                contenu.addWidget(mention)
             contenu.addSpacing(2)
             for langue in (source, cible):
                 if emploi.texte(langue):

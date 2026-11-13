@@ -1,0 +1,55 @@
+# Phrases d'exemple du lot 02_constitutionnel.txt : terme | phrase française | phrase arabe
+État | L'État garantit l'égalité de tous les citoyens devant la loi. | تضمن الدولة مساواة جميع المواطنين أمام القانون.
+souveraineté | La souveraineté nationale appartient au peuple. | السيادة الوطنية ملك للشعب.
+nation | Le président de la République incarne l'unité de la nation. | يجسد رئيس الجمهورية وحدة الأمة.
+peuple | Le peuple exerce sa souveraineté par l'intermédiaire de ses représentants élus. | يمارس الشعب سيادته بواسطة ممثليه المنتخبين.
+territoire | La loi s'applique sur l'ensemble du territoire national. | يطبق القانون في كامل الإقليم الوطني.
+république | L'Algérie est une république démocratique et populaire. | الجزائر جمهورية ديمقراطية شعبية.
+démocratie | La démocratie repose sur des élections libres et régulières. | تقوم الديمقراطية على انتخابات حرة ومنتظمة.
+citoyen | Tout citoyen remplissant les conditions légales peut élire et être élu. | لكل مواطن تتوفر فيه الشروط القانونية أن ينتخب وينتخب.
+citoyenneté | L'école transmet les valeurs de la citoyenneté. | تنقل المدرسة قيم المواطنة.
+séparation des pouvoirs | La constitution consacre la séparation des pouvoirs. | يكرس الدستور الفصل بين السلطات.
+pouvoir législatif | Le pouvoir législatif est exercé par un Parlement composé de deux chambres. | يمارس السلطة التشريعية برلمان يتكون من غرفتين.
+pouvoir exécutif | Le pouvoir exécutif veille à l'exécution des lois. | تسهر السلطة التنفيذية على تنفيذ القوانين.
+pouvoir judiciaire | Le pouvoir judiciaire est indépendant. | السلطة القضائية مستقلة.
+pouvoir réglementaire | Le président de la République exerce le pouvoir réglementaire dans les matières non réservées à la loi. | يمارس رئيس الجمهورية السلطة التنظيمية في المسائل غير المخصصة للقانون.
+pouvoir constituant | Le pouvoir constituant appartient au peuple. | السلطة التأسيسية ملك للشعب.
+président de la République | Le président de la République est élu au suffrage universel direct et secret. | ينتخب رئيس الجمهورية عن طريق الاقتراع العام المباشر والسري.
+chef de l'État | Le chef de l'État est le garant de la constitution. | رئيس الدولة هو حامي الدستور.
+Premier ministre | Le Premier ministre coordonne le travail du Gouvernement. | ينسق الوزير الأول عمل الحكومة.
+gouvernement | Le gouvernement est responsable devant l'Assemblée populaire nationale. | الحكومة مسؤولة أمام المجلس الشعبي الوطني.
+ministre | Le ministre signe les arrêtés relevant de son secteur. | يوقع الوزير القرارات التابعة لقطاعه.
+ministère | Le ministère publie ses circulaires sur son site. | تنشر الوزارة مناشيرها في موقعها.
+Conseil des ministres | Le projet de loi est adopté en Conseil des ministres. | يصادق على مشروع القانون في مجلس الوزراء.
+Parlement | Le Parlement adopte la loi et contrôle le Gouvernement. | يصادق البرلمان على القانون ويراقب الحكومة.
+Assemblée populaire nationale | L'Assemblée populaire nationale est élue pour cinq ans. | ينتخب المجلس الشعبي الوطني لمدة خمس سنوات.
+Conseil de la Nation | Le Conseil de la Nation examine le texte voté par l'Assemblée populaire nationale. | يدرس مجلس الأمة النص الذي صوت عليه المجلس الشعبي الوطني.
+député | Le député peut poser une question écrite à un ministre. | يمكن النائب أن يوجه سؤالا كتابيا إلى وزير.
+session | Le Parlement siège en une session ordinaire par an. | يجتمع البرلمان في دورة عادية واحدة كل سنة.
+immunité parlementaire | La levée de l'immunité parlementaire est demandée à l'assemblée concernée. | يطلب رفع الحصانة البرلمانية من المجلس المعني.
+motion de censure | Les députés ont déposé une motion de censure contre le Gouvernement. | أودع النواب ملتمس الرقابة ضد الحكومة.
+vote | Le vote a lieu à bulletin secret. | يجري التصويت بالاقتراع السري.
+quorum | La séance est reportée lorsque le quorum n'est pas atteint. | تؤجل الجلسة إذا لم يكتمل النصاب.
+majorité = أغلبية | La loi est adoptée à la majorité des membres présents. | يصادق على القانون بأغلبية الأعضاء الحاضرين.
+majorité absolue | Le candidat est élu à la majorité absolue des suffrages exprimés. | ينتخب المترشح بالأغلبية المطلقة للأصوات المعبر عنها.
+élection | L'élection du président de l'assemblée a lieu au début de la législature. | يجري انتخاب رئيس المجلس في بداية الفترة التشريعية.
+électeur | L'électeur présente sa carte avant de déposer son bulletin. | يقدم الناخب بطاقته قبل وضع ورقته في الصندوق.
+candidat | Le candidat dépose son dossier dans le délai fixé par la loi. | يودع المترشح ملفه في الأجل الذي يحدده القانون.
+liste électorale | Tout citoyen peut vérifier que son nom figure sur la liste électorale de sa commune. | لكل مواطن أن يتحقق من وجود اسمه في القائمة الانتخابية لبلديته.
+suffrage universel | Les députés sont élus au suffrage universel direct. | ينتخب النواب عن طريق الاقتراع العام المباشر.
+scrutin | Le scrutin est ouvert de huit heures à dix-neuf heures. | يفتتح الاقتراع من الساعة الثامنة إلى الساعة السابعة مساء.
+référendum | Le président de la République peut soumettre la révision au référendum. | يمكن رئيس الجمهورية أن يعرض التعديل على الاستفتاء.
+mandat électif | Le mandat électif prend fin à l'expiration de sa durée. | تنتهي العهدة الانتخابية بانقضاء مدتها.
+parti politique | Le droit de créer un parti politique est reconnu et garanti. | حق إنشاء حزب سياسي معترف به ومضمون.
+Autorité nationale indépendante des élections | L'Autorité nationale indépendante des élections organise le scrutin et proclame les résultats provisoires. | تنظم السلطة الوطنية المستقلة للانتخابات الاقتراع وتعلن النتائج المؤقتة.
+Cour constitutionnelle | La Cour constitutionnelle proclame les résultats définitifs de l'élection présidentielle. | تعلن المحكمة الدستورية النتائج النهائية للانتخابات الرئاسية.
+contrôle de constitutionnalité | Le contrôle de constitutionnalité est exercé par la Cour constitutionnelle. | تمارس المحكمة الدستورية الرقابة على دستورية القوانين.
+exception d'inconstitutionnalité | La juridiction transmet l'exception d'inconstitutionnalité à la Cour suprême ou au Conseil d'État. | تحيل الجهة القضائية الدفع بعدم الدستورية إلى المحكمة العليا أو مجلس الدولة.
+constitutionnalité | Le juge constitutionnel vérifie la constitutionnalité du traité avant sa ratification. | يتحقق القاضي الدستوري من دستورية المعاهدة قبل التصديق عليها.
+révision constitutionnelle | La révision constitutionnelle a été approuvée par référendum. | تمت الموافقة على التعديل الدستوري عن طريق الاستفتاء.
+saisine | La saisine de la Cour constitutionnelle suspend la promulgation de la loi. | يوقف إخطار المحكمة الدستورية إصدار القانون.
+état d'urgence | Le président de la République décrète l'état d'urgence pour une durée déterminée. | يقرر رئيس الجمهورية حالة الطوارئ لمدة محددة.
+état de siège | L'état de siège ne peut être prolongé qu'avec l'approbation du Parlement. | لا يمكن تمديد حالة الحصار إلا بعد موافقة البرلمان.
+état d'exception | L'état d'exception est décrété en cas de péril imminent. | تقرر الحالة الاستثنائية إذا كانت البلاد مهددة بخطر داهم.
+Cour des comptes | La Cour des comptes contrôle l'utilisation des fonds publics. | يراقب مجلس المحاسبة استعمال الأموال العمومية.
+Conseil supérieur de la magistrature | Le Conseil supérieur de la magistrature décide des nominations et des mutations des magistrats. | يقرر المجلس الأعلى للقضاء تعيين القضاة ونقلهم.

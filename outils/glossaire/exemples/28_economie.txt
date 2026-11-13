@@ -1,0 +1,29 @@
+# Phrases d'exemple du lot 28_economie.txt : terme | phrase française | phrase arabe
+consommateur | Le consommateur a le droit d'être informé sur le produit. | للمستهلك الحق في الإعلام حول المنتوج.
+protection du consommateur | La loi sur la protection du consommateur impose la sécurité des produits. | يفرض قانون حماية المستهلك أمن المنتوجات.
+service | Le prix du service est affiché à l'entrée du magasin. | يعلق ثمن الخدمة عند مدخل المحل.
+étiquetage | L'étiquetage du produit est rédigé en langue arabe. | يحرر وسم المنتوج باللغة العربية.
+droit de rétractation | Le consommateur exerce son droit de rétractation sans payer de frais. | يمارس المستهلك حق العدول دون دفع مصاريف.
+publicité trompeuse | La publicité trompeuse sur le prix est interdite. | يمنع الإشهار التضليلي حول الثمن.
+concurrence | La concurrence entre les entreprises profite au consommateur. | تعود المنافسة بين المؤسسات بالفائدة على المستهلك.
+marché | Le prix se forme librement sur le marché. | يتحدد الثمن بحرية في السوق.
+Conseil de la concurrence | Le Conseil de la concurrence sanctionne les pratiques qui faussent le marché. | يعاقب مجلس المنافسة على الممارسات التي تخل بالسوق.
+entente illicite | L'entente illicite sur le prix est sanctionnée par une amende. | يعاقب بغرامة على كل اتفاق محظور حول الثمن.
+abus de position dominante | Refuser de vendre sans motif légitime peut constituer un abus de position dominante. | يمكن أن يشكل رفض البيع بدون مبرر شرعي حالة من التعسف في وضعية الهيمنة.
+monopole | Le monopole empêche l'entrée de nouvelles entreprises sur le marché. | يمنع الاحتكار دخول مؤسسات جديدة إلى السوق.
+propriété intellectuelle | La propriété intellectuelle protège les créations de l'esprit. | تحمي الملكية الفكرية إبداعات الفكر.
+propriété industrielle | La propriété industrielle couvre les inventions et les marques. | تشمل الملكية الصناعية الاختراعات والعلامات.
+contrefaçon | La contrefaçon d'une marque enregistrée est un délit. | تقليد علامة مسجلة جنحة.
+redevance | L'exploitant verse une redevance annuelle à l'État. | يدفع المستغل إتاوة سنوية للدولة.
+droit d'auteur | Le droit d'auteur protège l'œuvre dès sa création. | يحمي حق المؤلف المصنف منذ إبداعه.
+auteur = مؤلف | L'auteur décide seul de faire connaître son œuvre au public. | يقرر المؤلف وحده الكشف عن مصنفه للجمهور.
+œuvre | L'œuvre est protégée quels que soient son genre et sa forme d'expression. | يحمى المصنف مهما يكن نوعه ونمط تعبيره.
+brevet d'invention | Le brevet d'invention protège son titulaire pendant vingt ans. | تحمي براءة الاختراع صاحبها لمدة عشرين سنة.
+invention | L'invention doit être nouvelle pour être protégée. | يجب أن يكون الاختراع جديدا لكي يحمى.
+marque | La marque est enregistrée pour dix ans renouvelables. | تسجل العلامة لمدة عشر سنوات قابلة للتجديد.
+données à caractère personnel | Le nom et l'adresse d'un client sont des données à caractère personnel. | اسم الزبون وعنوانه من المعطيات ذات الطابع الشخصي.
+traitement des données | Le traitement des données exige le consentement de la personne concernée. | تستلزم معالجة المعطيات رضا الشخص المعني.
+responsable du traitement | Le responsable du traitement veille à la sécurité des données. | يسهر المسؤول عن المعالجة على أمن المعطيات.
+commerce électronique | Le commerce électronique permet d'acheter à distance. | تسمح التجارة الإلكترونية بالشراء عن بعد.
+contrat électronique | Le contrat électronique est conclu sans la présence physique des parties. | يبرم العقد الإلكتروني دون الحضور الفعلي للأطراف.
+signature électronique | La signature électronique a la même valeur que la signature manuscrite. | للتوقيع الإلكتروني نفس قيمة التوقيع الخطي.

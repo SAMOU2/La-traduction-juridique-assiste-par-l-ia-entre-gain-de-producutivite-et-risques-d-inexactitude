@@ -217,7 +217,13 @@ class Traduction:
 
     @property
     def phrases_attestees(self) -> int:
+        """Nombre de phrases reprises d'un exemple du glossaire."""
         return sum(1 for phrase in self.phrases if phrase.attestation is not None)
+
+    @property
+    def phrases_a_verifier(self) -> int:
+        """Parmi les phrases reprises d'un exemple, celles dont l'exemple porte la mention « à vérifier »."""
+        return sum(1 for phrase in self.phrases if phrase.attestation is not None and phrase.attestation.a_verifier)
 
     @property
     def complete(self) -> bool:

@@ -1,0 +1,50 @@
+# Phrases d'exemple du lot 14_famille.txt : terme | phrase française | phrase arabe
+famille | La famille bénéficie de la protection de l'État. | تحظى الأسرة بحماية الدولة.
+parenté | Le degré de parenté se compte par génération. | تحسب درجة القرابة بعدد الأجيال.
+alliance | L'alliance unit chaque époux aux parents de l'autre. | تربط المصاهرة كل زوج بأقارب الزوج الآخر.
+ascendants | Les ascendants ont droit à une pension alimentaire lorsqu'ils sont dans le besoin. | للأصول الحق في نفقة إذا كانوا محتاجين.
+descendants | Les descendants héritent de leur père. | يرث الفروع أباهم.
+enfant | L'enfant est rattaché à son père lorsque le mariage est valide. | ينسب الولد لأبيه متى كان الزواج صحيحا.
+mariage | Le mariage est un contrat consensuel conclu entre un homme et une femme. | الزواج عقد رضائي يتم بين رجل وامرأة.
+acte de mariage | L'acte de mariage est dressé par un notaire ou par un officier de l'état civil. | يحرر عقد الزواج موثق أو ضابط الحالة المدنية.
+fiançailles | Les fiançailles sont une promesse de mariage. | الخطبة وعد بالزواج.
+époux | Chaque époux conserve son propre patrimoine. | لكل زوج ذمة مالية مستقلة.
+épouse | L'épouse conserve son nom de famille après le mariage. | تحتفظ الزوجة بلقبها بعد الزواج.
+dot | La dot appartient à l'épouse, qui en dispose librement. | الصداق ملك للزوجة تتصرف فيه بكل حرية.
+régime matrimonial | Dans le régime matrimonial prévu par la loi, les biens de chaque époux restent séparés. | في النظام المالي للزوجين المقرر قانونا، تبقى أموال كل زوج مستقلة.
+polygamie | La polygamie est soumise à l'autorisation du président du tribunal. | يخضع تعدد الزوجات لترخيص رئيس المحكمة.
+empêchement au mariage | La parenté proche est un empêchement au mariage. | القرابة القريبة مانع من موانع الزواج.
+dissolution du mariage | La dissolution du mariage résulte du divorce ou du décès de l'un des époux. | يكون انحلال الزواج بالطلاق أو بوفاة أحد الزوجين.
+divorce | Le divorce n'est établi que par jugement. | لا يثبت الطلاق إلا بحكم.
+divorce par consentement mutuel | Les époux présentent ensemble une demande de divorce par consentement mutuel. | يقدم الزوجان معا طلب الطلاق بالتراضي.
+khol'â | Par le khol'â, l'épouse se sépare de son époux moyennant une somme d'argent. | بالخلع، تنفصل الزوجة عن زوجها بمقابل مالي.
+retraite légale | La femme divorcée observe une retraite légale avant de se remarier. | تلتزم المطلقة بالعدة قبل أن تتزوج من جديد.
+pension alimentaire | Le père verse une pension alimentaire pour l'entretien de l'enfant. | يدفع الأب نفقة لإعالة الولد.
+obligation alimentaire | L'obligation alimentaire existe entre les ascendants et les descendants. | يقوم الالتزام بالنفقة بين الأصول والفروع.
+garde | La garde de l'enfant est confiée en priorité à la mère. | تسند حضانة الولد إلى الأم بالأولوية.
+droit de visite | Le juge qui confie la garde fixe aussi le droit de visite. | على القاضي عندما يحكم بإسناد الحضانة أن يحكم بحق الزيارة.
+section des affaires familiales | La section des affaires familiales statue sur les demandes de divorce. | يفصل قسم شؤون الأسرة في طلبات الطلاق.
+filiation | La filiation est établie par le mariage valide ou par l'aveu. | يثبت النسب بالزواج الصحيح أو بالإقرار.
+désaveu de paternité | Le désaveu de paternité se fait par les voies légales. | يتم نفي النسب بالطرق المشروعة.
+kafala | La kafala est l'engagement de prendre en charge bénévolement un enfant mineur. | الكفالة التزام على وجه التبرع بالقيام بولد قاصر.
+adoption | L'adoption est interdite par la loi. | يمنع التبني قانونا.
+succession | Les dettes du défunt sont payées sur la succession avant le partage. | تسدد ديون المورث من التركة قبل القسمة.
+héritage | L'héritage est transmis aux héritiers selon les parts fixées par la loi. | ينتقل الميراث إلى الورثة حسب الأنصبة التي يحددها القانون.
+ouverture de la succession | L'ouverture de la succession a lieu au jour du décès. | يتم افتتاح التركة يوم الوفاة.
+partage successoral | Le partage successoral est fait à l'amiable ou par le juge. | تتم قسمة التركة بالتراضي أو عن طريق القاضي.
+frédha | Le notaire établit la frédha qui désigne les héritiers et leurs parts. | يحرر الموثق الفريضة التي تعين الورثة وأنصبتهم.
+quote-part | Chaque héritier reçoit sa quote-part de la succession. | يأخذ كل وارث نصيبه من التركة.
+héritier | L'héritier ne répond des dettes que dans la limite de la succession. | لا يسأل الوارث عن الديون إلا في حدود التركة.
+défunt | Les biens du défunt passent aux héritiers. | تنتقل أموال المورث إلى الورثة.
+héritiers réservataires | Les héritiers réservataires reçoivent une part fixée par la loi. | يأخذ ذوو الفروض نصيبا يحدده القانون.
+héritier universel | L'héritier universel recueille ce qui reste après les parts fixées. | يأخذ العاصب ما بقي بعد الأنصبة المقدرة.
+tanzil | Par le tanzil, les descendants du fils décédé avant son père héritent à sa place. | بالتنزيل، يرث فروع الابن المتوفى قبل أبيه مكانه.
+indignité successorale | Le meurtre du défunt entraîne l'indignité successorale. | يترتب على قتل المورث عمدا المنع من الميراث.
+libéralité | La donation est une libéralité faite du vivant du donateur. | الهبة تبرع يتم في حياة الواهب.
+testament | Le testament ne peut dépasser le tiers de la succession. | لا تتجاوز الوصية ثلث التركة.
+testateur | Le testateur peut révoquer son testament. | يجوز للموصي الرجوع في الوصية.
+légataire | Le légataire reçoit la chose léguée après le décès du testateur. | يتسلم الموصى له الشيء الموصى به بعد وفاة الموصي.
+donation | La donation d'un immeuble est faite par acte notarié. | تتم هبة العقار بعقد توثيقي.
+donateur | Le donateur transfère la propriété sans contrepartie. | ينقل الواهب الملكية بلا عوض.
+donataire | Le donataire accepte la donation. | يقبل الموهوب له الهبة.
+renonciation | La renonciation à un droit ne se présume pas. | التنازل عن الحق لا يفترض.

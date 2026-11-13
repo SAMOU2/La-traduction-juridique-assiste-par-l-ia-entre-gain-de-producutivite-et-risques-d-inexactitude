@@ -122,6 +122,33 @@ def test_les_exemples_passent_avant_les_definitions_et_le_meme_domaine_d_abord(t
         "Exemple de « appel »", "art. 7", "Définition de « greffe »", "Définition de « juge »"]
 
 
+def test_un_exemple_a_verifier_passe_apres_les_autres(tmp_path):
+    """Un exemple qui n'est pas « à vérifier » vient d'abord, même plus long et d'un autre domaine."""
+    en_tete = ("terme_fr;terme_ar;domaine;definition_fr;definition_ar;source_definition;"
+               "contexte_fr;contexte_ar;source_contexte\n")
+    glossaire = charger(tmp_path, (
+        "bail;إيجار;Contrats;;;;;;\n"
+        "preneur;مستأجر;Contrats;;;;Le preneur signe le bail.;يوقع المستأجر الإيجار.;à vérifier (phrase d’exemple)\n"
+        "loyer;بدل الإيجار;Sociétés;;;;Le bail fixe le montant du loyer que doit le preneur.;"
+        "يحدد الإيجار مبلغ بدل الإيجار الواجب على المستأجر.;Code civil, art. 467\n"
+        "caution;كفيل;Contrats;;;;La caution garantit le bail.;يضمن الكفيل الإيجار.;\n"
+        "durée;مدة;Contrats;Temps que dure le bail.;مدة الإيجار.;à vérifier (définition d’exemple);;;\n"
+        "congé;تنبيه بالإخلاء;Sociétés;Acte par lequel une partie met fin au bail.;تصرف ينهي به طرف الإيجار.;"
+        "Code civil, art. 469;;;\n"
+        "état des lieux;محضر معاينة;Contrats;Description du bien au début du bail.;وصف المال عند بداية الإيجار.;;;;\n"),
+        en_tete)
+    trouves = emplois(glossaire, glossaire.entrees[0], 9)
+    assert [(emploi.origine, emploi.entree.terme_fr, emploi.a_verifier) for emploi in trouves] == [
+        (EXEMPLE, "caution", False),  # exemple sans mention, même domaine
+        (EXEMPLE, "loyer", False),  # exemple qui cite sa source, autre domaine
+        (EXEMPLE, "preneur", True),  # exemple à vérifier, bien que plus court et du même domaine
+        # Les définitions gardent leur ordre : le même domaine d'abord, puis la plus courte.
+        (DEFINITION, "durée", True),
+        (DEFINITION, "état des lieux", True),
+        (DEFINITION, "congé", False),
+    ]
+
+
 def test_a_domaine_egal_la_phrase_la_plus_courte_d_abord(tmp_path):
     glossaire = charger(tmp_path, (
         "bail;إيجار;;;;;;\n"
@@ -157,21 +184,96 @@ def test_un_emploi():
     emploi = Emploi("Le bail est écrit.", "الإيجار مكتوب.", PROPRE, "", None)
     assert emploi.provenance() == ""
     assert emploi.texte(FR) == "Le bail est écrit." and emploi.texte(AR) == "الإيجار مكتوب."
+    # Sans source, le glossaire ne dit rien de la phrase : elle n'est pas signalée.
+    assert not emploi.a_verifier and emploi.detail_a_verifier == ""
+
+
+# ------------------------------------------------------------------ la mention « à vérifier »
+@pytest.mark.parametrize(
+    ("source", "detail"),
+    [
+        ("à vérifier (phrase d’exemple)", "phrase d’exemple"),
+        ("À vérifier (phrase d'exemple)", "phrase d'exemple"),
+        ("A VERIFIER : exemple rédigé", "exemple rédigé"),
+        ("à vérifier", ""),
+        ("Code civil, art. 106", None),
+        ("Phrase à vérifier", None),  # la mention doit ouvrir la source
+        ("", None),
+    ],
+)
+def test_la_mention_a_verifier_d_une_source(source, detail):
+    from traducteur.glossaire import Contexte, mention_a_verifier
+
+    assert mention_a_verifier(source) == detail
+    assert Contexte("Le bail est écrit.", "الإيجار مكتوب.", source).a_verifier == (detail is not None)
+
+
+def test_une_phrase_a_verifier_n_a_pas_de_source_a_citer(tmp_path):
+    """« à vérifier (phrase d'exemple) » n'est pas une source : la phrase est signalée, et rien n'est cité."""
+    glossaire = charger(tmp_path, (
+        "bail;إيجار;;;;Le bail est écrit.;الإيجار مكتوب.;à vérifier (phrase d’exemple)\n"
+        "preneur;مستأجر;;;;Le preneur signe le bail.;يوقع المستأجر الإيجار.;à vérifier (phrase d’exemple)\n"
+        "bailleur;مؤجر;;;;Le bailleur remet le bail au preneur.;يسلم المؤجر الإيجار للمستأجر.;Code civil, art. 476\n"))
+    propre, cite, autre = emplois(glossaire, entree(glossaire, "bail"), 3)
+    assert (propre.origine, propre.provenance(), propre.a_verifier) == (PROPRE, "", True)
+    assert propre.source == "à vérifier (phrase d’exemple)" and propre.detail_a_verifier == "phrase d’exemple"
+    # La phrase d'une autre entrée est attribuée à cette entrée, pas à la mention.
+    assert (autre.origine, autre.provenance(), autre.a_verifier) == (EXEMPLE, "Exemple de « preneur »", True)
+    assert autre.provenance(AR) == "Exemple de « مستأجر »"
+    # Une phrase qui cite sa source n'est pas signalée.
+    assert (cite.origine, cite.provenance(), cite.a_verifier) == (EXEMPLE, "Code civil, art. 476", False)
+    assert cite.detail_a_verifier == ""
+
+
+def test_une_definition_prise_pour_contexte_est_a_verifier_comme_sur_sa_fiche(tmp_path):
+    en_tete = "terme_fr;terme_ar;definition_fr;definition_ar;source_definition\n"
+    glossaire = charger(tmp_path, (
+        "vente;بيع;;;\n"
+        "vendeur;بائع;Partie à la vente.;طرف في البيع.;Code civil, art. 351\n"
+        "acheteur;مشترٍ;Autre partie à la vente.;الطرف الآخر في البيع.;\n"
+        "prix;ثمن;Somme que paie celui qui conclut une vente.;مبلغ يدفعه من يبرم البيع.;"
+        "à vérifier (définition d’exemple)\n"),
+        en_tete)
+    trouves = emplois(glossaire, glossaire.entrees[0], 3)
+    assert [emploi.origine for emploi in trouves] == [DEFINITION] * 3
+    # Source citée ; aucune source ; mention « à vérifier ».
+    assert [(emploi.entree.terme_fr, emploi.a_verifier, emploi.detail_a_verifier) for emploi in trouves] == [
+        ("vendeur", False, ""), ("acheteur", True, ""), ("prix", True, "définition d’exemple")]
+    assert [emploi.provenance() for emploi in trouves] == [
+        "Définition de « vendeur »", "Définition de « acheteur »", "Définition de « prix »"]
 
 
 # ------------------------------------------------------------------ le glossaire fourni
 def test_contextes_du_glossaire_fourni(glossaire_fourni):
-    """Près des deux tiers des entrées n'ont encore aucune phrase : le glossaire fourni n'en contient pas pour elles."""
-    avec_exemple = sum(1 for entree in glossaire_fourni.entrees if entree.contextes)
-    avec_contexte = sum(1 for entree in glossaire_fourni.entrees if emplois(glossaire_fourni, entree))
-    assert avec_exemple == 31
-    assert avec_contexte == 360  # 329 entrées sans exemple reçoivent une phrase d'une autre entrée
-    # Les contextes trouvés emploient bien le terme, dans les deux langues.
+    """Chacune des 1 000 entrées a sa phrase d'exemple : le champ ④ n'est jamais vide.
+
+    Le test ne compte ni les phrases à vérifier, ni les phrases prises dans une autre entrée : ces nombres
+    changent quand le glossaire est relu ou corrigé (version 0.5 : 549 entrées affichent une phrase et 451 en
+    affichent deux).
+    """
+    completees = 0
     for element in glossaire_fourni.entrees:
-        for emploi in emplois(glossaire_fourni, element):
-            if emploi.origine != PROPRE:
-                assert positions_du_terme(emploi.fr, element, FR), (element.terme_fr, emploi.fr)
-                assert positions_du_terme(emploi.ar, element, AR), (element.terme_fr, emploi.ar)
+        trouves = emplois(glossaire_fourni, element)
+        # L'exemple de l'entrée vient en premier ; le champ n'affiche pas plus de phrases que prévu.
+        assert trouves and trouves[0].origine == PROPRE and trouves[0].entree is element, element.terme_fr
+        assert len(trouves) <= max(NOMBRE_VISE, len(element.contextes)), element.terme_fr
+        autres = [emploi for emploi in trouves if emploi.origine != PROPRE]
+        completees += bool(autres)
+        for emploi in autres:
+            # Les contextes trouvés ailleurs emploient bien le terme, dans les deux langues.
+            assert emploi.entree is not element
+            assert positions_du_terme(emploi.fr, element, FR), (element.terme_fr, emploi.fr)
+            assert positions_du_terme(emploi.ar, element, AR), (element.terme_fr, emploi.ar)
+        # Parmi les exemples des autres entrées, ceux qui citent leur source passent avant ceux qui sont à vérifier.
+        a_verifier = [emploi.a_verifier for emploi in emplois(glossaire_fourni, element, 12)
+                      if emploi.origine == EXEMPLE]
+        assert a_verifier == sorted(a_verifier), element.terme_fr
+    # Plusieurs centaines d'entrées affichent en plus une phrase d'une autre entrée qui emploie le terme.
+    assert completees > 300
+    # « contrat » : après ses deux exemples vient l'exemple d'une autre entrée qui cite sa source (un article
+    # du Code civil), et non une phrase à vérifier.
+    suite = emplois(glossaire_fourni, entree(glossaire_fourni, "contrat"), 3)[2:]
+    assert [(emploi.origine, emploi.a_verifier) for emploi in suite] == [(EXEMPLE, False)]
 
 
 def test_les_deux_sens_d_action_ont_chacun_leurs_contextes(glossaire_fourni):

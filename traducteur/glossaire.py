@@ -67,6 +67,8 @@ COLONNES_OBLIGATOIRES = ("terme_fr", "terme_ar")
 _NON_ALPHANUM = regex.compile(r"[^\p{L}\p{N}]+")
 _LATIN = regex.compile(r"\p{Latin}")
 _SUITE_ARABE = regex.compile(r"\p{Arabic}{2,}")
+#: Début, sans accents ni majuscules, d'une source qui annonce un texte à vérifier.
+_A_VERIFIER = "a verifier"
 
 
 #: Premiers octets des fichiers .xlsx / .ods (archive ZIP) et .xls (ancien format d'Office).
@@ -100,6 +102,18 @@ def _mot_entier(cle: str) -> regex.Pattern:
     return regex.compile(rf"(?<![\p{{L}}\p{{N}}]){regex.escape(cle)}(?![\p{{L}}\p{{N}}])")
 
 
+def mention_a_verifier(source: str) -> str | None:
+    """Détail d'une source qui commence par « à vérifier » ; ``None`` pour une vraie source.
+
+    Le glossaire fourni écrit « à vérifier (définition d'exemple) » ou « à vérifier (phrase
+    d'exemple) » à la place d'une source quand le texte n'est repris d'aucun ouvrage :
+    la fonction rend alors « définition d'exemple » ou « phrase d'exemple ».
+    """
+    if not cle_souple(source).startswith(_A_VERIFIER):
+        return None
+    return source[len(_A_VERIFIER):].strip(" :·,;-–—()")
+
+
 @dataclass(frozen=True)
 class Contexte:
     """Un exemple d'emploi du terme, dans les deux langues, avec sa source."""
@@ -110,6 +124,11 @@ class Contexte:
 
     def texte(self, langue: str) -> str:
         return self.fr if langue == FR else self.ar
+
+    @property
+    def a_verifier(self) -> bool:
+        """Vrai si la source de l'exemple commence par « à vérifier » : la phrase n'est reprise d'aucun texte."""
+        return mention_a_verifier(self.source) is not None
 
 
 @dataclass(eq=False)

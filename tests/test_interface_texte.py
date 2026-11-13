@@ -293,7 +293,9 @@ def test_les_contextes_d_un_terme_du_texte(page):
     assert [(emploi.origine, emploi.provenance()) for emploi in vendeur.emplois] == [
         ("propre", "Code civil, art. 351"), ("definition", "Définition de « prix »")]
     lignes = contenu(vendeur)
-    assert "Dans le glossaire · Code civil, art. 351" in lignes
+    # L'article du Code civil cite sa source : la phrase suit le titre, sans mention.
+    rang = lignes.index("Dans le glossaire · Code civil, art. 351")
+    assert lignes[rang + 1].startswith("La vente est un contrat par lequel le vendeur")
     assert "Dans le glossaire · Définition de « prix »" in lignes
     # « contrat de vente » n'a pas d'exemple : ses deux contextes viennent d'autres entrées.
     assert vente.entree.contextes == []
@@ -301,8 +303,48 @@ def test_les_contextes_d_un_terme_du_texte(page):
         "Définition de « acheteur »", "Définition de « vendeur »"]
     lignes = contenu(vente)
     rang = lignes.index("Dans le glossaire · Définition de « acheteur »")
-    assert lignes[rang + 1:rang + 3] == ["Partie au contrat de vente qui acquiert la chose et doit en payer le prix.",
+    # La définition de « acheteur » ne cite pas de source : elle est à vérifier, comme sur sa propre fiche.
+    assert lignes[rang + 1:rang + 4] == ["À vérifier",
+                                         "Partie au contrat de vente qui acquiert la chose et doit en payer le prix.",
                                          "الطرف في عقد البيع الذي يكتسب الشيء ويلتزم بدفع ثمنه."]
+
+
+def test_une_phrase_d_exemple_a_verifier_dans_la_carte_et_dans_la_traduction(fenetre, page, tmp_path):
+    """Une phrase marquée « à vérifier » est signalée dans la carte, et quand elle sert de traduction."""
+    fichier = tmp_path / "exemples.csv"
+    fichier.write_text(
+        "terme_fr;terme_ar;contexte_fr;contexte_ar;source_contexte\n"
+        "bail;إيجار;Le bail est écrit.;الإيجار مكتوب.;à vérifier (phrase d’exemple)\n"
+        "preneur;مستأجر;Le preneur signe le bail.;يوقع المستأجر الإيجار.;à vérifier (phrase d’exemple)\n"
+        "loyer;بدل الإيجار;Le loyer est payé chaque mois.;يدفع بدل الإيجار كل شهر.;Code civil, art. 498\n",
+        encoding="utf-8")
+    assert fenetre.charger_glossaire(fichier)
+
+    traduire(page, "Le bail prend fin.")
+    carte, = page.termes.cartes
+    carte.definir_ouverte(True)
+    assert [(emploi.provenance(), emploi.a_verifier) for emploi in carte.emplois] == [
+        ("", True), ("Exemple de « preneur »", True)]
+    lignes = contenu(carte)
+    # La mention « à vérifier » n'est pas écrite comme une source : elle suit le titre, en ambre.
+    rang = lignes.index("Dans le glossaire")
+    assert lignes[rang + 1:rang + 4] == ["À vérifier", "Le bail est écrit.", "الإيجار مكتوب."]
+    rang = lignes.index("Dans le glossaire · Exemple de « preneur »")
+    assert lignes[rang + 1:rang + 4] == ["À vérifier", "Le preneur signe le bail.", "يوقع المستأجر الإيجار."]
+    assert not any("phrase d’exemple)" in ligne for ligne in lignes)
+    # Aucune phrase n'est reprise d'un exemple : rien n'est signalé dans le bilan.
+    assert page.traduction.phrases_a_verifier == 0 and "à vérifier" not in page.badge.toolTip()
+    assert "0 phrase reprise des exemples du glossaire, 1 phrase traduite mot à mot." in page.bande.infobulle(4)
+
+    # Une phrase identique à un exemple reçoit sa traduction ; l'étape 5 et l'état disent d'où elle vient.
+    traduire(page, "Le bail est écrit. Le loyer est payé chaque mois. Le preneur paie le loyer.")
+    traduction = page.traduction
+    assert texte_traduit(page).startswith("الإيجار مكتوب. يدفع بدل الإيجار كل شهر. ")
+    assert (traduction.phrases_attestees, traduction.phrases_a_verifier) == (2, 1)
+    assert ("2 phrases reprises des exemples du glossaire (dont 1 d’un exemple à vérifier), "
+            "1 phrase traduite mot à mot.") in page.bande.infobulle(4)
+    assert ("1 phrase est reprise d’un exemple du glossaire qui porte la mention « à vérifier »."
+            in page.badge.toolTip())
 
 
 def test_un_exemple_identique_au_passage_n_est_pas_repete(page):

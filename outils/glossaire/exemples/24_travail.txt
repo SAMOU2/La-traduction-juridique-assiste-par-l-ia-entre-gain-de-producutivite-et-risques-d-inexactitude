@@ -1,0 +1,37 @@
+# Phrases d'exemple du lot 24_travail.txt : terme | phrase française | phrase arabe
+droit du travail | Le droit du travail fixe la durée légale du travail à quarante heures par semaine. | يحدد قانون العمل المدة القانونية للعمل بأربعين ساعة في الأسبوع.
+relation de travail | La relation de travail naît du contrat écrit ou non écrit. | تنشأ علاقة العمل بعقد كتابي أو غير كتابي.
+travailleur | Le travailleur a droit à un jour de repos par semaine. | للعامل الحق في يوم راحة في الأسبوع.
+employeur | L'employeur remet un bulletin de paie au travailleur. | يسلم المستخدم كشف الراتب للعامل.
+lien de subordination | Le lien de subordination distingue le contrat de travail du contrat d'entreprise. | تميز رابطة التبعية عقد العمل عن عقد المقاولة.
+contrat à durée indéterminée | Le contrat à durée indéterminée est la forme normale de la relation de travail. | العقد غير المحدد المدة هو الشكل العادي لعلاقة العمل.
+contrat à durée déterminée | Le contrat à durée déterminée est conclu pour remplacer un travailleur absent. | يبرم العقد المحدد المدة لاستخلاف عامل غائب.
+période d'essai | La période d'essai ne peut dépasser six mois. | لا تتجاوز فترة التجربة ستة أشهر.
+règlement intérieur | Le règlement intérieur est obligatoire dans l'entreprise qui emploie vingt travailleurs ou plus. | النظام الداخلي إلزامي في المؤسسة التي تشغل عشرين عاملا فأكثر.
+salaire | Le salaire est payé en monnaie à la fin de chaque mois. | يدفع الأجر نقدا عند نهاية كل شهر.
+salaire national minimum garanti | Aucun salaire ne peut être inférieur au salaire national minimum garanti. | لا يجوز أن يقل أي أجر عن الأجر الوطني الأدنى المضمون.
+heures supplémentaires | Les heures supplémentaires sont payées avec une majoration d'au moins cinquante pour cent. | تدفع الساعات الإضافية بزيادة لا تقل عن خمسين بالمائة.
+congé annuel | Le travailleur a droit à un congé annuel de trente jours. | للعامل الحق في عطلة سنوية مدتها ثلاثون يوما.
+licenciement | Le licenciement pour faute grave a lieu sans préavis. | يتم التسريح بسبب خطأ جسيم دون إشعار مسبق.
+licenciement abusif | En cas de licenciement abusif, le juge peut ordonner la réintégration du travailleur. | في حالة تسريح تعسفي، يجوز للقاضي أن يأمر بإعادة إدماج العامل.
+préavis | Le travailleur qui démissionne respecte un préavis. | يحترم العامل المستقيل مدة إشعار مسبق.
+certificat de travail | L'employeur remet un certificat de travail à la fin de la relation de travail. | يسلم المستخدم شهادة العمل عند انتهاء علاقة العمل.
+syndicat | Le syndicat défend les droits de ses adhérents. | تدافع النقابة عن حقوق منخرطيها.
+délégué du personnel | Le délégué du personnel est élu pour trois ans. | ينتخب مندوب المستخدمين لمدة ثلاث سنوات.
+convention collective | La convention collective fixe les conditions de travail et de salaire. | تحدد الاتفاقية الجماعية شروط العمل والأجر.
+grève | La grève est précédée d'un préavis déposé auprès de l'employeur. | يسبق الإضراب إشعار مسبق يودع لدى المستخدم.
+droit de grève | Le droit de grève est reconnu par la constitution. | حق الإضراب معترف به في الدستور.
+conciliation | La conciliation est tentée avant toute action devant le tribunal. | تجرى محاولة المصالحة قبل رفع أي دعوى أمام المحكمة.
+bureau de conciliation | Le bureau de conciliation dresse un procès-verbal de non-conciliation. | يحرر مكتب المصالحة محضرا بعدم المصالحة.
+inspection du travail | Le règlement intérieur est déposé à l'inspection du travail. | يودع النظام الداخلي لدى مفتشية العمل.
+inspecteur du travail | L'inspecteur du travail peut entrer dans l'entreprise à tout moment. | يمكن مفتش العمل أن يدخل المؤسسة في أي وقت.
+section sociale | La section sociale du tribunal statue sur le licenciement. | يفصل القسم الاجتماعي بالمحكمة في التسريح.
+sécurité sociale | L'employeur déclare le travailleur à la sécurité sociale dans les dix jours. | يصرح المستخدم بالعامل لدى الضمان الاجتماعي في أجل عشرة أيام.
+assuré social | L'assuré social est remboursé de ses frais médicaux. | تعوض للمؤمن له اجتماعيا المصاريف الطبية.
+cotisation | La cotisation est retenue sur le salaire. | يقتطع الاشتراك من الأجر.
+prestation | La caisse verse une prestation en cas de maladie. | يدفع الصندوق أداء في حالة المرض.
+ayant droit | L'ayant droit reçoit le capital-décès après la mort du travailleur. | يتقاضى ذو الحق منحة الوفاة بعد وفاة العامل.
+accident du travail | L'accident du travail est déclaré à l'employeur dans les vingt-quatre heures. | يصرح بحادث العمل للمستخدم خلال أربع وعشرين ساعة.
+maladie professionnelle | La surdité causée par le bruit de l'usine est une maladie professionnelle. | الصمم الناتج عن ضجيج المصنع مرض مهني.
+retraite | L'âge de la retraite est fixé à soixante ans. | تحدد سن التقاعد بستين سنة.
+pension de retraite | La pension de retraite est versée chaque mois. | يدفع معاش التقاعد كل شهر.

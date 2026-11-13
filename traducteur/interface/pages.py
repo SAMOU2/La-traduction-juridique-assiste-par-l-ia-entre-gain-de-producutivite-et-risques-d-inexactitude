@@ -56,7 +56,7 @@ CHAMPS = (
     ("Terme", "Le terme cherché, sa catégorie grammaticale, son domaine, ses synonymes."),
     ("Définition", "Ce que le terme signifie, en français et en arabe, avec la source de la définition."),
     ("Équivalent", "Le terme qui lui correspond dans l’autre langue, et ses autres équivalents."),
-    ("Contextualisation", "Des phrases qui emploient le terme, dans les deux langues."),
+    ("Contextualisation", "Des phrases qui emploient le terme, dans les deux langues, avec leur source."),
     ("Ressources", "Les textes de loi, les ouvrages et les sites à consulter et à citer."),
 )
 #: Les cinq étapes de la traduction d'un texte.
@@ -87,8 +87,14 @@ QUESTIONS = (
      ("L’application traduit avec le glossaire, et avec lui seul. Un mot absent du glossaire reste dans sa "
       "langue, écrit en gris : il est à traduire à la main.",)),
     ("Que signifie la mention « À vérifier » ?",
-     ("Le glossaire ne cite pas de source pour cette définition. Contrôlez-la dans un texte officiel ou un "
-      "dictionnaire juridique avant de la citer.",)),
+     ("Le glossaire ne cite pas de source pour cette définition ou pour cette phrase d’exemple : elle n’est "
+      "pas reprise d’un texte officiel. Contrôlez-la dans un texte de loi ou un dictionnaire juridique avant "
+      "de la citer.",
+      "Dans le glossaire fourni, presque toutes les définitions et les phrases d’exemple portent cette "
+      "mention : elles ont été rédigées par un assistant d’intelligence artificielle et n’ont pas été relues "
+      "par un juriste.",
+      "Après le contrôle, écrivez la source dans la colonne source_definition ou source_contexte du "
+      "glossaire : elle s’affiche à la place de la mention.")),
     ("Comment compléter le glossaire ?",
      ("Le glossaire fourni est le fichier glossaire_juridique.csv, dans le dossier « donnees » de "
       "l’application. Faites-en une copie et ouvrez la copie dans un tableur (Excel, LibreOffice).",
@@ -473,8 +479,8 @@ class PageDescription(PageInformation):
                 "ils sont à traduire à la main.",
                 "Un mot courant qui s’écrit comme un terme juridique est traduit comme ce terme. Chaque terme "
                 "traduit est donc à relire.",
-                "Les définitions marquées « À vérifier » ne citent pas de source. Les équivalents proposés "
-                "viennent du glossaire : l’application ne les vérifie pas.")):
+                "Les définitions et les phrases d’exemple marquées « À vérifier » ne citent pas de source. Les "
+                "équivalents proposés viennent du glossaire : l’application ne les vérifie pas.")):
             carte.ajouter(self._puce(texte), 12 if rang == 0 else 8)
 
         self.terminer()

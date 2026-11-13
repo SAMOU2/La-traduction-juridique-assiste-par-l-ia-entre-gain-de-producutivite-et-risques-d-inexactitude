@@ -1,0 +1,48 @@
+# Phrases d'exemple du lot 18_procedure_penale.txt : terme | phrase française | phrase arabe
+action publique | L'action publique s'éteint par le décès de l'inculpé. | تنقضي الدعوى العمومية بوفاة المتهم.
+action civile | L'action civile peut être exercée en même temps que l'action publique devant la même juridiction. | يجوز مباشرة الدعوى المدنية مع الدعوى العمومية في وقت واحد أمام الجهة القضائية نفسها.
+partie civile | La partie civile réclame la réparation de son dommage devant le juge pénal. | يطالب الطرف المدني بالتعويض عن الضرر أمام القاضي الجزائي.
+constitution de partie civile | La constitution de partie civile est possible devant le juge d'instruction. | يجوز الادعاء المدني أمام قاضي التحقيق.
+prescription de l'action publique | La prescription de l'action publique est de dix ans en matière de crime. | مدة تقادم الدعوى العمومية عشر سنوات في مواد الجنايات.
+plainte | La victime dépose une plainte auprès du procureur de la République. | تودع الضحية شكوى لدى وكيل الجمهورية.
+plaignant | Le plaignant est entendu par la police judiciaire. | تسمع الشرطة القضائية الشاكي.
+dénonciation | Le procureur de la République reçoit la dénonciation d'un crime. | يتلقى وكيل الجمهورية بلاغا عن جناية.
+poursuite | La poursuite est engagée par le ministère public. | تباشر النيابة العامة المتابعة.
+classement sans suite | Le procureur de la République décide le classement sans suite lorsque les faits ne constituent pas une infraction. | يقرر وكيل الجمهورية حفظ الملف إذا كانت الوقائع لا تشكل جريمة.
+médiation pénale | La médiation pénale met fin aux poursuites lorsque le dommage est réparé. | تضع الوساطة الجزائية حدا للمتابعة إذا تم جبر الضرر.
+police judiciaire | La police judiciaire constate les infractions et rassemble les preuves. | تعاين الشرطة القضائية الجرائم وتجمع الأدلة.
+officier de police judiciaire | L'officier de police judiciaire informe immédiatement le procureur de la République. | يخبر ضابط الشرطة القضائية وكيل الجمهورية فورا.
+enquête préliminaire | L'enquête préliminaire est menée sous la direction du procureur de la République. | يجرى التحقيق الابتدائي تحت إدارة وكيل الجمهورية.
+flagrant délit | En cas de flagrant délit, l'officier de police judiciaire se rend immédiatement sur les lieux. | في حالة التلبس بالجريمة، ينتقل ضابط الشرطة القضائية فورا إلى عين المكان.
+garde à vue | La garde à vue ne peut dépasser quarante-huit heures. | لا يجوز أن تتجاوز مدة التوقيف للنظر ثمانيا وأربعين ساعة.
+perquisition | La perquisition d'une maison ne peut pas commencer avant cinq heures du matin. | لا يجوز البدء في تفتيش المساكن قبل الساعة الخامسة صباحا.
+interrogatoire | L'interrogatoire de l'inculpé a lieu en présence de l'avocat. | يجري استجواب المتهم بحضور المحامي.
+audition | L'audition du témoin est consignée dans un procès-verbal. | يدون سماع الشاهد في محضر.
+commission rogatoire | Le juge d'instruction délivre une commission rogatoire à un officier de police judiciaire. | يصدر قاضي التحقيق إنابة قضائية لضابط الشرطة القضائية.
+pièce à conviction | L'arme trouvée sur les lieux est présentée à l'audience comme pièce à conviction. | يعرض السلاح الذي عثر عليه في عين المكان في الجلسة بصفته دليل الإقناع.
+suspect | Le suspect a le droit de recevoir la visite d'un avocat. | للمشتبه فيه الحق في تلقي زيارة محامٍ.
+inculpé | L'inculpé est libre de ne faire aucune déclaration lors de sa première comparution. | المتهم حر في عدم الإدلاء بأي تصريح عند المثول الأول.
+inculpation | Le juge d'instruction informe la personne des faits qui fondent son inculpation. | يحيط قاضي التحقيق الشخص علما بالوقائع التي يقوم عليها اتهامه.
+présomption d'innocence | Toute personne poursuivie bénéficie de la présomption d'innocence jusqu'à sa condamnation définitive. | يستفيد كل شخص متابع من قرينة البراءة إلى غاية الإدانة النهائية.
+intime conviction | Le juge pénal statue selon son intime conviction. | يفصل القاضي الجزائي بناء على الاقتناع الشخصي.
+juge d'instruction | Le juge d'instruction instruit à charge et à décharge. | يحقق قاضي التحقيق في أدلة الاتهام وأدلة النفي.
+instruction | L'instruction est obligatoire en matière de crime. | التحقيق القضائي وجوبي في مواد الجنايات.
+secret de l'instruction | Le secret de l'instruction s'impose à toute personne qui participe à la procédure. | يلتزم كل شخص يساهم في الإجراءات بسرية التحقيق.
+chambre d'accusation | La chambre d'accusation statue sur l'appel des ordonnances du juge d'instruction. | تفصل غرفة الاتهام في استئناف أوامر قاضي التحقيق.
+mandat d'arrêt | Le juge d'instruction délivre un mandat d'arrêt contre l'inculpé en fuite. | يصدر قاضي التحقيق الأمر بالقبض ضد المتهم الفار.
+mandat d'amener | Le mandat d'amener ordonne à la force publique de conduire l'inculpé devant le juge. | يكلف الأمر بالإحضار القوة العمومية باقتياد المتهم أمام القاضي.
+mandat de dépôt | Par le mandat de dépôt, le juge ordonne au directeur de l'établissement pénitentiaire de recevoir l'inculpé. | يأمر القاضي بموجب أمر الإيداع مدير المؤسسة العقابية باستلام المتهم.
+détention provisoire | La détention provisoire est une mesure exceptionnelle. | الحبس المؤقت إجراء استثنائي.
+contrôle judiciaire | Le contrôle judiciaire oblige l'inculpé à se présenter chaque semaine au commissariat. | تلزم الرقابة القضائية المتهم بالحضور كل أسبوع إلى مركز الشرطة.
+mise en liberté | L'avocat présente une demande de mise en liberté au juge d'instruction. | يقدم المحامي طلب إفراج إلى قاضي التحقيق.
+interdiction de sortie du territoire national | Le procureur de la République peut ordonner l'interdiction de sortie du territoire national pour les besoins de l'enquête. | يجوز لوكيل الجمهورية أن يأمر بالمنع من مغادرة التراب الوطني لضرورة التحقيق.
+ordonnance de non-lieu | Le juge d'instruction rend une ordonnance de non-lieu lorsque les charges sont insuffisantes. | يصدر قاضي التحقيق الأمر بألا وجه للمتابعة إذا كانت الأدلة غير كافية.
+ordonnance de renvoi | L'ordonnance de renvoi saisit le tribunal des faits reprochés au prévenu. | تتصل المحكمة بالوقائع المنسوبة إلى المتهم بموجب أمر الإحالة.
+citation directe | La victime peut saisir le tribunal par citation directe en cas d'émission de chèque sans provision. | يمكن الضحية اللجوء إلى المحكمة عن طريق التكليف المباشر بالحضور في حالة إصدار شيك بدون رصيد.
+comparution immédiate | La comparution immédiate s'applique en cas de flagrant délit. | تطبق إجراءات المثول الفوري في حالة التلبس بالجريمة.
+condamnation | La condamnation est inscrite au casier judiciaire. | تسجل الإدانة في صحيفة السوابق القضائية.
+condamné | Le condamné peut faire appel du jugement. | يجوز للمحكوم عليه أن يرفع استئنافا ضد الحكم.
+acquittement | Le tribunal prononce l'acquittement de l'accusé lorsque les preuves sont insuffisantes. | تنطق المحكمة ببراءة المتهم إذا كانت الأدلة غير كافية.
+juge des mineurs | Le juge des mineurs entend l'enfant en présence de ses parents. | يسمع قاضي الأحداث الطفل بحضور والديه.
+extradition | L'extradition est accordée en application d'une convention entre les États concernés. | يتم تسليم المجرمين تطبيقا لاتفاقية بين الدول المعنية.
+entraide judiciaire | L'entraide judiciaire permet d'entendre un témoin qui se trouve dans un autre pays. | يسمح التعاون القضائي بسماع شاهد موجود في بلد آخر.

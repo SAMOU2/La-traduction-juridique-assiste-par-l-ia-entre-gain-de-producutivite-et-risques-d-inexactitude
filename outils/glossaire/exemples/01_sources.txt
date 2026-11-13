@@ -1,0 +1,65 @@
+# Phrases d'exemple du lot 01_sources.txt : terme | phrase française | phrase arabe
+constitution | La constitution garantit les droits et les libertés des citoyens. | يضمن الدستور حقوق المواطنين وحرياتهم.
+loi organique | Une loi organique fixe l'organisation et le fonctionnement du Conseil d'État. | يحدد قانون عضوي تنظيم مجلس الدولة وعمله.
+loi ordinaire | Une loi ordinaire ne peut pas modifier la constitution. | لا يجوز لقانون عادي أن يعدل الدستور.
+législation | La législation du travail protège le salarié. | يحمي تشريع العمل الأجير.
+réglementation | Les modalités d'application de la loi sont fixées par la réglementation. | تحدد كيفيات تطبيق القانون عن طريق التنظيم.
+décret | Le décret est publié au Journal officiel. | ينشر المرسوم في الجريدة الرسمية.
+décret présidentiel | Le traité est ratifié par décret présidentiel. | يصادق على المعاهدة بمرسوم رئاسي.
+décret exécutif | Un décret exécutif précise les conditions d'application de la loi. | يوضح مرسوم تنفيذي شروط تطبيق القانون.
+arrêté ministériel | La liste des pièces du dossier est fixée par arrêté ministériel. | تحدد قائمة وثائق الملف بقرار وزاري.
+arrêté interministériel | Un arrêté interministériel fixe le montant de la redevance. | يحدد قرار وزاري مشترك مبلغ الإتاوة.
+circulaire | La circulaire explique aux agents la manière d'appliquer le décret. | يشرح المنشور للأعوان كيفية تطبيق المرسوم.
+code | Le code réunit les règles applicables à une même matière. | يجمع التقنين القواعد المطبقة على مادة واحدة.
+texte | Le juge applique le texte en vigueur au jour des faits. | يطبق القاضي النص الساري يوم وقوع الأفعال.
+disposition | Toute disposition contraire à la présente loi est abrogée. | يلغى كل حكم مخالف لهذا القانون.
+alinéa | Le deuxième alinéa de l'article prévoit une exception. | تنص الفقرة الثانية من المادة على استثناء.
+préambule | Le préambule de la constitution rappelle l'histoire du pays. | تذكر ديباجة الدستور بتاريخ البلاد.
+projet de loi | Le Gouvernement dépose le projet de loi sur le bureau de l'Assemblée. | تودع الحكومة مشروع القانون لدى مكتب المجلس.
+proposition de loi | La proposition de loi est examinée par la commission compétente. | تدرس اللجنة المختصة اقتراح القانون.
+exposé des motifs | L'exposé des motifs présente les objectifs du projet de loi. | يبين عرض الأسباب أهداف مشروع القانون.
+amendement | Le député a présenté un amendement à l'article 3. | قدم النائب تعديلا على المادة 3.
+promulgation | La promulgation de la loi relève du président de la République. | يعود إصدار القانون إلى رئيس الجمهورية.
+publication | La publication du texte au Journal officiel le rend opposable à tous. | يجعل نشر النص في الجريدة الرسمية نافذا في حق الجميع.
+entrée en vigueur | Le décret précise la date d'entrée en vigueur. | يحدد المرسوم تاريخ دخول حيز التنفيذ.
+abrogation | L'abrogation d'une loi ne vaut que pour l'avenir. | لا يسري إلغاء القانون إلا على المستقبل.
+rétroactivité | La rétroactivité de la loi pénale plus douce profite au prévenu. | يستفيد المتهم من رجعية القانون الجزائي الأصلح.
+non-rétroactivité de la loi | Le principe de non-rétroactivité de la loi protège les situations acquises. | يحمي مبدأ عدم رجعية القانون الأوضاع المكتسبة.
+dérogation | Aucune dérogation n'est admise sans texte. | لا يقبل أي استثناء بغير نص.
+source du droit | La loi est la première source du droit. | التشريع هو أول مصادر القانون.
+droit musulman | À défaut de disposition légale, le juge statue selon les principes du droit musulman. | إذا لم يوجد نص تشريعي، حكم القاضي بمقتضى مبادئ الشريعة الإسلامية.
+jurisprudence | La jurisprudence de la Cour suprême est constante sur ce point. | الاجتهاد القضائي للمحكمة العليا مستقر في هذه المسألة.
+doctrine | La doctrine est partagée sur cette question. | اختلف الفقه في هذه المسألة.
+principes généraux du droit | Le juge administratif applique les principes généraux du droit. | يطبق القاضي الإداري المبادئ العامة للقانون.
+règle | La règle s'applique à toutes les personnes placées dans la même situation. | تطبق القاعدة على جميع الأشخاص الموجودين في الوضع نفسه.
+règle de droit | La règle de droit est générale et obligatoire. | القاعدة القانونية عامة وملزمة.
+règle impérative | Les parties ne peuvent pas écarter une règle impérative. | لا يجوز للأطراف استبعاد قاعدة آمرة.
+règle supplétive | La règle supplétive s'applique dans le silence du contrat. | تطبق القاعدة المكملة عند سكوت العقد.
+principe | Le principe d'égalité devant la loi s'impose à l'administration. | تلتزم الإدارة بمبدأ المساواة أمام القانون.
+hiérarchie des normes | La hiérarchie des normes place la constitution au sommet. | يضع تدرج القواعد القانونية الدستور في القمة.
+ordre public | Le contrat contraire à l'ordre public est nul. | يكون العقد المخالف للنظام العام باطلا.
+bonnes mœurs | La clause contraire aux bonnes mœurs est nulle. | يبطل البند المخالف للآداب العامة.
+légalité | Le juge contrôle la légalité de l'acte administratif. | يراقب القاضي شرعية القرار الإداري.
+sécurité juridique | La stabilité des règles contribue à la sécurité juridique. | يساهم استقرار القواعد في الأمن القانوني.
+État de droit | L'indépendance de la justice est une condition de l'État de droit. | استقلالية القضاء شرط من شروط دولة القانون.
+sanction | La nullité est la sanction du défaut de consentement. | البطلان هو جزاء انعدام الرضا.
+interprétation | L'interprétation du contrat appartient au juge du fond. | يعود تفسير العقد إلى قاضي الموضوع.
+qualification | La qualification des faits détermine la règle applicable. | يحدد تكييف الوقائع القاعدة الواجبة التطبيق.
+analogie | Le raisonnement par analogie est interdit en matière pénale. | يمنع القياس في المادة الجزائية.
+vide juridique | Le juge ne peut pas refuser de statuer en invoquant un vide juridique. | لا يجوز للقاضي أن يمتنع عن الحكم بحجة وجود فراغ قانوني.
+droit positif | Cette solution est admise par le droit positif algérien. | يأخذ القانون الوضعي الجزائري بهذا الحل.
+droit naturel | Les principes du droit naturel inspirent le législateur. | يستلهم المشرع مبادئ القانون الطبيعي.
+droit comparé | Le législateur s'est appuyé sur une étude de droit comparé. | استند المشرع إلى دراسة في القانون المقارن.
+droit public | Le droit public régit les rapports entre l'État et les particuliers. | ينظم القانون العام العلاقات بين الدولة والأفراد.
+droit privé | Le contrat de vente relève du droit privé. | يخضع عقد البيع للقانون الخاص.
+droit civil | Le droit civil fixe les règles de la capacité. | يحدد القانون المدني قواعد الأهلية.
+droit pénal | Le droit pénal n'admet pas l'interprétation large. | لا يقبل القانون الجنائي التفسير الواسع.
+droit commercial | Le droit commercial s'applique aux actes de commerce. | يطبق القانون التجاري على الأعمال التجارية.
+droit administratif | Le droit administratif encadre l'activité des services publics. | يؤطر القانون الإداري نشاط المرافق العامة.
+droit constitutionnel | Le droit constitutionnel étudie l'organisation des pouvoirs publics. | يدرس القانون الدستوري تنظيم السلطات العمومية.
+convention | La convention entre en vigueur après sa ratification. | تدخل الاتفاقية حيز التنفيذ بعد التصديق عليها.
+accord | Les parties sont parvenues à un accord sur le prix. | توصل الطرفان إلى اتفاق على الثمن.
+acte juridique | Le testament est un acte juridique unilatéral. | الوصية تصرف قانوني بإرادة منفردة.
+fait juridique | Le décès est un fait juridique qui ouvre la succession. | الوفاة واقعة قانونية تفتح بها التركة.
+délai | Le délai court à compter de la notification du jugement. | يسري الأجل من تاريخ تبليغ الحكم.
+formalité | L'inscription est une formalité exigée pour la validité de l'hypothèque. | القيد شكلية مطلوبة لصحة الرهن الرسمي.

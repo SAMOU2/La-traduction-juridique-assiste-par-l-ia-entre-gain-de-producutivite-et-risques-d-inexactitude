@@ -1,0 +1,27 @@
+# Phrases d'exemple du lot 26_fiscal.txt : terme | phrase française | phrase arabe
+impôt | Tous les citoyens sont égaux devant l'impôt. | كل المواطنين متساوون في أداء الضريبة.
+taxe | La commune perçoit une taxe d'assainissement. | تحصل البلدية رسم التطهير.
+contribuable | Le contribuable dépose sa déclaration avant le 30 avril. | يودع المكلف بالضريبة تصريحه قبل 30 أفريل.
+assiette de l'impôt | L'assiette de l'impôt est le revenu net du contribuable. | وعاء الضريبة هو الدخل الصافي للمكلف بالضريبة.
+revenu | Le revenu du travail est soumis à l'impôt. | يخضع دخل العمل للضريبة.
+impôt sur le revenu global | L'impôt sur le revenu global est retenu à la source sur les salaires. | تقتطع الضريبة على الدخل الإجمالي من المصدر على الأجور.
+taxe sur la valeur ajoutée | La taxe sur la valeur ajoutée est comprise dans le prix payé par le consommateur. | يدخل الرسم على القيمة المضافة في الثمن الذي يدفعه المستهلك.
+administration fiscale | L'administration fiscale contrôle la déclaration de chaque contribuable. | تراقب الإدارة الجبائية تصريح كل مكلف بالضريبة.
+déclaration fiscale | La déclaration fiscale est déposée chaque année. | يودع التصريح الجبائي كل سنة.
+exonération | La loi accorde une exonération aux jeunes entreprises. | يمنح القانون إعفاء للمؤسسات الناشئة.
+recouvrement | Le recouvrement de l'impôt relève du receveur des impôts. | يتولى قابض الضرائب تحصيل الضريبة.
+fraude fiscale | La fraude fiscale est punie d'une amende et d'un emprisonnement. | يعاقب على الغش الجبائي بغرامة وبالحبس.
+contentieux fiscal | Le contentieux fiscal commence par une réclamation adressée au directeur des impôts. | تبدأ المنازعات الجبائية بشكوى توجه إلى مدير الضرائب.
+finances publiques | La Cour des comptes contrôle les finances publiques. | يراقب مجلس المحاسبة المالية العمومية.
+loi de finances | La loi de finances est votée chaque année par le Parlement. | يصوت البرلمان كل سنة على قانون المالية.
+budget | Le budget prévoit les recettes et les dépenses de l'année. | تقدر الميزانية إيرادات السنة ونفقاتها.
+recette publique | L'impôt est la principale recette publique. | الضريبة هي أهم إيراد عمومي.
+dépense publique | Toute dépense publique doit être autorisée par le budget. | يجب أن يرخص بكل نفقة عمومية في الميزانية.
+Trésor public | Le Trésor public encaisse les impôts et paie les dépenses de l'État. | تحصل الخزينة العمومية الضرائب وتدفع نفقات الدولة.
+comptable public | Le comptable public vérifie la régularité de la dépense avant de la payer. | يتحقق المحاسب العمومي من صحة النفقة قبل دفعها.
+administration des douanes | L'administration des douanes contrôle les marchandises à la frontière. | تراقب إدارة الجمارك البضائع عند الحدود.
+droits de douane | L'importateur paie les droits de douane avant de retirer la marchandise. | يدفع المستورد الحقوق الجمركية قبل سحب البضاعة.
+marchandise | La marchandise est livrée au magasin de l'acheteur. | تسلم البضاعة في مخزن المشتري.
+importation | L'importation de certains médicaments est soumise à une autorisation. | يخضع استيراد بعض الأدوية لترخيص.
+exportation | L'État encourage l'exportation des dattes. | تشجع الدولة تصدير التمور.
+contrebande | La contrebande de carburant est sévèrement punie. | يعاقب بشدة على تهريب الوقود.

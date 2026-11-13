@@ -1,0 +1,72 @@
+# Phrases d'exemple du lot 16_penal.txt : terme | phrase française | phrase arabe
+infraction | Nul ne peut être puni pour une infraction que la loi ne prévoit pas. | لا يعاقب أحد على جريمة لم ينص عليها القانون.
+crime | Le crime est puni de la réclusion. | يعاقب على الجناية بالسجن.
+délit | Le délit est puni d'un emprisonnement de plus de deux mois à cinq ans. | يعاقب على الجنحة بالحبس مدة تتجاوز شهرين إلى خمس سنوات.
+contravention | La contravention est punie d'une amende. | يعاقب على المخالفة بغرامة.
+légalité des délits et des peines | Le principe de légalité des délits et des peines interdit de punir sans texte. | يمنع مبدأ شرعية الجرائم والعقوبات العقاب بغير نص.
+élément légal | L'élément légal de l'infraction est le texte qui la punit. | الركن الشرعي للجريمة هو النص الذي يعاقب عليها.
+élément matériel | L'élément matériel du vol est la soustraction de la chose d'autrui. | الركن المادي للسرقة هو اختلاس شيء مملوك للغير.
+élément moral | L'élément moral de l'infraction est l'intention de son auteur. | الركن المعنوي للجريمة هو قصد الفاعل.
+intention criminelle | L'intention criminelle est nécessaire pour qu'il y ait homicide volontaire. | يشترط القصد الجنائي لقيام القتل العمد.
+préméditation | La préméditation aggrave la peine de l'homicide volontaire. | يشدد سبق الإصرار عقوبة القتل العمد.
+tentative | La tentative de crime est considérée comme le crime lui-même. | تعتبر محاولة الجناية كالجناية نفسها.
+récidive | La récidive entraîne une peine plus lourde. | يترتب على العود عقوبة أشد.
+auteur = فاعل | L'auteur de l'infraction est celui qui l'a commise lui-même. | فاعل الجريمة هو من ارتكبها بنفسه.
+complice | Le complice encourt la même peine que l'auteur. | يعاقب الشريك بالعقوبة المقررة للفاعل.
+délinquant | Le délinquant mineur relève du juge des mineurs. | يختص قاضي الأحداث بالجانح القاصر.
+responsabilité pénale | La responsabilité pénale est personnelle. | المسؤولية الجزائية شخصية.
+fait justificatif | La légitime défense est un fait justificatif. | الدفاع المشروع فعل مبرر.
+légitime défense | Il n'y a pas d'infraction lorsque l'acte est commandé par la légitime défense. | لا جريمة إذا كان الفعل قد دفعت إليه ضرورة الدفاع المشروع.
+état de nécessité | L'état de nécessité suppose un danger réel et actuel. | تفترض حالة الضرورة خطرا حقيقيا وحالا.
+peine | La peine est prononcée par le juge dans les limites fixées par la loi. | ينطق القاضي بالعقوبة في الحدود التي يقررها القانون.
+peine complémentaire | Le retrait du passeport est une peine complémentaire. | سحب جواز السفر عقوبة تكميلية.
+peine de mort | La peine de mort ne peut pas être prononcée contre un mineur. | لا يجوز الحكم بعقوبة الإعدام على قاصر.
+réclusion | Le tribunal criminel prononce une peine de vingt ans de réclusion. | تنطق محكمة الجنايات بعقوبة عشرين سنة سجنا.
+réclusion à perpétuité | Le tribunal criminel prononce la réclusion à perpétuité contre l'accusé. | تنطق محكمة الجنايات بالسجن المؤبد ضد المتهم.
+emprisonnement | Le tribunal prononce contre le prévenu une peine de six mois d'emprisonnement. | تنطق المحكمة ضد المتهم بعقوبة ستة أشهر حبسا.
+amende | L'amende est versée au Trésor public. | تدفع الغرامة إلى الخزينة العمومية.
+confiscation | Le juge ordonne la confiscation des choses qui ont servi à commettre l'infraction. | يأمر القاضي بمصادرة الأشياء التي استعملت في ارتكاب الجريمة.
+travail d'intérêt général | Le juge peut remplacer l'emprisonnement par un travail d'intérêt général. | يجوز للقاضي أن يستبدل عقوبة الحبس بالعمل للنفع العام.
+mesure de sûreté | Le placement dans un hôpital psychiatrique est une mesure de sûreté. | الوضع في مستشفى للأمراض العقلية تدبير من تدابير الأمن.
+circonstances atténuantes | Le juge accorde les circonstances atténuantes et réduit la peine. | يمنح القاضي الظروف المخففة ويخفض العقوبة.
+circonstances aggravantes | Le fait de porter une arme compte parmi les circonstances aggravantes du vol. | يعد حمل السلاح من الظروف المشددة للسرقة.
+sursis | Le tribunal prononce une peine d'un an d'emprisonnement avec sursis. | تنطق المحكمة بعقوبة سنة حبسا مع وقف التنفيذ.
+droit de grâce | Le président de la République dispose du droit de grâce. | لرئيس الجمهورية حق العفو.
+amnistie | L'amnistie est accordée par une loi. | يمنح العفو الشامل بقانون.
+réhabilitation | La réhabilitation efface la condamnation pour l'avenir. | يمحو رد الاعتبار آثار الإدانة في المستقبل.
+casier judiciaire | Le candidat joint à son dossier un extrait du casier judiciaire. | يرفق المترشح بملفه مستخرجا من صحيفة السوابق القضائية.
+établissement pénitentiaire | Le condamné purge sa peine dans un établissement pénitentiaire. | يقضي المحكوم عليه العقوبة في مؤسسة عقابية.
+libération conditionnelle | La libération conditionnelle est accordée au condamné dont la conduite est bonne. | يمنح الإفراج المشروط للمحكوم عليه حسن السيرة والسلوك.
+juge de l'application des peines | Le juge de l'application des peines suit l'exécution de la peine. | يتابع قاضي تطبيق العقوبات تنفيذ العقوبة.
+homicide volontaire | L'homicide volontaire est jugé par le tribunal criminel. | تفصل محكمة الجنايات في القتل العمد.
+homicide involontaire | Le conducteur est poursuivi pour homicide involontaire après l'accident. | يتابع السائق بتهمة القتل الخطأ بعد الحادث.
+coups et blessures volontaires | La victime de coups et blessures volontaires présente un certificat médical. | تقدم ضحية الضرب والجرح العمدي شهادة طبية.
+menace | La menace de mort faite par écrit est punie d'emprisonnement. | يعاقب بالحبس على التهديد بالقتل كتابة.
+enlèvement | L'enlèvement d'un mineur est sévèrement puni. | يعاقب بشدة على اختطاف قاصر.
+viol | Le viol est un crime puni de la réclusion. | الاغتصاب جناية يعاقب عليها بالسجن.
+harcèlement sexuel | Le harcèlement sexuel au travail est puni par la loi pénale. | يعاقب القانون الجزائي على التحرش الجنسي في العمل.
+traite des personnes | La traite des personnes est punie même lorsque la victime a consenti. | يعاقب على الاتجار بالأشخاص ولو رضيت الضحية.
+abandon de famille | Le père qui quitte le foyer sans motif grave pendant plus de deux mois commet un abandon de famille. | يرتكب الأب الذي يغادر مقر الأسرة دون سبب جدي لمدة تتجاوز شهرين جنحة ترك الأسرة.
+violation de domicile | L'entrée par ruse dans la maison d'autrui est une violation de domicile. | يشكل الدخول خدعة إلى منزل الغير جريمة انتهاك حرمة المنزل.
+diffamation | La diffamation porte atteinte à l'honneur de la personne visée. | يمس القذف بشرف الشخص المقصود.
+injure | L'injure publique est punie d'une amende. | يعاقب على السب العلني بغرامة.
+outrage | L'outrage à magistrat est puni d'emprisonnement. | يعاقب بالحبس على إهانة قاضٍ.
+vol | Le vol est la soustraction frauduleuse de la chose d'autrui. | السرقة هي اختلاس شيء غير مملوك للسارق.
+escroquerie | L'escroquerie suppose l'emploi de manœuvres frauduleuses. | يفترض النصب استعمال مناورات احتيالية.
+abus de confiance | Le salarié qui détourne les sommes remises par un client commet un abus de confiance. | يرتكب العامل الذي يختلس المبالغ التي سلمها له زبون خيانة الأمانة.
+recel | Le recel est puni même si l'auteur du vol est inconnu. | يعاقب على إخفاء الأشياء المسروقة ولو كان فاعل السرقة مجهولا.
+fraude | La fraude dans la vente des marchandises est punie par la loi. | يعاقب القانون على الغش في بيع البضائع.
+faux en écriture | Le faux en écriture publique est un crime. | التزوير في المحررات العمومية جناية.
+usage de faux | L'usage de faux est puni comme le faux lui-même. | يعاقب على استعمال المزور بعقوبة التزوير نفسها.
+faux témoignage | Le faux témoignage devant un tribunal est puni d'emprisonnement. | يعاقب بالحبس على شهادة الزور أمام محكمة.
+émission de chèque sans provision | L'émission de chèque sans provision est punie d'emprisonnement et d'amende. | يعاقب على إصدار شيك بدون رصيد بالحبس والغرامة.
+banqueroute | Le commerçant qui cache ses livres comptables commet une banqueroute. | يرتكب التاجر الذي يخفي دفاتره المحاسبية جريمة التفليس.
+terrorisme | Les actes de terrorisme relèvent du pôle pénal spécialisé. | يختص القطب الجزائي المتخصص بأعمال الإرهاب.
+association de malfaiteurs | Appartenir à une association de malfaiteurs est puni de la réclusion. | يعاقب بالسجن على الانتماء إلى جمعية الأشرار.
+trafic de stupéfiants | Le trafic de stupéfiants est puni de lourdes peines. | يعاقب على الاتجار بالمخدرات بعقوبات شديدة.
+blanchiment d'argent | La banque déclare tout soupçon de blanchiment d'argent. | يصرح البنك بكل شبهة تبييض الأموال.
+corruption | La corruption d'un agent public est punie de deux à dix ans d'emprisonnement. | يعاقب على رشوة عون عمومي بالحبس من سنتين إلى عشر سنوات.
+détournement de deniers publics | Le comptable est poursuivi pour détournement de deniers publics. | يتابع المحاسب بتهمة اختلاس الأموال العمومية.
+trafic d'influence | Le trafic d'influence consiste à monnayer ses relations avec l'administration. | يتمثل استغلال النفوذ في المتاجرة بالعلاقات مع الإدارة.
+abus de fonction | L'agent public qui viole la loi pour avantager un proche commet un abus de fonction. | يرتكب العون العمومي الذي يخرق القانون لفائدة أحد أقاربه إساءة استغلال الوظيفة.
+enrichissement illicite | L'agent public qui ne peut justifier l'augmentation de son patrimoine commet un enrichissement illicite. | يرتكب العون العمومي الذي لا يستطيع تبرير الزيادة في الذمة المالية جريمة الإثراء غير المشروع.
