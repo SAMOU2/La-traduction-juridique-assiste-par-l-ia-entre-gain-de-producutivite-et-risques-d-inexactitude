@@ -410,11 +410,17 @@ def analyser_avec_l_antivirus(resume: Resume, installeur: pathlib.Path) -> None:
             resume.noter("Antivirus : analyse non faite (Microsoft Defender n'a pas répondu)")
             resume.detailler(f"Antivirus : {echec} | {echec.details[-600:]}")
             return
+        journal = JOURNAUX / f"{etape}.txt"
+        reponse = journal.read_text(encoding="utf-8", errors="replace") if journal.is_file() else ""
+        resume.detailler(f"Antivirus, {cible.name} (code {code}) : " + " | ".join(
+            ligne.strip() for ligne in reponse.splitlines() if ligne.strip())[-400:])
+        if code == 2 and "failed with hr" in reponse.lower():
+            # Le code 2 sert aussi quand l'analyse elle-même échoue : ce n'est pas une alerte.
+            resume.noter("Antivirus : analyse non faite (Microsoft Defender a répondu par une erreur)")
+            return
         if code == 2:
-            journal = JOURNAUX / f"{etape}.txt"
-            signale = journal.read_text(encoding="utf-8", errors="replace") if journal.is_file() else ""
             raise Echec(etape, f"Microsoft Defender signale un logiciel malveillant dans {cible.name}.",
-                        fin_de(signale))
+                        fin_de(reponse))
     resume.noter("Antivirus : Microsoft Defender ne signale rien, ni dans le dossier de l'application ni dans "
                  "l'installeur")
 

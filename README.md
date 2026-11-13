@@ -31,6 +31,10 @@ logo et les tirets, et son **fond est transparent**. Derrière eux, on voit le b
 fenêtre qui se trouve là. Le nom de l'application, la mention « Chargement… », le dégradé, la
 lueur et la bordure sont retirés.
 
+La version 0.5.3 ajoute un **installeur pour Windows** : un fichier `.msi` qui installe
+l'application sur un ordinateur où Python n'est pas installé. Voir
+[Installation](#installation).
+
 Le reste de la présentation est celui de la version 0.4. Cette version comprenait la
 version 0.3, qui n'a pas été publiée à part. Elle avait apporté ceci :
 
@@ -78,9 +82,10 @@ on voit le bureau ou la fenêtre qui se trouve derrière :
 ![Centre d'aide](docs/apercu-aide.png)
 
 *Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
-l'autre. L'adresse affichée dans le centre d'aide est un exemple. Les captures des écrans
-« Terme », « Texte » et « Paramètres » datent de la version 0.4 : ces écrans s'affichent de la
-même façon depuis.*
+l'autre : la capture de l'[installation](#installation) montre l'écran « Terme » sous Windows.
+L'adresse affichée dans le centre d'aide est un exemple. Les captures des écrans « Terme »,
+« Texte » et « Paramètres » datent de la version 0.4 : ces écrans s'affichent de la même façon
+depuis.*
 
 ### Ce qui est fait, ce qui reste à faire
 
@@ -91,13 +96,53 @@ même façon depuis.*
 | Écran « Texte » : zones de texte, segmentation en phrases, découpage en mots, recherche de chaque mot dans le CSV, règles lexicales, grammaticales et sémantiques, reconstruction du paragraphe | Fait, dans les deux sens. La traduction se limite au contenu du glossaire : voir [Comment le texte est traduit](#comment-le-texte-est-traduit). |
 | Import de fichiers `.txt`, `.docx`, `.doc` | Fait |
 | Export de la traduction en `.docx` ou `.txt` | Fait. L'export au format `.doc` n'est pas proposé ; Word ouvre les fichiers `.docx`. |
-| Écran de démarrage, barre latérale, étapes qui s'allument, écrans « Paramètres », « Description de la plateforme » et « Centre d'aide » | Fait (version 0.4). Rien de cela n'a été essayé sous Windows : voir les [limites connues](#limites-connues). |
+| Écran de démarrage, barre latérale, étapes qui s'allument, écrans « Paramètres », « Description de la plateforme » et « Centre d'aide » | Fait (version 0.4). Sous Windows, personne ne les a encore regardés : voir les [limites connues](#limites-connues). |
 | Contextes cherchés dans tout le glossaire | Fait. |
 | Une phrase d'exemple pour chaque entrée du glossaire fourni | Fait (version 0.5) : 1 000 entrées sur 1 000. 969 phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
-| Fichier `.exe` pour Windows | À faire |
+| Installeur pour Windows (fichier `.msi`) | Fait (version 0.5.3) : voir [Installation](#installation). Il est fabriqué et essayé automatiquement sur une machine Windows. **Personne ne l'a encore installé à la main** : voir les [limites connues](#limites-connues). |
 
 ### Installation
+
+Il y a deux façons d'installer l'application :
+
+- **sous Windows, avec l'installeur** : c'est la plus simple, il n'y a rien d'autre à installer ;
+- **avec Python, à partir du code** : sous Windows, macOS ou Linux, pour modifier l'application.
+
+#### Sous Windows, avec l'installeur
+
+1. Ouvrir la page
+   [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
+   du dépôt. Sous la version la plus récente, dans « Assets », télécharger le fichier dont le
+   nom finit par `.msi`, par exemple `Traducteur-juridique-0.5.3.msi`.
+2. Double-cliquer sur le fichier téléchargé.
+3. Cliquer sur **Suivant**, puis sur **Installer**, puis sur **Terminer**. L'application s'ouvre.
+
+Les fois suivantes, l'application s'ouvre avec l'icône « Traducteur juridique » du Bureau ou
+du menu Démarrer.
+
+![L'application installée sous Windows, écran « Terme »](docs/apercu-windows.png)
+
+*Capture faite automatiquement sur une machine Windows, pendant l'essai de l'installeur.*
+
+- L'installeur convient à **Windows 10 et Windows 11, en 64 bits**. Il pèse environ 24 Mo et
+  contient Python et Qt : l'application installée occupe environ 70 Mo.
+- Il ne demande pas les droits d'administrateur. L'application s'installe dans le dossier de
+  l'utilisateur (`AppData\Local\Programs\Traducteur juridique`), pour le seul compte Windows
+  qui lance l'installeur.
+- **Windows peut afficher « Windows a protégé votre ordinateur »**, parce que l'installeur
+  n'est pas signé. Cliquer sur « Informations complémentaires », puis sur « Exécuter quand
+  même ».
+- Pour installer une nouvelle version, télécharger le nouvel installeur et le lancer : il
+  remplace la version installée. Les réglages de l'application sont conservés.
+- Pour désinstaller : Paramètres de Windows → Applications → Applications installées →
+  Traducteur juridique → Désinstaller.
+
+L'installeur a été essayé automatiquement, sans personne devant l'écran : voir
+[Fabrication de l'installeur Windows](#fabrication-de-linstalleur-windows) et les
+[limites connues](#limites-connues).
+
+#### Avec Python, à partir du code
 
 Il faut **Python 3.10 ou plus récent**.
 
@@ -121,6 +166,11 @@ n'est toujours pas reconnue, écrire `py` à la place.
 
 ### Lancement
 
+Application installée avec l'installeur : double-cliquer sur l'icône « Traducteur juridique »
+du Bureau, ou la chercher dans le menu Démarrer.
+
+Avec Python, depuis le dossier du projet :
+
 ```
 python main.py
 ```
@@ -136,7 +186,11 @@ Le glossaire fourni est chargé automatiquement. Si un autre glossaire a été c
 
 ### Mise à jour
 
-Pour récupérer la dernière version du dépôt, dans le terminal de VS Code :
+Application installée avec l'installeur : télécharger le nouvel installeur sur la page
+[Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
+et le lancer.
+
+Avec Python, pour récupérer la dernière version du dépôt, dans le terminal de VS Code :
 
 ```
 git pull origin main
@@ -583,6 +637,7 @@ traducteur/
   traduction.py              traduction d'un texte : recherche, règles, reconstruction
   documents.py               import et export des fichiers .txt, .docx et .doc
   application.py             démarrage de l'application
+  controle.py                contrôle de l'installation : l'application s'essaie elle-même (option --controle)
   interface/
     demarrage.py             écran de démarrage animé
     fenetre.py               fenêtre : barre latérale, menus, barre d'outils, chargement du glossaire
@@ -600,7 +655,19 @@ traducteur/
     icones.py                icônes
 outils/
   glossaire/                 construction du glossaire d'exemple : script, lots de termes, phrases d'exemple
+  installeur/                fabrication de l'installeur Windows
+    construire.py            enchaîne toutes les étapes, puis essaie l'installeur
+    icone.py                 icône de l'application au format de Windows
+    traducteur.spec          recette de PyInstaller : l'application, Python et Qt dans un dossier
+    superflu.py              fichiers de Qt écartés de ce dossier
+    crochet_controle.py      début du programme installé, quand il est lancé avec --controle
+    fichiers.py              liste des fichiers à installer
+    traducteur.wxs           description de l'installeur pour WiX Toolset : nom, écrans, raccourcis
+    publier.py               publication de l'installeur sur la page « Releases »
+    requirements.txt         outils de fabrication, avec leurs versions
   maquette/                  script qui dessine la proposition d'interface
+.github/workflows/
+  installeur.yml             fabrication automatique de l'installeur sur une machine Windows de GitHub
 tests/                       tests automatiques
   donnees/                   petit glossaire de 40 entrées réservé aux tests
 docs/                        captures d'écran
@@ -609,7 +676,7 @@ maquette/                    première maquette SVG des deux écrans (version 0.
 ```
 
 Les modules placés directement dans `traducteur/` n'utilisent pas l'interface graphique, sauf
-`application.py`. La lecture et l'écriture des fichiers Word n'utilisent aucune bibliothèque
+`application.py` et `controle.py`. La lecture et l'écriture des fichiers Word n'utilisent aucune bibliothèque
 supplémentaire.
 
 ### Tests
@@ -619,7 +686,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 439 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 508 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « contrat ») à mettre
@@ -638,18 +705,114 @@ Les tests de l'interface vérifient ce que chaque écran affiche et ce que fait 
 Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des captures (voir les
 [limites connues](#limites-connues)).
 
+Les tests de `tests/test_controle.py` portent sur le contrôle de l'installation (option
+`--controle`) ; l'un d'eux lance l'application entière, comme le fait l'installeur. Ceux de
+`tests/test_installeur.py` portent sur les outils de l'installeur : liste des fichiers, icône,
+tri des fichiers de Qt, page de téléchargement. L'installeur lui-même ne se fabrique que sous
+Windows : il n'est pas essayé par ces tests, mais par sa fabrication.
+
+### Fabrication de l'installeur Windows
+
+L'installeur est fabriqué par GitHub, sur une machine Windows (GitHub Actions, fichier
+`.github/workflows/installeur.yml`). La fabrication dure environ trois minutes. Elle démarre
+toute seule quand l'application ou l'installeur change :
+
+- sur la branche `main`, l'installeur est publié sur la page
+  [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
+  comme version `v0.5.3`, puis `v0.5.4`… ;
+- sur une branche de travail (`arena/…`), il est publié comme **version d'essai**, remplacée à
+  chaque fabrication. Elle sert à essayer un travail avant de le fusionner dans `main` ; elle
+  est retirée quand ce travail est fusionné.
+
+Elle se lance aussi à la main : onglet « Actions » du dépôt, « Installeur Windows », bouton
+« Run workflow ».
+
+Le script `outils/installeur/construire.py` fait tout le travail, en sept étapes :
+
+| Étape | Outil | Ce qu'elle produit |
+| --- | --- | --- |
+| 1 | `icone.py` | L'icône de l'application, au format de Windows. |
+| 2 | PyInstaller, recette `traducteur.spec` | Un dossier qui contient le programme `TraducteurJuridique.exe`, Python 3.13, Qt, le code de l'application et le glossaire fourni. `superflu.py` en écarte les fichiers de Qt dont l'application ne se sert pas (dessin en trois dimensions, réseau, textes dans d'autres langues que le français) : le dossier passe de 110 Mo à 70 Mo. |
+| 3 | Le programme lui-même, option `--controle` | Le programme est lancé et se contrôle. Le script vérifie aussi que chaque bibliothèque (`.dll`) demandée par un fichier du dossier est dans ce dossier ou fait partie de Windows. |
+| 4 | `fichiers.py` | La liste des fichiers à installer. |
+| 5 | WiX Toolset 3, description `traducteur.wxs` | Le fichier `.msi`, avec ses écrans en français. Windows Installer vérifie sa cohérence. |
+| 6 | Microsoft Defender, l'antivirus de Windows | L'analyse du dossier de l'application et de l'installeur. Un antivirus prend parfois un programme fabriqué par PyInstaller pour un logiciel malveillant : une alerte arrête la fabrication. |
+| 7 | Windows Installer | L'essai de l'installeur sur la machine de fabrication. |
+
+**Le contrôle (étape 3).** Lancée avec `--controle=dossier`, l'application démarre comme
+d'habitude, avec son écran de démarrage et le glossaire fourni. Puis elle cherche un terme,
+traduit le texte d'exemple, enregistre la traduction dans un document Word, le relit, affiche
+ses cinq écrans et vérifie que les menus de Qt sont en français. Elle écrit ce qu'elle a
+constaté dans `dossier/rapport.json`, avec une image de sa fenêtre et une image de l'écran de
+démarrage, puis elle se ferme. Si une étape échoue, la fabrication s'arrête. Ce contrôle ne
+regarde pas l'aspect des écrans. Il fonctionne aussi sans l'installeur :
+`python main.py --controle=dossier`.
+
+**L'essai de l'installeur (étape 7).** Il se fait sans afficher les écrans de l'installeur :
+
+1. installation : les fichiers, l'icône du Bureau et celle du menu Démarrer sont en place, les
+   deux icônes ouvrent le programme installé, et Windows connaît l'application ;
+2. contrôle de l'application installée, comme à l'étape 3 ;
+3. désinstallation : il ne reste ni dossier, ni icône, ni inscription ; les réglages de
+   l'application sont conservés ;
+4. mise à jour : l'installeur est lancé par-dessus une version plus ancienne, fabriquée pour
+   l'essai. Il la remplace, les réglages sont conservés et l'application passe encore son
+   contrôle.
+
+Le résultat de ces vérifications est écrit sur la page de téléchargement de l'installeur. Les
+journaux, les rapports et les images sont gardés 90 jours avec la fabrication (onglet
+« Actions », fichier « journaux »).
+
+**Fabriquer l'installeur sur un ordinateur Windows.** Il faut Python 3.13 et WiX Toolset 3.14
+(fichier `wix314.exe` de la page <https://github.com/wixtoolset/wix3/releases>). Puis, depuis
+le dossier du projet :
+
+```
+python -m pip install -r outils/installeur/requirements.txt
+python outils/installeur/construire.py
+```
+
+Le fichier `.msi` est écrit dans `build/installeur`. Le dossier du projet doit avoir un chemin
+court, par exemple `C:\tj` : Windows limite la longueur des chemins, et le nom de ce dépôt est
+long. Cette fabrication n'a été faite que sur la machine de GitHub.
+
 ### Limites connues
 
 - **Systèmes essayés.** Les tests ont été exécutés sous Linux, sans écran, avec Python 3.11
   (PySide6 6.7 et 6.11) et Python 3.15 (PySide6 6.12). Aucun test n'a été exécuté sous Windows ni
   sous macOS. Depuis la version 0.5, ils n'ont été exécutés qu'avec Python 3.11 et PySide6 6.11.
-  Les captures de cette page ont été produites sans écran. **Les versions 0.4 et 0.5 n'ont pas
-  été essayées sur un écran réel** : l'écran de démarrage (fenêtre sans bordure et sans ombre,
-  fond transparent, animation), la barre latérale et l'allumage des étapes sont à contrôler
-  sous Windows.
+  Les captures de cette page ont été produites sans écran, sauf celle de l'application
+  installée. Sous Windows, l'application n'a été lancée que par le contrôle automatique de
+  l'installeur (Windows Server 2025, Python 3.13, PySide6 6.11). **Personne n'a encore regardé
+  les versions 0.4 et 0.5 sur un écran réel** : l'animation de l'écran de démarrage, la barre
+  latérale et l'allumage des étapes sont à regarder sous Windows.
+- **Installeur Windows.**
+  - Il est essayé automatiquement à chaque fabrication, sur une machine Windows de GitHub :
+    voir [Fabrication de l'installeur Windows](#fabrication-de-linstalleur-windows). Cette
+    machine fonctionne sous Windows Server 2025, de la même famille que Windows 11.
+    L'installeur n'a pas été essayé sous Windows 10.
+  - **Personne ne l'a encore installé à la main.** L'essai automatique installe sans afficher
+    les écrans de l'installeur (« Bienvenue », « Prêt à installer », « Terminé ») : ces écrans,
+    et la case « Ouvrir Traducteur juridique maintenant » du dernier, n'ont jamais été
+    affichés.
+  - Il n'est pas signé. Windows peut afficher « Windows a protégé votre ordinateur » : il faut
+    cliquer sur « Informations complémentaires », puis sur « Exécuter quand même ». Ce message
+    n'a pas été observé : il ne s'affiche que pour un fichier téléchargé, lancé à la main.
+  - Pendant la fabrication, Microsoft Defender analyse l'installeur et ne signale rien. Un
+    autre antivirus, ou une mise à jour de Defender, peut réagir autrement.
+  - Il installe l'application pour le seul compte Windows qui le lance, et seulement sous
+    Windows 64 bits.
+  - Dans l'application installée, le glossaire fourni est rangé dans
+    `AppData\Local\Programs\Traducteur juridique\_internal\donnees`, un dossier que Windows
+    ne montre pas d'habitude. Pour le compléter, il est plus simple de télécharger le fichier
+    [`donnees/glossaire_juridique.csv`](donnees/glossaire_juridique.csv) de ce dépôt, puis de
+    le choisir dans « Paramètres ».
 - **Fond transparent de l'écran de démarrage.** C'est le système qui affiche la transparence.
   Les tests vérifient que l'application ne peint aucun fond et qu'elle demande une fenêtre
-  transparente ; l'affichage lui-même n'a pas été essayé sur un écran réel. Là où le système ne
+  transparente. Sous Windows, l'affichage a été contrôlé une fois, sur une image de l'écran
+  prise automatiquement pendant l'essai de l'installeur (Windows Server 2025) : on y voit,
+  derrière le logo et les tirets, la fenêtre qui se trouvait là. Il n'a pas été essayé sous
+  Windows 10 ni sous macOS. Là où le système ne
   permet pas la transparence (par exemple sous Linux, sans gestionnaire de composition), le
   fond devrait apparaître noir. Devant une fenêtre chargée, par exemple une page de texte, les
   tirets se distinguent moins bien. Selon le système, un clic à côté du logo et des tirets
