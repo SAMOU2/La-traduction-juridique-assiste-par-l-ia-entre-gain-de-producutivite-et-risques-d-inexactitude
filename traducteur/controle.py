@@ -8,8 +8,10 @@ Emploi :
 Personne n'a besoin d'être devant l'écran. L'application démarre comme d'habitude (écran de
 démarrage, fenêtre, glossaire fourni), puis elle cherche un terme, traduit le texte d'exemple,
 enregistre la traduction dans un document Word, le relit et affiche chaque écran. Elle écrit ce
-qu'elle a constaté dans ``<dossier>/rapport.json`` et une image de sa fenêtre dans
-``<dossier>/fenetre.png``, puis elle se ferme : code de sortie 0 si tout a fonctionné, 1 sinon.
+qu'elle a constaté dans ``<dossier>/rapport.json``, puis elle se ferme : code de sortie 0 si tout a
+fonctionné, 1 sinon. Elle laisse aussi deux images dans le dossier : ``fenetre.png``, sa fenêtre, et
+``demarrage.png``, l'écran de l'ordinateur à l'endroit de l'écran de démarrage (on y voit si son
+fond est bien transparent).
 
 Ce contrôle sert à vérifier l'installeur pour Windows (voir ``outils/installeur``). Il ne lit pas
 et ne modifie pas les réglages de l'utilisateur : il range les siens dans ``<dossier>``.
@@ -26,6 +28,7 @@ from collections.abc import Callable, Sequence
 from pathlib import Path
 
 from PySide6.QtCore import QCoreApplication, QObject, QSettings, Qt, QTimer, Signal, qVersion
+from PySide6.QtGui import QColor
 from PySide6.QtWidgets import QApplication
 
 from . import NOM_APPLICATION, __version__
@@ -34,6 +37,11 @@ from . import NOM_APPLICATION, __version__
 OPTION = "--controle="
 NOM_DU_RAPPORT = "rapport.json"
 NOM_DE_L_IMAGE = "fenetre.png"
+NOM_DE_L_IMAGE_DU_DEMARRAGE = "demarrage.png"
+#: Moment où l'écran de démarrage est photographié, en millisecondes après son affichage.
+MOMENT_DE_L_IMAGE_DU_DEMARRAGE = 700
+#: Affichages de Qt qui n'ont pas d'écran : il n'y a rien à y photographier.
+AFFICHAGES_SANS_ECRAN = ("offscreen", "minimal")
 #: Durée maximale du contrôle, en millisecondes. Au-delà, il est déclaré en échec.
 DELAI = 60_000
 #: Intervalle entre deux coups d'œil à la fenêtre pendant l'écran de démarrage, en millisecondes.
@@ -59,7 +67,7 @@ class Controle(QObject):
         self.application = application
         self.dossier = Path(dossier)
         self.dossier.mkdir(parents=True, exist_ok=True)
-        for nom in (NOM_DU_RAPPORT, NOM_DE_L_IMAGE, "reglages.ini", "traduction.docx"):
+        for nom in (NOM_DU_RAPPORT, NOM_DE_L_IMAGE, NOM_DE_L_IMAGE_DU_DEMARRAGE, "reglages.ini", "traduction.docx"):
             (self.dossier / nom).unlink(missing_ok=True)  # rien ne doit rester d'un contrôle précédent
         #: Réglages propres au contrôle : ceux de l'utilisateur ne sont ni lus ni modifiés.
         self.reglages = QSettings(str(self.dossier / "reglages.ini"), QSettings.Format.IniFormat)
@@ -102,7 +110,39 @@ class Controle(QObject):
         }
         if self.ecran is None:
             self.erreurs.append("démarrage : l'écran de démarrage ne s'est pas affiché")
+        else:
+            QTimer.singleShot(MOMENT_DE_L_IMAGE_DU_DEMARRAGE, self._photographier_le_demarrage)
         self._attente.start()
+
+    def _photographier_le_demarrage(self) -> None:
+        """Garde l'image de l'écran de l'ordinateur, à l'endroit de l'écran de démarrage.
+
+        Autour du logo, cette image montre ce qui se trouve derrière lui si son fond est transparent,
+        du noir si le système ne sait pas le rendre transparent. Le rapport note la couleur de ses quatre
+        coins et celle du carré du logo.
+        """
+        if self.code is not None or self.ecran is None or not self.ecran.isVisible():
+            return
+        if self.application.platformName() in AFFICHAGES_SANS_ECRAN:
+            return
+        cadre = self.ecran.geometry()
+        origine = self.ecran.screen().geometry().topLeft()
+        image = self.ecran.screen().grabWindow(
+            0, cadre.x() - origine.x(), cadre.y() - origine.y(), cadre.width(), cadre.height()).toImage()
+        fichier = self.dossier / NOM_DE_L_IMAGE_DU_DEMARRAGE
+        if image.isNull() or not image.save(str(fichier), "PNG"):
+            return
+
+        def couleur(x: int, y: int) -> str:
+            return image.pixelColor(x, y).name(QColor.NameFormat.HexArgb)
+
+        droite, bas = image.width() - 1, image.height() - 1
+        self.constats["demarrage"].update({
+            "image": fichier.name,
+            "coins": [couleur(0, 0), couleur(droite, 0), couleur(0, bas), couleur(droite, bas)],
+            # Un point du carré du logo, à gauche de la balance.
+            "logo": couleur(round(image.width() * (0.5 - 36 / cadre.width())), image.height() // 2),
+        })
 
     def _noter_le_message(self, parent, genre, titre, texte, **options) -> None:
         self.messages.append((titre, texte))

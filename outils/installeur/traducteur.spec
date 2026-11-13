@@ -15,8 +15,12 @@ l'installeur le copie tel quel.
 import sys
 from pathlib import Path
 
-RACINE = Path(SPECPATH).resolve().parents[1]  # noqa: F821 (SPECPATH est fourni par PyInstaller)
+ICI = Path(SPECPATH).resolve()  # noqa: F821 (SPECPATH est fourni par PyInstaller)
+RACINE = ICI.parents[1]
 sys.path.insert(0, str(RACINE))
+sys.path.insert(0, str(ICI))
+
+import superflu  # noqa: E402
 
 from traducteur import NOM_APPLICATION, __version__  # noqa: E402
 
@@ -58,6 +62,12 @@ analyse = Analysis(  # noqa: F821 (Analysis, PYZ, EXE et COLLECT sont fournis pa
     # Avec l'option --controle, le programme installé se contrôle sans jamais attendre un clic.
     runtime_hooks=[str(RACINE / "outils" / "installeur" / "crochet_controle.py")],
 )
+# Les fichiers de Qt dont l'application ne se sert pas sont écartés : voir « superflu.py ».
+analyse.binaries, binaires_ecartes = superflu.trier(analyse.binaries)
+analyse.datas, donnees_ecartees = superflu.trier(analyse.datas)
+print(f"Fichiers écartés ({len(binaires_ecartes) + len(donnees_ecartees)}) : "
+      + ", ".join(sorted(entree[0].replace(chr(92), "/") for entree in binaires_ecartes + donnees_ecartees)))
+
 archive = PYZ(analyse.pure)  # noqa: F821
 programme = EXE(  # noqa: F821
     archive,

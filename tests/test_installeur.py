@@ -20,6 +20,7 @@ if str(OUTILS) not in sys.path:
 import construire  # noqa: E402
 import fichiers  # noqa: E402
 import publier  # noqa: E402
+import superflu  # noqa: E402
 
 from traducteur import NOM_APPLICATION, __version__  # noqa: E402
 
@@ -181,6 +182,45 @@ def test_les_textes_de_l_installeur_s_ecrivent_dans_son_jeu_de_caracteres(descri
 
 def test_la_recette_de_pyinstaller_est_du_python_correct():
     compile((OUTILS / "traducteur.spec").read_text(encoding="utf-8"), "traducteur.spec", "exec")
+
+
+# ---------------------------------------------------------------------- fichiers de Qt écartés
+@pytest.mark.parametrize("chemin", [
+    "PySide6\\opengl32sw.dll",  # dessin en trois dimensions par logiciel
+    "PySide6\\Qt6Network.dll", "libcrypto-3-x64.dll", "libssl-3-x64.dll",  # réseau
+    "PySide6\\plugins\\tls\\qschannelbackend.dll", "PySide6\\plugins\\generic\\qtuiotouchplugin.dll",
+    "PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll",
+    "PySide6\\translations\\qtbase_de.qm", "PySide6\\translations\\qt_fr.qm",  # textes de Qt inutilisés
+    "PySide6/Qt/translations/qtbase_ar.qm",
+])
+def test_les_fichiers_de_qt_inutiles_sont_ecartes(chemin):
+    assert superflu.est_superflu(chemin)
+
+
+@pytest.mark.parametrize("chemin", [
+    "TraducteurJuridique.exe", "python313.dll", "PySide6\\Qt6Core.dll", "PySide6\\Qt6Gui.dll",
+    "PySide6\\Qt6Widgets.dll", "PySide6\\Qt6Svg.dll", "PySide6\\QtWidgets.pyd",
+    "PySide6\\plugins\\platforms\\qwindows.dll",  # sans elle, aucune fenêtre ne s'ouvre sous Windows
+    "PySide6\\plugins\\styles\\qmodernwindowsstyle.dll", "PySide6\\plugins\\imageformats\\qjpeg.dll",
+    "PySide6\\translations\\qtbase_fr.qm",  # les menus « Copier », « Coller »… en français
+    "PySide6/Qt/translations/qtbase_fr.qm",
+    "libcrypto-3.dll", "libssl-3.dll",  # celles de Python, à ne pas confondre avec celles de Qt
+    "donnees\\glossaire_juridique.csv", "regex\\_regex.cp313-win_amd64.pyd",
+    "tls.dll", "generic\\module.pyd",  # un nom qui ressemble ne suffit pas : il faut le dossier « plugins »
+])
+def test_les_fichiers_dont_l_application_a_besoin_sont_gardes(chemin):
+    assert not superflu.est_superflu(chemin)
+
+
+def test_le_tri_separe_les_entrees_gardees_des_entrees_ecartees():
+    entrees = [("PySide6\\Qt6Core.dll", "C:\\x\\Qt6Core.dll", "BINARY"),
+               ("PySide6\\opengl32sw.dll", "C:\\x\\opengl32sw.dll", "BINARY"),
+               ("PySide6\\translations\\qtbase_fr.qm", "C:\\x\\qtbase_fr.qm", "DATA"),
+               ("PySide6\\translations\\qtbase_ja.qm", "C:\\x\\qtbase_ja.qm", "DATA")]
+    gardees, ecartees = superflu.trier(entrees)
+    assert [entree[0] for entree in gardees] == ["PySide6\\Qt6Core.dll", "PySide6\\translations\\qtbase_fr.qm"]
+    assert [entree[0] for entree in ecartees] == ["PySide6\\opengl32sw.dll", "PySide6\\translations\\qtbase_ja.qm"]
+    assert gardees + ecartees != entrees and sorted(gardees + ecartees) == sorted(entrees)
 
 
 # ---------------------------------------------------------------------- icône

@@ -67,6 +67,24 @@ jobs:
         working-directory: ${{ env.PROJET }}
         run: python outils/installeur/construire.py --essayer-l-installation
 
+      # Étape temporaire, le temps de la mise au point : elle dépose les images du contrôle là où elles
+      # peuvent être relues à distance. Elle sera retirée.
+      - name: Diagnostic temporaire (images du contrôle)
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd "$PROJET/build/installeur/controles" || exit 0
+          for image in installe/fenetre.png installe/demarrage.png; do
+            [ -f "$image" ] || continue
+            base64 --wrap=0 "$image" > contenu.b64
+            jq -n --rawfile contenu contenu.b64 '{content: $contenu, encoding: "base64"}' > corps.json
+            sha="$(gh api "repos/$GITHUB_REPOSITORY/git/blobs" --input corps.json --jq .sha)"
+            echo "::notice title=Image $image::$sha"
+          done
+          rm -f contenu.b64 corps.json
+
       - name: Garder l'installeur avec la fabrication
         uses: actions/upload-artifact@v7
         with:

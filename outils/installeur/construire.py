@@ -218,6 +218,7 @@ def fabriquer_le_dossier(resume: Resume) -> None:
         resume.detailler("Extensions de Qt : " + " ".join(
             fichier.relative_to(extensions).as_posix() for fichier in fichiers_de(extensions)))
     avertissements(resume, "2-pyinstaller", "WARNING")
+    avertissements(resume, "2-pyinstaller", "Fichiers écartés")
 
 
 def avertissements(resume: Resume, etape: str, marque: str, nombre: int = 12) -> None:
@@ -319,11 +320,20 @@ def controler(programme: pathlib.Path, nom: str, resume: Resume, quoi: str) -> d
         raise Echec(etape, f"{quoi} : le glossaire chargé n'est pas celui du dossier de l'application.",
                     f"chargé : {rapport['glossaire']['fichier']}\nattendu : {attendu}")
     systeme = rapport["systeme"]
-    resume.noter(
-        f"{quoi} : le programme s'ouvre et son contrôle réussit en {rapport['duree_en_secondes']} s "
-        f"({rapport['glossaire']['entrees']} entrées du glossaire, recherche, traduction, document Word, "
-        f"cinq écrans ; {systeme['nom']}, Python {systeme['python']}, Qt {systeme['qt']}, "
-        f"affichage « {systeme['affichage']} », écran {systeme['ecran']}, police {systeme['police']})")
+    duree = str(rapport["duree_en_secondes"]).replace(".", ",")
+    if nom == "dossier":
+        resume.noter(
+            f"{quoi} : le programme s'ouvre et se contrôle lui-même en {duree} s — écran de démarrage, "
+            f"{rapport['glossaire']['entrees']} entrées du glossaire fourni, recherche d'un terme, traduction du "
+            f"texte d'exemple, document Word écrit et relu, cinq écrans affichés, menus de Qt en français "
+            f"({systeme['nom']}, Python {systeme['python']}, Qt {systeme['qt']}, écran {systeme['ecran']}, "
+            f"police {systeme['police']})")
+    else:
+        resume.noter(f"{quoi} : le même contrôle réussit, en {duree} s")
+    demarrage = rapport.get("demarrage", {})
+    if demarrage.get("coins"):
+        resume.detailler(f"Écran de démarrage ({nom}) : coins de l'image {' '.join(demarrage['coins'])} ; "
+                         f"carré du logo {demarrage.get('logo')}")
     return rapport
 
 
@@ -592,7 +602,8 @@ def essayer_l_installation(wix: pathlib.Path, installeur: pathlib.Path, resume: 
         resume.noter(f"Installation sans droits d'administrateur : {nombre_de_fichiers} fichiers dans "
                      f"« {lieux['dossier']} », une icône sur le Bureau et une dans le menu Démarrer (elles ouvrent "
                      f"le programme installé), « {NOM_APPLICATION} {__version__} » inscrit dans les applications "
-                     f"installées de l'utilisateur ({' ; '.join(lignes_de_desinstallation())})")
+                     f"installées")
+        resume.detailler("Inscription dans le registre : " + " ; ".join(lignes_de_desinstallation()))
     controler(lieux["programme"], "installe", resume, "Application installée")
 
     dire("  b) Désinstallation")

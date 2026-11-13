@@ -118,6 +118,42 @@ def test_un_glossaire_fourni_introuvable_fait_echouer_le_controle(application, t
     suivi.ecran.deleteLater()
 
 
+def test_l_ecran_de_demarrage_est_photographie_sur_l_ecran_de_l_ordinateur(application, tmp_path, monkeypatch):
+    """L'image montre ce qu'il y a derrière le logo : c'est elle qui dit si le fond est transparent."""
+    from traducteur.interface.demarrage import EcranDemarrage
+
+    monkeypatch.setattr(EcranDemarrage, "DUREE_MINIMALE", 600)
+    monkeypatch.setattr(controle, "MOMENT_DE_L_IMAGE_DU_DEMARRAGE", 100)
+    monkeypatch.setattr(controle, "AFFICHAGES_SANS_ECRAN", ())  # les tests n'ont pas d'écran : on fait comme si
+    suivi = controle.Controle(application, tmp_path)
+    suivi.demarrer()
+    _attendre_la_fin(suivi)
+
+    demarrage = _rapport(tmp_path)["demarrage"]
+    assert demarrage["image"] == controle.NOM_DE_L_IMAGE_DU_DEMARRAGE
+    assert (tmp_path / demarrage["image"]).read_bytes().startswith(b"\x89PNG")
+    assert len(demarrage["coins"]) == 4 and all(len(coin) == 9 and coin[0] == "#" for coin in demarrage["coins"])
+    assert demarrage["logo"] == "#ff1e325c"  # le carré du logo est bien à cet endroit de l'image
+    suivi.fenetre.deleteLater()
+    suivi.ecran.deleteLater()
+
+
+def test_sans_ecran_il_n_y_a_pas_d_image_de_l_ecran_de_demarrage(application, tmp_path, monkeypatch):
+    from traducteur.interface.demarrage import EcranDemarrage
+
+    monkeypatch.setattr(EcranDemarrage, "DUREE_MINIMALE", 600)
+    monkeypatch.setattr(controle, "MOMENT_DE_L_IMAGE_DU_DEMARRAGE", 100)
+    assert application.platformName() in controle.AFFICHAGES_SANS_ECRAN
+    suivi = controle.Controle(application, tmp_path)
+    suivi.demarrer()
+    _attendre_la_fin(suivi)
+
+    assert _rapport(tmp_path)["demarrage"] == {"ecran_de_demarrage": True, "fond_transparent": True}
+    assert not (tmp_path / controle.NOM_DE_L_IMAGE_DU_DEMARRAGE).exists()
+    suivi.fenetre.deleteLater()
+    suivi.ecran.deleteLater()
+
+
 def test_des_textes_de_qt_en_anglais_font_echouer_le_controle(application, tmp_path, demarrage_court):
     """Sans les textes français de Qt, les menus « Copier », « Coller »… s'affichent en anglais."""
     suivi = controle.Controle(application, tmp_path)
