@@ -2,6 +2,9 @@
 
     - - - - - - - - - -  [ logo ]  - - - - - - - - - -
 
+L'écran est plat (« flat ») : il ne montre que le logo et les tirets, sur un fond d'une seule
+couleur. Il n'a ni texte, ni dégradé, ni lueur, ni bordure, ni ombre.
+
 Il s'affiche pendant l'ouverture de l'application (construction de la fenêtre, chargement du
 glossaire), puis laisse la place à la fenêtre principale. Un clic le ferme sans attendre.
 """
@@ -11,12 +14,12 @@ from __future__ import annotations
 import math
 
 from PySide6.QtCore import QElapsedTimer, QPointF, QRectF, Qt, QTimer, Signal
-from PySide6.QtGui import QColor, QGuiApplication, QLinearGradient, QPainter, QPen, QRadialGradient
+from PySide6.QtGui import QColor, QGuiApplication, QPainter
 from PySide6.QtWidgets import QWidget
 
 from .. import NOM_APPLICATION
 from . import icones, theme
-from .dessin import dessiner_ligne, melanger, police
+from .dessin import melanger
 
 #: Couleurs que prennent tour à tour les tirets (la dernière rejoint la première).
 PALETTE = ("#FFB703", "#FB8500", "#FF4D8D", "#8B5CF6", "#3B82F6", "#22D3EE", "#34D399")
@@ -30,23 +33,26 @@ def couleur_de_la_palette(position: float) -> QColor:
 
 
 class EcranDemarrage(QWidget):
-    """Fenêtre sans bordure affichée à l'ouverture de l'application."""
+    """Fenêtre sans bordure et sans ombre affichée à l'ouverture de l'application."""
 
     #: L'écran de démarrage a fini : la fenêtre principale peut s'afficher.
     termine = Signal()
 
-    LARGEUR, HAUTEUR = 680, 340
+    LARGEUR, HAUTEUR = 680, 260
     #: Nombre de tirets de chaque côté du logo.
     TIRETS = 10
     #: Durée minimale d'affichage, en millisecondes : le temps de voir l'animation.
     DUREE_MINIMALE = 2000
     #: Durée d'une ondulation complète et d'un tour complet des couleurs, en secondes.
     PERIODE_DE_L_ONDE, PERIODE_DES_COULEURS = 1.5, 2.6
-    #: Hauteur du centre du logo, et taille du logo.
-    MILIEU, COTE_DU_LOGO = 126, 88
+    #: Hauteur du centre du logo (le milieu de la fenêtre), et taille du logo.
+    MILIEU, COTE_DU_LOGO = HAUTEUR // 2, 88
+    #: Couleur du fond, la même partout, et couleur du carré du logo.
+    FOND, FOND_DU_LOGO = theme.RAIL, theme.RAIL_ACTIF
 
     def __init__(self, parent: QWidget | None = None) -> None:
-        super().__init__(parent, Qt.WindowType.SplashScreen | Qt.WindowType.FramelessWindowHint)
+        super().__init__(parent, Qt.WindowType.SplashScreen | Qt.WindowType.FramelessWindowHint
+                         | Qt.WindowType.NoDropShadowWindowHint)
         self.setFixedSize(self.LARGEUR, self.HAUTEUR)
         self.setWindowTitle(NOM_APPLICATION)
         self.setWindowIcon(icones.icone_application())
@@ -124,26 +130,9 @@ class EcranDemarrage(QWidget):
         instant = self._horloge.elapsed() / 1000.0
         peintre = QPainter(self)
         peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
-        fond = QLinearGradient(0, 0, 0, self.height())
-        fond.setColorAt(0.0, QColor("#102043"))
-        fond.setColorAt(1.0, QColor(theme.RAIL))
-        peintre.fillRect(self.rect(), fond)
-        peintre.setPen(QPen(QColor(theme.RAIL_FILET), 1))
-        peintre.setBrush(Qt.BrushStyle.NoBrush)
-        peintre.drawRect(QRectF(0.5, 0.5, self.width() - 1, self.height() - 1))
-
-        # Lueur dorée derrière le logo : elle respire lentement.
-        centre = QPointF(self.width() / 2, self.MILIEU)
-        souffle = 0.5 + 0.5 * math.sin(2 * math.pi * instant / 2.2)
-        lueur = QRadialGradient(centre, 120)
-        teinte = QColor(theme.OR)
-        teinte.setAlphaF(0.10 + 0.10 * souffle)
-        lueur.setColorAt(0.0, teinte)
-        teinte.setAlphaF(0.0)
-        lueur.setColorAt(1.0, teinte)
+        # Le fond : une seule couleur, d'un bord à l'autre.
+        peintre.fillRect(self.rect(), QColor(self.FOND))
         peintre.setPen(Qt.PenStyle.NoPen)
-        peintre.setBrush(lueur)
-        peintre.drawEllipse(centre, 120, 120)
 
         # Les deux rangées de tirets.
         for position, largeur, inclinaison, couleur in self.tirets(instant):
@@ -154,23 +143,12 @@ class EcranDemarrage(QWidget):
             peintre.drawRoundedRect(QRectF(-largeur / 2, -2.5, largeur, 5.0), 2.5, 2.5)
             peintre.restore()
 
-        # Le logo : la balance dorée, dans un carré arrondi.
+        # Le logo : la balance dorée, dans un carré arrondi d'une seule couleur, sans contour.
+        centre = QPointF(self.width() / 2, self.MILIEU)
         cote = self.COTE_DU_LOGO
-        cadre = QRectF(centre.x() - cote / 2, centre.y() - cote / 2, cote, cote)
-        peintre.setPen(QPen(QColor("#2B4071"), 1.25))
-        peintre.setBrush(QColor(theme.RAIL_SURVOL))
-        peintre.drawRoundedRect(cadre, 24, 24)
+        peintre.setBrush(QColor(self.FOND_DU_LOGO))
+        peintre.drawRoundedRect(QRectF(centre.x() - cote / 2, centre.y() - cote / 2, cote, cote), 24, 24)
         peintre.drawPixmap(QPointF(centre.x() - 28, centre.y() - 28), icones.image("balance", "#F4C95D", 56, 1.25))
-
-        # Le nom de l'application, puis l'état du chargement.
-        largeur = self.width()
-        dessiner_ligne(peintre, QRectF(0, 198, largeur, 34), NOM_APPLICATION, police(self.font(), 22, gras=True),
-                       "#FFFFFF", alignement=Qt.AlignmentFlag.AlignHCenter)
-        dessiner_ligne(peintre, QRectF(0, 232, largeur, 24), "Traduction juridique français – arabe",
-                       police(self.font(), 13), theme.RAIL_ICONE, alignement=Qt.AlignmentFlag.AlignHCenter)
-        points = "." * (1 + int(instant / 0.4) % 3)
-        dessiner_ligne(peintre, QRectF(largeur / 2 - 40, self.height() - 46, 200, 22), f"Chargement{points}",
-                       police(self.font(), 12), "#7F92B3", alignement=Qt.AlignmentFlag.AlignLeft)
 
 
 __all__ = ["PALETTE", "EcranDemarrage", "couleur_de_la_palette"]

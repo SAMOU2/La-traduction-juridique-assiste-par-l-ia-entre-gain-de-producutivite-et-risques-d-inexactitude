@@ -26,8 +26,12 @@ La version 0.5 remplit le champ ④ **Contextualisation** pour tout le glossaire
 
 Le détail est dans [Le glossaire d'exemple](#le-glossaire-dexemple).
 
-La présentation reste celle de la version 0.4. Cette version comprenait la version 0.3, qui
-n'a pas été publiée à part. Elle avait apporté ceci :
+La version 0.5.1 simplifie l'**écran de démarrage** : il ne montre plus que le logo et les
+tirets, sur un fond d'une seule couleur. Le nom de l'application, la mention « Chargement… »,
+le dégradé, la lueur et la bordure sont retirés.
+
+Le reste de la présentation est celui de la version 0.4. Cette version comprenait la
+version 0.3, qui n'a pas été publiée à part. Elle avait apporté ceci :
 
 - la **fiche d'un terme** suit la [proposition d'interface](#la-proposition-dinterface) : les
   cinq champs côte à côte dans une seule fiche, l'équivalent au centre, les autres résultats
@@ -50,7 +54,8 @@ n'a pas été publiée à part. Elle avait apporté ceci :
 La lecture du glossaire, la recherche d'un terme et la traduction d'un texte sont celles de la
 version 0.2.
 
-**Écran de démarrage** — le logo, entre deux rangées de tirets qui ondulent et changent de couleur :
+**Écran de démarrage** — le logo, entre deux rangées de tirets qui ondulent et changent de
+couleur, sur un fond uni :
 
 ![Écran de démarrage](docs/apercu-demarrage.png)
 
@@ -72,8 +77,8 @@ version 0.2.
 
 *Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
 l'autre. L'adresse affichée dans le centre d'aide est un exemple. Les captures des écrans
-« Terme », « Texte », « Paramètres » et de l'écran de démarrage datent de la version 0.4 : ces
-écrans s'affichent de la même façon dans la version 0.5.*
+« Terme », « Texte » et « Paramètres » datent de la version 0.4 : ces écrans s'affichent de la
+même façon depuis.*
 
 ### Ce qui est fait, ce qui reste à faire
 
@@ -635,8 +640,9 @@ Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des 
 
 - **Systèmes essayés.** Les tests ont été exécutés sous Linux, sans écran, avec Python 3.11
   (PySide6 6.7 et 6.11) et Python 3.15 (PySide6 6.12). Aucun test n'a été exécuté sous Windows ni
-  sous macOS. Les captures de cette page ont été produites sans écran. **Les versions 0.4 et
-  0.5 n'ont pas été essayées sur un écran réel** : l'écran de démarrage (fenêtre sans bordure,
+  sous macOS. Depuis la version 0.5, ils n'ont été exécutés qu'avec Python 3.11 et PySide6 6.11.
+  Les captures de cette page ont été produites sans écran. **Les versions 0.4 et 0.5 n'ont pas
+  été essayées sur un écran réel** : l'écran de démarrage (fenêtre sans bordure et sans ombre,
   animation), la barre latérale et l'allumage des étapes sont à contrôler sous Windows.
 - **PySide6 6.12 avec Python 3.11.** Avec ces deux versions, l'application se ferme brutalement
   après quelques milliers d'opérations (« Fatal Python error: none_dealloc »). `requirements.txt`
@@ -731,8 +737,7 @@ version 0.4 s'en écarte sur les points suivants :
 
 L'application actuelle est celle des captures du début de cette page.
 
-Les fichiers sont dans `maquette/proposition/`. Le fichier `index.html` du même dossier les
-affiche tous sur une page : il suffit de l'ouvrir dans un navigateur.
+Les fichiers sont dans `maquette/proposition/`.
 
 ### Écran « Terme »
 
@@ -823,7 +828,7 @@ partie de l'application.
 ## Maquette de l'application de bureau
 
 Maquette SVG des deux écrans du prototype (version 0.1). Les deux écrans sont programmés (voir
-[L'application](#lapplication-version-04)). L'application actuelle ne ressemble plus à cette
+[L'application](#lapplication-version-05)). L'application actuelle ne ressemble plus à cette
 maquette : elle est gardée pour mémoire.
 
 ### Écran 1 — Recherche d'un terme
