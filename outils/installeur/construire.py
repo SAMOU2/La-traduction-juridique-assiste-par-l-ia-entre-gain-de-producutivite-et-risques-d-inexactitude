@@ -16,7 +16,8 @@ Ce script ne fait pas partie de l'application. Il enchaîne ces étapes :
 3. le contrôle de ce dossier : le programme est lancé, se contrôle lui-même et écrit un rapport
    (``traducteur/controle.py``) ;
 4. la liste des fichiers à installer (``fichiers.py``) ;
-5. l'installeur (WiX Toolset 3, description ``traducteur.wxs``).
+5. l'installeur (WiX Toolset 3, description ``traducteur.wxs``) ;
+6. l'analyse du dossier et de l'installeur par l'antivirus de Windows (Microsoft Defender), s'il est là.
 
 Avec ``--essayer-l-installation``, il essaie ensuite l'installeur sur cet ordinateur : installation,
 contrôle de l'application installée, désinstallation, puis remplacement d'une ancienne version. Cette
@@ -56,6 +57,10 @@ NOM_DE_L_INSTALLEUR = f"Traducteur-juridique-{__version__}.msi"
 GLOSSAIRE = pathlib.PurePath("_internal", "donnees", "glossaire_juridique.csv")
 #: Numéro de version de l'« ancienne version » fabriquée pour essayer une mise à jour.
 ANCIENNE_VERSION = "0.0.1"
+#: Clé du registre de l'utilisateur où l'application range ses réglages : l'installeur ne doit pas y toucher.
+CLE_DES_REGLAGES = rf"Software\TraducteurJuridique\{NOM_APPLICATION}"
+#: Nom du réglage que l'essai de l'installeur y écrit, pour vérifier qu'il est conservé.
+REGLAGE_TEMOIN = "essai_de_l_installeur"
 #: Page où télécharger WiX Toolset 3 quand il n'est pas sur l'ordinateur.
 PAGE_DE_WIX = "https://github.com/wixtoolset/wix3/releases"
 #: Durée maximale du contrôle du programme, en secondes (le contrôle lui-même s'arrête après 60 secondes).
@@ -380,6 +385,40 @@ def fabriquer_l_installeur(wix: pathlib.Path, version: str, sortie: pathlib.Path
         raise Echec(f"5-light-{nom}", f"WiX n'a pas produit {sortie.name}.")
 
 
+def analyser_avec_l_antivirus(resume: Resume, installeur: pathlib.Path) -> None:
+    """Fait analyser le dossier de l'application et l'installeur par Microsoft Defender, l'antivirus de Windows.
+
+    Un antivirus prend parfois un programme fabriqué par PyInstaller pour un logiciel malveillant. Si Defender
+    signale quelque chose, la fabrication s'arrête : l'installeur serait bloqué sur beaucoup d'ordinateurs.
+    Si Defender est absent ou ne répond pas, l'analyse est notée comme non faite, sans arrêter la fabrication.
+    """
+    # Le programme de Defender est rangé avec ses mises à jour ; à défaut, à l'endroit d'origine.
+    mises_a_jour = (pathlib.Path(os.environ.get("PROGRAMDATA", r"C:\ProgramData")) / "Microsoft"
+                    / "Windows Defender" / "Platform")
+    origine = pathlib.Path(os.environ.get("PROGRAMFILES", r"C:\Program Files")) / "Windows Defender"
+    outils = [*sorted(mises_a_jour.glob("*/MpCmdRun.exe"), reverse=True), origine / "MpCmdRun.exe"]
+    outil = next((candidat for candidat in outils if candidat.is_file()), None)
+    if outil is None:
+        resume.noter("Antivirus : analyse non faite (Microsoft Defender n'est pas sur cette machine)")
+        return
+    for rang, cible in enumerate((DOSSIER_DE_L_APPLICATION, installeur), start=1):
+        etape = f"6-antivirus-{rang}"
+        try:
+            code = lancer(etape, [outil, "-Scan", "-ScanType", "3", "-File", cible, "-DisableRemediation"],
+                          delai=900, codes_acceptes=(0, 2))
+        except Echec as echec:
+            resume.noter("Antivirus : analyse non faite (Microsoft Defender n'a pas répondu)")
+            resume.detailler(f"Antivirus : {echec} | {echec.details[-600:]}")
+            return
+        if code == 2:
+            journal = JOURNAUX / f"{etape}.txt"
+            signale = journal.read_text(encoding="utf-8", errors="replace") if journal.is_file() else ""
+            raise Echec(etape, f"Microsoft Defender signale un logiciel malveillant dans {cible.name}.",
+                        fin_de(signale))
+    resume.noter("Antivirus : Microsoft Defender ne signale rien, ni dans le dossier de l'application ni dans "
+                 "l'installeur")
+
+
 def avertissements_de_wix(resume: Resume, nom: str) -> None:
     for etape in (f"5-candle-{nom}", f"5-light-{nom}"):
         avertissements(resume, etape, "warning")
@@ -513,6 +552,42 @@ def marques_dans_le_registre() -> list[str]:
             + (f" ({', '.join(noms[:5])}…)" if noms else " (clé vide)")]
 
 
+def poser_le_reglage_temoin() -> None:
+    """Écrit un réglage là où l'application range les siens, comme si elle avait déjà servi."""
+    import winreg
+
+    with winreg.CreateKey(winreg.HKEY_CURRENT_USER, CLE_DES_REGLAGES) as cle:
+        winreg.SetValueEx(cle, REGLAGE_TEMOIN, 0, winreg.REG_SZ, "1")
+
+
+def reglage_temoin_present() -> bool:
+    import winreg
+
+    try:
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, CLE_DES_REGLAGES) as cle:
+            winreg.QueryValueEx(cle, REGLAGE_TEMOIN)
+    except OSError:
+        return False
+    return True
+
+
+def retirer_le_reglage_temoin() -> None:
+    """Retire le réglage écrit pour l'essai, puis les clés qu'il a fallu créer si elles sont restées vides."""
+    import winreg
+
+    try:
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, CLE_DES_REGLAGES, 0, winreg.KEY_SET_VALUE) as cle:
+            winreg.DeleteValue(cle, REGLAGE_TEMOIN)
+        for chemin in (CLE_DES_REGLAGES, CLE_DES_REGLAGES.rsplit("\\", 1)[0]):
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, chemin) as cle:
+                sous_cles, valeurs, _ = winreg.QueryInfoKey(cle)
+            if sous_cles or valeurs:
+                break  # de vrais réglages s'y trouvent : on n'y touche pas
+            winreg.DeleteKey(winreg.HKEY_CURRENT_USER, chemin)
+    except OSError:
+        pass
+
+
 def cible_du_raccourci(raccourci: pathlib.Path) -> str:
     resultat = subprocess.run(
         ["powershell", "-NoProfile", "-NonInteractive", "-Command",
@@ -570,11 +645,11 @@ def restes_de_l_installation() -> list[str]:
 
 
 def essayer_l_installation(wix: pathlib.Path, installeur: pathlib.Path, resume: Resume) -> None:
-    titre("6. Essai de l'installeur sur cet ordinateur")
+    titre("7. Essai de l'installeur sur cet ordinateur")
     nombre_de_fichiers = len(fichiers_de(DOSSIER_DE_L_APPLICATION))
     deja = restes_de_l_installation()
     if deja:
-        raise Echec("6-essai", f"{NOM_APPLICATION} est déjà sur cet ordinateur : l'essai le désinstallerait. "
+        raise Echec("7-essai", f"{NOM_APPLICATION} est déjà sur cet ordinateur : l'essai le désinstallerait. "
                                "Désinstallez-le d'abord, ou lancez le script sans --essayer-l-installation.",
                     "\n".join(deja))
     #: Tout ce qui ne convient pas est noté, et l'essai continue : un seul passage dit tout ce qu'il y a à corriger.
@@ -586,8 +661,27 @@ def essayer_l_installation(wix: pathlib.Path, installeur: pathlib.Path, resume: 
         defauts.extend(f"{moment} : {defaut}" for defaut in trouves)
         return not trouves
 
+    def reglages_gardes(moment: str) -> bool:
+        return noter_les_defauts(moment, [] if reglage_temoin_present() else [
+            f"le réglage écrit avant l'installation a disparu (HKEY_CURRENT_USER\\{CLE_DES_REGLAGES})"])
+
+    if reglage_temoin_present():
+        raise Echec("7-essai", "Un essai précédent de l'installeur ne s'est pas terminé : son réglage témoin est "
+                               f"encore dans le registre (HKEY_CURRENT_USER\\{CLE_DES_REGLAGES}, {REGLAGE_TEMOIN}).")
+    poser_le_reglage_temoin()
+    try:
+        _essayer(wix, installeur, resume, nombre_de_fichiers, noter_les_defauts, reglages_gardes)
+    finally:
+        retirer_le_reglage_temoin()
+    if defauts:
+        raise Echec("7-essai", f"L'essai de l'installeur a relevé {len(defauts)} défaut(s).", "\n".join(defauts))
+
+
+def _essayer(wix: pathlib.Path, installeur: pathlib.Path, resume: Resume, nombre_de_fichiers: int,
+             noter_les_defauts, reglages_gardes) -> None:
+    """Les trois temps de l'essai : installation, désinstallation, remplacement d'une ancienne version."""
     dire("  a) Première installation")
-    windows_installer("6a-installation", "/i", installeur)
+    windows_installer("7a-installation", "/i", installeur)
     lieux = emplacements()
     if noter_les_defauts("après l'installation", defauts_de_l_installation(__version__, nombre_de_fichiers)):
         resume.noter(f"Installation sans droits d'administrateur : {nombre_de_fichiers} fichiers dans "
@@ -598,29 +692,28 @@ def essayer_l_installation(wix: pathlib.Path, installeur: pathlib.Path, resume: 
     controler(lieux["programme"], "installe", resume, "Application installée")
 
     dire("  b) Désinstallation")
-    windows_installer("6b-desinstallation", "/x", installeur)
-    if noter_les_defauts("après la désinstallation", restes_de_l_installation()):
+    windows_installer("7b-desinstallation", "/x", installeur)
+    propre = noter_les_defauts("après la désinstallation", restes_de_l_installation())
+    if reglages_gardes("après la désinstallation") and propre:
         resume.noter("Désinstallation : le dossier, les deux icônes, l'inscription dans les applications "
-                     "installées et les marques du registre sont retirés")
+                     "installées et les marques du registre sont retirés ; les réglages de l'application restent")
 
     dire(f"  c) Remplacement d'une ancienne version ({ANCIENNE_VERSION})")
     ancien = TRAVAIL / "essai" / f"ancienne-version-{ANCIENNE_VERSION}.msi"
     ancien.parent.mkdir(parents=True, exist_ok=True)
     fabriquer_l_installeur(wix, ANCIENNE_VERSION, ancien, "none", "ancienne-version")
-    windows_installer("6c-ancienne-version", "/i", ancien)
+    windows_installer("7c-ancienne-version", "/i", ancien)
     noter_les_defauts("après l'installation de l'ancienne version",
                       defauts_de_l_installation(ANCIENNE_VERSION, nombre_de_fichiers))
-    windows_installer("6c-mise-a-jour", "/i", installeur)
+    windows_installer("7c-mise-a-jour", "/i", installeur)
     a_jour = noter_les_defauts("après la mise à jour", defauts_de_l_installation(__version__, nombre_de_fichiers))
+    gardes = reglages_gardes("après la mise à jour")
     controler(lieux["programme"], "mis-a-jour", resume, "Après une mise à jour")
-    if a_jour:
+    if a_jour and gardes:
         resume.noter(f"Mise à jour : installé par-dessus une version {ANCIENNE_VERSION}, l'installeur la remplace "
-                     "(Windows Installer ne connaît plus qu'une installation)")
-    windows_installer("6c-desinstallation", "/x", installeur)
+                     "(Windows Installer ne connaît plus qu'une installation) et les réglages sont conservés")
+    windows_installer("7c-desinstallation", "/x", installeur)
     noter_les_defauts("après la dernière désinstallation", restes_de_l_installation())
-
-    if defauts:
-        raise Echec("6-essai", f"L'essai de l'installeur a relevé {len(defauts)} défaut(s).", "\n".join(defauts))
 
 
 # ---------------------------------------------------------------------- programme principal
@@ -653,6 +746,9 @@ def construire(essai: bool) -> pathlib.Path:
         avertissements_de_wix(resume, "installeur")
         resume.noter(f"Installeur : {installeur.name}, {taille(installeur.stat().st_size)}, "
                      f"SHA-256 {empreinte(installeur)}")
+
+        titre("6. Analyse par l'antivirus de Windows")
+        analyser_avec_l_antivirus(resume, installeur)
 
         if essai:
             essayer_l_installation(wix, installeur, resume)
