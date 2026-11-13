@@ -98,14 +98,23 @@ def annoter(niveau: str, intitule: str, message: str) -> None:
 
 
 class Resume:
-    """Ce qui a été fabriqué et vérifié, ligne par ligne : affiché, puis écrit dans ``resume.md``."""
+    """Ce qui a été fabriqué et vérifié, ligne par ligne : affiché, puis écrit dans ``resume.md``.
+
+    Les ``details`` (plus gros fichiers, avertissements des outils) ne vont pas dans ``resume.md`` : ils
+    servent à qui met au point la fabrication.
+    """
 
     def __init__(self) -> None:
         self.lignes: list[str] = []
+        self.details: list[str] = []
 
     def noter(self, ligne: str) -> None:
         self.lignes.append(ligne)
         dire(f"  {ligne}")
+
+    def detailler(self, ligne: str) -> None:
+        self.details.append(ligne)
+        dire(f"    {ligne}")
 
     def texte(self) -> str:
         return "\n".join(f"- {ligne}" for ligne in self.lignes) + "\n"
@@ -195,9 +204,32 @@ def fabriquer_le_dossier(resume: Resume) -> None:
     total = sum(fichier.stat().st_size for fichier in contenu)
     resume.noter(f"Dossier de l'application : {len(contenu)} fichiers, {taille(total)} "
                  f"(Python {sys.version.split()[0]})")
-    dire("  Les plus gros fichiers :")
-    for fichier in sorted(contenu, key=lambda element: -element.stat().st_size)[:12]:
-        dire(f"    {taille(fichier.stat().st_size):>9}  {fichier.relative_to(DOSSIER_DE_L_APPLICATION)}")
+    resume.detailler("Les plus gros fichiers : " + " ; ".join(
+        f"{fichier.relative_to(DOSSIER_DE_L_APPLICATION).as_posix()} {taille(fichier.stat().st_size)}"
+        for fichier in sorted(contenu, key=lambda element: -element.stat().st_size)[:16]))
+    par_dossier: dict[str, list[int]] = {}
+    for fichier in contenu:
+        dossier = fichier.parent.relative_to(DOSSIER_DE_L_APPLICATION).as_posix()
+        par_dossier.setdefault(dossier, []).append(fichier.stat().st_size)
+    resume.detailler("Dossiers : " + " ; ".join(f"{dossier} ({len(tailles)} fichiers, {taille(sum(tailles))})"
+                                                for dossier, tailles in sorted(par_dossier.items())))
+    extensions = DOSSIER_DE_L_APPLICATION / "_internal" / "PySide6" / "plugins"
+    if extensions.is_dir():
+        resume.detailler("Extensions de Qt : " + " ".join(
+            fichier.relative_to(extensions).as_posix() for fichier in fichiers_de(extensions)))
+    avertissements(resume, "2-pyinstaller", "WARNING")
+
+
+def avertissements(resume: Resume, etape: str, marque: str, nombre: int = 12) -> None:
+    """Garde, dans les détails, les avertissements qu'un outil a écrits dans son journal."""
+    journal = JOURNAUX / f"{etape}.txt"
+    if not journal.is_file():
+        return
+    lignes = [ligne.strip() for ligne in journal.read_text(encoding="utf-8", errors="replace").splitlines()
+              if marque in ligne]
+    if lignes:
+        resume.detailler(f"Avertissements de {etape} ({len(lignes)}) : " + " | ".join(
+            ligne[:260] for ligne in lignes[:nombre]))
 
 
 def bibliotheques_absentes(dossier: pathlib.Path, systeme: pathlib.Path) -> dict[str, list[str]]:
@@ -347,6 +379,11 @@ def fabriquer_l_installeur(wix: pathlib.Path, version: str, sortie: pathlib.Path
         raise Echec(f"5-light-{nom}", f"WiX n'a pas produit {sortie.name}.")
 
 
+def avertissements_de_wix(resume: Resume, nom: str) -> None:
+    for etape in (f"5-candle-{nom}", f"5-light-{nom}"):
+        avertissements(resume, etape, "warning")
+
+
 # ---------------------------------------------------------------------- essai de l'installation
 def dossier_du_bureau() -> pathlib.Path:
     import ctypes
@@ -370,39 +407,109 @@ def emplacements() -> dict[str, pathlib.Path]:
     }
 
 
-def inscriptions() -> list[dict[str, str]]:
-    """Les lignes « Traducteur juridique » de la liste des applications installées de l'utilisateur."""
+def code_de_mise_a_jour() -> str:
+    """L'identifiant (UpgradeCode) par lequel Windows Installer reconnaît toutes les versions de l'application."""
+    from xml.etree import ElementTree
+
+    produit = ElementTree.parse(ICI / "traducteur.wxs").getroot().find(f"{{{liste_des_fichiers.ESPACE_WIX}}}Product")
+    return produit.get("UpgradeCode")
+
+
+def produits_installes() -> list[dict[str, str]]:
+    """Les versions de l'application que Windows Installer connaît sur cet ordinateur, pour cet utilisateur."""
+    import ctypes
+
+    msi = ctypes.WinDLL("msi")
+
+    def propriete(code: str, nom: str) -> str:
+        longueur = ctypes.c_ulong(1024)
+        valeur = ctypes.create_unicode_buffer(longueur.value)
+        resultat = msi.MsiGetProductInfoW(ctypes.c_wchar_p(code), ctypes.c_wchar_p(nom), valeur, ctypes.byref(longueur))
+        return valeur.value if resultat == 0 else ""
+
+    produits = []
+    code = ctypes.create_unicode_buffer(39)
+    rang = 0
+    while msi.MsiEnumRelatedProductsW(ctypes.c_wchar_p(code_de_mise_a_jour()), 0, rang, code) == 0:
+        produits.append({
+            "code": code.value,
+            "nom": propriete(code.value, "InstalledProductName"),
+            "version": propriete(code.value, "VersionString"),
+            # « 0 » : installé pour l'utilisateur ; « 1 » : pour tout l'ordinateur.
+            "pour": {"0": "l'utilisateur", "1": "tout l'ordinateur"}.get(propriete(code.value, "AssignmentType"), "?"),
+        })
+        rang += 1
+    return produits
+
+
+def lignes_de_desinstallation() -> list[str]:
+    """Où le registre de Windows range la ligne « Traducteur juridique » des applications installées."""
     import winreg
 
+    def sous_cles(cle) -> list[str]:
+        return [winreg.EnumKey(cle, rang) for rang in range(winreg.QueryInfoKey(cle)[0])]
+
+    def ligne(racine, chemin: str, vue: int) -> str | None:
+        """La version inscrite dans cette clé, si elle porte le nom de l'application."""
+        try:
+            with winreg.OpenKey(racine, chemin, 0, winreg.KEY_READ | vue) as cle:
+                if str(winreg.QueryValueEx(cle, "DisplayName")[0]) == NOM_APPLICATION:
+                    return str(winreg.QueryValueEx(cle, "DisplayVersion")[0])
+        except OSError:
+            pass
+        return None
+
     trouvees = []
+    # Les trois listes où un programme de désinstallation s'inscrit d'habitude.
+    desinstallation = r"Software\Microsoft\Windows\CurrentVersion\Uninstall"
+    for nom, racine, vue in (("HKEY_CURRENT_USER", winreg.HKEY_CURRENT_USER, 0),
+                             ("HKEY_LOCAL_MACHINE", winreg.HKEY_LOCAL_MACHINE, winreg.KEY_WOW64_64KEY),
+                             ("HKEY_LOCAL_MACHINE (32 bits)", winreg.HKEY_LOCAL_MACHINE, winreg.KEY_WOW64_32KEY)):
+        try:
+            with winreg.OpenKey(racine, desinstallation, 0, winreg.KEY_READ | vue) as liste:
+                produits = sous_cles(liste)
+        except OSError:
+            continue
+        for produit in produits:
+            version = ligne(racine, f"{desinstallation}\\{produit}", vue)
+            if version is not None:
+                trouvees.append(f"{nom}\\{desinstallation}\\{produit} (version {version})")
+    # La fiche que Windows Installer tient lui-même, par utilisateur.
+    fiches = r"SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData"
+    vue = winreg.KEY_WOW64_64KEY
     try:
-        liste = winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Microsoft\Windows\CurrentVersion\Uninstall")
+        with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, fiches, 0, winreg.KEY_READ | vue) as liste:
+            utilisateurs = sous_cles(liste)
     except OSError:
-        return trouvees
-    with liste:
-        for rang in range(winreg.QueryInfoKey(liste)[0]):
-            nom = winreg.EnumKey(liste, rang)
-            with winreg.OpenKey(liste, nom) as cle:
-                valeurs = {}
-                for champ in ("DisplayName", "DisplayVersion", "Publisher", "InstallLocation"):
-                    try:
-                        valeurs[champ] = str(winreg.QueryValueEx(cle, champ)[0])
-                    except OSError:
-                        valeurs[champ] = ""
-                if valeurs["DisplayName"] == NOM_APPLICATION:
-                    trouvees.append({"code": nom, **valeurs})
+        utilisateurs = []
+    for utilisateur in utilisateurs:
+        try:
+            with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, f"{fiches}\\{utilisateur}\\Products", 0,
+                                winreg.KEY_READ | vue) as liste:
+                produits = sous_cles(liste)
+        except OSError:
+            continue
+        for produit in produits:
+            chemin = f"{fiches}\\{utilisateur}\\Products\\{produit}\\InstallProperties"
+            version = ligne(winreg.HKEY_LOCAL_MACHINE, chemin, vue)
+            if version is not None:
+                trouvees.append(f"HKEY_LOCAL_MACHINE\\{chemin} (version {version})")
     return trouvees
 
 
-def marques_dans_le_registre() -> bool:
-    """La clé où l'installeur inscrit ses marques de présence existe-t-elle ?"""
+def marques_dans_le_registre() -> list[str]:
+    """Ce qui reste, dans le registre de l'utilisateur, des marques de présence de l'installeur."""
     import winreg
 
     try:
-        winreg.CloseKey(winreg.OpenKey(winreg.HKEY_CURRENT_USER, liste_des_fichiers.CLE_DU_REGISTRE))
+        cle = winreg.OpenKey(winreg.HKEY_CURRENT_USER, liste_des_fichiers.CLE_DU_REGISTRE)
     except OSError:
-        return False
-    return True
+        return []
+    with cle:
+        sous_cles, valeurs, _ = winreg.QueryInfoKey(cle)
+        noms = [winreg.EnumValue(cle, rang)[0] for rang in range(valeurs)]
+    return [f"HKEY_CURRENT_USER\\{liste_des_fichiers.CLE_DU_REGISTRE} : {valeurs} valeur(s), {sous_cles} sous-clé(s)"
+            + (f" ({', '.join(noms[:5])}…)" if noms else " (clé vide)")]
 
 
 def cible_du_raccourci(raccourci: pathlib.Path) -> str:
@@ -425,73 +532,93 @@ def windows_installer(etape: str, action: str, installeur: pathlib.Path) -> None
         raise Echec(etape, f"Windows Installer : {echec}", fin_de("\n".join(lignes), 40)) from echec
 
 
-def exiger_l_installation(etape: str, version: str, nombre_de_fichiers: int) -> dict[str, pathlib.Path]:
+def defauts_de_l_installation(version: str, nombre_de_fichiers: int) -> list[str]:
+    """Ce qui manque ou ne convient pas après une installation ; une liste vide si tout est en place."""
+    defauts = []
     lieux = emplacements()
-    manquants = [nom for nom, chemin in lieux.items() if not chemin.exists()]
-    if manquants:
-        raise Echec(etape, "Après l'installation, il manque : " + ", ".join(manquants) + ".",
-                    "\n".join(f"{nom} : {chemin}" for nom, chemin in lieux.items()))
-    installes = len(fichiers_de(lieux["dossier"]))
-    if installes != nombre_de_fichiers:
-        raise Echec(etape, f"{installes} fichiers installés au lieu de {nombre_de_fichiers}.")
+    for nom, chemin in lieux.items():
+        if not chemin.exists():
+            defauts.append(f"il manque le {nom} : {chemin}")
+    if lieux["dossier"].exists():
+        installes = len(fichiers_de(lieux["dossier"]))
+        if installes != nombre_de_fichiers:
+            defauts.append(f"{installes} fichiers installés au lieu de {nombre_de_fichiers}")
     for nom in ("raccourci du menu Démarrer", "raccourci du Bureau"):
-        cible = cible_du_raccourci(lieux[nom])
-        if pathlib.Path(cible) != lieux["programme"]:
-            raise Echec(etape, f"Le {nom} n'ouvre pas le programme installé.",
-                        f"cible : {cible!r}\nattendu : {lieux['programme']}")
-    lignes = inscriptions()
-    if len(lignes) != 1 or lignes[0]["DisplayVersion"] != version:
-        raise Echec(etape, f"La liste des applications installées devrait contenir une seule ligne "
-                           f"« {NOM_APPLICATION} », en version {version}.", json.dumps(lignes, ensure_ascii=False))
-    return lieux
+        if lieux[nom].exists():
+            cible = cible_du_raccourci(lieux[nom])
+            if pathlib.Path(cible) != lieux["programme"]:
+                defauts.append(f"le {nom} ouvre {cible!r} au lieu de {lieux['programme']}")
+    produits = produits_installes()
+    if [(produit["nom"], produit["version"], produit["pour"]) for produit in produits] != [
+            (NOM_APPLICATION, version, "l'utilisateur")]:
+        defauts.append(f"Windows Installer devrait connaître une seule installation, « {NOM_APPLICATION} » {version}, "
+                       f"faite pour l'utilisateur ; il connaît : {json.dumps(produits, ensure_ascii=False)}")
+    if not lignes_de_desinstallation():
+        defauts.append("le registre de Windows n'a aucune ligne au nom de l'application")
+    return defauts
 
 
-def exiger_la_desinstallation(etape: str) -> None:
+def restes_de_l_installation() -> list[str]:
+    """Ce qu'une désinstallation a laissé sur l'ordinateur ; une liste vide si tout est retiré."""
     restes = [f"{nom} : {chemin}" for nom, chemin in emplacements().items() if chemin.exists()]
-    restes += [f"ligne de la liste des applications installées : {ligne}" for ligne in inscriptions()]
-    if marques_dans_le_registre():
-        restes.append(f"clé du registre : {liste_des_fichiers.CLE_DU_REGISTRE}")
-    if restes:
-        raise Echec(etape, "La désinstallation a laissé quelque chose sur l'ordinateur.", "\n".join(restes))
+    restes += [f"installation connue de Windows Installer : {json.dumps(produit, ensure_ascii=False)}"
+               for produit in produits_installes()]
+    restes += [f"ligne de désinstallation : {ligne}" for ligne in lignes_de_desinstallation()]
+    restes += marques_dans_le_registre()
+    return restes
 
 
 def essayer_l_installation(wix: pathlib.Path, installeur: pathlib.Path, resume: Resume) -> None:
     titre("6. Essai de l'installeur sur cet ordinateur")
     nombre_de_fichiers = len(fichiers_de(DOSSIER_DE_L_APPLICATION))
-    deja = [str(chemin) for chemin in emplacements().values() if chemin.exists()]
-    deja += [str(ligne) for ligne in inscriptions()]
+    deja = restes_de_l_installation()
     if deja:
         raise Echec("6-essai", f"{NOM_APPLICATION} est déjà sur cet ordinateur : l'essai le désinstallerait. "
                                "Désinstallez-le d'abord, ou lancez le script sans --essayer-l-installation.",
                     "\n".join(deja))
+    #: Tout ce qui ne convient pas est noté, et l'essai continue : un seul passage dit tout ce qu'il y a à corriger.
+    defauts: list[str] = []
+
+    def noter_les_defauts(moment: str, trouves: list[str]) -> bool:
+        for defaut in trouves:
+            dire(f"    DÉFAUT — {moment} : {defaut}")
+        defauts.extend(f"{moment} : {defaut}" for defaut in trouves)
+        return not trouves
 
     dire("  a) Première installation")
     windows_installer("6a-installation", "/i", installeur)
-    lieux = exiger_l_installation("6a-installation", __version__, nombre_de_fichiers)
-    resume.noter(f"Installation sans droits d'administrateur : {nombre_de_fichiers} fichiers dans "
-                 f"« {lieux['dossier']} », une icône sur le Bureau et une dans le menu Démarrer (elles ouvrent le "
-                 f"programme installé), une ligne « {NOM_APPLICATION} {__version__} » dans les applications installées")
+    lieux = emplacements()
+    if noter_les_defauts("après l'installation", defauts_de_l_installation(__version__, nombre_de_fichiers)):
+        resume.noter(f"Installation sans droits d'administrateur : {nombre_de_fichiers} fichiers dans "
+                     f"« {lieux['dossier']} », une icône sur le Bureau et une dans le menu Démarrer (elles ouvrent "
+                     f"le programme installé), « {NOM_APPLICATION} {__version__} » inscrit dans les applications "
+                     f"installées de l'utilisateur ({' ; '.join(lignes_de_desinstallation())})")
     controler(lieux["programme"], "installe", resume, "Application installée")
 
     dire("  b) Désinstallation")
     windows_installer("6b-desinstallation", "/x", installeur)
-    exiger_la_desinstallation("6b-desinstallation")
-    resume.noter("Désinstallation : le dossier, les deux icônes, la ligne des applications installées et les "
-                 "marques du registre sont retirés")
+    if noter_les_defauts("après la désinstallation", restes_de_l_installation()):
+        resume.noter("Désinstallation : le dossier, les deux icônes, l'inscription dans les applications "
+                     "installées et les marques du registre sont retirés")
 
     dire(f"  c) Remplacement d'une ancienne version ({ANCIENNE_VERSION})")
     ancien = TRAVAIL / "essai" / f"ancienne-version-{ANCIENNE_VERSION}.msi"
     ancien.parent.mkdir(parents=True, exist_ok=True)
     fabriquer_l_installeur(wix, ANCIENNE_VERSION, ancien, "none", "ancienne-version")
     windows_installer("6c-ancienne-version", "/i", ancien)
-    exiger_l_installation("6c-ancienne-version", ANCIENNE_VERSION, nombre_de_fichiers)
+    noter_les_defauts("après l'installation de l'ancienne version",
+                      defauts_de_l_installation(ANCIENNE_VERSION, nombre_de_fichiers))
     windows_installer("6c-mise-a-jour", "/i", installeur)
-    lieux = exiger_l_installation("6c-mise-a-jour", __version__, nombre_de_fichiers)
+    a_jour = noter_les_defauts("après la mise à jour", defauts_de_l_installation(__version__, nombre_de_fichiers))
     controler(lieux["programme"], "mis-a-jour", resume, "Après une mise à jour")
-    resume.noter(f"Mise à jour : installé par-dessus une version {ANCIENNE_VERSION}, l'installeur la remplace "
-                 "(une seule ligne dans les applications installées)")
+    if a_jour:
+        resume.noter(f"Mise à jour : installé par-dessus une version {ANCIENNE_VERSION}, l'installeur la remplace "
+                     "(Windows Installer ne connaît plus qu'une installation)")
     windows_installer("6c-desinstallation", "/x", installeur)
-    exiger_la_desinstallation("6c-desinstallation")
+    noter_les_defauts("après la dernière désinstallation", restes_de_l_installation())
+
+    if defauts:
+        raise Echec("6-essai", f"L'essai de l'installeur a relevé {len(defauts)} défaut(s).", "\n".join(defauts))
 
 
 # ---------------------------------------------------------------------- programme principal
@@ -521,6 +648,7 @@ def construire(essai: bool) -> pathlib.Path:
         wix = trouver_wix()
         dire(f"  WiX : {wix}")
         fabriquer_l_installeur(wix, __version__, installeur, "high", "installeur")
+        avertissements_de_wix(resume, "installeur")
         resume.noter(f"Installeur : {installeur.name}, {taille(installeur.stat().st_size)}, "
                      f"SHA-256 {empreinte(installeur)}")
 
@@ -530,7 +658,10 @@ def construire(essai: bool) -> pathlib.Path:
             resume.noter("Installation non essayée (option --essayer-l-installation absente)")
     finally:
         resume.ecrire()
-    annoter("notice", f"Installeur de {NOM_APPLICATION} {__version__}", resume.texte())
+        if resume.lignes:
+            annoter("notice", f"Installeur de {NOM_APPLICATION} {__version__}", resume.texte())
+        if resume.details:
+            annoter("notice", "Détails de la fabrication", "\n".join(resume.details))
     titre(f"Terminé : {installeur}")
     return installeur
 
