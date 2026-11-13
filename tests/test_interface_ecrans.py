@@ -5,7 +5,7 @@
 * « Paramètres » règle le glossaire, l'affichage et l'adresse du service informatique.
 * Le « Centre d'aide » remplace le menu « Aide » : il prépare un message pour le service informatique.
 * Les étapes de l'enchaînement s'allument l'une après l'autre quand un résultat s'affiche.
-* L'écran de démarrage montre le logo entre deux rangées de tirets animés, sur un fond uni, et rien d'autre.
+* L'écran de démarrage montre le logo entre deux rangées de tirets animés, et rien d'autre : son fond est transparent.
 """
 
 import pytest
@@ -513,6 +513,8 @@ def test_l_ecran_de_demarrage_montre_le_logo_entre_deux_rangees_de_tirets(applic
     assert ecran.windowFlags() & Qt.WindowType.NoDropShadowWindowHint
     # Le logo est au milieu de la fenêtre, en hauteur comme en largeur.
     assert ecran.height() / 2 == EcranDemarrage.MILIEU
+    # La fenêtre est invisible autour du logo et des tirets : elle ne dépasse le logo que d'une marge.
+    assert 0 < ecran.height() - EcranDemarrage.COTE_DU_LOGO <= 40
     tirets = ecran.tirets(0.0)
     assert len(tirets) == 2 * EcranDemarrage.TIRETS
     milieu = ecran.width() / 2
@@ -555,55 +557,65 @@ def test_les_tirets_bougent_et_changent_de_couleur(application):
     ecran.deleteLater()
 
 
-def test_l_ecran_de_demarrage_est_plat_le_logo_et_les_tirets_sur_un_fond_uni(application):
+def test_le_fond_de_l_ecran_de_demarrage_est_transparent(application):
     ecran = EcranDemarrage()
+    # La transparence est demandée au système. Sous Windows, elle exige une fenêtre sans bordure.
+    assert ecran.testAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+    assert ecran.windowFlags() & Qt.WindowType.FramelessWindowHint
     ecran.show()
     application.processEvents()
+    # La fenêtre demandée au système a un canal de transparence, et l'application n'y peint pas de fond.
+    assert ecran.windowHandle().format().hasAlpha()
+    assert not ecran.autoFillBackground()
     image = ecran.grab().toImage()
+    assert image.hasAlphaChannel()
     echelle = image.devicePixelRatio()
-    fond, carre = QColor(EcranDemarrage.FOND), QColor(EcranDemarrage.FOND_DU_LOGO)
+    carre = QColor(EcranDemarrage.FOND_DU_LOGO)
     milieu, hauteur, demi_logo = ecran.width() // 2, EcranDemarrage.MILIEU, EcranDemarrage.COTE_DU_LOGO // 2
 
     def couleur(x: float, y: float) -> QColor:
-        return QColor(image.pixel(int(x * echelle), int(y * echelle)))
+        return image.pixelColor(int(x * echelle), int(y * echelle))
 
-    def couleurs(gauche: float, haut: float, droite: float, bas: float) -> set[str]:
-        """Toutes les couleurs d'un rectangle de la fenêtre."""
+    def opacites(gauche: float, haut: float, droite: float, bas: float) -> set[int]:
+        """Les opacités des points d'un rectangle de la fenêtre : 0 = transparent, 255 = opaque."""
         colonnes = range(int(gauche * echelle), int(droite * echelle))
         lignes = range(int(haut * echelle), int(bas * echelle))
-        return {QColor(valeur).name() for valeur in {image.pixel(x, y) for x in colonnes for y in lignes}}
+        return {image.pixel(x, y) >> 24 for x in colonnes for y in lignes}
 
-    def entre_le_fond_et_le_carre(teinte: QColor) -> bool:
-        composantes = zip(fond.getRgb()[:3], carre.getRgb()[:3], teinte.getRgb()[:3], strict=True)
-        return all(min(a, b) <= valeur <= max(a, b) for a, b, valeur in composantes)
-
-    # Le fond est sombre et d'une seule couleur. Au-dessus et au-dessous du logo, la fenêtre ne montre rien
-    # d'autre : ni dégradé, ni lueur, ni bordure, ni nom de l'application, ni « Chargement… ».
-    assert fond.lightness() < 60
-    assert couleurs(0, 0, ecran.width(), hauteur - demi_logo - 1) == {fond.name()}
-    assert couleurs(0, hauteur + demi_logo + 1, ecran.width(), ecran.height()) == {fond.name()}
-    # À la hauteur du logo, le fond va jusqu'aux bords de la fenêtre.
-    assert couleurs(0, hauteur - demi_logo, 20, hauteur + demi_logo) == {fond.name()}
-    assert couleurs(ecran.width() - 20, hauteur - demi_logo, ecran.width(), hauteur + demi_logo) == {fond.name()}
-    # Entre le logo et les premiers tirets : le fond, sans lueur autour du logo.
+    # Au-dessus et au-dessous du logo, rien n'est peint : ni fond, ni bordure, ni texte.
+    assert opacites(0, 0, ecran.width(), hauteur - demi_logo - 1) == {0}
+    assert opacites(0, hauteur + demi_logo + 1, ecran.width(), ecran.height()) == {0}
+    # À la hauteur du logo : rien non plus aux bords de la fenêtre, ni entre le logo et les premiers tirets.
+    assert opacites(0, hauteur - demi_logo, 20, hauteur + demi_logo) == {0}
+    assert opacites(ecran.width() - 20, hauteur - demi_logo, ecran.width(), hauteur + demi_logo) == {0}
     for cote in (-1, 1):
         gauche, droite = sorted((milieu + cote * (demi_logo + 2), milieu + cote * (demi_logo + 18)))
-        assert couleurs(gauche, hauteur - demi_logo, droite, hauteur + demi_logo) == {fond.name()}
+        assert opacites(gauche, hauteur - demi_logo, droite, hauteur + demi_logo) == {0}
 
-    # Le logo : un carré d'une seule couleur, sans contour. Du fond au carré, aucune autre teinte.
-    assert carre != fond
-    assert couleurs(milieu - 16, hauteur - demi_logo + 2, milieu + 16, hauteur - 30) == {carre.name()}
+    # Le logo : un carré opaque, d'une seule couleur. Ses coins sont arrondis : au-delà, c'est transparent.
+    haut_du_carre = (milieu - 16, hauteur - demi_logo + 2, milieu + 16, hauteur - 30)
+    assert opacites(*haut_du_carre) == {255}
+    assert {couleur(x, y).name() for x in range(milieu - 16, milieu + 16) for y in (hauteur - demi_logo + 3,
+                                                                                    hauteur - 31)} == {carre.name()}
+    for cote_x in (-1, 1):
+        for cote_y in (-1, 1):
+            assert couleur(milieu + cote_x * (demi_logo - 2), hauteur + cote_y * (demi_logo - 2)).alpha() == 0
+    # Sans contour : du transparent au carré, les points déjà bien visibles ont la couleur du carré.
     for distance in range(demi_logo - 8, demi_logo + 8):
         for teinte in (couleur(milieu, hauteur - distance), couleur(milieu - distance, hauteur)):
-            assert entre_le_fond_et_le_carre(teinte), (distance, teinte.name())
+            if teinte.alpha() >= 128:
+                ecart = max(abs(teinte.red() - carre.red()), abs(teinte.green() - carre.green()),
+                            abs(teinte.blue() - carre.blue()))
+                assert ecart <= 4, (distance, teinte.name())
     # Au centre du carré, la balance dorée.
     dores = [couleur(x, y) for x in range(milieu - 30, milieu + 30, 2) for y in range(hauteur - 30, hauteur + 30, 2)]
     assert any(teinte.red() > 200 and teinte.green() > 150 and teinte.blue() < 140 for teinte in dores)
-    # De chaque côté du logo, des tirets de couleur vive.
+    # De chaque côté du logo, des tirets opaques, de couleur vive.
     for cote in (-1, 1):
         vifs = [couleur(milieu + cote * distance, y) for distance in range(80, 300, 2)
                 for y in range(hauteur - 14, hauteur + 14, 2)]
-        assert sum(1 for teinte in vifs if teinte.saturation() > 120 and teinte.lightness() > 100) > 40
+        assert sum(1 for teinte in vifs
+                   if teinte.alpha() == 255 and teinte.saturation() > 120 and teinte.lightness() > 100) > 40
     ecran.close()
     ecran.deleteLater()
 
