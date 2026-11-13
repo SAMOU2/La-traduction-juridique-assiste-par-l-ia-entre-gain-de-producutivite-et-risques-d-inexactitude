@@ -54,7 +54,7 @@ créance | Le créancier prouve l'existence de sa créance par un écrit. | يث
 exigibilité | L'exigibilité de la dette permet au créancier d'en réclamer le paiement. | يسمح استحقاق الدين للدائن بالمطالبة بالوفاء.
 échéance | Le débiteur doit payer à l'échéance. | يجب على المدين الوفاء عند أجل الاستحقاق.
 solidarité | La solidarité entre les débiteurs ne se présume pas. | التضامن بين المدينين لا يفترض.
-débiteur solidaire | Le créancier peut réclamer toute la dette à un seul débiteur solidaire. | يجوز للدائن أن يطالب بكل الدين أي مدين متضامن.
+débiteur solidaire | Le créancier peut réclamer toute la dette à un seul débiteur solidaire. | يجوز للدائن أن يطالب أي مدين متضامن بكل الدين.
 obligation de moyens | Le médecin est tenu d'une obligation de moyens. | يقع على الطبيب الالتزام ببذل عناية.
 obligation de résultat | Le transporteur est tenu d'une obligation de résultat. | يقع على الناقل الالتزام بتحقيق نتيجة.
 obligation naturelle | Le débiteur ne peut pas être contraint d'exécuter une obligation naturelle. | لا يجبر المدين على تنفيذ التزام طبيعي.
@@ -81,7 +81,7 @@ enrichissement sans cause | L'action fondée sur l'enrichissement sans cause ten
 paiement de l'indu | En cas de paiement de l'indu, celui qui a reçu la somme doit la restituer. | في حالة دفع غير المستحق، يجب على من تسلم المبلغ أن يرده.
 gestion d'affaires | La gestion d'affaires oblige le maître à rembourser les dépenses utiles. | تلزم الفضالة رب العمل برد النفقات النافعة.
 responsabilité civile | L'assurance couvre la responsabilité civile du conducteur. | يغطي التأمين المسؤولية المدنية للسائق.
-responsabilité contractuelle | La responsabilité contractuelle suppose l'inexécution d'une obligation née du contrat. | تقوم المسؤولية العقدية في حالة عدم التنفيذ لالتزام ناشئ عن العقد.
+responsabilité contractuelle | La responsabilité contractuelle suppose qu'une obligation née du contrat n'a pas été exécutée. | تقوم المسؤولية العقدية إذا لم ينفذ التزام ناشئ عن العقد.
 responsabilité délictuelle | La responsabilité délictuelle naît d'une faute qui entraîne un dommage pour autrui. | تنشأ المسؤولية التقصيرية عن خطأ يسبب ضررا للغير.
 lien de causalité | La victime doit prouver le lien de causalité entre la faute et le dommage. | على الضحية أن تثبت علاقة السببية بين الخطأ والضرر.
 abus de droit | L'exercice d'un droit dans le seul but de nuire à autrui est un abus de droit. | يعد استعمال الحق بقصد الإضرار بالغير فقط صورة من التعسف في استعمال الحق.
@@ -101,7 +101,7 @@ imprudence | L'homicide involontaire peut résulter d'une imprudence. | يمكن
 preuve | Le demandeur apporte la preuve de son droit. | يقدم المدعي الدليل على حقه.
 charge de la preuve | La charge de la preuve pèse sur le créancier. | يقع عبء الإثبات على الدائن.
 moyen de preuve | L'écrit est le moyen de preuve le plus sûr. | الكتابة هي وسيلة الإثبات الأكثر أمانا.
-force probante | L'acte authentique a une force probante supérieure à celle de l'acte sous seing privé. | للعقد الرسمي القوة الثبوتية الأعلى مقارنة بالعقد العرفي.
+force probante | La force probante de l'acte authentique est supérieure à celle de l'acte sous seing privé. | القوة الثبوتية للعقد الرسمي أعلى من قوة العقد العرفي.
 preuve par écrit | La preuve par écrit est exigée au-delà de cent mille dinars. | يشترط الإثبات بالكتابة إذا زادت القيمة على مائة ألف دينار.
 commencement de preuve par écrit | Une lettre signée du débiteur vaut commencement de preuve par écrit. | تعد الرسالة الموقعة من المدين مبدأ ثبوت بالكتابة.
 acte authentique | L'acte authentique fait foi jusqu'à inscription de faux. | يعتبر العقد الرسمي حجة إلى غاية الطعن بالتزوير.

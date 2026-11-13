@@ -16,7 +16,7 @@ double degré de juridiction | Le double degré de juridiction permet de faire r
 ressort | Le tribunal compétent est celui dans le ressort duquel se trouve l'immeuble. | المحكمة المختصة هي التي يقع العقار في دائرة اختصاصها.
 audience | L'audience est publique, sauf si la loi en dispose autrement. | الجلسة علنية ما لم ينص القانون على خلاف ذلك.
 huis clos | Le président ordonne le huis clos pour protéger la vie privée des parties. | يأمر الرئيس بعقد جلسة سرية حماية للحياة الخاصة للأطراف.
-justice | La justice est rendue au nom du peuple. | يصدر العدل أحكامه باسم الشعب.
+justice | Le ministère de la Justice gère les établissements pénitentiaires. | تسير وزارة العدل المؤسسات العقابية.
 magistrature | La magistrature est un corps unique qui comprend les juges et les membres du parquet. | القضاء سلك واحد يضم قضاة الحكم وقضاة النيابة.
 indépendance de la justice | Le président de la République est garant de l'indépendance de la justice. | رئيس الجمهورية ضامن استقلالية القضاء.
 impartialité | L'impartialité du juge est une garantie du procès équitable. | حياد القاضي ضمانة من ضمانات المحاكمة العادلة.

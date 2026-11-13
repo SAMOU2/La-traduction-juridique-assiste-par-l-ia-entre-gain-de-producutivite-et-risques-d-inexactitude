@@ -55,5 +55,5 @@ publicité foncière | La publicité foncière rend le droit opposable aux tiers
 certificat de possession | Le certificat de possession est délivré par le président de l'assemblée populaire communale. | يسلم شهادة الحيازة رئيس المجلس الشعبي البلدي.
 acte de notoriété | L'acte de notoriété constate une possession de plus de quinze ans. | يثبت عقد الشهرة حيازة دامت أكثر من خمس عشرة سنة.
 terre agricole | La terre agricole ne peut pas être détournée de sa vocation. | لا يجوز تحويل الأرض الفلاحية عن وجهتها.
-promotion immobilière | La promotion immobilière est exercée par un promoteur agréé. | يمارس الترقية العقارية مرق عقاري معتمد.
+promotion immobilière | La promotion immobilière est exercée par un promoteur agréé. | يمارس الترقية العقارية مرقٍ عقاري معتمد.
 vente sur plans | Dans la vente sur plans, le prix est payé au fur et à mesure de l'avancement des travaux. | في البيع على التصاميم، يدفع الثمن تبعا لتقدم الأشغال.

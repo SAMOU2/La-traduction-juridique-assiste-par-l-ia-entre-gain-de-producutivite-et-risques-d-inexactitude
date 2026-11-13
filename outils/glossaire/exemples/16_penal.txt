@@ -47,7 +47,7 @@ viol | Le viol est un crime puni de la réclusion. | الاغتصاب جناية
 harcèlement sexuel | Le harcèlement sexuel au travail est puni par la loi pénale. | يعاقب القانون الجزائي على التحرش الجنسي في العمل.
 traite des personnes | La traite des personnes est punie même lorsque la victime a consenti. | يعاقب على الاتجار بالأشخاص ولو رضيت الضحية.
 abandon de famille | Le père qui quitte le foyer sans motif grave pendant plus de deux mois commet un abandon de famille. | يرتكب الأب الذي يغادر مقر الأسرة دون سبب جدي لمدة تتجاوز شهرين جنحة ترك الأسرة.
-violation de domicile | L'entrée par ruse dans la maison d'autrui est une violation de domicile. | يشكل الدخول خلسة إلى مسكن الغير جريمة انتهاك حرمة المنزل.
+violation de domicile | L'entrée par ruse dans la maison d'autrui est une violation de domicile. | يشكل الدخول خدعة إلى منزل الغير جريمة انتهاك حرمة المنزل.
 diffamation | La diffamation porte atteinte à l'honneur de la personne visée. | يمس القذف بشرف الشخص المقصود.
 injure | L'injure publique est punie d'une amende. | يعاقب على السب العلني بغرامة.
 outrage | L'outrage à magistrat est puni d'emprisonnement. | يعاقب بالحبس على إهانة قاضٍ.

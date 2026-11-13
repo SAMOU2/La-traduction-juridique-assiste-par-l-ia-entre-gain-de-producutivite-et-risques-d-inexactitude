@@ -19,7 +19,7 @@ certificat de travail | L'employeur remet un certificat de travail à la fin de 
 syndicat | Le syndicat défend les droits de ses adhérents. | تدافع النقابة عن حقوق منخرطيها.
 délégué du personnel | Le délégué du personnel est élu pour trois ans. | ينتخب مندوب المستخدمين لمدة ثلاث سنوات.
 convention collective | La convention collective fixe les conditions de travail et de salaire. | تحدد الاتفاقية الجماعية شروط العمل والأجر.
-grève | La grève est précédée d'un préavis de huit jours au moins. | يسبق الإضراب إشعار مسبق مدته ثمانية أيام على الأقل.
+grève | La grève est précédée d'un préavis déposé auprès de l'employeur. | يسبق الإضراب إشعار مسبق يودع لدى المستخدم.
 droit de grève | Le droit de grève est reconnu par la constitution. | حق الإضراب معترف به في الدستور.
 conciliation | La conciliation est tentée avant toute action devant le tribunal. | تجرى محاولة المصالحة قبل رفع أي دعوى أمام المحكمة.
 bureau de conciliation | Le bureau de conciliation dresse un procès-verbal de non-conciliation. | يحرر مكتب المصالحة محضرا بعدم المصالحة.

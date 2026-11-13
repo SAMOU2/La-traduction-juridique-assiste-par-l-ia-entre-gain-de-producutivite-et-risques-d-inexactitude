@@ -62,7 +62,7 @@ taxe judiciaire | La taxe judiciaire est payée lorsque la requête est déposé
 voie de recours | Le jugement indique la voie de recours ouverte aux parties. | يبين الحكم طريق الطعن المتاح للأطراف.
 recours | Le recours est formé dans un délai d'un mois. | يرفع الطعن في أجل شهر واحد.
 appel | L'appel est formé dans le délai d'un mois à compter de la signification du jugement. | يرفع الاستئناف في أجل شهر واحد من تاريخ التبليغ الرسمي للحكم.
-appelant | L'appelant expose ses griefs contre le jugement. | يعرض المستأنف أوجه نقده للحكم.
+appelant | L'appelant expose ses griefs contre le jugement. | يعرض المستأنف مآخذه على الحكم.
 intimé | L'intimé conclut au rejet de l'appel. | يلتمس المستأنف عليه رفض الاستئناف.
 opposition | L'opposition est portée devant le tribunal qui a rendu le jugement par défaut. | ترفع المعارضة أمام المحكمة التي أصدرت الحكم الغيابي.
 pourvoi en cassation | Le pourvoi en cassation est formé devant la Cour suprême dans un délai de deux mois. | يرفع الطعن بالنقض أمام المحكمة العليا في أجل شهرين.
@@ -81,7 +81,7 @@ constat | L'huissier de justice dresse un constat des dégâts. | يحرر ال�
 procès-verbal | Le procès-verbal est signé par le juge et le greffier. | يوقع المحضر القاضي وأمين الضبط.
 exécution forcée | À défaut de paiement volontaire, le créancier recourt à l'exécution forcée. | إذا لم يتم الوفاء اختياريا، يلجأ الدائن إلى التنفيذ الجبري.
 titre exécutoire | L'exécution forcée suppose un titre exécutoire. | لا يجوز التنفيذ الجبري إلا بسند تنفيذي.
-commandement de payer | L'huissier de justice remet au débiteur un commandement de payer dans un délai de quinze jours. | يسلم المحضر القضائي إلى المدين التكليف بالوفاء في أجل خمسة عشر يوما.
+commandement de payer | Le commandement de payer donne au débiteur un délai de quinze jours pour exécuter le jugement. | يمنح التكليف بالوفاء المدين أجل خمسة عشر يوما لتنفيذ الحكم.
 force publique | L'huissier de justice requiert le concours de la force publique. | يطلب المحضر القضائي مساعدة القوة العمومية.
 contrainte par corps | La contrainte par corps garantit le paiement des amendes. | يضمن الإكراه البدني دفع الغرامات.
 saisie | La saisie rend les biens du débiteur indisponibles. | يجعل الحجز أموال المدين غير قابلة للتصرف فيها.
