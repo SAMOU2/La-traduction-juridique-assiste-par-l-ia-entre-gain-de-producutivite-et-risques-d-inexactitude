@@ -1,0 +1,31 @@
+# Phrases d'exemple du lot 11_contrats_speciaux.txt : terme | phrase française | phrase arabe
+chose | La chose vendue doit être déterminée ou déterminable. | يجب أن يكون الشيء المبيع معينا أو قابلا للتعيين.
+délivrance | La délivrance consiste à mettre la chose vendue à la portée de l'acheteur. | يتم التسليم بوضع الشيء المبيع في متناول المشتري.
+garantie | Le vendeur doit la garantie des défauts de la chose. | يلتزم البائع بضمان عيوب الشيء.
+garantie d'éviction | La garantie d'éviction protège l'acheteur contre le tiers qui revendique la chose. | يحمي ضمان الاستحقاق المشتري من الغير الذي يدعي ملكية الشيء.
+vice caché | L'acheteur dispose d'un an pour agir en garantie d'un vice caché. | للمشتري أجل سنة لرفع دعوى الضمان بسبب عيب خفي.
+vente à crédit | Dans la vente à crédit, le prix est payé en plusieurs versements. | في البيع بالتقسيط، يدفع الثمن على عدة أقساط.
+acompte | L'acheteur verse un acompte le jour de la commande. | يدفع المشتري تسبيقا يوم الطلبية.
+facture | Le vendeur remet une facture à l'acheteur. | يسلم البائع فاتورة للمشتري.
+échange | Dans l'échange, chaque partie transfère à l'autre la propriété d'une chose. | في المقايضة، ينقل كل طرف إلى الآخر ملكية شيء.
+sous-location | La sous-location est interdite sans autorisation écrite du bailleur. | يمنع الإيجار الفرعي دون ترخيص كتابي من المؤجر.
+rente viagère | Le vendeur reçoit une rente viagère à la place d'un prix payé en une fois. | يتقاضى البائع المرتب مدى الحياة بدلا من ثمن يدفع مرة واحدة.
+transaction | Par la transaction, chaque partie renonce à une part de ses prétentions pour mettre fin au litige. | بالصلح، يتنازل كل طرف عن جزء من ادعاءاته لوضع حد للنزاع.
+prêt | Le prêt est remboursé en soixante mensualités. | يسدد القرض على ستين قسطا شهريا.
+prêt à usage | Dans le prêt à usage, celui qui reçoit la chose doit la rendre après s'en être servi. | في العارية، يجب على من تسلم الشيء أن يرده بعد استعماله.
+prêt de consommation | Le prêt de consommation porte sur une somme d'argent ou sur du blé. | يرد القرض الاستهلاكي على مبلغ من النقود أو على القمح.
+prêteur | Le prêteur remet la somme à l'emprunteur. | يسلم المقرض المبلغ إلى المقترض.
+emprunteur | L'emprunteur rembourse le prêt à la date convenue. | يسدد المقترض القرض في التاريخ المتفق عليه.
+dépôt | Le dépôt oblige à garder la chose et à la restituer. | تلزم الوديعة بحفظ الشيء ورده.
+déposant | Le déposant peut reprendre la chose à tout moment. | يجوز للمودع أن يسترد الشيء في أي وقت.
+dépositaire | Le dépositaire veille sur la chose comme sur ses propres biens. | يحافظ المودع لديه على الشيء كما يحافظ على أمواله.
+mandat | Le mandat prend fin par le décès du mandant. | تنتهي الوكالة بوفاة الموكل.
+mandant | Le mandant rembourse les frais engagés par le mandataire. | يرد الموكل المصاريف التي أنفقها الوكيل.
+mandataire | Le mandataire informe le mandant de ce qu'il a fait en son nom. | يطلع الوكيل الموكل على ما قام به باسمه.
+procuration | La procuration est établie devant un notaire. | يحرر التوكيل أمام موثق.
+contrat d'entreprise | Le contrat d'entreprise fixe le prix et le délai des travaux. | يحدد عقد المقاولة ثمن الأشغال وأجلها.
+entrepreneur | L'entrepreneur répond de la solidité de la construction pendant dix ans. | يضمن المقاول متانة البناء لمدة عشر سنوات.
+maître de l'ouvrage | Le maître de l'ouvrage reçoit les travaux à la fin du chantier. | يتسلم رب العمل الأشغال عند نهاية الورشة.
+sous-traitance | La sous-traitance ne décharge pas l'entrepreneur de la responsabilité. | لا تعفي المقاولة الفرعية المقاول من المسؤولية.
+contrat de transport | Le contrat de transport oblige à remettre la marchandise au destinataire. | يلزم عقد النقل بتسليم البضاعة إلى المرسل إليه.
+transporteur | Le transporteur répond des dommages subis par la marchandise pendant le voyage. | يسأل الناقل عن الأضرار التي تلحق البضاعة أثناء الرحلة.

@@ -1,0 +1,59 @@
+# Phrases d'exemple du lot 12_biens.txt : terme | phrase française | phrase arabe
+biens | Les biens du débiteur répondent de ses dettes. | أموال المدين جميعها ضامنة لوفاء ديونه.
+bien meuble | Une voiture est un bien meuble. | السيارة منقول.
+bien immeuble | Un terrain est un bien immeuble. | قطعة الأرض عقار.
+chose fongible | Le blé est une chose fongible. | القمح شيء مثلي.
+fruits | Les fruits de la chose appartiennent à son propriétaire. | ثمار الشيء ملك لمالكه.
+droit réel | L'usufruit est un droit réel. | حق الانتفاع حق عيني.
+droit personnel | Le droit du prêteur au remboursement de la somme prêtée est un droit personnel. | حق المقرض في استرداد المبلغ المقترض حق شخصي.
+droit de propriété | Le droit de propriété est garanti par la constitution. | حق الملكية مضمون بموجب الدستور.
+propriétaire | Le propriétaire peut vendre sa maison ou la louer. | يجوز للمالك أن يبيع منزله أو يؤجره.
+titre de propriété | L'acheteur reçoit son titre de propriété après l'accomplissement de la publicité foncière. | يتسلم المشتري سند الملكية بعد إتمام الشهر العقاري.
+transfert de propriété | Dans la vente d'un immeuble, le transfert de propriété dépend des démarches accomplies à la conservation foncière. | في بيع العقار، يتوقف نقل الملكية على الإجراءات التي تتم في المحافظة العقارية.
+copropriété | Les charges de la copropriété sont réparties entre les propriétaires des appartements. | توزع أعباء الملكية المشتركة على ملاك الشقق.
+indivision | Nul n'est tenu de rester dans l'indivision. | لا يجبر أحد على البقاء في الشيوع.
+indivisaire | Chaque indivisaire peut demander le partage. | يجوز لأي من الشركاء في الشيوع أن يطلب القسمة.
+partage | Le partage met fin à l'indivision. | تنهي القسمة حالة الشيوع.
+usufruit | L'usufruit s'éteint au décès de l'usufruitier. | ينتهي حق الانتفاع بوفاة المنتفع.
+usufruitier | L'usufruitier perçoit les fruits de la chose. | يحصل المنتفع على ثمار الشيء.
+nue-propriété | Le père donne la nue-propriété de la maison à son fils et en conserve l'usufruit. | يهب الأب ابنه ملكية الرقبة في المنزل ويحتفظ بحق الانتفاع.
+droit d'usage | Le droit d'usage est limité aux besoins personnels de son titulaire. | يقتصر حق الاستعمال على الحاجات الشخصية لصاحبه.
+droit d'habitation | Le droit d'habitation ne peut pas être cédé à un tiers, sauf clause expresse. | لا يجوز التنازل للغير عن حق السكنى إلا بناء على بند صريح.
+servitude | La servitude suit l'immeuble en quelques mains qu'il passe. | يتبع حق الارتفاق العقار في أي يد انتقل إليها.
+fonds dominant | Le propriétaire du fonds dominant use de la servitude sans l'aggraver. | يستعمل مالك العقار المرتفق حق الارتفاق دون أن يزيد في عبئه.
+fonds servant | Le propriétaire du fonds servant ne doit rien faire qui gêne l'exercice de la servitude. | لا يجوز لمالك العقار المرتفق به أن يعمل شيئا يعرقل ممارسة حق الارتفاق.
+droit de passage | Le propriétaire d'un terrain enclavé a un droit de passage sur le terrain voisin. | لمالك الأرض المحصورة حق المرور على الأرض المجاورة.
+trouble de voisinage | Le bruit excessif est un trouble de voisinage. | الضجيج المفرط من مضار الجوار.
+possession | La possession doit être paisible, publique et continue. | يجب أن تكون الحيازة هادئة وعلنية ومستمرة.
+possesseur | Le possesseur de bonne foi conserve les fruits qu'il a perçus. | يكسب الحائز حسن النية ما يقبضه من ثمار.
+prescription acquisitive | La prescription acquisitive d'un immeuble est de quinze ans. | مدة التقادم المكسب في العقار خمس عشرة سنة.
+action possessoire | L'action possessoire est exercée dans l'année du trouble. | ترفع دعوى الحيازة خلال سنة من التعرض.
+revendication | Par la revendication, le propriétaire réclame sa chose à celui qui la détient. | بدعوى الاستحقاق، يطالب المالك بالشيء من يحوزه.
+accession | Par accession, le propriétaire du sol devient propriétaire des constructions. | بالالتصاق، يصبح مالك الأرض مالكا للبناءات.
+occupation | La propriété d'un meuble sans maître s'acquiert par occupation. | تكتسب ملكية المنقول الذي لا مالك له بالاستيلاء.
+préemption | L'indivisaire peut exercer la préemption lorsqu'une part est vendue à un tiers. | يجوز للشريك في الشيوع أن يمارس الشفعة إذا بيعت حصة للغير.
+waqf | Le waqf ne peut être ni vendu ni donné. | لا يجوز بيع الوقف ولا هبته.
+sûreté | La banque exige une sûreté avant d'accorder le prêt. | يشترط البنك تأمينا قبل منح القرض.
+sûreté réelle | L'hypothèque est une sûreté réelle. | الرهن الرسمي تأمين عيني.
+sûreté personnelle | Le cautionnement est une sûreté personnelle. | الكفالة تأمين شخصي.
+cautionnement | Le cautionnement doit être constaté par écrit. | لا تثبت الكفالة إلا بالكتابة.
+caution | La caution paie la dette si le débiteur ne la paie pas. | يوفي الكفيل الدين إذا لم يوف به المدين.
+hypothèque | L'hypothèque est constituée par acte authentique. | ينعقد الرهن الرسمي بعقد رسمي.
+inscription hypothécaire | L'inscription hypothécaire conserve son effet pendant dix ans. | يحتفظ قيد الرهن بأثره لمدة عشر سنوات.
+nantissement | Le nantissement suppose la remise de la chose au créancier. | يستلزم الرهن الحيازي تسليم الشيء إلى الدائن.
+privilège | Le privilège des salaires passe avant les autres créances. | يتقدم حق الامتياز المقرر للأجور على باقي الديون.
+droit de préférence | Le droit de préférence permet au créancier hypothécaire d'être payé avant les autres créanciers. | يسمح حق التقدم للدائن المرتهن باستيفاء حقه قبل باقي الدائنين.
+droit de suite | Le droit de suite permet de saisir l'immeuble même après sa vente. | يسمح حق التتبع بالتنفيذ على العقار حتى بعد بيعه.
+créancier hypothécaire | Le créancier hypothécaire fait vendre l'immeuble si la dette n'est pas payée. | يطلب الدائن المرتهن بيع العقار إذا لم يوف الدين.
+créancier chirographaire | Le créancier chirographaire est payé après les créanciers privilégiés. | يستوفي الدائن العادي حقه بعد الدائنين الممتازين.
+cadastre | Le cadastre fixe les limites des terrains de chaque commune. | يحدد مسح الأراضي حدود العقارات في كل بلدية.
+livre foncier | Le livre foncier indique la situation juridique de chaque immeuble. | يبين السجل العقاري الوضعية القانونية لكل عقار.
+livret foncier | Le livret foncier est remis au propriétaire de l'immeuble cadastré. | يسلم الدفتر العقاري لمالك العقار الممسوح.
+conservation foncière | Le contrat de vente est déposé à la conservation foncière. | يودع عقد البيع لدى المحافظة العقارية.
+conservateur foncier | Le conservateur foncier vérifie l'acte notarié avant de le publier. | يتحقق المحافظ العقاري من العقد التوثيقي قبل شهره.
+publicité foncière | La publicité foncière rend le droit opposable aux tiers. | يجعل الشهر العقاري الحق نافذا في مواجهة الغير.
+certificat de possession | Le certificat de possession est délivré par le président de l'assemblée populaire communale. | يسلم شهادة الحيازة رئيس المجلس الشعبي البلدي.
+acte de notoriété | L'acte de notoriété constate une possession de plus de quinze ans. | يثبت عقد الشهرة حيازة دامت أكثر من خمس عشرة سنة.
+terre agricole | La terre agricole ne peut pas être détournée de sa vocation. | لا يجوز تحويل الأرض الفلاحية عن وجهتها.
+promotion immobilière | La promotion immobilière est exercée par un promoteur agréé. | يمارس الترقية العقارية مرق عقاري معتمد.
+vente sur plans | Dans la vente sur plans, le prix est payé au fur et à mesure de l'avancement des travaux. | في البيع على التصاميم، يدفع الثمن تبعا لتقدم الأشغال.
