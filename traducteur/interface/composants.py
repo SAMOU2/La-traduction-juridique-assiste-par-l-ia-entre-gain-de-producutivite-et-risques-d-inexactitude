@@ -8,6 +8,7 @@ from html import escape
 from PySide6.QtCore import QPoint, QRect, QRectF, QSize, Qt
 from PySide6.QtGui import QColor, QFont, QFontMetricsF, QPainter, QPainterPath, QPen
 from PySide6.QtWidgets import (
+    QBoxLayout,
     QFrame,
     QLabel,
     QLayout,
@@ -15,6 +16,7 @@ from PySide6.QtWidgets import (
     QScrollArea,
     QScrollBar,
     QSizePolicy,
+    QSpacerItem,
     QWidget,
 )
 
@@ -167,6 +169,17 @@ def separateur(nom_objet: str = "separateur") -> QFrame:
     filet.setObjectName(nom_objet)
     filet.setFixedHeight(1)
     return filet
+
+
+def espace_souple(disposition: QBoxLayout, largeur: int, minimum: int) -> None:
+    """Ajoute à une ligne un espace de ``largeur`` pixels, réduit jusqu'à ``minimum`` si la place manque.
+
+    Dans une fenêtre étroite, ou avec une police plus large que prévu, la ligne se resserre
+    ainsi un peu au lieu de déborder.
+    """
+    disposition.addSpacing(minimum)
+    disposition.addSpacerItem(QSpacerItem(largeur - minimum, 0, QSizePolicy.Policy.Maximum,
+                                          QSizePolicy.Policy.Minimum))
 
 
 def repeindre(widget: QWidget) -> None:

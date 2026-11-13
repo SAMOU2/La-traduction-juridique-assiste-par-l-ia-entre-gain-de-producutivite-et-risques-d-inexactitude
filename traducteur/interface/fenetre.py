@@ -32,7 +32,7 @@ from .. import NOM_APPLICATION, __version__
 from ..glossaire import ErreurGlossaire, Glossaire
 from ..langues import AR, NOM_EN_FRANCAIS, NOM_NATIF, autre_langue
 from . import boites, icones, theme
-from .composants import EtiquetteCourte, compte, etiquette, icone_fixe, repeindre
+from .composants import EtiquetteCourte, compte, espace_souple, etiquette, icone_fixe, repeindre
 from .recherche import PageRecherche
 from .texte import PageTexte
 
@@ -343,10 +343,11 @@ class FenetrePrincipale(QMainWindow):
         self.bouton_importer = self.page_texte.bouton_importer
         self.bouton_exporter = self.page_texte.bouton_exporter
 
+        # Les espaces se resserrent un peu si la fenêtre est étroite et la police du système large.
         ligne.addWidget(self.selecteur)
-        ligne.addSpacing(16)
+        espace_souple(ligne, 16, 8)
         ligne.addWidget(self.sens)
-        ligne.addSpacing(13)
+        espace_souple(ligne, 13, 5)
         ligne.addWidget(self.outils, 1)
         return barre
 

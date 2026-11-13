@@ -67,6 +67,7 @@ from .composants import (
     bornes_des_colonnes,
     compte,
     direction,
+    espace_souple,
     etiquette,
     icone_fixe,
     infobulle,
@@ -1279,9 +1280,9 @@ class PageTexte(QWidget):
         self.bouton_traduire.clicked.connect(lambda: self.traduire())
         ligne.addWidget(self.aide_outils, 1)
         ligne.addWidget(self.bouton_importer)
-        ligne.addSpacing(12)
+        espace_souple(ligne, 12, 6)
         ligne.addWidget(self.bouton_exporter)
-        ligne.addSpacing(12)
+        espace_souple(ligne, 12, 6)
         ligne.addWidget(self.bouton_traduire)
 
     # ------------------------------------------------------------------ glossaire et sens

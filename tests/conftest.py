@@ -54,8 +54,13 @@ def glossaire_de_demarrage(monkeypatch):
 # ------------------------------------------------------------------ interface (tests sans écran)
 @pytest.fixture(scope="session")
 def application():
+    """L'application Qt, avec le style et les couleurs que « traducteur.application » lui donne."""
     widgets = pytest.importorskip("PySide6.QtWidgets")
-    return widgets.QApplication.instance() or widgets.QApplication([])
+    from traducteur.interface import theme
+
+    application = widgets.QApplication.instance() or widgets.QApplication([])
+    theme.appliquer(application)
+    return application
 
 
 @pytest.fixture
@@ -67,14 +72,19 @@ def reglages(tmp_path):
 
 @pytest.fixture
 def avertissements(monkeypatch):
-    """Remplace les boîtes de dialogue par une simple liste de messages : (titre, texte)."""
+    """Remplace les boîtes de message par une simple liste de messages : (titre, texte).
+
+    Une vraie boîte attendrait un clic sur « OK » : le test ne se terminerait pas.
+    """
     pytest.importorskip("PySide6")
-    from traducteur.interface.fenetre import FenetrePrincipale
-    from traducteur.interface.texte import PageTexte
+    from traducteur.interface import boites
 
     messages: list[tuple[str, str]] = []
-    monkeypatch.setattr(FenetrePrincipale, "_boite", lambda self, icone, titre, texte: messages.append((titre, texte)))
-    monkeypatch.setattr(PageTexte, "_avertir", lambda self, titre, texte: messages.append((titre, texte)))
+
+    def noter(parent, genre, titre, texte, **options) -> None:
+        messages.append((titre, texte))
+
+    monkeypatch.setattr(boites, "afficher", noter)
     return messages
 
 

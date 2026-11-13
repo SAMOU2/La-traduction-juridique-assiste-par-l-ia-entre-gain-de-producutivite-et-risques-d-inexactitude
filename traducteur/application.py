@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import sys
 
-from PySide6.QtCore import Qt
+from PySide6.QtCore import QLibraryInfo, QLocale, Qt, QTranslator
 from PySide6.QtWidgets import QApplication
 
 from . import NOM_APPLICATION, __version__
@@ -43,20 +43,20 @@ AVERTISSEMENT_LIAISON = (
 )
 
 
-def installer_les_textes_de_qt(application: QApplication) -> bool:
+def installer_les_textes_de_qt(application: QApplication) -> QTranslator | None:
     """Met en français les textes fournis par Qt lui-même.
 
     Il s'agit surtout du menu contextuel des zones de texte (« Annuler », « Copier »,
-    « Coller »…) et du nom des touches dans les raccourcis (« Maj »). Renvoie ``False`` si
-    l'installation de Qt ne contient pas ces textes : ils restent alors en anglais.
+    « Coller »…) et du nom des touches dans les raccourcis (« Maj »). Renvoie les textes
+    installés, ou ``None`` si l'installation de Qt ne les contient pas : ils restent alors
+    en anglais.
     """
-    from PySide6.QtCore import QLibraryInfo, QLocale, QTranslator
-
     textes = QTranslator(application)
     dossier = QLibraryInfo.path(QLibraryInfo.LibraryPath.TranslationsPath)
-    if not textes.load(QLocale(QLocale.Language.French), "qtbase", "_", dossier):
-        return False
-    return application.installTranslator(textes)
+    if textes.load(QLocale(QLocale.Language.French), "qtbase", "_", dossier) and application.installTranslator(textes):
+        return textes
+    textes.deleteLater()
+    return None
 
 
 def main(arguments: list[str] | None = None) -> int:
