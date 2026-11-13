@@ -26,9 +26,10 @@ La version 0.5 remplit le champ ④ **Contextualisation** pour tout le glossaire
 
 Le détail est dans [Le glossaire d'exemple](#le-glossaire-dexemple).
 
-La version 0.5.1 simplifie l'**écran de démarrage** : il ne montre plus que le logo et les
-tirets, sur un fond d'une seule couleur. Le nom de l'application, la mention « Chargement… »,
-le dégradé, la lueur et la bordure sont retirés.
+Les versions 0.5.1 et 0.5.2 simplifient l'**écran de démarrage** : il ne montre plus que le
+logo et les tirets, et son **fond est transparent**. Derrière eux, on voit le bureau ou la
+fenêtre qui se trouve là. Le nom de l'application, la mention « Chargement… », le dégradé, la
+lueur et la bordure sont retirés.
 
 Le reste de la présentation est celui de la version 0.4. Cette version comprenait la
 version 0.3, qui n'a pas été publiée à part. Elle avait apporté ceci :
@@ -55,7 +56,8 @@ La lecture du glossaire, la recherche d'un terme et la traduction d'un texte son
 version 0.2.
 
 **Écran de démarrage** — le logo, entre deux rangées de tirets qui ondulent et changent de
-couleur, sur un fond uni :
+couleur. Le fond est transparent : sur cette capture, on voit le fond de la page ; à l'écran,
+on voit le bureau ou la fenêtre qui se trouve derrière :
 
 ![Écran de démarrage](docs/apercu-demarrage.png)
 
@@ -126,7 +128,7 @@ python main.py
 Ou, dans VS Code : ouvrir `main.py`, puis cliquer sur ▶ (« Exécuter le fichier Python »).
 
 L'écran de démarrage s'affiche environ deux secondes, puis la fenêtre s'ouvre. Un clic sur
-l'écran de démarrage le ferme dès que la fenêtre est prête. Il se désactive dans « Paramètres ».
+le logo le ferme dès que la fenêtre est prête. Il se désactive dans « Paramètres ».
 
 Le glossaire fourni est chargé automatiquement. Si un autre glossaire a été choisi dans
 « Paramètres », c'est lui qui est repris. Pour ouvrir l'application avec un glossaire précis :
@@ -643,7 +645,15 @@ Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des 
   sous macOS. Depuis la version 0.5, ils n'ont été exécutés qu'avec Python 3.11 et PySide6 6.11.
   Les captures de cette page ont été produites sans écran. **Les versions 0.4 et 0.5 n'ont pas
   été essayées sur un écran réel** : l'écran de démarrage (fenêtre sans bordure et sans ombre,
-  animation), la barre latérale et l'allumage des étapes sont à contrôler sous Windows.
+  fond transparent, animation), la barre latérale et l'allumage des étapes sont à contrôler
+  sous Windows.
+- **Fond transparent de l'écran de démarrage.** C'est le système qui affiche la transparence.
+  Les tests vérifient que l'application ne peint aucun fond et qu'elle demande une fenêtre
+  transparente ; l'affichage lui-même n'a pas été essayé sur un écran réel. Là où le système ne
+  permet pas la transparence (par exemple sous Linux, sans gestionnaire de composition), le
+  fond devrait apparaître noir. Devant une fenêtre chargée, par exemple une page de texte, les
+  tirets se distinguent moins bien. Selon le système, un clic à côté du logo et des tirets
+  ferme l'écran de démarrage ou atteint la fenêtre située derrière.
 - **PySide6 6.12 avec Python 3.11.** Avec ces deux versions, l'application se ferme brutalement
   après quelques milliers d'opérations (« Fatal Python error: none_dealloc »). `requirements.txt`
   installe donc une version antérieure de PySide6 avec Python 3.10 et 3.11 (Python 3.10 n'a pas

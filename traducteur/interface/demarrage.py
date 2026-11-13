@@ -2,11 +2,16 @@
 
     - - - - - - - - - -  [ logo ]  - - - - - - - - - -
 
-L'écran est plat (« flat ») : il ne montre que le logo et les tirets, sur un fond d'une seule
-couleur. Il n'a ni texte, ni dégradé, ni lueur, ni bordure, ni ombre.
+L'écran est plat (« flat ») et son fond est transparent : il ne montre que le logo et les
+tirets, posés sur ce qui se trouve derrière la fenêtre (le bureau, une autre application). Il
+n'a ni fond, ni texte, ni bordure, ni ombre.
 
 Il s'affiche pendant l'ouverture de l'application (construction de la fenêtre, chargement du
-glossaire), puis laisse la place à la fenêtre principale. Un clic le ferme sans attendre.
+glossaire), puis laisse la place à la fenêtre principale. Un clic sur le logo le ferme sans
+attendre.
+
+La transparence est assurée par le système. Là où il ne la permet pas (par exemple sous Linux,
+sans gestionnaire de composition), le fond devrait apparaître noir.
 """
 
 from __future__ import annotations
@@ -33,12 +38,13 @@ def couleur_de_la_palette(position: float) -> QColor:
 
 
 class EcranDemarrage(QWidget):
-    """Fenêtre sans bordure et sans ombre affichée à l'ouverture de l'application."""
+    """Fenêtre sans bordure, sans ombre et sans fond, affichée à l'ouverture de l'application."""
 
     #: L'écran de démarrage a fini : la fenêtre principale peut s'afficher.
     termine = Signal()
 
-    LARGEUR, HAUTEUR = 680, 260
+    #: Taille de la fenêtre : la place du logo et des tirets, avec une marge. Le reste est invisible.
+    LARGEUR, HAUTEUR = 680, 120
     #: Nombre de tirets de chaque côté du logo.
     TIRETS = 10
     #: Durée minimale d'affichage, en millisecondes : le temps de voir l'animation.
@@ -47,12 +53,15 @@ class EcranDemarrage(QWidget):
     PERIODE_DE_L_ONDE, PERIODE_DES_COULEURS = 1.5, 2.6
     #: Hauteur du centre du logo (le milieu de la fenêtre), et taille du logo.
     MILIEU, COTE_DU_LOGO = HAUTEUR // 2, 88
-    #: Couleur du fond, la même partout, et couleur du carré du logo.
-    FOND, FOND_DU_LOGO = theme.RAIL, theme.RAIL_ACTIF
+    #: Couleur du carré du logo.
+    FOND_DU_LOGO = theme.RAIL_ACTIF
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent, Qt.WindowType.SplashScreen | Qt.WindowType.FramelessWindowHint
                          | Qt.WindowType.NoDropShadowWindowHint)
+        # Fond transparent : Qt ne peint rien derrière le logo et les tirets. Sous Windows, cet
+        # attribut n'a d'effet que sur une fenêtre sans bordure (« FramelessWindowHint », ci-dessus).
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         self.setFixedSize(self.LARGEUR, self.HAUTEUR)
         self.setWindowTitle(NOM_APPLICATION)
         self.setWindowIcon(icones.icone_application())
@@ -130,8 +139,7 @@ class EcranDemarrage(QWidget):
         instant = self._horloge.elapsed() / 1000.0
         peintre = QPainter(self)
         peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
-        # Le fond : une seule couleur, d'un bord à l'autre.
-        peintre.fillRect(self.rect(), QColor(self.FOND))
+        # Aucun fond n'est peint : la fenêtre est transparente partout ailleurs.
         peintre.setPen(Qt.PenStyle.NoPen)
 
         # Les deux rangées de tirets.
