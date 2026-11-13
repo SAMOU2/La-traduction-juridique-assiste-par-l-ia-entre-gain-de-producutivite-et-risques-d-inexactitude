@@ -97,7 +97,11 @@ def ouvrir(application: QApplication, chemin_glossaire: str | None = None, regla
 
 
 def main(arguments: list[str] | None = None) -> int:
-    """Ouvre l'application. Un chemin de glossaire CSV peut être passé en argument."""
+    """Ouvre l'application. Un chemin de glossaire CSV peut être passé en argument.
+
+    Avec ``--controle=<dossier>``, l'application se contrôle elle-même, écrit un rapport dans ce
+    dossier et se ferme : voir le module ``controle``.
+    """
     arguments = list(sys.argv if arguments is None else arguments)
     if sys.platform == "win32":
         # Icône propre à l'application dans la barre des tâches de Windows.
@@ -122,6 +126,12 @@ def main(arguments: list[str] | None = None) -> int:
 
     theme.appliquer(application)
     installer_les_textes_de_qt(application)
+
+    from . import controle
+
+    dossier_du_controle = controle.dossier_demande(arguments)
+    if dossier_du_controle is not None:
+        return controle.executer(application, dossier_du_controle)
     chemins = [argument for argument in application.arguments()[1:] if not argument.startswith("-")]
     # La fenêtre et l'écran de démarrage doivent rester référencés tant que l'application tourne.
     fenetre, ecran = ouvrir(application, chemins[0] if chemins else None)

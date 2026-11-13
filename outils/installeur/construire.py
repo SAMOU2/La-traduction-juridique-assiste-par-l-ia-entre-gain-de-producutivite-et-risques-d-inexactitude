@@ -1,0 +1,794 @@
+#!/usr/bin/env python3
+"""Fabrique l'installeur de l'application pour Windows (fichier .msi), puis le vérifie.
+
+Emploi, sous Windows, depuis le dossier du projet :
+
+    python -m pip install -r outils/installeur/requirements.txt
+    python outils/installeur/construire.py
+
+Résultat : ``build/installeur/Traducteur-juridique-<version>.msi``. L'installeur contient Python et
+Qt : l'ordinateur où il est installé n'a besoin de rien d'autre.
+
+Ce script ne fait pas partie de l'application. Il enchaîne ces étapes :
+
+1. l'icône de l'application, au format de Windows (``icone.py``) ;
+2. le dossier de l'application, avec Python et Qt (PyInstaller, recette ``traducteur.spec``) ;
+3. le contrôle de ce dossier : le programme est lancé, se contrôle lui-même et écrit un rapport
+   (``traducteur/controle.py``) ;
+4. la liste des fichiers à installer (``fichiers.py``) ;
+5. l'installeur (WiX Toolset 3, description ``traducteur.wxs``) ;
+6. l'analyse du dossier et de l'installeur par l'antivirus de Windows (Microsoft Defender), s'il est là.
+
+Avec ``--essayer-l-installation``, il essaie ensuite l'installeur sur cet ordinateur : installation,
+contrôle de l'application installée, désinstallation, puis remplacement d'une ancienne version. Cette
+option est faite pour une machine de fabrication (GitHub Actions) : elle refuse de démarrer si
+l'application est déjà installée, car elle la désinstallerait.
+
+WiX Toolset 3 doit être installé sur l'ordinateur : c'est le cas des machines Windows de GitHub.
+Ailleurs, il s'installe avec le fichier ``wix314.exe`` de la page indiquée par ``PAGE_DE_WIX``.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import pathlib
+import shutil
+import subprocess
+import sys
+import time
+
+ICI = pathlib.Path(__file__).resolve().parent
+RACINE = ICI.parents[1]
+sys.path.insert(0, str(RACINE))
+sys.path.insert(0, str(ICI))
+
+import fichiers as liste_des_fichiers  # noqa: E402
+
+from traducteur import NOM_APPLICATION, __version__  # noqa: E402
+
+TRAVAIL = RACINE / "build" / "installeur"
+JOURNAUX = TRAVAIL / "journaux"
+NOM_DU_PROGRAMME = "TraducteurJuridique"
+PROGRAMME = NOM_DU_PROGRAMME + ".exe"
+DOSSIER_DE_L_APPLICATION = TRAVAIL / "dist" / NOM_DU_PROGRAMME
+NOM_DE_L_INSTALLEUR = f"Traducteur-juridique-{__version__}.msi"
+GLOSSAIRE = pathlib.PurePath("_internal", "donnees", "glossaire_juridique.csv")
+#: Numéro de version de l'« ancienne version » fabriquée pour essayer une mise à jour.
+ANCIENNE_VERSION = "0.0.1"
+#: Clé du registre de l'utilisateur où l'application range ses réglages : l'installeur ne doit pas y toucher.
+CLE_DES_REGLAGES = rf"Software\TraducteurJuridique\{NOM_APPLICATION}"
+#: Nom du réglage que l'essai de l'installeur y écrit, pour vérifier qu'il est conservé.
+REGLAGE_TEMOIN = "essai_de_l_installeur"
+#: Page où télécharger WiX Toolset 3 quand il n'est pas sur l'ordinateur.
+PAGE_DE_WIX = "https://github.com/wixtoolset/wix3/releases"
+#: Durée maximale du contrôle du programme, en secondes (le contrôle lui-même s'arrête après 60 secondes).
+DELAI_DU_CONTROLE = 180
+#: Longueur maximale du chemin du dossier de travail. Windows limite un chemin à 260 caractères, et le
+#: dossier de l'application en ajoute une centaine (…\dist\TraducteurJuridique\_internal\PySide6\plugins\…).
+CHEMIN_MAXIMAL = 140
+#: Bibliothèques de Microsoft qui ne font pas partie de Windows : le dossier de l'application doit les contenir.
+A_FOURNIR = ("vcruntime", "msvcp", "concrt", "vcomp", "vccorlib", "vcamp", "msvcr", "mfc", "atl1", "ucrtbased")
+
+
+class Echec(Exception):
+    """Une étape a échoué : ``etape`` la nomme, ``details`` donne la fin de ce que l'outil a affiché."""
+
+    def __init__(self, etape: str, message: str, details: str = "") -> None:
+        super().__init__(message)
+        self.etape = etape
+        self.details = details
+
+
+# ---------------------------------------------------------------------- affichage
+def dire(texte: str = "") -> None:
+    print(texte, flush=True)
+
+
+def titre(texte: str) -> None:
+    dire()
+    dire(f"=== {texte}")
+
+
+def annoter(niveau: str, intitule: str, message: str) -> None:
+    """Sous GitHub Actions, affiche un message sur la page de la fabrication (« notice », « warning », « error »)."""
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    for caractere, code in (("%", "%25"), ("\r", "%0D"), ("\n", "%0A")):
+        intitule = intitule.replace(caractere, code)
+        message = message.replace(caractere, code)
+    intitule = intitule.replace(":", "%3A").replace(",", "%2C")
+    dire(f"::{niveau} title={intitule}::{message}")
+
+
+class Resume:
+    """Ce qui a été fabriqué et vérifié, ligne par ligne : affiché, puis écrit dans ``resume.md``.
+
+    Les ``details`` (plus gros fichiers, avertissements des outils) ne vont pas dans ``resume.md`` : ils
+    servent à qui met au point la fabrication.
+    """
+
+    def __init__(self) -> None:
+        self.lignes: list[str] = []
+        self.details: list[str] = []
+
+    def noter(self, ligne: str) -> None:
+        self.lignes.append(ligne)
+        dire(f"  {ligne}")
+
+    def detailler(self, ligne: str) -> None:
+        self.details.append(ligne)
+        dire(f"    {ligne}")
+
+    def texte(self) -> str:
+        return "\n".join(f"- {ligne}" for ligne in self.lignes) + "\n"
+
+    def ecrire(self) -> None:
+        (TRAVAIL / "resume.md").write_text(self.texte(), encoding="utf-8")
+        page = os.environ.get("GITHUB_STEP_SUMMARY")
+        if page:
+            with pathlib.Path(page).open("a", encoding="utf-8") as fichier:
+                fichier.write(f"### Installeur de {NOM_APPLICATION} {__version__}\n\n{self.texte()}\n")
+
+
+# ---------------------------------------------------------------------- outils
+def lancer(etape: str, commande: list, *, delai: int | None = None, codes_acceptes: tuple[int, ...] = (0,),
+           environnement: dict[str, str] | None = None) -> int:
+    """Lance une commande, garde ce qu'elle affiche dans ``journaux/<etape>.txt`` et vérifie son code de sortie."""
+    commande = [str(element) for element in commande]
+    JOURNAUX.mkdir(parents=True, exist_ok=True)
+    journal = JOURNAUX / f"{etape}.txt"
+    dire(f"  > {subprocess.list2cmdline(commande)}")
+    debut = time.monotonic()
+    # Les scripts Python lancés ici écrivent en UTF-8, quel que soit le réglage de la console.
+    environnement = {**(os.environ if environnement is None else environnement), "PYTHONIOENCODING": "utf-8:replace"}
+    with journal.open("w", encoding="utf-8", errors="replace") as sortie:
+        try:
+            resultat = subprocess.run(commande, stdout=sortie, stderr=subprocess.STDOUT, timeout=delai, cwd=RACINE,
+                                      env=environnement, check=False)
+            code = resultat.returncode
+        except subprocess.TimeoutExpired:
+            code = None
+        except OSError as erreur:
+            raise Echec(etape, f"La commande n'a pas pu être lancée : {erreur}") from erreur
+    affiche = journal.read_text(encoding="utf-8", errors="replace")
+    dire(f"    code de sortie : {code if code is not None else 'aucun (délai dépassé)'} ; "
+         f"durée : {time.monotonic() - debut:.0f} s ; journal : {journal.relative_to(RACINE)}")
+    if code is None:
+        raise Echec(etape, f"La commande ne s'est pas terminée en {delai} secondes.", fin_de(affiche))
+    if code not in codes_acceptes:
+        raise Echec(etape, f"La commande a échoué (code de sortie {code}).", fin_de(affiche))
+    return code
+
+
+def fin_de(texte: str, lignes: int = 60, caracteres: int = 6000) -> str:
+    """Les dernières lignes d'un texte : c'est là que les outils écrivent leurs erreurs."""
+    return "\n".join(texte.strip().splitlines()[-lignes:])[-caracteres:]
+
+
+def lire_un_journal_de_windows(chemin: pathlib.Path) -> str:
+    """Le texte d'un journal de Windows Installer (écrit en UTF-16)."""
+    if not chemin.is_file():
+        return ""
+    brut = chemin.read_bytes()
+    encodage = "utf-16" if brut[:2] in (b"\xff\xfe", b"\xfe\xff") else "utf-8"
+    return brut.decode(encodage, "replace")
+
+
+def taille(octets: int) -> str:
+    return f"{octets / 1_000_000:.1f} Mo".replace(".", ",")
+
+
+def empreinte(chemin: pathlib.Path) -> str:
+    calcul = hashlib.sha256()
+    with chemin.open("rb") as fichier:
+        for bloc in iter(lambda: fichier.read(1 << 20), b""):
+            calcul.update(bloc)
+    return calcul.hexdigest()
+
+
+def fichiers_de(dossier: pathlib.Path) -> list[pathlib.Path]:
+    return sorted(element for element in dossier.rglob("*") if element.is_file())
+
+
+# ---------------------------------------------------------------------- étapes 1 et 2 : icône, dossier de l'application
+def fabriquer_le_dossier(resume: Resume) -> None:
+    titre("1. Icône de l'application")
+    lancer("1-icone", [sys.executable, ICI / "icone.py", TRAVAIL / "traducteur.ico"])
+
+    titre("2. Dossier de l'application, avec Python et Qt (PyInstaller)")
+    lancer("2-pyinstaller", [sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean",
+                             "--distpath", TRAVAIL / "dist", "--workpath", TRAVAIL / "pyinstaller",
+                             ICI / "traducteur.spec"], delai=1500)
+    if not (DOSSIER_DE_L_APPLICATION / PROGRAMME).is_file():
+        raise Echec("2-pyinstaller", f"PyInstaller n'a pas produit {PROGRAMME}.")
+    if not (DOSSIER_DE_L_APPLICATION / GLOSSAIRE).is_file():
+        raise Echec("2-pyinstaller", f"Le glossaire fourni n'est pas dans le dossier de l'application ({GLOSSAIRE}).")
+    contenu = fichiers_de(DOSSIER_DE_L_APPLICATION)
+    total = sum(fichier.stat().st_size for fichier in contenu)
+    resume.noter(f"Dossier de l'application : {len(contenu)} fichiers, {taille(total)} "
+                 f"(Python {sys.version.split()[0]})")
+    resume.detailler("Les plus gros fichiers : " + " ; ".join(
+        f"{fichier.relative_to(DOSSIER_DE_L_APPLICATION).as_posix()} {taille(fichier.stat().st_size)}"
+        for fichier in sorted(contenu, key=lambda element: -element.stat().st_size)[:16]))
+    par_dossier: dict[str, list[int]] = {}
+    for fichier in contenu:
+        dossier = fichier.parent.relative_to(DOSSIER_DE_L_APPLICATION).as_posix()
+        par_dossier.setdefault(dossier, []).append(fichier.stat().st_size)
+    resume.detailler("Dossiers : " + " ; ".join(f"{dossier} ({len(tailles)} fichiers, {taille(sum(tailles))})"
+                                                for dossier, tailles in sorted(par_dossier.items())))
+    extensions = DOSSIER_DE_L_APPLICATION / "_internal" / "PySide6" / "plugins"
+    if extensions.is_dir():
+        resume.detailler("Extensions de Qt : " + " ".join(
+            fichier.relative_to(extensions).as_posix() for fichier in fichiers_de(extensions)))
+    avertissements(resume, "2-pyinstaller", "WARNING")
+    avertissements(resume, "2-pyinstaller", "Fichiers écartés")
+
+
+def avertissements(resume: Resume, etape: str, marque: str, nombre: int = 12) -> None:
+    """Garde, dans les détails, les avertissements qu'un outil a écrits dans son journal."""
+    journal = JOURNAUX / f"{etape}.txt"
+    if not journal.is_file():
+        return
+    lignes = [ligne.strip() for ligne in journal.read_text(encoding="utf-8", errors="replace").splitlines()
+              if marque in ligne]
+    if lignes:
+        resume.detailler(f"Avertissements de {etape} ({len(lignes)}) : " + " | ".join(
+            ligne[:260] for ligne in lignes[:nombre]))
+
+
+def bibliotheques_absentes(dossier: pathlib.Path, systeme: pathlib.Path) -> dict[str, list[str]]:
+    """Bibliothèques (fichiers .dll) demandées par un fichier du dossier, absentes du dossier et de Windows.
+
+    Renvoie, pour chaque bibliothèque absente, les fichiers qui la demandent. Une bibliothèque présente dans
+    ``systeme`` (le dossier System32 de Windows) est considérée comme fournie par Windows, sauf celles de
+    ``A_FOURNIR`` : un ordinateur ne les a que si un autre logiciel les a installées.
+    """
+    import pefile
+
+    contenu = [fichier for fichier in fichiers_de(dossier) if fichier.suffix.lower() in (".exe", ".dll", ".pyd")]
+    presentes = {fichier.name.lower() for fichier in contenu}
+    absentes: dict[str, list[str]] = {}
+    for fichier in contenu:
+        try:
+            binaire = pefile.PE(str(fichier), fast_load=True)
+        except pefile.PEFormatError:
+            continue  # ce n'est pas un programme de Windows, malgré son extension
+        try:
+            binaire.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_IMPORT"]])
+            demandees = [entree.dll.decode("ascii", "replace").lower()
+                         for entree in getattr(binaire, "DIRECTORY_ENTRY_IMPORT", [])]
+        finally:
+            binaire.close()
+        for nom in demandees:
+            if nom in presentes or nom.startswith(("api-ms-win-", "ext-ms-")):
+                continue
+            if not nom.startswith(A_FOURNIR) and (systeme / nom).is_file():
+                continue
+            absentes.setdefault(nom, []).append(fichier.relative_to(dossier).as_posix())
+    return absentes
+
+
+def verifier_les_bibliotheques(resume: Resume) -> None:
+    systeme = pathlib.Path(os.environ.get("SYSTEMROOT", r"C:\Windows")) / "System32"
+    try:
+        absentes = bibliotheques_absentes(DOSSIER_DE_L_APPLICATION, systeme)
+    except ImportError:
+        resume.noter("Bibliothèques : non vérifiées (le module pefile n'est pas installé)")
+        return
+    if not absentes:
+        resume.noter("Bibliothèques : chaque fichier .dll demandé est dans le dossier ou fait partie de Windows")
+        return
+    lignes = [f"{nom} (demandée par {', '.join(demandeurs[:3])}{'…' if len(demandeurs) > 3 else ''})"
+              for nom, demandeurs in sorted(absentes.items())]
+    # Sur un ordinateur qui n'a pas cette bibliothèque, le fichier qui la demande ne se chargerait pas.
+    raise Echec("3-bibliotheques", "Des fichiers du dossier de l'application demandent une bibliothèque qui n'est "
+                                   "ni dans ce dossier ni dans Windows.", "\n".join(lignes))
+
+
+# ---------------------------------------------------------------------- étape 3 : contrôle du programme
+def controler(programme: pathlib.Path, nom: str, resume: Resume, quoi: str) -> dict:
+    """Lance le programme avec ``--controle`` et renvoie son rapport ; échoue si le contrôle n'a pas réussi."""
+    dossier = TRAVAIL / "controles" / nom
+    shutil.rmtree(dossier, ignore_errors=True)
+    dossier.mkdir(parents=True)
+    etape = f"controle-{nom}"
+    environnement = {cle: valeur for cle, valeur in os.environ.items() if cle != "QT_QPA_PLATFORM"}
+    avant = fichiers_de(programme.parent)
+    try:
+        lancer(etape, [programme, f"--controle={dossier}"], delai=DELAI_DU_CONTROLE, codes_acceptes=(0, 1, 3),
+               environnement=environnement)
+    except Echec as echec:
+        subprocess.run(["taskkill", "/F", "/T", "/IM", programme.name], capture_output=True, check=False)
+        raise Echec(etape, f"{quoi} : {echec}", echec.details) from echec
+    # L'application ne doit rien écrire dans son propre dossier : installé, il n'est pas fait pour cela.
+    ajoutes = sorted(set(fichiers_de(programme.parent)) - set(avant))
+    if ajoutes:
+        raise Echec(etape, f"{quoi} : le programme a écrit dans son propre dossier.",
+                    "\n".join(str(fichier.relative_to(programme.parent)) for fichier in ajoutes[:20]))
+    erreur = dossier / "erreur.txt"
+    if erreur.is_file():
+        raise Echec(etape, f"{quoi} : le programme n'a pas pu démarrer.", fin_de(erreur.read_text(encoding="utf-8")))
+    fichier = dossier / "rapport.json"
+    if not fichier.is_file():
+        raise Echec(etape, f"{quoi} : le programme n'a pas écrit son rapport.",
+                    fin_de((JOURNAUX / f"{etape}.txt").read_text(encoding="utf-8", errors="replace")))
+    rapport = json.loads(fichier.read_text(encoding="utf-8"))
+    dire(json.dumps(rapport, ensure_ascii=False, indent=2))
+    if not rapport.get("reussi"):
+        raise Echec(etape, f"{quoi} : le contrôle a échoué.", "\n".join(rapport.get("erreurs", [])))
+    if not rapport["application"]["installee"] or rapport["application"]["version"] != __version__:
+        raise Echec(etape, f"{quoi} : le rapport ne vient pas du programme fabriqué.",
+                    json.dumps(rapport["application"], ensure_ascii=False))
+    attendu = (programme.parent / GLOSSAIRE).resolve()
+    if pathlib.Path(rapport["glossaire"]["fichier"]).resolve() != attendu:
+        raise Echec(etape, f"{quoi} : le glossaire chargé n'est pas celui du dossier de l'application.",
+                    f"chargé : {rapport['glossaire']['fichier']}\nattendu : {attendu}")
+    systeme = rapport["systeme"]
+    duree = str(rapport["duree_en_secondes"]).replace(".", ",")
+    if nom == "dossier":
+        resume.noter(
+            f"{quoi} : le programme s'ouvre et se contrôle lui-même en {duree} s — écran de démarrage, "
+            f"{rapport['glossaire']['entrees']} entrées du glossaire fourni, recherche d'un terme, traduction du "
+            f"texte d'exemple, document Word écrit et relu, cinq écrans affichés, menus de Qt en français "
+            f"({systeme['nom']}, Python {systeme['python']}, Qt {systeme['qt']}, écran {systeme['ecran']}, "
+            f"police {systeme['police']})")
+    else:
+        resume.noter(f"{quoi} : le même contrôle réussit, en {duree} s")
+    demarrage = rapport.get("demarrage", {})
+    if demarrage.get("coins"):
+        resume.detailler(f"Écran de démarrage ({nom}) : coins de l'image {' '.join(demarrage['coins'])} ; "
+                         f"carré du logo {demarrage.get('logo')}")
+    return rapport
+
+
+# ---------------------------------------------------------------------- étapes 4 et 5 : installeur
+def trouver_wix() -> pathlib.Path:
+    """Le dossier qui contient candle.exe et light.exe, les deux programmes de WiX Toolset 3."""
+    candidats = []
+    if os.environ.get("WIX"):
+        candidats.append(pathlib.Path(os.environ["WIX"]) / "bin")
+    # Sous Windows, le nom d'une variable d'environnement s'écrit indifféremment en majuscules ou en minuscules.
+    for racine in (os.environ.get("PROGRAMFILES(X86)"), os.environ.get("PROGRAMFILES")):
+        if racine:
+            candidats.extend(sorted(pathlib.Path(racine).glob("WiX Toolset v3*/bin"), reverse=True))
+    trouve = shutil.which("candle.exe")
+    if trouve:
+        candidats.append(pathlib.Path(trouve).parent)
+    for dossier in candidats:
+        if (dossier / "candle.exe").is_file() and (dossier / "light.exe").is_file():
+            return dossier
+    raise Echec("5-wix", "WiX Toolset 3 n'est pas installé sur cet ordinateur. Installez-le avec le fichier "
+                         f"wix314.exe de la page {PAGE_DE_WIX}, puis relancez ce script.")
+
+
+def fabriquer_l_installeur(wix: pathlib.Path, version: str, sortie: pathlib.Path, compression: str, nom: str) -> None:
+    """Compile la description de l'installeur (candle), puis assemble le fichier .msi (light)."""
+    objets = TRAVAIL / "wix-objets" / nom
+    shutil.rmtree(objets, ignore_errors=True)
+    objets.mkdir(parents=True)
+    lancer(f"5-candle-{nom}", [
+        wix / "candle.exe", "-nologo", "-arch", "x64", "-ext", "WixUIExtension",
+        f"-dVersion={version}", f"-dSource={DOSSIER_DE_L_APPLICATION}", f"-dIcone={TRAVAIL / 'traducteur.ico'}",
+        f"-dCompression={compression}", "-out", f"{objets}{os.sep}",
+        ICI / "traducteur.wxs", TRAVAIL / "fichiers.wxs"], delai=600)
+    sortie.unlink(missing_ok=True)
+    lancer(f"5-light-{nom}", [
+        wix / "light.exe", "-nologo", "-ext", "WixUIExtension", "-cultures:fr-FR", "-spdb",
+        # Deux vérifications de Windows Installer ne donneraient que des avertissements attendus, un par
+        # fichier pour la seconde. ICE61 : l'installeur remplace aussi une version de même numéro.
+        # ICE91 : l'application s'installe dans le dossier de l'utilisateur. C'est voulu dans les deux cas.
+        "-sice:ICE61", "-sice:ICE91",
+        "-out", sortie, objets / "traducteur.wixobj", objets / "fichiers.wixobj"], delai=1500)
+    if not sortie.is_file():
+        raise Echec(f"5-light-{nom}", f"WiX n'a pas produit {sortie.name}.")
+
+
+def analyser_avec_l_antivirus(resume: Resume, installeur: pathlib.Path) -> None:
+    """Fait analyser le dossier de l'application et l'installeur par Microsoft Defender, l'antivirus de Windows.
+
+    Un antivirus prend parfois un programme fabriqué par PyInstaller pour un logiciel malveillant. Si Defender
+    signale quelque chose, la fabrication s'arrête : l'installeur serait bloqué sur beaucoup d'ordinateurs.
+    Si Defender est absent ou ne répond pas, l'analyse est notée comme non faite, sans arrêter la fabrication.
+    """
+    # Le programme de Defender est rangé avec ses mises à jour ; à défaut, à l'endroit d'origine.
+    mises_a_jour = (pathlib.Path(os.environ.get("PROGRAMDATA", r"C:\ProgramData")) / "Microsoft"
+                    / "Windows Defender" / "Platform")
+    origine = pathlib.Path(os.environ.get("PROGRAMFILES", r"C:\Program Files")) / "Windows Defender"
+    outils = [*sorted(mises_a_jour.glob("*/MpCmdRun.exe"), reverse=True), origine / "MpCmdRun.exe"]
+    outil = next((candidat for candidat in outils if candidat.is_file()), None)
+    if outil is None:
+        resume.noter("Antivirus : analyse non faite (Microsoft Defender n'est pas sur cette machine)")
+        return
+    for rang, cible in enumerate((DOSSIER_DE_L_APPLICATION, installeur), start=1):
+        etape = f"6-antivirus-{rang}"
+        try:
+            code = lancer(etape, [outil, "-Scan", "-ScanType", "3", "-File", cible, "-DisableRemediation"],
+                          delai=900, codes_acceptes=(0, 2))
+        except Echec as echec:
+            resume.noter("Antivirus : analyse non faite (Microsoft Defender n'a pas répondu)")
+            resume.detailler(f"Antivirus : {echec} | {echec.details[-600:]}")
+            return
+        journal = JOURNAUX / f"{etape}.txt"
+        reponse = journal.read_text(encoding="utf-8", errors="replace") if journal.is_file() else ""
+        resume.detailler(f"Antivirus, {cible.name} (code {code}) : " + " | ".join(
+            ligne.strip() for ligne in reponse.splitlines() if ligne.strip())[-400:])
+        if code == 2 and "failed with hr" in reponse.lower():
+            # Le code 2 sert aussi quand l'analyse elle-même échoue : ce n'est pas une alerte.
+            resume.noter("Antivirus : analyse non faite (Microsoft Defender a répondu par une erreur)")
+            return
+        if code == 2:
+            raise Echec(etape, f"Microsoft Defender signale un logiciel malveillant dans {cible.name}.",
+                        fin_de(reponse))
+    resume.noter("Antivirus : Microsoft Defender ne signale rien, ni dans le dossier de l'application ni dans "
+                 "l'installeur")
+
+
+def avertissements_de_wix(resume: Resume, nom: str) -> None:
+    for etape in (f"5-candle-{nom}", f"5-light-{nom}"):
+        avertissements(resume, etape, "warning")
+
+
+# ---------------------------------------------------------------------- essai de l'installation
+def dossier_du_bureau() -> pathlib.Path:
+    import ctypes
+    from ctypes import wintypes
+
+    chemin = ctypes.create_unicode_buffer(wintypes.MAX_PATH)
+    ctypes.windll.shell32.SHGetFolderPathW(None, 0x0010, None, 0, chemin)  # 0x0010 : le Bureau de l'utilisateur
+    return pathlib.Path(chemin.value)
+
+
+def emplacements() -> dict[str, pathlib.Path]:
+    """Ce que l'installeur doit créer, puis retirer."""
+    installation = pathlib.Path(os.environ["LOCALAPPDATA"]) / "Programs" / NOM_APPLICATION
+    menu = pathlib.Path(os.environ["APPDATA"]) / "Microsoft" / "Windows" / "Start Menu" / "Programs"
+    return {
+        "dossier": installation,
+        "programme": installation / PROGRAMME,
+        "glossaire": installation / GLOSSAIRE,
+        "raccourci du menu Démarrer": menu / f"{NOM_APPLICATION}.lnk",
+        "raccourci du Bureau": dossier_du_bureau() / f"{NOM_APPLICATION}.lnk",
+    }
+
+
+def code_de_mise_a_jour() -> str:
+    """L'identifiant (UpgradeCode) par lequel Windows Installer reconnaît toutes les versions de l'application."""
+    from xml.etree import ElementTree
+
+    produit = ElementTree.parse(ICI / "traducteur.wxs").getroot().find(f"{{{liste_des_fichiers.ESPACE_WIX}}}Product")
+    return produit.get("UpgradeCode")
+
+
+def produits_installes() -> list[dict[str, str]]:
+    """Les versions de l'application que Windows Installer connaît sur cet ordinateur, pour cet utilisateur."""
+    import ctypes
+
+    msi = ctypes.WinDLL("msi")
+
+    def propriete(code: str, nom: str) -> str:
+        longueur = ctypes.c_ulong(1024)
+        valeur = ctypes.create_unicode_buffer(longueur.value)
+        resultat = msi.MsiGetProductInfoW(ctypes.c_wchar_p(code), ctypes.c_wchar_p(nom), valeur, ctypes.byref(longueur))
+        return valeur.value if resultat == 0 else ""
+
+    produits = []
+    code = ctypes.create_unicode_buffer(39)
+    rang = 0
+    while msi.MsiEnumRelatedProductsW(ctypes.c_wchar_p(code_de_mise_a_jour()), 0, rang, code) == 0:
+        produits.append({
+            "code": code.value,
+            "nom": propriete(code.value, "InstalledProductName"),
+            "version": propriete(code.value, "VersionString"),
+            # « 0 » : installé pour l'utilisateur ; « 1 » : pour tout l'ordinateur.
+            "pour": {"0": "l'utilisateur", "1": "tout l'ordinateur"}.get(propriete(code.value, "AssignmentType"), "?"),
+        })
+        rang += 1
+    return produits
+
+
+def lignes_de_desinstallation() -> list[str]:
+    """Où le registre de Windows range la ligne « Traducteur juridique » des applications installées."""
+    import winreg
+
+    def sous_cles(cle) -> list[str]:
+        return [winreg.EnumKey(cle, rang) for rang in range(winreg.QueryInfoKey(cle)[0])]
+
+    def ligne(racine, chemin: str, vue: int) -> str | None:
+        """La version inscrite dans cette clé, si elle porte le nom de l'application."""
+        try:
+            with winreg.OpenKey(racine, chemin, 0, winreg.KEY_READ | vue) as cle:
+                if str(winreg.QueryValueEx(cle, "DisplayName")[0]) == NOM_APPLICATION:
+                    return str(winreg.QueryValueEx(cle, "DisplayVersion")[0])
+        except OSError:
+            pass
+        return None
+
+    trouvees = []
+    # Les trois listes où un programme de désinstallation s'inscrit d'habitude.
+    desinstallation = r"Software\Microsoft\Windows\CurrentVersion\Uninstall"
+    for nom, racine, vue in (("HKEY_CURRENT_USER", winreg.HKEY_CURRENT_USER, 0),
+                             ("HKEY_LOCAL_MACHINE", winreg.HKEY_LOCAL_MACHINE, winreg.KEY_WOW64_64KEY),
+                             ("HKEY_LOCAL_MACHINE (32 bits)", winreg.HKEY_LOCAL_MACHINE, winreg.KEY_WOW64_32KEY)):
+        try:
+            with winreg.OpenKey(racine, desinstallation, 0, winreg.KEY_READ | vue) as liste:
+                produits = sous_cles(liste)
+        except OSError:
+            continue
+        for produit in produits:
+            version = ligne(racine, f"{desinstallation}\\{produit}", vue)
+            if version is not None:
+                trouvees.append(f"{nom}\\{desinstallation}\\{produit} (version {version})")
+    # La fiche que Windows Installer tient lui-même, par utilisateur.
+    fiches = r"SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData"
+    vue = winreg.KEY_WOW64_64KEY
+    try:
+        with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, fiches, 0, winreg.KEY_READ | vue) as liste:
+            utilisateurs = sous_cles(liste)
+    except OSError:
+        utilisateurs = []
+    for utilisateur in utilisateurs:
+        try:
+            with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, f"{fiches}\\{utilisateur}\\Products", 0,
+                                winreg.KEY_READ | vue) as liste:
+                produits = sous_cles(liste)
+        except OSError:
+            continue
+        for produit in produits:
+            chemin = f"{fiches}\\{utilisateur}\\Products\\{produit}\\InstallProperties"
+            version = ligne(winreg.HKEY_LOCAL_MACHINE, chemin, vue)
+            if version is not None:
+                trouvees.append(f"HKEY_LOCAL_MACHINE\\{chemin} (version {version})")
+    return trouvees
+
+
+def marques_dans_le_registre() -> list[str]:
+    """Ce qui reste, dans le registre de l'utilisateur, des marques de présence de l'installeur."""
+    import winreg
+
+    try:
+        cle = winreg.OpenKey(winreg.HKEY_CURRENT_USER, liste_des_fichiers.CLE_DU_REGISTRE)
+    except OSError:
+        return []
+    with cle:
+        sous_cles, valeurs, _ = winreg.QueryInfoKey(cle)
+        noms = [winreg.EnumValue(cle, rang)[0] for rang in range(valeurs)]
+    return [f"HKEY_CURRENT_USER\\{liste_des_fichiers.CLE_DU_REGISTRE} : {valeurs} valeur(s), {sous_cles} sous-clé(s)"
+            + (f" ({', '.join(noms[:5])}…)" if noms else " (clé vide)")]
+
+
+def poser_le_reglage_temoin() -> None:
+    """Écrit un réglage là où l'application range les siens, comme si elle avait déjà servi."""
+    import winreg
+
+    with winreg.CreateKey(winreg.HKEY_CURRENT_USER, CLE_DES_REGLAGES) as cle:
+        winreg.SetValueEx(cle, REGLAGE_TEMOIN, 0, winreg.REG_SZ, "1")
+
+
+def reglage_temoin_present() -> bool:
+    import winreg
+
+    try:
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, CLE_DES_REGLAGES) as cle:
+            winreg.QueryValueEx(cle, REGLAGE_TEMOIN)
+    except OSError:
+        return False
+    return True
+
+
+def retirer_le_reglage_temoin() -> None:
+    """Retire le réglage écrit pour l'essai, puis les clés qu'il a fallu créer si elles sont restées vides."""
+    import winreg
+
+    try:
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, CLE_DES_REGLAGES, 0, winreg.KEY_SET_VALUE) as cle:
+            winreg.DeleteValue(cle, REGLAGE_TEMOIN)
+        for chemin in (CLE_DES_REGLAGES, CLE_DES_REGLAGES.rsplit("\\", 1)[0]):
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, chemin) as cle:
+                sous_cles, valeurs, _ = winreg.QueryInfoKey(cle)
+            if sous_cles or valeurs:
+                break  # de vrais réglages s'y trouvent : on n'y touche pas
+            winreg.DeleteKey(winreg.HKEY_CURRENT_USER, chemin)
+    except OSError:
+        pass
+
+
+def cible_du_raccourci(raccourci: pathlib.Path) -> str:
+    resultat = subprocess.run(
+        ["powershell", "-NoProfile", "-NonInteractive", "-Command",
+         f"(New-Object -ComObject WScript.Shell).CreateShortcut('{raccourci}').TargetPath"],
+        capture_output=True, text=True, timeout=120, check=False)
+    return resultat.stdout.strip()
+
+
+def windows_installer(etape: str, action: str, installeur: pathlib.Path) -> None:
+    """Installe (``/i``) ou désinstalle (``/x``) sans rien afficher, comme le ferait un double-clic sans écran."""
+    journal = JOURNAUX / f"{etape}-msiexec.log"
+    journal.unlink(missing_ok=True)
+    try:
+        lancer(etape, ["msiexec", action, installeur, "/qn", "/norestart", "/l*v", journal], delai=900)
+    except Echec as echec:
+        lignes = [ligne for ligne in lire_un_journal_de_windows(journal).splitlines()
+                  if "value 3" in ligne or "Error " in ligne or "erreur" in ligne.lower() or "-- Error" in ligne]
+        raise Echec(etape, f"Windows Installer : {echec}", fin_de("\n".join(lignes), 40)) from echec
+
+
+def defauts_de_l_installation(version: str, nombre_de_fichiers: int) -> list[str]:
+    """Ce qui manque ou ne convient pas après une installation ; une liste vide si tout est en place."""
+    defauts = []
+    lieux = emplacements()
+    for nom, chemin in lieux.items():
+        if not chemin.exists():
+            defauts.append(f"il manque le {nom} : {chemin}")
+    if lieux["dossier"].exists():
+        installes = len(fichiers_de(lieux["dossier"]))
+        if installes != nombre_de_fichiers:
+            defauts.append(f"{installes} fichiers installés au lieu de {nombre_de_fichiers}")
+    for nom in ("raccourci du menu Démarrer", "raccourci du Bureau"):
+        if lieux[nom].exists():
+            cible = cible_du_raccourci(lieux[nom])
+            if pathlib.Path(cible) != lieux["programme"]:
+                defauts.append(f"le {nom} ouvre {cible!r} au lieu de {lieux['programme']}")
+    produits = produits_installes()
+    if [(produit["nom"], produit["version"], produit["pour"]) for produit in produits] != [
+            (NOM_APPLICATION, version, "l'utilisateur")]:
+        defauts.append(f"Windows Installer devrait connaître une seule installation, « {NOM_APPLICATION} » {version}, "
+                       f"faite pour l'utilisateur ; il connaît : {json.dumps(produits, ensure_ascii=False)}")
+    if not lignes_de_desinstallation():
+        defauts.append("le registre de Windows n'a aucune ligne au nom de l'application")
+    return defauts
+
+
+def restes_de_l_installation() -> list[str]:
+    """Ce qu'une désinstallation a laissé sur l'ordinateur ; une liste vide si tout est retiré."""
+    restes = [f"{nom} : {chemin}" for nom, chemin in emplacements().items() if chemin.exists()]
+    restes += [f"installation connue de Windows Installer : {json.dumps(produit, ensure_ascii=False)}"
+               for produit in produits_installes()]
+    restes += [f"ligne de désinstallation : {ligne}" for ligne in lignes_de_desinstallation()]
+    restes += marques_dans_le_registre()
+    return restes
+
+
+def essayer_l_installation(wix: pathlib.Path, installeur: pathlib.Path, resume: Resume) -> None:
+    titre("7. Essai de l'installeur sur cet ordinateur")
+    nombre_de_fichiers = len(fichiers_de(DOSSIER_DE_L_APPLICATION))
+    deja = restes_de_l_installation()
+    if deja:
+        raise Echec("7-essai", f"{NOM_APPLICATION} est déjà sur cet ordinateur : l'essai le désinstallerait. "
+                               "Désinstallez-le d'abord, ou lancez le script sans --essayer-l-installation.",
+                    "\n".join(deja))
+    #: Tout ce qui ne convient pas est noté, et l'essai continue : un seul passage dit tout ce qu'il y a à corriger.
+    defauts: list[str] = []
+
+    def noter_les_defauts(moment: str, trouves: list[str]) -> bool:
+        for defaut in trouves:
+            dire(f"    DÉFAUT — {moment} : {defaut}")
+        defauts.extend(f"{moment} : {defaut}" for defaut in trouves)
+        return not trouves
+
+    def reglages_gardes(moment: str) -> bool:
+        return noter_les_defauts(moment, [] if reglage_temoin_present() else [
+            f"le réglage écrit avant l'installation a disparu (HKEY_CURRENT_USER\\{CLE_DES_REGLAGES})"])
+
+    if reglage_temoin_present():
+        raise Echec("7-essai", "Un essai précédent de l'installeur ne s'est pas terminé : son réglage témoin est "
+                               f"encore dans le registre (HKEY_CURRENT_USER\\{CLE_DES_REGLAGES}, {REGLAGE_TEMOIN}).")
+    poser_le_reglage_temoin()
+    try:
+        _essayer(wix, installeur, resume, nombre_de_fichiers, noter_les_defauts, reglages_gardes)
+    finally:
+        retirer_le_reglage_temoin()
+    if defauts:
+        raise Echec("7-essai", f"L'essai de l'installeur a relevé {len(defauts)} défaut(s).", "\n".join(defauts))
+
+
+def _essayer(wix: pathlib.Path, installeur: pathlib.Path, resume: Resume, nombre_de_fichiers: int,
+             noter_les_defauts, reglages_gardes) -> None:
+    """Les trois temps de l'essai : installation, désinstallation, remplacement d'une ancienne version."""
+    dire("  a) Première installation")
+    windows_installer("7a-installation", "/i", installeur)
+    lieux = emplacements()
+    if noter_les_defauts("après l'installation", defauts_de_l_installation(__version__, nombre_de_fichiers)):
+        resume.noter(f"Installation sans droits d'administrateur : {nombre_de_fichiers} fichiers dans "
+                     f"« {lieux['dossier']} », une icône sur le Bureau et une dans le menu Démarrer (elles ouvrent "
+                     f"le programme installé), « {NOM_APPLICATION} {__version__} » inscrit dans les applications "
+                     f"installées")
+        resume.detailler("Inscription dans le registre : " + " ; ".join(lignes_de_desinstallation()))
+    controler(lieux["programme"], "installe", resume, "Application installée")
+
+    dire("  b) Désinstallation")
+    windows_installer("7b-desinstallation", "/x", installeur)
+    propre = noter_les_defauts("après la désinstallation", restes_de_l_installation())
+    if reglages_gardes("après la désinstallation") and propre:
+        resume.noter("Désinstallation : le dossier, les deux icônes, l'inscription dans les applications "
+                     "installées et les marques du registre sont retirés ; les réglages de l'application restent")
+
+    dire(f"  c) Remplacement d'une ancienne version ({ANCIENNE_VERSION})")
+    ancien = TRAVAIL / "essai" / f"ancienne-version-{ANCIENNE_VERSION}.msi"
+    ancien.parent.mkdir(parents=True, exist_ok=True)
+    fabriquer_l_installeur(wix, ANCIENNE_VERSION, ancien, "none", "ancienne-version")
+    windows_installer("7c-ancienne-version", "/i", ancien)
+    noter_les_defauts("après l'installation de l'ancienne version",
+                      defauts_de_l_installation(ANCIENNE_VERSION, nombre_de_fichiers))
+    windows_installer("7c-mise-a-jour", "/i", installeur)
+    a_jour = noter_les_defauts("après la mise à jour", defauts_de_l_installation(__version__, nombre_de_fichiers))
+    gardes = reglages_gardes("après la mise à jour")
+    controler(lieux["programme"], "mis-a-jour", resume, "Après une mise à jour")
+    if a_jour and gardes:
+        resume.noter(f"Mise à jour : installé par-dessus une version {ANCIENNE_VERSION}, l'installeur la remplace "
+                     "(Windows Installer ne connaît plus qu'une installation) et les réglages sont conservés")
+    windows_installer("7c-desinstallation", "/x", installeur)
+    noter_les_defauts("après la dernière désinstallation", restes_de_l_installation())
+
+
+# ---------------------------------------------------------------------- programme principal
+def construire(essai: bool) -> pathlib.Path:
+    if sys.platform != "win32":
+        raise Echec("0-depart", "L'installeur se fabrique sous Windows : ce script ne fonctionne pas sur ce système.")
+    if len(str(TRAVAIL)) > CHEMIN_MAXIMAL:
+        raise Echec("0-depart", f"Le chemin du projet est trop long pour Windows ({len(str(RACINE))} caractères) : "
+                                "copiez le dossier du projet à un endroit au chemin court, par exemple C:\\tj, "
+                                "puis relancez ce script depuis cette copie.", str(RACINE))
+    wix = trouver_wix()  # cherché dès le début : inutile de fabriquer le dossier si WiX manque
+    shutil.rmtree(TRAVAIL, ignore_errors=True)
+    TRAVAIL.mkdir(parents=True)
+    resume = Resume()
+    installeur = TRAVAIL / NOM_DE_L_INSTALLEUR
+    try:
+        fabriquer_le_dossier(resume)
+
+        titre("3. Contrôle du dossier de l'application")
+        verifier_les_bibliotheques(resume)
+        controler(DOSSIER_DE_L_APPLICATION / PROGRAMME, "dossier", resume, "Dossier de l'application")
+
+        titre("4. Liste des fichiers à installer")
+        nombre, dossiers = liste_des_fichiers.ecrire(DOSSIER_DE_L_APPLICATION, PROGRAMME, TRAVAIL / "fichiers.wxs")
+        dire(f"  {nombre} fichiers dans {dossiers} dossiers")
+
+        titre("5. Installeur (WiX Toolset 3)")
+        dire(f"  WiX : {wix}")
+        fabriquer_l_installeur(wix, __version__, installeur, "high", "installeur")
+        avertissements_de_wix(resume, "installeur")
+        resume.noter(f"Installeur : {installeur.name}, {taille(installeur.stat().st_size)}, "
+                     f"SHA-256 {empreinte(installeur)}")
+
+        titre("6. Analyse par l'antivirus de Windows")
+        analyser_avec_l_antivirus(resume, installeur)
+
+        if essai:
+            essayer_l_installation(wix, installeur, resume)
+        else:
+            resume.noter("Installation non essayée (option --essayer-l-installation absente)")
+    finally:
+        resume.ecrire()
+        if resume.lignes:
+            annoter("notice", f"Installeur de {NOM_APPLICATION} {__version__}", resume.texte())
+        if resume.details:
+            annoter("notice", "Détails de la fabrication", "\n".join(resume.details))
+    titre(f"Terminé : {installeur}")
+    return installeur
+
+
+def main() -> int:
+    for flux in (sys.stdout, sys.stderr):  # les accents s'affichent, même quand la sortie est redirigée
+        if hasattr(flux, "reconfigure"):
+            flux.reconfigure(encoding="utf-8", errors="replace")
+    lecteur = argparse.ArgumentParser(description="Fabrique l'installeur de l'application pour Windows (.msi).")
+    lecteur.add_argument("--essayer-l-installation", action="store_true",
+                         help="installe, contrôle, désinstalle et met à jour l'application sur cet ordinateur")
+    options = lecteur.parse_args()
+    try:
+        construire(options.essayer_l_installation)
+    except Echec as echec:
+        dire()
+        dire(f"ÉCHEC — étape « {echec.etape} » : {echec}")
+        if echec.details:
+            dire(echec.details)
+        annoter("error", f"Étape « {echec.etape} »", f"{echec}\n{echec.details}".strip())
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

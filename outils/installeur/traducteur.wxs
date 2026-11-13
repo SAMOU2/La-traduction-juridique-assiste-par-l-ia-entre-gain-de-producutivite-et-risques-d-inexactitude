@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Installeur de l'application pour Windows (fichier .msi), écrit pour WiX Toolset 3.
+  « construire.py » enchaîne toutes les étapes ; ce fichier n'est pas lancé à la main.
+
+  Ce que fait l'installeur :
+    * il copie l'application dans le dossier de l'utilisateur (AppData\Local\Programs\Traducteur juridique),
+      sans demander de droits d'administrateur ;
+    * il ajoute une icône sur le Bureau et dans le menu Démarrer ;
+    * il inscrit l'application dans la liste des applications installées, d'où elle se désinstalle ;
+    * il remplace une version déjà installée.
+
+  La liste des fichiers copiés est dans un second fichier, fabriqué par « fichiers.py ».
+  Valeurs données par « construire.py » : Version, Source (dossier de l'application), Icone (fichier .ico)
+  et Compression (« high » pour l'installeur ; « none » pour l'installeur d'essai, plus vite fabriqué).
+-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define Nom = "Traducteur juridique" ?>
+  <?define Programme = "TraducteurJuridique.exe" ?>
+
+  <!-- Id="*" : chaque fabrication est un nouveau produit. UpgradeCode ne change jamais : c'est par lui
+       que l'installeur reconnaît une version déjà installée. -->
+  <Product Id="*" Name="$(var.Nom)" Language="1036" Codepage="1252" Version="$(var.Version)"
+           Manufacturer="$(var.Nom)" UpgradeCode="{B04176E3-FC16-4F81-B04A-918484AB9F04}">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perUser"
+             Description="$(var.Nom) $(var.Version)"
+             Comments="Traduction juridique entre le français et l'arabe. Prototype." />
+
+    <!-- Une version déjà installée est retirée avant l'installation, même si elle porte le même numéro. -->
+    <MajorUpgrade AllowSameVersionUpgrades="yes"
+                  DowngradeErrorMessage="Une version plus récente de [ProductName] est déjà installée sur cet ordinateur." />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="$(var.Compression)" />
+
+    <!-- Icône et réglages de la ligne « Traducteur juridique » dans la liste des applications installées. -->
+    <Icon Id="IconeDeLApplication.ico" SourceFile="$(var.Icone)" />
+    <Property Id="ARPPRODUCTICON" Value="IconeDeLApplication.ico" />
+    <Property Id="ARPNOMODIFY" Value="1" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="LocalAppDataFolder">
+        <Directory Id="DossierDesProgrammes" Name="Programs">
+          <Directory Id="INSTALLFOLDER" Name="$(var.Nom)" />
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder" />
+      <Directory Id="DesktopFolder" />
+    </Directory>
+
+    <!-- Les raccourcis. Chacun est repéré par une valeur du registre de l'utilisateur, comme le demande
+         Windows Installer pour ce qui s'installe dans le profil de l'utilisateur. -->
+    <DirectoryRef Id="ProgramMenuFolder">
+      <Component Id="RaccourciDuMenuDemarrer" Guid="{98F7D903-DFB3-422B-B42C-6ED3914D0C2A}">
+        <Shortcut Id="RaccourciDuMenuDemarrer" Name="$(var.Nom)"
+                  Description="Traduction juridique entre le français et l'arabe"
+                  Target="[INSTALLFOLDER]$(var.Programme)" WorkingDirectory="INSTALLFOLDER" />
+        <RegistryValue Root="HKCU" Key="Software\TraducteurJuridique\Installation" Name="RaccourciDuMenuDemarrer"
+                       Type="integer" Value="1" KeyPath="yes" />
+        <!-- Le dossier « Programs » de l'utilisateur est retiré s'il est vide après la désinstallation. -->
+        <RemoveFolder Id="RetirerLeDossierDesProgrammes" Directory="DossierDesProgrammes" On="uninstall" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="RaccourciDuBureau" Guid="{D37C352C-D5F8-4DDD-8C26-B494997E5051}">
+        <Shortcut Id="RaccourciDuBureau" Name="$(var.Nom)"
+                  Description="Traduction juridique entre le français et l'arabe"
+                  Target="[INSTALLFOLDER]$(var.Programme)" WorkingDirectory="INSTALLFOLDER" />
+        <RegistryValue Root="HKCU" Key="Software\TraducteurJuridique\Installation" Name="RaccourciDuBureau"
+                       Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <Feature Id="Application" Title="$(var.Nom)" Level="1">
+      <ComponentGroupRef Id="FichiersDeLApplication" />
+      <ComponentRef Id="RaccourciDuMenuDemarrer" />
+      <ComponentRef Id="RaccourciDuBureau" />
+    </Feature>
+
+    <!-- Dernier écran : où trouver l'application, et une case cochée pour l'ouvrir tout de suite. -->
+    <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT"
+              Value="Une icône « $(var.Nom) » a été ajoutée sur le Bureau et dans le menu Démarrer. Pour ouvrir l'application, double-cliquez sur cette icône." />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Ouvrir $(var.Nom) maintenant" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
+    <CustomAction Id="OuvrirLApplication" FileKey="ProgrammePrincipal" ExeCommand="" Return="asyncNoWait" />
+
+    <!-- Les écrans, en français (textes fournis par WiX) : Bienvenue, Prêt à installer, Installation, Terminé.
+         C'est le jeu d'écrans « WixUI_Minimal » de WiX, sans l'écran du contrat de licence. -->
+    <UI Id="EcransDeLInstalleur">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="Minimal" />
+
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+      <DialogRef Id="WelcomeDlg" />
+
+      <!-- Première installation : « Suivant », puis « Installer ». -->
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="1">NOT Installed</Publish>
+
+      <!-- Application déjà installée : réparer ou supprimer. -->
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="2">Installed</Publish>
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+
+      <!-- « Terminer » : ouvre l'application si la case est cochée, puis ferme l'installeur. -->
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="OuvrirLApplication" Order="1">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 AND NOT Installed</Publish>
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+    </UI>
+    <UIRef Id="WixUI_Common" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+  </Product>
+</Wix>
