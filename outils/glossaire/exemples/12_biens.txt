@@ -1,5 +1,5 @@
 # Phrases d'exemple du lot 12_biens.txt : terme | phrase française | phrase arabe
-biens | Les biens du débiteur répondent de ses dettes. | أموال المدين جميعها ضامنة لوفاء ديونه.
+biens | Les biens de la société sont distincts de ceux des associés. | أموال الشركة مستقلة عن أموال الشركاء.
 bien meuble | Une voiture est un bien meuble. | السيارة منقول.
 bien immeuble | Un terrain est un bien immeuble. | قطعة الأرض عقار.
 chose fongible | Le blé est une chose fongible. | القمح شيء مثلي.

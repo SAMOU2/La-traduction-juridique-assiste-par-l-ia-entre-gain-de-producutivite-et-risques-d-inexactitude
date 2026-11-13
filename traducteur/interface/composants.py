@@ -13,6 +13,7 @@ from PySide6.QtWidgets import (
     QApplication,
     QBoxLayout,
     QFrame,
+    QHBoxLayout,
     QLabel,
     QLayout,
     QPushButton,
@@ -207,6 +208,32 @@ def icone_fixe(nom: str, couleur: str, taille: int = 16, epaisseur: float = 1.5)
     label.setPixmap(icones.image(nom, couleur, taille, epaisseur))
     label.setFixedSize(taille, taille)
     return label
+
+
+def mention_a_controler(explication: str = "", detail: str = "") -> QWidget:
+    """La mention « À vérifier » : une icône d'alerte et les deux mots, en ambre.
+
+    ``detail`` (« phrase d'exemple ») suit en gris ; il disparaît quand la place manque.
+    ``explication`` est le texte de l'infobulle.
+    """
+    mention = QWidget()
+    mention.setFixedHeight(20)
+    ligne = QHBoxLayout(mention)
+    ligne.setContentsMargins(0, 0, 0, 0)
+    ligne.setSpacing(5)
+    icone, mots = icone_fixe("alerte", theme.AMBRE, 14, 1.6), etiquette("À vérifier", "piedAlerte")
+    ligne.addWidget(icone)
+    ligne.addWidget(mots)
+    if detail:
+        suite = EtiquetteCourte("", "pied")
+        suite.definir_texte(f"· {detail}", "")
+        ligne.addWidget(suite, 1)
+    else:
+        mention.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
+    if explication:
+        for element in (mention, icone, mots):
+            element.setToolTip(infobulle(explication))
+    return mention
 
 
 def rond(nom_objet: str, diametre: int, nom_icone: str, couleur: str, taille_icone: int,

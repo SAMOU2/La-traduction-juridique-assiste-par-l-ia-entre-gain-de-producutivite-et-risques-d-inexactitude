@@ -531,11 +531,12 @@ class BandeEtapes(QWidget):
                            for libelle, nombre_de_fois in lignes)
         regles.explication = "\n".join(details)
 
-        reprises = traduction.phrases_attestees
+        reprises, a_verifier = traduction.phrases_attestees, traduction.phrases_a_verifier
         reconstruction.resultat, reconstruction.resultat_court = compte(phrases, "phrase"), nombre(phrases)
         reconstruction.explication = (
-            f"{compte(reprises, 'phrase reprise', 'phrases reprises')} des exemples du glossaire, "
-            f"{compte(phrases - reprises, 'phrase traduite', 'phrases traduites')} mot à mot.")
+            f"{compte(reprises, 'phrase reprise', 'phrases reprises')} des exemples du glossaire"
+            + (f" (dont {nombre(a_verifier)} d’un exemple à vérifier)" if a_verifier else "")
+            + f", {compte(phrases - reprises, 'phrase traduite', 'phrases traduites')} mot à mot.")
 
     # ------------------------------------------------------------------ mise en place
     def _polices(self):
@@ -975,10 +976,15 @@ class PageTexte(QWidget):
         reperes = []
         if any(morceau.nature == TERME for morceau in traduction.morceaux):
             reperes.append(("point", COULEUR_TERME, "terme du glossaire", 1))
+        # Une phrase reprise d'un exemple « à vérifier » est signalée : sa traduction n'est celle d'aucun texte cité.
+        a_verifier = traduction.phrases_a_verifier
+        rappel = _A_RELIRE if not a_verifier else (
+            f"{_A_RELIRE} {compte(a_verifier, 'phrase est reprise', 'phrases sont reprises')} "
+            "d’un exemple du glossaire qui porte la mention « à vérifier ».")
         if traduction.complete:
             self.badge.definir(
                 "termine", f"Traduction terminée · {decompte}", f"Traduction terminée · {court}", "Traduction terminée",
-                explication=f"Tous les mots du texte ont été trouvés dans le glossaire. {_A_RELIRE}")
+                explication=f"Tous les mots du texte ont été trouvés dans le glossaire. {rappel}")
         elif not trouves:
             self.badge.definir(
                 "partiel", "Aucun mot trouvé dans le glossaire", "Aucun mot trouvé",
@@ -989,7 +995,7 @@ class PageTexte(QWidget):
                 "Traduction partielle",
                 explication=f"{compte(restants, 'mot')} sur {nombre(mots)} ne "
                             f"{'figure' if restants < 2 else 'figurent'} pas dans le glossaire : "
-                            f"{'il reste' if restants < 2 else 'ils restent'} à traduire. {_A_RELIRE}")
+                            f"{'il reste' if restants < 2 else 'ils restent'} à traduire. {rappel}")
         if restants:
             reperes.append(("point", COULEUR_ABSENT, "mot absent, à traduire", 0))
         self.legende.definir(reperes)

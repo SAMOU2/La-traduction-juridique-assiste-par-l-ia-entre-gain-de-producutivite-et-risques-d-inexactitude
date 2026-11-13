@@ -62,7 +62,9 @@ OBJECTIF = 1000
 sys.path.insert(0, str(DEPOT))
 from traducteur.glossaire import Entree  # noqa: E402
 from traducteur.langues import AR, FR, cle_souple  # noqa: E402
+from traducteur.segmentation import segmenter_en_phrases  # noqa: E402
 from traducteur.surlignage import motif_du_terme  # noqa: E402
+from traducteur.traduction import cle_phrase  # noqa: E402
 
 JO = "Journal officiel (JORADP), www.joradp.dz"
 RESSOURCES = {
@@ -468,7 +470,8 @@ def incoherences(anciennes: list[dict], nouvelles: list[dict]) -> list[str]:
 
     Ce n'est pas toujours une erreur : un mot peut avoir un autre sens dans la phrase. La liste sert à relire.
     """
-    modeles: list[tuple[str, regex.Pattern, list[regex.Pattern]]] = []
+    # Pour chaque terme du glossaire : le terme français, l'entrée qui sert de modèle, ses synonymes arabes.
+    modeles: list[tuple[str, Entree, list[str]]] = []
     for ancienne in anciennes:
         modele = Entree(numero=0, terme_fr=ancienne["terme_fr"], terme_ar=ancienne["terme_ar"],
                         pluriel_fr=ancienne["pluriel_fr"], pluriel_ar=ancienne["pluriel_ar"])
@@ -507,9 +510,9 @@ def incoherences(anciennes: list[dict], nouvelles: list[dict]) -> list[str]:
             # Un terme pris dans un terme déjà traduit (« cour » dans « Cour suprême », « intérêt » dans
             # « intérêts ») n'est pas signalé.
             dans_un_autre = any(a <= depart and arrivee <= b for a, b in couverts)
-            if not present and not dans_un_autre and cle_souple(terme) not in presents:
-                if f"{terme} = {arabe}" not in absents[cle_souple(terme)]:
-                    absents[cle_souple(terme)].append(f"{terme} = {arabe}")
+            signale = not present and not dans_un_autre and cle_souple(terme) not in presents
+            if signale and f"{terme} = {arabe}" not in absents[cle_souple(terme)]:
+                absents[cle_souple(terme)].append(f"{terme} = {arabe}")
         manques = [" / ".join(choix) for choix in absents.values()]
         if manques:
             remarques.append(f"{entree['origine_exemple']} « {entree['fr']} » : {' ; '.join(manques)}\n"
@@ -549,14 +552,24 @@ def construire() -> int:
     for entree in nouvelles:
         verifier(entree, erreurs)
     lire_les_exemples(nouvelles, erreurs)
-    phrases: dict[str, str] = {}
+    # Une phrase ne sert qu'une fois, en français comme en arabe : dans l'application, une phrase du texte
+    # identique à un exemple reçoit la traduction de cet exemple. Les exemples des entrées d'origine comptent.
+    phrases: dict[tuple[str, str], str] = {}
+    for ancienne in anciennes:
+        for langue, colonne in ((FR, "contexte_fr"), (AR, "contexte_ar")):
+            for exemple in ancienne[colonne].split("|"):
+                for phrase in (exemple, *(segment.texte for segment in segmenter_en_phrases(exemple))):
+                    if cle_phrase(phrase):
+                        phrases[langue, cle_phrase(phrase)] = ancienne["terme_fr"]
     for entree in nouvelles:
         if "exemple" in entree:
             verifier_l_exemple(entree, erreurs)
-            if entree["exemple"][0] in phrases:
-                erreurs.signaler(*entree["origine_exemple"].split(":")[:1], int(entree["origine_exemple"].split(":")[1]),
-                                 f"même phrase que « {phrases[entree['exemple'][0]]} » : {entree['exemple'][0]}")
-            phrases[entree["exemple"][0]] = entree["fr"]
+            fichier, ligne = entree["origine_exemple"].split(":")[:2]
+            for langue, phrase in zip((FR, AR), entree["exemple"], strict=True):
+                cle = (langue, cle_phrase(phrase))
+                if cle in phrases:
+                    erreurs.signaler(fichier, int(ligne), f"même phrase que « {phrases[cle]} » : {phrase}")
+                phrases[cle] = entree["fr"]
 
     # Doublons : même couple (terme français, terme arabe).
     vus: dict[tuple[str, str], str] = {

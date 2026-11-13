@@ -27,9 +27,9 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ..contextes import PROPRE, Emploi, emplois
-from ..glossaire import Entree, Glossaire
-from ..langues import AR, FR, NOM_EN_FRANCAIS, autre_langue, cle_souple, deviner_langue
+from ..contextes import DEFINITION, PROPRE, Emploi, emplois
+from ..glossaire import Entree, Glossaire, mention_a_verifier
+from ..langues import AR, FR, NOM_EN_FRANCAIS, autre_langue, deviner_langue
 from ..surlignage import positions_du_terme
 from . import icones, theme
 from .animation import Allumage
@@ -48,6 +48,7 @@ from .composants import (
     etiquette,
     icone_fixe,
     infobulle,
+    mention_a_controler,
     nombre,
     paragraphe,
     pastille,
@@ -73,7 +74,6 @@ HAUTEUR_DU_CORPS, HAUTEUR_MINIMALE_DU_CORPS = 336, 150
 INTERLIGNE = {FR: 22, AR: 30}
 
 _ADRESSE = regex.compile(r"(?:https?://|www\.)[^\s<>«»]+[^\s<>«».,;:!?)]")
-_A_VERIFIER = "a verifier"
 #: Marge au-dessus du message d'un champ vide, la même dans toutes les colonnes.
 _MARGE_HAUTE_DU_MESSAGE = 20
 
@@ -94,16 +94,6 @@ def _categorie_en_html(entree: Entree, langue: str) -> str:
     categorie, pluriel = entree.categorie(FR), entree.pluriel(FR)
     morceaux = ([f"<i>{escape(categorie)}</i>"] if categorie else []) + ([f"pl. {escape(pluriel)}"] if pluriel else [])
     return " · ".join(morceaux)
-
-
-def mention_a_verifier(source: str) -> str | None:
-    """Détail d'une source de définition qui commence par « à vérifier » ; ``None`` pour une vraie source.
-
-    « à vérifier (définition d'exemple) » donne « définition d'exemple ».
-    """
-    if not cle_souple(source).startswith(_A_VERIFIER):
-        return None
-    return source[len(_A_VERIFIER):].strip(" :·,;-–—()")
 
 
 def phrase_surlignee(phrase: str, entree: Entree, langue: str) -> str:
@@ -695,15 +685,87 @@ class LienCourt(QPushButton):
         self.setText(visible.replace("&", "&&"))
 
 
+class LigneDeProvenance(QWidget):
+    """Au-dessus d'une phrase trouvée dans une autre entrée : le lien vers cette entrée, puis « À vérifier ».
+
+    Le lien passe d'abord. Quand la place manque, la mention se réduit à son icône ; ensuite
+    seulement, le lien est abrégé.
+    """
+
+    ECART, ICONE, HAUTEUR = 8, 14, 20
+
+    def __init__(self, lien: LienCourt, explication: str = "", parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        self.lien = lien
+        lien.setParent(self)
+        #: L'icône et les mots de la mention ; ``None`` si la phrase cite sa source.
+        self.icone: QLabel | None = None
+        self.mots: QLabel | None = None
+        if explication:
+            self.icone = icone_fixe("alerte", theme.AMBRE, self.ICONE, 1.6)
+            self.mots = etiquette("À vérifier", "piedAlerte")
+            for element in (self.icone, self.mots):
+                element.setParent(self)
+                element.setToolTip(infobulle(explication))
+        self.setFixedHeight(self.HAUTEUR)
+        self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+
+    def a_verifier(self) -> bool:
+        return self.icone is not None
+
+    def _largeur_des_mots(self) -> int:
+        self.mots.ensurePolished()
+        return self.mots.sizeHint().width()
+
+    def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
+        largeur = self.lien.sizeHint().width()
+        if self.icone is not None:
+            largeur += self.ECART + self.ICONE + 5 + self._largeur_des_mots()
+        return QSize(largeur, self.HAUTEUR)
+
+    def minimumSizeHint(self) -> QSize:  # noqa: N802
+        largeur = self.lien.minimumSizeHint().width()
+        return QSize(largeur + (self.ECART + self.ICONE if self.icone is not None else 0), self.HAUTEUR)
+
+    def resizeEvent(self, evenement) -> None:  # noqa: N802
+        super().resizeEvent(evenement)
+        self._placer()
+
+    def showEvent(self, evenement) -> None:  # noqa: N802
+        super().showEvent(evenement)
+        self._placer()
+
+    def _placer(self) -> None:
+        complet = self.lien.sizeHint().width()
+        if self.icone is None:
+            self.lien.setGeometry(0, 0, min(complet, self.width()), self.HAUTEUR)
+            return
+        mots = self._largeur_des_mots()
+        avec_les_mots = complet + self.ECART + self.ICONE + 5 + mots <= self.width()
+        reste = self.width() - self.ECART - self.ICONE - (5 + mots if avec_les_mots else 0)
+        self.lien.setGeometry(0, 0, min(complet, max(reste, self.lien.minimumSizeHint().width())), self.HAUTEUR)
+        depart = self.lien.width() + self.ECART
+        self.icone.move(depart, (self.HAUTEUR - self.ICONE) // 2)
+        self.mots.setVisible(avec_les_mots)
+        self.mots.setGeometry(depart + self.ICONE + 5, 0, mots, self.HAUTEUR)
+
+
 class ColonneContexte(Colonne):
     """④ Des phrases qui emploient le terme, dans les deux langues ; le terme y est mis en évidence.
 
     Les exemples de l'entrée viennent d'abord. S'il en manque, la colonne les complète par des
     phrases d'autres entrées du glossaire (exemples, définitions) qui emploient le terme : voir
     ``traducteur.contextes``.
+
+    Au-dessus de chaque phrase : la source que cite le glossaire, ou la mention « À vérifier »
+    quand la phrase n'est reprise d'aucun texte.
     """
 
     marge_haute = 18
+    #: Infobulles de la mention « À vérifier », pour une phrase d'exemple et pour une définition.
+    EXPLICATION_EXEMPLE = ("Cette phrase a été rédigée pour montrer l’emploi du terme. Elle n’est pas reprise d’un "
+                           "texte officiel : vérifiez-la avant de la citer.")
+    EXPLICATION_DEFINITION = "Cette définition n’est pas reprise d’un texte officiel : vérifiez-la avant de la citer."
 
     def __init__(self, parent: QObject | None = None) -> None:
         super().__init__(parent)
@@ -726,21 +788,26 @@ class ColonneContexte(Colonne):
                 corps.addWidget(separateur())
                 corps.addSpacing(16)
             provenance = emploi.provenance(source)
-            if provenance and emploi.origine == PROPRE:
-                reference = etiquette(provenance, "sourceExemple")
-                reference.setFixedHeight(20)
-                reference.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
-                corps.addWidget(reference, 0, Qt.AlignmentFlag.AlignRight if deviner_langue(provenance) == AR
-                                else Qt.AlignmentFlag.AlignLeft)
-                corps.addSpacing(5)
-            elif provenance:
+            explication = (self.EXPLICATION_DEFINITION if emploi.origine == DEFINITION
+                           else self.EXPLICATION_EXEMPLE)
+            if emploi.origine != PROPRE:
                 # La phrase vient d'une autre entrée : le lien ouvre cette entrée.
                 lien = LienCourt(provenance, "sourceLien")
                 lien.setFixedHeight(20)
                 lien.setToolTip(infobulle(f"Phrase trouvée dans l’entrée « {emploi.entree.terme(source)} » : "
                                           "cliquez pour ouvrir cette entrée."))
                 lien.clicked.connect(lambda _=False, cible=emploi.entree: self.entree_demandee.emit(cible))
-                corps.addWidget(lien, 0, Qt.AlignmentFlag.AlignLeft)
+                corps.addWidget(LigneDeProvenance(lien, explication if emploi.a_verifier else ""))
+                corps.addSpacing(5)
+            elif provenance:
+                reference = etiquette(provenance, "sourceExemple")
+                reference.setFixedHeight(20)
+                reference.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
+                corps.addWidget(reference, 0, Qt.AlignmentFlag.AlignRight if deviner_langue(provenance) == AR
+                                else Qt.AlignmentFlag.AlignLeft)
+                corps.addSpacing(5)
+            elif emploi.a_verifier:
+                corps.addWidget(mention_a_controler(explication, emploi.detail_a_verifier))
                 corps.addSpacing(5)
             for langue in (source, cible):
                 phrase = emploi.texte(langue)

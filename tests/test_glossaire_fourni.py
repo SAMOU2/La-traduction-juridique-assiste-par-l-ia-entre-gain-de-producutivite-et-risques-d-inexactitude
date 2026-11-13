@@ -15,7 +15,8 @@ from conftest import GLOSSAIRE_FOURNI
 
 from traducteur.glossaire import COLONNES
 from traducteur.langues import AR, FR, cle_souple, cle_stricte, contient_arabe
-from traducteur.traduction import ATTESTE, NEUTRE, SOURCE, TERME, Traducteur
+from traducteur.surlignage import positions_du_terme
+from traducteur.traduction import ATTESTE, NEUTRE, SOURCE, TERME, Traducteur, cle_phrase
 
 NOMBRE_D_ENTREES = 1000
 
@@ -58,8 +59,46 @@ def test_chaque_entree_est_complete(glossaire_fourni):
         assert not contient_arabe(entree.definition_fr), nom
         assert entree.source_definition and entree.ressources, nom
         assert entree.pluriel_fr or not entree.pluriel_ar, nom  # un pluriel arabe a son pluriel français
+        assert entree.contextes, nom  # chaque entrée a sa phrase d'exemple
         for contexte in entree.contextes:
             assert contexte.fr and contexte.ar and contexte.source, nom
+            assert not contient_arabe(contexte.fr) and contient_arabe(contexte.ar), nom
+
+
+def test_les_phrases_d_exemple(glossaire_fourni):
+    """Une phrase par entrée. 969 ont été rédigées pour le glossaire ; les autres citent le Code civil."""
+    exemples = [(entree, contexte) for entree in glossaire_fourni.entrees for contexte in entree.contextes]
+    redigees = [(entree, contexte) for entree, contexte in exemples if contexte.a_verifier]
+    assert len(exemples) == 1002 and len(redigees) == 969
+    # Aucune phrase rédigée n'est présentée comme une citation : sa source est la mention « à vérifier ».
+    assert {contexte.source for _, contexte in redigees} == {"à vérifier (phrase d’exemple)"}
+    assert len({entree.numero for entree, _ in redigees}) == 969  # une seule par entrée
+    # Les 33 autres phrases sont des articles du Code civil, dans 31 entrées.
+    citees = [(entree, contexte) for entree, contexte in exemples if not contexte.a_verifier]
+    assert len({entree.numero for entree, _ in citees}) == 31
+    assert all("Code civil" in contexte.source or "القانون المدني" in contexte.ar for _, contexte in citees)
+    for entree, contexte in redigees:
+        nom = f"n° {entree.numero} : {entree.terme_fr}"
+        # Une phrase courte, qui commence par une majuscule ou un nombre et finit par un point.
+        for phrase in (contexte.fr, contexte.ar):
+            assert len(phrase) <= 170 and phrase.endswith(".") and phrase == phrase.strip() and "  " not in phrase, nom
+        assert contexte.fr[0].isupper() or contexte.fr[0].isdigit(), nom
+        # Elle emploie le terme dans les deux langues : l'application l'y met en évidence.
+        assert positions_du_terme(contexte.fr, entree, FR), (nom, contexte.fr)
+        assert positions_du_terme(contexte.ar, entree, AR), (nom, contexte.ar)
+
+
+def test_une_phrase_redigee_ne_sert_qu_une_fois(glossaire_fourni):
+    """Une phrase du texte identique à un exemple reçoit sa traduction : une phrase rédigée n'a donc qu'un emploi."""
+    for langue in (FR, AR):
+        vues: dict[str, tuple[str, bool]] = {}
+        for entree in glossaire_fourni.entrees:
+            for contexte in entree.contextes:
+                cle = cle_phrase(contexte.texte(langue))
+                if cle in vues:
+                    # Seul un article du Code civil est cité dans plusieurs entrées.
+                    assert not contexte.a_verifier and not vues[cle][1], (langue, entree.terme_fr, vues[cle][0])
+                vues[cle] = (entree.terme_fr, contexte.a_verifier)
 
 
 def test_aucun_couple_de_termes_n_est_repete(glossaire_fourni):
@@ -174,6 +213,10 @@ def test_un_mot_courant_peut_etre_pris_pour_un_terme(traducteur):
 # ------------------------------------------------------------------ les deux écrans
 pytest.importorskip("PySide6")
 
+from test_interface import textes  # noqa: E402
+
+from traducteur.interface.fiche import LigneDeProvenance  # noqa: E402
+
 
 @pytest.fixture
 def fenetre_fournie(application, reglages, avertissements, monkeypatch):
@@ -211,13 +254,27 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert page.liste.nombre.text() == "23" and len(page.liste.entrees()) == 23
     assert page.fiche.entete.etapes_allumees() == [True] * 5
 
-    # « loi organique » n'est employée dans aucune phrase du glossaire : l'étape 4 reste éteinte.
+    # « loi organique » : sa phrase d'exemple a été rédigée pour le glossaire, elle porte la mention « À vérifier ».
     page.rechercher("loi organique")
-    assert page.fiche.colonne_contexte.emplois == []
-    assert page.fiche.entete.etapes_allumees() == [True, True, True, False, True]
-    # « consentement » n'a qu'un exemple : une définition du glossaire qui emploie le terme le complète.
+    colonne = page.fiche.colonne_contexte
+    assert [(emploi.origine, emploi.a_verifier) for emploi in colonne.emplois] == [("propre", True)]
+    assert textes(colonne.corps) == [
+        "À vérifier", "· phrase d’exemple",
+        "Une loi organique fixe l’organisation et le fonctionnement du Conseil d’État.",
+        "يحدد قانون عضوي تنظيم مجلس الدولة وعمله."]
+    assert textes(colonne.pied) == ["1 exemple dans le glossaire"]
+    assert page.fiche.entete.etapes_allumees() == [True] * 5
+    # « consentement » : l'article du Code civil, cité avec son numéro ; puis la phrase d'une autre entrée,
+    # elle aussi rédigée pour le glossaire.
     page.rechercher("consentement")
-    assert [emploi.origine for emploi in page.fiche.colonne_contexte.emplois] == ["propre", "definition"]
+    assert [(emploi.origine, emploi.provenance(), emploi.a_verifier) for emploi in colonne.emplois] == [
+        ("propre", "Code civil, art. 106", False), ("exemple", "Exemple de « vice du consentement »", True)]
+    assert textes(colonne.corps)[0] == "Code civil, art. 106"
+    provenance, = colonne.corps.findChildren(LigneDeProvenance)
+    assert provenance.a_verifier() and provenance.lien.texte_complet == "Exemple de « vice du consentement »"
+    # Le lien ouvre l'entrée d'où vient la phrase.
+    provenance.lien.click()
+    assert page.fiche.colonne_terme.terme.terme == "vice du consentement"
 
     # « droit » : deux entrées de même forme (un onglet chacune), puis les expressions.
     page.rechercher("droit")

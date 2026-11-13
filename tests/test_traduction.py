@@ -50,6 +50,29 @@ def test_une_phrase_est_reconnue_malgre_la_ponctuation_et_les_majuscules(traduct
     assert cle_phrase("« Le contrat, fait la loi des parties ! »") == "le contrat fait la loi des parties"
 
 
+def test_une_phrase_reprise_d_un_exemple_a_verifier_est_comptee_a_part(traducteur, tmp_path):
+    """La traduction vient de l'exemple dans les deux cas ; le compte dit combien d'exemples sont « à vérifier »."""
+    # Les exemples du glossaire d'essai citent tous le Code civil.
+    assert traducteur.traduire(ARTICLES_FR, FR).phrases_a_verifier == 0
+    fichier = tmp_path / "exemples.csv"
+    fichier.write_text(
+        "terme_fr;terme_ar;contexte_fr;contexte_ar;source_contexte\n"
+        "bail;إيجار;Le bail est écrit.;الإيجار مكتوب.;à vérifier (phrase d’exemple)\n"
+        "loyer;بدل الإيجار;Le loyer est payé chaque mois.;يدفع بدل الإيجار كل شهر.;Code civil, art. 498\n"
+        "caution;كفيل;La caution paie la dette.;يوفي الكفيل الدين.;\n",
+        encoding="utf-8")
+    rediges = Traducteur(Glossaire.charger(fichier))
+    traduction = rediges.traduire("Le bail est écrit. Le loyer est payé chaque mois. La caution paie la dette.", FR)
+    assert traduction.texte == "الإيجار مكتوب. يدفع بدل الإيجار كل شهر. يوفي الكفيل الدين."
+    assert (traduction.phrases_attestees, traduction.phrases_a_verifier) == (3, 1)
+    assert [phrase.attestation.a_verifier for phrase in traduction.phrases] == [True, False, False]
+    # Dans l'autre sens aussi.
+    retour = rediges.traduire("الإيجار مكتوب.", AR)
+    assert retour.texte == "Le bail est écrit." and retour.phrases_a_verifier == 1
+    # Une phrase traduite mot à mot ne vient d'aucun exemple.
+    assert rediges.traduire("Le bail prend fin.", FR).phrases_a_verifier == 0
+
+
 def test_les_positions_des_termes_dans_le_texte_source(traducteur):
     texte = "  Le contrat fait la loi des parties.\nLa vente et le bail."
     traduction = traducteur.traduire(texte, FR)
