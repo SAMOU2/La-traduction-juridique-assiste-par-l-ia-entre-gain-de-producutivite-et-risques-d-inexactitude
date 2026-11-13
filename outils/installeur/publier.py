@@ -9,6 +9,7 @@ Lancé par la fabrication automatique (``.github/workflows/installeur.yml``), ap
   c'est celle que montre la page ``…/releases/latest`` du dépôt.
 * Depuis une autre branche, il est publié comme « version d'essai » (étiquette ``installeur-essai``),
   remplacée à chaque fabrication : elle sert à essayer un travail qui n'est pas encore fusionné.
+  Quand ce travail est fusionné, la version d'essai est retirée : la version publiée la remplace.
 
 Une publication qui porte déjà la même étiquette est d'abord supprimée. Le script se sert de la
 commande ``gh`` de GitHub et lit les variables que GitHub Actions lui donne.
@@ -109,7 +110,18 @@ def publier() -> str:
     arguments = ["release", "create", etiquette, str(installeur), "--repo", depot, "--target", commit,
                  "--title", titre, "--notes-file", str(fichier_des_notes)]
     arguments += ["--prerelease"] if essai else ["--latest"]
-    return gh(*arguments).stdout.strip().splitlines()[-1]
+    adresse = gh(*arguments).stdout.strip().splitlines()[-1]
+    if not essai and essai_fusionne(depot, commit):
+        gh("release", "delete", ETIQUETTE_D_ESSAI, "--repo", depot, "--yes", "--cleanup-tag", verifier=False)
+    return adresse
+
+
+def essai_fusionne(depot: str, commit: str) -> bool:
+    """Vrai si une version d'essai est publiée et si le travail dont elle vient est contenu dans ``commit``."""
+    comparaison = gh("api", f"repos/{depot}/compare/{ETIQUETTE_D_ESSAI}...{commit}", "--jq", ".status",
+                     verifier=False)
+    # « ahead » : ``commit`` contient le commit de la version d'essai, et d'autres après lui.
+    return comparaison.returncode == 0 and comparaison.stdout.strip() in ("ahead", "identical")
 
 
 def main() -> int:

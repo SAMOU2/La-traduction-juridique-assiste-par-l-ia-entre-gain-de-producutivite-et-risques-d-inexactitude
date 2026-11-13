@@ -281,6 +281,81 @@ def test_une_version_d_essai_s_annonce_comme_telle():
     assert "Aucune vérification n’a été notée." in texte
 
 
+@pytest.fixture
+def publication(tmp_path, monkeypatch):
+    """Un installeur prêt à publier, et une fausse commande « gh » qui note ce qu'on lui demande."""
+    import subprocess
+
+    travail = tmp_path / "installeur"
+    travail.mkdir()
+    (travail / "Traducteur-juridique-1.2.3.msi").write_bytes(b"installeur")
+    (travail / "resume.md").write_text("- Installeur : 24 Mo\n", encoding="utf-8")
+    monkeypatch.setattr(publier, "TRAVAIL", travail)
+    monkeypatch.setenv("GITHUB_REPOSITORY", "moi/depot")
+    monkeypatch.setenv("GITHUB_SHA", "0123456789abcdef0123456789abcdef01234567")
+    monkeypatch.delenv("GITHUB_RUN_ID", raising=False)
+    appels = []
+    #: Réponse de GitHub à la question « le travail de la version d'essai est-il dans ce commit ? ».
+    etat = {"comparaison": (1, "")}  # par défaut : aucune version d'essai n'est publiée
+
+    def gh(*arguments, verifier=True):
+        appels.append(arguments)
+        code, sortie = 0, ""
+        if arguments[:2] == ("release", "create"):
+            sortie = f"https://github.com/moi/depot/releases/tag/{arguments[2]}\n"
+        elif arguments[0] == "api" and "/compare/" in arguments[1]:
+            code, sortie = etat["comparaison"]
+        elif arguments[:2] == ("release", "delete") or arguments[0] == "api":
+            code = 1  # rien à supprimer
+        return subprocess.CompletedProcess(arguments, code, sortie, "")
+
+    monkeypatch.setattr(publier, "gh", gh)
+    return appels, etat
+
+
+def test_une_branche_de_travail_publie_la_version_d_essai(publication, monkeypatch):
+    appels, _ = publication
+    monkeypatch.setenv("GITHUB_REF_NAME", "arena/travail")
+    assert publier.publier() == "https://github.com/moi/depot/releases/tag/installeur-essai"
+    # L'ancienne version d'essai et son étiquette sont retirées, puis la nouvelle est créée sur ce commit.
+    assert [appel[:3] for appel in appels[:2]] == [
+        ("release", "delete", "installeur-essai"),
+        ("api", "--method", "DELETE")]
+    creation = appels[2]
+    assert creation[:3] == ("release", "create", "installeur-essai") and creation[3].endswith("-1.2.3.msi")
+    assert "--prerelease" in creation and "--latest" not in creation
+    assert creation[creation.index("--target") + 1] == "0123456789abcdef0123456789abcdef01234567"
+    assert len(appels) == 3
+    notes = (publier.TRAVAIL / "notes-de-publication.md").read_text(encoding="utf-8")
+    assert notes.startswith("**Version d’essai.**") and "- Installeur : 24 Mo" in notes
+
+
+def test_la_branche_principale_publie_la_version_et_retire_l_essai_fusionne(publication, monkeypatch):
+    appels, etat = publication
+    monkeypatch.setenv("GITHUB_REF_NAME", "main")
+    etat["comparaison"] = (0, "ahead\n")  # le commit de la version d'essai est contenu dans main
+    assert publier.publier().endswith(f"/releases/tag/v{__version__}")
+    creation = next(appel for appel in appels if appel[:2] == ("release", "create"))
+    assert creation[2] == f"v{__version__}" and "--latest" in creation and "--prerelease" not in creation
+    assert appels[-1][:3] == ("release", "delete", "installeur-essai")
+
+
+@pytest.mark.parametrize("comparaison", [(1, ""), (0, "diverged\n"), (0, "behind\n")])
+def test_un_essai_absent_ou_non_fusionne_est_laisse_en_place(publication, monkeypatch, comparaison):
+    appels, etat = publication
+    monkeypatch.setenv("GITHUB_REF_NAME", "main")
+    etat["comparaison"] = comparaison
+    publier.publier()
+    assert not any(appel[:3] == ("release", "delete", "installeur-essai") for appel in appels)
+
+
+def test_la_publication_exige_un_seul_installeur(publication, monkeypatch):
+    monkeypatch.setenv("GITHUB_REF_NAME", "main")
+    (publier.TRAVAIL / "autre.msi").write_bytes(b"x")
+    with pytest.raises(SystemExit, match="Un seul installeur"):
+        publier.publier()
+
+
 # ---------------------------------------------------------------------- fabrication
 def test_le_nom_de_l_installeur_porte_le_numero_de_version():
     assert f"Traducteur-juridique-{__version__}.msi" == construire.NOM_DE_L_INSTALLEUR
@@ -317,3 +392,16 @@ def test_la_fabrication_refuse_un_dossier_au_chemin_trop_long(monkeypatch, capsy
     monkeypatch.setattr(construire, "TRAVAIL", Path("C:/", "x" * construire.CHEMIN_MAXIMAL, "build", "installeur"))
     assert construire.main() == 1
     assert "trop long pour Windows" in capsys.readouterr().out
+
+
+def test_sans_wix_la_fabrication_s_arrete_avant_de_commencer(monkeypatch, capsys, tmp_path):
+    monkeypatch.setattr(sys, "platform", "win32")
+    monkeypatch.setattr(sys, "argv", ["construire.py"])
+    monkeypatch.setattr(construire, "TRAVAIL", tmp_path / "installeur")
+    for variable in ("WIX", "PROGRAMFILES(X86)", "PROGRAMFILES"):
+        monkeypatch.delenv(variable, raising=False)
+    monkeypatch.setenv("PATH", str(tmp_path))
+    assert construire.main() == 1
+    sortie = capsys.readouterr().out
+    assert "WiX Toolset 3 n'est pas installé" in sortie and construire.PAGE_DE_WIX in sortie
+    assert not (tmp_path / "installeur").exists()  # rien n'a été fabriqué

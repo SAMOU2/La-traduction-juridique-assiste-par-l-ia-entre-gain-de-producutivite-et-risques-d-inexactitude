@@ -23,7 +23,8 @@ contrôle de l'application installée, désinstallation, puis remplacement d'une
 option est faite pour une machine de fabrication (GitHub Actions) : elle refuse de démarrer si
 l'application est déjà installée, car elle la désinstallerait.
 
-WiX Toolset 3 est cherché sur l'ordinateur ; s'il est absent, il est téléchargé dans ``build``.
+WiX Toolset 3 doit être installé sur l'ordinateur : c'est le cas des machines Windows de GitHub.
+Ailleurs, il s'installe avec le fichier ``wix314.exe`` de la page indiquée par ``PAGE_DE_WIX``.
 """
 from __future__ import annotations
 
@@ -36,7 +37,6 @@ import shutil
 import subprocess
 import sys
 import time
-import zipfile
 
 ICI = pathlib.Path(__file__).resolve().parent
 RACINE = ICI.parents[1]
@@ -56,8 +56,8 @@ NOM_DE_L_INSTALLEUR = f"Traducteur-juridique-{__version__}.msi"
 GLOSSAIRE = pathlib.PurePath("_internal", "donnees", "glossaire_juridique.csv")
 #: Numéro de version de l'« ancienne version » fabriquée pour essayer une mise à jour.
 ANCIENNE_VERSION = "0.0.1"
-#: WiX Toolset 3, téléchargé seulement s'il n'est pas déjà sur l'ordinateur.
-ADRESSE_DE_WIX = "https://github.com/wixtoolset/wix3/releases/download/wix3141rtm/wix314-binaries.zip"
+#: Page où télécharger WiX Toolset 3 quand il n'est pas sur l'ordinateur.
+PAGE_DE_WIX = "https://github.com/wixtoolset/wix3/releases"
 #: Durée maximale du contrôle du programme, en secondes (le contrôle lui-même s'arrête après 60 secondes).
 DELAI_DU_CONTROLE = 180
 #: Longueur maximale du chemin du dossier de travail. Windows limite un chemin à 260 caractères, et le
@@ -277,8 +277,9 @@ def verifier_les_bibliotheques(resume: Resume) -> None:
         return
     lignes = [f"{nom} (demandée par {', '.join(demandeurs[:3])}{'…' if len(demandeurs) > 3 else ''})"
               for nom, demandeurs in sorted(absentes.items())]
-    resume.noter("Bibliothèques absentes du dossier et de Windows : " + " ; ".join(lignes))
-    annoter("warning", "Bibliothèques absentes", "\n".join(lignes))
+    # Sur un ordinateur qui n'a pas cette bibliothèque, le fichier qui la demande ne se chargerait pas.
+    raise Echec("3-bibliotheques", "Des fichiers du dossier de l'application demandent une bibliothèque qui n'est "
+                                   "ni dans ce dossier ni dans Windows.", "\n".join(lignes))
 
 
 # ---------------------------------------------------------------------- étape 3 : contrôle du programme
@@ -339,7 +340,7 @@ def controler(programme: pathlib.Path, nom: str, resume: Resume, quoi: str) -> d
 
 # ---------------------------------------------------------------------- étapes 4 et 5 : installeur
 def trouver_wix() -> pathlib.Path:
-    """Le dossier qui contient candle.exe et light.exe ; WiX est téléchargé s'il n'est pas sur l'ordinateur."""
+    """Le dossier qui contient candle.exe et light.exe, les deux programmes de WiX Toolset 3."""
     candidats = []
     if os.environ.get("WIX"):
         candidats.append(pathlib.Path(os.environ["WIX"]) / "bin")
@@ -350,21 +351,11 @@ def trouver_wix() -> pathlib.Path:
     trouve = shutil.which("candle.exe")
     if trouve:
         candidats.append(pathlib.Path(trouve).parent)
-    candidats.append(TRAVAIL / "wix")
     for dossier in candidats:
         if (dossier / "candle.exe").is_file() and (dossier / "light.exe").is_file():
             return dossier
-    dire(f"  WiX Toolset 3 n'est pas sur cet ordinateur : téléchargement de {ADRESSE_DE_WIX}")
-    import urllib.request
-
-    archive = TRAVAIL / "wix314-binaries.zip"
-    try:
-        urllib.request.urlretrieve(ADRESSE_DE_WIX, archive)
-        with zipfile.ZipFile(archive) as contenu:
-            contenu.extractall(TRAVAIL / "wix")
-    except (OSError, zipfile.BadZipFile) as erreur:
-        raise Echec("4-wix", f"WiX Toolset 3 n'a pas pu être téléchargé : {erreur}") from erreur
-    return TRAVAIL / "wix"
+    raise Echec("5-wix", "WiX Toolset 3 n'est pas installé sur cet ordinateur. Installez-le avec le fichier "
+                         f"wix314.exe de la page {PAGE_DE_WIX}, puis relancez ce script.")
 
 
 def fabriquer_l_installeur(wix: pathlib.Path, version: str, sortie: pathlib.Path, compression: str, nom: str) -> None:
@@ -640,6 +631,7 @@ def construire(essai: bool) -> pathlib.Path:
         raise Echec("0-depart", f"Le chemin du projet est trop long pour Windows ({len(str(RACINE))} caractères) : "
                                 "copiez le dossier du projet à un endroit au chemin court, par exemple C:\\tj, "
                                 "puis relancez ce script depuis cette copie.", str(RACINE))
+    wix = trouver_wix()  # cherché dès le début : inutile de fabriquer le dossier si WiX manque
     shutil.rmtree(TRAVAIL, ignore_errors=True)
     TRAVAIL.mkdir(parents=True)
     resume = Resume()
@@ -656,7 +648,6 @@ def construire(essai: bool) -> pathlib.Path:
         dire(f"  {nombre} fichiers dans {dossiers} dossiers")
 
         titre("5. Installeur (WiX Toolset 3)")
-        wix = trouver_wix()
         dire(f"  WiX : {wix}")
         fabriquer_l_installeur(wix, __version__, installeur, "high", "installeur")
         avertissements_de_wix(resume, "installeur")

@@ -61,6 +61,9 @@ analyse = Analysis(  # noqa: F821 (Analysis, PYZ, EXE et COLLECT sont fournis pa
     datas=[(str(RACINE / "donnees" / "glossaire_juridique.csv"), "donnees")],
     # Avec l'option --controle, le programme installé se contrôle sans jamais attendre un clic.
     runtime_hooks=[str(RACINE / "outils" / "installeur" / "crochet_controle.py")],
+    # L'application ne se connecte à rien. PyInstaller ajouterait pourtant le module de réseau de Qt,
+    # parce qu'une extension de Qt (écartée plus bas) s'en sert.
+    excludes=["PySide6.QtNetwork"],
 )
 # Les fichiers de Qt dont l'application ne se sert pas sont écartés : voir « superflu.py ».
 analyse.binaries, binaires_ecartes = superflu.trier(analyse.binaries)
