@@ -655,6 +655,7 @@ traducteur/
     theme.py                 couleurs et feuille de style
     icones.py                icônes
 outils/
+  aide_installation/         script qui dessine les images de docs/aide-installation
   glossaire/                 construction du glossaire d'exemple : script, lots de termes, phrases d'exemple
   installeur/                fabrication de l'installeur Windows
     construire.py            enchaîne toutes les étapes, puis essaie l'installeur
@@ -672,6 +673,7 @@ outils/
 tests/                       tests automatiques
   donnees/                   petit glossaire de 40 entrées réservé aux tests
 docs/                        captures d'écran
+  aide-installation/         images d'aide (dessins) : que faire si Windows 10 refuse d'ouvrir l'installeur
 maquette/                    première maquette SVG des deux écrans (version 0.1)
   proposition/               proposition d'interface (version 0.3)
 ```

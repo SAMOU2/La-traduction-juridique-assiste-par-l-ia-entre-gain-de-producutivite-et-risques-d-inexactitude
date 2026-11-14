@@ -1,0 +1,9 @@
+# Outils qui dessinent les images d'aide à l'installation (voir generer.py), à installer avec Python 3.11
+# ou plus récent :
+#
+#     python -m pip install -r outils/aide_installation/requirements.txt
+#
+# Les versions sont fixées : ce sont celles avec lesquelles les images de docs/aide-installation ont été dessinées.
+# fontmake sert à fabriquer la police Selawik à partir de ses sources (voir polices.py).
+pillow==13.0.0
+fontmake==3.12.2
