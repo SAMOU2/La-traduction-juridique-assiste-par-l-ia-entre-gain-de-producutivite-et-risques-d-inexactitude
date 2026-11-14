@@ -639,6 +639,8 @@ traducteur/
   documents.py               import et export des fichiers .txt, .docx et .doc
   application.py             démarrage de l'application
   controle.py                contrôle de l'installation : l'application s'essaie elle-même (option --controle)
+  ia/                        couche d'intelligence artificielle, facultative : l'application ne l'appelle pas encore
+    service.py               connecteur vers un service d'IA « compatible OpenAI » (NVIDIA Build, par exemple)
   interface/
     demarrage.py             écran de démarrage animé
     fenetre.py               fenêtre : barre latérale, menus, barre d'outils, chargement du glossaire
@@ -682,6 +684,11 @@ Les modules placés directement dans `traducteur/` n'utilisent pas l'interface g
 `application.py` et `controle.py`. La lecture et l'écriture des fichiers Word n'utilisent aucune bibliothèque
 supplémentaire.
 
+Le dossier `traducteur/ia/` n'utilise ni l'interface graphique ni le moteur. Son connecteur
+n'emploie que la bibliothèque standard de Python : il sait demander à un service d'IA la liste
+de ses modèles et lui envoyer une demande. **Rien dans l'application ne l'appelle pour
+l'instant** : elle traduit avec le glossaire, et avec lui seul.
+
 ### Tests
 
 ```
@@ -689,7 +696,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 508 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 661 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « contrat ») à mettre
@@ -713,6 +720,14 @@ Les tests de `tests/test_controle.py` portent sur le contrôle de l'installation
 `tests/test_installeur.py` portent sur les outils de l'installeur : liste des fichiers, icône,
 tri des fichiers de Qt, page de téléchargement. L'installeur lui-même ne se fabrique que sous
 Windows : il n'est pas essayé par ces tests, mais par sa fabrication.
+
+Les tests de `tests/test_ia_service.py` portent sur le connecteur du service d'IA. Aucun ne
+joint Internet : un faux service, lancé sur l'ordinateur lui-même, joue chaque cas (réponse
+normale, clé refusée, trop de demandes, lenteur, réponse illisible), et une connexion vers une
+autre machine fait échouer le test. Trois de ces tests fabriquent un certificat d'essai avec la
+commande `openssl` : sans elle, ils sont ignorés. Les tests de `tests/test_interface_ia.py`
+coupent le réseau, puis ouvrent l'application, cherchent des termes et traduisent des textes :
+elle ne doit tenter aucune connexion.
 
 ### Fabrication de l'installeur Windows
 
