@@ -526,11 +526,11 @@ class PageRecherche(QWidget):
         self._mettre_a_jour_les_suggestions()
 
     def _mettre_a_jour_les_suggestions(self) -> None:
-        termes: dict[str, str] = {}
-        if self.glossaire is not None:
-            for entree in self.glossaire.entrees:
-                termes.setdefault(cle_souple(entree.terme(self.source)), entree.terme(self.source))
-        self._modele_suggestions.setStringList([termes[cle] for cle in sorted(termes)])
+        # Un terme porté par plusieurs entrées (« droit ») n'est proposé qu'une fois ; deux termes que seuls
+        # leurs accents distinguent (« grève », « grevé ») sont proposés tous les deux.
+        entrees = self.glossaire.entrees if self.glossaire is not None else []
+        termes = {entree.terme(self.source) for entree in entrees}
+        self._modele_suggestions.setStringList(sorted(termes, key=lambda terme: (cle_souple(terme), terme)))
 
     # ------------------------------------------------------------------ recherche
     def lancer_recherche(self) -> None:
@@ -648,8 +648,13 @@ class PageRecherche(QWidget):
         self._definir_etat("")
 
     def _exemples(self) -> list[Entree]:
-        """Quelques entrées prises à intervalles réguliers dans le glossaire, sans terme répété."""
+        """Quelques entrées prises à intervalles réguliers dans le glossaire, sans terme répété.
+
+        Elles sont prises parmi les entrées qui ont une définition, s'il y en a : la fiche proposée en
+        exemple montre ainsi ses cinq champs, et non un terme accompagné de son seul équivalent.
+        """
         entrees = self.glossaire.entrees if self.glossaire is not None else []
+        entrees = [entree for entree in entrees if entree.definition_fr or entree.definition_ar] or entrees
         pas = max(1, len(entrees) // NOMBRE_EXEMPLES)
         exemples: list[Entree] = []
         for entree in entrees[::pas] + entrees:

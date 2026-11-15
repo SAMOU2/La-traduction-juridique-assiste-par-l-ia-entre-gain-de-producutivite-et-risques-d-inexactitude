@@ -1,0 +1,228 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Adverbes, prépositions, conjonctions et leurs locutions (codes adv, prep, conj), et les formules des actes.
+# L'application ne les remplace pas dans la traduction d'un texte. Une locution reconnue dans un texte y
+# reste entière : dans « de plein droit », le mot « droit » n'est pas traduit à part.
+
+## Vocabulaire juridique général | Locutions | Manière ## CORNU
+de plein droit | بقوة القانون | adv | sa=بحكم القانون
+légalement | قانونا | adv | sf=de droit
+de fait | فعليا | adv
+en droit | من الناحية القانونية | adv
+en fait | في الواقع | adv
+en l'espèce | في قضية الحال | adv
+en principe | مبدئيا | adv
+illégalement | بصفة غير قانونية | adv
+régulièrement | بصفة نظامية | adv
+valablement | بصفة صحيحة | adv
+dûment | حسب الأصول | adv
+indûment | بغير حق | adv | sf=sans droit
+abusivement | تعسفا | adv
+arbitrairement | تحكما | adv
+à bon droit | عن حق | adv
+à tort | بغير وجه حق | adv
+
+à l'amiable | وديا | adv
+d'office | تلقائيا | adv | sa=من تلقاء نفسه
+de bonne foi | بحسن نية | adj
+de mauvaise foi | بسوء نية | adj
+de gré à gré | بالتراضي | adv
+de plein gré | طواعية | adv | sa=بمحض إرادته
+sciemment | عن علم | adv | sf=en connaissance de cause
+intentionnellement | عمدا | adv | sf=volontairement, délibérément
+involontairement | بغير قصد | adv
+par négligence | بإهمال | adj
+par imprudence | عن عدم احتياط | adj
+solidairement | بالتضامن | adv
+conjointement | بالاشتراك | adv
+séparément | على انفراد | adv
+personnellement | شخصيا | adv | sf=en personne
+par écrit | كتابة | adv
+verbalement | شفاهة | adv | sf=oralement
+expressément | صراحة | adv
+tacitement | ضمنا | adv | sf=implicitement
+exclusivement | حصريا | adv
+uniquement | فقط | adv | sf=seulement
+notamment | لا سيما | adv | sa=خصوصا
+respectivement | على التوالي | adv
+réciproquement | بالتبادل | adv | sf=mutuellement
+
+## Vocabulaire juridique général | Locutions | À titre de ## CORNU
+à titre exceptionnel | بصفة استثنائية | adv
+à titre provisoire | بصفة مؤقتة | adv | sf=provisoirement
+à titre définitif | بصفة نهائية | adv | sf=définitivement
+à titre principal | بصفة أصلية | adv
+à titre subsidiaire | بصفة احتياطية | adv
+à titre accessoire | بصفة تبعية | adv
+à titre gratuit | بدون مقابل | adv | sa=مجانا
+à titre onéreux | بمقابل | adv
+à titre conservatoire | على سبيل التحفظ | adv
+à titre indicatif | على سبيل البيان | adv
+à titre d'exemple | على سبيل المثال | adv
+à titre personnel | بصفة شخصية | adv
+à titre de | على سبيل | prep
+au titre de | بعنوان | prep
+en qualité de | بصفة | prep | sf=en tant que
+ès qualités | بصفته | adv
+
+## Vocabulaire juridique général | Locutions | Temps ## CORNU
+immédiatement | فورا | adv | sf=sans délai
+dans les meilleurs délais | في أقرب الآجال | adv
+à bref délai | في أجل قصير | adv
+en temps utile | في الوقت المناسب | adv
+au préalable | مسبقا | adv | sf=préalablement
+ultérieurement | لاحقا | adv
+rétroactivement | بأثر رجعي | adv
+à l'avenir | مستقبلا | adv
+au plus tard | على الأكثر | adv
+à compter de | ابتداء من | prep | sf=à partir de, à dater de
+jusqu'à | إلى غاية | prep
+au cours de | خلال | prep | sf=pendant, durant
+dans un délai de | في أجل | prep
+à l'expiration de | عند انقضاء | prep | sf=à l'issue de
+avant l'expiration de | قبل انقضاء | prep
+à l'occasion de | بمناسبة | prep
+dans l'exercice de | أثناء ممارسة | prep
+
+## Vocabulaire juridique général | Locutions | Procédure ## CORNU+CPCA
+d'urgence | على وجه الاستعجال | adv | sf=en urgence
+en référé | استعجاليا | adv
+au fond | في الموضوع | adv
+en la forme | في الشكل | adv
+avant dire droit | قبل الفصل في الموضوع | adv
+en premier ressort | ابتدائيا | adv
+en dernier ressort | في آخر درجة | adv
+en premier et dernier ressort | ابتدائيا ونهائيا | adv
+contradictoirement | حضوريا | adv
+par défaut | غيابيا | adv
+publiquement | علنيا | adv
+à huis clos | في جلسة سرية | adj
+en chambre du conseil | في غرفة المشورة | adv
+sous serment | بعد أداء اليمين | adj
+par procuration | بالوكالة | adj
+par intérim | بالنيابة | adv
+à peine de nullité | تحت طائلة البطلان | adv
+à peine d'irrecevabilité | تحت طائلة عدم القبول | adv
+à peine de déchéance | تحت طائلة السقوط | adv
+en tout état de cause | في جميع الأحوال | adv | sf=en tout cas
+le cas échéant | عند الاقتضاء | adv
+s'il y a lieu | إن اقتضى الحال | adv
+en cas de besoin | عند الحاجة | adv
+par dérogation | استثناء | adv
+
+## Vocabulaire juridique général | Locutions | Biens et paiements ## CORNU+CIVIL
+en nature | عينا | adv
+en espèces | نقدا | adv | sf=au comptant
+à crédit | بالأجل | adv | sf=à terme
+à tempérament | بالتقسيط | adv
+au prorata | بالتناسب | adv | sf=proportionnellement
+à parts égales | بالتساوي | adv
+en totalité | كليا | adv | sf=intégralement, totalement
+en partie | جزئيا | adv | sf=partiellement
+en indivision | على الشيوع | adj
+en pleine propriété | ملكية تامة | adv
+en bon père de famille | بعناية الرجل العادي | adv
+à l'étranger | في الخارج | adv
+sur le territoire national | على التراب الوطني | adv
+
+## Vocabulaire juridique général | Locutions | Rapport à la règle ## CORNU
+en vertu de | بمقتضى | prep | sa=بموجب
+conformément à | طبقا ل | prep | sa=وفقا ل
+en application de | تطبيقا ل | prep
+aux termes de | حسب أحكام | prep
+au sens de | بمفهوم | prep
+sous réserve de | مع مراعاة | prep
+sans préjudice de | دون الإخلال ب | prep | sa=دون المساس ب
+sous peine de | تحت طائلة | prep | sf=à peine de
+à l'exception de | باستثناء | prep | sf=sauf, hormis, à l'exclusion de
+nonobstant | بصرف النظر عن | prep | sf=malgré, en dépit de
+par dérogation à | استثناء من | prep
+en violation de | خرقا ل | prep | sf=au mépris de
+dans le cadre de | في إطار | prep
+dans la limite de | في حدود | prep
+en matière de | في مجال | prep | sa=في مادة
+en cas de | في حالة | prep
+à défaut de | عند انعدام | prep | sf=faute de
+en l'absence de | في غياب | prep
+en présence de | بحضور | prep
+
+## Vocabulaire juridique général | Locutions | Personnes et intérêts ## CORNU
+au nom de | باسم | prep
+pour le compte de | لحساب | prep
+au profit de | لفائدة | prep | sa=لصالح | sf=en faveur de, au bénéfice de
+à la charge de | على عاتق | prep
+aux frais de | على نفقة | prep
+à l'encontre de | ضد | prep | sf=contre
+à l'égard de | تجاه | prep | sa=إزاء | sf=envers, vis-à-vis de
+à la demande de | بطلب من | prep | sf=à la requête de, sur demande de
+à l'initiative de | بمبادرة من | prep
+sur proposition de | باقتراح من | prep
+sur rapport de | بناء على تقرير | prep
+après avis de | بعد استشارة | prep
+avec l'accord de | بموافقة | prep
+à l'insu de | دون علم | prep
+dans l'intérêt de | لمصلحة | prep
+par l'intermédiaire de | بواسطة | prep | sf=au moyen de, par le biais de
+par voie de | عن طريق | prep
+
+## Vocabulaire juridique général | Locutions | Cause, but et mesure ## CORNU
+au vu de | بناء على | prep | sf=vu, sur la base de
+compte tenu de | بالنظر إلى | prep | sf=eu égard à
+en raison de | بسبب | prep | sf=à cause de, du fait de
+par suite de | نتيجة ل | prep | sf=à la suite de
+en vue de | قصد | prep | sa=بغرض | sf=afin de, aux fins de
+en contrepartie de | مقابل | prep | sf=moyennant
+à concurrence de | في حدود مبلغ | prep | sf=jusqu'à concurrence de
+en remplacement de | بدلا من | prep | sf=au lieu de, à la place de
+en sus de | زيادة على | prep | sf=en plus de, outre
+à proportion de | بنسبة | prep
+en fonction de | حسب | prep | sf=selon, suivant
+par rapport à | بالنسبة إلى | prep
+quant à | فيما يخص | prep | sf=en ce qui concerne, concernant, relativement à
+par conséquent | وبالتالي | adv | sf=en conséquence
+toutefois | غير أنه | adv | sf=cependant, néanmoins
+en outre | زيادة على ذلك | adv | sf=de plus, par ailleurs
+à cet effet | لهذا الغرض | adv | sf=à cette fin
+de ce fait | نتيجة لذلك | adv
+à ce titre | بهذه الصفة | adv
+
+## Vocabulaire juridique général | Locutions | Conditions et réserves ## CORNU
+à condition que | بشرط أن | conj | sf=pourvu que, sous réserve que
+à moins que | ما لم | conj | sf=sauf si
+dès lors que | متى | conj | sf=dès que
+lorsque | عندما | conj | sf=quand
+tant que | ما دام | conj | sf=aussi longtemps que
+jusqu'à ce que | إلى أن | conj
+avant que | قبل أن | conj
+après que | بعد أن | conj
+sans que | دون أن | conj
+afin que | لكي | conj | sf=pour que
+de sorte que | بحيث | conj | sf=de telle sorte que
+bien que | مع أن | conj | sf=quoique
+alors que | في حين أن | conj | sf=tandis que
+étant donné que | بما أن | conj | sf=vu que, puisque
+attendu que | حيث أن | conj | sf=considérant que
+au cas où | في حالة ما إذا | conj | sf=dans le cas où
+dans la mesure où | بقدر ما | conj
+à savoir | أي | conj | sf=c'est-à-dire
+sauf disposition contraire | ما لم يوجد نص مخالف | adv
+sauf convention contraire | ما لم يتفق على خلاف ذلك | adv | sf=sauf stipulation contraire
+sauf preuve contraire | ما لم يثبت العكس | adv | sf=jusqu'à preuve du contraire
+
+## Vocabulaire juridique général | Locutions | Formules des actes ## CORNU
+ci-dessus | أعلاه | adv
+ci-dessous | أدناه | adv
+ci-après | فيما يلي | adv
+ci-joint | رفقته | adv
+susvisé | المذكور أعلاه | adj | sf=susmentionné, précité
+ledit | المذكور | adj
+soussigné | الموقع أدناه | adj
+dénommé | المسمى | adj
+ci-après dénommé | المسمى فيما يلي | adj
+relatif à | المتعلق ب | adj | sf=afférent à, portant sur
+prévu par la loi | المنصوص عليه قانونا | adj
+fait à | حرر ب | v
+lu et approuvé | قرئ وصودق عليه | adj
+pour copie conforme | نسخة طبق الأصل | adv
+pour valoir ce que de droit | لاستعمالها في حدود ما يسمح به القانون | adv
+bon pour accord | صالح للموافقة | adj
+dont acte | وإثباتا لذلك حرر هذا العقد | adv

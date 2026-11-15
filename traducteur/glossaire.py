@@ -473,9 +473,11 @@ class Glossaire:
         Ordre de pertinence :
 
         0. le terme (ou son pluriel) est exactement la requête ;
-        1. le terme commence par la requête ;
-        2. le terme contient la requête comme mot entier ;
-        3. la requête est un synonyme du terme.
+        1. la requête est un synonyme du terme (« préjudice » : l'entrée « dommage ») ;
+        2. le terme commence par la requête (« préjudice futur ») ;
+        3. le terme contient la requête comme mot entier (« réparer le préjudice »).
+
+        Le synonyme passe avant les expressions : c'est son entrée qui donne l'équivalent du mot cherché.
         """
         cles = cles_de_recherche(requete, langue)
         if not cles:
@@ -486,11 +488,11 @@ class Glossaire:
             if entree in rangs:
                 continue
             cles_du_terme = self._cles_du_terme[langue][entree]
-            if any(terme.startswith(cle) for terme in cles_du_terme for cle in cles):
+            if any(cle in self._cles_des_synonymes[langue][entree] for cle in cles):
                 rangs[entree] = 1
-            elif any(motif.search(terme) for terme in cles_du_terme for motif in motifs):
+            elif any(terme.startswith(cle) for terme in cles_du_terme for cle in cles):
                 rangs[entree] = 2
-            elif any(cle in self._cles_des_synonymes[langue][entree] for cle in cles):
+            elif any(motif.search(terme) for terme in cles_du_terme for motif in motifs):
                 rangs[entree] = 3
         return sorted(rangs, key=lambda entree: (rangs[entree], len(entree.terme(langue)), entree.numero))
 

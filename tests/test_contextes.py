@@ -1,6 +1,7 @@
 """Contextes d'emploi d'un terme, cherchés dans tout le glossaire (champ ④ « Contextualisation »)."""
 
 import pytest
+from conftest import ENTREES_COMPLETES
 
 from traducteur.contextes import DEFINITION, EXEMPLE, NOMBRE_VISE, PROPRE, Emploi, emplois
 from traducteur.glossaire import Glossaire
@@ -245,14 +246,14 @@ def test_une_definition_prise_pour_contexte_est_a_verifier_comme_sur_sa_fiche(tm
 
 # ------------------------------------------------------------------ le glossaire fourni
 def test_contextes_du_glossaire_fourni(glossaire_fourni):
-    """Chacune des 1 000 entrées a sa phrase d'exemple : le champ ④ n'est jamais vide.
+    """Chacune des 1 000 entrées complètes a sa phrase d'exemple : son champ ④ n'est jamais vide.
 
     Le test ne compte ni les phrases à vérifier, ni les phrases prises dans une autre entrée : ces nombres
     changent quand le glossaire est relu ou corrigé (version 0.5 : 549 entrées affichent une phrase et 451 en
     affichent deux).
     """
     completees = 0
-    for element in glossaire_fourni.entrees:
+    for element in glossaire_fourni.entrees[:ENTREES_COMPLETES]:
         trouves = emplois(glossaire_fourni, element)
         # L'exemple de l'entrée vient en premier ; le champ n'affiche pas plus de phrases que prévu.
         assert trouves and trouves[0].origine == PROPRE and trouves[0].entree is element, element.terme_fr
@@ -274,6 +275,26 @@ def test_contextes_du_glossaire_fourni(glossaire_fourni):
     # du Code civil), et non une phrase à vérifier.
     suite = emplois(glossaire_fourni, entree(glossaire_fourni, "contrat"), 3)[2:]
     assert [(emploi.origine, emploi.a_verifier) for emploi in suite] == [(EXEMPLE, False)]
+
+
+def test_contextes_des_termes_seuls(glossaire_fourni):
+    """Un terme seul n'a pas d'exemple à lui : le champ ④ montre les phrases d'autres entrées qui l'emploient.
+
+    Le test porte sur un terme seul sur vingt, pour rester rapide : chaque recherche parcourt tout le glossaire.
+    """
+    seuls = glossaire_fourni.entrees[ENTREES_COMPLETES:]
+    assert seuls and not any(element.contextes for element in seuls)
+    for element in seuls[::20]:
+        trouves = emplois(glossaire_fourni, element)
+        assert len(trouves) <= NOMBRE_VISE, element.terme_fr
+        for emploi in trouves:
+            assert emploi.origine != PROPRE and emploi.entree is not element
+            assert positions_du_terme(emploi.fr, element, FR), (element.terme_fr, emploi.fr)
+            assert positions_du_terme(emploi.ar, element, AR), (element.terme_fr, emploi.ar)
+    # « protection » : absente du glossaire jusqu'à la version 0.7 ; ses contextes viennent d'autres entrées.
+    protection = entree(glossaire_fourni, "protection")
+    assert protection.numero > ENTREES_COMPLETES and not protection.definition_fr
+    assert [emploi.origine for emploi in emplois(glossaire_fourni, protection)] == [EXEMPLE, EXEMPLE]
 
 
 def test_les_deux_sens_d_action_ont_chacun_leurs_contextes(glossaire_fourni):

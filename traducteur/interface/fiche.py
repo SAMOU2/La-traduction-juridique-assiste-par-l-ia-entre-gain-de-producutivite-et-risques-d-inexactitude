@@ -561,6 +561,12 @@ class ColonneDefinition(Colonne):
         corps = self.disposition
         if not entree.definition_fr and not entree.definition_ar:
             self._vide("document", "Aucune définition pour ce terme", "Le glossaire n’en donne pas encore.")
+            # Sans définition, une mention « à vérifier » écrite dans la colonne « source_definition » porte sur
+            # l'équivalent : c'est le cas des termes seuls du glossaire fourni (« à vérifier (équivalent d'exemple) »).
+            detail = mention_a_verifier(entree.source_definition)
+            if detail is not None:
+                self._pied_a_verifier(detail, "Cet équivalent n’est repris d’aucun texte officiel ni d’aucun "
+                                              "dictionnaire : vérifiez-le avant de l’employer.")
             return
         for rang, langue in enumerate((source, cible)):
             if rang:
@@ -587,20 +593,28 @@ class ColonneDefinition(Colonne):
             detail = "source non indiquée"
             explication = ("Le glossaire n’indique pas la source de cette définition : "
                            "vérifiez-la avant de la citer.")
+        if detail is not None:
+            self._pied_a_verifier(detail, explication)
+            return
         mention = QHBoxLayout()
         mention.setSpacing(4)
-        if detail is None:
-            self.ligne_du_pied.addWidget(icone_fixe("document", theme.TEXTE_3))
-            mention.addWidget(etiquette("Source :", "pied"))
-            self.source_de_la_definition = EtiquetteCourte(entree.source_definition, "piedFort")
-        else:
-            self.ligne_du_pied.addWidget(icone_fixe("alerte", theme.AMBRE, 16, 1.6))
-            a_verifier = etiquette("À vérifier", "piedAlerte")
-            a_verifier.setToolTip(infobulle(explication))
-            mention.addWidget(a_verifier)
-            self.source_de_la_definition = EtiquetteCourte("", "pied")
-            if detail:
-                self.source_de_la_definition.definir_texte(f"· {detail}", "")
+        self.ligne_du_pied.addWidget(icone_fixe("document", theme.TEXTE_3))
+        mention.addWidget(etiquette("Source :", "pied"))
+        self.source_de_la_definition = EtiquetteCourte(entree.source_definition, "piedFort")
+        mention.addWidget(self.source_de_la_definition, 1)
+        self.ligne_du_pied.addLayout(mention, 1)
+
+    def _pied_a_verifier(self, detail: str, explication: str) -> None:
+        """Pied du champ : la mention « À vérifier », son détail (« définition d'exemple ») et son infobulle."""
+        mention = QHBoxLayout()
+        mention.setSpacing(4)
+        self.ligne_du_pied.addWidget(icone_fixe("alerte", theme.AMBRE, 16, 1.6))
+        a_verifier = etiquette("À vérifier", "piedAlerte")
+        a_verifier.setToolTip(infobulle(explication))
+        mention.addWidget(a_verifier)
+        self.source_de_la_definition = EtiquetteCourte("", "pied")
+        if detail:
+            self.source_de_la_definition.definir_texte(f"· {detail}", "")
         mention.addWidget(self.source_de_la_definition, 1)
         self.ligne_du_pied.addLayout(mention, 1)
 

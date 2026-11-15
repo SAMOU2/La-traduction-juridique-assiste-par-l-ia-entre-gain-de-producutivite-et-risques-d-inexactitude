@@ -1,0 +1,291 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Organisation judiciaire, procédure civile et administrative, voies d'exécution.
+
+## Organisation judiciaire ## ORGJUD
+ordre judiciaire | نظام قضائي عادي | mc
+ordre administratif | نظام قضائي إداري | mc
+juridiction de droit commun | جهة قضائية عادية | fc
+juridiction d'exception | جهة قضائية استثنائية | fc
+juridiction spécialisée | جهة قضائية متخصصة | fc
+juridiction du premier degré | جهة قضائية من الدرجة الأولى | fc
+juridiction d'appel | جهة الاستئناف | fi
+juridiction de renvoi | جهة الإحالة | fi
+juge unique | قاض فرد | ma
+formation collégiale | تشكيلة جماعية | fa
+composition du tribunal | تشكيلة المحكمة | fi
+carte judiciaire | خريطة قضائية | fa
+section civile | قسم مدني | fa
+section commerciale | قسم تجاري | fa
+section foncière | قسم عقاري | fa
+section des référés | قسم الاستعجال | fi
+section pénale | قسم الجنح | fi
+section des mineurs | قسم الأحداث | fi
+section maritime | قسم بحري | fa
+chambre civile | غرفة مدنية | fa
+chambre pénale | غرفة جزائية | fa
+chambre commerciale et maritime | غرفة تجارية وبحرية | fc
+chambre sociale | غرفة اجتماعية | fa
+chambre foncière | غرفة عقارية | fa
+chambre administrative | غرفة إدارية | fa
+chambre des mineurs | غرفة الأحداث | fi
+chambres réunies | غرف مجتمعة | fap
+chambre mixte | غرفة مختلطة | fa
+président de chambre | رئيس غرفة | mc | رؤساء الغرف
+président de section | رئيس قسم | mc
+président de la cour | رئيس المجلس القضائي | mi
+premier président | رئيس أول | ma
+vice-président | نائب الرئيس | mi | نواب الرئيس
+conseiller rapporteur | مستشار مقرر | ma
+juge rapporteur | قاض مقرر | ma
+commissaire d'État | محافظ الدولة | mi
+substitut du procureur | وكيل الجمهورية المساعد | mc
+avocat général | محام عام | ma
+doyen des juges d'instruction | عميد قضاة التحقيق | mi
+corps de la magistrature | سلك القضاء | mi
+statut de la magistrature | القانون الأساسي للقضاء | mc
+serment du magistrat | يمين القاضي | mi
+devoir de réserve | واجب التحفظ | mi
+secret des délibérations | سرية المداولات | mi
+discipline des magistrats | تأديب القضاة | fi
+prise à partie | مخاصمة القضاة | fi
+école supérieure de la magistrature | المدرسة العليا للقضاء | fc
+greffier en chef | رئيس أمناء الضبط | mi
+rôle des affaires | جدول القضايا | mi
+registre d'audience | سجل الجلسات | mi
+minute du jugement | أصل الحكم | fi
+expédition du jugement | نسخة عادية من الحكم | fc
+conseil de l'ordre | مجلس المنظمة | mi
+avocat stagiaire | محام متربص | ma
+avocat agréé près la Cour suprême | محام معتمد لدى المحكمة العليا | mc
+cabinet d'avocat | مكتب محاماة | mc
+constitution d'avocat | تأسيس محام | fc
+avocat commis d'office | محام معين تلقائيا | mc
+honoraires d'avocat | أتعاب المحامي | mip
+chambre nationale des notaires | الغرفة الوطنية للموثقين | fc
+étude notariale | مكتب التوثيق | fi
+chambre nationale des huissiers de justice | الغرفة الوطنية للمحضرين القضائيين | fc
+office d'huissier | مكتب المحضر القضائي | mi
+expert | خبير | mm | خبراء
+liste des experts | قائمة الخبراء | fi
+interprète | مترجم فوري | ma
+traducteur assermenté | مترجم محلف | ma
+conciliateur | مصلح | mm
+bureau d'assistance judiciaire | مكتب المساعدة القضائية | mi
+palais de justice | قصر العدالة | mi
+salle d'audience | قاعة الجلسات | fi
+vacances judiciaires | عطلة قضائية | fap
+année judiciaire | سنة قضائية | fa
+inspection générale | مفتشية عامة | fa
+ministère de la Justice | وزارة العدل | mi
+garde des Sceaux | وزير العدل حافظ الأختام | mc
+
+## Procédure civile | Action et instance ## CPCA
+droit d'agir | حق التقاضي | mi
+intérêt à agir | مصلحة في التقاضي | mc
+qualité pour agir | صفة في التقاضي | fc
+capacité d'ester en justice | أهلية التقاضي | fi
+défaut de qualité | انعدام الصفة | mi
+défaut d'intérêt | انعدام المصلحة | mi
+introduction de l'instance | رفع الدعوى | fi
+enrôlement | قيد الدعوى | mi
+objet du litige | موضوع النزاع | mi
+moyen de droit | وجه قانوني | ma
+moyen de fait | وجه واقعي | ma
+moyen nouveau | وجه جديد | ma
+moyen d'ordre public | وجه من النظام العام | mc
+mémoire en réponse | مذكرة جوابية | ma
+mémoire en réplique | مذكرة رد | mc
+mémoire ampliatif | مذكرة إضافية | ma
+échange des mémoires | تبادل المذكرات | mi
+communication des pièces | تبليغ الوثائق | fi
+bordereau de pièces | جدول الوثائق | mi
+demande principale | طلب أصلي | fa
+demande incidente | طلب عارض | fa
+demande subsidiaire | طلب احتياطي | fa
+demande nouvelle | طلب جديد | fa
+demande en intervention | طلب التدخل | fi
+intervention volontaire | تدخل اختياري | fa
+intervention forcée | إدخال في الخصومة | fc
+appel en garantie | إدخال الضامن | mi
+mise en cause | إدخال الغير في الخصومة | fc
+exception d'incompétence | دفع بعدم الاختصاص | fc
+exception de litispendance | دفع بوحدة الموضوع | fc
+exception de connexité | دفع بالارتباط | fc
+exception de nullité | دفع بالبطلان | fc
+exception dilatoire | دفع بإرجاء الفصل | fc
+litispendance | وحدة الموضوع | fi
+connexité | ارتباط | fm
+incident d'instance | عارض الخصومة | mi | عوارض الخصومة
+suspension de l'instance | وقف الخصومة | fi
+interruption de l'instance | انقطاع الخصومة | fi
+reprise d'instance | إعادة السير في الدعوى | fc
+extinction de l'instance | انقضاء الخصومة | fi
+acquiescement | قبول بالطلبات | mc
+désistement d'action | تنازل عن الدعوى | mc
+disjonction d'instances | فصل الخصومات | fi
+partie défaillante | خصم متخلف | fa
+défaut de comparution | تخلف عن الحضور | mc
+représentation en justice | تمثيل أمام القضاء | fc
+ministère d'avocat | تمثيل بمحام | mc
+partie succombante | خصم خاسر | fa
+partie gagnante | خصم رابح | fa
+colitigant | خصم منضم | ma
+tiers intervenant | متدخل في الخصومة | mc
+appelé en garantie | مدخل في الخصومة | mc
+
+## Procédure civile | Audience et jugement ## CPCA
+mise en état | تهيئة القضية | fi
+clôture de l'instruction | اختتام التحقيق | fi
+réouverture des débats | إعادة فتح المرافعات | fi
+police de l'audience | ضبط الجلسة | fi
+publicité des débats | علنية الجلسات | fi
+audience publique | جلسة علنية | fa
+audience de conciliation | جلسة الصلح | fi
+tentative de conciliation | محاولة الصلح | fi
+mise en délibéré | وضع القضية في المداولة | fc
+prononcé du jugement | النطق بالحكم | mc
+date du prononcé | تاريخ النطق بالحكم | fc
+rédaction du jugement | تحرير الحكم | fi
+motifs du jugement | أسباب الحكم | mip
+défaut de motifs | انعدام التسبيب | mi
+insuffisance de motifs | قصور في التسبيب | fc
+contradiction de motifs | تناقض الأسباب | fi
+défaut de base légale | انعدام الأساس القانوني | mi
+dénaturation | تحريف | fm
+omission de statuer | إغفال الفصل في طلب | fc
+ultra petita | حكم بأكثر مما طلب | mc
+erreur matérielle | خطأ مادي | fa | أخطاء مادية
+rectification du jugement | تصحيح الحكم | fi
+interprétation du jugement | تفسير الحكم | fi
+jugement au fond | حكم في الموضوع | mc
+jugement en premier ressort | حكم ابتدائي | mc
+jugement réputé contradictoire | حكم معتبر حضوريا | mc
+jugement déclaratif | حكم كاشف | ma
+jugement constitutif | حكم منشئ | ma
+jugement d'expédient | حكم اتفاقي | mc
+jugement étranger | حكم أجنبي | ma | أحكام أجنبية
+décision de justice | مقرر قضائي | fc
+décision gracieuse | أمر ولائي | fa
+matière gracieuse | مادة ولائية | fa
+matière contentieuse | مادة نزاعية | fa
+trouble manifestement illicite | اضطراب غير مشروع بين | mc
+dommage imminent | ضرر وشيك | ma
+contestation sérieuse | نزاع جدي | fa
+provision ad litem | تسبيق عن المصاريف | fc
+condamnation aux dépens | حكم بالمصاريف | fc
+amende civile | غرامة مدنية | fa
+frais irrépétibles | مصاريف غير قابلة للاسترداد | mcp
+liquidation des dépens | تصفية المصاريف | fi
+signification du jugement | تبليغ الحكم | fi
+notification à personne | تبليغ شخصي | fa
+notification à domicile | تبليغ في الموطن | fc
+notification par voie d'affichage | تبليغ عن طريق التعليق | fc
+procès-verbal de notification | محضر التبليغ | mi
+acte d'huissier | محرر المحضر القضائي | mi
+exploit | محضر تبليغ رسمي | mc
+convocation | استدعاء | fm | استدعاءات
+élection de domicile | اختيار الموطن | fi
+
+## Procédure civile | Preuve et instruction ## CPCA+CIVIL
+administration de la preuve | تقديم الدليل | fi
+preuve littérale | دليل كتابي | fa
+preuve testimoniale | إثبات بالشهود | fc
+preuve par présomption | إثبات بالقرائن | fc
+preuve contraire | دليل عكسي | fa
+élément de preuve | عنصر إثبات | mc
+présomption simple | قرينة بسيطة | fa
+présomption irréfragable | قرينة قاطعة | fa
+présomption de fait | قرينة قضائية | fa
+aveu judiciaire | إقرار قضائي | ma
+aveu extrajudiciaire | إقرار غير قضائي | mc
+serment supplétoire | يمين متممة | ma
+délation du serment | توجيه اليمين | fi
+refus de serment | نكول عن اليمين | mc
+audition des témoins | سماع الشهود | fi
+reproche de témoin | تجريح الشاهد | mi
+déposition | إفادة | ff
+comparution personnelle | حضور شخصي | fa
+descente sur les lieux | انتقال للمعاينة | fc
+transport sur les lieux | انتقال إلى الأماكن | mc
+rapport d'expertise | تقرير الخبرة | mi
+contre-expertise | خبرة مضادة | fa
+complément d'expertise | خبرة تكميلية | mc
+mission d'expertise | مهمة الخبير | fi
+récusation de l'expert | رد الخبير | fi
+consultation | استشارة | ff | استشارات
+constat d'huissier | محضر معاينة | mc
+faux incident | ادعاء فرعي بالتزوير | mc
+faux principal | دعوى التزوير الأصلية | mc
+production forcée de pièces | إلزام بتقديم الوثائق | fc
+secret des affaires | سر الأعمال | mi
+
+## Procédure civile | Voies de recours ## CPCA
+voie de recours ordinaire | طريق طعن عادي | fc
+voie de recours extraordinaire | طريق طعن غير عادي | fc
+délai d'appel | أجل الاستئناف | mi
+délai de pourvoi | أجل الطعن بالنقض | mc
+appel principal | استئناف أصلي | ma
+appel incident | استئناف فرعي | ma
+appel abusif | استئناف تعسفي | ma
+acte d'appel | عريضة الاستئناف | mi
+arrêt confirmatif | قرار مؤيد | ma
+arrêt infirmatif | قرار ملغ | ma
+arrêt de cassation | قرار بالنقض | mc
+arrêt de rejet | قرار بالرفض | mc
+arrêt de renvoi | قرار بالإحالة | mc
+arrêt de principe | قرار مبدئي | ma
+cassation sans renvoi | نقض بدون إحالة | fc
+cassation partielle | نقض جزئي | fa
+moyen de cassation | وجه الطعن بالنقض | mc
+violation de la loi | مخالفة القانون | fi
+vice de forme | عيب في الشكل | mc
+vice de procédure | عيب في الإجراءات | mc
+demandeur au pourvoi | طاعن | mm
+défendeur au pourvoi | مطعون ضده | mc
+opposant | معارض | mm
+tiers opposant | معترض خارج عن الخصومة | mc
+recours en interprétation | دعوى تفسيرية | mc
+effet non suspensif | أثر غير موقف | mc
+défense à exécution | اعتراض على النفاذ المعجل | fc
+déchéance du pourvoi | سقوط الطعن | fi
+désistement du pourvoi | تنازل عن الطعن | mc
+irrecevabilité de l'appel | عدم قبول الاستئناف | fi
+chose jugée | شيء مقضي فيه | fc
+identité de parties | وحدة الأطراف | fi
+identité d'objet | وحدة المحل | fi
+identité de cause | وحدة السبب | fi
+
+## Procédure civile | Voies d'exécution ## CPCA
+exécution volontaire du jugement | تنفيذ اختياري للحكم | fc
+difficulté d'exécution | إشكال في التنفيذ | fc | إشكالات التنفيذ
+agent d'exécution | عون التنفيذ | mi
+sommation | إنذار رسمي | fa
+procès-verbal de saisie | محضر الحجز | mi
+procès-verbal de carence | محضر عدم وجود | mc
+débiteur saisi | مدين محجوز عليه | mc
+biens saisis | أموال محجوزة | map
+gardien des biens saisis | حارس الأشياء المحجوزة | mi
+saisie mobilière | حجز على المنقول | fc
+saisie des rémunérations | حجز على الأجور | fc
+saisie-revendication | حجز استحقاقي | fa
+saisie-gagerie | حجز المؤجر على منقولات المستأجر | fc
+saisie foraine | حجز على منقولات المدين المتنقل | fc
+validation de la saisie | تثبيت الحجز | fi
+conversion de la saisie | تحويل الحجز | fi
+cahier des conditions de vente | قائمة شروط البيع | mc
+mise à prix | سعر افتتاحي | fa
+enchère | مزايدة | ff | مزايدات
+surenchère | إعادة البيع بالمزاد بزيادة | fc
+folle enchère | إعادة البيع على ذمة الراسي عليه المزاد | fc
+jugement d'adjudication | حكم رسو المزاد | mi
+enchérisseur | مزايد | mm
+distribution des deniers | توزيع المبالغ المتحصلة | fc
+ordre entre créanciers | ترتيب الدائنين | mi
+créancier poursuivant | دائن مباشر للإجراءات | mc
+créancier inscrit | دائن مقيد | ma
+délai de paiement | مهلة الدفع | mi
+concours de la force publique | مساعدة القوة العمومية | mi
+expulsion locative | طرد المستأجر | fi
+liquidation de l'astreinte | تصفية الغرامة التهديدية | fi
+exécution sur minute | تنفيذ بموجب النسخة الأصلية | fc
+titre exécutoire étranger | سند تنفيذي أجنبي | mc

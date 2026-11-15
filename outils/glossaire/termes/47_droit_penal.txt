@@ -1,0 +1,342 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit pénal général, infractions, procédure pénale, exécution des peines.
+
+## Droit pénal ## CP
+loi pénale | قانون جزائي | fa
+application de la loi pénale dans le temps | تطبيق القانون الجزائي من حيث الزمان | fc
+application de la loi pénale dans l'espace | تطبيق القانون الجزائي من حيث المكان | fc
+principe de territorialité | مبدأ الإقليمية | mi
+interprétation stricte | تفسير ضيق | fa
+loi pénale plus douce | قانون أصلح للمتهم | fc
+incrimination | تجريم | fm
+dépénalisation | رفع التجريم | fi
+fait incriminé | فعل مجرم | ma
+acte préparatoire | عمل تحضيري | ma | أعمال تحضيرية
+commencement d'exécution | بدء في التنفيذ | mc
+désistement volontaire | عدول اختياري | ma
+infraction tentée | جريمة مشروع فيها | fc
+infraction consommée | جريمة تامة | fa
+infraction impossible | جريمة مستحيلة | fa
+infraction intentionnelle | جريمة عمدية | fa
+infraction non intentionnelle | جريمة غير عمدية | fc
+infraction continue | جريمة مستمرة | fa
+infraction instantanée | جريمة وقتية | fa
+infraction d'habitude | جريمة اعتياد | fc
+infraction politique | جريمة سياسية | fa
+infraction militaire | جريمة عسكرية | fa
+infraction de droit commun | جريمة القانون العام | fi
+infraction flagrante | جريمة متلبس بها | fc
+concours d'infractions | تعدد الجرائم | mi
+cumul des peines | جمع العقوبات | mi
+confusion des peines | دمج العقوبات | fi
+dol général | قصد جنائي عام | mc
+dol spécial | قصد جنائي خاص | mc
+mobile | باعث | mm | بواعث
+culpabilité | إذناب | fm
+coauteur | فاعل مشترك | ma
+instigateur | محرض | mm | محرضون
+provocation | تحريض | fm
+aide et assistance | مساعدة ومعاونة | fc
+auteur principal | فاعل أصلي | ma
+auteur moral | فاعل معنوي | ma
+personne morale pénalement responsable | شخص معنوي مسؤول جزائيا | fc
+cause d'irresponsabilité | مانع من موانع المسؤولية | fc
+démence | جنون | fm
+contrainte irrésistible | قوة لا قبل له بدفعها | fc
+minorité pénale | صغر السن | fi
+excuse légale | عذر قانوني | fa | أعذار قانونية
+excuse atténuante | عذر مخفف | fa
+excuse absolutoire | عذر معف | fa
+excuse de provocation | عذر الاستفزاز | fi
+ordre de la loi | أمر القانون | mi
+commandement de l'autorité légitime | أمر السلطة الشرعية | mc
+permission de la loi | إذن القانون | fi
+consentement de la victime | رضا المجني عليه | mc
+proportionnalité de la défense | تناسب الدفاع | fi
+
+peine principale | عقوبة أصلية | fa | عقوبات أصلية
+peine criminelle | عقوبة جنائية | fa
+peine délictuelle | عقوبة جنحية | fa
+peine privative de liberté | عقوبة سالبة للحرية | fc
+réclusion à temps | سجن مؤقت | fa
+peine d'amende | عقوبة الغرامة | fi
+jour-amende | غرامة يومية | ma
+peine alternative | عقوبة بديلة | fa | عقوبات بديلة
+placement sous surveillance électronique | وضع تحت المراقبة الإلكترونية | mc
+bracelet électronique | سوار إلكتروني | ma
+interdiction de séjour | منع من الإقامة | fc
+assignation à résidence | تحديد الإقامة | fi
+interdiction légale | حجر قانوني | fa
+dégradation civique | حرمان من الحقوق الوطنية | fc
+interdiction d'exercer une profession | منع من ممارسة مهنة | fc
+fermeture d'établissement | إغلاق المؤسسة | fi
+exclusion des marchés publics | إقصاء من الصفقات العمومية | fc
+retrait du permis de conduire | سحب رخصة السياقة | mi
+publication de la condamnation | نشر الحكم | fi
+confiscation générale | مصادرة عامة | fa
+confiscation spéciale | مصادرة خاصة | fa
+internement judiciaire | حجز قضائي في مؤسسة استشفائية | mc
+placement en établissement thérapeutique | وضع في مؤسسة علاجية | mc
+individualisation de la peine | تفريد العقوبة | fi
+aggravation de la peine | تشديد العقوبة | fi
+atténuation de la peine | تخفيف العقوبة | fi
+maximum de la peine | حد أقصى للعقوبة | mc
+minimum de la peine | حد أدنى للعقوبة | mc
+période de sûreté | فترة أمنية | fa
+sursis simple | وقف تنفيذ بسيط | mc
+sursis avec mise à l'épreuve | وقف تنفيذ مع الوضع تحت الاختبار | mc
+révocation du sursis | إلغاء وقف التنفيذ | fi
+dispense de peine | إعفاء من العقوبة | fc
+prescription de la peine | تقادم العقوبة | fi
+extinction de la peine | انقضاء العقوبة | fi
+réhabilitation légale | رد الاعتبار القانوني | fc
+réhabilitation judiciaire | رد الاعتبار القضائي | fc
+antécédents judiciaires | سوابق قضائية | map
+récidiviste | عائد إلى الجريمة | mc
+délinquant primaire | مجرم مبتدئ | ma
+mineur délinquant | حدث جانح | ma | أحداث جانحون
+enfant en danger | طفل في خطر | mc
+
+## Droit pénal | Infractions | Personnes ## CP
+assassinat | قتل مع سبق الإصرار والترصد | mc
+guet-apens | ترصد | mm
+parricide | قتل الأصول | mi
+infanticide | قتل الأطفال | mi
+empoisonnement | تسميم | mm
+violences | أعمال عنف | fcp
+blessures involontaires | جرح خطأ | fcp
+incapacité totale de travail | عجز كلي عن العمل | fc
+infirmité permanente | عاهة مستديمة | fa
+mutilation | بتر | fm
+mise en danger d'autrui | تعريض الغير للخطر | fc
+non-assistance à personne en danger | عدم تقديم المساعدة لشخص في خطر | fc
+omission de porter secours | امتناع عن تقديم المساعدة | fc
+avortement | إجهاض | mm
+délaissement d'enfant | ترك الأطفال | mi
+abandon de l'enfant | تخلي عن الطفل | mc
+non-représentation d'enfant | عدم تسليم الطفل | fi
+non-paiement de la pension alimentaire | عدم تسديد النفقة | mi
+détournement de mineur | إبعاد قاصر | mc
+séquestration | حجز الأشخاص | fi
+prise d'otages | أخذ الرهائن | fi
+otage | رهينة | mf | رهائن
+trafic d'organes | اتجار بالأعضاء | mc
+trafic de migrants | تهريب المهاجرين | mi
+attentat à la pudeur | فعل مخل بالحياء | mc
+outrage public à la pudeur | فعل علني مخل بالحياء | mc
+agression sexuelle | اعتداء جنسي | fa | اعتداءات جنسية
+inceste | فاحشة بين ذوي المحارم | mc
+adultère | زنا | mm
+proxénétisme | وساطة في الدعارة | mc
+prostitution | دعارة | ff
+incitation à la débauche | تحريض على الفسق | fc
+harcèlement moral | تحرش معنوي | ma
+violence conjugale | عنف زوجي | fa
+dénonciation calomnieuse | وشاية كاذبة | fa
+atteinte à l'honneur | مساس بالشرف | fc
+atteinte à la considération | مساس بالاعتبار | fc
+violation du secret professionnel | إفشاء السر المهني | fi
+violation du secret des correspondances | انتهاك سرية المراسلات | fc
+discours de haine | خطاب الكراهية | mi
+discrimination | تمييز بين الأشخاص | fc
+menace de mort | تهديد بالقتل | fc
+chantage | ابتزاز | mm
+
+## Droit pénal | Infractions | Biens ## CP
+vol simple | سرقة بسيطة | ma
+vol qualifié | سرقة موصوفة | ma
+vol aggravé | سرقة مشددة | ma
+vol avec violence | سرقة بالعنف | mc
+vol à main armée | سرقة بالسلاح | mc
+vol avec effraction | سرقة بالكسر | mc
+effraction | كسر | fm
+escalade | تسلق | fm
+fausses clés | مفاتيح مصطنعة | fap
+extorsion | انتزاع بالقوة | fc
+détournement | اختلاس | mm
+abus de biens sociaux | تعسف في استعمال أموال الشركة | mc
+abus de faiblesse | استغلال حالة ضعف | mc
+abus de blanc-seing | خيانة الأمانة في ورقة موقعة على بياض | mc
+destruction de biens | تخريب الأموال | fi
+dégradation | إتلاف | fm
+incendie volontaire | حريق عمدي | ma
+contrefaçon de monnaie | تزوير النقود | fi
+fausse monnaie | نقود مزورة | fa
+faux en écriture publique | تزوير في محررات رسمية | mc
+faux en écriture privée | تزوير في محررات عرفية | mc
+faux en écriture de commerce | تزوير في محررات تجارية | mc
+faux matériel | تزوير مادي | ma
+faux intellectuel | تزوير معنوي | ma
+falsification | تزييف | fm
+usurpation d'identité | انتحال هوية | fc
+usurpation de fonctions | انتحال وظيفة | fc
+usurpation de titre | انتحال لقب | fc
+fausse déclaration | تصريح كاذب | fa | تصريحات كاذبة
+faux serment | يمين كاذبة | ma
+subornation de témoin | إغراء الشهود | fi
+tromperie | خداع | fm
+falsification de denrées | غش في المواد الغذائية | fc
+spéculation illicite | مضاربة غير مشروعة | fa
+usure | ربا | fm
+jeu de hasard | لعبة حظ | mc | ألعاب الحظ
+loterie | يانصيب | fm
+
+## Droit pénal | Infractions | État et paix publique ## CP+CORRUPTION
+atteinte à la sûreté de l'État | مساس بأمن الدولة | fc
+trahison | خيانة | ff
+espionnage | تجسس | mm
+complot | مؤامرة | mf | مؤامرات
+attentat | اعتداء | mm | اعتداءات
+rébellion | عصيان | fm
+attroupement | تجمهر | mm
+acte terroriste | عمل إرهابي | ma | أعمال إرهابية
+apologie du terrorisme | إشادة بالأعمال الإرهابية | fc
+financement du terrorisme | تمويل الإرهاب | mi
+organisation terroriste | منظمة إرهابية | fa
+crime organisé | جريمة منظمة | ma
+groupe criminel organisé | جماعة إجرامية منظمة | mc
+criminalité transnationale | إجرام عابر للحدود | fc
+détention d'arme | حيازة سلاح | fc
+port d'arme prohibée | حمل سلاح محظور | mc
+arme à feu | سلاح ناري | fa | أسلحة نارية
+arme blanche | سلاح أبيض | fa
+munitions | ذخيرة | ffp
+explosifs | متفجرات | mfp
+stupéfiants | مخدرات | mfp
+substances psychotropes | مؤثرات عقلية | fap
+consommation de stupéfiants | استهلاك المخدرات | fi
+détention de stupéfiants | حيازة المخدرات | fi
+outrage à magistrat | إهانة قاض | mc
+outrage à agent public | إهانة موظف | mc
+violences contre un agent public | تعدي على موظف | fcp
+évasion | هروب | fm
+bris de scellés | كسر الأختام | mi
+entrave à la justice | عرقلة سير العدالة | fc
+non-dénonciation de crime | عدم التبليغ عن جناية | fc
+recel de malfaiteur | إخفاء مجرم | mc
+concussion | غدر | fm
+prise illégale d'intérêts | أخذ فوائد بصفة غير قانونية | fc
+octroi d'avantages injustifiés | منح امتيازات غير مبررة | mc
+corruption active | رشوة إيجابية | fa
+corruption passive | رشوة سلبية | fa
+corrupteur | راش | mm
+corrompu | مرتش | mm
+pot-de-vin | رشوة مالية | ma
+cadeau | هدية | mf | هدايا
+conflit d'intérêts | تعارض المصالح | mi
+déclaration de patrimoine | تصريح بالممتلكات | fc
+lanceur d'alerte | مبلغ عن الفساد | mc
+dilapidation | تبديد | fm
+gaspillage | تبذير | mm
+cybercriminalité | جريمة معلوماتية | fa
+accès frauduleux | دخول عن طريق الغش | mc
+atteinte aux systèmes de traitement automatisé de données | مساس بأنظمة المعالجة الآلية للمعطيات | fc
+migration clandestine | هجرة غير شرعية | fa
+infraction de change | جريمة الصرف | fi
+infraction douanière | جريمة جمركية | fa
+infraction économique | جريمة اقتصادية | fa
+infraction routière | مخالفة مرورية | fa
+conduite en état d'ivresse | سياقة في حالة سكر | fc
+délit de fuite | جنحة الفرار | mi
+
+## Procédure pénale ## CPP
+mise en mouvement de l'action publique | تحريك الدعوى العمومية | fc
+exercice de l'action publique | مباشرة الدعوى العمومية | mc
+extinction de l'action publique | انقضاء الدعوى العمومية | fc
+opportunité des poursuites | ملاءمة المتابعة | fi
+réquisitoire introductif | طلب افتتاحي لإجراء التحقيق | mc
+réquisitoire définitif | طلبات ختامية | mc
+réquisitions | التماسات النيابة | fcp
+plainte avec constitution de partie civile | شكوى مصحوبة بادعاء مدني | fc
+retrait de plainte | سحب الشكوى | mi
+agent de police judiciaire | عون الشرطة القضائية | mi
+gendarmerie nationale | درك وطني | fa
+sûreté nationale | أمن وطني | fa
+enquête de flagrance | تحري في حالة التلبس | fc
+scène de crime | مسرح الجريمة | fi
+indices graves et concordants | دلائل قوية ومتماسكة | mcp
+saisie des objets | حجز الأشياء | fi
+scellés | أحراز | mmp
+visite domiciliaire | تفتيش المساكن | fi
+mandat de perquisition | إذن بالتفتيش | mc
+interception des correspondances | اعتراض المراسلات | fi
+écoute téléphonique | تنصت هاتفي | fa
+infiltration | تسرب | fm
+livraison surveillée | تسليم مراقب | fa
+prélèvement biologique | أخذ عينة بيولوجية | mc
+expertise médico-légale | خبرة طبية شرعية | fa
+autopsie | تشريح الجثة | fi
+médecin légiste | طبيب شرعي | ma | أطباء شرعيون
+empreintes digitales | بصمات الأصابع | fip
+empreinte génétique | بصمة وراثية | fa
+identification | تحديد الهوية | fi
+contrôle d'identité | مراقبة الهوية | mi
+interpellation | استيقاف | fm
+arrestation | إلقاء القبض | fi
+prolongation de la garde à vue | تمديد التوقيف للنظر | fc
+droits de la personne gardée à vue | حقوق الموقوف للنظر | mcp
+examen médical | فحص طبي | ma | فحوص طبية
+présentation devant le procureur | تقديم أمام وكيل الجمهورية | fc
+procès-verbal d'audition | محضر سماع | mc
+procès-verbal d'interrogatoire | محضر استجواب | mc
+aveux | اعترافات | mfp
+ouverture d'une information | فتح تحقيق | fc
+interrogatoire de première comparution | استجواب عند الحضور الأول | mc
+reconstitution des faits | إعادة تمثيل الجريمة | fi
+témoin assisté | شاهد مستفيد من مساعدة محام | mc
+mandat de comparution | أمر بالحضور | mc
+mandat d'arrêt international | أمر دولي بالقبض | mc
+ordonnance de mise en détention | أمر بالوضع في الحبس المؤقت | fc
+ordonnance de mise en liberté | أمر بالإفراج | fc
+cautionnement pénal | كفالة مالية | ma
+ordonnance de règlement | أمر بالتصرف في التحقيق | fc
+ordonnance de transmission des pièces | أمر بإرسال المستندات | fc
+arrêt de mise en accusation | قرار الإحالة على محكمة الجنايات | mc
+charges suffisantes | أعباء كافية | fap
+personne détenue | شخص محبوس | fa
+jugement de condamnation | حكم بالإدانة | mc
+jugement de relaxe | حكم بالبراءة | mc
+déclaration de culpabilité | تصريح بالإدانة | fc
+verdict | منطوق حكم المحلفين | mc
+doute | شك | mm
+jugement par contumace | حكم غيابي في جناية | mc
+opposition au jugement par défaut | معارضة في الحكم الغيابي | fc
+appel correctionnel | استئناف في الجنح | mc
+appel criminel | استئناف في الجنايات | mc
+tribunal criminel d'appel | محكمة الجنايات الاستئنافية | mc
+audience correctionnelle | جلسة الجنح | fi
+ordonnance pénale | أمر جزائي | fa
+composition pénale | تسوية جزائية | fa
+comparution sur reconnaissance préalable de culpabilité | مثول بناء على اعتراف مسبق بالذنب | fc
+amende forfaitaire | غرامة جزافية | fa
+révision du procès pénal | إعادة النظر في الحكم الجزائي | fc
+erreur judiciaire | خطأ قضائي | fa | أخطاء قضائية
+indemnisation de la détention injustifiée | تعويض عن الحبس المؤقت غير المبرر | fc
+protection des témoins | حماية الشهود | fi
+témoin protégé | شاهد محمي | ma
+
+## Droit pénal | Exécution des peines ## PENITENTIAIRE
+exécution des peines | تنفيذ العقوبات | fi
+administration pénitentiaire | إدارة السجون | fi
+établissement de prévention | مؤسسة وقاية | mc
+établissement de rééducation | مؤسسة إعادة التربية | mi
+établissement de réadaptation | مؤسسة إعادة التأهيل | mi
+centre spécialisé pour mineurs | مركز متخصص للأحداث | mc
+écrou | قيد في سجل الحبس | mc
+levée d'écrou | رفع القيد من سجل الحبس | fc
+régime de détention | نظام الاحتباس | mi
+isolement | عزلة | mf
+permission de sortie | إجازة الخروج | fi
+semi-liberté | حرية نصفية | fa
+chantier extérieur | ورشة خارجية | ma
+milieu ouvert | بيئة مفتوحة | ma
+milieu fermé | بيئة مغلقة | ma
+réinsertion sociale | إعادة الإدماج الاجتماعي | fc
+rééducation | إعادة التربية | fi
+remise de peine | تخفيض العقوبة | fi
+suspension de la peine | توقيف مؤقت لتطبيق العقوبة | fc
+commission de l'application des peines | لجنة تطبيق العقوبات | fi
+libéré conditionnel | مفرج عنه بشروط | mc
+assistance post-pénale | رعاية لاحقة | fa
+transfèrement | تحويل المحبوس | mi
+surpopulation carcérale | اكتظاظ السجون | fi
