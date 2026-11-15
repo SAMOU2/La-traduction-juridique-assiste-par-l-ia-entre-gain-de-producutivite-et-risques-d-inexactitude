@@ -14,6 +14,11 @@ Le résultat est une aide à la traduction, pas une traduction achevée : les
 mots absents du glossaire restent écrits dans la langue source et l'ordre des
 mots n'est pas modifié. Seules les phrases reprises d'un exemple du glossaire
 sont des traductions complètes.
+
+Seuls les noms et les groupes nominaux du glossaire sont remplacés. Un adjectif
+devrait s'accorder avec son nom et un verbe se conjuguer : le glossaire n'en
+donne qu'une forme et les règles de ce module ne traitent que les noms. Ces
+entrées restent dans la langue source (voir ``se_remplace_dans_un_texte``).
 """
 
 from __future__ import annotations
@@ -90,6 +95,13 @@ _H_ASPIRES = ("hausse", "haut", "hasard", "harcèlement", "handicap", "hiérarch
               "halte", "hameau", "hangar", "héros", "heurt")
 _GENRE_FEMININ = regex.compile(r"fémin|\bfém\b|\bn\.?\s?f\b|\bf\b|\bnf\b")
 _GENRE_MASCULIN = regex.compile(r"mascul|\bmasc\b|\bn\.?\s?m\b|\bm\b|\bnm\b")
+#: Catégories d'un mot qui n'est pas un nom : verbe, adjectif, adverbe, préposition, conjonction, et les
+#: locutions de même nature.
+_AUTRE_NATURE = regex.compile(r"\b(?:verb|adjecti|adverb|particip|pr[ée]positi|conjoncti)"
+                              r"|\b(?:adj|adv|v|pr[ée]p|conj)\b")
+_NATURE_DE_NOM = regex.compile(r"\bnom|\bsubst|\bn\b|\bn[mf]\b")
+#: Catégories des mots invariables : adverbes, prépositions, conjonctions et leurs locutions.
+_INVARIABLE = regex.compile(r"\b(?:adverb|pr[ée]positi|conjoncti)|\b(?:adv|pr[ée]p|conj)\b")
 
 # ------------------------------------------------------------------ arabe
 _ARTICLE = "ال"
@@ -101,6 +113,22 @@ _TERMINAISONS = (("هما", "possessif"), ("هم", "possessif"), ("هن", "posse
                  ("نا", "possessif"), ("كم", "possessif"), ("ان", "pluriel"), ("ين", "pluriel"),
                  ("ون", "pluriel"), ("ات", "pluriel"), ("ه", "possessif"), ("ا", "indefini"))
 _PERSONNES = {"ه": "3s", "ها": "3s", "هما": "3p", "هم": "3p", "هن": "3p", "نا": "1p", "كم": "2p"}
+
+
+def se_remplace_dans_un_texte(entree: Entree) -> bool:
+    """Indique si la traduction d'un texte remplace le terme d'une entrée : un nom ou un groupe nominal.
+
+    Un adjectif (« protégé ») devrait s'accorder avec le nom qu'il qualifie, un verbe (« protéger ») se
+    conjuguer, et bien des verbes arabes s'écrivent comme un nom (« عقد », « حكم »). Les règles de ce module
+    ne traitent que les noms : les autres mots ne sont pas remplacés, pour ne pas écrire une forme fausse.
+    Ils gardent leur fiche dans l'écran « Terme ». Une entrée sans catégorie est traitée comme un nom.
+    """
+    categorie = entree.categorie_fr.casefold()
+    return _AUTRE_NATURE.search(categorie) is None or _NATURE_DE_NOM.search(categorie) is not None
+
+
+#: Dernier mot d'une locution française, et les formes contractées qu'il prend devant le mot qui suit.
+_FINS_DE_LOCUTION = {"de": ("d'", "du", "des"), "a": ("au", "aux"), "que": ("qu'",)}
 
 
 def _cle_d_amorce(mot: str, langue: str) -> str:
@@ -260,6 +288,11 @@ class Traducteur:
 
     def __init__(self, glossaire: Glossaire) -> None:
         self.glossaire = glossaire
+        #: Les entrées que la traduction remplace (voir ``se_remplace_dans_un_texte``), avec leurs index. C'est
+        #: le glossaire lui-même s'il ne contient que des noms.
+        noms = [entree for entree in glossaire.entrees if se_remplace_dans_un_texte(entree)]
+        self._noms = (glossaire if len(noms) == len(glossaire.entrees)
+                      else Glossaire(noms, glossaire.chemin, glossaire.encodage))
         #: Phrases d'exemple du glossaire : clé de la phrase -> exemple.
         self._memoire: dict[str, dict[str, Contexte]] = {langue: {} for langue in LANGUES}
         #: Nombre de mots de la plus longue expression du glossaire, dans chaque langue.
@@ -268,9 +301,13 @@ class Traducteur:
         self._amorces: dict[str, set[str]] = {langue: set() for langue in LANGUES}
         #: Vrai si le glossaire écrit les accents du français. Dans un texte lui aussi accentué, les
         #: accents comptent alors : « cause » n'est pas « causé », ni « condamne » « condamné ».
-        self._glossaire_accentue = any(porte_des_accents(forme) for entree in glossaire.entrees
+        self._glossaire_accentue = any(porte_des_accents(forme) for entree in noms
                                        for forme in (*entree.formes(FR), *entree.synonymes_fr))
         self._accents_comptent = False
+        #: Locutions invariables du glossaire (« de plein droit », « بقوة القانون ») : premier mot -> suites de
+        #: mots, la plus longue d'abord. La traduction ne les remplace pas, et leurs mots ne sont pas traduits
+        #: un par un. Une locution verbale ou adjectivale change de forme dans un texte : elle n'y figure pas.
+        self._locutions: dict[str, dict[str, list[tuple[str, ...]]]] = {langue: {} for langue in LANGUES}
         # Résultats déjà calculés (un même mot revient souvent dans un texte).
         self._lectures: dict[tuple[str, str, bool], _Lecture | None] = {}
         self._debuts: dict[tuple[str, str], bool] = {}
@@ -278,12 +315,25 @@ class Traducteur:
         for entree in glossaire.entrees:
             for contexte in entree.contextes:
                 self._memoriser(contexte)
+        for entree in noms:
             for langue in LANGUES:
                 for forme in (*entree.formes(langue), *entree.synonymes(langue)):
                     mots = [jeton.texte for jeton in decouper_en_mots(forme) if jeton.nature != PONCTUATION]
                     self._longueur[langue] = max(self._longueur[langue], min(len(mots), LONGUEUR_MAXIMALE))
                     if len(mots) > 1:
                         self._amorces[langue].add(_cle_d_amorce(mots[0], langue))
+        if self._noms is not glossaire:
+            for entree in glossaire.entrees:
+                if se_remplace_dans_un_texte(entree) or not _INVARIABLE.search(entree.categorie_fr.casefold()):
+                    continue
+                for langue in LANGUES:
+                    for forme in (*entree.formes(langue), *entree.synonymes(langue)):
+                        mots = tuple(cle_souple(jeton.texte) for jeton in decouper_en_mots(forme)
+                                     if jeton.nature != PONCTUATION)
+                        if len(mots) > 1 and mots not in self._locutions[langue].setdefault(mots[0], []):
+                            self._locutions[langue][mots[0]].append(mots)
+            for suites in (suite for langue in LANGUES for suite in self._locutions[langue].values()):
+                suites.sort(key=len, reverse=True)
 
     def _memoriser(self, contexte: Contexte) -> None:
         if not contexte.fr or not contexte.ar:
@@ -377,6 +427,10 @@ class Traducteur:
                     lecture = _au_singulier(lecture)
                 if lecture is not None:
                     break
+            locution = self._locution(jetons, rang, langue)
+            if locution > (longueur if lecture is not None else 0):
+                rang += locution  # « de plein droit » : la locution reste entière, « droit » n'y est pas un terme
+                continue
             if lecture is None:
                 rang += 1
                 continue
@@ -392,6 +446,31 @@ class Traducteur:
             occurrences.append(occurrence)
             rang += longueur
         return occurrences
+
+    def _locution(self, jetons: list[Jeton], rang: int, langue: str) -> int:
+        """Nombre de jetons de la locution invariable qui commence au jeton ``rang`` ; 0 s'il n'y en a pas.
+
+        Une locution est reconnue telle qu'elle est écrite dans le glossaire. Deux écarts sont admis : son
+        dernier mot peut être contracté (« en vertu de » se lit aussi « en vertu du », « des » ou « d' ») et,
+        en arabe, son premier mot peut porter la conjonction « و » ou « ف ».
+        """
+        locutions = self._locutions[langue]
+        if not locutions:
+            return 0
+        premier = cle_souple(jetons[rang].texte)
+        suites = locutions.get(premier)
+        if suites is None and langue == AR and len(premier) > 2 and premier[0] in "وف":
+            suites = locutions.get(premier[1:])
+        for mots in suites or ():
+            fin = rang + len(mots)
+            if fin > len(jetons) or any(jeton.nature == PONCTUATION for jeton in jetons[rang:fin]):
+                continue
+            lus = [cle_souple(jeton.texte) for jeton in jetons[rang + 1:fin]]
+            if lus[:-1] != list(mots[1:-1]):
+                continue
+            if lus[-1] == mots[-1] or (langue == FR and lus[-1] in _FINS_DE_LOCUTION.get(mots[-1], ())):
+                return len(mots)
+        return 0
 
     def _commence_une_expression(self, mot: str, langue: str) -> bool:
         """Indique si une expression de plusieurs mots du glossaire peut commencer par ``mot``."""
@@ -409,7 +488,7 @@ class Traducteur:
 
     def _singuliers_arabes(self, mot: str) -> list[str]:
         """Singuliers d'un mot arabe que le glossaire donne comme un pluriel : « عقود » -> « عقد »."""
-        return [entree.terme_ar for entree, nature in self.glossaire.reconnaitre(mot, AR)
+        return [entree.terme_ar for entree, nature in self._noms.reconnaitre(mot, AR)
                 if nature == "pluriel" and len(entree.terme_ar.split()) == 1]
 
     def _pluriel_arabe(self, entree: Entree) -> str:
@@ -424,7 +503,7 @@ class Traducteur:
         premier, _, suite = entree.terme_ar.partition(" ")
         if not suite or _a_l_article(premier) or not _a_l_article(suite.split()[-1]):
             return ""
-        for autre in self.glossaire.trouver(premier, AR):
+        for autre in self._noms.trouver(premier, AR):
             if (autre.pluriel_ar and len(autre.pluriel_ar.split()) == 1
                     and cle_stricte(autre.terme_ar) == cle_stricte(premier)):
                 return f"{autre.pluriel_ar} {suite}"
@@ -451,12 +530,12 @@ class Traducteur:
         forme = cle_stricte(forme)  # sans voyelles brèves ni allongement
         variantes = list(_sans_particules(forme))
         for particules, reste in variantes:
-            entrees = self.glossaire.reconnaitre(reste, AR)
+            entrees = self._noms.reconnaitre(reste, AR)
             if entrees:
                 return _Lecture(entrees, particules=particules, defini=_est_defini(reste))
         for particules, reste in variantes:
             for terminaison, nature, radical in _sans_terminaison(reste):
-                entrees = self.glossaire.reconnaitre(radical, AR)
+                entrees = self._noms.reconnaitre(radical, AR)
                 if entrees:
                     return _Lecture(entrees, particules=particules, defini=_est_defini(radical),
                                     pluriel=nature == "pluriel", indefini=nature == "indefini",
@@ -467,14 +546,14 @@ class Traducteur:
             if not suite:
                 break
             for singulier in self._singuliers_arabes(premier):
-                entrees = self.glossaire.reconnaitre(f"{singulier} {suite}", AR)
+                entrees = self._noms.reconnaitre(f"{singulier} {suite}", AR)
                 if entrees:
                     return _Lecture(entrees, particules=particules, defini=_est_defini(reste), pluriel=True)
         return None
 
     def _reconnaitre_en_francais(self, forme: str) -> list[tuple[Entree, str]]:
         """Entrées désignées par une forme française ; les accents comptent si le texte en porte."""
-        entrees = self.glossaire.reconnaitre(forme, FR)
+        entrees = self._noms.reconnaitre(forme, FR)
         if not self._accents_comptent:
             return entrees
         return [(entree, nature) for entree, nature in entrees
@@ -524,7 +603,7 @@ class Traducteur:
         champ: set[str] = set()
         for terme in (*entree.termes_associes, *entree.synonymes(langue)):
             champ.add(cle_souple(terme))
-            for liee in (*self.glossaire.trouver(terme, FR), *self.glossaire.trouver(terme, AR)):
+            for liee in (*self._noms.trouver(terme, FR), *self._noms.trouver(terme, AR)):
                 champ.add(cle_souple(liee.terme(langue)))
         textes = [entree.definition(langue), *(contexte.texte(langue) for contexte in entree.contextes)]
         mots = {cle_souple(jeton.texte) for texte in textes for jeton in decouper_en_mots(texte)
@@ -555,7 +634,7 @@ class Traducteur:
         else:
             _annexions_arabes(phrase.occurrences)
             for occurrence in phrase.occurrences:
-                occurrence.rendu = _rendre_en_francais(occurrence, self.glossaire)
+                occurrence.rendu = _rendre_en_francais(occurrence, self._noms)
         return reconnus
 
     # ------------------------------------------------------------------ étape 5 : reconstruction
@@ -635,7 +714,7 @@ class Traducteur:
 
     def _particule(self, particule: str) -> Morceau:
         """Particule séparée d'un mot arabe : traduite si le glossaire la contient, sinon laissée telle quelle."""
-        entrees = self.glossaire.reconnaitre(particule, AR)
+        entrees = self._noms.reconnaitre(particule, AR)
         if entrees:
             return Morceau(entrees[0][0].terme_fr, TERME, entrees[0][0])
         return Morceau(particule if particule == "و" else particule + "ـ", SOURCE)
@@ -780,13 +859,26 @@ def _definir(terme: str, categorie: str = "") -> str:
     return _ARTICLE + terme
 
 
-def _etat_construit(terme: str) -> str:
-    """Forme d'un nom arabe suivi de son complément : قاضٍ -> قاضي ; متعاقدون -> متعاقدو."""
+def _etat_construit(terme: str, pluriel_en_oun: bool = False) -> str:
+    """Forme d'un nom arabe suivi de son complément : قاضٍ -> قاضي ; متعاقدون -> متعاقدو.
+
+    Seul un pluriel en « ون » perd son « ن » : le singulier « قانون » et le pluriel brisé « ديون » le gardent.
+    """
     if terme.endswith(TANWIN_KASRA):
         return terme[:-1] + "ي"
-    if terme.endswith("ون") and len(terme) > 4:
+    if pluriel_en_oun and terme.endswith("ون"):
         return terme[:-1]
     return terme
+
+
+def _est_un_pluriel_en_oun(entree: Entree, terme: str) -> bool:
+    """Indique si ``terme`` est le pluriel en « ون » de l'entrée : موظف -> موظفون, محامٍ -> محامون."""
+    if not terme.endswith("ون"):
+        return False
+    if terme == entree.terme_ar:  # l'entrée est elle-même un pluriel, et sa catégorie arabe le dit (« جمع »)
+        return "جمع" in entree.categorie_ar
+    radical = entree.terme_ar.rstrip(TANWIN_KASRA)
+    return terme in (radical + "ون", radical[:-1] + "ون" if radical.endswith(("ي", "ى")) else "")
 
 
 def _rendre_en_arabe(occurrence: Occurrence, premier_terme: Occurrence | None, pluriel_ar: str) -> str:
@@ -801,7 +893,7 @@ def _rendre_en_arabe(occurrence: Occurrence, premier_terme: Occurrence | None, p
         terme = pluriel_ar
         occurrence.regles.append("pluriel")
     if occurrence.annexe and len(terme.split()) == 1:
-        rendu = _etat_construit(terme)
+        rendu = _etat_construit(terme, _est_un_pluriel_en_oun(entree, terme))
     elif occurrence.defini:
         rendu = _definir(terme, entree.categorie_ar)
     else:

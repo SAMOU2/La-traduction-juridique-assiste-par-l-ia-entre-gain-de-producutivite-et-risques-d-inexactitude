@@ -1,0 +1,369 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit commercial, sociétés, effets de commerce, entreprises en difficulté, banque, assurances.
+
+## Droit commercial ## COMMERCE
+qualité de commerçant | صفة التاجر | fi
+commerçant personne physique | تاجر شخص طبيعي | mc
+activité commerciale | نشاط تجاري | fa | نشاطات تجارية
+profession commerciale | مهنة تجارية | fa
+acte de commerce par nature | عمل تجاري بحسب موضوعه | mc
+acte de commerce par la forme | عمل تجاري بحسب شكله | mc
+acte de commerce par accessoire | عمل تجاري بالتبعية | mc
+acte mixte | عمل مختلط | ma
+liberté du commerce et de l'industrie | حرية التجارة والصناعة | fc
+immatriculation au registre du commerce | قيد في السجل التجاري | fc
+extrait du registre du commerce | مستخرج من السجل التجاري | mc
+centre national du registre du commerce | المركز الوطني للسجل التجاري | mc
+numéro d'immatriculation | رقم القيد | mi
+radiation du registre du commerce | شطب من السجل التجاري | fc
+nom commercial | اسم تجاري | ma | أسماء تجارية
+enseigne | عنوان المحل | fi
+clientèle | زبائن | fm
+achalandage | شهرة تجارية | ma
+droit au bail | حق الإيجار | mi
+éléments du fonds de commerce | عناصر المحل التجاري | mip
+vente du fonds de commerce | بيع المحل التجاري | fi
+nantissement du fonds de commerce | رهن المحل التجاري | mi
+location-gérance | تسيير حر | fa
+gérant libre | مسير حر | ma
+livres de commerce | دفاتر تجارية | map
+livre-journal | دفتر اليومية | mi
+livre d'inventaire | دفتر الجرد | mi
+bilan comptable | ميزانية محاسبية | ma
+compte de résultat | حساب النتائج | mi
+inventaire | جرد | mm
+exercice comptable | سنة مالية | ma
+chiffre d'affaires | رقم الأعمال | mi
+correspondance commerciale | مراسلات تجارية | fa
+usages commerciaux | أعراف تجارية | map
+preuve commerciale | إثبات تجاري | fa
+solidarité commerciale | تضامن تجاري | fa
+intermédiaire de commerce | وسيط تجاري | ma
+commissionnaire | وكيل بالعمولة | mc
+contrat de commission | عقد الوكالة بالعمولة | mc
+contrat de courtage | عقد السمسرة | mi
+contrat d'agence commerciale | عقد الوكالة التجارية | mi
+représentant de commerce | ممثل تجاري | ma
+concessionnaire | صاحب الامتياز | mi
+distributeur | موزع | mm | موزعون
+contrat de distribution | عقد التوزيع | mi
+franchise | امتياز تجاري | fa
+franchiseur | مانح الامتياز | mi
+fournisseur | مورد | mm | موردون
+grossiste | تاجر جملة | mc
+détaillant | تاجر تجزئة | mc
+vente commerciale | بيع تجاري | fa
+bon de commande | وصل الطلب | mi
+bon de livraison | وصل التسليم | mi
+facture pro forma | فاتورة شكلية | fa
+gage commercial | رهن تجاري | ma
+crédit-bail | اعتماد إيجاري | ma
+affacturage | عقد تحويل الفاتورة | mi
+entrepôt | مستودع | mm | مستودعات
+magasin général | مخزن عام | ma | مخازن عامة
+récépissé-warrant | سند الخزن | mi
+foire | معرض | fm
+chambre de commerce et d'industrie | غرفة التجارة والصناعة | fc
+tribunal de commerce | محكمة تجارية | ma
+juridiction commerciale | قضاء تجاري | fa
+
+## Droit commercial | Sociétés ## COMMERCE
+société de personnes | شركة أشخاص | fc | شركات الأشخاص
+société de capitaux | شركة أموال | fc | شركات الأموال
+société en commandite simple | شركة التوصية البسيطة | fi
+société en commandite par actions | شركة التوصية بالأسهم | fc
+société en participation | شركة محاصة | fc
+société de fait | شركة فعلية | fa
+société créée de fait | شركة منشأة بحكم الواقع | fc
+société par actions simplifiée | شركة مساهمة بسيطة | fc
+société mère | شركة أم | fc
+filiale | شركة تابعة | fa | شركات تابعة
+succursale | فرع الشركة | fi
+groupe de sociétés | مجمع شركات | mc
+groupement d'intérêt économique | تجمع ذو منفعة اقتصادية | mc
+société holding | شركة قابضة | fa
+entreprise publique économique | مؤسسة عمومية اقتصادية | fc
+acte constitutif | عقد تأسيسي | ma
+fondateur de la société | مؤسس الشركة | mi
+associé commandité | شريك متضامن | ma
+associé commanditaire | شريك موص | ma
+associé unique | شريك وحيد | ma
+affectio societatis | نية الاشتراك | mi
+raison sociale | عنوان الشركة | fi
+dénomination sociale | تسمية الشركة | fi
+durée de la société | مدة الشركة | fi
+personnalité morale de la société | شخصية معنوية للشركة | fc
+apport en numéraire | حصة نقدية | ma | حصص نقدية
+apport en nature | حصة عينية | ma | حصص عينية
+apport en industrie | حصة بالعمل | mc
+commissaire aux apports | مندوب الحصص | mi
+libération des apports | تسديد الحصص | fi
+souscription du capital | اكتتاب في رأس المال | fc
+capital minimum | حد أدنى لرأس المال | mc
+augmentation de capital | زيادة رأس المال | fi
+réduction de capital | تخفيض رأس المال | fi
+amortissement du capital | استهلاك رأس المال | mi
+capital variable | رأس مال متغير | mc
+réserve légale | احتياطي قانوني | fa
+bénéfice distribuable | ربح قابل للتوزيع | mc
+répartition des bénéfices | توزيع الأرباح | fi
+contribution aux pertes | مساهمة في الخسائر | fc
+titre financier | سند مالي | ma
+valeur mobilière | قيمة منقولة | fa | قيم منقولة
+action nominative | سهم اسمي | fa | أسهم اسمية
+action au porteur | سهم لحامله | fc
+action ordinaire | سهم عادي | fa
+action de préférence | سهم ممتاز | fc
+action de jouissance | سهم تمتع | fc
+obligation convertible | سند قابل للتحويل إلى أسهم | fc
+emprunt obligataire | قرض سندي | ma
+obligataire | حامل السندات | mi
+cession de parts sociales | إحالة الحصص | fi
+cession d'actions | تنازل عن الأسهم | fc
+clause d'agrément | شرط الموافقة | fi
+droit préférentiel de souscription | حق الأفضلية في الاكتتاب | mc
+droit de vote | حق التصويت | mi
+droit aux dividendes | حق في الأرباح | mc
+droit à l'information de l'associé | حق الشريك في الإعلام | mc
+assemblée générale ordinaire | جمعية عامة عادية | fc
+assemblée générale extraordinaire | جمعية عامة غير عادية | fc
+assemblée constitutive | جمعية تأسيسية | fa
+convocation de l'assemblée | استدعاء الجمعية | fi
+ordre du jour | جدول الأعمال | mi
+résolution de l'assemblée | قرار الجمعية | fi
+procès-verbal de l'assemblée | محضر الجمعية | mi
+feuille de présence | ورقة الحضور | fi
+majorité qualifiée | أغلبية موصوفة | fa
+unanimité | إجماع | fm
+minorité de blocage | أقلية معطلة | fc
+abus de majorité | تعسف الأغلبية | mi
+administrateur | قائم بالإدارة | mc
+président du conseil d'administration | رئيس مجلس الإدارة | mi
+président-directeur général | رئيس مدير عام | mc
+directeur général | مدير عام | ma | مديرون عامون
+directoire | مجلس المديرين | mi
+conseil de surveillance | مجلس المراقبة | mi
+dirigeant social | مسير الشركة | mi
+dirigeant de fait | مسير فعلي | ma
+mandataire social | وكيل الشركة | mi
+rapport de gestion | تقرير التسيير | mi
+comptes sociaux | حسابات الشركة | mip
+approbation des comptes | مصادقة على الحسابات | fc
+quitus | إبراء ذمة المسيرين | mc
+convention réglementée | اتفاقية منظمة | fa
+faute de gestion | خطأ في التسيير | fc
+action sociale | دعوى الشركة | fi
+action individuelle | دعوى فردية | fa
+transformation de la société | تحويل الشركة | fi
+scission | انفصال | fm
+fusion-absorption | اندماج بطريق الضم | fc
+apport partiel d'actif | تقديم جزئي للأصول | mc
+prorogation de la société | تمديد الشركة | fi
+nullité de la société | بطلان الشركة | fi
+dissolution anticipée | حل مسبق | fa
+liquidation amiable | تصفية ودية | fa
+boni de liquidation | فائض التصفية | mi
+clôture de la liquidation | قفل التصفية | fi
+bourse des valeurs | بورصة القيم المنقولة | fi
+marché financier | سوق مالية | ma
+offre publique d'achat | عرض عمومي للشراء | fc
+appel public à l'épargne | لجوء علني للادخار | mc
+délit d'initié | جنحة العالم بأسرار الشركة | mc
+commission d'organisation et de surveillance des opérations de bourse | لجنة تنظيم عمليات البورصة ومراقبتها | fc
+
+## Droit commercial | Effets de commerce ## COMMERCE
+titre de crédit | سند ائتمان | mc
+porteur du titre | حامل السند | mi
+porteur légitime | حامل شرعي | ma
+endosseur | مظهر | mm
+endossataire | مظهر له | mc
+endossement translatif | تظهير ناقل للملكية | mc
+endossement de procuration | تظهير توكيلي | mc
+endossement pignoratif | تظهير تأميني | mc
+acceptation de la lettre de change | قبول السفتجة | fi
+aval | ضمان احتياطي | ma
+avaliste | ضامن احتياطي | ma
+présentation au paiement | تقديم للوفاء | fc
+protêt faute de paiement | احتجاج لعدم الدفع | mc
+protêt faute d'acceptation | احتجاج لعدم القبول | mc
+recours cambiaire | رجوع صرفي | ma
+action cambiaire | دعوى صرفية | fa
+inopposabilité des exceptions | عدم الاحتجاج بالدفوع | fc
+lettre de change à vue | سفتجة مستحقة عند الاطلاع | fc
+chèque barré | شيك مسطر | ma
+chèque certifié | شيك مصادق عليه | mc
+chèque de banque | شيك مصرفي | mc
+chèque postal | شيك بريدي | ma
+chèque sans provision | شيك بدون رصيد | mc
+chéquier | دفتر الشيكات | mi
+opposition au paiement du chèque | معارضة في وفاء الشيك | fc
+interdiction d'émettre des chèques | منع من إصدار الشيكات | fc
+incident de paiement | عارض الدفع | mi | عوارض الدفع
+warrant | سند رهن | mc
+bon de caisse | سند الصندوق | mi
+escompte | خصم تجاري | ma
+
+## Droit commercial | Entreprises en difficulté ## COMMERCE
+entreprise en difficulté | مؤسسة في حالة صعوبة | fc
+état de cessation des paiements | حالة التوقف عن الدفع | mc
+déclaration de cessation des paiements | تصريح بالتوقف عن الدفع | fc
+jugement déclaratif de faillite | حكم بشهر الإفلاس | mc
+date de cessation des paiements | تاريخ التوقف عن الدفع | fc
+période suspecte | فترة الريبة | fi
+juge-commissaire | قاض منتدب | ma
+failli | مفلس | mm
+masse des créanciers | جماعة الدائنين | fi
+contrôleur | مراقب | mm | مراقبون
+dessaisissement | غل اليد | mi
+déclaration de créance | تصريح بالدين | fc
+production des créances | تقديم الديون | fi
+vérification des créances | تحقيق الديون | fi
+admission des créances | قبول الديون | fi
+état des créances | كشف الديون | mi
+suspension des poursuites individuelles | وقف المتابعات الفردية | fc
+arrêt du cours des intérêts | وقف سريان الفوائد | mc
+revendication des marchandises | استرداد البضائع | fi
+continuation de l'exploitation | استمرار الاستغلال | fi
+concordat préventif | صلح واق من الإفلاس | mc
+homologation du concordat | مصادقة على الصلح | fc
+union des créanciers | اتحاد الدائنين | fi
+liquidation des biens | تصفية الأموال | fi
+réalisation de l'actif | بيع الأصول | fi
+actif social | أصول الشركة | mi
+passif | خصوم الشركة | mi
+insuffisance d'actif | عدم كفاية الأصول | fc
+clôture pour insuffisance d'actif | قفل التفليسة لعدم كفاية الأصول | fc
+clôture pour extinction du passif | قفل التفليسة لانقضاء الديون | fc
+faillite personnelle | إفلاس شخصي | fa
+banqueroute simple | تفليس بالتقصير | fc
+banqueroute frauduleuse | تفليس بالتدليس | fc
+réhabilitation commerciale | رد الاعتبار التجاري | fc
+interdiction de gérer | منع من التسيير | fc
+redressement de l'entreprise | تقويم المؤسسة | mi
+sauvegarde de l'entreprise | إنقاذ المؤسسة | fi
+
+## Droit bancaire ## BANQUE
+établissement de crédit | مؤسسة قرض | mc
+banque commerciale | بنك تجاري | fa | بنوك تجارية
+banque islamique | بنك إسلامي | fa
+finance islamique | صيرفة إسلامية | fa
+agrément bancaire | اعتماد مصرفي | ma
+opération de banque | عملية مصرفية | fa | عمليات مصرفية
+dépôt bancaire | وديعة مصرفية | ma | ودائع مصرفية
+dépôt à vue | وديعة تحت الطلب | mc
+dépôt à terme | وديعة لأجل | mc
+compte courant | حساب جار | ma
+compte d'épargne | حساب ادخار | mc
+compte joint | حساب مشترك | ma
+titulaire du compte | صاحب الحساب | mi
+solde du compte | رصيد الحساب | mi
+solde débiteur | رصيد مدين | ma
+solde créditeur | رصيد دائن | ma
+découvert bancaire | سحب على المكشوف | mc
+relevé de compte | كشف الحساب | mi
+relevé d'identité bancaire | كشف الهوية المصرفية | mi
+clôture du compte | قفل الحساب | fi
+ordre de virement | أمر بالتحويل | mc
+prélèvement bancaire | اقتطاع مصرفي | ma
+carte bancaire | بطاقة مصرفية | fa | بطاقات مصرفية
+carte de paiement | بطاقة الدفع | fi
+carte de crédit | بطاقة الائتمان | fi
+moyen de paiement | وسيلة دفع | mc | وسائل الدفع
+paiement électronique | دفع إلكتروني | ma
+monnaie électronique | نقود إلكترونية | fa
+ouverture de crédit | فتح اعتماد | fc
+crédit immobilier | قرض عقاري | ma
+crédit d'investissement | قرض استثمار | mc
+crédit documentaire | اعتماد مستندي | ma
+lettre de crédit | خطاب اعتماد | fc
+remise documentaire | تحصيل مستندي | fa
+garantie bancaire | ضمان مصرفي | fa
+caution bancaire | كفالة مصرفية | fa
+garantie à première demande | ضمان عند أول طلب | fc
+taux effectif global | معدل فعلي إجمالي | mc
+taux d'usure | معدل الفائدة الفاحشة | mi
+taux directeur | معدل توجيهي | ma
+intérêts conventionnels | فوائد اتفاقية | map
+intérêts composés | فوائد مركبة | map
+échéancier | جدول الاستحقاقات | mi
+mensualité | قسط شهري | fa
+remboursement anticipé | تسديد مسبق | ma
+rééchelonnement | إعادة جدولة الديون | mc
+créance douteuse | دين مشكوك في تحصيله | fc
+surendettement | استدانة مفرطة | ma
+coffre-fort | خزانة حديدية | ma
+location de coffre-fort | إيجار الخزائن الحديدية | fi
+réglementation des changes | تنظيم الصرف | fi
+taux de change | سعر الصرف | mi
+devise | عملة أجنبية | fa | عملات أجنبية
+bureau de change | مكتب الصرف | mi
+transfert de fonds | تحويل الأموال | mi
+rapatriement des fonds | إعادة الأموال إلى الوطن | mc
+Conseil de la monnaie et du crédit | مجلس النقد والقرض | mc
+Commission bancaire | اللجنة المصرفية | fc
+gouverneur de la Banque d'Algérie | محافظ بنك الجزائر | mi
+supervision bancaire | رقابة مصرفية | fa
+ratio de solvabilité | نسبة الملاءة | mi
+réserves obligatoires | احتياطات إجبارية | fap
+centrale des risques | مركزية المخاطر | fi
+centrale des impayés | مركزية عوارض الدفع | fi
+déclaration de soupçon | إخطار بالشبهة | fc
+cellule de traitement du renseignement financier | خلية معالجة الاستعلام المالي | fc
+devoir de vigilance | واجب اليقظة | mi
+gel des avoirs | تجميد الأموال | mi
+bénéficiaire effectif | مستفيد حقيقي | ma
+
+## Droit des assurances ## ASSURANCES
+compagnie d'assurance | شركة تأمين | fc | شركات التأمين
+mutuelle d'assurance | تعاضدية تأمين | fc
+intermédiaire d'assurance | وسيط تأمين | mc
+agent général d'assurance | وكيل عام للتأمين | mc
+courtier d'assurance | سمسار تأمين | mc
+proposition d'assurance | طلب تأمين | fc
+note de couverture | مذكرة تغطية | fc
+conditions générales | شروط عامة | fap
+conditions particulières | شروط خاصة | fap
+déclaration du risque | تصريح بالخطر | fc
+aggravation du risque | تفاقم الخطر | fi
+fausse déclaration du risque | تصريح كاذب بالخطر | fc
+réticence | كتمان | fm
+déclaration de sinistre | تصريح بالحادث | fc
+indemnité d'assurance | تعويض التأمين | fi
+somme assurée | مبلغ مؤمن عليه | fc
+valeur assurée | قيمة مؤمن عليها | fc
+franchise d'assurance | إعفاء من جزء من التعويض | fc
+plafond de garantie | حد أقصى للضمان | mc
+exclusion de garantie | استثناء من الضمان | fc
+déchéance de garantie | سقوط الحق في الضمان | fc
+suspension de la garantie | وقف الضمان | fi
+résiliation du contrat d'assurance | فسخ عقد التأمين | fc
+subrogation de l'assureur | حلول المؤمن | fi
+principe indemnitaire | مبدأ التعويض | mi
+surassurance | تأمين زائد | fa
+sous-assurance | تأمين ناقص | fa
+coassurance | تأمين مشترك | fa
+assurance de dommages | تأمين على الأضرار | fc
+assurance de personnes | تأمين على الأشخاص | fc
+assurance de responsabilité | تأمين من المسؤولية | fc
+assurance obligatoire | تأمين إلزامي | fa
+assurance automobile | تأمين على السيارات | fc
+assurance incendie | تأمين من الحريق | fc
+assurance vol | تأمين من السرقة | fc
+assurance sur la vie | تأمين على الحياة | fc
+assurance décès | تأمين في حالة الوفاة | fc
+assurance maladie | تأمين على المرض | fc
+assurance de groupe | تأمين جماعي | fc
+assurance maritime | تأمين بحري | fa
+assurance crédit | تأمين القرض | fi
+assurance catastrophes naturelles | تأمين على الكوارث الطبيعية | fc
+assurance takaful | تأمين تكافلي | fa
+bénéficiaire de l'assurance | مستفيد من التأمين | mc
+capital décès | رأسمال الوفاة | mi
+rachat du contrat | استرداد قيمة العقد | mc
+tiers lésé | الغير المتضرر | mc
+action directe | دعوى مباشرة | fa
+constat amiable | معاينة ودية | ma
+expert en assurance | خبير في التأمين | mc
+évaluation du dommage | تقدير الضرر | fi
+fonds de garantie automobile | صندوق ضمان السيارات | mc
+Commission de supervision des assurances | لجنة الإشراف على التأمينات | fc

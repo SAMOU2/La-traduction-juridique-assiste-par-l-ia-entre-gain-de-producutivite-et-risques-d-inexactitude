@@ -309,6 +309,29 @@ def test_les_contextes_d_un_terme_du_texte(page):
                                          "الطرف في عقد البيع الذي يكتسب الشيء ويلتزم بدفع ثمنه."]
 
 
+def test_un_equivalent_a_verifier_est_signale_dans_la_carte(fenetre, page, tmp_path):
+    """Un terme sans définition, donné comme « à vérifier » par le glossaire : la carte le dit."""
+    fichier = tmp_path / "seuls.csv"
+    fichier.write_text(
+        "terme_fr;terme_ar;categorie_fr;source_definition\n"
+        "cédant;محيل;nom masculin;à vérifier (équivalent d’exemple)\n"
+        "bail;إيجار;nom masculin;\n",
+        encoding="utf-8")
+    assert fenetre.charger_glossaire(fichier)
+
+    traduire(page, "Le cédant signe le bail.")
+    cedant, bail = page.termes.cartes
+    cedant.definir_ouverte(True)
+    assert cedant.equivalent_a_verifier
+    assert contenu(cedant)[:3] == ["DÉFINITION", "À vérifier", "Aucune définition dans le glossaire."]
+    mention, = (label for label in cedant.corps.findChildren(QLabel) if label.text() == "À vérifier")
+    assert mention.toolTip() == "Équivalent à vérifier : il n’est repris d’aucune source citée."
+    # Un terme sans définition et sans mention : le glossaire ne dit rien de lui.
+    bail.definir_ouverte(True)
+    assert not bail.equivalent_a_verifier
+    assert contenu(bail)[:2] == ["DÉFINITION", "Aucune définition dans le glossaire."]
+
+
 def test_une_phrase_d_exemple_a_verifier_dans_la_carte_et_dans_la_traduction(fenetre, page, tmp_path):
     """Une phrase marquée « à vérifier » est signalée dans la carte, et quand elle sert de traduction."""
     fichier = tmp_path / "exemples.csv"

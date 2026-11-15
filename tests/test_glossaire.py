@@ -96,6 +96,25 @@ def test_recherche_par_un_synonyme(glossaire):
     assert termes(glossaire.chercher("usage", FR)) == ["usage", "coutume"]  # terme exact d'abord
 
 
+def test_un_synonyme_passe_avant_les_expressions():
+    """« préjudice » est un synonyme de « dommage » : cette entrée donne son équivalent, elle vient la première."""
+    glossaire = Glossaire.depuis_texte(
+        "terme_fr;terme_ar;synonymes_fr\n"
+        "réparer le préjudice;جبر الضرر;\n"
+        "préjudice futur;ضرر مستقبل;\n"
+        "dommage;ضرر;préjudice\n")
+    assert [entree.terme_fr for entree in glossaire.chercher("préjudice", FR)] == [
+        "dommage", "préjudice futur", "réparer le préjudice"]
+    # Le terme lui-même reste le premier, avant l'entrée dont il est un synonyme.
+    glossaire = Glossaire.depuis_texte(
+        "terme_fr;terme_ar;synonymes_fr\n"
+        "contrat;عقد;convention\n"
+        "convention collective;اتفاقية جماعية;\n"
+        "convention;اتفاقية;\n")
+    assert [entree.terme_fr for entree in glossaire.chercher("convention", FR)] == [
+        "convention", "contrat", "convention collective"]
+
+
 def test_homonymes(glossaire):
     droits = glossaire.chercher("droit", FR)
     assert termes(droits, AR) == ["حق", "قانون"]

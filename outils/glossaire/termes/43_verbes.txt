@@ -1,0 +1,245 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Verbes et locutions verbales (code v). L'application ne les remplace pas dans la traduction d'un texte :
+# il faudrait les conjuguer. Le français est à l'infinitif, l'arabe au passé, à la troisième personne.
+
+## Vocabulaire juridique général | Verbes | Faire et appliquer la loi ## CORNU
+protéger | حمى | v
+garantir | ضمن | v
+légiférer | شرع | v
+promulguer | أصدر | v
+publier | نشر | v
+abroger | ألغى | v
+modifier | عدل | v
+compléter | تمم | v
+réviser | راجع | v
+codifier | قنن | v
+réglementer | نظم | v
+édicter | سن | v
+ratifier | صادق على | v | sf=homologuer
+adopter | أقر | v
+approuver | وافق على | v
+voter | صوت | v
+délibérer | تداول | v
+entrer en vigueur | دخل حيز التنفيذ | v
+déroger à | خرج عن | v
+interpréter | فسر | v
+appliquer | طبق | v
+exécuter | نفذ | v
+respecter | احترم | v
+violer | انتهك | v
+enfreindre | خالف | v
+manquer à | أخل ب | v | sf=contrevenir à
+
+interdire | منع | v | sa=حظر
+prohiber | حرم | v
+autoriser | رخص | v | sa=أذن
+permettre | أجاز | v | sa=سمح
+habiliter | أهل | v
+imposer | فرض | v
+obliger | ألزم | v
+contraindre | أجبر | v
+dispenser | أعفى | v | sf=exempter, exonérer
+prévoir | نص على | v
+stipuler | اشترط | v
+définir | عرف | v
+fixer | حدد | v | sf=déterminer
+désigner | عين | v | sf=nommer
+instituer | أنشأ | v | sf=créer, établir
+supprimer | حذف | v
+conférer | خول | v
+attribuer | أسند | v
+reconnaître | اعترف ب | v
+priver de | حرم من | v
+restreindre | قيد | v | sf=limiter
+étendre | وسع | v
+
+## Vocabulaire juridique général | Verbes | Contracter et s'obliger ## CORNU
+conclure | أبرم | v | sa=عقد
+contracter | تعاقد | v
+négocier | تفاوض | v
+convenir | اتفق | v
+consentir | رضي | v
+accepter | قبل | v
+refuser | رفض | v
+offrir | عرض | v
+promettre | وعد | v
+s'engager | التزم | v | sa=تعهد
+signer | وقع | v | sa=أمضى
+résilier | فسخ | v | sf=résoudre
+mettre fin à | أنهى | v
+annuler | أبطل | v
+rétracter | تراجع عن | v
+renouveler | جدد | v
+proroger | مدد | v | sf=prolonger
+céder | تنازل عن | v
+renoncer à | تخلى عن | v
+transférer | نقل | v | sf=transmettre
+aliéner | تصرف في | v
+acquérir | اكتسب | v
+posséder | حاز | v | sf=détenir
+vendre | باع | v
+acheter | اشترى | v
+donner à bail | أجر | v | sf=louer
+prendre à bail | استأجر | v
+prêter | أقرض | v
+emprunter | اقترض | v
+faire donation | وهب | v
+léguer | أوصى | v
+hériter | ورث | v
+cautionner | كفل | v
+hypothéquer | رهن | v
+livrer | سلم | v | sf=remettre, délivrer
+payer | دفع | v | sf=régler
+rembourser | سدد | v | sf=acquitter
+indemniser | عوض | v | sf=dédommager
+réparer le préjudice | جبر الضرر | v
+restituer | رد | v
+réclamer | طالب ب | v
+exiger | استلزم | v
+mettre en demeure | أعذر | v
+déléguer | فوض | v
+mandater | وكل | v
+représenter | مثل | v
+substituer | استبدل | v | sf=remplacer
+confirmer | أيد | v
+se porter garant | ضمن الوفاء | v
+se porter fort | تعهد عن الغير | v
+
+## Vocabulaire juridique général | Verbes | Agir en justice ## CORNU+CPCA
+agir en justice | رفع دعوى | v | sf=ester en justice, intenter une action
+assigner | كلف بالحضور | v | sf=citer à comparaître
+saisir | حجز | v
+saisir le juge | أخطر القاضي | v
+comparaître | حضر | v
+plaider | رافع | v
+invoquer | تمسك ب | v | sf=se prévaloir de
+alléguer | ادعى | v | sf=prétendre
+contester | نازع في | v
+prouver | أثبت | v | sf=établir, démontrer
+témoigner | شهد | v
+prêter serment | أدى اليمين | v | sa=حلف | sf=jurer
+avouer | اعترف | v
+nier | أنكر | v | sf=dénier
+statuer | فصل | v | sf=trancher
+juger | حكم | v
+condamner | حكم على | v
+déclarer coupable | أدان | v
+acquitter l'accusé | برأ | v | sf=relaxer
+débouter | رفض الدعوى | v
+ordonner | أمر | v | sf=enjoindre
+prononcer | نطق ب | v
+rendre un jugement | أصدر حكما | v
+motiver | سبب | v | sa=علل
+notifier | بلغ | v | sf=signifier
+faire appel | استأنف | v | sf=interjeter appel
+se pourvoir en cassation | طعن بالنقض | v
+former opposition | عارض | v
+casser | نقض | v
+infirmer | ألغى الحكم | v
+renvoyer | أحال | v
+surseoir à statuer | أرجأ الفصل | v
+ajourner | أجل | v | sf=reporter, différer
+suspendre | أوقف | v | sa=علق
+interrompre | قطع | v
+radier | شطب | v
+récuser | رد القاضي | v
+se désister | ترك الخصومة | v
+transiger | تصالح | v
+concilier | أصلح بين | v
+recouvrer | حصل | v | sa=استوفى
+liquider | صفى | v
+constater | عاين | v
+expertiser | أجرى خبرة | v
+
+## Vocabulaire juridique général | Verbes | Poursuivre et punir ## CORNU+CPP
+enquêter | حقق | v | sf=instruire
+entendre | سمع | v | sf=auditionner
+interroger | استجوب | v
+perquisitionner | فتش | v
+arrêter | ألقى القبض على | v
+placer en garde à vue | أوقف للنظر | v
+incarcérer | سجن | v | sf=emprisonner
+libérer | أفرج عن | v
+inculper | اتهم | v | sf=accuser
+poursuivre | تابع | v
+porter plainte | قدم شكوى | v
+dénoncer | بلغ عن | v
+classer sans suite | حفظ الملف | v
+extrader | سلم المجرم | v
+expulser | طرد | v
+gracier | عفا عن | v
+sanctionner | عاقب | v | sf=punir
+commettre | ارتكب | v | sf=perpétrer
+voler | سرق | v
+tuer | قتل | v
+blesser | جرح | v
+frauder | غش | v
+falsifier | زور | v | sf=contrefaire
+corrompre | رشا | v
+détourner | اختلس | v
+escroquer | احتال على | v
+menacer | هدد | v
+diffamer | قذف | v
+injurier | سب | v
+receler | أخفى | v
+nuire à | أضر ب | v | sf=léser
+causer un dommage | ألحق ضررا | v
+endommager | أتلف | v | sf=détériorer
+détruire | دمر | v
+usurper | انتحل | v
+abuser de | أساء استعمال | v
+séquestrer | احتجز | v
+enlever | اختطف | v
+
+## Vocabulaire juridique général | Verbes | Administrer ## CORNU
+administrer | أدار | v | sf=gérer
+diriger | سير | v
+contrôler | راقب | v | sf=surveiller
+inspecter | تفقد | v
+révoquer | عزل | v | sf=destituer
+licencier | سرح | v | sf=congédier
+démissionner | استقال | v
+recruter | وظف | v | sf=embaucher
+titulariser | رسم | v
+enregistrer | سجل | v | sf=inscrire, immatriculer
+certifier | صدق على | v | sf=légaliser
+authentifier | وثق | v
+déclarer | صرح | v
+convoquer | استدعى | v
+requérir | طلب | v | sf=demander, solliciter
+réquisitionner | سخر | v
+exproprier | نزع الملكية | v
+accorder | منح | v | sf=octroyer, concéder
+retirer | سحب | v
+subventionner | دعم | v
+percevoir | قبض | v | sf=encaisser, toucher
+déduire | خصم | v | sf=retenir
+soumissionner | قدم عرضا | v
+
+## Vocabulaire juridique général | Verbes | Personnes, famille et affaires ## CORNU
+naître | ولد | v
+décéder | توفي | v
+se marier | تزوج | v | sf=épouser
+divorcer | طلق | v
+émanciper | رشد | v
+frapper d'interdiction | حجر على | v
+assister | ساعد | v
+succéder à | خلف | v
+partager | قسم | v
+résider | أقام | v | sf=demeurer
+naturaliser | جنس | v
+constituer | أسس | v | sf=fonder
+dissoudre | حل | v
+fusionner | اندمج | v
+souscrire | اكتتب | v
+distribuer | وزع | v | sf=répartir
+faire faillite | أفلس | v
+cesser ses paiements | توقف عن الدفع | v
+endosser | ظهر | v
+facturer | فوتر | v
+importer | استورد | v
+exporter | صدر | v
+dédouaner | جمرك | v
+assurer | أمن | v
+investir | استثمر | v
+concurrencer | نافس | v

@@ -20,6 +20,10 @@ from traducteur.glossaire import Glossaire  # noqa: E402
 
 #: Glossaire fourni avec l'application : celui qu'elle ouvre au démarrage.
 GLOSSAIRE_FOURNI = RACINE / "donnees" / "glossaire_juridique.csv"
+#: Nombre d'entrées du glossaire fourni. Les premières sont complètes : chacune a sa définition et sa phrase
+#: d'exemple. Les suivantes (version 0.8) sont des « termes seuls » : terme, équivalent, catégorie et domaine.
+NOMBRE_D_ENTREES = 3182
+ENTREES_COMPLETES = 1000
 #: Petit glossaire réservé aux tests : 40 entrées de droit civil. La plupart des tests l'utilisent,
 #: pour que leurs résultats ne changent pas quand le glossaire fourni est enrichi ou remplacé.
 GLOSSAIRE_D_ESSAI = RACINE / "tests" / "donnees" / "glossaire_essai.csv"

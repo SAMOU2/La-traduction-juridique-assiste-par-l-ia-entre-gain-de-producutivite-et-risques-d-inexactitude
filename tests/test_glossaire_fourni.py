@@ -4,21 +4,43 @@ Les autres tests utilisent le petit glossaire d'essai (voir ``conftest.py``). Ce
 vérifient le fichier que l'application ouvre au démarrage : il se lit sans perte, ses
 entrées sont complètes, et les deux écrans fonctionnent avec lui.
 
-Les nombres attendus (1 000 entrées, 24 résultats pour « contrat »…) décrivent le
+Les nombres attendus (nombre d'entrées, résultats pour « contrat »…) décrivent le
 contenu actuel du fichier : ils sont à mettre à jour quand le glossaire est enrichi.
+Le nombre d'entrées est écrit dans ``conftest.py``.
+
+Depuis la version 0.8, le fichier a deux parties : 1 000 entrées complètes (définition et
+phrase d'exemple), puis des « termes seuls » (terme, équivalent, catégorie, domaine).
 """
 
 from collections import Counter
 
 import pytest
-from conftest import GLOSSAIRE_FOURNI
+from conftest import ENTREES_COMPLETES, GLOSSAIRE_FOURNI, NOMBRE_D_ENTREES
 
-from traducteur.glossaire import COLONNES
+from traducteur.glossaire import COLONNES, mention_a_verifier
 from traducteur.langues import AR, FR, cle_souple, cle_stricte, contient_arabe
 from traducteur.surlignage import positions_du_terme
-from traducteur.traduction import ATTESTE, NEUTRE, SOURCE, TERME, Traducteur, cle_phrase
+from traducteur.traduction import (
+    ATTESTE,
+    NEUTRE,
+    SOURCE,
+    TERME,
+    Traducteur,
+    cle_phrase,
+    se_remplace_dans_un_texte,
+)
 
-NOMBRE_D_ENTREES = 1000
+#: Catégories des noms, et catégories des mots que la traduction d'un texte ne remplace pas.
+NOMS = {"nom", "nom masculin", "nom féminin", "nom masculin pluriel", "nom féminin pluriel",
+        "locution nominale masculine", "locution nominale féminine", "locution nominale (masculin pluriel)",
+        "locution nominale (féminin pluriel)"}
+AUTRES_MOTS = {"adjectif", "locution adjectivale", "verbe", "locution verbale", "adverbe", "locution adverbiale",
+               "préposition", "locution prépositive", "conjonction", "locution conjonctive"}
+
+
+def nombre(valeur: int) -> str:
+    """Un nombre écrit comme dans l'application : 1 000, avec une espace fine insécable."""
+    return f"{valeur:,}".replace(",", "\u202f")
 
 
 def balise(traduction) -> str:
@@ -50,8 +72,10 @@ def test_le_fichier_s_ouvre_dans_un_tableur():
 
 
 def test_chaque_entree_est_complete(glossaire_fourni):
-    for entree in glossaire_fourni.entrees:
+    """Les 1 000 premières entrées : terme, catégorie, domaine, définition, source, ressources, exemple."""
+    for entree in glossaire_fourni.entrees[:ENTREES_COMPLETES]:
         nom = f"n° {entree.numero} : {entree.terme_fr}"
+        assert entree.categorie_fr in NOMS, nom
         assert entree.terme_fr and contient_arabe(entree.terme_ar), nom
         assert not contient_arabe(entree.terme_fr), nom
         assert entree.categorie_fr and entree.categorie_ar and entree.domaines, nom
@@ -65,15 +89,49 @@ def test_chaque_entree_est_complete(glossaire_fourni):
             assert not contient_arabe(contexte.fr) and contient_arabe(contexte.ar), nom
 
 
+def test_les_termes_seuls(glossaire_fourni):
+    """Les entrées suivantes (version 0.8) : terme, équivalent, catégorie, domaine et ressources.
+
+    Elles n'ont ni définition ni phrase d'exemple. Aucune forme d'un nom seul ne désigne un autre nom : la
+    traduction d'un texte n'aurait rien pour choisir entre les deux. Un adjectif, un verbe ou une locution
+    peut partager une forme avec une autre entrée (« منع » : « interdiction » et « interdire »), puisque la
+    traduction d'un texte ne le remplace pas.
+    """
+    seuls = glossaire_fourni.entrees[ENTREES_COMPLETES:]
+    assert len(seuls) == NOMBRE_D_ENTREES - ENTREES_COMPLETES
+    noms = Traducteur(glossaire_fourni)._noms  # les entrées que la traduction d'un texte remplace
+    for entree in seuls:
+        nom = f"n° {entree.numero} : {entree.terme_fr}"
+        assert entree.terme_fr and not contient_arabe(entree.terme_fr) and contient_arabe(entree.terme_ar), nom
+        assert entree.categorie_fr in NOMS | AUTRES_MOTS and contient_arabe(entree.categorie_ar), nom
+        assert entree.domaines and entree.ressources, nom
+        assert not entree.definition_fr and not entree.definition_ar, nom
+        # Faute de définition, la mention « à vérifier » porte sur l'équivalent : la fiche l'affiche au pied du champ ②.
+        assert mention_a_verifier(entree.source_definition) == "équivalent d’exemple", nom
+        assert not entree.contextes, nom
+        assert entree.pluriel_fr or not entree.pluriel_ar, nom
+        if entree.categorie_fr in AUTRES_MOTS:
+            assert not entree.pluriel_fr and not entree.pluriel_ar, nom
+            assert not se_remplace_dans_un_texte(entree), nom
+            continue
+        assert se_remplace_dans_un_texte(entree), nom
+        for langue in (FR, AR):
+            for forme in (*entree.formes(langue), *entree.synonymes(langue)):
+                assert [autre for autre, _ in noms.reconnaitre(forme, langue)] == [entree], (nom, forme)
+    # Les mots qui ne sont pas des noms se trouvent tous dans cette seconde partie.
+    assert all(se_remplace_dans_un_texte(entree) for entree in glossaire_fourni.entrees[:ENTREES_COMPLETES])
+
+
 def test_les_phrases_d_exemple(glossaire_fourni):
-    """Chaque entrée a sa phrase d'exemple. Une phrase « à vérifier » est courte et emploie le terme.
+    """Chaque entrée complète a sa phrase d'exemple. Une phrase « à vérifier » est courte et emploie le terme.
 
     Dans la version 0.5, 969 phrases sur 1 002 portent la mention « à vérifier » : elles ont été rédigées pour
     le glossaire. Le test ne compte pas ces phrases : leur nombre baisse à mesure que le glossaire est relu
     et que leur source est écrite dans la colonne ``source_contexte``.
     """
     exemples = [(entree, contexte) for entree in glossaire_fourni.entrees for contexte in entree.contextes]
-    assert len(exemples) >= NOMBRE_D_ENTREES
+    assert len(exemples) >= ENTREES_COMPLETES
+    assert all(entree.contextes for entree in glossaire_fourni.entrees[:ENTREES_COMPLETES])
     a_verifier = [(entree, contexte) for entree, contexte in exemples if contexte.a_verifier]
     for entree, contexte in a_verifier:
         nom = f"n° {entree.numero} : {entree.terme_fr}"
@@ -108,38 +166,62 @@ def test_aucun_couple_de_termes_n_est_repete(glossaire_fourni):
 
 
 def test_les_termes_associes_sont_des_entrees(glossaire_fourni):
-    """Les puces « Termes associés » ouvrent une fiche. Seul « cocontractant » n'a pas d'entrée."""
+    """Les puces « Termes associés » ouvrent une fiche : chaque terme associé a son entrée."""
     absents = {terme for entree in glossaire_fourni.entrees for terme in entree.termes_associes
                if glossaire_fourni.par_terme(terme, FR) is None}
-    assert absents == {"cocontractant"}
+    assert absents == set()
 
 
 def test_les_homonymes(glossaire_fourni):
-    """Formes qui désignent plusieurs entrées : la traduction d'un texte choisit d'après le contexte."""
+    """Formes qui désignent plusieurs noms : la traduction d'un texte choisit d'après le contexte.
+
+    Ces homonymes se trouvent tous parmi les 1 000 entrées complètes : un nom seul n'en ajoute aucun.
+    """
     def homonymes(langue):
         return {entree.terme(langue) for entree in glossaire_fourni.entrees
-                if len(glossaire_fourni.homonymes(entree, langue)) > 1}
+                if sum(se_remplace_dans_un_texte(autre)
+                       for autre in glossaire_fourni.homonymes(entree, langue)) > 1}
 
     assert homonymes(FR) == {"action", "auteur", "droit", "majorité"}
     assert homonymes(AR) == {"القانون المدني", "تأمين", "حكم", "دين", "شريك", "عرف", "قانون", "قرار", "كفالة",
                              "ولاية"}
+    # Un verbe ou un adjectif peut s'écrire comme un nom : l'écran « Terme » propose alors les deux fiches.
+    juger = glossaire_fourni.par_terme("juger", FR)
+    assert [(autre.terme_fr, autre.categorie_fr) for autre in glossaire_fourni.homonymes(juger, AR)] == [
+        ("disposition", "nom féminin"), ("jugement", "nom masculin"), ("juger", "verbe")]
+    assert glossaire_fourni.libelle(juger, AR) == "حكم (juger)"
 
 
 def test_les_termes_au_pluriel_sont_signales(glossaire_fourni):
     """« biens », « droits de l'homme »… : la catégorie contient « pluriel », pour l'article « les »."""
-    pluriels = {entree.terme_fr for entree in glossaire_fourni.entrees if "pluriel" in entree.categorie_fr}
+    complets = glossaire_fourni.entrees[:ENTREES_COMPLETES]
+    pluriels = {entree.terme_fr for entree in complets if "pluriel" in entree.categorie_fr}
     assert len(pluriels) == 24
     assert {"biens", "dépens", "arrhes", "droits de l'homme", "libertés fondamentales"} <= pluriels
     assert all(terme.split()[0].endswith("s") for terme in pluriels)
+    # Parmi les termes seuls aussi, un terme noté au pluriel commence par un mot au pluriel (« travaux publics »).
+    seuls = {entree.terme_fr for entree in glossaire_fourni.entrees[ENTREES_COMPLETES:]
+             if "pluriel" in entree.categorie_fr}
+    assert all(terme.split()[0].endswith(("s", "x")) for terme in seuls), sorted(seuls)
 
 
 # ------------------------------------------------------------------ recherche
+#: Nombre d'entrées dont le terme contient « contrat », sans compter « contrat » lui-même.
+EXPRESSIONS_AVEC_CONTRAT = 57
+
+
 def test_recherche_dans_le_glossaire_fourni(glossaire_fourni):
     contrats = [entree.terme_fr for entree in glossaire_fourni.chercher("contrat", FR)]
-    assert len(contrats) == 24 and contrats[:3] == ["contrat", "contrat de bail", "contrat de vente"]
+    assert len(contrats) == EXPRESSIONS_AVEC_CONTRAT + 1
+    assert contrats[:3] == ["contrat", "contrat-type", "contrat réel"]  # le terme, puis les plus courts
+    assert {"contrat de bail", "contrat de vente", "contrat-cadre", "formation du contrat"} <= set(contrats)
     assert glossaire_fourni.chercher("عقد", AR)[0].terme_fr == "contrat"
+    # Un synonyme passe avant les expressions qui commencent par lui : son entrée donne l'équivalent du mot cherché.
+    prejudices = [entree.terme_fr for entree in glossaire_fourni.chercher("préjudice", FR)]
+    assert prejudices[:2] == ["dommage", "préjudice futur"] and prejudices[-1] == "réparer le préjudice"
     assert [entree.terme_ar for entree in glossaire_fourni.chercher("droit", FR)[:2]] == ["حق", "قانون"]
-    assert [entree.terme_fr for entree in glossaire_fourni.propositions("contart", FR)] == ["contrat", "constat"]
+    assert [entree.terme_fr for entree in glossaire_fourni.propositions("contart", FR)] == ["contrat", "constat",
+                                                                                           "constater"]
     assert glossaire_fourni.par_terme("procès-verbaux", FR).terme_ar == "محضر"
     assert glossaire_fourni.par_terme("المحاضر", AR).terme_fr == "procès-verbal"
 
@@ -162,7 +244,7 @@ def test_recherche_dans_le_glossaire_fourni(glossaire_fourni):
         # Les accents comptent : « condamne » n'est pas « condamné », ni « causé » « cause ».
         ("Le tribunal condamne le défendeur à réparer le dommage causé.",
          "[المحكمة] {condamne} [المدعى عليه] {à} {réparer} [الضرر] {causé}."),
-        ("Le condamné et l'assuré ; la cause du contrat.", "[المحكوم عليه] {et} [المؤمن له]؛ [سبب] [العقد]."),
+        ("Le condamné et l'assuré ; la cause du contrat.", "[المحكوم عليه] {et} [المؤمن له]؛ [سبب العقد]."),
         # Une majuscule peut ne pas porter son accent.
         ("L'Etat garantit la propriété.", "[الدولة] {garantit} [الملكية]."),
     ],
@@ -240,18 +322,22 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     parametres = fenetre_fournie.page_parametres
     assert parametres.nom_du_glossaire.texte_complet() == "Glossaire juridique"
     assert parametres.dossier_du_glossaire.texte_complet() == "Fourni avec l’application"
-    assert parametres.taille_du_glossaire.text() == "1\u202f000 entrées"
+    assert parametres.taille_du_glossaire.text() == f"{nombre(NOMBRE_D_ENTREES)} entrées"
     assert fenetre_fournie.barre_etat.texte() == ""
-    assert "glossaire de 1\u202f000 entrées" in fenetre_fournie.page_description.presentation.text()
+    assert f"glossaire de {nombre(NOMBRE_D_ENTREES)} entrées" in fenetre_fournie.page_description.presentation.text()
 
     page = fenetre_fournie.page
-    assert len(page.accueil.puces) == 5  # termes proposés à l'accueil
+    # Les termes proposés à l'accueil sont pris parmi les entrées complètes : leur fiche a ses cinq champs.
+    assert len(page.accueil.puces) == 5
+    assert [entree.numero for entree in page._exemples()] == [1, 201, 401, 601, 801]
+    assert [puce.text() for puce in page.accueil.puces] == [entree.terme_fr for entree in page._exemples()]
     page.rechercher("contrat")
-    assert page.barre.texte_du_resume() == "1 terme · 23 expressions"
-    assert fenetre_fournie.barre_etat.etat() == "« contrat » : 24 entrées trouvées dans le glossaire."
-    assert page.fiche.colonne_terme.rang.texte_complet() == "Entrée 1 sur 1\u202f000"
+    expressions = EXPRESSIONS_AVEC_CONTRAT
+    assert page.barre.texte_du_resume() == f"1 terme · {expressions} expressions"
+    assert fenetre_fournie.barre_etat.etat() == f"« contrat » : {expressions + 1} entrées trouvées dans le glossaire."
+    assert page.fiche.colonne_terme.rang.texte_complet() == f"Entrée 1 sur {nombre(NOMBRE_D_ENTREES)}"
     assert page.liste.titre.texte_complet() == "Expressions avec « contrat »"
-    assert page.liste.nombre.text() == "23" and len(page.liste.entrees()) == 23
+    assert page.liste.nombre.text() == str(expressions) and len(page.liste.entrees()) == expressions
     assert page.fiche.entete.etapes_allumees() == [True] * 5
 
     # « loi organique » n'avait aucune phrase avant la version 0.5. Le champ ④ affiche maintenant son exemple,
@@ -282,8 +368,11 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert [onglet.text() for onglet in page.fiche.onglets.onglets] == ["Sens 1 : حق", "Sens 2 : قانون"]
     assert page.liste.entrees()[0].terme_fr == "droit réel"
 
-    # Les suggestions pendant la saisie couvrent tout le glossaire (les homonymes une seule fois).
-    assert page.suggestions.model().rowCount() == NOMBRE_D_ENTREES - 4
+    # Les suggestions pendant la saisie couvrent tout le glossaire. Un terme porté par plusieurs entrées n'est
+    # proposé qu'une fois : « droit », « majorité », « action », « auteur », et « récidiviste » (nom et adjectif).
+    suggestions = page.suggestions.model().stringList()
+    assert len(suggestions) == NOMBRE_D_ENTREES - 5 == len({entree.terme_fr for entree in page.glossaire.entrees})
+    assert {"protégé", "protéger", "protection", "grève", "grevé", "de plein droit"} <= set(suggestions)
 
     # Fenêtre étroite : la fiche garde ses cinq champs, la liste défile dans la place qui reste.
     page.rechercher("responsabilité")

@@ -388,6 +388,24 @@ def test_une_definition_sans_source_est_a_verifier(fenetre, tmp_path):
     assert textes(page.fiche.colonne_definition.pied) == ["À vérifier", "· source non indiquée"]
 
 
+def test_un_terme_sans_definition_peut_etre_a_verifier(fenetre, tmp_path):
+    """Sans définition, la mention « à vérifier » de la colonne « source_definition » porte sur l'équivalent."""
+    fenetre.charger_glossaire(ecrire(tmp_path / "seuls.csv", (
+        "terme_fr;terme_ar;categorie_fr;source_definition\n"
+        "protégé;محمي;adjectif;à vérifier (équivalent d’exemple)\n"
+        "bail;إيجار;nom masculin;\n")))
+    page = fenetre.page
+    page.rechercher("protégé")
+    colonne = page.fiche.colonne_definition
+    assert textes(colonne.corps) == ["Aucune définition pour ce terme", "Le glossaire n’en donne pas encore."]
+    assert textes(colonne.pied) == ["À vérifier", "· équivalent d’exemple"]
+    mention, = (label for label in colonne.pied.findChildren(QLabel) if label.text() == "À vérifier")
+    assert "Cet équivalent n’est repris d’aucun texte officiel" in mention.toolTip()
+    # Un terme sans définition et sans mention : le glossaire ne dit rien de lui, le pied reste vide.
+    page.rechercher("bail")
+    assert textes(page.fiche.colonne_definition.pied) == []
+
+
 def test_une_phrase_d_exemple_a_verifier_est_signalee(fenetre, tmp_path):
     """④ La mention « À vérifier » précède une phrase que le glossaire ne reprend d'aucun texte."""
     fenetre.charger_glossaire(ecrire(tmp_path / "exemples.csv", (

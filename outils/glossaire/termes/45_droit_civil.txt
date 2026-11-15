@@ -1,0 +1,372 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit civil : obligations, contrats spéciaux, responsabilité, biens, sûretés, personnes.
+
+## Droit civil | Obligations ## CIVIL
+contrat-cadre | عقد إطار | mc
+contrat-type | عقد نموذجي | ma | عقود نموذجية
+contrat nommé | عقد مسمى | ma | عقود مسماة
+contrat innommé | عقد غير مسمى | mc
+contrat à exécution successive | عقد مستمر التنفيذ | mc
+contrat à exécution instantanée | عقد فوري التنفيذ | mc
+contrat commutatif | عقد محدد | ma
+contrat réel | عقد عيني | ma
+avant-contrat | عقد تمهيدي | ma
+contrat préliminaire | عقد ابتدائي | ma
+pacte de préférence | وعد بالتفضيل | mc
+lettre d'intention | خطاب نوايا | fc
+formation du contrat | تكوين العقد | fi
+interprétation du contrat | تفسير العقد | fi
+révision du contrat | مراجعة العقد | fi
+modification du contrat | تعديل العقد | fi
+durée du contrat | مدة العقد | fi
+objet du contrat | محل العقد | mi
+cause du contrat | سبب العقد | fi
+parties au contrat | أطراف العقد | fip
+cocontractant | المتعاقد الآخر | mc
+tiers de bonne foi | الغير حسن النية | mc
+échange des consentements | تبادل الرضا | mi
+accord de volontés | توافق الإرادتين | mi
+manifestation de volonté | تعبير عن الإرادة | fc
+volonté unilatérale | إرادة منفردة | fa
+promesse unilatérale | وعد انفرادي | fa
+promesse de récompense | وعد بجائزة | fc
+silence | سكوت | mm
+réticence dolosive | كتمان تدليسي | fa
+manœuvres frauduleuses | طرق احتيالية | fap
+erreur sur la substance | غلط في صفة الشيء | fc
+erreur sur la personne | غلط في الشخص | fc
+erreur de droit | غلط في القانون | fc
+crainte | رهبة | ff
+exploitation | استغلال | fm
+
+obligation de faire | التزام بعمل | fc
+obligation de ne pas faire | التزام بالامتناع عن عمل | fc
+obligation de donner | التزام بإعطاء | fc
+obligation de garantie | التزام بالضمان | fc
+obligation de sécurité | التزام بالسلامة | fc
+obligation d'information | التزام بالإعلام | fc
+obligation de conseil | التزام بالنصح | fc
+obligation solidaire | التزام تضامني | fa
+obligation alternative | التزام تخييري | fa
+obligation facultative | التزام بدلي | fa
+obligation indivisible | التزام غير قابل للانقسام | fc
+obligation conditionnelle | التزام معلق على شرط | fc
+obligation à terme | التزام مضاف إلى أجل | fc
+obligation pécuniaire | التزام نقدي | fa
+obligation accessoire | التزام تبعي | fa
+obligation principale | التزام أصلي | fa
+solidarité active | تضامن بين الدائنين | fc
+solidarité passive | تضامن بين المدينين | fc
+indivisibilité | عدم القابلية للانقسام | fc
+source de l'obligation | مصدر الالتزام | fi | مصادر الالتزام
+extinction de l'obligation | انقضاء الالتزام | fi
+exécution de l'obligation | تنفيذ الالتزام | fi
+transmission de l'obligation | انتقال الالتزام | fi
+effets de l'obligation | آثار الالتزام | mip
+
+exécution volontaire | تنفيذ اختياري | fa
+exécution partielle | تنفيذ جزئي | fa
+exécution défectueuse | تنفيذ معيب | fa
+exécution tardive | تنفيذ متأخر | fa
+retard dans l'exécution | تأخر في التنفيذ | mc
+inexécution totale | عدم التنفيذ الكلي | fc
+impossibilité d'exécution | استحالة التنفيذ | fi
+cause étrangère | سبب أجنبي | fa
+fait du tiers | فعل الغير | mi
+fait de la victime | فعل المضرور | mi
+fait du créancier | فعل الدائن | mi
+dommages-intérêts moratoires | تعويض عن التأخير | mcp
+dommages-intérêts compensatoires | تعويض عن عدم التنفيذ | mcp
+intérêts moratoires | فوائد التأخير | mip
+réparation intégrale | تعويض كامل | fa
+réparation en nature | تعويض عيني | fa
+réparation par équivalent | تعويض بمقابل | fc
+clause limitative de responsabilité | شرط محدد للمسؤولية | fc
+clause exonératoire de responsabilité | شرط الإعفاء من المسؤولية | fc
+clause de non-concurrence | شرط عدم المنافسة | fi
+clause de réserve de propriété | شرط الاحتفاظ بالملكية | fc
+clause de confidentialité | شرط السرية | fi
+clause d'exclusivité | شرط الحصرية | fi
+clause attributive de compétence | شرط إسناد الاختصاص | fi
+clause de style | شرط مألوف | fa
+clause léonine | شرط الأسد | fi
+
+paiement partiel | وفاء جزئي | ma
+paiement anticipé | وفاء معجل | ma
+paiement par subrogation | وفاء مع الحلول | mc
+offre réelle | عرض حقيقي | fa
+imputation des paiements | خصم المدفوعات | fi
+lieu du paiement | مكان الوفاء | mi
+date du paiement | تاريخ الوفاء | fi
+preuve du paiement | إثبات الوفاء | fi
+reconnaissance de dette | اعتراف بدين | fc
+délégation de paiement | إنابة في الوفاء | fc
+compensation légale | مقاصة قانونية | fa
+compensation judiciaire | مقاصة قضائية | fa
+compensation conventionnelle | مقاصة اتفاقية | fa
+délai de prescription | مدة التقادم | mi
+prescription quinquennale | تقادم خمسي | fa
+prescription décennale | تقادم عشري | fa
+renonciation à la prescription | نزول عن التقادم | fc
+débiteur cédé | مدين محال عليه | mc
+cédant | محيل | mm
+cessionnaire | محال له | mc
+subrogation légale | حلول قانوني | fa
+subrogation conventionnelle | حلول اتفاقي | fa
+subrogé | حال محل الدائن | mc
+
+## Droit civil | Responsabilité civile ## CIVIL
+fait dommageable | فعل ضار | ma | أفعال ضارة
+fait générateur | فعل منشئ للمسؤولية | mc
+fait personnel | فعل شخصي | ma
+faute intentionnelle | خطأ عمدي | fa
+faute non intentionnelle | خطأ غير عمدي | fc
+faute légère | خطأ يسير | fa
+faute inexcusable | خطأ غير مغتفر | fc
+faute professionnelle | خطأ مهني | fa | أخطاء مهنية
+faute médicale | خطأ طبي | fa | أخطاء طبية
+faute de la victime | خطأ المضرور | fi
+faute commune | خطأ مشترك | fa
+faute présumée | خطأ مفترض | fa
+préjudice direct | ضرر مباشر | ma
+préjudice indirect | ضرر غير مباشر | mc
+préjudice certain | ضرر محقق | ma
+préjudice futur | ضرر مستقبل | ma
+préjudice éventuel | ضرر احتمالي | ma
+préjudice par ricochet | ضرر مرتد | mc
+perte de chance | تفويت الفرصة | fi
+perte subie | خسارة لاحقة | fa
+gain manqué | كسب فائت | ma
+préjudice esthétique | ضرر جمالي | ma
+préjudice d'agrément | ضرر المتعة | mi
+incapacité permanente | عجز دائم | fa
+incapacité temporaire | عجز مؤقت | fa
+taux d'incapacité | نسبة العجز | mi
+responsabilité sans faute | مسؤولية بدون خطأ | fc
+responsabilité objective | مسؤولية موضوعية | fa
+responsabilité pour faute | مسؤولية على أساس الخطأ | fc
+responsabilité du fait des animaux | مسؤولية حارس الحيوان | fi
+responsabilité du fait des bâtiments | مسؤولية مالك البناء | fi
+responsabilité du fait des produits | مسؤولية المنتج | fi
+responsabilité des parents | مسؤولية الوالدين | fi
+responsabilité du commettant | مسؤولية المتبوع | fi
+responsabilité solidaire | مسؤولية تضامنية | fa
+responsabilité médicale | مسؤولية طبية | fa
+responsabilité professionnelle | مسؤولية مهنية | fa
+responsabilité décennale | مسؤولية عشرية | fa
+partage de responsabilité | توزيع المسؤولية | mi
+exonération de responsabilité | إعفاء من المسؤولية | fc
+action en responsabilité | دعوى المسؤولية | fi
+action en réparation | دعوى التعويض | fi
+action récursoire | دعوى الرجوع | fi
+coauteur du dommage | مشارك في إحداث الضرر | mc
+garde de la chose | حراسة الشيء | fi
+vice de la chose | عيب الشيء | mi
+ruine du bâtiment | تهدم البناء | fi
+trouble anormal | مضار غير مألوفة | mc
+enrichissement | إثراء | mm
+appauvrissement | افتقار | mm
+répétition de l'indu | استرداد غير المستحق | fi
+gérant d'affaires | فضولي | mm
+
+## Droit civil | Contrats spéciaux ## CIVIL
+vente à l'essai | بيع بشرط التجربة | fc
+vente sur échantillon | بيع بالعينة | fc
+vente à réméré | بيع الوفاء | fi
+vente en bloc | بيع جزافي | fa
+vente de la chose d'autrui | بيع ملك الغير | fi
+vente d'immeuble | بيع عقار | fc
+vente amiable | بيع ودي | fa
+vente forcée | بيع جبري | fa
+chose vendue | مبيع | fm
+prix de vente | ثمن البيع | mi
+paiement du prix | دفع الثمن | mi
+obligation de délivrance | التزام بالتسليم | fc
+garantie des vices cachés | ضمان العيوب الخفية | fi
+action rédhibitoire | دعوى رد المبيع | fi
+action estimatoire | دعوى إنقاص الثمن | fi
+action en garantie | دعوى الضمان | fi
+trouble de jouissance | تعرض في الانتفاع | mc
+garantie conventionnelle | ضمان اتفاقي | fa
+garantie légale | ضمان قانوني | fa
+bail d'habitation | إيجار سكني | ma
+bail à usage professionnel | إيجار مهني | mc
+bail rural | إيجار فلاحي | ma
+bail à durée déterminée | إيجار محدد المدة | mc
+chose louée | عين مؤجرة | fa
+état des lieux | معاينة الأمكنة | mi
+réparations locatives | ترميمات إيجارية | fap
+grosses réparations | ترميمات ضرورية | fap
+charges locatives | تكاليف إيجارية | fap
+dépôt de garantie | مبلغ الضمان | mi
+congé | تنبيه بالإخلاء | mc
+cession de bail | تنازل عن الإيجار | fc
+renouvellement du bail | تجديد الإيجار | mi
+résiliation du bail | فسخ الإيجار | fi
+droit au maintien dans les lieux | حق البقاء في الأمكنة | mc
+indemnité d'occupation | تعويض الاستغلال | fi
+indemnité d'éviction | تعويض الاستحقاق | fi
+prêt à intérêt | قرض بفائدة | mc
+dépôt nécessaire | وديعة اضطرارية | ma
+séquestre conventionnel | حراسة اتفاقية | ma
+mandat spécial | وكالة خاصة | ma
+mandat général | وكالة عامة | ma
+mandat apparent | وكالة ظاهرة | ma
+substitution de mandataire | إنابة الوكيل | fi
+révocation du mandat | عزل الوكيل | fi
+reddition de comptes | تقديم الحساب | fi
+réception de l'ouvrage | تسلم العمل | fi
+réception provisoire | استلام مؤقت | fa
+réception définitive | استلام نهائي | fa
+garantie décennale | ضمان عشري | fa
+malfaçon | عيب في الصنع | fc
+sous-traitant | مقاول فرعي | ma | مقاولون فرعيون
+architecte | مهندس معماري | ma | مهندسون معماريون
+devis | كشف تقديري | ma
+contrat de société | عقد الشركة | mi
+société civile | شركة مدنية | fa | شركات مدنية
+contrat de jeu | عقد المقامرة | mi
+pari | رهان | mm
+contrat de prestation de services | عقد تقديم خدمات | mc
+contrat de dépôt | عقد الوديعة | mi
+contrat de mandat | عقد الوكالة | mi
+contrat de prêt | عقد القرض | mi
+contrat d'échange | عقد المقايضة | mi
+contrat de donation | عقد الهبة | mi
+contrat de cautionnement | عقد الكفالة | mi
+
+## Droit civil | Droits réels ## CIVIL
+bien corporel | مال مادي | ma | أموال مادية
+bien incorporel | مال معنوي | ma | أموال معنوية
+immeuble par nature | عقار بطبيعته | mc
+immeuble par destination | عقار بالتخصيص | mc
+meuble par nature | منقول بطبيعته | mc
+chose consomptible | شيء قابل للاستهلاك | fc
+chose hors du commerce | شيء خارج عن التعامل | fc
+chose commune | شيء مشترك | fa
+chose sans maître | مال لا مالك له | fc
+bien vacant | ملك شاغر | ma | أملاك شاغرة
+épave | حطام | fm
+produits | منتجات | mfp
+fruits naturels | ثمار طبيعية | map
+fruits civils | ثمار مدنية | map
+droit réel principal | حق عيني أصلي | ma
+droit réel accessoire | حق عيني تبعي | ma
+démembrement de la propriété | تجزئة حق الملكية | mc
+attributs du droit de propriété | سلطات المالك | mip
+droit de jouir | حق الاستغلال | mi
+droit de disposer | حق التصرف | mi
+restrictions au droit de propriété | قيود حق الملكية | fcp
+propriété privée | ملكية خاصة | fa
+propriété collective | ملكية جماعية | fa
+propriété publique | ملكية عامة | fa
+copropriétaire | شريك في الملك | mc
+parties communes | أجزاء مشتركة | fap
+parties privatives | أجزاء خاصة | fap
+règlement de copropriété | نظام الملكية المشتركة | mi
+syndic de copropriété | متصرف الملكية المشتركة | mi
+assemblée des copropriétaires | جمعية الملاك | fi
+charges de copropriété | تكاليف الملكية المشتركة | fip
+mitoyenneté | اشتراك في الحائط | fc
+mur mitoyen | حائط مشترك | ma
+bornage | وضع الحدود | mi
+clôture du fonds | تسوير الملك | fi
+enclave | انحصار | fm
+servitude légale | ارتفاق قانوني | fa
+servitude conventionnelle | ارتفاق اتفاقي | fa
+servitude de vue | حق المطل | fi
+servitude d'écoulement des eaux | حق المسيل | fi
+servitude d'aqueduc | حق المجرى | fi
+droit de superficie | حق السطح | mi
+emphytéose | حكر | fm
+possession de bonne foi | حيازة بحسن نية | fc
+possession paisible | حيازة هادئة | fa
+possession continue | حيازة مستمرة | fa
+possession publique | حيازة علنية | fa
+détention précaire | حيازة عرضية | fa
+détenteur | حائز عرضي | ma
+juste titre | سند صحيح | ma
+action en bornage | دعوى تعيين الحدود | fi
+action confessoire | دعوى الإقرار بحق الارتفاق | fc
+action négatoire | دعوى إنكار حق الارتفاق | fc
+complainte | دعوى منع التعرض | fc
+dénonciation de nouvel œuvre | دعوى وقف الأعمال الجديدة | fc
+réintégrande | دعوى استرداد الحيازة | fc
+alluvion | طمي | fm
+construction sur le terrain d'autrui | بناء في ملك الغير | fc
+bonne foi du possesseur | حسن نية الحائز | fi
+indivision forcée | شيوع إجباري | fa
+partage amiable | قسمة ودية | ma
+partage judiciaire | قسمة قضائية | ma
+partage en nature | قسمة عينية | ma
+licitation | بيع بالمزاد لعدم إمكان القسمة | fc
+lot | حصة مفرزة | ma
+soulte | معدل القسمة | fi
+
+## Droit civil | Sûretés ## CIVIL
+hypothèque légale | رهن قانوني | fa
+hypothèque judiciaire | رهن قضائي | fa
+hypothèque conventionnelle | رهن اتفاقي | fa
+créancier gagiste | دائن مرتهن حيازيا | mc
+droit d'affectation | حق التخصيص | mi
+rang de l'hypothèque | مرتبة الرهن | mi
+purge des hypothèques | تطهير العقار | fi
+radiation de l'inscription | شطب القيد | fi
+renouvellement de l'inscription | تجديد القيد | mi
+tiers détenteur | حائز العقار المرهون | mc
+privilège général | امتياز عام | ma
+privilège spécial | امتياز خاص | ma
+privilège du vendeur | امتياز البائع | mi
+privilège du bailleur | امتياز المؤجر | mi
+privilège du Trésor | امتياز الخزينة | mi
+caution solidaire | كفيل متضامن | fa
+caution réelle | كفيل عيني | fa
+bénéfice de discussion | دفع بالتجريد | mc
+bénéfice de division | دفع بالتقسيم | mc
+garantie autonome | ضمان مستقل | fa
+lettre de garantie | خطاب ضمان | fc
+réalisation de la sûreté | التنفيذ على الضمان | fc
+distribution du prix | توزيع الثمن | fi
+
+## Droit civil | Personnes ## CIVIL+ETATCIVIL
+existence de la personne | وجود الشخص | fi
+enfant conçu | حمل مستكن | ma
+identité | هوية | ff
+prénom | اسم شخصي | ma
+changement de nom | تغيير اللقب | mi
+pseudonyme | اسم مستعار | ma
+sexe | جنس | mm
+date de naissance | تاريخ الميلاد | fi
+lieu de naissance | مكان الميلاد | mi
+filiation légitime | نسب شرعي | fa
+situation de famille | حالة عائلية | fa
+célibataire | أعزب | mm
+veuf | أرمل | mm
+résidence habituelle | إقامة اعتيادية | fa
+changement de domicile | تغيير الموطن | mi
+domicile légal | موطن قانوني | ma
+absence | غياب | fm
+disparition | فقدان | fm
+jugement déclaratif de décès | حكم بموت المفقود | mc
+mort civile | موت حكمي | fa
+registre de l'état civil | سجل الحالة المدنية | mi | سجلات الحالة المدنية
+extrait d'acte de naissance | مستخرج من شهادة الميلاد | mc
+fiche familiale | شهادة عائلية | fa
+déclaration de naissance | تصريح بالولادة | fc
+déclaration de décès | تصريح بالوفاة | fc
+rectification d'acte d'état civil | تصحيح عقد الحالة المدنية | fc
+transcription | تسجيل في السجلات | fc
+carte nationale d'identité | بطاقة التعريف الوطنية | fi
+numéro d'identification national | رقم التعريف الوطني | mi
+droit à l'image | الحق في الصورة | mc
+droit au nom | الحق في الاسم | mc
+droit à l'honneur | الحق في الشرف | mc
+intégrité physique | سلامة جسدية | fa
+atteinte à la vie privée | مساس بالحياة الخاصة | fc
+fondation | مؤسسة خيرية | fa
+groupement | تجمع | mm | تجمعات
+objet social | غرض الشركة | mi
+dénomination | تسمية | ff
+représentant | ممثل | mm | ممثلون
+organe | هيئة | mf | هيئات
+dissolution | انحلال | fm

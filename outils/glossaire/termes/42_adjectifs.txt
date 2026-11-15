@@ -1,0 +1,347 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Adjectifs et participes (code adj). L'application ne les remplace pas dans la traduction d'un texte :
+# il faudrait les accorder avec leur nom. L'arabe est donné au masculin singulier, sans article.
+
+## Vocabulaire juridique général | Adjectifs | Conformité au droit ## CORNU
+protégé | محمي | adj
+juridique | قانوني | adj | sf=légal
+illégal | غير قانوني | adj
+légitime | مشروع | adj
+illégitime | غير شرعي | adj
+licite | مباح | adj
+illicite | غير مشروع | adj
+régulier | نظامي | adj
+irrégulier | غير نظامي | adj
+conforme | مطابق | adj
+contraire | مخالف | adj
+compatible | متوافق | adj
+incompatible | متنافٍ | adj
+
+## Vocabulaire juridique général | Adjectifs | Branches du droit ## CORNU
+civil | مدني | adj
+pénal | جزائي | adj
+criminel | جنائي | adj
+correctionnel | جنحي | adj
+commercial | تجاري | adj
+administratif | إداري | adj
+constitutionnel | دستوري | adj
+inconstitutionnel | غير دستوري | adj
+législatif | تشريعي | adj
+réglementaire | تنظيمي | adj
+exécutif | تنفيذي | adj
+judiciaire | قضائي | adj | sf=juridictionnel
+extrajudiciaire | غير قضائي | adj
+arbitral | تحكيمي | adj
+disciplinaire | تأديبي | adj
+
+fiscal | جبائي | adj | sa=ضريبي
+douanier | جمركي | adj
+financier | مالي | adj
+monétaire | نقدي | adj
+bancaire | مصرفي | adj | sa=بنكي
+économique | اقتصادي | adj
+social | اجتماعي | adj
+professionnel | مهني | adj
+syndical | نقابي | adj
+immobilier | عقاري | adj | sf=foncier
+mobilier | منقول | adj
+agricole | فلاحي | adj | sa=زراعي
+urbain | حضري | adj
+rural | ريفي | adj
+maritime | بحري | adj
+aérien | جوي | adj
+terrestre | بري | adj
+environnemental | بيئي | adj
+
+international | دولي | adj
+national | وطني | adj
+diplomatique | دبلوماسي | adj
+consulaire | قنصلي | adj
+bilatéral | ثنائي | adj
+multilatéral | متعدد الأطراف | adj
+humanitaire | إنساني | adj
+militaire | عسكري | adj
+politique | سياسي | adj
+religieux | ديني | adj
+culturel | ثقافي | adj
+médical | طبي | adj
+médico-légal | طبي شرعي | adj
+scientifique | علمي | adj
+technique | تقني | adj
+numérique | رقمي | adj
+électronique | إلكتروني | adj
+informatique | معلوماتي | adj
+
+## Vocabulaire juridique général | Adjectifs | Sources et règles ## CORNU
+contractuel | تعاقدي | adj
+extracontractuel | غير تعاقدي | adj
+délictuel | تقصيري | adj
+quasi délictuel | شبه تقصيري | adj
+conventionnel | اتفاقي | adj
+statutaire | قانوني أساسي | adj
+coutumier | عرفي | adj
+jurisprudentiel | اجتهادي | adj
+doctrinal | فقهي | adj
+impératif | آمر | adj
+supplétif | مكمل | adj
+interprétatif | تفسيري | adj
+obligatoire | إلزامي | adj | sa=إجباري
+facultatif | اختياري | adj
+contraignant | ملزم | adj
+exceptionnel | استثنائي | adj
+discrétionnaire | تقديري | adj
+arbitraire | تحكمي | adj
+abusif | تعسفي | adj
+motivé | مسبب | adj | sa=معلل
+
+## Vocabulaire juridique général | Adjectifs | Validité et effets ## CORNU
+nul | باطل | adj
+annulable | قابل للإبطال | adj
+valable | صحيح | adj
+caduc | ساقط | adj
+inexistant | منعدم | adj
+résoluble | قابل للفسخ | adj
+révocable | قابل للرجوع فيه | adj
+irrévocable | غير قابل للرجوع فيه | adj
+rétroactif | رجعي | adj
+suspensif | واقف | adj
+résolutoire | فاسخ | adj
+extinctif | مسقط | adj
+acquisitif | مكسب | adj
+déclaratif | كاشف | adj
+constitutif | منشئ | adj
+translatif | ناقل | adj
+translatif de propriété | ناقل للملكية | adj
+opposable | محتج به | adj
+inopposable | غير نافذ | adj
+exécutoire | واجب التنفيذ | adj
+en vigueur | ساري المفعول | adj
+applicable | قابل للتطبيق | adj
+inapplicable | غير قابل للتطبيق | adj
+abrogé | ملغى | adj
+modifié | معدل | adj
+complété | متمم | adj
+promulgué | صادر | adj
+
+## Vocabulaire juridique général | Adjectifs | Durée et moment ## CORNU
+conservatoire | تحفظي | adj
+provisoire | مؤقت | adj
+définitif | نهائي | adj
+temporaire | وقتي | adj
+permanent | دائم | adj
+perpétuel | مؤبد | adj
+viager | مدى الحياة | adj
+immédiat | فوري | adj
+différé | مؤجل | adj
+échelonné | مقسط | adj
+anticipé | معجل | adj
+tardif | متأخر | adj
+antérieur | سابق | adj
+postérieur | لاحق | adj
+préalable | مسبق | adj
+successif | متتابع | adj
+simultané | متزامن | adj
+urgent | مستعجل | adj | sa=عاجل
+éventuel | محتمل | adj
+conditionnel | مشروط | adj
+inconditionnel | غير مشروط | adj
+
+## Vocabulaire juridique général | Adjectifs | Créances et biens ## CORNU
+exigible | مستحق الأداء | adj
+échu | حال الأجل | adj
+liquide | معين المقدار | adj
+certain | محقق | adj
+dû | مستحق | adj
+indu | غير مستحق | adj
+solvable | موسر | adj | sa=مليء
+insolvable | معسر | adj
+solidaire | متضامن | adj | sa=تضامني
+commun | مشترك | adj | sf=conjoint
+indivis | شائع | adj
+indivisible | غير قابل للانقسام | adj
+divisible | قابل للانقسام | adj
+fongible | مثلي | adj
+consomptible | قابل للاستهلاك | adj
+cessible | قابل للتنازل | adj
+incessible | غير قابل للتنازل | adj
+saisissable | قابل للحجز | adj
+insaisissable | غير قابل للحجز | adj
+aliénable | قابل للتصرف فيه | adj
+inaliénable | غير قابل للتصرف فيه | adj
+prescriptible | قابل للتقادم | adj
+imprescriptible | غير قابل للتقادم | adj
+transmissible | قابل للانتقال | adj
+intransmissible | غير قابل للانتقال | adj
+négociable | قابل للتداول | adj
+endossable | قابل للتظهير | adj
+nominatif | اسمي | adj
+au porteur | لحامله | adj
+à ordre | لأمر | adj
+
+hypothécaire | رهني | adj
+privilégié | ممتاز | adj
+gagé | مرهون | adj
+grevé | مثقل | adj
+ordinaire | عادي | adj | sf=chirographaire
+corporel | جسماني | adj
+incorporel | غير مادي | adj
+matériel | مادي | adj
+moral | معنوي | adj
+réel | عيني | adj
+personnel | شخصي | adj
+patrimonial | متعلق بالذمة المالية | adj
+extrapatrimonial | غير مالي | adj
+contigu | ملاصق | adj | sa=مجاور
+enclavé | محصور | adj
+vacant | شاغر | adj
+bâti | مبني | adj
+non bâti | غير مبني | adj
+constructible | قابل للبناء | adj
+
+## Vocabulaire juridique général | Adjectifs | Contrats et volonté ## CORNU
+unilatéral | انفرادي | adj
+synallagmatique | ملزم للجانبين | adj
+onéreux | بعوض | adj
+gratuit | مجاني | adj
+aléatoire | احتمالي | adj
+formel | شكلي | adj
+consensuel | رضائي | adj
+tacite | ضمني | adj | sf=implicite
+exprès | صريح | adj | sf=explicite
+verbal | شفوي | adj
+oral | شفهي | adj
+amiable | ودي | adj
+forcé | جبري | adj
+spontané | تلقائي | adj
+réciproque | متبادل | adj | sf=mutuel
+principal | أصلي | adj | sa=رئيسي
+accessoire | تبعي | adj
+subsidiaire | احتياطي | adj
+complémentaire | تكميلي | adj
+alternatif | تخييري | adj
+exclusif | حصري | adj
+collectif | جماعي | adj
+individuel | فردي | adj
+lucratif | ربحي | adj
+non lucratif | غير ربحي | adj
+bénévole | تطوعي | adj
+rémunéré | مأجور | adj
+fictif | صوري | adj
+apparent | ظاهر | adj
+occulte | خفي | adj
+présumé | مفترض | adj
+frauduleux | احتيالي | adj
+dolosif | تدليسي | adj
+
+## Vocabulaire juridique général | Adjectifs | Faute et responsabilité ## CORNU
+coupable | مذنب | adj
+innocent | بريء | adj
+responsable | مسؤول | adj
+irresponsable | غير مسؤول | adj
+punissable | معاقب عليه | adj
+intentionnel | عمدي | adj | sf=volontaire
+involontaire | غير عمدي | adj
+prémédité | مع سبق الإصرار | adj
+aggravé | مشدد | adj
+atténué | مخفف | adj
+flagrant | متلبس به | adj
+récidiviste | عائد | adj
+fautif | مخطئ | adj
+dommageable | ضار | adj
+préjudiciable | مضر | adj
+lésé | متضرر | adj | sa=مضرور
+grave | جسيم | adj | sa=خطير
+léger | يسير | adj
+fortuit | عرضي | adj | sf=accidentel
+prévisible | متوقع | adj
+imprévisible | غير متوقع | adj
+proportionné | متناسب | adj
+disproportionné | غير متناسب | adj
+raisonnable | معقول | adj
+excessif | مفرط | adj
+manifeste | جلي | adj
+équitable | منصف | adj
+juste | عادل | adj
+injuste | ظالم | adj | sa=جائر
+
+## Vocabulaire juridique général | Adjectifs | Procédure ## CORNU
+litigieux | متنازع فيه | adj
+recevable | مقبول | adj
+irrecevable | غير مقبول | adj
+fondé | مؤسس | adj
+infondé | غير مؤسس | adj
+compétent | مختص | adj
+incompétent | غير مختص | adj
+contradictoire | حضوري | adj
+réputé contradictoire | معتبر حضوريا | adj
+susceptible d'appel | قابل للاستئناف | adj
+insusceptible de recours | غير قابل للطعن | adj
+probatoire | إثباتي | adj
+probant | ذو حجية | adj
+décisoire | حاسم | adj
+transactionnel | تصالحي | adj
+impartial | محايد | adj
+neutre | حيادي | adj
+indépendant | مستقل | adj
+confidentiel | سري | adj | sf=secret
+officiel | رسمي | adj | sf=authentique
+officieux | غير رسمي | adj
+légalisé | مصادق عليه | adj
+certifié conforme | مطابق للأصل | adj
+enregistré | مسجل | adj
+inscrit | مقيد | adj
+publié | منشور | adj
+recommandé | موصى عليه | adj
+
+## Vocabulaire juridique général | Adjectifs | Institutions et administration ## CORNU
+public | عمومي | adj
+privé | خاص | adj | sf=spécial, particulier
+général | عام | adj
+électoral | انتخابي | adj
+éligible | قابل للانتخاب | adj
+inéligible | غير قابل للانتخاب | adj
+parlementaire | برلماني | adj
+gouvernemental | حكومي | adj
+présidentiel | رئاسي | adj
+ministériel | وزاري | adj
+interministériel | وزاري مشترك | adj
+communal | بلدي | adj
+wilayal | ولائي | adj
+régional | جهوي | adj
+local | محلي | adj
+territorial | إقليمي | adj
+central | مركزي | adj
+décentralisé | لامركزي | adj
+déconcentré | غير ممركز | adj
+hiérarchique | سلمي | adj
+souverain | ذو سيادة | adj
+titulaire | مرسم | adj
+stagiaire | متربص | adj
+intérimaire | بالنيابة | adj
+suppléant | مستخلف | adj
+honoraire | شرفي | adj
+habilité | مؤهل | adj
+délégué | مفوض | adj
+
+## Vocabulaire juridique général | Adjectifs | Personnes et famille ## CORNU
+capable | ذو أهلية | adj
+conjugal | زوجي | adj
+familial | أسري | adj | sa=عائلي
+parental | والدي | adj
+paternel | أبوي | adj
+maternel | أمومي | adj
+héréditaire | وراثي | adj
+successoral | إرثي | adj
+naturel | طبيعي | adj
+binational | مزدوج الجنسية | adj
+naturalisé | متجنس | adj
+
+## Vocabulaire juridique général | Adjectifs | Impôts et comptes ## CORNU
+net | صافٍ | adj
+brut | إجمالي | adj | sa=خام
+imposable | خاضع للضريبة | adj
+exonéré | معفى | adj
+déductible | قابل للخصم | adj
+forfaitaire | جزافي | adj
+proportionnel | نسبي | adj
+progressif | تصاعدي | adj

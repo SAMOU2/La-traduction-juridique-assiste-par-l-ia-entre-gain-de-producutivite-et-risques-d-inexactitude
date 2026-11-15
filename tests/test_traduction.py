@@ -341,3 +341,159 @@ def test_texte_vide_ou_sans_mot(traducteur):
         traduction = traducteur.traduire(texte, FR)
         assert traduction.texte == texte and traduction.phrases == [] and traduction.termes == []
         assert not traduction.complete
+
+
+# ------------------------------------------------------------------ adjectifs, verbes et locutions
+#: Un petit glossaire qui contient, avec des noms, des mots que la traduction d'un texte ne remplace pas.
+AVEC_D_AUTRES_MOTS = (
+    "terme_fr;terme_ar;categorie_fr;pluriel_ar\n"
+    "contrat;عقد;nom masculin;عقود\n"
+    "loi;قانون;nom féminin;قوانين\n"
+    "consommateur;مستهلك;nom masculin;\n"
+    "protection;حماية;nom féminin;\n"
+    "mineur;قاصر;nom et adjectif;\n"
+    "usage;عرف;;\n"
+    "protégé;محمي;adjectif;\n"
+    "nul;باطل;adj.;\n"
+    "protéger;حمى;verbe;\n"
+    "conclure;عقد;verbe;\n"
+    "de plein droit;بقوة القانون;locution adverbiale;\n"
+    "en vertu de;بمقتضى;locution prépositive;\n"
+)
+
+
+@pytest.mark.parametrize(("categorie", "remplace"), [
+    ("nom masculin", True), ("nom féminin pluriel", True), ("locution nominale féminine", True),
+    ("locution nominale (masculin pluriel)", True), ("", True), ("n.m.", True), ("nf", True), ("Nom", True),
+    ("nom et adjectif", True), ("nom verbal", True),
+    ("adjectif", False), ("adj.", False), ("Adjectif qualificatif", False), ("locution adjectivale", False),
+    ("participe passé", False), ("verbe", False), ("v.", False), ("verbe transitif", False),
+    ("locution verbale", False), ("adverbe", False), ("adv.", False), ("locution adverbiale", False),
+    ("préposition", False), ("prép.", False), ("locution prépositive", False),
+    ("conjonction", False), ("conj.", False), ("locution conjonctive", False),
+])
+def test_seuls_les_noms_sont_remplaces_dans_un_texte(categorie, remplace):
+    from traducteur.glossaire import Entree
+    from traducteur.traduction import se_remplace_dans_un_texte
+
+    assert se_remplace_dans_un_texte(Entree(numero=1, terme_fr="x", terme_ar="س", categorie_fr=categorie)) is remplace
+
+
+def test_un_adjectif_un_verbe_et_une_locution_restent_dans_la_langue_source():
+    """Un adjectif devrait s'accorder et un verbe se conjuguer : ils ne sont pas remplacés, les noms le sont."""
+    glossaire = Glossaire.depuis_texte(AVEC_D_AUTRES_MOTS)
+    traducteur = Traducteur(glossaire)
+    resultat = traducteur.traduire("Le contrat protégé est nul de plein droit, en vertu de la loi. "
+                                   "L'usage doit protéger le mineur et le consommateur.", FR)
+    assert balise(resultat) == ("[العقد] {protégé} {est} {nul} {de} {plein} {droit}، {en} {vertu} {de} [القانون]. "
+                                "[العرف] {doit} {protéger} [القاصر] {et} [المستهلك].")
+    # « droit » est un terme du glossaire fourni ; dans « de plein droit », il n'est pas traduit à part.
+    assert [terme.entree.terme_fr for terme in resultat.termes] == ["contrat", "loi", "usage", "mineur",
+                                                                     "consommateur"]
+    assert {"protégé", "nul", "protéger"} <= set(resultat.mots_absents)
+
+    # De l'arabe vers le français : « عقد » est le nom « contrat », jamais le verbe « conclure » qui s'écrit
+    # de la même façon, et le choix n'est pas signalé comme incertain.
+    resultat = traducteur.traduire("حمى القانون العقد المحمي بقوة القانون. عقد المستهلك باطل بمقتضى العرف.", AR)
+    assert balise(resultat) == ("{حمى} [la loi] [le contrat] {المحمي} {بقوة} {القانون}. "
+                                "[Le contrat] [du consommateur] {باطل} {بمقتضى} [l’usage].")
+    contrats = [occurrence for occurrence in resultat.occurrences if occurrence.entree.terme_fr == "contrat"]
+    assert len(contrats) == 2
+    assert all(len(occurrence.candidats) == 1 and not occurrence.incertain for occurrence in contrats)
+
+    # Ces mots gardent leur fiche : la recherche d'un terme les trouve, avec ou sans accents.
+    assert [entree.terme_fr for entree in glossaire.chercher("protege", FR)] == ["protégé", "protéger"]
+    assert [entree.terme_fr for entree in glossaire.chercher("عقد", AR)] == ["contrat", "conclure"]
+    assert glossaire.par_terme("بقوة القانون", AR).terme_fr == "de plein droit"
+
+
+def test_un_glossaire_de_noms_n_est_pas_copie(glossaire):
+    """Sans adjectif ni verbe, la traduction se sert du glossaire tel quel : rien n'est indexé une seconde fois."""
+    assert Traducteur(glossaire)._noms is glossaire
+    avec_d_autres_mots = Glossaire.depuis_texte(AVEC_D_AUTRES_MOTS)
+    noms = Traducteur(avec_d_autres_mots)._noms
+    assert noms is not avec_d_autres_mots and len(noms) == 6 and len(avec_d_autres_mots) == 12
+    # Les entrées sont les mêmes objets : une fiche ouverte depuis un texte traduit est celle du glossaire.
+    assert all(entree is avec_d_autres_mots.entrees[entree.numero - 1] for entree in noms.entrees)
+
+
+
+def test_les_mots_d_une_locution_ne_sont_pas_traduits_un_par_un():
+    """« de plein droit » : « droit » n'y est pas le terme « droit ». La locution reste entière, à traduire."""
+    glossaire = Glossaire.depuis_texte(
+        "terme_fr;terme_ar;categorie_fr;synonymes_fr\n"
+        "droit;قانون;nom masculin;\n"
+        "peine;عقوبة;nom féminin;\n"
+        "préjudice;ضرر;nom masculin;\n"
+        "nullité;بطلان;nom féminin;\n"
+        "tiers;الغير;nom masculin;\n"
+        "appel;استئناف;nom masculin;\n"
+        "jugement;حكم;nom masculin;\n"
+        "bonne foi;حسن النية;locution nominale féminine;\n"
+        "de plein droit;بقوة القانون;locution adverbiale;de droit\n"
+        "sous peine de;تحت طائلة;locution prépositive;à peine de\n"
+        "sans préjudice de;دون الإخلال ب;locution prépositive;\n"
+        "à l'égard de;تجاه;locution prépositive;\n"
+        "susceptible d'appel;قابل للاستئناف;locution adjectivale;\n"
+        "interjeter appel;استأنف;locution verbale;\n"
+        "de bonne foi;بحسن نية;locution adjectivale;\n"
+        "grâce à;بفضل;locution prépositive;\n"
+    )
+    traducteur = Traducteur(glossaire)
+
+    def traduire(texte: str, langue: str = FR) -> str:
+        return balise(traducteur.traduire(texte, langue))
+
+    # Sans la locution, « droit », « peine », « préjudice » et « appel » seraient remplacés par leur équivalent.
+    assert traduire("Le jugement est nul de plein droit.") == "[الحكم] {est} {nul} {de} {plein} {droit}."
+    assert traduire("Il le fait sous peine de nullité.") == "{Il} {le} {fait} {sous} {peine} {de} [بطلان]."
+    # Le dernier mot peut être contracté : « de » devant une voyelle, « du », « des », « au », « aux ».
+    assert traduire("Sans préjudice du droit des tiers.") == "{Sans} {préjudice} {du} [قانون] [الغير]."
+    assert traduire("À peine d’irrecevabilité.") == "{À} {peine} {d’}{irrecevabilité}."
+    assert traduire("Le droit à l'égard du tiers.") == "[القانون] {à} {l'}{égard} {du} [الغير]."
+    assert traduire("Grâce aux tiers.") == "{Grâce} {aux} [الغير]."
+    # Une locution verbale ou adjectivale change de forme dans un texte (« interjette appel », « susceptibles
+    # d'appel ») : elle n'est pas gardée entière, et le nom qu'elle contient est traduit comme ailleurs.
+    assert traduire("Le jugement est susceptible d'appel.") == "[الحكم] {est} {susceptible} {d'}[استئناف]."
+    assert traduire("Il peut interjeter appel du jugement.") == "{Il} {peut} {interjeter} [استئناف] [الحكم]."
+    assert traduire("Il interjette appel.") == "{Il} {interjette} [استئناف]."
+    assert traduire("La bonne foi du tiers.") == "[حسن النية] [للغير]."
+    assert traduire("Le tiers de bonne foi.") == "[الغير] [حسن النية]."
+    # Une ponctuation interrompt la locution : chaque mot est alors lu à part.
+    assert traduire("De plein, droit.") == "{De} {plein}، [قانون]."
+
+    # En arabe : « القانون » n'est pas « la loi » dans « بقوة القانون », même après la conjonction « و ».
+    assert traduire("الحكم باطل بقوة القانون.", AR) == "[Le jugement] {باطل} {بقوة} {القانون}."
+    assert traduire("وبقوة القانون.", AR) == "{وبقوة} {القانون}."
+    assert traduire("قوة القانون.", AR) == "{قوة} [le droit]."
+    # Les mots d'une locution restent dans la liste des mots à traduire.
+    assert "plein" in traducteur.traduire("Nul de plein droit.", FR).mots_absents
+
+
+
+def test_seul_un_pluriel_en_oun_perd_son_noun_devant_un_complement():
+    """« قانون » est un singulier et « ديون » un pluriel brisé : suivis d'un complément, ils gardent leur « ن »."""
+    glossaire = Glossaire.depuis_texte(
+        "terme_fr;terme_ar;categorie_fr;pluriel_ar;categorie_ar\n"
+        "loi;قانون;nom féminin;قوانين;اسم مذكر\n"
+        "arrhes;عربون;nom féminin pluriel;;اسم مذكر\n"
+        "dette;دين;nom féminin;ديون;اسم مذكر\n"
+        "fonctionnaire;موظف;nom masculin;موظفون;اسم مذكر\n"
+        "avocat;محامٍ;nom masculin;محامون;اسم مذكر\n"
+        "acheteur;مشتري;nom masculin;مشترون;اسم مذكر\n"
+        "contractants;متعاقدون;nom masculin pluriel;;جمع مذكر\n"
+        "commune;بلدية;nom féminin;;اسم مؤنث\n"
+    )
+    traducteur = Traducteur(glossaire)
+    for texte, attendu in (
+            ("La loi de la commune.", "[قانون] [البلدية]."),          # et non « قانو البلدية »
+            ("Les lois de la commune.", "[قوانين] [البلدية]."),
+            ("Les arrhes de la commune.", "[عربون] [البلدية]."),
+            ("Les dettes de la commune.", "[ديون] [البلدية]."),
+            ("Le fonctionnaire de la commune.", "[موظف] [البلدية]."),
+            ("Les fonctionnaires de la commune.", "[موظفو] [البلدية]."),
+            ("Les avocats de la commune.", "[محامو] [البلدية]."),
+            ("L'avocat de la commune.", "[محامي] [البلدية]."),
+            ("Les acheteurs de la commune.", "[مشترو] [البلدية]."),
+            ("Les contractants de la commune.", "[متعاقدو] [البلدية].")):
+        assert balise(traducteur.traduire(texte, FR)) == attendu, texte

@@ -254,6 +254,8 @@ class CarteTerme(QWidget):
         self.langue_definition, self.definition = self.definitions[0] if self.definitions else (source, "")
         #: Vrai si la définition n'est reprise d'aucune source citée.
         self.a_verifier = not entree.source_definition or mention_a_verifier(entree.source_definition) is not None
+        #: Vrai si le terme n'a pas de définition et que le glossaire donne son équivalent comme « à vérifier ».
+        self.equivalent_a_verifier = not self.definition and mention_a_verifier(entree.source_definition) is not None
         # ③ Équivalent ; s'il y a plusieurs sens, un avertissement le signale.
         self.equivalent = entree.terme(cible)
         self.grammaire = categorie_et_pluriel(entree, cible)
@@ -331,8 +333,11 @@ class CarteTerme(QWidget):
         return contenu
 
     def _mention_de_la_definition(self) -> QWidget | None:
-        """À droite du titre « Définition » : la source citée, ou la mention « À vérifier »."""
-        if not self.definition:
+        """À droite du titre « Définition » : la source citée, ou la mention « À vérifier ».
+
+        Sans définition, la mention ne s'affiche que si le glossaire l'écrit : elle porte alors sur l'équivalent.
+        """
+        if not self.definition and not self.equivalent_a_verifier:
             return None
         mention = QWidget()
         ligne = QHBoxLayout(mention)
@@ -341,7 +346,9 @@ class CarteTerme(QWidget):
         if self.a_verifier:
             ligne.addWidget(icone_fixe("alerte", theme.AMBRE, 14, 1.6))
             texte = etiquette("À vérifier", "piedAlerte")
-            texte.setToolTip("Définition à vérifier : elle n’est reprise d’aucune source citée.")
+            texte.setToolTip("Équivalent à vérifier : il n’est repris d’aucune source citée."
+                             if self.equivalent_a_verifier
+                             else "Définition à vérifier : elle n’est reprise d’aucune source citée.")
         else:
             ligne.addWidget(icone_fixe("document", theme.TEXTE_3, 14))
             texte = EtiquetteCourte(f"Source : {self.entree.source_definition}", "pied")

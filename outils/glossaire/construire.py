@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Construit donnees/glossaire_juridique.csv : les 40 entrées d'origine, puis les lots de nouveaux termes.
+"""Construit donnees/glossaire_juridique.csv : les 40 entrées d'origine, les lots, puis les termes seuls.
 
 Emploi, depuis le dossier du projet :
 
@@ -8,8 +8,9 @@ Emploi, depuis le dossier du projet :
     python outils/glossaire/construire.py --ecrire   récrit le fichier CSV
 
 Les 40 premières entrées du CSV sont gardées telles quelles. Toutes les suivantes sont récrites à partir des
-lots et des exemples : une correction faite à la main dans le CSV après la 40e entrée est perdue. Pour la
-conserver, la faire dans le lot ou dans le fichier d'exemples, ou ne plus utiliser ce script.
+lots, des exemples et des termes seuls : une correction faite à la main dans le CSV après la 40e entrée est
+perdue. Pour la conserver, la faire dans le lot, dans le fichier d'exemples ou dans le fichier de termes seuls,
+ou ne plus utiliser ce script.
 
 Options d'affichage : --pluriels (pluriels français calculés pour les termes de plusieurs mots), --homonymes
 (termes qui désignent plusieurs entrées), --domaines (nombre d'entrées nouvelles par domaine), --manquants
@@ -35,6 +36,23 @@ terme en français et son équivalent en arabe. Elle remplit les colonnes contex
 
 La seconde forme sert quand le terme français désigne deux entrées (« action » : « دعوى » ou « سهم »).
 Le script vérifie que chaque phrase contient bien le terme, avec la même règle que l'application.
+
+Format d'un fichier de termes seuls (dossier termes/, à partir de la version 0.8) : le même en-tête de domaine
+et les mêmes groupes que dans un lot, mais ni définition ni phrase d'exemple. Ces termes sont écrits dans le
+CSV après ceux des lots. Le pluriel arabe et les options peuvent manquer.
+
+    terme français | terme arabe | codes | pluriel arabe | options…
+
+Aux codes des noms s'ajoutent cinq codes : adj (adjectif), v (verbe), adv (adverbe ou locution adverbiale),
+prep (préposition ou locution prépositive), conj (conjonction ou locution conjonctive). L'application ne
+remplace pas ces mots dans la traduction d'un texte : il faudrait les accorder ou les conjuguer. Ils ont leur
+fiche, et une locution de plusieurs mots reconnue dans un texte y reste entière (« de plein droit »).
+
+Le script refuse un nom seul dont une forme (terme, pluriel ou synonyme) désigne déjà un autre nom, en français
+ou en arabe : l'application n'aurait ni définition ni exemple pour choisir entre les deux. Il refuse aussi un
+nom d'un seul mot qui est un mot courant de la langue (« or », « est », « قبل ») : la traduction d'un texte le
+remplacerait partout. Un adjectif, un verbe ou une locution peut partager une forme avec une autre entrée,
+puisqu'il n'est pas remplacé : « عقد » est le nom « contrat » et le verbe « conclure ».
 """
 from __future__ import annotations
 
@@ -51,18 +69,23 @@ DEPOT = pathlib.Path(__file__).resolve().parents[2]
 CSV = DEPOT / "donnees" / "glossaire_juridique.csv"
 LOTS = pathlib.Path(__file__).parent / "lots"
 EXEMPLES = pathlib.Path(__file__).parent / "exemples"
+#: Termes seuls : terme, équivalent, catégorie, pluriel et domaine, sans définition ni phrase d'exemple.
+TERMES = pathlib.Path(__file__).parent / "termes"
 #: Nombre d'entrées placées au début du CSV et écrites à la main : le script n'y touche pas.
 ENTREES_D_ORIGINE = 40
 SOURCE = "à vérifier (définition d’exemple)"
 #: Source écrite pour les phrases d'exemple : elles ont été rédigées pour la démonstration, sans texte officiel.
 SOURCE_EXEMPLE = "à vérifier (phrase d’exemple)"
+#: Mention écrite dans la colonne « source_definition » d'un terme seul : il n'a pas de définition, la mention
+#: porte sur son équivalent. L'application l'affiche au pied du champ ② et dans la carte du terme.
+SOURCE_SEUL = "à vérifier (équivalent d’exemple)"
 #: Longueur maximale d'une phrase d'exemple, pour qu'elle tienne dans le champ ④ sans le remplir.
 LONGUEUR_EXEMPLE = 170
-OBJECTIF = 1000
+OBJECTIF = 5000
 
 sys.path.insert(0, str(DEPOT))
 from traducteur.glossaire import Entree  # noqa: E402
-from traducteur.langues import AR, FR, cle_souple  # noqa: E402
+from traducteur.langues import AR, FR, cle_souple, cles_de_recherche  # noqa: E402
 from traducteur.segmentation import segmenter_en_phrases  # noqa: E402
 from traducteur.surlignage import motif_du_terme  # noqa: E402
 from traducteur.traduction import cle_phrase  # noqa: E402
@@ -264,6 +287,36 @@ _MASCULINS = {"خليفة", "مستشفى", "مبنى", "معنى", "مدعى", 
 _SANS_ARTICLE = {"التزام", "التزامات", "التماس", "التحاق", "التقاء", "التفات", "التباس", "التقاط", "التصاق"}
 
 
+#: Codes d'un nom : genre français, nature du terme arabe, « p » si le terme français est un pluriel.
+_CODES_D_UN_NOM = regex.compile(r"[mf][mfaic]p?")
+#: Autres natures de mots, admises dans les termes seuls : code -> (catégorie d'un mot, catégorie d'une locution),
+#: en français puis en arabe. L'application ne remplace pas ces mots dans la traduction d'un texte.
+AUTRES_NATURES = {
+    "adj": (("adjectif", "locution adjectivale"), ("صفة", "عبارة وصفية")),
+    "v": (("verbe", "locution verbale"), ("فعل", "عبارة فعلية")),
+    "adv": (("adverbe", "locution adverbiale"), ("ظرف", "شبه جملة")),
+    "prep": (("préposition", "locution prépositive"), ("شبه جملة", "شبه جملة")),
+    "conj": (("conjonction", "locution conjonctive"), ("أداة ربط", "عبارة ربط")),
+}
+#: Mots courants du français et de l'arabe : un nom d'un seul mot ne doit pas se confondre avec l'un d'eux,
+#: car la traduction d'un texte le remplacerait partout (« or » : le métal, ou la conjonction ?).
+_MOTS_COURANTS_FR = (
+    "a à au aux avec car ce ces cet cette comme dans de des dès donc du elle elles en entre est et eux il ils "
+    "la là le les leur leurs lui ma mais me mes mon ne ni non nos notre nous on or ou où par pas plus pour "
+    "que qui sa sans se ses si son sous sur ta te tes ton tous tout toute toutes très un une vers vos votre "
+    "vous y été être avoir fait faire dit soit peut doit sont ont même autre autres après avant depuis lors "
+    "alors ainsi aussi bien peu trop pendant selon contre envers hors près chez ici dont quand puis car "
+    "cela ceci celui celle ceux celles chaque aucun aucune quel quelle tel telle dû sûr")
+_MOTS_COURANTS_AR = (
+    "على في من إلى عن مع أو أن إن كان كانت هذا هذه قبل بعد عند بين حتى كل غير ذلك تلك التي الذي الذين ما لا "
+    "لم لن قد هو هي هم أي أية ثم حيث إذا إذ لدى ضد دون خلال منذ نحو ضمن حسب وفق أمام خلف فوق تحت بدون مثل "
+    "نفس بعض جميع كما لكن بل أما إما سواء فقط أيضا جدا له لها به بها فيه فيها منه منها عليه عليها إليه "
+    "يكون تكون ليس هناك هنا إلا لو هل كيف متى أين أنه أنها بأن لأن حين عندما بينما كذلك أكثر أقل آخر أخرى "
+    "أول واحد أحد يجب يجوز يمكن تم يتم")
+_MOTS_COURANTS = {langue: frozenset(cle_souple(mot) for mot in mots.split())
+                  for langue, mots in ((FR, _MOTS_COURANTS_FR), (AR, _MOTS_COURANTS_AR))}
+
+
 def pluriel_mot(mot: str) -> str:
     if "-" in mot:
         debut, _, fin = mot.rpartition("-")
@@ -300,10 +353,12 @@ class Erreurs(list):
         self.append(f"{lot}:{numero}: {message}")
 
 
-def lire_les_lots(erreurs: Erreurs) -> list[dict]:
+def lire_les_lots(erreurs: Erreurs, dossier: pathlib.Path | None = None, seuls: bool = False) -> list[dict]:
+    """Lit les lots du dossier ``lots/`` ou, avec ``seuls``, les termes seuls du dossier ``termes/``."""
+    dossier = dossier or (TERMES if seuls else LOTS)
     entrees: list[dict] = []
     groupe = 0
-    for lot in sorted(LOTS.glob("*.txt")):
+    for lot in sorted(dossier.glob("*.txt")):
         domaine, cles = "", []
         for numero, ligne in enumerate(lot.read_text(encoding="utf-8").splitlines(), 1):
             ligne = unicodedata.normalize("NFC", ligne.strip())
@@ -322,13 +377,22 @@ def lire_les_lots(erreurs: Erreurs) -> list[dict]:
             if ligne.startswith("#"):
                 continue
             champs = [champ.strip() for champ in ligne.split(" | ")]
-            if len(champs) < 6:
-                erreurs.signaler(lot.name, numero, f"{len(champs)} champs au lieu de 6 : {ligne[:60]}")
-                continue
-            fr, ar, codes, pluriel_ar, def_fr, def_ar, *options = champs
+            if seuls:
+                # Terme seul : terme, équivalent, codes ; puis le pluriel arabe et les options, s'il y en a.
+                if len(champs) < 3:
+                    erreurs.signaler(lot.name, numero, f"{len(champs)} champs au lieu de 3 au moins : {ligne[:60]}")
+                    continue
+                fr, ar, codes, *options = champs
+                pluriel_ar = options.pop(0) if options and "=" not in options[0] else ""
+                def_fr = def_ar = ""
+            else:
+                if len(champs) < 6:
+                    erreurs.signaler(lot.name, numero, f"{len(champs)} champs au lieu de 6 : {ligne[:60]}")
+                    continue
+                fr, ar, codes, pluriel_ar, def_fr, def_ar, *options = champs
             entree = {"lot": lot.name, "numero": numero, "fr": fr, "ar": ar, "codes": codes, "pluriel_ar": pluriel_ar,
-                      "def_fr": def_fr, "def_ar": def_ar, "domaine": domaine, "cles": cles, "groupe": groupe,
-                      "pf": None, "sf": [], "sa": [], "va": []}
+                      "def_fr": def_fr, "def_ar": def_ar, "domaine": domaine, "cles": cles,
+                      "groupe": (dossier.name, groupe), "seul": seuls, "pf": None, "sf": [], "sa": [], "va": []}
             for option in options:
                 nom, egal, valeur = option.partition("=")
                 if not egal or nom not in ("pf", "sf", "sa", "va"):
@@ -357,12 +421,16 @@ def verifier(entree: dict, erreurs: Erreurs) -> None:
         signaler("apostrophe courbe ou espaces dans le terme français")
     if not _TERME_ARABE.fullmatch(ar):
         signaler(f"caractère inattendu dans le terme arabe : {ar}")
-    if not regex.fullmatch(r"[mf][mfaic]p?", codes):
+    if not (_CODES_D_UN_NOM.fullmatch(codes) or (entree["seul"] and codes in AUTRES_NATURES)):
         signaler(f"codes invalides : {codes}")
         return
     mots = ar.split()
-    nature = codes[1]
-    if (len(mots) == 1) != (nature in "mf"):
+    # Un adjectif, un verbe ou une locution : seule l'écriture est vérifiée ; la nature « x » ne correspond à aucun nom.
+    nature = "x" if codes in AUTRES_NATURES else codes[1]
+    if nature == "x":
+        if entree["pluriel_ar"] or entree["pf"]:
+            signaler("un adjectif, un verbe ou une locution n'a pas de pluriel dans le glossaire")
+    elif (len(mots) == 1) != (nature in "mf"):
         signaler(f"nature arabe « {nature} » incompatible avec {len(mots)} mot(s)")
     if len(mots) == 1 and nature in "mf":
         feminin = ar.endswith(("ة", "ى", "ات")) or ar in _FEMININS
@@ -376,17 +444,22 @@ def verifier(entree: dict, erreurs: Erreurs) -> None:
         pass  # groupe indéfini (préposition, etc.) : accepté tel quel
     if entree["pluriel_ar"] and not _TERME_ARABE.fullmatch(entree["pluriel_ar"]):
         signaler(f"caractère inattendu dans le pluriel arabe : {entree['pluriel_ar']}")
-    for nom in ("def_fr",):
-        texte = entree[nom]
+    if entree["seul"]:
+        if nature != "x":
+            for langue, mot in ((FR, fr), (AR, ar)):
+                if len(mot.split()) == 1 and cle_souple(mot) in _MOTS_COURANTS[langue]:
+                    signaler(f"« {mot} » est aussi un mot courant : la traduction d'un texte le remplacerait partout")
+    else:
+        texte = entree["def_fr"]
         if not texte or _ARABE.search(texte) or not texte[0].isupper() or not texte.endswith("."):
             signaler("définition française : vide, arabe, sans majuscule ou sans point final")
         if "  " in texte or " ," in texte or " ." in texte:
             signaler("définition française : espace mal placée")
-    texte = entree["def_ar"]
-    if not texte or _LATIN.search(texte) or not texte.endswith(".") or not _TEXTE_ARABE.fullmatch(texte):
-        signaler(f"définition arabe : vide, lettres latines, signe inattendu ou sans point final : {texte}")
-    if "  " in texte or " ،" in texte or " ." in texte or "," in texte or ";" in texte:
-        signaler("définition arabe : ponctuation ou espace mal placée")
+        texte = entree["def_ar"]
+        if not texte or _LATIN.search(texte) or not texte.endswith(".") or not _TEXTE_ARABE.fullmatch(texte):
+            signaler(f"définition arabe : vide, lettres latines, signe inattendu ou sans point final : {texte}")
+        if "  " in texte or " ،" in texte or " ." in texte or "," in texte or ";" in texte:
+            signaler("définition arabe : ponctuation ou espace mal placée")
     for synonyme in entree["sa"]:
         if not _TERME_ARABE.fullmatch(synonyme):
             signaler(f"synonyme arabe inattendu : {synonyme}")
@@ -397,7 +470,7 @@ def verifier(entree: dict, erreurs: Erreurs) -> None:
 
 def pluriel_francais(entree: dict) -> str:
     """Pluriel français écrit dans le CSV : celui du lot (pf=), sinon le pluriel calculé, sinon rien."""
-    if entree["pf"] == "-" or entree["codes"].endswith("p"):
+    if entree["pf"] == "-" or entree["codes"].endswith("p") or entree["codes"] in AUTRES_NATURES:
         return ""
     if entree["pf"]:
         return entree["pf"]
@@ -408,7 +481,8 @@ def lire_les_exemples(entrees: list[dict], erreurs: Erreurs) -> None:
     """Lit les fichiers d'exemples et range chaque phrase dans son entrée (clé « exemple »)."""
     par_terme: dict[str, list[dict]] = collections.defaultdict(list)
     for entree in entrees:
-        par_terme[cle_souple(entree["fr"])].append(entree)
+        if not entree["seul"]:  # un terme seul n'a pas de phrase d'exemple
+            par_terme[cle_souple(entree["fr"])].append(entree)
     for fichier in sorted(EXEMPLES.glob("*.txt")):
         for numero, ligne in enumerate(fichier.read_text(encoding="utf-8").splitlines(), 1):
             ligne = unicodedata.normalize("NFC", ligne.strip())
@@ -522,6 +596,9 @@ def incoherences(anciennes: list[dict], nouvelles: list[dict]) -> list[str]:
 
 
 def categories(entree: dict) -> tuple[str, str]:
+    if entree["codes"] in AUTRES_NATURES:
+        francais, arabe = AUTRES_NATURES[entree["codes"]]
+        return francais[" " in entree["fr"]], arabe[" " in entree["ar"]]
     genre, nature, pluriel = entree["codes"][0], entree["codes"][1], entree["codes"].endswith("p")
     locution = " " in entree["fr"]
     if pluriel:
@@ -533,6 +610,50 @@ def categories(entree: dict) -> tuple[str, str]:
         fr = "nom " + ("masculin" if genre == "m" else "féminin")
     ar = {"m": "اسم مذكر", "f": "اسم مؤنث", "a": "مركب وصفي", "i": "مركب إضافي", "c": "مركب اسمي"}[nature]
     return fr, ar
+
+
+def formes_partagees(anciennes: list[dict], nouvelles: list[dict], erreurs: Erreurs) -> None:
+    """Refuse un nom seul dont une forme (terme, pluriel ou synonyme) désigne aussi un autre nom.
+
+    Les formes sont comparées comme le fait l'application : sans accents, sans hamza et sans article. Entre deux
+    entrées complètes, l'application choisit d'après leur définition et leur exemple ; un terme seul n'en a pas.
+
+    Un adjectif, un verbe ou une locution peut partager une forme avec une autre entrée : la traduction d'un
+    texte ne le remplace pas, elle n'a donc pas à choisir. « عقد » est ainsi le nom « contrat » et le verbe
+    « conclure » ; l'écran « Terme » propose les deux fiches.
+    """
+    porteurs: dict[tuple[str, str], list[tuple[int, str, dict | None]]] = collections.defaultdict(list)
+
+    def noter(rang: int, libelle: str, entree: dict | None, langue: str, formes: list[str]) -> None:
+        for forme in formes:
+            for cle in cles_de_recherche(forme, langue) if forme else ():
+                if all(autre != rang for autre, _, _ in porteurs[langue, cle]):
+                    porteurs[langue, cle].append((rang, libelle, entree))
+
+    for rang, ancienne in enumerate(anciennes):
+        libelle = f"{ancienne['terme_fr']} / {ancienne['terme_ar']}"
+        for langue, suffixe in ((FR, "fr"), (AR, "ar")):
+            noter(rang, libelle, None, langue, [ancienne[f"terme_{suffixe}"], ancienne[f"pluriel_{suffixe}"],
+                                                *ancienne[f"synonymes_{suffixe}"].split(" | ")])
+    for rang, entree in enumerate(nouvelles, len(anciennes)):
+        if entree["codes"] in AUTRES_NATURES:
+            continue
+        libelle = f"{entree['fr']} / {entree['ar']}"
+        seule = entree if entree["seul"] else None
+        noter(rang, libelle, seule, FR, [entree["fr"], pluriel_francais(entree), *entree["sf"]])
+        noter(rang, libelle, seule, AR, [entree["ar"], entree["pluriel_ar"], *entree["sa"]])
+    deja: set[tuple[int, int]] = set()
+    for (_, cle), liste in porteurs.items():
+        if len(liste) < 2:
+            continue
+        for rang, _, entree in liste:
+            autres = [(autre, libelle) for autre, libelle, _ in liste if autre != rang]
+            if entree is None or all((min(rang, autre), max(rang, autre)) in deja for autre, _ in autres):
+                continue
+            deja.update((min(rang, autre), max(rang, autre)) for autre, _ in autres)
+            erreurs.signaler(entree["lot"], entree["numero"],
+                             f"« {entree['fr']} » : la forme « {cle} » désigne aussi "
+                             + " ; ".join(f"« {libelle} »" for _, libelle in autres))
 
 
 def lire_l_origine() -> str:
@@ -549,7 +670,9 @@ def construire() -> int:
     anciennes = list(csv.DictReader(io.StringIO(origine, newline=""), delimiter=";"))
     colonnes = list(anciennes[0].keys())
     erreurs = Erreurs()
-    nouvelles = lire_les_lots(erreurs)
+    completes = lire_les_lots(erreurs)
+    seuls = lire_les_lots(erreurs, seuls=True)
+    nouvelles = completes + seuls
     for entree in nouvelles:
         verifier(entree, erreurs)
     lire_les_exemples(nouvelles, erreurs)
@@ -589,6 +712,8 @@ def construire() -> int:
         par_fr[cle[0]].append(entree["ar"])
         par_ar[cle[1]].append(entree["fr"])
 
+    formes_partagees(anciennes, nouvelles, erreurs)
+
     # Termes associés : les voisins du même groupe, les plus proches d'abord.
     groupes: dict[int, list[dict]] = collections.defaultdict(list)
     for entree in nouvelles:
@@ -615,7 +740,7 @@ def construire() -> int:
     pluriels_composes = []
     for entree in nouvelles:
         categorie_fr, categorie_ar = "", ""
-        if regex.fullmatch(r"[mf][mfaic]p?", entree["codes"]):
+        if _CODES_D_UN_NOM.fullmatch(entree["codes"]) or entree["codes"] in AUTRES_NATURES:
             categorie_fr, categorie_ar = categories(entree)
         pluriel = pluriel_francais(entree)
         if pluriel and not entree["pf"] and (" " in entree["fr"] or "-" in entree["fr"]):
@@ -632,18 +757,25 @@ def construire() -> int:
             "domaine": entree["domaine"], "synonymes_fr": " | ".join(entree["sf"]),
             "synonymes_ar": " | ".join(entree["sa"]), "termes_associes": " | ".join(entree["associes"]),
             "definition_fr": entree["def_fr"].replace("'", "’"), "definition_ar": entree["def_ar"],
-            "source_definition": SOURCE, "contexte_fr": phrase_fr.replace("'", "’"), "contexte_ar": phrase_ar,
+            "source_definition": SOURCE if entree["def_fr"] else SOURCE_SEUL,
+            "contexte_fr": phrase_fr.replace("'", "’"), "contexte_ar": phrase_ar,
             "source_contexte": SOURCE_EXEMPLE if phrase_fr else "",
             "ressources": " | ".join(ressources),
         }
         ecrivain.writerow([valeurs[colonne] for colonne in colonnes])
 
     total = len(anciennes) + len(nouvelles)
-    print(f"{len(anciennes)} entrées d'origine + {len(nouvelles)} nouvelles = {total} (objectif {OBJECTIF}, "
-          f"reste {OBJECTIF - total})")
-    sans_exemple = [entree for entree in nouvelles if "exemple" not in entree]
-    print(f"phrases d'exemple : {len(nouvelles) - len(sans_exemple)} sur {len(nouvelles)} entrées nouvelles"
+    print(f"{len(anciennes)} entrées d'origine + {len(completes)} entrées des lots + {len(seuls)} termes seuls "
+          f"= {total} (objectif {OBJECTIF}, reste {OBJECTIF - total})")
+    sans_exemple = [entree for entree in completes if "exemple" not in entree]
+    print(f"phrases d'exemple : {len(completes) - len(sans_exemple)} sur {len(completes)} entrées des lots"
           + (f" ; il en manque {len(sans_exemple)} (--manquants pour la liste)" if sans_exemple else ""))
+    natures = collections.Counter(categories(entree)[0].split()[0] if entree["codes"] in AUTRES_NATURES else "nom"
+                                  for entree in seuls if _CODES_D_UN_NOM.fullmatch(entree["codes"])
+                                  or entree["codes"] in AUTRES_NATURES)
+    if seuls:
+        print("termes seuls : " + ", ".join(f"{nombre} × {nature}" for nature, nombre in natures.most_common())
+              + f" ; {sum(1 for entree in seuls if entree['pluriel_ar'])} avec un pluriel arabe")
     if "--coherence" in sys.argv:
         remarques = incoherences(anciennes, nouvelles)
         print(f"\n{len(remarques)} phrase(s) à relire (terme français sans son équivalent arabe) :")
@@ -663,6 +795,9 @@ def construire() -> int:
     if "--domaines" in sys.argv:
         for domaine, nombre in collections.Counter(e["domaine"] for e in nouvelles).most_common():
             print(f"{nombre:4d}  {domaine}")
+        print()
+        for lot, nombre in collections.Counter(e["lot"] for e in nouvelles).items():
+            print(f"{nombre:4d}  {lot}")
     if erreurs:
         print(f"\n{len(erreurs)} ERREUR(S) :")
         print("\n".join(erreurs))

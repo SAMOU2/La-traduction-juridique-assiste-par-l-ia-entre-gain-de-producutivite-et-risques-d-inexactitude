@@ -1,0 +1,138 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Vocabulaire commun à toutes les branches du droit : des noms et des groupes nominaux.
+
+## Vocabulaire juridique général | Droits et devoirs ## CORNU
+protection | حماية | ff
+sauvegarde | صون | fm
+interdiction | حظر | fm | sa=منع
+prohibition | تحريم | fm
+restriction | تقييد | fm
+tolérance | تسامح | fm
+
+prérogatives | صلاحيات | ffp
+titulaire du droit | صاحب الحق | mi | أصحاب الحق
+intérêt légitime | مصلحة مشروعة | ma | مصالح مشروعة
+jouissance des droits | التمتع بالحقوق | fc
+exercice des droits | ممارسة الحقوق | mi
+droit acquis | حق مكتسب | ma | حقوق مكتسبة
+droit fondamental | حق أساسي | ma | حقوق أساسية
+
+abus | تعسف | mm
+atteinte | مساس | fm
+violation | انتهاك | fm | انتهاكات
+manquement | إخلال | mm
+respect de la loi | احترام القانون | mi
+
+## Vocabulaire juridique général | Validité et effets ## CORNU
+validité du contrat | صحة العقد | fi
+illégalité | عدم المشروعية | fi
+opposabilité aux tiers | النفاذ في حق الغير | fc
+inopposabilité | عدم النفاذ | fi
+inexistence | انعدام | fm
+efficacité | فعالية | ff
+applicabilité | قابلية التطبيق | fi
+conformité | مطابقة | ff
+compatibilité | توافق | fm
+incompatibilité | تنافٍ | fm
+
+effet juridique | أثر قانوني | ma | آثار قانونية
+effet rétroactif | أثر رجعي | ma
+effet immédiat | أثر فوري | ma
+champ d'application | مجال التطبيق | mi
+application de la loi | تطبيق القانون | fi
+entrée en application | دخول حيز التطبيق | fc
+prise d'effet | سريان المفعول | fi
+date d'effet | تاريخ السريان | fi
+
+## Vocabulaire juridique général | Actes et écrits ## CORNU
+acte unilatéral | تصرف انفرادي | ma
+acte d'administration | عمل من أعمال الإدارة | mc
+acte de disposition | عمل من أعمال التصرف | mc
+document | وثيقة | mf | وثائق
+pièce justificative | وثيقة ثبوتية | fa | وثائق ثبوتية
+duplicata | نسخة ثانية | ma
+ampliation | نسخة مطابقة للأصل | fc
+extrait | مستخرج | mm | مستخرجات
+récépissé de dépôt | وصل إيداع | mc
+accusé de réception | إشعار بالاستلام | mc
+formulaire | استمارة | mf | استمارات
+répertoire | فهرس | mm | فهارس
+archives | أرشيف | fmp
+sceau de l'État | ختم الدولة | mi
+paraphe | توقيع بالأحرف الأولى | mc
+mention marginale | بيان هامشي | fa | بيانات هامشية
+
+## Vocabulaire juridique général | Temps et délais ## CORNU
+délai légal | أجل قانوني | ma | آجال قانونية
+délai de grâce | نظرة الميسرة | mi
+délai raisonnable | أجل معقول | ma
+délai de rigueur | أجل حتمي | ma
+prorogation | تمديد | fm
+report | تأجيل | mm
+expiration | انقضاء | fm
+point de départ du délai | بدء سريان الأجل | mc
+computation des délais | حساب الآجال | fi
+jour ouvrable | يوم عمل | mc | أيام عمل
+jour férié | يوم عطلة | mc | أيام عطلة
+antériorité | أسبقية | ff
+durée | مدة | ff | مدد
+tacite reconduction | تجديد ضمني | fa
+suspension | تعليق | fm
+interruption | انقطاع | fm
+
+## Vocabulaire juridique général | Raisonnement juridique ## CORNU
+qualification juridique | تكييف قانوني | fa
+fondement juridique | أساس قانوني | ma | أسس قانونية
+base légale | سند قانوني | fa
+critère | معيار | mm | معايير
+hypothèse | فرضية | ff | فرضيات
+condition de fond | شرط موضوعي | fa | شروط موضوعية
+condition de forme | شرط شكلي | fa | شروط شكلية
+élément constitutif | ركن | mm | أركان
+situation juridique | وضعية قانونية | fa | وضعيات قانونية
+statut juridique | مركز قانوني | ma | مراكز قانونية
+régime juridique | نظام قانوني | ma | أنظمة قانونية
+définition légale | تعريف قانوني | fa
+assimilation | مماثلة | ff
+argument | حجة | mf | حجج
+contradiction | تناقض | fm
+lacune | ثغرة | ff | ثغرات
+ambiguïté | غموض | fm
+
+## Vocabulaire juridique général | Personnes et rapports ## CORNU
+intéressé | المعني بالأمر | mc
+ayant cause à titre universel | خلف عام | ma
+ayant cause à titre particulier | خلف خاص | ma
+auteur de l'acte | صاحب التصرف | mi
+destinataire | مرسل إليه | mc
+partie signataire | طرف موقع | fa | أطراف موقعة
+usager | مرتفق | mm | مرتفقون
+rapport de droit | علاقة قانونية | ma | علاقات قانونية
+lien juridique | رابطة قانونية | ma | روابط قانونية
+réciprocité | معاملة بالمثل | fc
+égalité | مساواة | ff
+discrimination raciale | تمييز عنصري | fa
+transparence | شفافية | ff
+secret professionnel | سر مهني | ma | أسرار مهنية
+loyauté | نزاهة | ff
+diligence | عناية | ff
+vigilance | يقظة | ff
+prudence | حيطة | ff
+
+## Vocabulaire juridique général | Sanctions et remèdes ## CORNU
+mesure provisoire | تدبير مؤقت | fa | تدابير مؤقتة
+mesure d'urgence | تدبير استعجالي | fa | تدابير استعجالية
+injonction | أمر قضائي | fa
+avertissement | إنذار | mm | إنذارات
+blâme | توبيخ | mm
+pénalité de retard | غرامة التأخير | fi | غرامات التأخير
+restitution | استرداد | fm
+remise en état | إعادة الحال إلى ما كان عليه | fc
+régularisation | تسوية الوضعية | fi
+rectification | تصحيح | fm | تصحيحات
+retrait | سحب | mm
+interdiction d'exercer | منع من ممارسة النشاط | fc
+fermeture | غلق | fm
+exclusion | إقصاء | fm
+privation de droits | حرمان من الحقوق | fc
+nullité de plein droit | بطلان بقوة القانون | fc
