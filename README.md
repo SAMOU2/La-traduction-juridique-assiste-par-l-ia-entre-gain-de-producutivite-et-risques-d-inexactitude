@@ -9,24 +9,21 @@ Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont p
 [proposition d'interface](#la-proposition-dinterface) et la
 [première maquette](#maquette-de-lapplication-de-bureau).
 
-## L'application (version 0.6)
+## L'application (version 0.7)
 
-La version 0.6 prépare l'emploi d'une **intelligence artificielle** (IA), facultative :
+La version 0.7 **retire la partie « Intelligence artificielle »** que la version 0.6 avait
+ajoutée à l'écran « Paramètres » :
 
-- l'écran « Paramètres » a une nouvelle partie, **Intelligence artificielle** : un interrupteur
-  « Utiliser l'IA », l'adresse du service, la clé d'accès, le modèle et un bouton **Tester la
-  connexion** ;
-- **l'IA est éteinte à l'installation.** Éteinte, l'application ne se connecte à aucun service ;
-- **l'IA ne traduit encore rien.** La traduction se fait toujours avec le glossaire, et avec lui
-  seul. Le seul bouton qui se sert de l'IA est « Tester la connexion » ;
-- **aucun modèle d'un vrai service d'IA n'a encore été interrogé** : ce bouton n'a été essayé
-  qu'avec un faux service, et aucune clé réelle n'a été utilisée. Une seule vraie demande a été
-  faite à NVIDIA Build, sans clé : celle de la liste de ses modèles. Voir les
-  [limites connues](#limites-connues).
+- cette partie reliait l'application à un service d'intelligence artificielle en ligne. Elle ne
+  servait qu'à régler et à essayer la connexion : l'IA n'a jamais rien traduit ;
+- l'essai n'a pas abouti : le service a répondu, mais le modèle n'a pas répondu à temps ;
+- **l'application ne se connecte à rien**, comme avant la version 0.6. Elle traduit avec le
+  glossaire, et avec lui seul ;
+- à sa première ouverture, la version 0.7 **efface les réglages que la version 0.6 a pu laisser
+  sur l'ordinateur, dont la clé d'accès**.
 
-![La partie « Intelligence artificielle » de l'écran « Paramètres », IA allumée](docs/apercu-ia.png)
-
-Le détail est dans [Intelligence artificielle](#intelligence-artificielle).
+Le détail est dans
+[L'essai d'un service d'IA (version 0.6)](#lessai-dun-service-dia-version-06).
 
 La version 0.5 remplit le champ ④ **Contextualisation** pour tout le glossaire fourni :
 
@@ -100,10 +97,9 @@ on voit le bureau ou la fenêtre qui se trouve derrière :
 
 *Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
 l'autre : la capture de l'[installation](#installation) montre l'écran « Terme » sous Windows.
-L'adresse affichée dans le centre d'aide est un exemple. Les captures des écrans « Terme » et
-« Texte » datent de la version 0.4 : ces écrans s'affichent de la même façon depuis. Celles de
-l'écran « Paramètres » datent de la version 0.6 ; la clé d'accès qu'on y voit en points est
-inventée.*
+L'adresse affichée dans le centre d'aide est un exemple. Les captures des écrans « Terme »,
+« Texte » et « Paramètres » datent de la version 0.4 : ces écrans s'affichent de la même façon
+depuis.*
 
 ### Ce qui est fait, ce qui reste à faire
 
@@ -118,7 +114,7 @@ inventée.*
 | Contextes cherchés dans tout le glossaire | Fait. |
 | Une phrase d'exemple pour chaque entrée du glossaire fourni | Fait (version 0.5) : 1 000 entrées sur 1 000. 969 phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
-| Intelligence artificielle, facultative | Commencé (version 0.6). Fait : les réglages et l'essai de la connexion, dans « Paramètres ». **L'IA ne traduit encore rien**, et aucun modèle d'un vrai service n'a encore été interrogé : voir [Intelligence artificielle](#intelligence-artificielle). |
+| Liaison avec un service d'intelligence artificielle en ligne | Essayée dans la version 0.6, **retirée dans la version 0.7** : voir [L'essai d'un service d'IA (version 0.6)](#lessai-dun-service-dia-version-06). L'application ne se connecte à rien. |
 | Installeur pour Windows (fichier `.msi`) | Fait (version 0.5.3) : voir [Installation](#installation). Il est fabriqué et essayé automatiquement sur une machine Windows. **Personne ne l'a encore installé à la main** : voir les [limites connues](#limites-connues). |
 
 ### Installation
@@ -133,7 +129,7 @@ Il y a deux façons d'installer l'application :
 1. Ouvrir la page
    [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
    du dépôt. Sous la version la plus récente, dans « Assets », télécharger le fichier dont le
-   nom finit par `.msi`, par exemple `Traducteur-juridique-0.6.0.msi`.
+   nom finit par `.msi`, par exemple `Traducteur-juridique-0.7.0.msi`.
 2. Double-cliquer sur le fichier téléchargé.
 3. Cliquer sur **Suivant**, puis sur **Installer**, puis sur **Terminer**. L'application s'ouvre.
 
@@ -342,9 +338,6 @@ Chaque écran garde son propre sens de traduction.
   démarrage.
 - *Service informatique* : l'adresse électronique du service informatique. **Elle est vide à
   l'installation.** Il faut la saisir une fois, puis cliquer sur **Enregistrer**.
-- *Intelligence artificielle*, en bas de la page : l'interrupteur « Utiliser l'IA », éteint à
-  l'installation, puis l'adresse du service, la clé d'accès et le modèle. Voir
-  [Intelligence artificielle](#intelligence-artificielle).
 
 **Description de la plateforme** — ce que fait l'application, les cinq étapes de
 l'enchaînement, les deux écrans de travail, la façon dont un texte est traduit, et ce qu'il faut
@@ -358,89 +351,12 @@ savoir avant de se fier à une traduction.
 - Si aucun logiciel de messagerie ne répond, l'adresse est copiée dans le presse-papiers, pour
   écrire depuis une autre messagerie. **Copier l'adresse** la copie directement.
 - Tant que l'adresse n'est pas saisie, le bouton renvoie à « Paramètres ».
-- Sept questions fréquentes, puis la liste des raccourcis du clavier.
-
-### Intelligence artificielle
-
-*Depuis la version 0.6. Cette partie est facultative : sans elle, l'application fonctionne comme
-avant.*
-
-L'écran « Paramètres » se termine par la partie **Intelligence artificielle**. Elle relie
-l'application à un service d'IA en ligne, par exemple [NVIDIA Build](https://build.nvidia.com).
-
-**Ce qu'elle fait aujourd'hui, et ce qu'elle ne fait pas**
-
-- **L'IA ne traduit encore rien.** La recherche d'un terme et la traduction d'un texte se font
-  avec le glossaire, et avec lui seul, que l'IA soit allumée ou éteinte.
-- Le seul bouton qui se sert de l'IA est **Tester la connexion**.
-- **L'IA est éteinte à l'installation.** Éteinte, l'application ne se connecte à aucun service,
-  et les champs de cette partie sont grisés.
-- Allumée, l'application ne se connecte que sur un clic.
-
-**Régler la connexion**
-
-1. Créer une clé d'accès sur le site du service. Chez NVIDIA Build, elle commence par `nvapi-`.
-2. Ouvrir « Paramètres » et descendre jusqu'à « Intelligence artificielle ». Allumer
-   **Utiliser l'IA**. La première fois, un avertissement s'affiche : cliquer sur **Allumer
-   l'IA** pour continuer, ou sur **Annuler**.
-3. Coller la clé dans le champ **Clé d'accès**. Elle s'affiche en points ; **Afficher** la
-   montre.
-4. Laisser l'**adresse du service** et le **modèle** tels qu'ils sont, ou les remplacer. Ceux
-   de départ sont `https://integrate.api.nvidia.com/v1` et `google/gemma-4-31b-it`. Un champ
-   vidé reprend sa valeur de départ.
-5. Cliquer sur **Tester la connexion**.
-
-Il n'y a pas de bouton « Enregistrer » : ce qui est saisi est enregistré aussitôt.
-
-**Ce que fait « Tester la connexion »**
-
-| Temps | Ce que l'application envoie | Ce qu'elle affiche |
-| --- | --- | --- |
-| 1. Le service répond-il ? | La demande de la liste de ses modèles, avec la clé saisie. | Le nombre de modèles, et si le modèle choisi est dans la liste. S'il n'y est pas : les noms les plus proches. |
-| 2. Le modèle répond-il ? | Une seule phrase, toujours la même : « Traduis en arabe le mot français « contrat ». Réponds par ce seul mot, sans rien ajouter. » | Le temps de réponse, et la réponse du modèle. |
-
-L'essai n'envoie aucun texte de l'utilisateur. La fenêtre continue de répondre pendant
-l'essai. Chaque attente est limitée : 20 secondes pour la liste, 40 secondes pour la réponse du
-modèle. Si le service ne répond pas, l'essai s'arrête donc de lui-même, le plus souvent en
-moins d'une minute. En cas d'échec, la ligne dit ce qui ne va pas : pas de connexion à
-Internet, adresse fausse, clé refusée, modèle inconnu, crédit épuisé, trop de demandes, service
-trop lent. Éteindre l'IA pendant un essai l'abandonne.
-
-**La clé d'accès**
-
-- Elle se saisit **dans l'application, jamais dans le code** : ce dépôt est public, et
-  l'installeur est le même pour tout le monde. Chaque utilisateur saisit sa propre clé.
-- Elle est enregistrée sur l'ordinateur avec les autres réglages de l'application, **sans
-  chiffrement** : une personne qui ouvre la même session peut la lire. Sous Windows, ces
-  réglages sont dans le registre de l'utilisateur
-  (`HKEY_CURRENT_USER\Software\TraducteurJuridique`).
-- Elle n'est envoyée qu'au service dont l'adresse est saisie, par une connexion chiffrée :
-  l'application refuse une adresse qui commence par `http://`, sauf celle de l'ordinateur
-  lui-même. Elle n'est écrite ni dans un message d'erreur, ni dans le message préparé pour le
-  service informatique, ni dans un fichier exporté.
-- **Effacer la clé** la retire des réglages de l'application. **Désinstaller l'application ne
-  la retire pas** : les réglages sont conservés. Avant de désinstaller l'application ou de
-  prêter l'ordinateur, cliquer sur « Effacer la clé ». Pour qu'une clé ne serve plus à personne,
-  il faut aussi la supprimer sur le site du service.
-
-**Précautions**
-
-- Ne jamais envoyer de texte confidentiel ni de données personnelles à un service en ligne.
-  Les [conditions de l'offre d'essai de NVIDIA](https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf)
-  (en anglais, lues en novembre 2026) le disent ainsi : le service est réservé aux essais, et
-  non à un usage en production (article 1.2) ; il ne faut lui envoyer ni information
-  confidentielle, ni donnée personnelle sauf si un service le permet expressément
-  (article 2.6) ; NVIDIA collecte ce qui est envoyé et ce qui est répondu, sans identifier
-  l'utilisateur, pour améliorer ses produits, dont ses modèles d'IA (article 3.3).
-- Ce qu'écrit une IA est toujours à vérifier.
-
-Ce qui n'a pas été vérifié est dans les [limites connues](#limites-connues).
+- Six questions fréquentes, puis la liste des raccourcis du clavier.
 
 ### Comment le texte est traduit
 
 La traduction utilise **le glossaire CSV et lui seul** : ni dictionnaire général, ni service en
-ligne, ni modèle d'intelligence artificielle. C'est vrai aussi quand l'IA est allumée dans
-« Paramètres ». Elle suit cinq étapes :
+ligne, ni modèle d'intelligence artificielle. Elle suit cinq étapes :
 
 1. **Segmentation** : le texte est découpé en phrases.
 2. **Découpage** : chaque phrase est découpée en mots.
@@ -477,6 +393,41 @@ Ce que cela donne :
 - Pour traduire davantage, il faut enrichir le CSV : termes, pluriels, synonymes, exemples.
 
 Le résultat est une aide à la traduction. Il doit être complété et vérifié par le traducteur.
+
+### L'essai d'un service d'IA (version 0.6)
+
+*Retiré dans la version 0.7.*
+
+La version 0.6 avait ajouté, en bas de l'écran « Paramètres », une partie « Intelligence
+artificielle » : un interrupteur, l'adresse d'un service d'IA en ligne (celle de
+[NVIDIA Build](https://build.nvidia.com) était proposée), une clé d'accès, le nom d'un modèle
+et un bouton « Tester la connexion ». L'IA était éteinte à l'installation et ne traduisait
+rien : ces réglages préparaient une suite, qui n'a pas été faite.
+
+Ce que l'essai a montré, en novembre 2026 :
+
+- pendant la fabrication de l'installeur, sous Windows, le programme a reçu du service la liste
+  de ses 83 modèles, sans clé ;
+- avec une clé saisie dans l'application, l'essai de connexion a reçu cette liste, mais le
+  modèle proposé (`google/gemma-4-31b-it`) **n'a pas répondu à temps** : l'application attend
+  sa réponse 40 secondes. La cause n'a pas été établie. Peu après, la file d'attente de ce
+  modèle, lue sur le site de NVIDIA, comptait environ 900 demandes ;
+- aucun texte n'a été traduit par une IA.
+
+Un service gratuit en ligne peut être lent, saturé ou modifié sans prévenir. La version 0.7
+retire donc cette partie :
+
+- l'écran « Paramètres » retrouve ses trois parties, et le centre d'aide ses six questions ;
+- le code qui parlait au service est retiré, avec ses tests. L'application ne se connecte à
+  rien : un test le vérifie (voir [Tests](#tests)) ;
+- la fabrication de l'installeur n'essaie plus de connexion ;
+- **à sa première ouverture, l'application efface les réglages de cette partie**, s'il y en a :
+  l'interrupteur, l'adresse, le modèle et **la clé d'accès**, que la version 0.6 enregistrait
+  sans chiffrement. Les autres réglages sont gardés. La clé reste valable chez le service qui
+  l'a créée : pour qu'elle ne serve plus à personne, il faut aussi la supprimer sur son site.
+
+Le code de cet essai n'est pas perdu : il reste dans l'historique du dépôt
+([le dépôt tel qu'il était à la version 0.6](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/tree/b599f3ac598e93e12a1c14a6b1239abc6888a53a)).
 
 ### Import et export
 
@@ -738,10 +689,6 @@ traducteur/
   documents.py               import et export des fichiers .txt, .docx et .doc
   application.py             démarrage de l'application
   controle.py                contrôle de l'installation : l'application s'essaie elle-même (option --controle)
-  ia/                        couche d'intelligence artificielle, facultative
-    service.py               connecteur vers un service d'IA « compatible OpenAI » (NVIDIA Build, par exemple)
-    essai.py                 essai de la connexion, en deux temps : le service, puis le modèle
-    lecture.py               lecture de la réponse d'un modèle, sans la « réflexion » qui la précède
   interface/
     demarrage.py             écran de démarrage animé
     fenetre.py               fenêtre : barre latérale, menus, barre d'outils, chargement du glossaire
@@ -751,7 +698,6 @@ traducteur/
     texte.py                 écran « Texte » : zones de texte, bande des étapes
     termes.py                écran « Texte » : cartes des termes détectés
     pages.py                 écrans « Paramètres », « Description de la plateforme », « Centre d'aide »
-    ia.py                    écran « Paramètres » : partie « Intelligence artificielle »
     animation.py             allumage progressif des étapes
     boites.py                fenêtres de message (glossaire chargé, erreurs)
     composants.py            éléments communs : étiquettes, puces, panneaux, dispositions
@@ -786,13 +732,6 @@ Les modules placés directement dans `traducteur/` n'utilisent pas l'interface g
 `application.py` et `controle.py`. La lecture et l'écriture des fichiers Word n'utilisent aucune bibliothèque
 supplémentaire.
 
-Le dossier `traducteur/ia/` n'utilise ni l'interface graphique ni le moteur. Il n'emploie que
-la bibliothèque standard de Python : son connecteur sait demander à un service d'IA la liste de
-ses modèles et lui envoyer une demande. **Deux modules seulement l'appellent** :
-`interface/ia.py`, quand l'utilisateur a allumé l'IA et clique sur « Tester la connexion », et
-`controle.py`, quand le contrôle est lancé avec l'option `--controle-connexion`. Le moteur ne le
-connaît pas : l'application traduit avec le glossaire, et avec lui seul.
-
 ### Tests
 
 ```
@@ -800,7 +739,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 767 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 513 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (1 000 entrées, 24 résultats pour « contrat ») à mettre
@@ -825,26 +764,17 @@ Les tests de `tests/test_controle.py` portent sur le contrôle de l'installation
 tri des fichiers de Qt, page de téléchargement. L'installeur lui-même ne se fabrique que sous
 Windows : il n'est pas essayé par ces tests, mais par sa fabrication.
 
-Les tests de `tests/test_ia_service.py` portent sur le connecteur du service d'IA. Aucun ne
-joint Internet : un faux service, lancé sur l'ordinateur lui-même, joue chaque cas (réponse
-normale, clé refusée, trop de demandes, lenteur, réponse illisible), et une connexion vers une
-autre machine fait échouer le test. Trois de ces tests fabriquent un certificat d'essai avec la
-commande `openssl` : sans elle, ils sont ignorés. De même, un test de `tests/test_documents.py`
-relit un fichier Word avec la bibliothèque `python-docx` : si elle n'est pas installée, il est
-ignoré.
+Le premier test de `tests/test_aucune_connexion.py` coupe le réseau, puis ouvre l'application,
+cherche des termes, traduit des textes et visite chaque écran : l'application ne doit tenter
+aucune connexion. Le second vérifie que ce garde-fou voit bien une connexion. Le garde-fou ne
+voit que les connexions demandées par Python ; celles de Qt passeraient par son module de
+réseau, que l'application ne charge pas et que l'installeur n'emporte pas.
 
-Le même faux service sert aux tests de la partie « Intelligence artificielle » :
+Trois tests de `tests/test_application.py` vérifient qu'à son ouverture, l'application efface
+les réglages laissés par la version 0.6 et garde les autres.
 
-- `tests/test_ia_essai.py` : l'essai de la connexion en deux temps, et la lecture des réponses ;
-- `tests/test_interface_ia.py` : l'IA éteinte au départ, l'avertissement du premier allumage,
-  les réglages enregistrés, la clé masquée et jamais recopiée, le bouton « Tester la
-  connexion ». Plusieurs de ces tests coupent le réseau : IA éteinte, ou allumée mais sans
-  clic, l'application ne doit tenter aucune connexion quand on l'ouvre, qu'on y cherche un
-  terme ou qu'on y traduit un texte ;
-- `tests/test_controle_ia.py` : le contrôle de l'installation vérifie que l'IA est éteinte, et
-  n'essaie une connexion que si on le lui demande.
-
-**Aucun de ces tests ne parle à un vrai service d'IA.**
+Un test de `tests/test_documents.py` relit un fichier Word avec la bibliothèque `python-docx` :
+si elle n'est pas installée, il est ignoré.
 
 ### Fabrication de l'installeur Windows
 
@@ -854,7 +784,7 @@ toute seule quand l'application ou l'installeur change :
 
 - sur la branche `main`, l'installeur est publié sur la page
   [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
-  comme version `v0.6.0`, puis `v0.6.1`… ;
+  comme version `v0.7.0`, puis `v0.7.1`… ;
 - sur une branche de travail (`arena/…`), il est publié comme **version d'essai**, remplacée à
   chaque fabrication. Elle sert à essayer un travail avant de le fusionner dans `main` ; elle
   est retirée quand ce travail est fusionné.
@@ -867,8 +797,8 @@ Le script `outils/installeur/construire.py` fait tout le travail, en sept étape
 | Étape | Outil | Ce qu'elle produit |
 | --- | --- | --- |
 | 1 | `icone.py` | L'icône de l'application, au format de Windows. |
-| 2 | PyInstaller, recette `traducteur.spec` | Un dossier qui contient le programme `TraducteurJuridique.exe`, Python 3.13, Qt, le code de l'application et le glossaire fourni. `superflu.py` en écarte les fichiers de Qt dont l'application ne se sert pas (dessin en trois dimensions, réseau de Qt, textes dans d'autres langues que le français) : le dossier passe de 110 Mo à 70 Mo. |
-| 3 | Le programme lui-même, options `--controle` et `--controle-connexion` | Le programme est lancé et se contrôle ; il essaie aussi une connexion chiffrée au service d'IA proposé par défaut. Le script vérifie que chaque bibliothèque (`.dll`) demandée par un fichier du dossier est dans ce dossier ou fait partie de Windows. |
+| 2 | PyInstaller, recette `traducteur.spec` | Un dossier qui contient le programme `TraducteurJuridique.exe`, Python 3.13, Qt, le code de l'application et le glossaire fourni. `superflu.py` en écarte les fichiers de Qt dont l'application ne se sert pas (dessin en trois dimensions, réseau, textes dans d'autres langues que le français) : le dossier passe de 110 Mo à 70 Mo. |
+| 3 | Le programme lui-même, option `--controle` | Le programme est lancé et se contrôle. Le script vérifie aussi que chaque bibliothèque (`.dll`) demandée par un fichier du dossier est dans ce dossier ou fait partie de Windows. |
 | 4 | `fichiers.py` | La liste des fichiers à installer. |
 | 5 | WiX Toolset 3, description `traducteur.wxs` | Le fichier `.msi`, avec ses écrans en français. Windows Installer vérifie sa cohérence. |
 | 6 | Microsoft Defender, l'antivirus de Windows | L'analyse du dossier de l'application et de l'installeur. Un antivirus prend parfois un programme fabriqué par PyInstaller pour un logiciel malveillant : une alerte arrête la fabrication. |
@@ -877,20 +807,11 @@ Le script `outils/installeur/construire.py` fait tout le travail, en sept étape
 **Le contrôle (étape 3).** Lancée avec `--controle=dossier`, l'application démarre comme
 d'habitude, avec son écran de démarrage et le glossaire fourni. Puis elle cherche un terme,
 traduit le texte d'exemple, enregistre la traduction dans un document Word, le relit, affiche
-ses cinq écrans, vérifie que l'IA est éteinte et qu'aucune clé n'est enregistrée, et vérifie
-que les menus de Qt sont en français. Elle écrit ce qu'elle a
+ses cinq écrans et vérifie que les menus de Qt sont en français. Elle écrit ce qu'elle a
 constaté dans `dossier/rapport.json`, avec une image de sa fenêtre et une image de l'écran de
 démarrage, puis elle se ferme. Si une étape échoue, la fabrication s'arrête. Ce contrôle ne
 regarde pas l'aspect des écrans. Il fonctionne aussi sans l'installeur :
 `python main.py --controle=dossier`.
-
-Ce contrôle ne se connecte à rien. Pendant la fabrication, le programme reçoit en plus l'option
-`--controle-connexion` : il demande alors au service d'IA proposé par défaut (NVIDIA Build) la
-liste de ses modèles, **sans clé et sans envoyer aucun texte**. Cela montre si le programme
-fabriqué sait ouvrir une connexion chiffrée depuis Windows. Si le service ne répond pas, ou
-pas en 25 secondes, la fabrication continue et le signale : le service peut être en panne. S'il
-répond par un refus, la connexion chiffrée a fonctionné : le refus est écrit dans le résumé de
-la fabrication. Cet essai ne dit rien de la clé, ni de la réponse d'un modèle.
 
 **L'essai de l'installeur (étape 7).** Il se fait sans afficher les écrans de l'installeur :
 
@@ -901,7 +822,10 @@ la fabrication. Cet essai ne dit rien de la clé, ni de la réponse d'un modèle
    l'application sont conservés ;
 4. mise à jour : l'installeur est lancé par-dessus une version plus ancienne, fabriquée pour
    l'essai. Il la remplace, les réglages sont conservés et l'application passe encore son
-   contrôle.
+   contrôle ;
+5. réglages laissés par la version 0.6 : le script en écrit dans le registre de Windows, avec
+   une clé d'accès inventée. Puis il lance, avec Python, le code de l'application qui les
+   efface à chaque ouverture : ils doivent avoir disparu, et les autres réglages être restés.
 
 Le résultat de ces vérifications est écrit sur la page de téléchargement de l'installeur. Les
 journaux, les rapports et les images sont gardés 90 jours avec la fabrication (onglet
@@ -952,34 +876,20 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
     ne montre pas d'habitude. Pour le compléter, il est plus simple de télécharger le fichier
     [`donnees/glossaire_juridique.csv`](donnees/glossaire_juridique.csv) de ce dépôt, puis de
     le choisir dans « Paramètres ».
-- **Intelligence artificielle (version 0.6).**
-  - **Aucun modèle d'un vrai service d'IA n'a été interrogé, et aucune clé réelle n'a été
-    utilisée.** La machine de mise au point ne peut pas joindre NVIDIA Build. Le bouton
-    « Tester la connexion » n'a été essayé qu'avec un faux service, lancé sur l'ordinateur
-    lui-même, qui joue les réponses attendues : liste des modèles, réponse du modèle, clé
-    refusée, modèle inconnu, crédit épuisé, trop de demandes, lenteur. Ce faux service suit le
-    format décrit par la documentation de NVIDIA ; le vrai service peut répondre autrement sur
-    un détail. **Le premier essai réel est à faire par l'utilisateur, avec sa clé.**
-  - Une seule vraie demande a été faite à NVIDIA Build : celle de la liste de ses modèles, sans
-    clé et sans aucun texte. Le programme fabriqué la fait sous Windows, pendant la fabrication
-    de l'installeur ; à la première fabrication de la version 0.6.0, il a reçu la liste. Cela
-    montre qu'il sait ouvrir une connexion chiffrée vers ce service et lire sa liste. Cela ne
-    dit rien de la clé, ni de la réponse d'un modèle.
-  - Avec de vraies connexions, le bouton n'a été essayé que sur deux adresses qui ne sont pas
-    des services d'IA (`https://api.github.com` et `https://pypi.org/simple`), sans clé : la
-    connexion chiffrée s'établit, puis l'application répond que l'adresse n'est pas la bonne.
-  - Le modèle proposé, `google/gemma-4-31b-it`, n'a pas été interrogé. Son nom figure dans la
-    liste des modèles que donne le service de NVIDIA Build, lue sans clé en novembre 2026 ;
-    cela ne dit pas s'il répond à une clé d'essai. NVIDIA peut le retirer ou le renommer : si
-    le service ne le connaît plus sous ce nom, l'essai affiche les noms les plus proches.
-  - Sous Windows, cette partie n'a été ni regardée sur un écran réel, ni essayée à la main. La
-    fabrication de l'installeur vérifie que l'IA est éteinte dans le programme fabriqué, et
-    essaie une connexion chiffrée vers NVIDIA Build, sans clé : voir
-    [Fabrication de l'installeur Windows](#fabrication-de-linstalleur-windows).
-  - La connexion à travers le proxy d'un établissement (université, entreprise) n'a pas été
-    essayée.
-  - La clé d'accès est enregistrée sans chiffrement, et la désinstallation ne la retire pas :
-    voir [Intelligence artificielle](#intelligence-artificielle).
+- **Réglages laissés par la version 0.6.** La version 0.7 les efface à sa première ouverture,
+  clé d'accès comprise : voir
+  [L'essai d'un service d'IA (version 0.6)](#lessai-dun-service-dia-version-06).
+  - Les tests le vérifient sous Linux, où les réglages sont dans un fichier.
+  - Sous Windows, ils sont dans le registre de l'utilisateur
+    (`HKEY_CURRENT_USER\Software\TraducteurJuridique`). La fabrication de l'installeur y
+    essaie l'effacement, avec le code de l'application lancé par Python, et ne publie
+    l'installeur que si cet essai réussit : voir
+    [Fabrication de l'installeur Windows](#fabrication-de-linstalleur-windows). À la première
+    fabrication de la version 0.7.0, il a réussi (Windows Server 2025).
+  - L'effacement n'a pas été essayé avec le programme installé, ni sur un ordinateur où la
+    version 0.6 a servi.
+  - La clé effacée de l'ordinateur reste valable chez le service qui l'a créée, tant qu'elle
+    n'y est pas supprimée.
 - **Fond transparent de l'écran de démarrage.** C'est le système qui affiche la transparence.
   Les tests vérifient que l'application ne peint aucun fond et qu'elle demande une fenêtre
   transparente. Sous Windows, l'affichage a été contrôlé une fois, sur une image de l'écran
@@ -1174,7 +1084,7 @@ partie de l'application.
 ## Maquette de l'application de bureau
 
 Maquette SVG des deux écrans du prototype (version 0.1). Les deux écrans sont programmés (voir
-[L'application](#lapplication-version-06)). L'application actuelle ne ressemble plus à cette
+[L'application](#lapplication-version-07)). L'application actuelle ne ressemble plus à cette
 maquette : elle est gardée pour mémoire.
 
 ### Écran 1 — Recherche d'un terme

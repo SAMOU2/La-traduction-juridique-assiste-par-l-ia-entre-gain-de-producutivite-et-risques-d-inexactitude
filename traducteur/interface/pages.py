@@ -110,14 +110,6 @@ QUESTIONS = (
       "contexte_ar, source_contexte, ressources.",
       "Dans une cellule, plusieurs valeurs se séparent par une barre verticale : convention | accord. Depuis "
       "Excel : Enregistrer sous → « CSV UTF-8 (délimité par des virgules) ».")),
-    ("Où saisir la clé du service d’intelligence artificielle ?",
-     ("Dans « Paramètres », partie « Intelligence artificielle ». Allumez « Utiliser l’IA », collez la clé dans "
-      "le champ « Clé d’accès », puis cliquez sur « Tester la connexion ».",
-      "La clé se crée sur le site du service. L’adresse de NVIDIA Build et un modèle sont déjà saisis ; une clé "
-      "de NVIDIA commence par « nvapi- ». La clé est personnelle : ne l’écrivez ni dans un message, ni dans un "
-      "document.",
-      "L’IA est facultative, et éteinte au départ : éteinte, l’application ne se connecte à aucun service. Pour "
-      "l’instant, elle ne traduit rien : la traduction se fait toujours avec le glossaire, et avec lui seul.")),
 )
 #: Raccourcis rappelés dans le centre d'aide : (touches, action).
 RACCOURCIS = (
@@ -285,10 +277,10 @@ class PageInformation(QWidget):
 
 # ====================================================================== paramètres
 class PageParametres(PageInformation):
-    """Réglages : le glossaire utilisé, l'affichage, l'adresse du service informatique, l'intelligence artificielle."""
+    """Réglages : le glossaire utilisé, l'affichage, l'adresse du service informatique."""
 
     TITRE = "Paramètres"
-    SOUS_TITRE = "Glossaire, affichage, service informatique, intelligence artificielle"
+    SOUS_TITRE = "Glossaire, affichage, service informatique"
 
     #: Demandes transmises à la fenêtre.
     glossaire_a_choisir = Signal()
@@ -373,13 +365,6 @@ class PageParametres(PageInformation):
         self.retour_adresse = etiquette("", "noteCarte")
         carte.ajouter(self.retour_adresse, 8)
         self.retour_adresse.hide()
-
-        # ---------------------------------------------------------- intelligence artificielle
-        from .ia import PartieIA  # import tardif : le module « ia » se sert des cartes définies ici
-
-        self.carte_ia = self.ajouter_carte("Intelligence artificielle")
-        self.ia = PartieIA(self.carte_ia, self.reglages, self)
-        self.ia.message.connect(self.message)
         self.terminer()
         self.afficher_glossaire(None, False)
 
