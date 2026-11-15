@@ -25,7 +25,8 @@ MODE_AIDE = "aide"
 ECRANS = {
     MODE_TERME: ("Terme", "loupe", "Rechercher un terme dans le glossaire", "Ctrl+1"),
     MODE_TEXTE: ("Texte", "document", "Traduire un texte", "Ctrl+2"),
-    MODE_PARAMETRES: ("Paramètres", "reglages", "Glossaire, affichage, service informatique", "Ctrl+3"),
+    MODE_PARAMETRES: ("Paramètres", "reglages", "Glossaire, affichage, service informatique, intelligence artificielle",
+                      "Ctrl+3"),
     MODE_DESCRIPTION: ("Description de la plateforme", "information", "Ce que fait l’application", "Ctrl+4"),
     MODE_AIDE: ("Centre d’aide", "aide", "Questions fréquentes, contact du service informatique", "F1"),
 }

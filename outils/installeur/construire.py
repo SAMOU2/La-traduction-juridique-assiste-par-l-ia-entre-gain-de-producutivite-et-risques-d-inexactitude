@@ -14,7 +14,9 @@ Ce script ne fait pas partie de l'application. Il enchaîne ces étapes :
 1. l'icône de l'application, au format de Windows (``icone.py``) ;
 2. le dossier de l'application, avec Python et Qt (PyInstaller, recette ``traducteur.spec``) ;
 3. le contrôle de ce dossier : le programme est lancé, se contrôle lui-même et écrit un rapport
-   (``traducteur/controle.py``) ;
+   (``traducteur/controle.py``). Il essaie aussi une connexion chiffrée au service d'IA proposé par
+   défaut : il lui demande la liste de ses modèles, sans clé. Un échec de cette connexion est
+   signalé, sans arrêter la fabrication ;
 4. la liste des fichiers à installer (``fichiers.py``) ;
 5. l'installeur (WiX Toolset 3, description ``traducteur.wxs``) ;
 6. l'analyse du dossier et de l'installeur par l'antivirus de Windows (Microsoft Defender), s'il est là.
@@ -65,6 +67,8 @@ REGLAGE_TEMOIN = "essai_de_l_installeur"
 PAGE_DE_WIX = "https://github.com/wixtoolset/wix3/releases"
 #: Durée maximale du contrôle du programme, en secondes (le contrôle lui-même s'arrête après 60 secondes).
 DELAI_DU_CONTROLE = 180
+#: Argument qui ajoute au contrôle l'essai d'une connexion chiffrée au service d'IA (voir traducteur/controle.py).
+OPTION_DE_CONNEXION = "--controle-connexion"
 #: Longueur maximale du chemin du dossier de travail. Windows limite un chemin à 260 caractères, et le
 #: dossier de l'application en ajoute une centaine (…\dist\TraducteurJuridique\_internal\PySide6\plugins\…).
 CHEMIN_MAXIMAL = 140
@@ -297,8 +301,8 @@ def controler(programme: pathlib.Path, nom: str, resume: Resume, quoi: str) -> d
     environnement = {cle: valeur for cle, valeur in os.environ.items() if cle != "QT_QPA_PLATFORM"}
     avant = fichiers_de(programme.parent)
     try:
-        lancer(etape, [programme, f"--controle={dossier}"], delai=DELAI_DU_CONTROLE, codes_acceptes=(0, 1, 3),
-               environnement=environnement)
+        lancer(etape, [programme, f"--controle={dossier}", OPTION_DE_CONNEXION], delai=DELAI_DU_CONTROLE,
+               codes_acceptes=(0, 1, 3), environnement=environnement)
     except Echec as echec:
         subprocess.run(["taskkill", "/F", "/T", "/IM", programme.name], capture_output=True, check=False)
         raise Echec(etape, f"{quoi} : {echec}", echec.details) from echec
@@ -336,11 +340,47 @@ def controler(programme: pathlib.Path, nom: str, resume: Resume, quoi: str) -> d
             f"police {systeme['police']})")
     else:
         resume.noter(f"{quoi} : le même contrôle réussit, en {duree} s")
+    noter_la_connexion(rapport, nom, resume)
     demarrage = rapport.get("demarrage", {})
     if demarrage.get("coins"):
         resume.detailler(f"Écran de démarrage ({nom}) : coins de l'image {' '.join(demarrage['coins'])} ; "
                          f"carré du logo {demarrage.get('logo')}")
     return rapport
+
+
+def ligne_de_la_connexion(connexion: dict) -> str:
+    """Ce que le résumé dit de la connexion chiffrée au service d'IA, essayée par le programme fabriqué."""
+    adresse = connexion.get("adresse", "")
+    if connexion.get("reussie"):
+        duree = str(connexion.get("duree_en_secondes", "?")).replace(".", ",")
+        return (f"Connexion chiffrée au service d'IA proposé par défaut ({adresse}) : le programme fabriqué "
+                f"l'établit et reçoit la liste de {connexion.get('modeles', '?')} modèles, sans clé, en {duree} s")
+    message = connexion.get("message", "raison inconnue")
+    if connexion.get("etablie"):
+        # Le service a répondu, par un refus : la connexion chiffrée fonctionne, et c'est ce que l'essai cherche.
+        code = f" (code {connexion['code']})" if connexion.get("code") else ""
+        return (f"Connexion chiffrée au service d'IA proposé par défaut ({adresse}) : le programme fabriqué "
+                f"l'établit. Le service a répondu sans donner la liste de ses modèles{code} — {message}")
+    return (f"Connexion chiffrée au service d'IA proposé par défaut ({adresse}) : non établie depuis cette "
+            f"machine — {message}")
+
+
+def noter_la_connexion(rapport: dict, nom: str, resume: Resume) -> None:
+    """Note le résultat de la connexion au service d'IA : dans le résumé pour le premier contrôle, en détail ensuite.
+
+    Un échec n'arrête pas la fabrication (le service peut être en panne) : il est signalé sur la page de GitHub.
+    Un refus du service n'est pas un échec de la connexion : il est noté, sans signalement.
+    """
+    connexion = rapport.get("ia", {}).get("connexion")
+    if connexion is None:
+        return
+    ligne = ligne_de_la_connexion(connexion)
+    if nom == "dossier":
+        resume.noter(ligne)
+    else:
+        resume.detailler(f"{nom} : {ligne}")
+    if not (connexion.get("reussie") or connexion.get("etablie")):
+        annoter("warning", f"Connexion au service d'IA ({nom})", ligne)
 
 
 # ---------------------------------------------------------------------- étapes 4 et 5 : installeur

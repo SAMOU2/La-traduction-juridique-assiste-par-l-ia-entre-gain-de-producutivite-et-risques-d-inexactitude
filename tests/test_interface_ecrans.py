@@ -2,7 +2,8 @@
 
 * La barre latérale sombre, à gauche, donne accès aux cinq écrans : « Terme », « Texte »,
   « Paramètres », « Description de la plateforme » et « Centre d'aide ».
-* « Paramètres » règle le glossaire, l'affichage et l'adresse du service informatique.
+* « Paramètres » règle le glossaire, l'affichage, l'adresse du service informatique et l'intelligence
+  artificielle (cette dernière partie a ses tests dans ``test_interface_ia.py``).
 * Le « Centre d'aide » remplace le menu « Aide » : il prépare un message pour le service informatique.
 * Les étapes de l'enchaînement s'allument l'une après l'autre quand un résultat s'affiche.
 * L'écran de démarrage montre le logo entre deux rangées de tirets animés, et rien d'autre : son fond est transparent.
@@ -117,7 +118,7 @@ def test_les_raccourcis_des_ecrans(fenetre):
 def test_un_ecran_d_information_affiche_son_titre_a_la_place_des_outils(fenetre, application):
     assert fenetre.cadre_sens.isVisible() and fenetre.action_inverser.isEnabled()
     attendus = {
-        MODE_PARAMETRES: ("Paramètres", "Glossaire, affichage, service informatique"),
+        MODE_PARAMETRES: ("Paramètres", "Glossaire, affichage, service informatique, intelligence artificielle"),
         MODE_DESCRIPTION: ("Description de la plateforme", "Ce que fait l’application, et comment"),
         MODE_AIDE: ("Centre d’aide", "Contacter le service informatique, questions fréquentes"),
     }
@@ -181,7 +182,8 @@ def test_aucun_bouton_n_est_plus_etroit_que_son_texte(fenetre, application, tail
 # ------------------------------------------------------------------ paramètres
 def test_les_parametres_presentent_le_glossaire_charge(fenetre):
     parametres = fenetre.page_parametres
-    assert [carte.titre.text() for carte in parametres.cartes] == ["Glossaire", "Affichage", "Service informatique"]
+    assert [carte.titre.text() for carte in parametres.cartes] == [
+        "Glossaire", "Affichage", "Service informatique", "Intelligence artificielle"]
     # Le glossaire fourni est désigné par ce qu'il est : le nom de son fichier n'est pas affiché.
     assert parametres.nom_du_glossaire.texte_complet() == "Glossaire juridique"
     assert parametres.dossier_du_glossaire.texte_complet() == "Fourni avec l’application"
@@ -285,7 +287,8 @@ def test_le_centre_d_aide(fenetre, application):
     assert [question.text() for question in aide.questions] == [question for question, _ in pages.QUESTIONS] == [
         "Comment chercher un terme ?", "Comment traduire un texte ?",
         "Pourquoi des mots restent-ils dans la langue d’origine ?", "Que signifie la mention « À vérifier » ?",
-        "Comment compléter le glossaire ?", "Comment utiliser un autre glossaire ?"]
+        "Comment compléter le glossaire ?", "Comment utiliser un autre glossaire ?",
+        "Où saisir la clé du service d’intelligence artificielle ?"]
     contenu = textes(aide.carte_questions)
     for _, reponse in pages.QUESTIONS:
         for paragraphe in reponse:
