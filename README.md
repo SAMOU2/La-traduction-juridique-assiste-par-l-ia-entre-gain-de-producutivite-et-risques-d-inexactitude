@@ -882,8 +882,10 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   - Les tests le vérifient sous Linux, où les réglages sont dans un fichier.
   - Sous Windows, ils sont dans le registre de l'utilisateur
     (`HKEY_CURRENT_USER\Software\TraducteurJuridique`). La fabrication de l'installeur y
-    essaie l'effacement, avec le code de l'application lancé par Python : voir
-    [Fabrication de l'installeur Windows](#fabrication-de-linstalleur-windows).
+    essaie l'effacement, avec le code de l'application lancé par Python, et ne publie
+    l'installeur que si cet essai réussit : voir
+    [Fabrication de l'installeur Windows](#fabrication-de-linstalleur-windows). À la première
+    fabrication de la version 0.7.0, il a réussi (Windows Server 2025).
   - L'effacement n'a pas été essayé avec le programme installé, ni sur un ordinateur où la
     version 0.6 a servi.
   - La clé effacée de l'ordinateur reste valable chez le service qui l'a créée, tant qu'elle
