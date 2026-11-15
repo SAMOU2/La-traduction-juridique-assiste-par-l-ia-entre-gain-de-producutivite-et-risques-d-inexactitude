@@ -19,8 +19,10 @@ La version 0.6 prépare l'emploi d'une **intelligence artificielle** (IA), facul
 - **l'IA est éteinte à l'installation.** Éteinte, l'application ne se connecte à aucun service ;
 - **l'IA ne traduit encore rien.** La traduction se fait toujours avec le glossaire, et avec lui
   seul. Le seul bouton qui se sert de l'IA est « Tester la connexion » ;
-- **aucune demande n'a encore été envoyée à un vrai service d'IA** : pendant la mise au point,
-  ce bouton n'a été essayé qu'avec un faux service. Voir les [limites connues](#limites-connues).
+- **aucun modèle d'un vrai service d'IA n'a encore été interrogé** : ce bouton n'a été essayé
+  qu'avec un faux service, et aucune clé réelle n'a été utilisée. Une seule vraie demande a été
+  faite à NVIDIA Build, sans clé : celle de la liste de ses modèles. Voir les
+  [limites connues](#limites-connues).
 
 ![La partie « Intelligence artificielle » de l'écran « Paramètres », IA allumée](docs/apercu-ia.png)
 
@@ -116,7 +118,7 @@ inventée.*
 | Contextes cherchés dans tout le glossaire | Fait. |
 | Une phrase d'exemple pour chaque entrée du glossaire fourni | Fait (version 0.5) : 1 000 entrées sur 1 000. 969 phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
-| Intelligence artificielle, facultative | Commencé (version 0.6). Fait : les réglages et l'essai de la connexion, dans « Paramètres ». **L'IA ne traduit encore rien**, et aucune demande n'a encore été envoyée à un vrai service : voir [Intelligence artificielle](#intelligence-artificielle). |
+| Intelligence artificielle, facultative | Commencé (version 0.6). Fait : les réglages et l'essai de la connexion, dans « Paramètres ». **L'IA ne traduit encore rien**, et aucun modèle d'un vrai service n'a encore été interrogé : voir [Intelligence artificielle](#intelligence-artificielle). |
 | Installeur pour Windows (fichier `.msi`) | Fait (version 0.5.3) : voir [Installation](#installation). Il est fabriqué et essayé automatiquement sur une machine Windows. **Personne ne l'a encore installé à la main** : voir les [limites connues](#limites-connues). |
 
 ### Installation
@@ -425,10 +427,11 @@ trop lent. Éteindre l'IA pendant un essai l'abandonne.
 
 - Ne jamais envoyer de texte confidentiel ni de données personnelles à un service en ligne.
   Les [conditions de l'offre d'essai de NVIDIA](https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf)
-  (en anglais, lues en novembre 2026) le disent ainsi : le service est réservé aux essais
-  (article 1.2) ; il ne faut lui envoyer ni information confidentielle ni donnée personnelle
-  (article 2.6) ; NVIDIA enregistre ce qui est envoyé et ce qui est répondu, et s'en sert pour
-  améliorer ses produits, dont ses modèles (article 3.3).
+  (en anglais, lues en novembre 2026) le disent ainsi : le service est réservé aux essais, et
+  non à un usage en production (article 1.2) ; il ne faut lui envoyer ni information
+  confidentielle, ni donnée personnelle sauf si un service le permet expressément
+  (article 2.6) ; NVIDIA collecte ce qui est envoyé et ce qui est répondu, sans identifier
+  l'utilisateur, pour améliorer ses produits, dont ses modèles d'IA (article 3.3).
 - Ce qu'écrit une IA est toujours à vérifier.
 
 Ce qui n'a pas été vérifié est dans les [limites connues](#limites-connues).
@@ -950,21 +953,25 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
     [`donnees/glossaire_juridique.csv`](donnees/glossaire_juridique.csv) de ce dépôt, puis de
     le choisir dans « Paramètres ».
 - **Intelligence artificielle (version 0.6).**
-  - **Aucune demande n'a été envoyée à un vrai service d'IA pendant la mise au point.** La
-    machine de mise au point ne peut pas joindre NVIDIA Build, et aucune clé n'y a été
-    utilisée. Le bouton « Tester la connexion » n'a été essayé qu'avec un faux service, lancé
-    sur l'ordinateur lui-même, qui joue les réponses attendues : liste des modèles, réponse du
-    modèle, clé refusée, modèle inconnu, crédit épuisé, trop de demandes, lenteur. Ce faux
-    service suit le format décrit par la documentation de NVIDIA ; le vrai service peut
-    répondre autrement sur un détail. **Le premier essai réel est à faire par l'utilisateur,
-    avec sa clé.**
+  - **Aucun modèle d'un vrai service d'IA n'a été interrogé, et aucune clé réelle n'a été
+    utilisée.** La machine de mise au point ne peut pas joindre NVIDIA Build. Le bouton
+    « Tester la connexion » n'a été essayé qu'avec un faux service, lancé sur l'ordinateur
+    lui-même, qui joue les réponses attendues : liste des modèles, réponse du modèle, clé
+    refusée, modèle inconnu, crédit épuisé, trop de demandes, lenteur. Ce faux service suit le
+    format décrit par la documentation de NVIDIA ; le vrai service peut répondre autrement sur
+    un détail. **Le premier essai réel est à faire par l'utilisateur, avec sa clé.**
+  - Une seule vraie demande a été faite à NVIDIA Build : celle de la liste de ses modèles, sans
+    clé et sans aucun texte. Le programme fabriqué la fait sous Windows, pendant la fabrication
+    de l'installeur ; à la première fabrication de la version 0.6.0, il a reçu la liste. Cela
+    montre qu'il sait ouvrir une connexion chiffrée vers ce service et lire sa liste. Cela ne
+    dit rien de la clé, ni de la réponse d'un modèle.
   - Avec de vraies connexions, le bouton n'a été essayé que sur deux adresses qui ne sont pas
     des services d'IA (`https://api.github.com` et `https://pypi.org/simple`), sans clé : la
     connexion chiffrée s'établit, puis l'application répond que l'adresse n'est pas la bonne.
-  - Le modèle proposé, `google/gemma-4-31b-it`, n'a pas été essayé depuis l'application. Son
-    nom est celui de sa page sur le site de NVIDIA Build, en novembre 2026 ; NVIDIA peut le
-    retirer ou le renommer. Si le service ne le connaît pas sous ce nom, l'essai affiche les
-    noms les plus proches.
+  - Le modèle proposé, `google/gemma-4-31b-it`, n'a pas été interrogé. Son nom figure dans la
+    liste des modèles que donne le service de NVIDIA Build, lue sans clé en novembre 2026 ;
+    cela ne dit pas s'il répond à une clé d'essai. NVIDIA peut le retirer ou le renommer : si
+    le service ne le connaît plus sous ce nom, l'essai affiche les noms les plus proches.
   - Sous Windows, cette partie n'a été ni regardée sur un écran réel, ni essayée à la main. La
     fabrication de l'installeur vérifie que l'IA est éteinte dans le programme fabriqué, et
     essaie une connexion chiffrée vers NVIDIA Build, sans clé : voir
