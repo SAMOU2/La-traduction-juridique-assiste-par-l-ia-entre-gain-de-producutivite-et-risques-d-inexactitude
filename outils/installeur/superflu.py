@@ -1,13 +1,9 @@
 """Fichiers de Qt que PyInstaller ajoute au dossier de l'application et dont elle ne se sert pas.
 
 ``traducteur.spec`` les écarte : l'installeur est plus léger d'un tiers environ, et le téléchargement
-plus court. L'application dessine ses fenêtres elle-même, sans carte graphique, et ne se sert pas
-du réseau de Qt : elle n'a besoin ni du dessin en trois dimensions par logiciel, ni des bibliothèques
-de réseau de Qt, ni des textes de Qt dans d'autres langues que le français.
-
-Quand l'utilisateur allume l'IA, l'application se connecte avec la bibliothèque standard de Python,
-et non avec Qt. Les bibliothèques de chiffrement de Python (``libcrypto-3.dll``, ``libssl-3.dll``,
-sans « -x64 » dans leur nom) ne sont donc pas écartées.
+plus court. L'application dessine ses fenêtres elle-même, sans carte graphique, et ne se connecte à
+rien : elle n'a besoin ni du dessin en trois dimensions par logiciel, ni des bibliothèques de réseau,
+ni des textes de Qt dans d'autres langues que le français.
 
 Après ce tri, ``construire.py`` vérifie que le programme fonctionne encore (contrôle complet) et
 qu'aucun fichier restant ne réclame une bibliothèque écartée.
@@ -17,8 +13,8 @@ from __future__ import annotations
 #: Bibliothèques écartées, par leur nom (en minuscules).
 FICHIERS = frozenset({
     "opengl32sw.dll",  # dessin en trois dimensions par logiciel : 20 Mo
-    "qt6network.dll",  # réseau de Qt
-    "libcrypto-3-x64.dll", "libssl-3-x64.dll",  # chiffrement des connexions de Qt (pas celles de Python)
+    "qt6network.dll",  # réseau
+    "libcrypto-3-x64.dll", "libssl-3-x64.dll",  # chiffrement des connexions de Qt
 })
 #: Familles d'extensions de Qt écartées en entier : elles ont toutes besoin du réseau.
 EXTENSIONS = frozenset({"generic", "networkinformation", "tls"})

@@ -138,3 +138,82 @@ def test_l_installation_a_corriger_est_signalee_a_l_ouverture(request, reglages,
     assert "python -m pip install -r requirements.txt" in avertissements[0][1]
     fenetre.close()
     fenetre.deleteLater()
+
+
+# ------------------------------------------------------------------ réglages laissés par la version 0.6
+#: Ce que la version 0.6 enregistrait pour sa partie « Intelligence artificielle ». La clé est inventée.
+REGLAGES_DE_LA_VERSION_0_6 = {
+    "ia/active": True,
+    "ia/adresse": "https://integrate.api.nvidia.com/v1",
+    "ia/cle": "nvapi-cle-inventee-pour-les-tests",
+    "ia/modele": "google/gemma-4-31b-it",
+    "ia/avertissement_lu": True,
+}
+#: Des réglages de l'application : ils doivent rester.
+AUTRES_REGLAGES = {"aide/adresse": "service@exemple.dz", "glossaire/chemin": "C:/glossaires/le-mien.csv"}
+
+
+def enregistres(fichier) -> dict:
+    """Les réglages relus dans le fichier, comme au prochain lancement de l'application."""
+    from PySide6.QtCore import QSettings
+
+    relus = QSettings(str(fichier), QSettings.Format.IniFormat)
+    return {nom: relus.value(nom) for nom in relus.allKeys()}
+
+
+def de_l_ia(nom: str) -> bool:
+    return nom.split("/")[0] == "ia"
+
+
+def test_les_reglages_de_l_ia_laisses_par_la_version_0_6_sont_retires(reglages, tmp_path):
+    fichier = tmp_path / "reglages.ini"
+    for nom, valeur in {**REGLAGES_DE_LA_VERSION_0_6, **AUTRES_REGLAGES}.items():
+        reglages.setValue(nom, valeur)
+    reglages.sync()
+    avant = enregistres(fichier)
+    assert len([nom for nom in avant if de_l_ia(nom)]) == 5
+    assert "nvapi-cle-inventee" in fichier.read_text(encoding="utf-8")  # la clé est bien écrite sur le disque
+
+    assert application.retirer_les_reglages_de_l_ia(reglages) is True
+
+    # La clé n'est plus sur le disque, sans attendre la fermeture de l'application.
+    texte = fichier.read_text(encoding="utf-8")
+    assert "nvapi" not in texte and "[ia]" not in texte and "gemma" not in texte
+    # Les autres réglages sont gardés tels quels : « aide/adresse » n'est pas pris pour un réglage de l'IA.
+    restes = enregistres(fichier)
+    assert restes == {nom: valeur for nom, valeur in avant.items() if not de_l_ia(nom)}
+    assert AUTRES_REGLAGES.items() <= restes.items()
+    # La deuxième fois, il n'y a plus rien à retirer.
+    assert application.retirer_les_reglages_de_l_ia(reglages) is False
+
+
+def test_sans_reglage_de_l_ia_rien_n_est_modifie(reglages, tmp_path):
+    fichier = tmp_path / "reglages.ini"
+    for nom, valeur in AUTRES_REGLAGES.items():
+        reglages.setValue(nom, valeur)
+    reglages.sync()
+    avant = fichier.read_bytes()
+    assert application.retirer_les_reglages_de_l_ia(reglages) is False
+    reglages.sync()
+    assert fichier.read_bytes() == avant
+
+
+def test_l_application_retire_les_reglages_de_l_ia_a_son_ouverture(request, reglages, avertissements, tmp_path):
+    qt = request.getfixturevalue("application")
+    reglages.setValue("affichage/ecran_de_demarrage", False)
+    reglages.setValue("aide/adresse", "service@exemple.dz")
+    for nom, valeur in REGLAGES_DE_LA_VERSION_0_6.items():
+        reglages.setValue(nom, valeur)
+    reglages.sync()
+    fenetre, _ = application.ouvrir(qt, reglages=reglages)
+    try:
+        restes = enregistres(tmp_path / "reglages.ini")
+        assert not [nom for nom in restes if de_l_ia(nom)]
+        assert "nvapi" not in (tmp_path / "reglages.ini").read_text(encoding="utf-8")
+        assert restes["aide/adresse"] == "service@exemple.dz"
+        # L'adresse du service informatique est gardée : l'écran « Paramètres » l'affiche.
+        assert fenetre.page_parametres.champ_adresse.text() == "service@exemple.dz"
+        assert avertissements == []
+    finally:
+        fenetre.close()
+        fenetre.deleteLater()

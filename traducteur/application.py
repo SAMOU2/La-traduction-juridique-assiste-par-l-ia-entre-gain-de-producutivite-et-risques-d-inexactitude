@@ -59,6 +59,31 @@ def installer_les_textes_de_qt(application: QApplication) -> QTranslator | None:
     return None
 
 
+#: Groupe des réglages de la partie « Intelligence artificielle », que seule la version 0.6 a eue.
+#: Si une telle partie revient un jour, elle devra ranger ses réglages sous un autre nom, ou le retrait
+#: ci-dessous devra disparaître : sinon ses réglages seraient effacés à chaque ouverture.
+REGLAGES_DE_L_IA = "ia"
+
+
+def retirer_les_reglages_de_l_ia(reglages: QSettings) -> bool:
+    """Retire les réglages que la version 0.6 a pu laisser sur l'ordinateur, dont une clé d'accès.
+
+    La version 0.6 avait, dans « Paramètres », une partie « Intelligence artificielle ». Elle y
+    enregistrait la clé d'accès à un service en ligne, sans chiffrement. Cette partie est retirée :
+    plus rien dans l'application ne lit ces réglages, et plus rien ne permet d'effacer la clé. Ils
+    sont donc retirés ici, à l'ouverture. Les autres réglages ne changent pas.
+
+    Renvoie vrai s'il y avait de tels réglages.
+    """
+    reglages.beginGroup(REGLAGES_DE_L_IA)
+    presents = bool(reglages.allKeys())
+    reglages.endGroup()
+    if presents:
+        reglages.remove(REGLAGES_DE_L_IA)
+        reglages.sync()  # écrit tout de suite : la clé ne reste pas enregistrée jusqu'à la fermeture
+    return presents
+
+
 def ouvrir(application: QApplication, chemin_glossaire: str | None = None, reglages: QSettings | None = None):
     """Affiche l'écran de démarrage (s'il est activé), construit la fenêtre principale, puis l'affiche.
 
@@ -71,6 +96,7 @@ def ouvrir(application: QApplication, chemin_glossaire: str | None = None, regla
     from .interface.pages import CLE_ECRAN_DE_DEMARRAGE
 
     reglages = reglages if reglages is not None else QSettings()
+    retirer_les_reglages_de_l_ia(reglages)
     ecran = None
     if reglages.value(CLE_ECRAN_DE_DEMARRAGE, True, bool):
         ecran = EcranDemarrage()
@@ -100,8 +126,7 @@ def main(arguments: list[str] | None = None) -> int:
     """Ouvre l'application. Un chemin de glossaire CSV peut être passé en argument.
 
     Avec ``--controle=<dossier>``, l'application se contrôle elle-même, écrit un rapport dans ce
-    dossier et se ferme : voir le module ``controle``. ``--controle-connexion`` y ajoute l'essai
-    d'une connexion chiffrée.
+    dossier et se ferme : voir le module ``controle``.
     """
     arguments = list(sys.argv if arguments is None else arguments)
     if sys.platform == "win32":
@@ -132,7 +157,7 @@ def main(arguments: list[str] | None = None) -> int:
 
     dossier_du_controle = controle.dossier_demande(arguments)
     if dossier_du_controle is not None:
-        return controle.executer(application, dossier_du_controle, controle.connexion_demandee(arguments))
+        return controle.executer(application, dossier_du_controle)
     chemins = [argument for argument in application.arguments()[1:] if not argument.startswith("-")]
     # La fenêtre et l'écran de démarrage doivent rester référencés tant que l'application tourne.
     fenetre, ecran = ouvrir(application, chemins[0] if chemins else None)
