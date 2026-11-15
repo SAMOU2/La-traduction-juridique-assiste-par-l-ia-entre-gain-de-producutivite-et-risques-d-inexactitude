@@ -7,14 +7,20 @@ Emploi :
 
 Personne n'a besoin d'être devant l'écran. L'application démarre comme d'habitude (écran de
 démarrage, fenêtre, glossaire fourni), puis elle cherche un terme, traduit le texte d'exemple,
-enregistre la traduction dans un document Word, le relit et affiche chaque écran. Elle écrit ce
-qu'elle a constaté dans ``<dossier>/rapport.json``, puis elle se ferme : code de sortie 0 si tout a
-fonctionné, 1 sinon. Elle laisse aussi deux images dans le dossier : ``fenetre.png``, sa fenêtre, et
-``demarrage.png``, l'écran de l'ordinateur à l'endroit de l'écran de démarrage (on y voit si son
-fond est bien transparent).
+enregistre la traduction dans un document Word, le relit et affiche chaque écran. Elle vérifie
+aussi que l'IA est éteinte tant que personne ne l'a allumée. Elle écrit ce qu'elle a constaté dans
+``<dossier>/rapport.json``, puis elle se ferme : code de sortie 0 si tout a fonctionné, 1 sinon.
+Elle laisse aussi deux images dans le dossier : ``fenetre.png``, sa fenêtre, et ``demarrage.png``,
+l'écran de l'ordinateur à l'endroit de l'écran de démarrage (on y voit si son fond est bien
+transparent).
 
 Ce contrôle sert à vérifier l'installeur pour Windows (voir ``outils/installeur``). Il ne lit pas
 et ne modifie pas les réglages de l'utilisateur : il range les siens dans ``<dossier>``.
+
+Le contrôle ne se connecte à rien. Avec ``--controle-connexion`` en plus, il essaie une connexion
+chiffrée : il demande au service d'IA proposé par défaut la liste de ses modèles, sans clé et sans
+envoyer aucun texte. Le résultat est noté dans le rapport ; un échec ne fait pas échouer le
+contrôle, car l'ordinateur peut ne pas avoir d'accès à Internet.
 """
 
 from __future__ import annotations
@@ -22,6 +28,7 @@ from __future__ import annotations
 import json
 import platform
 import sys
+import threading
 import time
 import traceback
 from collections.abc import Callable, Sequence
@@ -35,6 +42,14 @@ from . import NOM_APPLICATION, __version__
 
 #: Début de l'argument qui demande le contrôle ; la suite est le dossier du rapport.
 OPTION = "--controle="
+#: Argument qui demande, en plus, l'essai d'une connexion chiffrée au service d'IA proposé par défaut.
+OPTION_DE_CONNEXION = "--controle-connexion"
+#: Temps laissé à ce service pour chaque échange (ouvrir la connexion, puis répondre), en secondes.
+DELAI_DE_LA_CONNEXION = 15.0
+#: Durée maximale de cet essai, en secondes. Quand le réseau ne répond pas, les adresses du service sont
+#: essayées l'une après l'autre : sans cette limite, l'essai pourrait retenir le contrôle plus longtemps que
+#: ``DELAI`` et le faire échouer.
+DUREE_MAXIMALE_DE_LA_CONNEXION = 25.0
 NOM_DU_RAPPORT = "rapport.json"
 NOM_DE_L_IMAGE = "fenetre.png"
 NOM_DE_L_IMAGE_DU_DEMARRAGE = "demarrage.png"
@@ -56,16 +71,23 @@ def dossier_demande(arguments: Sequence[str]) -> Path | None:
     return None
 
 
+def connexion_demandee(arguments: Sequence[str]) -> bool:
+    """Vrai si ``--controle-connexion`` fait partie des arguments."""
+    return OPTION_DE_CONNEXION in arguments[1:]
+
+
 class Controle(QObject):
     """Un contrôle en cours : ses réglages, ce qu'il a constaté, les erreurs rencontrées."""
 
     #: Le contrôle est fini et le rapport est écrit. L'argument est le code de sortie : 0 ou 1.
     termine = Signal(int)
 
-    def __init__(self, application: QApplication, dossier: Path) -> None:
+    def __init__(self, application: QApplication, dossier: Path, connexion: bool = False) -> None:
         super().__init__()
         self.application = application
         self.dossier = Path(dossier)
+        #: Vrai si le contrôle doit aussi essayer une connexion chiffrée au service d'IA proposé par défaut.
+        self.connexion = connexion
         self.dossier.mkdir(parents=True, exist_ok=True)
         for nom in (NOM_DU_RAPPORT, NOM_DE_L_IMAGE, NOM_DE_L_IMAGE_DU_DEMARRAGE, "reglages.ini", "traduction.docx"):
             (self.dossier / nom).unlink(missing_ok=True)  # rien ne doit rester d'un contrôle précédent
@@ -174,6 +196,7 @@ class Controle(QObject):
         self._etape("traduction", self._traduction)
         self._etape("document", self._document)
         self._etape("ecrans", self._ecrans)
+        self._etape("ia", self._ia)
         self._etape("textes_de_qt", self._textes_de_qt)
         self._etape("image", self._image)
 
@@ -247,6 +270,74 @@ class Controle(QObject):
             affiches.append(mode)
         return affiches
 
+    def _ia(self) -> dict:
+        """L'IA est éteinte tant que personne ne l'a allumée, et aucune clé n'est enregistrée."""
+        from .interface import ia
+
+        reglages = ia.lire(self.reglages)
+        partie = self.fenetre.page_parametres.ia
+        self._exiger(not reglages.active and not partie.active(), "l'IA est allumée sans que personne l'ait demandé")
+        self._exiger(not partie.bouton_tester.isEnabled(),
+                     "IA éteinte, le bouton « Tester la connexion » peut encore être cliqué")
+        self._exiger(not reglages.cle, "une clé d'accès est enregistrée dans des réglages neufs")
+        constat: dict[str, object] = {"allumee": reglages.active, "adresse": reglages.adresse,
+                                      "modele": reglages.modele}
+        if self.connexion:
+            constat["connexion"] = self._connexion()
+        return constat
+
+    def _connexion(self) -> dict:
+        """Demande au service d'IA proposé par défaut la liste de ses modèles : sans clé, sans aucun texte.
+
+        C'est l'essai d'une connexion chiffrée faite par le programme lui-même, avec ses propres
+        bibliothèques et les certificats de l'ordinateur. Un échec est noté, sans plus : le service
+        injoignable, ou muet, ne fait pas échouer le contrôle. Une erreur du programme, elle, le fait
+        échouer.
+
+        Le constat distingue deux choses : ``etablie``, vrai dès que le service a répondu, même par
+        un refus (la connexion chiffrée fonctionne) ; ``reussie``, vrai s'il a donné sa liste.
+
+        L'essai est mené dans un fil d'exécution à part, attendu ``DUREE_MAXIMALE_DE_LA_CONNEXION``
+        secondes au plus. Passé ce temps, il est abandonné : le fil ne retient pas le programme. Le
+        temps passé à attendre le service ne compte pas dans le délai du contrôle (``DELAI``).
+        """
+        from .ia import service
+
+        adresse = service.ADRESSE_PAR_DEFAUT
+        constat: dict[str, object] = {}
+        erreurs: list[BaseException] = []
+
+        def essayer() -> None:
+            debut = time.monotonic()
+            try:
+                modeles = service.lister_les_modeles(adresse, delai=DELAI_DE_LA_CONNEXION, envois=1)
+            except service.ErreurService as erreur:
+                # Un code, ou une réponse illisible : le service a répondu, donc la connexion a été établie.
+                repondu = erreur.code is not None or erreur.genre == service.REPONSE
+                constat.update(etablie=repondu, reussie=False, genre=erreur.genre, message=str(erreur))
+                if erreur.code is not None:
+                    constat["code"] = erreur.code
+            except Exception as erreur:  # une erreur du programme : elle est rendue au contrôle, qui la note
+                erreurs.append(erreur)
+            else:
+                constat.update(etablie=True, reussie=True, modeles=len(modeles),
+                               duree_en_secondes=round(time.monotonic() - debut, 1))
+
+        reste = self._limite.remainingTime()  # -1 quand le délai du contrôle ne court pas
+        self._limite.stop()
+        fil = threading.Thread(target=essayer, name="controle-de-la-connexion", daemon=True)
+        fil.start()
+        fil.join(DUREE_MAXIMALE_DE_LA_CONNEXION)
+        if reste >= 0:
+            self._limite.start(reste)
+        if fil.is_alive():
+            duree = f"{DUREE_MAXIMALE_DE_LA_CONNEXION:g}".replace(".", ",")
+            return {"adresse": adresse, "etablie": False, "reussie": False, "genre": service.DELAI_DEPASSE,
+                    "message": f"Le service n’a pas répondu en {duree} secondes : l’essai a été abandonné."}
+        if erreurs:
+            raise erreurs[0]
+        return {"adresse": adresse, **constat}
+
     def _textes_de_qt(self) -> dict:
         en_francais = QCoreApplication.translate("QShortcut", "Shift") == "Maj"
         self._exiger(en_francais, "les textes fournis par Qt (menus « Copier », « Coller »…) ne sont pas en français")
@@ -307,9 +398,9 @@ class Controle(QObject):
         self.termine.emit(self.code)
 
 
-def executer(application: QApplication, dossier: Path) -> int:
+def executer(application: QApplication, dossier: Path, connexion: bool = False) -> int:
     """Lance le contrôle, attend sa fin et renvoie son code de sortie : 0 si tout a fonctionné, 1 sinon."""
-    controle = Controle(application, dossier)
+    controle = Controle(application, dossier, connexion)
     controle.termine.connect(application.exit)
     QTimer.singleShot(0, controle.demarrer)
     application.exec()

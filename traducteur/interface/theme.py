@@ -276,6 +276,19 @@ QLabel[classe="tailleGlossaire"] {{ color: {TEXTE_2}; font-size: 13px; font-weig
     padding: 0 12px; font-size: 14px; selection-background-color: {BLEU}; selection-color: {SURFACE};
 }}
 #champAdresse:focus {{ border-color: {BLEU}; }}
+QLabel[classe="nomReglage"] {{ color: {TEXTE}; font-size: 14px; }}
+QLabel[classe="nomReglage"]:disabled {{ color: {TEXTE_4}; }}
+QLineEdit[classe="champReglage"] {{
+    background: {SURFACE}; color: {TEXTE}; border: 1px solid {FILET}; border-radius: 8px;
+    padding: 0 12px; font-size: 14px; selection-background-color: {BLEU}; selection-color: {SURFACE};
+}}
+QLineEdit[classe="champReglage"]:focus {{ border-color: {BLEU}; }}
+QLineEdit[classe="champReglage"]:disabled {{ background: {GRIS_50}; color: {TEXTE_4}; }}
+#cadreEssai {{ background: {GRIS_50}; border: 1px solid {FILET}; border-radius: 10px; }}
+#pointEssai {{ background: {GRIS_300}; border: none; border-radius: 4px; }}
+#pointEssai[etat="reussi"] {{ background: {VERT_VIF}; }}
+#pointEssai[etat="echec"] {{ background: {AMBRE}; }}
+QLabel[classe="resultatEssai"] {{ color: {TEXTE_2}; font-size: 13px; }}
 
 /* ---------- Écran « Texte » : zones de texte ---------- */
 #zoneTexte {{

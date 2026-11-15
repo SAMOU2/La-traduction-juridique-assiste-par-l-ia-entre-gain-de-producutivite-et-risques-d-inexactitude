@@ -205,6 +205,7 @@ def test_les_fichiers_de_qt_inutiles_sont_ecartes(chemin):
     "PySide6\\translations\\qtbase_fr.qm",  # les menus « Copier », « Coller »… en français
     "PySide6/Qt/translations/qtbase_fr.qm",
     "libcrypto-3.dll", "libssl-3.dll",  # celles de Python, à ne pas confondre avec celles de Qt
+    "_ssl.pyd", "_socket.pyd", "select.pyd",  # avec elles, Python ouvre la connexion chiffrée au service d'IA
     "donnees\\glossaire_juridique.csv", "regex\\_regex.cp313-win_amd64.pyd",
     "tls.dll", "generic\\module.pyd",  # un nom qui ressemble ne suffit pas : il faut le dossier « plugins »
 ])
