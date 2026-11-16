@@ -1,0 +1,344 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit international public (traités, État et territoire, organisations, règlement des différends),
+# relations diplomatiques, droit international humanitaire, droits de l'homme, droit international privé,
+# arbitrage et modes alternatifs de règlement des litiges.
+
+## Droit international public | Sources et traités ## DIP
+sujet de droit international | شخص القانون الدولي | mi | أشخاص القانون الدولي
+communauté internationale | مجتمع دولي | fa
+coutume internationale | عرف دولي | fa
+jus cogens | قواعد آمرة في القانون الدولي | mc
+traité bilatéral | معاهدة ثنائية | ma | معاهدات ثنائية
+traité multilatéral | معاهدة متعددة الأطراف | mc
+accord international | اتفاق دولي | ma | اتفاقات دولية
+accord de coopération | اتفاق التعاون | mi
+accord de siège | اتفاق المقر | mi
+mémorandum d'entente | مذكرة تفاهم | mc
+échange de lettres | تبادل الرسائل | mi
+charte | ميثاق | fm | مواثيق
+pacte international | عهد دولي | ma
+négociation du traité | تفاوض بشأن المعاهدة | fc
+pleins pouvoirs | وثيقة التفويض الكامل | mip
+représentant plénipotentiaire | ممثل مفوض | ma
+signature du traité | توقيع المعاهدة | fi
+approbation du traité | موافقة على المعاهدة | fc
+instrument de ratification | وثيقة التصديق | mi | وثائق التصديق
+dépôt des instruments de ratification | إيداع وثائق التصديق | mi
+dépositaire du traité | وديع المعاهدة | mi
+État partie | دولة طرف | mc | دول أطراف
+État signataire | دولة موقعة | ma
+État tiers | دولة من الغير | mc
+entrée en vigueur du traité | بدء نفاذ المعاهدة | fi
+application provisoire | تطبيق مؤقت | fa
+enregistrement du traité | تسجيل المعاهدة | mi
+déclaration interprétative | إعلان تفسيري | fa
+objection à une réserve | اعتراض على تحفظ | fc
+retrait de la réserve | سحب التحفظ | mi
+amendement du traité | تعديل المعاهدة | mi
+dénonciation du traité | نقض المعاهدة | fi
+retrait du traité | انسحاب من المعاهدة | mc
+suspension de l'application du traité | إيقاف العمل بالمعاهدة | fc
+extinction du traité | انقضاء المعاهدة | fi
+nullité du traité | بطلان المعاهدة | fi
+changement fondamental de circonstances | تغير جوهري في الظروف | mc
+primauté du droit international | سمو القانون الدولي | fi
+réception du traité en droit interne | إدماج المعاهدة في القانون الداخلي | fc
+droit interne | قانون داخلي | ma
+effet direct | أثر مباشر | ma
+clause de la nation la plus favorisée | شرط الدولة الأولى بالرعاية | fc
+traitement national | معاملة وطنية | ma
+principe de réciprocité | مبدأ المعاملة بالمثل | mc
+
+## Droit international public | État et territoire ## DIP
+reconnaissance d'État | اعتراف بالدولة | fc
+reconnaissance de gouvernement | اعتراف بالحكومة | fc
+succession d'États | خلافة الدول | fi
+égalité souveraine des États | مساواة في السيادة بين الدول | fc
+non-ingérence dans les affaires intérieures | عدم التدخل في الشؤون الداخلية | fi
+droit des peuples à disposer d'eux-mêmes | حق الشعوب في تقرير مصيرها | mc
+autodétermination | تقرير المصير | fi
+frontière internationale | حدود دولية | fa
+délimitation des frontières | تعيين الحدود | fi
+démarcation des frontières | ترسيم الحدود | fi
+poste frontalier | مركز حدودي | ma | مراكز حدودية
+litige frontalier | نزاع حدودي | ma
+territoire national | إقليم وطني | ma
+espace aérien | مجال جوي | ma
+mer territoriale | بحر إقليمي | fa
+eaux intérieures | مياه داخلية | fap
+eaux territoriales | مياه إقليمية | fap
+zone contiguë | منطقة متاخمة | fa
+zone économique exclusive | منطقة اقتصادية خالصة | fa
+plateau continental | جرف قاري | ma
+haute mer | أعالي البحار | fi
+fonds marins | قاع البحار | mip
+droit de passage inoffensif | حق المرور البريء | mi
+liberté de navigation | حرية الملاحة | fi
+détroit international | مضيق دولي | ma
+piraterie maritime | قرصنة بحرية | fa
+droit de poursuite en mer | حق المطاردة الحثيثة | mi
+espace extra-atmosphérique | فضاء خارجي | ma
+patrimoine commun de l'humanité | تراث مشترك للإنسانية | mc
+compétence universelle | اختصاص عالمي | fa
+immunité de juridiction | حصانة قضائية | fa
+immunité d'exécution | حصانة من التنفيذ | fc
+immunité de l'État | حصانة الدولة | fi
+protection diplomatique | حماية دبلوماسية | fa
+épuisement des voies de recours internes | استنفاد طرق الطعن الداخلية | mi
+responsabilité internationale de l'État | مسؤولية دولية للدولة | fc
+fait internationalement illicite | فعل غير مشروع دوليا | mc
+contre-mesures | تدابير مضادة | fap
+représailles | أعمال انتقامية | fap
+rétorsion | رد بالمثل | fc
+sanctions internationales | عقوبات دولية | fap
+embargo | حظر اقتصادي | ma
+recours à la force | استخدام القوة | mi
+interdiction du recours à la force | حظر استخدام القوة | fi
+agression armée | عدوان مسلح | fa
+occupation militaire | احتلال عسكري | fa
+annexion de territoire | ضم الإقليم | fi
+maintien de la paix | حفظ السلام | mi
+opération de maintien de la paix | عملية حفظ السلام | fi
+sécurité collective | أمن جماعي | fa
+désarmement | نزع السلاح | mi
+non-prolifération des armes nucléaires | عدم انتشار الأسلحة النووية | fi
+neutralité permanente | حياد دائم | fa
+
+## Droit international public | Organisations et règlement des différends ## DIP
+Assemblée générale des Nations Unies | الجمعية العامة للأمم المتحدة | fc
+Secrétaire général des Nations Unies | الأمين العام للأمم المتحدة | mc
+Conseil économique et social | المجلس الاقتصادي والاجتماعي | mc
+institution spécialisée | وكالة متخصصة | fa | وكالات متخصصة
+résolution du Conseil de sécurité | قرار مجلس الأمن | fi
+recommandation | توصية | ff | توصيات
+droit de veto | حق النقض | mi
+membre permanent | عضو دائم | ma | أعضاء دائمون
+État membre | دولة عضو | mc | دول أعضاء
+État observateur | دولة مراقبة | ma
+Union africaine | الاتحاد الإفريقي | fc
+Ligue des États arabes | جامعة الدول العربية | fi
+Union du Maghreb arabe | اتحاد المغرب العربي | fi
+Organisation de la coopération islamique | منظمة التعاون الإسلامي | fi
+Organisation mondiale du commerce | المنظمة العالمية للتجارة | fc | sf=OMC
+Organisation internationale du travail | منظمة العمل الدولية | fi | sf=OIT
+Organisation mondiale de la santé | منظمة الصحة العالمية | fi | sf=OMS
+Fonds monétaire international | صندوق النقد الدولي | mi | sf=FMI
+Banque mondiale | البنك العالمي | fc
+Cour pénale internationale | المحكمة الجنائية الدولية | fc | sf=CPI
+Cour africaine des droits de l'homme et des peuples | المحكمة الإفريقية لحقوق الإنسان والشعوب | fc
+Tribunal international du droit de la mer | المحكمة الدولية لقانون البحار | mc
+fonctionnaire international | موظف دولي | ma
+personnalité juridique internationale | شخصية قانونية دولية | fa
+différend international | نزاع دولي | ma | نزاعات دولية
+règlement pacifique des différends | تسوية سلمية للنزاعات | mc
+bons offices | مساعٍ حميدة | map
+négociation diplomatique | تفاوض دبلوماسي | fa
+enquête internationale | تحقيق دولي | fa
+conciliation internationale | توفيق دولي | fa
+arbitrage international | تحكيم دولي | ma
+clause facultative de juridiction obligatoire | شرط اختياري للولاية الإجبارية | fc
+avis consultatif | رأي استشاري | ma
+arrêt de la Cour internationale de Justice | حكم محكمة العدل الدولية | mi
+
+## Droit international public | Relations diplomatiques ## DIPLOMATIE
+relations diplomatiques | علاقات دبلوماسية | fap
+relations consulaires | علاقات قنصلية | fap
+mission diplomatique | بعثة دبلوماسية | fa | بعثات دبلوماسية
+chef de mission | رئيس البعثة | mi
+chef de mission diplomatique | رئيس البعثة الدبلوماسية | mc
+agent diplomatique | مبعوث دبلوماسي | ma
+corps diplomatique | سلك دبلوماسي | ma
+chargé d'affaires | قائم بالأعمال | mc
+consul | قنصل | mm | قناصل
+consul général | قنصل عام | ma
+consul honoraire | قنصل فخري | ma
+attaché culturel | ملحق ثقافي | ma
+attaché militaire | ملحق عسكري | ma
+lettres de créance | أوراق الاعتماد | fip
+État accréditant | دولة معتمدة | ma
+État accréditaire | دولة معتمد لديها | mc
+persona non grata | شخص غير مرغوب فيه | fc
+rupture des relations diplomatiques | قطع العلاقات الدبلوماسية | fi
+locaux de la mission | مقر البعثة | mip
+inviolabilité des locaux diplomatiques | حرمة المقرات الدبلوماسية | fi
+valise diplomatique | حقيبة دبلوماسية | fa
+privilèges et immunités | امتيازات وحصانات | mcp
+immunité consulaire | حصانة قنصلية | fa
+fonctions consulaires | مهام قنصلية | fap
+protection consulaire | حماية قنصلية | fa
+immatriculation consulaire | تسجيل قنصلي | fa
+légalisation consulaire | تصديق قنصلي | fa
+passeport diplomatique | جواز سفر دبلوماسي | mc
+note verbale | مذكرة شفوية | fa
+asile diplomatique | لجوء دبلوماسي | ma
+asile politique | لجوء سياسي | ma
+droit d'asile | حق اللجوء السياسي | mc
+conférence internationale | مؤتمر دولي | fa | مؤتمرات دولية
+représentation permanente | ممثلية دائمة | fa
+État d'envoi | دولة موفدة | ma
+État de résidence | دولة الإقامة | mi
+
+## Droit international public | Droit international humanitaire ## DIH
+conflit armé international | نزاع مسلح دولي | ma
+conflit armé non international | نزاع مسلح غير دولي | mc
+lois et coutumes de la guerre | قوانين الحرب وأعرافها | fcp
+belligérant | طرف محارب | ma
+combattant | مقاتل | mm | مقاتلون
+population civile | سكان مدنيون | fa
+personne protégée | شخص محمي | fa | أشخاص محميون
+prisonnier de guerre | أسير حرب | mc | أسرى حرب
+blessés et malades | جرحى ومرضى | mcp
+personnel sanitaire | أفراد الخدمات الطبية | mi
+bien de caractère civil | عين مدنية | ma | أعيان مدنية
+objectif militaire | هدف عسكري | ma | أهداف عسكرية
+principe de distinction | مبدأ التمييز | mi
+principe de proportionnalité | مبدأ التناسب | mi
+nécessité militaire | ضرورة عسكرية | fa
+attaque indiscriminée | هجوم عشوائي | fa
+arme prohibée | سلاح محظور | fa | أسلحة محظورة
+armes de destruction massive | أسلحة الدمار الشامل | fip
+mines antipersonnel | ألغام مضادة للأفراد | fcp
+puissance occupante | دولة قائمة بالاحتلال | fc
+territoire occupé | إقليم محتل | ma | أقاليم محتلة
+puissance protectrice | دولة حامية | fa
+Comité international de la Croix-Rouge | اللجنة الدولية للصليب الأحمر | mc | sf=CICR
+emblème protecteur | شارة حامية | ma
+infractions graves aux Conventions de Genève | مخالفات جسيمة لاتفاقيات جنيف | fcp
+crime d'agression | جريمة العدوان | mi
+nettoyage ethnique | تطهير عرقي | ma
+déportation | ترحيل قسري | fa
+transfert forcé de population | نقل قسري للسكان | mc
+disparition forcée | اختفاء قسري | fa
+exécution extrajudiciaire | إعدام خارج نطاق القضاء | fc
+enfant soldat | طفل جندي | mc
+mercenaire | مرتزق | mm | مرتزقة
+imprescriptibilité des crimes de guerre | عدم تقادم جرائم الحرب | fi
+justice transitionnelle | عدالة انتقالية | fa
+commission de vérité | لجنة الحقيقة | fi
+cessez-le-feu | وقف إطلاق النار | mi
+armistice | هدنة | mf
+traité de paix | معاهدة السلام | mi
+demandeur d'asile | طالب اللجوء | mi | طالبو اللجوء
+statut de réfugié | صفة اللاجئ | mi
+principe de non-refoulement | مبدأ عدم الإعادة القسرية | mi
+déplacé interne | نازح داخلي | ma | نازحون داخليون
+apatridie | انعدام الجنسية | fi
+rapatriement volontaire | عودة طوعية إلى الوطن | mc
+Haut-Commissariat des Nations Unies pour les réfugiés | مفوضية الأمم المتحدة السامية لشؤون اللاجئين | mc | sf=HCR
+
+## Droits de l'homme ## DH+CONSTITUTION
+droits civils et politiques | حقوق مدنية وسياسية | mcp
+droits économiques, sociaux et culturels | حقوق اقتصادية واجتماعية وثقافية | mcp
+droit à la vie | حق في الحياة | mc
+droit à la liberté et à la sûreté | حق في الحرية والأمان | mc
+droit à un procès équitable | حق في محاكمة عادلة | mc
+droit à un recours effectif | حق في سبيل انتصاف فعال | mc
+respect de la vie privée | احترام الحياة الخاصة | mi
+droit à l'éducation | حق في التعليم | mc
+droit à la santé | حق في الصحة | mc
+droit au travail | حق في العمل | mc
+droit au logement | حق في السكن | mc
+droit à un environnement sain | حق في بيئة سليمة | mc
+droit de pétition | حق تقديم العرائض | mi
+liberté de réunion | حرية الاجتماع | fi
+liberté d'association | حرية إنشاء الجمعيات | fi
+liberté de manifestation pacifique | حرية التظاهر السلمي | fi
+liberté de conscience | حرية المعتقد | fi
+liberté de culte | حرية ممارسة العبادات | fi
+liberté d'opinion | حرية الرأي | fi
+liberté de la presse | حرية الصحافة | fi
+droit d'accès à l'information | حق الحصول على المعلومات | mi
+liberté individuelle | حرية فردية | fa | حريات فردية
+libertés publiques | حريات عامة | fap
+inviolabilité du domicile | حرمة المسكن | fi
+secret des correspondances | سرية المراسلات | mi
+esclavage | استرقاق | mm
+interdiction de l'esclavage | حظر الرق | fi
+traitements cruels, inhumains ou dégradants | معاملة قاسية أو لاإنسانية أو مهينة | mcp
+détention arbitraire | اعتقال تعسفي | fa
+égalité des sexes | مساواة بين الجنسين | fc
+discrimination à l'égard des femmes | تمييز ضد المرأة | fc
+droits de l'enfant | حقوق الطفل | mip
+droits de la femme | حقوق المرأة | mip
+droits des personnes handicapées | حقوق الأشخاص ذوي الإعاقة | mip
+droits des minorités | حقوق الأقليات | mip
+minorité nationale | أقلية قومية | fa
+peuples autochtones | شعوب أصلية | map
+défenseur des droits de l'homme | مدافع عن حقوق الإنسان | mc
+violation des droits de l'homme | انتهاك حقوق الإنسان | fi
+universalité des droits de l'homme | عالمية حقوق الإنسان | fi
+restriction des droits | تقييد الحقوق | fi
+Conseil des droits de l'homme | مجلس حقوق الإنسان | mi
+Haut-Commissariat aux droits de l'homme | المفوضية السامية لحقوق الإنسان | mc
+Comité des droits de l'homme | اللجنة المعنية بحقوق الإنسان | mc
+examen périodique universel | استعراض دوري شامل | ma
+rapporteur spécial | مقرر خاص | ma
+communication individuelle | بلاغ فردي | fa
+Charte africaine des droits de l'homme et des peuples | الميثاق الإفريقي لحقوق الإنسان والشعوب | fc
+Charte arabe des droits de l'homme | الميثاق العربي لحقوق الإنسان | fc
+Convention relative aux droits de l'enfant | اتفاقية حقوق الطفل | fi
+
+## Droit international privé ## CIVIL+CPCA
+règle de conflit | قاعدة الإسناد | fi | قواعد الإسناد
+facteur de rattachement | ضابط الإسناد | mi
+loi du for | قانون القاضي | fi
+loi personnelle | قانون شخصي | fa
+loi du domicile | قانون الموطن | fi
+loi du lieu de situation du bien | قانون موقع المال | fi
+loi du lieu de conclusion | قانون محل الإبرام | fi
+loi d'autonomie | قانون الإرادة | fi
+lois de police | قواعد ذات التطبيق الضروري | fcp
+statut personnel | أحوال شخصية | ma
+statut réel | أحوال عينية | ma
+ordre public international | نظام عام دولي | ma
+fraude à la loi | غش نحو القانون | fc
+conflit de juridictions | تنازع الاختصاص القضائي الدولي | mi
+compétence internationale | اختصاص قضائي دولي | fa
+reconnaissance des jugements étrangers | اعتراف بالأحكام الأجنبية | fc
+exécution des jugements étrangers | تنفيذ الأحكام الأجنبية | fi
+acte authentique étranger | سند رسمي أجنبي | ma
+condition des étrangers | مركز الأجانب | fi
+double nationalité | ازدواج الجنسية | fi
+conflit de nationalités | تنازع الجنسيات | mi
+élément d'extranéité | عنصر أجنبي | ma
+contrat international | عقد دولي | ma | عقود دولية
+commission rogatoire internationale | إنابة قضائية دولية | fa
+entraide judiciaire internationale | تعاون قضائي دولي | fa
+notification à l'étranger | تبليغ في الخارج | fc
+légalisation des actes | تصديق على الوثائق | fc
+preuve de la loi étrangère | إثبات القانون الأجنبي | fi
+application de la loi étrangère | تطبيق القانون الأجنبي | fi
+
+## Modes alternatifs de règlement des litiges ## CPCA+ARBITRAGE
+modes alternatifs de règlement des litiges | طرق بديلة لحل النزاعات | mcp
+arbitrage commercial international | تحكيم تجاري دولي | ma
+arbitrage interne | تحكيم داخلي | ma
+arbitrage institutionnel | تحكيم مؤسسي | ma
+arbitrage ad hoc | تحكيم حر | ma
+centre d'arbitrage | مركز التحكيم | mi | مراكز التحكيم
+règlement d'arbitrage | نظام التحكيم | mi
+compromis d'arbitrage | اتفاق التحكيم | mi
+arbitrabilité | قابلية النزاع للتحكيم | fc
+constitution du tribunal arbitral | تشكيل محكمة التحكيم | fi
+désignation de l'arbitre | تعيين المحكم | fi
+arbitre unique | محكم فرد | ma
+président du tribunal arbitral | رئيس محكمة التحكيم | mi
+récusation de l'arbitre | رد المحكم | fi
+acte de mission | وثيقة المهمة | mi
+siège de l'arbitrage | مقر التحكيم | mi
+langue de l'arbitrage | لغة التحكيم | fi
+procédure arbitrale | إجراءات التحكيم | fi
+amiable compositeur | محكم مفوض بالصلح | mc
+sentence partielle | حكم تحكيمي جزئي | fa
+sentence définitive | حكم تحكيمي نهائي | fa
+recours en annulation de la sentence | طعن ببطلان حكم التحكيم | mc
+reconnaissance de la sentence arbitrale | اعتراف بحكم التحكيم | fc
+exécution de la sentence arbitrale | تنفيذ حكم التحكيم | fi
+frais d'arbitrage | مصاريف التحكيم | mip
+honoraires des arbitres | أتعاب المحكمين | mip
+confidentialité de l'arbitrage | سرية التحكيم | fi
+accord de médiation | اتفاق الوساطة | mi
+médiation judiciaire | وساطة قضائية | fa
+médiation conventionnelle | وساطة اتفاقية | fa
+procès-verbal d'accord | محضر الاتفاق | mi
+homologation de l'accord | مصادقة على الاتفاق | fc

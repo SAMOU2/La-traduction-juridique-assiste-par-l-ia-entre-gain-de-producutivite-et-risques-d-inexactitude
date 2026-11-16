@@ -1,0 +1,264 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit administratif : acte administratif, police et service public, collectivités territoriales,
+# fonction publique, marchés publics, domaine public et expropriation, contentieux administratif.
+
+## Droit administratif | Acte administratif ## CPCA+CONSTITUTION
+acte administratif unilatéral | قرار إداري انفرادي | ma
+acte réglementaire | قرار تنظيمي | ma | قرارات تنظيمية
+acte individuel | قرار فردي | ma | قرارات فردية
+acte de gouvernement | عمل السيادة | mi | أعمال السيادة
+mesure d'ordre intérieur | إجراء التنظيم الداخلي | fi
+décision implicite | قرار ضمني | fa
+décision explicite | قرار صريح | fa
+décision de rejet | قرار الرفض | fi
+silence de l'administration | سكوت الإدارة | mi
+motivation des actes administratifs | تسبيب القرارات الإدارية | fi
+retrait de l'acte administratif | سحب القرار الإداري | mi
+annulation de l'acte administratif | إلغاء القرار الإداري | fi | sf=abrogation de l'acte administratif
+exécution d'office | تنفيذ مباشر | fa
+caractère exécutoire | طابع تنفيذي | ma
+présomption de légalité | قرينة المشروعية | fi
+principe de légalité | مبدأ المشروعية | mi
+compétence liée | اختصاص مقيد | fa
+vice d'incompétence | عيب عدم الاختصاص | mi
+erreur manifeste d'appréciation | خطأ ظاهر في التقدير | fc
+inexactitude matérielle des faits | عدم صحة الوقائع المادية | fi
+illégalité externe | عدم المشروعية الخارجية | fi
+illégalité interne | عدم المشروعية الداخلية | fi
+circulaire interprétative | منشور تفسيري | fa
+instruction ministérielle | تعليمة وزارية | fa | تعليمات وزارية
+note de service | مذكرة مصلحية | fa
+arrêté du wali | قرار الوالي | mi
+arrêté communal | قرار بلدي | ma
+délégation de signature | تفويض الإمضاء | fi
+délégation de pouvoir | تفويض السلطة | fi
+
+## Droit administratif | Police et service public ## CPCA+CONSTITUTION
+sécurité publique | أمن عمومي | fa
+tranquillité publique | سكينة عمومية | fa
+salubrité publique | نظافة عمومية | fa
+santé publique | صحة عمومية | fa
+police générale | ضبط إداري عام | fa
+police spéciale | ضبط إداري خاص | fa
+mesure de police administrative | تدبير الضبط الإداري | fc | تدابير الضبط الإداري
+autorité de police administrative | سلطة الضبط الإداري | fi
+maintien de l'ordre | حفظ النظام | mi
+maintien de l'ordre public | حفظ النظام العام | mc
+continuité du service public | استمرارية المرفق العام | fi
+égalité devant le service public | مساواة أمام المرفق العام | fc
+neutralité du service public | حياد المرفق العام | fi
+service public administratif | مرفق عام إداري | ma
+service public industriel et commercial | مرفق عام صناعي وتجاري | mc
+régie directe | استغلال مباشر | fa
+gestion déléguée | تسيير مفوض | fa
+affermage | إيجار المرفق العام | mi
+établissement public à caractère administratif | مؤسسة عمومية ذات طابع إداري | mc | sf=EPA
+établissement public à caractère industriel et commercial | مؤسسة عمومية ذات طابع صناعي وتجاري | mc | sf=EPIC
+autorité administrative indépendante | سلطة إدارية مستقلة | fa
+autorité de régulation | سلطة الضبط | fi | سلطات الضبط
+usager du service public | مستعمل المرفق العام | mi
+administration centrale | إدارة مركزية | fa
+administration locale | إدارة محلية | fa
+services extérieurs de l'État | مصالح خارجية للدولة | mcp
+services déconcentrés | مصالح غير ممركزة | mcp
+direction générale | مديرية عامة | fa
+direction de wilaya | مديرية ولائية | fa
+circonscription administrative | مقاطعة إدارية | fa
+organigramme | هيكل تنظيمي | ma
+simplification des procédures administratives | تبسيط الإجراءات الإدارية | fi
+guichet unique | شباك وحيد | ma
+administration électronique | إدارة إلكترونية | fa
+accès aux documents administratifs | اطلاع على الوثائق الإدارية | mc
+médiateur de la République | وسيط الجمهورية | mi
+réclamation administrative | تظلم إداري | fa | تظلمات إدارية
+
+## Droit administratif | Collectivités territoriales ## CONSTITUTION
+code communal | قانون البلدية | mi
+code de wilaya | قانون الولاية | mi
+exécutif communal | هيئة تنفيذية للبلدية | mc
+élu local | منتخب محلي | ma | منتخبون محليون
+vice-président de l'assemblée populaire communale | نائب رئيس المجلس الشعبي البلدي | mi
+président de l'assemblée populaire de wilaya | رئيس المجلس الشعبي الولائي | mi
+secrétaire général de la commune | الأمين العام للبلدية | mc
+chef de daïra | رئيس الدائرة | mi
+wali délégué | والٍ منتدب | ma
+délégation communale | مندوبية بلدية | fa
+antenne administrative | ملحقة إدارية | fa
+approbation de la délibération | مصادقة على المداولة | fc
+contrôle de légalité | رقابة المشروعية | mi
+pouvoir de substitution | سلطة الحلول | mi
+dissolution de l'assemblée populaire communale | حل المجلس الشعبي البلدي | fi
+intercommunalité | تعاون مشترك بين البلديات | fc
+budget communal | ميزانية البلدية | mi
+finances locales | مالية محلية | fap
+fiscalité locale | جباية محلية | fa
+patrimoine communal | أملاك البلدية | mi
+démocratie locale | ديمقراطية محلية | fa
+participation citoyenne | مشاركة المواطنين | fi
+autonomie financière | استقلال مالي | fa
+personne morale de droit public | شخص معنوي خاضع للقانون العام | fc
+chef-lieu de wilaya | مقر الولاية | mi
+limites territoriales | حدود إقليمية | fap
+wilaya déléguée | ولاية منتدبة | fa
+
+## Droit administratif | Fonction publique ## FONCTIONPUBLIQUE
+statut général de la fonction publique | القانون الأساسي العام للوظيفة العمومية | mc
+statut particulier | قانون أساسي خاص | ma
+corps de fonctionnaires | سلك الموظفين | mi | أسلاك الموظفين
+poste supérieur | منصب عالٍ | ma | مناصب عليا
+fonction supérieure de l'État | وظيفة عليا في الدولة | fc
+poste budgétaire | منصب مالي | ma | مناصب مالية
+emploi vacant | منصب شاغر | ma | مناصب شاغرة
+recrutement | توظيف | mm
+concours sur épreuves | مسابقة على أساس الاختبارات | mc
+concours sur titres | مسابقة على أساس الشهادات | mc
+examen professionnel | امتحان مهني | ma
+période de stage | فترة التربص | fi
+agent contractuel | عون متعاقد | ma | أعوان متعاقدون
+classification des grades | تصنيف الرتب | fi
+avancement d'échelon | ترقية في الدرجة | mc
+avancement de grade | ترقية في الرتبة | mc
+promotion | ترقية | ff
+tableau d'avancement | جدول الترقية | mi
+notation | تنقيط | fm
+évaluation du fonctionnaire | تقييم الموظف | fi
+indice de traitement | رقم استدلالي | ma
+traitement de base | راتب أساسي | ma
+régime indemnitaire | نظام تعويضي | ma
+prime de rendement | منحة المردودية | fi
+position d'activité | وضعية القيام بالخدمة | fc
+mise en disponibilité | إحالة على الاستيداع | fc
+position hors cadre | وضعية خارج الإطار | fc
+service national | خدمة وطنية | ma
+mutation d'office | نقل إجباري | fa
+mouvement de mutation | حركة النقل | mi
+mise à la retraite | إحالة على التقاعد | fc
+cessation de fonctions | إنهاء المهام | fi
+abandon de poste | إهمال المنصب | mi
+devoir d'obéissance | واجب الطاعة | mi
+cumul d'emplois | جمع بين الوظائف | mc
+conseil de discipline | مجلس تأديبي | ma
+commission administrative paritaire | لجنة إدارية متساوية الأعضاء | fc
+commission de recours | لجنة الطعن | fi
+suspension de fonctions | توقيف عن المهام | fc
+rétrogradation | تنزيل في الرتبة | fc
+radiation du tableau d'avancement | شطب من قائمة التأهيل | fc
+dossier administratif | ملف إداري | ma
+droit syndical | حق نقابي | ma
+protection fonctionnelle | حماية الموظف | fi
+autorité investie du pouvoir de nomination | سلطة لها صلاحيات التعيين | fc
+supérieur hiérarchique | رئيس سلمي | ma
+déontologie professionnelle | أخلاقيات المهنة | fi
+
+## Droit administratif | Marchés publics ## MARCHES
+commande publique | طلب عمومي | fa
+marché de travaux | صفقة الأشغال | mi
+marché de fournitures | صفقة اللوازم | mi
+marché de services | صفقة الخدمات | mi
+marché d'études | صفقة الدراسات | mi
+appel d'offres ouvert | طلب عروض مفتوح | mc
+appel d'offres restreint | طلب عروض محدود | mc
+procédure de gré à gré | إجراء التراضي | fi
+négociation directe | تفاوض مباشر | fa
+avis d'appel d'offres | إعلان طلب العروض | mi
+dossier de consultation des entreprises | ملف استشارة المؤسسات | mi
+offre technique | عرض تقني | fa
+offre financière | عرض مالي | fa
+ouverture des plis | فتح الأظرفة | fi
+évaluation des offres | تقييم العروض | fi
+commission d'ouverture des plis et d'évaluation des offres | لجنة فتح الأظرفة وتقييم العروض | fc
+commission des marchés publics | لجنة الصفقات العمومية | fi
+attribution provisoire | منح مؤقت | fa
+attributaire du marché public | صاحب الصفقة العمومية | mc
+partenaire cocontractant | متعامل متعاقد | ma
+opérateur économique | متعامل اقتصادي | ma | متعاملون اقتصاديون
+offre anormalement basse | عرض منخفض بشكل غير عادي | fc
+infructuosité | عدم الجدوى | fi
+caution de soumission | كفالة التعهد | fi
+caution de bonne exécution | كفالة حسن التنفيذ | fi
+avance forfaitaire | تسبيق جزافي | fa
+ordre de service | أمر بالخدمة | mc
+délai d'exécution | أجل التنفيذ | mi
+décompte général et définitif | كشف عام ونهائي | mc
+groupement momentané d'entreprises | تجمع مؤقت لمؤسسات | mc
+résiliation unilatérale | فسخ من جانب واحد | fc
+nantissement du marché public | رهن حيازي للصفقة العمومية | mc
+contrôle externe | رقابة خارجية | ma
+contrôle interne | رقابة داخلية | ma
+visa de la commission des marchés | تأشيرة لجنة الصفقات | mi
+marge de préférence nationale | هامش الأفضلية الوطنية | fi
+partenariat public-privé | شراكة بين القطاعين العام والخاص | mc
+concession de service public | امتياز المرفق العام | fi
+convention de délégation | اتفاقية التفويض | fi
+portail des marchés publics | بوابة الصفقات العمومية | mi
+liberté d'accès à la commande publique | حرية الوصول للطلبات العمومية | fc
+égalité de traitement des candidats | مساواة في معاملة المرشحين | fc
+transparence des procédures | شفافية الإجراءات | fi
+
+## Droit administratif | Domaine public ## DOMAINE+EXPROPRIATION
+domaine national | أملاك وطنية | ma
+domaine public naturel | أملاك عمومية طبيعية | ma
+domaine public artificiel | أملاك عمومية اصطناعية | ma
+domaine public maritime | أملاك عمومية بحرية | ma
+domaine public hydraulique | أملاك عمومية مائية | ma
+biens de l'État | أملاك الدولة | mip
+administration des domaines | إدارة أملاك الدولة | fi
+acte d'affectation | قرار التخصيص | mi
+désaffectation | إلغاء التخصيص | fi
+acte de classement | قرار التصنيف | mi
+déclassement | إلغاء التصنيف | mi
+inaliénabilité | عدم القابلية للتصرف | fc
+imprescriptibilité | عدم القابلية للتقادم | fc
+occupation temporaire | شغل مؤقت | fa
+autorisation d'occupation du domaine public | رخصة شغل الأملاك العمومية | fi
+permission de voirie | رخصة الطريق | fi
+redevance domaniale | إتاوة الأملاك الوطنية | fi
+contravention de voirie | مخالفة الطرق | fi
+expropriation pour cause d'utilité publique | نزع الملكية من أجل المنفعة العمومية | fc
+déclaration d'utilité publique | تصريح بالمنفعة العمومية | fc
+enquête préalable | تحقيق مسبق | fa
+commissaire enquêteur | محافظ محقق | ma
+arrêté de cessibilité | قرار قابلية التنازل | mi
+enquête parcellaire | تحقيق جزئي | fa
+indemnité d'expropriation | تعويض عن نزع الملكية | fc
+indemnité juste et équitable | تعويض عادل ومنصف | fc
+exproprié | منزوع ملكيته | mc
+expropriant | نازع الملكية | mi
+nationalisation | تأميم | fm
+privatisation | خوصصة | ff
+ouvrage public | منشأة عمومية | ma | منشآت عمومية
+dommage de travaux publics | ضرر الأشغال العمومية | mi
+servitude d'utilité publique | ارتفاق المنفعة العمومية | fi
+
+## Droit administratif | Contentieux administratif ## CPCA
+juge administratif | قاضٍ إداري | ma
+juridiction administrative | جهة قضائية إدارية | fa
+recours de pleine juridiction | دعوى القضاء الكامل | mi
+recours en appréciation de légalité | دعوى تقدير المشروعية | mi
+recours administratif préalable | تظلم إداري مسبق | ma
+décision préalable | قرار مسبق | fa
+délai de recours contentieux | أجل الطعن القضائي | mi
+sursis à exécution de la décision administrative | وقف تنفيذ القرار الإداري | mi
+référé administratif | استعجال إداري | ma
+référé-liberté | استعجال في مادة الحريات الأساسية | mc
+référé précontractuel | استعجال في مادة إبرام العقود والصفقات | mc
+référé-constat | استعجال في مادة إثبات الحالة | mc
+référé-provision | استعجال في مادة التسبيق المالي | mc
+annulation pour excès de pouvoir | إلغاء لتجاوز السلطة | fc
+annulation partielle | إلغاء جزئي | fa
+effet rétroactif de l'annulation | أثر رجعي للإلغاء | mc
+plein contentieux | قضاء كامل | ma
+contentieux de l'annulation | قضاء الإلغاء | mi
+contentieux de la responsabilité | قضاء التعويض | mi
+responsabilité pour risque | مسؤولية على أساس المخاطر | fc
+faute de service | خطأ مرفقي | fa
+faute personnelle | خطأ شخصي | fa
+rupture de l'égalité devant les charges publiques | إخلال بالمساواة أمام الأعباء العامة | fc
+injonction à l'administration | أمر موجه للإدارة | fc
+exécution des décisions de la justice administrative | تنفيذ أحكام القضاء الإداري | fi
+conflit de compétence | تنازع الاختصاص | mi
+décision attaquée | قرار مطعون فيه | fc | sf=acte attaqué
+substitution de motifs | استبدال الأسباب | fi
+exception d'illégalité | دفع بعدم المشروعية | fc
+question préjudicielle | مسألة أولية | fa
+dualité de juridictions | ازدواجية القضاء | fi

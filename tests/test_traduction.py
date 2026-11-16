@@ -471,6 +471,76 @@ def test_les_mots_d_une_locution_ne_sont_pas_traduits_un_par_un():
 
 
 
+def test_deux_expressions_qui_se_chevauchent():
+    """« délai d'exécution du contrat » : le dernier mot d'une expression commence l'expression suivante.
+
+    Le premier nom de la première expression est retenu seul, pour que la seconde soit lue en entier, si ce nom,
+    traduit seul, donne le début de la traduction de l'expression. Sinon la première expression est gardée.
+    """
+    glossaire = Glossaire.depuis_texte(
+        "terme_fr;terme_ar;categorie_fr;categorie_ar\n"
+        "délai;أجل;nom masculin;اسم مذكر\n"
+        "délai d'exécution;أجل التنفيذ;locution nominale masculine;مركب إضافي\n"
+        "exécution du contrat;تنفيذ العقد;locution nominale féminine;مركب إضافي\n"
+        "contrat de travail;عقد العمل;locution nominale masculine;مركب إضافي\n"
+        "novation;تجديد;nom féminin;اسم مذكر\n"
+        "renouvellement du contrat;تجديد العقد;locution nominale masculine;مركب إضافي\n"
+        "attributaire du marché;صاحب الصفقة;locution nominale masculine;مركب إضافي\n"
+        "marché public;صفقة عمومية;locution nominale masculine;مركب وصفي\n"
+        "travailleur;عامل;nom masculin;اسم مذكر\n"
+        "travailleur étranger;عامل أجنبي;locution nominale masculine;مركب وصفي\n"
+        "étranger non résident;أجنبي غير مقيم;locution nominale masculine;مركب اسمي\n"
+        "jugement;حكم;nom masculin;اسم مذكر\n"
+        "disposition;حكم;nom féminin;اسم مذكر\n"
+        "jugement de divorce;حكم الطلاق;locution nominale masculine;مركب إضافي\n"
+        "divorce par consentement mutuel;طلاق بالتراضي;locution nominale masculine;مركب اسمي\n"
+    )
+    traducteur = Traducteur(glossaire)
+
+    def traduire(texte: str, langue: str = FR) -> str:
+        return balise(traducteur.traduire(texte, langue))
+
+    # « délai » se traduit « أجل », le début de « أجل التنفيذ » : il est lu seul, puis « exécution du contrat ».
+    assert traduire("Le délai d'exécution du contrat.") == "[أجل] [تنفيذ العقد]."
+    assert traduire("أجل تنفيذ العقد.", AR) == "[Le délai] [de l’exécution du contrat]."
+    # Sans seconde expression à la suite, la première est lue en entier.
+    assert traduire("Le délai d'exécution est court.") == "[أجل التنفيذ] {est} {court}."
+    assert traduire("أجل التنفيذ.", AR) == "[Le délai d'exécution]."
+
+    # « تجديد » seul est la « novation » : un autre sens que « renouvellement du contrat », qui est gardé.
+    assert traduire("تجديد عقد العمل.", AR) == "[Renouvellement du contrat] {العمل}."
+    # « renouvellement » et « attributaire » ne sont pas des termes : rien ne remplace la première expression.
+    assert traduire("Le renouvellement du contrat de travail.") == "[تجديد العقد] {de} {travail}."
+    assert traduire("L'attributaire du marché public.") == "[صاحب الصفقة] {public}."
+    # Un nom et son adjectif ne sont pas séparés : « étranger » qualifie ici le travailleur.
+    assert traduire("Le travailleur étranger non résident.") == "[العامل الأجنبي] {non} {résident}."
+    assert traduire("العامل الأجنبي غير المقيم.", AR) == "[Le travailleur étranger] {غير} {المقيم}."
+    # Même sans catégorie arabe dans le glossaire : en arabe, un nom qui porte l'article n'a pas de complément.
+    sans_categorie = Traducteur(Glossaire.depuis_texte(
+        "terme_fr;terme_ar;categorie_fr\ntravailleur;عامل;nom masculin\n"
+        "travailleur étranger;عامل أجنبي;locution nominale masculine\n"
+        "étranger non résident;أجنبي غير مقيم;locution nominale masculine\n"))
+    assert balise(sans_categorie.traduire("العامل الأجنبي غير المقيم.", AR)) == (
+        "[Le travailleur étranger] {غير} {المقيم}.")
+    # Une expression notée comme un nom et son complément (مركب إضافي) est partagée dans les deux cas.
+    parties = Traducteur(Glossaire.depuis_texte(
+        "terme_fr;terme_ar;categorie_fr;categorie_ar;pluriel_fr;pluriel_ar\n"
+        "partie;طرف;nom féminin;اسم مذكر;parties;أطراف\n"
+        "parties au contrat;أطراف العقد;locution nominale (féminin pluriel);مركب إضافي;;\n"
+        "acte sous seing privé;عقد عرفي;locution nominale masculine;مركب وصفي;;\n"))
+    assert balise(parties.traduire("يوقع الأطراف العقد العرفي.", AR)) == (
+        "{يوقع} [les parties] [l’acte sous seing privé].")
+    assert balise(parties.traduire("يوقع أطراف العقد العرفي.", AR)) == (
+        "{يوقع} [les parties] [de l’acte sous seing privé].")
+    assert balise(parties.traduire("أطراف العقد.", AR)) == "[Les parties au contrat]."
+
+    # « حكم » désigne le jugement et la disposition. Seul le sens de l'expression « حكم الطلاق » est gardé.
+    traduction = traducteur.traduire("حكم الطلاق بالتراضي.", AR)
+    assert balise(traduction) == "[Le jugement] [du divorce par consentement mutuel]."
+    assert [candidat.terme_fr for candidat in traduction.occurrences[0].candidats] == ["jugement"]
+    assert traduire("حكم الطلاق.", AR) == "[Le jugement de divorce]."
+
+
 def test_seul_un_pluriel_en_oun_perd_son_noun_devant_un_complement():
     """« قانون » est un singulier et « ديون » un pluriel brisé : suivis d'un complément, ils gardent leur « ن »."""
     glossaire = Glossaire.depuis_texte(

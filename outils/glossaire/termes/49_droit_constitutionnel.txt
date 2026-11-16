@@ -1,0 +1,195 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit constitutionnel : institutions, Parlement, élections, justice constitutionnelle, vie politique.
+
+## Droit constitutionnel | Institutions ## CONSTITUTION
+régime politique | نظام سياسي | ma | أنظمة سياسية
+régime présidentiel | نظام رئاسي | ma
+régime parlementaire | نظام برلماني | ma
+régime semi-présidentiel | نظام شبه رئاسي | mc
+forme de l'État | شكل الدولة | fi
+État unitaire | دولة موحدة | ma
+État fédéral | دولة اتحادية | ma
+souveraineté nationale | سيادة وطنية | fa
+souveraineté populaire | سيادة شعبية | fa
+intégrité territoriale | سلامة التراب الوطني | fi
+unité nationale | وحدة وطنية | fa
+emblème national | علم وطني | ma
+hymne national | نشيد وطني | ma
+langue nationale et officielle | لغة وطنية ورسمية | fc
+institutions de l'État | مؤسسات الدولة | fip
+pouvoirs publics | سلطات عمومية | map
+équilibre des pouvoirs | توازن السلطات | mi
+chef du gouvernement | رئيس الحكومة | mi
+membre du gouvernement | عضو الحكومة | mi | أعضاء الحكومة
+ministre d'État | وزير دولة | mc
+ministre délégué | وزير منتدب | ma
+secrétaire d'État | كاتب دولة | mc
+secrétaire général du gouvernement | الأمين العام للحكومة | mc
+portefeuille ministériel | حقيبة وزارية | ma | حقائب وزارية
+remaniement ministériel | تعديل وزاري | ma
+programme du gouvernement | برنامج الحكومة | mi
+plan d'action du gouvernement | مخطط عمل الحكومة | mi
+déclaration de politique générale | بيان السياسة العامة | fi
+vote de confiance | تصويت بالثقة | mc
+démission du gouvernement | استقالة الحكومة | fi
+vacance de la présidence de la République | شغور رئاسة الجمهورية | fi
+état d'empêchement | حالة المانع | mi
+intérim de la présidence | رئاسة الدولة بالنيابة | mc
+serment constitutionnel | يمين دستورية | ma
+mandat présidentiel | عهدة رئاسية | ma | عهدات رئاسية
+pouvoir de nomination | سلطة التعيين | mi
+pouvoirs exceptionnels | سلطات استثنائية | map
+haute trahison | خيانة عظمى | fa
+Haute Cour de l'État | المحكمة العليا للدولة | fc
+Haut Conseil de sécurité | المجلس الأعلى للأمن | mc
+Haut Conseil islamique | المجلس الإسلامي الأعلى | mc
+Conseil national économique, social et environnemental | المجلس الوطني الاقتصادي والاجتماعي والبيئي | mc
+Conseil national des droits de l'homme | المجلس الوطني لحقوق الإنسان | mc
+Haute Autorité de transparence, de prévention et de lutte contre la corruption | السلطة العليا للشفافية والوقاية من الفساد ومكافحته | fc
+Observatoire national de la société civile | المرصد الوطني للمجتمع المدني | mc
+Conseil supérieur de la jeunesse | المجلس الأعلى للشباب | mc
+institution consultative | مؤسسة استشارية | fa | مؤسسات استشارية
+institution de contrôle | مؤسسة الرقابة | fi | مؤسسات الرقابة
+autorité indépendante | سلطة مستقلة | fa | سلطات مستقلة
+défense nationale | دفاع وطني | fa
+Armée nationale populaire | الجيش الوطني الشعبي | fc
+mobilisation générale | تعبئة عامة | fa
+déclaration de guerre | إعلان الحرب | fi
+état de guerre | حالة الحرب | mi
+
+## Droit constitutionnel | Parlement ## CONSTITUTION
+chambre du Parlement | غرفة البرلمان | fi
+bicamérisme | نظام الغرفتين | mi
+membre du Conseil de la Nation | عضو مجلس الأمة | mi | أعضاء مجلس الأمة
+président de l'Assemblée populaire nationale | رئيس المجلس الشعبي الوطني | mc
+président du Conseil de la Nation | رئيس مجلس الأمة | mi
+commission permanente | لجنة دائمة | fa | لجان دائمة
+commission d'enquête parlementaire | لجنة تحقيق برلمانية | fc
+commission paritaire | لجنة متساوية الأعضاء | fc
+groupe parlementaire | مجموعة برلمانية | ma | مجموعات برلمانية
+opposition parlementaire | معارضة برلمانية | fa
+majorité parlementaire | أغلبية برلمانية | fa
+majorité présidentielle | أغلبية رئاسية | fa
+majorité simple | أغلبية بسيطة | fa
+majorité relative | أغلبية نسبية | fa
+législature | فترة تشريعية | fa
+session ordinaire | دورة عادية | fa
+session extraordinaire | دورة غير عادية | fc
+séance plénière | جلسة عامة | fa | جلسات عامة
+initiative législative | مبادرة تشريعية | fa
+procédure législative | إجراء تشريعي | fa
+seconde délibération | مداولة ثانية | fa
+législation par ordonnance | تشريع بأوامر | fc
+contrôle parlementaire | رقابة برلمانية | ma
+question orale | سؤال شفوي | fa | أسئلة شفوية
+question écrite | سؤال كتابي | fa | أسئلة كتابية
+interpellation du gouvernement | استجواب الحكومة | fi
+débat général | مناقشة عامة | ma
+dissolution de l'Assemblée populaire nationale | حل المجلس الشعبي الوطني | fc
+élections législatives anticipées | انتخابات تشريعية مسبقة | fcp
+mandat parlementaire | عهدة برلمانية | ma
+cumul des mandats | جمع بين العهدات | mc
+cas d'incompatibilité | حالة التنافي | mi | حالات التنافي
+déchéance du mandat parlementaire | إسقاط العهدة البرلمانية | fi
+levée de l'immunité parlementaire | رفع الحصانة البرلمانية | fc
+nomadisme politique | تجوال سياسي | ma
+indemnité parlementaire | تعويضة برلمانية | fa
+tiers présidentiel | ثلث رئاسي | ma
+
+## Droit constitutionnel | Élections ## CONSTITUTION
+régime électoral | نظام انتخابي | ma
+loi électorale | قانون الانتخابات | fi
+corps électoral | هيئة ناخبة | ma
+convocation du corps électoral | استدعاء الهيئة الناخبة | fi
+circonscription électorale | دائرة انتخابية | fa | دوائر انتخابية
+découpage électoral | تقسيم الدوائر الانتخابية | mi
+carte d'électeur | بطاقة الناخب | fi
+inscription sur les listes électorales | تسجيل في القوائم الانتخابية | fc
+révision des listes électorales | مراجعة القوائم الانتخابية | fi
+déclaration de candidature | تصريح بالترشح | fc
+candidature | ترشح | fm
+liste de candidats | قائمة المترشحين | fi | قوائم المترشحين
+candidat indépendant | مترشح حر | ma
+collecte des signatures | جمع التوقيعات | fi
+campagne électorale | حملة انتخابية | fa | حملات انتخابية
+financement de la campagne électorale | تمويل الحملة الانتخابية | mi
+compte de campagne | حساب الحملة الانتخابية | mi
+silence électoral | صمت انتخابي | ma
+bureau de vote | مكتب التصويت | mi | مكاتب التصويت
+centre de vote | مركز التصويت | mi | مراكز التصويت
+urne | صندوق الاقتراع | fi
+bulletin de vote | ورقة التصويت | mi | أوراق التصويت
+bulletin nul | ورقة ملغاة | ma
+bulletin blanc | ورقة بيضاء | ma
+vote par procuration | تصويت بالوكالة | mc
+scrutin secret | اقتراع سري | ma
+suffrage direct | اقتراع مباشر | ma
+suffrage indirect | اقتراع غير مباشر | mc
+suffrages exprimés | أصوات معبر عنها | mcp
+voix prépondérante | صوت مرجح | fa
+dépouillement du scrutin | فرز الأصوات | mi
+procès-verbal de dépouillement | محضر الفرز | mi
+proclamation des résultats | إعلان النتائج | fi
+résultats provisoires | نتائج مؤقتة | map
+résultats définitifs | نتائج نهائية | map
+taux de participation | نسبة المشاركة | mi
+abstention électorale | امتناع عن التصويت | fc
+scrutin de liste | اقتراع على القائمة | mc
+scrutin majoritaire | اقتراع بالأغلبية | mc
+scrutin uninominal | اقتراع على الاسم الواحد | mc
+représentation proportionnelle | تمثيل نسبي | fa
+second tour | دور ثانٍ | ma
+seuil électoral | عتبة انتخابية | ma
+répartition des sièges | توزيع المقاعد | fi
+siège vacant | مقعد شاغر | ma | مقاعد شاغرة
+élection présidentielle | انتخابات رئاسية | fa
+élections législatives | انتخابات تشريعية | fap
+élections locales | انتخابات محلية | fap
+élection partielle | انتخاب جزئي | fa
+contentieux électoral | منازعات انتخابية | ma
+recours électoral | طعن انتخابي | ma | طعون انتخابية
+fraude électorale | تزوير انتخابي | fa
+observateur des élections | مراقب الانتخابات | mi
+éligibilité | قابلية الانتخاب | fi
+inéligibilité | عدم القابلية للانتخاب | fc
+consultation référendaire | استشارة استفتائية | fa
+
+## Droit constitutionnel | Justice constitutionnelle ## CONSTITUTION
+suprématie de la Constitution | سمو الدستور | fi
+bloc de constitutionnalité | كتلة دستورية | ma
+membre de la Cour constitutionnelle | عضو المحكمة الدستورية | mi
+président de la Cour constitutionnelle | رئيس المحكمة الدستورية | mi
+contrôle a priori | رقابة قبلية | ma
+contrôle a posteriori | رقابة بعدية | ma
+contrôle de conformité | رقابة المطابقة | mi
+décision de la Cour constitutionnelle | قرار المحكمة الدستورية | fi
+déclaration d'inconstitutionnalité | تصريح بعدم الدستورية | fc
+inconstitutionnalité | عدم الدستورية | fi
+réserve d'interprétation | تحفظ تفسيري | fa
+renvoi à la Cour constitutionnelle | إحالة على المحكمة الدستورية | mc
+interprétation de la Constitution | تفسير الدستور | fi
+conflit entre les pouvoirs constitutionnels | خلاف بين السلطات الدستورية | mc
+initiative de la révision constitutionnelle | مبادرة بالتعديل الدستوري | fc
+projet de révision constitutionnelle | مشروع التعديل الدستوري | mi
+constitution rigide | دستور جامد | fa
+constitution souple | دستور مرن | fa
+constitution écrite | دستور مكتوب | fa
+constitution coutumière | دستور عرفي | fa
+pouvoir constituant originaire | سلطة تأسيسية أصلية | ma
+pouvoir constituant dérivé | سلطة تأسيسية مشتقة | ma
+assemblée constituante | مجلس تأسيسي | fa
+
+## Droit constitutionnel | Vie politique ## CONSTITUTION
+alternance au pouvoir | تداول على السلطة | fc
+pluralisme politique | تعددية سياسية | ma
+multipartisme | تعددية حزبية | ma
+organisations de la société civile | منظمات المجتمع المدني | fip
+opposition politique | معارضة سياسية | fa
+création d'un parti politique | تأسيس حزب سياسي | fc
+financement des partis politiques | تمويل الأحزاب السياسية | mi
+mouvement associatif | حركة جمعوية | ma
+démocratie participative | ديمقراطية تشاركية | fa
+démocratie représentative | ديمقراطية تمثيلية | fa
+bonne gouvernance | حكم راشد | fa
+responsabilité politique | مسؤولية سياسية | fa
+moralisation de la vie publique | أخلقة الحياة العامة | fi

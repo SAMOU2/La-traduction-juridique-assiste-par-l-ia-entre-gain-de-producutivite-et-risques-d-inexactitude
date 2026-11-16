@@ -1,0 +1,165 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit de la famille : mariage, divorce, filiation et enfance, protection des incapables, successions.
+
+## Droit de la famille | Mariage ## FAMILLE
+conclusion du mariage | إبرام عقد الزواج | fi
+conditions du mariage | شروط الزواج | fip
+éléments constitutifs du mariage | أركان الزواج | mip
+consentement des époux | رضا الزوجين | mi
+capacité matrimoniale | أهلية الزواج | fi
+âge du mariage | سن الزواج | mi
+tuteur matrimonial | ولي الزواج | mi
+témoins du mariage | شاهدا الزواج | mip
+certificat médical prénuptial | شهادة طبية قبل الزواج | mc
+transcription du mariage | تسجيل عقد الزواج | fi
+preuve du mariage | إثبات الزواج | fi
+mariage coutumier | زواج عرفي | ma
+jugement de validation du mariage | حكم بتثبيت الزواج | mc
+mariage nul | زواج باطل | ma
+mariage vicié | زواج فاسد | ma
+mariage mixte | زواج مختلط | ma
+consommation du mariage | دخول بالزوجة | fc
+dot à terme | صداق مؤجل | fa
+dot payable d'avance | صداق معجل | fa
+dot de parité | صداق المثل | fi
+cadeaux de fiançailles | هدايا الخطبة | mip
+rupture des fiançailles | عدول عن الخطبة | fc
+fiancée | مخطوبة | ff
+empêchements absolus | موانع مؤبدة | map
+empêchements temporaires | موانع مؤقتة | map
+parenté par allaitement | قرابة الرضاع | fi
+degré de parenté | درجة القرابة | mi
+parenté en ligne directe | قرابة مباشرة | fa
+parenté en ligne collatérale | قرابة الحواشي | fi
+collatéraux | أقارب الحواشي | mip
+conjoint survivant | زوج باق على قيد الحياة | mc
+droits et obligations des époux | حقوق وواجبات الزوجين | mcp
+devoir de cohabitation | واجب المساكنة | mi
+devoir de fidélité | واجب الإخلاص | mi
+entretien de l'épouse | نفقة الزوجة | mi
+entretien des enfants | نفقة الأولاد | mi
+domicile conjugal | مسكن الزوجية | mi
+abandon du domicile conjugal | ترك مقر الزوجية | mc
+séparation des biens | استقلال الذمة المالية | fi
+biens communs des époux | أموال مشتركة بين الزوجين | mcp
+clause du contrat de mariage | شرط في عقد الزواج | fc
+autorisation de polygamie | ترخيص بالتعدد | fc
+coépouse | ضرة | ff
+nouchouz | نشوز | mm
+conciliation entre époux | صلح بين الزوجين | fc
+arbitrage familial | تحكيم بين الزوجين | mc
+
+## Droit de la famille | Divorce ## FAMILLE
+divorce par volonté unilatérale de l'époux | طلاق بالإرادة المنفردة للزوج | mc
+divorce à la demande de l'épouse | تطليق | mm
+divorce pour préjudice | تطليق للضرر | mc
+divorce abusif | طلاق تعسفي | ma
+divorce révocable | طلاق رجعي | ma
+divorce irrévocable | طلاق بائن | ma
+reprise de l'épouse | مراجعة الزوجة | fi
+jugement de divorce | حكم الطلاق | mi
+transcription du jugement de divorce | تسجيل حكم الطلاق | fi
+effets du divorce | آثار الطلاق | mip
+réparation du divorce abusif | تعويض عن الطلاق التعسفي | fc
+pension de la retraite légale | نفقة العدة | fi
+compensation du khol'â | مقابل الخلع | fi
+délai de viduité | عدة الوفاة | mi
+épouse divorcée | زوجة مطلقة | fa
+veuve | أرملة | ff | أرامل
+logement de la gardienne | سكن الحاضنة | mi
+attribution de la garde | إسناد الحضانة | fi
+déchéance du droit de garde | سقوط الحضانة | fi
+gardien de l'enfant | حاضن | mm
+enfant gardé | محضون | mm
+intérêt supérieur de l'enfant | مصلحة الطفل الفضلى | mc
+fonds de la pension alimentaire | صندوق النفقة | mi
+droit d'hébergement | حق الاستضافة | mi
+remariage | إعادة الزواج | mi
+serment d'anathème | لعان | mm
+
+## Droit de la famille | Filiation et enfance ## FAMILLE
+établissement de la filiation | إثبات النسب | mi
+reconnaissance de filiation | إقرار بالنسب | fc
+reconnaissance de maternité | إقرار بالأمومة | fc
+présomption de paternité | قرينة الأبوة | fi
+durée minimale de la grossesse | أقل مدة الحمل | fc
+durée maximale de la grossesse | أقصى مدة الحمل | fc
+insémination artificielle | تلقيح اصطناعي | fa
+preuve scientifique de la filiation | طرق علمية لإثبات النسب | fc
+paternité | أبوة | ff
+maternité | أمومة | ff
+enfant légitime | ولد شرعي | ma
+enfant naturel | ولد غير شرعي | mc
+enfant trouvé | لقيط | mm
+enfant de filiation inconnue | مجهول النسب | mi
+orphelin | يتيم | mm | أيتام
+pupille de l'État | طفل مسعف | ma
+enfance assistée | طفولة مسعفة | fa
+titulaire du recueil légal | كافل | mm
+enfant recueilli | طفل مكفول | ma
+puissance paternelle | سلطة أبوية | fa
+autorité parentale | سلطة الوالدين | fi
+tutelle sur la personne | ولاية على النفس | fc
+tutelle sur les biens | ولاية على المال | fc
+allaitement | إرضاع | mm
+éducation de l'enfant | تربية الطفل | fi
+protection de l'enfance | حماية الطفولة | fi
+délégué national à la protection de l'enfance | المفوض الوطني لحماية الطفولة | mc
+mineur doué de discernement | قاصر مميز | ma
+mineur non doué de discernement | قاصر غير مميز | mc
+âge de discernement | سن التمييز | mi
+
+## Droit de la famille | Protection des incapables ## FAMILLE
+tutelle légale | ولاية شرعية | fa
+tutelle testamentaire | وصاية على القاصر | fc
+gestion des biens du mineur | إدارة أموال القاصر | fi
+actes soumis à autorisation | تصرفات خاضعة للإذن | mcp
+compte de tutelle | حساب الوصاية | mi
+fin de la tutelle | انتهاء الولاية | fi
+déchéance de la tutelle | إسقاط الولاية | fi
+personne interdite | شخص محجور عليه | fc
+mainlevée de l'interdiction judiciaire | رفع الحجر | fi
+imbécillité | عته | fm
+faible d'esprit | معتوه | mm
+prodigalité | سفه | fm
+prodigue | سفيه | mm
+altération des facultés mentales | اختلال القوى العقلية | fi
+personne âgée | شخص مسن | fa
+personne handicapée | شخص معاق | fa
+assistant judiciaire | مساعد قضائي | ma
+
+## Droit de la famille | Successions ## FAMILLE
+vocation successorale | استحقاق الإرث | fi
+causes de la succession | أسباب الإرث | fip
+empêchements à la succession | موانع الإرث | mip
+actif successoral | أصول التركة | mi
+passif successoral | ديون التركة | mi
+liquidation de la succession | تصفية التركة | fi
+inventaire de la succession | جرد التركة | mi
+frais funéraires | مصاريف التجهيز والدفن | mcp
+cognats | ذوو الأرحام | mip
+éviction successorale | حجب عن الميراث | fc
+éviction totale | حجب حرمان | fc
+éviction partielle | حجب نقصان | fc
+réduction proportionnelle des parts | عول | fm
+accroissement par restitution | رد على ذوي الفروض | mc
+part successorale | نصيب في التركة | fc
+succession vacante | تركة شاغرة | fa
+succession en déshérence | تركة لا وارث لها | fc
+indivision successorale | شيوع في التركة | fc
+cohéritier | شريك في الميراث | mc
+différence de religion | اختلاف الدين | fi
+testament olographe | وصية بخط اليد | mc
+tiers disponible | ثلث التركة | mi
+legs excédant le tiers | وصية بما زاد عن الثلث | mc
+révocation du testament | رجوع عن الوصية | fc
+exécuteur testamentaire | منفذ الوصية | mi
+legs universel | وصية بكامل التركة | mc
+legs particulier | وصية بمال معين | mc
+donation entre vifs | هبة بين الأحياء | fc
+révocation de la donation | رجوع في الهبة | fc
+prise de possession du bien donné | حيازة الموهوب | fi
+donation en maladie de mort | هبة في مرض الموت | fc
+maladie de la mort | مرض الموت | fi
+wakf familial | وقف خاص | ma
+wakf public | وقف عام | ma

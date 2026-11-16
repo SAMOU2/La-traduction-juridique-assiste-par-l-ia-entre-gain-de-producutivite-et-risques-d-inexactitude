@@ -1,0 +1,47 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Adjectifs et verbes des domaines ajoutés dans les fichiers 49 à 57 (codes adj et v). L'application ne les
+# remplace pas dans la traduction d'un texte. L'arabe est au masculin singulier, ou au passé.
+
+## Vocabulaire juridique général | Adjectifs | Institutions et administration ## CORNU
+budgétaire | ميزانياتي | adj
+référendaire | استفتائي | adj
+démocratique | ديمقراطي | adj
+républicain | جمهوري | adj
+fédéral | اتحادي | adj
+consultatif | استشاري | adj
+représentatif | تمثيلي | adj
+paritaire | متساوي الأعضاء | adj
+intergouvernemental | حكومي دولي | adj
+non gouvernemental | غير حكومي | adj
+transfrontalier | عابر للحدود | adj
+supranational | فوق وطني | adj
+
+## Vocabulaire juridique général | Adjectifs | Créances et biens ## CORNU
+foncier | عقاري | adj
+cadastral | مسحي | adj
+portuaire | مينائي | adj
+frontalier | حدودي | adj
+polluant | ملوث | adj
+contrefait | مقلد | adj
+concurrentiel | تنافسي | adj
+trompeur | مضلل | adj
+défectueux | معيب | adj
+arbitrable | قابل للتحكيم | adj
+
+## Vocabulaire juridique général | Verbes | Administrer ## CORNU
+élire | انتخب | v
+nommer | عين | v
+promouvoir | رقى | v
+affecter | خصص | v
+taxer | فرض ضريبة على | v
+nationaliser | أمم | v
+privatiser | خوصص | v
+construire | بنى | v
+démolir | هدم | v
+polluer | لوث | v
+contrefaire | قلد | v
+adhérer | انضم إلى | v
+s'abstenir | امتنع | v
+embaucher | شغل | v
+faire grève | أضرب | v
+émigrer | هاجر | v

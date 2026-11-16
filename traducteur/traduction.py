@@ -5,7 +5,9 @@ L'algorithme suit cinq étapes :
 1. segmentation du texte en phrases ;
 2. découpage de chaque phrase en mots ;
 3. recherche dans le glossaire : la phrase entière parmi les exemples, puis
-   les expressions les plus longues, puis les mots un par un ;
+   les expressions les plus longues, puis les mots un par un. Quand deux
+   expressions se suivent et partagent un mot (« délai d'exécution du
+   contrat »), voir ``Traducteur._sans_chevauchement`` ;
 4. application des règles lexicales, grammaticales et sémantiques (voir
    ``REGLES``) ;
 5. reconstruction du texte dans la langue cible, phrase par phrase.
@@ -25,7 +27,7 @@ from __future__ import annotations
 
 import itertools
 from collections import Counter
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 
 import regex
 
@@ -134,6 +136,12 @@ _FINS_DE_LOCUTION = {"de": ("d'", "du", "des"), "a": ("au", "aux"), "que": ("qu'
 def _cle_d_amorce(mot: str, langue: str) -> str:
     cle = cle_souple(mot)
     return sans_article_arabe(cle) if langue == AR else cle
+
+
+def _cle_de_debut(terme: str, langue: str) -> str:
+    """Clé d'un terme pour comparer des débuts de termes : sans accents, ni majuscules, ni article."""
+    cle = cle_souple(terme)
+    return sans_article_arabe(cle) if langue == AR else sans_article_francais(cle)
 
 
 def cle_phrase(texte: str) -> str:
@@ -414,26 +422,16 @@ class Traducteur:
             if not jetons[rang].est_mot:
                 rang += 1
                 continue
-            lecture, longueur = None, 0
-            maximum = self._longueur[langue] if self._commence_une_expression(jetons[rang].texte, langue) else 1
-            apres_un_singulier = (langue == FR and rang > 0
-                                  and _minuscule(jetons[rang - 1]) in _DETERMINANTS_SINGULIERS)
-            for longueur in range(min(maximum, len(jetons) - rang), 0, -1):
-                groupe = jetons[rang:rang + longueur]
-                if not groupe[-1].est_mot or any(jeton.nature == PONCTUATION for jeton in groupe):
-                    continue
-                lecture = self._lire(texte[groupe[0].debut:groupe[-1].fin], langue)
-                if lecture is not None and apres_un_singulier:
-                    lecture = _au_singulier(lecture)
-                if lecture is not None:
-                    break
+            lecture, longueur = self._plus_longue_lecture(texte, jetons, rang, langue)
             locution = self._locution(jetons, rang, langue)
-            if locution > (longueur if lecture is not None else 0):
+            if locution > longueur:
                 rang += locution  # « de plein droit » : la locution reste entière, « droit » n'y est pas un terme
                 continue
             if lecture is None:
                 rang += 1
                 continue
+            if longueur > 1:
+                lecture, longueur = self._sans_chevauchement(texte, jetons, rang, langue, lecture, longueur)
             premier, dernier = jetons[rang], jetons[rang + longueur - 1]
             entree, nature = lecture.entrees[0]
             occurrence = Occurrence(
@@ -446,6 +444,73 @@ class Traducteur:
             occurrences.append(occurrence)
             rang += longueur
         return occurrences
+
+    def _plus_longue_lecture(self, texte: str, jetons: list[Jeton], rang: int, langue: str,
+                             limite: int | None = None) -> tuple[_Lecture | None, int]:
+        """La plus longue suite de jetons qui commence au jeton ``rang`` et que le glossaire reconnaît.
+
+        Renvoie la lecture et son nombre de jetons, ``(None, 0)`` s'il n'y en a pas. ``limite`` borne ce nombre.
+        """
+        maximum = self._longueur[langue] if self._commence_une_expression(jetons[rang].texte, langue) else 1
+        if limite is not None:
+            maximum = min(maximum, limite)
+        apres_un_singulier = langue == FR and rang > 0 and _minuscule(jetons[rang - 1]) in _DETERMINANTS_SINGULIERS
+        for longueur in range(min(maximum, len(jetons) - rang), 0, -1):
+            groupe = jetons[rang:rang + longueur]
+            if not groupe[-1].est_mot or any(jeton.nature == PONCTUATION for jeton in groupe):
+                continue
+            lecture = self._lire(texte[groupe[0].debut:groupe[-1].fin], langue)
+            if lecture is not None and apres_un_singulier:
+                lecture = _au_singulier(lecture)
+            if lecture is not None:
+                return lecture, longueur
+        return None, 0
+
+    def _sans_chevauchement(self, texte: str, jetons: list[Jeton], rang: int, langue: str, lecture: _Lecture,
+                            longueur: int) -> tuple[_Lecture, int]:
+        """Départage deux expressions du glossaire qui se chevauchent : « délai d'exécution du contrat ».
+
+        Le dernier mot de l'expression lue (« délai d'exécution ») commence une autre expression, qui continue
+        dans le texte (« exécution du contrat »). Garder la première couperait la seconde, dont la fin resterait
+        seule. Le premier nom de l'expression lue (« délai ») est retenu à sa place quand trois conditions sont
+        réunies : l'expression est un nom suivi de son complément ; ce nom est lui-même un terme du glossaire ;
+        traduit seul, il donne le début de la traduction de l'expression (« أجل », « أجل التنفيذ »). La seconde
+        expression est alors lue en entier et la règle du complément du nom relie les deux (« أجل تنفيذ العقد »).
+
+        Dans tous les autres cas, l'expression lue est gardée. C'est le cas de « تجديد العقد » (renouvellement
+        du contrat) : son premier nom, seul, se traduit par « novation », un autre sens.
+        """
+        dernier = rang + longueur - 1
+        suite, etendue = self._plus_longue_lecture(texte, jetons, dernier, langue)
+        if suite is None or etendue < 2:
+            return lecture, longueur
+        expression = lecture.entrees[0][0]
+        fin = dernier  # rang du jeton qui suit le premier nom
+        if langue == FR:
+            # Le complément est introduit par « de », « d' », « du », « des », « de la », « de l' »…
+            avant = _minuscule(jetons[dernier - 1])
+            if avant in _ARTICLES_DEFINIS and dernier - 2 > rang and _minuscule(jetons[dernier - 2]) in _DE:
+                fin = dernier - 2
+            elif avant in _DE or avant in ("du", "des"):
+                fin = dernier - 1
+            else:
+                return lecture, longueur  # « État partie » : un nom et son adjectif, pas un complément
+        elif "وصفي" in expression.categorie_ar:
+            return lecture, longueur  # « عامل أجنبي » : un nom et son adjectif
+        tete, portee = self._plus_longue_lecture(texte, jetons, rang, langue, limite=fin - rang)
+        if tete is None or portee != fin - rang:
+            return lecture, longueur
+        if langue == AR and tete.defini and "إضافي" not in expression.categorie_ar:
+            # Sans catégorie arabe, l'article le dit : un nom suivi de son complément ne le porte pas, et
+            # « العامل الأجنبي » est donc un nom et son adjectif.
+            return lecture, longueur
+        cible = autre_langue(langue)
+        traduction = _cle_de_debut(expression.terme(cible), cible)
+        entrees = [(entree, nature) for entree, nature in tete.entrees
+                   if any(traduction.startswith(_cle_de_debut(forme, cible)) for forme in entree.formes(cible))]
+        if not entrees:
+            return lecture, longueur
+        return replace(tete, entrees=entrees), portee
 
     def _locution(self, jetons: list[Jeton], rang: int, langue: str) -> int:
         """Nombre de jetons de la locution invariable qui commence au jeton ``rang`` ; 0 s'il n'y en a pas.

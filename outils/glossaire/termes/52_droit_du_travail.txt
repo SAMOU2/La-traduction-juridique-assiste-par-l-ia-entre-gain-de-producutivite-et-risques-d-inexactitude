@@ -1,0 +1,201 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit du travail (contrat, salaire, durée du travail, relations collectives, hygiène et sécurité)
+# et droit de la sécurité sociale.
+
+## Droit du travail | Contrat de travail ## TRAVAIL
+législation du travail | تشريع العمل | fi
+relations individuelles de travail | علاقات العمل الفردية | fip
+relations collectives de travail | علاقات العمل الجماعية | fip
+marché du travail | سوق العمل | mi
+politique de l'emploi | سياسة التشغيل | fi
+agence nationale de l'emploi | الوكالة الوطنية للتشغيل | fc
+demandeur d'emploi | طالب العمل | mi | طالبو العمل
+offre d'emploi | عرض العمل | fi | عروض العمل
+promesse d'embauche | وعد بالتشغيل | fc
+poste de travail | منصب العمل | mi | مناصب العمل
+lieu de travail | مكان العمل | mi | أماكن العمل
+organisme employeur | هيئة مستخدمة | ma
+travailleur étranger | عامل أجنبي | ma | عمال أجانب
+permis de travail | رخصة العمل | mi
+travailleur à domicile | عامل في المنزل | mc
+travail à temps partiel | عمل بالتوقيت الجزئي | mc
+travail à temps plein | عمل بالتوقيت الكامل | mc
+travail temporaire | عمل مؤقت | ma
+travail saisonnier | عمل موسمي | ma
+travail de nuit | عمل ليلي | ma
+travail posté | عمل تناوبي | ma
+télétravail | عمل عن بعد | mc
+travail dissimulé | عمل غير مصرح به | mc
+travail des enfants | عمل الأطفال | mi
+travail forcé | عمل قسري | ma
+apprentissage | تمهين | mm
+apprenti | متمهن | mm | متمهنون
+contrat d'apprentissage | عقد التمهين | mi
+formation professionnelle | تكوين مهني | fa
+qualification professionnelle | تأهيل مهني | fa
+classification professionnelle | تصنيف مهني | fa
+ancienneté | أقدمية | ff
+confirmation du travailleur | تثبيت العامل | fi
+modification du contrat de travail | تعديل عقد العمل | fi
+suspension de la relation de travail | تعليق علاقة العمل | fi
+cessation de la relation de travail | انتهاء علاقة العمل | fi
+rupture du contrat de travail | إنهاء عقد العمل | fi
+renouvellement du contrat à durée déterminée | تجديد العقد المحدد المدة | mc
+requalification du contrat à durée déterminée | إعادة تكييف العقد المحدد المدة | fc
+clause de mobilité | شرط التنقل | fi
+obligation de loyauté | التزام بالولاء | fc
+pouvoir disciplinaire | سلطة تأديبية | ma
+faute professionnelle grave | خطأ مهني جسيم | fa
+procédure disciplinaire | إجراء تأديبي | fa
+mise à pied | توقيف عن العمل | fc
+licenciement disciplinaire | تسريح تأديبي | ma
+licenciement pour motif économique | تسريح لأسباب اقتصادية | mc
+compression d'effectifs | تقليص عدد العمال | fi
+volet social | جانب اجتماعي | ma
+indemnité de licenciement | تعويض عن التسريح | fc
+réintégration du travailleur | إعادة إدماج العامل | fi
+départ volontaire | ذهاب إرادي | ma
+retraite anticipée | تقاعد مسبق | fa
+reçu pour solde de tout compte | وصل تصفية كل الحساب | mc
+
+## Droit du travail | Salaire et durée du travail ## TRAVAIL
+salaire de base | أجر قاعدي | ma
+salaire de poste | أجر المنصب | mi
+salaire brut | أجر خام | ma
+salaire net | أجر صافٍ | ma
+bulletin de paie | كشف الراتب | mi | كشوف الرواتب
+paiement du salaire | دفع الأجر | mi
+retenue sur salaire | اقتطاع من الأجر | fc
+saisie sur salaire | حجز على الأجر | fc
+privilège des salaires | امتياز الأجور | mi
+prime d'ancienneté | تعويض الأقدمية | fi
+prime de panier | منحة السلة | fi
+prime de transport | منحة النقل | fi
+indemnité de zone | تعويض المنطقة | fi
+avantages en nature | مزايا عينية | map
+égalité de rémunération | مساواة في الأجور | fc
+grille des salaires | شبكة الأجور | fi
+masse salariale | كتلة الأجور | fi
+durée légale du travail | مدة قانونية للعمل | fc
+temps de travail effectif | وقت العمل الفعلي | mi
+horaire de travail | توقيت العمل | mi
+repos hebdomadaire | راحة أسبوعية | ma
+repos compensateur | راحة تعويضية | ma
+jour de repos légal | يوم الراحة القانونية | mi
+congé de maladie | عطلة مرضية | ma
+congé de maternité | عطلة الأمومة | mi
+congé sans solde | عطلة غير مدفوعة الأجر | mc
+congé exceptionnel | عطلة استثنائية | ma
+absence autorisée | غياب مرخص به | fc
+absence injustifiée | غياب غير مبرر | fc
+indemnité de congé payé | تعويض العطلة السنوية | fi
+
+## Droit du travail | Relations collectives ## TRAVAIL
+liberté syndicale | حرية نقابية | fa
+exercice du droit syndical | ممارسة الحق النقابي | mi
+organisation syndicale représentative | منظمة نقابية تمثيلية | fa
+représentativité syndicale | تمثيلية نقابية | fa
+section syndicale | فرع نقابي | fa | فروع نقابية
+délégué syndical | مندوب نقابي | ma | مندوبون نقابيون
+union de syndicats | اتحاد النقابات | fi
+confédération syndicale | كنفدرالية نقابية | fa
+organisation patronale | منظمة أرباب العمل | fi
+comité de participation | لجنة المشاركة | mi
+représentants des travailleurs | ممثلو العمال | mip
+négociation collective | تفاوض جماعي | fa
+accord collectif | اتفاق جماعي | ma | اتفاقات جماعية
+convention de branche | اتفاقية القطاع | fi
+dénonciation de la convention collective | نقض الاتفاقية الجماعية | fi
+partenaires sociaux | شركاء اجتماعيون | map
+dialogue social | حوار اجتماعي | ma
+conflit collectif de travail | نزاع جماعي في العمل | mc
+conflit individuel de travail | نزاع فردي في العمل | mc
+préavis de grève | إشعار مسبق بالإضراب | mc
+service minimum | حد أدنى من الخدمة | mc
+ordre de réquisition | أمر التسخير | mi
+grève illicite | إضراب غير مشروع | fc
+travailleur gréviste | عامل مضرب | ma
+lock-out | غلق أماكن العمل | mi
+occupation des lieux de travail | احتلال أماكن العمل | fi
+entrave à la liberté du travail | عرقلة حرية العمل | fi
+arbitrage obligatoire | تحكيم إجباري | ma
+commission nationale d'arbitrage | اللجنة الوطنية للتحكيم | fc
+procès-verbal de non-conciliation | محضر عدم الصلح | mi
+procès-verbal de conciliation | محضر الصلح | mi
+
+## Droit du travail | Hygiène, sécurité et inspection ## TRAVAIL
+hygiène et sécurité | وقاية صحية وأمن | fc
+médecine du travail | طب العمل | fi
+médecin du travail | طبيب العمل | mi
+comité d'hygiène et de sécurité | لجنة الوقاية الصحية والأمن | mc
+risque professionnel | خطر مهني | ma | أخطار مهنية
+prévention des risques professionnels | وقاية من الأخطار المهنية | fc
+équipement de protection individuelle | تجهيز الحماية الفردية | mi
+conditions de travail | ظروف العمل | fip
+discrimination à l'embauche | تمييز في التشغيل | fc
+égalité professionnelle | مساواة مهنية | fa
+protection de la maternité | حماية الأمومة | fi
+travailleur handicapé | عامل معاق | ma
+travailleur mineur | عامل قاصر | ma
+âge minimum d'admission à l'emploi | سن أدنى للتشغيل | mc
+procès-verbal d'infraction | محضر مخالفة | mc
+mise en demeure de l'inspecteur du travail | إعذار مفتش العمل | fi
+visite d'inspection | زيارة التفتيش | fi
+registre du personnel | سجل المستخدمين | mi
+livre de paie | دفتر الأجور | mi
+
+## Droit de la sécurité sociale ## SECU
+régime de sécurité sociale | نظام الضمان الاجتماعي | mi
+caisse de sécurité sociale | صندوق الضمان الاجتماعي | fi
+Caisse nationale des assurances sociales | الصندوق الوطني للتأمينات الاجتماعية | fc | sf=CNAS
+Caisse nationale des retraites | الصندوق الوطني للتقاعد | fc | sf=CNR
+Caisse nationale d'assurance chômage | الصندوق الوطني للتأمين عن البطالة | fc | sf=CNAC
+Caisse nationale de sécurité sociale des non-salariés | الصندوق الوطني للضمان الاجتماعي لغير الأجراء | fc | sf=CASNOS
+assurances sociales | تأمينات اجتماعية | fap
+assurance maternité | تأمين على الأمومة | fc
+assurance invalidité | تأمين على العجز | fc
+assurance chômage | تأمين عن البطالة | fc
+affiliation | انتساب | fm
+immatriculation à la sécurité sociale | تسجيل لدى الضمان الاجتماعي | fc
+numéro de sécurité sociale | رقم الضمان الاجتماعي | mi
+carte d'assuré social | بطاقة المؤمن له اجتماعيا | fc
+carte Chifa | بطاقة الشفاء | fi
+déclaration des salaires | تصريح بالأجور | fc
+assiette des cotisations | وعاء الاشتراكات | fi
+taux de cotisation | نسبة الاشتراك | mi
+part patronale | حصة صاحب العمل | fi
+part salariale | حصة العامل | fi
+majoration de retard | زيادة التأخير | fi
+prestations en nature | أداءات عينية | fap
+prestations en espèces | أداءات نقدية | fap
+indemnité journalière | تعويضة يومية | fa
+remboursement des frais médicaux | تعويض المصاريف الطبية | mi
+tiers payant | دفع من قبل الغير | mc
+arrêt de travail | توقف عن العمل | mc
+certificat médical | شهادة طبية | ma
+contrôle médical | مراقبة طبية | ma
+médecin-conseil | طبيب مستشار | ma
+incapacité permanente partielle | عجز جزئي دائم | fa
+pension d'invalidité | معاش العجز | fi
+rente d'accident du travail | ريع حادث العمل | fi
+accident de trajet | حادث المسار | mi
+déclaration d'accident du travail | تصريح بحادث العمل | fc
+faute inexcusable de l'employeur | خطأ غير معذور لصاحب العمل | fc
+tableau des maladies professionnelles | جدول الأمراض المهنية | mi
+âge légal de la retraite | سن قانونية للتقاعد | mc
+années de cotisation | سنوات الاشتراك | fip
+pension de réversion | معاش منقول | fa
+allocation de retraite | منحة التقاعد | fi
+allocations familiales | منح عائلية | fap
+allocation chômage | منحة البطالة | fi
+contentieux de la sécurité sociale | منازعات الضمان الاجتماعي | mi
+contentieux général | منازعات عامة | ma
+contentieux médical | منازعات طبية | ma
+contentieux technique | منازعات تقنية | ma
+commission de recours préalable | لجنة الطعن المسبق | fi
+expertise médicale | خبرة طبية | fa
+mutuelle sociale | تعاضدية اجتماعية | fa
+régime des non-salariés | نظام غير الأجراء | mi
+travailleur indépendant | عامل غير أجير | mc
+recouvrement forcé des cotisations | تحصيل جبري للاشتراكات | mc
+défaut d'affiliation | عدم الانتساب | mi

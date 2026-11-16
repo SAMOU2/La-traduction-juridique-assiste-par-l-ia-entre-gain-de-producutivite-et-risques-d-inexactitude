@@ -1,0 +1,53 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Noms courants du droit qui manquaient seuls : le glossaire n'en avait que des expressions (« délai d'exécution »,
+# « acquisition de la nationalité »). Seul, le nom sert aussi à lire deux expressions qui se suivent dans un texte :
+# « exécution de la peine de mort » se lit « exécution » puis « peine de mort ».
+# Le fichier se termine par des locutions qui protègent des mots arabes à double sens : « من أجل » (pour) n'est
+# pas le « délai » (أجل), ni « من طرف » (par) la « partie » (طرف).
+# Une ligne vide sépare les termes qui ne sont pas associés entre eux.
+
+## Vocabulaire juridique général | Noms | Actes et opérations ## CORNU
+exécution | تنفيذ | fm
+mise en vigueur | وضع حيز التنفيذ | fc
+
+désignation | تعيين | fm | sf=nomination
+
+acquisition | اكتساب | fm
+
+gestion | تسيير | fm
+
+enregistrement | تسجيل | mm
+
+évaluation | تقييم | fm
+
+négociation | تفاوض | fm
+
+## Vocabulaire juridique général | Noms | Garanties et organes ## CORNU
+libertés | حريات | ffp
+immunité | حصانة | ff | حصانات
+
+bureau | مكتب | mm | مكاتب
+bureau d'études | مكتب الدراسات | mi
+
+## Procédure civile | Voies d'exécution ## CPCA
+exécution du jugement | تنفيذ الحكم | fi
+exécution des décisions de justice | تنفيذ أحكام القضاء | fc
+
+## Droit civil | Droits réels ## CIVIL
+modes d'acquisition de la propriété | طرق اكتساب الملكية | mcp
+
+## Droit fiscal | Impôts et taxes ## FISCAL
+enregistrement des actes | تسجيل العقود | mi
+
+## Droit bancaire | Opérations ## BANQUE
+placement de fonds | توظيف الأموال | mi
+
+## Vocabulaire juridique général | Locutions | Cause, but et mesure ## CORNU
+pour cause de | من أجل | prep
+
+de la part de | من طرف | prep | sa=من قبل
+
+selon le cas | حسب الحالة | adv
+
+en vigueur | حيز التنفيذ | adv
+en cours d'exécution | قيد التنفيذ | adv

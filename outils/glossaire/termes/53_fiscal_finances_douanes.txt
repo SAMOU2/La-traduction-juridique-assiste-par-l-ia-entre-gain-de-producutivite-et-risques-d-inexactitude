@@ -1,0 +1,254 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit fiscal (impôts et taxes, contrôle et contentieux), finances publiques (budget, comptabilité publique
+# et contrôle) et droit douanier.
+
+## Droit fiscal | Impôts et taxes ## FISCAL
+droit fiscal | قانون جبائي | ma
+système fiscal | نظام جبائي | ma
+législation fiscale | تشريع جبائي | fa
+fiscalité | جباية | ff
+pression fiscale | ضغط جبائي | fa
+impôt direct | ضريبة مباشرة | ma | ضرائب مباشرة
+impôt indirect | ضريبة غير مباشرة | mc
+impôt sur les bénéfices des sociétés | ضريبة على أرباح الشركات | mc | sf=IBS
+impôt forfaitaire unique | ضريبة جزافية وحيدة | ma | sf=IFU
+impôt sur la fortune | ضريبة على الثروة | mc
+taxe foncière | رسم عقاري | fa
+taxe d'enlèvement des ordures ménagères | رسم رفع القمامات المنزلية | fi
+taxe sur l'activité professionnelle | رسم على النشاط المهني | fc | sf=TAP
+taxe intérieure de consommation | رسم داخلي على الاستهلاك | fc
+taxe sur les produits pétroliers | رسم على المنتوجات البترولية | fc
+droit de timbre | حق الطابع | mi | حقوق الطابع
+droits d'enregistrement | حقوق التسجيل | mip
+taxe de publicité foncière | رسم الإشهار العقاري | fi
+vignette automobile | قسيمة السيارات | fi
+taxe parafiscale | رسم شبه جبائي | fc
+prélèvement obligatoire | اقتطاع إجباري | ma
+retenue à la source | اقتطاع من المصدر | fc
+acompte provisionnel | تسبيق على الحساب | mc
+matière imposable | مادة خاضعة للضريبة | fc
+fait générateur de l'impôt | حدث منشئ للضريبة | mc
+exigibilité de l'impôt | استحقاق الضريبة | fi
+base imposable | أساس خاضع للضريبة | fc
+revenu imposable | دخل خاضع للضريبة | mc
+revenu brut | دخل خام | ma
+revenu net | دخل صافٍ | ma
+bénéfice imposable | ربح خاضع للضريبة | mc
+bénéfices industriels et commerciaux | أرباح صناعية وتجارية | mcp
+bénéfices des professions non commerciales | أرباح المهن غير التجارية | mip
+revenus fonciers | مداخيل عقارية | map
+revenus agricoles | مداخيل فلاحية | map
+traitements et salaires | مرتبات وأجور | mcp
+revenus des capitaux mobiliers | مداخيل رؤوس الأموال المنقولة | mip
+plus-value de cession | فائض قيمة التنازل | fi
+barème progressif | جدول تصاعدي | ma
+tranche d'imposition | شريحة الدخل | fi
+abattement fiscal | تخفيض جبائي | ma
+crédit d'impôt | قرض ضريبي | ma
+droit à déduction | حق الخصم | mi
+charges déductibles | أعباء قابلة للخصم | fcp
+amortissement | اهتلاك | mm
+déficit fiscal | عجز جبائي | ma
+report déficitaire | ترحيل العجز | mi
+avantage fiscal | امتياز جبائي | ma | امتيازات جبائية
+incitation fiscale | تحفيز جبائي | fa
+franchise de TVA | إعفاء من الرسم على القيمة المضافة | fc
+assujetti à la TVA | خاضع للرسم على القيمة المضافة | mc
+redevable de l'impôt | مدين بالضريبة | mc
+domicile fiscal | موطن جبائي | ma
+résident fiscal | مقيم جبائي | ma
+établissement stable | مؤسسة مستقرة | ma
+double imposition | ازدواج ضريبي | fa
+convention fiscale | اتفاقية جبائية | fa | اتفاقيات جبائية
+prix de transfert | سعر التحويل | mi | أسعار التحويل
+paradis fiscal | ملاذ ضريبي | ma | ملاذات ضريبية
+évasion fiscale | تهرب ضريبي | fa
+numéro d'identification fiscale | رقم التعريف الجبائي | mi | sf=NIF
+régime du réel | نظام الربح الحقيقي | mi
+régime du forfait | نظام جزافي | ma
+exercice fiscal | سنة جبائية | ma
+année d'imposition | سنة فرض الضريبة | fi
+
+## Droit fiscal | Contrôle et contentieux ## FISCAL
+inspection des impôts | مفتشية الضرائب | fi
+recette des impôts | قباضة الضرائب | fi
+centre des impôts | مركز الضرائب | mi
+direction des grandes entreprises | مديرية كبريات المؤسسات | fi
+receveur des impôts | قابض الضرائب | mi
+inspecteur des impôts | مفتش الضرائب | mi
+agent vérificateur | عون محقق | ma
+déclaration annuelle des revenus | تصريح سنوي بالمداخيل | fc
+déclaration d'existence | تصريح بالوجود | fc
+déclaration mensuelle | تصريح شهري | fa
+télédéclaration | تصريح عن بعد | fc
+défaut de déclaration | عدم التصريح | mi
+déclaration tardive | تصريح متأخر | fa
+avis d'imposition | إشعار بالضريبة | mc
+mise en recouvrement | إدراج في التحصيل | fc
+titre de perception | سند التحصيل | mi
+recouvrement amiable | تحصيل ودي | ma
+recouvrement forcé | تحصيل جبري | ma
+pénalité fiscale | عقوبة جبائية | fa
+amende fiscale | غرامة جبائية | fa
+contrôle fiscal | رقابة جبائية | ma
+vérification de comptabilité | تحقيق في المحاسبة | fc
+vérification approfondie de la situation fiscale d'ensemble | تحقيق معمق في مجمل الوضعية الجبائية | fc | sf=VASFE
+contrôle sur pièces | مراقبة على الوثائق | mc
+avis de vérification | إشعار بالتحقيق | mc
+droit de communication | حق الاطلاع | mi
+droit de reprise | حق الاستدراك | mi
+prescription fiscale | تقادم جبائي | fa
+redressement fiscal | تقويم جبائي | ma
+notification de redressement | إشعار بالتقويم | fc
+taxation d'office | فرض تلقائي للضريبة | fc
+évaluation d'office | تقييم تلقائي | fa
+rejet de comptabilité | رفض المحاسبة | mi
+abus de droit fiscal | تعسف في استعمال الحق الجبائي | mc
+dissimulation de revenus | إخفاء المداخيل | fi
+réclamation contentieuse | شكوى نزاعية | fa
+commission de recours des impôts directs | لجنة الطعن للضرائب المباشرة | fi
+sursis légal de paiement | تأجيل قانوني للدفع | mc
+dégrèvement d'office | تخفيض تلقائي | ma
+restitution de l'impôt | استرداد الضريبة | fi
+remboursement de crédit de TVA | استرجاع قرض الرسم على القيمة المضافة | mc
+avis à tiers détenteur | إشعار للغير الحائز | mc
+fermeture temporaire du local | غلق مؤقت للمحل | fc
+solidarité fiscale | تضامن جبائي | fa
+extrait de rôle | مستخرج من جدول الضرائب | mc
+
+## Finances publiques | Budget ## FINANCES
+loi de finances de l'année | قانون المالية للسنة | fc
+loi de finances rectificative | قانون المالية التصحيحي | fi
+loi de règlement budgétaire | قانون تسوية الميزانية | fi
+projet de loi de finances | مشروع قانون المالية | mi
+budget général de l'État | الميزانية العامة للدولة | mc
+budget annexe | ميزانية ملحقة | ma
+comptes spéciaux du Trésor | حسابات خاصة للخزينة | mcp
+compte d'affectation spéciale | حساب التخصيص الخاص | mi
+principe de l'annualité budgétaire | مبدأ سنوية الميزانية | mi
+principe de l'unité budgétaire | مبدأ وحدة الميزانية | mi
+principe de l'universalité budgétaire | مبدأ شمولية الميزانية | mi
+principe de la spécialité budgétaire | مبدأ تخصيص الاعتمادات | mi
+sincérité budgétaire | صدق الميزانية | fi
+équilibre budgétaire | توازن الميزانية | mi
+déficit budgétaire | عجز الميزانية | mi
+excédent budgétaire | فائض الميزانية | mi
+dette publique | دين عمومي | fa
+emprunt public | قرض عمومي | ma
+ressources de l'État | موارد الدولة | fip
+charges de l'État | أعباء الدولة | fip
+recettes fiscales | إيرادات جبائية | fap
+recettes non fiscales | إيرادات غير جبائية | fcp
+fiscalité pétrolière | جباية بترولية | fa
+dépenses de fonctionnement | نفقات التسيير | fip
+dépenses d'investissement | نفقات الاستثمار | fip
+dépenses de personnel | نفقات المستخدمين | fip
+crédits budgétaires | اعتمادات مالية | map
+ouverture de crédits | فتح الاعتمادات | fi
+autorisation d'engagement | رخصة الالتزام | fi
+crédit de paiement | اعتماد الدفع | mi
+transfert de crédits | تحويل الاعتمادات | mi
+virement de crédits | نقل الاعتمادات | mi
+annulation de crédits | إلغاء الاعتمادات | fi
+programme budgétaire | برنامج ميزانياتي | ma
+portefeuille de programmes | حافظة البرامج | mi
+exécution du budget | تنفيذ الميزانية | fi
+subvention | إعانة | ff | إعانات
+dotation budgétaire | تخصيص ميزانياتي | fa
+fonds de régulation des recettes | صندوق ضبط الإيرادات | mi
+
+## Finances publiques | Comptabilité publique et contrôle ## FINANCES
+comptabilité publique | محاسبة عمومية | fa
+ordonnateur | آمر بالصرف | mc | آمرون بالصرف
+ordonnateur principal | آمر بالصرف رئيسي | mc
+ordonnateur secondaire | آمر بالصرف ثانوي | mc
+séparation des ordonnateurs et des comptables | فصل بين الآمرين بالصرف والمحاسبين | fc
+comptable assignataire | محاسب مخصص | ma
+agent comptable | عون محاسب | ma
+régie d'avances | وكالة التسبيقات | fi
+régie de recettes | وكالة الإيرادات | fi
+engagement de la dépense | التزام بالنفقة العمومية | mc
+liquidation de la dépense publique | تصفية النفقة العمومية | fc
+ordonnancement de la dépense | أمر بصرف النفقة | mc
+mandat de paiement | حوالة الدفع | mi
+paiement de la dépense publique | دفع النفقة العمومية | mc
+émission du titre de recette | إصدار سند الإيراد | fi
+contrôle financier | رقابة مالية | ma
+contrôle budgétaire | رقابة ميزانياتية | ma
+contrôleur financier | مراقب مالي | ma
+contrôleur budgétaire | مراقب ميزانياتي | ma
+visa du contrôleur | تأشيرة المراقب | mi
+Inspection générale des finances | المفتشية العامة للمالية | fc | sf=IGF
+compte de gestion | حساب التسيير | mi
+compte administratif | حساب إداري | ma
+reddition des comptes | تقديم الحسابات | fi
+apurement des comptes | تصفية الحسابات | mi
+responsabilité personnelle et pécuniaire | مسؤولية شخصية ومالية | fc
+gestion de fait | تسيير فعلي | fa
+comptable de fait | محاسب فعلي | ma
+discipline budgétaire et financière | انضباط في مجال تسيير الميزانية والمالية | fc
+magistrat de la Cour des comptes | قاضي مجلس المحاسبة | mi
+rapport annuel de la Cour des comptes | التقرير السنوي لمجلس المحاسبة | mc
+deniers publics | أموال عمومية | map
+trésorier de wilaya | أمين خزينة الولاية | mi
+bon du Trésor | سند الخزينة | mi | سندات الخزينة
+
+## Droit douanier ## DOUANES
+législation douanière | تشريع جمركي | fa
+territoire douanier | إقليم جمركي | ma
+rayon des douanes | نطاق جمركي | ma
+bureau de douane | مكتب الجمارك | mi | مكاتب الجمارك
+agent des douanes | عون الجمارك | mi | أعوان الجمارك
+receveur des douanes | قابض الجمارك | mi
+contrôle douanier | مراقبة جمركية | ma
+visite des marchandises | فحص البضائع | fi
+conduite en douane | إحضار البضائع أمام الجمارك | fc
+dédouanement | جمركة | mf
+déclaration en douane | تصريح جمركي | fa
+déclaration en détail | تصريح مفصل | fa
+déclarant en douane | مصرح لدى الجمارك | mc
+commissionnaire en douane | وكيل معتمد لدى الجمارك | mc
+tarif douanier | تعريفة جمركية | ma
+position tarifaire | بند تعريفي | fa
+espèce tarifaire | نوع تعريفي | fa
+origine des marchandises | منشأ البضائع | fi
+certificat d'origine | شهادة المنشأ | mi
+valeur en douane | قيمة لدى الجمارك | fc
+liquidation des droits | تصفية الحقوق | fi
+mainlevée des marchandises | رفع اليد عن البضائع | fc
+régime douanier | نظام جمركي | ma | أنظمة جمركية
+régimes douaniers économiques | أنظمة جمركية اقتصادية | map
+mise à la consommation | وضع للاستهلاك | fc
+transit douanier | عبور جمركي | ma
+entrepôt de douane | مستودع جمركي | ma
+admission temporaire | قبول مؤقت | fa
+exportation temporaire | تصدير مؤقت | fa
+réexportation | إعادة التصدير | fi
+drawback | استرداد الرسوم الجمركية | mi
+zone franche | منطقة حرة | fa | مناطق حرة
+franchise douanière | إعفاء جمركي | fa
+magasin et aire de dédouanement | مخزن ومساحة الإيداع المؤقت | mc
+marchandise prohibée | بضاعة محظورة | fa | بضائع محظورة
+marchandise sensible à la fraude | بضاعة حساسة للغش | fc
+restriction à l'importation | تقييد الاستيراد | fi
+licence d'importation | رخصة الاستيراد | fi
+contingent tarifaire | حصة تعريفية | ma
+droits et taxes | حقوق ورسوم | mcp
+droit additionnel provisoire de sauvegarde | رسم إضافي مؤقت وقائي | ma
+droit antidumping | رسم مضاد للإغراق | mc
+dumping | إغراق | mm
+mesures de sauvegarde | تدابير وقائية | fap
+délit douanier | جنحة جمركية | ma
+importation sans déclaration | استيراد بدون تصريح | fc
+saisie douanière | حجز جمركي | fa
+amende douanière | غرامة جمركية | fa
+transaction douanière | مصالحة جمركية | fa
+détenteur de la marchandise | حائز البضاعة | mi
+intéressé à la fraude | مستفيد من الغش | mc
+coopération douanière | تعاون جمركي | fa
+opérateur économique agréé | متعامل اقتصادي معتمد | ma
+contrôle des changes | مراقبة الصرف | mi
+infraction à la législation des changes | مخالفة تشريع الصرف | fi
+mouvements de capitaux | حركة رؤوس الأموال | mip
+domiciliation bancaire | توطين بنكي | fa
+rapatriement des devises | استرجاع العملة الصعبة | mi

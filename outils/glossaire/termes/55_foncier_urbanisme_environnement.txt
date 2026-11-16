@@ -1,0 +1,171 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit foncier, droit de l'urbanisme et droit de l'environnement.
+
+## Droit foncier ## FONCIER
+régime foncier | نظام عقاري | ma
+propriété foncière | ملكية عقارية | fa
+propriété foncière privée | ملكية عقارية خاصة | fa
+orientation foncière | توجيه عقاري | fa
+établissement du cadastre général | إعداد مسح الأراضي العام | mi
+opérations cadastrales | عمليات المسح | fip
+plan cadastral | مخطط مسح الأراضي | mi
+section cadastrale | قسم مساحي | fa
+îlot de propriété | مجموعة الملكية | mi
+parcelle | قطعة أرض | fc | قطع أرضية
+unité foncière | وحدة عقارية | fa | وحدات عقارية
+immatriculation foncière | ترقيم عقاري | fa
+immatriculation provisoire | ترقيم مؤقت | fa
+immatriculation définitive | ترقيم نهائي | fa
+document d'arpentage | وثيقة القياس | mi
+géomètre-expert foncier | مهندس خبير عقاري | ma
+fichier immobilier | مجموعة البطاقات العقارية | mi
+fiche d'immeuble | بطاقة عقارية | fa | بطاقات عقارية
+formalité de publicité | إجراء الشهر | fi
+dépôt des actes | إيداع العقود | mi
+refus de dépôt | رفض الإيداع | mi
+rejet de la formalité | رفض الإجراء | mi
+effet relatif de la publicité | أثر نسبي للشهر | mc
+acte authentique translatif de propriété | عقد رسمي ناقل للملكية | mc
+enquête foncière | تحقيق عقاري | fa
+constatation du droit de propriété | معاينة حق الملكية | fi
+terres archs | أراضي العرش | fip
+terres melk | أراضي الملك | fip
+terre de parcours | أرض رعوية | fa | أراضٍ رعوية
+terre alfatière | أرض حلفائية | fa
+terre saharienne | أرض صحراوية | fa
+terre à vocation forestière | أرض ذات وجهة غابية | fc
+terre urbanisée | أرض عامرة | fa
+terre urbanisable | أرض قابلة للتعمير | fc
+exploitation agricole | مستثمرة فلاحية | fa | مستثمرات فلاحية
+exploitation agricole collective | مستثمرة فلاحية جماعية | fa
+concession agricole | امتياز فلاحي | fa
+mise en valeur des terres | استصلاح الأراضي | fi
+accession à la propriété foncière agricole | حيازة الملكية العقارية الفلاحية | fi
+droit de jouissance perpétuelle | حق الانتفاع الدائم | mi
+non-exploitation des terres agricoles | عدم استغلال الأراضي الفلاحية | fi
+morcellement des terres | تفتيت الأراضي | mi
+réserve foncière | احتياط عقاري | fa | احتياطات عقارية
+agence foncière | وكالة عقارية | fa
+transaction foncière | معاملة عقارية | fa | معاملات عقارية
+marché foncier | سوق عقارية | ma
+spéculation foncière | مضاربة عقارية | fa
+assiette foncière | وعاء عقاري | fa
+foncier industriel | عقار صناعي | ma
+zone industrielle | منطقة صناعية | fa | مناطق صناعية
+régularisation foncière | تسوية عقارية | fa
+
+## Droit de l'urbanisme ## URBANISME
+aménagement du territoire | تهيئة الإقليم | mi
+plan directeur d'aménagement et d'urbanisme | مخطط توجيهي للتهيئة والتعمير | mc | sf=PDAU
+plan d'occupation des sols | مخطط شغل الأراضي | mi | sf=POS
+schéma national d'aménagement du territoire | مخطط وطني لتهيئة الإقليم | mc | sf=SNAT
+instruments d'urbanisme | أدوات التعمير | mip
+règles générales d'aménagement et d'urbanisme | قواعد عامة للتهيئة والتعمير | fcp
+secteur urbanisé | قطاع معمر | ma
+secteur à urbaniser | قطاع مبرمج للتعمير | mc
+secteur non urbanisable | قطاع غير قابل للتعمير | mc
+coefficient d'occupation du sol | معامل شغل الأرض | mi
+coefficient d'emprise au sol | معامل ما يؤخذ من الأرض | mc
+certificat d'urbanisme | شهادة التعمير | mi
+certificat de morcellement | شهادة التقسيم | mi
+permis de lotir | رخصة التجزئة | mi
+certificat de viabilité | شهادة قابلية الاستغلال | mi
+acte d'urbanisme | عقد التعمير | mi | عقود التعمير
+demande de permis de construire | طلب رخصة البناء | fi
+instruction de la demande | دراسة الطلب | fi
+terrain à bâtir | قطعة أرض صالحة للبناء | mc
+constructibilité | قابلية البناء | fi
+hauteur des constructions | علو البنايات | fi
+densité de construction | كثافة البناء | fi
+construction illicite | بناء فوضوي | fa
+mise en conformité des constructions | مطابقة البنايات | fi
+achèvement des constructions | إتمام إنجاز البنايات | mi
+démolition | هدم | fm
+arrêté de démolition | قرار الهدم | mi
+interruption des travaux | وقف الأشغال | fi
+police de l'urbanisme | شرطة العمران | fi
+inspecteur de l'urbanisme | مفتش التعمير | mi
+infraction d'urbanisme | مخالفة التعمير | fi
+habitat précaire | سكن هش | ma
+résorption de l'habitat précaire | امتصاص السكن الهش | fi
+logement social | سكن اجتماعي | ma
+logement promotionnel | سكن ترقوي | ma
+promoteur immobilier | مرقٍ عقاري | ma
+contrat de vente sur plans | عقد البيع على التصاميم | mc
+contrat de réservation | عقد حفظ الحق | mi
+ville nouvelle | مدينة جديدة | fa | مدن جديدة
+rénovation urbaine | تجديد عمراني | fa
+réhabilitation urbaine | إعادة تأهيل عمراني | fc
+espace vert | مساحة خضراء | ma | مساحات خضراء
+site archéologique | موقع أثري | ma | مواقع أثرية
+patrimoine culturel | تراث ثقافي | ma
+monument historique | معلم تاريخي | ma | معالم تاريخية
+secteur sauvegardé | قطاع محفوظ | ma
+
+## Droit de l'environnement ## ENVIRONNEMENT
+droit de l'environnement | قانون البيئة | mi
+principe de précaution | مبدأ الحيطة | mi
+principe d'action préventive | مبدأ النشاط الوقائي | mi
+principe du pollueur-payeur | مبدأ الملوث الدافع | mi
+principe d'information et de participation | مبدأ الإعلام والمشاركة | mc
+principe de non-dégradation des ressources naturelles | مبدأ عدم تدهور الموارد الطبيعية | mi
+principe de substitution | مبدأ الاستبدال | mi
+principe d'intégration | مبدأ الإدماج | mi
+notice d'impact | موجز التأثير | fi
+étude de danger | دراسة الخطر | fi
+enquête publique | تحقيق عمومي | fa
+installation classée | منشأة مصنفة | fa | منشآت مصنفة
+autorisation d'exploitation | رخصة الاستغلال | fi
+exploitant | مستغل | mm
+audit environnemental | تدقيق بيئي | ma
+délégué pour l'environnement | مندوب البيئة | mi
+pollution atmosphérique | تلوث جوي | fa
+pollution des eaux | تلوث المياه | fi
+pollution marine | تلوث بحري | fa
+nuisances sonores | أضرار سمعية | fap
+rejet d'effluents liquides | تصريف النفايات السائلة | mi
+émission de gaz | انبعاث الغازات | fi
+gaz à effet de serre | غازات الدفيئة | mi
+changement climatique | تغير مناخي | ma | تغيرات مناخية
+déchet | نفاية | mf | نفايات
+déchets ménagers | نفايات منزلية | map
+déchets spéciaux dangereux | نفايات خاصة خطرة | map
+déchets inertes | نفايات هامدة | map
+gestion des déchets | تسيير النفايات | fi
+élimination des déchets | إزالة النفايات | fi
+valorisation des déchets | تثمين النفايات | fi
+recyclage | رسكلة | mf
+décharge publique | مفرغة عمومية | fa
+centre d'enfouissement technique | مركز الردم التقني | mi
+substance dangereuse | مادة خطرة | fa | مواد خطرة
+produit chimique | مادة كيميائية | ma
+risque majeur | خطر كبير | ma | أخطار كبرى
+risque technologique | خطر تكنولوجي | ma
+catastrophe naturelle | كارثة طبيعية | fa | كوارث طبيعية
+plan d'intervention | مخطط التدخل | mi
+ressources naturelles | موارد طبيعية | fap
+ressources en eau | موارد مائية | fap
+diversité biologique | تنوع بيولوجي | fa
+espèce protégée | صنف محمي | fa | أصناف محمية
+aire protégée | مجال محمي | fa | مجالات محمية
+parc national | حظيرة وطنية | ma
+réserve naturelle | محمية طبيعية | fa
+littoral | ساحل | mm
+protection du littoral | حماية الساحل | fi
+domaine forestier national | أملاك غابية وطنية | ma
+déboisement | إزالة الغابات | mi
+désertification | تصحر | fm
+lutte contre la désertification | مكافحة التصحر | fi
+énergies renouvelables | طاقات متجددة | fap
+efficacité énergétique | نجاعة طاقوية | fa
+taxe écologique | رسم بيئي | fa
+fiscalité environnementale | جباية بيئية | fa
+dommage écologique | ضرر بيئي | ma | أضرار بيئية
+réparation du dommage écologique | إصلاح الضرر البيئي | fi
+remise en état des lieux | إعادة الأماكن إلى حالتها | fc
+infraction environnementale | جريمة بيئية | fa
+police de l'environnement | شرطة البيئة | fi
+inspecteur de l'environnement | مفتش البيئة | mi
+association de protection de l'environnement | جمعية حماية البيئة | fi
+information environnementale | إعلام بيئي | fa
+éducation environnementale | تربية بيئية | fa
