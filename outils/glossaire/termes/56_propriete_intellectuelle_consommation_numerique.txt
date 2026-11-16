@@ -1,0 +1,187 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Propriété intellectuelle, droit de la consommation, droit de la concurrence et droit du numérique.
+
+## Propriété intellectuelle ## PI
+propriété littéraire et artistique | ملكية أدبية وفنية | fc
+droits voisins | حقوق مجاورة | map
+droit moral | حق معنوي | ma
+droits patrimoniaux | حقوق مادية | map
+droit de reproduction | حق الاستنساخ | mi
+droit de divulgation | حق الكشف عن المصنف | mc
+droit de paternité | حق الأبوة | mi
+droit au respect de l'œuvre | حق احترام سلامة المصنف | mc
+œuvre littéraire | مصنف أدبي | fa | مصنفات أدبية
+œuvre artistique | مصنف فني | fa | مصنفات فنية
+œuvre originale | مصنف أصلي | fa
+œuvre dérivée | مصنف مشتق | fa
+œuvre de collaboration | مصنف مشترك | fa
+œuvre collective | مصنف جماعي | fa
+œuvre audiovisuelle | مصنف سمعي بصري | fa
+programme d'ordinateur | برنامج الحاسوب | mi | برامج الحاسوب | sf=logiciel
+base de données | قاعدة البيانات | fi | قواعد البيانات
+durée de protection | مدة الحماية | fi
+cession des droits d'auteur | تنازل عن حقوق المؤلف | fc
+contrat d'édition | عقد النشر | mi
+éditeur | ناشر | mm | ناشرون
+artiste interprète | فنان مؤدٍ | ma
+producteur de phonogrammes | منتج التسجيلات السمعية | mi
+organisme de radiodiffusion | هيئة البث الإذاعي | mi
+gestion collective des droits | تسيير جماعي للحقوق | fc
+Office national des droits d'auteur et des droits voisins | الديوان الوطني لحقوق المؤلف والحقوق المجاورة | mc | sf=ONDA
+copie privée | نسخة خاصة | fa
+piratage informatique | قرصنة معلوماتية | ma
+plagiat | سرقة أدبية | ma
+brevetabilité | قابلية الحصول على البراءة | fc
+activité inventive | نشاط اختراعي | fa
+application industrielle | تطبيق صناعي | fa
+inventeur | مخترع | mm | مخترعون
+demande de brevet | طلب البراءة | fi
+titulaire du brevet | صاحب البراءة | mi
+délivrance du brevet | تسليم البراءة | fi
+revendications du brevet | مطالبات البراءة | fip
+licence contractuelle | رخصة تعاقدية | fa
+licence obligatoire | رخصة إجبارية | fa
+déchéance du brevet | سقوط البراءة | fi
+invention de service | اختراع الخدمة | fi
+certificat d'addition | شهادة الإضافة | mi
+Institut national algérien de la propriété industrielle | المعهد الوطني الجزائري للملكية الصناعية | mc | sf=INAPI
+marque de fabrique | علامة المصنع | fi
+marque de commerce | علامة تجارية | fa | علامات تجارية
+marque de service | علامة الخدمة | fi
+marque collective | علامة جماعية | fa
+marque notoire | علامة مشهورة | fa
+enregistrement de la marque | تسجيل العلامة | mi
+dépôt de la marque | إيداع العلامة | mi
+titulaire de la marque | صاحب العلامة | mi
+renouvellement de l'enregistrement | تجديد التسجيل | mi
+contrefaçon de marque | تقليد العلامة | fi
+dessin ou modèle industriel | رسم أو نموذج صناعي | mc
+appellation d'origine | تسمية المنشأ | fi
+indication géographique | بيان جغرافي | fa
+schéma de configuration de circuits intégrés | تصميم شكلي للدوائر المتكاملة | mc
+savoir-faire | معرفة فنية | ma
+transfert de technologie | نقل التكنولوجيا | mi
+action en contrefaçon | دعوى التقليد | fi
+saisie-contrefaçon | حجز التقليد | fi
+marchandise contrefaite | بضاعة مقلدة | fa | بضائع مقلدة
+
+## Droit de la consommation ## CONSOMMATION
+droit de la consommation | قانون الاستهلاك | mi
+intervenant | متدخل | mm | متدخلون
+produit alimentaire | مادة غذائية | ma | مواد غذائية
+produit défectueux | منتوج معيب | ma
+bien de consommation | سلعة استهلاكية | ma | سلع استهلاكية
+sécurité des produits | أمن المنتوجات | fi
+conformité des produits | مطابقة المنتوجات | fi
+obligation d'information du consommateur | التزام بإعلام المستهلك | fc
+garantie du produit | ضمان المنتوج | fi
+service après-vente | خدمة ما بعد البيع | mc
+certificat de garantie | شهادة الضمان | mi
+date de péremption | تاريخ نهاية الصلاحية | fi
+salubrité des denrées alimentaires | سلامة المواد الغذائية | fi
+affichage des prix | إعلام بالأسعار | mc
+vente à distance | بيع عن بعد | fc
+vente à domicile | بيع في المنزل | fc
+vente promotionnelle | بيع ترويجي | fa
+vente en solde | بيع بالتخفيض | fc
+vente avec prime | بيع بالمكافأة | fc
+crédit à la consommation | قرض موجه للاستهلاك | mc
+fraude sur la marchandise | غش في البضاعة | fc
+répression des fraudes | قمع الغش | fi
+agent de la répression des fraudes | عون قمع الغش | mi
+prélèvement d'échantillons | اقتطاع العينات | mi
+analyse de laboratoire | تحليل مخبري | fa
+retrait du produit | سحب المنتوج | mi
+rappel du produit | استرجاع المنتوج | mi
+association de consommateurs | جمعية المستهلكين | fi | جمعيات المستهلكين
+Conseil national de protection des consommateurs | المجلس الوطني لحماية المستهلكين | mc
+intérêt collectif des consommateurs | مصلحة مشتركة للمستهلكين | mc
+amende transactionnelle | غرامة الصلح | fi
+
+## Droit de la concurrence ## CONCURRENCE
+droit de la concurrence | قانون المنافسة | mi
+libre concurrence | منافسة حرة | fa
+liberté des prix | حرية الأسعار | fi
+marché pertinent | سوق معنية | ma
+position dominante | وضعية الهيمنة | fi
+part de marché | حصة في السوق | fc
+pratique anticoncurrentielle | ممارسة مقيدة للمنافسة | fc
+pratique concertée | ممارسة مدبرة | fa
+abus de dépendance économique | تعسف في استغلال وضعية التبعية الاقتصادية | mc
+prix abusivement bas | سعر منخفض بشكل تعسفي | mc
+prix imposé | سعر مفروض | ma
+vente à perte | بيع بالخسارة | fc
+refus de vente | رفض البيع | mi
+vente liée | بيع متلازم | fa
+pratique discriminatoire | ممارسة تمييزية | fa
+concentration économique | تجميع اقتصادي | fa | تجميعات اقتصادية
+contrôle des concentrations | مراقبة التجميعات الاقتصادية | mi
+notification de la concentration | إخطار بالتجميع | fc
+autorisation de concentration | ترخيص بالتجميع | fc
+attestation négative | تصريح بعدم التدخل | fc
+aide d'État | إعانة الدولة | fi
+entreprise en position dominante | مؤسسة مهيمنة | fa
+dénigrement | تشويه سمعة المنافس | mc
+pratiques commerciales | ممارسات تجارية | fap
+pratiques commerciales déloyales | ممارسات تجارية غير نزيهة | fcp
+transparence des pratiques commerciales | شفافية الممارسات التجارية | fi
+facturation | فوترة | ff
+défaut de facturation | عدم الفوترة | mi
+pratique de prix illicites | ممارسة أسعار غير شرعية | fc
+plafonnement des prix | تسقيف الأسعار | mi
+marge bénéficiaire | هامش الربح | fi
+saisine du Conseil de la concurrence | إخطار مجلس المنافسة | fi
+enquête de concurrence | تحقيق في مجال المنافسة | fc
+sanction pécuniaire | عقوبة مالية | fa
+régulation économique | ضبط اقتصادي | fa
+
+## Droit du numérique ## NUMERIQUE
+protection des données à caractère personnel | حماية المعطيات ذات الطابع الشخصي | fi
+personne concernée | شخص معني | fa
+consentement de la personne concernée | موافقة الشخص المعني | mi
+finalité du traitement | غاية المعالجة | fi
+données sensibles | معطيات حساسة | fap
+données de santé | معطيات صحية | fap
+données biométriques | معطيات بيومترية | fap
+fichier de données | ملف المعطيات | mi
+collecte des données | جمع المعطيات | fi
+conservation des données | حفظ المعطيات | fi
+transfert de données vers l'étranger | تحويل المعطيات نحو الخارج | mc
+droit d'accès | حق الولوج | mi
+droit de rectification | حق التصحيح | mi
+droit d'opposition | حق الاعتراض | mi
+droit à l'oubli | حق في النسيان | mc
+déclaration préalable | تصريح مسبق | fa
+autorisation préalable | ترخيص مسبق | fa
+Autorité nationale de protection des données à caractère personnel | السلطة الوطنية لحماية المعطيات ذات الطابع الشخصي | fc
+sécurité des données | أمن المعطيات | fi
+violation de données | انتهاك المعطيات | fi
+confidentialité des données | سرية المعطيات | fi
+vidéosurveillance | مراقبة بالفيديو | fc
+prospection directe | استكشاف مباشر | fa
+fournisseur électronique | مورد إلكتروني | ma
+consommateur électronique | مستهلك إلكتروني | ma
+transaction électronique | معاملة إلكترونية | fa | معاملات إلكترونية
+plate-forme de paiement électronique | منصة الدفع الإلكتروني | fi
+offre commerciale électronique | عرض تجاري إلكتروني | fa
+commande électronique | طلبية إلكترونية | fa
+publicité électronique | إشهار إلكتروني | fa
+nom de domaine | اسم النطاق | mi | أسماء النطاق
+fournisseur d'hébergement | مقدم خدمة الاستضافة | mi
+fournisseur d'accès à internet | مقدم خدمة الوصول إلى الإنترنت | mi
+communications électroniques | اتصالات إلكترونية | fap
+opérateur de télécommunications | متعامل الاتصالات | mi
+certification électronique | تصديق إلكتروني | fa
+certificat électronique | شهادة إلكترونية | ma
+prestataire de services de certification électronique | مؤدي خدمات التصديق الإلكتروني | mi
+signature électronique qualifiée | توقيع إلكتروني موصوف | fa
+écrit électronique | كتابة في الشكل الإلكتروني | mc
+document électronique | وثيقة إلكترونية | ma
+archivage électronique | أرشفة إلكترونية | ma
+preuve électronique | إثبات إلكتروني | fa
+identité numérique | هوية رقمية | fa
+système de traitement automatisé de données | نظام المعالجة الآلية للمعطيات | mc
+atteinte à l'intégrité des données | مساس بسلامة المعطيات | fc
+cybersécurité | أمن سيبراني | fa
+intelligence artificielle | ذكاء اصطناعي | fa
+numérisation | رقمنة | ff

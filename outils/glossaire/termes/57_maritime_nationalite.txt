@@ -1,0 +1,90 @@
+# Termes seuls : terme français | terme arabe | codes | pluriel arabe | options
+# Droit maritime, droit de la nationalité et condition des étrangers.
+
+## Droit maritime ## MARITIME
+droit maritime | قانون بحري | ma
+navigation maritime | ملاحة بحرية | fa
+pavillon du navire | راية السفينة | mi
+nationalité du navire | جنسية السفينة | fi
+immatriculation du navire | تسجيل السفينة | fi
+registre d'immatriculation des navires | دفتر تسجيل السفن | mi
+port d'attache | ميناء التسجيل | mi
+propriétaire du navire | مالك السفينة | mi
+équipage | طاقم | mm | أطقم
+gens de mer | رجال البحر | mip
+pilotage maritime | إرشاد بحري | ma
+remorquage maritime | قطر بحري | ma
+consignataire du navire | وكيل السفينة | mi
+consignataire de la cargaison | وكيل الحمولة | mi
+courtier maritime | سمسار بحري | ma
+contrat d'affrètement | عقد استئجار السفينة | mi
+charte-partie | مشارطة الإيجار | fi
+fréteur | مؤجر السفينة | mi
+affréteur | مستأجر السفينة | mi
+fret | أجرة الحمولة | mi
+transporteur maritime | ناقل بحري | ma
+chargeur | شاحن | mm | شاحنون
+cargaison | حمولة | ff
+déchargement | تفريغ | mm
+manutention portuaire | مناولة مينائية | fa
+avarie commune | خسارة مشتركة | fa
+avarie particulière | خسارة خاصة | fa
+abordage | تصادم بحري | ma
+naufrage | غرق السفينة | mi
+assistance maritime | إسعاف بحري | fa
+sauvetage maritime | إنقاذ بحري | ma
+épave maritime | حطام بحري | fa
+privilège maritime | امتياز بحري | ma | امتيازات بحرية
+hypothèque maritime | رهن بحري | fa
+saisie conservatoire du navire | حجز تحفظي على السفينة | fc
+limitation de responsabilité de l'armateur | تحديد مسؤولية مجهز السفينة | fi
+événement de mer | حادث بحري | ma | حوادث بحرية
+journal de bord | يومية السفينة | mi
+navigabilité | صلاحية السفينة للملاحة | fc
+cabotage | ملاحة ساحلية | ma
+pêche maritime | صيد بحري | fa
+autorité portuaire | سلطة مينائية | fa
+garde-côtes | حرس السواحل | mip
+contrat de passage | عقد نقل المسافرين | mi
+
+## Droit de la nationalité ## NATIONALITE
+nationalité algérienne | جنسية جزائرية | fa
+nationalité par filiation | جنسية بالنسب | fc
+acquisition de la nationalité | اكتساب الجنسية | fi
+nationalité acquise | جنسية مكتسبة | fa
+acquisition de la nationalité par le mariage | اكتساب الجنسية بالزواج | fc
+perte de la nationalité | فقدان الجنسية | fi
+retrait de la nationalité | سحب الجنسية | mi
+renonciation à la nationalité | تنازل عن الجنسية | fc
+réintégration dans la nationalité | استرداد الجنسية | fi
+certificat de nationalité | شهادة الجنسية | mi
+preuve de la nationalité | إثبات الجنسية | fi
+contentieux de la nationalité | منازعات الجنسية | mi
+décret de naturalisation | مرسوم التجنس | mi
+demande de naturalisation | طلب التجنس | fi
+ressortissant étranger | رعية أجنبية | ma | رعايا أجانب
+
+## Droit de la nationalité | Condition des étrangers ## ETRANGERS
+entrée sur le territoire | دخول إلى الإقليم | fc
+sortie du territoire | خروج من الإقليم | fc
+séjour des étrangers | إقامة الأجانب | mi
+carte de résident | بطاقة المقيم | fi
+titre de séjour | سند الإقامة | mi
+résident étranger | مقيم أجنبي | ma
+étranger non résident | أجنبي غير مقيم | mc
+étranger en situation irrégulière | أجنبي في وضعية غير قانونية | mc
+séjour irrégulier | إقامة غير شرعية | mc
+migrant | مهاجر | mm | مهاجرون
+visa d'entrée | تأشيرة الدخول | mi
+visa de transit | تأشيرة العبور | mi
+prolongation du visa | تمديد التأشيرة | fi
+reconduite à la frontière | اقتياد إلى الحدود | fc
+expulsion de l'étranger | طرد الأجنبي | fi
+arrêté d'expulsion | قرار الطرد | mi
+interdiction d'entrée sur le territoire | منع من دخول الإقليم | fc
+centre d'attente | مركز الانتظار | mi
+regroupement familial | تجمع عائلي | ma
+police des frontières | شرطة الحدود | fi
+contrôle aux frontières | مراقبة الحدود | mi
+document de voyage | وثيقة السفر | mi | وثائق السفر
+laissez-passer | رخصة مرور | mc

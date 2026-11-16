@@ -9,22 +9,34 @@ Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont p
 [proposition d'interface](#la-proposition-dinterface) et la
 [première maquette](#maquette-de-lapplication-de-bureau).
 
-## L'application (version 0.8)
+## L'application (version 0.9)
 
-La version 0.8 **agrandit le glossaire fourni : 3 182 entrées au lieu de 1 000**. L'objectif
-est de 5 000 entrées ; il n'est pas encore atteint.
+La version 0.9 **porte le glossaire fourni à 5 000 entrées** : l'objectif est atteint.
 
-- Les 2 182 nouvelles entrées sont des **termes seuls** : le terme, son équivalent, sa
-  catégorie, son domaine. Elles n'ont ni définition ni phrase d'exemple.
-- Elles apportent le vocabulaire juridique général qui manquait : des adjectifs (« protégé »,
-  « exécutoire »), des verbes (« protéger », « résilier »), des locutions (« de plein droit »,
-  « en vertu de »). Elles ajoutent aussi des noms au vocabulaire général et à huit domaines :
-  droit civil, organisation judiciaire, procédure civile, droit pénal, procédure pénale, droit
-  commercial, banque, assurances.
+- Les 1 818 entrées ajoutées sont des **termes seuls**, comme celles de la version 0.8 : le
+  terme, son équivalent, sa catégorie, son domaine. Elles n'ont ni définition ni phrase
+  d'exemple. Le glossaire compte donc 1 000 entrées complètes et 4 000 termes seuls.
+- Elles couvrent les domaines qui n'avaient pas encore de termes seuls : droit constitutionnel,
+  droit administratif, droit de la famille, droit du travail et sécurité sociale, droit fiscal,
+  finances publiques, douanes, droit international, droits de l'homme, arbitrage, foncier,
+  urbanisme, environnement, propriété intellectuelle, consommation, concurrence, numérique,
+  droit maritime, nationalité.
 - **Elles ont été écrites de mémoire par un assistant d'intelligence artificielle, sans
   dictionnaire, et personne ne les a relues.** L'application les signale par la mention
   **À vérifier**.
-- Dans la traduction d'un texte, seuls les noms sont remplacés. Les adjectifs, les verbes et
+- La traduction d'un texte lit mieux deux expressions qui se suivent : « le délai d'exécution
+  du contrat de vente » donne « أجل تنفيذ عقد البيع ». Voir
+  [Comment le texte est traduit](#comment-le-texte-est-traduit).
+
+La version 0.8 avait porté le glossaire de 1 000 à 3 182 entrées, avec les premiers termes
+seuls :
+
+- ils apportaient le vocabulaire juridique général qui manquait : des adjectifs (« protégé »,
+  « exécutoire »), des verbes (« protéger », « résilier »), des locutions (« de plein droit »,
+  « en vertu de »). Ils ajoutaient aussi des noms au vocabulaire général et à huit domaines :
+  droit civil, organisation judiciaire, procédure civile, droit pénal, procédure pénale, droit
+  commercial, banque, assurances ;
+- dans la traduction d'un texte, seuls les noms sont remplacés. Les adjectifs, les verbes et
   les locutions ont une fiche sur l'écran « Terme », mais ils restent dans la langue du texte.
 
 Le détail est dans [Les termes seuls](#les-termes-seuls).
@@ -132,7 +144,7 @@ depuis.*
 | Écran de démarrage, barre latérale, étapes qui s'allument, écrans « Paramètres », « Description de la plateforme » et « Centre d'aide » | Fait (version 0.4). Sous Windows, personne ne les a encore regardés : voir les [limites connues](#limites-connues). |
 | Contextes cherchés dans tout le glossaire | Fait. |
 | Une phrase d'exemple pour chacune des 1 000 premières entrées du glossaire fourni | Fait (version 0.5). 969 phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
-| Glossaire fourni porté à 5 000 entrées | **En cours** (version 0.8) : 3 182 entrées. Les 2 182 entrées ajoutées sont des termes seuls, sans définition ni phrase d'exemple, et **restent à vérifier** : voir [Les termes seuls](#les-termes-seuls). Il manque 1 818 entrées. |
+| Glossaire fourni porté à 5 000 entrées | Fait (version 0.9) : 1 000 entrées complètes et 4 000 termes seuls. Les termes seuls n'ont ni définition ni phrase d'exemple, et **restent à vérifier** : voir [Les termes seuls](#les-termes-seuls). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
 | Liaison avec un service d'intelligence artificielle en ligne | Essayée dans la version 0.6, **retirée dans la version 0.7** : voir [L'essai d'un service d'IA (version 0.6)](#lessai-dun-service-dia-version-06). L'application ne se connecte à rien. |
 | Installeur pour Windows (fichier `.msi`) | Fait (version 0.5.3) : voir [Installation](#installation). Il est fabriqué et essayé automatiquement sur une machine Windows. **Personne ne l'a encore installé à la main** : voir les [limites connues](#limites-connues). |
@@ -149,7 +161,7 @@ Il y a deux façons d'installer l'application :
 1. Ouvrir la page
    [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
    du dépôt. Sous la version la plus récente, dans « Assets », télécharger le fichier dont le
-   nom finit par `.msi`, par exemple `Traducteur-juridique-0.8.0.msi`.
+   nom finit par `.msi`, par exemple `Traducteur-juridique-0.9.0.msi`.
 2. Double-cliquer sur le fichier téléchargé.
 3. Cliquer sur **Suivant**, puis sur **Installer**, puis sur **Terminer**. L'application s'ouvre.
 
@@ -292,7 +304,7 @@ le glossaire : voir [Corriger le glossaire](#corriger-le-glossaire).
   est vide, ou commence par « à vérifier ». C'est le cas de 993 des 1 000 définitions du
   glossaire fourni.
 - Dans le champ ② d'un terme sans définition, elle porte sur l'équivalent, quand la colonne
-  `source_definition` commence par « à vérifier ». C'est le cas des 2 182 termes seuls du
+  `source_definition` commence par « à vérifier ». C'est le cas des 4 000 termes seuls du
   glossaire fourni : « À vérifier · équivalent d'exemple ». Un terme sans définition dont la
   colonne `source_definition` est vide s'affiche sans mention.
 - Dans le champ ④, elle signale une phrase d'exemple dont la colonne `source_contexte`
@@ -416,6 +428,13 @@ Ce que cela donne :
 - Une locution adverbiale, prépositive ou conjonctive du glossaire reste entière : ses mots ne
   sont pas traduits un par un. Dans « de plein droit », le mot « droit » n'est pas traduit ;
   dans « sous peine de nullité », le mot « peine » non plus, et « nullité » devient « بطلان ».
+- **Deux expressions qui se suivent** (depuis la version 0.9). Dans « le délai d'exécution du
+  contrat de vente », le glossaire reconnaît « délai d'exécution », « exécution du contrat » et
+  « contrat de vente » : chacune commence par le dernier mot de la précédente. Garder la
+  première couperait les suivantes. L'application lit donc « délai », puis « exécution », puis
+  « contrat de vente », et les relie : « أجل تنفيذ عقد البيع ». Elle ne le fait que si le
+  premier nom (« délai ») est lui-même un terme du glossaire et garde le même sens : sinon,
+  voir les [limites connues](#limites-connues).
 - Dans un texte français écrit avec ses accents, les accents comptent : « cause » n'est pas
   « causé », ni « condamne » « condamné ». Une majuscule peut ne pas porter le sien (« Etat »).
   Un texte sans aucun accent est comparé sans les accents.
@@ -538,7 +557,7 @@ utiliser un autre glossaire ? ».
 
 ### Le glossaire d'exemple
 
-`donnees/glossaire_juridique.csv` contient **3 182 entrées**, dans le vocabulaire du droit
+`donnees/glossaire_juridique.csv` contient **5 000 entrées**, dans le vocabulaire du droit
 algérien. Il sert à essayer l'application. **Son contenu n'a été relu ni par un juriste ni par
 un traducteur** : il doit être vérifié avant tout usage, ou remplacé par le glossaire du projet.
 
@@ -548,31 +567,36 @@ Il est fait de trois parties :
 | --- | --- | --- |
 | n° 1 à 40 | Entrées complètes des premières versions | 40 |
 | n° 41 à 1 000 | Entrées complètes : définition dans les deux langues, phrase d'exemple | 960 |
-| n° 1 001 à 3 182 | Termes seuls : ni définition, ni phrase d'exemple | 2 182 |
+| n° 1 001 à 5 000 | Termes seuls : ni définition, ni phrase d'exemple | 4 000 |
 
-L'objectif est de 5 000 entrées : il en manque 1 818.
+L'objectif de 5 000 entrées est atteint. Quatre entrées sur cinq sont des termes seuls.
 
 Nombre d'entrées par domaine (premier domaine indiqué dans la colonne `domaine`) :
 
 | Domaine | Entrées complètes | Termes seuls | Total |
 | --- | --- | --- | --- |
-| Vocabulaire juridique général (adjectifs, verbes, locutions, noms communs à tout le droit) | 0 | 868 | 868 |
-| Droit civil (personnes, obligations, responsabilité, preuve, contrats, biens, sûretés) | 257 | 355 | 612 |
+| Vocabulaire juridique général (adjectifs, verbes, locutions, noms communs à tout le droit) | 0 | 923 | 923 |
+| Droit civil (personnes, obligations, responsabilité, preuve, contrats, biens, sûretés) | 257 | 356 | 613 |
+| Droit international public et privé, droits de l'homme, arbitrage et médiation | 40 | 324 | 364 |
 | Droit pénal (droit pénal général, infractions, exécution des peines) | 71 | 253 | 324 |
-| Procédure civile et voies d'exécution | 99 | 201 | 300 |
+| Droit administratif | 59 | 247 | 306 |
+| Procédure civile et voies d'exécution | 99 | 203 | 302 |
 | Droit commercial (sociétés, effets de commerce, entreprises en difficulté) | 49 | 233 | 282 |
-| Droit bancaire et droit des assurances | 21 | 122 | 143 |
+| Droit fiscal, finances publiques, douanes | 26 | 242 | 268 |
+| Droit constitutionnel | 54 | 183 | 237 |
+| Droit du travail et sécurité sociale | 37 | 188 | 225 |
+| Droit de la famille et successions | 54 | 153 | 207 |
+| Propriété intellectuelle, consommation, concurrence, numérique | 28 | 177 | 205 |
+| Droit foncier, urbanisme, environnement | 21 | 163 | 184 |
+| Droit bancaire et droit des assurances | 21 | 123 | 144 |
 | Organisation judiciaire | 49 | 76 | 125 |
 | Procédure pénale | 47 | 74 | 121 |
+| Droit maritime, nationalité et condition des étrangers | 14 | 82 | 96 |
 | Sources du droit et notions générales | 74 | 0 | 74 |
-| Droit administratif | 59 | 0 | 59 |
-| Droit constitutionnel | 54 | 0 | 54 |
-| Droit de la famille et successions | 54 | 0 | 54 |
-| Droit international public et privé, droits de l'homme, arbitrage et médiation | 40 | 0 | 40 |
-| Droit du travail et sécurité sociale | 37 | 0 | 37 |
-| Autres : fiscal, finances publiques, douanes, foncier, propriété intellectuelle, consommation, concurrence, numérique, environnement, urbanisme, nationalité, maritime | 89 | 0 | 89 |
+| **Total** | **1 000** | **4 000** | **5 000** |
 
-Les domaines sans terme seul sont ceux qui restent à compléter pour atteindre 5 000 entrées.
+Les « sources du droit et notions générales » n'ont pas de terme seul : les mots de ce genre
+ajoutés depuis sont rangés dans le « vocabulaire juridique général ».
 
 #### Les 40 premières entrées
 
@@ -635,15 +659,15 @@ contenu est à vérifier.
 
 #### Les termes seuls
 
-Les entrées n° 1 001 à 3 182 ont été ajoutées dans la version 0.8. Comme les précédentes,
-elles ont été **écrites de mémoire par un assistant d'intelligence artificielle**, sans
-dictionnaire juridique et sans relecture par un spécialiste. **Chaque équivalent est à
-vérifier.**
+Les entrées n° 1 001 à 3 182 ont été ajoutées dans la version 0.8, les entrées n° 3 183 à
+5 000 dans la version 0.9. Comme les précédentes, elles ont été **écrites de mémoire par un
+assistant d'intelligence artificielle**, sans dictionnaire juridique et sans relecture par un
+spécialiste. **Chaque équivalent est à vérifier.**
 
 ![Fiche du terme « protégé » : un terme seul, sans définition ni exemple, avec la mention « À vérifier »](docs/apercu-terme-seul.png)
 
 - **Ce qu'une entrée contient.** Le terme français, le terme arabe, la catégorie dans les deux
-  langues, le domaine, les termes associés, les ouvrages et les textes à consulter ; pour 105
+  langues, le domaine, les termes associés, les ouvrages et les textes à consulter ; pour 244
   noms, le pluriel ; pour certaines entrées, des synonymes. Elle n'a **ni définition, ni phrase
   d'exemple** : sur la fiche, les champs ② et ④ le disent, et leurs étapes restent grises.
 - **La mention « À vérifier ».** La colonne `source_definition` de ces entrées contient
@@ -654,12 +678,18 @@ vérifier.**
 
   | Catégorie | Entrées | Exemples |
   | --- | --- | --- |
-  | Noms et groupes nominaux | 1 433 | « protection », « dommages-intérêts moratoires », « garantie décennale » |
-  | Adjectifs et locutions adjectivales | 334 | « protégé », « exécutoire », « de bonne foi » |
-  | Verbes et locutions verbales | 230 | « protéger », « résilier », « faire appel » |
-  | Adverbes et locutions adverbiales | 107 | « de plein droit », « à titre gratuit » |
-  | Prépositions et locutions prépositives | 60 | « en vertu de », « sous peine de » |
+  | Noms et groupes nominaux | 3 208 | « protection », « garantie décennale », « question écrite », « permis de travail » |
+  | Adjectifs et locutions adjectivales | 356 | « protégé », « exécutoire », « de bonne foi » |
+  | Verbes et locutions verbales | 246 | « protéger », « résilier », « faire appel » |
+  | Adverbes et locutions adverbiales | 110 | « de plein droit », « à titre gratuit » |
+  | Prépositions et locutions prépositives | 62 | « en vertu de », « sous peine de » |
   | Conjonctions et locutions conjonctives | 18 | « à condition que », « à moins que » |
+
+  Les entrées de la version 0.9 sont presque toutes des noms et des groupes nominaux, dans les
+  domaines qui n'avaient pas encore de termes seuls : voir le tableau des domaines, plus haut.
+  Dix noms courants manquaient seuls et n'existaient que dans des expressions : « exécution »,
+  « désignation », « acquisition », « gestion », « enregistrement », « évaluation »,
+  « négociation », « immunité », « bureau », « libertés ».
 
 - **Forme des termes.** Un adjectif arabe est écrit au masculin singulier, sans article. Un
   verbe français est à l'infinitif. Un verbe arabe est au passé, à la troisième personne du
@@ -681,6 +711,24 @@ vérifier.**
   - D'autres étaient des mots trop courants, qu'un texte aurait fait traduire à tort :
     « titre » (dans « à titre de »), « registre » (« سجل » est aussi le verbe « il a
     enregistré »).
+  - Dans la version 0.9, d'autres ont été écartés parce que leur mot arabe a un second sens
+    courant : « coup d'État » (« انقلاب » est aussi le renversement d'un véhicule), « religion
+    de l'État » (« دين الدولة » : au pluriel, « ديون الدولة » désigne les dettes de l'État). Le
+    singulier « liberté » n'a pas de fiche à lui : « بحرية » se lit « librement » ou
+    « maritime ». Le glossaire a le pluriel « libertés » et les expressions (« liberté
+    d'expression », « liberté de réunion »…).
+  - D'autres ont été remplacés par une expression plus précise : « transit » par « transit
+    douanier », « piratage » par « piratage informatique ». « nomination » est donné comme
+    synonyme de « désignation » (« تعيين ») : sa recherche ouvre cette fiche.
+- **Ce qui a été contrôlé dans la version 0.9.** L'effet des nouvelles entrées sur la traduction
+  d'un texte a été essayé sur les 1 000 définitions et les 1 002 phrases d'exemple du glossaire,
+  dans les deux langues, et sur environ 170 phrases d'essai : un programme a comparé chaque
+  traduction à celle de la version 0.8. Sur 4 176 phrases, 396 traductions ont changé. Dans 11
+  d'entre elles, un terme que la version 0.8 reconnaissait ne l'est plus, et c'est voulu :
+  « من أجل » (pour) n'est plus lu « délai », deux expressions qui se suivent sont lues en
+  entier. Plusieurs dizaines d'entrées qui donnaient un faux équivalent ou coupaient une autre
+  expression ont été retirées ou récrites. Ce contrôle porte sur ce que les entrées font dans un
+  texte. **Il ne dit pas si un équivalent est le bon terme juridique.**
 - **Recherche d'un synonyme.** Depuis la version 0.8, un mot qui est le synonyme d'une entrée
   ouvre cette entrée, avant les expressions qui commencent par lui : « préjudice » ouvre la
   fiche « dommage », puis la liste propose « préjudice futur », « préjudice direct »…
@@ -727,8 +775,8 @@ Le glossaire contient 1 002 phrases d'exemple : une par entrée, deux pour « co
 
 #### Dans tout le glossaire
 
-- Le *Vocabulaire juridique* de G. Cornu est cité comme ouvrage à consulter (933 entrées, dont
-  les 868 du vocabulaire juridique général) : aucune définition et aucun équivalent n'en sont
+- Le *Vocabulaire juridique* de G. Cornu est cité comme ouvrage à consulter (988 entrées, dont
+  les 923 du vocabulaire juridique général) : aucune définition et aucun équivalent n'en sont
   tirés.
 - Parmi les noms, quatre termes français et dix termes arabes désignent chacun deux entrées,
   par exemple
@@ -749,12 +797,12 @@ la phrase vérifiée, remplacer « à vérifier (phrase d'exemple) » par sa sou
 `source_contexte` (par exemple « Code de la famille, art. 4 ») : la mention « À vérifier »
 disparaît de l'application.
 
-Le dossier `outils/glossaire/` garde ce qui a servi à écrire les entrées n° 41 à 3 182 :
+Le dossier `outils/glossaire/` garde ce qui a servi à écrire les entrées n° 41 à 5 000 :
 
 - `lots/` : les entrées n° 41 à 1 000, une par ligne (19 fichiers texte, un par domaine) ;
 - `exemples/` : les phrases d'exemple, une par ligne, dans un fichier du même nom que le lot :
   `terme français | phrase française | phrase arabe` ;
-- `termes/` : les termes seuls, un par ligne (8 fichiers texte) :
+- `termes/` : les termes seuls, un par ligne (19 fichiers texte) :
   `terme français | terme arabe | codes | pluriel arabe | options` ;
 - `construire.py` : le script qui vérifie ces fichiers et les assemble.
 
@@ -788,7 +836,7 @@ fichiers est décrit au début de `construire.py`.
 main.py                      lance l'application
 requirements.txt             bibliothèques nécessaires
 donnees/
-  glossaire_juridique.csv    glossaire d'exemple (3 182 entrées)
+  glossaire_juridique.csv    glossaire d'exemple (5 000 entrées)
 traducteur/
   langues.py                 comparaison des mots : accents, variantes d'écriture de l'arabe
   glossaire.py               lecture du CSV et recherche des termes
@@ -849,10 +897,10 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 552 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 565 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
-dernier : ils contiennent des nombres (3 182 entrées, 58 résultats pour « contrat ») à mettre
+dernier : ils contiennent des nombres (5 000 entrées, 70 résultats pour « contrat ») à mettre
 à jour quand il est enrichi.
 
 Ces tests demandent que chacune des 1 000 premières entrées du glossaire fourni ait une
@@ -896,7 +944,7 @@ toute seule quand l'application ou l'installeur change :
 
 - sur la branche `main`, l'installeur est publié sur la page
   [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
-  comme version `v0.8.0`, puis `v0.8.1`… ;
+  comme version `v0.9.0`, puis `v0.9.1`… ;
 - sur une branche de travail (`arena/…`), il est publié comme **version d'essai**, remplacée à
   chaque fabrication. Elle sert à essayer un travail avant de le fusionner dans `main` ; elle
   est retirée quand ce travail est fusionné.
@@ -1032,13 +1080,17 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   mots. Elle ne distingue pas un terme juridique d'un verbe ou d'un mot ordinaire qui s'écrit
   de la même façon. Exemples avec le glossaire fourni :
   - « celui qui cause un dommage » : le verbe « cause » est traduit par « سبب » ;
-  - « en tout état de cause » : « état » est traduit par « دولة » et « cause » par « سبب » ;
   - « la mise en œuvre » : « œuvre » est traduit par « مصنف » ;
   - « en cours d'examen » : « cours » est lu comme le pluriel de « cour » ;
-  - « من أجل » (pour) : « أجل » est traduit par « délai » ; « عدة أشخاص » (plusieurs
-    personnes) : « عدة » est traduit par « retraite légale » ;
+  - « عدة أشخاص » (plusieurs personnes) : « عدة » est traduit par « retraite légale » ;
   - « دفع المشتري الثمن » (l'acheteur a payé le prix) : le verbe « دفع » est lu comme le nom
-    « paiement ».
+    « paiement » ;
+  - « تدخل المعاهدة حيز التنفيذ » (le traité entre en vigueur) : le verbe « تدخل » est lu
+    comme le nom « intervention ».
+
+  Des locutions du glossaire gardent entières quelques tournures de ce genre, qui ne sont donc
+  pas traduites mot à mot : « en tout état de cause », « من أجل » (pour), « من طرف » (par),
+  « حيز التنفيذ » (en vigueur).
 
   Plus le glossaire est riche, plus ces confusions sont fréquentes. L'étiquette « Traduction
   terminée » signifie seulement que tous les mots ont été trouvés dans le glossaire : elle
@@ -1046,7 +1098,7 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   sa carte dans le panneau de droite : ils sont à vérifier un par un.
 - **Texte long.** Avec le glossaire fourni, sur la machine d'essai (Linux, sans écran), un
   texte de 2 000 mots est traduit et affiché en une demi-seconde environ, un texte de
-  13 000 mots en deux secondes environ. **Tout développer** est plus lent, parce qu'il
+  13 000 mots en trois secondes environ. **Tout développer** est plus lent, parce qu'il
   construit toutes les cartes : deux à trois secondes pour 115 termes, huit secondes pour
   380 termes. La fenêtre ne répond pas pendant ce temps ; le pointeur d'attente s'affiche.
   Quand des centaines de cartes sont ouvertes, changer la taille de la fenêtre est lent aussi.
@@ -1068,18 +1120,22 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   contenir une erreur de droit, un chiffre faux ou périmé, ou une tournure arabe maladroite.
   L'application les marque « À vérifier » ; elle ne les vérifie pas. Voir
   [Les phrases d'exemple](#les-phrases-dexemple).
-- **Termes seuls du glossaire fourni.** Les 2 182 entrées ajoutées dans la version 0.8 ont été
-  écrites de mémoire par un assistant d'intelligence artificielle. Elles n'ont ni définition ni
-  exemple qui aiderait à les contrôler, et aucun juriste ne les a relues. Un équivalent peut
-  être faux, vieilli, ou étranger à l'usage algérien. L'application les marque « À vérifier » ;
-  elle ne les vérifie pas. Voir [Les termes seuls](#les-termes-seuls).
-- **Objectif de 5 000 entrées.** Il n'est pas atteint : le glossaire en compte 3 182. Le droit
-  administratif, le droit constitutionnel, le droit de la famille, le droit du travail, le
-  droit fiscal et le droit international n'ont pas encore reçu de termes seuls.
+- **Termes seuls du glossaire fourni.** Les 4 000 entrées ajoutées dans les versions 0.8 et 0.9
+  ont été écrites de mémoire par un assistant d'intelligence artificielle. Elles n'ont ni
+  définition ni exemple qui aiderait à les contrôler, et aucun juriste ne les a relues. Un
+  équivalent peut être faux, vieilli, ou étranger à l'usage algérien. L'application les marque
+  « À vérifier » ; elle ne les vérifie pas. Voir [Les termes seuls](#les-termes-seuls).
+- **5 000 entrées, dont 1 000 complètes.** L'objectif de 5 000 entrées est atteint avec des
+  termes seuls : quatre entrées sur cinq n'ont ni définition ni phrase d'exemple.
 - **Adjectifs, verbes et locutions.** Ils ont une fiche, mais la traduction d'un texte ne les
   remplace pas. Un adjectif n'est écrit qu'au masculin singulier, un verbe qu'à l'infinitif :
-  pour « protégée » ou « exécutoires », l'écran « Terme » ne trouve pas la fiche et propose
+  pour « protégés » ou « exécutoires », l'écran « Terme » ne trouve pas la fiche et propose
   le terme le plus proche (« protégé », « exécutoire »).
+- **Deux expressions qui se suivent.** Quand le dernier mot d'une expression commence la
+  suivante, celle-ci n'est lue en entier que si le premier nom de la première est un terme du
+  glossaire, avec le même sens. Sinon la fin de la seconde reste dans la langue du texte :
+  « le président du tribunal administratif » donne « رئيس المحكمة administratif », parce que
+  « président » n'a pas de fiche à lui.
 - **Davantage de noms, davantage de faux équivalents.** Plus le glossaire a de noms d'un seul
   mot, plus un mot courant risque d'être traduit comme un terme. Avec le glossaire fourni,
   « مظهر العقد » (« l'apparence du contrat ») donne « L'endosseur du contrat », et « سحب

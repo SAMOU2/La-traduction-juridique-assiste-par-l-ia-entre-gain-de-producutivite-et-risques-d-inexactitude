@@ -90,7 +90,7 @@ def test_chaque_entree_est_complete(glossaire_fourni):
 
 
 def test_les_termes_seuls(glossaire_fourni):
-    """Les entrées suivantes (version 0.8) : terme, équivalent, catégorie, domaine et ressources.
+    """Les entrées suivantes (versions 0.8 et 0.9) : terme, équivalent, catégorie, domaine et ressources.
 
     Elles n'ont ni définition ni phrase d'exemple. Aucune forme d'un nom seul ne désigne un autre nom : la
     traduction d'un texte n'aurait rien pour choisir entre les deux. Un adjectif, un verbe ou une locution
@@ -207,7 +207,7 @@ def test_les_termes_au_pluriel_sont_signales(glossaire_fourni):
 
 # ------------------------------------------------------------------ recherche
 #: Nombre d'entrées dont le terme contient « contrat », sans compter « contrat » lui-même.
-EXPRESSIONS_AVEC_CONTRAT = 57
+EXPRESSIONS_AVEC_CONTRAT = 69
 
 
 def test_recherche_dans_le_glossaire_fourni(glossaire_fourni):
@@ -218,7 +218,8 @@ def test_recherche_dans_le_glossaire_fourni(glossaire_fourni):
     assert glossaire_fourni.chercher("عقد", AR)[0].terme_fr == "contrat"
     # Un synonyme passe avant les expressions qui commencent par lui : son entrée donne l'équivalent du mot cherché.
     prejudices = [entree.terme_fr for entree in glossaire_fourni.chercher("préjudice", FR)]
-    assert prejudices[:2] == ["dommage", "préjudice futur"] and prejudices[-1] == "réparer le préjudice"
+    assert prejudices[:2] == ["dommage", "préjudice futur"]
+    assert prejudices[-2:] == ["réparer le préjudice", "divorce pour préjudice"]
     assert [entree.terme_ar for entree in glossaire_fourni.chercher("droit", FR)[:2]] == ["حق", "قانون"]
     assert [entree.terme_fr for entree in glossaire_fourni.propositions("contart", FR)] == ["contrat", "constat",
                                                                                            "constater"]
@@ -247,6 +248,17 @@ def test_recherche_dans_le_glossaire_fourni(glossaire_fourni):
         ("Le condamné et l'assuré ; la cause du contrat.", "[المحكوم عليه] {et} [المؤمن له]؛ [سبب العقد]."),
         # Une majuscule peut ne pas porter son accent.
         ("L'Etat garantit la propriété.", "[الدولة] {garantit} [الملكية]."),
+        # Deux expressions qui se suivent : « principe de légalité » puis « légalité des délits et des peines »,
+        # « délai d'exécution » puis « exécution du contrat » puis « contrat de vente ».
+        ("Le principe de légalité des délits et des peines s'impose au juge.",
+         "[مبدأ] [شرعية الجرائم والعقوبات] {s'}{impose} {au} [القاضي]."),
+        ("Le principe de légalité soumet l'administration à la loi.",
+         "[مبدأ المشروعية] {soumet} [الإدارة] {à} [القانون]."),
+        ("Le délai d'exécution du contrat de vente est dépassé.", "[أجل] [تنفيذ] [عقد البيع] {est} {dépassé}."),
+        ("Le wali veille au maintien de l'ordre public.", "[الوالي] {veille} {au} [حفظ النظام العام]."),
+        # « nomination » est donné comme synonyme de « désignation » (تعيين).
+        ("La nomination des fonctionnaires et la désignation d'un expert.",
+         "[تعيين] [الموظفون] {et} [التعيين] {d'}[خبير]."),
     ],
 )
 def test_du_francais_vers_l_arabe(traducteur, texte, attendu):
@@ -263,6 +275,21 @@ def test_du_francais_vers_l_arabe(traducteur, texte, attendu):
         ("قضت المحكمة العليا بنقض القرار.", "{قضت} [la Cour suprême] {بـ} [la cassation] [de l’arrêt]."),
         ("شركة المساهمة وشركات المساهمة والأسهم.",
          "[La société par actions] {و} [les sociétés par actions] {و} [les actions]."),
+        # Des mots à double sens que des locutions gardent entiers : « حيز التنفيذ » (en vigueur) n'est pas
+        # « l'exécution », « من طرف » (par) n'est pas « la partie », ni « من أجل » (pour) « le délai ».
+        ("يدخل القانون حيز التنفيذ بعد نشره.", "{يدخل} [la loi] {حيز} {التنفيذ} {بعد} [sa publication]."),
+        ("يعين الخبير من طرف القاضي من أجل تقييم الضرر.",
+         "{يعين} [l’expert] {من} {طرف} [le juge] {من} {أجل} [l’évaluation] [du dommage]."),
+        # « بحرية » : « maritime », ou « librement ». Le glossaire n'a que le pluriel « حريات » (libertés), pour
+        # ne pas lire « ب + حرية » dans « عمارة بحرية » (bâtiment de mer).
+        ("عمارة بحرية مخصصة للملاحة البحرية.", "{عمارة} {بحرية} {مخصصة} {لـ} [la navigation maritime]."),
+        ("تعيين القضاة وحرياتهم.", "[La désignation] [des juges] {و} [leurs libertés]."),
+        # « ديون الدولة » : les dettes de l'État. Aucune expression ne lit ici « دين » comme la religion.
+        ("ارتفعت ديون الدولة.", "{ارتفعت} [les dettes] [de l’État]."),
+        # Deux expressions qui se suivent : « حكم الطلاق » puis « طلاق بالتراضي ».
+        ("صدر حكم الطلاق بالتراضي.", "{صدر} [le jugement] [du divorce par consentement mutuel]."),
+        ("يحدد مكتب المجلس الشعبي الوطني جدول الأعمال.",
+         "{يحدد} [le bureau] [de l’Assemblée populaire nationale] [l’ordre du jour]."),
     ],
 )
 def test_de_l_arabe_vers_le_francais(traducteur, texte, attendu):
@@ -369,9 +396,10 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert page.liste.entrees()[0].terme_fr == "droit réel"
 
     # Les suggestions pendant la saisie couvrent tout le glossaire. Un terme porté par plusieurs entrées n'est
-    # proposé qu'une fois : « droit », « majorité », « action », « auteur », et « récidiviste » (nom et adjectif).
+    # proposé qu'une fois : « droit », « majorité », « action », « auteur », « récidiviste » (nom et adjectif) et
+    # « en vigueur » (adjectif et adverbe).
     suggestions = page.suggestions.model().stringList()
-    assert len(suggestions) == NOMBRE_D_ENTREES - 5 == len({entree.terme_fr for entree in page.glossaire.entrees})
+    assert len(suggestions) == NOMBRE_D_ENTREES - 6 == len({entree.terme_fr for entree in page.glossaire.entrees})
     assert {"protégé", "protéger", "protection", "grève", "grevé", "de plein droit"} <= set(suggestions)
 
     # Fenêtre étroite : la fiche garde ses cinq champs, la liste défile dans la place qui reste.
