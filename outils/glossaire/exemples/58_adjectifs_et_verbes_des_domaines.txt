@@ -1,0 +1,39 @@
+# Phrases d'exemple de termes/58_adjectifs_et_verbes_des_domaines.txt : terme | phrase française | phrase arabe
+budgétaire | L'année budgétaire commence le 1er janvier. | تبدأ السنة الميزانياتية في أول يناير.
+référendaire | La consultation référendaire est organisée par l'autorité électorale. | تنظم السلطة الانتخابية الاستشارة الاستفتائية.
+démocratique | L'alternance démocratique est garantie par la Constitution. | يضمن الدستور التداول الديمقراطي.
+républicain | Le caractère républicain de l'État ne peut être révisé. | لا يجوز تعديل الطابع الجمهوري للدولة.
+fédéral | Dans un État fédéral, chaque province a son parlement. | في الدولة الاتحادية، لكل مقاطعة برلمانها.
+consultatif | Le comité a un rôle consultatif. | للجنة دور استشاري.
+représentatif | L'organisation syndicale représentative participe à la négociation. | تشارك المنظمة النقابية التمثيلية في التفاوض.
+paritaire | La commission paritaire examine la promotion des fonctionnaires. | تدرس اللجنة المتساوية الأعضاء ترقية الموظفين.
+intergouvernemental | L'Union africaine est une organisation intergouvernementale. | الاتحاد الإفريقي منظمة حكومية دولية.
+non gouvernemental | Une organisation non gouvernementale observe le déroulement du vote. | تراقب منظمة غير حكومية سير التصويت.
+transfrontalier | La pollution transfrontalière engage la responsabilité de l'État. | يرتب التلوث العابر للحدود مسؤولية الدولة.
+supranational | Une autorité supranationale contrôle le respect du traité. | تراقب سلطة فوق وطنية احترام المعاهدة.
+foncier | Le livre foncier mentionne le nom du propriétaire. | يذكر السجل العقاري اسم المالك.
+cadastral | Le numéro cadastral identifie chaque parcelle. | يعرف الرقم المسحي كل قطعة أرض.
+portuaire | L'autorité portuaire fixe les taxes de stationnement des navires. | تحدد السلطة المينائية رسوم توقف السفن.
+frontalier | Le poste frontalier contrôle l'entrée des marchandises. | يراقب المركز الحدودي دخول البضائع.
+polluant | L'activité polluante est soumise à une taxe. | يخضع النشاط الملوث لرسم.
+contrefait | Le produit contrefait est saisi par la douane. | تحجز الجمارك المنتوج المقلد.
+concurrentiel | Le marché concurrentiel profite au consommateur. | تفيد السوق التنافسية المستهلك.
+trompeur | L'étiquetage trompeur est puni d'une amende. | يعاقب على الوسم المضلل بغرامة.
+défectueux | Le producteur répond du dommage causé par un produit défectueux. | يسأل المنتج عن الضرر الذي يسببه المنتوج المعيب.
+arbitrable | Le litige commercial est arbitrable. | النزاع التجاري قابل للتحكيم.
+élire | Le conseil a élu son président. | انتخب المجلس رئيسه.
+nommer | Le président de la République a nommé le Premier ministre. | عين رئيس الجمهورية الوزير الأول.
+promouvoir | L'administration a promu le fonctionnaire au grade supérieur. | رقت الإدارة الموظف إلى الرتبة العليا.
+affecter | La commune a affecté le terrain à la construction d'une école. | خصصت البلدية الأرض لبناء مدرسة.
+taxer | La loi de finances a taxé les produits de luxe. | فرض قانون المالية ضريبة على المنتجات الفاخرة.
+nationaliser | L'État a nationalisé les mines en 1966. | أممت الدولة المناجم سنة 1966.
+privatiser | Le gouvernement a privatisé une entreprise publique. | خوصصت الحكومة مؤسسة عمومية.
+construire | Le propriétaire a construit une maison sans permis. | بنى المالك منزلا دون رخصة.
+démolir | La commune a démoli la construction illégale. | هدمت البلدية البناء غير القانوني.
+polluer | L'usine a pollué la rivière. | لوث المصنع النهر.
+contrefaire | Le fabricant a contrefait une marque connue. | قلد الصانع علامة معروفة.
+adhérer | L'Algérie a adhéré à la convention en 1989. | انضمت الجزائر إلى الاتفاقية سنة 1989.
+s'abstenir | Le député s'est abstenu lors du vote. | امتنع النائب أثناء التصويت.
+embaucher | L'entreprise a embauché vingt ouvriers. | شغلت المؤسسة عشرين عاملا.
+faire grève | Les ouvriers ont fait grève pendant deux jours. | أضرب العمال مدة يومين.
+émigrer | Le salarié a émigré au Canada. | هاجر العامل إلى كندا.

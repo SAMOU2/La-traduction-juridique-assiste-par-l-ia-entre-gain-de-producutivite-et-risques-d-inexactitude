@@ -1,9 +1,10 @@
 """Outil qui construit le glossaire fourni (``outils/glossaire/construire.py``) : contrôle de ce qu'il assemble.
 
 Le script assemble les lots de termes, les phrases d'exemple et les termes seuls dans
-``donnees/glossaire_juridique.csv``. Ces tests travaillent sur des copies du fichier CSV et des dossiers
-``exemples/`` et ``termes/`` : ils ne modifient aucun fichier du projet. Ils ne vérifient pas que le fichier CSV
-fourni correspond encore aux lots : il peut avoir été corrigé à la main.
+``donnees/glossaire_juridique.csv``. Depuis la version 0.11, un terme seul peut avoir sa phrase d'exemple. Ces
+tests travaillent sur des copies du fichier CSV et des dossiers ``exemples/`` et ``termes/`` : ils ne modifient
+aucun fichier du projet. Ils ne vérifient pas que le fichier CSV fourni correspond encore aux lots : il peut
+avoir été corrigé à la main.
 """
 
 import importlib.util
@@ -11,9 +12,11 @@ import shutil
 import sys
 
 import pytest
-from conftest import ENTREES_COMPLETES, NOMBRE_D_ENTREES, RACINE
+from conftest import ENTREES_COMPLETES, NOMBRE_D_ENTREES, RACINE, TERMES_SEULS_AVEC_EXEMPLE
 
 from traducteur.glossaire import Glossaire
+from traducteur.langues import AR, FR
+from traducteur.surlignage import positions_du_terme
 
 SCRIPT = RACINE / "outils" / "glossaire" / "construire.py"
 
@@ -67,14 +70,17 @@ def remplacer_la_ligne(fichier, terme: str, phrase_fr: str, phrase_ar: str) -> N
     fichier.write_text("\n".join(lignes) + "\n", encoding="utf-8")
 
 
-def test_les_lots_et_les_exemples_fournis_sont_acceptes(outil, monkeypatch, capsys):
+def test_les_lots_et_les_exemples_fournis_sont_acceptes(outil, glossaire_fourni, monkeypatch, capsys):
     avant = outil.CSV.read_bytes()
     code, sortie = lancer(outil, monkeypatch, capsys)
     assert code == 0 and "ERREUR" not in sortie, sortie
     seuls = NOMBRE_D_ENTREES - ENTREES_COMPLETES
     assert f"40 entrées d'origine + 960 entrées des lots + {seuls} termes seuls = {NOMBRE_D_ENTREES}" in sortie
-    # Chaque entrée d'un lot a sa phrase d'exemple.
-    assert "phrases d'exemple : 960 sur 960 entrées des lots" in sortie and "il en manque" not in sortie
+    # Chaque entrée d'un lot a sa phrase d'exemple ; les termes seuls reçoivent la leur par étapes (version 0.11).
+    pourvus = sum(1 for entree in glossaire_fourni.entrees[ENTREES_COMPLETES:] if entree.contextes)
+    assert pourvus >= TERMES_SEULS_AVEC_EXEMPLE
+    assert f"phrases d'exemple : 960 sur 960 entrées des lots, {pourvus} sur {seuls} termes seuls" in sortie
+    assert (f"il en manque {seuls - pourvus} (--manquants pour la liste)" in sortie) == (pourvus < seuls)
     # Le fichier fourni est bien celui que donnent les lots, les exemples et les termes seuls.
     assert "Le fichier CSV correspond aux lots et aux exemples." in sortie
     # Sans l'option --ecrire, le fichier CSV n'est pas touché.
@@ -158,11 +164,17 @@ def test_les_phrases_d_exemple_refusees(outil, glossaire_fourni, monkeypatch, ca
 
 
 # ------------------------------------------------------------------ les termes seuls (version 0.8)
-def ecrire_les_termes(outil, *lignes: str) -> None:
-    """Remplace les fichiers de termes seuls par un seul fichier, qui contient ``lignes``."""
+def ecrire_les_termes(outil, *lignes: str, exemples: tuple[str, ...] = ()) -> None:
+    """Remplace les fichiers de termes seuls par un seul fichier, qui contient ``lignes``.
+
+    Les phrases d'exemple des fichiers retirés le sont aussi ; ``exemples`` donne celles du nouveau fichier.
+    """
     for fichier in outil.TERMES.glob("*.txt"):
+        (outil.EXEMPLES / fichier.name).unlink(missing_ok=True)
         fichier.unlink()
     (outil.TERMES / "41_essai.txt").write_text("\n".join(lignes) + "\n", encoding="utf-8")
+    if exemples:
+        (outil.EXEMPLES / "41_essai.txt").write_text("\n".join(exemples) + "\n", encoding="utf-8")
 
 
 def test_un_terme_seul_est_ecrit_sans_definition_ni_exemple(outil, monkeypatch, capsys):
@@ -180,6 +192,7 @@ def test_un_terme_seul_est_ecrit_sans_definition_ni_exemple(outil, monkeypatch, 
     code, sortie = lancer(outil, monkeypatch, capsys, "--ecrire")
     assert code == 0, sortie
     assert "40 entrées d'origine + 960 entrées des lots + 6 termes seuls = 1006 (objectif 5000, reste 3994)" in sortie
+    assert "phrases d'exemple : 960 sur 960 entrées des lots, 0 sur 6 termes seuls ; il en manque 6" in sortie
 
     glossaire = Glossaire.charger(outil.CSV)
     assert len(glossaire) == 1006 and glossaire.lignes_ignorees == 0
@@ -204,6 +217,102 @@ def test_un_terme_seul_est_ecrit_sans_definition_ni_exemple(outil, monkeypatch, 
         ("adjectif", "صفة"), ("locution verbale", "عبارة فعلية"), ("locution adverbiale", "شبه جملة"),
         ("locution prépositive", "شبه جملة")]
     assert not any(entree.pluriel_fr or entree.pluriel_ar for entree in (orbital, mettre, hors, au_dela))
+
+
+TERMES_DE_L_ESPACE = (
+    "## Droit de l'espace | Satellites ## DIP",
+    "satellite | قمر صناعي | ma | أقمار صناعية",
+    "orbital | مداري | adj",
+    "susceptible de lancement | قابل للإطلاق | adj",
+    "lancer | أطلق | v",
+    "mettre en orbite | وضع في المدار | v",
+    "se désintégrer | تفكك | v",
+    "au-delà de | فيما وراء | prep",
+    "conformément à | طبقا ل | prep",
+)
+
+
+def test_la_phrase_d_exemple_d_un_terme_seul(outil, monkeypatch, capsys):
+    """Version 0.11 : un terme seul reçoit sa phrase, écrite dans ``exemples/``, dans le fichier du même nom."""
+    ecrire_les_termes(outil, *TERMES_DE_L_ESPACE, exemples=(
+        "# terme | phrase française | phrase arabe",
+        "satellite | L'État immatricule chaque satellite. | تسجل الدولة كل قمر صناعي.",
+        # Un adjectif s'accorde avec son nom, dans les deux langues ; une locution adjectivale aussi.
+        "orbital | La station orbitale relève de l'État d'immatriculation. | تخضع المحطة المدارية لدولة التسجيل.",
+        "susceptible de lancement | Les fusées susceptibles de lancement sont déclarées. | "
+        "يصرح بالصواريخ القابلة للإطلاق.",
+        # Un verbe est au passé : le participe passé en français, le féminin en arabe (« أطلقت »).
+        "lancer | L'agence a lancé un satellite. | أطلقت الوكالة قمرا صناعيا.",
+        # Une locution verbale : quelques mots séparent le verbe de la suite, dans les deux langues.
+        "mettre en orbite | L'agence a mis le satellite en orbite. | وضعت الوكالة القمر الصناعي في المدار.",
+        "se désintégrer | Le satellite s'est désintégré dans l'atmosphère. | تفكك القمر الصناعي في الغلاف الجوي.",
+        # Une locution se contracte avec le mot qui suit ; en arabe, la particule se colle à ce mot.
+        "au-delà de | La loi ne s'applique pas au-delà des frontières. | لا يطبق القانون فيما وراء الحدود.",
+        "conformément à | Le lancement est déclaré conformément au traité. | يصرح بالإطلاق طبقا للمعاهدة.",
+    ))
+    code, sortie = lancer(outil, monkeypatch, capsys, "--ecrire")
+    assert code == 0, sortie
+    assert "phrases d'exemple : 960 sur 960 entrées des lots, 8 sur 8 termes seuls" in sortie
+    assert "il en manque" not in sortie
+
+    glossaire = Glossaire.charger(outil.CSV)
+    seuls = glossaire.entrees[ENTREES_COMPLETES:]
+    assert len(seuls) == 8
+    for entree in seuls:
+        contexte, = entree.contextes
+        # Toujours pas de définition ; la phrase porte la même mention que celles des lots.
+        assert not entree.definition_fr and contexte.source == outil.SOURCE_EXEMPLE and contexte.a_verifier
+        # L'application repère le terme dans sa phrase, dans les deux langues.
+        assert positions_du_terme(contexte.fr, entree, FR), entree.terme_fr
+        assert positions_du_terme(contexte.ar, entree, AR), entree.terme_fr
+    reperes = {entree.terme_fr: [[contexte.texte(langue)[debut:fin]
+                                  for debut, fin in positions_du_terme(contexte.texte(langue), entree, langue)]
+                                 for langue in (FR, AR)]
+               for entree in seuls for contexte in entree.contextes}
+    assert reperes["orbital"] == [["orbitale"], ["المدارية"]]
+    assert reperes["susceptible de lancement"] == [["susceptibles de lancement"], ["القابلة للإطلاق"]]
+    assert reperes["lancer"] == [["lancé"], ["أطلقت"]]
+    assert reperes["mettre en orbite"] == [["mis", "en orbite"], ["وضعت", "في المدار"]]
+    # Dans le CSV, l'apostrophe droite des fichiers d'exemples est devenue une apostrophe courbe.
+    assert reperes["se désintégrer"] == [["s’est désintégré"], ["تفكك"]]
+    assert reperes["au-delà de"] == [["au-delà des"], ["فيما وراء"]]
+    assert reperes["conformément à"] == [["conformément au"], ["طبقا للمعاهدة"]]
+
+
+def test_les_phrases_d_exemple_d_un_terme_seul_refusees(outil, monkeypatch, capsys):
+    ecrire_les_termes(outil, *TERMES_DE_L_ESPACE, exemples=(
+        # 1 : le verbe au présent n'est pas repéré, ni en français ni en arabe : il s'écrit au passé.
+        "lancer | L'agence lance un satellite. | تطلق الوكالة قمرا صناعيا.",
+        # 2 : l'adjectif est remplacé par un autre mot.
+        "orbital | La station spatiale relève de l'État d'immatriculation. | تخضع المحطة الفضائية لدولة التسجيل.",
+        # 3 : « contrat » est une entrée d'un lot, pas un terme de ce fichier.
+        "contrat | Le contrat de lancement est écrit. | عقد الإطلاق مكتوب.",
+        # 4 : le terme a déjà sa phrase, à la ligne 1.
+        "lancer | L'agence a lancé une sonde. | أطلقت الوكالة مسبارا.",
+    ))
+    avant = outil.CSV.read_bytes()
+    code, sortie = lancer(outil, monkeypatch, capsys, "--ecrire")
+    assert code == 1 and outil.CSV.read_bytes() == avant and "écrit :" not in sortie
+    erreurs = [ligne for ligne in sortie.splitlines() if ligne.startswith("41_essai.txt:")]
+    for attendu in (
+            "41_essai.txt:1: « lancer » : la phrase française ne contient pas « lancer »",
+            "41_essai.txt:1: « lancer » : la phrase arabe ne contient pas « أطلق »",
+            "41_essai.txt:2: « orbital » : la phrase française ne contient pas « orbital »",
+            "41_essai.txt:2: « orbital » : la phrase arabe ne contient pas « مداري »",
+            "41_essai.txt:3: exemple d'un terme absent de termes/41_essai.txt : contrat",
+            "41_essai.txt:4: « lancer » a déjà un exemple",
+    ):
+        assert any(attendu in erreur for erreur in erreurs), (attendu, erreurs)
+    assert len(erreurs) == 6
+
+    # Un fichier d'exemples qui ne porte le nom d'aucun fichier de termes est lu comme celui d'un lot : ses
+    # phrases ne vont pas aux termes seuls.
+    (outil.EXEMPLES / "41_essai.txt").rename(outil.EXEMPLES / "99_autre_nom.txt")
+    code, sortie = lancer(outil, monkeypatch, capsys)
+    assert code == 1
+    assert "99_autre_nom.txt:1: exemple d'un terme absent des lots : lancer" in sortie
+    # « contrat » est une des 40 entrées d'origine : le script ne récrit pas ces entrées.
+    assert "99_autre_nom.txt:3: exemple d'un terme absent des lots : contrat" in sortie
 
 
 def test_les_termes_seuls_refuses(outil, monkeypatch, capsys):

@@ -1,0 +1,231 @@
+# Phrases d'exemple de termes/43_verbes.txt : terme | phrase française | phrase arabe
+# Le verbe est au passé dans les deux langues : le participe passé en français, le passé en arabe.
+protéger | Le législateur a protégé le consommateur contre les clauses abusives. | حمى المشرع المستهلك من الشروط التعسفية.
+garantir | La Constitution a garanti la liberté d'expression. | ضمن الدستور حرية التعبير.
+légiférer | Le Parlement a légiféré en matière de protection des données. | شرع البرلمان في مجال حماية المعطيات.
+promulguer | Le président de la République a promulgué la loi de finances. | أصدر رئيس الجمهورية قانون المالية.
+publier | Le gouvernement a publié le décret au Journal officiel. | نشرت الحكومة المرسوم في الجريدة الرسمية.
+abroger | La loi nouvelle a abrogé toutes les dispositions contraires. | ألغى القانون الجديد جميع الأحكام المخالفة.
+modifier | Le législateur a modifié le Code de la famille en 2005. | عدل المشرع قانون الأسرة سنة 2005.
+compléter | Le législateur a complété le Code pénal par un nouveau chapitre. | تمم المشرع قانون العقوبات بفصل جديد.
+réviser | Le juge a révisé le montant de la pension alimentaire. | راجع القاضي مبلغ النفقة.
+codifier | Le législateur a codifié les règles de procédure civile. | قنن المشرع قواعد الإجراءات المدنية.
+réglementer | Le décret a réglementé l'exercice de la profession de traducteur. | نظم المرسوم ممارسة مهنة المترجم.
+édicter | Le législateur a édicté des règles strictes en matière de sécurité. | سن المشرع قواعد صارمة في مجال الأمن.
+ratifier | L'Algérie a ratifié la Convention relative aux droits de l'enfant. | صادقت الجزائر على اتفاقية حقوق الطفل.
+adopter | Le Parlement a adopté le projet de loi. | أقر البرلمان مشروع القانون.
+approuver | L'assemblée générale a approuvé les comptes de l'exercice. | وافقت الجمعية العامة على حسابات السنة المالية.
+voter | Le député a voté contre le texte. | صوت النائب ضد النص.
+délibérer | Le conseil a délibéré sur le budget. | تداول المجلس في الميزانية.
+entrer en vigueur | Le nouveau code est entré en vigueur le 1er janvier. | دخل القانون الجديد حيز التنفيذ في أول يناير.
+déroger à | Le contrat a dérogé à la règle supplétive. | خرج العقد عن القاعدة المكملة.
+interpréter | Le juge a interprété la clause en faveur du débiteur. | فسر القاضي البند لمصلحة المدين.
+appliquer | Le tribunal a appliqué la loi étrangère au contrat. | طبقت المحكمة القانون الأجنبي على العقد.
+exécuter | L'entrepreneur a exécuté les travaux dans le délai. | نفذ المقاول الأشغال في الأجل.
+respecter | Le vendeur a respecté le délai de livraison. | احترم البائع أجل التسليم.
+violer | Le journal a violé la vie privée du plaignant. | انتهكت الجريدة الحياة الخاصة للشاكي.
+enfreindre | Le conducteur a enfreint le Code de la route. | خالف السائق قانون المرور.
+manquer à | Le locataire a manqué à son obligation de payer le loyer. | أخل المستأجر بالتزامه بدفع بدل الإيجار.
+interdire | Le wali a interdit la manifestation. | منع الوالي المظاهرة.
+prohiber | La loi a prohibé la vente de ces produits. | حرم القانون بيع هذه المنتجات.
+autoriser | Le ministre a autorisé l'ouverture de l'établissement. | رخص الوزير بفتح المؤسسة.
+permettre | La loi a permis le remboursement du prêt avant l'échéance. | أجاز القانون تسديد القرض قبل حلول أجل الاستحقاق.
+habiliter | La loi a habilité les agents des douanes à constater les infractions. | أهل القانون أعوان الجمارك لمعاينة الجرائم.
+imposer | Le règlement a imposé le casque sur le chantier. | فرض النظام ارتداء الخوذة في الورشة.
+obliger | Le jugement a obligé le vendeur à livrer la marchandise. | ألزم الحكم البائع بتسليم البضاعة.
+contraindre | La menace a contraint la victime à signer. | أجبر التهديد الضحية على التوقيع.
+dispenser | Le ministre a dispensé le candidat de l'épreuve orale. | أعفى الوزير المترشح من الاختبار الشفهي.
+prévoir | Le contrat a prévu une pénalité de retard. | نص العقد على غرامة تأخير.
+stipuler | Le bailleur a stipulé le paiement du loyer d'avance. | اشترط المؤجر دفع بدل الإيجار مسبقا.
+définir | Le Code civil a défini le contrat de vente. | عرف القانون المدني عقد البيع.
+fixer | Le juge a fixé la date de l'audience. | حدد القاضي تاريخ الجلسة.
+désigner | Le tribunal a désigné un expert. | عينت المحكمة خبيرا.
+instituer | La loi a institué un fonds de garantie. | أنشأ القانون صندوق ضمان.
+supprimer | Le législateur a supprimé cette formalité. | حذف المشرع هذه الشكلية.
+conférer | Le mandat a conféré au mandataire le pouvoir de vendre. | خولت الوكالة الوكيل سلطة البيع.
+attribuer | Le marché public a été attribué à l'entreprise la moins chère. | أسندت الصفقة العمومية إلى المؤسسة الأقل سعرا.
+reconnaître | Le débiteur a reconnu sa dette par écrit. | اعترف المدين بدينه كتابة.
+priver de | Le jugement a privé le condamné de ses droits civiques. | حرم الحكم المحكوم عليه من حقوقه الوطنية.
+restreindre | Le décret a restreint l'importation de certains produits. | قيد المرسوم استيراد بعض المنتجات.
+étendre | La loi a étendu la protection sociale aux travailleurs indépendants. | وسع القانون الحماية الاجتماعية إلى العمال المستقلين.
+conclure | Le salarié a conclu un contrat de travail à durée déterminée. | أبرم العامل عقد عمل محدد المدة.
+contracter | La commune a contracté avec une entreprise privée. | تعاقدت البلدية مع مؤسسة خاصة.
+négocier | Le syndicat a négocié avec l'employeur. | تفاوضت النقابة مع المستخدم.
+convenir | Les parties ont convenu d'un prix. | اتفق الطرفان على ثمن.
+consentir | Le propriétaire a consenti à la vente. | رضي المالك بالبيع.
+accepter | L'acheteur a accepté l'offre sans réserve. | قبل المشتري الإيجاب دون تحفظ.
+refuser | L'assureur a refusé de payer l'indemnité. | رفض المؤمن دفع التعويض.
+offrir | Le vendeur a offert une garantie de deux ans. | عرض البائع ضمانا لمدة سنتين.
+promettre | Le propriétaire a promis de vendre son terrain. | وعد المالك ببيع أرضه.
+s'engager | Le transporteur s'est engagé à livrer la marchandise en bon état. | التزم الناقل بتسليم البضاعة في حالة جيدة.
+signer | Le directeur a signé le contrat. | وقع المدير العقد.
+résilier | Le bailleur a résilié le bail pour défaut de paiement. | فسخ المؤجر الإيجار لعدم الدفع.
+mettre fin à | L'employeur a mis fin à la période d'essai. | أنهى المستخدم فترة التجربة.
+annuler | Le tribunal a annulé la vente pour dol. | أبطلت المحكمة البيع بسبب التدليس.
+rétracter | L'acheteur a rétracté son consentement dans le délai légal. | تراجع المشتري عن رضاه في الأجل القانوني.
+renouveler | Le locataire a renouvelé son bail. | جدد المستأجر إيجاره.
+proroger | Le juge a prorogé le délai de dépôt du rapport. | مدد القاضي أجل إيداع التقرير.
+céder | Le commerçant a cédé son fonds de commerce. | تنازل التاجر عن محله التجاري.
+renoncer à | L'héritier a renoncé à la succession. | تخلى الوارث عن التركة.
+transférer | Le vendeur a transféré la propriété à l'acheteur. | نقل البائع الملكية إلى المشتري.
+aliéner | Le tuteur a aliéné un immeuble du mineur avec l'autorisation du juge. | تصرف الولي في عقار القاصر بترخيص من القاضي.
+acquérir | Le possesseur a acquis la propriété par prescription. | اكتسب الحائز الملكية بالتقادم.
+posséder | Le voisin a possédé le terrain pendant quinze ans. | حاز الجار الأرض مدة خمس عشرة سنة.
+vendre | Le propriétaire a vendu sa maison. | باع المالك منزله.
+acheter | La société a acheté un terrain industriel. | اشترت الشركة أرضا صناعية.
+donner à bail | Le propriétaire a donné à bail un local commercial. | أجر المالك محلا تجاريا.
+prendre à bail | Le médecin a pris à bail un cabinet. | استأجر الطبيب عيادة.
+prêter | La banque a prêté dix millions de dinars à l'entreprise. | أقرض البنك المؤسسة عشرة ملايين دينار.
+emprunter | L'associé a emprunté une somme à la société. | اقترض الشريك مبلغا من الشركة.
+faire donation | Le père a fait donation d'un appartement à sa fille. | وهب الأب شقة لابنته.
+léguer | Le défunt a légué le tiers de ses biens à une association. | أوصى المورث بثلث أمواله لجمعية.
+hériter | Le fils a hérité de la maison familiale. | ورث الابن المنزل العائلي.
+cautionner | Le gérant a cautionné la dette de la société. | كفل المسير دين الشركة.
+hypothéquer | Le débiteur a hypothéqué son immeuble au profit de la banque. | رهن المدين عقاره لفائدة البنك.
+livrer | Le fournisseur a livré la marchandise à la date convenue. | سلم المورد البضاعة في التاريخ المتفق عليه.
+payer | L'acheteur a payé le prix en espèces. | دفع المشتري الثمن نقدا.
+rembourser | L'emprunteur a remboursé le prêt avant l'échéance. | سدد المقترض القرض قبل حلول أجل الاستحقاق.
+indemniser | L'assureur a indemnisé la victime de l'accident. | عوض المؤمن ضحية الحادث.
+réparer le préjudice | Le responsable de l'accident a réparé le préjudice subi par la victime. | جبر المسؤول عن الحادث الضرر الذي لحق الضحية.
+restituer | Le dépositaire a restitué la chose au déposant. | رد المودع لديه الشيء إلى المودع.
+réclamer | Le salarié a réclamé le paiement de ses heures supplémentaires. | طالب العامل بدفع ساعاته الإضافية.
+exiger | La gravité des faits a exigé une enquête approfondie. | استلزمت خطورة الوقائع تحقيقا معمقا.
+mettre en demeure | Le créancier a mis le débiteur en demeure de payer. | أعذر الدائن المدين بالدفع.
+déléguer | Le ministre a délégué sa signature au directeur. | فوض الوزير توقيعه للمدير.
+mandater | Le vendeur a mandaté un avocat pour signer l'acte. | وكل البائع محاميا لتوقيع العقد.
+représenter | L'avocat a représenté la société devant le tribunal. | مثل المحامي الشركة أمام المحكمة.
+substituer | Le juge a substitué une amende à la peine d'emprisonnement. | استبدل القاضي عقوبة الحبس بغرامة.
+confirmer | La cour a confirmé le jugement. | أيد المجلس القضائي الحكم.
+se porter garant | Le père s'est porté garant de la dette de son fils. | ضمن الأب الوفاء بدين ابنه.
+se porter fort | Le vendeur s'est porté fort que son frère signerait l'acte. | تعهد البائع عن الغير بأن أخاه سيوقع العقد.
+agir en justice | Le locataire a agi en justice contre le bailleur. | رفع المستأجر دعوى ضد المؤجر.
+assigner | Le demandeur a assigné le défendeur devant le tribunal. | كلف المدعي المدعى عليه بالحضور أمام المحكمة.
+saisir | L'huissier de justice a saisi les meubles du débiteur. | حجز المحضر القضائي منقولات المدين.
+saisir le juge | Le salarié a saisi le juge du litige. | أخطر العامل القاضي بالنزاع.
+comparaître | Le prévenu a comparu devant le tribunal. | حضر المتهم أمام المحكمة.
+plaider | L'avocat a plaidé pendant une heure. | رافع المحامي مدة ساعة.
+invoquer | Le défendeur a invoqué la prescription. | تمسك المدعى عليه بالتقادم.
+alléguer | Le demandeur a allégué un préjudice moral. | ادعى المدعي ضررا معنويا.
+contester | L'héritier a contesté la validité du testament. | نازع الوارث في صحة الوصية.
+prouver | Le créancier a prouvé l'existence de la dette. | أثبت الدائن وجود الدين.
+témoigner | Le voisin a témoigné devant le juge d'instruction. | شهد الجار أمام قاضي التحقيق.
+prêter serment | L'expert a prêté serment devant le tribunal. | أدى الخبير اليمين أمام المحكمة.
+avouer | L'accusé a avoué les faits. | اعترف المتهم بالوقائع.
+nier | Le débiteur a nié sa signature. | أنكر المدين توقيعه.
+statuer | Le tribunal a statué sur la demande. | فصلت المحكمة في الطلب.
+juger | Le tribunal a jugé l'affaire en audience publique. | حكمت المحكمة في القضية في جلسة علنية.
+condamner | Le tribunal a condamné le prévenu à une amende. | حكمت المحكمة على المتهم بغرامة.
+déclarer coupable | Le tribunal a déclaré coupable le prévenu. | أدانت المحكمة المتهم.
+acquitter l'accusé | Le tribunal a acquitté l'accusé faute de preuves. | برأت المحكمة المتهم لانعدام الأدلة.
+débouter | Le tribunal a débouté le demandeur. | رفضت المحكمة دعوى المدعي.
+ordonner | Le juge a ordonné une expertise. | أمر القاضي بخبرة.
+prononcer | Le juge a prononcé le divorce. | نطق القاضي بالطلاق.
+rendre un jugement | Le tribunal a rendu un jugement en faveur du salarié. | أصدرت المحكمة حكما لصالح العامل.
+motiver | Le juge a motivé sa décision. | سبب القاضي قراره.
+notifier | L'huissier a notifié le jugement au défendeur. | بلغ المحضر الحكم إلى المدعى عليه.
+faire appel | Le condamné a fait appel du jugement. | استأنف المحكوم عليه الحكم.
+se pourvoir en cassation | Le ministère public s'est pourvu en cassation. | طعنت النيابة العامة بالنقض.
+former opposition | Le défendeur a formé opposition dans le délai d'un mois. | عارض المدعى عليه في أجل شهر واحد.
+casser | La Cour suprême a cassé l'arrêt. | نقضت المحكمة العليا القرار.
+infirmer | La cour a infirmé le jugement. | ألغى المجلس القضائي الحكم.
+renvoyer | Le juge d'instruction a renvoyé le prévenu devant le tribunal. | أحال قاضي التحقيق المتهم إلى المحكمة.
+surseoir à statuer | Le tribunal a sursis à statuer jusqu'au dépôt du rapport. | أرجأت المحكمة الفصل إلى غاية إيداع التقرير.
+ajourner | Le président a ajourné l'audience. | أجل الرئيس الجلسة.
+suspendre | Le juge a suspendu l'exécution de la décision. | أوقف القاضي تنفيذ القرار.
+interrompre | La citation en justice a interrompu la prescription. | قطع التكليف بالحضور التقادم.
+radier | Le tribunal a radié l'affaire du rôle. | شطبت المحكمة القضية من الجدول.
+récuser | Le défendeur a récusé le juge. | رد المدعى عليه القاضي.
+se désister | Le demandeur s'est désisté de l'instance. | ترك المدعي الخصومة.
+transiger | L'assureur a transigé avec la victime. | تصالح المؤمن مع الضحية.
+concilier | Le juge a concilié les époux. | أصلح القاضي بين الزوجين.
+recouvrer | Le Trésor a recouvré l'impôt dû. | حصلت الخزينة الضريبة المستحقة.
+liquider | Le liquidateur a liquidé les biens de la société. | صفى المصفي أموال الشركة.
+constater | L'huissier a constaté les dégâts. | عاين المحضر الأضرار.
+expertiser | Le technicien a expertisé le véhicule accidenté. | أجرى التقني خبرة على المركبة المتضررة.
+enquêter | La police a enquêté sur le vol. | حققت الشرطة في السرقة.
+entendre | Le juge a entendu les témoins. | سمع القاضي الشهود.
+interroger | Le juge d'instruction a interrogé l'inculpé. | استجوب قاضي التحقيق المتهم.
+perquisitionner | Les enquêteurs ont perquisitionné la maison du suspect. | فتش المحققون منزل المشتبه فيه.
+arrêter | La police a arrêté le suspect. | ألقت الشرطة القبض على المشتبه فيه.
+placer en garde à vue | Le suspect a été placé en garde à vue. | أوقف المشتبه فيه للنظر.
+incarcérer | Le condamné a été incarcéré à la prison d'El Harrach. | سجن المحكوم عليه في سجن الحراش.
+libérer | Le juge a libéré le détenu sous caution. | أفرج القاضي عن المحبوس بكفالة.
+inculper | Le juge d'instruction a inculpé le directeur. | اتهم قاضي التحقيق المدير.
+poursuivre | Le procureur a poursuivi l'auteur de l'infraction. | تابع وكيل الجمهورية فاعل الجريمة.
+porter plainte | La victime a porté plainte contre son voisin. | قدمت الضحية شكوى ضد جارها.
+dénoncer | Le comptable a dénoncé la fraude au procureur. | بلغ المحاسب عن الغش وكيل الجمهورية.
+classer sans suite | Le procureur a classé sans suite le dossier. | حفظ وكيل الجمهورية الملف.
+extrader | L'État a extradé le criminel recherché. | سلمت الدولة المجرم المطلوب.
+expulser | Le ministre a expulsé un étranger condamné pour trafic. | طرد الوزير أجنبيا محكوما عليه بسبب التهريب.
+gracier | Le président de la République a gracié le condamné. | عفا رئيس الجمهورية عن المحكوم عليه.
+sanctionner | L'employeur a sanctionné le salarié fautif. | عاقب المستخدم العامل المخطئ.
+commettre | Le prévenu a commis un vol. | ارتكب المتهم سرقة.
+voler | Le salarié a volé de l'argent dans la caisse. | سرق العامل مالا من الصندوق.
+tuer | L'accusé a tué la victime avec une arme. | قتل المتهم الضحية بسلاح.
+blesser | Le conducteur a blessé un piéton. | جرح السائق أحد الراجلين.
+frauder | Le commerçant a fraudé sur le poids de la marchandise. | غش التاجر في وزن البضاعة.
+falsifier | Le faussaire a falsifié un passeport. | زور المزور جواز سفر.
+corrompre | L'entrepreneur a corrompu un agent public. | رشا المقاول عونا عموميا.
+détourner | Le caissier a détourné des fonds publics. | اختلس أمين الصندوق أموالا عمومية.
+escroquer | Le faux agent a escroqué plusieurs personnes. | احتال العون المزيف على عدة أشخاص.
+menacer | Le débiteur a menacé son créancier. | هدد المدين دائنه.
+diffamer | Le journaliste a diffamé le ministre. | قذف الصحفي الوزير.
+injurier | Le prévenu a injurié un agent de police. | سب المتهم عون شرطة.
+receler | Le commerçant a recelé des objets volés. | أخفى التاجر أشياء مسروقة.
+nuire à | La publicité mensongère a nui à la réputation du concurrent. | أضر الإشهار الكاذب بسمعة المنافس.
+causer un dommage | L'incendie a causé un dommage aux immeubles voisins. | ألحق الحريق ضررا بالعقارات المجاورة.
+endommager | Le locataire a endommagé la porte du logement. | أتلف المستأجر باب السكن.
+détruire | L'explosion a détruit l'entrepôt. | دمر الانفجار المستودع.
+usurper | Le prévenu a usurpé l'identité d'un médecin. | انتحل المتهم هوية طبيب.
+abuser de | Le gérant a abusé de ses pouvoirs. | أساء المسير استعمال سلطاته.
+séquestrer | Les ravisseurs ont séquestré la victime pendant trois jours. | احتجز الخاطفون الضحية مدة ثلاثة أيام.
+enlever | Un inconnu a enlevé un enfant devant l'école. | اختطف مجهول طفلا أمام المدرسة.
+administrer | Le tuteur a administré les biens du mineur. | أدار الولي أموال القاصر.
+diriger | Le gérant a dirigé la société pendant dix ans. | سير المسير الشركة مدة عشر سنوات.
+contrôler | La Cour des comptes a contrôlé les comptes de la commune. | راقب مجلس المحاسبة حسابات البلدية.
+inspecter | L'inspecteur du travail a inspecté le chantier. | تفقد مفتش العمل الورشة.
+révoquer | L'assemblée générale a révoqué le gérant. | عزلت الجمعية العامة المسير.
+licencier | L'employeur a licencié le salarié sans préavis. | سرح المستخدم العامل دون إشعار مسبق.
+démissionner | Le directeur a démissionné de son poste. | استقال المدير من منصبه.
+recruter | La commune a recruté dix agents. | وظفت البلدية عشرة أعوان.
+titulariser | L'administration a titularisé le fonctionnaire stagiaire. | رسمت الإدارة الموظف المتربص.
+enregistrer | Le greffier a enregistré la requête. | سجل أمين الضبط العريضة.
+certifier | Le notaire a certifié la signature. | صدق الموثق على التوقيع.
+authentifier | Le notaire a authentifié l'acte de vente. | وثق الموثق عقد البيع.
+déclarer | Le contribuable a déclaré ses revenus. | صرح المكلف بالضريبة بمداخيله.
+convoquer | Le président a convoqué les membres du conseil. | استدعى الرئيس أعضاء المجلس.
+requérir | Le procureur a requis une peine de deux ans. | طلب وكيل الجمهورية عقوبة سنتين.
+réquisitionner | Le wali a réquisitionné les véhicules nécessaires. | سخر الوالي المركبات اللازمة.
+exproprier | L'administration a exproprié le terrain pour cause d'utilité publique. | نزعت الإدارة الملكية من أجل المنفعة العمومية.
+accorder | Le juge a accordé un délai au débiteur. | منح القاضي أجلا للمدين.
+retirer | L'administration a retiré le permis de construire. | سحبت الإدارة رخصة البناء.
+subventionner | L'État a subventionné le prix du lait. | دعمت الدولة سعر الحليب.
+percevoir | Le bailleur a perçu les loyers du trimestre. | قبض المؤجر بدلات إيجار الثلاثي.
+déduire | Le contribuable a déduit ses charges de son revenu. | خصم المكلف بالضريبة أعباءه من دخله.
+soumissionner | L'entreprise a soumissionné pour le marché de travaux. | قدمت المؤسسة عرضا في صفقة الأشغال.
+naître | L'enfant est né à Constantine. | ولد الطفل في قسنطينة.
+décéder | Le vendeur est décédé avant la signature de l'acte. | توفي البائع قبل توقيع العقد.
+se marier | Le défunt s'est marié en 1990. | تزوج المورث سنة 1990.
+divorcer | Le mari a divorcé de son épouse. | طلق الزوج زوجته.
+émanciper | Le juge a émancipé le mineur âgé de dix-huit ans. | رشد القاضي القاصر البالغ ثماني عشرة سنة.
+frapper d'interdiction | Le tribunal a frappé d'interdiction le prodigue. | حجرت المحكمة على السفيه.
+assister | L'avocat a assisté le prévenu pendant l'audience. | ساعد المحامي المتهم أثناء الجلسة.
+succéder à | Le fils a succédé à son père à la tête de l'entreprise. | خلف الابن أباه على رأس المؤسسة.
+partager | Le notaire a partagé la succession entre les héritiers. | قسم الموثق التركة بين الورثة.
+résider | Le défendeur a résidé à Oran pendant cinq ans. | أقام المدعى عليه بوهران مدة خمس سنوات.
+naturaliser | L'Algérie a naturalisé plusieurs sportifs étrangers. | جنست الجزائر عدة رياضيين أجانب.
+constituer | Les associés ont constitué une société à responsabilité limitée. | أسس الشركاء شركة ذات مسؤولية محدودة.
+dissoudre | Le tribunal a dissous l'association. | حلت المحكمة الجمعية.
+fusionner | La banque a fusionné avec un établissement concurrent. | اندمج البنك مع مؤسسة منافسة.
+souscrire | L'actionnaire a souscrit cent actions nouvelles. | اكتتب المساهم في مائة سهم جديد.
+distribuer | La société a distribué des dividendes aux actionnaires. | وزعت الشركة أرباح الأسهم على المساهمين.
+faire faillite | Le commerçant a fait faillite après la perte de son principal client. | أفلس التاجر بعد فقدان زبونه الرئيسي.
+cesser ses paiements | Le débiteur a cessé ses paiements depuis trois mois. | توقف المدين عن الدفع منذ ثلاثة أشهر.
+endosser | Le bénéficiaire a endossé le chèque. | ظهر المستفيد الشيك.
+facturer | Le fournisseur a facturé la livraison. | فوتر المورد التسليم.
+importer | La société a importé des pièces de rechange. | استوردت الشركة قطع غيار.
+exporter | L'entreprise a exporté des dattes vers l'Europe. | صدرت المؤسسة تمورا إلى أوروبا.
+dédouaner | L'importateur a dédouané la marchandise. | جمرك المستورد البضاعة.
+assurer | Le propriétaire a assuré son véhicule contre le vol. | أمن المالك مركبته من السرقة.
+investir | La société a investi dans une nouvelle usine. | استثمرت الشركة في مصنع جديد.
+concurrencer | Le nouveau magasin a concurrencé les commerces du quartier. | نافس المتجر الجديد محلات الحي.

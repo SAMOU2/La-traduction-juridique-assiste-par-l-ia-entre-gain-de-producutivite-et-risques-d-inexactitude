@@ -28,18 +28,25 @@ i : annexion, article sur le dernier mot ; c : autre groupe de mots), puis « p 
 Options : pf= pluriel français (« - » pour aucun), sf= synonymes français (séparés par « , »),
 sa= synonymes arabes (séparés par « ، »), va= termes associés ajoutés (séparés par « , »).
 
-Format d'un fichier d'exemples (dossier exemples/, un fichier par lot) : une phrase par terme, qui emploie le
-terme en français et son équivalent en arabe. Elle remplit les colonnes contexte_fr et contexte_ar.
+Format d'un fichier d'exemples (dossier exemples/) : une phrase par terme, qui emploie le terme en français et
+son équivalent en arabe. Elle remplit les colonnes contexte_fr et contexte_ar. Le fichier porte le nom du lot
+ou du fichier de termes seuls qu'il illustre : exemples/41_vocabulaire_general.txt donne les phrases des termes
+de termes/41_vocabulaire_general.txt, et de ceux-là seulement.
 
     terme français | phrase française | phrase arabe
     terme français = terme arabe | phrase française | phrase arabe
 
 La seconde forme sert quand le terme français désigne deux entrées (« action » : « دعوى » ou « سهم »).
-Le script vérifie que chaque phrase contient bien le terme, avec la même règle que l'application.
+Le script vérifie que chaque phrase contient bien le terme, avec la même règle que l'application
+(traducteur/surlignage.py). Un nom y figure tel quel ou au pluriel. Un adjectif peut s'accorder. Un verbe
+s'écrit au passé dans les deux langues : en français l'infinitif ou le participe passé (« a abrogé »), en
+arabe le passé à la troisième personne (« ألغى », « ألغت »). Quelques mots peuvent séparer le verbe d'une
+locution verbale de sa suite (« a mis le débiteur en demeure », « رفع المدعي دعوى »).
 
 Format d'un fichier de termes seuls (dossier termes/, à partir de la version 0.8) : le même en-tête de domaine
-et les mêmes groupes que dans un lot, mais ni définition ni phrase d'exemple. Ces termes sont écrits dans le
-CSV après ceux des lots. Le pluriel arabe et les options peuvent manquer.
+et les mêmes groupes que dans un lot, mais sans définition. Ces termes sont écrits dans le CSV après ceux des
+lots. Le pluriel arabe et les options peuvent manquer. La phrase d'exemple d'un terme seul s'écrit dans le
+dossier exemples/, dans le fichier du même nom ; un terme seul peut ne pas en avoir.
 
     terme français | terme arabe | codes | pluriel arabe | options…
 
@@ -69,7 +76,7 @@ DEPOT = pathlib.Path(__file__).resolve().parents[2]
 CSV = DEPOT / "donnees" / "glossaire_juridique.csv"
 LOTS = pathlib.Path(__file__).parent / "lots"
 EXEMPLES = pathlib.Path(__file__).parent / "exemples"
-#: Termes seuls : terme, équivalent, catégorie, pluriel et domaine, sans définition ni phrase d'exemple.
+#: Termes seuls : terme, équivalent, catégorie, pluriel et domaine, sans définition.
 TERMES = pathlib.Path(__file__).parent / "termes"
 #: Nombre d'entrées placées au début du CSV et écrites à la main : le script n'y touche pas.
 ENTREES_D_ORIGINE = 40
@@ -477,13 +484,27 @@ def pluriel_francais(entree: dict) -> str:
     return pluriel_fr(entree["fr"]) if entree["pluriel_ar"] else ""
 
 
+def modele(entree: dict) -> Entree:
+    """L'entrée d'un lot ou d'un fichier de termes, telle que l'application la lira : ses formes et sa catégorie."""
+    codes_valides = _CODES_D_UN_NOM.fullmatch(entree["codes"]) or entree["codes"] in AUTRES_NATURES
+    return Entree(numero=0, terme_fr=entree["fr"], terme_ar=entree["ar"], pluriel_ar=entree["pluriel_ar"],
+                  pluriel_fr=pluriel_francais(entree), categorie_fr=categories(entree)[0] if codes_valides else "")
+
+
 def lire_les_exemples(entrees: list[dict], erreurs: Erreurs) -> None:
-    """Lit les fichiers d'exemples et range chaque phrase dans son entrée (clé « exemple »)."""
+    """Lit les fichiers d'exemples et range chaque phrase dans son entrée (clé « exemple »).
+
+    Un fichier d'exemples porte le nom du lot ou du fichier de termes seuls qu'il illustre. Les phrases d'un
+    fichier de termes seuls ne vont qu'aux termes de ce fichier : « en vigueur » est un adjectif dans un fichier
+    et un adverbe dans un autre. Les phrases d'un lot vont aux entrées des lots, comme avant la version 0.11.
+    """
     par_terme: dict[str, list[dict]] = collections.defaultdict(list)
     for entree in entrees:
-        if not entree["seul"]:  # un terme seul n'a pas de phrase d'exemple
-            par_terme[cle_souple(entree["fr"])].append(entree)
+        par_terme[cle_souple(entree["fr"])].append(entree)
+    fichiers_de_termes = {entree["lot"] for entree in entrees if entree["seul"]}
     for fichier in sorted(EXEMPLES.glob("*.txt")):
+        de_termes = fichier.name in fichiers_de_termes
+        origine = f"de termes/{fichier.name}" if de_termes else "des lots"
         for numero, ligne in enumerate(fichier.read_text(encoding="utf-8").splitlines(), 1):
             ligne = unicodedata.normalize("NFC", ligne.strip())
             if not ligne or ligne.startswith("#"):
@@ -494,11 +515,12 @@ def lire_les_exemples(entrees: list[dict], erreurs: Erreurs) -> None:
                 continue
             cle, phrase_fr, phrase_ar = champs
             fr, _, ar = (morceau.strip() for morceau in cle.partition(" = "))
-            candidates = par_terme.get(cle_souple(fr), [])
+            candidates = [entree for entree in par_terme.get(cle_souple(fr), [])
+                          if (entree["lot"] == fichier.name if de_termes else not entree["seul"])]
             if ar:
                 candidates = [entree for entree in candidates if cle_souple(entree["ar"]) == cle_souple(ar)]
             if not candidates:
-                erreurs.signaler(fichier.name, numero, f"exemple d'un terme absent des lots : {cle}")
+                erreurs.signaler(fichier.name, numero, f"exemple d'un terme absent {origine} : {cle}")
             elif len(candidates) > 1:
                 choix = " ou ".join(f"« {fr} = {entree['ar']} »" for entree in candidates)
                 erreurs.signaler(fichier.name, numero, f"« {fr} » désigne plusieurs entrées : écrire {choix}")
@@ -531,13 +553,13 @@ def verifier_l_exemple(entree: dict, erreurs: Erreurs) -> None:
         if len(phrase) > LONGUEUR_EXEMPLE:
             signaler(f"phrase {langue} trop longue : {len(phrase)} caractères (maximum {LONGUEUR_EXEMPLE})")
     # Le terme doit se trouver dans la phrase, d'après la règle que l'application applique pour le mettre
-    # en évidence (terme ou pluriel ; en arabe, article, particules collées et terminaisons courantes).
-    modele = Entree(numero=0, terme_fr=entree["fr"], terme_ar=entree["ar"], pluriel_fr=pluriel_francais(entree),
-                    pluriel_ar=entree["pluriel_ar"])
+    # en évidence (terme ou pluriel ; en arabe, article, particules collées et terminaisons courantes ; un
+    # adjectif accordé, un verbe au passé).
+    lue = modele(entree)
     for langue, nom, phrase in ((FR, "française", phrase_fr), (AR, "arabe", phrase_ar)):
-        motif = motif_du_terme(modele, langue)
+        motif = motif_du_terme(lue, langue)
         if motif is None or not motif.search(phrase):
-            signaler(f"la phrase {nom} ne contient pas « {modele.terme(langue)} » : {phrase}")
+            signaler(f"la phrase {nom} ne contient pas « {lue.terme(langue)} » : {phrase}")
 
 
 def incoherences(anciennes: list[dict], nouvelles: list[dict]) -> list[str]:
@@ -548,19 +570,19 @@ def incoherences(anciennes: list[dict], nouvelles: list[dict]) -> list[str]:
     # Pour chaque terme du glossaire : le terme français, l'entrée qui sert de modèle, ses synonymes arabes.
     modeles: list[tuple[str, Entree, list[str]]] = []
     for ancienne in anciennes:
-        modele = Entree(numero=0, terme_fr=ancienne["terme_fr"], terme_ar=ancienne["terme_ar"],
-                        pluriel_fr=ancienne["pluriel_fr"], pluriel_ar=ancienne["pluriel_ar"])
+        lue = Entree(numero=0, terme_fr=ancienne["terme_fr"], terme_ar=ancienne["terme_ar"],
+                     pluriel_fr=ancienne["pluriel_fr"], pluriel_ar=ancienne["pluriel_ar"],
+                     categorie_fr=ancienne["categorie_fr"])
         synonymes = [s.strip() for s in ancienne["synonymes_ar"].split("|") if s.strip()]
-        modeles.append((ancienne["terme_fr"], modele, synonymes))
+        modeles.append((ancienne["terme_fr"], lue, synonymes))
     for entree in nouvelles:
-        modele = Entree(numero=0, terme_fr=entree["fr"], terme_ar=entree["ar"], pluriel_fr=pluriel_francais(entree),
-                        pluriel_ar=entree["pluriel_ar"])
-        modeles.append((entree["fr"], modele, entree["sa"]))
+        modeles.append((entree["fr"], modele(entree), entree["sa"]))
     motifs = []
-    for terme, modele, synonymes in modeles:
-        arabes = [motif_du_terme(modele, AR)] + [
-            motif_du_terme(Entree(numero=0, terme_fr=terme, terme_ar=synonyme), AR) for synonyme in synonymes]
-        motifs.append((terme, modele.terme_ar, motif_du_terme(modele, FR), [m for m in arabes if m is not None]))
+    for terme, lue, synonymes in modeles:
+        arabes = [motif_du_terme(lue, AR)] + [
+            motif_du_terme(Entree(numero=0, terme_fr=terme, terme_ar=synonyme, categorie_fr=lue.categorie_fr), AR)
+            for synonyme in synonymes]
+        motifs.append((terme, lue.terme_ar, motif_du_terme(lue, FR), [m for m in arabes if m is not None]))
     remarques = []
     for entree in nouvelles:
         if "exemple" not in entree:
@@ -767,8 +789,10 @@ def construire() -> int:
     total = len(anciennes) + len(nouvelles)
     print(f"{len(anciennes)} entrées d'origine + {len(completes)} entrées des lots + {len(seuls)} termes seuls "
           f"= {total} (objectif {OBJECTIF}, reste {OBJECTIF - total})")
-    sans_exemple = [entree for entree in completes if "exemple" not in entree]
-    print(f"phrases d'exemple : {len(completes) - len(sans_exemple)} sur {len(completes)} entrées des lots"
+    sans_exemple = [entree for entree in nouvelles if "exemple" not in entree]
+    manquent = collections.Counter(entree["seul"] for entree in sans_exemple)
+    print(f"phrases d'exemple : {len(completes) - manquent[False]} sur {len(completes)} entrées des lots"
+          + (f", {len(seuls) - manquent[True]} sur {len(seuls)} termes seuls" if seuls else "")
           + (f" ; il en manque {len(sans_exemple)} (--manquants pour la liste)" if sans_exemple else ""))
     natures = collections.Counter(categories(entree)[0].split()[0] if entree["codes"] in AUTRES_NATURES else "nom"
                                   for entree in seuls if _CODES_D_UN_NOM.fullmatch(entree["codes"])

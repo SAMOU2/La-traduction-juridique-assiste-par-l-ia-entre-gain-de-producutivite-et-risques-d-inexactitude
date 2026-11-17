@@ -1,0 +1,204 @@
+# Phrases d'exemple de termes/44_locutions.txt : terme | phrase française | phrase arabe
+de plein droit | Le contrat est résolu de plein droit en cas de non-paiement. | يفسخ العقد بقوة القانون في حالة عدم الدفع.
+légalement | Le mineur est légalement représenté par son père. | يمثل القاصر قانونا أبوه.
+de fait | L'associé dirige de fait la société. | يسير الشريك الشركة فعليا.
+en droit | La demande est fondée en droit. | الطلب مؤسس من الناحية القانونية.
+en fait | Le juge constate que les époux vivent en fait séparés. | يعاين القاضي أن الزوجين يعيشان في الواقع منفصلين.
+en l'espèce | En l'espèce, le délai d'appel est expiré. | في قضية الحال، انقضى أجل الاستئناف.
+en principe | L'audience est en principe publique. | الجلسة مبدئيا علنية.
+illégalement | L'étranger est entré illégalement sur le territoire. | دخل الأجنبي إلى الإقليم بصفة غير قانونية.
+régulièrement | Les membres ont été régulièrement convoqués. | استدعي الأعضاء بصفة نظامية.
+valablement | Le conseil délibère valablement en présence de la majorité de ses membres. | يتداول المجلس بصفة صحيحة بحضور أغلبية أعضائه.
+dûment | Le formulaire dûment rempli est déposé au guichet. | تودع الاستمارة المملوءة حسب الأصول لدى الشباك.
+indûment | Les sommes indûment perçues sont restituées. | ترد المبالغ المقبوضة بغير حق.
+abusivement | Le salarié abusivement licencié est réintégré. | يعاد إدماج العامل المسرح تعسفا.
+arbitrairement | Nul ne peut être arbitrairement privé de sa nationalité. | لا يجوز حرمان أحد من جنسيته تحكما.
+à bon droit | Le tribunal a rejeté à bon droit la demande. | رفضت المحكمة الطلب عن حق.
+à tort | Le salarié soutient qu'il a été sanctionné à tort. | يدعي العامل أنه عوقب بغير وجه حق.
+à l'amiable | Les héritiers ont partagé la succession à l'amiable. | اقتسم الورثة التركة وديا.
+d'office | Le juge soulève d'office son incompétence. | يثير القاضي عدم اختصاصه تلقائيا.
+de bonne foi | L'acheteur a agi de bonne foi. | تصرف المشتري بحسن نية.
+de mauvaise foi | Le possesseur de mauvaise foi restitue les fruits. | يرد الحائز بسوء نية الثمار.
+de gré à gré | Le marché public est passé de gré à gré lorsque la concurrence est impossible. | تبرم الصفقة العمومية بالتراضي عندما تتعذر المنافسة.
+de plein gré | Le témoin s'est présenté de plein gré devant le juge. | حضر الشاهد طواعية أمام القاضي.
+sciemment | Le vendeur a sciemment caché le défaut du véhicule. | أخفى البائع عيب المركبة عن علم.
+intentionnellement | Celui qui endommage intentionnellement le bien d'autrui est puni. | يعاقب من أتلف عمدا مال الغير.
+involontairement | Le conducteur a involontairement blessé un passant. | جرح السائق أحد المارة بغير قصد.
+par négligence | Le gardien a causé l'incendie par négligence. | تسبب الحارس في الحريق بإهمال.
+par imprudence | Le chasseur a blessé un promeneur par imprudence. | جرح الصياد أحد المتنزهين عن عدم احتياط.
+solidairement | Les associés répondent solidairement des dettes sociales. | يسأل الشركاء بالتضامن عن ديون الشركة.
+conjointement | Les deux gérants signent conjointement les chèques. | يوقع المسيران الشيكات بالاشتراك.
+séparément | Le juge entend chaque témoin séparément. | يسمع القاضي كل شاهد على انفراد.
+personnellement | Le défendeur comparaît personnellement à l'audience. | يحضر المدعى عليه شخصيا إلى الجلسة.
+par écrit | Le congé est donné par écrit. | يوجه التنبيه بالإخلاء كتابة.
+verbalement | Les parties ont conclu la vente verbalement. | أبرم الطرفان البيع شفاهة.
+expressément | La loi interdit expressément cette pratique. | يمنع القانون هذه الممارسة صراحة.
+tacitement | Le contrat est tacitement renouvelé chaque année. | يجدد العقد ضمنا كل سنة.
+exclusivement | Le local est destiné exclusivement à l'habitation. | المحل مخصص حصريا للسكن.
+uniquement | L'appel porte uniquement sur le montant de l'indemnité. | ينصب الاستئناف على مبلغ التعويض فقط.
+notamment | Le dossier comprend notamment une copie du contrat. | يتضمن الملف لا سيما نسخة من العقد.
+respectivement | Les deux accusés sont condamnés respectivement à trois et cinq ans de prison. | حكم على المتهمين على التوالي بثلاث وخمس سنوات حبسا.
+réciproquement | Les parties s'informent réciproquement de tout changement d'adresse. | يعلم الطرفان بعضهما بالتبادل بكل تغيير في العنوان.
+à titre exceptionnel | Le délai peut être prolongé à titre exceptionnel. | يجوز تمديد الأجل بصفة استثنائية.
+à titre provisoire | Le juge confie la garde de l'enfant à la mère à titre provisoire. | يسند القاضي حضانة الطفل إلى الأم بصفة مؤقتة.
+à titre définitif | Le fonctionnaire est nommé à titre définitif après son stage. | يعين الموظف بصفة نهائية بعد تربصه.
+à titre principal | Le demandeur réclame à titre principal l'exécution du contrat. | يطلب المدعي بصفة أصلية تنفيذ العقد.
+à titre subsidiaire | Il demande à titre subsidiaire le remboursement du prix. | يطلب بصفة احتياطية رد الثمن.
+à titre accessoire | La société exerce à titre accessoire une activité de transport. | تمارس الشركة بصفة تبعية نشاط نقل.
+à titre gratuit | Le terrain est cédé à la commune à titre gratuit. | يتنازل عن الأرض للبلدية بدون مقابل.
+à titre onéreux | Le mandat peut être donné à titre onéreux. | يجوز أن تمنح الوكالة بمقابل.
+à titre conservatoire | Le compte bancaire est bloqué à titre conservatoire. | يجمد الحساب البنكي على سبيل التحفظ.
+à titre indicatif | Les prix sont donnés à titre indicatif. | تقدم الأسعار على سبيل البيان.
+à titre d'exemple | La loi cite à titre d'exemple quelques clauses abusives. | يذكر القانون على سبيل المثال بعض الشروط التعسفية.
+à titre personnel | Le gérant est poursuivi à titre personnel. | يتابع المسير بصفة شخصية.
+à titre de | Le locataire verse une somme à titre de garantie. | يدفع المستأجر مبلغا على سبيل الضمان.
+au titre de | Le budget ouvre un crédit au titre de l'exercice 2024. | تفتح الميزانية اعتمادا بعنوان السنة المالية 2024.
+en qualité de | Il intervient à l'acte en qualité de tuteur. | يتدخل في العقد بصفة ولي.
+ès qualités | Le liquidateur agit ès qualités devant le tribunal. | يتقاضى المصفي بصفته هذه أمام المحكمة.
+immédiatement | L'ordonnance de référé est exécutoire immédiatement. | الأمر الاستعجالي واجب التنفيذ فورا.
+dans les meilleurs délais | L'administration répond à la demande dans les meilleurs délais. | ترد الإدارة على الطلب في أقرب الآجال.
+à bref délai | Le juge fixe l'audience à bref délai. | يحدد القاضي الجلسة في أجل قصير.
+en temps utile | L'avocat dépose ses conclusions en temps utile. | يودع المحامي مذكراته في الوقت المناسب.
+au préalable | Le salarié doit au préalable informer son employeur. | يجب على العامل أن يعلم مستخدمه مسبقا.
+ultérieurement | La date de l'audience sera fixée ultérieurement. | يحدد تاريخ الجلسة لاحقا.
+rétroactivement | L'annulation efface rétroactivement les effets du contrat. | يمحو الإبطال آثار العقد بأثر رجعي.
+à l'avenir | Le règlement modifié s'appliquera à l'avenir aux nouveaux contrats. | يطبق النظام المعدل مستقبلا على العقود الجديدة.
+au plus tard | La déclaration est déposée au plus tard le 30 avril. | يودع التصريح في 30 أبريل على الأكثر.
+à compter de | Le délai court à compter de la notification. | يسري الأجل ابتداء من التبليغ.
+jusqu'à | Le bail est prolongé jusqu'à la fin de l'année. | يمدد الإيجار إلى غاية نهاية السنة.
+au cours de | Le témoin a été entendu au cours de l'enquête. | سمع الشاهد خلال التحقيق.
+dans un délai de | L'appel est formé dans un délai d'un mois. | يرفع الاستئناف في أجل شهر واحد.
+à l'expiration de | Le locataire quitte les lieux à l'expiration du bail. | يغادر المستأجر الأمكنة عند انقضاء الإيجار.
+avant l'expiration de | Le congé est donné avant l'expiration du contrat. | يوجه التنبيه بالإخلاء قبل انقضاء العقد.
+à l'occasion de | L'accident est survenu à l'occasion du travail. | وقع الحادث بمناسبة العمل.
+dans l'exercice de | L'agent a été blessé dans l'exercice de ses fonctions. | أصيب العون بجروح أثناء ممارسة وظائفه.
+d'urgence | Le juge statue d'urgence sur la demande. | يفصل القاضي في الطلب على وجه الاستعجال.
+en référé | Le président du tribunal ordonne en référé la suspension des travaux. | يأمر رئيس المحكمة استعجاليا بتعليق الأشغال.
+au fond | Le tribunal statue au fond après l'expertise. | تفصل المحكمة في الموضوع بعد الخبرة.
+en la forme | L'appel est recevable en la forme. | الاستئناف مقبول في الشكل.
+avant dire droit | Le tribunal ordonne une expertise avant dire droit. | تأمر المحكمة بخبرة قبل الفصل في الموضوع.
+en premier ressort | Le tribunal statue en premier ressort sur les litiges de travail. | تفصل المحكمة ابتدائيا في نزاعات العمل.
+en dernier ressort | La cour statue en dernier ressort. | يفصل المجلس القضائي في آخر درجة.
+en premier et dernier ressort | Le tribunal statue en premier et dernier ressort sur les petits litiges. | تفصل المحكمة ابتدائيا ونهائيا في النزاعات البسيطة.
+contradictoirement | Le jugement est rendu contradictoirement. | يصدر الحكم حضوريا.
+par défaut | Le prévenu absent est jugé par défaut. | يحاكم المتهم الغائب غيابيا.
+publiquement | Le jugement est prononcé publiquement. | ينطق بالحكم علنيا.
+à huis clos | Les affaires de mineurs sont jugées à huis clos. | يفصل في قضايا القصر في جلسة سرية.
+en chambre du conseil | Le tribunal statue en chambre du conseil sur la rectification de l'état civil. | تفصل المحكمة في غرفة المشورة في تصحيح الحالة المدنية.
+sous serment | Le témoin dépose sous serment. | يدلي الشاهد بشهادته بعد أداء اليمين.
+par procuration | L'associé absent vote par procuration. | يصوت الشريك الغائب بالوكالة.
+par intérim | Le secrétaire général exerce par intérim les fonctions de directeur. | يمارس الأمين العام بالنيابة وظائف المدير.
+à peine de nullité | L'acte doit être signé par les deux parties à peine de nullité. | يجب أن يوقع الطرفان العقد تحت طائلة البطلان.
+à peine d'irrecevabilité | La requête doit être signée par un avocat à peine d'irrecevabilité. | يجب أن توقع العريضة من محام تحت طائلة عدم القبول.
+à peine de déchéance | Le sinistre est déclaré dans les sept jours à peine de déchéance. | يصرح بالحادث خلال سبعة أيام تحت طائلة السقوط.
+en tout état de cause | La nullité d'ordre public peut être invoquée en tout état de cause. | يجوز التمسك بالبطلان المتعلق بالنظام العام في جميع الأحوال.
+le cas échéant | Le juge entend, le cas échéant, l'enfant mineur. | يسمع القاضي، عند الاقتضاء، الطفل القاصر.
+s'il y a lieu | Le tribunal ordonne, s'il y a lieu, une contre-expertise. | تأمر المحكمة، إن اقتضى الحال، بخبرة مضادة.
+en cas de besoin | Le président désigne en cas de besoin un interprète. | يعين الرئيس عند الحاجة مترجما فوريا.
+par dérogation | Le ministre peut, par dérogation, autoriser l'ouverture le vendredi. | يجوز للوزير، استثناء، أن يرخص بالفتح يوم الجمعة.
+en nature | Le partage se fait en nature lorsque les biens sont divisibles. | تتم القسمة عينا عندما تكون الأموال قابلة للانقسام.
+en espèces | Le loyer est payé en espèces contre reçu. | يدفع بدل الإيجار نقدا مقابل وصل.
+à crédit | Le commerçant vend à crédit à ses clients habituels. | يبيع التاجر بالأجل لزبائنه المعتادين.
+à tempérament | Le véhicule est acheté à tempérament. | تشترى المركبة بالتقسيط.
+au prorata | Les bénéfices sont répartis au prorata des apports. | توزع الأرباح بالتناسب مع الحصص.
+à parts égales | Les frais sont partagés à parts égales entre les parties. | تقسم المصاريف بالتساوي بين الطرفين.
+en totalité | La dette a été payée en totalité. | دفع الدين كليا.
+en partie | Le jugement est confirmé en partie. | يؤيد الحكم جزئيا.
+en indivision | Les héritiers possèdent la maison en indivision. | يملك الورثة المنزل على الشيوع.
+en pleine propriété | Le donataire reçoit l'immeuble en pleine propriété. | يتلقى الموهوب له العقار ملكية تامة.
+en bon père de famille | Le locataire use de la chose louée en bon père de famille. | يستعمل المستأجر العين المؤجرة بعناية الرجل العادي.
+à l'étranger | Le jugement rendu à l'étranger est exécuté après exequatur. | ينفذ الحكم الصادر في الخارج بعد الأمر بالتنفيذ.
+sur le territoire national | La loi pénale s'applique aux infractions commises sur le territoire national. | يطبق القانون الجزائي على الجرائم المرتكبة على التراب الوطني.
+en vertu de | L'huissier agit en vertu d'un titre exécutoire. | يتصرف المحضر بمقتضى سند تنفيذي.
+conformément à | Le contrat est exécuté conformément à ses clauses. | ينفذ العقد طبقا لبنوده.
+en application de | Le décret est pris en application de la loi. | يتخذ المرسوم تطبيقا للقانون.
+aux termes de | Aux termes de l'article 5, le délai est de trois mois. | حسب أحكام المادة 5، الأجل ثلاثة أشهر.
+au sens de | Est commerçant, au sens de la loi, celui qui exerce des actes de commerce. | يعد تاجرا، بمفهوم القانون، من يباشر أعمالا تجارية.
+sous réserve de | Le contrat est librement négocié sous réserve des dispositions d'ordre public. | يتفاوض على العقد بحرية مع مراعاة الأحكام المتعلقة بالنظام العام.
+sans préjudice de | L'amende est prononcée sans préjudice des réparations civiles. | ينطق بالغرامة دون الإخلال بالتعويضات المدنية.
+sous peine de | Le témoin doit comparaître sous peine d'amende. | يجب على الشاهد الحضور تحت طائلة الغرامة.
+à l'exception de | Tous les biens sont saisissables à l'exception des biens nécessaires à la vie. | جميع الأموال قابلة للحجز باستثناء الأموال الضرورية للمعيشة.
+nonobstant | Le jugement est exécuté nonobstant appel. | ينفذ الحكم بصرف النظر عن الاستئناف.
+par dérogation à | Par dérogation à l'article 10, le délai est réduit à huit jours. | استثناء من المادة 10، يخفض الأجل إلى ثمانية أيام.
+en violation de | La décision a été prise en violation des droits de la défense. | اتخذ القرار خرقا لحقوق الدفاع.
+dans le cadre de | L'expert agit dans le cadre de sa mission. | يتصرف الخبير في إطار مهمته.
+dans la limite de | La caution est tenue dans la limite de son engagement. | يلتزم الكفيل في حدود تعهده.
+en matière de | Le wali est compétent en matière d'ordre public. | الوالي مختص في مجال النظام العام.
+en cas de | En cas de litige, le tribunal d'Alger est compétent. | في حالة النزاع، تكون محكمة الجزائر مختصة.
+à défaut de | À défaut d'accord, le prix est fixé par un expert. | عند انعدام الاتفاق، يحدد خبير الثمن.
+en l'absence de | Le jugement est rendu en l'absence du défendeur. | يصدر الحكم في غياب المدعى عليه.
+en présence de | L'inventaire est dressé en présence des héritiers. | يحرر الجرد بحضور الورثة.
+au nom de | Le jugement est rendu au nom du peuple algérien. | يصدر الحكم باسم الشعب الجزائري.
+pour le compte de | Le commissionnaire agit pour le compte de son client. | يتصرف الوكيل بالعمولة لحساب زبونه.
+au profit de | L'assurance est souscrite au profit des enfants. | يكتتب التأمين لفائدة الأولاد.
+à la charge de | Les frais de l'acte sont à la charge de l'acheteur. | تقع مصاريف العقد على عاتق المشتري.
+aux frais de | Les travaux sont exécutés aux frais du propriétaire. | تنفذ الأشغال على نفقة المالك.
+à l'encontre de | Une sanction disciplinaire a été prise à l'encontre du salarié. | اتخذت عقوبة تأديبية ضد العامل.
+à l'égard de | Le contrat n'a d'effet qu'à l'égard des parties. | لا ينتج العقد أثرا إلا تجاه الطرفين.
+à la demande de | L'expertise est ordonnée à la demande du défendeur. | يؤمر بالخبرة بطلب من المدعى عليه.
+à l'initiative de | La réunion est convoquée à l'initiative du président. | يستدعى الاجتماع بمبادرة من الرئيس.
+sur proposition de | Le directeur est nommé sur proposition du ministre. | يعين المدير باقتراح من الوزير.
+sur rapport de | Le décret est pris sur rapport du ministre des Finances. | يتخذ المرسوم بناء على تقرير وزير المالية.
+après avis de | Le plan est approuvé après avis de la commission. | يصادق على المخطط بعد استشارة اللجنة.
+avec l'accord de | Le mineur contracte avec l'accord de son tuteur. | يتعاقد القاصر بموافقة وليه.
+à l'insu de | L'associé a vendu ses parts à l'insu des autres associés. | باع الشريك حصصه دون علم باقي الشركاء.
+dans l'intérêt de | Le tuteur agit dans l'intérêt du mineur. | يتصرف الولي لمصلحة القاصر.
+par l'intermédiaire de | Le recours est déposé par l'intermédiaire d'un avocat. | يودع الطعن بواسطة محام.
+par voie de | Le litige est réglé par voie d'arbitrage. | يسوى النزاع عن طريق التحكيم.
+au vu de | Le visa est délivré au vu du dossier. | تسلم التأشيرة بناء على الملف.
+compte tenu de | La peine est fixée compte tenu de la gravité des faits. | تحدد العقوبة بالنظر إلى خطورة الوقائع.
+en raison de | L'audience est reportée en raison de l'absence du témoin. | تؤجل الجلسة بسبب غياب الشاهد.
+par suite de | Le contrat est rompu par suite de la faillite du fournisseur. | ينتهي العقد نتيجة لإفلاس المورد.
+en vue de | Le dossier est transmis au juge en vue d'une conciliation. | يحال الملف إلى القاضي قصد إجراء مصالحة.
+en contrepartie de | Le salarié perçoit un salaire en contrepartie de son travail. | يتقاضى العامل أجرا مقابل عمله.
+à concurrence de | La caution garantit la dette à concurrence d'un million de dinars. | يضمن الكفيل الدين في حدود مبلغ مليون دينار.
+en remplacement de | Un nouveau gérant est nommé en remplacement du gérant démissionnaire. | يعين مسير جديد بدلا من المسير المستقيل.
+en sus de | Le salarié reçoit une indemnité en sus de son salaire. | يتلقى العامل تعويضا زيادة على أجره.
+à proportion de | Chaque associé contribue aux pertes à proportion de sa part. | يساهم كل شريك في الخسائر بنسبة حصته.
+en fonction de | L'indemnité est calculée en fonction de l'ancienneté. | يحسب التعويض حسب الأقدمية.
+par rapport à | Le loyer a augmenté par rapport à l'année précédente. | ارتفع بدل الإيجار بالنسبة إلى السنة الماضية.
+quant à | Le contrat est muet quant au lieu de paiement. | لم يتضمن العقد شيئا فيما يخص مكان الدفع.
+par conséquent | Le délai est expiré et, par conséquent, l'appel est irrecevable. | انقضى الأجل، وبالتالي فإن الاستئناف غير مقبول.
+toutefois | Le bail est conclu pour trois ans, toutefois le locataire peut le résilier plus tôt. | يبرم الإيجار لمدة ثلاث سنوات، غير أنه يجوز للمستأجر فسخه قبل ذلك.
+en outre | Le tribunal prononce en outre une amende. | تنطق المحكمة زيادة على ذلك بغرامة.
+à cet effet | Le président désigne un juge à cet effet. | يعين الرئيس قاضيا لهذا الغرض.
+de ce fait | Le contrat est nul et, de ce fait, ne produit aucun effet. | العقد باطل، ونتيجة لذلك لا ينتج أي أثر.
+à ce titre | Le gérant représente la société et, à ce titre, signe les contrats. | يمثل المسير الشركة، وبهذه الصفة يوقع العقود.
+à condition que | Le bail est renouvelé à condition que le locataire paie le loyer. | يجدد الإيجار بشرط أن يدفع المستأجر بدل الإيجار.
+à moins que | La vente est parfaite à moins que les parties n'en décident autrement. | يكون البيع تاما ما لم يتفق الطرفان على غير ذلك.
+dès lors que | Le contrat est formé dès lors que les parties sont d'accord sur le prix. | ينعقد العقد متى اتفق الطرفان على الثمن.
+lorsque | Le salarié est indemnisé lorsque le licenciement est abusif. | يعوض العامل عندما يكون التسريح تعسفيا.
+tant que | Le vendeur reste propriétaire tant que le prix n'est pas payé. | يبقى البائع مالكا ما دام الثمن لم يدفع.
+jusqu'à ce que | Le bien reste sous séquestre jusqu'à ce que le juge statue. | يبقى المال تحت الحراسة إلى أن يفصل القاضي.
+avant que | L'offre peut être retirée avant que l'acceptation ne soit connue de l'offrant. | يجوز سحب الإيجاب قبل أن يعلم الموجب بالقبول.
+après que | Le jugement est exécuté après que le délai d'appel a expiré. | ينفذ الحكم بعد أن ينقضي أجل الاستئناف.
+sans que | Le contrat est résilié sans que le juge intervienne. | يفسخ العقد دون أن يتدخل القاضي.
+afin que | Le jugement est notifié afin que le délai d'appel commence à courir. | يبلغ الحكم لكي يبدأ سريان أجل الاستئناف.
+de sorte que | Le délai est expiré, de sorte que l'action est prescrite. | انقضى الأجل بحيث تقادمت الدعوى.
+bien que | Le contrat est valable bien qu'il ne soit pas écrit. | العقد صحيح مع أنه غير مكتوب.
+alors que | Le vendeur réclame le prix alors que la chose n'a pas été livrée. | يطالب البائع بالثمن في حين أن الشيء لم يسلم.
+étant donné que | Étant donné que le débiteur est insolvable, le créancier poursuit la caution. | بما أن المدين معسر، يتابع الدائن الكفيل.
+attendu que | Attendu que le demandeur ne prouve pas sa créance, sa demande est rejetée. | حيث أن المدعي لم يثبت دينه، ترفض دعواه.
+au cas où | Le contrat prévoit une pénalité au cas où la livraison serait tardive. | ينص العقد على غرامة في حالة ما إذا تأخر التسليم.
+dans la mesure où | L'assureur indemnise la victime dans la mesure où le dommage est prouvé. | يعوض المؤمن الضحية بقدر ما يثبت الضرر.
+à savoir | Le dossier comprend deux pièces, à savoir le contrat et la facture. | يتضمن الملف وثيقتين، أي العقد والفاتورة.
+sauf disposition contraire | Le paiement se fait au domicile du débiteur, sauf disposition contraire. | يتم الوفاء في موطن المدين ما لم يوجد نص مخالف.
+sauf convention contraire | Les frais de livraison sont à la charge du vendeur, sauf convention contraire. | تقع مصاريف التسليم على عاتق البائع ما لم يتفق على خلاف ذلك.
+sauf preuve contraire | Le possesseur est considéré comme propriétaire, sauf preuve contraire. | يعتبر الحائز مالكا ما لم يثبت العكس.
+ci-dessus | Les conditions énumérées ci-dessus sont cumulatives. | يجب أن تجتمع الشروط المعددة أعلاه.
+ci-dessous | Les parties désignées ci-dessous ont signé le présent contrat. | وقع الطرفان المعينان أدناه هذا العقد.
+ci-après | Les conditions de la vente sont précisées ci-après. | تحدد شروط البيع فيما يلي.
+ci-joint | Le demandeur produit ci-joint une copie du contrat. | يقدم المدعي رفقته نسخة من العقد.
+susvisé | Le décret susvisé est modifié comme suit. | يعدل المرسوم المذكور أعلاه كما يأتي.
+ledit | Ledit contrat prend effet à la date de sa signature. | يسري العقد المذكور من تاريخ توقيعه.
+soussigné | Je soussigné, gérant de la société, certifie l'exactitude des comptes. | أنا الموقع أدناه، مسير الشركة، أشهد بصحة الحسابات.
+dénommé | L'immeuble dénommé Dar El Amel appartient à la commune. | العقار المسمى دار الأمل ملك للبلدية.
+ci-après dénommé | Le client, ci-après dénommé l'emprunteur, reçoit la somme. | يتسلم الزبون، المسمى فيما يلي المقترض، المبلغ.
+relatif à | La loi relative à la monnaie et au crédit fixe le rôle de la Banque d'Algérie. | يحدد القانون المتعلق بالنقد والقرض دور بنك الجزائر.
+prévu par la loi | Le délai prévu par la loi est d'un mois. | الأجل المنصوص عليه قانونا شهر واحد.
+fait à | Fait à Alger, le 2 mars 2024, en deux exemplaires. | حرر بالجزائر في 2 مارس 2024 في نسختين.
+lu et approuvé | Chaque partie écrit la mention lu et approuvé avant de signer. | يكتب كل طرف عبارة قرئ وصودق عليه قبل التوقيع.
+pour copie conforme | Le greffier signe le document avec la mention pour copie conforme. | يوقع أمين الضبط الوثيقة مع عبارة نسخة طبق الأصل.
+pour valoir ce que de droit | La présente attestation est délivrée à l'intéressé pour valoir ce que de droit. | سلمت هذه الشهادة للمعني بالأمر لاستعمالها في حدود ما يسمح به القانون.
+bon pour accord | Le client signe le devis avec la mention bon pour accord. | يوقع الزبون الكشف التقديري مع عبارة صالح للموافقة.
+dont acte | Dont acte, établi en l'étude du notaire soussigné. | وإثباتا لذلك حرر هذا العقد بمكتب الموثق الموقع أدناه.
