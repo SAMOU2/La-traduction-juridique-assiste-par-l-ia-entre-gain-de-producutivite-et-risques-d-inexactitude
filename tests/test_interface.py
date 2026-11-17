@@ -1,7 +1,10 @@
 """Interface de bureau : fenêtre, barre de menus, écran « Terme », fiche (tests exécutés sans écran).
 
-La barre latérale, les écrans « Paramètres », « Description de la plateforme » et « Centre
-d'aide », l'allumage des étapes et l'écran de démarrage sont testés dans ``test_interface_ecrans.py``.
+La fiche d'un terme a deux colonnes : le terme et son équivalent. Le reste de l'entrée (définition,
+phrases d'exemple, ressources…) est dans le menu « Plus de détails », sous la fiche : ce menu est
+testé dans ``test_interface_details.py``. La barre latérale, les écrans « Paramètres »,
+« Description de la plateforme » et « Centre d'aide », l'allumage et l'écran de démarrage sont
+testés dans ``test_interface_ecrans.py``.
 
 La largeur d'un texte dépend de la police du système. Les tests ne comparent donc pas les textes
 abrégés ou raccourcis à une valeur exacte : ils vérifient leur forme (une des formes prévues,
@@ -15,19 +18,26 @@ import pytest
 
 pytest.importorskip("PySide6")
 
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QGuiApplication
+from PySide6.QtCore import QPoint, Qt
+from PySide6.QtGui import QColor, QGuiApplication, QTextLayout
 from PySide6.QtTest import QTest
 from PySide6.QtWidgets import QDialog, QFileDialog, QLabel, QPushButton
 
 from traducteur.interface import boites, theme
 from traducteur.interface import fenetre as module_fenetre
 from traducteur.interface.boites import BoiteMessage
-from traducteur.interface.composants import ESPACE_INVISIBLE, MARQUE_RTL, EtiquetteCourte
+from traducteur.interface.composants import (
+    ESPACE_INVISIBLE,
+    MARQUE_LTR,
+    MARQUE_RTL,
+    EtiquetteCourte,
+    TermeAjuste,
+    message_en_francais,
+)
+from traducteur.interface.details import CLES
 from traducteur.interface.fenetre import MODE_PARAMETRES, MODE_TERME, MODE_TEXTE, BarreEtat, FenetrePrincipale
 from traducteur.interface.fiche import LARGEUR_MINIMALE, LienCourt, LigneDeProvenance
 from traducteur.interface.navigation import LARGEUR as LARGEUR_DU_RAIL
-from traducteur.interface.recherche import LEGENDES
 from traducteur.langues import AR, FR
 
 _BALISE = re.compile(r"<[^>]+>")
@@ -45,6 +55,21 @@ def textes(widget) -> list[str]:
         if texte:
             resultat.append(texte)
     return resultat
+
+
+def points_de_couleur(widget, couleur: str, tolerance: int = 40) -> int:
+    """Nombre de points de l'image d'un widget dont la couleur est proche de ``couleur``."""
+    image = widget.grab().toImage()
+    cible = QColor(couleur)
+    total = 0
+    for x in range(image.width()):
+        for y in range(image.height()):
+            point = image.pixelColor(x, y)
+            if (point.alpha() > 200 and abs(point.red() - cible.red()) <= tolerance
+                    and abs(point.green() - cible.green()) <= tolerance
+                    and abs(point.blue() - cible.blue()) <= tolerance):
+                total += 1
+    return total
 
 
 def puces(widget) -> list[str]:
@@ -73,7 +98,7 @@ def test_la_fenetre_s_ouvre_avec_le_glossaire_d_exemple(fenetre, avertissements)
     """Le glossaire est chargé à l'ouverture, sans aucune commande."""
     assert avertissements == []
     assert fenetre.windowTitle() == "Traducteur juridique"
-    assert (fenetre.minimumWidth(), fenetre.minimumHeight()) == (900, 560)
+    assert (fenetre.minimumWidth(), fenetre.minimumHeight()) == (900, 600)
     assert fenetre.glossaire.nom == "glossaire_essai.csv" and len(fenetre.glossaire) == 40
     assert fenetre.glossaire_fourni()
     # Barre d'outils : le sens de traduction, puis la barre de recherche de l'écran « Terme ».
@@ -111,10 +136,8 @@ def test_ecran_d_accueil(fenetre):
     assert page.entree is None and page.pile.currentWidget() is accueil
     assert accueil.titre.text() == "Recherchez un terme juridique"
     assert "Saisissez un terme en français ou en arabe, puis appuyez sur Entrée." in textes(accueil)[1]
-    # Les cinq champs de l'enchaînement, chacun avec sa légende (longue ou courte selon la place).
-    assert accueil.entete.titres == ["Terme", "Définition", "Équivalent", "Contextualisation", "Ressources"]
-    for legende, formes in zip(accueil.entete.legendes_affichees(), LEGENDES, strict=True):
-        assert legende in formes or legende.endswith("…")
+    # L'accueil ne décrit pas la fiche : il invite à chercher un terme, sans autre explication.
+    assert not {"Définition", "Équivalent", "Contextualisation", "Ressources"} & set(textes(accueil))
     # Cinq termes du glossaire en exemple, puis les raccourcis.
     assert accueil.etiquette_puces.text() == "PAR EXEMPLE"
     exemples = [bouton.text() for bouton in accueil.puces]
@@ -135,64 +158,52 @@ def test_un_exemple_de_l_accueil_ouvre_sa_fiche(fenetre):
 
 
 # ------------------------------------------------------------------ recherche
-def test_recherche_d_un_terme_francais(fenetre):
+def test_recherche_d_un_terme_francais(fenetre, application):
+    """La fiche a deux colonnes : le terme et son équivalent. Le reste est dans le menu « Plus de détails »."""
     page = fenetre.page
     page.rechercher("contrat")
-    fiche = page.fiche
+    application.processEvents()
+    fiche, details = page.fiche, page.details
     assert page.entree.terme_fr == "contrat"
     assert page.pile.currentWidget() is page.vue_fiche
     assert page.barre.texte_du_resume() == "1 terme · 5 expressions"
     assert page.barre.resume.isVisible() and page.barre.effacer.isVisible()
     assert fenetre.barre_etat.texte() == "« contrat » : 6 entrées trouvées dans le glossaire."
-    assert fiche.entete.titres == ["Terme", "Définition", "Équivalent", "Contextualisation", "Ressources"]
+    assert fiche.colonnes == [fiche.colonne_terme, fiche.colonne_equivalent]
     assert not fiche.onglets.isVisible()  # un seul sens : pas d'onglets
 
-    # 1 Terme
+    # À gauche, le terme : sa catégorie et son domaine. Au pied : son rang dans le glossaire, les entrées voisines.
     assert grand_terme(fiche.colonne_terme) == "contrat"
-    contenu = textes(fiche.colonne_terme.corps)
-    assert contenu[0] == "FRANÇAIS · SOURCE"
-    assert "nom masculin · pl. contrats" in contenu
-    assert {"DOMAINE", "SYNONYMES", "TERMES ASSOCIÉS"} <= set(contenu)
-    assert {"Droit civil › Obligations", "convention", "accord", "cocontractant", "clause"} <= set(contenu)
-    assert puces(fiche.colonne_terme.corps) == ["contractant", "obligation"]  # entrées du glossaire : cliquables
+    assert textes(fiche.colonne_terme.corps) == [
+        "FRANÇAIS · SOURCE", "contrat", "nom masculin · pl. contrats", "Droit civil › Obligations"]
     assert fiche.colonne_terme.rang.texte_complet() == "Entrée 1 sur 40"
     assert not fiche.colonne_terme.bouton_precedent.isEnabled() and fiche.colonne_terme.bouton_suivant.isEnabled()
 
-    # 2 Définition
-    contenu = textes(fiche.colonne_definition.corps)
-    assert contenu[0] == "FRANÇAIS" and contenu[1].startswith("Convention par laquelle")
-    assert contenu[2] == "العربية" and contenu[3].startswith("اتفاق يلتزم بموجبه")
-    assert textes(fiche.colonne_definition.pied) == ["Source :", "Code civil, art. 54"]
-
-    # 3 Équivalent
+    # À droite, l'équivalent : sa grammaire, ses autres équivalents. Au pied : le lien qui le copie.
     assert grand_terme(fiche.colonne_equivalent) == "عقد"
     assert textes(fiche.colonne_equivalent.corps) == [
         "ARABE · CIBLE", "عقد", "اسم مذكر، ج. عقود", "AUTRE ÉQUIVALENT", "اتفاق"]
+    assert fiche.colonne_equivalent.mention is None  # rien à vérifier : la définition de « contrat » cite sa source
+    assert textes(fiche.colonne_equivalent.pied) == []
     assert fiche.colonne_equivalent.bouton_copier.text() == "Copier l’équivalent"
 
-    # 4 Contextualisation : le terme est mis en évidence dans les deux langues
-    contenu = textes(fiche.colonne_contexte.corps)
-    assert contenu[:3] == ["Code civil, art. 106", "Le contrat fait la loi des parties.", "العقد شريعة المتعاقدين."]
-    assert textes(fiche.colonne_contexte.pied) == ["2 exemples dans le glossaire"]
-    assert [emploi.origine for emploi in fiche.colonne_contexte.emplois] == ["propre", "propre"]
-    riches = [label.text() for label in fiche.colonne_contexte.corps.findChildren(QLabel) if "<span" in label.text()]
-    assert len(riches) == 4
-    assert any('font-weight: 600;">contrat</span>' in texte for texte in riches)
-    assert any('font-weight: 600;">العقد</span>' in texte for texte in riches)
+    # Les deux colonnes se partagent la largeur de la fiche ; le terme et son équivalent sont à la même hauteur.
+    terme, equivalent = fiche.colonne_terme.terme, fiche.colonne_equivalent.terme
+    assert abs(fiche.colonne_terme.corps.width() - fiche.colonne_equivalent.corps.width()) <= 1
+    assert fiche.colonne_terme.corps.width() + fiche.colonne_equivalent.corps.width() == fiche.width()
+    assert terme.mapTo(fiche, QPoint(0, 0)).x() < equivalent.mapTo(fiche, QPoint(0, 0)).x()
+    assert abs(terme.mapTo(fiche, terme.rect().center()).y()
+               - equivalent.mapTo(fiche, equivalent.rect().center()).y()) <= 1
 
-    # 5 Ressources
-    contenu = textes(fiche.colonne_ressources.corps)
-    assert contenu[0] == "Code civil algérien\nordonnance n° 75-58 du 26 septembre 1975, art. 54, 106 et 107"
-    liens = [label.text() for label in fiche.colonne_ressources.corps.findChildren(QLabel) if "<a href" in label.text()]
-    assert len(liens) == 1 and 'href="https://www.joradp.dz"' in liens[0]
-    assert fiche.colonne_ressources.bouton_copier.text() == "Copier les références"
-
-    # Sous la fiche : les autres entrées trouvées.
-    assert page.liste.isVisible()
-    assert page.liste.titre.texte_complet() == "Expressions avec « contrat »" and page.liste.nombre.text() == "5"
-    assert [entree.terme_fr for entree in page.liste.entrees()] == [
-        "contrat de bail", "contrat de vente", "contrat de travail", "exécution du contrat", "conclusion du contrat"]
-    assert page.liste.grille.cellules[0].text() == "contrat de bail — عقد الإيجار"
+    # Ni définition, ni phrase d'exemple, ni référence dans la fiche : le menu les donne à la demande.
+    contenu = textes(fiche)
+    assert not any(texte.startswith("Convention par laquelle") for texte in contenu)
+    assert "Le contrat fait la loi des parties." not in contenu and "Code civil, art. 54" not in contenu
+    assert details.isVisible() and details.titre.text() == "Plus de détails"
+    assert fiche.geometry().bottom() < details.geometry().top()  # le menu est sous la fiche
+    # Aucune information n'est ouverte d'office : une invitation nomme celles que le glossaire renseigne.
+    assert details.detail == "" and details.pile.currentWidget() is details.invite
+    assert details.renseignes() == list(CLES)
 
 
 def test_la_saisie_au_clavier_lance_la_recherche(fenetre, application):
@@ -215,14 +226,17 @@ def test_le_bouton_rechercher(fenetre):
 
 def test_choisir_une_autre_entree_trouvee(fenetre):
     page = fenetre.page
+    details = page.details
     page.rechercher("contrat")
-    page.liste.grille.cellules[1].click()
+    details.roue.boutons["expressions"].click()
+    details.colonne_expressions.grille.cellules[1].click()
     assert page.entree.terme_fr == "contrat de vente"
     assert grand_terme(page.fiche.colonne_equivalent) == "عقد البيع"
     assert page.champ.text() == "contrat"  # la recherche saisie est conservée
-    # La liste présente alors les autres résultats de cette recherche, « contrat » compris.
-    assert page.liste.titre.texte_complet() == "Autres résultats pour « contrat »"
-    assert [entree.terme_fr for entree in page.liste.entrees()] == [
+    # La liste reste ouverte : elle présente alors les autres résultats de cette recherche, « contrat » compris.
+    assert details.detail == "expressions"
+    assert details.titre_du_detail.texte_complet() == "Autres résultats pour « contrat »"
+    assert [entree.terme_fr for entree in details.colonne_expressions.entrees()] == [
         "contrat", "contrat de bail", "contrat de travail", "exécution du contrat", "conclusion du contrat"]
 
 
@@ -235,14 +249,59 @@ def test_un_terme_arabe_inverse_le_sens(fenetre):
     assert grand_terme(page.fiche.colonne_equivalent) == "contrat"
     assert textes(page.fiche.colonne_terme.corps)[0] == "ARABE · SOURCE"
     assert textes(page.fiche.colonne_equivalent.corps)[0] == "FRANÇAIS · CIBLE"
-    # La colonne du terme arabe s'aligne à droite.
-    assert page.fiche.colonne_terme.corps.layoutDirection() == Qt.LayoutDirection.RightToLeft
+    # Le terme et son équivalent sont centrés dans leur colonne ; le terme arabe s'écrit de droite à gauche.
+    assert page.fiche.colonne_terme.terme.alignment() == Qt.AlignmentFlag.AlignCenter
+    assert page.fiche.colonne_equivalent.terme.alignment() == Qt.AlignmentFlag.AlignCenter
+    assert page.fiche.colonne_terme.terme.layoutDirection() == Qt.LayoutDirection.RightToLeft
+    assert page.fiche.colonne_equivalent.terme.layoutDirection() == Qt.LayoutDirection.LeftToRight
     assert fenetre.sens.source.text() == "العربية" and fenetre.sens.cible.text() == "Français"
     assert page.champ.placeholderText() == "أدخل مصطلحا قانونيا، بالعربية أو بالفرنسية..."
     assert page.champ.layoutDirection() == Qt.LayoutDirection.RightToLeft
     # Un message passager l'annonce ; l'état de l'écran reste le résultat de la recherche.
     assert fenetre.barre_etat.texte() == "Terme saisi en arabe : le sens de traduction a été inversé."
     assert fenetre.barre_etat.etat() == "« العقد » : 6 entrées trouvées dans le glossaire."
+
+
+def test_un_message_qui_cite_un_terme_arabe_se_lit_de_gauche_a_droite(fenetre, application):
+    """La barre d'état écrit en français : un terme arabe ne doit ni inverser la ligne, ni déplacer un nombre."""
+
+    def abscisses(texte: str) -> list[float]:
+        """Où Qt écrit chaque partie du message, de la première à la dernière."""
+        disposition = QTextLayout(texte, barre.message.font())
+        disposition.beginLayout()
+        ligne = disposition.createLine()
+        ligne.setLineWidth(100_000)
+        disposition.endLayout()
+        return [ligne.cursorToX(texte.index(partie))[0] for partie in ("«", "العقد", "»", ":", "6", "entrées", "dans")]
+
+    barre = fenetre.barre_etat
+    fenetre.page.rechercher("العقد")
+    barre._oublier_le_message()  # le message passager « Terme saisi en arabe… » laisse la place à l'état
+    message = "« العقد » : 6 entrées trouvées dans le glossaire."
+    assert barre.texte() == barre.etat() == message
+    # Des marques invisibles gardent au message son sens de lecture : ses parties se suivent de gauche à droite.
+    affiche = barre.message.text()
+    assert affiche == message_en_francais(message)
+    assert affiche == f"{MARQUE_LTR}« \u2067العقد\u2069 » : 6 entrées trouvées dans le glossaire."
+    positions = abscisses(affiche)
+    assert positions == sorted(positions) and len(set(positions)) == len(positions)
+    # Sans elles, Qt écrit la ligne de droite à gauche. Avec la seule marque de début de ligne, le terme arabe
+    # entraîne le nombre qui le suit : « 6 » passerait devant lui.
+    positions = abscisses(message)
+    assert positions == sorted(positions, reverse=True)
+    positions = abscisses(MARQUE_LTR + message)
+    assert positions != sorted(positions) and positions[4] < positions[2]
+    # À l'écran : le message part du bord gauche de la barre, rien n'est écrit dans sa moitié droite.
+    application.processEvents()
+    image = barre.grab().toImage()
+    fond = image.pixelColor(image.width() - 3, image.height() // 2)
+    assert all(image.pixelColor(x, y) == fond
+               for x in range(image.width() // 2, image.width() - 3) for y in range(4, image.height() - 2))
+    # Un message sans terme arabe ne reçoit que la marque de début ; une barre vide reste vide.
+    assert message_en_francais("Glossaire chargé : g.csv.") == MARQUE_LTR + "Glossaire chargé : g.csv."
+    assert message_en_francais("Copié : عقد البيع") == f"{MARQUE_LTR}Copié : \u2067عقد البيع\u2069"
+    fenetre.definir_mode(MODE_TEXTE)
+    assert barre.texte() == "" and barre.message.text() == "" and message_en_francais("") == ""
 
 
 def test_inverser_le_sens_garde_l_entree_affichee(fenetre):
@@ -276,7 +335,7 @@ def test_inverser_le_sens_sans_entree_affichee(fenetre):
     assert len(page.accueil.puces) == 5
 
 
-def test_un_terme_qui_a_plusieurs_sens(fenetre):
+def test_un_terme_qui_a_plusieurs_sens(fenetre, application):
     page = fenetre.page
     page.rechercher("droit")
     assert page.barre.texte_du_resume() == "2 sens"
@@ -287,13 +346,30 @@ def test_un_terme_qui_a_plusieurs_sens(fenetre):
     assert bande.avertissement.texte_complet() == (
         "« droit » a 2 sens dans le glossaire : choisissez celui qui convient au texte.")
     assert grand_terme(page.fiche.colonne_equivalent) == "حق"
-    assert not page.liste.isVisible()  # aucune autre entrée trouvée
+    assert page.details.etats()["expressions"] == (False, 0)  # aucune autre entrée trouvée
 
     bande.onglets[1].click()
     assert page.entree.terme_ar == "قانون"
     assert grand_terme(page.fiche.colonne_equivalent) == "قانون"
     assert [onglet.isChecked() for onglet in page.fiche.onglets.onglets] == [False, True]
     assert page.champ.text() == "droit"
+
+    # Les onglets sont au-dessus des deux colonnes. Le signe orange précède l'avertissement, écrit à droite :
+    # dans une fenêtre étroite, où le texte raccourcit, il ne recouvre jamais un onglet.
+    for taille in ((1440, 860), (1080, 620), (900, 600)):
+        fenetre.resize(*taille)
+        application.processEvents()
+        bande = page.fiche.onglets
+        assert bande.geometry().bottom() < page.fiche.defilement.geometry().top(), taille
+        assert bande.avertissement.text() in (
+            "« droit » a 2 sens dans le glossaire : choisissez celui qui convient au texte.",
+            "2 sens dans le glossaire : choisissez celui qui convient.", "2 sens", ""), taille
+        if bande.avertissement.text():
+            assert bande._signe.isVisible(), taille
+            assert bande.onglets[-1].geometry().right() < bande._signe.geometry().left(), taille
+            assert bande._signe.geometry().right() < bande.avertissement.geometry().right(), taille
+        else:
+            assert not bande._signe.isVisible(), taille
 
 
 def test_aucun_resultat_propose_les_termes_proches(fenetre):
@@ -335,10 +411,14 @@ def test_effacer_la_recherche_revient_a_l_accueil(fenetre):
 def test_les_puces_et_les_fleches_ouvrent_une_autre_entree(fenetre):
     page = fenetre.page
     page.rechercher("contrat")
-    page.fiche.colonne_terme.corps.findChild(QPushButton).click()  # puce « contractant »
+    # Dans « Termes associés », un terme qui a son entrée dans le glossaire est une puce cliquable.
+    page.details.choisir("associes")
+    associes = page.details.colonne_associes
+    assert puces(associes.corps) == ["contractant", "obligation"]
+    associes.corps.findChild(QPushButton).click()  # puce « contractant »
     assert page.entree.terme_fr == "contractant" and page.champ.text() == "contractant"
 
-    # Au pied du champ « Terme » : l'entrée précédente et l'entrée suivante du glossaire.
+    # Au pied de la colonne du terme : l'entrée précédente et l'entrée suivante du glossaire.
     numero = page.entree.numero
     page.fiche.colonne_terme.bouton_suivant.click()
     assert page.entree.numero == numero + 1 and page.champ.text() == page.entree.terme_fr
@@ -351,24 +431,35 @@ def test_les_puces_et_les_fleches_ouvrent_une_autre_entree(fenetre):
 
 
 def test_entree_sans_definition_ni_exemple_ni_ressource(fenetre, tmp_path):
-    """Un glossaire réduit aux deux colonnes de termes : les champs 2, 4 et 5 le signalent."""
+    """Un glossaire réduit aux deux colonnes de termes : la fiche est complète, le menu dit ce qui manque."""
     assert fenetre.charger_glossaire(ecrire(tmp_path / "deux_colonnes.csv", "terme_fr;terme_ar\ncapacité;أهلية\n"))
     page = fenetre.page
     page.rechercher("capacité")
-    fiche = page.fiche
+    fiche, details = page.fiche, page.details
     assert textes(fiche.colonne_terme.corps) == ["FRANÇAIS · SOURCE", "capacité"]
-    # Les messages disent ce qui manque, sans nom de colonne ni de fichier.
-    assert textes(fiche.colonne_definition.corps) == [
-        "Aucune définition pour ce terme", "Le glossaire n’en donne pas encore."]
-    assert textes(fiche.colonne_contexte.corps) == [
-        "Aucun exemple pour ce terme", "Aucune phrase du glossaire n’emploie encore ce terme."]
-    assert textes(fiche.colonne_ressources.corps) == [
-        "Aucune ressource pour ce terme", "Le glossaire ne cite pas encore de référence."]
-    assert fiche.entete.etapes_allumees() == [True, False, True, False, False]
-    assert textes(fiche.colonne_definition.pied) == [] and textes(fiche.colonne_contexte.pied) == []
     assert grand_terme(fiche.colonne_equivalent) == "أهلية"
     assert textes(fiche.colonne_equivalent.corps) == ["ARABE · CIBLE", "أهلية"]
     assert fiche.colonne_terme.rang.texte_complet() == "Entrée 1 sur 1"
+    # Les six cercles du menu sont gris ; l'invitation dit que le glossaire ne donne que l'équivalent.
+    assert details.renseignes() == [] and details.roue.etats() == dict.fromkeys(CLES, False)
+    assert (details.invite.titre.text(), details.invite.texte.text()) == (
+        "Le glossaire ne donne que l’équivalent de ce terme",
+        "Il n’a pour lui ni définition, ni phrase d’exemple, ni référence.")
+    # Un cercle gris s'ouvre quand même : son message dit ce qui manque, sans nom de colonne ni de fichier.
+    attendus = {
+        "definition": ["Aucune définition pour ce terme", "Le glossaire n’en donne pas encore."],
+        "contexte": ["Aucun exemple pour ce terme", "Aucune phrase du glossaire n’emploie encore ce terme."],
+        "ressources": ["Aucune ressource pour ce terme", "Le glossaire ne cite pas encore de référence."],
+        "expressions": ["Aucune expression avec ce terme", "Aucune autre entrée du glossaire ne contient ce terme."],
+        "associes": ["Aucun terme associé", "Le glossaire n’en cite pas pour ce terme."],
+        "synonymes": ["Aucun synonyme pour ce terme", "Le glossaire n’en donne pas."],
+    }
+    assert list(attendus) == list(CLES)
+    for cle, message in attendus.items():
+        details.roue.boutons[cle].click()
+        assert details.detail == cle and details.pile.currentWidget() is details.vue
+        assert textes(details.colonnes[cle].corps) == message
+        assert textes(details.colonnes[cle].pied) == [] and not details.nombre.isVisible()
 
 
 def test_une_definition_sans_source_est_a_verifier(fenetre, tmp_path):
@@ -379,16 +470,19 @@ def test_une_definition_sans_source_est_a_verifier(fenetre, tmp_path):
         "prêt;قرض;Contrat de prêt.;\n")))
     page = fenetre.page
     page.rechercher("bail")
-    assert textes(page.fiche.colonne_definition.pied) == ["À vérifier", "· définition d’exemple"]
-    assert textes(page.fiche.colonne_definition.corps)[-1] == "Pas de définition en arabe dans le glossaire."
+    definition = page.details.colonne_definition
+    assert textes(definition.pied) == ["À vérifier", "· définition d’exemple"]
+    assert textes(definition.corps)[-1] == "Pas de définition en arabe dans le glossaire."
+    # La mention porte sur la définition : rien n'est signalé au pied de l'équivalent.
+    assert page.fiche.colonne_equivalent.mention is None
     page.rechercher("vente")
-    assert textes(page.fiche.colonne_definition.pied) == ["À vérifier"]
-    # Sans source dans le glossaire, la définition est aussi à vérifier (comme dans le tableau de l'écran « Texte »).
+    assert textes(definition.pied) == ["À vérifier"]
+    # Sans source dans le glossaire, la définition est aussi à vérifier.
     page.rechercher("prêt")
-    assert textes(page.fiche.colonne_definition.pied) == ["À vérifier", "· source non indiquée"]
+    assert textes(definition.pied) == ["À vérifier", "· source non indiquée"]
 
 
-def test_un_terme_sans_definition_peut_etre_a_verifier(fenetre, tmp_path):
+def test_un_terme_sans_definition_peut_etre_a_verifier(fenetre, application, tmp_path):
     """Sans définition, la mention « à vérifier » de la colonne « source_definition » porte sur l'équivalent."""
     fenetre.charger_glossaire(ecrire(tmp_path / "seuls.csv", (
         "terme_fr;terme_ar;categorie_fr;source_definition\n"
@@ -396,18 +490,26 @@ def test_un_terme_sans_definition_peut_etre_a_verifier(fenetre, tmp_path):
         "bail;إيجار;nom masculin;\n")))
     page = fenetre.page
     page.rechercher("protégé")
-    colonne = page.fiche.colonne_definition
-    assert textes(colonne.corps) == ["Aucune définition pour ce terme", "Le glossaire n’en donne pas encore."]
+    application.processEvents()
+    # La mention est écrite au pied de la colonne de l'équivalent : elle se voit sans ouvrir le menu.
+    colonne = page.fiche.colonne_equivalent
+    assert colonne.mention is not None and colonne.mention.isVisible()
     assert textes(colonne.pied) == ["À vérifier", "· équivalent d’exemple"]
     mention, = (label for label in colonne.pied.findChildren(QLabel) if label.text() == "À vérifier")
     assert "Cet équivalent n’est repris d’aucun texte officiel" in mention.toolTip()
-    # Un terme sans définition et sans mention : le glossaire ne dit rien de lui, le pied reste vide.
+    assert colonne.bouton_copier.isVisible()  # le lien « Copier l'équivalent » reste à côté d'elle
+    # La définition, elle, manque : son cercle est gris, et sa page ne répète pas la mention.
+    definition = page.details.colonne_definition
+    assert page.details.etats()["definition"] == (False, 0)
+    assert textes(definition.corps) == ["Aucune définition pour ce terme", "Le glossaire n’en donne pas encore."]
+    assert textes(definition.pied) == []
+    # Un terme sans définition et sans mention : le glossaire ne dit rien de lui, rien n'est signalé.
     page.rechercher("bail")
-    assert textes(page.fiche.colonne_definition.pied) == []
+    assert page.fiche.colonne_equivalent.mention is None and textes(page.fiche.colonne_equivalent.pied) == []
 
 
-def test_une_phrase_d_exemple_a_verifier_est_signalee(fenetre, tmp_path):
-    """④ La mention « À vérifier » précède une phrase que le glossaire ne reprend d'aucun texte."""
+def test_une_phrase_d_exemple_a_verifier_est_signalee(fenetre, application, tmp_path):
+    """Contextualisation : la mention « À vérifier » précède une phrase que le glossaire ne reprend d'aucun texte."""
     fenetre.charger_glossaire(ecrire(tmp_path / "exemples.csv", (
         "terme_fr;terme_ar;definition_fr;definition_ar;source_definition;contexte_fr;contexte_ar;source_contexte\n"
         "bail;إيجار;;;;Le bail est écrit.;الإيجار مكتوب.;à vérifier (phrase d’exemple)\n"
@@ -415,10 +517,12 @@ def test_une_phrase_d_exemple_a_verifier_est_signalee(fenetre, tmp_path):
         "preneur;مستأجر;;;;Le preneur signe le bail.;يوقع المستأجر الإيجار.;À vérifier\n"
         "caution;كفيل;;;;La caution paie la dette.;يوفي الكفيل الدين.;\n")))
     page = fenetre.page
-    colonne = page.fiche.colonne_contexte
+    page.details.choisir("contexte")  # la contextualisation s'ouvre par son cercle, et reste ouverte ensuite
+    colonne = page.details.colonne_contexte
 
     # L'exemple de l'entrée, puis celui d'une autre entrée : tous deux sont à vérifier.
     page.rechercher("bail")
+    application.processEvents()
     assert [(emploi.origine, emploi.a_verifier) for emploi in colonne.emplois] == [("propre", True), ("exemple", True)]
     assert textes(colonne.corps) == [
         "À vérifier", "· phrase d’exemple", "Le bail est écrit.", "الإيجار مكتوب.",
@@ -433,7 +537,7 @@ def test_une_phrase_d_exemple_a_verifier_est_signalee(fenetre, tmp_path):
     assert provenance.a_verifier() and provenance.lien.texte_complet == "Exemple de « preneur »"
     assert provenance.icone.isVisible() and provenance.lien.width() >= provenance.lien.minimumSizeHint().width()
     provenance.lien.click()
-    assert grand_terme(page.fiche.colonne_terme) == "preneur"
+    assert grand_terme(page.fiche.colonne_terme) == "preneur" and page.details.detail == "contexte"
     # Ici la mention est seule, sans précision : rien ne la suit.
     assert textes(colonne.corps)[:3] == ["À vérifier", "Le preneur signe le bail.", "يوقع المستأجر الإيجار."]
 
@@ -447,7 +551,7 @@ def test_une_phrase_d_exemple_a_verifier_est_signalee(fenetre, tmp_path):
 
 
 def test_une_definition_prise_pour_contexte_porte_la_mention_de_sa_fiche(fenetre, tmp_path):
-    """④ Une définition d'une autre entrée : « À vérifier » si cette définition ne cite pas de source."""
+    """Contextualisation : la définition d'une autre entrée est « À vérifier » si elle ne cite pas de source."""
     fenetre.charger_glossaire(ecrire(tmp_path / "definitions.csv", (
         "terme_fr;terme_ar;definition_fr;definition_ar;source_definition\n"
         "vente;بيع;;;\n"
@@ -455,7 +559,7 @@ def test_une_definition_prise_pour_contexte_porte_la_mention_de_sa_fiche(fenetre
         "acheteur;مشترٍ;Autre partie à la vente.;الطرف الآخر في البيع.;\n")))
     page = fenetre.page
     page.rechercher("vente")
-    colonne = page.fiche.colonne_contexte
+    colonne = page.details.colonne_contexte
     lignes = colonne.corps.findChildren(LigneDeProvenance)
     assert [(ligne.lien.texte_complet, ligne.a_verifier()) for ligne in lignes] == [
         ("Définition de « vendeur »", False), ("Définition de « acheteur »", True)]
@@ -509,7 +613,10 @@ def test_copier_l_equivalent_et_les_references(fenetre):
     assert QGuiApplication.clipboard().text() == "عقد"
     assert page.fiche.colonne_equivalent.bouton_copier.text() == "Équivalent copié"
     assert fenetre.barre_etat.texte() == "Équivalent copié : عقد"
-    lien = page.fiche.colonne_ressources.bouton_copier
+    # Les références se copient depuis le menu « Plus de détails » : cercle « Ressources ».
+    page.details.roue.boutons["ressources"].click()
+    lien = page.details.colonne_ressources.bouton_copier
+    assert lien.isVisible() and lien.text() == "Copier les références"
     lien.click()
     assert QGuiApplication.clipboard().text().splitlines() == page.entree.ressources
     assert lien.text() == "Références copiées"
@@ -534,45 +641,118 @@ def test_toutes_les_entrees_trouvees_sont_dans_la_liste(fenetre, application, tm
                                                                                      strict=True))
     fenetre.charger_glossaire(ecrire(tmp_path / "long.csv", "terme_fr;terme_ar\n" + lignes))
     page = fenetre.page
+    details = page.details
     page.rechercher("contrat")
     application.processEvents()
-    # Aucune entrée ne s'appelle « contrat » : la première trouvée est affichée, les autres sont dans la liste.
+    # Aucune entrée ne s'appelle « contrat » : la première trouvée est affichée. La liste des autres s'ouvre
+    # d'office : l'utilisateur voit que le terme affiché n'est pas celui qu'il a saisi.
     assert len(page.resultats) == 10 and page.entree.terme_fr == "contrat type a"
     assert page.barre.texte_du_resume() == "10 résultats"
-    assert page.liste.titre.texte_complet() == "Autres résultats pour « contrat »" and page.liste.nombre.text() == "9"
-    assert [entree.terme_fr[-1] for entree in page.liste.entrees()] == list("bcdefghij")
-    # Quatre colonnes dans la fenêtre de référence, trois dans une fenêtre étroite.
-    grille = page.liste.grille
-    assert (grille.colonnes(), grille.rangees()) == (4, 3)
-    fenetre.resize(900, 560)
+    assert details.detail == "expressions" and details.roue.boutons["expressions"].isChecked()
+    assert details.titre_du_detail.texte_complet() == "Autres résultats pour « contrat »"
+    assert details.nombre.isVisible() and details.nombre.text() == "9"
+    liste = details.colonne_expressions
+    assert [entree.terme_fr[-1] for entree in liste.entrees()] == list("bcdefghij")
+    # Le cercle porte alors le nom « Autres résultats » (« Résultats » quand la roue est étroite).
+    assert details.roue.boutons["expressions"].libelle in ("Autres résultats", "Résultats")
+    # À droite de la roue : trois colonnes dans la fenêtre de référence, une seule dans la plus petite fenêtre.
+    grille = liste.grille
+    assert (grille.colonnes(), grille.rangees()) == (3, 3) and grille.cases_abregees() == 0
+    fenetre.resize(900, 600)
     application.processEvents()
-    assert (grille.colonnes(), grille.rangees()) == (3, 3)
-    # La liste garde au moins son titre et deux lignes ; les autres lignes défilent.
-    assert page.liste.height() >= page.liste.hauteur_minimale()
-    assert page.fiche.height() >= page.fiche.hauteur_minimale()
+    assert (grille.colonnes(), grille.rangees()) == (1, 9) and grille.cases_abregees() == 0
+    # La fiche garde tout son contenu, le menu sa hauteur minimale : c'est la liste qui défile.
+    assert page.fiche.height() >= page.fiche.hauteur_du_contenu(page.fiche.width())
+    assert details.height() >= details.HAUTEUR_MINIMALE
 
-    page.liste.grille.cellules[-1].click()
-    assert page.entree.terme_fr == "contrat type j" and len(page.liste.entrees()) == 9
+    grille.cellules[-1].click()
+    assert page.entree.terme_fr == "contrat type j" and len(liste.entrees()) == 9
+    assert details.detail == "expressions"
+
+    # Refermée, la liste ne se rouvre pas pour un terme trouvé tel quel ; elle se rouvre à la prochaine
+    # recherche dont le premier résultat n'est pas le terme saisi.
+    details.bouton_fermer.click()
+    page.rechercher("contrat type b")
+    assert page.entree.terme_fr == "contrat type b" and details.detail == ""
+    page.rechercher("contrat")
+    assert details.detail == "expressions"
 
 
-def test_la_fiche_defile_dans_une_fenetre_etroite(fenetre, application):
+def test_de_longues_expressions_sont_rangees_sur_moins_de_colonnes(fenetre, application, tmp_path):
+    """Le nombre de colonnes d'une liste dépend de ses termes : ils doivent, presque tous, être écrits en entier."""
+    lettres = list(zip("abcdefghij", "ابتثجحخدذر", strict=True))
+    courtes = "".join(f"bail {lettre};إيجار {arabe}\n" for lettre, arabe in lettres)
+    longues = "".join(
+        f"responsabilité du fait des choses inanimées {lettre};المسؤولية عن فعل الأشياء غير الحية {arabe}\n"
+        for lettre, arabe in lettres)
+    page = fenetre.page
+
+    def lister(requete: str):
+        """Cherche ``requete`` et ouvre la liste des autres résultats : la grille, et les colonnes possibles."""
+        page.rechercher(requete)
+        page.details.choisir("expressions")
+        application.processEvents()
+        grille = page.details.colonne_expressions.grille
+        return grille, min(4, grille.width() // grille.LARGEUR_DE_CASE)
+
+    def entiere(cellule) -> bool:
+        return cellule.textes_affiches() == (cellule.entree.terme_fr, cellule.entree.terme_ar)
+
+    fenetre.charger_glossaire(ecrire(tmp_path / "longueurs.csv", "terme_fr;terme_ar\n" + courtes + longues))
+    # Des termes courts : autant de colonnes que la largeur le permet.
+    grille, possibles = lister("bail")
+    assert len(grille.cellules) == 9 and grille.colonnes() == possibles == 3 and grille.cases_abregees() == 0
+    # De longues expressions, dans la même largeur : une seule colonne, et chacune est écrite en entier.
+    grille, possibles = lister("responsabilité")
+    assert len(grille.cellules) == 9 and (possibles, grille.colonnes()) == (3, 1) and grille.cases_abregees() == 0
+    assert grille.rangees() == 9 and grille.height() == 9 * grille.HAUTEUR_DE_LIGNE
+    assert {cellule.width() for cellule in grille.cellules} == {grille.width()}
+    assert grille.width() // 2 < max(cellule.largeur_necessaire() for cellule in grille.cellules) <= grille.width()
+    # La largeur nécessaire d'une case est juste : à cette largeur, les deux termes sont écrits en entier ;
+    # quelques points de moins, et l'un d'eux est abrégé (l'infobulle donne alors les termes entiers).
+    cellule = grille.cellules[0]
+    cellule.marge_gauche = cellule.marge_droite = theme.MARGE
+    necessaire = cellule.largeur_necessaire()
+    cellule.resize(necessaire, cellule.height())
+    assert entiere(cellule) and cellule.toolTip() == ""
+    cellule.resize(necessaire - 6, cellule.height())
+    assert not entiere(cellule) and cellule.entree.terme_fr in unescape(cellule.toolTip())
+
+    # Un seul terme long parmi des courts ne change pas la grille : il est abrégé, les autres restent en colonnes.
+    long = "bail et responsabilité du fait des choses inanimées;إيجار والمسؤولية عن فعل الأشياء غير الحية\n"
+    fenetre.charger_glossaire(ecrire(tmp_path / "melange.csv", "terme_fr;terme_ar\n" + courtes + long))
+    grille, possibles = lister("bail")
+    assert len(grille.cellules) == 10 and grille.colonnes() == possibles == 3
+    assert [entiere(cellule) for cellule in grille.cellules] == [True] * 9 + [False]
+
+
+def test_la_fiche_et_le_menu_tiennent_dans_la_plus_petite_fenetre(fenetre, application):
     page = fenetre.page
     page.rechercher("contrat")
-    barre = page.defilement_fiche.horizontalScrollBar()
+    fiche, details = page.fiche, page.details
 
     def place(largeur: int) -> int:
         """Largeur laissée à la fiche : la fenêtre, moins la barre latérale et les marges."""
         return largeur - LARGEUR_DU_RAIL - 2 * theme.MARGE
 
-    fenetre.resize(1080, 620)
+    for taille in ((1900, 1000), (1440, 860), (1080, 620), (900, 600)):
+        fenetre.resize(*taille)
+        application.processEvents()
+        # La fiche et le menu occupent toute la largeur : rien ne défile de gauche à droite.
+        assert fiche.width() == details.width() == place(taille[0]) >= LARGEUR_MINIMALE, taille
+        # La fiche montre tout son contenu, sans défilement ; le menu garde au moins sa hauteur minimale.
+        assert fiche.defilement.verticalScrollBar().maximum() == 0, taille
+        assert fiche.height() >= fiche.hauteur_du_contenu(fiche.width()), taille
+        assert details.height() >= details.HAUTEUR_MINIMALE == 170, taille
+        # Le menu est sous la fiche, et se termine dans l'écran.
+        assert fiche.geometry().bottom() < details.geometry().top(), taille
+        assert details.geometry().bottom() < page.vue_fiche.height(), taille
+        # Le résumé de la recherche laisse sa place au champ de saisie quand elle manque ; il reste connu.
+        assert page.barre.texte_du_resume() == "1 terme · 5 expressions", taille
+    # Quand la hauteur ne manque pas, la fiche a sa hauteur de référence : le menu reçoit tout le reste.
+    fenetre.resize(1440, 860)
     application.processEvents()
-    assert barre.maximum() == 0 and page.fiche.width() == place(1080)  # les cinq champs tiennent
-    assert page.barre.resume.isVisible()
-    fenetre.resize(900, 560)
-    application.processEvents()
-    # La fiche garde sa largeur minimale et défile ; le résumé laisse sa place au champ de saisie.
-    assert page.fiche.width() == LARGEUR_MINIMALE and barre.maximum() == LARGEUR_MINIMALE - place(900)
-    assert not page.barre.resume.isVisible() and page.barre.texte_du_resume() == "1 terme · 5 expressions"
+    assert fiche.height() == fiche.hauteur_de_reference() and details.height() > details.HAUTEUR_CONFORTABLE
 
 
 def test_les_signes_speciaux_du_glossaire_sont_affiches_tels_quels(fenetre, tmp_path):
@@ -587,25 +767,30 @@ def test_les_signes_speciaux_du_glossaire_sont_affiches_tels_quels(fenetre, tmp_
     assert nom.texte_complet() == "a&b.csv" and nom.textFormat() == Qt.TextFormat.PlainText
     page = fenetre.page
     page.rechercher("dommages & intérêts")
-    fiche = page.fiche
+    fiche, details = page.fiche, page.details
     assert fenetre.barre_etat.etat() == "« dommages & intérêts » : 1 entrée trouvée dans le glossaire."
     assert fenetre.barre_etat.message.textFormat() == Qt.TextFormat.PlainText
     assert grand_terme(fiche.colonne_terme) == "dommages & intérêts"
     assert grand_terme(fiche.colonne_equivalent) == "تعويض <1>"
     simples = {label.text(): label for label in fiche.colonne_terme.corps.findChildren(QLabel)}
-    assert {"Droit <civil>", "<b>gras</b>"} <= set(simples)
-    assert all(simples[texte].textFormat() == Qt.TextFormat.PlainText for texte in ("Droit <civil>", "<b>gras</b>"))
-    assert [bouton.text() for bouton in fiche.colonne_terme.corps.findChildren(QPushButton)] == ["droits && devoirs"]
-    assert "Somme <b>due</b> & payée." in textes(fiche.colonne_definition.corps)
-    assert textes(fiche.colonne_definition.pied) == ["Source :", "Source <x> & y"]
-    exemple = next(label.text() for label in fiche.colonne_contexte.corps.findChildren(QLabel)
+    assert "Droit <civil>" in simples and simples["Droit <civil>"].textFormat() == Qt.TextFormat.PlainText
+    # Dans le menu « Plus de détails » : les termes associés, la définition et sa source, l'exemple, la ressource.
+    associes = details.colonne_associes
+    simples = {label.text(): label for label in associes.corps.findChildren(QLabel)}
+    assert "<b>gras</b>" in simples and simples["<b>gras</b>"].textFormat() == Qt.TextFormat.PlainText
+    assert [bouton.text() for bouton in associes.corps.findChildren(QPushButton)] == ["droits && devoirs"]
+    assert "Somme <b>due</b> & payée." in textes(details.colonne_definition.corps)
+    assert textes(details.colonne_definition.pied) == ["Source :", "Source <x> & y"]
+    exemple = next(label.text() for label in details.colonne_contexte.corps.findChildren(QLabel)
                    if "<span" in label.text())
     assert '600;">dommages &amp; intérêts</span> &lt;dus&gt;.' in exemple
-    ressource = next(label.text() for label in fiche.colonne_ressources.corps.findChildren(QLabel)
+    ressource = next(label.text() for label in details.colonne_ressources.corps.findChildren(QLabel)
                      if "<span" in label.text())
     assert "Titre &lt;b&gt;x&lt;/b&gt;</span>" in ressource and "suite &amp; fin" in ressource
+    # Au centre de la roue, le terme est dessiné tel quel.
+    assert details.roue.terme == "dommages & intérêts"
 
-    fiche.colonne_terme.corps.findChild(QPushButton).click()
+    associes.corps.findChild(QPushButton).click()
     assert page.entree.terme_fr == "droits & devoirs" and page.champ.text() == "droits & devoirs"
 
 
@@ -661,11 +846,11 @@ def test_la_forme_la_plus_courte_peut_fixer_la_largeur_minimale(application):
 
 
 def test_un_mot_plus_large_que_la_colonne_est_coupe(fenetre, application, tmp_path):
-    mot = "anticonstitutionnellement"
+    mot = "anticonstitutionnellement" * 3  # 75 lettres : plus large qu'une colonne, même en petits caractères
     fenetre.charger_glossaire(ecrire(tmp_path / "long.csv",
                                      f"terme_fr;terme_ar\nrecours {mot};على نحو مخالف للدستور\n"))
     page = fenetre.page
-    fenetre.resize(1080, 620)
+    fenetre.resize(900, 600)
     page.rechercher(mot)
     application.processEvents()
     terme = page.fiche.colonne_terme.terme
@@ -673,9 +858,15 @@ def test_un_mot_plus_large_que_la_colonne_est_coupe(fenetre, application, tmp_pa
     assert terme.taille == 14 and terme.fontMetrics().horizontalAdvance(mot) > terme.contentsRect().width()
     assert terme.text() == "recours " + ESPACE_INVISIBLE.join(mot)
     assert terme.height() >= 2 * terme.fontMetrics().height()  # le terme occupe plusieurs lignes…
-    assert terme.height() == terme.heightForWidth(terme.width())  # … et toutes sont visibles
+    assert terme.height() >= terme.heightForWidth(terme.width())  # … et toutes sont visibles
     assert terme.textInteractionFlags() == Qt.TextInteractionFlag.NoTextInteraction
     assert terme.terme == f"recours {mot}"
+    # La fiche montre le terme en entier, sans défilement ; le menu garde sa hauteur minimale.
+    assert page.fiche.defilement.verticalScrollBar().maximum() == 0
+    assert page.details.height() >= page.details.HAUTEUR_MINIMALE
+    # Le centre de la roue ne peut pas l'écrire : il porte le mot « TERME », et son infobulle donne le terme.
+    assert page.details.roue.lignes_du_centre()[0] == []
+    assert page.details.roue.info_du_centre() == f"<qt>recours {mot}</qt>"
 
     fenetre.resize(1900, 860)  # avec plus de place, le mot redevient entier (et sélectionnable)
     application.processEvents()
@@ -688,17 +879,37 @@ def test_le_terme_trop_long_est_ecrit_plus_petit(fenetre, application):
     page = fenetre.page
     page.rechercher("contrat")
     application.processEvents()
-    assert page.fiche.colonne_terme.terme.taille == 34 and page.fiche.colonne_equivalent.terme.taille == 58
+    assert page.fiche.colonne_terme.terme.taille == 40 and page.fiche.colonne_equivalent.terme.taille == 58
+    # Un terme plus long est écrit plus petit, dès la fenêtre de référence.
     page.rechercher("responsabilité")
     application.processEvents()
-    normale = page.fiche.colonne_terme.terme.taille
-    fenetre.resize(1080, 620)
+    assert page.fiche.colonne_terme.terme.taille == 30
+    # Dans la plus petite fenêtre, il ne dépasse pas de sa colonne.
+    fenetre.resize(900, 600)
     application.processEvents()
     terme = page.fiche.colonne_terme.terme
-    assert 14 <= terme.taille < normale <= 26
-    # Le terme ne dépasse pas de sa colonne.
+    assert 14 <= terme.taille <= 30
     assert terme.fontMetrics().horizontalAdvance("responsabilité") <= terme.contentsRect().width()
     assert terme.geometry().right() < page.fiche.colonne_terme.corps.width()
+
+
+def test_les_caracteres_du_terme_diminuent_quand_la_largeur_manque(application):
+    terme = TermeAjuste("responsabilité", "terme", FR, 40, 14, centre=True)
+    terme.resize(900, 80)
+    terme.show()
+    application.processEvents()
+    assert terme.taille == 40
+    largeur = terme.fontMetrics().horizontalAdvance("responsabilité")
+    terme.resize(largeur * 2 // 3, 80)  # moins de place que le mot n'en demande
+    application.processEvents()
+    assert 14 <= terme.taille < 40
+    assert terme.fontMetrics().horizontalAdvance("responsabilité") <= terme.contentsRect().width()
+    assert terme.text() == "responsabilité"
+    terme.resize(900, 80)  # la place revenue, le terme reprend sa taille
+    application.processEvents()
+    assert terme.taille == 40
+    terme.close()
+    terme.deleteLater()
 
 
 def test_les_termes_trop_longs_de_la_liste_sont_abreges(fenetre, application, tmp_path):
@@ -708,8 +919,9 @@ def test_les_termes_trop_longs_de_la_liste_sont_abreges(fenetre, application, tm
         f"faute et {longue};خطأ والمسؤولية المدنية عن فعل الأشياء غير الحية التي تكون تحت الحراسة وعن الحيوانات\n")))
     page = fenetre.page
     page.rechercher("faute")
+    page.details.choisir("expressions")
     application.processEvents()
-    courte, etendue = page.liste.grille.cellules
+    courte, etendue = page.details.colonne_expressions.grille.cellules
     assert courte.textes_affiches() == ("faute lourde", "خطأ جسيم") and courte.toolTip() == ""
     francais, arabe = etendue.textes_affiches()
     assert francais.endswith("…") and francais.startswith("faute et") and arabe.endswith("…")
@@ -787,7 +999,7 @@ def test_recharger_le_glossaire_garde_l_entree_affichee(fenetre, tmp_path):
     fenetre.page_parametres.bouton_recharger.click()  # Paramètres → Recharger (ou F5)
     assert len(fenetre.glossaire) == 3
     assert fenetre.page.entree.terme_ar == "قانون"
-    assert "Ensemble de règles" in textes(fenetre.page.fiche.colonne_definition.corps)
+    assert "Ensemble de règles" in textes(fenetre.page.details.colonne_definition.corps)
     assert fenetre.page_parametres.taille_du_glossaire.text() == "3 entrées"
     assert fenetre.barre_etat.texte() == "Glossaire chargé : g.csv, 3 entrées."  # message passager
 
@@ -902,8 +1114,10 @@ def test_la_barre_de_menus(fenetre):
         "Recherche d’un terme", "Traduction d’un texte", "Paramètres", "Description de la plateforme",
         "Centre d’aide", "Inverser le sens de traduction"]
     assert libelles(menus["Recherche"]) == ["Aller à la barre de recherche", "Effacer la recherche"]
+    # « Étapes du traitement… » ouvre le détail du traitement, qui n'est plus affiché en permanence.
     assert libelles(menus["Traduction"]) == [
-        "Traduire le texte", "Copier la traduction", "Insérer un texte d’exemple", "Effacer le texte"]
+        "Traduire le texte", "Copier la traduction", "Étapes du traitement…", "Insérer un texte d’exemple",
+        "Effacer le texte"]
     # Hors des menus, deux raccourcis restent : choisir un autre glossaire, relire le fichier.
     assert fenetre.action_ouvrir.shortcut().toString() == "Ctrl+O"
     assert fenetre.action_recharger.shortcut().toString() == "F5"

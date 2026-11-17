@@ -1,481 +1,86 @@
-"""Informations sur les termes juridiques d'un texte : une carte par terme, à droite de l'écran « Texte ».
+"""Termes juridiques d'un texte : la liste placée sous le texte et sa traduction, sur l'écran « Texte ».
 
-Chaque carte reprend l'enchaînement de l'écran « Terme » :
-
-① Terme → ② Définition → ③ Équivalent → ④ Contextualisation → ⑤ Ressources
-
-L'en-tête d'une carte donne le terme et son équivalent. Un clic ouvre la carte : les cinq
-étapes s'allument l'une après l'autre, avec la définition, l'équivalent, le passage du texte
-où le terme figure et toutes les références.
+Chaque terme du glossaire relevé dans le texte a une case : le terme français à gauche, le terme
+arabe à droite. Un clic sur une case ouvre la fiche du terme sur l'écran « Terme », où le menu
+« Plus de détails » donne sa définition, ses exemples et ses références.
 """
 
 from __future__ import annotations
 
-from collections.abc import Sequence
-from html import escape
+from PySide6.QtCore import QPointF, QRectF, Qt, Signal
+from PySide6.QtGui import QColor, QPainter
+from PySide6.QtWidgets import QHBoxLayout, QSizePolicy, QVBoxLayout, QWidget
 
-from PySide6.QtCore import QPointF, QRectF, QSize, Qt, QTimer, Signal
-from PySide6.QtGui import QColor, QPainter, QPen
-from PySide6.QtWidgets import (
-    QAbstractButton,
-    QHBoxLayout,
-    QPushButton,
-    QSizePolicy,
-    QVBoxLayout,
-    QWidget,
-)
-
-from ..contextes import DEFINITION, PROPRE, Emploi, emplois
-from ..glossaire import Glossaire
-from ..langues import AR, FR, cle_souple, deviner_langue
-from ..traduction import TERME, TermeDetecte, Traduction
+from ..glossaire import Entree
+from ..traduction import TermeDetecte, Traduction
 from . import icones, theme
-from .animation import Allumage
 from .composants import (
-    DispositionFluide,
     EtiquetteCourte,
-    Numero,
     Panneau,
     ZoneDefilante,
-    capitales,
     compte,
     etiquette,
-    icone_fixe,
-    mention_a_controler,
+    infobulle,
     nombre,
-    paragraphe,
     pastille,
-    puce_neutre,
-    sablier,
     separateur,
 )
-from .dessin import abreger, dessiner_ligne, dessiner_numero, largeur_du_texte, police
-from .fiche import ETAPES as CHAMPS
-from .fiche import INTERLIGNE, categorie_et_pluriel, mention_a_verifier, phrase_surlignee, ressource_en_html
-
-#: Nombre de contextes du glossaire affichés dans une carte, après le passage du texte.
-EMPLOIS_AFFICHES = 2
+from .dessin import abreger, dessiner_ligne, police
+from .fiche import CelluleEntree, GrilleEntrees, equivalent_a_verifier
 
 
-def passage_du_terme(terme: TermeDetecte, traduction: Traduction) \
-        -> tuple[tuple[str, list[tuple[int, int]]], tuple[str, list[tuple[int, int]]]]:
-    """Le passage du texte qui illustre un terme : une phrase du texte source et sa traduction.
+# ====================================================================== la case d'un terme
+class CelluleTerme(CelluleEntree):
+    """La case d'un terme relevé dans le texte : son entrée du glossaire, et ce que le texte en dit.
 
-    Renvoie, pour chacune, son texte et les positions (début, fin) du terme à mettre en
-    évidence. Parmi les phrases où le terme figure, on retient la première dont la traduction
-    contient l'équivalent du terme ; à défaut, la première phrase.
-    """
-    choix = None
-    for occurrence in terme.occurrences:
-        phrase = traduction.phrases[occurrence.phrase]
-        evidences, position = [], 0
-        for morceau in phrase.morceaux:
-            if morceau.nature == TERME and morceau.entree is terme.entree:
-                evidences.append((position, position + len(morceau.texte)))
-            position += len(morceau.texte)
-        if choix is None or evidences:
-            choix = (phrase, evidences)
-        if evidences:
-            break
-    phrase, evidences_cible = choix
-    debut = phrase.source.debut
-    evidences_source = [(occurrence.debut - debut, occurrence.fin - debut)
-                        for occurrence in phrase.occurrences if occurrence.entree is terme.entree]
-    return (phrase.source.texte, evidences_source), (phrase.texte, evidences_cible)
-
-
-def passage_en_html(texte: str, evidences: Sequence[tuple[int, int]], langue: str) -> str:
-    """Passage du texte en HTML : les positions données sont écrites en demi-gras, en bleu."""
-    morceaux, position = [], 0
-    for debut, fin in sorted(evidences):
-        if debut < position:
-            continue
-        morceaux.append(escape(texte[position:debut]))
-        morceaux.append(f'<span style="color: {theme.BLEU_FONCE}; font-weight: 600;">{escape(texte[debut:fin])}</span>')
-        position = fin
-    morceaux.append(escape(texte[position:]))
-    return paragraphe("".join(morceaux), langue, INTERLIGNE[langue])
-
-
-# ====================================================================== en-tête d'une carte
-class EnteteCarte(QAbstractButton):
-    """En-tête d'une carte : ① le terme, sa catégorie, ses occurrences ; à droite, l'équivalent.
-
-    L'en-tête est dessiné directement : chaque texte est abrégé à la largeur exacte de sa place.
+    L'infobulle donne le nombre d'occurrences du terme, et dit si son équivalent est à vérifier.
+    Quand le terme a plusieurs sens dans le glossaire et que le contexte n'a pas permis de
+    choisir, un signe orange précède le terme.
     """
 
-    HAUTEUR = 58
+    #: Place du signe orange, devant le terme.
+    LARGEUR_DU_SIGNE = 20
 
-    def __init__(self, carte: CarteTerme) -> None:
-        super().__init__(carte)
-        self.carte = carte
-        self.setFixedHeight(self.HAUTEUR)
-        self.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.setAttribute(Qt.WidgetAttribute.WA_Hover)
-        self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
-        self.setText(f"{carte.libelle} — {carte.equivalent}")
-
-    def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
-        return QSize(320, self.HAUTEUR)
-
-    def minimumSizeHint(self) -> QSize:  # noqa: N802
-        return QSize(160, self.HAUTEUR)
-
-    def places(self) -> tuple[float, float, float, float]:
-        """Abscisse et largeur du terme, puis de l'équivalent."""
-        gauche = 20 + 18 + 12
-        droite = self.width() - 20 - 16 - 12
-        libre = max(droite - gauche - 16, 40)
-        part = min(max(libre * 0.56, 90), libre - 60) if libre > 150 else libre * 0.56
-        return gauche, part, gauche + part + 16, libre - part
-
-    def sous_le_terme(self) -> tuple[str, str]:
-        """Sous le terme : sa catégorie et son nombre d'occurrences, tels qu'ils sont affichés."""
-        carte = self.carte
-        place = self.places()[1]
-        de_categorie, du_nombre = self._polices_du_terme()
-        separation = 3 * largeur_du_texte(" ", du_nombre) + largeur_du_texte("·", du_nombre)
-        formes = [(carte.categorie, carte.occurrences), (carte.categorie, carte.occurrences_en_bref),
-                  ("", carte.occurrences), ("", carte.occurrences_en_bref)]
-        for categorie, occurrences in formes:
-            largeur = largeur_du_texte(occurrences, du_nombre)
-            if categorie:
-                largeur += largeur_du_texte(categorie, de_categorie) + separation
-            if largeur <= place:
-                return categorie, occurrences
-        return formes[-1]
-
-    def _polices_du_terme(self):
-        if self.carte.source == AR:
-            return police(self.font(), 14), police(self.font(), 12)
-        return police(self.font(), 12, italique=True), police(self.font(), 12)
-
-    def paintEvent(self, evenement) -> None:  # noqa: N802
-        carte = self.carte
-        peintre = QPainter(self)
-        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
-        largeur, hauteur = self.width(), self.height()
-        survol = self.underMouse() or self.hasFocus()
-        if carte.ouverte or survol:
-            peintre.fillRect(self.rect(), QColor(theme.BLEU_50 if carte.ouverte else theme.GRIS_50))
-        if self.hasFocus():
-            peintre.setPen(QPen(QColor(theme.BLEU_200), 1))
-            peintre.setBrush(Qt.BrushStyle.NoBrush)
-            peintre.drawRect(QRectF(0.5, 0.5, largeur - 1, hauteur - 1))
-        if carte.ouverte:
-            # Trait doré sur le bord gauche de la carte ouverte (il se prolonge le long de son contenu).
-            peintre.fillRect(QRectF(0, 0, 3, hauteur), QColor(theme.OR))
-        base = self.font()
-        dessiner_numero(peintre, QPointF(20 + 9, hauteur / 2), 9, "1", police(base, 11, gras=True),
-                        carte.allumage.niveau(0), carte.allumage.halo(0))
-        x_terme, place_terme, x_equivalent, place_equivalent = self.places()
-
-        # ① Le terme ; dessous, sa catégorie et son nombre d'occurrences.
-        categorie, occurrences = self.sous_le_terme()
-        de_categorie, du_nombre = self._polices_du_terme()
-        if carte.source == AR:
-            du_terme = police(base, 17, gras=True)
-            dessiner_ligne(peintre, QRectF(x_terme, 0, place_terme, hauteur), abreger(carte.libelle, du_terme,
-                                                                                    place_terme),
-                           du_terme, theme.BLEU_FONCE, langue=AR, alignement=Qt.AlignmentFlag.AlignLeft, base=27)
-            suite = " · ".join(morceau for morceau in (occurrences, categorie) if morceau)
-            dessiner_ligne(peintre, QRectF(x_terme, 0, place_terme, hauteur), abreger(suite, du_nombre, place_terme),
-                           du_nombre, theme.TEXTE_3, base=46)
-        else:
-            du_terme = police(base, 14, gras=True)
-            dessiner_ligne(peintre, QRectF(x_terme, 0, place_terme, hauteur), abreger(carte.libelle, du_terme,
-                                                                                    place_terme),
-                           du_terme, theme.BLEU_FONCE, base=25)
-            x = x_terme
-            if categorie:
-                dessiner_ligne(peintre, QRectF(x, 0, place_terme, hauteur), categorie, de_categorie,
-                               theme.TEXTE_3, base=44)
-                x += largeur_du_texte(categorie, de_categorie)
-                occurrences = " · " + occurrences
-            dessiner_ligne(peintre, QRectF(x, 0, place_terme, hauteur), occurrences, du_nombre, theme.TEXTE_3,
-                           base=44)
-
-        # ③ L'équivalent, aligné à droite ; dessous, sa grammaire, ou l'avertissement s'il a plusieurs sens.
-        droite = Qt.AlignmentFlag.AlignRight
-        de_l_equivalent = police(base, 17 if carte.cible == AR else 14, gras=True)
-        dessiner_ligne(peintre, QRectF(x_equivalent, 0, place_equivalent, hauteur),
-                       abreger(carte.equivalent, de_l_equivalent, place_equivalent), de_l_equivalent,
-                       theme.BLEU_FONCE, langue=carte.cible, alignement=droite, base=27 if carte.cible == AR else 25)
-        if carte.alerte:
-            de_l_alerte = police(base, 12, gras=carte.incertain)
-            dessiner_ligne(peintre, QRectF(x_equivalent, 0, place_equivalent, hauteur),
-                           abreger(carte.alerte, de_l_alerte, place_equivalent), de_l_alerte,
-                           theme.AMBRE if carte.incertain else theme.TEXTE_3, alignement=droite, base=44)
-        elif carte.grammaire:
-            de_grammaire = police(base, 13 if carte.cible == AR else 12)
-            grammaire = carte.grammaire
-            if carte.categorie_cible and largeur_du_texte(grammaire, de_grammaire) > place_equivalent:
-                grammaire = carte.categorie_cible
-            dessiner_ligne(peintre, QRectF(x_equivalent, 0, place_equivalent, hauteur),
-                           abreger(grammaire, de_grammaire, place_equivalent), de_grammaire, theme.TEXTE_3,
-                           langue=carte.cible, alignement=droite, base=45 if carte.cible == AR else 44)
-
-        chevron = icones.image("chevron-h" if carte.ouverte else "chevron-b",
-                               theme.BLEU if carte.ouverte else theme.TEXTE_4, 16, 1.6)
-        peintre.drawPixmap(QPointF(largeur - 20 - 16, (hauteur - 16) / 2), chevron)
-
-
-# ====================================================================== carte d'un terme
-class CarteTerme(QWidget):
-    """Les informations d'un terme relevé dans le texte : les cinq champs de l'enchaînement.
-
-    Le contenu de la carte n'est construit qu'à sa première ouverture : un long texte peut
-    contenir des centaines de termes.
-    """
-
-    #: Demande d'ouverture de la fiche complète du terme (écran « Terme »).
-    fiche_demandee = Signal(object)
-    #: La carte vient d'être ouverte ou refermée.
-    basculee = Signal()
-
-    def __init__(self, terme: TermeDetecte, traduction: Traduction, glossaire: Glossaire | None = None,
-                 parent: QWidget | None = None) -> None:
-        super().__init__(parent)
+    def __init__(self, terme: TermeDetecte, cible: str, parent: QWidget | None = None) -> None:
+        super().__init__(terme.entree, parent)
+        #: Le terme relevé, avec toutes ses occurrences dans le texte.
         self.detecte = terme
-        self.glossaire = glossaire
-        entree = self.entree = terme.entree
-        source = self.source = traduction.source
-        cible = self.cible = traduction.cible
-        self.ouverte = False
-
-        # ① Terme
-        self.libelle = entree.terme(source)
-        self.categorie = entree.categorie(source)
         self.occurrences = compte(len(terme.occurrences), "occurrence")
-        self.occurrences_en_bref = f"{nombre(len(terme.occurrences))} occ."
-        # ② Définition, dans la langue du texte puis dans l'autre langue.
-        self.definitions = [(langue, entree.definition(langue)) for langue in (source, cible)
-                            if entree.definition(langue)]
-        self.langue_definition, self.definition = self.definitions[0] if self.definitions else (source, "")
-        #: Vrai si la définition n'est reprise d'aucune source citée.
-        self.a_verifier = not entree.source_definition or mention_a_verifier(entree.source_definition) is not None
-        #: Vrai si le terme n'a pas de définition et que le glossaire donne son équivalent comme « à vérifier ».
-        self.equivalent_a_verifier = not self.definition and mention_a_verifier(entree.source_definition) is not None
-        # ③ Équivalent ; s'il y a plusieurs sens, un avertissement le signale.
-        self.equivalent = entree.terme(cible)
-        self.grammaire = categorie_et_pluriel(entree, cible)
-        self.categorie_cible = entree.categorie(cible)
-        self.autres_equivalents = list(entree.synonymes(cible))
+        #: Vrai si le contexte n'a pas permis de choisir entre plusieurs sens du terme.
         self.incertain = terme.incertain
         autres = " / ".join(autre.terme(cible) for autre in terme.autres_candidats)
+        #: Avertissement sur les autres sens du terme (vide s'il n'en a qu'un).
         self.alerte = "" if not autres else (f"Ambigu : aussi « {autres} »" if terme.incertain
                                              else f"Autre sens : « {autres} »")
-        # ④ Contextualisation : la phrase du texte et sa traduction, puis les contextes du glossaire.
-        self.passage_source, self.passage_cible = passage_du_terme(terme, traduction)
-        # Un exemple du glossaire identique au passage du texte n'est pas répété.
-        passage = cle_souple(self.passage_source[0])
-        self.emplois: list[Emploi] = [emploi for emploi in emplois(glossaire, entree, EMPLOIS_AFFICHES + 1)
-                                      if cle_souple(emploi.texte(source)) != passage][:EMPLOIS_AFFICHES]
-        # ⑤ Ressources : toutes les références de l'entrée.
-        self.ressources = list(entree.ressources)
+        #: Vrai si le glossaire donne l'équivalent de ce terme comme « à vérifier ».
+        self.a_verifier = equivalent_a_verifier(terme.entree) is not None
+        self.retrait = self.LARGEUR_DU_SIGNE if self.incertain else 0
+        self.setAccessibleDescription(". ".join(morceau for morceau in (
+            self.occurrences, self.alerte, "Équivalent à vérifier" if self.a_verifier else "") if morceau))
 
-        self.allumage = Allumage(len(CHAMPS), self)
-        self.allumage.change.connect(self._rafraichir)
-        self.numeros: dict[int, Numero] = {}
-        self.entete = EnteteCarte(self)
-        self.entete.clicked.connect(lambda: self.definir_ouverte(not self.ouverte))
-        self.entete.setAccessibleDescription(self.definition)
-        self.corps: QWidget | None = None
-        self._ensemble = QVBoxLayout(self)
-        self._ensemble.setContentsMargins(0, 0, 0, 0)
-        self._ensemble.setSpacing(0)
-        self._ensemble.addWidget(self.entete)
-        self._filet = separateur()
-        self._ensemble.addWidget(self._filet)
-
-    # ------------------------------------------------------------------ ouverture
-    def etapes_renseignees(self) -> list[bool]:
-        """Pour chacune des cinq étapes : vrai si elle a quelque chose à montrer pour ce terme."""
-        return [True, bool(self.definition), True, True, bool(self.ressources)]
-
-    def definir_ouverte(self, ouverte: bool, *, animer: bool = True) -> None:
-        """Ouvre ou referme la carte. À l'ouverture, les étapes renseignées s'allument l'une après l'autre."""
-        if ouverte == self.ouverte:
-            return
-        self.ouverte = ouverte
-        if ouverte and self.corps is None:
-            self.corps = self._construire_le_corps()
-            self._ensemble.insertWidget(1, self.corps)
-        if self.corps is not None:
-            self.corps.setVisible(ouverte)
-        self.allumage.definir(self.etapes_renseignees() if ouverte else [False] * len(CHAMPS), animer=animer)
-        self.entete.update()
-        self.basculee.emit()
-
-    def _rafraichir(self) -> None:
-        self.entete.update()
-        for rang, numero in self.numeros.items():
-            numero.definir(self.allumage.niveau(rang), self.allumage.halo(rang))
-
-    # ------------------------------------------------------------------ contenu
-    def _section(self, corps: QVBoxLayout, rang: int, mention: QWidget | None = None) -> QVBoxLayout:
-        """Ajoute le titre numéroté d'un champ ; renvoie la disposition où placer son contenu."""
-        ligne = QHBoxLayout()
-        ligne.setContentsMargins(0, 0, 0, 0)
-        ligne.setSpacing(6)
-        numero = Numero(rang + 1, rayon=9)
-        self.numeros[rang] = numero
-        ligne.addWidget(numero)
-        ligne.addWidget(capitales(CHAMPS[rang], "capitalesBleu" if rang == 2 else "capitales"))
-        ligne.addStretch(1)
-        if mention is not None:
-            ligne.addWidget(mention)
-        corps.addLayout(ligne)
-        contenu = QVBoxLayout()
-        contenu.setContentsMargins(numero.width() + 6, 0, 0, 0)
-        contenu.setSpacing(0)
-        corps.addLayout(contenu)
-        return contenu
-
-    def _mention_de_la_definition(self) -> QWidget | None:
-        """À droite du titre « Définition » : la source citée, ou la mention « À vérifier ».
-
-        Sans définition, la mention ne s'affiche que si le glossaire l'écrit : elle porte alors sur l'équivalent.
-        """
-        if not self.definition and not self.equivalent_a_verifier:
-            return None
-        mention = QWidget()
-        ligne = QHBoxLayout(mention)
-        ligne.setContentsMargins(0, 0, 0, 0)
-        ligne.setSpacing(5)
+    def ajuster(self) -> None:
+        super().ajuster()
+        lignes = [f"{self.entree.terme_fr} — {self.entree.terme_ar}", f"{self.occurrences} dans le texte."]
+        if self.incertain:
+            lignes.append(f"{self.alerte}. Le contexte n’a pas permis de choisir entre les sens de ce terme : "
+                          "vérifiez l’équivalent.")
+        elif self.alerte:
+            lignes.append(f"{self.alerte}. Ce terme a d’autres sens dans le glossaire.")
         if self.a_verifier:
-            ligne.addWidget(icone_fixe("alerte", theme.AMBRE, 14, 1.6))
-            texte = etiquette("À vérifier", "piedAlerte")
-            texte.setToolTip("Équivalent à vérifier : il n’est repris d’aucune source citée."
-                             if self.equivalent_a_verifier
-                             else "Définition à vérifier : elle n’est reprise d’aucune source citée.")
-        else:
-            ligne.addWidget(icone_fixe("document", theme.TEXTE_3, 14))
-            texte = EtiquetteCourte(f"Source : {self.entree.source_definition}", "pied")
-            texte.setMaximumWidth(260)
-        ligne.addWidget(texte)
-        return mention
-
-    def _construire_le_corps(self) -> QWidget:
-        entree, source, cible = self.entree, self.source, self.cible
-        cadre = QWidget()
-        corps = QVBoxLayout(cadre)
-        corps.setContentsMargins(14, 2, 20, 16)
-        corps.setSpacing(0)
-
-        # ② Définition
-        contenu = self._section(corps, 1, self._mention_de_la_definition())
-        if not self.definitions:
-            contenu.addWidget(etiquette("Aucune définition dans le glossaire.", "discret", retour_ligne=True))
-        for rang, (langue, definition) in enumerate(self.definitions):
-            if rang:
-                contenu.addSpacing(4)
-            contenu.addWidget(etiquette(paragraphe(escape(definition), langue, INTERLIGNE[langue]), "definition",
-                                        langue, retour_ligne=True, selectionnable=True, riche=True))
-        corps.addSpacing(8)
-
-        # ③ Équivalent
-        contenu = self._section(corps, 2)
-        self.etiquette_equivalent = etiquette(paragraphe(escape(self.equivalent), cible, 34 if cible == AR else 27),
-                                              "equivalentCarte", cible, retour_ligne=True, selectionnable=True,
-                                              riche=True)
-        contenu.addWidget(self.etiquette_equivalent)
-        if self.grammaire:
-            contenu.addWidget(etiquette(self.grammaire, "grammaire", cible, retour_ligne=True))
-        if self.autres_equivalents:
-            contenu.addSpacing(6)
-            zone = QWidget()
-            zone.setLayoutDirection(Qt.LayoutDirection.RightToLeft if cible == AR else Qt.LayoutDirection.LeftToRight)
-            rangee = DispositionFluide(zone, 6, 6)
-            for autre in self.autres_equivalents:
-                rangee.addWidget(puce_neutre(autre, cible))
-            contenu.addWidget(zone)
-        if self.alerte:
-            contenu.addSpacing(6)
-            detail = ("Le contexte n’a pas permis de choisir entre les sens de ce terme : vérifiez l’équivalent."
-                      if self.incertain else "Ce terme a d’autres sens dans le glossaire.")
-            contenu.addWidget(etiquette(f"{self.alerte}. {detail}", "alerteCarte" if self.incertain else "discret",
-                                        retour_ligne=True))
-        corps.addSpacing(8)
-
-        # ④ Contextualisation : le passage du texte, puis les contextes du glossaire
-        contenu = self._section(corps, 3)
-        contenu.addWidget(etiquette("Dans le texte", "sousTitre"))
-        contenu.addSpacing(2)
-        for langue, (texte, evidences) in ((source, self.passage_source), (cible, self.passage_cible)):
-            if texte.strip():
-                contenu.addWidget(etiquette(passage_en_html(texte.strip(), _decaler(texte, evidences), langue),
-                                            "definition", langue, retour_ligne=True, selectionnable=True, riche=True))
-        for emploi in self.emplois:
-            contenu.addSpacing(10)
-            provenance = emploi.provenance(source)
-            titre = "Dans le glossaire" + (f" · {provenance}" if provenance else "")
-            mention = EtiquetteCourte(titre, "sousTitre")
-            if emploi.origine != PROPRE:
-                mention.setToolTip(f"Phrase trouvée dans l’entrée « {emploi.entree.terme(source)} » du glossaire.")
-            if emploi.a_verifier:
-                # La phrase n'est reprise d'aucun texte cité : la mention « À vérifier » le dit, à droite du titre.
-                ligne = QHBoxLayout()
-                ligne.setContentsMargins(0, 0, 0, 0)
-                ligne.setSpacing(8)
-                ligne.addWidget(mention, 1)
-                ligne.addWidget(mention_a_controler(
-                    "Définition à vérifier : elle n’est reprise d’aucune source citée." if emploi.origine == DEFINITION
-                    else "Phrase d’exemple à vérifier : elle n’est reprise d’aucun texte officiel."))
-                contenu.addLayout(ligne)
-            else:
-                contenu.addWidget(mention)
-            contenu.addSpacing(2)
-            for langue in (source, cible):
-                if emploi.texte(langue):
-                    contenu.addWidget(etiquette(phrase_surlignee(emploi.texte(langue), entree, langue), "definition",
-                                                langue, retour_ligne=True, selectionnable=True, riche=True))
-        corps.addSpacing(8)
-
-        # ⑤ Ressources : toutes les références, écrites en entier
-        contenu = self._section(corps, 4)
-        if not self.ressources:
-            contenu.addWidget(etiquette("Aucune ressource dans le glossaire.", "discret", retour_ligne=True))
-        for rang, ressource in enumerate(self.ressources):
-            if rang:
-                contenu.addSpacing(7)
-            langue = deviner_langue(ressource) or FR
-            reference = etiquette(ressource_en_html(ressource, langue), "ressource", langue, retour_ligne=True,
-                                  riche=True)
-            reference.setTextInteractionFlags(Qt.TextInteractionFlag.TextBrowserInteraction)
-            reference.setOpenExternalLinks(True)
-            contenu.addWidget(reference)
-
-        corps.addSpacing(12)
-        pied = QHBoxLayout()
-        pied.setContentsMargins(36, 0, 0, 0)
-        self.lien_fiche = QPushButton("Ouvrir la fiche du terme")
-        self.lien_fiche.setProperty("classe", "lien")
-        self.lien_fiche.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.lien_fiche.setToolTip(f"Afficher « {self.libelle} » sur l’écran « Terme »")
-        self.lien_fiche.clicked.connect(lambda: self.fiche_demandee.emit(self.entree))
-        pied.addWidget(self.lien_fiche)
-        pied.addStretch(1)
-        corps.addLayout(pied)
-        return cadre
+            lignes.append("Équivalent à vérifier : il n’est repris d’aucune source citée.")
+        self.setToolTip(infobulle(*lignes))
 
     def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
-        if self.ouverte:
-            # Trait doré sur le bord gauche de la carte ouverte.
+        super().paintEvent(evenement)
+        if self.incertain:
             peintre = QPainter(self)
-            peintre.fillRect(QRectF(0, 0, 3, self.height() - 1), QColor(theme.OR))
-
-
-def _decaler(texte: str, evidences: Sequence[tuple[int, int]]) -> list[tuple[int, int]]:
-    """Positions reportées dans le texte privé de ses espaces de début."""
-    retrait = len(texte) - len(texte.lstrip())
-    limite = len(texte.strip())
-    return [(max(debut - retrait, 0), min(fin - retrait, limite)) for debut, fin in evidences if fin - retrait > 0]
+            peintre.drawPixmap(QPointF(self.marge_gauche, (self.height() - 14) / 2),
+                               icones.image("alerte", theme.AMBRE, 14, 1.6))
 
 
 # ====================================================================== message d'un panneau vide
 class MessageVide(QWidget):
-    """Message centré, affiché à la place des cartes quand il n'y a aucun terme à montrer."""
+    """Message centré, affiché à la place des termes quand il n'y en a aucun à montrer."""
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
@@ -494,7 +99,7 @@ class MessageVide(QWidget):
         place = self.width() - 2 * theme.MARGE
         avec_disque = self.height() >= 124
         hauteur = (40 + 14 if avec_disque else 0) + 20 + 4 + 20
-        y = max((self.height() - hauteur) / 2 - 4, 4)
+        y = max((self.height() - hauteur) / 2 - (4 if avec_disque else 0), 2)
         if avec_disque:
             centre = QPointF(self.width() / 2, y + 20)
             peintre.setPen(Qt.PenStyle.NoPen)
@@ -511,16 +116,21 @@ class MessageVide(QWidget):
 
 # ====================================================================== le panneau
 class PanneauTermes(Panneau):
-    """Les termes du glossaire relevés dans le texte, avec leurs informations."""
+    """Les termes du glossaire relevés dans le texte : une case par terme, sous le texte et sa traduction."""
 
-    #: Demande d'ouverture de la fiche d'une entrée sur l'écran « Terme ».
+    #: Demande d'ouverture de la fiche d'une entrée sur l'écran « Terme » (clic sur une case).
     ouverture = Signal(object)
 
     HAUTEUR_DU_TITRE = 42
+    #: Hauteur du message affiché quand il n'y a aucun terme à montrer.
+    HAUTEUR_DU_MESSAGE = 58
+    #: Espace laissé sous la dernière ligne.
+    MARGE_BASSE = 4
+    #: Part de la hauteur de l'écran que les termes peuvent occuper ; au-delà, la liste défile.
+    PART_DE_L_ECRAN = 0.36
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
-        self.cartes: list[CarteTerme] = []
         ensemble = QVBoxLayout(self)
         ensemble.setContentsMargins(0, 0, 0, 0)
         ensemble.setSpacing(0)
@@ -528,52 +138,35 @@ class PanneauTermes(Panneau):
         titre = QWidget()
         titre.setFixedHeight(self.HAUTEUR_DU_TITRE)
         ligne = QHBoxLayout(titre)
-        ligne.setContentsMargins(20, 0, 20, 0)
+        ligne.setContentsMargins(theme.MARGE, 0, theme.MARGE, 0)
         ligne.setSpacing(10)
         self.titre = etiquette("Termes juridiques détectés", "titrePanneau")
         self.nombre = pastille()
         self.aide = EtiquetteCourte("", "aidePanneau")
-        self.aide.definir_texte("Cliquez sur un terme pour afficher ses informations", "Cliquez sur un terme", "")
+        self.aide.definir_texte("Cliquez sur un terme pour ouvrir sa fiche", "Cliquez sur un terme", "")
+        self.aide.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
         self.aide.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
-        self.bouton_tout = QPushButton("Tout développer")
-        self.bouton_tout.setProperty("classe", "lien")
-        self.bouton_tout.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.bouton_tout.clicked.connect(self._basculer_tout)
         ligne.addWidget(self.titre)
         ligne.addWidget(self.nombre)
         ligne.addWidget(self.aide, 1)
-        ligne.addWidget(self.bouton_tout)
         ensemble.addWidget(titre)
         ensemble.addWidget(separateur())
 
-        self._liste = QWidget()
-        self._colonne = QVBoxLayout(self._liste)
-        self._colonne.setContentsMargins(0, 0, 0, 0)
-        self._colonne.setSpacing(0)
-        self._colonne.addStretch(1)
+        self.grille = GrilleEntrees()
+        self.grille.ouverture.connect(self.ouverture)
         self.defilement = ZoneDefilante()
-        self.defilement.definir_contenu(self._liste)
+        self.defilement.definir_contenu(self.grille)
         ensemble.addWidget(self.defilement, 1)
         self.message = MessageVide()
         ensemble.addWidget(self.message, 1)
-        self.setMinimumHeight(self.HAUTEUR_DU_TITRE + 2 * EnteteCarte.HAUTEUR)
         self.afficher(None)
 
     # ------------------------------------------------------------------ contenu
-    def afficher(self, traduction: Traduction | None, glossaire: Glossaire | None = None, *,
-                 sans_glossaire: bool = False) -> None:
+    def afficher(self, traduction: Traduction | None, *, sans_glossaire: bool = False) -> None:
         """Affiche les termes relevés par une traduction ; sans traduction, un message d'attente."""
-        for carte in self.cartes:
-            carte.setParent(None)
-            carte.deleteLater()
-        self.cartes = []
         termes = traduction.termes if traduction is not None else []
-        for rang, terme in enumerate(termes):
-            carte = CarteTerme(terme, traduction, glossaire)
-            carte.fiche_demandee.connect(self.ouverture)
-            carte.basculee.connect(self._actualiser_le_bouton)
-            self._colonne.insertWidget(rang, carte)
-            self.cartes.append(carte)
+        cible = traduction.cible if traduction is not None else ""
+        self.grille.definir(termes, lambda terme, parent: CelluleTerme(terme, cible, parent))
         if sans_glossaire:
             self.message.definir("Aucun glossaire n’est chargé", "Choisissez un fichier CSV dans « Paramètres ».")
         elif traduction is None:
@@ -585,61 +178,27 @@ class PanneauTermes(Panneau):
         self.nombre.setText(nombre(len(termes)))
         self.nombre.setVisible(traduction is not None)
         self.aide.setVisible(bool(termes))
-        self.bouton_tout.setVisible(len(termes) > 1)
         self.defilement.setVisible(bool(termes))
         self.message.setVisible(not termes)
         self.defilement.revenir_en_haut()
-        if self.cartes:
-            # Le premier terme est ouvert : ses étapes s'allument.
-            self.cartes[0].definir_ouverte(True)
-        self._actualiser_le_bouton()
 
-    def lignes_affichees(self) -> list[CarteTerme]:
-        """Les cartes, dans l'ordre d'apparition des termes dans le texte."""
-        return list(self.cartes)
+    @property
+    def cellules(self) -> list[CelluleTerme]:
+        """Les cases, dans l'ordre d'apparition des termes dans le texte."""
+        return list(self.grille.cellules)
 
-    def carte_de(self, entree) -> CarteTerme | None:
-        return next((carte for carte in self.cartes if carte.entree is entree), None)
+    def cellule_de(self, entree: Entree) -> CelluleTerme | None:
+        return next((cellule for cellule in self.grille.cellules if cellule.entree is entree), None)
 
-    # ------------------------------------------------------------------ ouverture des cartes
-    def ouvrir(self, entree) -> bool:
-        """Ouvre la carte d'un terme (les autres sont refermées) et la fait défiler jusqu'à la vue."""
-        cible = self.carte_de(entree)
-        if cible is None:
-            return False
-        for carte in self.cartes:
-            if carte is not cible:
-                carte.definir_ouverte(False)
-        cible.definir_ouverte(True)
-        QTimer.singleShot(0, lambda: self._montrer(cible))
-        return True
-
-    def _montrer(self, carte: CarteTerme) -> None:
-        if carte in self.cartes:
-            self._liste.layout().activate()
-            self.defilement.verticalScrollBar().setValue(max(carte.y() - 8, 0))
-
-    def tout_ouvert(self) -> bool:
-        return bool(self.cartes) and all(carte.ouverte for carte in self.cartes)
-
-    def definir_tout(self, ouvert: bool) -> None:
-        """Ouvre ou referme toutes les cartes d'un coup (sans animation).
-
-        Le contenu d'une carte n'est construit qu'à sa première ouverture : les ouvrir toutes
-        prend plusieurs secondes quand le texte compte des centaines de termes.
-        """
-        with sablier():
-            for carte in self.cartes:
-                carte.definir_ouverte(ouvert, animer=False)
-        if not ouvert:
-            self.defilement.revenir_en_haut()
-
-    def _basculer_tout(self) -> None:
-        self.definir_tout(not self.tout_ouvert())
-
-    def _actualiser_le_bouton(self) -> None:
-        self.bouton_tout.setText("Tout réduire" if self.tout_ouvert() else "Tout développer")
+    # ------------------------------------------------------------------ hauteur
+    def hauteur_pour(self, largeur: int, hauteur_de_l_ecran: int) -> int:
+        """Hauteur du panneau : le titre, puis les lignes de termes dans la limite d'une part de l'écran."""
+        if not self.grille.cellules:
+            return self.HAUTEUR_DU_TITRE + 1 + self.HAUTEUR_DU_MESSAGE
+        ligne = GrilleEntrees.HAUTEUR_DE_LIGNE
+        fixe = self.HAUTEUR_DU_TITRE + 1 + self.MARGE_BASSE
+        permises = max(1, (round(hauteur_de_l_ecran * self.PART_DE_L_ECRAN) - fixe) // ligne)
+        return fixe + min(self.grille.rangees(largeur), permises) * ligne
 
 
-__all__ = ["EMPLOIS_AFFICHES", "CarteTerme", "EnteteCarte", "MessageVide", "PanneauTermes", "passage_du_terme",
-           "passage_en_html"]
+__all__ = ["CelluleTerme", "MessageVide", "PanneauTermes"]

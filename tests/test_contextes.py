@@ -1,4 +1,4 @@
-"""Contextes d'emploi d'un terme, cherchés dans tout le glossaire (champ ④ « Contextualisation »)."""
+"""Contextes d'emploi d'un terme, cherchés dans tout le glossaire (④ « Contextualisation »)."""
 
 import pytest
 from conftest import ENTREES_COMPLETES
@@ -246,7 +246,7 @@ def test_une_definition_prise_pour_contexte_est_a_verifier_comme_sur_sa_fiche(tm
 
 # ------------------------------------------------------------------ le glossaire fourni
 def test_contextes_du_glossaire_fourni(glossaire_fourni):
-    """Chacune des 1 000 entrées complètes a sa phrase d'exemple : son champ ④ n'est jamais vide.
+    """Chacune des 1 000 entrées complètes a sa phrase d'exemple : sa contextualisation n'est jamais vide.
 
     Le test ne compte ni les phrases à vérifier, ni les phrases prises dans une autre entrée : ces nombres
     changent quand le glossaire est relu ou corrigé (version 0.5 : 549 entrées affichent une phrase et 451 en
@@ -278,7 +278,7 @@ def test_contextes_du_glossaire_fourni(glossaire_fourni):
 
 
 def test_contextes_des_termes_seuls(glossaire_fourni):
-    """Un terme seul n'a pas d'exemple à lui : le champ ④ montre les phrases d'autres entrées qui l'emploient.
+    """Un terme seul n'a pas d'exemple à lui : la contextualisation montre les phrases d'autres entrées qui l'emploient.
 
     Le test porte sur un terme seul sur vingt, pour rester rapide : chaque recherche parcourt tout le glossaire.
     """

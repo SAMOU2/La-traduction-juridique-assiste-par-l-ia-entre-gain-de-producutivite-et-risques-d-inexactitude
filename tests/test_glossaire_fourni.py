@@ -106,7 +106,7 @@ def test_les_termes_seuls(glossaire_fourni):
         assert entree.categorie_fr in NOMS | AUTRES_MOTS and contient_arabe(entree.categorie_ar), nom
         assert entree.domaines and entree.ressources, nom
         assert not entree.definition_fr and not entree.definition_ar, nom
-        # Faute de définition, la mention « à vérifier » porte sur l'équivalent : la fiche l'affiche au pied du champ ②.
+        # Faute de définition, la mention « à vérifier » porte sur l'équivalent : la fiche l'affiche à son pied.
         assert mention_a_verifier(entree.source_definition) == "équivalent d’exemple", nom
         assert not entree.contextes, nom
         assert entree.pluriel_fr or not entree.pluriel_ar, nom
@@ -354,7 +354,8 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert f"glossaire de {nombre(NOMBRE_D_ENTREES)} entrées" in fenetre_fournie.page_description.presentation.text()
 
     page = fenetre_fournie.page
-    # Les termes proposés à l'accueil sont pris parmi les entrées complètes : leur fiche a ses cinq champs.
+    details = page.details
+    # Les termes proposés à l'accueil sont pris parmi les entrées complètes : leur fiche a une définition.
     assert len(page.accueil.puces) == 5
     assert [entree.numero for entree in page._exemples()] == [1, 201, 401, 601, 801]
     assert [puce.text() for puce in page.accueil.puces] == [entree.terme_fr for entree in page._exemples()]
@@ -363,24 +364,29 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert page.barre.texte_du_resume() == f"1 terme · {expressions} expressions"
     assert fenetre_fournie.barre_etat.etat() == f"« contrat » : {expressions + 1} entrées trouvées dans le glossaire."
     assert page.fiche.colonne_terme.rang.texte_complet() == f"Entrée 1 sur {nombre(NOMBRE_D_ENTREES)}"
-    assert page.liste.titre.texte_complet() == "Expressions avec « contrat »"
-    assert page.liste.nombre.text() == str(expressions) and len(page.liste.entrees()) == expressions
-    assert page.fiche.entete.etapes_allumees() == [True] * 5
+    # Le menu « Plus de détails » : les six cercles de « contrat » sont colorés, aucun n'est ouvert d'office.
+    assert details.renseignes() == list(details.colonnes) and details.detail == ""
+    assert details.etats()["expressions"] == (True, expressions)
+    details.roue.boutons["expressions"].click()
+    assert details.titre_du_detail.texte_complet() == "Expressions avec « contrat »"
+    assert details.nombre.text() == str(expressions) and len(details.colonne_expressions.entrees()) == expressions
 
-    # « loi organique » n'avait aucune phrase avant la version 0.5. Le champ ④ affiche maintenant son exemple,
-    # sous la mention « À vérifier » tant que le glossaire ne cite pas de source pour cette phrase.
+    # « loi organique » n'avait aucune phrase avant la version 0.5. La contextualisation affiche maintenant son
+    # exemple, sous la mention « À vérifier » tant que le glossaire ne cite pas de source pour cette phrase.
     page.rechercher("loi organique")
-    colonne = page.fiche.colonne_contexte
+    details.roue.boutons["contexte"].click()
+    colonne = details.colonne_contexte
     exemple = colonne.emplois[0]
     assert exemple.origine == "propre" and exemple.entree.terme_fr == "loi organique"
     lignes = textes(colonne.corps)
     assert exemple.fr in lignes and exemple.ar in lignes
     assert (lignes[0] == "À vérifier") == exemple.a_verifier
     assert exemple.a_verifier or lignes[0] == exemple.source
-    assert page.fiche.entete.etapes_allumees() == [True] * 5
+    assert details.renseignes() == ["definition", "contexte", "ressources", "associes"]
     # « consentement » : son exemple (un article du Code civil, cité avec son numéro), puis la phrase d'une
     # autre entrée. L'étiquette de cette phrase dit d'où elle vient, si elle est à vérifier, et ouvre son entrée.
     page.rechercher("consentement")
+    assert details.detail == "contexte"  # l'information choisie reste ouverte d'un terme à l'autre
     propre, autre = colonne.emplois
     assert (propre.origine, propre.a_verifier) == ("propre", False) and autre.origine != "propre"
     assert textes(colonne.corps)[0] == propre.source == "Code civil, art. 106"
@@ -390,10 +396,11 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     provenance.lien.click()
     assert page.fiche.colonne_terme.terme.terme == autre.entree.terme_fr != "consentement"
 
-    # « droit » : deux entrées de même forme (un onglet chacune), puis les expressions.
+    # « droit » : deux entrées de même forme (un onglet chacune), puis les expressions et les termes proches.
     page.rechercher("droit")
     assert [onglet.text() for onglet in page.fiche.onglets.onglets] == ["Sens 1 : حق", "Sens 2 : قانون"]
-    assert page.liste.entrees()[0].terme_fr == "droit réel"
+    assert details.colonne_expressions.entrees()[0].terme_fr == "droit réel"
+    assert details.roue.boutons["expressions"].libelle in ("Termes proches", "Proches")
 
     # Les suggestions pendant la saisie couvrent tout le glossaire. Un terme porté par plusieurs entrées n'est
     # proposé qu'une fois : « droit », « majorité », « action », « auteur », « récidiviste » (nom et adjectif) et
@@ -402,18 +409,49 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert len(suggestions) == NOMBRE_D_ENTREES - 6 == len({entree.terme_fr for entree in page.glossaire.entrees})
     assert {"protégé", "protéger", "protection", "grève", "grevé", "de plein droit"} <= set(suggestions)
 
-    # Fenêtre étroite : la fiche garde ses cinq champs, la liste défile dans la place qui reste.
+    # Fenêtre étroite : la fiche garde tout son contenu, et la liste des 33 expressions défile à droite de la roue.
     page.rechercher("responsabilité")
+    details.choisir("expressions")
     fenetre_fournie.resize(1080, 620)
     application.processEvents()
-    assert page.defilement_fiche.horizontalScrollBar().maximum() == 0
-    assert page.fiche.height() >= page.fiche.hauteur_minimale()
-    assert page.liste.height() >= page.liste.hauteur_minimale()
-    assert page.liste.defilement.verticalScrollBar().maximum() > 0
+    assert page.fiche.defilement.verticalScrollBar().maximum() == 0
+    assert page.fiche.height() >= page.fiche.hauteur_du_contenu(page.fiche.width())
+    assert details.height() >= details.HAUTEUR_MINIMALE
+    assert len(details.colonne_expressions.entrees()) == 33
+    assert details.colonne_expressions.grille.height() > details.height()  # plus haute que le panneau : elle défile
+
+
+def test_la_fiche_d_un_terme_seul_avec_le_glossaire_fourni(fenetre_fournie, application):
+    """Un des 4 000 termes seuls : la fiche donne l'équivalent, « à vérifier » ; le menu dit ce qui manque."""
+    page = fenetre_fournie.page
+    details = page.details
+    page.rechercher("protege")  # saisi sans accent
+    application.processEvents()
+    entree = page.entree
+    assert entree.terme_fr == "protégé" and entree.numero > ENTREES_COMPLETES
+    assert not entree.definition_fr and not entree.contextes
+    # La fiche : le terme, son équivalent et, au pied de l'équivalent, la mention « À vérifier ».
+    assert textes(page.fiche.colonne_terme.corps)[:2] == ["FRANÇAIS · SOURCE", "protégé"]
+    assert page.fiche.colonne_equivalent.terme.terme == entree.terme_ar
+    assert textes(page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalent d’exemple"]
+    # Le menu : ni définition ni phrase d'exemple (cercles gris) ; l'invitation ne nomme que ce qui existe.
+    etats = details.etats()
+    assert etats["definition"] == (False, 0) and etats["contexte"] == (False, 0)
+    assert "definition" not in details.renseignes() and "contexte" not in details.renseignes()
+    assert "définition" not in details.invite.texte.text()
+    details.roue.boutons["definition"].click()
+    assert textes(details.colonne_definition.corps) == [
+        "Aucune définition pour ce terme", "Le glossaire n’en donne pas encore."]
+    # Un terme absent du glossaire : la première entrée trouvée est affichée, et la liste des autres s'ouvre.
+    details.bouton_fermer.click()
+    page.rechercher("magistrat")
+    assert page.entree.terme_fr != "magistrat" and "magistrat" in page.entree.terme_fr
+    assert details.detail == "expressions"
+    assert details.titre_du_detail.texte_complet() == "Autres résultats pour « magistrat »"
 
 
 def test_ecran_texte_avec_le_glossaire_fourni(fenetre_fournie, application):
-    from traducteur.interface.fenetre import MODE_TEXTE
+    from traducteur.interface.fenetre import MODE_TERME, MODE_TEXTE
 
     fenetre_fournie.definir_mode(MODE_TEXTE)
     page = fenetre_fournie.page_texte
@@ -427,12 +465,21 @@ def test_ecran_texte_avec_le_glossaire_fourni(fenetre_fournie, application):
         "contrat", "loi", "partie", "consentement", "cause", "bonne foi", "contractant", "usage", "équité",
         "obligation", "nullité", "contrat de vente", "acheteur"]
     assert traduction.texte.endswith("بطلان عقد البيع protège المشتري.")
-    # L'écran en rend compte : état de la traduction, une carte par terme, barre d'état.
+    # L'écran en rend compte : état de la traduction, une case par terme, barre d'état.
     assert page.badge.texte() == "Traduction partielle · 83 mots sur 84 trouvés"
-    assert page.termes.nombre.text() == "13" and len(page.termes.cartes) == 13
-    # Chaque terme a au moins un contexte (son passage du texte) et toutes ses références.
-    for carte in page.termes.cartes:
-        assert carte.passage_source[0] and carte.etapes_renseignees() == [True] * 5
-        assert carte.ressources == carte.entree.ressources and carte.ressources
-    assert [carte.a_verifier for carte in page.termes.cartes[:2]] == [False, True]  # « contrat », puis « loi »
+    cases = page.termes.cellules
+    assert page.termes.nombre.text() == "13" and len(cases) == 13
+    assert [case.entree for case in cases] == [terme.entree for terme in traduction.termes]
+    assert cases[0].text() == "contrat — عقد"
+    # Ces treize termes sont des entrées complètes : aucun équivalent n'est signalé « à vérifier ».
+    assert not any(case.a_verifier for case in cases)
     assert fenetre_fournie.barre_etat.etat() == "Traduction : 83 mots sur 84 trouvés dans le glossaire."
+    # Un clic sur une case ouvre la fiche du terme : sa définition, ses exemples et ses références y sont.
+    for case in (cases[0], cases[4], cases[-1]):
+        case.click()
+        assert fenetre_fournie.mode == MODE_TERME and fenetre_fournie.page.entree is case.entree
+        etats = fenetre_fournie.page.details.etats()
+        assert etats["definition"][0] and etats["contexte"][0] and etats["ressources"][0], case.text()
+        assert etats["ressources"][1] == len(case.entree.ressources)
+        fenetre_fournie.bouton_retour.click()
+        assert fenetre_fournie.mode == MODE_TEXTE and page.traduction is traduction

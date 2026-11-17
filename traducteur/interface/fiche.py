@@ -1,15 +1,15 @@
-"""La fiche d'un terme : les cinq champs de l'enchaînement, côte à côte dans un seul panneau.
+"""La fiche d'un terme : le terme et son équivalent, côte à côte dans un seul panneau.
 
-① Terme → ② Définition → ③ Équivalent → ④ Contextualisation → ⑤ Ressources
-
-Chaque champ est une colonne de la fiche : un corps, construit à partir d'une entrée du
-glossaire et du sens de traduction, et un pied. Sous la fiche, ``ListeEntrees`` présente les
-autres entrées trouvées par la recherche.
+Les autres informations de l'entrée (définition, contextualisation, ressources, synonymes, termes
+associés, expressions) ne sont pas dans la fiche : le menu « Plus de détails » les affiche à la
+demande (voir ``details.py``). Chacune est une « colonne », comme le terme et l'équivalent : un
+corps, construit à partir d'une entrée du glossaire et du sens de traduction, et un pied.
 """
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+import math
+from collections.abc import Callable, Sequence
 from html import escape
 
 import regex
@@ -32,7 +32,6 @@ from ..glossaire import Entree, Glossaire, mention_a_verifier
 from ..langues import AR, FR, NOM_EN_FRANCAIS, autre_langue, deviner_langue
 from ..surlignage import positions_du_terme
 from . import icones, theme
-from .animation import Allumage
 from .composants import (
     ESPACE_INVISIBLE,
     DispositionColonnes,
@@ -51,24 +50,28 @@ from .composants import (
     mention_a_controler,
     nombre,
     paragraphe,
-    pastille,
     puce,
     puce_neutre,
     rond,
     separateur,
     vider,
 )
-from .dessin import abreger, dessiner_ligne, dessiner_numero, largeur_du_texte, melanger, police
+from .dessin import abreger, dessiner_ligne, largeur_du_texte, police
 
-#: Les cinq champs de l'enchaînement.
-ETAPES = ("Terme", "Définition", "Équivalent", "Contextualisation", "Ressources")
-#: Largeurs relatives des cinq colonnes (celles de la proposition, pour une fiche de 1 392 pixels).
-PROPORTIONS = (272, 292, 264, 292, 272)
-#: En dessous de cette largeur, la fiche garde sa largeur et défile horizontalement.
-LARGEUR_MINIMALE = 960
-HAUTEUR_ONGLETS, HAUTEUR_ENTETE, HAUTEUR_PIED = 38, 50, 44
+#: Les deux colonnes de la fiche : le terme, dans la langue source, et son équivalent, dans la langue cible.
+COLONNES = ("Terme", "Équivalent")
+#: Largeurs relatives des deux colonnes.
+PROPORTIONS = (1, 1)
+#: Largeur minimale de la fiche.
+LARGEUR_MINIMALE = 560
+HAUTEUR_ONGLETS, HAUTEUR_PIED = 38, 44
 #: Hauteur du corps de la fiche dans la fenêtre de référence (1440 × 860), et hauteur minimale.
-HAUTEUR_DU_CORPS, HAUTEUR_MINIMALE_DU_CORPS = 336, 150
+HAUTEUR_DU_CORPS, HAUTEUR_MINIMALE_DU_CORPS = 196, 132
+#: Hauteur de la ligne du terme et de celle de l'équivalent : la même, pour que les deux mots soient
+#: écrits à la même hauteur dans les deux colonnes, quelle que soit la taille de leurs caractères.
+HAUTEUR_DU_TERME = 78
+#: Espace entre la légende d'une colonne (« FRANÇAIS · SOURCE ») et le terme.
+ESPACE_SOUS_LA_LEGENDE = 10
 
 #: Hauteur des lignes d'un paragraphe, selon la langue.
 INTERLIGNE = {FR: 22, AR: 30}
@@ -85,6 +88,18 @@ def categorie_et_pluriel(entree: Entree, langue: str) -> str:
     if langue == AR:
         return "، ".join(morceau for morceau in (categorie, f"ج. {pluriel}" if pluriel else "") if morceau)
     return " · ".join(morceau for morceau in (categorie, f"pl. {pluriel}" if pluriel else "") if morceau)
+
+
+def equivalent_a_verifier(entree: Entree) -> str | None:
+    """Détail de la mention « à vérifier » qui porte sur l'équivalent d'une entrée ; ``None`` sans mention.
+
+    Sans définition, une mention « à vérifier » écrite dans la colonne « source_definition » porte
+    sur l'équivalent : c'est le cas des termes seuls du glossaire fourni, marqués « à vérifier
+    (équivalent d'exemple) ». Le détail rendu est alors « équivalent d'exemple ».
+    """
+    if entree.definition_fr or entree.definition_ar:
+        return None
+    return mention_a_verifier(entree.source_definition)
 
 
 def _categorie_en_html(entree: Entree, langue: str) -> str:
@@ -149,88 +164,9 @@ def _tailles_du_terme(terme: str, langue: str, role: str) -> tuple[int, int]:
         paliers = (((8, 58), (16, 42), (28, 32), (999, 26)) if langue == AR
                    else ((10, 44), (18, 32), (30, 25), (999, 21)))
     else:
-        paliers = ((10, 40), (18, 30), (999, 24)) if langue == AR else ((12, 34), (22, 26), (999, 21))
+        paliers = ((10, 48), (18, 36), (999, 28)) if langue == AR else ((12, 40), (22, 30), (999, 24))
     maximale = next(taille for limite, taille in paliers if len(terme) <= limite)
     return maximale, min(maximale, 16 if langue == AR else 14)
-
-
-# ====================================================================== en-tête : les cinq étapes
-class EnteteEtapes(QWidget):
-    """Les cinq étapes de l'enchaînement, numérotées et reliées par des flèches.
-
-    Chaque étape est placée au début de sa colonne. ``legendes`` ajoute une ligne sous chaque
-    titre : pour chaque étape, les formes du texte, de la plus longue à la plus courte.
-
-    Une étape est éteinte (grise) ou allumée (dorée). ``allumer`` allume, l'une après l'autre,
-    les étapes que le glossaire renseigne pour le terme affiché.
-    """
-
-    def __init__(self, legendes: Sequence[Sequence[str]] = (), parent: QWidget | None = None) -> None:
-        super().__init__(parent)
-        self.titres = list(ETAPES)
-        self._legendes = [tuple(formes) for formes in legendes]
-        self.setFixedHeight(80 if legendes else HAUTEUR_ENTETE)
-        self.setAccessibleName(" → ".join(ETAPES))
-        self.allumage = Allumage(len(ETAPES), self)
-        self.allumage.change.connect(self.update)
-
-    def allumer(self, etapes: Sequence[bool], *, animer: bool = True) -> None:
-        """Allume les étapes renseignées (vrai), dans l'ordre ; les autres restent éteintes."""
-        self.allumage.definir(etapes, animer=animer)
-        allumees = [titre for titre, allumee in zip(ETAPES, etapes, strict=True) if allumee]
-        self.setAccessibleDescription("Étapes renseignées : " + ", ".join(allumees) if allumees else "")
-
-    def etapes_allumees(self) -> list[bool]:
-        """Pour chaque étape : vrai si elle est allumée (ou le sera à la fin de l'animation)."""
-        return self.allumage.allumees()
-
-    def legendes_affichees(self) -> list[str]:
-        """La légende de chaque étape, dans la forme qui tient dans sa colonne."""
-        bornes = bornes_des_colonnes(self.width(), PROPORTIONS)
-        police_legende = police(self.font(), 12)
-        resultat = []
-        for rang, formes in enumerate(self._legendes):
-            place = bornes[rang + 1] - bornes[rang] - theme.MARGE - 31 - 8
-            resultat.append(next((forme for forme in formes if largeur_du_texte(forme, police_legende) <= place),
-                                 abreger(formes[-1], police_legende, place)))
-        return resultat
-
-    def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
-        peintre = QPainter(self)
-        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
-        bornes = bornes_des_colonnes(self.width(), PROPORTIONS)
-        milieu = 29 if self._legendes else HAUTEUR_ENTETE / 2
-        police_titre = police(self.font(), 14, gras=True)
-        police_numero = police(self.font(), 12, gras=True)
-        legendes = self.legendes_affichees()
-        for rang, titre in enumerate(ETAPES):
-            gauche = bornes[rang] + theme.MARGE
-            accent = rang == 2  # l'équivalent est le champ mis en avant
-            niveau = self.allumage.niveau(rang)
-            dessiner_numero(peintre, QPointF(gauche + 11, milieu), 11, str(rang + 1), police_numero, niveau,
-                            self.allumage.halo(rang))
-
-            x_titre = gauche + 31
-            place = bornes[rang + 1] - x_titre - 4
-            titre = abreger(titre, police_titre, place)
-            dessiner_ligne(peintre, QRectF(x_titre, milieu - 12, place, 24), titre, police_titre,
-                           melanger(theme.TEXTE_3, theme.BLEU_FONCE if accent else theme.TEXTE, niveau).name())
-            if legendes:
-                dessiner_ligne(peintre, QRectF(x_titre, milieu + 12, place, 20), legendes[rang],
-                               police(self.font(), 12), theme.TEXTE_3)
-            if rang < len(ETAPES) - 1:
-                # Flèche vers l'étape suivante : du titre jusqu'au numéro de la colonne voisine. Elle
-                # se colore quand l'étape suivante s'allume.
-                debut = x_titre + largeur_du_texte(titre, police_titre) + 14
-                fin = bornes[rang + 1] + theme.MARGE - 14
-                if fin - debut >= 12:
-                    stylo = QPen(melanger("#CBD3DF", theme.OR_FONCE, self.allumage.niveau(rang + 1)), 1.25)
-                    stylo.setCapStyle(Qt.PenCapStyle.RoundCap)
-                    stylo.setJoinStyle(Qt.PenJoinStyle.RoundJoin)
-                    peintre.setPen(stylo)
-                    peintre.drawLine(QPointF(debut, milieu), QPointF(fin, milieu))
-                    peintre.drawLine(QPointF(fin - 4.5, milieu - 4), QPointF(fin, milieu))
-                    peintre.drawLine(QPointF(fin - 4.5, milieu + 4), QPointF(fin, milieu))
 
 
 # ====================================================================== onglets des sens
@@ -316,6 +252,8 @@ class BandeDesSens(QWidget):
         # Le signe précède le texte : il est placé juste devant lui (voir « _placer_le_signe »).
         self._signe = icone_fixe("alerte", theme.AMBRE, 14, 1.6)
         self._signe.setParent(self)
+        # Le texte choisit sa forme (longue, courte…) quand sa largeur change : le signe est alors replacé.
+        self.avertissement.installEventFilter(self)
 
     def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
         peintre = QPainter(self)
@@ -326,6 +264,12 @@ class BandeDesSens(QWidget):
     def resizeEvent(self, evenement) -> None:  # noqa: N802
         super().resizeEvent(evenement)
         self._placer_le_signe()
+
+    def eventFilter(self, objet, evenement) -> bool:  # noqa: N802
+        if objet is self.avertissement and evenement.type() == QEvent.Type.Resize:
+            # Le texte n'a pas encore pris sa nouvelle forme : le signe est replacé juste après.
+            QTimer.singleShot(0, self, self._placer_le_signe)
+        return False
 
     def afficher(self, sens: Sequence[Entree], courant: Entree | None, source: str) -> None:
         """Affiche un onglet par sens ; la bande est cachée s'il n'y a qu'un sens."""
@@ -426,15 +370,15 @@ class Colonne(QObject):
         self.disposition.addSpacing(6)
         return label
 
-    def _rangee_de_puces(self, puces: Sequence[QWidget], *, centre: bool = False) -> QWidget:
+    def _rangee_de_puces(self, puces: Sequence[QWidget], *, centre: bool = False, espace: int = 6) -> QWidget:
         conteneur = QWidget()
-        rangee = DispositionFluide(conteneur, 6, 6, centre=centre)
+        rangee = DispositionFluide(conteneur, espace, espace, centre=centre)
         for element in puces:
             rangee.addWidget(element)
         self.disposition.addWidget(conteneur)
         return conteneur
 
-    def _puce_de_terme(self, texte: str, langue: str | None = None) -> QWidget:
+    def _puce_de_terme(self, texte: str, langue: str | None = None, *, grande: bool = False) -> QWidget:
         """Puce d'un terme : cliquable si ce terme est une autre entrée du glossaire.
 
         ``langue`` est la langue du terme quand elle est connue (un synonyme) ; sinon elle est
@@ -447,8 +391,9 @@ class Colonne(QObject):
             if autre is None and langue is None:
                 autre = self.glossaire.par_terme(texte, autre_langue(ecriture))
         if autre is None or autre is self.entree:
-            return puce_neutre(texte, ecriture)
-        bouton = puce(texte, ecriture, info="Ouvrir cette entrée du glossaire")
+            return puce_neutre(texte, ecriture, hauteur=30 if grande else theme.HAUTEUR_PUCE, grande=grande)
+        bouton = (puce(texte, ecriture, classe="puceExemple", hauteur=30, info="Ouvrir cette entrée du glossaire")
+                  if grande else puce(texte, ecriture, info="Ouvrir cette entrée du glossaire"))
         bouton.clicked.connect(lambda _=False, cible=autre: self.entree_demandee.emit(cible))
         return bouton
 
@@ -491,36 +436,35 @@ class Colonne(QObject):
 
 
 class ColonneTerme(Colonne):
-    """① Le terme recherché : catégorie grammaticale, domaine, synonymes et termes associés."""
+    """Le terme recherché, dans la langue source : sa catégorie grammaticale et son domaine."""
 
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
-        # En arabe, toute la colonne s'aligne à droite, comme le terme.
-        self.corps.setLayoutDirection(direction(source))
         corps = self.disposition
-        corps.addWidget(capitales(f"{NOM_EN_FRANCAIS[source]} · source"))
-        corps.addSpacing(2)
+        centre = Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignTop
+        legende = capitales(f"{NOM_EN_FRANCAIS[source]} · source")
+        legende.setAlignment(centre)
+        corps.addWidget(legende)
+        corps.addSpacing(ESPACE_SOUS_LA_LEGENDE)
         terme = entree.terme(source)
-        self.terme = TermeAjuste(terme, "terme", source, *_tailles_du_terme(terme, source, "source"))
+        self.terme = TermeAjuste(terme, "terme", source, *_tailles_du_terme(terme, source, "source"), centre=True)
         if source == FR:
             police_du_terme = QFont(self.terme.font())
             police_du_terme.setLetterSpacing(QFont.SpacingType.AbsoluteSpacing, -0.4)
             self.terme.setFont(police_du_terme)
+        # Le terme est centré dans une ligne de hauteur fixe : il est écrit à la hauteur de son équivalent.
+        self.terme.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.terme.setMinimumHeight(HAUTEUR_DU_TERME)
         corps.addWidget(self.terme)
         categorie = _categorie_en_html(entree, source)
         if categorie:
             corps.addSpacing(2)
-            corps.addWidget(etiquette(paragraphe(categorie, source, 24 if source == AR else 18), "categorie", source,
-                                      retour_ligne=True, riche=True))
+            corps.addWidget(etiquette(paragraphe(categorie, source, 24 if source == AR else 18, centre=True),
+                                      "categorie", source, retour_ligne=True, riche=True))
         if entree.domaines:
-            self._rubrique("Domaine")
-            corps.addWidget(etiquette(" › ".join(entree.domaines), "domaine", retour_ligne=True))
-        synonymes = entree.synonymes(source)
-        if synonymes:
-            self._rubrique("Synonyme" if len(synonymes) == 1 else "Synonymes")
-            self._rangee_de_puces([self._puce_de_terme(synonyme, source) for synonyme in synonymes])
-        if entree.termes_associes:
-            self._rubrique("Terme associé" if len(entree.termes_associes) == 1 else "Termes associés")
-            self._rangee_de_puces([self._puce_de_terme(associe) for associe in entree.termes_associes])
+            corps.addSpacing(6)
+            domaine = etiquette(" › ".join(entree.domaines), "domaine", retour_ligne=True)
+            domaine.setAlignment(centre)
+            corps.addWidget(domaine)
         corps.addStretch(1)
 
         # Pied : rang de l'entrée dans le glossaire, et passage à l'entrée voisine.
@@ -555,18 +499,14 @@ class ColonneTerme(Colonne):
 
 
 class ColonneDefinition(Colonne):
-    """② La définition du terme dans les deux langues, avec sa source."""
+    """La définition du terme dans les deux langues, avec sa source."""
 
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
         corps = self.disposition
         if not entree.definition_fr and not entree.definition_ar:
-            self._vide("document", "Aucune définition pour ce terme", "Le glossaire n’en donne pas encore.")
-            # Sans définition, une mention « à vérifier » écrite dans la colonne « source_definition » porte sur
-            # l'équivalent : c'est le cas des termes seuls du glossaire fourni (« à vérifier (équivalent d'exemple) »).
-            detail = mention_a_verifier(entree.source_definition)
-            if detail is not None:
-                self._pied_a_verifier(detail, "Cet équivalent n’est repris d’aucun texte officiel ni d’aucun "
-                                              "dictionnaire : vérifiez-le avant de l’employer.")
+            # Sans définition, une mention « à vérifier » du glossaire porte sur l'équivalent : la colonne
+            # de l'équivalent l'affiche (voir ``ColonneEquivalent``).
+            self._vide("livre", "Aucune définition pour ce terme", "Le glossaire n’en donne pas encore.")
             return
         for rang, langue in enumerate((source, cible)):
             if rang:
@@ -584,8 +524,8 @@ class ColonneDefinition(Colonne):
                                           "discret", retour_ligne=True))
         corps.addStretch(1)
 
-        # Pied : la source de la définition, ou la mention « À vérifier » (comme dans le tableau
-        # de l'écran « Texte », une définition sans source citée est à vérifier).
+        # Pied : la source de la définition, ou la mention « À vérifier » (une définition sans source
+        # citée est à vérifier).
         if entree.source_definition:
             detail = mention_a_verifier(entree.source_definition)
             explication = "Cette définition n’est pas reprise d’un texte officiel : vérifiez-la avant de la citer."
@@ -620,7 +560,15 @@ class ColonneDefinition(Colonne):
 
 
 class ColonneEquivalent(Colonne):
-    """③ L'équivalent du terme dans la langue cible, et ses autres équivalents."""
+    """L'équivalent du terme dans la langue cible, et ses autres équivalents.
+
+    Au pied : la mention « À vérifier » quand le glossaire la porte sur l'équivalent lui-même,
+    puis le lien qui copie l'équivalent.
+    """
+
+    #: Infobulle de la mention « À vérifier ».
+    EXPLICATION = ("Cet équivalent n’est repris d’aucun texte officiel ni d’aucun dictionnaire : "
+                   "vérifiez-le avant de l’employer.")
 
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
         corps = self.disposition
@@ -628,39 +576,45 @@ class ColonneEquivalent(Colonne):
         legende = capitales(f"{NOM_EN_FRANCAIS[cible]} · cible", "capitalesBleu")
         legende.setAlignment(centre)
         corps.addWidget(legende)
-        corps.addStretch(1)
+        corps.addSpacing(ESPACE_SOUS_LA_LEGENDE)
         equivalent = entree.terme(cible)
         self.terme = TermeAjuste(equivalent, "equivalent", cible, *_tailles_du_terme(equivalent, cible, "cible"),
                                  centre=True)
+        self.terme.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.terme.setMinimumHeight(HAUTEUR_DU_TERME)
         corps.addWidget(self.terme)
         grammaire = categorie_et_pluriel(entree, cible)
         if grammaire:
-            corps.addSpacing(4)
+            corps.addSpacing(2)
             label = etiquette(grammaire, "grammaire", cible, retour_ligne=True)
             label.setAlignment(centre)
             corps.addWidget(label)
         autres = entree.synonymes(cible)
         if autres:
-            corps.addSpacing(16)
-            filet = separateur("separateurBleu")
-            filet.setFixedWidth(56)
-            corps.addWidget(filet, 0, Qt.AlignmentFlag.AlignHCenter)
-            corps.addSpacing(16)
+            # Sur une ligne : le titre, puis les autres équivalents.
+            corps.addSpacing(10)
             titre = capitales("Autre équivalent" if len(autres) == 1 else "Autres équivalents")
-            titre.setAlignment(centre)
-            corps.addWidget(titre)
-            corps.addSpacing(8)
-            self._rangee_de_puces([self._puce_d_equivalent(autre, cible) for autre in autres], centre=True)
+            titre.setFixedHeight(26)
+            titre.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            self._rangee_de_puces([titre, *(self._puce_d_equivalent(autre, cible) for autre in autres)], centre=True,
+                                  espace=8)
         corps.addStretch(1)
 
         def copier() -> None:
             QGuiApplication.clipboard().setText(equivalent)
             self.message.emit(f"Équivalent copié : {equivalent}")
 
+        #: La mention « À vérifier », quand le glossaire la porte sur l'équivalent (``None`` sinon).
+        self.mention: QWidget | None = None
+        detail = equivalent_a_verifier(entree)
+        if detail is not None:
+            self.mention = mention_a_controler(self.EXPLICATION, detail)
+        if self.mention is not None:
+            self.ligne_du_pied.addWidget(self.mention, 1)
+        else:
+            self.ligne_du_pied.addStretch(1)
         self.bouton_copier = self._lien_du_pied("Copier l’équivalent", copier, "Équivalent copié")
-        self.ligne_du_pied.addStretch(1)
         self.ligne_du_pied.addWidget(self.bouton_copier)
-        self.ligne_du_pied.addStretch(1)
 
     def _puce_d_equivalent(self, texte: str, cible: str) -> QWidget:
         """Puce d'un autre équivalent : cliquable s'il est le terme d'une entrée du glossaire."""
@@ -765,7 +719,7 @@ class LigneDeProvenance(QWidget):
 
 
 class ColonneContexte(Colonne):
-    """④ Des phrases qui emploient le terme, dans les deux langues ; le terme y est mis en évidence.
+    """Contextualisation : des phrases qui emploient le terme, dans les deux langues ; le terme y est mis en évidence.
 
     Les exemples de l'entrée viennent d'abord. S'il en manque, la colonne les complète par des
     phrases d'autres entrées du glossaire (exemples, définitions) qui emploient le terme : voir
@@ -793,7 +747,7 @@ class ColonneContexte(Colonne):
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
         corps = self.disposition
         if not self.emplois:
-            self._vide("texte", "Aucun exemple pour ce terme",
+            self._vide("bulle", "Aucun exemple pour ce terme",
                        "Aucune phrase du glossaire n’emploie encore ce terme.")
             return
         for rang, emploi in enumerate(self.emplois):
@@ -847,14 +801,14 @@ class ColonneContexte(Colonne):
 
 
 class ColonneRessources(Colonne):
-    """⑤ Les références à consulter et à citer : textes de loi, dictionnaires, sites officiels."""
+    """Les références à consulter et à citer : textes de loi, dictionnaires, sites officiels."""
 
     marge_haute = 15
 
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
         corps = self.disposition
         if not entree.ressources:
-            self._vide("document", "Aucune ressource pour ce terme",
+            self._vide("ouvrages", "Aucune ressource pour ce terme",
                        "Le glossaire ne cite pas encore de référence.")
             return
         for rang, ressource in enumerate(entree.ressources):
@@ -880,20 +834,143 @@ class ColonneRessources(Colonne):
         self.ligne_du_pied.addStretch(1)
 
 
-# ====================================================================== la fiche
-class Fiche(Panneau):
-    """Les cinq champs d'une entrée du glossaire, dans un seul panneau.
+class ColonneTermesLies(Colonne):
+    """Des termes liés au terme affiché, en puces : synonymes, termes associés.
 
-    De haut en bas : les onglets des sens (si le terme en a plusieurs), l'en-tête des cinq
-    étapes, le corps des cinq colonnes (il défile d'un bloc si la hauteur manque) et leur pied.
+    Une puce bleue est une autre entrée du glossaire : un clic l'ouvre. Une puce grise est un
+    terme que le glossaire cite sans lui donner d'entrée.
     """
 
-    #: Demande d'ouverture d'une autre entrée du glossaire (clic sur une puce de la fiche).
+    marge_haute = 20
+    #: Message affiché quand le glossaire ne donne aucun terme : icône, titre, texte.
+    ICONE, TITRE_VIDE, TEXTE_VIDE = "", "", ""
+
+    def __init__(self, parent: QObject | None = None) -> None:
+        super().__init__(parent)
+        #: Les puces affichées, dans l'ordre du glossaire.
+        self.puces: list[QWidget] = []
+
+    def afficher(self, glossaire: Glossaire | None, entree: Entree | None, source: str) -> None:
+        self.puces = []
+        super().afficher(glossaire, entree, source)
+
+    def termes(self, entree: Entree, source: str) -> list[tuple[str, str | None]]:
+        """Les termes à afficher : (terme, langue) ; la langue est ``None`` quand elle est à deviner."""
+        raise NotImplementedError
+
+    def remplir(self, entree: Entree, source: str, cible: str) -> None:
+        termes = self.termes(entree, source)
+        if not termes:
+            self._vide(self.ICONE, self.TITRE_VIDE, self.TEXTE_VIDE)
+            return
+        self.puces = [self._puce_de_terme(texte, langue, grande=True) for texte, langue in termes]
+        self._rangee_de_puces(self.puces, espace=8)
+        self.disposition.addStretch(1)
+        # Pied : ce que veulent dire les deux couleurs de puces.
+        ouvrables = sum(1 for element in self.puces if isinstance(element, QPushButton))
+        legende = EtiquetteCourte("", "pied")
+        if ouvrables == len(self.puces):
+            legende.definir_texte("Cliquez sur un terme pour ouvrir son entrée dans le glossaire",
+                                  "Cliquez sur un terme pour ouvrir son entrée", "")
+        elif ouvrables:
+            legende.definir_texte("En bleu : une entrée du glossaire, à ouvrir d’un clic · en gris : un terme "
+                                  "sans entrée", "En bleu : une entrée du glossaire, à ouvrir d’un clic", "")
+        else:
+            legende.definir_texte("Ces termes n’ont pas encore d’entrée dans le glossaire", "")
+        self.ligne_du_pied.addWidget(icone_fixe("information", theme.TEXTE_3))
+        self.ligne_du_pied.addWidget(legende, 1)
+
+
+class ColonneSynonymes(ColonneTermesLies):
+    """Les synonymes du terme, dans la langue source."""
+
+    ICONE, TITRE_VIDE, TEXTE_VIDE = "equivalence", "Aucun synonyme pour ce terme", "Le glossaire n’en donne pas."
+
+    def termes(self, entree: Entree, source: str) -> list[tuple[str, str | None]]:
+        return [(synonyme, source) for synonyme in entree.synonymes(source)]
+
+    def remplir(self, entree: Entree, source: str, cible: str) -> None:
+        # Des synonymes arabes se suivent de droite à gauche.
+        self.corps.setLayoutDirection(direction(source))
+        super().remplir(entree, source, cible)
+
+
+class ColonneAssocies(ColonneTermesLies):
+    """Les termes associés au terme : ceux qu'on rencontre avec lui dans les mêmes textes."""
+
+    ICONE, TITRE_VIDE, TEXTE_VIDE = "liens", "Aucun terme associé", "Le glossaire n’en cite pas pour ce terme."
+
+    def termes(self, entree: Entree, source: str) -> list[tuple[str, str | None]]:
+        return [(associe, None) for associe in entree.termes_associes]
+
+
+class ColonneExpressions(Colonne):
+    """Les autres entrées trouvées par la recherche : expressions qui contiennent le terme, termes proches.
+
+    Le contenu ne vient pas de l'entrée affichée mais de la recherche en cours : ``definir`` le
+    reçoit, avant ``afficher``.
+    """
+
+    #: Demande d'affichage d'une entrée de la liste (la recherche en cours est conservée).
+    ouverture = Signal(object)
+
+    def __init__(self, parent: QObject | None = None) -> None:
+        super().__init__(parent)
+        #: Titre de la liste : « Expressions avec « contrat » », « Autres résultats pour « contra » »…
+        self.titre = ""
+        self._entrees: list[Entree] = []
+        self.grille: GrilleEntrees | None = None
+        # La grille va d'un bord à l'autre : ses filets rejoignent ceux du panneau.
+        self.disposition.setContentsMargins(0, 0, 0, 0)
+
+    def definir_reserve(self, reserve: int) -> None:
+        """La liste n'a pas de marge : rien à réserver."""
+
+    def definir(self, titre: str, entrees: Sequence[Entree]) -> None:
+        """Fixe le titre et le contenu de la liste, affichés au prochain appel de ``afficher``."""
+        self.titre, self._entrees = titre, list(entrees)
+
+    def entrees(self) -> list[Entree]:
+        return list(self._entrees)
+
+    def afficher(self, glossaire: Glossaire | None, entree: Entree | None, source: str) -> None:
+        self.grille = None
+        super().afficher(glossaire, entree, source)
+
+    def remplir(self, entree: Entree, source: str, cible: str) -> None:
+        if not self._entrees:
+            self._vide("liste", "Aucune expression avec ce terme",
+                       "Aucune autre entrée du glossaire ne contient ce terme.")
+            return
+        self.grille = GrilleEntrees()
+        self.grille.definir(self._entrees)
+        self.grille.ouverture.connect(self.ouverture)
+        self.disposition.addWidget(self.grille)
+        self.disposition.addStretch(1)
+        aide = EtiquetteCourte("", "pied")
+        aide.definir_texte("Cliquez sur une ligne pour ouvrir sa fiche", "")
+        self.ligne_du_pied.addWidget(icone_fixe("information", theme.TEXTE_3))
+        self.ligne_du_pied.addWidget(aide, 1)
+
+
+# ====================================================================== la fiche
+class Fiche(Panneau):
+    """Le terme et son équivalent, côte à côte dans un seul panneau.
+
+    De haut en bas : les onglets des sens (si le terme en a plusieurs), le corps des deux
+    colonnes (il défile d'un bloc si la hauteur manque) et leur pied. Les autres informations
+    de l'entrée sont dans le menu « Plus de détails » : voir ``details.py``.
+    """
+
+    #: Demande d'ouverture d'une autre entrée du glossaire (clic sur une puce ou sur une flèche de la fiche).
     entree_demandee = Signal(object)
     #: Un autre sens du terme a été choisi par son onglet.
     sens_choisi = Signal(object)
     #: Message court à afficher dans la barre d'état.
     message = Signal(str)
+
+    #: Rayon du rond dessiné entre les deux colonnes : sa flèche va du terme vers l'équivalent.
+    RAYON_DE_LA_FLECHE = 14
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
@@ -905,14 +982,9 @@ class Fiche(Panneau):
         self.onglets = BandeDesSens()
         self.onglets.sens_choisi.connect(self.sens_choisi)
         self.onglets.hide()
-        self.entete = EnteteEtapes()
         self.colonne_terme = ColonneTerme(self)
-        self.colonne_definition = ColonneDefinition(self)
         self.colonne_equivalent = ColonneEquivalent(self)
-        self.colonne_contexte = ColonneContexte(self)
-        self.colonne_ressources = ColonneRessources(self)
-        self.colonnes: list[Colonne] = [self.colonne_terme, self.colonne_definition, self.colonne_equivalent,
-                                        self.colonne_contexte, self.colonne_ressources]
+        self.colonnes: list[Colonne] = [self.colonne_terme, self.colonne_equivalent]
 
         self._rangee = QWidget()
         corps = DispositionColonnes(self._rangee, PROPORTIONS)
@@ -933,7 +1005,6 @@ class Fiche(Panneau):
         ensemble.setContentsMargins(0, 0, 0, 0)
         ensemble.setSpacing(0)
         ensemble.addWidget(self.onglets)
-        ensemble.addWidget(self.entete)
         ensemble.addWidget(self.defilement, 1)
         ensemble.addWidget(pieds)
 
@@ -946,16 +1017,7 @@ class Fiche(Panneau):
         self.onglets.afficher(sens, entree, source)
         self.defilement.revenir_en_haut()
         self._centrer_dans_la_vue()
-        self.entete.allumer(self.etapes_renseignees())
         self.update()
-
-    def etapes_renseignees(self) -> list[bool]:
-        """Pour chacune des cinq étapes : vrai si le glossaire la renseigne pour l'entrée affichée."""
-        entree = self.entree
-        if entree is None:
-            return [False] * len(ETAPES)
-        return [True, bool(entree.definition_fr or entree.definition_ar), True,
-                bool(self.colonne_contexte.emplois), bool(entree.ressources)]
 
     # ------------------------------------------------------------------ hauteurs
     def eventFilter(self, objet, evenement) -> bool:  # noqa: N802 (nom imposé par Qt)
@@ -972,11 +1034,10 @@ class Fiche(Panneau):
     def _centrer_dans_la_vue(self) -> None:
         """Limite la hauteur utile de chaque colonne à la partie visible du corps.
 
-        Les cinq colonnes défilent d'un bloc : elles ont toutes la hauteur de la plus haute.
-        Un contenu centré en hauteur (l'équivalent, le message d'un champ vide) serait placé
-        au milieu de cette hauteur, parfois hors de la vue. Le bas de chaque colonne reçoit
-        donc une réserve vide : son contenu se place dans la partie visible, ou dans la
-        hauteur qu'il lui faut si elle est plus grande.
+        Les deux colonnes défilent d'un bloc : elles ont la hauteur de la plus haute. Leur
+        contenu est centré en hauteur ; il serait placé au milieu de cette hauteur, parfois hors
+        de la vue. Le bas de chaque colonne reçoit donc une réserve vide : son contenu se place
+        dans la partie visible, ou dans la hauteur qu'il lui faut si elle est plus grande.
         """
         visible = self.defilement.viewport().height()
         naturelles = self._hauteurs_naturelles(self.width())
@@ -985,8 +1046,8 @@ class Fiche(Panneau):
             colonne.definir_reserve(rangee - max(visible, naturelle))
 
     def _hauteur_fixe(self) -> int:
-        """Hauteur de tout ce qui entoure le corps : onglets, en-tête, pied."""
-        return (HAUTEUR_ONGLETS if not self.onglets.isHidden() else 0) + HAUTEUR_ENTETE + HAUTEUR_PIED
+        """Hauteur de tout ce qui entoure le corps : onglets, pied."""
+        return (HAUTEUR_ONGLETS if not self.onglets.isHidden() else 0) + HAUTEUR_PIED
 
     def hauteur_de_reference(self) -> int:
         """Hauteur de la fiche dans la fenêtre de référence."""
@@ -996,29 +1057,35 @@ class Fiche(Panneau):
         return self._hauteur_fixe() + HAUTEUR_MINIMALE_DU_CORPS
 
     def hauteur_du_contenu(self, largeur: int) -> int:
-        """Hauteur qu'il faut à la fiche pour afficher ses cinq colonnes sans défilement."""
+        """Hauteur qu'il faut à la fiche pour afficher ses deux colonnes sans défilement."""
         return self._hauteur_fixe() + max(self._hauteurs_naturelles(largeur))
 
     # ------------------------------------------------------------------ dessin
     def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
         super().paintEvent(evenement)
         peintre = QPainter(self)
-        bornes = bornes_des_colonnes(self.width(), PROPORTIONS)
-        haut = self.entete.y()
-        sous_entete = haut + HAUTEUR_ENTETE
+        peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
+        milieu = bornes_des_colonnes(self.width(), PROPORTIONS)[1]
+        haut = self.defilement.y()
         pied = self.height() - HAUTEUR_PIED
-        # Le champ 3 (l'équivalent) est mis en avant : fond teinté, filet bleu en haut.
-        peintre.fillRect(bornes[2], haut, bornes[3] - bornes[2], self.height() - haut, QColor(theme.BLEU_50))
-        peintre.fillRect(bornes[2], haut, bornes[3] - bornes[2], 3, QColor(theme.BLEU))
+        # L'équivalent est mis en avant : fond teinté, filet bleu en haut.
+        peintre.fillRect(milieu, haut, self.width() - milieu, self.height() - haut, QColor(theme.BLEU_50))
+        peintre.fillRect(milieu, haut, self.width() - milieu, 3, QColor(theme.BLEU))
         peintre.setPen(QColor(theme.FILET_DOUX))
-        peintre.drawLine(0, sous_entete, self.width(), sous_entete)
-        peintre.drawLine(0, pied, self.width(), pied)
-        for rang in range(1, len(PROPORTIONS)):
-            peintre.setPen(QColor(theme.BLEU_100 if rang in (2, 3) else theme.FILET_DOUX))
-            peintre.drawLine(bornes[rang], sous_entete, bornes[rang], self.height())
+        peintre.drawLine(0, pied, milieu, pied)
+        peintre.setPen(QColor(theme.BLEU_100))
+        peintre.drawLine(milieu, pied, self.width(), pied)
+        peintre.drawLine(milieu, haut, milieu, self.height())
+        if self.entree is not None and pied - haut >= 4 * self.RAYON_DE_LA_FLECHE:
+            # Entre les deux colonnes : du terme vers son équivalent.
+            centre = QPointF(milieu + 0.5, (haut + pied) / 2)
+            peintre.setPen(QPen(QColor(theme.BLEU_200), 1))
+            peintre.setBrush(QColor(theme.SURFACE))
+            peintre.drawEllipse(centre, self.RAYON_DE_LA_FLECHE, self.RAYON_DE_LA_FLECHE)
+            peintre.drawPixmap(QPointF(centre.x() - 7, centre.y() - 7), icones.image("fleche", theme.BLEU, 14, 1.6))
 
 
-# ====================================================================== autres entrées trouvées
+# ====================================================================== listes d'entrées
 class CelluleEntree(QAbstractButton):
     """Une entrée de la liste : le terme français à gauche, le terme arabe à droite."""
 
@@ -1026,7 +1093,10 @@ class CelluleEntree(QAbstractButton):
         super().__init__(parent)
         self.entree = entree
         self.marge_gauche = self.marge_droite = 16
+        #: Place gardée devant le terme français (pour un signe, par exemple).
+        self.retrait = 0
         self._francais = self._arabe = ""
+        self._necessaire: tuple[tuple, float] | None = None
         self.setText(f"{entree.terme_fr} — {entree.terme_ar}")
         self.setCursor(Qt.CursorShape.PointingHandCursor)
         self.setAttribute(Qt.WidgetAttribute.WA_Hover)
@@ -1038,20 +1108,36 @@ class CelluleEntree(QAbstractButton):
         super().resizeEvent(evenement)
         self.ajuster()
 
+    #: Écart gardé entre les deux termes, et part de la case que le terme arabe peut occuper.
+    ECART = 20
+    PART_DE_L_ARABE = 0.55
+
     def ajuster(self) -> None:
         """Abrège les deux termes à la largeur de la case ; l'infobulle donne alors les termes entiers."""
         francais, arabe = self._polices()
-        place = self.width() - self.marge_gauche - self.marge_droite
+        place = self.width() - self.marge_gauche - self.retrait - self.marge_droite
         # L'arabe garde sa largeur, dans la limite de la moitié de la case ; le français prend le reste.
-        largeur_arabe = min(largeur_du_texte(self.entree.terme_ar, arabe) + 2, max(place * 0.55, 40))
+        largeur_arabe = min(largeur_du_texte(self.entree.terme_ar, arabe) + 2, max(place * self.PART_DE_L_ARABE, 40))
         self._arabe = abreger(self.entree.terme_ar, arabe, largeur_arabe)
         self._francais = abreger(self.entree.terme_fr, francais,
-                                 place - largeur_du_texte(self._arabe, arabe) - 20)
+                                 place - largeur_du_texte(self._arabe, arabe) - self.ECART)
         abrege = (self._francais, self._arabe) != (self.entree.terme_fr, self.entree.terme_ar)
         self.setToolTip(infobulle(f"{self.entree.terme_fr} — {self.entree.terme_ar}") if abrege else "")
 
     def textes_affiches(self) -> tuple[str, str]:
         return self._francais, self._arabe
+
+    def largeur_necessaire(self) -> float:
+        """Largeur de case à partir de laquelle les deux termes sont écrits en entier, où que soit la case."""
+        cle = (self.font().key(), self.retrait)
+        if self._necessaire is None or self._necessaire[0] != cle:
+            francais, arabe = self._polices()
+            largeur_arabe = largeur_du_texte(self.entree.terme_ar, arabe)
+            place = max(largeur_du_texte(self.entree.terme_fr, francais) + largeur_arabe + self.ECART,
+                        (largeur_arabe + 2) / self.PART_DE_L_ARABE)
+            # Les cases du bord ont la marge la plus large : c'est elle qui est comptée.
+            self._necessaire = (cle, math.ceil(place) + 1 + self.retrait + 2 * theme.MARGE)
+        return self._necessaire[1]
 
     def paintEvent(self, evenement) -> None:  # noqa: N802
         peintre = QPainter(self)
@@ -1062,7 +1148,8 @@ class CelluleEntree(QAbstractButton):
             peintre.setBrush(QColor(theme.BLEU_50))
             peintre.drawRoundedRect(QRectF(6.5, 4.5, self.width() - 13, self.height() - 8), 6, 6)
         francais, arabe = self._polices()
-        cadre = QRectF(self.marge_gauche, 0, self.width() - self.marge_gauche - self.marge_droite, self.height())
+        gauche = self.marge_gauche + self.retrait
+        cadre = QRectF(gauche, 0, self.width() - gauche - self.marge_droite, self.height())
         dessiner_ligne(peintre, cadre, self._francais, francais, theme.BLEU_FONCE if survol else theme.TEXTE,
                        base=22.8)
         dessiner_ligne(peintre, cadre, self._arabe, arabe, theme.BLEU_FONCE if survol else theme.TEXTE_2,
@@ -1070,14 +1157,21 @@ class CelluleEntree(QAbstractButton):
 
 
 class GrilleEntrees(QWidget):
-    """Grille des entrées : quatre colonnes au plus, des lignes de hauteur régulière."""
+    """Grille des entrées : quatre colonnes au plus, des lignes de hauteur régulière.
+
+    Le nombre de colonnes dépend de la largeur de la grille et de la longueur des termes : de
+    longues expressions sont rangées sur moins de colonnes, pour être écrites en entier.
+    """
 
     #: Demande d'ouverture d'une entrée (clic sur une case).
     ouverture = Signal(object)
 
     HAUTEUR_DE_LIGNE = 36
-    #: Largeur minimale d'une case : le nombre de colonnes en dépend.
+    #: Largeur minimale d'une case : la grille n'a jamais plus de colonnes que cette largeur n'en permet.
     LARGEUR_DE_CASE = 250
+    #: Part des cases dont les deux termes doivent être écrits en entier. En dessous, la grille prend une colonne
+    #: de moins. Les quelques termes plus longs que les autres sont abrégés ; leur infobulle les donne en entier.
+    PART_ENTIERE = 0.9
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
@@ -1086,14 +1180,19 @@ class GrilleEntrees(QWidget):
         regle.setHeightForWidth(True)
         self.setSizePolicy(regle)
 
-    def definir(self, entrees: Sequence[Entree]) -> None:
+    def definir(self, elements: Sequence, fabrique: Callable[..., CelluleEntree] = CelluleEntree) -> None:
+        """Remplit la grille : une case par élément.
+
+        ``fabrique`` construit la case d'un élément ; par défaut, les éléments sont des entrées
+        du glossaire. La case porte l'entrée qu'un clic ouvre (attribut ``entree``).
+        """
         for cellule in self.cellules:
             cellule.setParent(None)
             cellule.deleteLater()
         self.cellules = []
-        for entree in entrees:
-            cellule = CelluleEntree(entree, self)
-            cellule.clicked.connect(lambda _=False, cible=entree: self.ouverture.emit(cible))
+        for element in elements:
+            cellule = fabrique(element, self)
+            cellule.clicked.connect(lambda _=False, cible=cellule.entree: self.ouverture.emit(cible))
             cellule.show()
             self.cellules.append(cellule)
         self._placer()
@@ -1101,8 +1200,21 @@ class GrilleEntrees(QWidget):
         self.update()
 
     def colonnes(self, largeur: int | None = None) -> int:
+        """Le plus grand nombre de colonnes qui laisse presque toutes les cases écrites en entier."""
         largeur = self.width() if largeur is None else largeur
-        return max(1, min(4, largeur // self.LARGEUR_DE_CASE))
+        possibles = max(1, min(4, largeur // self.LARGEUR_DE_CASE))
+        if possibles > 1:
+            necessaires = [cellule.largeur_necessaire() for cellule in self.cellules]
+            for colonnes in range(possibles, 1, -1):
+                entieres = sum(1 for necessaire in necessaires if necessaire <= largeur // colonnes)
+                if entieres >= self.PART_ENTIERE * len(necessaires):
+                    return colonnes
+        return 1
+
+    def cases_abregees(self) -> int:
+        """Nombre de cases dont un terme est abrégé."""
+        return sum(1 for cellule in self.cellules
+                   if cellule.textes_affiches() != (cellule.entree.terme_fr, cellule.entree.terme_ar))
 
     def rangees(self, largeur: int | None = None) -> int:
         return -(-len(self.cellules) // self.colonnes(largeur))
@@ -1144,67 +1256,3 @@ class GrilleEntrees(QWidget):
             peintre.drawLine(borne, 0, borne, self.height())
         for rangee in range(1, self.rangees()):
             peintre.drawLine(0, rangee * self.HAUTEUR_DE_LIGNE, self.width(), rangee * self.HAUTEUR_DE_LIGNE)
-
-
-class ListeEntrees(Panneau):
-    """Panneau placé sous la fiche : les autres entrées du glossaire trouvées par la recherche."""
-
-    #: Demande d'affichage d'une entrée de la liste.
-    ouverture = Signal(object)
-
-    HAUTEUR_DU_TITRE = 40
-    #: Espace laissé sous la dernière ligne.
-    MARGE_BASSE = 4
-
-    def __init__(self, parent: QWidget | None = None) -> None:
-        super().__init__(parent)
-        ensemble = QVBoxLayout(self)
-        ensemble.setContentsMargins(0, 0, 0, 0)
-        ensemble.setSpacing(0)
-        titre = QWidget()
-        titre.setFixedHeight(self.HAUTEUR_DU_TITRE)
-        ligne = QHBoxLayout(titre)
-        ligne.setContentsMargins(theme.MARGE, 0, theme.MARGE, 0)
-        ligne.setSpacing(12)
-        self.titre = EtiquetteCourte("", "titrePanneau")
-        self.nombre = pastille()
-        self.aide = EtiquetteCourte("", "aidePanneau")
-        self.aide.definir_texte("Cliquez sur une ligne pour ouvrir sa fiche", "")
-        self.aide.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
-        self.aide.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
-        ligne.addWidget(self.titre)
-        ligne.addWidget(self.nombre)
-        ligne.addWidget(self.aide, 1)
-        ensemble.addWidget(titre)
-
-        self.grille = GrilleEntrees()
-        self.grille.ouverture.connect(self.ouverture)
-        self.defilement = ZoneDefilante()
-        self.defilement.definir_contenu(self.grille)
-        ensemble.addWidget(self.defilement, 1)
-
-    def definir(self, titre: str, entrees: Sequence[Entree]) -> None:
-        """Remplit la liste ; le panneau n'a pas lieu d'être affiché si ``entrees`` est vide."""
-        self.titre.definir_texte(titre)
-        self.nombre.setText(nombre(len(entrees)))
-        self.grille.definir(entrees)
-        self.defilement.revenir_en_haut()
-
-    def entrees(self) -> list[Entree]:
-        return [cellule.entree for cellule in self.grille.cellules]
-
-    def hauteur_naturelle(self, largeur: int) -> int:
-        """Hauteur du panneau quand toutes les lignes sont visibles."""
-        if not self.grille.cellules:
-            return 0
-        return self.HAUTEUR_DU_TITRE + self.grille.heightForWidth(largeur) + self.MARGE_BASSE
-
-    def hauteur_minimale(self) -> int:
-        """Le titre et deux lignes."""
-        return self.HAUTEUR_DU_TITRE + 2 * GrilleEntrees.HAUTEUR_DE_LIGNE + self.MARGE_BASSE
-
-    def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
-        super().paintEvent(evenement)
-        peintre = QPainter(self)
-        peintre.setPen(QColor(theme.FILET_DOUX))
-        peintre.drawLine(0, self.HAUTEUR_DU_TITRE, self.width(), self.HAUTEUR_DU_TITRE)

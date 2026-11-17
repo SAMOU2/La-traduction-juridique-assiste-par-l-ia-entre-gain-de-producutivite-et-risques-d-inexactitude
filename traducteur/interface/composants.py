@@ -6,6 +6,7 @@ from collections.abc import Iterator, Sequence
 from contextlib import contextmanager
 from html import escape
 
+import regex
 from PySide6.QtCore import QPoint, QPointF, QRect, QRectF, QSize, Qt
 from PySide6.QtGui import QColor, QFont, QFontMetricsF, QPainter, QPainterPath, QPen
 from PySide6.QtWidgets import (
@@ -30,6 +31,12 @@ from . import dessin, icones, theme
 #: Marque invisible qui force l'écriture de droite à gauche d'une ligne arabe,
 #: même si elle commence par un chiffre ou un mot en caractères latins.
 MARQUE_RTL = "\u200F"
+#: Marque invisible qui force l'écriture de gauche à droite d'une ligne française, même si elle commence par un
+#: terme arabe.
+MARQUE_LTR = "\u200E"
+#: Marques invisibles placées avant et après un passage arabe cité dans une phrase française : elles l'isolent du
+#: reste de la ligne, pour qu'il n'entraîne pas dans son sens d'écriture les signes et les nombres qui le suivent.
+DEBUT_ISOLE_RTL, FIN_ISOLE = "\u2067", "\u2069"
 #: Espace sans largeur : elle autorise un retour à la ligne là où elle est placée.
 ESPACE_INVISIBLE = "\u200B"
 
@@ -37,7 +44,24 @@ GAUCHE = Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignAbsolute
 DROITE = Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignAbsolute
 
 
+#: Un passage arabe : des mots écrits en caractères arabes, avec les espaces qui les séparent.
+_PASSAGE_ARABE = regex.compile(r"[\p{Arabic}\p{Mn}]*\p{Arabic}[\p{Arabic}\p{Mn}]*(?:[ \u00A0]+[\p{Arabic}\p{Mn}]+)*")
+
+
 # ====================================================================== textes
+def message_en_francais(texte: str) -> str:
+    """Prépare l'affichage, sur une ligne, d'un message écrit en français qui cite un terme arabe.
+
+    Qt choisit le sens d'une ligne d'après sa première lettre, et un mot arabe entraîne avec lui les signes et
+    les nombres qui le suivent. « « عقد » : 81 entrées trouvées » serait donc écrit de droite à gauche, collé
+    au bord droit ; ou bien « 81 » passerait devant le terme. Des marques invisibles règlent les deux points :
+    la ligne est écrite de gauche à droite, et chaque passage arabe est isolé du reste.
+    """
+    if not texte:
+        return ""
+    return MARQUE_LTR + _PASSAGE_ARABE.sub(lambda passage: DEBUT_ISOLE_RTL + passage.group() + FIN_ISOLE, texte)
+
+
 def nombre(valeur: int) -> str:
     """Écrit un nombre à la française : 1 000."""
     return f"{valeur:,}".replace(",", "\u202f")
@@ -117,16 +141,17 @@ def infobulle(*paragraphes: str, espace: int = 6) -> str:
     return "<qt>" + "".join(morceaux) + "</qt>"
 
 
-def paragraphe(html: str, langue: str, interligne: int, style: str = "") -> str:
+def paragraphe(html: str, langue: str, interligne: int, style: str = "", *, centre: bool = False) -> str:
     """Paragraphe HTML d'une étiquette : sens d'écriture de la langue, lignes de hauteur fixe.
 
     Une hauteur de ligne fixe garde des lignes régulières quand un même paragraphe mêle des
-    mots français et des mots arabes, dont les caractères n'ont pas la même hauteur.
+    mots français et des mots arabes, dont les caractères n'ont pas la même hauteur. Avec
+    ``centre``, le paragraphe est centré ; sinon il est aligné du côté où sa langue commence.
     """
     style = f"margin: 0; line-height: {interligne}px; -qt-line-height-type: fixed; {style}".strip()
     if langue == AR:
-        return f'<p dir="rtl" align="right" style="{style}">{MARQUE_RTL}{html}</p>'
-    return f'<p dir="ltr" align="left" style="{style}">{html}</p>'
+        return f'<p dir="rtl" align="{"center" if centre else "right"}" style="{style}">{MARQUE_RTL}{html}</p>'
+    return f'<p dir="ltr" align="{"center" if centre else "left"}" style="{style}">{html}</p>'
 
 
 # ====================================================================== étiquettes, puces, icônes
@@ -179,13 +204,17 @@ def puce(texte: str, langue: str = FR, *, classe: str = "puce", hauteur: int = t
     return bouton
 
 
-def puce_neutre(texte: str, langue: str = FR, *, hauteur: int = theme.HAUTEUR_PUCE) -> QLabel:
-    """Puce non cliquable : un terme cité par le glossaire, mais qui n'y a pas d'entrée."""
+def puce_neutre(texte: str, langue: str = FR, *, hauteur: int = theme.HAUTEUR_PUCE, grande: bool = False) -> QLabel:
+    """Puce non cliquable : un terme cité par le glossaire, mais qui n'y a pas d'entrée.
+
+    ``grande`` lui donne les caractères et les angles d'une grande puce cliquable (classe « puceExemple »).
+    """
     label = QLabel()
     label.setTextFormat(Qt.TextFormat.PlainText)
     label.setText(texte)
     label.setProperty("classe", "puceNeutre")
     label.setProperty("arabe", langue == AR)
+    label.setProperty("grande", grande)
     label.setFixedHeight(hauteur)
     label.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
     return label

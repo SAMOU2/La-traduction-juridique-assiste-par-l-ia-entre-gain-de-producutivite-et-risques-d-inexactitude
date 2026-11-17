@@ -344,8 +344,9 @@ def controler(programme: pathlib.Path, nom: str, resume: Resume, quoi: str) -> d
     if nom == "dossier":
         resume.noter(
             f"{quoi} : le programme s'ouvre et se contrôle lui-même en {duree} s — écran de démarrage, "
-            f"{rapport['glossaire']['entrees']} entrées du glossaire fourni, recherche d'un terme, traduction du "
-            f"texte d'exemple, document Word écrit et relu, cinq écrans affichés, menus de Qt en français "
+            f"{rapport['glossaire']['entrees']} entrées du glossaire fourni, recherche d'un terme, menu « Plus de "
+            f"détails », traduction du texte d'exemple, fiche d'un terme ouverte depuis le texte, document Word "
+            f"écrit et relu, cinq écrans affichés, menus de Qt en français "
             f"({systeme['nom']}, Python {systeme['python']}, Qt {systeme['qt']}, écran {systeme['ecran']}, "
             f"police {systeme['police']})")
     else:

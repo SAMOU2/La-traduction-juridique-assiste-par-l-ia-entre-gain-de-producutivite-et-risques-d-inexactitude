@@ -77,9 +77,9 @@ SOURCE = "à vérifier (définition d’exemple)"
 #: Source écrite pour les phrases d'exemple : elles ont été rédigées pour la démonstration, sans texte officiel.
 SOURCE_EXEMPLE = "à vérifier (phrase d’exemple)"
 #: Mention écrite dans la colonne « source_definition » d'un terme seul : il n'a pas de définition, la mention
-#: porte sur son équivalent. L'application l'affiche au pied du champ ② et dans la carte du terme.
+#: porte sur son équivalent. L'application l'affiche dans la fiche du terme, au pied de l'équivalent.
 SOURCE_SEUL = "à vérifier (équivalent d’exemple)"
-#: Longueur maximale d'une phrase d'exemple, pour qu'elle tienne dans le champ ④ sans le remplir.
+#: Longueur maximale d'une phrase d'exemple, pour qu'elle reste courte à l'écran (« Contextualisation »).
 LONGUEUR_EXEMPLE = 170
 OBJECTIF = 5000
 

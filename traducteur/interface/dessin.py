@@ -8,16 +8,13 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 
-import regex
 from PySide6.QtCore import QPointF, QRectF, Qt
 from PySide6.QtGui import QColor, QFont, QFontMetricsF, QPainter, QPen, QTextCharFormat, QTextLayout, QTextOption
 
 from ..langues import AR, FR
 from . import theme
 
-_MOT = regex.compile(r"\S+")
-#: Ce qui ne peut pas rester tel quel dans un texte écrit sur une ligne.
-_ESPACES_A_REDUIRE = regex.compile(r"\s{2,}|[\t\n\r\f\v]|^\s|\s$")
+#: Signes retirés de la fin d'un texte abrégé, avant « … ».
 _FIN_DE_COUPE = " ,;:،؛"
 
 
@@ -186,92 +183,3 @@ def couper_en_lignes(texte: str, police_du_texte: QFont, largeur: float, lignes:
         resultat.append(tranche(debut, fin))
     disposition.endLayout()
     return resultat, abrege
-
-
-def sur_une_ligne(texte: str, evidences: Sequence[tuple[int, int]] = ()) -> tuple[str, list[tuple[int, int]]]:
-    """Prépare un texte à être écrit sur une seule ligne.
-
-    Les tabulations, les retours à la ligne et les suites d'espaces deviennent une espace ; les
-    espaces du début et de la fin sont retirées. Renvoie le texte et les positions (début, fin)
-    des passages en évidence, reportées dans ce nouveau texte.
-    """
-    if not _ESPACES_A_REDUIRE.search(texte):
-        return texte, list(evidences)
-    positions, caracteres, espace_en_attente = [], [], ""
-    for caractere in texte:
-        if caractere.isspace():
-            positions.append(len(caracteres) + (1 if espace_en_attente else 0))
-            if caracteres:
-                # Une espace seule est gardée telle quelle (espace insécable comprise).
-                espace_en_attente = " " if espace_en_attente or caractere in "\t\n\r\f\v" else caractere
-            continue
-        if espace_en_attente:
-            caracteres.append(espace_en_attente)
-            espace_en_attente = ""
-        positions.append(len(caracteres))
-        caracteres.append(caractere)
-    limite = len(caracteres)
-    positions.append(limite)
-    reportees = [(min(positions[debut], limite), min(positions[fin], limite)) for debut, fin in evidences]
-    return "".join(caracteres), [(debut, fin) for debut, fin in reportees if fin > debut]
-
-
-def extrait_autour(texte: str, evidences: Sequence[tuple[int, int]], police_du_texte: QFont, largeur: float,
-                   repere: float = 0.0) -> tuple[str, list[tuple[int, int]]]:
-    """Passage d'une phrase qui tient sur une ligne, pris autour de son premier passage en évidence.
-
-    Le passage est étendu mot par mot, à droite puis à gauche, tant qu'il tient dans ``largeur``
-    pixels ; « … » marque chaque côté coupé. Sans passage en évidence, le passage est pris autour
-    du mot situé à la proportion ``repere`` de la phrase (0 : début, 1 : fin).
-
-    Renvoie le passage et la position des passages en évidence dans ce passage.
-    """
-    texte, evidences = sur_une_ligne(texte, evidences)
-    normale = QFontMetricsF(police_du_texte)
-    grasse = QFontMetricsF(police(police_du_texte, police_du_texte.pixelSize(), gras=True))
-
-    def largeur_de(chaine: str, locales: Sequence[tuple[int, int]]) -> float:
-        total = normale.horizontalAdvance(chaine)
-        for debut, fin in locales:
-            total += grasse.horizontalAdvance(chaine[debut:fin]) - normale.horizontalAdvance(chaine[debut:fin])
-        return total + 1.0
-
-    if largeur_de(texte, evidences) <= largeur:
-        return texte, list(evidences)
-    mots = [(trouve.start(), trouve.end()) for trouve in _MOT.finditer(texte)]
-    if not mots:
-        return texte, list(evidences)
-    if evidences:
-        debut_foyer, fin_foyer = evidences[0]
-    else:
-        debut_foyer = fin_foyer = min(int(len(texte) * min(max(repere, 0.0), 1.0)), len(texte) - 1)
-    premier = next((rang for rang, (_, fin) in enumerate(mots) if fin > debut_foyer), len(mots) - 1)
-    dernier = max((rang for rang, (debut, _) in enumerate(mots) if debut < fin_foyer), default=premier)
-    dernier = max(dernier, premier)
-
-    def construire(rang_debut: int, rang_fin: int) -> tuple[str, list[tuple[int, int]]]:
-        debut, fin = mots[rang_debut][0], mots[rang_fin][1]
-        prefixe = "… " if rang_debut > 0 else ""
-        corps = texte[debut:fin]
-        if rang_fin < len(mots) - 1:
-            corps = corps.rstrip(_FIN_DE_COUPE) + "…"
-        decalage = len(prefixe) - debut
-        limite = len(prefixe) + fin - debut
-        locales = [(max(a, debut) + decalage, min(min(b, fin) + decalage, limite))
-                   for a, b in evidences if b > debut and a < fin]
-        return prefixe + corps, locales
-
-    def tient(rang_debut: int, rang_fin: int) -> bool:
-        return largeur_de(*construire(rang_debut, rang_fin)) <= largeur
-
-    while True:
-        etendu = False
-        if dernier < len(mots) - 1 and tient(premier, dernier + 1):
-            dernier += 1
-            etendu = True
-        if premier > 0 and tient(premier - 1, dernier):
-            premier -= 1
-            etendu = True
-        if not etendu:
-            break
-    return construire(premier, dernier)

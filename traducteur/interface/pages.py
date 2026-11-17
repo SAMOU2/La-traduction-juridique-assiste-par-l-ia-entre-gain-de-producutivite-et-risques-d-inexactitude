@@ -43,6 +43,7 @@ from .composants import (
     rond,
     separateur,
 )
+from .details import PAR_CLE, Detail, medaillon
 
 #: Clés des réglages enregistrés.
 CLE_ANIMATIONS = "affichage/animations"
@@ -51,13 +52,19 @@ CLE_ADRESSE = "aide/adresse"
 
 _ADRESSE = regex.compile(r"[^@\s]+@[^@\s]+\.[^@\s.]+")
 
-#: Les cinq champs de l'enchaînement : (titre, ce que contient le champ).
-CHAMPS = (
-    ("Terme", "Le terme cherché, sa catégorie grammaticale, son domaine, ses synonymes."),
-    ("Définition", "Ce que le terme signifie, en français et en arabe, avec la source de la définition."),
+#: Les deux colonnes de la fiche d'un terme : (titre, ce que contient la colonne).
+COLONNES = (
+    ("Terme", "Le terme cherché, sa catégorie grammaticale et son domaine."),
     ("Équivalent", "Le terme qui lui correspond dans l’autre langue, et ses autres équivalents."),
-    ("Contextualisation", "Des phrases qui emploient le terme, dans les deux langues, avec leur source."),
-    ("Ressources", "Les textes de loi, les ouvrages et les sites à consulter et à citer."),
+)
+#: Les informations du menu « Plus de détails » : (clé du cercle, ce que contient l'information).
+INFORMATIONS = (
+    ("definition", "Ce que le terme signifie, en français et en arabe, avec la source de la définition."),
+    ("contexte", "Des phrases qui emploient le terme, dans les deux langues, avec leur source."),
+    ("ressources", "Les textes de loi, les ouvrages et les sites à consulter et à citer."),
+    ("expressions", "Les expressions du glossaire qui contiennent le terme, et les termes proches."),
+    ("associes", "Les termes qu’on rencontre avec lui dans les mêmes textes."),
+    ("synonymes", "Les autres mots qui désignent la même chose, dans la même langue."),
 )
 #: Les cinq étapes de la traduction d'un texte.
 TRAITEMENT = (
@@ -76,25 +83,26 @@ QUESTIONS = (
     ("Comment chercher un terme ?",
      ("Ouvrez l’écran « Terme » (première icône de la barre de gauche). Écrivez le terme, en français ou en "
       "arabe, puis appuyez sur Entrée.",
-      "La fiche affiche les cinq étapes : terme, définition, équivalent, contextualisation, ressources. Les "
-      "étapes s’allument quand elles sont renseignées.")),
+      "La fiche affiche le terme et son équivalent. Pour sa définition, ses phrases d’exemple ou ses "
+      "références, cliquez sur un cercle du menu « Plus de détails », sous la fiche. Un cercle gris signale "
+      "que le glossaire n’a rien pour ce terme.")),
     ("Comment traduire un texte ?",
      ("Ouvrez l’écran « Texte » (deuxième icône). Écrivez, collez ou importez le texte : fichier .txt, .docx "
       "ou .doc. Cliquez ensuite sur « Traduire ».",
-      "La traduction s’affiche sous le texte. À droite, chaque terme juridique du texte a sa définition, son "
-      "équivalent, son contexte et ses références : cliquez sur un terme pour les afficher.")),
+      "La traduction s’affiche à droite du texte. Dessous, la liste des termes juridiques du texte : cliquez "
+      "sur un terme pour ouvrir sa fiche, puis sur « Retour au texte » pour revenir.")),
     ("Pourquoi des mots restent-ils dans la langue d’origine ?",
      ("L’application traduit avec le glossaire, et avec lui seul. Un mot absent du glossaire reste dans sa "
       "langue, écrit en gris : il est à traduire à la main.",)),
     ("Que signifie la mention « À vérifier » ?",
-     ("Le glossaire ne cite pas de source pour cette définition ou pour cette phrase d’exemple : elle n’est "
-      "pas reprise d’un texte officiel. Contrôlez-la dans un texte de loi ou un dictionnaire juridique avant "
-      "de la citer.",
-      "Dans le glossaire fourni, presque toutes les définitions et les phrases d’exemple portent cette "
-      "mention : elles ont été rédigées par un assistant d’intelligence artificielle et n’ont pas été relues "
+     ("Le glossaire ne cite pas de source pour cet équivalent, cette définition ou cette phrase d’exemple : "
+      "le texte n’est pas repris d’un texte officiel. Contrôlez-le dans un texte de loi ou un dictionnaire "
+      "juridique avant de l’employer.",
+      "Dans le glossaire fourni, la plupart des équivalents, des définitions et des phrases d’exemple portent "
+      "cette mention : ils ont été rédigés par un assistant d’intelligence artificielle et n’ont pas été relus "
       "par un juriste.",
-      "Après le contrôle, écrivez la source dans la colonne source_definition ou source_contexte du "
-      "glossaire : elle s’affiche à la place de la mention.")),
+      "Après le contrôle, remplacez la mention par la source, dans la colonne source_definition ou "
+      "source_contexte du glossaire : la mention ne s’affiche plus.")),
     ("Comment compléter le glossaire ?",
      ("Le glossaire fourni est le fichier glossaire_juridique.csv, dans le dossier « donnees » de "
       "l’application. Faites-en une copie et ouvrez la copie dans un tableur (Excel, LibreOffice).",
@@ -212,6 +220,33 @@ class LigneNumerotee(QWidget):
         ligne.addLayout(textes, 1)
 
 
+class LigneDetail(QWidget):
+    """Une information du menu « Plus de détails » dans une liste : son cercle, son nom, une phrase d'explication."""
+
+    def __init__(self, detail: Detail, texte: str, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        self.detail = detail
+        ligne = QHBoxLayout(self)
+        ligne.setContentsMargins(4, 0, 0, 0)
+        ligne.setSpacing(12)
+        self.cercle = QLabel()
+        self.cercle.setPixmap(medaillon(detail, 24))
+        self.cercle.setFixedSize(24, 24)
+        cadre = QVBoxLayout()
+        cadre.setContentsMargins(0, 4, 0, 0)
+        cadre.addWidget(self.cercle)
+        cadre.addStretch(1)
+        ligne.addLayout(cadre)
+        textes = QVBoxLayout()
+        textes.setContentsMargins(0, 5, 0, 0)
+        textes.setSpacing(1)
+        self.titre = etiquette(detail.titre, "question")
+        self.texte = _texte(texte, "noteCarte", interligne=20)
+        textes.addWidget(self.titre)
+        textes.addWidget(self.texte)
+        ligne.addLayout(textes, 1)
+
+
 class LigneReglage(QWidget):
     """Un réglage à deux positions : un titre, une explication, un interrupteur."""
 
@@ -286,7 +321,7 @@ class PageParametres(PageInformation):
     glossaire_a_choisir = Signal()
     glossaire_a_recharger = Signal()
     glossaire_fourni_demande = Signal()
-    #: Le réglage « Étapes animées » a changé.
+    #: Le réglage « Animations » a changé.
     animations_changees = Signal(bool)
     #: L'adresse du service informatique a été enregistrée.
     adresse_changee = Signal(str)
@@ -333,8 +368,8 @@ class PageParametres(PageInformation):
         # ---------------------------------------------------------- affichage
         carte = self.carte_affichage = self.ajouter_carte("Affichage")
         self.reglage_animations = LigneReglage(
-            "Étapes animées",
-            "Les étapes s’allument l’une après l’autre quand un résultat s’affiche.")
+            "Animations",
+            "Les cercles du menu « Plus de détails » s’allument l’un après l’autre quand une fiche s’affiche.")
         self.reglage_demarrage = LigneReglage(
             "Écran de démarrage",
             "Le logo animé s’affiche pendant l’ouverture de l’application.")
@@ -453,23 +488,29 @@ class PageDescription(PageInformation):
         carte.disposition.addSpacing(12)
         carte.disposition.addLayout(entete)
 
-        carte = self.carte_enchainement = self.ajouter_carte("L’enchaînement en cinq étapes")
-        carte.ajouter_texte("Chaque terme est présenté dans le même ordre. Une étape s’allume quand le "
-                            "glossaire la renseigne.")
-        self.etapes = [carte.ajouter(LigneNumerotee(rang, titre, texte), 12 if rang == 1 else 8)
-                       for rang, (titre, texte) in enumerate(CHAMPS, start=1)]
+        carte = self.carte_fiche = self.ajouter_carte("La fiche d’un terme")
+        carte.ajouter_texte("La fiche affiche deux colonnes : le terme et son équivalent.")
+        self.colonnes_de_la_fiche = [carte.ajouter(LigneNumerotee(rang, titre, texte), 12 if rang == 1 else 8)
+                                     for rang, (titre, texte) in enumerate(COLONNES, start=1)]
+        carte.ajouter_texte("Le reste est dans le menu « Plus de détails », sous la fiche : un cercle par "
+                            "information. Un clic sur un cercle affiche l’information. Un cercle reste gris "
+                            "quand le glossaire n’a rien pour ce terme.", espace=16)
+        self.informations = [carte.ajouter(LigneDetail(PAR_CLE[cle], texte), 12 if rang == 0 else 8)
+                             for rang, (cle, texte) in enumerate(INFORMATIONS)]
 
         carte = self.carte_ecrans = self.ajouter_carte("Deux écrans de travail")
         carte.ajouter(self._ecran("loupe", "Terme",
-                                  "Chercher un terme, en français ou en arabe. Sa fiche affiche les cinq étapes ; "
-                                  "les expressions qui contiennent le terme sont listées sous la fiche."), 12)
+                                  "Chercher un terme, en français ou en arabe. Sa fiche affiche le terme et son "
+                                  "équivalent ; le menu « Plus de détails » donne le reste à la demande."), 12)
         carte.ajouter(self._ecran("document", "Texte",
-                                  "Écrire, coller ou importer un texte, puis le traduire. La traduction s’affiche "
-                                  "sous le texte ; à droite, chaque terme juridique du texte a ses informations."), 12)
+                                  "Écrire, coller ou importer un texte, puis le traduire. Le texte et sa traduction "
+                                  "sont côte à côte ; dessous, la liste des termes juridiques du texte. Un clic sur "
+                                  "un terme ouvre sa fiche."), 12)
 
         carte = self.carte_traduction = self.ajouter_carte("Comment un texte est traduit")
         carte.ajouter_texte("La traduction utilise le glossaire, et lui seul : ni dictionnaire général, ni service "
-                            "en ligne.")
+                            "en ligne. Sur l’écran « Texte », un clic sur l’état de la traduction affiche le "
+                            "résultat de chacune des cinq étapes.")
         self.traitement = [carte.ajouter(LigneNumerotee(rang, titre, texte, carre=True), 12 if rang == 1 else 8)
                            for rang, (titre, texte) in enumerate(TRAITEMENT, start=1)]
 
@@ -651,6 +692,6 @@ class PageAide(PageInformation):
             self.message.emit(f"Adresse copiée : {self.adresse}")
 
 
-__all__ = ["CHAMPS", "CLE_ADRESSE", "CLE_ANIMATIONS", "CLE_ECRAN_DE_DEMARRAGE", "QUESTIONS", "RACCOURCIS",
-           "TRAITEMENT", "Carte", "PageAide", "PageDescription", "PageInformation", "PageParametres",
+__all__ = ["CLE_ADRESSE", "CLE_ANIMATIONS", "CLE_ECRAN_DE_DEMARRAGE", "COLONNES", "INFORMATIONS", "QUESTIONS",
+           "RACCOURCIS", "TRAITEMENT", "Carte", "PageAide", "PageDescription", "PageInformation", "PageParametres",
            "adresse_valide", "ouvrir_lien"]

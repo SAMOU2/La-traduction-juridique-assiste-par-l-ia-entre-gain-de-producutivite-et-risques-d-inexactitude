@@ -1,10 +1,11 @@
-"""Barre latérale, écrans d'information, allumage des étapes, écran de démarrage (tests exécutés sans écran).
+"""Barre latérale, écrans d'information, allumage, écran de démarrage (tests exécutés sans écran).
 
 * La barre latérale sombre, à gauche, donne accès aux cinq écrans : « Terme », « Texte »,
   « Paramètres », « Description de la plateforme » et « Centre d'aide ».
 * « Paramètres » règle le glossaire, l'affichage et l'adresse du service informatique.
 * Le « Centre d'aide » remplace le menu « Aide » : il prépare un message pour le service informatique.
-* Les étapes de l'enchaînement s'allument l'une après l'autre quand un résultat s'affiche.
+* Les cercles du menu « Plus de détails » et les étapes du traitement d'un texte s'allument l'un après
+  l'autre quand un résultat s'affiche (réglage « Animations »).
 * L'écran de démarrage montre le logo entre deux rangées de tirets animés, et rien d'autre : son fond est transparent.
 """
 
@@ -14,7 +15,7 @@ pytest.importorskip("PySide6")
 
 from urllib.parse import parse_qs, unquote, urlsplit
 
-from PySide6.QtCore import QPoint, Qt
+from PySide6.QtCore import QElapsedTimer, QPoint, Qt
 from PySide6.QtGui import QColor, QGuiApplication
 from PySide6.QtTest import QTest
 from PySide6.QtWidgets import QPushButton
@@ -24,6 +25,7 @@ from traducteur import __version__
 from traducteur.interface import animation, demarrage, navigation, pages, theme
 from traducteur.interface.animation import Allumage
 from traducteur.interface.demarrage import PALETTE, EcranDemarrage, couleur_de_la_palette
+from traducteur.interface.details import CLES, DETAILS
 from traducteur.interface.fenetre import (
     MODE_AIDE,
     MODE_DESCRIPTION,
@@ -32,7 +34,7 @@ from traducteur.interface.fenetre import (
     MODE_TEXTE,
     FenetrePrincipale,
 )
-from traducteur.interface.fiche import ETAPES as CHAMPS_DE_LA_FICHE
+from traducteur.interface.fiche import COLONNES as COLONNES_DE_LA_FICHE
 from traducteur.interface.pages import CLE_ADRESSE, CLE_ANIMATIONS, CLE_ECRAN_DE_DEMARRAGE, adresse_valide
 from traducteur.interface.texte import ETAPES as ETAPES_DU_TRAITEMENT
 
@@ -138,7 +140,7 @@ def test_un_ecran_d_information_affiche_son_titre_a_la_place_des_outils(fenetre,
 
 
 def test_les_ecrans_d_information_tiennent_dans_une_petite_fenetre(fenetre, application):
-    fenetre.resize(900, 560)
+    fenetre.resize(900, 600)
     for mode in (MODE_PARAMETRES, MODE_DESCRIPTION, MODE_AIDE):
         fenetre.definir_mode(mode)
         application.processEvents()
@@ -150,7 +152,7 @@ def test_les_ecrans_d_information_tiennent_dans_une_petite_fenetre(fenetre, appl
             assert 300 < carte.width() <= place - 2 * theme.MARGE, mode
 
 
-@pytest.mark.parametrize("taille", [(1440, 860), (900, 560)])
+@pytest.mark.parametrize("taille", [(1440, 860), (900, 600)])
 def test_aucun_bouton_n_est_plus_etroit_que_son_texte(fenetre, application, taille):
     """Les largeurs prévues valent pour la police de Windows : avec une police plus large, le bouton s'élargit."""
     fenetre.resize(*taille)
@@ -195,8 +197,14 @@ def test_les_parametres_presentent_le_glossaire_charge(fenetre):
                for texte in textes(parametres.carte_glossaire))
 
 
-def test_regler_les_etapes_animees(fenetre, reglages, application, avertissements):
+def test_regler_les_animations(fenetre, reglages, application, avertissements):
     parametres = fenetre.page_parametres
+    assert [carte.titre.text() for carte in parametres.cartes][1] == "Affichage"
+    assert parametres.reglage_animations.titre.text() == "Animations"
+    assert textes(parametres.reglage_animations) == [
+        "Animations",
+        "Les cercles du menu « Plus de détails » s’allument l’un après l’autre quand une fiche s’affiche."]
+    assert parametres.interrupteur_animations.accessibleName() == "Animations"
     assert not parametres.interrupteur_animations.isChecked() and not animation.actives()  # réglage des tests
     parametres.interrupteur_animations.click()
     assert parametres.interrupteur_animations.isChecked()
@@ -204,7 +212,7 @@ def test_regler_les_etapes_animees(fenetre, reglages, application, avertissement
     parametres.interrupteur_animations.click()
     assert not animation.actives() and reglages.value(CLE_ANIMATIONS, True, bool) is False
 
-    # Le réglage est repris à la prochaine ouverture ; sans réglage, les étapes sont animées.
+    # Le réglage est repris à la prochaine ouverture ; sans réglage, les animations sont actives.
     reglages.remove(CLE_ANIMATIONS)
     autre = FenetrePrincipale(reglages=reglages)
     assert animation.actives() and autre.page_parametres.interrupteur_animations.isChecked()
@@ -370,22 +378,35 @@ def test_la_description_de_la_plateforme(fenetre, application):
     description = fenetre.page_description
     assert fenetre.pile.currentWidget() is description
     assert [carte.titre.text() for carte in description.cartes] == [
-        "Traducteur juridique", "L’enchaînement en cinq étapes", "Deux écrans de travail",
+        "Traducteur juridique", "La fiche d’un terme", "Deux écrans de travail",
         "Comment un texte est traduit", "À savoir"]
-    # Les cinq étapes de l'enchaînement portent les noms des cinq champs de la fiche.
-    assert [ligne.titre.text() for ligne in description.etapes] == [titre for titre, _ in pages.CHAMPS] == [
-        "Terme", "Définition", "Équivalent", "Contextualisation", "Ressources"]
-    assert [titre for titre, _ in pages.CHAMPS] == list(CHAMPS_DE_LA_FICHE)
-    assert [ligne.numero.numero for ligne in description.etapes] == [1, 2, 3, 4, 5]
-    assert all(ligne.numero.niveau == 1.0 for ligne in description.etapes)  # dessinées allumées
+    # La fiche : ses deux colonnes, numérotées, sous les noms qu'elles portent à l'écran « Terme ».
+    assert [ligne.titre.text() for ligne in description.colonnes_de_la_fiche] == [
+        titre for titre, _ in pages.COLONNES] == list(COLONNES_DE_LA_FICHE) == ["Terme", "Équivalent"]
+    assert [ligne.numero.numero for ligne in description.colonnes_de_la_fiche] == [1, 2]
+    assert all(ligne.numero.niveau == 1.0 for ligne in description.colonnes_de_la_fiche)  # dessinées allumées
+    # Puis les six informations du menu « Plus de détails » : dans l'ordre des cercles, chacune avec son cercle.
+    assert [cle for cle, _ in pages.INFORMATIONS] == list(CLES)
+    assert [ligne.detail for ligne in description.informations] == list(DETAILS)
+    assert [ligne.titre.text() for ligne in description.informations] == [
+        "Définition", "Contextualisation", "Ressources", "Expressions", "Termes associés", "Synonymes"]
+    assert all(not ligne.cercle.pixmap().isNull() for ligne in description.informations)
+    contenu = textes(description.carte_fiche)
+    for _, texte in (*pages.COLONNES, *pages.INFORMATIONS):
+        assert texte in contenu
+    assert "La fiche affiche deux colonnes : le terme et son équivalent." in contenu
+    assert any(texte.startswith("Le reste est dans le menu « Plus de détails », sous la fiche") for texte in contenu)
     # Les cinq étapes du traitement d'un texte portent les noms de la bande de l'écran « Texte ».
     assert [ligne.titre.text() for ligne in description.traitement] == [nom for nom, _, _ in ETAPES_DU_TRAITEMENT]
+    assert [ligne.numero.numero for ligne in description.traitement] == [1, 2, 3, 4, 5]
     # La présentation cite la taille du glossaire chargé ; la page n'affiche pas de numéro de version.
     contenu = textes(description)
     assert contenu[1] == ("Aide à la traduction juridique entre le français et l’arabe, à partir d’un glossaire "
                           "de 40 entrées.")
     assert any(texte.startswith("L’application ne remplace pas le traducteur.") for texte in contenu)
     assert not any(__version__ in texte or "ersion" in texte for texte in contenu)
+    # Elle ne décrit plus l'ancienne fiche en cinq champs, ni les cartes de l'écran « Texte ».
+    assert not any("cinq champs" in texte or "enchaînement" in texte for texte in contenu)
 
 
 def test_la_description_sans_glossaire(application):
@@ -395,7 +416,7 @@ def test_la_description_sans_glossaire(application):
     description.deleteLater()
 
 
-# ------------------------------------------------------------------ allumage des étapes
+# ------------------------------------------------------------------ allumage (cercles du menu, étapes du traitement)
 def test_sans_animation_les_etapes_prennent_leur_etat_final(application):
     allumage = Allumage(5)
     assert allumage.allumees() == [False] * 5 and not allumage.en_cours()
@@ -454,6 +475,18 @@ def test_une_etape_non_renseignee_reste_eteinte(application):
     assert not allumage.en_cours()
 
 
+def attendre(condition, delai: int = 5000) -> bool:
+    """Laisse tourner l'application jusqu'à ce que ``condition`` soit vraie, ``delai`` millisecondes au plus.
+
+    Une animation dure moins d'une seconde ; le délai laisse de la marge à un ordinateur occupé.
+    """
+    horloge = QElapsedTimer()
+    horloge.start()
+    while not condition() and horloge.elapsed() < delai:
+        QTest.qWait(20)
+    return bool(condition())
+
+
 def test_l_allumage_reel_se_termine(application):
     """Avec la vraie horloge : l'animation s'arrête d'elle-même, toutes les étapes allumées."""
     animation.definir_actives(True)
@@ -462,35 +495,42 @@ def test_l_allumage_reel_se_termine(application):
     allumage.termine.connect(lambda: termine.append(True))
     allumage.definir([True] * 3)
     assert allumage.en_cours()
-    QTest.qWait(allumage.duree() + 400)
-    assert termine == [True] and not allumage.en_cours()
+    assert attendre(lambda: not allumage.en_cours()) and termine == [True]
     assert [allumage.niveau(rang) for rang in range(3)] == [1.0] * 3
 
 
-def test_les_etapes_de_la_fiche_s_allument_selon_le_glossaire(fenetre):
+def test_les_cercles_du_menu_s_allument_selon_le_glossaire(fenetre):
     page = fenetre.page
-    # À l'accueil, aucun terme n'est affiché : les cinq étapes sont éteintes.
-    assert page.accueil.entete.etapes_allumees() == [False] * 5
+    roue = page.details.roue
+    # À l'accueil, aucun terme n'est affiché : les six cercles sont éteints.
+    assert roue.allumage.allumees() == [False] * 6
     page.rechercher("contrat")
-    assert page.fiche.etapes_renseignees() == [True] * 5
-    assert page.fiche.entete.etapes_allumees() == [True] * 5
-    # « contrat de travail » n'a pas de contexte dans le glossaire d'essai : l'étape 4 reste éteinte.
+    assert page.details.renseignes() == list(CLES)
+    assert roue.allumage.allumees() == [True] * 6
+    # Dans le glossaire d'essai, « contrat de travail » n'a que sa définition et ses ressources.
     page.rechercher("contrat de travail")
-    assert page.fiche.colonne_contexte.emplois == []
-    assert page.fiche.etapes_renseignees() == [True, True, True, False, True]
-    assert page.fiche.entete.etapes_allumees() == [True, True, True, False, True]
+    assert page.details.colonne_contexte.emplois == []
+    assert page.details.renseignes() == ["definition", "ressources"]
+    assert roue.allumage.allumees() == [True, False, True, False, False, False]
+    # Retour à l'accueil : tout s'éteint.
+    page.barre.effacer.click()
+    assert roue.allumage.allumees() == [False] * 6
 
 
-def test_les_etapes_de_la_fiche_sont_animees_quand_le_reglage_le_demande(fenetre, application):
+def test_les_cercles_du_menu_sont_animes_quand_le_reglage_le_demande(fenetre, application):
     fenetre.page_parametres.interrupteur_animations.click()
     assert animation.actives()
     page = fenetre.page
     page.rechercher("contrat")
-    allumage = page.fiche.entete.allumage
-    assert allumage.en_cours() and allumage.niveau(4) < 1.0  # la dernière étape n'est pas encore allumée
-    QTest.qWait(allumage.duree() + 400)
-    assert not allumage.en_cours() and [allumage.niveau(rang) for rang in range(5)] == [1.0] * 5
-    assert page.fiche.entete.etapes_allumees() == [True] * 5
+    roue = page.details.roue
+    allumage = roue.allumage
+    assert allumage.en_cours() and allumage.niveau(5) < 1.0  # le dernier cercle n'est pas encore allumé
+    assert roue.boutons["synonymes"].niveau < 1.0
+    assert attendre(lambda: not allumage.en_cours())
+    assert [allumage.niveau(rang) for rang in range(6)] == [1.0] * 6
+    assert [bouton.niveau for bouton in roue.boutons.values()] == [1.0] * 6
+    assert [bouton.halo for bouton in roue.boutons.values()] == [0.0] * 6
+    assert roue.allumage.allumees() == [True] * 6
 
 
 # ------------------------------------------------------------------ écran de démarrage
@@ -632,7 +672,7 @@ def test_l_ecran_de_demarrage_passe_la_main(application):
     # Une fois la fenêtre prête, l'écran reste affiché le temps prévu, puis se ferme.
     ecran.passer_la_main(duree_minimale=250)
     assert termine == [] and ecran.isVisible()
-    QTest.qWait(500)
+    assert attendre(lambda: bool(termine))
     assert termine == [True] and not ecran.isVisible() and not ecran._images.isActive()
     ecran.deleteLater()
 
