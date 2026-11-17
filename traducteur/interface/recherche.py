@@ -1,9 +1,10 @@
 """Écran « Terme » : recherche d'un terme dans le glossaire.
 
 La barre de recherche est placée par la fenêtre dans la barre d'outils. L'écran affiche la
-fiche du terme trouvé (les cinq champs de l'enchaînement) et, sous la fiche, les autres
-entrées trouvées ; sans fiche à afficher, un panneau invite à chercher un terme ou propose
-les termes proches.
+fiche du terme trouvé : le terme et son équivalent, côte à côte. Sous la fiche, le menu « Plus
+de détails » donne le reste à la demande : définition, contextualisation, ressources,
+expressions, termes associés, synonymes. Sans fiche à afficher, un panneau invite à chercher
+un terme ou propose les termes proches.
 """
 
 from __future__ import annotations
@@ -14,13 +15,11 @@ from PySide6.QtCore import QEvent, QRect, QRectF, QSize, QStringListModel, Qt, S
 from PySide6.QtGui import QColor, QKeySequence, QPainter, QPen
 from PySide6.QtWidgets import (
     QCompleter,
-    QFrame,
     QHBoxLayout,
     QLabel,
     QLayout,
     QLineEdit,
     QPushButton,
-    QScrollArea,
     QSizePolicy,
     QStackedWidget,
     QToolButton,
@@ -45,7 +44,8 @@ from .composants import (
     repeindre,
     vider,
 )
-from .fiche import PROPORTIONS, EnteteEtapes, Fiche, ListeEntrees
+from .details import PanneauDetails
+from .fiche import LARGEUR_MINIMALE, Fiche
 
 #: Nombre de termes du glossaire proposés comme exemples avant la première recherche.
 NOMBRE_EXEMPLES = 5
@@ -58,14 +58,6 @@ _AUCUN_GLOSSAIRE = "Aucun glossaire n’est chargé : choisissez un fichier CSV 
 #: Rappel affiché quand un terme n'est pas dans le glossaire : les fiches viennent du glossaire, et de lui seul.
 _TERME_A_AJOUTER = "Les fiches viennent du glossaire. Le centre d’aide explique comment le compléter."
 
-#: Sous chaque étape du panneau d'accueil : ce que contient le champ (forme longue, forme courte).
-LEGENDES = (
-    ("catégorie, domaine, synonymes", "catégorie, domaine"),
-    ("en français et en arabe, avec sa source", "dans les deux langues"),
-    ("dans la langue cible", "langue cible"),
-    ("exemples d’emploi dans les deux langues", "exemples d’emploi"),
-    ("textes de loi, ouvrages, sites officiels", "textes, ouvrages, sites"),
-)
 #: Raccourcis rappelés au pied du panneau d'accueil.
 RACCOURCIS = (
     ("Ctrl+F", "aller à la barre de recherche"),
@@ -177,8 +169,8 @@ class BarreRecherche(QWidget):
 class PanneauAccueil(Panneau):
     """Panneau affiché quand il n'y a pas de fiche : avant la recherche, ou quand le terme est introuvable.
 
-    En haut, le rappel des cinq champs de l'enchaînement ; au centre, un message et des termes
-    à ouvrir (exemples ou termes proches) ; au pied, les raccourcis ou un conseil.
+    Au centre, un message et des termes à ouvrir (exemples ou termes proches) ; au pied, les
+    raccourcis ou un conseil.
     """
 
     #: Demande d'ouverture d'une entrée du glossaire (clic sur une puce).
@@ -194,8 +186,6 @@ class PanneauAccueil(Panneau):
         ensemble = QVBoxLayout(self)
         ensemble.setContentsMargins(0, 0, 0, 0)
         ensemble.setSpacing(0)
-        self.entete = EnteteEtapes(LEGENDES)
-        ensemble.addWidget(self.entete)
 
         centre = QVBoxLayout()
         centre.setContentsMargins(theme.MARGE, 12, theme.MARGE, 12)
@@ -300,7 +290,6 @@ class PanneauAccueil(Panneau):
         super().paintEvent(evenement)
         peintre = QPainter(self)
         peintre.setPen(QColor(theme.FILET_DOUX))
-        peintre.drawLine(0, self.entete.height(), self.width(), self.entete.height())
         peintre.drawLine(0, self.height() - self.HAUTEUR_DU_PIED, self.width(), self.height() - self.HAUTEUR_DU_PIED)
 
 
@@ -345,24 +334,26 @@ class _Raccourcis(QWidget):
             x += taille.width() + self.ECART
 
 
-# ====================================================================== fiche et liste
+# ====================================================================== fiche et détails
 class DispositionFiche(QLayout):
-    """Partage la hauteur de l'écran entre la fiche et la liste des autres entrées.
+    """Partage la hauteur de l'écran entre la fiche et le menu « Plus de détails ».
 
-    La fiche reçoit sa hauteur de référence. La liste prend ce qu'il lui faut dans la place
-    restante (elle défile si la place manque). S'il reste encore de la place, la fiche
-    s'agrandit jusqu'à montrer tout son contenu.
+    La fiche reçoit sa hauteur de référence, et le menu le reste. Dans une petite fenêtre, la
+    fiche se resserre dès que le menu n'aurait plus sa hauteur confortable, mais jamais au point
+    de couper le terme ou son équivalent : c'est alors le menu qui rétrécit, jusqu'à sa hauteur
+    minimale. Une fiche plus haute que la référence (un terme écrit sur deux lignes) reçoit de
+    la même façon la hauteur qu'il lui faut.
     """
 
     ECART = 16
 
-    def __init__(self, parent: QWidget, defilement: QScrollArea, fiche: Fiche, liste: ListeEntrees) -> None:
+    def __init__(self, parent: QWidget, fiche: Fiche, details: PanneauDetails) -> None:
         super().__init__(parent)
         self._elements: list = []
-        self._defilement, self._fiche, self._liste = defilement, fiche, liste
+        self._fiche, self._details = fiche, details
         self.setContentsMargins(0, 0, 0, 0)
-        self.addWidget(defilement)
-        self.addWidget(liste)
+        self.addWidget(fiche)
+        self.addWidget(details)
 
     def addItem(self, element) -> None:  # noqa: N802 (nom imposé par Qt)
         self._elements.append(element)
@@ -380,33 +371,26 @@ class DispositionFiche(QLayout):
         return Qt.Orientation.Horizontal | Qt.Orientation.Vertical
 
     def sizeHint(self) -> QSize:  # noqa: N802
-        return QSize(1392, 710)
+        return QSize(1328, 708)
 
     def minimumSize(self) -> QSize:  # noqa: N802
-        return QSize(400, self._fiche.hauteur_minimale() + 14 + self.ECART + self._liste.hauteur_minimale())
+        return QSize(LARGEUR_MINIMALE, self._fiche.hauteur_minimale() + self.ECART + self._details.HAUTEUR_MINIMALE)
 
     def hauteurs(self, largeur: int, hauteur: int) -> tuple[int, int]:
-        """Hauteur donnée à la fiche (barre de défilement horizontale comprise) et à la liste."""
-        # Dans une fenêtre étroite, la fiche défile horizontalement : sa barre prend de la hauteur.
-        barre = self._defilement.horizontalScrollBar().sizeHint().height() if largeur < self._fiche.minimumWidth() \
-            else 0
-        naturelle = 0 if self._liste.isHidden() else self._liste.hauteur_naturelle(largeur)
-        ecart = self.ECART if naturelle else 0
-        minimum_liste = min(naturelle, self._liste.hauteur_minimale())
-        fiche = max(self._fiche.hauteur_minimale() + barre,
-                    min(self._fiche.hauteur_de_reference() + barre, hauteur - ecart - minimum_liste))
-        liste = max(0, min(naturelle, hauteur - ecart - fiche))
-        reste = hauteur - ecart - fiche - liste
-        if reste > 0:
-            fiche += max(0, min(reste, self._fiche.hauteur_du_contenu(largeur) + barre - fiche))
-        return fiche, liste
+        """Hauteur donnée à la fiche, puis au menu « Plus de détails »."""
+        libre = hauteur - self.ECART
+        # 1. La hauteur de référence, tant que le menu garde sa hauteur confortable.
+        fiche = max(self._fiche.hauteur_minimale(),
+                    min(self._fiche.hauteur_de_reference(), libre - self._details.HAUTEUR_CONFORTABLE))
+        # 2. Au moins la hauteur qu'il faut à son contenu, tant que le menu garde sa hauteur minimale.
+        fiche = max(fiche, min(self._fiche.hauteur_du_contenu(largeur), libre - self._details.HAUTEUR_MINIMALE))
+        return fiche, max(libre - fiche, 0)
 
     def setGeometry(self, rectangle: QRect) -> None:  # noqa: N802
         super().setGeometry(rectangle)
-        fiche, liste = self.hauteurs(rectangle.width(), rectangle.height())
-        self._defilement.setGeometry(QRect(rectangle.x(), rectangle.y(), rectangle.width(), fiche))
-        if not self._liste.isHidden():
-            self._liste.setGeometry(QRect(rectangle.x(), rectangle.y() + fiche + self.ECART, rectangle.width(), liste))
+        fiche, details = self.hauteurs(rectangle.width(), rectangle.height())
+        self._fiche.setGeometry(QRect(rectangle.x(), rectangle.y(), rectangle.width(), fiche))
+        self._details.setGeometry(QRect(rectangle.x(), rectangle.y() + fiche + self.ECART, rectangle.width(), details))
 
 
 # ====================================================================== l'écran
@@ -455,23 +439,17 @@ class PageRecherche(QWidget):
         self.accueil.entree_demandee.connect(self.ouvrir)
         self.accueil.glossaire_demande.connect(self.glossaire_demande)
 
-        # ---------------------------------------------------------- fiche et autres entrées trouvées
+        # ---------------------------------------------------------- fiche, puis menu « Plus de détails »
         self.fiche = Fiche()
         self.fiche.entree_demandee.connect(self.ouvrir)
         self.fiche.sens_choisi.connect(self.afficher_entree)
         self.fiche.message.connect(self.message)
-        # Dans une fenêtre étroite, la fiche garde sa largeur minimale et défile horizontalement.
-        self.defilement_fiche = QScrollArea()
-        self.defilement_fiche.setObjectName("zoneDefilante")
-        self.defilement_fiche.setWidgetResizable(True)
-        self.defilement_fiche.setFrameShape(QFrame.Shape.NoFrame)
-        self.defilement_fiche.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.defilement_fiche.viewport().setAutoFillBackground(False)
-        self.defilement_fiche.setWidget(self.fiche)
-        self.liste = ListeEntrees()
-        self.liste.ouverture.connect(self.afficher_entree)
+        self.details = PanneauDetails()
+        self.details.entree_demandee.connect(self.ouvrir)
+        self.details.ouverture.connect(self.afficher_entree)
+        self.details.message.connect(self.message)
         self.vue_fiche = QWidget()
-        self._disposition_fiche = DispositionFiche(self.vue_fiche, self.defilement_fiche, self.fiche, self.liste)
+        self._disposition_fiche = DispositionFiche(self.vue_fiche, self.fiche, self.details)
 
         self.pile = QStackedWidget()
         self.pile.addWidget(self.accueil)
@@ -610,19 +588,22 @@ class PageRecherche(QWidget):
         return all(id(autre) in expressions for autre in autres)
 
     def _afficher_la_fiche(self, entree: Entree) -> None:
-        """Affiche la fiche d'une entrée et, dessous, les autres entrées trouvées."""
+        """Affiche la fiche d'une entrée ; les autres entrées trouvées vont dans le menu « Plus de détails »."""
         self.entree = entree
         sens = self.glossaire.homonymes(entree, self.source)
         autres = [autre for autre in self.resultats if not any(autre is homonyme for homonyme in sens)]
         self.fiche.afficher(self.glossaire, entree, self.source, sens)
-        if any(entree is exacte for exacte in self._exacts()):
-            titre = (f"Expressions avec « {entree.terme(self.source)} »" if self._que_des_expressions(entree, autres)
-                     else "Expressions et termes proches")
+        exacte = any(entree is trouvee for trouvee in self._exacts())
+        if exacte and self._que_des_expressions(entree, autres):
+            titre, libelle = f"Expressions avec « {entree.terme(self.source)} »", ("Expressions", "Expressions")
+        elif exacte:
+            titre, libelle = "Expressions et termes proches", ("Termes proches", "Proches")
         else:
-            titre = f"Autres résultats pour « {_abrege(self.requete)} »"
-        self.liste.definir(titre, autres)
-        self.liste.setVisible(bool(autres))
-        self.defilement_fiche.horizontalScrollBar().setValue(0)
+            titre, libelle = f"Autres résultats pour « {_abrege(self.requete)} »", ("Autres résultats", "Résultats")
+        # Le terme affiché n'est pas celui qui a été saisi : la liste des résultats est montrée d'office,
+        # pour choisir le bon.
+        self.details.afficher(self.glossaire, entree, self.source, titre_des_autres=titre, autres=autres,
+                              libelle_des_autres=libelle, suggestion="" if exacte or not autres else "expressions")
         self.pile.setCurrentWidget(self.vue_fiche)
         self._disposition_fiche.invalidate()
         self._disposition_fiche.activate()
@@ -630,7 +611,7 @@ class PageRecherche(QWidget):
     def _afficher_sans_fiche(self) -> None:
         self.entree = None
         self.fiche.afficher(self.glossaire, None, self.source)
-        self.liste.definir("", [])
+        self.details.afficher(self.glossaire, None, self.source)
         self.pile.setCurrentWidget(self.accueil)
 
     def _proposer(self, entrees: Sequence[Entree]) -> list[tuple[str, Entree]]:
@@ -650,8 +631,8 @@ class PageRecherche(QWidget):
     def _exemples(self) -> list[Entree]:
         """Quelques entrées prises à intervalles réguliers dans le glossaire, sans terme répété.
 
-        Elles sont prises parmi les entrées qui ont une définition, s'il y en a : la fiche proposée en
-        exemple montre ainsi ses cinq champs, et non un terme accompagné de son seul équivalent.
+        Elles sont prises parmi les entrées qui ont une définition, s'il y en a : le terme proposé en
+        exemple a ainsi de quoi remplir le menu « Plus de détails », et non son seul équivalent.
         """
         entrees = self.glossaire.entrees if self.glossaire is not None else []
         entrees = [entree for entree in entrees if entree.definition_fr or entree.definition_ar] or entrees
@@ -686,5 +667,4 @@ def _abrege(texte: str, longueur: int = 40) -> str:
     return texte if len(texte) <= longueur else texte[:longueur - 1] + "…"
 
 
-__all__ = ["LEGENDES", "NOMBRE_EXEMPLES", "PROPORTIONS", "RACCOURCIS", "BarreRecherche", "PageRecherche",
-           "PanneauAccueil"]
+__all__ = ["NOMBRE_EXEMPLES", "RACCOURCIS", "BarreRecherche", "DispositionFiche", "PageRecherche", "PanneauAccueil"]

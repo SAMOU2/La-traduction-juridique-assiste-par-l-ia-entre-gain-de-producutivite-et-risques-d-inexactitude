@@ -73,6 +73,20 @@ def sans_animation():
     animation.definir_actives(True)
 
 
+@pytest.fixture(autouse=True)
+def fenetres_detruites():
+    """Après chaque test, détruit pour de bon les fenêtres qu'il a fermées (``deleteLater``).
+
+    Les tests n'ont pas de boucle d'événements : Qt garderait ces fenêtres jusqu'à la première
+    attente d'un test (``QTest.qWait``). Cette attente passerait alors son temps à en détruire
+    une centaine, plus d'une seconde, et l'animation qu'elle devait laisser tourner n'avancerait pas.
+    """
+    yield
+    coeur = sys.modules.get("PySide6.QtCore")
+    if coeur is not None and coeur.QCoreApplication.instance() is not None:
+        coeur.QCoreApplication.sendPostedEvents(None, coeur.QEvent.Type.DeferredDelete)
+
+
 @pytest.fixture(scope="session")
 def application():
     """L'application Qt, avec le style et les couleurs que « traducteur.application » lui donne."""

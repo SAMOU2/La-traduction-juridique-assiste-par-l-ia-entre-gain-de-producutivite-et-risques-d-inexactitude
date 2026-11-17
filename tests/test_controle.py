@@ -10,9 +10,11 @@ import pytest
 pytest.importorskip("PySide6")
 
 from conftest import GLOSSAIRE_D_ESSAI, RACINE
+from PySide6.QtGui import QColor, QImage
 from PySide6.QtTest import QTest
 
 from traducteur import __version__, controle
+from traducteur.interface.details import CLES, DETAILS
 
 
 def _attendre_la_fin(suivi: controle.Controle, delai: int = 10_000) -> None:
@@ -26,6 +28,15 @@ def _attendre_la_fin(suivi: controle.Controle, delai: int = 10_000) -> None:
 
 def _rapport(dossier: Path) -> dict:
     return json.loads((dossier / controle.NOM_DU_RAPPORT).read_text(encoding="utf-8"))
+
+
+def _points_de_couleur(fichier: Path, couleur: str) -> int:
+    """Nombre de points d'une image qui ont exactement cette couleur."""
+    image = QImage(str(fichier)).convertToFormat(QImage.Format.Format_RGB32)
+    assert not image.isNull(), fichier
+    voulue = QColor(couleur)
+    # Quatre octets par point, sans octet de remplissage : bleu, vert, rouge, puis 255.
+    return bytes(image.constBits()).count(bytes([voulue.blue(), voulue.green(), voulue.red(), 255]))
 
 
 @pytest.fixture
@@ -76,7 +87,13 @@ def test_le_controle_essaie_l_application_et_ecrit_son_rapport(application, tmp_
     assert rapport["demarrage"] == {"ecran_de_demarrage": True, "fond_transparent": True}
     assert rapport["glossaire"] == {"fichier": str(GLOSSAIRE_D_ESSAI), "fourni": True, "entrees": 40}
     assert rapport["recherche"]["entrees_trouvees"] >= 1
+    # Le menu « Plus de détails » : la première information que le glossaire donne pour ce terme a été ouverte.
+    informations = rapport["recherche"]["informations"]
+    assert informations and set(informations) <= set(CLES)
+    assert rapport["recherche"]["information_affichee"] == informations[0]
     assert rapport["traduction"]["termes_reconnus"] >= 1 and rapport["traduction"]["caracteres"] > 0
+    # La fiche d'un terme du texte a été ouverte par un clic sur sa case, puis « Retour au texte » a ramené au texte.
+    assert rapport["traduction"]["fiche_ouverte_depuis_le_texte"] == "contrat"
     assert rapport["ecrans"] == ["parametres", "description", "aide", "texte", "terme"]
     assert rapport["textes_de_qt"] == {"en_francais": True}
     # Les fichiers annoncés existent : le document Word de la traduction et l'image de la fenêtre.
@@ -201,3 +218,9 @@ def test_le_programme_lance_avec_l_option_se_controle_et_se_ferme(tmp_path, glos
     assert rapport["reussi"] is True and rapport["erreurs"] == []
     assert rapport["glossaire"]["fourni"] is True and rapport["glossaire"]["entrees"] == len(glossaire_fourni)
     assert Path(rapport["glossaire"]["fichier"]) == glossaire_fourni.chemin
+    # L'image de la fenêtre montre l'écran « Terme » dans son état final. Le terme cherché a les six informations
+    # du menu « Plus de détails » : les six cercles sont allumés, chacun dans sa couleur. Pendant l'allumage, qui
+    # dure plus d'une seconde, les derniers cercles seraient encore gris.
+    assert rapport["recherche"]["informations"] == list(CLES)
+    for detail in DETAILS:
+        assert _points_de_couleur(tmp_path / rapport["image"]["fichier"], detail.couleur) >= 20, detail.titre

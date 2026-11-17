@@ -48,6 +48,15 @@ GRIS_200 = "#E6EAF0"
 GRIS_300 = "#CDD3DD"
 #: Colonne « Équivalent » du tableau des termes : teinte au repos.
 TEINTE_TABLEAU = "#F7F9FF"
+#: Menu « Plus de détails » de l'écran « Terme » : une couleur par cercle.
+DETAIL_VERT = "#12B76A"
+DETAIL_ROUGE = "#F04438"
+DETAIL_VIOLET = "#7A5AF8"
+DETAIL_ROSE = "#EE46BC"
+DETAIL_ORANGE = "#F79009"
+DETAIL_CYAN = "#06AED4"
+#: Cercle éteint (le glossaire n'a rien pour cette information), et trait qui le relie au centre.
+DETAIL_ETEINT = "#D3D9E3"
 
 # ------------------------------------------------------------------ dimensions communes
 #: Marge entre le bord de la fenêtre et les panneaux, et marge intérieure des panneaux.
@@ -189,6 +198,8 @@ QLabel[classe="puceNeutre"] {{
     padding: 0 9px; font-size: 13px;
 }}
 QLabel[classe="puceNeutre"][arabe="true"] {{ font-size: 14px; }}
+QLabel[classe="puceNeutre"][grande="true"] {{ border-radius: 8px; padding: 0 13px; font-size: 14px; }}
+QLabel[classe="puceNeutre"][grande="true"][arabe="true"] {{ font-size: 16px; }}
 QPushButton[classe="puceExemple"] {{
     background: {BLEU_50}; color: {BLEU_FONCE}; border: 1px solid {BLEU_100}; border-radius: 8px;
     padding: 0 13px; font-size: 14px;
@@ -291,6 +302,8 @@ QLabel[classe="decompte"] {{ color: {TEXTE_3}; font-size: 12px; }}
 QLabel[classe="nomFichier"] {{ color: {TEXTE_2}; font-size: 12px; }}
 #fermerFichier {{ background: transparent; border: none; border-radius: 4px; }}
 #fermerFichier:hover, #fermerFichier:focus {{ background: {FILET}; }}
+/* La petite fenêtre des étapes du traitement, ouverte sous l'état de la traduction. */
+#voletEtapes {{ background: {SURFACE}; border: 1px solid {GRIS_300}; }}
 
 /* ---------- Barres de défilement ---------- */
 QScrollBar:vertical {{ background: transparent; width: {LARGEUR_BARRE}px; margin: 4px 3px 4px 3px; }}

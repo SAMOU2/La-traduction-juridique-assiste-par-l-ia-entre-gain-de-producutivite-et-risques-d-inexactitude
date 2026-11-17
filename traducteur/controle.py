@@ -6,8 +6,9 @@ Emploi :
     python main.py --controle=<dossier>               (depuis le dossier du projet)
 
 Personne n'a besoin d'être devant l'écran. L'application démarre comme d'habitude (écran de
-démarrage, fenêtre, glossaire fourni), puis elle cherche un terme, traduit le texte d'exemple,
-enregistre la traduction dans un document Word, le relit et affiche chaque écran. Elle écrit ce
+démarrage, fenêtre, glossaire fourni), puis elle cherche un terme, ouvre une information du menu
+« Plus de détails », traduit le texte d'exemple, ouvre la fiche d'un terme du texte et revient au
+texte, enregistre la traduction dans un document Word, le relit et affiche chaque écran. Elle écrit ce
 qu'elle a constaté dans ``<dossier>/rapport.json``, puis elle se ferme : code de sortie 0 si tout a
 fonctionné, 1 sinon. Elle laisse aussi deux images dans le dossier : ``fenetre.png``, sa fenêtre, et
 ``demarrage.png``, l'écran de l'ordinateur à l'endroit de l'écran de démarrage (on y voit si son
@@ -206,10 +207,20 @@ class Controle(QObject):
         page.rechercher(terme)
         self.application.processEvents()
         self._exiger(entree in page.resultats, f"le terme « {terme} » n'a pas été trouvé")
-        return {"terme": terme, "entrees_trouvees": len(page.resultats)}
+        self._exiger(page.entree is entree, f"la fiche du terme « {terme} » ne s'est pas affichée")
+        # Le menu « Plus de détails » : un clic sur un cercle affiche son information.
+        details = page.details
+        renseignees = details.renseignes()
+        if renseignees:
+            details.roue.boutons[renseignees[0]].click()
+            self.application.processEvents()
+            self._exiger(details.detail == renseignees[0] and details.vue.isVisible(),
+                         "le menu « Plus de détails » n'a pas affiché l'information choisie")
+        return {"terme": terme, "entrees_trouvees": len(page.resultats), "informations": renseignees,
+                "information_affichee": details.detail}
 
     def _traduction(self) -> dict:
-        from .interface.navigation import MODE_TEXTE
+        from .interface.navigation import MODE_TERME, MODE_TEXTE
 
         self.fenetre.definir_mode(MODE_TEXTE)
         page = self.fenetre.page_texte
@@ -220,9 +231,21 @@ class Controle(QObject):
         self._exiger(traduction is not None, "le texte d'exemple n'a pas été traduit")
         self._exiger(bool(traduction.texte.strip()), "la traduction est vide")
         self._exiger(len(traduction.termes) > 0, "aucun terme du glossaire n'a été reconnu dans le texte d'exemple")
+        # Un clic sur un terme du texte ouvre sa fiche sur l'écran « Terme » ; « Retour au texte » ramène au texte.
+        cellules = page.termes.cellules
+        self._exiger(len(cellules) == len(traduction.termes), "la liste des termes du texte est incomplète")
+        cellules[0].click()
+        self.application.processEvents()
+        self._exiger(self.fenetre.mode == MODE_TERME and self.fenetre.page.entree is cellules[0].entree,
+                     "un clic sur un terme du texte n'a pas ouvert sa fiche")
+        self._exiger(self.fenetre.bouton_retour.isVisible(), "le bouton « Retour au texte » ne s'est pas affiché")
+        self.fenetre.bouton_retour.click()
+        self.application.processEvents()
+        self._exiger(self.fenetre.mode == MODE_TEXTE and page.traduction is traduction,
+                     "« Retour au texte » n'a pas ramené au texte traduit")
         return {"sens": f"{traduction.source} -> {traduction.cible}", "caracteres": len(traduction.texte),
                 "termes_reconnus": len(traduction.termes), "mots": traduction.mots,
-                "mots_reconnus": traduction.mots_reconnus}
+                "mots_reconnus": traduction.mots_reconnus, "fiche_ouverte_depuis_le_texte": cellules[0].entree.terme_fr}
 
     def _document(self) -> dict:
         from . import documents
@@ -253,6 +276,10 @@ class Controle(QObject):
         return {"en_francais": en_francais}
 
     def _image(self) -> dict:
+        # L'image montre l'écran dans son état final. Les cercles du menu « Plus de détails » s'allument l'un
+        # après l'autre pendant plus d'une seconde : l'allumage en cours est mené à son terme.
+        self.fenetre.page.details.roue.allumage.terminer()
+        self.application.processEvents()
         image = self.fenetre.grab().toImage()
         fichier = self.dossier / NOM_DE_L_IMAGE
         self._exiger(image.save(str(fichier), "PNG"), "l'image de la fenêtre n'a pas pu être enregistrée")

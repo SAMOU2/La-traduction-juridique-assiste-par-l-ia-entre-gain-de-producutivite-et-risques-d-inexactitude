@@ -36,6 +36,18 @@ TRACES = {
     "enveloppe": '<rect x="2.5" y="4" width="11" height="8.5" rx="1.5"/><path d="M3 5.2l5 3.6 5-3.6"/>',
     "dossier": '<path d="M2.5 5a1 1 0 0 1 1-1h2.7l1.3 1.5h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1z"/>',
     "recharger": '<path d="M13 8a5 5 0 1 1-1.5-3.55M13.2 2.6v2.9h-2.9"/>',
+    "fleche-g": '<path d="M13 8H3M6.5 4.5 3 8l3.5 3.5"/>',
+    # Icônes des cercles du menu « Plus de détails ».
+    "livre": '<path d="M8 4.4C6.7 3.4 5 3 2.8 3v9c2.2 0 3.9.4 5.2 1.4 1.3-1 3-1.4 5.2-1.4V3C11 3 9.3 3.4 8 4.4z'
+             'M8 4.4v9"/>',
+    "bulle": '<path d="M3.5 3h9A1.5 1.5 0 0 1 14 4.5v5a1.5 1.5 0 0 1-1.5 1.5H8l-3 2.5V11H3.5A1.5 1.5 0 0 1 2 9.5v-5'
+             'A1.5 1.5 0 0 1 3.5 3z"/><path d="M5 6h6M5 8.2h4"/>',
+    "ouvrages": '<rect x="2.5" y="3" width="3" height="10" rx=".6"/><rect x="5.5" y="3" width="3" height="10" rx=".6"/>'
+                '<path d="M9.7 4.4l2.5-.7 2 8.6-2.5.7z"/>',
+    "equivalence": '<path d="M3 6.3c1.6-1.5 3.4-1.5 5 0s3.4 1.5 5 0M3 10.3c1.6-1.5 3.4-1.5 5 0s3.4 1.5 5 0"/>',
+    "liens": '<circle cx="4" cy="8" r="1.9"/><circle cx="11.8" cy="4" r="1.9"/><circle cx="11.8" cy="12" r="1.9"/>'
+             '<path d="M5.7 7.1 10.1 4.9M5.7 8.9l4.4 2.2"/>',
+    "liste": '<path d="M6 4.5h7.5M6 8h7.5M6 11.5h7.5M2.9 4.5h.2M2.9 8h.2M2.9 11.5h.2"/>',
 }
 
 _GABARIT = (

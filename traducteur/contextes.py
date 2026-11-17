@@ -1,6 +1,6 @@
 """Contextes d'emploi d'un terme, cherchés dans tout le glossaire.
 
-Le champ ④ « Contextualisation » montre d'abord les exemples de l'entrée (colonnes
+La « Contextualisation » (④) montre d'abord les exemples de l'entrée (colonnes
 ``contexte_fr`` et ``contexte_ar`` de sa ligne). Quand l'entrée n'en a pas assez, on cherche
 des phrases qui emploient le terme dans le reste du glossaire :
 

@@ -1,14 +1,14 @@
-"""Écran « Texte » : saisie, traduction, informations sur les termes, import et export (tests exécutés sans écran).
+"""Écran « Texte » : saisie, traduction, termes du texte, import et export (tests exécutés sans écran).
 
-L'écran a deux colonnes. À gauche, de haut en bas : le texte, les cinq étapes du traitement, la
-traduction. À droite : une carte par terme juridique du texte, avec les cinq champs de
-l'enchaînement (terme, définition, équivalent, contextualisation, ressources).
+L'écran montre le texte et sa traduction, côte à côte. Dessous, une case par terme juridique du
+texte : un clic sur une case, ou sur un terme coloré de l'un des deux textes, ouvre la fiche du
+terme sur l'écran « Terme » ; le bouton « Retour au texte » ramène ici. Les cinq étapes du
+traitement ne sont pas affichées en permanence : un clic sur l'état de la traduction les ouvre
+dans une petite fenêtre.
 
 Comme dans ``test_interface.py``, les tests ne dépendent pas de la police du système : les textes
 qui se raccourcissent selon la place sont comparés à leurs formes prévues, pas à une valeur exacte.
 """
-
-import re
 
 import pytest
 
@@ -17,17 +17,15 @@ pytest.importorskip("PySide6")
 from PySide6.QtCore import QPoint, QStandardPaths, Qt
 from PySide6.QtGui import QGuiApplication, QTextCursor
 from PySide6.QtTest import QTest
-from PySide6.QtWidgets import QFileDialog, QLabel, QPushButton
+from PySide6.QtWidgets import QFileDialog, QPushButton
 from test_documents import fabriquer_doc
-from test_interface import textes
+from test_interface import points_de_couleur, textes
 
 from traducteur import documents
 from traducteur.interface import theme
 from traducteur.interface.composants import MARQUE_RTL
-from traducteur.interface.dessin import extrait_autour, police, sur_une_ligne
-from traducteur.interface.fenetre import MODE_TERME, MODE_TEXTE, FenetrePrincipale
-from traducteur.interface.termes import CarteTerme
-from traducteur.interface.texte import ETAPES, EXEMPLES, PARTS
+from traducteur.interface.fenetre import MODE_PARAMETRES, MODE_TERME, MODE_TEXTE, FenetrePrincipale
+from traducteur.interface.texte import ETAPES, EXEMPLES, BandeEtapes
 from traducteur.langues import AR, FR
 
 ARTICLE_106 = "Le contrat fait la loi des parties."
@@ -58,19 +56,14 @@ def resultats_des_etapes(page) -> list[str]:
     return [etape.resultat for etape in page.bande.etapes]
 
 
-def termes_des_cartes(page) -> list[str]:
-    """Le terme de chaque carte, dans l'ordre des cartes."""
-    return [carte.libelle for carte in page.termes.cartes]
+def termes_detectes(page) -> list[str]:
+    """Le terme français de chaque case, dans l'ordre des cases."""
+    return [case.entree.terme_fr for case in page.termes.cellules]
 
 
 def message_des_termes(page) -> tuple[str, str]:
-    """Le message affiché à la place des cartes quand aucun terme n'est à montrer."""
+    """Le message affiché à la place des cases quand aucun terme n'est à montrer."""
     return page.termes.message.titre, page.termes.message.texte
-
-
-def contenu(carte: CarteTerme) -> list[str]:
-    """Les textes écrits dans une carte ouverte, de haut en bas."""
-    return textes(carte.corps)
 
 
 def sens_d_ecriture(zone) -> Qt.LayoutDirection:
@@ -101,30 +94,36 @@ def test_la_barre_laterale_affiche_l_ecran_texte(fenetre, application):
     assert fenetre.rail.boutons[MODE_TERME].isChecked() and fenetre.page.barre.isVisible()
 
 
-def test_le_texte_et_sa_traduction_sont_a_gauche_les_informations_a_droite(fenetre, page, application):
+def test_le_texte_et_sa_traduction_sont_cote_a_cote_les_termes_dessous(fenetre, page, application):
     def haut(widget) -> int:
         return widget.mapTo(page, QPoint(0, 0)).y()
 
     def gauche(widget) -> int:
         return widget.mapTo(page, QPoint(0, 0)).x()
 
-    for taille in ((1440, 860), (1080, 620), (900, 560)):
-        fenetre.resize(*taille)
-        application.processEvents()
-        # À gauche, de haut en bas : le texte, les étapes, la traduction ; les trois ont la même largeur.
-        assert gauche(page.cadre_source) == gauche(page.bande) == gauche(page.cadre_cible) == theme.MARGE, taille
-        assert page.cadre_source.width() == page.bande.width() == page.cadre_cible.width(), taille
-        assert haut(page.cadre_source) + page.cadre_source.height() <= haut(page.bande), taille
-        assert haut(page.bande) + page.bande.height() <= haut(page.cadre_cible), taille
-        assert abs(page.cadre_source.height() - page.cadre_cible.height()) <= 1, taille
-        # À droite, sur toute la hauteur : les informations sur les termes.
-        assert gauche(page.termes) >= gauche(page.cadre_source) + page.cadre_source.width(), taille
-        assert haut(page.termes) == haut(page.cadre_source), taille
-        assert page.termes.height() == page.colonne_textes.height(), taille
-        assert gauche(page.termes) + page.termes.width() == page.width() - theme.MARGE, taille
-        # Les deux colonnes se partagent la largeur selon ``PARTS``.
-        part = page.colonne_textes.width() / (page.colonne_textes.width() + page.termes.width())
-        assert abs(part - PARTS[0] / sum(PARTS)) < 0.01, taille
+    source, cible, termes = page.cadre_source, page.cadre_cible, page.termes
+    for traduit in (False, True):
+        if traduit:
+            page.inserer_un_exemple()
+            page.traduire()
+        for taille in ((1440, 860), (1080, 620), (900, 600)):
+            fenetre.resize(*taille)
+            application.processEvents()
+            repere = (traduit, taille)
+            # En haut, deux colonnes de même taille : le texte à gauche, sa traduction à droite.
+            assert gauche(source) == theme.MARGE and haut(source) == haut(cible) == 0, repere
+            assert abs(source.width() - cible.width()) <= 1 and source.height() == cible.height(), repere
+            assert gauche(cible) == gauche(source) + source.width() + page.ECART, repere
+            assert gauche(cible) + cible.width() == page.width() - theme.MARGE, repere
+            # Dessous, sur toute la largeur : les termes juridiques du texte.
+            assert gauche(termes) == theme.MARGE and termes.width() == page.width() - 2 * theme.MARGE, repere
+            assert haut(termes) == haut(source) + source.height() + page.ECART, repere
+            assert haut(termes) + termes.height() == page.height() - page.MARGE_BASSE, repere
+            # Les termes n'occupent qu'une part de l'écran : les deux textes gardent l'essentiel de la hauteur.
+            assert termes.height() <= termes.PART_DE_L_ECRAN * page.height() < source.height(), repere
+            assert page.zone_source.height() >= 150 and page.zone_cible.height() >= 150, repere
+    # Les étapes du traitement ne sont plus dans l'écran : elles s'ouvrent à la demande.
+    assert not page.bande.isVisible() and not page.volet_etapes.isVisible()
 
 
 def test_etat_initial(fenetre, page):
@@ -148,8 +147,9 @@ def test_etat_initial(fenetre, page):
     assert "Le texte est découpé en phrases." in page.bande.infobulle(0)
     assert "Résultat" not in page.bande.infobulle(0)
     assert page.bande.allumage.allumees() == [False] * 5  # aucune étape n'est allumée
-    assert page.termes.cartes == [] and not page.termes.nombre.isVisible()
-    assert not page.termes.bouton_tout.isVisible() and not page.termes.aide.isVisible()
+    assert not page.bande.isVisible() and not page.volet_etapes.isVisible()  # elles s'ouvrent à la demande
+    assert page.termes.titre.text() == "Termes juridiques détectés"
+    assert page.termes.cellules == [] and not page.termes.nombre.isVisible() and not page.termes.aide.isVisible()
     assert message_des_termes(page) == ("Les termes juridiques du texte s’afficheront ici",
                                         "Saisissez ou importez un texte, puis cliquez sur « Traduire ».")
     # Rien à effacer, à copier ni à exporter tant qu'il n'y a ni texte ni traduction.
@@ -179,11 +179,12 @@ def test_inserer_un_exemple_puis_traduire(fenetre, page):
     assert page.badge.texte() == "Traduction partielle · 83 mots sur 84 trouvés"
     assert "1 mot sur 84 ne figure pas dans le glossaire : il reste à traduire." in page.badge.toolTip()
     assert "relisez et complétez la traduction" in page.badge.toolTip()
+    assert "Cliquez pour voir les étapes du traitement." in page.badge.toolTip()
     # Pied des deux zones : décomptes, et légende des couleurs du texte traduit.
     assert page.decompte_source.texte_complet() == "5 phrases · 84 mots · 473 caractères"
     assert page.decompte_cible.texte_complet() == "5 phrases · 54 mots · 321 caractères"
     assert page.legende.libelles() == ["terme du glossaire", "mot absent, à traduire"]
-    # Les cinq étapes et leur résultat ; le détail est dans l'infobulle de chaque étape.
+    # Les cinq étapes et leur résultat (dans la petite fenêtre des étapes) ; le détail est dans leur infobulle.
     assert page.bande.faite
     assert resultats_des_etapes(page) == ["5 phrases", "84 mots", "83 mots sur 84", "8 appliquées", "5 phrases"]
     assert "Résultat : 5 phrases." in page.bande.infobulle(0)
@@ -215,102 +216,79 @@ def test_les_mots_absents_du_glossaire_sont_en_gris_et_les_termes_en_bleu(page):
     assert couleur_de(".") not in (theme.TEXTE_4, theme.BLEU)  # la ponctuation garde la couleur du texte
 
 
-def test_une_carte_par_terme(page):
+def test_une_case_par_terme(page, application):
     page.inserer_un_exemple()
     page.traduire()
+    application.processEvents()
     panneau = page.termes
-    assert termes_des_cartes(page) == [
+    assert termes_detectes(page) == [
         "contrat", "loi", "partie", "consentement", "bonne foi", "contractant", "usage", "équité", "obligation",
         "nullité", "contrat de vente", "acheteur"]
     assert panneau.titre.text() == "Termes juridiques détectés"
     assert panneau.nombre.isVisible() and panneau.nombre.text() == "12"
-    assert panneau.aide.texte_complet() == "Cliquez sur un terme pour afficher ses informations"
+    assert panneau.aide.isVisible() and panneau.aide.texte_complet() == "Cliquez sur un terme pour ouvrir sa fiche"
     assert panneau.defilement.isVisible() and not panneau.message.isVisible()
-    # La première carte est ouverte, les autres sont fermées : leur contenu n'est pas encore construit.
-    assert [carte.ouverte for carte in panneau.cartes] == [True] + [False] * 11
-    assert all(carte.corps is None for carte in panneau.cartes[1:])
 
-    # ① L'en-tête de la carte : le terme, sa catégorie, ses occurrences ; à droite, l'équivalent.
-    carte = panneau.cartes[0]
-    assert carte.entete.text() == "contrat — عقد"
-    assert (carte.libelle, carte.categorie, carte.occurrences) == ("contrat", "nom masculin", "3 occurrences")
-    assert (carte.equivalent, carte.grammaire, carte.alerte) == ("عقد", "اسم مذكر، ج. عقود", "")
-    # ② La définition, dans la langue du texte puis dans l'autre langue, et sa source.
-    assert [langue for langue, _ in carte.definitions] == [FR, AR]
-    assert carte.definition.startswith("Convention par laquelle une ou plusieurs personnes s’obligent")
-    assert not carte.a_verifier  # sa définition cite sa source
-    lignes = contenu(carte)
-    assert lignes[:2] == ["DÉFINITION", "Source : Code civil, art. 54"]
-    assert lignes[2].endswith("à donner, à faire ou à ne pas faire quelque chose.") and lignes[3].startswith("اتفاق")
-    # ③ L'équivalent, sa grammaire, les autres équivalents.
-    rang = lignes.index("ÉQUIVALENT")
-    assert lignes[rang + 1:rang + 4] == ["عقد", "اسم مذكر، ج. عقود", "اتفاق"]
-    # ④ La phrase du texte et sa traduction, le terme en évidence ; puis les contextes du glossaire.
-    assert carte.passage_source == (ARTICLE_106, [(3, 10)])
-    assert carte.passage_cible == (ARTICLE_106_AR, [(0, 5)])
-    rang = lignes.index("CONTEXTUALISATION")
-    assert lignes[rang + 1:rang + 4] == ["Dans le texte", ARTICLE_106, ARTICLE_106_AR]
-    # ⑤ Puis les ressources et, au pied de la carte, le lien vers la fiche complète.
-    assert "RESSOURCES" in lignes[rang:]
-    assert carte.lien_fiche.text() == "Ouvrir la fiche du terme"
-    assert carte.lien_fiche.toolTip() == "Afficher « contrat » sur l’écran « Terme »"
-
-    # « loi » : sa définition n'est reprise d'aucune source citée.
-    loi = panneau.cartes[1]
-    loi.definir_ouverte(True)
-    assert loi.a_verifier and contenu(loi)[:2] == ["DÉFINITION", "À vérifier"]
+    # Une case : le terme français à gauche, le terme arabe à droite. Rien d'autre n'y est écrit.
+    case = panneau.cellules[0]
+    assert case.text() == "contrat — عقد" and case.textes_affiches() == ("contrat", "عقد")
+    assert case.detecte.entree is case.entree and panneau.cellule_de(case.entree) is case
+    assert textes(panneau.grille) == []  # ni définition, ni exemple, ni référence : ils sont sur la fiche
+    # L'infobulle donne le nombre d'occurrences du terme dans le texte.
+    assert (case.occurrences, case.incertain, case.alerte, case.a_verifier) == ("3 occurrences", False, "", False)
+    assert "contrat — عقد" in case.toolTip() and "3 occurrences dans le texte." in case.toolTip()
+    assert case.accessibleDescription() == "3 occurrences"
+    # Les cases se suivent de gauche à droite, puis de haut en bas : quatre colonnes dans la fenêtre de référence.
+    grille = panneau.grille
+    assert (grille.colonnes(), grille.rangees()) == (4, 3)
+    premiere_ligne = panneau.cellules[:4]
+    assert [autre.x() for autre in premiere_ligne] == sorted({autre.x() for autre in panneau.cellules})
+    assert {autre.y() for autre in premiere_ligne} == {0} and panneau.cellules[4].y() == grille.HAUTEUR_DE_LIGNE
+    assert all(autre.height() == grille.HAUTEUR_DE_LIGNE for autre in panneau.cellules)
+    # Toutes sont visibles : le panneau a pris la hauteur de ses trois lignes.
+    assert panneau.defilement.verticalScrollBar().maximum() == 0
 
 
-def test_toutes_les_references_sont_ecrites_en_entier(page):
-    """Aucun compteur du genre « +3 » : chaque référence de l'entrée est écrite, en entier."""
+def test_les_termes_defilent_quand_ils_sont_nombreux(fenetre, page, application):
+    """Dans une petite fenêtre, la liste des termes ne prend qu'une part de l'écran : elle défile."""
     page.inserer_un_exemple()
     page.traduire()
-    carte = page.termes.cartes[0]
-    assert len(carte.ressources) == 4 and carte.ressources == carte.entree.ressources
-    lignes = contenu(carte)
-    references = lignes[lignes.index("RESSOURCES") + 1:]
-    assert references == [
-        "Code civil algérien\nordonnance n° 75-58 du 26 septembre 1975, art. 54, 106 et 107",
-        "القانون المدني\nالأمر رقم 75-58 المؤرخ في 26 سبتمبر 1975، المواد 54 و106 و107",
-        "Journal officiel (JORADP) n° 78 du 30 septembre 1975\nwww.joradp.dz\u00a0↗",
-        "G. Cornu (dir.)\nVocabulaire juridique, Association Henri Capitant, PUF"]
-    assert not any(re.search(r"\+\s?\d", ligne) for ligne in lignes)
-    # L'adresse d'un site est un lien.
-    liens = [label.text() for label in carte.corps.findChildren(QLabel) if "<a href" in label.text()]
-    assert len(liens) == 1 and 'href="https://www.joradp.dz"' in liens[0]
+    fenetre.resize(900, 600)
+    application.processEvents()
+    panneau, grille = page.termes, page.termes.grille
+    assert (grille.colonnes(), grille.rangees()) == (3, 4)
+    visibles = panneau.defilement.viewport().height() // grille.HAUTEUR_DE_LIGNE
+    assert 1 <= visibles < 4 and panneau.defilement.verticalScrollBar().maximum() > 0
+    assert panneau.height() == panneau.hauteur_pour(panneau.width(), page.height() - page.MARGE_BASSE)
+    # Un seul terme : une seule ligne, et le texte garde toute la place.
+    traduire(page, "Le juge.")
+    application.processEvents()
+    assert termes_detectes(page) == ["juge"] and panneau.nombre.text() == "1"
+    assert panneau.height() == panneau.HAUTEUR_DU_TITRE + 1 + panneau.MARGE_BASSE + grille.HAUTEUR_DE_LIGNE
+    assert panneau.defilement.verticalScrollBar().maximum() == 0
 
 
-def test_les_contextes_d_un_terme_du_texte(page):
-    """④ Chaque terme a au moins son passage du texte ; le glossaire fournit d'autres emplois."""
+def test_les_informations_d_un_terme_du_texte_sont_sur_sa_fiche(fenetre, page):
+    """La case ne donne que le terme et son équivalent : le reste se lit sur l'écran « Terme », à un clic."""
     traduire(page, "Le vendeur et l’acheteur signent le contrat de vente.")
-    assert termes_des_cartes(page) == ["vendeur", "acheteur", "contrat de vente"]
-    for carte in page.termes.cartes:
-        carte.definir_ouverte(True)
-        assert carte.etapes_renseignees()[3]
-        assert "Dans le texte" in contenu(carte)
-    vendeur, _, vente = page.termes.cartes
+    assert termes_detectes(page) == ["vendeur", "acheteur", "contrat de vente"]
+    details = fenetre.page.details
+    page.termes.cellules[0].click()
+    assert fenetre.mode == MODE_TERME and fenetre.page.entree.terme_fr == "vendeur"
     # « vendeur » : l'exemple de son entrée, puis une définition du glossaire qui emploie le terme.
-    assert [(emploi.origine, emploi.provenance()) for emploi in vendeur.emplois] == [
+    assert [(emploi.origine, emploi.provenance()) for emploi in details.colonne_contexte.emplois] == [
         ("propre", "Code civil, art. 351"), ("definition", "Définition de « prix »")]
-    lignes = contenu(vendeur)
-    # L'article du Code civil cite sa source : la phrase suit le titre, sans mention.
-    rang = lignes.index("Dans le glossaire · Code civil, art. 351")
-    assert lignes[rang + 1].startswith("La vente est un contrat par lequel le vendeur")
-    assert "Dans le glossaire · Définition de « prix »" in lignes
+    fenetre.bouton_retour.click()
+    page.termes.cellules[2].click()
+    assert fenetre.page.entree.terme_fr == "contrat de vente"
     # « contrat de vente » n'a pas d'exemple : ses deux contextes viennent d'autres entrées.
-    assert vente.entree.contextes == []
-    assert [emploi.provenance() for emploi in vente.emplois] == [
+    assert fenetre.page.entree.contextes == [] and details.etats()["contexte"] == (True, 2)
+    assert [emploi.provenance() for emploi in details.colonne_contexte.emplois] == [
         "Définition de « acheteur »", "Définition de « vendeur »"]
-    lignes = contenu(vente)
-    rang = lignes.index("Dans le glossaire · Définition de « acheteur »")
-    # La définition de « acheteur » ne cite pas de source : elle est à vérifier, comme sur sa propre fiche.
-    assert lignes[rang + 1:rang + 4] == ["À vérifier",
-                                         "Partie au contrat de vente qui acquiert la chose et doit en payer le prix.",
-                                         "الطرف في عقد البيع الذي يكتسب الشيء ويلتزم بدفع ثمنه."]
 
 
-def test_un_equivalent_a_verifier_est_signale_dans_la_carte(fenetre, page, tmp_path):
-    """Un terme sans définition, donné comme « à vérifier » par le glossaire : la carte le dit."""
+def test_un_equivalent_a_verifier_est_signale(fenetre, page, tmp_path):
+    """Un terme sans définition, donné comme « à vérifier » par le glossaire : sa case et sa fiche le disent."""
     fichier = tmp_path / "seuls.csv"
     fichier.write_text(
         "terme_fr;terme_ar;categorie_fr;source_definition\n"
@@ -320,20 +298,19 @@ def test_un_equivalent_a_verifier_est_signale_dans_la_carte(fenetre, page, tmp_p
     assert fenetre.charger_glossaire(fichier)
 
     traduire(page, "Le cédant signe le bail.")
-    cedant, bail = page.termes.cartes
-    cedant.definir_ouverte(True)
-    assert cedant.equivalent_a_verifier
-    assert contenu(cedant)[:3] == ["DÉFINITION", "À vérifier", "Aucune définition dans le glossaire."]
-    mention, = (label for label in cedant.corps.findChildren(QLabel) if label.text() == "À vérifier")
-    assert mention.toolTip() == "Équivalent à vérifier : il n’est repris d’aucune source citée."
+    cedant, bail = page.termes.cellules
+    assert cedant.a_verifier and "Équivalent à vérifier : il n’est repris d’aucune source citée." in cedant.toolTip()
+    assert cedant.accessibleDescription() == "1 occurrence. Équivalent à vérifier"
     # Un terme sans définition et sans mention : le glossaire ne dit rien de lui.
-    bail.definir_ouverte(True)
-    assert not bail.equivalent_a_verifier
-    assert contenu(bail)[:2] == ["DÉFINITION", "Aucune définition dans le glossaire."]
+    assert not bail.a_verifier and "vérifier" not in bail.toolTip()
+    # Sur la fiche, la mention est écrite au pied de l'équivalent.
+    cedant.click()
+    assert fenetre.mode == MODE_TERME and fenetre.page.entree.terme_fr == "cédant"
+    assert textes(fenetre.page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalent d’exemple"]
 
 
-def test_une_phrase_d_exemple_a_verifier_dans_la_carte_et_dans_la_traduction(fenetre, page, tmp_path):
-    """Une phrase marquée « à vérifier » est signalée dans la carte, et quand elle sert de traduction."""
+def test_une_phrase_reprise_d_un_exemple_a_verifier_est_signalee(fenetre, page, tmp_path):
+    """Une phrase du texte identique à un exemple « à vérifier » : l'état de la traduction et l'étape 5 le disent."""
     fichier = tmp_path / "exemples.csv"
     fichier.write_text(
         "terme_fr;terme_ar;contexte_fr;contexte_ar;source_contexte\n"
@@ -343,19 +320,9 @@ def test_une_phrase_d_exemple_a_verifier_dans_la_carte_et_dans_la_traduction(fen
         encoding="utf-8")
     assert fenetre.charger_glossaire(fichier)
 
-    traduire(page, "Le bail prend fin.")
-    carte, = page.termes.cartes
-    carte.definir_ouverte(True)
-    assert [(emploi.provenance(), emploi.a_verifier) for emploi in carte.emplois] == [
-        ("", True), ("Exemple de « preneur »", True)]
-    lignes = contenu(carte)
-    # La mention « à vérifier » n'est pas écrite comme une source : elle suit le titre, en ambre.
-    rang = lignes.index("Dans le glossaire")
-    assert lignes[rang + 1:rang + 4] == ["À vérifier", "Le bail est écrit.", "الإيجار مكتوب."]
-    rang = lignes.index("Dans le glossaire · Exemple de « preneur »")
-    assert lignes[rang + 1:rang + 4] == ["À vérifier", "Le preneur signe le bail.", "يوقع المستأجر الإيجار."]
-    assert not any("phrase d’exemple)" in ligne for ligne in lignes)
     # Aucune phrase n'est reprise d'un exemple : rien n'est signalé dans le bilan.
+    traduire(page, "Le bail prend fin.")
+    assert termes_detectes(page) == ["bail"]
     assert page.traduction.phrases_a_verifier == 0 and "à vérifier" not in page.badge.toolTip()
     assert "0 phrase reprise des exemples du glossaire, 1 phrase traduite mot à mot." in page.bande.infobulle(4)
 
@@ -368,83 +335,27 @@ def test_une_phrase_d_exemple_a_verifier_dans_la_carte_et_dans_la_traduction(fen
             "1 phrase traduite mot à mot.") in page.bande.infobulle(4)
     assert ("1 phrase est reprise d’un exemple du glossaire qui porte la mention « à vérifier »."
             in page.badge.toolTip())
+    # Sur la fiche du terme, la contextualisation signale les deux phrases à vérifier.
+    page.termes.cellule_de(traduction.termes[0].entree).click()
+    assert fenetre.mode == MODE_TERME and fenetre.page.entree.terme_fr == "bail"
+    assert [(emploi.provenance(), emploi.a_verifier) for emploi in fenetre.page.details.colonne_contexte.emplois] == [
+        ("", True), ("Exemple de « preneur »", True)]
 
 
-def test_un_exemple_identique_au_passage_n_est_pas_repete(page):
-    traduire(page, ARTICLE_106)
-    carte = page.termes.cartes[0]
-    assert carte.passage_source[0] == ARTICLE_106
-    # « Le contrat fait la loi des parties. » est aussi le premier exemple de l'entrée « contrat ».
-    assert carte.entree.contextes[0].fr == ARTICLE_106
-    assert ARTICLE_106 not in [emploi.fr for emploi in carte.emplois] and len(carte.emplois) == 2
-    assert contenu(carte).count(ARTICLE_106) == 1
-
-
-def test_l_en_tete_d_une_carte_s_ajuste_a_la_largeur(fenetre, page, application):
-    page.inserer_un_exemple()
-    page.traduire()
-    application.processEvents()
-    entete = page.termes.cartes[0].entete
-    # Sous le terme : la catégorie et le nombre d'occurrences.
-    assert entete.sous_le_terme() == ("nom masculin", "3 occurrences")
-    gauche, place_du_terme, debut_de_l_equivalent, place_de_l_equivalent = entete.places()
-    assert gauche + place_du_terme < debut_de_l_equivalent
-    assert debut_de_l_equivalent + place_de_l_equivalent < entete.width()
-    fenetre.resize(900, 560)
-    application.processEvents()
-    # Fenêtre étroite : « occurrences » est abrégé, puis la catégorie retirée ; rien ne se chevauche.
-    assert entete.sous_le_terme() in (("nom masculin", "3 occurrences"), ("nom masculin", "3 occ."),
-                                      ("", "3 occurrences"), ("", "3 occ."))
-    gauche, place_du_terme, debut_de_l_equivalent, place_de_l_equivalent = entete.places()
-    assert place_du_terme >= 90 and place_de_l_equivalent >= 60
-    assert debut_de_l_equivalent + place_de_l_equivalent < entete.width()
-
-
-def test_ouvrir_et_refermer_les_cartes(page, application):
-    page.inserer_un_exemple()
-    page.traduire()
-    panneau = page.termes
-    premiere, deuxieme = panneau.cartes[:2]
-    assert panneau.bouton_tout.isVisible() and panneau.bouton_tout.text() == "Tout développer"
-    # Un clic sur l'en-tête ouvre ou referme la carte ; les autres ne changent pas.
-    deuxieme.entete.click()
-    assert deuxieme.ouverte and premiere.ouverte and deuxieme.corps.isVisible()
-    premiere.entete.click()
-    assert not premiere.ouverte and not premiere.corps.isVisible() and deuxieme.ouverte
-    # « Tout développer » ouvre toutes les cartes ; le bouton propose alors de tout réduire.
-    panneau.bouton_tout.click()
-    assert panneau.tout_ouvert() and all(carte.corps is not None for carte in panneau.cartes)
-    assert panneau.bouton_tout.text() == "Tout réduire"
-    panneau.bouton_tout.click()
-    assert not any(carte.ouverte for carte in panneau.cartes) and panneau.bouton_tout.text() == "Tout développer"
-    # Ouvrir la dernière carte à la main ne suffit pas : toutes ne sont pas ouvertes.
-    panneau.cartes[-1].entete.click()
-    assert panneau.bouton_tout.text() == "Tout développer"
-
-
-def test_le_pointeur_d_attente_s_affiche_pendant_une_operation_longue(page, monkeypatch):
-    """Traduire un long texte ou ouvrir toutes les cartes peut durer : le pointeur d'attente l'indique."""
+def test_le_pointeur_d_attente_s_affiche_pendant_la_traduction(page, monkeypatch):
+    """Traduire un long texte peut durer : le pointeur d'attente l'indique."""
     pointeurs = []
 
     def relever() -> None:
         pointeur = QGuiApplication.overrideCursor()
         pointeurs.append(None if pointeur is None else pointeur.shape())
 
-    # Pendant la traduction.
     traduire_vraiment = page.traducteur.traduire
     monkeypatch.setattr(page.traducteur, "traduire", lambda *arguments: (relever(), traduire_vraiment(*arguments))[1])
     page.inserer_un_exemple()
     page.traduire()
     assert pointeurs == [Qt.CursorShape.WaitCursor] and QGuiApplication.overrideCursor() is None
-    assert page.traduction is not None and len(page.termes.cartes) > 2
-    # Pendant « Tout développer ».
-    derniere = page.termes.cartes[-1]
-    ouvrir_vraiment = derniere.definir_ouverte
-    monkeypatch.setattr(derniere, "definir_ouverte",
-                        lambda ouverte, **options: (relever(), ouvrir_vraiment(ouverte, **options))[1])
-    page.termes.bouton_tout.click()
-    assert pointeurs == [Qt.CursorShape.WaitCursor] * 2 and QGuiApplication.overrideCursor() is None
-    assert page.termes.tout_ouvert()
+    assert page.traduction is not None and len(page.termes.cellules) > 2
 
 
 def test_le_pointeur_est_retabli_si_la_traduction_echoue(page, monkeypatch):
@@ -458,12 +369,6 @@ def test_le_pointeur_est_retabli_si_la_traduction_echoue(page, monkeypatch):
     assert QGuiApplication.overrideCursor() is None
 
 
-def test_un_seul_terme_n_a_pas_de_bouton_tout_developper(page):
-    traduire(page, "Le juge.")
-    assert termes_des_cartes(page) == ["juge"] and page.termes.cartes[0].ouverte
-    assert not page.termes.bouton_tout.isVisible() and page.termes.nombre.text() == "1"
-
-
 def point_du_mot(zone, mot: str) -> QPoint:
     """Le point de la zone où est écrit le milieu d'un mot."""
     position = zone.toPlainText().index(mot) + len(mot) // 2
@@ -472,62 +377,40 @@ def point_du_mot(zone, mot: str) -> QPoint:
     return zone.cursorRect(curseur).center()
 
 
-def test_cliquer_sur_un_terme_du_texte_ouvre_sa_carte(page, application):
+def test_cliquer_sur_un_terme_de_l_un_des_deux_textes_ouvre_sa_fiche(fenetre, page, application):
     page.inserer_un_exemple()
     page.traduire()
     application.processEvents()
-    panneau = page.termes
     # Dans le texte source : « consentement ».
     point = point_du_mot(page.zone_source, "consentement")
     assert page.terme_a(page.zone_source, point).terme_fr == "consentement"
     QTest.mouseClick(page.zone_source.viewport(), Qt.MouseButton.LeftButton, pos=point)
     application.processEvents()
-    assert [carte.libelle for carte in panneau.cartes if carte.ouverte] == ["consentement"]
+    assert fenetre.mode == MODE_TERME and fenetre.page.entree.terme_fr == "consentement"
+    assert fenetre.cadre_retour.isVisible()
+    fenetre.bouton_retour.click()
+    application.processEvents()
+    assert page.texte() == EXEMPLES[FR] and page.traduction is not None  # le clic n'a rien changé au texte
     # Dans la traduction : « القانون » (loi).
     point = point_du_mot(page.zone_cible, "القانون")
     assert page.terme_a(page.zone_cible, point).terme_fr == "loi"
     QTest.mouseClick(page.zone_cible.viewport(), Qt.MouseButton.LeftButton, pos=point)
     application.processEvents()
-    assert [carte.libelle for carte in panneau.cartes if carte.ouverte] == ["loi"]
-    # Un mot qui n'est pas un terme du glossaire ne change rien.
+    assert fenetre.mode == MODE_TERME and fenetre.page.entree.terme_fr == "loi"
+    fenetre.bouton_retour.click()
+    application.processEvents()
+    # Un mot qui n'est pas un terme du glossaire ne mène nulle part.
     point = point_du_mot(page.zone_source, "mutuel")
     assert page.terme_a(page.zone_source, point) is None
     QTest.mouseClick(page.zone_source.viewport(), Qt.MouseButton.LeftButton, pos=point)
-    assert [carte.libelle for carte in panneau.cartes if carte.ouverte] == ["loi"]
-
-
-def test_les_etapes_d_une_carte_s_allument(page):
-    page.inserer_un_exemple()
-    page.traduire()
-    carte = page.termes.cartes[0]
-    # Les cinq champs de « contrat » sont renseignés : les cinq numéros sont allumés.
-    assert carte.etapes_renseignees() == [True] * 5
-    assert carte.allumage.allumees() == [True] * 5
-    # La bande du traitement est allumée elle aussi, étape par étape.
-    assert page.bande.allumage.allumees() == [True] * 5
-
-
-def test_un_passage_ecrit_sur_une_ligne_garde_son_terme_en_evidence(application):
-    """Un texte collé depuis un tableau contient des tabulations : le terme reste en évidence au bon endroit."""
-    texte = "  Le\t\tcontrat   de \t vente est nul.  "
-    terme = (texte.index("contrat"), texte.index("vente") + len("vente"))
-    ligne, evidences = sur_une_ligne(texte, [terme])
-    assert ligne == "Le contrat de vente est nul."
-    assert [ligne[debut:fin] for debut, fin in evidences] == ["contrat de vente"]
-    # Un texte déjà propre est rendu tel quel, avec les espaces insécables du français.
-    assert sur_une_ligne("prix\u00a0: 1\u202f000 DA", [(0, 4)]) == ("prix\u00a0: 1\u202f000 DA", [(0, 4)])
-
-    police_du_passage = police(application.font(), 13)
-    # Assez de place : la phrase entière.
-    passage, evidences = extrait_autour(texte, [terme], police_du_passage, 2000)
-    assert passage == "Le contrat de vente est nul."
-    assert [passage[debut:fin] for debut, fin in evidences] == ["contrat de vente"]
-    # Peu de place : le passage est pris autour du terme ; « … » marque chaque côté coupé.
-    phrase = "Selon la loi, \t le contrat de vente oblige le vendeur à livrer la chose vendue à l'acheteur."
-    debut = phrase.index("vendeur")
-    passage, evidences = extrait_autour(phrase, [(debut, debut + len("vendeur"))], police_du_passage, 170)
-    assert passage.startswith("… ") and passage.endswith("…") and "\t" not in passage
-    assert [passage[debut:fin] for debut, fin in evidences] == ["vendeur"]
+    assert fenetre.mode == MODE_TEXTE
+    # Seul un simple clic compte : relâcher la souris après avoir sélectionné un passage n'ouvre rien.
+    curseur = page.zone_source.textCursor()
+    curseur.select(QTextCursor.SelectionType.Document)
+    page.zone_source.setTextCursor(curseur)
+    QTest.mouseRelease(page.zone_source.viewport(), Qt.MouseButton.LeftButton,
+                       pos=point_du_mot(page.zone_source, "consentement"))
+    assert fenetre.mode == MODE_TEXTE
 
 
 def test_un_texte_entierement_reconnu(page):
@@ -548,25 +431,41 @@ def test_un_texte_sans_aucun_mot_du_glossaire(fenetre, page):
     assert "recopié tel quel" in page.badge.toolTip()
     assert page.legende.libelles() == ["mot absent, à traduire"]
     assert resultats_des_etapes(page) == ["1 phrase", "6 mots", "0 mot sur 6", "aucune appliquée", "1 phrase"]
-    assert page.termes.cartes == [] and page.termes.message.isVisible()
+    assert page.termes.cellules == [] and page.termes.message.isVisible()
     assert page.termes.nombre.isVisible() and page.termes.nombre.text() == "0"
-    assert not page.termes.aide.isVisible() and not page.termes.bouton_tout.isVisible()
+    assert not page.termes.aide.isVisible() and not page.termes.defilement.isVisible()
     assert message_des_termes(page) == ("Aucun terme du glossaire dans ce texte",
                                         "Aucun mot de ce texte ne figure parmi les termes du glossaire.")
     assert fenetre.barre_etat.texte() == "Traduction : 0 mot sur 6 trouvé dans le glossaire."
 
 
-def test_un_terme_ambigu_est_signale_dans_sa_carte(page):
+def test_un_terme_ambigu_est_signale_dans_sa_case(fenetre, page, application):
     traduire(page, "Le droit et le juge.")
-    droit, juge = page.termes.cartes
-    assert (droit.libelle, droit.equivalent) == ("droit", "حق")
+    application.processEvents()
+    droit, juge = page.termes.cellules
+    assert droit.text() == "droit — حق"
     # « droit » a deux sens dans le glossaire et rien, dans la phrase, ne permet de choisir.
     assert droit.incertain and droit.alerte == "Ambigu : aussi « قانون »"
     assert ("Ambigu : aussi « قانون ». Le contexte n’a pas permis de choisir entre les sens de ce terme : "
-            "vérifiez l’équivalent.") in contenu(droit)
-    juge.definir_ouverte(True)
-    assert not juge.incertain and juge.alerte == ""
-    assert not any("Ambigu" in ligne for ligne in contenu(juge))
+            "vérifiez l’équivalent.") in droit.toolTip()
+    assert droit.accessibleDescription() == "1 occurrence. Ambigu : aussi « قانون »"
+    assert not juge.incertain and juge.alerte == "" and "Ambigu" not in juge.toolTip()
+    # Un signe orange précède le terme ambigu, et lui seul.
+    assert droit.retrait == droit.LARGEUR_DU_SIGNE > 0 and juge.retrait == 0
+    assert points_de_couleur(droit, theme.AMBRE) > 8 and points_de_couleur(juge, theme.AMBRE) == 0
+    # Sa fiche s'ouvre sur le sens retenu par la traduction ; ses onglets donnent l'autre sens.
+    droit.click()
+    assert fenetre.mode == MODE_TERME and fenetre.page.entree.terme_ar == "حق"
+    assert [onglet.text() for onglet in fenetre.page.fiche.onglets.onglets] == ["Sens 1 : حق", "Sens 2 : قانون"]
+    fenetre.bouton_retour.click()
+
+    # Le contexte a permis de choisir : pas de signe, mais l'infobulle rappelle l'autre sens.
+    traduire(page, "Le droit de propriété est garanti par la loi.")
+    application.processEvents()
+    droit = page.termes.cellules[0]
+    assert (droit.text(), droit.incertain, droit.alerte) == ("droit — حق", False, "Autre sens : « قانون »")
+    assert "Autre sens : « قانون ». Ce terme a d’autres sens dans le glossaire." in droit.toolTip()
+    assert droit.retrait == 0 and points_de_couleur(droit, theme.AMBRE) == 0
 
 
 def sens_des_paragraphes(page) -> list[Qt.LayoutDirection]:
@@ -612,13 +511,8 @@ def test_les_signes_speciaux_du_texte_sont_affiches_tels_quels(page):
     assert texte_traduit(page) == page.traduction.texte
     assert "<b>" in texte_traduit(page) and "</b> &" in texte_traduit(page)
     assert texte_traduit(page).endswith("\n\tfin")
-    # Dans la carte du terme, le passage cité garde lui aussi ses signes.
-    carte = page.termes.cartes[0]
-    assert carte.passage_source[0] == "Le <b>contrat</b> & la loi : a < b > c « d »"
-    assert "Le <b>contrat</b> & la loi : a < b > c « d »" in contenu(carte)
-    passage = next(label.text() for label in carte.corps.findChildren(QLabel) if "&lt;b&gt;" in label.text())
-    assert (f'&lt;b&gt;<span style="color: {theme.BLEU_FONCE}; font-weight: 600;">contrat</span>&lt;/b&gt; &amp;'
-            in passage)
+    # Les termes sont reconnus au milieu de ces signes.
+    assert termes_detectes(page) == ["contrat", "loi"]
 
 
 def test_les_termes_sont_colores_dans_le_texte_source(page):
@@ -646,16 +540,8 @@ def test_un_texte_arabe_inverse_le_sens(fenetre, page):
     assert page.zone_cible.invite() == "La traduction s’affichera ici."
     assert fenetre.barre_etat.texte() == "Texte écrit en arabe : le sens de traduction a été inversé."
     assert fenetre.barre_etat.etat() == "Traduction : 3 mots sur 4 trouvés dans le glossaire."
-    # Les cartes sont écrites dans la langue source : le terme arabe, puis son équivalent français.
-    assert termes_des_cartes(page) == ["بطلان", "عقد", "مشترٍ"]
-    carte = page.termes.cartes[1]
-    assert carte.equivalent == "contrat" and carte.entete.text() == "عقد — contrat"
-    carte.definir_ouverte(True)
-    # La définition arabe vient en premier ; le passage du texte aussi.
-    assert [langue for langue, _ in carte.definitions] == [AR, FR]
-    lignes = contenu(carte)
-    rang = lignes.index("Dans le texte")
-    assert lignes[rang + 1:rang + 3] == ["بطلان العقد يحمي المشتري.", "La nullité du contrat يحمي l’acheteur."]
+    # Les cases gardent leur ordre dans les deux sens : le terme français à gauche, le terme arabe à droite.
+    assert [case.text() for case in page.termes.cellules] == ["nullité — بطلان", "contrat — عقد", "acheteur — مشترٍ"]
 
 
 def test_inverser_le_sens_garde_le_texte_et_efface_la_traduction(fenetre, page):
@@ -693,30 +579,75 @@ def test_l_exemple_suit_le_sens_de_traduction(fenetre, page):
 
 
 # ------------------------------------------------------------------ du texte à la fiche d'un terme
-def test_le_lien_d_une_carte_ouvre_la_fiche_du_terme(fenetre, page):
+def test_un_clic_sur_une_case_ouvre_la_fiche_du_terme(fenetre, page, application):
     traduire(page, "La nullité du contrat de vente protège l’acheteur.")
-    assert termes_des_cartes(page) == ["nullité", "contrat de vente", "acheteur"]
-    carte = page.termes.cartes[1]
-    carte.entete.click()  # l'en-tête ouvre la carte : on reste sur l'écran « Texte »
-    assert carte.ouverte and fenetre.mode == MODE_TEXTE
-    carte.lien_fiche.click()
+    assert termes_detectes(page) == ["nullité", "contrat de vente", "acheteur"]
+    assert not fenetre.cadre_retour.isVisible() and not fenetre.venu_du_texte
+    page.termes.cellules[1].click()
+    application.processEvents()
     assert fenetre.mode == MODE_TERME
-    assert fenetre.pile.currentWidget() is fenetre.page
+    assert fenetre.pile.currentWidget() is fenetre.page and fenetre.rail.boutons[MODE_TERME].isChecked()
     assert fenetre.page.entree.terme_fr == "contrat de vente"
     assert fenetre.page.entree.terme_ar == "عقد البيع"
     assert fenetre.page.champ.text() == "contrat de vente"
-    # Le texte et sa traduction sont conservés quand on revient à l'écran « Texte ».
+    # Le bouton « Retour au texte » s'affiche au début de la barre d'outils, devant le sens de traduction.
+    bouton = fenetre.bouton_retour
+    assert fenetre.venu_du_texte and fenetre.cadre_retour.isVisible() and bouton.text() == "Retour au texte"
+    assert "Revenir à l’écran « Texte »" in bouton.toolTip()
+    assert bouton.mapTo(fenetre, QPoint(bouton.width(), 0)).x() <= fenetre.sens.mapTo(fenetre, QPoint(0, 0)).x()
+    assert bouton.width() >= QPushButton.sizeHint(bouton).width()  # son texte n'est pas coupé
+    # Il ramène à l'écran « Texte » : le texte, sa traduction et ses termes y sont restés.
+    bouton.click()
+    application.processEvents()
+    assert fenetre.mode == MODE_TEXTE and not fenetre.cadre_retour.isVisible() and not fenetre.venu_du_texte
+    assert page.texte() == "La nullité du contrat de vente protège l’acheteur."
+    assert page.traduction is not None and len(page.termes.cellules) == 3
+
+
+def test_le_bouton_retour_au_texte(fenetre, page, application):
+    """Le bouton accompagne une fiche ouverte depuis l'écran « Texte », tant qu'on n'est pas revenu au texte."""
+    traduire(page, ARTICLE_106)
+    # L'écran « Terme » ouvert par la barre latérale : pas de bouton.
+    fenetre.rail.boutons[MODE_TERME].click()
+    assert not fenetre.cadre_retour.isVisible()
     fenetre.definir_mode(MODE_TEXTE)
-    assert page.traduction is not None and len(page.termes.cartes) == 3
+    page.termes.cellules[0].click()
+    assert fenetre.cadre_retour.isVisible()
+    # Il reste affiché quand on poursuit sur l'écran « Terme » : une autre recherche, une autre fiche.
+    fenetre.page.rechercher("loi")
+    fenetre.page.fiche.colonne_terme.bouton_suivant.click()
+    assert fenetre.cadre_retour.isVisible()
+    # Il se cache avec la barre d'outils des autres écrans, et revient avec l'écran « Terme ».
+    fenetre.definir_mode(MODE_PARAMETRES)
+    assert not fenetre.cadre_retour.isVisible()
+    fenetre.definir_mode(MODE_TERME)
+    assert fenetre.cadre_retour.isVisible()
+    # Dans la plus petite fenêtre, la barre d'outils garde le bouton, le sens de traduction et le champ de saisie.
+    fenetre.resize(900, 600)
+    application.processEvents()
+    bouton, barre = fenetre.bouton_retour, fenetre.page.barre
+    assert bouton.width() >= QPushButton.sizeHint(bouton).width()
+    assert fenetre.sens.width() >= 200 and fenetre.page.champ.width() >= 120
+    # (La barre de recherche réserve, de chaque côté, la place de son halo.)
+    assert barre.mapTo(fenetre, QPoint(barre.width(), 0)).x() <= 900 - theme.MARGE + barre.HALO
+    # Revenir au texte par un autre chemin (la barre latérale) le retire pour de bon.
+    fenetre.rail.boutons[MODE_TEXTE].click()
+    fenetre.rail.boutons[MODE_TERME].click()
+    assert not fenetre.cadre_retour.isVisible() and not fenetre.venu_du_texte
 
 
 def test_la_fiche_s_ouvre_dans_le_sens_du_texte(fenetre, page):
     traduire(page, "بطلان العقد يحمي المشتري.")
-    page.termes.cartes[0].lien_fiche.click()
+    assert fenetre.page.source == FR  # l'écran « Terme » avait gardé son propre sens
+    page.termes.cellules[0].click()
     assert fenetre.mode == MODE_TERME
     assert fenetre.page.source == AR
-    assert fenetre.page.entree.terme_ar == "بطلان"
+    assert fenetre.page.entree.terme_ar == "بطلان" and fenetre.page.champ.text() == "بطلان"
     assert fenetre.sens.source.text() == "العربية"
+    # Au centre du menu « Plus de détails » : le terme arabe.
+    assert (fenetre.page.details.roue.terme, fenetre.page.details.roue.langue) == ("بطلان", AR)
+    fenetre.bouton_retour.click()
+    assert fenetre.mode == MODE_TEXTE and page.source == AR and page.texte() == "بطلان العقد يحمي المشتري."
 
 
 # ------------------------------------------------------------------ modification, effacement, copie
@@ -746,7 +677,7 @@ def test_effacer(fenetre, page, tmp_path):
     assert texte_traduit(page) == ""
     assert not page.fichier_importe.isVisible() and page.lien_exemple.isVisible()
     assert not page.badge.isVisible() and page.legende.libelles() == []
-    assert page.termes.cartes == []
+    assert page.termes.cellules == [] and not page.termes.nombre.isVisible()
     assert resultats_des_etapes(page) == [""] * 5 and page.bande.allumage.allumees() == [False] * 5
     assert not fenetre.bouton_exporter.isEnabled() and not page.bouton_effacer.isEnabled()
     assert fenetre.barre_etat.texte() == ""
@@ -779,6 +710,12 @@ def test_le_menu_traduction(fenetre, application):
     QGuiApplication.clipboard().setText("avant")
     fenetre.action_copier.trigger()
     assert QGuiApplication.clipboard().text() == fenetre.page_texte.traduction.texte
+    # « Étapes du traitement… » affiche l'écran « Texte » et y ouvre la petite fenêtre des étapes.
+    fenetre.definir_mode(MODE_TERME)
+    fenetre.action_etapes.trigger()
+    application.processEvents()
+    assert fenetre.mode == MODE_TEXTE and fenetre.page_texte.volet_etapes.isVisible()
+    fenetre.page_texte.volet_etapes.hide()
     fenetre._effacer_le_texte()
     assert fenetre.page_texte.texte() == "" and not fenetre.action_copier.isEnabled()
 
@@ -921,21 +858,17 @@ def test_export_impossible(page, avertissements, tmp_path):
 def test_changer_de_glossaire_refait_la_traduction(fenetre, page, tmp_path):
     traduire(page, "Le juge applique la loi.")
     assert page.traduction.texte == "القاضي applique القانون."
-    assert termes_des_cartes(page) == ["juge", "loi"]
+    assert termes_detectes(page) == ["juge", "loi"]
     fichier = tmp_path / "autre.csv"
     fichier.write_text("terme_fr;terme_ar\njuge;حاكم\n", encoding="utf-8")
     assert fenetre.charger_glossaire(fichier)
     assert page.traduction.texte == "الحاكم applique la loi."
-    assert termes_des_cartes(page) == ["juge"]
+    assert termes_detectes(page) == ["juge"] and page.termes.cellules[0].text() == "juge — حاكم"
     assert resultats_des_etapes(page)[2] == "2 mots sur 5"
-    # Ce glossaire n'a ni définition ni ressource : la carte le dit, et ces deux étapes restent éteintes.
-    carte = page.termes.cartes[0]
-    assert (carte.definition, carte.ressources, carte.grammaire) == ("", [], "")
-    assert carte.etapes_renseignees() == [True, False, True, True, False]
-    assert carte.allumage.allumees() == [True, False, True, True, False]
-    lignes = contenu(carte)
-    assert "Aucune définition dans le glossaire." in lignes and "Aucune ressource dans le glossaire." in lignes
-    assert "Dans le texte" in lignes  # le passage du texte reste le contexte du terme
+    # Ce glossaire n'a ni définition ni ressource : sur la fiche du terme, les cercles du menu restent gris.
+    page.termes.cellules[0].click()
+    assert fenetre.mode == MODE_TERME and fenetre.page.entree.terme_ar == "حاكم"
+    assert fenetre.page.details.renseignes() == []
 
 
 def test_sans_glossaire(application, reglages, avertissements, tmp_path, monkeypatch):
@@ -956,51 +889,105 @@ def test_sans_glossaire(application, reglages, avertissements, tmp_path, monkeyp
 
 
 # ------------------------------------------------------------------ fenêtre étroite
-def test_avant_la_traduction_les_etapes_ne_sont_jamais_coupees(fenetre, page, application):
-    """Le nom de chaque étape passe à sa forme courte, puis disparaît, plutôt que d'être coupé par « … »."""
-    for largeur in (1900, 1440, 1280, 1100, 900):
-        fenetre.resize(largeur, 700)
+def test_les_etapes_du_traitement_s_ouvrent_a_la_demande(fenetre, page, application):
+    page.inserer_un_exemple()
+    page.traduire()
+    volet, bande = page.volet_etapes, page.bande
+    for taille in ((1440, 860), (900, 600)):
+        fenetre.resize(*taille)
         application.processEvents()
-        affiches = page.bande.textes_affiches()
+        # L'écran n'affiche pas les étapes ; un clic sur l'état de la traduction les ouvre dans une petite fenêtre.
+        assert not volet.isVisible() and not bande.isVisible(), taille
+        QTest.mouseClick(page.badge, Qt.MouseButton.LeftButton)
+        application.processEvents()
+        assert volet.isVisible() and bande.isVisible() and volet.bande is bande, taille
+        assert volet.windowFlags() & Qt.WindowType.Popup == Qt.WindowType.Popup  # un clic ailleurs la referme
+        assert volet.titre.text() == "Étapes du traitement"
+        # Les cinq étapes, allumées, avec leur résultat écrit en entier.
+        assert bande.allumage.allumees() == [True] * 5
+        affiches = bande.textes_affiches()
+        assert [resultat for _, resultat in affiches] == [
+            "5 phrases", "84 mots", "83 mots sur 84", "8 appliquées", "5 phrases"], taille
+        assert [nom for nom, _ in affiches] in ([nom for nom, _, _ in ETAPES], [court for _, court, _ in ETAPES])
+        assert volet.width() >= volet.LARGEUR and bande.width() >= bande.largeur_confortable()
+        # La petite fenêtre s'ouvre sous l'état de la traduction, sans sortir de la fenêtre de l'application.
+        coin, bord = volet.mapToGlobal(QPoint(0, 0)), fenetre.mapToGlobal(QPoint(0, 0))
+        assert coin.y() >= page.badge.mapToGlobal(QPoint(0, page.badge.height())).y(), taille
+        assert bord.x() <= coin.x() and coin.x() + volet.width() <= bord.x() + fenetre.width(), taille
+        volet.hide()
+        application.processEvents()
+
+    # Sans traduction, la commande du menu montre quand même les cinq étapes : leur nom, sans résultat.
+    page.effacer()
+    assert not page.badge.isVisible()
+    fenetre.action_etapes.trigger()
+    application.processEvents()
+    assert volet.isVisible() and bande.allumage.allumees() == [False] * 5
+    assert [resultat for _, resultat in bande.textes_affiches()] == [""] * 5
+    volet.hide()
+
+
+def bande_seule(application, traduction=None) -> BandeEtapes:
+    """La bande des étapes, hors de sa petite fenêtre : sa largeur se règle à la main."""
+    bande = BandeEtapes()
+    bande.afficher(traduction)
+    bande.show()
+    application.processEvents()
+    return bande
+
+
+def test_avant_la_traduction_les_etapes_ne_sont_jamais_coupees(application):
+    """Le nom de chaque étape passe à sa forme courte, puis disparaît, plutôt que d'être coupé par « … »."""
+    bande = bande_seule(application)
+    for largeur in (1400, 1000, 720, 560, 420, 300, 240):
+        bande.resize(largeur, bande.height())
+        application.processEvents()
+        affiches = bande.textes_affiches()
         for (nom_affiche, resultat), (nom, nom_court, _) in zip(affiches, ETAPES, strict=True):
             assert nom_affiche in (nom, nom_court, "") and resultat == "", largeur
         # Les cinq étapes ont la même forme : toutes nommées, ou aucune.
         assert len({bool(nom) for nom, _ in affiches}) == 1, largeur
         # Les étapes tiennent dans la bande, sans se chevaucher.
-        _, abscisses, ecart = page.bande.disposition()
-        assert abscisses[0] == page.bande.MARGE and abscisses == sorted(abscisses) and ecart >= 4, largeur
-    fenetre.resize(1900, 860)
+        _, abscisses, ecart = bande.disposition()
+        assert abscisses[0] == bande.MARGE and abscisses == sorted(abscisses) and ecart >= 4, largeur
+    bande.resize(1400, bande.height())
     application.processEvents()
-    assert [nom for nom, _ in page.bande.textes_affiches()] == [nom_court for _, nom_court, _ in ETAPES]
-    assert not page.bande.empilee()
+    assert [nom for nom, _ in bande.textes_affiches()] == [nom for nom, _, _ in ETAPES]
+    assert not bande.empilee()
+    bande.close()
+    bande.deleteLater()
 
 
-def test_les_etapes_sont_abregees_dans_une_fenetre_etroite(fenetre, page, application):
+def test_les_etapes_sont_abregees_dans_une_bande_etroite(page, application):
     page.inserer_un_exemple()
     page.traduire()
-    fenetre.resize(1900, 860)
+    bande = bande_seule(application, page.traduction)
+    bande.resize(1400, bande.height())
     application.processEvents()
-    assert page.bande.textes_affiches()[2] == ("Recherche", "83 mots sur 84") and not page.bande.empilee()
+    assert bande.textes_affiches()[2] == ("Recherche dans le glossaire", "83 mots sur 84") and not bande.empilee()
 
-    fenetre.resize(1100, 700)
+    bande.resize(bande.largeur_confortable(), bande.height())
+    application.processEvents()
+    # La largeur « confortable » : le nom court de chaque étape, et son résultat en entier.
+    assert bande.textes_affiches()[2] == ("Recherche", "83 mots sur 84") and not bande.empilee()
+
+    bande.resize(420, bande.height())
     application.processEvents()
     # Bande étroite : les noms sont gardés, ou retirés ; ils ne sont jamais coupés par « … ».
-    affiches = page.bande.textes_affiches()
+    affiches = bande.textes_affiches()
     assert [nom for nom, _ in affiches] in ([nom_court for _, nom_court, _ in ETAPES], [""] * 5)
-    for (_, resultat), etape in zip(affiches, page.bande.etapes, strict=True):
+    for (_, resultat), etape in zip(affiches, bande.etapes, strict=True):
         assert resultat in (etape.resultat, etape.resultat_court, "")
 
-    fenetre.resize(900, 560)
+    bande.resize(bande.minimumWidth(), bande.height())
     application.processEvents()
-    affiches = page.bande.textes_affiches()
-    for (nom, resultat), etape in zip(affiches, page.bande.etapes, strict=True):
+    for (nom, resultat), etape in zip(bande.textes_affiches(), bande.etapes, strict=True):
         assert nom in (etape.nom_court, "") and resultat in (etape.resultat_court, "")
-    assert page.bande.etapes[2].resultat_court == "83 / 84"
-    assert "<b>3. Recherche dans le glossaire</b>" in page.bande.infobulle(2)  # l'infobulle garde le nom entier…
-    assert "Résultat : 83 mots sur 84." in page.bande.infobulle(2)  # … et le résultat en toutes lettres
-    # Les zones de texte et les cartes gardent une hauteur utilisable.
-    assert page.zone_source.height() >= 56 and page.zone_cible.height() >= 56
-    assert page.termes.defilement.height() >= 200
+    assert bande.etapes[2].resultat_court == "83 / 84"
+    assert "<b>3. Recherche dans le glossaire</b>" in bande.infobulle(2)  # l'infobulle garde le nom entier…
+    assert "Résultat : 83 mots sur 84." in bande.infobulle(2)  # … et le résultat en toutes lettres
+    bande.close()
+    bande.deleteLater()
 
 
 def test_les_formes_de_la_bande_des_etapes(page, application):
@@ -1032,8 +1019,10 @@ def test_l_ecran_s_adapte_a_une_fenetre_etroite(fenetre, page, application):
     assert [libelle for _, _, libelle, _ in page.legende.reperes_affiches()] == page.legende.libelles()
     assert page.decompte_cible.texte_complet() == "5 phrases · 54 mots · 321 caractères"
 
-    fenetre.resize(900, 560)
+    fenetre.resize(900, 600)
     application.processEvents()
+    # Les deux zones de texte gardent une hauteur utilisable, au-dessus de la liste des termes.
+    assert page.zone_source.height() >= 150 and page.zone_cible.height() >= 150
     # L'état de la traduction prend une forme courte ; sa forme longue reste connue.
     assert page.badge.texte_affiche() in ("Traduction partielle · 83 / 84", "Traduction partielle")
     assert page.badge.texte() == longue

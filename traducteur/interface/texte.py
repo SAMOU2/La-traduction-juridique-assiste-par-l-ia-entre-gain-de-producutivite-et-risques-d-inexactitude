@@ -1,10 +1,11 @@
 """Écran « Texte » : traduction d'un texte à l'aide du glossaire.
 
-À gauche, de haut en bas : le texte source, la bande des cinq étapes du traitement, puis la
-traduction. À droite : les informations sur les termes du glossaire relevés dans le texte
-(voir ``termes.py``), qui reprennent l'enchaînement de l'écran « Terme » :
+Le texte source et sa traduction sont côte à côte. Dessous, la liste des termes du glossaire
+relevés dans le texte (voir ``termes.py``). Un clic sur un terme, dans la liste ou dans l'un
+des deux textes, ouvre sa fiche sur l'écran « Terme ».
 
-① Terme → ② Définition → ③ Équivalent → ④ Contextualisation → ⑤ Ressources
+Les cinq étapes du traitement et leur résultat ne sont pas affichés en permanence : un clic
+sur l'état de la traduction les ouvre dans une petite fenêtre (``VoletEtapes``).
 
 Les boutons « Importer », « Exporter » et « Traduire » appartiennent à cet écran ; la
 fenêtre les place dans la barre d'outils.
@@ -12,13 +13,14 @@ fenêtre les place dans la barre d'outils.
 
 from __future__ import annotations
 
+import math
 from collections.abc import Sequence
 from dataclasses import dataclass
 from html import escape
 from pathlib import Path
 from types import MappingProxyType
 
-from PySide6.QtCore import QEvent, QPointF, QRectF, QSize, QStandardPaths, Qt, QTimer, Signal
+from PySide6.QtCore import QEvent, QPoint, QPointF, QRectF, QSize, QStandardPaths, Qt, QTimer, Signal
 from PySide6.QtGui import (
     QColor,
     QGuiApplication,
@@ -104,6 +106,8 @@ _AUCUN_GLOSSAIRE = "Aucun glossaire n’est chargé : choisissez un fichier CSV 
 _TEXTE_MODIFIE = "Le texte source a changé : cliquez sur « Traduire » pour mettre la traduction à jour."
 #: Rappelé sous les états « Traduction terminée » et « Traduction partielle ».
 _A_RELIRE = "Le traducteur ne connaît que les termes du glossaire : relisez et complétez la traduction."
+#: Ajouté à l'infobulle de l'état de la traduction : un clic ouvre le détail du traitement.
+_VOIR_LES_ETAPES = "Cliquez pour voir les étapes du traitement."
 
 #: Les cinq étapes du traitement : (nom, nom court, ce que fait l'étape).
 ETAPES = (
@@ -115,9 +119,6 @@ ETAPES = (
      "Lexique, grammaire, sémantique : synonymes, pluriel, article, complément du nom, choix entre plusieurs sens."),
     ("Reconstruction", "Reconstruction", "Chaque phrase est récrite dans la langue cible, avec sa ponctuation."),
 )
-#: Parts de la largeur données à la colonne des textes (à gauche) et aux informations sur les termes.
-PARTS = (46, 54)
-
 #: Hauteur d'une ligne des zones de texte, en pixels, selon la langue. Une hauteur fixe garde des
 #: lignes régulières quand une même ligne mêle des mots français et des mots arabes.
 INTERLIGNE = {FR: 26, AR: 32}
@@ -234,13 +235,19 @@ class ChampTexte(QTextEdit):
 
 
 class Badge(QWidget):
-    """État de la traduction, dans une pastille : une icône et un texte.
+    """État de la traduction, dans une pastille : une icône, un texte et un chevron.
 
     Le texte a plusieurs formes, de la plus longue à la plus courte. La pastille affiche la
-    première qui tient dans la largeur reçue, et se place à droite de cette largeur.
+    première qui tient dans la largeur reçue, et se place à droite de cette largeur. Un clic
+    sur la pastille ouvre le détail du traitement : le chevron l'annonce.
     """
 
+    #: La pastille a été cliquée.
+    clique = Signal()
+
     HAUTEUR = 24
+    #: Place du chevron, à droite du texte.
+    CHEVRON = 18
     #: état -> (fond, filet, couleur du texte, icône)
     ASPECTS = MappingProxyType({
         "attente": (theme.GRIS_100, theme.FILET, theme.TEXTE_3, "information"),
@@ -254,13 +261,14 @@ class Badge(QWidget):
         self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         self.etat = "attente"
         self._formes: tuple[str, ...] = ("",)
+        self.setCursor(Qt.CursorShape.PointingHandCursor)
         self.hide()
 
     def definir(self, etat: str, *formes: str, explication: str = "") -> None:
         """Change l'état affiché ; sans texte, la pastille est cachée."""
         self.etat = etat
         self._formes = tuple(formes) or ("",)
-        self.setToolTip(infobulle(explication))
+        self.setToolTip(infobulle(explication, _VOIR_LES_ETAPES))
         self.setAccessibleName(self._formes[0])
         self.setVisible(bool(self._formes[0]))
         self.updateGeometry()
@@ -275,7 +283,12 @@ class Badge(QWidget):
         return next((forme for forme in self._formes if self._largeur(forme) <= self.width()), self._formes[-1])
 
     def _largeur(self, forme: str) -> int:
-        return round(10 + 14 + 7 + largeur_du_texte(forme, police(self.font(), 12, gras=True)) + 16)
+        return round(10 + 14 + 7 + largeur_du_texte(forme, police(self.font(), 12, gras=True)) + 8 + self.CHEVRON)
+
+    def mouseReleaseEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        if evenement.button() == Qt.MouseButton.LeftButton and self.rect().contains(evenement.position().toPoint()):
+            self.clique.emit()
+        super().mouseReleaseEvent(evenement)
 
     def sizeHint(self) -> QSize:  # noqa: N802 (nom imposé par Qt)
         return QSize(self._largeur(self._formes[0]), self.HAUTEUR)
@@ -294,8 +307,9 @@ class Badge(QWidget):
         peintre.setBrush(QColor(fond))
         peintre.drawRoundedRect(QRectF(gauche + 0.5, 0.5, largeur - 1, self.height() - 1), 11.5, 11.5)
         peintre.drawPixmap(QPointF(gauche + 9, 5), icones.image(nom_icone, couleur, 14, 1.6))
-        dessiner_ligne(peintre, QRectF(gauche + 30, 0, largeur - 30 - 8, self.height()), texte,
+        dessiner_ligne(peintre, QRectF(gauche + 30, 0, largeur - 30 - self.CHEVRON, self.height()), texte,
                        police(self.font(), 12, gras=True), couleur, base=16.4)
+        peintre.drawPixmap(QPointF(gauche + largeur - self.CHEVRON - 2, 6), icones.image("chevron-b", couleur, 12, 1.7))
 
 
 class RappelFichier(QFrame):
@@ -466,6 +480,8 @@ class Etape:
 class BandeEtapes(QWidget):
     """Bande des cinq étapes du traitement : pour chacune, son numéro, son nom et, dessous, son résultat.
 
+    L'écran « Texte » ne l'affiche pas en permanence : elle est placée dans ``VoletEtapes``.
+
     Les étapes occupent leur largeur propre et l'espace restant est réparti entre elles. Quand
     la place manque, les noms puis les résultats prennent leur forme courte, puis chaque nom
     passe sous son numéro ; dans une bande très étroite, il ne reste que les numéros et les
@@ -505,6 +521,10 @@ class BandeEtapes(QWidget):
             f"{etape.nom} : {etape.resultat}" if etape.resultat else etape.nom for etape in self.etapes))
         self.allumage.definir([self.faite] * len(self.etapes), animer=animer)
         self.update()
+
+    def rejouer(self) -> None:
+        """Allume de nouveau les étapes l'une après l'autre (quand la bande vient d'être affichée)."""
+        self.allumage.definir([self.faite] * len(self.etapes))
 
     def _renseigner(self, traduction: Traduction) -> None:
         segmentation, decoupage, recherche, regles, reconstruction = self.etapes
@@ -590,6 +610,11 @@ class BandeEtapes(QWidget):
     def empilee(self) -> bool:
         """Vrai si le nom de chaque étape est écrit sous son numéro (bande étroite)."""
         return self._forme_choisie()[0]
+
+    def largeur_confortable(self) -> int:
+        """Largeur qu'il faut à la bande pour écrire le nom court de chaque étape et son résultat en entier."""
+        forme = [(etape.nom_court, etape.resultat) for etape in self.etapes]
+        return math.ceil(sum(self._largeurs(False, forme)) + self.ECART_MINIMAL * (len(forme) - 1) + 2 * self.MARGE)
 
     def disposition(self) -> tuple[list[tuple[str, str]], list[float], float]:
         """Les textes affichés (nom, résultat), l'abscisse de chaque étape et l'espace entre deux étapes."""
@@ -679,6 +704,55 @@ class BandeEtapes(QWidget):
                                resultat, normal, theme.TEXTE_2, base=milieu + 4.5)
 
 
+class VoletEtapes(QFrame):
+    """Petite fenêtre des cinq étapes du traitement, ouverte à la demande sous l'état de la traduction.
+
+    L'écran « Texte » ne montre que le texte, sa traduction et ses termes. Le détail du
+    traitement (phrases, mots, mots trouvés, règles appliquées) reste disponible ici. Un clic
+    en dehors de la petite fenêtre, ou la touche Échap, la referme.
+    """
+
+    #: Largeur habituelle de la petite fenêtre ; elle s'élargit si les résultats n'y tiennent pas en entier.
+    LARGEUR = 720
+
+    def __init__(self, bande: BandeEtapes, parent: QWidget | None = None) -> None:
+        super().__init__(parent, Qt.WindowType.Popup)
+        self.setObjectName("voletEtapes")
+        self.bande = bande
+        colonne = QVBoxLayout(self)
+        colonne.setContentsMargins(16, 12, 16, 16)
+        colonne.setSpacing(10)
+        ligne = QHBoxLayout()
+        ligne.setSpacing(12)
+        self.titre = etiquette("Étapes du traitement", "titrePanneau")
+        self.aide = EtiquetteCourte("", "aidePanneau")
+        self.aide.definir_texte("Laissez le pointeur sur une étape pour voir son détail", "")
+        self.aide.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+        self.aide.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
+        ligne.addWidget(self.titre)
+        ligne.addWidget(self.aide, 1)
+        colonne.addLayout(ligne)
+        colonne.addWidget(bande)
+
+    def ouvrir_sous(self, ancre: QWidget, largeur_disponible: int) -> None:
+        """Ouvre la petite fenêtre sous ``ancre``, alignée sur son bord droit, sans sortir de la fenêtre."""
+        marges = self.layout().contentsMargins()
+        autour = marges.left() + marges.right() + 2 * self.frameWidth()
+        souhaitee = max(self.LARGEUR, self.bande.largeur_confortable() + autour)
+        largeur = max(min(souhaitee, largeur_disponible), 300)
+        self.setFixedWidth(largeur)
+        self.adjustSize()
+        coin = ancre.mapToGlobal(QPoint(ancre.width(), ancre.height() + 6))
+        gauche = coin.x() - largeur
+        fenetre = ancre.window()
+        if fenetre is not None:
+            bord = fenetre.mapToGlobal(QPoint(0, 0)).x()
+            gauche = max(min(gauche, bord + fenetre.width() - largeur - 8), bord + 8)
+        self.move(gauche, coin.y())
+        self.bande.rejouer()
+        self.show()
+
+
 # ====================================================================== l'écran
 class PageTexte(QWidget):
     """L'écran de traduction d'un texte."""
@@ -693,6 +767,9 @@ class PageTexte(QWidget):
     entree_demandee = Signal(object)
     #: Une traduction vient d'être affichée ou effacée.
     traduction_changee = Signal()
+
+    #: Espace entre les panneaux, et marge sous le dernier.
+    ECART, MARGE_BASSE = 16, 16
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
@@ -736,6 +813,7 @@ class PageTexte(QWidget):
         self.zone_cible = self.panneau_cible.zone
         self.zone_cible.setReadOnly(True)
         self.badge = Badge()
+        self.badge.clique.connect(self.montrer_les_etapes)
         self.panneau_cible.entete.addWidget(self.badge)
 
         self.decompte_cible = self.panneau_cible.decompte
@@ -750,33 +828,33 @@ class PageTexte(QWidget):
         self.panneau_cible.pied.addWidget(self.legende)
         self.panneau_cible.pied.addWidget(self.bouton_copier)
 
-        # ---------------------------------------------------------- étapes et termes
-        self.bande = BandeEtapes()
+        # ---------------------------------------------------------- termes du texte, étapes du traitement
         self.termes = PanneauTermes()
         self.termes.ouverture.connect(self.entree_demandee)
+        # Les étapes ne sont pas affichées en permanence : un clic sur l'état de la traduction les ouvre.
+        self.bande = BandeEtapes()
+        self.volet_etapes = VoletEtapes(self.bande, self)
 
-        # À gauche : le texte source, les étapes du traitement, puis la traduction, l'un sous l'autre.
+        # Le texte et sa traduction, côte à côte ; dessous, les termes juridiques du texte.
         self.cadre_source = self._encadrer(self.panneau_source)
         self.cadre_cible = self._encadrer(self.panneau_cible)
-        self.colonne_textes = QWidget()
-        gauche = QVBoxLayout(self.colonne_textes)
-        gauche.setContentsMargins(0, 0, 0, 0)
-        gauche.setSpacing(12)
-        gauche.addWidget(self.cadre_source, 1)
-        gauche.addWidget(self.bande)
-        gauche.addWidget(self.cadre_cible, 1)
-        # À droite : les informations sur les termes du texte.
-        page = QHBoxLayout(self)
-        page.setContentsMargins(theme.MARGE, 0, theme.MARGE, 16)
-        page.setSpacing(16)
-        page.addWidget(self.colonne_textes, PARTS[0])
-        page.addWidget(self.termes, PARTS[1])
+        self.rangee_des_textes = QWidget()
+        rangee = QHBoxLayout(self.rangee_des_textes)
+        rangee.setContentsMargins(0, 0, 0, 0)
+        rangee.setSpacing(self.ECART)
+        rangee.addWidget(self.cadre_source, 1)
+        rangee.addWidget(self.cadre_cible, 1)
+        page = QVBoxLayout(self)
+        page.setContentsMargins(theme.MARGE, 0, theme.MARGE, self.MARGE_BASSE)
+        page.setSpacing(self.ECART)
+        page.addWidget(self.rangee_des_textes, 1)
+        page.addWidget(self.termes)
 
-        # Un clic sur un terme coloré, dans l'une ou l'autre zone, ouvre ses informations.
+        # Un clic sur un terme coloré, dans l'une ou l'autre zone, ouvre sa fiche sur l'écran « Terme ».
         self._termes_des_zones: dict[ChampTexte, list[tuple[int, int, Entree]]] = {}
         for zone in (self.zone_source, self.zone_cible):
             zone.viewport().installEventFilter(self)
-        self.zone_cible.viewport().setMouseTracking(True)
+            zone.viewport().setMouseTracking(True)
 
         raccourci = QShortcut(QKeySequence("Ctrl+Return"), self)
         raccourci.setContext(Qt.ShortcutContext.WidgetWithChildrenShortcut)
@@ -890,8 +968,9 @@ class PageTexte(QWidget):
             return
         self._actualiser_l_entete_source()
         if self.traduction is not None and self.traduction.texte_source != self.texte():
-            # Le texte ne correspond plus à la traduction affichée.
+            # Le texte ne correspond plus à la traduction affichée : ses termes ne sont plus colorés, ni cliquables.
             self.zone_source.setExtraSelections([])
+            self._termes_des_zones[self.zone_source] = []
             self.badge.definir("attente", "Texte modifié · traduction à refaire", "Texte modifié",
                                explication=_TEXTE_MODIFIE)
             self._definir_etat(_TEXTE_MODIFIE)
@@ -943,7 +1022,8 @@ class PageTexte(QWidget):
         self._afficher_le_decompte_source()
         self._actualiser_l_entete_source()
         self.bande.afficher(traduction)
-        self.termes.afficher(traduction, self.glossaire, sans_glossaire=self.traducteur is None)
+        self.termes.afficher(traduction, sans_glossaire=self.traducteur is None)
+        self._ajuster_les_termes()
         self._reperer_les_termes(traduction)
         self.bouton_copier.setEnabled(traduction is not None)
         self.bouton_exporter.setEnabled(traduction is not None)
@@ -1005,6 +1085,21 @@ class PageTexte(QWidget):
         self.etat = texte
         self.etat_change.emit(texte)
 
+    # ------------------------------------------------------------------ termes du texte, étapes du traitement
+    def _ajuster_les_termes(self) -> None:
+        """Donne à la liste des termes la hauteur de ses lignes, dans la limite d'une part de l'écran."""
+        self.termes.setFixedHeight(self.termes.hauteur_pour(self.width() - 2 * theme.MARGE,
+                                                            self.height() - self.MARGE_BASSE))
+
+    def resizeEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        super().resizeEvent(evenement)
+        self._ajuster_les_termes()
+
+    def montrer_les_etapes(self) -> None:
+        """Ouvre la petite fenêtre des cinq étapes du traitement, sous l'état de la traduction."""
+        ancre = self.badge if self.badge.isVisible() else self.panneau_cible.nom
+        self.volet_etapes.ouvrir_sous(ancre, self.width() - 2 * theme.MARGE)
+
     def _surligner_les_termes(self, traduction: Traduction) -> None:
         """Colore, dans le texte source, les termes trouvés dans le glossaire."""
         texte = traduction.texte_source
@@ -1031,7 +1126,8 @@ class PageTexte(QWidget):
     def _reperer_les_termes(self, traduction: Traduction | None) -> None:
         """Note la place des termes dans les deux zones, en positions de Qt (unités UTF-16)."""
         self._termes_des_zones = {self.zone_source: [], self.zone_cible: []}
-        self.zone_cible.viewport().setCursor(Qt.CursorShape.IBeamCursor)
+        for zone in (self.zone_source, self.zone_cible):
+            zone.viewport().setCursor(Qt.CursorShape.IBeamCursor)
         if traduction is None:
             return
 
@@ -1071,10 +1167,11 @@ class PageTexte(QWidget):
                 continue
             if (evenement.type() == QEvent.Type.MouseButtonRelease
                     and evenement.button() == Qt.MouseButton.LeftButton and not zone.textCursor().hasSelection()):
+                # Un simple clic sur un terme coloré (et non la sélection d'un passage) ouvre sa fiche.
                 entree = self.terme_a(zone, evenement.position().toPoint())
                 if entree is not None:
-                    self.termes.ouvrir(entree)
-            elif evenement.type() == QEvent.Type.MouseMove and zone is self.zone_cible:
+                    self.entree_demandee.emit(entree)
+            elif evenement.type() == QEvent.Type.MouseMove and not evenement.buttons():
                 survol = self.terme_a(zone, evenement.position().toPoint()) is not None
                 zone.viewport().setCursor(Qt.CursorShape.PointingHandCursor if survol
                                           else Qt.CursorShape.IBeamCursor)

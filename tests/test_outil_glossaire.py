@@ -119,7 +119,7 @@ def test_les_phrases_d_exemple_refusees(outil, glossaire_fourni, monkeypatch, ca
     officielle = debiteur.contextes[0].ar
     assert "أموال" in officielle and not debiteur.contextes[0].a_verifier
     remplacer_la_ligne(biens, "biens", "Les créanciers peuvent saisir tous les biens du débiteur.", officielle)
-    # 3. Une phrase trop longue pour le champ ④.
+    # 3. Une phrase trop longue pour la contextualisation.
     longue = "Le propriétaire " + "peut vendre sa maison et " * 7 + "la louer."
     assert len(longue) > outil.LONGUEUR_EXEMPLE
     remplacer_la_ligne(biens, "propriétaire", longue, phrases_de(biens, "propriétaire")[1])
@@ -191,7 +191,7 @@ def test_un_terme_seul_est_ecrit_sans_definition_ni_exemple(outil, monkeypatch, 
     assert (orbite.categorie_fr, orbite.synonymes_fr, orbite.synonymes_ar) == (
         "nom féminin", ["trajectoire orbitale"], ["فلك"])
     # Ni définition, ni exemple. Faute de définition, la mention « à vérifier » porte sur l'équivalent : la fiche
-    # l'affiche au pied du champ ②.
+    # l'affiche au pied de l'équivalent.
     for entree in (satellite, orbite, orbital, mettre, hors, au_dela):
         assert not entree.definition_fr and not entree.definition_ar
         assert entree.source_definition == "à vérifier (équivalent d’exemple)"

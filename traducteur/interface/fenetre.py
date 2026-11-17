@@ -6,6 +6,9 @@ premiers sont les écrans de travail : chacun garde son propre sens de traductio
 d'outils affiche ses commandes (la barre de recherche, ou l'import, l'export et la traduction
 d'un texte). Pour les autres écrans, la barre d'outils affiche le titre de l'écran.
 
+Un clic sur un terme de l'écran « Texte » ouvre sa fiche sur l'écran « Terme » ; le bouton
+« Retour au texte » s'affiche alors au début de la barre d'outils.
+
 Le glossaire est chargé à l'ouverture de la fenêtre ; l'écran « Paramètres » permet d'en
 choisir un autre.
 """
@@ -34,7 +37,16 @@ from .. import NOM_APPLICATION
 from ..glossaire import ErreurGlossaire, Glossaire
 from ..langues import AR, NOM_EN_FRANCAIS, NOM_NATIF, autre_langue
 from . import animation, boites, icones, theme
-from .composants import EtiquetteCourte, compte, espace_souple, etiquette, icone_fixe, repeindre
+from .composants import (
+    BoutonAjuste,
+    EtiquetteCourte,
+    compte,
+    espace_souple,
+    etiquette,
+    icone_fixe,
+    message_en_francais,
+    repeindre,
+)
 from .navigation import (
     ECRANS,
     MODE_AIDE,
@@ -168,11 +180,12 @@ class BarreEtat(QFrame):
         self._actualiser()
 
     def _actualiser(self) -> None:
-        self.message.definir_texte(self._passager or self._etat)
+        # Les messages sont écrits en français, même quand ils citent un terme arabe.
+        self.message.definir_texte(message_en_francais(self.texte()))
 
     def texte(self) -> str:
         """Le texte affiché (non abrégé)."""
-        return self.message.texte_complet()
+        return self._passager or self._etat
 
     def etat(self) -> str:
         return self._etat
@@ -187,6 +200,8 @@ class FenetrePrincipale(QMainWindow):
         self.reglages = reglages if reglages is not None else QSettings()
         self.glossaire: Glossaire | None = None
         self.mode = MODE_TERME
+        #: Vrai quand la fiche affichée a été ouverte depuis l'écran « Texte » : le bouton « Retour au texte » y ramène.
+        self.venu_du_texte = False
         #: Erreurs de lecture du glossaire au démarrage, à signaler quand la fenêtre s'affiche.
         self._erreurs_au_demarrage: list[str] = []
         animation.definir_actives(self.reglages.value(CLE_ANIMATIONS, True, bool))
@@ -195,7 +210,7 @@ class FenetrePrincipale(QMainWindow):
         self.setWindowIcon(icones.icone_application())
         self.setPalette(theme.palette())
         self.setStyleSheet(theme.FEUILLE_DE_STYLE)
-        self.setMinimumSize(900, 560)
+        self.setMinimumSize(900, 600)
 
         self.page = PageRecherche()
         self.page_texte = PageTexte()
@@ -262,11 +277,25 @@ class FenetrePrincipale(QMainWindow):
         self.etiquette_source, self.etiquette_cible = self.sens.source, self.sens.cible
         self.bouton_inverser = self.sens.bouton_inverser
         self.bouton_inverser.clicked.connect(self.inverser_le_sens)
+        # Après un clic sur un terme de l'écran « Texte » : le bouton qui y ramène, devant le sens de traduction.
+        self.bouton_retour = BoutonAjuste("Retour au texte", 150, 44)
+        self.bouton_retour.setProperty("classe", "contour")
+        self.bouton_retour.setIcon(icones.icone("fleche-g", theme.TEXTE_2, 16, 1.6, marge=3))
+        self.bouton_retour.setIconSize(QSize(19, 16))
+        self.bouton_retour.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.bouton_retour.setToolTip("Revenir à l’écran « Texte » : le texte et sa traduction y sont restés")
+        self.bouton_retour.clicked.connect(lambda: self.definir_mode(MODE_TEXTE))
+        self.cadre_retour = QWidget()
+        dans_le_retour = QHBoxLayout(self.cadre_retour)
+        dans_le_retour.setContentsMargins(0, 0, 10, 0)
+        dans_le_retour.addWidget(self.bouton_retour)
+        self.cadre_retour.hide()
         # Le sens et l'espace qui le suit disparaissent ensemble sur les écrans d'information.
         self.cadre_sens = QWidget()
         dans_le_cadre = QHBoxLayout(self.cadre_sens)
         dans_le_cadre.setContentsMargins(0, 0, 0, 0)
         dans_le_cadre.setSpacing(0)
+        dans_le_cadre.addWidget(self.cadre_retour)
         dans_le_cadre.addWidget(self.sens)
         # L'espace se resserre un peu si la fenêtre est étroite et la police du système large.
         espace_souple(dans_le_cadre, 13, 5)
@@ -386,6 +415,10 @@ class FenetrePrincipale(QMainWindow):
         self.action_copier.setShortcut(QKeySequence("Ctrl+Shift+C"))
         self.action_copier.triggered.connect(self.page_texte.copier)
         menu_traduction.addAction(self.action_copier)
+        # Les étapes du traitement ne sont pas affichées en permanence : cette commande les ouvre.
+        self.action_etapes = QAction("Éta&pes du traitement…", self)
+        self.action_etapes.triggered.connect(self._montrer_les_etapes)
+        menu_traduction.addAction(self.action_etapes)
         menu_traduction.addSeparator()
         action_exemple = QAction("Insérer un texte d’&exemple", self)
         action_exemple.triggered.connect(self._inserer_un_exemple)
@@ -531,6 +564,9 @@ class FenetrePrincipale(QMainWindow):
         page = self.pages[mode]
         self.pile.setCurrentWidget(page)
         travail = mode in _ECRANS_DE_TRAVAIL
+        if mode == MODE_TEXTE:
+            self.venu_du_texte = False  # on y est revenu
+        self.cadre_retour.setVisible(mode == MODE_TERME and self.venu_du_texte)
         self.cadre_sens.setVisible(travail)
         self.outils.setCurrentIndex(_ECRANS_DE_TRAVAIL.index(mode) if travail else 2)
         if travail:
@@ -555,8 +591,12 @@ class FenetrePrincipale(QMainWindow):
         self.page_parametres.montrer_l_adresse()
 
     def afficher_la_fiche(self, entree) -> None:
-        """Ouvre, sur l'écran « Terme », la fiche d'un terme relevé dans un texte."""
+        """Ouvre, sur l'écran « Terme », la fiche d'un terme relevé dans un texte.
+
+        Le bouton « Retour au texte » reste affiché tant que l'écran « Texte » n'a pas été rouvert.
+        """
         self.page.definir_sens(self.page_texte.source)
+        self.venu_du_texte = True
         self.definir_mode(MODE_TERME)
         self.page.ouvrir(entree)
 
@@ -596,6 +636,10 @@ class FenetrePrincipale(QMainWindow):
     def _traduire_le_texte(self) -> None:
         self.definir_mode(MODE_TEXTE)
         self.page_texte.traduire()
+
+    def _montrer_les_etapes(self) -> None:
+        self.definir_mode(MODE_TEXTE)
+        self.page_texte.montrer_les_etapes()
 
     def _inserer_un_exemple(self) -> None:
         self.definir_mode(MODE_TEXTE)
