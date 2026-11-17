@@ -1,0 +1,319 @@
+# Phrases d'exemple de termes/42_adjectifs.txt : terme | phrase française | phrase arabe
+# L'adjectif peut s'accorder avec son nom, en français comme en arabe.
+protégé | Le logiciel est protégé par le droit d'auteur. | البرنامج المعلوماتي محمي بحق المؤلف.
+juridique | L'avocat donne un avis juridique à son client. | يقدم المحامي رأيا قانونيا لموكله.
+illégal | Le licenciement prononcé sans motif est illégal. | التسريح المنطوق به دون سبب غير قانوني.
+légitime | Le motif invoqué par l'employeur est légitime. | السبب الذي تمسك به المستخدم مشروع.
+illégitime | Le pouvoir pris par la force est illégitime. | السلطة المأخوذة بالقوة غير شرعية.
+licite | L'objet du contrat doit être licite. | يجب أن يكون محل العقد مباحا.
+illicite | La cause illicite entraîne la nullité du contrat. | يترتب على السبب غير المشروع بطلان العقد.
+régulier | Le séjour de l'étranger est régulier. | إقامة الأجنبي نظامية.
+irrégulier | L'acte de procédure irrégulier peut être annulé. | يجوز إبطال الإجراء غير النظامي.
+conforme | Le produit livré est conforme à la commande. | المنتوج المسلم مطابق للطلبية.
+contraire | Toute clause contraire à la loi est réputée non écrite. | يعتبر كل بند مخالف للقانون كأن لم يكن.
+compatible | Le règlement intérieur est compatible avec la loi. | النظام الداخلي متوافق مع القانون.
+incompatible | La fonction de juge est incompatible avec l'exercice du commerce. | وظيفة القاضي متنافية مع ممارسة التجارة.
+civil | Le juge civil statue sur la demande de réparation. | يفصل القاضي المدني في طلب التعويض.
+pénal | Le juge pénal apprécie librement les preuves. | يقدر القاضي الجزائي الأدلة بحرية.
+criminel | L'accusé n'a aucun antécédent criminel. | ليست للمتهم أي سابقة جنائية.
+correctionnel | La chambre correctionnelle de la cour examine l'appel du prévenu. | تنظر الغرفة الجنحية بالمجلس القضائي في استئناف المتهم.
+commercial | Le bail commercial est conclu pour une durée déterminée. | يبرم الإيجار التجاري لمدة محددة.
+administratif | Le recours administratif peut précéder la saisine du juge. | يجوز أن يسبق التظلم الإداري إخطار القاضي.
+constitutionnel | Le principe d'égalité a un rang constitutionnel. | لمبدأ المساواة مرتبة دستورية.
+inconstitutionnel | Un texte déclaré inconstitutionnel perd tout effet. | يفقد النص المصرح بأنه غير دستوري كل أثر.
+législatif | Le pouvoir législatif est exercé par le Parlement. | يمارس البرلمان السلطة التشريعية.
+réglementaire | Le président de la République exerce le pouvoir réglementaire. | يمارس رئيس الجمهورية السلطة التنظيمية.
+exécutif | Le décret exécutif est signé par le Premier ministre. | يوقع الوزير الأول المرسوم التنفيذي.
+judiciaire | La police judiciaire agit sous la direction du procureur de la République. | تعمل الشرطة القضائية تحت إدارة وكيل الجمهورية.
+extrajudiciaire | L'aveu extrajudiciaire est laissé à l'appréciation du juge. | يترك الإقرار غير القضائي لتقدير القاضي.
+arbitral | La sentence arbitrale s'impose aux parties. | يلزم الحكم التحكيمي الأطراف.
+disciplinaire | Le conseil disciplinaire entend le fonctionnaire. | يستمع المجلس التأديبي إلى الموظف.
+fiscal | Le contrôle fiscal porte sur les quatre dernières années. | تشمل الرقابة الجبائية السنوات الأربع الأخيرة.
+douanier | Le contrôle douanier a lieu au port d'arrivée. | تجري المراقبة الجمركية في ميناء الوصول.
+financier | Le rapport financier est présenté aux associés. | يعرض التقرير المالي على الشركاء.
+monétaire | Le marché monétaire est surveillé par la Banque d'Algérie. | يراقب بنك الجزائر السوق النقدية.
+bancaire | Le secret bancaire protège les clients. | يحمي السر المصرفي الزبائن.
+économique | L'opérateur économique tient une comptabilité régulière. | يمسك المتعامل الاقتصادي محاسبة نظامية.
+social | Le dialogue social réunit employeurs et syndicats. | يجمع الحوار الاجتماعي المستخدمين والنقابات.
+professionnel | La faute professionnelle grave justifie le licenciement. | يبرر الخطأ المهني الجسيم التسريح.
+syndical | Le délégué syndical représente les travailleurs. | يمثل المندوب النقابي العمال.
+immobilier | Le promoteur immobilier livre les logements dans le délai convenu. | يسلم المرقي العقاري السكنات في الأجل المتفق عليه.
+mobilier | Le gage porte sur un bien mobilier. | يرد الرهن الحيازي على مال منقول.
+agricole | Le crédit agricole finance l'achat de matériel. | يمول القرض الفلاحي شراء العتاد.
+urbain | Le transport urbain est organisé par la commune. | تنظم البلدية النقل الحضري.
+rural | Le logement rural bénéficie d'une aide de l'État. | يستفيد السكن الريفي من إعانة الدولة.
+maritime | Le transport maritime est régi par le Code maritime. | يخضع النقل البحري للقانون البحري.
+aérien | Le transporteur aérien répond des bagages perdus. | يسأل الناقل الجوي عن الأمتعة الضائعة.
+terrestre | Le poste frontalier terrestre est ouvert jour et nuit. | المركز الحدودي البري مفتوح ليلا ونهارا.
+environnemental | L'étude d'impact environnemental précède la délivrance du permis. | تسبق دراسة التأثير البيئي تسليم الرخصة.
+international | Le commerce international repose sur des usages reconnus. | تقوم التجارة الدولية على أعراف معترف بها.
+national | La défense nationale est un devoir de chaque citoyen. | الدفاع الوطني واجب على كل مواطن.
+diplomatique | L'agent diplomatique jouit de l'immunité de juridiction. | يتمتع المبعوث الدبلوماسي بالحصانة القضائية.
+consulaire | Le poste consulaire délivre les visas. | يسلم المركز القنصلي التأشيرات.
+bilatéral | Un accord bilatéral règle la question des visas. | ينظم اتفاق ثنائي مسألة التأشيرات.
+multilatéral | L'Algérie a signé un traité multilatéral sur l'environnement. | وقعت الجزائر معاهدة متعددة الأطراف حول البيئة.
+humanitaire | Le droit humanitaire protège les civils en temps de guerre. | يحمي القانون الإنساني المدنيين في زمن الحرب.
+militaire | Le tribunal militaire juge les infractions commises par les soldats. | تفصل المحكمة العسكرية في الجرائم التي يرتكبها الجنود.
+politique | Le parti politique dépose ses statuts au ministère de l'Intérieur. | يودع الحزب السياسي قانونه الأساسي لدى وزارة الداخلية.
+religieux | Le mariage religieux ne remplace pas l'acte d'état civil. | لا يغني الزواج الديني عن عقد الحالة المدنية.
+culturel | Le patrimoine culturel est protégé par l'État. | التراث الثقافي محمي من طرف الدولة.
+médical | Le certificat médical constate l'incapacité de travail. | تثبت الشهادة الطبية العجز عن العمل.
+médico-légal | Le rapport médico-légal détermine la cause du décès. | يحدد التقرير الطبي الشرعي سبب الوفاة.
+scientifique | La police scientifique relève les empreintes. | ترفع الشرطة العلمية البصمات.
+technique | Le contrôle technique du véhicule est obligatoire. | المراقبة التقنية للمركبة إلزامية.
+numérique | L'économie numérique appelle de nouvelles règles. | يستدعي الاقتصاد الرقمي قواعد جديدة.
+électronique | Le commerçant accepte le paiement électronique. | يقبل التاجر الدفع الإلكتروني.
+informatique | Le système informatique de la banque a subi une intrusion. | تعرض النظام المعلوماتي للبنك إلى اختراق.
+contractuel | L'équilibre contractuel est rompu par la hausse des prix. | يختل التوازن التعاقدي بارتفاع الأسعار.
+extracontractuel | Le dommage extracontractuel est réparé selon les règles de la responsabilité civile. | يعوض الضرر غير التعاقدي وفق قواعد المسؤولية المدنية.
+délictuel | Le régime délictuel s'applique en l'absence de contrat. | يطبق النظام التقصيري في غياب العقد.
+quasi délictuel | L'imprudence constitue une faute quasi délictuelle. | يشكل عدم الاحتياط خطأ شبه تقصيري.
+conventionnel | Le délai conventionnel de préavis est plus long que le délai légal. | أجل الإشعار المسبق الاتفاقي أطول من الأجل القانوني.
+statutaire | Le fonctionnaire est dans une situation statutaire vis-à-vis de l'administration. | يكون الموظف تجاه الإدارة في وضعية قانونية أساسية.
+coutumier | Le droit coutumier complète la loi écrite. | يكمل القانون العرفي القانون المكتوب.
+jurisprudentiel | Un revirement jurisprudentiel modifie la solution admise. | يغير التحول الاجتهادي الحل المعمول به.
+doctrinal | Le débat doctrinal porte sur la nature de ce contrat. | يدور النقاش الفقهي حول طبيعة هذا العقد.
+impératif | Une règle impérative s'impose aux parties. | تفرض القاعدة الآمرة على الأطراف.
+supplétif | La règle supplétive s'applique à défaut d'accord contraire. | تطبق القاعدة المكملة عند انعدام اتفاق مخالف.
+interprétatif | Une loi interprétative précise le sens d'un texte antérieur. | يوضح القانون التفسيري معنى نص سابق.
+obligatoire | L'assurance automobile est obligatoire. | التأمين على السيارات إلزامي.
+facultatif | Le recours à un avocat est facultatif devant le tribunal. | الاستعانة بمحام اختيارية أمام المحكمة.
+contraignant | L'avis du comité n'est pas contraignant. | رأي اللجنة غير ملزم.
+exceptionnel | Le président de la République décrète l'état exceptionnel. | يقرر رئيس الجمهورية الحالة الاستثنائية.
+discrétionnaire | L'administration dispose d'un pouvoir discrétionnaire. | تتمتع الإدارة بسلطة تقديرية.
+arbitraire | Une décision arbitraire est annulée par le juge. | يلغي القاضي القرار التحكمي.
+abusif | Le licenciement abusif ouvre droit à une indemnité. | يخول التسريح التعسفي الحق في تعويض.
+motivé | Le jugement doit être motivé. | يجب أن يكون الحكم مسببا.
+nul | Le contrat conclu sans consentement est nul. | العقد المبرم دون رضا باطل.
+annulable | Le contrat conclu par un mineur est annulable. | العقد الذي يبرمه القاصر قابل للإبطال.
+valable | Le mariage conclu devant l'officier d'état civil est valable. | الزواج المبرم أمام ضابط الحالة المدنية صحيح.
+caduc | L'offre devient caduque à l'expiration du délai. | يصبح الإيجاب ساقطا عند انقضاء الأجل.
+inexistant | L'acte pris par une autorité incompétente est inexistant. | القرار الصادر عن سلطة غير مختصة منعدم.
+résoluble | Le contrat est résoluble en cas d'inexécution. | العقد قابل للفسخ في حالة عدم التنفيذ.
+révocable | Le testament est révocable jusqu'au décès. | الوصية قابلة للرجوع فيها إلى غاية الوفاة.
+irrévocable | Le crédit documentaire irrévocable engage la banque. | يلزم الاعتماد المستندي غير القابل للرجوع فيه البنك.
+rétroactif | L'annulation a un caractère rétroactif. | للإبطال طابع رجعي.
+suspensif | La condition suspensive retarde la naissance de l'obligation. | يؤخر الشرط الواقف نشوء الالتزام.
+résolutoire | La condition résolutoire fait disparaître le droit lorsqu'elle se réalise. | يزول الحق عند تحقق الشرط الفاسخ.
+extinctif | La prescription extinctive éteint la créance. | ينهي التقادم المسقط الدين.
+acquisitif | La prescription acquisitive permet d'acquérir la propriété. | يسمح التقادم المكسب باكتساب الملكية.
+déclaratif | Le partage a un effet déclaratif. | للقسمة أثر كاشف.
+constitutif | L'inscription au registre a un effet constitutif. | للقيد في السجل أثر منشئ.
+translatif | L'effet translatif de la vente se produit dès l'accord des parties. | يتحقق الأثر الناقل للبيع بمجرد اتفاق الطرفين.
+translatif de propriété | La donation est un acte translatif de propriété. | الهبة تصرف ناقل للملكية.
+opposable | Le jugement est opposable aux héritiers. | الحكم محتج به على الورثة.
+inopposable | La cession non publiée est inopposable aux tiers. | التنازل غير المشهر غير نافذ في حق الغير.
+exécutoire | L'acte notarié est exécutoire comme un jugement. | العقد التوثيقي واجب التنفيذ مثل الحكم.
+en vigueur | Le contrat respecte la législation en vigueur. | يحترم العقد التشريع الساري المفعول.
+applicable | Le texte est applicable dès sa publication. | النص قابل للتطبيق منذ نشره.
+inapplicable | La clause est inapplicable aux contrats déjà conclus. | البند غير قابل للتطبيق على العقود المبرمة من قبل.
+abrogé | Le texte abrogé ne s'applique plus aux faits nouveaux. | لا يطبق النص الملغى على الوقائع الجديدة.
+modifié | Le Code civil, modifié en 2005, régit les contrats. | يحكم القانون المدني، المعدل سنة 2005، العقود.
+complété | L'article complété par la loi de 2005 ajoute un nouveau cas. | تضيف المادة المتممة بقانون سنة 2005 حالة جديدة.
+promulgué | La loi promulguée est publiée au Journal officiel. | ينشر القانون الصادر في الجريدة الرسمية.
+conservatoire | La saisie conservatoire empêche le débiteur de vendre le bien. | يمنع الحجز التحفظي المدين من بيع المال.
+provisoire | Le permis provisoire est valable six mois. | الرخصة المؤقتة صالحة لمدة ستة أشهر.
+définitif | Le jugement définitif a l'autorité de la chose jugée. | للحكم النهائي حجية الشيء المقضي به.
+temporaire | Le remplacement temporaire d'un salarié absent justifie un contrat à durée déterminée. | يبرر الاستخلاف الوقتي لعامل غائب عقدا محدد المدة.
+permanent | Le salarié occupe un emploi permanent. | يشغل العامل منصب عمل دائما.
+perpétuel | La réclusion perpétuelle sanctionne les crimes les plus graves. | يعاقب بالسجن المؤبد على أخطر الجنايات.
+viager | Le débiteur verse la rente viagère au début de chaque mois. | يدفع المدين المرتب مدى الحياة في بداية كل شهر.
+immédiat | Le vendeur demande le paiement immédiat du prix à la livraison. | يطلب البائع الدفع الفوري للثمن عند التسليم.
+différé | Le paiement différé est garanti par une caution. | يضمن الدفع المؤجل بكفالة.
+échelonné | Le paiement échelonné de la dette est accordé par le receveur. | يمنح القابض الدفع المقسط للدين.
+anticipé | Le paiement anticipé de la dette libère le débiteur. | يبرئ الوفاء المعجل بالدين ذمة المدين.
+tardif | Le recours tardif est déclaré irrecevable. | يصرح بأن الطعن المتأخر غير مقبول.
+antérieur | Le droit antérieur reste applicable aux contrats en cours. | يبقى القانون السابق قابلا للتطبيق على العقود الجارية.
+postérieur | Un accord postérieur peut modifier le contrat. | يجوز لاتفاق لاحق أن يعدل العقد.
+préalable | L'autorisation préalable du wali est exigée. | يشترط الترخيص المسبق من الوالي.
+successif | Le contrat prévoit des livraisons successives. | ينص العقد على تسليمات متتابعة.
+simultané | L'échange simultané des documents clôt la vente. | يختتم البيع بالتبادل المتزامن للوثائق.
+urgent | Le juge statue sans délai sur les affaires urgentes. | يفصل القاضي دون تأخير في القضايا المستعجلة.
+éventuel | Le dommage éventuel n'est pas réparable. | الضرر المحتمل غير قابل للتعويض.
+conditionnel | La libération conditionnelle est accordée par le juge de l'application des peines. | يمنح قاضي تطبيق العقوبات الإفراج المشروط.
+inconditionnel | La banque donne une garantie inconditionnelle. | يقدم البنك ضمانا غير مشروط.
+exigible | La dette devient exigible à l'échéance. | يصبح الدين مستحق الأداء عند حلول أجل الاستحقاق.
+échu | Le loyer échu doit être payé sans délai. | يجب دفع بدل الإيجار الحال الأجل دون تأخير.
+liquide | La compensation suppose une créance liquide. | تفترض المقاصة دينا معين المقدار.
+certain | Le préjudice doit être certain. | يجب أن يكون الضرر محققا.
+dû | Le salaire dû est versé à la fin du mois. | يدفع الأجر المستحق في آخر الشهر.
+indu | Celui qui reçoit un paiement indu doit le restituer. | من تسلم دفعا غير مستحق وجب عليه رده.
+solvable | La caution doit être solvable. | يجب أن يكون الكفيل موسرا.
+insolvable | Le débiteur insolvable ne peut payer ses créanciers. | لا يستطيع المدين المعسر الوفاء لدائنيه.
+solidaire | Les codébiteurs sont solidaires envers le créancier. | المدينون متضامنون تجاه الدائن.
+commun | Le mur commun est entretenu par les deux voisins. | يتولى الجاران صيانة الحائط المشترك.
+indivis | Chaque héritier dispose de sa part indivise. | يتصرف كل وارث في حصته الشائعة.
+indivisible | L'objet de l'obligation est indivisible par nature. | محل الالتزام غير قابل للانقسام بطبيعته.
+divisible | Une dette d'argent est divisible entre les héritiers. | الدين النقدي قابل للانقسام بين الورثة.
+fongible | Le prêt de consommation porte sur des choses fongibles. | يرد القرض الاستهلاكي على أشياء مثلية.
+consomptible | Le prêt porte sur une chose consomptible. | يرد القرض على شيء قابل للاستهلاك.
+cessible | Le droit au bail est cessible avec le fonds de commerce. | حق الإيجار قابل للتنازل مع المحل التجاري.
+incessible | Le droit de vote est incessible. | حق التصويت غير قابل للتنازل.
+saisissable | Le salaire est saisissable dans les limites fixées par la loi. | الأجر قابل للحجز في الحدود التي يحددها القانون.
+insaisissable | La pension alimentaire est insaisissable. | النفقة غير قابلة للحجز.
+aliénable | Le bien privé de la commune est aliénable. | الملك الخاص للبلدية قابل للتصرف فيه.
+inaliénable | Le domaine public est inaliénable. | الأملاك الوطنية العمومية غير قابلة للتصرف فيها.
+prescriptible | L'action en paiement est prescriptible. | دعوى الوفاء قابلة للتقادم.
+imprescriptible | Le crime contre l'humanité est imprescriptible. | الجريمة ضد الإنسانية غير قابلة للتقادم.
+transmissible | Le droit d'auteur est transmissible aux héritiers. | حق المؤلف قابل للانتقال إلى الورثة.
+intransmissible | L'usufruit est intransmissible aux héritiers. | حق الانتفاع غير قابل للانتقال إلى الورثة.
+négociable | L'action de la société est négociable en bourse. | سهم الشركة قابل للتداول في البورصة.
+endossable | Le chèque est endossable sauf mention contraire. | الشيك قابل للتظهير ما لم يرد بيان مخالف.
+nominatif | Le titre nominatif porte le nom de son propriétaire. | يحمل السند الاسمي اسم مالكه.
+au porteur | Le chèque au porteur se transmet par simple remise. | ينتقل الشيك لحامله بمجرد التسليم.
+à ordre | Le billet à ordre se transmet par endossement. | ينتقل السند لأمر بالتظهير.
+hypothécaire | La banque accorde un crédit hypothécaire à l'acheteur. | يمنح البنك قرضا رهنيا للمشتري.
+privilégié | Le Trésor est un créancier privilégié. | الخزينة دائن ممتاز.
+gagé | Le bien gagé est remis au créancier. | يسلم المال المرهون إلى الدائن.
+grevé | L'immeuble est grevé d'une hypothèque. | العقار مثقل برهن رسمي.
+ordinaire | Le créancier ordinaire ne bénéficie d'aucune garantie. | لا يستفيد الدائن العادي من أي ضمان.
+corporel | Le dommage corporel est réparé intégralement. | يعوض الضرر الجسماني تعويضا كاملا.
+incorporel | La clientèle est un élément incorporel du fonds de commerce. | الزبائن عنصر غير مادي من عناصر المحل التجاري.
+matériel | Le dommage matériel est évalué par un expert. | يقدر خبير الضرر المادي.
+moral | Le dommage moral ouvre droit à réparation. | يخول الضرر المعنوي الحق في التعويض.
+réel | La sûreté réelle porte sur un bien déterminé. | يرد التأمين العيني على مال معين.
+personnel | Le droit personnel s'exerce contre un débiteur déterminé. | يمارس الحق الشخصي ضد مدين معين.
+patrimonial | Le droit de créance est un droit patrimonial. | حق الدائنية حق متعلق بالذمة المالية.
+extrapatrimonial | Le droit au nom est un droit extrapatrimonial. | الحق في الاسم حق غير مالي.
+contigu | Le propriétaire du terrain contigu peut demander le bornage. | يجوز لمالك الأرض الملاصقة أن يطلب وضع الحدود.
+enclavé | Le propriétaire d'un fonds enclavé a droit à un passage. | لمالك الأرض المحصورة الحق في ممر.
+vacant | Le poste vacant est pourvu par concours. | يشغل المنصب الشاغر عن طريق المسابقة.
+bâti | La taxe foncière frappe les propriétés bâties. | يفرض الرسم العقاري على الملكيات المبنية.
+non bâti | Le terrain non bâti est soumis à la taxe foncière. | تخضع الأرض غير المبنية للرسم العقاري.
+constructible | Le terrain constructible est situé en zone urbaine. | تقع الأرض القابلة للبناء في منطقة حضرية.
+unilatéral | La modification unilatérale du contrat est interdite. | يمنع التعديل الانفرادي للعقد.
+synallagmatique | Dans un contrat synallagmatique, chaque partie s'oblige envers l'autre. | في العقد الملزم للجانبين، يلتزم كل طرف تجاه الآخر.
+onéreux | La vente est un acte onéreux. | البيع تصرف بعوض.
+gratuit | L'enseignement public est gratuit. | التعليم العمومي مجاني.
+aléatoire | L'assurance est un contrat aléatoire. | التأمين عقد احتمالي.
+formel | L'hypothèque est un contrat formel. | الرهن الرسمي عقد شكلي.
+consensuel | La vente de meubles est un contrat consensuel. | بيع المنقولات عقد رضائي.
+tacite | Le silence du bailleur vaut acceptation tacite. | يعد سكوت المؤجر قبولا ضمنيا.
+exprès | La renonciation doit résulter d'un accord exprès. | يجب أن ينتج التنازل عن اتفاق صريح.
+verbal | L'accord verbal des parties est difficile à prouver. | يصعب إثبات الاتفاق الشفوي بين الطرفين.
+oral | Le témoin fait une déclaration orale devant le juge. | يدلي الشاهد بتصريح شفهي أمام القاضي.
+amiable | Le règlement amiable du litige évite le procès. | تغني التسوية الودية للنزاع عن المحاكمة.
+forcé | L'exécution forcée est confiée à l'huissier de justice. | يعهد بالتنفيذ الجبري إلى المحضر القضائي.
+spontané | Le paiement spontané de l'amende éteint l'action publique. | ينهي الدفع التلقائي للغرامة الدعوى العمومية.
+réciproque | Les époux se doivent un respect réciproque. | يلتزم الزوجان باحترام متبادل.
+principal | Le débiteur principal est poursuivi avant la caution. | يتابع المدين الأصلي قبل الكفيل.
+accessoire | La peine accessoire s'ajoute à la peine principale. | تضاف العقوبة التبعية إلى العقوبة الأصلية.
+subsidiaire | Le demandeur présente une demande subsidiaire. | يقدم المدعي طلبا احتياطيا.
+complémentaire | La peine complémentaire est prononcée par le juge. | ينطق القاضي بالعقوبة التكميلية.
+alternatif | L'obligation alternative laisse le choix au débiteur. | يترك الالتزام التخييري الخيار للمدين.
+exclusif | Le distributeur bénéficie d'un droit exclusif de vente. | يستفيد الموزع من حق حصري للبيع.
+collectif | Le conflit collectif de travail est soumis à la conciliation. | يعرض النزاع الجماعي في العمل على المصالحة.
+individuel | Le conflit individuel de travail est porté devant le bureau de conciliation. | يرفع النزاع الفردي في العمل إلى مكتب المصالحة.
+lucratif | La société poursuit un but lucratif. | تسعى الشركة إلى غرض ربحي.
+non lucratif | L'association poursuit un but non lucratif. | تسعى الجمعية إلى غرض غير ربحي.
+bénévole | Le travail bénévole n'ouvre pas droit à un salaire. | لا يخول العمل التطوعي الحق في أجر.
+rémunéré | Le mandat rémunéré oblige le mandataire à plus de diligence. | تلزم الوكالة المأجورة الوكيل بعناية أكبر.
+fictif | Le contrat fictif cache la véritable volonté des parties. | يخفي العقد الصوري الإرادة الحقيقية للطرفين.
+apparent | Le vice apparent doit être signalé à la livraison. | يجب التبليغ عن العيب الظاهر عند التسليم.
+occulte | La contre-lettre est un accord occulte. | ورقة الضد اتفاق خفي.
+présumé | L'auteur présumé de l'infraction est entendu par la police. | تسمع الشرطة الفاعل المفترض للجريمة.
+frauduleux | Le montage frauduleux a permis de détourner des fonds. | سمح التركيب الاحتيالي باختلاس أموال.
+dolosif | Le silence dolosif du vendeur vicie le consentement. | يعيب السكوت التدليسي للبائع الرضا.
+coupable | Le tribunal déclare le prévenu coupable. | تصرح المحكمة بأن المتهم مذنب.
+innocent | L'enquête a montré que le suspect était innocent. | أظهر التحقيق أن المشتبه فيه بريء.
+responsable | Le gardien de la chose est responsable du dommage qu'elle cause. | حارس الشيء مسؤول عن الضرر الذي يحدثه.
+irresponsable | Le dément est pénalement irresponsable. | المجنون غير مسؤول جزائيا.
+punissable | La tentative de crime est punissable. | الشروع في الجناية معاقب عليه.
+intentionnel | L'homicide intentionnel est puni de la réclusion. | يعاقب على القتل العمدي بالسجن.
+involontaire | La faute involontaire n'exclut pas la réparation du dommage. | لا يمنع الخطأ غير العمدي تعويض الضرر.
+prémédité | Le crime prémédité est puni plus sévèrement. | يعاقب على الجناية مع سبق الإصرار بعقوبة أشد.
+aggravé | La peine aggravée est prononcée en cas de récidive. | ينطق بالعقوبة المشددة في حالة العود.
+atténué | La peine atténuée tient compte de l'âge du mineur. | تراعي العقوبة المخففة سن القاصر.
+flagrant | Le délit flagrant permet une comparution rapide. | تسمح الجنحة المتلبس بها بالمثول السريع.
+récidiviste | Le condamné récidiviste encourt le double de la peine. | يتعرض المحكوم عليه العائد لضعف العقوبة.
+fautif | Le conducteur fautif indemnise la victime. | يعوض السائق المخطئ الضحية.
+dommageable | Le fait dommageable oblige son auteur à réparation. | يلزم الفعل الضار فاعله بالتعويض.
+préjudiciable | La clause préjudiciable au salarié est nulle. | البند المضر بالعامل باطل.
+lésé | La partie lésée demande réparation au juge. | يطلب الطرف المتضرر التعويض من القاضي.
+grave | La faute grave prive le salarié de préavis. | يحرم الخطأ الجسيم العامل من الإشعار المسبق.
+léger | La faute légère n'exonère pas le transporteur. | لا يعفي الخطأ اليسير الناقل من المسؤولية.
+fortuit | La découverte fortuite d'un trésor profite au propriétaire du sol. | يعود الاكتشاف العرضي للكنز بالفائدة على مالك الأرض.
+prévisible | Le débiteur ne répond que du dommage prévisible. | لا يسأل المدين إلا عن الضرر المتوقع.
+imprévisible | La force majeure est un événement imprévisible. | القوة القاهرة حادث غير متوقع.
+proportionné | La sanction doit être proportionnée à la faute. | يجب أن يكون الجزاء متناسبا مع الخطأ.
+disproportionné | Un engagement disproportionné aux revenus de la caution peut être réduit. | يجوز تخفيض الالتزام غير المتناسب مع مداخيل الكفيل.
+raisonnable | Le doute raisonnable profite à l'accusé. | يفسر الشك المعقول لصالح المتهم.
+excessif | Le juge réduit la clause pénale d'un montant excessif. | يخفض القاضي الشرط الجزائي إذا كان مبلغه مفرطا.
+manifeste | La violation manifeste de la loi justifie la cassation. | يبرر الانتهاك الجلي للقانون النقض.
+équitable | Le juge fixe une indemnité équitable. | يحدد القاضي تعويضا منصفا.
+juste | L'exproprié reçoit une indemnité juste. | يتلقى المنزوع ملكيته تعويضا عادلا.
+injuste | Une condamnation injuste peut être révisée. | يجوز إعادة النظر في الإدانة الظالمة.
+litigieux | Le bien litigieux est placé sous séquestre. | يوضع المال المتنازع فيه تحت الحراسة القضائية.
+recevable | L'appel formé dans le délai est recevable. | الاستئناف المرفوع في الأجل مقبول.
+irrecevable | La demande nouvelle en appel est irrecevable. | الطلب الجديد في الاستئناف غير مقبول.
+fondé | Le moyen tiré du défaut de motifs est fondé. | الوجه المأخوذ من انعدام التسبيب مؤسس.
+infondé | Le pourvoi est rejeté car le moyen est infondé. | يرفض الطعن لأن الوجه غير مؤسس.
+compétent | Le tribunal compétent est celui du domicile du défendeur. | المحكمة المختصة هي محكمة موطن المدعى عليه.
+incompétent | Le juge se déclare incompétent. | يصرح القاضي بأنه غير مختص.
+contradictoire | Le jugement contradictoire est rendu en présence des parties. | يصدر الحكم الحضوري بحضور الأطراف.
+réputé contradictoire | Le jugement est réputé contradictoire si le défendeur a été cité à personne. | يكون الحكم معتبرا حضوريا إذا كلف المدعى عليه شخصيا بالحضور.
+susceptible d'appel | Le jugement rendu en premier ressort est susceptible d'appel. | الحكم الصادر ابتدائيا قابل للاستئناف.
+insusceptible de recours | La décision de la Cour constitutionnelle est insusceptible de recours. | قرار المحكمة الدستورية غير قابل للطعن.
+probatoire | La valeur probatoire d'une copie dépend de l'original. | تتوقف القيمة الإثباتية للنسخة على الأصل.
+probant | L'acte authentique est un écrit probant. | العقد الرسمي محرر ذو حجية.
+décisoire | Une partie défère le serment décisoire à l'autre partie. | يوجه أحد الطرفين اليمين الحاسمة إلى الطرف الآخر.
+transactionnel | L'accord transactionnel met fin au litige. | ينهي الاتفاق التصالحي النزاع.
+impartial | Le juge doit rester impartial. | يجب أن يبقى القاضي محايدا.
+neutre | L'expert adopte une position neutre entre les parties. | يتخذ الخبير موقفا حياديا بين الطرفين.
+indépendant | L'arbitre est indépendant des parties. | المحكم مستقل عن الأطراف.
+confidentiel | Le dossier médical est confidentiel. | الملف الطبي سري.
+officiel | Le document officiel porte le cachet de l'administration. | تحمل الوثيقة الرسمية ختم الإدارة.
+officieux | Une traduction officieuse n'a pas de valeur devant le tribunal. | ليست للترجمة غير الرسمية قيمة أمام المحكمة.
+légalisé | La signature légalisée est apposée au bas de la procuration. | يوضع التوقيع المصادق عليه في أسفل التوكيل.
+certifié conforme | Le dossier comprend une copie certifiée conforme du diplôme. | يتضمن الملف نسخة مطابقة للأصل من الشهادة.
+enregistré | Le contrat enregistré acquiert date certaine. | يكتسب العقد المسجل تاريخا ثابتا.
+inscrit | Le créancier inscrit est payé sur le prix de l'immeuble. | يستوفي الدائن المقيد حقه من ثمن العقار.
+publié | Le décret publié au Journal officiel s'impose à tous. | يلزم المرسوم المنشور في الجريدة الرسمية الجميع.
+recommandé | Le congé est donné par lettre recommandée. | يوجه التنبيه بالإخلاء برسالة موصى عليها.
+public | L'établissement public est doté de la personnalité morale. | تتمتع المؤسسة العمومية بالشخصية المعنوية.
+privé | Le secteur privé emploie la majorité des salariés. | يشغل القطاع الخاص أغلبية الأجراء.
+général | L'intérêt général prime sur les intérêts des particuliers. | تقدم المصلحة العامة على مصالح الأفراد.
+électoral | La liste électorale est révisée chaque année. | تراجع القائمة الانتخابية كل سنة.
+éligible | Tout citoyen remplissant les conditions légales est éligible. | كل مواطن تتوفر فيه الشروط القانونية قابل للانتخاب.
+inéligible | Le condamné privé de ses droits civiques est inéligible. | المحكوم عليه المحروم من حقوقه الوطنية غير قابل للانتخاب.
+parlementaire | L'immunité parlementaire protège le député. | تحمي الحصانة البرلمانية النائب.
+gouvernemental | Le programme gouvernemental est soumis à l'approbation de l'Assemblée. | يعرض البرنامج الحكومي على موافقة المجلس.
+présidentiel | Le décret présidentiel porte nomination du ministre. | يتضمن المرسوم الرئاسي تعيين الوزير.
+ministériel | L'arrêté ministériel fixe les modalités d'application du décret. | يحدد القرار الوزاري كيفيات تطبيق المرسوم.
+interministériel | Un arrêté interministériel fixe le montant de l'indemnité. | يحدد قرار وزاري مشترك مبلغ التعويض.
+communal | Le budget communal est voté par l'assemblée populaire communale. | يصوت المجلس الشعبي البلدي على الميزانية البلدية.
+wilayal | Le budget wilayal est soumis à l'approbation du ministre. | تعرض الميزانية الولائية على موافقة الوزير.
+régional | Le directeur régional des impôts instruit la réclamation. | يدرس المدير الجهوي للضرائب الشكوى.
+local | Les collectivités locales sont la commune et la wilaya. | الجماعات المحلية هي البلدية والولاية.
+territorial | La compétence territoriale du tribunal est fixée par la loi. | يحدد القانون الاختصاص الإقليمي للمحكمة.
+central | L'administration centrale du ministère siège à Alger. | يوجد مقر الإدارة المركزية للوزارة بالجزائر.
+décentralisé | La commune est une collectivité décentralisée. | البلدية جماعة لامركزية.
+déconcentré | Les services déconcentrés de l'État sont placés sous l'autorité du wali. | توضع المصالح غير الممركزة للدولة تحت سلطة الوالي.
+hiérarchique | Le supérieur hiérarchique note le fonctionnaire chaque année. | ينقط الرئيس السلمي الموظف كل سنة.
+souverain | Chaque État souverain fixe librement sa politique étrangère. | تحدد كل دولة ذات سيادة سياستها الخارجية بحرية.
+titulaire | Le fonctionnaire titulaire ne peut être licencié sans procédure disciplinaire. | لا يجوز تسريح الموظف المرسم دون إجراء تأديبي.
+stagiaire | Le fonctionnaire stagiaire est évalué à la fin de l'année. | يقيم الموظف المتربص في نهاية السنة.
+intérimaire | Le directeur intérimaire signe les actes urgents. | يوقع المدير بالنيابة القرارات المستعجلة.
+suppléant | Le membre suppléant siège en cas d'absence du membre élu. | يحضر العضو المستخلف في حالة غياب العضو المنتخب.
+honoraire | Le président honoraire de l'association assiste à l'assemblée générale. | يحضر الرئيس الشرفي للجمعية اجتماع الجمعية العامة.
+habilité | L'agent habilité constate l'infraction par procès-verbal. | يعاين العون المؤهل الجريمة بمحضر.
+délégué | Le pouvoir délégué ne peut être transmis à un tiers. | لا يجوز نقل السلطة المفوضة إلى الغير.
+capable | Le contrat suppose un contractant capable. | يفترض العقد متعاقدا ذا أهلية.
+conjugal | Le lien conjugal est rompu par le divorce. | تنحل الرابطة الزوجية بالطلاق.
+familial | La médiation familiale aide les époux à s'entendre. | تساعد الوساطة الأسرية الزوجين على التفاهم.
+parental | Le contrôle parental limite l'accès des enfants à certains sites. | تحد الرقابة الوالدية من دخول الأطفال إلى بعض المواقع.
+paternel | L'autorisation paternelle est demandée pour le voyage du mineur. | يطلب الترخيص الأبوي لسفر القاصر.
+maternel | La filiation maternelle se prouve par l'acte de naissance. | يثبت النسب الأمومي بعقد الميلاد.
+héréditaire | L'examen médical avant le mariage peut révéler une maladie héréditaire. | قد يكشف الفحص الطبي قبل الزواج عن مرض وراثي.
+successoral | Le litige successoral est porté devant la section des affaires familiales. | يرفع النزاع الإرثي إلى قسم شؤون الأسرة.
+naturel | L'obligation naturelle ne peut faire l'objet d'une exécution forcée. | لا يكون الالتزام الطبيعي محلا لتنفيذ جبري.
+binational | Un enfant binational possède deux passeports. | يملك الطفل المزدوج الجنسية جوازي سفر.
+naturalisé | L'étranger naturalisé acquiert les droits attachés à la nationalité. | يكتسب الأجنبي المتجنس الحقوق المرتبطة بالجنسية.
+net | L'impôt est calculé sur le revenu net. | تحسب الضريبة على الدخل الصافي.
+brut | Le montant brut de la facture comprend la taxe. | يشمل المبلغ الإجمالي للفاتورة الرسم.
+imposable | Le bénéfice imposable est déclaré chaque année. | يصرح بالربح الخاضع للضريبة كل سنة.
+exonéré | Le revenu exonéré n'entre pas dans la base de l'impôt. | لا يدخل الدخل المعفى في وعاء الضريبة.
+déductible | Le loyer du local professionnel est déductible du bénéfice. | بدل إيجار المحل المهني قابل للخصم من الربح.
+forfaitaire | L'impôt forfaitaire unique s'applique aux petits commerçants. | تطبق الضريبة الجزافية الوحيدة على صغار التجار.
+proportionnel | Le droit proportionnel d'enregistrement est calculé sur le prix. | يحسب رسم التسجيل النسبي على الثمن.
+progressif | Le barème progressif de l'impôt compte plusieurs tranches. | يتضمن الجدول التصاعدي للضريبة عدة أشطر.

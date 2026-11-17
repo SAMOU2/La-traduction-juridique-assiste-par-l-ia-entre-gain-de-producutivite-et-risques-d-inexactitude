@@ -1,0 +1,328 @@
+# Phrases d'exemple de termes/47_droit_penal.txt : terme | phrase française | phrase arabe
+loi pénale | La loi pénale définit les infractions et les peines. | يحدد القانون الجزائي الجرائم والعقوبات.
+application de la loi pénale dans le temps | Le principe de non-rétroactivité gouverne l'application de la loi pénale dans le temps. | يحكم مبدأ عدم الرجعية تطبيق القانون الجزائي من حيث الزمان.
+application de la loi pénale dans l'espace | Le principe de territorialité gouverne l'application de la loi pénale dans l'espace. | يحكم مبدأ الإقليمية تطبيق القانون الجزائي من حيث المكان.
+principe de territorialité | Le principe de territorialité soumet à la loi pénale toute infraction commise sur le territoire. | يخضع مبدأ الإقليمية للقانون الجزائي كل جريمة ترتكب في الإقليم.
+interprétation stricte | La loi pénale est d'interprétation stricte. | يخضع القانون الجزائي لتفسير ضيق.
+loi pénale plus douce | La loi pénale plus douce s'applique aux faits commis avant elle. | يطبق القانون الأصلح للمتهم على الأفعال المرتكبة قبله.
+incrimination | L'incrimination d'un comportement relève de la loi. | تجريم سلوك ما من اختصاص القانون.
+dépénalisation | Le législateur discute la dépénalisation de quelques fautes de gestion. | يناقش المشرع رفع التجريم عن بعض أخطاء التسيير.
+fait incriminé | Le juge vérifie que le fait incriminé correspond à un texte précis. | يتحقق القاضي من أن الفعل المجرم يطابق نصا محددا.
+acte préparatoire | L'achat de l'arme n'est qu'un acte préparatoire. | شراء السلاح مجرد عمل تحضيري.
+commencement d'exécution | La tentative repose sur un commencement d'exécution. | تقوم المحاولة على بدء في التنفيذ.
+désistement volontaire | Le désistement volontaire de l'auteur exclut la tentative punissable. | ينفي العدول الاختياري للفاعل قيام المحاولة المعاقب عليها.
+infraction tentée | Le tribunal qualifie les faits d'infraction tentée. | تكيف المحكمة الوقائع على أنها جريمة مشروع فيها.
+infraction consommée | Le vol devient une infraction consommée dès la soustraction de la chose. | تصبح السرقة جريمة تامة بمجرد اختلاس الشيء.
+infraction impossible | Tirer sur une personne déjà morte est une infraction impossible. | إطلاق النار على شخص ميت جريمة مستحيلة.
+infraction intentionnelle | Le vol est une infraction intentionnelle. | السرقة جريمة عمدية.
+infraction non intentionnelle | L'homicide involontaire est une infraction non intentionnelle. | القتل الخطأ جريمة غير عمدية.
+infraction continue | Le recel est une infraction continue. | إخفاء الأشياء المسروقة جريمة مستمرة.
+infraction instantanée | Le meurtre est une infraction instantanée. | القتل العمد جريمة وقتية.
+infraction d'habitude | La mendicité habituelle est une infraction d'habitude. | التسول الاعتيادي جريمة اعتياد.
+infraction politique | L'extradition est refusée pour une infraction politique. | يرفض تسليم المجرمين في جريمة سياسية.
+infraction militaire | La désertion est une infraction militaire. | الفرار من الجيش جريمة عسكرية.
+infraction de droit commun | L'infraction de droit commun s'oppose à l'infraction politique. | تقابل جريمة القانون العام الجريمة السياسية.
+infraction flagrante | La police arrête l'auteur d'une infraction flagrante. | تلقي الشرطة القبض على فاعل جريمة متلبس بها.
+concours d'infractions | Le concours d'infractions réunit plusieurs infractions commises avant tout jugement définitif. | يجمع تعدد الجرائم عدة جرائم مرتكبة قبل أي حكم نهائي.
+cumul des peines | Le condamné demande au tribunal d'écarter le cumul des peines. | يطلب المحكوم عليه من المحكمة استبعاد جمع العقوبات.
+confusion des peines | Le tribunal ordonne la confusion des peines. | تأمر المحكمة بدمج العقوبات.
+dol général | Le dol général est la volonté de commettre l'acte interdit. | القصد الجنائي العام هو إرادة ارتكاب الفعل الممنوع.
+dol spécial | Le meurtre exige un dol spécial : l'intention de donner la mort. | يستلزم القتل العمد قصدا جنائيا خاصا: نية إزهاق الروح.
+mobile | Le mobile du crime reste inconnu. | يبقى باعث الجناية مجهولا.
+culpabilité | Le tribunal déclare la culpabilité de l'accusé. | تصرح المحكمة بإذناب المتهم.
+coauteur | Chaque coauteur encourt la même peine. | يتعرض كل فاعل مشترك للعقوبة نفسها.
+instigateur | L'instigateur est puni comme l'auteur de l'infraction. | يعاقب المحرض مثل فاعل الجريمة.
+provocation | La provocation peut prendre la forme de promesses ou de menaces. | قد يأخذ التحريض شكل وعود أو تهديدات.
+aide et assistance | Le complice apporte aide et assistance à l'auteur. | يقدم الشريك مساعدة ومعاونة للفاعل.
+auteur principal | Le complice comparaît avec l'auteur principal. | يمثل الشريك مع الفاعل الأصلي أمام المحكمة.
+auteur moral | L'auteur moral fait commettre l'infraction par une autre personne. | يدفع الفاعل المعنوي شخصا آخر إلى ارتكاب الجريمة.
+personne morale pénalement responsable | La société est une personne morale pénalement responsable de cette infraction. | الشركة شخص معنوي مسؤول جزائيا عن هذه الجريمة.
+cause d'irresponsabilité | La démence est une cause d'irresponsabilité. | الجنون مانع من موانع المسؤولية.
+démence | La démence au moment des faits exclut la peine. | يمنع الجنون وقت ارتكاب الأفعال توقيع العقوبة.
+contrainte irrésistible | L'auteur a agi sous une contrainte irrésistible. | تصرف الفاعل تحت تأثير قوة لا قبل له بدفعها.
+minorité pénale | La minorité pénale peut conduire à une peine atténuée. | قد يؤدي صغر السن إلى عقوبة مخففة.
+excuse légale | L'excuse légale est prévue par un texte précis. | ينص على العذر القانوني نص محدد.
+excuse atténuante | L'excuse atténuante réduit la peine encourue. | ينقص العذر المخفف من العقوبة المقررة.
+excuse absolutoire | Le dénonciateur bénéficie d'une excuse absolutoire. | يستفيد المبلغ من عذر معف.
+excuse de provocation | L'accusé invoque l'excuse de provocation. | يتمسك المتهم بعذر الاستفزاز.
+ordre de la loi | L'acte accompli sur l'ordre de la loi n'est pas une infraction. | الفعل المرتكب بناء على أمر القانون ليس جريمة.
+commandement de l'autorité légitime | L'agent a obéi au commandement de l'autorité légitime. | أطاع العون أمر السلطة الشرعية.
+permission de la loi | Le médecin opère avec la permission de la loi. | يجري الطبيب العملية بناء على إذن القانون.
+consentement de la victime | En principe, le consentement de la victime n'efface pas l'infraction. | مبدئيا، لا يمحو رضا المجني عليه الجريمة.
+proportionnalité de la défense | Le juge examine la proportionnalité de la défense face à l'attaque. | ينظر القاضي في تناسب الدفاع مع الاعتداء.
+peine principale | L'emprisonnement est une peine principale. | الحبس عقوبة أصلية.
+peine criminelle | La réclusion est une peine criminelle. | السجن عقوبة جنائية.
+peine délictuelle | L'abus de confiance est puni d'une peine délictuelle. | يعاقب على خيانة الأمانة بعقوبة جنحية.
+peine privative de liberté | Le tribunal prononce une peine privative de liberté. | تنطق المحكمة بعقوبة سالبة للحرية.
+réclusion à temps | L'accusé est condamné à la réclusion à temps. | يحكم على المتهم بالسجن المؤقت.
+peine d'amende | Le tribunal remplace l'emprisonnement par une peine d'amende. | تستبدل المحكمة الحبس بعقوبة الغرامة.
+jour-amende | Le jour-amende est une somme payée pour chaque jour fixé par le juge. | الغرامة اليومية مبلغ يدفع عن كل يوم يحدده القاضي.
+peine alternative | Le travail d'intérêt général est une peine alternative à l'emprisonnement. | العمل للنفع العام عقوبة بديلة للحبس.
+placement sous surveillance électronique | Le condamné bénéficie du placement sous surveillance électronique. | يستفيد المحكوم عليه من الوضع تحت المراقبة الإلكترونية.
+bracelet électronique | Le condamné porte un bracelet électronique à la cheville. | يحمل المحكوم عليه سوارا إلكترونيا في الكاحل.
+interdiction de séjour | L'interdiction de séjour empêche le condamné de se trouver dans des lieux déterminés. | يحظر المنع من الإقامة على المحكوم عليه التواجد في أماكن محددة.
+assignation à résidence | L'assignation à résidence oblige le condamné à demeurer dans un territoire fixé par le jugement. | يلزم تحديد الإقامة المحكوم عليه بالبقاء في إقليم يحدده الحكم.
+interdiction légale | L'interdiction légale empêche le condamné de gérer lui-même ses biens pendant sa peine. | يمنع الحجر القانوني المحكوم عليه من إدارة أمواله بنفسه خلال عقوبته.
+dégradation civique | La dégradation civique retire au condamné le droit de vote. | يترتب على الحرمان من الحقوق الوطنية فقدان المحكوم عليه حق التصويت.
+interdiction d'exercer une profession | Le tribunal peut prononcer une interdiction d'exercer une profession liée à l'infraction. | يجوز للمحكمة أن تنطق بمنع من ممارسة مهنة لها صلة بالجريمة.
+fermeture d'établissement | Le tribunal ordonne la fermeture d'établissement pour une durée limitée. | تأمر المحكمة بإغلاق المؤسسة لمدة محدودة.
+exclusion des marchés publics | L'entreprise condamnée subit une exclusion des marchés publics. | تخضع المؤسسة المحكوم عليها لإقصاء من الصفقات العمومية.
+retrait du permis de conduire | Le retrait du permis de conduire peut s'ajouter à l'amende. | قد يضاف سحب رخصة السياقة إلى الغرامة.
+publication de la condamnation | Le tribunal ordonne la publication de la condamnation dans un journal. | تأمر المحكمة بنشر الحكم في جريدة.
+confiscation générale | La confiscation générale porte sur tous les biens du condamné. | تنصب المصادرة العامة على جميع أموال المحكوم عليه.
+confiscation spéciale | La confiscation spéciale vise l'arme utilisée. | تنصب المصادرة الخاصة على السلاح المستعمل.
+internement judiciaire | L'internement judiciaire concerne l'auteur atteint de troubles mentaux. | يخص الحجز القضائي في مؤسسة استشفائية الفاعل المصاب بخلل عقلي.
+placement en établissement thérapeutique | Le juge ordonne le placement en établissement thérapeutique du toxicomane. | يأمر القاضي بالوضع في مؤسسة علاجية لفائدة المدمن.
+individualisation de la peine | L'individualisation de la peine dépend de la personnalité du condamné. | يتوقف تفريد العقوبة على شخصية المحكوم عليه.
+aggravation de la peine | La récidive entraîne l'aggravation de la peine. | يترتب على العود تشديد العقوبة.
+atténuation de la peine | Les circonstances atténuantes permettent l'atténuation de la peine. | تسمح الظروف المخففة بتخفيف العقوبة.
+maximum de la peine | Le procureur de la République requiert le maximum de la peine. | يطلب وكيل الجمهورية الحد الأقصى للعقوبة.
+minimum de la peine | Le tribunal prononce le minimum de la peine prévue. | تنطق المحكمة بالحد الأدنى للعقوبة المقررة.
+période de sûreté | Pendant la période de sûreté, le condamné n'obtient pas la libération conditionnelle. | خلال الفترة الأمنية، لا يستفيد المحكوم عليه من الإفراج المشروط.
+sursis simple | Le tribunal assortit la peine d'un sursis simple. | تقرن المحكمة العقوبة بوقف تنفيذ بسيط.
+sursis avec mise à l'épreuve | Le sursis avec mise à l'épreuve impose des obligations au condamné. | يفرض وقف التنفيذ مع الوضع تحت الاختبار التزامات على المحكوم عليه.
+révocation du sursis | Une nouvelle condamnation peut entraîner la révocation du sursis. | قد يترتب على إدانة جديدة إلغاء وقف التنفيذ.
+dispense de peine | Le tribunal accorde une dispense de peine au repenti. | تمنح المحكمة التائب إعفاء من العقوبة.
+prescription de la peine | La prescription de la peine empêche son exécution. | يمنع تقادم العقوبة تنفيذها.
+extinction de la peine | La grâce entraîne l'extinction de la peine. | يترتب على العفو انقضاء العقوبة.
+réhabilitation légale | La réhabilitation légale s'acquiert de plein droit après un délai sans nouvelle condamnation. | يكتسب رد الاعتبار القانوني بقوة القانون بعد أجل دون إدانة جديدة.
+réhabilitation judiciaire | La réhabilitation judiciaire est accordée par la chambre d'accusation. | تمنح غرفة الاتهام رد الاعتبار القضائي.
+antécédents judiciaires | Le juge prend en compte les antécédents judiciaires du prévenu. | يراعي القاضي السوابق القضائية للمتهم.
+récidiviste | Le récidiviste encourt une peine plus lourde. | يتعرض العائد إلى الجريمة لعقوبة أشد.
+délinquant primaire | Le délinquant primaire obtient plus facilement le sursis. | يحصل المجرم المبتدئ بسهولة أكبر على وقف التنفيذ.
+mineur délinquant | Le mineur délinquant comparaît devant la section des mineurs. | يمثل الحدث الجانح أمام قسم الأحداث.
+enfant en danger | Le juge des mineurs protège l'enfant en danger. | يحمي قاضي الأحداث الطفل في خطر.
+assassinat | L'accusé est renvoyé devant le tribunal criminel pour assassinat. | يحال المتهم على محكمة الجنايات من أجل القتل مع سبق الإصرار والترصد.
+guet-apens | Le guet-apens consiste à attendre la victime pour l'attaquer. | الترصد هو انتظار الضحية للاعتداء عليها.
+parricide | Le parricide est le meurtre du père, de la mère ou d'un autre ascendant. | قتل الأصول هو إزهاق روح الأب أو الأم أو أحد الأصول الآخرين.
+infanticide | L'infanticide est le meurtre d'un enfant nouveau-né. | قتل الأطفال هو إزهاق روح طفل حديث عهد بالولادة.
+empoisonnement | L'empoisonnement est puni même si la victime survit. | يعاقب على التسميم ولو بقيت الضحية على قيد الحياة.
+violences | Le prévenu est poursuivi pour violences sur son voisin. | يتابع المتهم من أجل أعمال عنف ضد جاره.
+blessures involontaires | Le conducteur est condamné pour blessures involontaires. | يحكم على السائق من أجل الجرح الخطأ.
+incapacité totale de travail | La peine dépend de la durée de l'incapacité totale de travail. | تتوقف العقوبة على مدة العجز الكلي عن العمل.
+infirmité permanente | Les coups ont causé une infirmité permanente à la victime. | سببت الضربات للضحية عاهة مستديمة.
+mutilation | La mutilation d'un membre aggrave la peine. | يشدد بتر أحد الأعضاء العقوبة.
+mise en danger d'autrui | Le ministère public poursuit le conducteur pour mise en danger d'autrui. | تتابع النيابة العامة السائق من أجل تعريض الغير للخطر.
+non-assistance à personne en danger | Le témoin de l'accident est poursuivi pour non-assistance à personne en danger. | يتابع شاهد الحادث من أجل عدم تقديم المساعدة لشخص في خطر.
+omission de porter secours | L'omission de porter secours suppose que l'aide était possible sans danger. | يفترض الامتناع عن تقديم المساعدة أن العون كان ممكنا دون خطر.
+avortement | L'avortement n'est pas puni lorsqu'un médecin le pratique pour sauver la vie de la mère. | لا يعاقب على الإجهاض إذا أجراه طبيب لإنقاذ حياة الأم.
+délaissement d'enfant | Le délaissement d'enfant dans un lieu isolé est puni d'emprisonnement. | يعاقب على ترك الأطفال في مكان خال بالحبس.
+abandon de l'enfant | Les parents sont poursuivis pour abandon de l'enfant. | يتابع الوالدان من أجل التخلي عن الطفل.
+non-représentation d'enfant | Retenir l'enfant après la fin du droit de visite est une non-représentation d'enfant. | الاحتفاظ بالطفل بعد انتهاء حق الزيارة يعد عدم تسليم الطفل.
+non-paiement de la pension alimentaire | Le non-paiement de la pension alimentaire fixée par le juge est un délit. | عدم تسديد النفقة التي حددها القاضي جنحة.
+détournement de mineur | Le détournement de mineur est puni même sans menace. | يعاقب على إبعاد قاصر ولو دون تهديد.
+séquestration | La séquestration est un crime puni de réclusion. | حجز الأشخاص جناية يعاقب عليها بالسجن.
+prise d'otages | La prise d'otages vise à obtenir une rançon ou une décision. | يهدف أخذ الرهائن إلى الحصول على فدية أو قرار.
+otage | L'otage a été libéré sain et sauf. | أفرج عن الرهينة سالمة.
+trafic d'organes | La loi réprime le trafic d'organes humains. | يقمع القانون الاتجار بالأعضاء البشرية.
+trafic de migrants | Le réseau organisait le trafic de migrants par la mer. | كانت الشبكة تنظم تهريب المهاجرين عبر البحر.
+attentat à la pudeur | L'attentat à la pudeur sur un mineur est sévèrement puni. | يعاقب بشدة على الفعل المخل بالحياء ضد قاصر.
+outrage public à la pudeur | L'outrage public à la pudeur est un délit. | الفعل العلني المخل بالحياء جنحة.
+agression sexuelle | La victime d'une agression sexuelle est examinée par un médecin légiste. | يفحص طبيب شرعي ضحية اعتداء جنسي.
+inceste | Le Code pénal réprime l'inceste. | يقمع قانون العقوبات الفاحشة بين ذوي المحارم.
+adultère | La poursuite pour adultère exige la plainte du conjoint offensé. | تستلزم المتابعة من أجل الزنا شكوى الزوج المضرور.
+proxénétisme | Le proxénétisme est puni d'emprisonnement et d'amende. | يعاقب على الوساطة في الدعارة بالحبس والغرامة.
+prostitution | Le prévenu vivait de la prostitution d'autrui. | كان المتهم يعيش من دعارة الغير.
+incitation à la débauche | L'incitation à la débauche de mineurs est un délit. | التحريض على الفسق في حق القصر جنحة.
+harcèlement moral | La salariée signale un harcèlement moral au travail. | تبلغ العاملة عن تحرش معنوي في العمل.
+violence conjugale | Le Code pénal punit la violence conjugale. | يعاقب قانون العقوبات على العنف الزوجي.
+dénonciation calomnieuse | La dénonciation calomnieuse vise une personne innocente. | تستهدف الوشاية الكاذبة شخصا بريئا.
+atteinte à l'honneur | Le texte publié contient une atteinte à l'honneur d'un commerçant. | يتضمن النص المنشور مساسا بالشرف في حق تاجر.
+atteinte à la considération | Le plaignant invoque une atteinte à la considération dont il jouit dans son métier. | يتمسك الشاكي بمساس بالاعتبار الذي يحظى به في مهنته.
+violation du secret professionnel | Le médecin est poursuivi pour violation du secret professionnel. | يتابع الطبيب من أجل إفشاء السر المهني.
+violation du secret des correspondances | Ouvrir la lettre d'autrui est une violation du secret des correspondances. | يعد فتح رسالة الغير من قبيل انتهاك سرية المراسلات.
+discours de haine | La loi punit le discours de haine sur les réseaux sociaux. | يعاقب القانون على خطاب الكراهية في شبكات التواصل الاجتماعي.
+discrimination | La discrimination en raison de l'origine est punie par la loi. | يعاقب القانون على التمييز بين الأشخاص بسبب الأصل.
+menace de mort | La victime a reçu une menace de mort par téléphone. | تلقت الضحية تهديدا بالقتل عبر الهاتف.
+chantage | Le chantage consiste à réclamer de l'argent sous la menace d'une révélation. | الابتزاز هو المطالبة بمال تحت التهديد بإفشاء أمر.
+vol simple | Le vol simple est un délit. | السرقة البسيطة جنحة.
+vol qualifié | La chambre d'accusation renvoie l'accusé devant le tribunal criminel pour vol qualifié. | تحيل غرفة الاتهام المتهم على محكمة الجنايات من أجل السرقة الموصوفة.
+vol aggravé | Le vol aggravé est puni plus sévèrement que le vol simple. | يعاقب على السرقة المشددة بأشد مما يعاقب على السرقة البسيطة.
+vol avec violence | La victime du vol avec violence a été blessée. | جرحت ضحية السرقة بالعنف.
+vol à main armée | La bande a commis un vol à main armée dans une banque. | ارتكبت العصابة سرقة بالسلاح في بنك.
+vol avec effraction | Le vol avec effraction a eu lieu pendant la nuit. | وقعت السرقة بالكسر ليلا.
+effraction | La serrure porte des traces d'effraction. | يحمل القفل آثار كسر.
+escalade | Le voleur est entré par escalade du mur. | دخل السارق بتسلق الجدار.
+fausses clés | Le voleur a ouvert la porte avec de fausses clés. | فتح السارق الباب بمفاتيح مصطنعة.
+extorsion | Le prévenu a obtenu l'argent par extorsion. | حصل المتهم على المال عن طريق الانتزاع بالقوة.
+détournement | L'audit révèle un détournement dans la caisse de l'association. | يكشف التدقيق عن اختلاس في صندوق الجمعية.
+abus de biens sociaux | Le gérant est condamné pour abus de biens sociaux. | يحكم على المسير من أجل التعسف في استعمال أموال الشركة.
+abus de faiblesse | L'abus de faiblesse vise une personne âgée ou malade. | يستهدف استغلال حالة ضعف شخصا مسنا أو مريضا.
+abus de blanc-seing | L'abus de blanc-seing consiste à remplir par fraude un papier signé en blanc. | تتمثل خيانة الأمانة في ورقة موقعة على بياض في ملء الورقة بطريق الغش.
+destruction de biens | La destruction de biens d'autrui est punie par la loi. | يعاقب القانون على تخريب الأموال المملوكة للغير.
+dégradation | La dégradation d'un monument est un délit. | إتلاف نصب تذكاري جنحة.
+incendie volontaire | L'incendie volontaire d'une maison habitée est un crime. | الحريق العمدي لمنزل مسكون جناية.
+contrefaçon de monnaie | La contrefaçon de monnaie est un crime. | تزوير النقود جناية.
+fausse monnaie | La police a saisi de la fausse monnaie. | حجزت الشرطة نقودا مزورة.
+faux en écriture publique | Le faux en écriture publique commis par un fonctionnaire est un crime. | التزوير في محررات رسمية الذي يرتكبه موظف جناية.
+faux en écriture privée | Le faux en écriture privée porte sur un acte sous seing privé. | ينصب التزوير في محررات عرفية على عقد عرفي.
+faux en écriture de commerce | Une fausse facture peut constituer un faux en écriture de commerce. | قد تشكل فاتورة مزورة تزويرا في محررات تجارية.
+faux matériel | L'imitation d'une signature est un faux matériel. | تقليد توقيع تزوير مادي.
+faux intellectuel | Le faux intellectuel consiste à écrire des faits inexacts dans un document. | يتمثل التزوير المعنوي في كتابة وقائع غير صحيحة في وثيقة.
+falsification | La falsification du passeport a été découverte à la frontière. | اكتشف تزييف جواز السفر عند الحدود.
+usurpation d'identité | L'usurpation d'identité d'autrui sur Internet est punie. | يعاقب على انتحال هوية الغير على الإنترنت.
+usurpation de fonctions | Le faux policier est poursuivi pour usurpation de fonctions. | يتابع الشرطي المزيف من أجل انتحال وظيفة.
+usurpation de titre | Se dire avocat sans l'être est une usurpation de titre. | ادعاء صفة محام دون حق انتحال لقب.
+fausse déclaration | Une fausse déclaration à l'état civil est punie par la loi. | يعاقب القانون على تصريح كاذب أمام الحالة المدنية.
+faux serment | Le faux serment en matière civile est un délit. | اليمين الكاذبة في المواد المدنية جنحة.
+subornation de témoin | La subornation de témoin vise à obtenir un faux témoignage. | يهدف إغراء الشهود إلى الحصول على شهادة الزور.
+tromperie | La tromperie sur l'origine de la marchandise est punie. | يعاقب على الخداع في مصدر البضاعة.
+falsification de denrées | Le commerçant est condamné pour falsification de denrées. | يحكم على التاجر من أجل الغش في المواد الغذائية.
+spéculation illicite | La loi punit la spéculation illicite sur les marchandises de première nécessité. | يعاقب القانون على المضاربة غير المشروعة في البضائع الأساسية.
+usure | Le prêteur est poursuivi pour usure. | يتابع المقرض من أجل الربا.
+jeu de hasard | La roulette est un jeu de hasard. | الروليت لعبة حظ.
+loterie | L'organisation d'une loterie exige une autorisation. | يستلزم تنظيم يانصيب ترخيصا.
+atteinte à la sûreté de l'État | L'accusé répond d'une atteinte à la sûreté de l'État. | يسأل المتهم عن مساس بأمن الدولة.
+trahison | La trahison est commise par un citoyen au profit d'un État étranger. | يرتكب الخيانة مواطن لفائدة دولة أجنبية.
+espionnage | Le Code pénal appelle espionnage les actes de trahison commis par un étranger. | يسمي قانون العقوبات تجسسا أفعال الخيانة التي يرتكبها أجنبي.
+complot | Le complot contre l'autorité de l'État est un crime. | المؤامرة ضد سلطة الدولة جناية.
+attentat | L'attentat a fait plusieurs victimes. | خلف الاعتداء عدة ضحايا.
+rébellion | Résister par la force à un agent de l'autorité est une rébellion. | مقاومة عون السلطة بالقوة عصيان.
+attroupement | La police disperse un attroupement armé. | تفرق الشرطة تجمهرا مسلحا.
+acte terroriste | L'explosion est qualifiée d'acte terroriste. | يكيف الانفجار على أنه عمل إرهابي.
+apologie du terrorisme | L'apologie du terrorisme est punie par le Code pénal. | يعاقب قانون العقوبات على الإشادة بالأعمال الإرهابية.
+financement du terrorisme | La banque signale une opération soupçonnée de servir au financement du terrorisme. | يبلغ البنك عن عملية يشتبه في ارتباطها بتمويل الإرهاب.
+organisation terroriste | L'accusé appartenait à une organisation terroriste. | كان المتهم ينتمي إلى منظمة إرهابية.
+crime organisé | La lutte contre le crime organisé exige une coopération internationale. | تستلزم مكافحة الجريمة المنظمة تعاونا دوليا.
+groupe criminel organisé | Le vol a été commis par un groupe criminel organisé. | ارتكبت السرقة جماعة إجرامية منظمة.
+criminalité transnationale | La convention vise la criminalité transnationale. | تستهدف الاتفاقية الإجرام العابر للحدود.
+détention d'arme | La détention d'arme sans autorisation est punie. | يعاقب على حيازة سلاح دون ترخيص.
+port d'arme prohibée | Le prévenu est poursuivi pour port d'arme prohibée. | يتابع المتهم من أجل حمل سلاح محظور.
+arme à feu | La police a trouvé une arme à feu dans la voiture. | عثرت الشرطة على سلاح ناري في السيارة.
+arme blanche | La victime a été frappée avec une arme blanche. | ضربت الضحية بسلاح أبيض.
+munitions | Les gendarmes ont saisi des munitions dans la cave. | حجز الدرك ذخيرة في القبو.
+explosifs | Le transport d'explosifs exige une autorisation. | يستلزم نقل متفجرات ترخيصا.
+stupéfiants | La police a saisi des stupéfiants dans le véhicule. | حجزت الشرطة مخدرات في المركبة.
+substances psychotropes | La vente de substances psychotropes est strictement contrôlée. | يخضع بيع المؤثرات العقلية لرقابة صارمة.
+consommation de stupéfiants | La consommation de stupéfiants est un délit. | استهلاك المخدرات جنحة.
+détention de stupéfiants | Le prévenu a été arrêté pour détention de stupéfiants. | ألقي القبض على المتهم من أجل حيازة المخدرات.
+outrage à magistrat | L'outrage à magistrat peut être commis par des paroles ou par des gestes. | قد ترتكب إهانة قاض بالقول أو بالإشارة.
+outrage à agent public | Insulter un policier en service constitue un outrage à agent public. | يشكل سب شرطي أثناء الخدمة إهانة موظف.
+violences contre un agent public | Les violences contre un agent public en service sont punies d'emprisonnement. | يعاقب بالحبس على التعدي على موظف أثناء الخدمة.
+évasion | L'évasion d'un détenu est punie d'emprisonnement. | يعاقب على هروب محبوس بالحبس.
+bris de scellés | Le bris de scellés est un délit. | كسر الأختام جنحة.
+entrave à la justice | Faire disparaître une preuve est une entrave à la justice. | يعد إخفاء دليل من قبيل عرقلة سير العدالة.
+non-dénonciation de crime | La non-dénonciation de crime est punie par la loi. | يعاقب القانون على عدم التبليغ عن جناية.
+recel de malfaiteur | Cacher une personne recherchée pour un crime constitue un recel de malfaiteur. | يشكل إيواء شخص مبحوث عنه من أجل جناية إخفاء مجرم.
+concussion | Le fonctionnaire qui perçoit une somme non due commet une concussion. | الموظف الذي يقبض مبلغا غير مستحق يرتكب جريمة الغدر.
+prise illégale d'intérêts | L'élu est poursuivi pour prise illégale d'intérêts. | يتابع المنتخب من أجل أخذ فوائد بصفة غير قانونية.
+octroi d'avantages injustifiés | L'octroi d'avantages injustifiés dans un marché public est un délit. | منح امتيازات غير مبررة في صفقة عمومية جنحة.
+corruption active | La corruption active consiste à offrir un avantage indu à un agent public. | تتمثل الرشوة الإيجابية في عرض مزية غير مستحقة على عون عمومي.
+corruption passive | La corruption passive consiste, pour un agent public, à accepter un avantage indu. | تتمثل الرشوة السلبية في قبول عون عمومي مزية غير مستحقة.
+corrupteur | La loi punit le corrupteur qui offre de l'argent à un fonctionnaire. | يعاقب القانون كل راش يعرض مالا على موظف.
+corrompu | L'enquête a identifié un corrompu parmi les agents. | كشف التحقيق عن مرتش من بين الأعوان.
+pot-de-vin | L'entrepreneur a versé un pot-de-vin pour obtenir le contrat. | دفع المقاول رشوة مالية للحصول على العقد.
+cadeau | Le fonctionnaire refuse le cadeau offert par un usager. | يرفض الموظف هدية يقدمها مرتفق.
+conflit d'intérêts | L'agent public signale le conflit d'intérêts à son supérieur. | يبلغ العون العمومي رئيسه بتعارض المصالح.
+déclaration de patrimoine | L'élu dépose sa déclaration de patrimoine. | يودع المنتخب التصريح بالممتلكات.
+lanceur d'alerte | La loi protège le lanceur d'alerte. | يحمي القانون المبلغ عن الفساد.
+dilapidation | Le rapport d'inspection révèle une dilapidation de deniers publics. | يكشف تقرير التفتيش عن تبديد أموال عمومية.
+gaspillage | Le rapport critique le gaspillage des ressources de la commune. | ينتقد التقرير تبذير موارد البلدية.
+cybercriminalité | Une brigade spécialisée lutte contre la cybercriminalité. | تكافح فرقة متخصصة الجريمة المعلوماتية.
+accès frauduleux | L'accès frauduleux à un système informatique est un délit. | الدخول عن طريق الغش إلى منظومة معلوماتية جنحة.
+atteinte aux systèmes de traitement automatisé de données | Le Code pénal réprime l'atteinte aux systèmes de traitement automatisé de données. | يقمع قانون العقوبات المساس بأنظمة المعالجة الآلية للمعطيات.
+migration clandestine | La migration clandestine par la mer met des vies en danger. | تعرض الهجرة غير الشرعية عبر البحر أرواحا للخطر.
+infraction de change | L'infraction de change est constatée par les agents des douanes. | يعاين جريمة الصرف أعوان الجمارك.
+infraction douanière | La contrebande est une infraction douanière. | التهريب جريمة جمركية.
+infraction économique | La fraude fiscale est une infraction économique. | الغش الجبائي جريمة اقتصادية.
+infraction routière | L'excès de vitesse est une infraction routière. | تجاوز السرعة مخالفة مرورية.
+conduite en état d'ivresse | La conduite en état d'ivresse peut entraîner le retrait du permis de conduire. | قد يترتب على السياقة في حالة سكر سحب رخصة السياقة.
+délit de fuite | Le conducteur qui quitte les lieux de l'accident commet un délit de fuite. | السائق الذي يغادر مكان الحادث يرتكب جنحة الفرار.
+mise en mouvement de l'action publique | Le ministère public décide la mise en mouvement de l'action publique. | تقرر النيابة العامة تحريك الدعوى العمومية.
+exercice de l'action publique | L'exercice de l'action publique est confié aux magistrats du ministère public. | يعهد بمباشرة الدعوى العمومية إلى قضاة النيابة العامة.
+extinction de l'action publique | Le décès du prévenu entraîne l'extinction de l'action publique. | يترتب على وفاة المتهم انقضاء الدعوى العمومية.
+opportunité des poursuites | Le procureur de la République apprécie l'opportunité des poursuites. | يقدر وكيل الجمهورية ملاءمة المتابعة.
+réquisitoire introductif | Le juge d'instruction reçoit un réquisitoire introductif du procureur de la République. | يتلقى قاضي التحقيق طلبا افتتاحيا لإجراء التحقيق من وكيل الجمهورية.
+réquisitoire définitif | Le dossier contient le réquisitoire définitif du procureur de la République. | يتضمن الملف الطلبات الختامية لوكيل الجمهورية.
+réquisitions | Le tribunal entend les réquisitions du ministère public. | تسمع المحكمة التماسات النيابة العامة.
+plainte avec constitution de partie civile | La victime dépose une plainte avec constitution de partie civile devant le juge d'instruction. | تودع الضحية شكوى مصحوبة بادعاء مدني أمام قاضي التحقيق.
+retrait de plainte | Dans quelques délits, le retrait de plainte met fin aux poursuites. | في بعض الجنح، يضع سحب الشكوى حدا للمتابعة.
+agent de police judiciaire | L'agent de police judiciaire assiste l'officier dans l'enquête. | يساعد عون الشرطة القضائية الضابط في التحقيق.
+gendarmerie nationale | La gendarmerie nationale enquête dans les zones rurales. | يحقق الدرك الوطني في المناطق الريفية.
+sûreté nationale | Les agents de la sûreté nationale contrôlent la circulation en ville. | يراقب أعوان الأمن الوطني حركة المرور في المدينة.
+enquête de flagrance | L'officier de police judiciaire conduit l'enquête de flagrance. | يباشر ضابط الشرطة القضائية التحري في حالة التلبس.
+scène de crime | La police protège la scène de crime. | تحمي الشرطة مسرح الجريمة.
+indices graves et concordants | Il existe contre le suspect des indices graves et concordants. | توجد ضد المشتبه فيه دلائل قوية ومتماسكة.
+saisie des objets | Le procès-verbal mentionne la saisie des objets trouvés. | يذكر المحضر حجز الأشياء التي عثر عليها.
+scellés | Les objets saisis sont placés sous scellés. | توضع الأشياء المحجوزة في أحراز.
+visite domiciliaire | La visite domiciliaire a lieu en présence de l'occupant. | يتم تفتيش المساكن بحضور صاحب المسكن.
+mandat de perquisition | L'officier de police judiciaire présente le mandat de perquisition. | يستظهر ضابط الشرطة القضائية الإذن بالتفتيش.
+interception des correspondances | Le procureur de la République autorise l'interception des correspondances. | يأذن وكيل الجمهورية باعتراض المراسلات.
+écoute téléphonique | L'écoute téléphonique est autorisée par un magistrat. | يأذن قاض بالتنصت الهاتفي.
+infiltration | Un officier de police judiciaire mène l'infiltration du réseau. | يقوم ضابط الشرطة القضائية بعملية تسرب داخل الشبكة.
+livraison surveillée | La livraison surveillée permet de découvrir les trafiquants. | يسمح التسليم المراقب باكتشاف المهربين.
+prélèvement biologique | Le juge autorise un prélèvement biologique sur le suspect. | يأذن القاضي بأخذ عينة بيولوجية من المشتبه فيه.
+expertise médico-légale | Le juge d'instruction ordonne une expertise médico-légale. | يأمر قاضي التحقيق بخبرة طبية شرعية.
+autopsie | L'autopsie révèle la cause de la mort. | يكشف تشريح الجثة سبب الوفاة.
+médecin légiste | Le médecin légiste rédige son rapport. | يحرر الطبيب الشرعي تقريره.
+empreintes digitales | La police relève les empreintes digitales sur la porte. | ترفع الشرطة بصمات الأصابع عن الباب.
+empreinte génétique | L'empreinte génétique confirme l'identité du suspect. | تؤكد البصمة الوراثية هوية المشتبه فيه.
+identification | L'identification de la victime a pris plusieurs jours. | استغرق تحديد هوية الضحية عدة أيام.
+contrôle d'identité | La police procède à un contrôle d'identité dans la gare. | تقوم الشرطة بمراقبة الهوية في المحطة.
+interpellation | L'interpellation du suspect a eu lieu dans la rue. | تم استيقاف المشتبه فيه في الشارع.
+arrestation | L'arrestation du fugitif a eu lieu à la frontière. | تم إلقاء القبض على الفار عند الحدود.
+prolongation de la garde à vue | Le procureur de la République autorise la prolongation de la garde à vue. | يأذن وكيل الجمهورية بتمديد التوقيف للنظر.
+droits de la personne gardée à vue | L'officier de police judiciaire informe le suspect des droits de la personne gardée à vue. | يعلم ضابط الشرطة القضائية المشتبه فيه بحقوق الموقوف للنظر.
+examen médical | La personne gardée à vue a droit à un examen médical. | للموقوف للنظر الحق في فحص طبي.
+présentation devant le procureur | La garde à vue peut se terminer par la présentation devant le procureur. | قد ينتهي التوقيف للنظر بالتقديم أمام وكيل الجمهورية.
+procès-verbal d'audition | Le témoin signe le procès-verbal d'audition. | يوقع الشاهد على محضر السماع.
+procès-verbal d'interrogatoire | Le greffier rédige le procès-verbal d'interrogatoire. | يحرر أمين الضبط محضر الاستجواب.
+aveux | Les aveux du prévenu sont laissés à l'appréciation du juge. | تترك اعترافات المتهم لتقدير القاضي.
+ouverture d'une information | Le procureur de la République demande l'ouverture d'une information. | يطلب وكيل الجمهورية فتح تحقيق.
+interrogatoire de première comparution | Lors de l'interrogatoire de première comparution, le juge informe l'inculpé des faits reprochés. | خلال الاستجواب عند الحضور الأول، يعلم القاضي المتهم بالوقائع المنسوبة إليه.
+reconstitution des faits | Le juge d'instruction organise une reconstitution des faits. | ينظم قاضي التحقيق إعادة تمثيل الجريمة.
+témoin assisté | Le témoin assisté est entendu en présence de son avocat. | يسمع الشاهد المستفيد من مساعدة محام بحضور محاميه.
+mandat de comparution | Le juge d'instruction délivre un mandat de comparution. | يصدر قاضي التحقيق أمرا بالحضور.
+mandat d'arrêt international | Un mandat d'arrêt international est lancé contre le fugitif. | يصدر أمر دولي بالقبض ضد الفار.
+ordonnance de mise en détention | Le juge d'instruction rend une ordonnance de mise en détention. | يصدر قاضي التحقيق أمرا بالوضع في الحبس المؤقت.
+ordonnance de mise en liberté | L'inculpé quitte la prison après l'ordonnance de mise en liberté. | يغادر المتهم المؤسسة العقابية بعد الأمر بالإفراج.
+cautionnement pénal | La mise en liberté de l'étranger peut être soumise à un cautionnement pénal. | قد يخضع الإفراج عن الأجنبي لكفالة مالية.
+ordonnance de règlement | Le juge d'instruction termine son travail par une ordonnance de règlement. | يختم قاضي التحقيق عمله بأمر بالتصرف في التحقيق.
+ordonnance de transmission des pièces | Le juge d'instruction rend une ordonnance de transmission des pièces au procureur général. | يصدر قاضي التحقيق أمرا بإرسال المستندات إلى النائب العام.
+arrêt de mise en accusation | L'arrêt de mise en accusation est notifié à l'accusé détenu. | يبلغ قرار الإحالة على محكمة الجنايات إلى المتهم المحبوس.
+charges suffisantes | Le juge d'instruction estime qu'il existe des charges suffisantes contre l'inculpé. | يرى قاضي التحقيق أنه توجد أعباء كافية ضد المتهم.
+personne détenue | Toute personne détenue a droit à la visite de sa famille. | لكل شخص محبوس الحق في زيارة أفراد الأسرة.
+jugement de condamnation | Le jugement de condamnation fixe la peine. | يحدد الحكم بالإدانة العقوبة.
+jugement de relaxe | Le prévenu quitte le tribunal après un jugement de relaxe. | يغادر المتهم المحكمة بعد حكم بالبراءة.
+déclaration de culpabilité | La déclaration de culpabilité précède le choix de la peine. | يسبق التصريح بالإدانة اختيار العقوبة.
+verdict | Le président lit le verdict devant l'accusé. | يتلو الرئيس منطوق حكم المحلفين أمام المتهم.
+doute | Le juge relaxe le prévenu au bénéfice du doute. | يقضي القاضي ببراءة المتهم لفائدة الشك.
+jugement par contumace | L'accusé en fuite est condamné par un jugement par contumace. | يحكم على المتهم الفار بحكم غيابي في جناية.
+opposition au jugement par défaut | Le prévenu forme une opposition au jugement par défaut. | يرفع المتهم معارضة في الحكم الغيابي.
+appel correctionnel | L'appel correctionnel est porté devant la chambre pénale de la cour. | يرفع الاستئناف في الجنح أمام الغرفة الجزائية بالمجلس القضائي.
+appel criminel | L'appel criminel est possible depuis la réforme de la procédure pénale. | أصبح الاستئناف في الجنايات ممكنا منذ إصلاح الإجراءات الجزائية.
+tribunal criminel d'appel | Le tribunal criminel d'appel siège au chef-lieu de la cour. | تنعقد محكمة الجنايات الاستئنافية بمقر المجلس القضائي.
+audience correctionnelle | Le prévenu est convoqué à l'audience correctionnelle. | يستدعى المتهم إلى جلسة الجنح.
+ordonnance pénale | Le juge statue par ordonnance pénale sans audience. | يفصل القاضي بأمر جزائي دون جلسة.
+composition pénale | Le procureur de la République propose une composition pénale au suspect. | يقترح وكيل الجمهورية تسوية جزائية على المشتبه فيه.
+comparution sur reconnaissance préalable de culpabilité | La comparution sur reconnaissance préalable de culpabilité évite un long procès. | يجنب المثول بناء على اعتراف مسبق بالذنب محاكمة طويلة.
+amende forfaitaire | Le conducteur paie une amende forfaitaire. | يدفع السائق غرامة جزافية.
+révision du procès pénal | La révision du procès pénal est demandée après la découverte d'un fait nouveau. | تطلب إعادة النظر في الحكم الجزائي بعد اكتشاف واقعة جديدة.
+erreur judiciaire | La victime d'une erreur judiciaire reçoit une indemnité de l'État. | تتلقى ضحية خطأ قضائي تعويضا من الدولة.
+indemnisation de la détention injustifiée | Une commission statue sur l'indemnisation de la détention injustifiée. | تفصل لجنة في التعويض عن الحبس المؤقت غير المبرر.
+protection des témoins | La loi organise la protection des témoins et des experts. | ينظم القانون حماية الشهود والخبراء.
+témoin protégé | L'identité du témoin protégé reste secrète. | تبقى هوية الشاهد المحمي سرية.
+exécution des peines | Le ministère public veille à l'exécution des peines. | تسهر النيابة العامة على تنفيذ العقوبات.
+administration pénitentiaire | L'administration pénitentiaire gère les établissements pénitentiaires. | تسير إدارة السجون المؤسسات العقابية.
+établissement de prévention | Le prévenu est détenu dans un établissement de prévention. | يحبس المتهم في مؤسسة وقاية.
+établissement de rééducation | Le condamné purge sa peine dans un établissement de rééducation. | يقضي المحكوم عليه عقوبته في مؤسسة إعادة التربية.
+établissement de réadaptation | Les longues peines sont exécutées dans un établissement de réadaptation. | تنفذ العقوبات الطويلة في مؤسسة إعادة التأهيل.
+centre spécialisé pour mineurs | Le mineur condamné est placé dans un centre spécialisé pour mineurs. | يوضع القاصر المحكوم عليه في مركز متخصص للأحداث.
+écrou | L'écrou mentionne la date d'entrée du détenu. | يذكر القيد في سجل الحبس تاريخ دخول المحبوس.
+levée d'écrou | La levée d'écrou a lieu le jour de la sortie de prison. | يتم رفع القيد من سجل الحبس يوم الخروج من المؤسسة العقابية.
+régime de détention | Le régime de détention dépend de la peine prononcée. | يتوقف نظام الاحتباس على العقوبة المنطوق بها.
+isolement | Le détenu dangereux est placé à l'isolement. | يوضع المحبوس الخطير في عزلة.
+permission de sortie | Le juge de l'application des peines accorde une permission de sortie. | يمنح قاضي تطبيق العقوبات إجازة الخروج.
+semi-liberté | La semi-liberté permet au condamné de travailler hors de la prison le jour. | تسمح الحرية النصفية للمحكوم عليه بالعمل خارج المؤسسة العقابية نهارا.
+chantier extérieur | Le condamné travaille dans un chantier extérieur. | يعمل المحكوم عليه في ورشة خارجية.
+milieu ouvert | Le condamné exécute la fin de sa peine en milieu ouvert. | ينفذ المحكوم عليه نهاية عقوبته في بيئة مفتوحة.
+milieu fermé | La peine commence en milieu fermé. | تبدأ العقوبة في بيئة مغلقة.
+réinsertion sociale | La peine vise la réinsertion sociale du condamné. | تهدف العقوبة إلى إعادة الإدماج الاجتماعي للمحكوم عليه.
+rééducation | Le travail en prison participe à la rééducation du détenu. | يساهم العمل داخل المؤسسة العقابية في إعادة تربية المحبوس.
+remise de peine | Le condamné obtient une remise de peine pour bonne conduite. | يحصل المحكوم عليه على تخفيض العقوبة لحسن السيرة.
+suspension de la peine | Le juge accorde une suspension de la peine pour raison médicale. | يمنح القاضي توقيفا مؤقتا لتطبيق العقوبة لسبب طبي.
+commission de l'application des peines | La commission de l'application des peines examine la demande du détenu. | تدرس لجنة تطبيق العقوبات طلب المحبوس.
+libéré conditionnel | Le libéré conditionnel respecte les obligations fixées par le juge. | يحترم المفرج عنه بشروط الالتزامات التي حددها القاضي.
+assistance post-pénale | L'assistance post-pénale aide l'ancien détenu à trouver un emploi. | تساعد الرعاية اللاحقة المحبوس السابق على إيجاد عمل.
+transfèrement | Le transfèrement vers un autre établissement est décidé par l'administration. | تقرر الإدارة تحويل المحبوس إلى مؤسسة أخرى.
+surpopulation carcérale | Les peines alternatives peuvent réduire la surpopulation carcérale. | قد تقلص العقوبات البديلة من اكتظاظ السجون.

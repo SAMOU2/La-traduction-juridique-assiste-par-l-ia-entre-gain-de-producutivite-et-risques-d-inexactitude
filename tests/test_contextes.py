@@ -1,7 +1,7 @@
 """Contextes d'emploi d'un terme, cherchés dans tout le glossaire (④ « Contextualisation »)."""
 
 import pytest
-from conftest import ENTREES_COMPLETES
+from conftest import ENTREES_COMPLETES, TERMES_SEULS_AVEC_EXEMPLE
 
 from traducteur.contextes import DEFINITION, EXEMPLE, NOMBRE_VISE, PROPRE, Emploi, emplois
 from traducteur.glossaire import Glossaire
@@ -278,23 +278,43 @@ def test_contextes_du_glossaire_fourni(glossaire_fourni):
 
 
 def test_contextes_des_termes_seuls(glossaire_fourni):
-    """Un terme seul n'a pas d'exemple à lui : la contextualisation montre les phrases d'autres entrées qui l'emploient.
+    """Un terme seul a sa phrase d'exemple, ou bien les phrases d'autres entrées qui l'emploient.
 
-    Le test porte sur un terme seul sur vingt, pour rester rapide : chaque recherche parcourt tout le glossaire.
+    Depuis la version 0.11, les termes du vocabulaire général ont leur phrase (noms, adjectifs, verbes et
+    locutions), ainsi que les noms de trois domaines : droit civil, justice et procédure, droit pénal. Les termes
+    des autres domaines la recevront ensuite ; en attendant, la contextualisation leur prête les phrases d'autres
+    entrées. Le test porte sur un terme seul sur vingt, pour rester rapide : chaque recherche parcourt tout le
+    glossaire.
     """
     seuls = glossaire_fourni.entrees[ENTREES_COMPLETES:]
-    assert seuls and not any(element.contextes for element in seuls)
+    pourvus = [element for element in seuls if element.contextes]
+    assert len(pourvus) >= TERMES_SEULS_AVEC_EXEMPLE
+    # Une seule phrase par terme, rédigée pour le glossaire : elle porte la mention « à vérifier ».
+    assert all(len(element.contextes) == 1 and element.contextes[0].a_verifier for element in pourvus)
     for element in seuls[::20]:
         trouves = emplois(glossaire_fourni, element)
         assert len(trouves) <= NOMBRE_VISE, element.terme_fr
+        # La phrase du terme vient en premier ; les autres sont prises ailleurs.
+        assert [emploi.origine == PROPRE for emploi in trouves] == [
+            rang < len(element.contextes) for rang in range(len(trouves))], element.terme_fr
         for emploi in trouves:
-            assert emploi.origine != PROPRE and emploi.entree is not element
+            assert (emploi.entree is element) == (emploi.origine == PROPRE)
             assert positions_du_terme(emploi.fr, element, FR), (element.terme_fr, emploi.fr)
             assert positions_du_terme(emploi.ar, element, AR), (element.terme_fr, emploi.ar)
-    # « protection » : absente du glossaire jusqu'à la version 0.7 ; ses contextes viennent d'autres entrées.
+    # « protection » : absente du glossaire jusqu'à la version 0.7. Sa phrase, puis celle d'une autre entrée.
     protection = entree(glossaire_fourni, "protection")
     assert protection.numero > ENTREES_COMPLETES and not protection.definition_fr
-    assert [emploi.origine for emploi in emplois(glossaire_fourni, protection)] == [EXEMPLE, EXEMPLE]
+    assert [emploi.origine for emploi in emplois(glossaire_fourni, protection)] == [PROPRE, EXEMPLE]
+    # Un verbe : la phrase l'emploie au passé dans les deux langues, et le verbe y est repéré.
+    proteger, = entree(glossaire_fourni, "protéger").contextes
+    assert "a protégé" in proteger.fr and proteger.ar.startswith("حمى ")
+    # Un nom d'un domaine qui a reçu sa phrase (procédure pénale) : elle vient avant celle d'une autre entrée.
+    doute = entree(glossaire_fourni, "doute")
+    assert doute.numero > ENTREES_COMPLETES and doute.domaines[0] == "Procédure pénale"
+    assert [emploi.origine for emploi in emplois(glossaire_fourni, doute)] == [PROPRE, EXEMPLE]
+    # Un terme d'un domaine qui n'a pas encore sa phrase : celle d'une autre entrée, ou rien.
+    sans_phrase = next(element for element in seuls if not element.contextes)
+    assert all(emploi.origine != PROPRE for emploi in emplois(glossaire_fourni, sans_phrase))
 
 
 def test_les_deux_sens_d_action_ont_chacun_leurs_contextes(glossaire_fourni):

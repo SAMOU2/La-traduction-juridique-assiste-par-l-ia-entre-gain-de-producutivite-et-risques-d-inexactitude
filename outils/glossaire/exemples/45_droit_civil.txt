@@ -1,0 +1,356 @@
+# Phrases d'exemple de termes/45_droit_civil.txt : terme | phrase française | phrase arabe
+contrat-cadre | Le contrat-cadre fixe les conditions générales des commandes futures. | يحدد عقد الإطار الشروط العامة للطلبيات المقبلة.
+contrat-type | L'assureur propose un contrat-type à ses clients. | يقترح المؤمن عقدا نموذجيا على زبائنه.
+contrat nommé | La vente est un contrat nommé. | البيع عقد مسمى.
+contrat innommé | Le contrat innommé obéit aux règles générales des obligations. | يخضع العقد غير المسمى للقواعد العامة للالتزامات.
+contrat à exécution successive | Le bail est un contrat à exécution successive. | الإيجار عقد مستمر التنفيذ.
+contrat à exécution instantanée | La vente au comptant est un contrat à exécution instantanée. | البيع نقدا عقد فوري التنفيذ.
+contrat commutatif | Dans un contrat commutatif, chaque partie connaît dès le départ la prestation qu'elle doit. | في العقد المحدد، يعرف كل طرف منذ البداية الأداء الواجب عليه.
+contrat réel | Le contrat réel ne se forme que par la remise de la chose. | لا ينعقد العقد العيني إلا بتسليم الشيء.
+avant-contrat | L'avant-contrat prépare la conclusion de la vente. | يمهد العقد التمهيدي لإبرام البيع.
+contrat préliminaire | Les parties signent un contrat préliminaire avant l'acte définitif. | يوقع الطرفان عقدا ابتدائيا قبل العقد النهائي.
+pacte de préférence | Le pacte de préférence donne au bénéficiaire la priorité en cas de vente. | يمنح الوعد بالتفضيل المستفيد الأولوية في حالة البيع.
+lettre d'intention | La lettre d'intention exprime la volonté de négocier. | يعبر خطاب النوايا عن إرادة التفاوض.
+formation du contrat | La formation du contrat suppose l'accord des parties. | يفترض تكوين العقد اتفاق الطرفين.
+interprétation du contrat | L'interprétation du contrat recherche la commune intention des parties. | يبحث في تفسير العقد عن النية المشتركة للطرفين.
+révision du contrat | Un événement exceptionnel peut justifier la révision du contrat par le juge. | قد يبرر حادث استثنائي مراجعة العقد من القاضي.
+modification du contrat | La modification du contrat exige l'accord des deux parties. | يستلزم تعديل العقد اتفاق الطرفين.
+durée du contrat | La durée du contrat est fixée à deux ans. | حددت مدة العقد بسنتين.
+objet du contrat | L'objet du contrat est la construction d'une maison. | محل العقد هو بناء منزل.
+cause du contrat | La cause du contrat doit être conforme à l'ordre public. | يجب أن يكون سبب العقد مطابقا للنظام العام.
+parties au contrat | Les parties au contrat signent chaque page. | يوقع أطراف العقد كل صفحة.
+cocontractant | Chaque partie doit informer son cocontractant. | يجب على كل طرف أن يعلم المتعاقد الآخر.
+tiers de bonne foi | La loi protège le tiers de bonne foi qui a acquis le bien. | يحمي القانون الغير حسن النية الذي اكتسب المال.
+échange des consentements | Le contrat naît de l'échange des consentements. | ينشأ العقد عن تبادل الرضا.
+accord de volontés | Le contrat repose sur un accord de volontés. | يقوم العقد على توافق الإرادتين.
+manifestation de volonté | La signature du contrat est une manifestation de volonté. | توقيع العقد تعبير عن الإرادة.
+volonté unilatérale | La promesse de récompense naît d'une volonté unilatérale. | ينشأ الوعد بجائزة عن إرادة منفردة.
+promesse unilatérale | La promesse unilatérale de vente n'engage que le vendeur. | لا يلزم الوعد الانفرادي بالبيع إلا البائع.
+promesse de récompense | La promesse de récompense faite au public doit être tenue. | يجب الوفاء بالوعد بجائزة الموجه إلى الجمهور.
+silence | En principe, le silence du destinataire ne vaut pas acceptation. | مبدئيا، لا يعد سكوت المرسل إليه قبولا.
+réticence dolosive | La réticence dolosive du vendeur permet à l'acheteur de demander l'annulation. | يسمح الكتمان التدليسي من البائع للمشتري بطلب الإبطال.
+manœuvres frauduleuses | Le dol suppose des manœuvres frauduleuses. | يفترض التدليس طرقا احتيالية.
+erreur sur la substance | L'erreur sur la substance vicie le consentement. | يعيب الغلط في صفة الشيء الرضا.
+erreur sur la personne | L'erreur sur la personne permet d'annuler un contrat conclu en considération de celle-ci. | يسمح الغلط في الشخص بإبطال العقد المبرم لاعتبار شخصي.
+erreur de droit | L'erreur de droit peut justifier l'annulation du contrat. | قد يبرر الغلط في القانون إبطال العقد.
+crainte | La crainte inspirée par la menace vicie le consentement. | تعيب الرهبة الناتجة عن التهديد الرضا.
+exploitation | L'exploitation de la faiblesse d'un contractant permet d'annuler le contrat. | يسمح استغلال ضعف المتعاقد بإبطال العقد.
+obligation de faire | L'entrepreneur est tenu d'une obligation de faire. | يقع على المقاول التزام بعمل.
+obligation de ne pas faire | La clause de non-concurrence crée une obligation de ne pas faire. | ينشئ شرط عدم المنافسة التزاما بالامتناع عن عمل.
+obligation de donner | Le vendeur assume une obligation de donner. | يتحمل البائع التزاما بإعطاء شيء.
+obligation de garantie | Le vendeur est tenu d'une obligation de garantie contre les vices cachés. | يقع على البائع التزام بالضمان ضد العيوب الخفية.
+obligation de sécurité | Le transporteur est tenu d'une obligation de sécurité envers les voyageurs. | يقع على الناقل التزام بالسلامة تجاه المسافرين.
+obligation d'information | Le vendeur professionnel a une obligation d'information envers l'acheteur. | يقع على البائع المهني التزام بالإعلام تجاه المشتري.
+obligation de conseil | Le banquier a une obligation de conseil envers son client. | يقع على المصرفي التزام بالنصح تجاه زبونه.
+obligation solidaire | Dans une obligation solidaire, le créancier peut réclamer toute la dette à un seul débiteur. | في الالتزام التضامني، يجوز للدائن أن يطالب مدينا واحدا بكل الدين.
+obligation alternative | L'obligation alternative s'éteint par l'exécution de l'une des deux prestations. | ينقضي الالتزام التخييري بتنفيذ أحد الأداءين.
+obligation facultative | Dans l'obligation facultative, le débiteur peut se libérer par une autre prestation. | في الالتزام البدلي، يجوز للمدين أن يبرئ ذمته بأداء آخر.
+obligation indivisible | L'obligation indivisible doit être exécutée en entier. | يجب تنفيذ الالتزام غير القابل للانقسام كاملا.
+obligation conditionnelle | L'obligation conditionnelle dépend d'un événement futur et incertain. | يتوقف الالتزام المعلق على شرط على أمر مستقبل غير محقق.
+obligation à terme | L'obligation à terme n'est exigible qu'à l'échéance. | لا يكون الالتزام المضاف إلى أجل مستحق الأداء إلا عند حلول أجل الاستحقاق.
+obligation pécuniaire | Le paiement du loyer est une obligation pécuniaire. | دفع بدل الإيجار التزام نقدي.
+obligation accessoire | Le cautionnement est une obligation accessoire. | الكفالة التزام تبعي.
+obligation principale | La nullité de l'obligation principale entraîne celle du cautionnement. | يترتب على بطلان الالتزام الأصلي بطلان الكفالة.
+solidarité active | La solidarité active permet à chaque créancier de réclamer toute la dette. | يسمح التضامن بين الدائنين لكل دائن بالمطالبة بكل الدين.
+solidarité passive | La solidarité passive permet au créancier de réclamer toute la dette à un seul débiteur. | يسمح التضامن بين المدينين للدائن بمطالبة مدين واحد بكل الدين.
+indivisibilité | L'indivisibilité de la dette oblige chaque débiteur au paiement du tout. | يلزم عدم القابلية للانقسام كل مدين بوفاء الدين كله.
+source de l'obligation | Le contrat est la source de l'obligation la plus fréquente. | العقد هو مصدر الالتزام الأكثر شيوعا.
+extinction de l'obligation | Le paiement entraîne l'extinction de l'obligation. | يترتب على الوفاء انقضاء الالتزام.
+exécution de l'obligation | Le créancier peut demander l'exécution de l'obligation en nature. | يجوز للدائن أن يطلب تنفيذ الالتزام عينا.
+transmission de l'obligation | La cession de créance opère la transmission de l'obligation. | يترتب على حوالة الحق انتقال الالتزام.
+effets de l'obligation | Le Code civil consacre un titre aux effets de l'obligation. | يخصص القانون المدني بابا لآثار الالتزام.
+exécution volontaire | L'exécution volontaire de la dette évite la saisie. | يجنب التنفيذ الاختياري للدين الحجز.
+exécution partielle | Le créancier peut refuser une exécution partielle. | يجوز للدائن أن يرفض التنفيذ الجزئي.
+exécution défectueuse | L'exécution défectueuse des travaux engage la responsabilité de l'entrepreneur. | يرتب التنفيذ المعيب للأشغال مسؤولية المقاول.
+exécution tardive | L'exécution tardive ouvre droit à des dommages-intérêts moratoires. | يخول التنفيذ المتأخر الحق في تعويض عن التأخير.
+retard dans l'exécution | Le retard dans l'exécution est établi par une mise en demeure. | يثبت التأخر في التنفيذ بإعذار.
+inexécution totale | L'inexécution totale du contrat justifie sa résolution. | يبرر عدم التنفيذ الكلي للعقد فسخه.
+impossibilité d'exécution | L'impossibilité d'exécution libère le débiteur lorsqu'elle ne vient pas de sa faute. | تبرئ استحالة التنفيذ ذمة المدين إذا لم تكن ناتجة عن خطئه.
+cause étrangère | Le débiteur est libéré s'il prouve une cause étrangère. | تبرأ ذمة المدين إذا أثبت سببا أجنبيا.
+fait du tiers | Le fait du tiers peut exonérer le gardien de la chose. | قد يعفي فعل الغير حارس الشيء من المسؤولية.
+fait de la victime | Le fait de la victime peut réduire le montant de la réparation. | قد ينقص فعل المضرور من مبلغ التعويض.
+fait du créancier | Le fait du créancier a rendu l'exécution impossible. | جعل فعل الدائن التنفيذ مستحيلا.
+dommages-intérêts moratoires | Les dommages-intérêts moratoires réparent le retard de paiement. | يجبر التعويض عن التأخير التأخر في الدفع.
+dommages-intérêts compensatoires | Les dommages-intérêts compensatoires remplacent la prestation non exécutée. | يحل التعويض عن عدم التنفيذ محل الأداء غير المنفذ.
+intérêts moratoires | Le contrat de prêt bancaire fixe le taux des intérêts moratoires. | يحدد عقد القرض البنكي نسبة فوائد التأخير.
+réparation intégrale | Le tribunal accorde au locataire la réparation intégrale de son préjudice. | تمنح المحكمة المستأجر تعويضا كاملا عن ضرره.
+réparation en nature | Le juge ordonne une réparation en nature lorsqu'elle est possible. | يأمر القاضي بتعويض عيني عندما يكون ممكنا.
+réparation par équivalent | La réparation par équivalent prend la forme d'une somme d'argent. | يتخذ التعويض بمقابل شكل مبلغ من النقود.
+clause limitative de responsabilité | Le contrat de transport contient une clause limitative de responsabilité. | يتضمن عقد النقل شرطا محددا للمسؤولية.
+clause exonératoire de responsabilité | La clause exonératoire de responsabilité ne couvre pas la fraude du débiteur. | لا يشمل شرط الإعفاء من المسؤولية غش المدين.
+clause de non-concurrence | La clause de non-concurrence est limitée dans le temps et dans l'espace. | يحدد شرط عدم المنافسة من حيث الزمان والمكان.
+clause de réserve de propriété | La clause de réserve de propriété retarde le transfert jusqu'au paiement complet. | يؤخر شرط الاحتفاظ بالملكية نقلها إلى غاية الوفاء الكامل.
+clause de confidentialité | La clause de confidentialité interdit de divulguer les informations reçues. | يمنع شرط السرية إفشاء المعلومات المتلقاة.
+clause d'exclusivité | La clause d'exclusivité limite la distribution à un seul revendeur. | يقصر شرط الحصرية التوزيع على بائع واحد.
+clause attributive de compétence | La clause attributive de compétence désigne le tribunal d'Alger. | يعين شرط إسناد الاختصاص محكمة الجزائر.
+clause de style | Cette formule habituelle n'est qu'une clause de style. | هذه العبارة المعتادة مجرد شرط مألوف.
+clause léonine | La clause léonine prive un associé de toute part dans les bénéfices. | يحرم شرط الأسد الشريك من كل نصيب في الأرباح.
+paiement partiel | Le créancier n'est pas tenu d'accepter un paiement partiel. | لا يجبر الدائن على قبول وفاء جزئي.
+paiement anticipé | Le débiteur propose un paiement anticipé de sa dette. | يقترح المدين وفاء معجلا لدينه.
+paiement par subrogation | Le paiement par subrogation transmet la créance à celui qui a payé. | ينقل الوفاء مع الحلول الدين إلى من قام بالوفاء.
+offre réelle | Le débiteur fait une offre réelle lorsque le créancier refuse le paiement. | يقوم المدين بعرض حقيقي عندما يرفض الدائن الوفاء.
+imputation des paiements | L'imputation des paiements se fait d'abord sur les frais. | يتم خصم المدفوعات أولا من المصاريف.
+lieu du paiement | Le contrat précise le lieu du paiement. | يبين العقد مكان الوفاء.
+date du paiement | La quittance mentionne la date du paiement. | تذكر المخالصة تاريخ الوفاء.
+preuve du paiement | La preuve du paiement incombe au débiteur. | يقع إثبات الوفاء على المدين.
+reconnaissance de dette | Le débiteur a signé une reconnaissance de dette devant le notaire. | وقع المدين اعترافا بدين أمام الموثق.
+délégation de paiement | La délégation de paiement suppose l'accord du créancier. | تفترض الإنابة في الوفاء اتفاقا مع الدائن.
+compensation légale | La compensation légale éteint deux dettes réciproques. | تنهي المقاصة القانونية دينين متبادلين.
+compensation judiciaire | Le juge prononce la compensation judiciaire entre les deux créances. | ينطق القاضي بالمقاصة القضائية بين الدينين.
+compensation conventionnelle | Les parties conviennent d'une compensation conventionnelle. | يتفق الطرفان على مقاصة اتفاقية.
+délai de prescription | Le juge vérifie si le délai de prescription est écoulé. | يتحقق القاضي من انقضاء مدة التقادم.
+prescription quinquennale | Le loyer est soumis à la prescription quinquennale. | يخضع بدل الإيجار للتقادم الخمسي.
+prescription décennale | Le possesseur de bonne foi qui a un juste titre bénéficie de la prescription décennale. | يستفيد الحائز بحسن نية الذي له سند صحيح من التقادم العشري.
+renonciation à la prescription | La renonciation à la prescription ne peut pas être décidée à l'avance. | لا يجوز تقرير النزول عن التقادم مسبقا.
+débiteur cédé | La cession est notifiée au débiteur cédé. | تبلغ الحوالة إلى المدين المحال عليه.
+cédant | Le cédant garantit l'existence de la créance. | يضمن المحيل وجود الدين المحال.
+cessionnaire | Le cessionnaire reçoit la créance avec ses garanties. | يتلقى المحال له الدين مع ضماناته.
+subrogation légale | La caution qui paie bénéficie de la subrogation légale. | يستفيد الكفيل الذي يوفي الدين من الحلول القانوني.
+subrogation conventionnelle | La subrogation conventionnelle résulte d'un accord avec le créancier. | ينتج الحلول الاتفاقي عن اتفاق مع الدائن.
+subrogé | Le subrogé exerce les droits du créancier payé. | يمارس الحال محل الدائن حقوق الدائن المستوفي.
+fait dommageable | Le fait dommageable engage la responsabilité de celui qui le commet. | يرتب الفعل الضار مسؤولية مرتكبه.
+fait générateur | La victime doit prouver le fait générateur de la responsabilité. | يجب على المضرور أن يثبت الفعل المنشئ للمسؤولية.
+fait personnel | Chacun répond du fait personnel qu'il commet. | يسأل كل شخص عن الفعل الشخصي الذي يرتكبه.
+faute intentionnelle | L'assurance ne couvre pas la faute intentionnelle de l'assuré. | لا يغطي التأمين الخطأ العمدي للمؤمن له.
+faute non intentionnelle | La négligence est une faute non intentionnelle. | الإهمال خطأ غير عمدي.
+faute légère | La faute légère n'empêche pas le versement de l'indemnité d'assurance. | لا يمنع الخطأ اليسير دفع تعويض التأمين.
+faute inexcusable | Le juge retient la faute inexcusable du transporteur. | يأخذ القاضي بالخطأ غير المغتفر للناقل.
+faute professionnelle | La faute professionnelle de l'avocat engage sa responsabilité. | يرتب الخطأ المهني للمحامي مسؤوليته.
+faute médicale | L'expert recherche l'existence d'une faute médicale. | يبحث الخبير عن وجود خطأ طبي.
+faute de la victime | La faute de la victime exonère en partie le conducteur. | يعفي خطأ المضرور السائق جزئيا.
+faute commune | En cas de faute commune, le juge répartit la réparation entre les responsables. | في حالة الخطأ المشترك، يوزع القاضي التعويض بين المسؤولين.
+faute présumée | La responsabilité des parents repose sur une faute présumée. | تقوم مسؤولية الوالدين على خطأ مفترض.
+préjudice direct | Seul le préjudice direct est réparé. | لا يعوض إلا الضرر المباشر.
+préjudice indirect | Le préjudice indirect n'ouvre pas droit à réparation. | لا يخول الضرر غير المباشر الحق في التعويض.
+préjudice certain | Le salaire perdu pendant l'hospitalisation est un préjudice certain. | الأجر المفقود خلال الإقامة في المستشفى ضرر محقق.
+préjudice futur | Le préjudice futur est réparable s'il est certain. | يعوض الضرر المستقبل إذا كان محققا.
+préjudice éventuel | Le juge refuse de réparer un préjudice éventuel. | يرفض القاضي تعويض ضرر احتمالي.
+préjudice par ricochet | Les proches de la victime subissent un préjudice par ricochet. | يلحق أقارب الضحية ضرر مرتد.
+perte de chance | La perte de chance de réussir un concours est un préjudice réparable. | تفويت فرصة النجاح في مسابقة ضرر قابل للتعويض.
+perte subie | La réparation couvre la perte subie et le gain manqué. | يشمل التعويض الخسارة اللاحقة والكسب الفائت.
+gain manqué | Le commerçant réclame le gain manqué pendant la fermeture. | يطالب التاجر بالكسب الفائت خلال مدة الغلق.
+préjudice esthétique | La cicatrice au visage constitue un préjudice esthétique. | تشكل الندبة في الوجه ضررا جماليا.
+préjudice d'agrément | La victime ne peut plus pratiquer le sport : elle subit un préjudice d'agrément. | لم يعد المضرور قادرا على ممارسة الرياضة: لحقه ضرر المتعة.
+incapacité permanente | L'accident a laissé à la victime une incapacité permanente. | خلف الحادث للضحية عجزا دائما.
+incapacité temporaire | Le certificat médical fixe la durée de l'incapacité temporaire. | تحدد الشهادة الطبية مدة العجز المؤقت.
+taux d'incapacité | Le médecin expert évalue le taux d'incapacité. | يقدر الطبيب الخبير نسبة العجز.
+responsabilité sans faute | La responsabilité sans faute dispense la victime de prouver une faute. | تعفي المسؤولية بدون خطأ الضحية من إثبات الخطأ.
+responsabilité objective | La responsabilité objective repose sur le risque créé. | تقوم المسؤولية الموضوعية على الخطر المستحدث.
+responsabilité pour faute | La responsabilité pour faute suppose la preuve d'une négligence. | تفترض المسؤولية على أساس الخطأ إثبات إهمال.
+responsabilité du fait des animaux | Le propriétaire du chien engage sa responsabilité du fait des animaux. | تقوم مسؤولية حارس الحيوان في حق مالك الكلب.
+responsabilité du fait des bâtiments | La responsabilité du fait des bâtiments joue en cas d'effondrement. | تقوم مسؤولية مالك البناء في حالة الانهيار.
+responsabilité du fait des produits | La responsabilité du fait des produits protège le consommateur. | تحمي مسؤولية المنتج المستهلك.
+responsabilité des parents | La responsabilité des parents cesse à la majorité de l'enfant. | تنتهي مسؤولية الوالدين ببلوغ الولد سن الرشد.
+responsabilité du commettant | La responsabilité du commettant couvre les fautes du préposé. | تشمل مسؤولية المتبوع أخطاء التابع.
+responsabilité solidaire | Les deux entreprises encourent une responsabilité solidaire envers la victime. | تتحمل المؤسستان مسؤولية تضامنية تجاه الضحية.
+responsabilité médicale | La responsabilité médicale suppose une faute du praticien. | تفترض المسؤولية الطبية خطأ من الممارس.
+responsabilité professionnelle | Le notaire souscrit une assurance de responsabilité professionnelle. | يكتتب الموثق تأمينا من المسؤولية المهنية.
+responsabilité décennale | L'entrepreneur est tenu d'une responsabilité décennale. | تقع على المقاول مسؤولية عشرية.
+partage de responsabilité | Le juge prononce un partage de responsabilité entre les deux conducteurs. | يقضي القاضي بتوزيع المسؤولية بين السائقين.
+exonération de responsabilité | La force majeure est une cause d'exonération de responsabilité. | القوة القاهرة سبب للإعفاء من المسؤولية.
+action en responsabilité | L'action en responsabilité est portée devant le tribunal du lieu du dommage. | ترفع دعوى المسؤولية أمام محكمة مكان وقوع الضرر.
+action en réparation | La victime exerce l'action en réparation contre le conducteur. | يرفع المضرور دعوى التعويض ضد السائق.
+action récursoire | L'assureur exerce une action récursoire contre le responsable. | يمارس المؤمن دعوى الرجوع ضد المسؤول.
+coauteur du dommage | Chaque coauteur du dommage peut être poursuivi pour le tout. | يجوز متابعة كل مشارك في إحداث الضرر بكامل التعويض.
+garde de la chose | La garde de la chose appartient à celui qui l'utilise, la dirige et la contrôle. | تعود حراسة الشيء لمن يستعمله ويسيره ويراقبه.
+vice de la chose | Le vice de la chose est à l'origine de l'accident. | عيب الشيء هو سبب الحادث.
+ruine du bâtiment | Le propriétaire répond de la ruine du bâtiment. | يسأل المالك عن تهدم البناء.
+trouble anormal | Le bruit de l'usine constitue un trouble anormal de voisinage. | يشكل ضجيج المصنع مضار غير مألوفة للجوار.
+enrichissement | L'enrichissement sans cause oblige à restituer. | يلزم الإثراء بلا سبب بالرد.
+appauvrissement | L'appauvrissement du demandeur doit être prouvé. | يجب إثبات افتقار المدعي.
+répétition de l'indu | La répétition de l'indu permet de récupérer une somme payée par erreur. | يسمح استرداد غير المستحق باسترجاع مبلغ دفع عن غلط.
+gérant d'affaires | Le gérant d'affaires doit continuer le travail qu'il a commencé. | يجب على الفضولي أن يمضي في العمل الذي بدأه.
+vente à l'essai | Dans la vente à l'essai, l'acheteur peut refuser la chose vendue. | في البيع بشرط التجربة، يجوز للمشتري أن يرفض المبيع.
+vente sur échantillon | Dans la vente sur échantillon, la chose vendue doit être conforme à l'échantillon. | في البيع بالعينة، يجب أن يكون المبيع مطابقا للعينة.
+vente à réméré | Le Code civil algérien déclare nulle la vente à réméré. | يعتبر القانون المدني الجزائري بيع الوفاء باطلا.
+vente en bloc | La vente en bloc porte sur toute la récolte. | يرد البيع الجزافي على المحصول كله.
+vente de la chose d'autrui | La vente de la chose d'autrui peut être annulée à la demande de l'acheteur. | يجوز إبطال بيع ملك الغير بطلب من المشتري.
+vente d'immeuble | La vente d'immeuble est publiée à la conservation foncière. | يشهر بيع العقار في المحافظة العقارية.
+vente amiable | Le créancier accepte la vente amiable du bien saisi. | يقبل الدائن البيع الودي للمال المحجوز.
+vente forcée | Le créancier demande la vente forcée de l'immeuble saisi. | يطلب الدائن البيع الجبري للعقار المحجوز.
+chose vendue | Le vendeur doit livrer la chose vendue telle qu'elle était au moment de la vente. | يلتزم البائع بتسليم المبيع بالحالة التي كان عليها وقت البيع.
+prix de vente | Le prix de vente est payable à la livraison. | يدفع ثمن البيع عند التسليم.
+paiement du prix | Le vendeur réclame le paiement du prix. | يطالب البائع بدفع الثمن.
+obligation de délivrance | Le vendeur exécute l'obligation de délivrance en remettant les clés. | ينفذ البائع الالتزام بالتسليم بتسليم المفاتيح.
+garantie des vices cachés | Le vendeur est tenu de la garantie des vices cachés. | يلتزم البائع بضمان العيوب الخفية.
+action rédhibitoire | L'action rédhibitoire permet de rendre la chose et de récupérer le prix. | تسمح دعوى رد المبيع برد الشيء واسترجاع الثمن.
+action estimatoire | L'action estimatoire permet de garder la chose en payant un prix réduit. | تسمح دعوى إنقاص الثمن بالاحتفاظ بالشيء مقابل ثمن مخفض.
+action en garantie | L'acheteur exerce l'action en garantie contre le vendeur. | يرفع المشتري دعوى الضمان ضد البائع.
+trouble de jouissance | Le bailleur garantit le locataire contre tout trouble de jouissance. | يضمن المؤجر للمستأجر عدم التعرض في الانتفاع.
+garantie conventionnelle | La garantie conventionnelle s'ajoute à la garantie légale. | يضاف الضمان الاتفاقي إلى الضمان القانوني.
+garantie légale | Le consommateur bénéficie d'une garantie légale sur l'appareil acheté. | يستفيد المستهلك من ضمان قانوني على الجهاز المشترى.
+bail d'habitation | Le bail d'habitation est conclu par écrit. | يبرم الإيجار السكني كتابة.
+bail à usage professionnel | Le médecin signe un bail à usage professionnel pour son cabinet. | يوقع الطبيب إيجارا مهنيا لعيادته.
+bail rural | Le bail rural porte sur une terre agricole. | يرد الإيجار الفلاحي على أرض فلاحية.
+bail à durée déterminée | Le bail à durée déterminée prend fin sans congé. | ينتهي الإيجار المحدد المدة دون تنبيه بالإخلاء.
+chose louée | Le locataire entretient la chose louée. | يعتني المستأجر بالعين المؤجرة.
+état des lieux | Un état des lieux est dressé à l'entrée du locataire. | تحرر معاينة الأمكنة عند دخول المستأجر.
+réparations locatives | Les réparations locatives sont à la charge du locataire. | تقع الترميمات الإيجارية على عاتق المستأجر.
+grosses réparations | Le bailleur supporte les grosses réparations. | يتحمل المؤجر الترميمات الضرورية.
+charges locatives | Le loyer ne comprend pas les charges locatives. | لا يشمل بدل الإيجار التكاليف الإيجارية.
+dépôt de garantie | Le dépôt de garantie est restitué à la fin du bail. | يرد مبلغ الضمان عند نهاية الإيجار.
+congé | Le congé doit indiquer la date de départ du locataire. | يجب أن يبين التنبيه بالإخلاء تاريخ مغادرة المستأجر.
+cession de bail | La cession de bail exige l'accord écrit du bailleur. | يستلزم التنازل عن الإيجار اتفاقا مكتوبا مع المؤجر.
+renouvellement du bail | Le renouvellement du bail fait l'objet d'un nouvel écrit. | يكون تجديد الإيجار محل عقد مكتوب جديد.
+résiliation du bail | Le défaut de paiement du loyer peut entraîner la résiliation du bail. | قد يترتب على عدم دفع بدل الإيجار فسخ الإيجار.
+droit au maintien dans les lieux | Le locataire invoque le droit au maintien dans les lieux pour rester dans le logement. | يتمسك المستأجر بحق البقاء في الأمكنة للبقاء في السكن.
+indemnité d'occupation | L'occupant sans titre doit une indemnité d'occupation. | يلتزم الشاغل بدون سند بدفع تعويض الاستغلال.
+indemnité d'éviction | Le commerçant réclame une indemnité d'éviction après le refus de renouvellement. | يطالب التاجر بتعويض الاستحقاق بعد رفض التجديد.
+prêt à intérêt | Entre particuliers, la loi interdit le prêt à intérêt. | بين الأفراد، يمنع القانون القرض بفائدة.
+dépôt nécessaire | Le dépôt nécessaire résulte d'un événement imprévu, comme un incendie. | تنتج الوديعة الاضطرارية عن حادث غير متوقع كالحريق.
+séquestre conventionnel | Les parties placent le bien litigieux sous séquestre conventionnel. | يضع الطرفان المال المتنازع فيه تحت حراسة اتفاقية.
+mandat spécial | La vente d'un immeuble exige un mandat spécial. | يستلزم بيع العقار وكالة خاصة.
+mandat général | Le mandat général ne permet que les actes d'administration. | لا تخول الوكالة العامة إلا أعمال الإدارة.
+mandat apparent | Le mandat apparent protège le tiers de bonne foi. | تحمي الوكالة الظاهرة الغير حسن النية.
+substitution de mandataire | Le mandant a autorisé par écrit la substitution de mandataire. | رخص الموكل كتابة بإنابة الوكيل.
+révocation du mandat | La révocation du mandat met fin aux pouvoirs du mandataire. | ينهي عزل الوكيل سلطاته في التمثيل.
+reddition de comptes | Le mandataire doit la reddition de comptes à la fin de sa mission. | يلتزم الوكيل بتقديم الحساب عند نهاية مهمته.
+réception de l'ouvrage | La réception de l'ouvrage fait courir les délais de garantie. | يبدأ سريان آجال الضمان من تسلم العمل.
+réception provisoire | Un procès-verbal est dressé lors de la réception provisoire. | يحرر محضر عند الاستلام المؤقت.
+réception définitive | La réception définitive intervient à la fin du délai de garantie. | يتم الاستلام النهائي عند نهاية أجل الضمان.
+garantie décennale | La garantie décennale couvre l'effondrement de l'ouvrage. | يغطي الضمان العشري انهيار المنشأة.
+malfaçon | L'expert constate une malfaçon dans la toiture. | يعاين الخبير عيبا في الصنع في السقف.
+sous-traitant | Le sous-traitant exécute les travaux de peinture. | ينفذ المقاول الفرعي أشغال الدهن.
+architecte | L'architecte établit les plans de l'immeuble. | يعد المهندس المعماري مخططات العمارة.
+devis | L'entrepreneur remet un devis avant le début des travaux. | يسلم المقاول كشفا تقديريا قبل بداية الأشغال.
+contrat de société | Le contrat de société fixe la part de chaque associé. | يحدد عقد الشركة حصة كل شريك.
+société civile | Les médecins créent une société civile pour exercer ensemble. | ينشئ الأطباء شركة مدنية لممارسة مهنتهم معا.
+contrat de jeu | Le Code civil interdit en principe le contrat de jeu. | يمنع القانون المدني مبدئيا عقد المقامرة.
+pari | Le pari sportif est organisé par un organisme autorisé. | تنظم الرهان الرياضي هيئة مرخص لها.
+contrat de prestation de services | L'entreprise signe un contrat de prestation de services avec un consultant. | توقع المؤسسة عقد تقديم خدمات مع مستشار.
+contrat de dépôt | Le contrat de dépôt oblige le dépositaire à garder la chose. | يلزم عقد الوديعة المودع لديه بحفظ الشيء.
+contrat de mandat | Le contrat de mandat prend fin par le décès du mandant. | ينتهي عقد الوكالة بوفاة الموكل.
+contrat de prêt | Le contrat de prêt fixe la date de remboursement. | يحدد عقد القرض تاريخ التسديد.
+contrat d'échange | Le contrat d'échange obéit aux règles de la vente. | يخضع عقد المقايضة لقواعد البيع.
+contrat de donation | Le contrat de donation portant sur un immeuble est notarié. | يحرر عقد الهبة الوارد على عقار في شكل توثيقي.
+contrat de cautionnement | Le contrat de cautionnement doit être prouvé par écrit. | يجب إثبات عقد الكفالة كتابة.
+bien corporel | Une voiture est un bien corporel. | السيارة مال مادي.
+bien incorporel | Le brevet est un bien incorporel. | براءة الاختراع مال معنوي.
+immeuble par nature | Le sol est un immeuble par nature. | الأرض عقار بطبيعته.
+immeuble par destination | Le tracteur attaché à l'exploitation agricole est un immeuble par destination. | الجرار المرصود لخدمة المستثمرة الفلاحية عقار بالتخصيص.
+meuble par nature | Un tableau est un meuble par nature. | اللوحة منقول بطبيعته.
+chose consomptible | L'argent est une chose consomptible. | النقود شيء قابل للاستهلاك.
+chose hors du commerce | Une chose hors du commerce ne peut être vendue. | لا يجوز بيع شيء خارج عن التعامل.
+chose commune | L'air est une chose commune à tous. | الهواء شيء مشترك بين الجميع.
+chose sans maître | Toute chose sans maître appartient à l'État. | كل مال لا مالك له ملك للدولة.
+bien vacant | Le bien vacant est inscrit au nom de l'État. | يقيد الملك الشاغر باسم الدولة.
+épave | L'épave du navire gêne l'entrée du port. | يعيق حطام السفينة مدخل الميناء.
+produits | Les produits d'une carrière diminuent sa substance. | تنقص منتجات المحجر من أصله.
+fruits naturels | Les récoltes sont des fruits naturels. | المحاصيل ثمار طبيعية.
+fruits civils | Le loyer compte parmi les fruits civils. | بدل الإيجار من الثمار المدنية.
+droit réel principal | La propriété est un droit réel principal. | الملكية حق عيني أصلي.
+droit réel accessoire | Le gage est un droit réel accessoire. | الرهن الحيازي حق عيني تبعي.
+démembrement de la propriété | L'usufruit opère un démembrement de la propriété. | ينتج عن حق الانتفاع تجزئة حق الملكية.
+attributs du droit de propriété | User de la chose, en jouir et en disposer : ce sont les attributs du droit de propriété. | استعمال الشيء واستغلاله والتصرف فيه: تلك هي سلطات المالك.
+droit de jouir | L'usufruitier a le droit de jouir du bien. | للمنتفع حق استغلال المال.
+droit de disposer | Seul le propriétaire a le droit de disposer de la chose. | للمالك وحده حق التصرف في الشيء.
+restrictions au droit de propriété | Les règles d'urbanisme sont des restrictions au droit de propriété. | قواعد التعمير من قيود حق الملكية.
+propriété privée | La propriété privée est garantie par la Constitution. | يضمن الدستور الملكية الخاصة.
+propriété collective | Les terres de la tribu relevaient d'une propriété collective. | كانت أراضي العرش تخضع لملكية جماعية.
+propriété publique | Le sous-sol relève de la propriété publique. | يدخل باطن الأرض ضمن الملكية العامة.
+copropriétaire | Chaque copropriétaire participe aux charges de l'immeuble. | يساهم كل شريك في الملك في تكاليف العمارة.
+parties communes | L'escalier appartient aux parties communes. | السلم من الأجزاء المشتركة.
+parties privatives | L'appartement et sa cave sont des parties privatives. | الشقة وقبوها أجزاء خاصة.
+règlement de copropriété | Le règlement de copropriété fixe les conditions d'utilisation des parties communes. | يحدد نظام الملكية المشتركة شروط استعمال الأجزاء المشتركة.
+syndic de copropriété | Le syndic de copropriété exécute les décisions de l'assemblée. | ينفذ متصرف الملكية المشتركة قرارات الجمعية.
+assemblée des copropriétaires | L'assemblée des copropriétaires approuve le budget de l'immeuble. | توافق جمعية الملاك على ميزانية العمارة.
+charges de copropriété | Les charges de copropriété sont payées chaque trimestre. | تدفع تكاليف الملكية المشتركة كل ثلاثة أشهر.
+mitoyenneté | Les deux voisins contestent la mitoyenneté devant le juge. | ينازع الجاران في الاشتراك في الحائط أمام القاضي.
+mur mitoyen | Chaque voisin peut appuyer une construction sur le mur mitoyen. | يجوز لكل جار أن يسند بناء إلى الحائط المشترك.
+bornage | Le bornage fixe la limite entre deux terrains. | يحدد وضع الحدود الفاصل بين أرضين.
+clôture du fonds | La clôture du fonds est un droit du propriétaire. | تسوير الملك حق للمالك.
+enclave | L'enclave du terrain justifie un droit de passage. | يبرر انحصار الأرض حق المرور.
+servitude légale | Le droit de passage est une servitude légale. | حق المرور ارتفاق قانوني.
+servitude conventionnelle | Les voisins créent une servitude conventionnelle par acte notarié. | ينشئ الجاران ارتفاقا اتفاقيا بعقد توثيقي.
+servitude de vue | La servitude de vue impose une distance entre la fenêtre et le terrain voisin. | يفرض حق المطل مسافة بين النافذة والأرض المجاورة.
+servitude d'écoulement des eaux | Le fonds inférieur supporte la servitude d'écoulement des eaux. | يتحمل العقار المنخفض حق المسيل.
+servitude d'aqueduc | La servitude d'aqueduc permet de faire passer l'eau par le terrain voisin. | يسمح حق المجرى بتمرير الماء عبر الأرض المجاورة.
+droit de superficie | Le droit de superficie permet de construire sur le terrain d'autrui. | يسمح حق السطح بالبناء على أرض الغير.
+emphytéose | L'emphytéose est un bail de très longue durée. | الحكر إيجار لمدة طويلة جدا.
+possession de bonne foi | La possession de bonne foi donne droit aux fruits. | تخول الحيازة بحسن نية الحق في الثمار.
+possession paisible | La prescription suppose une possession paisible. | يفترض التقادم حيازة هادئة.
+possession continue | La prescription acquisitive exige une possession continue. | يشترط التقادم المكسب حيازة مستمرة.
+possession publique | La possession publique s'exerce devant tout le monde. | تمارس الحيازة العلنية على مرأى من الجميع.
+détention précaire | La détention précaire du locataire ne mène pas à la prescription. | لا تؤدي الحيازة العرضية للمستأجر إلى التقادم.
+détenteur | Le dépositaire est un simple détenteur de la chose. | المودع لديه مجرد حائز عرضي للشيء.
+juste titre | Le possesseur présente un acte de vente comme juste titre. | يقدم الحائز عقد بيع بوصفه سندا صحيحا.
+action en bornage | L'action en bornage est portée devant la section foncière. | ترفع دعوى تعيين الحدود أمام القسم العقاري.
+action confessoire | Le propriétaire du fonds dominant exerce l'action confessoire. | يمارس مالك العقار المرتفق دعوى الإقرار بحق الارتفاق.
+action négatoire | L'action négatoire conteste l'existence d'une servitude. | تنازع دعوى إنكار حق الارتفاق في وجود ارتفاق.
+complainte | La complainte protège le possesseur troublé. | تحمي دعوى منع التعرض الحائز الذي وقع له تعرض.
+dénonciation de nouvel œuvre | La dénonciation de nouvel œuvre vise à faire cesser les travaux du voisin. | ترمي دعوى وقف الأعمال الجديدة إلى وقف أشغال الجار.
+réintégrande | La réintégrande permet au possesseur dépossédé de retrouver son bien. | تسمح دعوى استرداد الحيازة للحائز الذي فقد حيازته باسترجاع ماله.
+alluvion | L'alluvion profite au propriétaire riverain. | يعود الطمي إلى المالك المجاور للنهر.
+construction sur le terrain d'autrui | Le juge examine le sort de la construction sur le terrain d'autrui. | ينظر القاضي في مصير البناء في ملك الغير.
+bonne foi du possesseur | La bonne foi du possesseur est présumée. | حسن نية الحائز مفترض.
+indivision forcée | Les parties communes de l'immeuble relèvent de l'indivision forcée. | تخضع الأجزاء المشتركة في العمارة للشيوع الإجباري.
+partage amiable | Les héritiers ont conclu un partage amiable. | أبرم الورثة قسمة ودية.
+partage judiciaire | À défaut d'accord, le tribunal ordonne un partage judiciaire. | عند انعدام الاتفاق، تأمر المحكمة بقسمة قضائية.
+partage en nature | Le partage en nature attribue un lot à chaque héritier. | تمنح القسمة العينية حصة مفرزة لكل وارث.
+licitation | Le tribunal ordonne la licitation de l'immeuble indivis. | تأمر المحكمة في العقار الشائع بالبيع بالمزاد لعدم إمكان القسمة.
+lot | Chaque copartageant reçoit son lot par tirage au sort. | يتسلم كل متقاسم حصة مفرزة بطريق القرعة.
+soulte | L'héritier qui reçoit le plus grand bien verse une soulte aux autres. | يدفع الوارث الذي يأخذ المال الأكبر معدل القسمة للآخرين.
+hypothèque légale | La banque bénéficie d'une hypothèque légale sur les immeubles de son débiteur. | يستفيد البنك من رهن قانوني على عقارات مدينه.
+hypothèque judiciaire | Le créancier obtient une hypothèque judiciaire sur l'immeuble du débiteur. | يحصل الدائن على رهن قضائي على عقار المدين.
+hypothèque conventionnelle | L'hypothèque conventionnelle naît d'un contrat passé devant notaire. | ينشأ الرهن الاتفاقي عن عقد يبرم أمام الموثق.
+créancier gagiste | Le créancier gagiste conserve la chose jusqu'au paiement. | يحتفظ الدائن المرتهن حيازيا بالشيء إلى غاية الوفاء.
+droit d'affectation | Le créancier muni d'un jugement obtient un droit d'affectation sur l'immeuble. | يحصل الدائن الحائز لحكم على حق التخصيص على العقار.
+rang de l'hypothèque | Le rang de l'hypothèque dépend de la date d'inscription. | تتوقف مرتبة الرهن على تاريخ القيد.
+purge des hypothèques | L'acheteur de l'immeuble peut demander la purge des hypothèques. | يجوز لمشتري العقار أن يطلب تطهير العقار.
+radiation de l'inscription | La radiation de l'inscription suit le paiement de la dette. | يتم شطب القيد بعد الوفاء بالدين.
+renouvellement de l'inscription | Le renouvellement de l'inscription conserve le rang du créancier. | يحفظ تجديد القيد مرتبة الدائن.
+tiers détenteur | Le tiers détenteur peut payer la dette pour éviter la saisie. | يجوز لحائز العقار المرهون أن يوفي الدين لتجنب الحجز.
+privilège général | Les salaires des travailleurs bénéficient d'un privilège général. | تستفيد أجور العمال من امتياز عام.
+privilège spécial | Le privilège spécial porte sur un bien déterminé. | يرد الامتياز الخاص على مال معين.
+privilège du vendeur | Le privilège du vendeur garantit le paiement du prix. | يضمن امتياز البائع دفع الثمن.
+privilège du bailleur | Le privilège du bailleur porte sur les meubles du locataire. | يرد امتياز المؤجر على منقولات المستأجر.
+privilège du Trésor | Le privilège du Trésor garantit le recouvrement des impôts. | يضمن امتياز الخزينة تحصيل الضرائب.
+caution solidaire | La caution solidaire ne peut demander que le débiteur soit poursuivi d'abord. | لا يجوز للكفيل المتضامن أن يطلب متابعة المدين أولا.
+caution réelle | La caution réelle affecte un immeuble à la garantie de la dette d'autrui. | يخصص الكفيل العيني عقارا لضمان دين الغير.
+bénéfice de discussion | La caution invoque le bénéfice de discussion. | يتمسك الكفيل بالدفع بالتجريد.
+bénéfice de division | Chaque caution invoque le bénéfice de division pour ne payer que sa part. | يتمسك كل كفيل بالدفع بالتقسيم حتى لا يدفع إلا نصيبه.
+garantie autonome | La banque délivre une garantie autonome au profit du vendeur. | يسلم البنك ضمانا مستقلا لفائدة البائع.
+lettre de garantie | La banque remet une lettre de garantie à l'entreprise. | يسلم البنك خطاب ضمان للمؤسسة.
+réalisation de la sûreté | La réalisation de la sûreté permet au créancier d'être payé sur le prix. | يسمح التنفيذ على الضمان للدائن باستيفاء حقه من الثمن.
+distribution du prix | La distribution du prix se fait selon le rang des créanciers. | يتم توزيع الثمن حسب مرتبة الدائنين.
+existence de la personne | En droit, l'existence de la personne commence lorsqu'elle naît vivante. | من الناحية القانونية، يبدأ وجود الشخص بولادته حيا.
+enfant conçu | L'enfant conçu hérite s'il naît vivant. | يرث الحمل المستكن إذا ولد حيا.
+identité | L'agent vérifie l'identité du déclarant. | يتحقق العون من هوية المصرح.
+prénom | Le prénom de l'enfant est choisi par ses parents. | يختار الوالدان الاسم الشخصي للطفل.
+changement de nom | Le changement de nom est autorisé par décret. | يرخص بتغيير اللقب بمرسوم.
+pseudonyme | L'écrivain publie sous un pseudonyme. | ينشر الكاتب تحت اسم مستعار.
+sexe | L'acte de naissance mentionne le sexe de l'enfant. | يذكر في عقد الميلاد جنس الطفل.
+date de naissance | La date de naissance figure sur la carte nationale d'identité. | يرد تاريخ الميلاد في بطاقة التعريف الوطنية.
+lieu de naissance | Le lieu de naissance détermine la commune compétente. | يحدد مكان الميلاد البلدية المختصة.
+filiation légitime | L'enfant né d'un mariage valide a une filiation légitime. | للولد المولود من زواج صحيح نسب شرعي.
+situation de famille | Le formulaire indique la situation de famille du candidat. | تبين الاستمارة الحالة العائلية للمترشح.
+célibataire | Le célibataire n'a pas de livret de famille. | ليس للأعزب دفتر عائلي.
+veuf | Le veuf hérite d'une part de la succession de son épouse. | يرث الأرمل نصيبا من تركة زوجته.
+résidence habituelle | L'enfant a sa résidence habituelle chez sa mère. | للطفل إقامة اعتيادية عند أمه.
+changement de domicile | La lettre recommandée annonce un changement de domicile. | تعلن الرسالة الموصى عليها عن تغيير الموطن.
+domicile légal | Le mineur a pour domicile légal celui de son tuteur. | الموطن القانوني للقاصر هو موطن وليه.
+absence | L'absence du défendeur n'empêche pas le jugement. | لا يمنع غياب المدعى عليه صدور الحكم.
+disparition | La disparition d'une personne est établie par jugement. | يثبت فقدان الشخص بحكم.
+jugement déclaratif de décès | Le jugement déclaratif de décès ouvre la succession du disparu. | يفتح الحكم بموت المفقود تركته.
+mort civile | Le jugement constate la mort civile de la personne disparue. | يثبت الحكم الموت الحكمي للشخص المفقود.
+registre de l'état civil | La naissance est inscrite au registre de l'état civil. | تقيد الولادة في سجل الحالة المدنية.
+extrait d'acte de naissance | Le dossier comprend un extrait d'acte de naissance. | يتضمن الملف مستخرجا من شهادة الميلاد.
+fiche familiale | La fiche familiale mentionne les enfants à charge. | تذكر الشهادة العائلية الأولاد المكفولين.
+déclaration de naissance | Le père fait la déclaration de naissance à l'officier de l'état civil. | يقوم الأب بالتصريح بالولادة لدى ضابط الحالة المدنية.
+déclaration de décès | Un proche fait la déclaration de décès à la commune. | يقوم أحد الأقارب بالتصريح بالوفاة لدى البلدية.
+rectification d'acte d'état civil | La rectification d'acte d'état civil peut être ordonnée par le président du tribunal. | يجوز أن يأمر رئيس المحكمة بتصحيح عقد الحالة المدنية.
+transcription | Après le jugement de divorce, la transcription est faite à la demande du ministère public. | بعد حكم الطلاق، يتم التسجيل في السجلات بطلب من النيابة العامة.
+carte nationale d'identité | Le citoyen présente sa carte nationale d'identité au guichet. | يقدم المواطن بطاقة التعريف الوطنية في الشباك.
+numéro d'identification national | Chaque citoyen reçoit un numéro d'identification national. | يحصل كل مواطن على رقم التعريف الوطني.
+droit à l'image | Le droit à l'image interdit de publier une photo sans autorisation. | يمنع الحق في الصورة نشر صورة دون ترخيص.
+droit au nom | Le droit au nom permet de s'opposer à son utilisation par un tiers. | يسمح الحق في الاسم بالاعتراض على استعماله من الغير.
+droit à l'honneur | La diffamation est une atteinte au droit à l'honneur. | القذف مساس بالحق في الشرف.
+intégrité physique | La loi interdit de porter atteinte à l'intégrité physique d'autrui. | يمنع القانون المساس بالسلامة الجسدية للغير.
+atteinte à la vie privée | La publication de cette lettre constitue une atteinte à la vie privée. | يشكل نشر هذه الرسالة مساسا بالحياة الخاصة.
+fondation | La fondation consacre ses biens à l'intérêt général. | تخصص المؤسسة الخيرية أموالها للمصلحة العامة.
+groupement | Les entreprises forment un groupement pour répondre à l'appel d'offres. | تشكل المؤسسات تجمعا للرد على طلب العروض.
+objet social | L'objet social est fixé dans les statuts. | يحدد غرض الشركة في القانون الأساسي.
+dénomination | La dénomination de la société figure sur tous ses documents. | ترد تسمية الشركة في جميع وثائقها.
+représentant | Le représentant de la société signe le contrat. | يوقع ممثل الشركة العقد.
+organe | L'assemblée générale est un organe de la société. | الجمعية العامة هيئة من هيئات الشركة.
+dissolution | La dissolution de l'association est décidée par ses membres. | يقرر الأعضاء انحلال الجمعية.

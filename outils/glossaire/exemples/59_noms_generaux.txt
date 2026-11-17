@@ -1,0 +1,23 @@
+# Phrases d'exemple de termes/59_noms_generaux.txt : terme | phrase française | phrase arabe
+exécution | L'exécution du contrat est suspendue pendant la grève. | يعلق تنفيذ العقد خلال الإضراب.
+mise en vigueur | Le décret fixe la date de mise en vigueur. | يحدد المرسوم تاريخ الوضع حيز التنفيذ.
+désignation | La désignation de l'expert relève du juge. | يعود تعيين الخبير إلى القاضي.
+acquisition | L'acquisition de la nationalité est soumise à des conditions de résidence. | يخضع اكتساب الجنسية لشروط الإقامة.
+gestion | La gestion de la société est confiée à un gérant. | يعهد بتسيير الشركة إلى مسير.
+enregistrement | L'enregistrement de la marque protège son propriétaire. | يحمي تسجيل العلامة مالكها.
+évaluation | L'évaluation du préjudice est confiée à un expert. | يعهد بتقييم الضرر إلى خبير.
+négociation | La négociation collective fixe les conditions de travail. | يحدد التفاوض الجماعي ظروف العمل.
+libertés | Les libertés fondamentales sont garanties par la Constitution. | يضمن الدستور الحريات الأساسية.
+immunité | L'immunité du député peut être levée par l'Assemblée. | يجوز للمجلس رفع حصانة النائب.
+bureau | Le bureau de l'association se réunit chaque mois. | يجتمع مكتب الجمعية كل شهر.
+bureau d'études | Le bureau d'études contrôle l'exécution des travaux. | يراقب مكتب الدراسات تنفيذ الأشغال.
+exécution du jugement | L'exécution du jugement est poursuivie par l'huissier de justice. | يباشر المحضر القضائي تنفيذ الحكم.
+exécution des décisions de justice | L'État garantit l'exécution des décisions de justice. | تضمن الدولة تنفيذ أحكام القضاء.
+modes d'acquisition de la propriété | La vente et l'héritage sont des modes d'acquisition de la propriété. | البيع والميراث من طرق اكتساب الملكية.
+enregistrement des actes | L'enregistrement des actes notariés donne lieu au paiement d'un droit. | يترتب على تسجيل العقود التوثيقية دفع رسم.
+placement de fonds | La société propose au public un placement de fonds. | تقترح الشركة على الجمهور توظيف الأموال.
+pour cause de | L'expropriation pour cause d'utilité publique donne lieu à indemnité. | يترتب على نزع الملكية من أجل المنفعة العمومية تعويض.
+de la part de | Le locataire a reçu le congé de la part du bailleur. | تلقى المستأجر التنبيه بالإخلاء من طرف المؤجر.
+selon le cas | La demande est adressée, selon le cas, au wali ou au ministre. | يوجه الطلب، حسب الحالة، إلى الوالي أو إلى الوزير.
+en vigueur | Le texte entre en vigueur un jour après sa publication. | يدخل النص حيز التنفيذ بعد يوم من نشره.
+en cours d'exécution | Le contrat en cours d'exécution n'est pas touché par la loi nouvelle. | لا يمس القانون الجديد العقد قيد التنفيذ.

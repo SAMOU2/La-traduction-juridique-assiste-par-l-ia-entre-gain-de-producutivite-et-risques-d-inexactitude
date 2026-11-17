@@ -1,0 +1,278 @@
+# Phrases d'exemple de termes/46_justice_et_procedure.txt : terme | phrase française | phrase arabe
+ordre judiciaire | Les tribunaux et les cours relèvent de l'ordre judiciaire. | تنتمي المحاكم والمجالس القضائية إلى النظام القضائي العادي.
+ordre administratif | Le Conseil d'État est au sommet de l'ordre administratif. | يوجد مجلس الدولة في قمة النظام القضائي الإداري.
+juridiction de droit commun | Le tribunal est la juridiction de droit commun et se compose de sections. | المحكمة هي الجهة القضائية العادية وتتشكل من أقسام.
+juridiction d'exception | Une juridiction d'exception ne connaît que des affaires que la loi lui attribue. | لا تفصل الجهة القضائية الاستثنائية إلا في القضايا التي يسندها إليها القانون.
+juridiction spécialisée | Le tribunal commercial est une juridiction spécialisée. | المحكمة التجارية جهة قضائية متخصصة.
+juridiction du premier degré | Le tribunal est une juridiction du premier degré. | المحكمة جهة قضائية من الدرجة الأولى.
+juridiction d'appel | La cour est la juridiction d'appel des jugements du tribunal. | المجلس القضائي هو جهة الاستئناف في أحكام المحكمة.
+juridiction de renvoi | Après la cassation, l'affaire revient devant la juridiction de renvoi. | بعد النقض، تعود القضية إلى جهة الإحالة.
+juge unique | En principe, le tribunal statue à juge unique. | مبدئيا، تفصل المحكمة بقاض فرد.
+formation collégiale | La cour statue en formation collégiale. | يفصل المجلس القضائي بتشكيلة جماعية.
+composition du tribunal | La composition du tribunal figure dans le jugement. | تذكر تشكيلة المحكمة في الحكم.
+carte judiciaire | La carte judiciaire fixe le siège et le ressort de chaque tribunal. | تحدد الخريطة القضائية المقر ودائرة الاختصاص لكل محكمة.
+section civile | L'affaire est inscrite au rôle de la section civile. | تقيد القضية في جدول القسم المدني.
+section commerciale | La section commerciale connaît des litiges entre commerçants. | ينظر القسم التجاري في النزاعات بين التجار.
+section foncière | La section foncière tranche les litiges relatifs aux immeubles. | يفصل القسم العقاري في النزاعات المتعلقة بالعقارات.
+section des référés | La section des référés ordonne des mesures urgentes. | يأمر قسم الاستعجال بتدابير مستعجلة.
+section pénale | La section pénale du tribunal statue sur les délits. | يفصل قسم الجنح بالمحكمة في الجنح.
+section des mineurs | La section des mineurs statue sur les délits commis par des mineurs. | يفصل قسم الأحداث في الجنح التي يرتكبها القصر.
+section maritime | La section maritime siège dans quelques tribunaux proches de la mer. | ينعقد القسم البحري في بعض المحاكم القريبة من البحر.
+chambre civile | La chambre civile de la cour examine l'appel. | تنظر الغرفة المدنية بالمجلس القضائي في الاستئناف.
+chambre pénale | La chambre pénale de la cour statue sur l'appel des jugements correctionnels. | تفصل الغرفة الجزائية بالمجلس القضائي في استئناف الأحكام الجنحية.
+chambre commerciale et maritime | La Cour suprême comprend une chambre commerciale et maritime. | تضم المحكمة العليا غرفة تجارية وبحرية.
+chambre sociale | La chambre sociale de la cour statue sur les litiges du travail. | تفصل الغرفة الاجتماعية بالمجلس القضائي في نزاعات العمل.
+chambre foncière | La chambre foncière de la Cour suprême rejette le recours. | ترفض الغرفة العقارية بالمحكمة العليا الطعن.
+chambre administrative | Avant les tribunaux administratifs, la chambre administrative de la cour jugeait ces litiges. | قبل المحاكم الإدارية، كانت الغرفة الإدارية بالمجلس القضائي تفصل في هذه النزاعات.
+chambre des mineurs | La chambre des mineurs de la cour examine l'appel du mineur. | تنظر غرفة الأحداث بالمجلس القضائي في استئناف القاصر.
+chambres réunies | La Cour suprême siège en chambres réunies pour trancher cette question. | تنعقد المحكمة العليا في غرف مجتمعة للفصل في هذه المسألة.
+chambre mixte | La chambre mixte réunit des juges de plusieurs chambres. | تضم الغرفة المختلطة قضاة من عدة غرف.
+président de chambre | Le président de chambre dirige les débats. | يدير رئيس الغرفة المرافعات.
+président de section | Le président de section fixe la date de l'audience. | يحدد رئيس القسم تاريخ الجلسة.
+président de la cour | Le président de la cour répartit les juges entre les chambres. | يوزع رئيس المجلس القضائي القضاة على الغرف.
+premier président | Le premier président préside les chambres réunies de la Cour suprême. | يرأس الرئيس الأول الغرف المجتمعة للمحكمة العليا.
+vice-président | Le vice-président remplace le président absent. | ينوب نائب الرئيس عن الرئيس الغائب.
+conseiller rapporteur | Le président de chambre désigne un conseiller rapporteur pour le dossier. | يعين رئيس الغرفة مستشارا مقررا للملف.
+juge rapporteur | Un juge rapporteur est désigné pour étudier le dossier. | يعين قاض مقرر لدراسة الملف.
+commissaire d'État | Le commissaire d'État présente son rapport écrit devant le tribunal administratif. | يقدم محافظ الدولة تقريره المكتوب أمام المحكمة الإدارية.
+substitut du procureur | Le substitut du procureur représente le ministère public à l'audience. | يمثل وكيل الجمهورية المساعد النيابة العامة في الجلسة.
+avocat général | Un avocat général représente le ministère public devant la Cour suprême. | يمثل النيابة العامة أمام المحكمة العليا محام عام.
+doyen des juges d'instruction | La victime dépose une plainte devant le doyen des juges d'instruction. | تودع الضحية شكوى أمام عميد قضاة التحقيق.
+corps de la magistrature | Le corps de la magistrature comprend les magistrats du siège et ceux du ministère public. | يشمل سلك القضاء قضاة الحكم وقضاة النيابة العامة.
+statut de la magistrature | Le statut de la magistrature fixe les droits et les devoirs des magistrats. | يحدد القانون الأساسي للقضاء حقوق القضاة وواجباتهم.
+serment du magistrat | Le serment du magistrat a lieu avant son entrée en fonction. | تؤدى يمين القاضي قبل توليه وظيفته.
+devoir de réserve | Le juge respecte le devoir de réserve en toutes circonstances. | يلتزم القاضي بواجب التحفظ في كل الظروف.
+secret des délibérations | Le secret des délibérations s'impose à chaque juge. | تفرض سرية المداولات على كل قاض.
+discipline des magistrats | La discipline des magistrats relève du Conseil supérieur de la magistrature. | يعود تأديب القضاة إلى المجلس الأعلى للقضاء.
+prise à partie | La prise à partie est une action exercée contre un juge. | مخاصمة القضاة دعوى ترفع ضد قاض.
+école supérieure de la magistrature | Les futurs juges sont formés à l'École supérieure de la magistrature. | يتكون قضاة المستقبل في المدرسة العليا للقضاء.
+greffier en chef | Le greffier en chef délivre les copies des jugements. | يسلم رئيس أمناء الضبط نسخ الأحكام.
+rôle des affaires | L'affaire figure au rôle des affaires de l'audience. | ترد القضية في جدول القضايا الخاص بالجلسة.
+registre d'audience | Le greffier tient le registre d'audience. | يمسك أمين الضبط سجل الجلسات.
+minute du jugement | La minute du jugement est signée par le président et le greffier. | يوقع الرئيس وأمين الضبط على أصل الحكم.
+expédition du jugement | Le greffe remet une expédition du jugement à chaque partie. | تسلم أمانة الضبط نسخة عادية من الحكم لكل طرف.
+conseil de l'ordre | Le conseil de l'ordre examine la demande du nouvel avocat. | يدرس مجلس المنظمة طلب المحامي الجديد.
+avocat stagiaire | Un avocat stagiaire assiste aux audiences avec son maître de stage. | يحضر الجلسات محام متربص مع المشرف على تربصه.
+avocat agréé près la Cour suprême | Le recours est signé par un avocat agréé près la Cour suprême. | يوقع على الطعن محام معتمد لدى المحكمة العليا.
+cabinet d'avocat | Le client est reçu au cabinet d'avocat. | يستقبل الموكل في مكتب المحاماة.
+constitution d'avocat | Devant la cour, la constitution d'avocat est en principe obligatoire. | أمام المجلس القضائي، تأسيس محام إلزامي مبدئيا.
+avocat commis d'office | L'accusé sans défenseur est assisté par un avocat commis d'office. | يساعد المتهم الذي ليس له مدافع محام معين تلقائيا.
+honoraires d'avocat | Les honoraires d'avocat sont versés en plusieurs fois. | تدفع أتعاب المحامي على عدة دفعات.
+chambre nationale des notaires | La chambre nationale des notaires représente la profession. | تمثل الغرفة الوطنية للموثقين المهنة.
+étude notariale | L'acte de vente est signé à l'étude notariale. | يوقع عقد البيع في مكتب التوثيق.
+chambre nationale des huissiers de justice | La chambre nationale des huissiers de justice veille au respect des règles de la profession. | تسهر الغرفة الوطنية للمحضرين القضائيين على احترام قواعد المهنة.
+office d'huissier | Le créancier remet le jugement à l'office d'huissier. | يسلم الدائن الحكم إلى مكتب المحضر القضائي.
+expert | Le tribunal désigne un expert pour évaluer le dommage. | تعين المحكمة خبيرا لتقدير الضرر.
+liste des experts | Le juge choisit un nom sur la liste des experts de la cour. | يختار القاضي اسما من قائمة الخبراء بالمجلس القضائي.
+interprète | Le témoin étranger est entendu avec l'aide d'un interprète. | يسمع الشاهد الأجنبي بمساعدة مترجم فوري.
+traducteur assermenté | Le document est traduit par un traducteur assermenté. | يترجم الوثيقة مترجم محلف.
+conciliateur | Le conciliateur aide les parties à trouver un accord. | يساعد المصلح الطرفين على إيجاد اتفاق.
+bureau d'assistance judiciaire | La demande est déposée au bureau d'assistance judiciaire du tribunal. | يودع الطلب لدى مكتب المساعدة القضائية بالمحكمة.
+palais de justice | L'audience se tient au palais de justice. | تنعقد الجلسة في قصر العدالة.
+salle d'audience | Les témoins attendent hors de la salle d'audience. | ينتظر الشهود خارج قاعة الجلسات.
+vacances judiciaires | Les affaires urgentes sont examinées pendant les vacances judiciaires. | ينظر في القضايا المستعجلة خلال العطلة القضائية.
+année judiciaire | L'année judiciaire s'ouvre par une audience solennelle. | تفتتح السنة القضائية بجلسة رسمية.
+inspection générale | L'inspection générale contrôle le fonctionnement des juridictions. | تراقب المفتشية العامة سير الجهات القضائية.
+ministère de la Justice | Le ministère de la Justice publie les statistiques des tribunaux. | تنشر وزارة العدل إحصائيات المحاكم.
+garde des Sceaux | Le garde des Sceaux présente le projet de loi au Parlement. | يعرض وزير العدل حافظ الأختام مشروع القانون على البرلمان.
+droit d'agir | Toute personne dispose du droit d'agir devant les tribunaux. | لكل شخص حق التقاضي أمام المحاكم.
+intérêt à agir | Le demandeur doit justifier d'un intérêt à agir. | يجب على المدعي أن يثبت أن له مصلحة في التقاضي.
+qualité pour agir | Le juge vérifie la qualité pour agir du demandeur. | يتحقق القاضي من أن للمدعي صفة في التقاضي.
+capacité d'ester en justice | Le mineur acquiert la capacité d'ester en justice à sa majorité. | يكتسب القاصر أهلية التقاضي عند بلوغه سن الرشد.
+défaut de qualité | Le défendeur invoque le défaut de qualité de la société demanderesse. | يتمسك المدعى عليه بانعدام الصفة لدى الشركة المدعية.
+défaut d'intérêt | La demande est irrecevable pour défaut d'intérêt. | الطلب غير مقبول لانعدام المصلحة.
+introduction de l'instance | L'introduction de l'instance se fait par une requête écrite. | يتم رفع الدعوى بعريضة مكتوبة.
+enrôlement | L'enrôlement a lieu au greffe après le paiement des taxes. | يتم قيد الدعوى في أمانة الضبط بعد دفع الرسوم.
+objet du litige | L'objet du litige est fixé par les demandes des parties. | يتحدد موضوع النزاع بطلبات الأطراف.
+moyen de droit | L'avocat soulève un moyen de droit devant la cour. | يثير المحامي وجها قانونيا أمام المجلس القضائي.
+moyen de fait | Le moyen de fait repose sur les circonstances de l'affaire. | يستند الوجه الواقعي إلى ظروف القضية.
+moyen nouveau | La Cour suprême écarte un moyen nouveau. | تستبعد المحكمة العليا وجها جديدا.
+moyen d'ordre public | Le juge soulève d'office un moyen d'ordre public. | يثير القاضي تلقائيا وجها من النظام العام.
+mémoire en réponse | Le mémoire en réponse est notifié au demandeur. | تبلغ المذكرة الجوابية إلى المدعي.
+mémoire en réplique | Le demandeur répond par un mémoire en réplique. | يجيب المدعي بمذكرة رد.
+mémoire ampliatif | L'avocat complète la requête par un mémoire ampliatif. | يكمل المحامي العريضة بمذكرة إضافية.
+échange des mémoires | Le juge fixe un délai pour l'échange des mémoires. | يحدد القاضي أجلا لتبادل المذكرات.
+communication des pièces | La communication des pièces permet à chaque partie de préparer ses arguments. | يسمح تبليغ الوثائق لكل طرف بتحضير حججه.
+bordereau de pièces | L'avocat joint un bordereau de pièces à la requête. | يرفق المحامي جدول الوثائق بالعريضة.
+demande principale | Le tribunal statue d'abord sur la demande principale. | تفصل المحكمة أولا في الطلب الأصلي.
+demande incidente | Une demande incidente est présentée pendant l'instance. | يقدم طلب عارض أثناء الخصومة.
+demande subsidiaire | Le demandeur présente une demande subsidiaire pour le cas où la première serait rejetée. | يقدم المدعي طلبا احتياطيا في حالة رفض الطلب الأول.
+demande nouvelle | La cour déclare irrecevable la demande nouvelle de l'appelant. | يصرح المجلس القضائي بأن الطلب الجديد للمستأنف غير مقبول.
+demande en intervention | Le tiers dépose une demande en intervention. | يودع الغير طلب التدخل.
+intervention volontaire | L'intervention volontaire permet à un tiers de défendre ses droits dans l'instance. | يسمح التدخل الاختياري للغير بالدفاع عن حقوقه في الخصومة.
+intervention forcée | L'intervention forcée oblige un tiers à participer à l'instance. | يلزم الإدخال في الخصومة الغير بالمشاركة فيها.
+appel en garantie | Le défendeur demande un délai pour l'appel en garantie. | يطلب المدعى عليه أجلا لإدخال الضامن.
+mise en cause | La mise en cause d'un tiers est demandée avant la fin des débats. | يطلب إدخال الغير في الخصومة قبل نهاية المرافعات.
+exception d'incompétence | Le défendeur soulève une exception d'incompétence. | يثير المدعى عليه دفعا بعدم الاختصاص.
+exception de litispendance | L'exception de litispendance évite deux jugements sur le même litige. | يجنب الدفع بوحدة الموضوع صدور حكمين في النزاع نفسه.
+exception de connexité | L'exception de connexité tend à réunir deux affaires liées. | يرمي الدفع بالارتباط إلى ضم قضيتين مرتبطتين.
+exception de nullité | L'exception de nullité vise un acte de procédure qui ne respecte pas les formes. | ينصب الدفع بالبطلان على إجراء لا يحترم الأشكال المقررة.
+exception dilatoire | L'exception dilatoire retarde l'examen de l'affaire. | يؤخر الدفع بإرجاء الفصل النظر في القضية.
+litispendance | Il y a litispendance lorsque deux tribunaux connaissent du même litige. | تقوم وحدة الموضوع عندما تنظر محكمتان في النزاع نفسه.
+connexité | La connexité entre les deux affaires justifie leur réunion. | يبرر الارتباط بين القضيتين ضمهما.
+incident d'instance | La jonction de deux affaires est un incident d'instance. | ضم قضيتين عارض من عوارض الخصومة.
+suspension de l'instance | Le juge ordonne la suspension de l'instance jusqu'à la décision pénale. | يأمر القاضي بوقف الخصومة إلى غاية صدور القرار الجزائي.
+interruption de l'instance | Le décès du demandeur peut entraîner l'interruption de l'instance. | قد يترتب على وفاة المدعي انقطاع الخصومة.
+reprise d'instance | Les héritiers demandent la reprise d'instance. | يطلب الورثة إعادة السير في الدعوى.
+extinction de l'instance | La transaction entre les parties entraîne l'extinction de l'instance. | يترتب على الصلح بين الطرفين انقضاء الخصومة.
+acquiescement | L'acquiescement du défendeur met fin au litige. | يضع القبول بالطلبات الصادر عن المدعى عليه حدا للنزاع.
+désistement d'action | Le demandeur signe un désistement d'action devant le juge. | يوقع المدعي تنازلا عن الدعوى أمام القاضي.
+disjonction d'instances | Le juge ordonne la disjonction d'instances pour statuer sur chaque affaire à part. | يأمر القاضي بفصل الخصومات للفصل في كل قضية على حدة.
+partie défaillante | Le jugement est notifié à la partie défaillante. | يبلغ الحكم إلى الخصم المتخلف.
+défaut de comparution | Le juge constate le défaut de comparution du défendeur. | يعاين القاضي التخلف عن الحضور من جانب المدعى عليه.
+représentation en justice | Le gérant de la société assure la représentation en justice. | يتولى مسير الشركة التمثيل أمام القضاء.
+ministère d'avocat | Le ministère d'avocat s'impose à la société qui forme un pourvoi en cassation. | يفرض التمثيل بمحام على الشركة التي ترفع طعنا بالنقض.
+partie succombante | En principe, la partie succombante supporte les dépens. | مبدئيا، يتحمل الخصم الخاسر المصاريف القضائية.
+partie gagnante | La partie gagnante demande l'exécution du jugement. | يطلب الخصم الرابح تنفيذ الحكم.
+colitigant | Chaque colitigant présente ses propres arguments. | يقدم كل خصم منضم حججه الخاصة.
+tiers intervenant | Le tiers intervenant dépose ses demandes au greffe. | يودع المتدخل في الخصومة طلباته لدى أمانة الضبط.
+appelé en garantie | L'appelé en garantie conteste sa responsabilité. | ينازع المدخل في الخصومة في مسؤوليته.
+mise en état | La mise en état précède l'audience de jugement. | تسبق تهيئة القضية جلسة الحكم.
+clôture de l'instruction | Une ordonnance fixe la date de la clôture de l'instruction. | يحدد أمر تاريخ اختتام التحقيق.
+réouverture des débats | Le tribunal ordonne la réouverture des débats pour entendre un témoin. | تأمر المحكمة بإعادة فتح المرافعات لسماع شاهد.
+police de l'audience | Le président assure la police de l'audience. | يتولى الرئيس ضبط الجلسة.
+publicité des débats | La publicité des débats est un principe du procès. | علنية الجلسات مبدأ من مبادئ المحاكمة.
+audience publique | Le témoin est entendu en audience publique. | يسمع الشاهد في جلسة علنية.
+audience de conciliation | Les époux sont convoqués à une audience de conciliation. | يستدعى الزوجان إلى جلسة الصلح.
+tentative de conciliation | Le juge procède à une tentative de conciliation avant le divorce. | يجري القاضي محاولة الصلح قبل الطلاق.
+mise en délibéré | Le président annonce la mise en délibéré de l'affaire. | يعلن الرئيس وضع القضية في المداولة.
+prononcé du jugement | Le prononcé du jugement a lieu à l'audience. | يتم النطق بالحكم في الجلسة.
+date du prononcé | Le président fixe la date du prononcé à la fin des débats. | يحدد الرئيس تاريخ النطق بالحكم عند نهاية المرافعات.
+rédaction du jugement | La rédaction du jugement suit des règles précises. | يخضع تحرير الحكم لقواعد دقيقة.
+motifs du jugement | Les motifs du jugement expliquent la décision du juge. | تشرح أسباب الحكم قرار القاضي.
+défaut de motifs | La Cour suprême casse l'arrêt pour défaut de motifs. | تنقض المحكمة العليا القرار لانعدام التسبيب.
+insuffisance de motifs | Le demandeur au pourvoi invoque une insuffisance de motifs. | يتمسك الطاعن بقصور في التسبيب.
+contradiction de motifs | L'avocat relève une contradiction de motifs dans l'arrêt. | يسجل المحامي تناقض الأسباب في القرار.
+défaut de base légale | L'arrêt est cassé pour défaut de base légale. | ينقض القرار لانعدام الأساس القانوني.
+dénaturation | La dénaturation d'un document clair ouvre la voie à la cassation. | يفتح تحريف وثيقة واضحة باب النقض.
+omission de statuer | Le demandeur reproche au tribunal une omission de statuer. | ينعى المدعي على المحكمة إغفال الفصل في طلب.
+ultra petita | Le juge qui accorde plus que la demande statue ultra petita. | القاضي الذي يمنح أكثر من الطلب يصدر حكما بأكثر مما طلب.
+erreur matérielle | Le juge corrige une erreur matérielle dans le nom du défendeur. | يصحح القاضي خطأ ماديا في اسم المدعى عليه.
+rectification du jugement | La rectification du jugement est demandée par requête. | يطلب تصحيح الحكم بعريضة.
+interprétation du jugement | L'interprétation du jugement appartient au tribunal qui l'a rendu. | يعود تفسير الحكم إلى المحكمة التي أصدرته.
+jugement au fond | Le jugement au fond tranche le litige entre les parties. | يحسم الحكم في الموضوع النزاع بين الطرفين.
+jugement en premier ressort | Un jugement en premier ressort peut être frappé d'appel. | يجوز استئناف حكم ابتدائي.
+jugement réputé contradictoire | Le jugement réputé contradictoire n'est pas susceptible d'opposition. | الحكم المعتبر حضوريا غير قابل للمعارضة.
+jugement déclaratif | Le jugement déclaratif reconnaît un droit qui existait déjà. | يعترف الحكم الكاشف بحق كان موجودا من قبل.
+jugement constitutif | Le jugement constitutif crée une situation juridique nouvelle. | ينشئ الحكم المنشئ وضعية قانونية جديدة.
+jugement d'expédient | Le jugement d'expédient reprend l'accord des parties. | يتضمن الحكم الاتفاقي اتفاق الطرفين.
+jugement étranger | Un jugement étranger doit recevoir l'exequatur pour être exécuté en Algérie. | يجب أن يحصل حكم أجنبي على الأمر بالتنفيذ لكي ينفذ في الجزائر.
+décision de justice | Le journal commente une décision de justice récente. | تعلق الجريدة على مقرر قضائي حديث.
+décision gracieuse | L'ordonnance sur requête est une décision gracieuse. | الأمر على عريضة أمر ولائي.
+matière gracieuse | En matière gracieuse, le juge statue sans adversaire. | في المادة الولائية، يفصل القاضي دون خصم.
+matière contentieuse | En matière contentieuse, chaque partie présente ses arguments. | في المادة النزاعية، يقدم كل طرف حججه.
+trouble manifestement illicite | Le juge des référés met fin à un trouble manifestement illicite. | يضع قاضي الاستعجال حدا لاضطراب غير مشروع بين.
+dommage imminent | Le juge ordonne une mesure pour prévenir un dommage imminent. | يأمر القاضي بتدبير لتفادي ضرر وشيك.
+contestation sérieuse | Le défendeur oppose une contestation sérieuse à la demande. | يواجه المدعى عليه الطلب بنزاع جدي.
+provision ad litem | Le juge accorde à l'épouse une provision ad litem. | يمنح القاضي الزوجة تسبيقا عن المصاريف.
+condamnation aux dépens | La condamnation aux dépens frappe le plaideur qui perd l'affaire. | يقع الحكم بالمصاريف على الخصم الذي يخسر القضية.
+amende civile | Le plaideur de mauvaise foi s'expose à une amende civile. | يتعرض المتقاضي بسوء نية لغرامة مدنية.
+frais irrépétibles | En principe, les frais irrépétibles restent à la charge de celui qui les a engagés. | مبدئيا، تبقى المصاريف غير القابلة للاسترداد على عاتق من أنفقها.
+liquidation des dépens | La liquidation des dépens figure dans le jugement. | ترد تصفية المصاريف في الحكم.
+signification du jugement | La signification du jugement fait courir le délai d'appel. | يبدأ سريان أجل الاستئناف من تبليغ الحكم.
+notification à personne | L'huissier de justice procède à une notification à personne. | يقوم المحضر القضائي بتبليغ شخصي.
+notification à domicile | À défaut, le document est remis par notification à domicile. | عند التعذر، تسلم الوثيقة بتبليغ في الموطن.
+notification par voie d'affichage | La notification par voie d'affichage a lieu au tableau du tribunal. | يتم التبليغ عن طريق التعليق في لوحة الإعلانات بالمحكمة.
+procès-verbal de notification | L'huissier de justice remet le procès-verbal de notification au créancier. | يسلم المحضر القضائي محضر التبليغ إلى الدائن.
+acte d'huissier | L'acte d'huissier mentionne la date et l'heure de la remise. | يذكر محرر المحضر القضائي تاريخ التسليم وساعته.
+exploit | L'exploit est remis au destinataire lui-même. | يسلم محضر التبليغ الرسمي إلى المرسل إليه نفسه.
+convocation | Le témoin reçoit une convocation du tribunal. | يتلقى الشاهد استدعاء من المحكمة.
+élection de domicile | Le contrat contient une élection de domicile au cabinet de l'avocat. | يتضمن العقد اختيار الموطن في مكتب المحامي.
+administration de la preuve | Le juge dirige l'administration de la preuve pendant l'instance. | يشرف القاضي على تقديم الدليل أثناء الخصومة.
+preuve littérale | Le contrat écrit constitue une preuve littérale. | يشكل العقد المكتوب دليلا كتابيا.
+preuve testimoniale | La preuve testimoniale est admise en matière commerciale. | يقبل الإثبات بالشهود في المواد التجارية.
+preuve par présomption | Le juge accepte la preuve par présomption dans cette affaire. | يقبل القاضي الإثبات بالقرائن في هذه القضية.
+preuve contraire | Le défendeur peut apporter la preuve contraire. | يجوز للمدعى عليه أن يقدم الدليل العكسي.
+élément de preuve | Le courriel est un élément de preuve parmi d'autres. | الرسالة الإلكترونية عنصر إثبات من بين عناصر أخرى.
+présomption simple | La présomption simple tombe devant la preuve contraire. | تسقط القرينة البسيطة أمام الدليل العكسي.
+présomption irréfragable | La présomption irréfragable n'admet aucune preuve contraire. | لا تقبل القرينة القاطعة أي دليل عكسي.
+présomption de fait | Le juge tire une présomption de fait des circonstances de l'affaire. | يستخلص القاضي قرينة قضائية من ظروف القضية.
+aveu judiciaire | Le défendeur reconnaît la dette à l'audience : c'est un aveu judiciaire. | يعترف المدعى عليه بالدين في الجلسة: هذا إقرار قضائي.
+aveu extrajudiciaire | Une lettre du débiteur peut contenir un aveu extrajudiciaire. | قد تتضمن رسالة من المدين إقرارا غير قضائي.
+serment supplétoire | Le juge peut déférer d'office le serment supplétoire à l'une des parties. | يجوز للقاضي أن يوجه تلقائيا اليمين المتممة إلى أحد الطرفين.
+délation du serment | La délation du serment est demandée par le plaideur qui manque de preuves. | يطلب توجيه اليمين الخصم الذي تنقصه الأدلة.
+refus de serment | Après son refus de serment, le plaideur perd l'affaire. | بعد النكول عن اليمين، يخسر الخصم القضية.
+audition des témoins | Le juge ordonne l'audition des témoins. | يأمر القاضي بسماع الشهود.
+reproche de témoin | Le reproche de témoin est fondé sur un lien de parenté avec une partie. | تجريح الشاهد مؤسس على قرابة مع أحد الأطراف.
+déposition | Le greffier consigne la déposition du témoin. | يدون أمين الضبط إفادة الشاهد.
+comparution personnelle | Le juge ordonne la comparution personnelle des parties. | يأمر القاضي بالحضور الشخصي للأطراف.
+descente sur les lieux | Le juge décide une descente sur les lieux pour voir le terrain. | يقرر القاضي انتقالا للمعاينة لمشاهدة الأرض.
+transport sur les lieux | Le procès-verbal décrit le transport sur les lieux du juge. | يصف المحضر الانتقال إلى الأماكن الذي قام به القاضي.
+rapport d'expertise | L'expert dépose son rapport d'expertise au greffe. | يودع الخبير تقرير الخبرة لدى أمانة الضبط.
+contre-expertise | Le défendeur demande une contre-expertise. | يطلب المدعى عليه خبرة مضادة.
+complément d'expertise | Le juge ordonne un complément d'expertise. | يأمر القاضي بخبرة تكميلية.
+mission d'expertise | Le jugement précise la mission d'expertise. | يبين الحكم مهمة الخبير.
+récusation de l'expert | La récusation de l'expert est demandée en raison d'un lien de parenté. | يطلب رد الخبير بسبب القرابة.
+consultation | L'avocat donne une consultation écrite à son client. | يقدم المحامي استشارة مكتوبة لموكله.
+constat d'huissier | Le constat d'huissier décrit les dégâts dans le logement. | يصف محضر المعاينة الأضرار في السكن.
+faux incident | Le faux incident est soulevé pendant l'instance contre un document produit. | يثار الادعاء الفرعي بالتزوير أثناء الخصومة ضد وثيقة مقدمة.
+faux principal | Le faux principal est une action indépendante de toute autre instance. | دعوى التزوير الأصلية دعوى مستقلة عن أي خصومة أخرى.
+production forcée de pièces | Le plaideur demande au juge la production forcée de pièces détenues par un tiers. | يطلب الخصم من القاضي الإلزام بتقديم الوثائق التي يحوزها الغير.
+secret des affaires | L'entreprise invoque le secret des affaires pour garder le document. | تتمسك المؤسسة بسر الأعمال للاحتفاظ بالوثيقة.
+voie de recours ordinaire | L'appel est une voie de recours ordinaire. | الاستئناف طريق طعن عادي.
+voie de recours extraordinaire | Le pourvoi en cassation est une voie de recours extraordinaire. | الطعن بالنقض طريق طعن غير عادي.
+délai d'appel | L'avocat vérifie que le délai d'appel n'est pas expiré. | يتحقق المحامي من أن أجل الاستئناف لم ينقض.
+délai de pourvoi | Le délai de pourvoi court à partir de la signification de l'arrêt. | يسري أجل الطعن بالنقض ابتداء من التبليغ الرسمي للقرار.
+appel principal | L'appel principal est formé par le plaideur qui a perdu. | يرفع الاستئناف الأصلي الخصم الذي خسر الدعوى.
+appel incident | L'intimé répond par un appel incident. | يرد المستأنف عليه باستئناف فرعي.
+appel abusif | La cour sanctionne un appel abusif par une amende civile. | يعاقب المجلس القضائي على استئناف تعسفي بغرامة مدنية.
+acte d'appel | L'acte d'appel est déposé au greffe de la cour. | تودع عريضة الاستئناف لدى أمانة الضبط بالمجلس القضائي.
+arrêt confirmatif | La cour rend un arrêt confirmatif du jugement. | يصدر المجلس القضائي قرارا مؤيدا للحكم.
+arrêt infirmatif | La cour a rendu un arrêt infirmatif du jugement attaqué. | صدر عن المجلس القضائي قرار ملغ للحكم المطعون فيه.
+arrêt de cassation | L'arrêt de cassation peut renvoyer l'affaire devant une autre cour. | قد يحيل القرار بالنقض القضية إلى مجلس قضائي آخر.
+arrêt de rejet | La Cour suprême rend un arrêt de rejet. | تصدر المحكمة العليا قرارا بالرفض.
+arrêt de renvoi | La chambre d'accusation rend un arrêt de renvoi devant le tribunal criminel. | تصدر غرفة الاتهام قرارا بالإحالة على محكمة الجنايات.
+arrêt de principe | Un arrêt de principe fixe l'interprétation d'une règle de droit. | يحدد قرار مبدئي تفسير قاعدة قانونية.
+cassation sans renvoi | La Cour suprême prononce une cassation sans renvoi. | تنطق المحكمة العليا بنقض بدون إحالة.
+cassation partielle | La cassation partielle laisse subsister le reste de l'arrêt. | يبقي النقض الجزئي على باقي القرار.
+moyen de cassation | Le mémoire expose le premier moyen de cassation. | تعرض المذكرة وجه الطعن بالنقض الأول.
+violation de la loi | Le recours est fondé sur la violation de la loi. | الطعن مؤسس على مخالفة القانون.
+vice de forme | La requête est rejetée pour vice de forme. | ترفض العريضة لعيب في الشكل.
+vice de procédure | L'avocat soulève un vice de procédure. | يثير المحامي عيبا في الإجراءات.
+demandeur au pourvoi | Le demandeur au pourvoi dépose son mémoire dans le délai fixé. | يودع الطاعن مذكرته في الأجل المحدد.
+défendeur au pourvoi | Le défendeur au pourvoi répond au mémoire. | يرد المطعون ضده على المذكرة.
+opposant | L'opposant demande au tribunal de statuer de nouveau sur l'affaire. | يطلب المعارض من المحكمة الفصل من جديد في القضية.
+tiers opposant | Le tiers opposant n'était pas partie au premier jugement. | لم يكن المعترض الخارج عن الخصومة طرفا في الحكم الأول.
+recours en interprétation | Le recours en interprétation porte sur le sens d'un acte administratif. | تنصب الدعوى التفسيرية على معنى قرار إداري.
+effet non suspensif | En principe, le pourvoi en cassation a un effet non suspensif. | مبدئيا، للطعن بالنقض أثر غير موقف.
+défense à exécution | L'appelant présente une défense à exécution devant le président de la cour. | يقدم المستأنف اعتراضا على النفاذ المعجل أمام رئيس المجلس القضائي.
+déchéance du pourvoi | La Cour suprême constate la déchéance du pourvoi. | تعاين المحكمة العليا سقوط الطعن.
+désistement du pourvoi | L'avocat dépose un désistement du pourvoi au greffe. | يودع المحامي تنازلا عن الطعن لدى أمانة الضبط.
+irrecevabilité de l'appel | La cour prononce l'irrecevabilité de l'appel tardif. | يقضي المجلس القضائي بعدم قبول الاستئناف المتأخر.
+chose jugée | Le défendeur oppose la chose jugée à la nouvelle demande. | يدفع المدعى عليه بالشيء المقضي فيه في مواجهة الطلب الجديد.
+identité de parties | L'identité de parties est une condition de la chose jugée. | وحدة الأطراف شرط من شروط الشيء المقضي فيه.
+identité d'objet | La nouvelle demande présente une identité d'objet avec la première. | يجمع الطلب الجديد بالطلب الأول وحدة المحل.
+identité de cause | Le juge vérifie l'identité de cause entre les deux demandes. | يتحقق القاضي من وحدة السبب بين الطلبين.
+exécution volontaire du jugement | L'huissier de justice invite le débiteur à l'exécution volontaire du jugement. | يدعو المحضر القضائي المدين إلى التنفيذ الاختياري للحكم.
+difficulté d'exécution | L'huissier de justice soumet la difficulté d'exécution au président du tribunal. | يعرض المحضر القضائي الإشكال في التنفيذ على رئيس المحكمة.
+agent d'exécution | L'agent d'exécution dresse l'inventaire des biens. | يحرر عون التنفيذ جرد الأموال.
+sommation | Le créancier adresse une sommation au débiteur. | يوجه الدائن إنذارا رسميا إلى المدين.
+procès-verbal de saisie | Le procès-verbal de saisie énumère les biens saisis. | يعدد محضر الحجز الأموال المحجوزة.
+procès-verbal de carence | Faute de biens à saisir, l'huissier de justice dresse un procès-verbal de carence. | لعدم وجود أموال قابلة للحجز، يحرر المحضر القضائي محضر عدم وجود.
+débiteur saisi | L'huissier de justice remet une copie du procès-verbal au débiteur saisi. | يسلم المحضر القضائي نسخة من المحضر إلى المدين المحجوز عليه.
+biens saisis | Les biens saisis sont confiés à un gardien. | تسلم الأموال المحجوزة إلى حارس.
+gardien des biens saisis | Le gardien des biens saisis doit les conserver. | يجب على حارس الأشياء المحجوزة أن يحافظ عليها.
+saisie mobilière | L'huissier de justice pratique la saisie mobilière au domicile du débiteur. | يباشر المحضر القضائي الحجز على المنقول في موطن المدين.
+saisie des rémunérations | La saisie des rémunérations ne porte que sur une fraction du salaire. | لا يشمل الحجز على الأجور إلا جزءا من الأجر.
+saisie-revendication | Le propriétaire d'un meuble pratique une saisie-revendication contre celui qui le détient. | يوقع مالك المنقول حجزا استحقاقيا على من يحوزه.
+saisie-gagerie | La saisie-gagerie garantit le paiement des loyers. | يضمن حجز المؤجر على منقولات المستأجر دفع بدل الإيجار.
+saisie foraine | La saisie foraine est pratiquée avec l'autorisation du juge. | يوقع الحجز على منقولات المدين المتنقل بترخيص من القاضي.
+validation de la saisie | Le créancier demande la validation de la saisie conservatoire. | يطلب الدائن تثبيت الحجز التحفظي.
+conversion de la saisie | La conversion de la saisie conservatoire en saisie-exécution a lieu après le jugement. | يتم تحويل الحجز التحفظي إلى حجز تنفيذي بعد صدور الحكم.
+cahier des conditions de vente | L'huissier de justice dépose le cahier des conditions de vente au greffe. | يودع المحضر القضائي قائمة شروط البيع لدى أمانة الضبط.
+mise à prix | La mise à prix est fixée par un expert. | يحدد خبير السعر الافتتاحي.
+enchère | Chaque enchère dépasse la précédente. | تفوق كل مزايدة سابقتها.
+surenchère | Un nouvel acheteur propose la surenchère après la première vente. | يقترح مشتر جديد إعادة البيع بالمزاد بزيادة بعد البيع الأول.
+folle enchère | La folle enchère a lieu lorsque l'adjudicataire ne paie pas le prix. | تتم إعادة البيع على ذمة الراسي عليه المزاد عندما لا يدفع الثمن.
+jugement d'adjudication | Le jugement d'adjudication transfère la propriété à l'adjudicataire. | ينقل حكم رسو المزاد الملكية إلى الراسي عليه المزاد.
+enchérisseur | Le dernier enchérisseur devient adjudicataire. | يصبح آخر مزايد الراسي عليه المزاد.
+distribution des deniers | La distribution des deniers a lieu entre les créanciers. | يتم توزيع المبالغ المتحصلة بين الدائنين.
+ordre entre créanciers | L'ordre entre créanciers dépend des privilèges et des hypothèques. | يتوقف ترتيب الدائنين على حقوق الامتياز والرهون الرسمية.
+créancier poursuivant | Le créancier poursuivant avance les frais de la saisie. | يدفع الدائن المباشر للإجراءات مصاريف الحجز مسبقا.
+créancier inscrit | L'huissier de justice avertit chaque créancier inscrit de la date de la vente. | يخطر المحضر القضائي كل دائن مقيد بتاريخ البيع.
+délai de paiement | Le juge accorde au débiteur le délai de paiement demandé. | يمنح القاضي المدين مهلة الدفع المطلوبة.
+concours de la force publique | L'expulsion a lieu avec le concours de la force publique. | يتم الطرد بمساعدة القوة العمومية.
+expulsion locative | L'expulsion locative est exécutée par un huissier de justice. | ينفذ طرد المستأجر محضر قضائي.
+liquidation de l'astreinte | Le créancier demande la liquidation de l'astreinte. | يطلب الدائن تصفية الغرامة التهديدية.
+exécution sur minute | Le juge des référés ordonne l'exécution sur minute en cas d'extrême urgence. | يأمر قاضي الاستعجال بالتنفيذ بموجب النسخة الأصلية في حالة الاستعجال القصوى.
+titre exécutoire étranger | Un titre exécutoire étranger est exécuté après l'exequatur. | ينفذ سند تنفيذي أجنبي بعد الأمر بالتنفيذ.

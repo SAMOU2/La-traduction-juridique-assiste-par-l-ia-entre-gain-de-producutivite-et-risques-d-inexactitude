@@ -9,13 +9,14 @@ contenu actuel du fichier : ils sont à mettre à jour quand le glossaire est en
 Le nombre d'entrées est écrit dans ``conftest.py``.
 
 Depuis la version 0.8, le fichier a deux parties : 1 000 entrées complètes (définition et
-phrase d'exemple), puis des « termes seuls » (terme, équivalent, catégorie, domaine).
+phrase d'exemple), puis des « termes seuls » (terme, équivalent, catégorie, domaine). Depuis
+la version 0.11, les termes seuls reçoivent à leur tour une phrase d'exemple, par étapes.
 """
 
 from collections import Counter
 
 import pytest
-from conftest import ENTREES_COMPLETES, GLOSSAIRE_FOURNI, NOMBRE_D_ENTREES
+from conftest import ENTREES_COMPLETES, GLOSSAIRE_FOURNI, NOMBRE_D_ENTREES, TERMES_SEULS_AVEC_EXEMPLE
 
 from traducteur.glossaire import COLONNES, mention_a_verifier
 from traducteur.langues import AR, FR, cle_souple, cle_stricte, contient_arabe
@@ -92,10 +93,12 @@ def test_chaque_entree_est_complete(glossaire_fourni):
 def test_les_termes_seuls(glossaire_fourni):
     """Les entrées suivantes (versions 0.8 et 0.9) : terme, équivalent, catégorie, domaine et ressources.
 
-    Elles n'ont ni définition ni phrase d'exemple. Aucune forme d'un nom seul ne désigne un autre nom : la
-    traduction d'un texte n'aurait rien pour choisir entre les deux. Un adjectif, un verbe ou une locution
-    peut partager une forme avec une autre entrée (« منع » : « interdiction » et « interdire »), puisque la
-    traduction d'un texte ne le remplace pas.
+    Elles n'ont pas de définition. Depuis la version 0.11, une partie d'entre elles ont une phrase d'exemple : tous
+    les adjectifs, les verbes et les locutions, et une partie des noms (vocabulaire général, droit civil, justice
+    et procédure, droit pénal). Aucune forme d'un nom seul ne désigne
+    un autre nom : la traduction d'un texte n'aurait rien pour choisir entre les deux. Un adjectif, un verbe ou
+    une locution peut partager une forme avec une autre entrée (« منع » : « interdiction » et « interdire »),
+    puisque la traduction d'un texte ne le remplace pas.
     """
     seuls = glossaire_fourni.entrees[ENTREES_COMPLETES:]
     assert len(seuls) == NOMBRE_D_ENTREES - ENTREES_COMPLETES
@@ -108,9 +111,14 @@ def test_les_termes_seuls(glossaire_fourni):
         assert not entree.definition_fr and not entree.definition_ar, nom
         # Faute de définition, la mention « à vérifier » porte sur l'équivalent : la fiche l'affiche à son pied.
         assert mention_a_verifier(entree.source_definition) == "équivalent d’exemple", nom
-        assert not entree.contextes, nom
+        # Au plus une phrase d'exemple, dans les deux langues, rédigée pour le glossaire : « à vérifier ».
+        assert len(entree.contextes) <= 1, nom
+        for contexte in entree.contextes:
+            assert contexte.fr and contient_arabe(contexte.ar) and not contient_arabe(contexte.fr), nom
+            assert mention_a_verifier(contexte.source) == "phrase d’exemple", nom
         assert entree.pluriel_fr or not entree.pluriel_ar, nom
         if entree.categorie_fr in AUTRES_MOTS:
+            assert entree.contextes, nom  # chaque adjectif, chaque verbe et chaque locution a sa phrase
             assert not entree.pluriel_fr and not entree.pluriel_ar, nom
             assert not se_remplace_dans_un_texte(entree), nom
             continue
@@ -120,10 +128,14 @@ def test_les_termes_seuls(glossaire_fourni):
                 assert [autre for autre, _ in noms.reconnaitre(forme, langue)] == [entree], (nom, forme)
     # Les mots qui ne sont pas des noms se trouvent tous dans cette seconde partie.
     assert all(se_remplace_dans_un_texte(entree) for entree in glossaire_fourni.entrees[:ENTREES_COMPLETES])
+    # Le nombre de termes seuls qui ont leur phrase ne baisse pas d'une version à l'autre.
+    assert sum(1 for entree in seuls if entree.contextes) >= TERMES_SEULS_AVEC_EXEMPLE
 
 
 def test_les_phrases_d_exemple(glossaire_fourni):
     """Chaque entrée complète a sa phrase d'exemple. Une phrase « à vérifier » est courte et emploie le terme.
+
+    Les phrases des termes seuls (version 0.11) sont du nombre : un adjectif y est accordé, un verbe y est au passé.
 
     Dans la version 0.5, 969 phrases sur 1 002 portent la mention « à vérifier » : elles ont été rédigées pour
     le glossaire. Le test ne compte pas ces phrases : leur nombre baisse à mesure que le glossaire est relu
@@ -322,6 +334,7 @@ def test_un_mot_courant_peut_etre_pris_pour_un_terme(traducteur):
 # ------------------------------------------------------------------ les deux écrans
 pytest.importorskip("PySide6")
 
+from PySide6.QtWidgets import QLabel  # noqa: E402
 from test_interface import textes  # noqa: E402
 
 from traducteur.interface.fiche import LigneDeProvenance  # noqa: E402
@@ -429,19 +442,35 @@ def test_la_fiche_d_un_terme_seul_avec_le_glossaire_fourni(fenetre_fournie, appl
     application.processEvents()
     entree = page.entree
     assert entree.terme_fr == "protégé" and entree.numero > ENTREES_COMPLETES
-    assert not entree.definition_fr and not entree.contextes
+    assert not entree.definition_fr and len(entree.contextes) == 1
     # La fiche : le terme, son équivalent et, au pied de l'équivalent, la mention « À vérifier ».
     assert textes(page.fiche.colonne_terme.corps)[:2] == ["FRANÇAIS · SOURCE", "protégé"]
     assert page.fiche.colonne_equivalent.terme.terme == entree.terme_ar
     assert textes(page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalent d’exemple"]
-    # Le menu : ni définition ni phrase d'exemple (cercles gris) ; l'invitation ne nomme que ce qui existe.
+    # Le menu : pas de définition (cercle gris) ; l'invitation ne nomme que ce qui existe.
     etats = details.etats()
-    assert etats["definition"] == (False, 0) and etats["contexte"] == (False, 0)
-    assert "definition" not in details.renseignes() and "contexte" not in details.renseignes()
+    assert etats["definition"] == (False, 0) and "definition" not in details.renseignes()
     assert "définition" not in details.invite.texte.text()
     details.roue.boutons["definition"].click()
     assert textes(details.colonne_definition.corps) == [
         "Aucune définition pour ce terme", "Le glossaire n’en donne pas encore."]
+    # Depuis la version 0.11, le terme a sa phrase d'exemple : le cercle « Contextualisation » est coloré. La
+    # phrase porte la mention « À vérifier », et l'adjectif y est mis en évidence, accordé ou non.
+    assert etats["contexte"][0] and "contexte" in details.renseignes()
+    details.roue.boutons["contexte"].click()
+    colonne = details.colonne_contexte
+    exemple = colonne.emplois[0]
+    assert exemple.origine == "propre" and exemple.a_verifier
+    lignes = textes(colonne.corps)
+    assert lignes[0] == "À vérifier" and exemple.fr in lignes and exemple.ar in lignes
+    assert "protégé" in exemple.fr and "محمي" in exemple.ar
+    # Un verbe : la phrase l'emploie au passé, « a abrogé » et « ألغى » ; les deux formes sont mises en évidence.
+    page.rechercher("abroger")
+    assert page.entree.terme_fr == "abroger" and details.detail == "contexte"
+    abroger = colonne.emplois[0]
+    assert abroger.origine == "propre" and "a abrogé" in abroger.fr and abroger.ar.startswith("ألغى ")
+    riches = [label.text() for label in colonne.corps.findChildren(QLabel) if "font-weight" in label.text()]
+    assert any(">abrogé</span>" in texte for texte in riches) and any(">ألغى</span>" in texte for texte in riches)
     # Un terme absent du glossaire : la première entrée trouvée est affichée, et la liste des autres s'ouvre.
     details.bouton_fermer.click()
     page.rechercher("magistrat")

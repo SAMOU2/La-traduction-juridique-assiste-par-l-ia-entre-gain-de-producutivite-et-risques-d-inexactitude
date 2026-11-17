@@ -1,0 +1,120 @@
+# Phrases d'exemple de termes/41_vocabulaire_general.txt : terme | phrase française | phrase arabe
+protection | La loi assure la protection des données personnelles. | يضمن القانون حماية المعطيات الشخصية.
+sauvegarde | La sauvegarde des libertés publiques incombe au juge. | يقع صون الحريات العامة على عاتق القاضي.
+interdiction | L'interdiction de fumer s'applique dans les lieux publics. | يطبق حظر التدخين في الأماكن العمومية.
+prohibition | La prohibition de l'usure protège l'emprunteur. | يحمي تحريم الربا المقترض.
+restriction | Toute restriction d'un droit doit être prévue par la loi. | يجب أن ينص القانون على كل تقييد لحق من الحقوق.
+tolérance | La tolérance du propriétaire ne crée aucun droit au profit du voisin. | لا ينشئ تسامح المالك أي حق لفائدة الجار.
+prérogatives | Le directeur exerce ses prérogatives dans les limites fixées par les statuts. | يمارس المدير صلاحياته في الحدود التي يحددها القانون الأساسي.
+titulaire du droit | Le titulaire du droit peut y renoncer par écrit. | يجوز لصاحب الحق أن يتنازل عنه كتابة.
+intérêt légitime | Le demandeur doit justifier d'un intérêt légitime. | يجب على المدعي أن يثبت وجود مصلحة مشروعة.
+jouissance des droits | La jouissance des droits civils est reconnue à toute personne. | يعترف لكل شخص بالتمتع بالحقوق المدنية.
+exercice des droits | L'exercice des droits politiques est réservé aux citoyens. | ممارسة الحقوق السياسية مقصورة على المواطنين.
+droit acquis | La loi nouvelle ne porte pas atteinte à un droit acquis. | لا يمس القانون الجديد بحق مكتسب.
+droit fondamental | Le droit à la vie est un droit fondamental. | الحق في الحياة حق أساسي.
+abus | L'abus de droit engage la responsabilité de celui qui le commet. | يرتب التعسف في استعمال الحق مسؤولية مرتكبه.
+atteinte | Toute atteinte à la vie privée ouvre droit à réparation. | كل مساس بالحياة الخاصة يخول الحق في التعويض.
+violation | La violation du secret de la correspondance est punie par la loi. | يعاقب القانون على انتهاك سرية المراسلات.
+manquement | Un manquement grave justifie la résolution du contrat. | يبرر الإخلال الجسيم فسخ العقد.
+respect de la loi | Le juge veille au respect de la loi. | يسهر القاضي على احترام القانون.
+validité du contrat | La validité du contrat suppose un consentement libre. | تفترض صحة العقد وجود رضا حر.
+illégalité | Le requérant invoque l'illégalité de la décision administrative. | يثير الطاعن عدم مشروعية القرار الإداري.
+opposabilité aux tiers | L'opposabilité aux tiers dépend de l'inscription de l'acte. | يتوقف النفاذ في حق الغير على قيد العقد.
+inopposabilité | L'inopposabilité de l'acte protège les créanciers du vendeur. | يحمي عدم نفاذ التصرف دائني البائع.
+inexistence | L'inexistence de l'acte peut être invoquée à tout moment. | يجوز التمسك بانعدام التصرف في أي وقت.
+efficacité | L'efficacité de la sanction dépend de son exécution rapide. | تتوقف فعالية الجزاء على سرعة تنفيذه.
+applicabilité | Le juge vérifie l'applicabilité du texte au litige. | يتحقق القاضي من قابلية تطبيق النص على النزاع.
+conformité | Le vendeur garantit la conformité de la chose vendue. | يضمن البائع مطابقة الشيء المبيع.
+compatibilité | Le juge examine la compatibilité de la loi avec le traité. | ينظر القاضي في توافق القانون مع المعاهدة.
+incompatibilité | Il y a incompatibilité entre la fonction de député et celle de juge. | يوجد تناف بين وظيفة النائب ووظيفة القاضي.
+effet juridique | Un acte nul ne produit aucun effet juridique. | لا ينتج التصرف الباطل أي أثر قانوني.
+effet rétroactif | La loi n'a pas d'effet rétroactif. | ليس للقانون أثر رجعي.
+effet immédiat | La loi de procédure a un effet immédiat. | لقانون الإجراءات أثر فوري.
+champ d'application | L'article premier fixe le champ d'application de la loi. | تحدد المادة الأولى مجال تطبيق القانون.
+application de la loi | L'application de la loi dans le temps obéit à des règles précises. | يخضع تطبيق القانون من حيث الزمان لقواعد محددة.
+entrée en application | La date d'entrée en application figure à la fin du décret. | يرد تاريخ دخول حيز التطبيق في آخر المرسوم.
+prise d'effet | La prise d'effet du contrat est fixée au jour de la signature. | يحدد سريان مفعول العقد بيوم التوقيع.
+date d'effet | La date d'effet de la police d'assurance figure sur l'attestation. | يرد تاريخ سريان وثيقة التأمين في الشهادة.
+acte unilatéral | Le testament est un acte unilatéral. | الوصية تصرف انفرادي.
+acte d'administration | Le bail de courte durée est un acte d'administration. | الإيجار القصير المدة عمل من أعمال الإدارة.
+acte de disposition | La vente d'un immeuble est un acte de disposition. | بيع العقار عمل من أعمال التصرف.
+document | Chaque document du dossier porte un numéro. | تحمل كل وثيقة في الملف رقما.
+pièce justificative | Toute dépense doit être appuyée d'une pièce justificative. | يجب أن تدعم كل نفقة بوثيقة ثبوتية.
+duplicata | En cas de perte du titre, un duplicata est délivré au propriétaire. | في حالة ضياع السند، تسلم للمالك نسخة ثانية.
+ampliation | Une ampliation de l'arrêté est remise à l'intéressé. | تسلم للمعني بالأمر نسخة مطابقة للأصل من القرار.
+extrait | La commune délivre un extrait de l'acte de naissance. | تسلم البلدية مستخرجا من عقد الميلاد.
+récépissé de dépôt | Le greffe remet un récépissé de dépôt au déclarant. | تسلم أمانة الضبط وصل إيداع للمصرح.
+accusé de réception | La lettre recommandée est envoyée avec accusé de réception. | ترسل الرسالة الموصى عليها مع إشعار بالاستلام.
+formulaire | Le candidat remplit un formulaire fourni par l'administration. | يملأ المترشح استمارة تقدمها الإدارة.
+répertoire | Le notaire tient un répertoire de tous les actes qu'il reçoit. | يمسك الموثق فهرسا لجميع العقود التي يتلقاها.
+archives | Les archives du tribunal sont conservées au greffe. | يحفظ أرشيف المحكمة في أمانة الضبط.
+sceau de l'État | Le sceau de l'État est apposé sur les lois promulguées. | يوضع ختم الدولة على القوانين الصادرة.
+paraphe | Chaque page du contrat porte le paraphe des deux parties. | تحمل كل صفحة من العقد التوقيع بالأحرف الأولى للطرفين.
+mention marginale | Le divorce fait l'objet d'une mention marginale sur l'acte de mariage. | يكون الطلاق محل بيان هامشي في عقد الزواج.
+délai légal | Le recours est formé dans le délai légal. | يرفع الطعن في الأجل القانوني.
+délai de grâce | Le juge peut accorder au débiteur un délai de grâce. | يجوز للقاضي أن يمنح المدين نظرة الميسرة.
+délai raisonnable | Toute personne a droit à être jugée dans un délai raisonnable. | لكل شخص الحق في أن يحاكم في أجل معقول.
+délai de rigueur | Le délai d'appel est un délai de rigueur. | أجل الاستئناف أجل حتمي.
+prorogation | La prorogation du délai est demandée avant son expiration. | يطلب تمديد الأجل قبل انقضائه.
+report | L'avocat demande le report de l'audience. | يطلب المحامي تأجيل الجلسة.
+expiration | Le bail prend fin à l'expiration de la durée convenue. | ينتهي الإيجار عند انقضاء المدة المتفق عليها.
+point de départ du délai | La notification marque le point de départ du délai. | يحدد التبليغ بدء سريان الأجل.
+computation des délais | La computation des délais se fait en jours francs. | يتم حساب الآجال بالأيام الكاملة.
+jour ouvrable | Le délai est prorogé jusqu'au premier jour ouvrable suivant. | يمدد الأجل إلى غاية أول يوم عمل موال.
+jour férié | Le délai qui expire un jour férié est prorogé au lendemain. | يمدد الأجل الذي ينقضي في يوم عطلة إلى اليوم الموالي.
+antériorité | L'antériorité de l'inscription fixe le rang des créanciers. | تحدد أسبقية القيد مرتبة الدائنين.
+durée | La durée du bail est de trois ans. | مدة الإيجار ثلاث سنوات.
+tacite reconduction | Le bail se poursuit par tacite reconduction. | يستمر الإيجار بتجديد ضمني.
+suspension | La suspension du contrat de travail ne rompt pas le lien entre les parties. | لا يقطع تعليق عقد العمل الرابطة بين الطرفين.
+interruption | L'interruption de l'instance résulte du décès d'une partie. | ينتج انقطاع الخصومة عن وفاة أحد الأطراف.
+qualification juridique | La qualification juridique des faits appartient au juge. | يعود التكييف القانوني للوقائع إلى القاضي.
+fondement juridique | La demande est rejetée faute de fondement juridique. | يرفض الطلب لانعدام أي أساس قانوني.
+base légale | La décision manque de base légale. | يفتقر القرار إلى سند قانوني.
+critère | L'intérêt de l'enfant est le critère retenu par le juge. | مصلحة الطفل هي المعيار الذي يعتمده القاضي.
+hypothèse | La loi envisage l'hypothèse du décès de l'un des associés. | يتناول القانون فرضية وفاة أحد الشركاء.
+condition de fond | Le consentement des époux est une condition de fond du mariage. | رضا الزوجين شرط موضوعي للزواج.
+condition de forme | L'écrit est une condition de forme de la donation. | الكتابة شرط شكلي في الهبة.
+élément constitutif | L'intention est un élément constitutif de l'infraction. | القصد ركن من أركان الجريمة.
+situation juridique | La loi nouvelle régit la situation juridique en cours. | يحكم القانون الجديد الوضعية القانونية الجارية.
+statut juridique | Le statut juridique de l'étranger dépend de son titre de séjour. | يتوقف المركز القانوني للأجنبي على سند إقامته.
+régime juridique | Le régime juridique du domaine public diffère de celui du domaine privé. | يختلف النظام القانوني للأملاك الوطنية العمومية عن نظام الأملاك الوطنية الخاصة.
+définition légale | Le contrat fait l'objet d'une définition légale dans le Code civil. | العقد محل تعريف قانوني في القانون المدني.
+assimilation | L'assimilation du stagiaire au salarié lui ouvre droit à la protection sociale. | تخول مماثلة المتربص بالعامل الحق في الحماية الاجتماعية.
+argument | L'avocat présente un argument nouveau devant la cour. | يقدم المحامي حجة جديدة أمام المجلس القضائي.
+contradiction | La contradiction entre les motifs entraîne la cassation de l'arrêt. | يؤدي التناقض بين الأسباب إلى نقض القرار.
+lacune | Le juge comble la lacune de la loi par les principes généraux du droit. | يسد القاضي ثغرة القانون بالمبادئ العامة للقانون.
+ambiguïté | L'ambiguïté de la clause s'interprète en faveur du débiteur. | يفسر غموض البند لمصلحة المدين.
+intéressé | La décision est notifiée à l'intéressé. | يبلغ القرار إلى المعني بالأمر.
+ayant cause à titre universel | L'héritier est un ayant cause à titre universel du défunt. | الوارث خلف عام للمورث.
+ayant cause à titre particulier | L'acheteur est un ayant cause à titre particulier du vendeur. | المشتري خلف خاص للبائع.
+auteur de l'acte | L'auteur de l'acte doit avoir la capacité requise. | يجب أن تتوفر في صاحب التصرف الأهلية المطلوبة.
+destinataire | Le destinataire signe l'avis de réception. | يوقع المرسل إليه على الإشعار بالاستلام.
+partie signataire | Chaque partie signataire reçoit un exemplaire de l'accord. | يتسلم كل طرف موقع نسخة من الاتفاق.
+usager | L'usager a droit à un accueil de qualité au guichet. | للمرتفق الحق في استقبال جيد عند الشباك.
+rapport de droit | Le contrat crée un rapport de droit entre les parties. | ينشئ العقد علاقة قانونية بين الطرفين.
+lien juridique | L'obligation est un lien juridique entre le créancier et le débiteur. | الالتزام رابطة قانونية بين الدائن والمدين.
+réciprocité | L'étranger jouit de ce droit sous réserve de réciprocité. | يتمتع الأجنبي بهذا الحق مع مراعاة المعاملة بالمثل.
+égalité | L'égalité devant la loi est garantie à tous les citoyens. | المساواة أمام القانون مضمونة لجميع المواطنين.
+discrimination raciale | La loi punit tout acte de discrimination raciale. | يعاقب القانون على كل فعل تمييز عنصري.
+transparence | La transparence des procédures renforce la confiance des citoyens. | تعزز شفافية الإجراءات ثقة المواطنين.
+secret professionnel | Le médecin est tenu au secret professionnel. | يلتزم الطبيب بالسر المهني.
+loyauté | Les parties négocient avec loyauté. | يتفاوض الطرفان بنزاهة.
+diligence | Le mandataire agit avec diligence. | يتصرف الوكيل بعناية.
+vigilance | La banque doit faire preuve de vigilance à l'ouverture d'un compte. | يجب على البنك أن يتحلى باليقظة عند فتح حساب.
+prudence | Le conducteur doit rouler avec prudence. | يجب على السائق أن يسير بحيطة.
+mesure provisoire | Le juge des référés ordonne une mesure provisoire. | يأمر قاضي الاستعجال بتدبير مؤقت.
+mesure d'urgence | Le président du tribunal peut prendre toute mesure d'urgence. | يجوز لرئيس المحكمة أن يتخذ كل تدبير استعجالي.
+injonction | La partie défaillante n'a pas respecté l'injonction. | لم يحترم الخصم المتخلف الأمر القضائي.
+avertissement | L'avertissement est la première sanction disciplinaire. | الإنذار هو أول عقوبة تأديبية.
+blâme | Le blâme est inscrit au dossier du fonctionnaire. | يقيد التوبيخ في ملف الموظف.
+pénalité de retard | Le contrat de travaux prévoit une pénalité de retard par jour. | ينص عقد الأشغال على غرامة تأخير عن كل يوم.
+restitution | L'annulation de la vente entraîne la restitution du prix. | يترتب على إبطال البيع استرداد الثمن.
+remise en état | Le juge ordonne la remise en état aux frais du locataire. | يأمر القاضي بإعادة الحال إلى ما كان عليه على نفقة المستأجر.
+régularisation | L'administration accorde un délai pour la régularisation du dossier. | تمنح الإدارة أجلا لتسوية وضعية الملف.
+rectification | La rectification d'une erreur matérielle est demandée au juge. | يطلب تصحيح الخطأ المادي من القاضي.
+retrait | Le retrait du permis de conduire est prononcé par le juge. | ينطق القاضي بسحب رخصة السياقة.
+interdiction d'exercer | Le tribunal prononce une interdiction d'exercer de deux ans. | تنطق المحكمة بالمنع من ممارسة النشاط لمدة سنتين.
+fermeture | Le wali ordonne la fermeture de l'établissement. | يأمر الوالي بغلق المؤسسة.
+exclusion | L'exclusion d'un associé est décidée par l'assemblée générale. | تقرر الجمعية العامة إقصاء الشريك.
+privation de droits | La peine s'accompagne d'une privation de droits civiques. | تقترن العقوبة بحرمان من الحقوق الوطنية.
+nullité de plein droit | La clause contraire à l'ordre public est frappée de nullité de plein droit. | يلحق البند المخالف للنظام العام بطلان بقوة القانون.
