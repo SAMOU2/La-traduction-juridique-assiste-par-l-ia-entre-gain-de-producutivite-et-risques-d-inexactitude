@@ -1,0 +1,83 @@
+# Phrases d'exemple de termes/57_maritime_nationalite.txt : terme | phrase française | phrase arabe
+droit maritime | Le droit maritime régit la navigation et le transport par mer. | ينظم القانون البحري الملاحة والنقل عبر البحر.
+navigation maritime | La navigation maritime est soumise au contrôle des autorités portuaires. | تخضع الملاحة البحرية لرقابة السلطات المينائية.
+pavillon du navire | Le pavillon du navire détermine la loi applicable. | تحدد راية السفينة القانون الواجب التطبيق.
+nationalité du navire | La nationalité du navire figure dans le registre. | ترد جنسية السفينة في السجل.
+immatriculation du navire | L'immatriculation du navire se fait au port d'attache. | يتم تسجيل السفينة في ميناء التسجيل.
+registre d'immatriculation des navires | Le registre d'immatriculation des navires est tenu par l'autorité portuaire. | تتولى السلطة المينائية مسك دفتر تسجيل السفن.
+port d'attache | Le port d'attache est mentionné sur le certificat. | يذكر ميناء التسجيل في الشهادة.
+propriétaire du navire | Le propriétaire du navire répond des dommages causés. | يسأل مالك السفينة عن الأضرار اللاحقة.
+équipage | L'équipage compte douze marins. | يتكون الطاقم من اثني عشر بحارا.
+gens de mer | Les gens de mer bénéficient d'une protection particulière. | يتمتع رجال البحر بحماية خاصة.
+pilotage maritime | Le pilotage maritime est obligatoire à l'entrée du port. | الإرشاد البحري إلزامي عند دخول الميناء.
+remorquage maritime | Le remorquage maritime aide le navire à entrer au port. | يساعد القطر البحري السفينة على دخول الميناء.
+consignataire du navire | Le consignataire du navire représente l'armateur au port. | يمثل وكيل السفينة المجهز في الميناء.
+consignataire de la cargaison | Le consignataire de la cargaison surveille le déchargement. | يراقب وكيل الحمولة عملية التفريغ.
+courtier maritime | Le courtier maritime met en rapport le fréteur et l'affréteur. | يجمع السمسار البحري بين مؤجر السفينة ومستأجر السفينة.
+contrat d'affrètement | Le contrat d'affrètement fixe le prix du transport. | يحدد عقد استئجار السفينة ثمن النقل.
+charte-partie | La charte-partie précise les clauses du voyage. | تبين مشارطة الإيجار شروط الرحلة.
+fréteur | Le fréteur remet le navire en bon état. | يسلم مؤجر السفينة السفينة في حالة جيدة.
+affréteur | L'affréteur utilise le navire pour transporter des marchandises. | يستعمل مستأجر السفينة السفينة لنقل البضائع.
+fret | Le fret est payable à l'arrivée. | تستحق أجرة الحمولة عند الوصول.
+transporteur maritime | Le transporteur maritime émet un connaissement. | يصدر الناقل البحري سند شحن.
+chargeur | Le chargeur remet la marchandise au transporteur. | يسلم الشاحن البضاعة إلى الناقل.
+cargaison | La cargaison est arrimée dans la cale. | ترص الحمولة في عنبر السفينة.
+déchargement | Le déchargement commence dès l'arrivée du navire. | يبدأ التفريغ فور وصول السفينة.
+manutention portuaire | La manutention portuaire emploie de nombreux dockers. | تشغل المناولة المينائية عددا كبيرا من العمال.
+avarie commune | L'avarie commune est répartie entre les intéressés. | توزع الخسارة المشتركة بين المعنيين.
+avarie particulière | L'avarie particulière reste à la charge du propriétaire. | تبقى الخسارة الخاصة على عاتق المالك.
+abordage | L'abordage a endommagé les deux navires. | ألحق التصادم البحري أضرارا بالسفينتين.
+naufrage | Le naufrage a fait plusieurs victimes. | أوقع غرق السفينة عدة ضحايا.
+assistance maritime | L'assistance maritime est rémunérée par une indemnité. | يقابل الإسعاف البحري بتعويض.
+sauvetage maritime | Le sauvetage maritime a permis de sauver l'équipage. | أتى الإنقاذ البحري على إنقاذ الطاقم.
+épave maritime | L'épave maritime gêne la navigation. | يعيق الحطام البحري الملاحة.
+privilège maritime | Le privilège maritime garantit le salaire des marins. | يضمن الامتياز البحري أجرة البحارة.
+hypothèque maritime | L'hypothèque maritime grève le navire. | يرتب الرهن البحري على السفينة.
+saisie conservatoire du navire | La saisie conservatoire du navire est ordonnée par le juge. | يأمر القاضي بالحجز التحفظي على السفينة.
+limitation de responsabilité de l'armateur | La limitation de responsabilité de l'armateur protège le propriétaire. | يحمي تحديد مسؤولية مجهز السفينة المالك.
+événement de mer | Tout événement de mer doit être consigné au journal de bord. | يجب تدوين كل حادث بحري في يومية السفينة.
+journal de bord | Le capitaine tient le journal de bord chaque jour. | يمسك القبطان يومية السفينة كل يوم.
+navigabilité | L'armateur garantit la navigabilité du navire. | يضمن المجهز صلاحية السفينة للملاحة.
+cabotage | Le cabotage relie les ports du littoral. | تربط الملاحة الساحلية موانئ الساحل.
+pêche maritime | La pêche maritime est réglementée par des textes spéciaux. | ينظم الصيد البحري بنصوص خاصة.
+autorité portuaire | L'autorité portuaire délivre les autorisations. | تمنح السلطة المينائية التراخيص.
+garde-côtes | Les garde-côtes surveillent les eaux territoriales. | يراقب حرس السواحل المياه الإقليمية.
+contrat de passage | Le contrat de passage oblige le transporteur envers le passager. | يلزم عقد نقل المسافرين الناقل تجاه المسافر.
+nationalité algérienne | La nationalité algérienne s'acquiert par filiation ou par naturalisation. | تكتسب الجنسية الجزائرية بالنسب أو بالتجنس.
+nationalité par filiation | La nationalité par filiation est la règle de principe. | الجنسية بالنسب هي القاعدة الأصلية.
+acquisition de la nationalité | L'acquisition de la nationalité suppose une demande préalable. | يفترض اكتساب الجنسية تقديم طلب مسبق.
+nationalité acquise | La nationalité acquise peut être retirée en cas de fraude. | يجوز سحب الجنسية المكتسبة في حالة الغش.
+acquisition de la nationalité par le mariage | L'acquisition de la nationalité par le mariage est soumise à des conditions. | يخضع اكتساب الجنسية بالزواج لشروط.
+perte de la nationalité | La perte de la nationalité entraîne celle des droits politiques. | يترتب على فقدان الجنسية فقدان الحقوق السياسية.
+retrait de la nationalité | Le retrait de la nationalité est prononcé par décret. | يصدر سحب الجنسية بمرسوم.
+renonciation à la nationalité | La renonciation à la nationalité est un acte volontaire. | التنازل عن الجنسية تصرف إرادي.
+réintégration dans la nationalité | La réintégration dans la nationalité rétablit l'ancien statut. | يعيد استرداد الجنسية الوضعية السابقة.
+certificat de nationalité | Le certificat de nationalité prouve l'appartenance à l'État. | تثبت شهادة الجنسية الانتماء إلى الدولة.
+preuve de la nationalité | La preuve de la nationalité incombe au demandeur. | يقع إثبات الجنسية على الطالب.
+contentieux de la nationalité | Le contentieux de la nationalité relève du juge administratif. | تختص منازعات الجنسية بالقاضي الإداري.
+décret de naturalisation | Le décret de naturalisation est publié au Journal officiel. | ينشر مرسوم التجنس بالجريدة الرسمية.
+demande de naturalisation | La demande de naturalisation est déposée à la wilaya. | يودع طلب التجنس لدى الولاية.
+ressortissant étranger | Le ressortissant étranger doit présenter un passeport valide. | يجب على الرعية الأجنبية تقديم جواز سفر صالح.
+entrée sur le territoire | L'entrée sur le territoire exige un visa. | يستلزم الدخول إلى الإقليم تأشيرة.
+sortie du territoire | La sortie du territoire est contrôlée. | يخضع الخروج من الإقليم للمراقبة.
+séjour des étrangers | Le séjour des étrangers est régi par la loi. | تنظم إقامة الأجانب القانون.
+carte de résident | La carte de résident est valable dix ans. | بطاقة المقيم صالحة عشر سنوات.
+titre de séjour | Le titre de séjour autorise le travail. | يسمح سند الإقامة بالعمل.
+résident étranger | Le résident étranger paie ses impôts en Algérie. | يدفع المقيم الأجنبي ضرائبه في الجزائر.
+étranger non résident | L'étranger non résident ne peut ouvrir un commerce sans autorisation. | لا يمكن للأجنبي غير المقيم فتح متجر دون ترخيص.
+étranger en situation irrégulière | L'étranger en situation irrégulière peut être expulsé. | يجوز طرد الأجنبي في وضعية غير قانونية.
+séjour irrégulier | Le séjour irrégulier est puni d'une amende. | يعاقب على الإقامة غير الشرعية بغرامة.
+migrant | Le migrant demande l'asile. | يطلب المهاجر اللجوء.
+visa d'entrée | Le visa d'entrée est apposé sur le passeport. | تثبت تأشيرة الدخول على جواز السفر.
+visa de transit | Le visa de transit permet un arrêt de courte durée. | تسمح تأشيرة العبور بتوقف قصير.
+prolongation du visa | La prolongation du visa est demandée avant l'expiration. | يطلب تمديد التأشيرة قبل انتهاء صلاحيتها.
+reconduite à la frontière | La reconduite à la frontière est exécutée par la police. | تنفذ الشرطة الاقتياد إلى الحدود.
+expulsion de l'étranger | L'expulsion de l'étranger est décidée par l'autorité administrative. | تقرر السلطة الإدارية طرد الأجنبي.
+arrêté d'expulsion | L'arrêté d'expulsion est motivé. | يجب تعليل قرار الطرد.
+interdiction d'entrée sur le territoire | L'interdiction d'entrée sur le territoire accompagne l'expulsion. | يواكب المنع من دخول الإقليم الطرد.
+centre d'attente | L'étranger est placé au centre d'attente. | يوضع الأجنبي في مركز الانتظار.
+regroupement familial | Le regroupement familial permet de rejoindre son conjoint. | يسمح التجمع العائلي بالالتحاق بالزوج.
+police des frontières | La police des frontières vérifie les documents. | تتحقق شرطة الحدود من الوثائق.
+contrôle aux frontières | Le contrôle aux frontières est renforcé. | يتم تعزيز مراقبة الحدود.
+document de voyage | Le document de voyage doit être en cours de validité. | يجب أن تكون وثيقة السفر سارية المفعول.
+laissez-passer | Le laissez-passer remplace le passeport perdu. | تعوض رخصة المرور جواز السفر المفقود.

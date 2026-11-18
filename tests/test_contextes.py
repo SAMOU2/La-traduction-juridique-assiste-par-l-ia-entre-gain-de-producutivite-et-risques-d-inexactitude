@@ -281,10 +281,12 @@ def test_contextes_des_termes_seuls(glossaire_fourni):
     """Un terme seul a sa phrase d'exemple, ou bien les phrases d'autres entrées qui l'emploient.
 
     Depuis la version 0.11, les termes du vocabulaire général ont leur phrase (noms, adjectifs, verbes et
-    locutions), ainsi que les noms de trois domaines : droit civil, justice et procédure, droit pénal. Les termes
-    des autres domaines la recevront ensuite ; en attendant, la contextualisation leur prête les phrases d'autres
-    entrées. Le test porte sur un terme seul sur vingt, pour rester rapide : chaque recherche parcourt tout le
-    glossaire.
+    locutions), ainsi que les noms de trois domaines : droit civil, justice et procédure, droit pénal. La version
+    0.12 ajoute les noms du droit des affaires, du droit constitutionnel, du droit administratif, du droit de la
+    famille, du droit du travail et de la sécurité sociale, du droit maritime et de la nationalité. Les termes des
+    quatre autres domaines la recevront ensuite ; en attendant, la contextualisation leur prête les phrases
+    d'autres entrées. Le test porte sur un terme seul sur vingt, pour rester rapide : chaque recherche parcourt
+    tout le glossaire.
     """
     seuls = glossaire_fourni.entrees[ENTREES_COMPLETES:]
     pourvus = [element for element in seuls if element.contextes]

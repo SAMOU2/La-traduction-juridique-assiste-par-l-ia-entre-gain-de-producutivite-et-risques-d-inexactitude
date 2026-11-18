@@ -93,9 +93,11 @@ def test_chaque_entree_est_complete(glossaire_fourni):
 def test_les_termes_seuls(glossaire_fourni):
     """Les entrées suivantes (versions 0.8 et 0.9) : terme, équivalent, catégorie, domaine et ressources.
 
-    Elles n'ont pas de définition. Depuis la version 0.11, une partie d'entre elles ont une phrase d'exemple : tous
-    les adjectifs, les verbes et les locutions, et une partie des noms (vocabulaire général, droit civil, justice
-    et procédure, droit pénal). Aucune forme d'un nom seul ne désigne
+    Elles n'ont pas de définition. Depuis les versions 0.11 et 0.12, une partie d'entre elles ont une phrase
+    d'exemple : tous les adjectifs, les verbes et les locutions, et une partie des noms (vocabulaire général,
+    droit civil, justice et procédure, droit pénal, droit des affaires, droit constitutionnel, droit administratif,
+    droit de la famille, droit du travail et sécurité sociale, droit maritime et nationalité). Aucune forme d'un
+    nom seul ne désigne
     un autre nom : la traduction d'un texte n'aurait rien pour choisir entre les deux. Un adjectif, un verbe ou
     une locution peut partager une forme avec une autre entrée (« منع » : « interdiction » et « interdire »),
     puisque la traduction d'un texte ne le remplace pas.

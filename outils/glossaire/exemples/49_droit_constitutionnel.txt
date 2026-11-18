@@ -1,0 +1,184 @@
+# Phrases d'exemple de termes/49_droit_constitutionnel.txt : terme | phrase française | phrase arabe
+régime politique | Le régime politique algérien est défini par la Constitution. | يحدد الدستور النظام السياسي الجزائري.
+régime présidentiel | Dans un régime présidentiel, le chef de l'État est élu au suffrage direct. | في النظام الرئاسي، ينتخب رئيس الدولة بالاقتراع المباشر.
+régime parlementaire | Le régime parlementaire repose sur la responsabilité du gouvernement devant le Parlement. | يقوم النظام البرلماني على مسؤولية الحكومة أمام البرلمان.
+régime semi-présidentiel | Le régime semi-présidentiel partage le pouvoir entre le président et le chef du gouvernement. | يتقاسم النظام شبه الرئاسي السلطة بين الرئيس ورئيس الحكومة.
+forme de l'État | La forme de l'État est unitaire. | شكل الدولة موحد.
+État unitaire | L'Algérie est un État unitaire décentralisé. | الجزائر دولة موحدة لامركزية.
+État fédéral | Un État fédéral répartit les compétences entre la fédération et les États membres. | توزع الدولة الاتحادية الاختصاصات بين الاتحاد والدول الأعضاء.
+souveraineté nationale | La souveraineté nationale ne peut être cédée. | لا يمكن التنازل عن السيادة الوطنية.
+souveraineté populaire | La souveraineté populaire s'exerce par le référendum et par les élus. | تمارس السيادة الشعبية بالاستفتاء وبالممثلين المنتخبين.
+intégrité territoriale | L'armée défend l'intégrité territoriale du pays. | يدافع الجيش عن سلامة التراب الوطني.
+unité nationale | La Constitution protège l'unité nationale. | يحمي الدستور الوحدة الوطنية.
+emblème national | L'emblème national est vert et blanc. | العلم الوطني أخضر وأبيض.
+hymne national | L'hymne national est joué lors des cérémonies officielles. | يعزف النشيد الوطني في المناسبات الرسمية.
+langue nationale et officielle | L'arabe est la langue nationale et officielle. | العربية لغة وطنية ورسمية.
+institutions de l'État | Les institutions de l'État fonctionnent selon la Constitution. | تعمل مؤسسات الدولة وفق الدستور.
+pouvoirs publics | Les pouvoirs publics doivent respecter la loi. | يجب على السلطات العمومية احترام القانون.
+équilibre des pouvoirs | L'équilibre des pouvoirs garantit les libertés. | يضمن توازن السلطات الحريات.
+chef du gouvernement | Le chef du gouvernement présente son programme. | يعرض رئيس الحكومة برنامجه.
+membre du gouvernement | Chaque membre du gouvernement est responsable de son secteur. | كل عضو الحكومة مسؤول عن قطاعه.
+ministre d'État | Le ministre d'État siège au sommet du gouvernement. | يشغل وزير دولة مرتبة عليا في الحكومة.
+ministre délégué | Le ministre délégué assiste le ministre dans ses fonctions. | يساعد الوزير المنتدب الوزير في مهامه.
+secrétaire d'État | Le secrétaire d'État est chargé d'un secteur précis. | يكلف كاتب دولة بقطاع محدد.
+secrétaire général du gouvernement | Le secrétaire général du gouvernement assure la coordination. | يضمن الأمين العام للحكومة التنسيق.
+portefeuille ministériel | Un portefeuille ministériel a changé de titulaire. | تغير صاحب حقيبة وزارية.
+remaniement ministériel | Le remaniement ministériel a remplacé trois ministres. | استبدل التعديل الوزاري ثلاثة وزراء.
+programme du gouvernement | Le programme du gouvernement est voté par les deux chambres. | يصوت على برنامج الحكومة من الغرفتين.
+plan d'action du gouvernement | Le plan d'action du gouvernement fixe les priorités de cinq ans. | يحدد مخطط عمل الحكومة أولويات خمس سنوات.
+déclaration de politique générale | Le Premier ministre a lu la déclaration de politique générale. | قرأ الوزير الأول بيان السياسة العامة.
+vote de confiance | Le vote de confiance a suivi la présentation du programme. | أعقب التصويت بالثقة عرض البرنامج.
+démission du gouvernement | La démission du gouvernement ouvre une crise politique. | تفتح استقالة الحكومة أزمة سياسية.
+vacance de la présidence de la République | La vacance de la présidence de la République est constatée par le Conseil constitutionnel. | يثبت المجلس الدستوري شغور رئاسة الجمهورية.
+état d'empêchement | L'état d'empêchement du président est déclaré par la Cour constitutionnelle. | تعلن المحكمة الدستورية حالة المانع.
+intérim de la présidence | L'intérim de la présidence est assuré par le président du Conseil de la Nation. | يتولى رئيس مجلس الأمة رئاسة الدولة بالنيابة.
+serment constitutionnel | Le président prête le serment constitutionnel devant le Parlement. | يؤدي الرئيس اليمين الدستورية أمام البرلمان.
+mandat présidentiel | Le mandat présidentiel est de cinq ans. | العهدة الرئاسية خمس سنوات.
+pouvoir de nomination | Le pouvoir de nomination appartient au président de la République. | تعود سلطة التعيين إلى رئيس الجمهورية.
+pouvoirs exceptionnels | Les pouvoirs exceptionnels sont exercés en cas de péril imminent. | تمارس السلطات الاستثنائية في حالة خطر داهم.
+haute trahison | La haute trahison relève de la Haute Cour de l'État. | تختص الخيانة العظمى بالمحكمة العليا للدولة.
+Haute Cour de l'État | La Haute Cour de l'État juge le président en cas de haute trahison. | تحاكم المحكمة العليا للدولة الرئيس في حالة خيانة عظمى.
+Haut Conseil de sécurité | Le Haut Conseil de sécurité examine les questions de défense. | ينظر المجلس الأعلى للأمن في مسائل الدفاع.
+Haut Conseil islamique | Le Haut Conseil islamique donne des avis sur les questions religieuses. | يقدم المجلس الإسلامي الأعلى آراء في المسائل الدينية.
+Conseil national économique, social et environnemental | Le Conseil national économique, social et environnemental rend des avis. | يقدم المجلس الوطني الاقتصادي والاجتماعي والبيئي آراء.
+Conseil national des droits de l'homme | Le Conseil national des droits de l'homme publie un rapport annuel. | ينشر المجلس الوطني لحقوق الإنسان تقريرا سنويا.
+Haute Autorité de transparence, de prévention et de lutte contre la corruption | La Haute Autorité de transparence, de prévention et de lutte contre la corruption reçoit les déclarations de patrimoine. | تتلقى السلطة العليا للشفافية والوقاية من الفساد ومكافحته تصريحات الممتلكات.
+Observatoire national de la société civile | L'Observatoire national de la société civile organise des rencontres. | ينظم المرصد الوطني للمجتمع المدني لقاءات.
+Conseil supérieur de la jeunesse | Le Conseil supérieur de la jeunesse représente les jeunes. | يمثل المجلس الأعلى للشباب الشباب.
+institution consultative | Le Conseil islamique est une institution consultative. | المجلس الإسلامي مؤسسة استشارية.
+institution de contrôle | La Cour des comptes est une institution de contrôle. | مجلس المحاسبة مؤسسة الرقابة.
+autorité indépendante | La Haute Autorité de la presse est une autorité indépendante. | السلطة العليا للصحافة سلطة مستقلة.
+défense nationale | La défense nationale est une mission de l'armée. | الدفاع الوطني مهمة من مهام الجيش.
+Armée nationale populaire | L'Armée nationale populaire protège les frontières. | يحمي الجيش الوطني الشعبي الحدود.
+mobilisation générale | La mobilisation générale est décrétée en temps de guerre. | تعلن التعبئة العامة في زمن الحرب.
+déclaration de guerre | La déclaration de guerre appartient au chef de l'État. | يعود إعلان الحرب إلى رئيس الدولة.
+état de guerre | L'état de guerre suspend certaines libertés. | تعلق حالة الحرب بعض الحريات.
+chambre du Parlement | Chaque chambre du Parlement vote son règlement intérieur. | تصوت كل غرفة البرلمان على نظامها الداخلي.
+bicamérisme | Le bicamérisme algérien repose sur deux chambres. | يقوم نظام الغرفتين الجزائري على غرفتين.
+membre du Conseil de la Nation | Le membre du Conseil de la Nation est élu par les élus locaux. | ينتخب عضو مجلس الأمة من طرف المنتخبين المحليين.
+président de l'Assemblée populaire nationale | Le président de l'Assemblée populaire nationale ouvre la session. | يفتح رئيس المجلس الشعبي الوطني الدورة.
+président du Conseil de la Nation | Le président du Conseil de la Nation assure l'intérim présidentiel. | يضمن رئيس مجلس الأمة النيابة الرئاسية.
+commission permanente | La commission permanente se réunit chaque semaine. | تجتمع اللجنة الدائمة كل أسبوع.
+commission d'enquête parlementaire | La commission d'enquête parlementaire entend les ministres. | تستمع لجنة تحقيق برلمانية إلى الوزراء.
+commission paritaire | La commission paritaire comprend des députés et des sénateurs. | تضم لجنة متساوية الأعضاء نوابا وأعضاء مجلس الأمة.
+groupe parlementaire | Chaque groupe parlementaire désigne son porte-parole. | تعين كل مجموعة برلمانية ناطقها.
+opposition parlementaire | L'opposition parlementaire dispose d'un temps de parole. | تتمتع المعارضة البرلمانية بوقت للكلام.
+majorité parlementaire | La majorité parlementaire soutient le gouvernement. | تدعم الأغلبية البرلمانية الحكومة.
+majorité présidentielle | La majorité présidentielle a voté le texte. | صوتت الأغلبية الرئاسية على النص.
+majorité simple | Le texte est adopté à la majorité simple. | يعتمد النص بالأغلبية البسيطة.
+majorité relative | La majorité relative suffit au second tour. | تكفي الأغلبية النسبية في الدور الثاني.
+législature | La législature dure cinq ans. | تدوم الفترة التشريعية خمس سنوات.
+session ordinaire | La session ordinaire commence en septembre. | تبدأ الدورة العادية في سبتمبر.
+session extraordinaire | Une session extraordinaire peut être convoquée par décret. | يمكن استدعاء دورة غير عادية بمرسوم.
+séance plénière | La séance plénière est publique. | الجلسة العامة علنية.
+initiative législative | L'initiative législative appartient aussi aux députés. | تعود المبادرة التشريعية أيضا إلى النواب.
+procédure législative | La procédure législative comporte plusieurs lectures. | يشمل الإجراء التشريعي عدة قراءات.
+seconde délibération | Le texte revient en seconde délibération. | يعود النص إلى مداولة ثانية.
+législation par ordonnance | La législation par ordonnance est limitée aux cas prévus. | يقتصر التشريع بأوامر على الحالات المنصوص عليها.
+contrôle parlementaire | Le contrôle parlementaire porte sur l'action du gouvernement. | تشمل الرقابة البرلمانية عمل الحكومة.
+question orale | Une question orale est posée en séance. | يطرح سؤال شفوي في الجلسة.
+question écrite | Le ministre répond à la question écrite sous un mois. | يجيب الوزير على السؤال الكتابي خلال شهر.
+interpellation du gouvernement | L'interpellation du gouvernement peut finir par une motion. | قد ينتهي استجواب الحكومة بملتمس.
+débat général | Le débat général précède le vote. | تسبق المناقشة العامة التصويت.
+dissolution de l'Assemblée populaire nationale | La dissolution de l'Assemblée populaire nationale entraîne des élections anticipées. | يترتب على حل المجلس الشعبي الوطني انتخابات مسبقة.
+élections législatives anticipées | Les élections législatives anticipées se tiennent dans les trois mois. | تجري الانتخابات التشريعية المسبقة في غضون ثلاثة أشهر.
+mandat parlementaire | Le mandat parlementaire est incompatible avec une fonction publique. | العهدة البرلمانية تتنافى مع الوظيفة العمومية.
+cumul des mandats | Le cumul des mandats est limité par la Constitution. | يقيد الدستور الجمع بين العهدات.
+cas d'incompatibilité | Le cas d'incompatibilité est examiné par le bureau. | تدرس حالة التنافي من طرف المكتب.
+déchéance du mandat parlementaire | La déchéance du mandat parlementaire est prononcée par la Cour constitutionnelle. | تصدر المحكمة الدستورية إسقاط العهدة البرلمانية.
+levée de l'immunité parlementaire | La levée de l'immunité parlementaire exige un vote. | يستلزم رفع الحصانة البرلمانية تصويتا.
+nomadisme politique | Le nomadisme politique change les équilibres au Parlement. | يغير التجوال السياسي التوازنات في البرلمان.
+indemnité parlementaire | L'indemnité parlementaire est fixée par la loi. | تحدد التعويضة البرلمانية بقانون.
+tiers présidentiel | Le tiers présidentiel désigne un tiers des sièges. | الثلث الرئاسي يعني ثلث المقاعد.
+régime électoral | Le régime électoral est fixé par la loi. | يحدد القانون النظام الانتخابي.
+loi électorale | La loi électorale organise le scrutin. | ينظم قانون الانتخابات الاقتراع.
+corps électoral | Le corps électoral compte plus de vingt millions de personnes. | تضم الهيئة الناخبة أكثر من عشرين مليون شخص.
+convocation du corps électoral | La convocation du corps électoral est publiée au Journal officiel. | ينشر استدعاء الهيئة الناخبة في الجريدة الرسمية.
+circonscription électorale | Chaque circonscription électorale élit un député. | تنتخب كل دائرة انتخابية نائبا.
+découpage électoral | Le découpage électoral est revu avant chaque élection. | يراجع تقسيم الدوائر الانتخابية قبل كل انتخاب.
+carte d'électeur | La carte d'électeur est exigée au bureau de vote. | تطلب بطاقة الناخب في مكتب التصويت.
+inscription sur les listes électorales | L'inscription sur les listes électorales se fait à la commune. | يتم التسجيل في القوائم الانتخابية في البلدية.
+révision des listes électorales | La révision des listes électorales a lieu chaque année. | تجري مراجعة القوائم الانتخابية كل سنة.
+déclaration de candidature | La déclaration de candidature est déposée auprès de l'administration. | يودع التصريح بالترشح لدى الإدارة.
+candidature | La candidature est enregistrée par la commission. | يسجل الترشح من طرف اللجنة.
+liste de candidats | La liste de candidats doit respecter la parité. | يجب أن تحترم قائمة المترشحين المناصفة.
+candidat indépendant | Le candidat indépendant ne relève d'aucun parti. | لا يتبع المترشح الحر أي حزب.
+collecte des signatures | La collecte des signatures précède le dépôt du dossier. | يسبق جمع التوقيعات إيداع الملف.
+campagne électorale | La campagne électorale dure vingt jours. | تدوم الحملة الانتخابية عشرين يوما.
+financement de la campagne électorale | Le financement de la campagne électorale est contrôlé. | يخضع تمويل الحملة الانتخابية للمراقبة.
+compte de campagne | Chaque candidat dépose un compte de campagne. | يودع كل مترشح حساب الحملة الانتخابية.
+silence électoral | Le silence électoral commence la veille du vote. | يبدأ الصمت الانتخابي عشية الاقتراع.
+bureau de vote | Le bureau de vote ouvre à huit heures. | يفتح مكتب التصويت على الساعة الثامنة.
+centre de vote | Le centre de vote regroupe plusieurs bureaux. | يجمع مركز التصويت عدة مكاتب.
+urne | L'urne est scellée avant le vote. | يغلق صندوق الاقتراع بالشمع قبل التصويت.
+bulletin de vote | Le bulletin de vote est placé dans une enveloppe. | توضع ورقة التصويت في ظرف.
+bulletin nul | Un bulletin nul n'est pas compté. | لا تحسب ورقة ملغاة.
+bulletin blanc | Le bulletin blanc exprime l'abstention. | تعبر الورقة البيضاء عن الامتناع.
+vote par procuration | Le vote par procuration est admis pour les malades. | يسمح بالتصويت بالوكالة للمرضى.
+scrutin secret | Le scrutin secret protège la liberté du choix. | يحمي الاقتراع السري حرية الاختيار.
+suffrage direct | Le président est élu au suffrage direct. | ينتخب الرئيس بالاقتراع المباشر.
+suffrage indirect | Les sénateurs sont élus au suffrage indirect. | ينتخب أعضاء مجلس الأمة بالاقتراع غير المباشر.
+suffrages exprimés | Le candidat obtient la moitié des suffrages exprimés. | يحصل المترشح على نصف الأصوات المعبر عنها.
+voix prépondérante | Le président du bureau dispose d'une voix prépondérante. | يتمتع رئيس المكتب بصوت مرجح.
+dépouillement du scrutin | Le dépouillement du scrutin commence après la fermeture. | يبدأ فرز الأصوات بعد الإغلاق.
+procès-verbal de dépouillement | Le procès-verbal de dépouillement est signé par les assesseurs. | يوقع محضر الفرز من طرف الأعضاء المساعدين.
+proclamation des résultats | La proclamation des résultats a lieu à la commission. | يتم إعلان النتائج في اللجنة.
+résultats provisoires | Les résultats provisoires sont annoncés le soir du vote. | تعلن النتائج المؤقتة في مساء الاقتراع.
+résultats définitifs | Les résultats définitifs sont publiés par le Conseil constitutionnel. | ينشر المجلس الدستوري النتائج النهائية.
+taux de participation | Le taux de participation dépasse cinquante pour cent. | تتجاوز نسبة المشاركة خمسين بالمائة.
+abstention électorale | L'abstention électorale atteint un niveau élevé. | يبلغ الامتناع عن التصويت مستوى عاليا.
+scrutin de liste | Le scrutin de liste s'applique aux élections locales. | يطبق الاقتراع على القائمة في الانتخابات المحلية.
+scrutin majoritaire | Le scrutin majoritaire favorise les grands partis. | يفضل الاقتراع بالأغلبية الأحزاب الكبيرة.
+scrutin uninominal | Le scrutin uninominal désigne un seul élu par circonscription. | يعين الاقتراع على الاسم الواحد منتخبا واحدا عن كل دائرة.
+représentation proportionnelle | La représentation proportionnelle répartit les sièges selon les voix. | يوزع التمثيل النسبي المقاعد حسب الأصوات.
+second tour | Le second tour a lieu une semaine plus tard. | يجري دور ثانٍ بعد أسبوع.
+seuil électoral | Le seuil électoral est fixé à cinq pour cent. | تحدد العتبة الانتخابية بخمسة بالمائة.
+répartition des sièges | La répartition des sièges suit le quotient électoral. | يتبع توزيع المقاعد الحاصل الانتخابي.
+siège vacant | Un siège vacant est pourvu par élection partielle. | يملأ مقعد شاغر بانتخاب جزئي.
+élection présidentielle | L'élection présidentielle a lieu tous les cinq ans. | تجري الانتخابات الرئاسية كل خمس سنوات.
+élections législatives | Les élections législatives renouvellent l'Assemblée. | تجدد الانتخابات التشريعية المجلس.
+élections locales | Les élections locales désignent les assemblées communales. | تعين الانتخابات المحلية المجالس البلدية.
+élection partielle | Une élection partielle comble le siège laissé vide. | يملأ انتخاب جزئي المقعد الشاغر.
+contentieux électoral | Le juge statue sur le contentieux électoral. | يفصل القاضي في منازعات انتخابية.
+recours électoral | Le recours électoral est déposé dans les trois jours. | يودع الطعن الانتخابي في غضون ثلاثة أيام.
+fraude électorale | La fraude électorale entraîne l'annulation du vote. | يترتب على التزوير الانتخابي إبطال الاقتراع.
+observateur des élections | L'observateur des élections vérifie le déroulement du vote. | يتحقق مراقب الانتخابات من سير الاقتراع.
+éligibilité | L'éligibilité suppose l'inscription sur les listes. | تفترض قابلية الانتخاب التسجيل في القوائم.
+inéligibilité | L'inéligibilité est prononcée pour cinq ans. | يقضى بعدم القابلية للانتخاب لمدة خمس سنوات.
+consultation référendaire | La consultation référendaire porte sur la révision constitutionnelle. | تتعلق الاستشارة الاستفتائية بالتعديل الدستوري.
+suprématie de la Constitution | La suprématie de la Constitution soumet toutes les lois à son respect. | يقرر سمو الدستور خضوع جميع القوانين له.
+bloc de constitutionnalité | Le bloc de constitutionnalité comprend la Constitution et les traités. | تضم الكتلة الدستورية الدستور والمعاهدات.
+membre de la Cour constitutionnelle | Le membre de la Cour constitutionnelle est nommé pour six ans. | يعين عضو المحكمة الدستورية لمدة ست سنوات.
+président de la Cour constitutionnelle | Le président de la Cour constitutionnelle prête serment. | يؤدي رئيس المحكمة الدستورية اليمين.
+contrôle a priori | Le contrôle a priori s'exerce avant la promulgation. | تمارس الرقابة القبلية قبل الإصدار.
+contrôle a posteriori | Le contrôle a posteriori intervient après l'entrée en vigueur. | تأتي الرقابة البعدية بعد دخول النص حيز التنفيذ.
+contrôle de conformité | Le contrôle de conformité vérifie le respect de la Constitution. | تتحقق رقابة المطابقة من احترام الدستور.
+décision de la Cour constitutionnelle | La décision de la Cour constitutionnelle s'impose aux pouvoirs publics. | يلزم قرار المحكمة الدستورية السلطات العمومية.
+déclaration d'inconstitutionnalité | La déclaration d'inconstitutionnalité prive le texte de tout effet. | يحرم التصريح بعدم الدستورية النص من كل أثر.
+inconstitutionnalité | L'inconstitutionnalité est constatée par la Cour. | تثبت المحكمة عدم الدستورية.
+réserve d'interprétation | La réserve d'interprétation sauve la disposition contestée. | ينقذ التحفظ التفسيري الحكم المطعون فيه.
+renvoi à la Cour constitutionnelle | Le renvoi à la Cour constitutionnelle suspend le procès. | تعلق الإحالة على المحكمة الدستورية المحاكمة.
+interprétation de la Constitution | L'interprétation de la Constitution appartient à la Cour. | يعود تفسير الدستور إلى المحكمة.
+conflit entre les pouvoirs constitutionnels | Le conflit entre les pouvoirs constitutionnels est tranché par la Cour. | يفصل في الخلاف بين السلطات الدستورية المحكمة.
+initiative de la révision constitutionnelle | L'initiative de la révision constitutionnelle appartient au président. | تعود المبادرة بالتعديل الدستوري إلى الرئيس.
+projet de révision constitutionnelle | Le projet de révision constitutionnelle est soumis au Parlement. | يعرض مشروع التعديل الدستوري على البرلمان.
+constitution rigide | Une constitution rigide exige une procédure spéciale. | يشترط الدستور الجامد إجراء خاصا.
+constitution souple | Une constitution souple se révise comme une loi ordinaire. | يراجع الدستور المرن كقانون عادي.
+constitution écrite | La constitution écrite rassemble les règles fondamentales. | يجمع الدستور المكتوب القواعد الأساسية.
+constitution coutumière | La constitution coutumière repose sur des usages constants. | يقوم الدستور العرفي على أعراف ثابتة.
+pouvoir constituant originaire | Le pouvoir constituant originaire crée un nouvel ordre juridique. | تنشئ السلطة التأسيسية الأصلية نظاما قانونيا جديدا.
+pouvoir constituant dérivé | Le pouvoir constituant dérivé modifie la Constitution. | تعدل السلطة التأسيسية المشتقة الدستور.
+assemblée constituante | L'assemblée constituante rédige la Constitution. | يصوغ المجلس التأسيسي الدستور.
+alternance au pouvoir | L'alternance au pouvoir est un signe de démocratie. | التداول على السلطة علامة على الديمقراطية.
+pluralisme politique | Le pluralisme politique est garanti par la Constitution. | يضمن الدستور التعددية السياسية.
+multipartisme | Le multipartisme est consacré depuis 1989. | كرست التعددية الحزبية منذ 1989.
+organisations de la société civile | Les organisations de la société civile participent au débat. | تشارك منظمات المجتمع المدني في النقاش.
+opposition politique | L'opposition politique critique le budget. | تنتقد المعارضة السياسية الميزانية.
+création d'un parti politique | La création d'un parti politique exige une déclaration. | يستلزم تأسيس حزب سياسي تصريحا.
+financement des partis politiques | Le financement des partis politiques est plafonné. | يحدد سقف تمويل الأحزاب السياسية.
+mouvement associatif | Le mouvement associatif compte des milliers d'associations. | تضم الحركة الجمعوية آلاف الجمعيات.
+démocratie participative | La démocratie participative associe les citoyens aux décisions. | تشرك الديمقراطية التشاركية المواطنين في القرارات.
+démocratie représentative | La démocratie représentative repose sur des élus. | تقوم الديمقراطية التمثيلية على منتخبين.
+bonne gouvernance | La bonne gouvernance exige la transparence. | يستلزم الحكم الراشد الشفافية.
+responsabilité politique | La responsabilité politique du gouvernement est engagée devant le Parlement. | تثار المسؤولية السياسية للحكومة أمام البرلمان.
+moralisation de la vie publique | La moralisation de la vie publique lutte contre la corruption. | تكافح أخلقة الحياة العامة الفساد.

@@ -1,0 +1,356 @@
+# Phrases d'exemple de termes/48_droit_des_affaires.txt : terme | phrase française | phrase arabe
+qualité de commerçant | La qualité de commerçant suppose l'exercice habituel du commerce. | تفترض صفة التاجر ممارسة التجارة بصفة معتادة.
+commerçant personne physique | Le commerçant personne physique tient des livres comptables. | يمسك تاجر شخص طبيعي دفاتر محاسبية.
+activité commerciale | L'activité commerciale est déclarée au registre. | يصرح بالنشاط التجاري في السجل.
+profession commerciale | La profession commerciale exige une inscription. | تستلزم المهنة التجارية قيدا.
+acte de commerce par nature | La vente de marchandises est un acte de commerce par nature. | بيع البضائع عمل تجاري بحسب موضوعه.
+acte de commerce par la forme | La lettre de change est un acte de commerce par la forme. | السفتجة عمل تجاري بحسب شكله.
+acte de commerce par accessoire | L'achat d'un fonds de commerce est un acte de commerce par accessoire. | شراء المحل التجاري عمل تجاري بالتبعية.
+acte mixte | L'acte mixte relève du juge civil à l'égard du non-commerçant. | يخضع العمل المختلط للقاضي المدني تجاه غير التاجر.
+liberté du commerce et de l'industrie | La liberté du commerce et de l'industrie est un principe constitutionnel. | حرية التجارة والصناعة مبدأ دستوري.
+immatriculation au registre du commerce | L'immatriculation au registre du commerce est obligatoire. | القيد في السجل التجاري إلزامي.
+extrait du registre du commerce | L'extrait du registre du commerce est joint au dossier. | يرفق مستخرج من السجل التجاري بالملف.
+centre national du registre du commerce | Le centre national du registre du commerce délivre les extraits. | يسلم المركز الوطني للسجل التجاري المستخرجات.
+numéro d'immatriculation | Le numéro d'immatriculation figure sur les factures. | يظهر رقم القيد في الفواتير.
+radiation du registre du commerce | La radiation du registre du commerce suit la cessation d'activité. | يأتي الشطب من السجل التجاري بعد توقف النشاط.
+nom commercial | Le nom commercial distingue la maison de ses concurrents. | يميز الاسم التجاري المحل عن منافسيه.
+enseigne | L'enseigne est apposée sur la façade. | يعلق عنوان المحل على الواجهة.
+clientèle | La clientèle fait partie du fonds de commerce. | الزبائن جزء من المحل التجاري.
+achalandage | L'achalandage attire de nouveaux acheteurs. | تجذب الشهرة التجارية مشترين جدد.
+droit au bail | Le droit au bail permet le renouvellement du contrat. | يسمح حق الإيجار بتجديد العقد.
+éléments du fonds de commerce | Les éléments du fonds de commerce comprennent le matériel. | تشمل عناصر المحل التجاري العتاد.
+vente du fonds de commerce | La vente du fonds de commerce est publiée. | ينشر بيع المحل التجاري.
+nantissement du fonds de commerce | Le nantissement du fonds de commerce garantit un prêt. | يضمن رهن المحل التجاري قرضا.
+location-gérance | La location-gérance confie le fonds à un gérant. | يسلم التسيير الحر المحل إلى مسير.
+gérant libre | Le gérant libre paie un loyer au propriétaire. | يدفع المسير الحر إيجارا إلى المالك.
+livres de commerce | Les livres de commerce sont tenus chronologiquement. | تمسك الدفاتر التجارية حسب الترتيب الزمني.
+livre-journal | Le livre-journal enregistre les opérations quotidiennes. | يسجل دفتر اليومية العمليات اليومية.
+livre d'inventaire | Le livre d'inventaire est arrêté chaque année. | يقفل دفتر الجرد كل سنة.
+bilan comptable | Le bilan comptable présente l'actif et le passif. | تعرض الميزانية المحاسبية الأصول والخصوم.
+compte de résultat | Le compte de résultat fait apparaître le bénéfice. | يظهر حساب النتائج الربح.
+inventaire | L'inventaire est dressé à la clôture de l'exercice. | يحرر الجرد عند قفل السنة المالية.
+exercice comptable | L'exercice comptable dure douze mois. | تدوم السنة المالية اثني عشر شهرا.
+chiffre d'affaires | Le chiffre d'affaires a augmenté de dix pour cent. | ارتفع رقم الأعمال بعشرة بالمائة.
+correspondance commerciale | La correspondance commerciale prouve l'accord des parties. | تثبت المراسلات التجارية اتفاق الطرفين.
+usages commerciaux | Les usages commerciaux complètent la loi. | تكمل الأعراف التجارية القانون.
+preuve commerciale | La preuve commerciale est libre entre commerçants. | الإثبات التجاري حر بين التجار.
+solidarité commerciale | La solidarité commerciale oblige chaque associé pour le tout. | يلزم التضامن التجاري كل شريك بكل الدين.
+intermédiaire de commerce | L'intermédiaire de commerce rapproche vendeur et acheteur. | يقرب الوسيط التجاري بين البائع والمشتري.
+commissionnaire | Le commissionnaire agit en son nom propre. | يتصرف الوكيل بالعمولة باسمه الخاص.
+contrat de commission | Le contrat de commission fixe la rémunération. | يحدد عقد الوكالة بالعمولة الأجر.
+contrat de courtage | Le contrat de courtage met en rapport deux parties. | يجمع عقد السمسرة بين طرفين.
+contrat d'agence commerciale | Le contrat d'agence commerciale est conclu pour une durée déterminée. | يبرم عقد الوكالة التجارية لمدة محددة.
+représentant de commerce | Le représentant de commerce visite les clients. | يزور الممثل التجاري الزبائن.
+concessionnaire | Le concessionnaire vend les produits de la marque. | يبيع صاحب الامتياز منتجات العلامة.
+distributeur | Le distributeur assure la livraison dans une région. | يضمن الموزع التسليم في منطقة.
+contrat de distribution | Le contrat de distribution précise le territoire. | يحدد عقد التوزيع الإقليم.
+franchise | La franchise repose sur un savoir-faire. | يقوم الامتياز التجاري على الخبرة.
+franchiseur | Le franchiseur forme le franchisé. | يكون مانح الامتياز المستفيد.
+fournisseur | Le fournisseur livre la marchandise commandée. | يسلم المورد البضاعة المطلوبة.
+grossiste | Le grossiste achète en grande quantité. | يشتري تاجر جملة بكميات كبيرة.
+détaillant | Le détaillant vend au consommateur. | يبيع تاجر تجزئة للمستهلك.
+vente commerciale | La vente commerciale est soumise aux usages. | يخضع البيع التجاري للأعراف.
+bon de commande | Le bon de commande est signé par l'acheteur. | يوقع المشتري وصل الطلب.
+bon de livraison | Le bon de livraison accompagne la marchandise. | يرافق وصل التسليم البضاعة.
+facture pro forma | La facture pro forma précède la commande. | تسبق الفاتورة الشكلية الطلب.
+gage commercial | Le gage commercial porte sur le matériel. | يقع الرهن التجاري على العتاد.
+crédit-bail | Le crédit-bail permet d'utiliser un bien avant de l'acquérir. | يسمح الاعتماد الإيجاري باستعمال مال قبل اكتسابه.
+affacturage | L'affacturage cède les créances à une société spécialisée. | يحيل عقد تحويل الفاتورة الديون إلى شركة متخصصة.
+entrepôt | L'entrepôt stocke les marchandises. | يخزن المستودع البضائع.
+magasin général | Le magasin général délivre un récépissé. | يسلم المخزن العام وصلا.
+récépissé-warrant | Le récépissé-warrant permet de nantir les marchandises. | يسمح سند الخزن برهن البضائع.
+foire | La foire présente les nouveaux produits. | يعرض المعرض المنتجات الجديدة.
+chambre de commerce et d'industrie | La chambre de commerce et d'industrie représente les entreprises. | تمثل غرفة التجارة والصناعة المؤسسات.
+tribunal de commerce | Le tribunal de commerce juge les litiges entre commerçants. | تفصل المحكمة التجارية في نزاعات التجار.
+juridiction commerciale | La juridiction commerciale statue en premier ressort. | يفصل القضاء التجاري في أول درجة.
+société de personnes | La société de personnes repose sur la confiance entre associés. | تقوم شركة أشخاص على الثقة بين الشركاء.
+société de capitaux | La société de capitaux réunit des actionnaires. | تجمع شركة أموال مساهمين.
+société en commandite simple | La société en commandite simple comprend deux catégories d'associés. | تضم شركة التوصية البسيطة فئتين من الشركاء.
+société en commandite par actions | La société en commandite par actions émet des actions. | تصدر شركة التوصية بالأسهم أسهما.
+société en participation | La société en participation n'a pas la personnalité morale. | ليس لشركة محاصة شخصية معنوية.
+société de fait | La société de fait naît de comportements communs. | تنشأ شركة فعلية من سلوكات مشتركة.
+société créée de fait | La société créée de fait se prouve par tous moyens. | تثبت شركة منشأة بحكم الواقع بكل الوسائل.
+société par actions simplifiée | La société par actions simplifiée est librement organisée. | تنظم شركة مساهمة بسيطة بحرية.
+société mère | La société mère contrôle ses filiales. | تراقب الشركة الأم شركاتها التابعة.
+filiale | La filiale applique la politique du groupe. | تطبق الشركة التابعة سياسة المجمع.
+succursale | La succursale n'a pas de personnalité juridique distincte. | ليس لفرع الشركة شخصية قانونية مستقلة.
+groupe de sociétés | Le groupe de sociétés publie des comptes consolidés. | ينشر مجمع شركات حسابات مجمعة.
+groupement d'intérêt économique | Le groupement d'intérêt économique facilite les achats communs. | يسهل تجمع ذو منفعة اقتصادية المشتريات المشتركة.
+société holding | La société holding détient des participations. | تملك الشركة القابضة مساهمات.
+entreprise publique économique | L'entreprise publique économique est soumise au droit commercial. | تخضع المؤسسة العمومية الاقتصادية للقانون التجاري.
+acte constitutif | L'acte constitutif est déposé chez le notaire. | يودع العقد التأسيسي عند الموثق.
+fondateur de la société | Le fondateur de la société assume les premiers frais. | يتحمل مؤسس الشركة المصاريف الأولى.
+associé commandité | L'associé commandité répond des dettes. | يسأل الشريك المتضامن عن الديون.
+associé commanditaire | L'associé commanditaire n'engage que son apport. | لا يلزم الشريك الموص إلا بحصته.
+associé unique | L'associé unique décide seul. | يقرر الشريك الوحيد بمفرده.
+affectio societatis | L'affectio societatis exprime la volonté de collaborer. | تعبر نية الاشتراك عن إرادة التعاون.
+raison sociale | La raison sociale figure sur les documents. | يظهر عنوان الشركة في الوثائق.
+dénomination sociale | La dénomination sociale doit être disponible. | يجب أن تكون تسمية الشركة متاحة.
+durée de la société | La durée de la société est fixée à quatre-vingt-dix-neuf ans. | حددت مدة الشركة بتسعة وتسعين سنة.
+personnalité morale de la société | La personnalité morale de la société naît de l'immatriculation. | تنشأ شخصية معنوية للشركة عن القيد.
+apport en numéraire | L'apport en numéraire est versé à la banque. | تدفع الحصة النقدية إلى البنك.
+apport en nature | L'apport en nature consiste en un immeuble. | تتكون الحصة العينية من عقار.
+apport en industrie | L'apport en industrie apporte un savoir-faire. | تقدم الحصة بالعمل خبرة.
+commissaire aux apports | Le commissaire aux apports évalue les biens. | يقدر مندوب الحصص الأموال.
+libération des apports | La libération des apports suit la souscription. | يأتي تسديد الحصص بعد الاكتتاب.
+souscription du capital | La souscription du capital est ouverte au public. | يفتح الاكتتاب في رأس المال للجمهور.
+capital minimum | Le capital minimum est fixé par la loi. | يحدد القانون حد أدنى لرأس المال.
+augmentation de capital | L'augmentation de capital renforce les fonds propres. | تعزز زيادة رأس المال الأموال الخاصة.
+réduction de capital | La réduction de capital couvre les pertes. | تغطي تخفيض رأس المال الخسائر.
+amortissement du capital | L'amortissement du capital rembourse la valeur des actions. | يسدد استهلاك رأس المال قيمة الأسهم.
+capital variable | Le capital variable peut évoluer sans formalité. | يمكن لرأس مال متغير أن يتطور دون إجراء.
+réserve légale | La réserve légale est prélevée sur le bénéfice. | يخصم الاحتياطي القانوني من الربح.
+bénéfice distribuable | Le bénéfice distribuable est fixé par l'assemblée. | تحدد الجمعية الربح القابل للتوزيع.
+répartition des bénéfices | La répartition des bénéfices intervient après l'approbation des comptes. | يأتي توزيع الأرباح بعد المصادقة على الحسابات.
+contribution aux pertes | La contribution aux pertes limite la responsabilité de l'associé. | تحدد المساهمة في الخسائر مسؤولية الشريك.
+titre financier | Le titre financier est négociable. | السند المالي قابل للتداول.
+valeur mobilière | La valeur mobilière est inscrite au compte titres. | تقيد القيمة المنقولة في حساب الأوراق.
+action nominative | L'action nominative est inscrite au nom du titulaire. | يقيد السهم الاسمي باسم صاحبه.
+action au porteur | L'action au porteur se transmet par simple remise. | ينتقل السهم لحامله بمجرد التسليم.
+action ordinaire | L'action ordinaire donne un droit de vote. | يمنح السهم العادي حق التصويت.
+action de préférence | L'action de préférence reçoit un dividende majoré. | يتلقى السهم الممتاز أرباحا أعلى.
+action de jouissance | L'action de jouissance remplace l'action amortie. | يعوض سهم تمتع السهم المستهلك.
+obligation convertible | L'obligation convertible devient une action. | يتحول السند القابل للتحويل إلى أسهم إلى سهم.
+emprunt obligataire | L'emprunt obligataire finance un projet. | يمول القرض السندي مشروعا.
+obligataire | L'obligataire perçoit un intérêt annuel. | يتقاضى حامل السندات فائدة سنوية.
+cession de parts sociales | La cession de parts sociales exige l'agrément. | تستلزم إحالة الحصص الموافقة.
+cession d'actions | La cession d'actions est enregistrée par la société. | تسجل الشركة التنازل عن الأسهم.
+clause d'agrément | La clause d'agrément contrôle l'entrée d'un nouvel associé. | تراقب شرط الموافقة دخول شريك جديد.
+droit préférentiel de souscription | Le droit préférentiel de souscription protège l'associé. | يحمي حق الأفضلية في الاكتتاب الشريك.
+droit de vote | Le droit de vote est proportionnel aux actions. | يتناسب حق التصويت مع الأسهم.
+droit aux dividendes | Le droit aux dividendes naît après l'approbation. | ينشأ حق في الأرباح بعد المصادقة.
+droit à l'information de l'associé | Le droit à l'information de l'associé permet de consulter les comptes. | يسمح حق الشريك في الإعلام بالاطلاع على الحسابات.
+assemblée générale ordinaire | L'assemblée générale ordinaire approuve les comptes. | تصادق الجمعية العامة العادية على الحسابات.
+assemblée générale extraordinaire | L'assemblée générale extraordinaire modifie les statuts. | تعدل الجمعية العامة غير العادية القانون الأساسي.
+assemblée constitutive | L'assemblée constitutive nomme le premier gérant. | تعين الجمعية التأسيسية أول مسير.
+convocation de l'assemblée | La convocation de l'assemblée respecte un délai de quinze jours. | تحترم استدعاء الجمعية مهلة خمسة عشر يوما.
+ordre du jour | L'ordre du jour est joint à la convocation. | يرفق جدول الأعمال بالاستدعاء.
+résolution de l'assemblée | La résolution de l'assemblée est adoptée à la majorité. | يعتمد قرار الجمعية بالأغلبية.
+procès-verbal de l'assemblée | Le procès-verbal de l'assemblée est signé par les membres. | يوقع محضر الجمعية من طرف الأعضاء.
+feuille de présence | La feuille de présence est annexée au procès-verbal. | ترفق ورقة الحضور بالمحضر.
+majorité qualifiée | La majorité qualifiée est exigée pour modifier les statuts. | تستلزم الأغلبية الموصوفة لتعديل القانون الأساسي.
+unanimité | L'unanimité est requise pour changer la nationalité de la société. | يستلزم الإجماع لتغيير جنسية الشركة.
+minorité de blocage | La minorité de blocage empêche la modification. | تمنع الأقلية المعطلة التعديل.
+abus de majorité | L'abus de majorité est sanctionné par la nullité. | يعاقب على تعسف الأغلبية بالبطلان.
+administrateur | L'administrateur est nommé par l'assemblée. | يعين القائم بالإدارة من طرف الجمعية.
+président du conseil d'administration | Le président du conseil d'administration convoque les réunions. | يستدعي رئيس مجلس الإدارة الاجتماعات.
+président-directeur général | Le président-directeur général dirige la société. | يدير رئيس مدير عام الشركة.
+directeur général | Le directeur général exécute la politique de la société. | ينفذ المدير العام سياسة الشركة.
+directoire | Le directoire est contrôlé par le conseil de surveillance. | يراقب مجلس المراقبة مجلس المديرين.
+conseil de surveillance | Le conseil de surveillance examine le rapport de gestion. | يفحص مجلس المراقبة تقرير التسيير.
+dirigeant social | Le dirigeant social engage la société. | يلزم مسير الشركة الشركة.
+dirigeant de fait | Le dirigeant de fait est responsable comme le dirigeant légal. | يسأل المسير الفعلي كالمسير القانوني.
+mandataire social | Le mandataire social représente la société. | يمثل وكيل الشركة الشركة.
+rapport de gestion | Le rapport de gestion présente l'activité de l'année. | يعرض تقرير التسيير نشاط السنة.
+comptes sociaux | Les comptes sociaux sont approuvés chaque année. | تصادق حسابات الشركة كل سنة.
+approbation des comptes | L'approbation des comptes intervient dans les six mois. | تأتي المصادقة على الحسابات في غضون ستة أشهر.
+quitus | Le quitus libère les dirigeants de leur gestion. | يعفي إبراء ذمة المسيرين المسيرين من تسييرهم.
+convention réglementée | La convention réglementée est soumise au conseil. | تعرض الاتفاقية المنظمة على المجلس.
+faute de gestion | La faute de gestion peut engager la responsabilité du dirigeant. | قد يثير خطأ في التسيير مسؤولية المسير.
+action sociale | L'action sociale répare le préjudice subi par la société. | تجبر دعوى الشركة الضرر اللاحق بالشركة.
+action individuelle | L'action individuelle appartient à chaque associé. | تعود الدعوى الفردية إلى كل شريك.
+transformation de la société | La transformation de la société ne crée pas une personne nouvelle. | لا ينشئ تحويل الشركة شخصا جديدا.
+scission | La scission divise la société en deux entités. | يقسم الانفصال الشركة إلى كيانين.
+fusion-absorption | La fusion-absorption intègre une société dans une autre. | يدمج الاندماج بطريق الضم شركة في أخرى.
+apport partiel d'actif | L'apport partiel d'actif transfère une branche d'activité. | ينقل تقديم جزئي للأصول فرع نشاط.
+prorogation de la société | La prorogation de la société exige une décision collective. | يستلزم تمديد الشركة قرارا جماعيا.
+nullité de la société | La nullité de la société est prononcée par le juge. | يصدر القاضي بطلان الشركة.
+dissolution anticipée | La dissolution anticipée met fin à la société. | ينهي الحل المسبق الشركة.
+liquidation amiable | La liquidation amiable est menée par un liquidateur. | تجرى التصفية الودية من طرف مصف.
+boni de liquidation | Le boni de liquidation est partagé entre associés. | يقسم فائض التصفية بين الشركاء.
+clôture de la liquidation | La clôture de la liquidation est publiée. | ينشر قفل التصفية.
+bourse des valeurs | La bourse des valeurs cote les actions. | تسجل بورصة القيم المنقولة الأسهم.
+marché financier | Le marché financier attire les investisseurs. | تجذب السوق المالية المستثمرين.
+offre publique d'achat | L'offre publique d'achat porte sur le capital d'une société. | يتعلق العرض العمومي للشراء برأس مال شركة.
+appel public à l'épargne | L'appel public à l'épargne exige une autorisation. | يستلزم اللجوء العلني للادخار ترخيصا.
+délit d'initié | Le délit d'initié est puni par la loi. | يعاقب القانون على جنحة العالم بأسرار الشركة.
+commission d'organisation et de surveillance des opérations de bourse | La commission d'organisation et de surveillance des opérations de bourse contrôle les marchés. | تراقب لجنة تنظيم عمليات البورصة ومراقبتها الأسواق.
+titre de crédit | Le titre de crédit constate une créance. | يثبت سند ائتمان دينا.
+porteur du titre | Le porteur du titre demande le paiement. | يطلب حامل السند الوفاء.
+porteur légitime | Le porteur légitime justifie d'une suite régulière d'endossements. | يثبت الحامل الشرعي بتتابع نظامي للتظهيرات.
+endosseur | L'endosseur garantit le paiement. | يضمن المظهر الوفاء.
+endossataire | L'endossataire devient créancier du titre. | يصبح المظهر له دائنا بالسند.
+endossement translatif | L'endossement translatif transmet la propriété du titre. | ينقل التظهير الناقل للملكية ملكية السند.
+endossement de procuration | L'endossement de procuration donne un mandat de recouvrement. | يمنح التظهير التوكيلي وكالة للتحصيل.
+endossement pignoratif | L'endossement pignoratif garantit une dette. | يضمن التظهير التأميني دينا.
+acceptation de la lettre de change | L'acceptation de la lettre de change engage le tiré. | يلزم قبول السفتجة المسحوب عليه.
+aval | L'aval garantit le paiement de la lettre de change. | يضمن الضمان الاحتياطي وفاء السفتجة.
+avaliste | L'avaliste répond comme le tireur. | يسأل الضامن الاحتياطي كالساحب.
+présentation au paiement | La présentation au paiement se fait à l'échéance. | يتم التقديم للوفاء عند الاستحقاق.
+protêt faute de paiement | Le protêt faute de paiement constate le refus. | يثبت الاحتجاج لعدم الدفع الرفض.
+protêt faute d'acceptation | Le protêt faute d'acceptation ouvre le recours. | يفتح الاحتجاج لعدم القبول حق الرجوع.
+recours cambiaire | Le recours cambiaire vise les signataires du titre. | يستهدف الرجوع الصرفي موقعي السند.
+action cambiaire | L'action cambiaire se prescrit par six mois. | تتقادم الدعوى الصرفية بستة أشهر.
+inopposabilité des exceptions | L'inopposabilité des exceptions protège le porteur de bonne foi. | يحمي عدم الاحتجاج بالدفوع الحامل حسن النية.
+lettre de change à vue | La lettre de change à vue est payable immédiatement. | السفتجة المستحقة عند الاطلاع واجبة الدفع فورا.
+chèque barré | Le chèque barré se paie par virement. | يوفى الشيك المسطر بالتحويل.
+chèque certifié | Le chèque certifié atteste l'existence de la provision. | يثبت الشيك المصادق عليه وجود الرصيد.
+chèque de banque | Le chèque de banque est émis par la banque. | يصدر الشيك المصرفي من البنك.
+chèque postal | Le chèque postal est encaissé à la poste. | يحصل الشيك البريدي في البريد.
+chèque sans provision | Le chèque sans provision est sanctionné pénalement. | يعاقب جزائيا على الشيك بدون رصيد.
+chéquier | Le chéquier est remis au titulaire du compte. | يسلم دفتر الشيكات إلى صاحب الحساب.
+opposition au paiement du chèque | L'opposition au paiement du chèque est déclarée à la banque. | تصرح المعارضة في وفاء الشيك لدى البنك.
+interdiction d'émettre des chèques | L'interdiction d'émettre des chèques dure cinq ans. | يدوم المنع من إصدار الشيكات خمس سنوات.
+incident de paiement | L'incident de paiement est signalé à la banque. | يبلغ عارض الدفع إلى البنك.
+warrant | Le warrant garantit le crédit par les marchandises. | يضمن سند رهن القرض بالبضائع.
+bon de caisse | Le bon de caisse rémunère un dépôt court. | يكافئ سند الصندوق وديعة قصيرة.
+escompte | L'escompte avance le montant de la lettre de change. | يسلف الخصم التجاري مبلغ السفتجة.
+entreprise en difficulté | L'entreprise en difficulté demande un redressement. | تطلب المؤسسة في حالة صعوبة تقويما.
+état de cessation des paiements | L'état de cessation des paiements est déclaré au tribunal. | يصرح بحالة التوقف عن الدفع لدى المحكمة.
+déclaration de cessation des paiements | La déclaration de cessation des paiements est faite dans les huit jours. | يتم التصريح بالتوقف عن الدفع في غضون ثمانية أيام.
+jugement déclaratif de faillite | Le jugement déclaratif de faillite nomme un administrateur. | يعين حكم بشهر الإفلاس أمينا.
+date de cessation des paiements | La date de cessation des paiements est fixée par le juge. | يحدد القاضي تاريخ التوقف عن الدفع.
+période suspecte | La période suspecte annule certains actes. | تبطل فترة الريبة بعض التصرفات.
+juge-commissaire | Le juge-commissaire surveille la procédure. | يراقب قاض منتدب الإجراء.
+failli | Le failli perd l'administration de ses biens. | يفقد المفلس إدارة أمواله.
+masse des créanciers | La masse des créanciers délibère sur ses intérêts. | تتداول جماعة الدائنين في مصالحها.
+contrôleur | Le contrôleur est désigné par les créanciers. | يعين الدائنون المراقب.
+dessaisissement | Le dessaisissement prive le débiteur de la gestion. | يحرم غل اليد المدين من التسيير.
+déclaration de créance | La déclaration de créance est adressée au mandataire. | يرسل التصريح بالدين إلى الوكيل.
+production des créances | La production des créances est vérifiée par le juge. | يتحقق القاضي من تقديم الديون.
+vérification des créances | La vérification des créances écarte les créances douteuses. | يستبعد تحقيق الديون الديون المشكوك فيها.
+admission des créances | L'admission des créances fixe le passif. | يحدد قبول الديون الخصوم.
+état des créances | L'état des créances est déposé au greffe. | يودع كشف الديون في أمانة الضبط.
+suspension des poursuites individuelles | La suspension des poursuites individuelles protège le débiteur. | يحمي وقف المتابعات الفردية المدين.
+arrêt du cours des intérêts | L'arrêt du cours des intérêts suit le jugement. | يأتي وقف سريان الفوائد بعد الحكم.
+revendication des marchandises | La revendication des marchandises exige la preuve de la livraison. | يستلزم استرداد البضائع إثبات التسليم.
+continuation de l'exploitation | La continuation de l'exploitation sauve les emplois. | ينقذ استمرار الاستغلال مناصب العمل.
+concordat préventif | Le concordat préventif évite la faillite. | يتجنب صلح واق من الإفلاس حالة الإفلاس.
+homologation du concordat | L'homologation du concordat est prononcée par le tribunal. | تصدر المحكمة المصادقة على الصلح.
+union des créanciers | L'union des créanciers négocie avec le débiteur. | يتفاوض اتحاد الدائنين مع المدين.
+liquidation des biens | La liquidation des biens réalise l'actif. | تحقق تصفية الأموال الأصول.
+réalisation de l'actif | La réalisation de l'actif paie les créanciers. | يدفع بيع الأصول الدائنين.
+actif social | L'actif social comprend les biens et les créances. | تشمل أصول الشركة الأموال والديون.
+passif | Le passif dépasse l'actif. | تتجاوز خصوم الشركة الأصول.
+insuffisance d'actif | L'insuffisance d'actif clôt la procédure. | يقفل عدم كفاية الأصول الإجراء.
+clôture pour insuffisance d'actif | La clôture pour insuffisance d'actif libère le débiteur. | يعفي قفل التفليسة لعدم كفاية الأصول المدين.
+clôture pour extinction du passif | La clôture pour extinction du passif intervient quand les dettes sont payées. | يأتي قفل التفليسة لانقضاء الديون عندما تسدد الديون.
+faillite personnelle | La faillite personnelle interdit la direction d'une société. | يمنع الإفلاس الشخصي إدارة شركة.
+banqueroute simple | La banqueroute simple résulte d'une négligence grave. | ينتج التفليس بالتقصير عن إهمال جسيم.
+banqueroute frauduleuse | La banqueroute frauduleuse est un délit. | التفليس بالتدليس جنحة.
+réhabilitation commerciale | La réhabilitation commerciale efface la sanction. | يمحي رد الاعتبار التجاري العقوبة.
+interdiction de gérer | L'interdiction de gérer est prononcée pour cinq ans. | يصدر المنع من التسيير لمدة خمس سنوات.
+redressement de l'entreprise | Le redressement de l'entreprise maintient l'activité. | يحافظ تقويم المؤسسة على النشاط.
+sauvegarde de l'entreprise | La sauvegarde de l'entreprise protège les salariés. | تحمي إنقاذ المؤسسة العمال.
+établissement de crédit | L'établissement de crédit collecte les dépôts. | تجمع مؤسسة قرض الودائع.
+banque commerciale | La banque commerciale finance les entreprises. | يمول البنك التجاري المؤسسات.
+banque islamique | La banque islamique partage les profits et les pertes. | يتقاسم البنك الإسلامي الأرباح والخسائر.
+finance islamique | La finance islamique évite les intérêts. | تتجنب الصيرفة الإسلامية الفوائد.
+agrément bancaire | L'agrément bancaire est délivré par le Conseil de la monnaie. | يسلم الاعتماد المصرفي من طرف مجلس النقد.
+opération de banque | L'opération de banque comprend la réception des fonds. | تشمل العملية المصرفية تلقي الأموال.
+dépôt bancaire | Le dépôt bancaire est remboursable à vue. | الوديعة المصرفية واجبة الرد عند الطلب.
+dépôt à vue | Le dépôt à vue est disponible immédiatement. | الوديعة تحت الطلب متاحة فورا.
+dépôt à terme | Le dépôt à terme produit des intérêts. | تنتج الوديعة لأجل فوائد.
+compte courant | Le compte courant enregistre les mouvements. | يسجل الحساب الجاري الحركات.
+compte d'épargne | Le compte d'épargne rémunère l'épargne. | يكافئ حساب ادخار الادخار.
+compte joint | Le compte joint appartient aux deux titulaires. | يعود الحساب المشترك إلى صاحبيه.
+titulaire du compte | Le titulaire du compte signe la convention. | يوقع صاحب الحساب الاتفاقية.
+solde du compte | Le solde du compte est créditeur. | رصيد الحساب دائن.
+solde débiteur | Le solde débiteur porte intérêt. | الرصيد المدين يحمل فائدة.
+solde créditeur | Le solde créditeur reste disponible. | يبقى الرصيد الدائن متاحا.
+découvert bancaire | Le découvert bancaire est autorisé par convention. | يسمح بالسحب على المكشوف باتفاقية.
+relevé de compte | Le relevé de compte est envoyé chaque mois. | يرسل كشف الحساب كل شهر.
+relevé d'identité bancaire | Le relevé d'identité bancaire accompagne le prélèvement. | يرافق كشف الهوية المصرفية الاقتطاع.
+clôture du compte | La clôture du compte exige une demande écrite. | يستلزم قفل الحساب طلبا كتابيا.
+ordre de virement | L'ordre de virement est signé par le client. | يوقع العميل الأمر بالتحويل.
+prélèvement bancaire | Le prélèvement bancaire est mensuel. | الاقتطاع المصرفي شهري.
+carte bancaire | La carte bancaire permet de retirer de l'argent. | تسمح البطاقة المصرفية بسحب المال.
+carte de paiement | La carte de paiement est acceptée chez les commerçants. | تقبل بطاقة الدفع عند التجار.
+carte de crédit | La carte de crédit reporte le paiement. | تؤجل بطاقة الائتمان الدفع.
+moyen de paiement | Le virement est un moyen de paiement sûr. | التحويل وسيلة دفع آمنة.
+paiement électronique | Le paiement électronique se développe rapidement. | يتطور الدفع الإلكتروني بسرعة.
+monnaie électronique | La monnaie électronique est stockée sur un support. | تخزن النقود الإلكترونية على حامل.
+ouverture de crédit | L'ouverture de crédit met des fonds à disposition. | يضع فتح اعتماد أموالا تحت التصرف.
+crédit immobilier | Le crédit immobilier finance l'achat d'un logement. | يمول القرض العقاري اقتناء سكن.
+crédit d'investissement | Le crédit d'investissement finance le matériel. | يمول قرض استثمار العتاد.
+crédit documentaire | Le crédit documentaire garantit le paiement international. | يضمن الاعتماد المستندي الدفع الدولي.
+lettre de crédit | La lettre de crédit engage la banque émettrice. | يلزم خطاب اعتماد البنك المصدر.
+remise documentaire | La remise documentaire transmet les documents contre paiement. | ينقل التحصيل المستندي الوثائق مقابل الدفع.
+garantie bancaire | La garantie bancaire couvre l'inexécution du contrat. | يغطي الضمان المصرفي عدم تنفيذ العقد.
+caution bancaire | La caution bancaire est appelée en cas de défaut. | تستدعى الكفالة المصرفية في حالة العجز.
+garantie à première demande | La garantie à première demande est payée sans discussion. | يوفى ضمان عند أول طلب دون نقاش.
+taux effectif global | Le taux effectif global inclut les frais. | يشمل المعدل الفعلي الإجمالي المصاريف.
+taux d'usure | Le taux d'usure plafonne les intérêts. | يحدد سقف معدل الفائدة الفاحشة الفوائد.
+taux directeur | Le taux directeur guide les crédits. | يوجه المعدل التوجيهي القروض.
+intérêts conventionnels | Les intérêts conventionnels sont fixés par le contrat. | تحدد الفوائد الاتفاقية بالعقد.
+intérêts composés | Les intérêts composés s'ajoutent au capital. | تضاف الفوائد المركبة إلى رأس المال.
+échéancier | L'échéancier fixe les dates de paiement. | يحدد جدول الاستحقاقات تواريخ الدفع.
+mensualité | La mensualité comprend le capital et les intérêts. | يشمل القسط الشهري رأس المال والفوائد.
+remboursement anticipé | Le remboursement anticipé réduit les intérêts. | يخفض التسديد المسبق الفوائد.
+rééchelonnement | Le rééchelonnement allonge la durée du crédit. | تطيل إعادة جدولة الديون مدة القرض.
+créance douteuse | La créance douteuse est provisionnée. | يخصص احتياطي لدين مشكوك في تحصيله.
+surendettement | Le surendettement conduit à une procédure amiable. | تؤدي الاستدانة المفرطة إلى إجراء ودي.
+coffre-fort | Le coffre-fort protège les valeurs. | تحمي الخزانة الحديدية الأشياء الثمينة.
+location de coffre-fort | La location de coffre-fort est un service bancaire. | إيجار الخزائن الحديدية خدمة مصرفية.
+réglementation des changes | La réglementation des changes contrôle les transferts. | يراقب تنظيم الصرف التحويلات.
+taux de change | Le taux de change varie chaque jour. | يتغير سعر الصرف كل يوم.
+devise | La devise est cotée sur le marché. | تسجل العملة الأجنبية في السوق.
+bureau de change | Le bureau de change achète et vend les devises. | يشتري مكتب الصرف ويبيع العملات.
+transfert de fonds | Le transfert de fonds exige une justification. | يستلزم تحويل الأموال تبريرا.
+rapatriement des fonds | Le rapatriement des fonds est obligatoire après l'exportation. | إعادة الأموال إلى الوطن إلزامية بعد التصدير.
+Conseil de la monnaie et du crédit | Le Conseil de la monnaie et du crédit fixe les taux. | يحدد مجلس النقد والقرض المعدلات.
+Commission bancaire | La Commission bancaire sanctionne les manquements. | تعاقب اللجنة المصرفية على الإخلالات.
+gouverneur de la Banque d'Algérie | Le gouverneur de la Banque d'Algérie signe les billets. | يوقع محافظ بنك الجزائر الأوراق النقدية.
+supervision bancaire | La supervision bancaire vérifie la solidité des banques. | تتحقق الرقابة المصرفية من متانة البنوك.
+ratio de solvabilité | Le ratio de solvabilité mesure les fonds propres. | تقيس نسبة الملاءة الأموال الخاصة.
+réserves obligatoires | Les réserves obligatoires sont déposées à la banque centrale. | تودع الاحتياطات الإجبارية في البنك المركزي.
+centrale des risques | La centrale des risques recense les crédits accordés. | تحصي مركزية المخاطر القروض الممنوحة.
+centrale des impayés | La centrale des impayés signale les chèques rejetés. | تبلغ مركزية عوارض الدفع عن الشيكات المرفوضة.
+déclaration de soupçon | La déclaration de soupçon est transmise à la cellule spécialisée. | يرسل الإخطار بالشبهة إلى الخلية المتخصصة.
+cellule de traitement du renseignement financier | La cellule de traitement du renseignement financier analyse les signalements. | تحلل خلية معالجة الاستعلام المالي التبليغات.
+devoir de vigilance | Le devoir de vigilance impose d'identifier le client. | يفرض واجب اليقظة التعرف على العميل.
+gel des avoirs | Le gel des avoirs s'applique aux personnes sanctionnées. | يطبق تجميد الأموال على الأشخاص المعاقب عليهم.
+bénéficiaire effectif | Le bénéficiaire effectif est déclaré à la banque. | يصرح بالمستفيد الحقيقي لدى البنك.
+compagnie d'assurance | La compagnie d'assurance couvre les risques. | تغطي شركة تأمين المخاطر.
+mutuelle d'assurance | La mutuelle d'assurance appartient à ses adhérents. | تعود تعاضدية تأمين إلى منخرطيها.
+intermédiaire d'assurance | L'intermédiaire d'assurance présente les contrats. | يعرض وسيط تأمين العقود.
+agent général d'assurance | L'agent général d'assurance représente une compagnie. | يمثل وكيل عام للتأمين شركة.
+courtier d'assurance | Le courtier d'assurance compare les offres. | يقارن سمسار تأمين العروض.
+proposition d'assurance | La proposition d'assurance précède la souscription. | يسبق طلب تأمين الاكتتاب.
+note de couverture | La note de couverture garantit immédiatement. | تضمن مذكرة تغطية فورا.
+conditions générales | Les conditions générales sont remises au souscripteur. | تسلم الشروط العامة إلى المكتتب.
+conditions particulières | Les conditions particulières adaptent le contrat. | تكيف الشروط الخاصة العقد.
+déclaration du risque | La déclaration du risque doit être exacte. | يجب أن يكون التصريح بالخطر دقيقا.
+aggravation du risque | L'aggravation du risque est déclarée à l'assureur. | يصرح بتفاقم الخطر إلى المؤمن.
+fausse déclaration du risque | La fausse déclaration du risque peut annuler le contrat. | قد يبطل التصريح الكاذب بالخطر العقد.
+réticence | La réticence de l'assuré engage sa responsabilité. | يلزم الكتمان المؤمن له بالمسؤولية.
+déclaration de sinistre | La déclaration de sinistre est faite dans les cinq jours. | يتم التصريح بالحادث في غضون خمسة أيام.
+indemnité d'assurance | L'indemnité d'assurance répare le dommage. | يجبر تعويض التأمين الضرر.
+somme assurée | La somme assurée plafonne l'indemnité. | يحدد المبلغ المؤمن عليه سقف التعويض.
+valeur assurée | La valeur assurée est estimée avant le sinistre. | تقدر القيمة المؤمن عليها قبل الحادث.
+franchise d'assurance | La franchise d'assurance reste à la charge de l'assuré. | يبقى الإعفاء من جزء من التعويض على عاتق المؤمن له.
+plafond de garantie | Le plafond de garantie limite le paiement. | يحدد الحد الأقصى للضمان الدفع.
+exclusion de garantie | L'exclusion de garantie est écrite en caractères apparents. | يكتب الاستثناء من الضمان بحروف بارزة.
+déchéance de garantie | La déchéance de garantie sanctionne le retard. | يعاقب سقوط الحق في الضمان على التأخر.
+suspension de la garantie | La suspension de la garantie dure jusqu'au paiement. | يدوم وقف الضمان إلى حين الدفع.
+résiliation du contrat d'assurance | La résiliation du contrat d'assurance est notifiée par lettre. | يبلغ فسخ عقد التأمين برسالة.
+subrogation de l'assureur | La subrogation de l'assureur lui transmet les recours. | تنقل حلول المؤمن إليه حقوق الرجوع.
+principe indemnitaire | Le principe indemnitaire interdit l'enrichissement. | يمنع مبدأ التعويض الإثراء.
+surassurance | La surassurance n'ouvre pas droit à un gain. | لا يفتح التأمين الزائد حقا في الربح.
+sous-assurance | La sous-assurance réduit l'indemnité au prorata. | يخفض التأمين الناقص التعويض بالتناسب.
+coassurance | La coassurance répartit le risque entre assureurs. | توزع التأمين المشترك الخطر بين المؤمنين.
+assurance de dommages | L'assurance de dommages couvre les pertes matérielles. | تغطي التأمين على الأضرار الخسائر المادية.
+assurance de personnes | L'assurance de personnes verse un capital. | تدفع التأمين على الأشخاص رأسمالا.
+assurance de responsabilité | L'assurance de responsabilité couvre les tiers. | تغطي التأمين من المسؤولية الغير.
+assurance obligatoire | L'assurance obligatoire couvre les véhicules. | يغطي التأمين الإلزامي المركبات.
+assurance automobile | L'assurance automobile indemnise les accidents de la route. | تعوض التأمين على السيارات حوادث الطرق.
+assurance incendie | L'assurance incendie couvre le bâtiment. | تغطي التأمين من الحريق المبنى.
+assurance vol | L'assurance vol exige une plainte. | تستلزم التأمين من السرقة شكوى.
+assurance sur la vie | L'assurance sur la vie verse un capital au décès. | تدفع التأمين على الحياة رأسمالا عند الوفاة.
+assurance décès | L'assurance décès protège la famille. | تحمي التأمين في حالة الوفاة الأسرة.
+assurance maladie | L'assurance maladie rembourse les soins. | تعوض التأمين على المرض العلاج.
+assurance de groupe | L'assurance de groupe couvre les salariés. | تغطي التأمين الجماعي العمال.
+assurance maritime | L'assurance maritime couvre la cargaison. | تغطي التأمين البحري الحمولة.
+assurance crédit | L'assurance crédit protège contre l'insolvabilité. | تحمي التأمين القرض من الإعسار.
+assurance catastrophes naturelles | L'assurance catastrophes naturelles couvre les séismes. | تغطي التأمين على الكوارث الطبيعية الزلازل.
+assurance takaful | L'assurance takaful repose sur la mutualisation. | تقوم التأمين التكافلي على التعاضد.
+bénéficiaire de l'assurance | Le bénéficiaire de l'assurance reçoit le capital. | يتلقى المستفيد من التأمين رأس المال.
+capital décès | Le capital décès est versé aux héritiers. | يدفع رأسمال الوفاة إلى الورثة.
+rachat du contrat | Le rachat du contrat rend l'épargne disponible. | يجعل استرداد قيمة العقد الادخار متاحا.
+tiers lésé | Le tiers lésé peut agir directement. | يمكن للغير المتضرر أن يتصرف مباشرة.
+action directe | L'action directe permet d'assigner l'assureur. | تسمح الدعوى المباشرة باستدعاء المؤمن.
+constat amiable | Le constat amiable est signé par les deux conducteurs. | يوقع السائقان معاينة ودية.
+expert en assurance | L'expert en assurance évalue le sinistre. | يقدر خبير في التأمين الحادث.
+évaluation du dommage | L'évaluation du dommage tient compte de la vétusté. | يراعي تقدير الضرر القدم.
+fonds de garantie automobile | Le fonds de garantie automobile indemnise les victimes. | يعوض صندوق ضمان السيارات الضحايا.
+Commission de supervision des assurances | La Commission de supervision des assurances contrôle les sociétés. | تراقب لجنة الإشراف على التأمينات الشركات.

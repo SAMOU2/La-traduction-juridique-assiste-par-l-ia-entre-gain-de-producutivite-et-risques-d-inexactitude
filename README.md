@@ -12,19 +12,44 @@ Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont p
 [proposition d'interface](#la-proposition-dinterface) et la
 [première maquette](#maquette-de-lapplication-de-bureau).
 
-## L'application (version 0.11)
+## L'application (version 0.12)
 
-La version 0.11 **donne une phrase d'exemple à 1 887 des 4 000 termes seuls** du glossaire
-fourni. Ces termes n'avaient pas de phrase à eux. Pour 3 690 d'entre eux, le cercle
-« Contextualisation » restait gris.
+La version 0.12 **donne une phrase d'exemple à 1 208 termes seuls de plus**. Le glossaire
+fourni compte désormais **3 095 des 4 000 termes seuls avec une phrase** ; il en reste 905.
 
-- **1 887 termes seuls ont maintenant leur phrase**, en français et en arabe :
+- **1 208 termes seuls ont maintenant leur phrase**, en français et en arabe. Ce sont les noms
+  de six domaines :
+  - droit des affaires (355 termes) : « La société holding détient des participations. » ;
+  - droit constitutionnel (183) : « Le corps électoral compte plus de vingt millions de
+    personnes. » ;
+  - droit administratif (247) : « Le guichet unique reçoit les demandes. » ;
+  - droit de la famille (153) : « L'intérêt supérieur de l'enfant guide toute décision. » ;
+  - droit du travail et sécurité sociale (188) : « Le préavis de grève est déposé trois jours
+    avant. » ;
+  - droit maritime, nationalité et condition des étrangers (82) : « Le journal de bord est tenu
+    par le capitaine. ».
+- **905 termes seuls n'ont pas encore leur phrase** : fiscalité, finances et douanes (241),
+  droit international (324), foncier, urbanisme et environnement (163), propriété
+  intellectuelle, consommation et numérique (177). Pour une partie d'entre eux, la
+  contextualisation affiche la phrase d'une autre entrée qui emploie le terme ; pour les
+  autres, le cercle reste gris. Ils recevront leur phrase ensuite.
+- **Ces phrases ont été écrites de mémoire par un assistant d'intelligence artificielle, et
+  personne ne les a relues.** L'application les affiche sous la mention **À vérifier**.
+- La traduction d'un texte ne change pas : une phrase du texte identique à l'un de ces
+  exemples reçoit sa traduction, comme pour les autres exemples.
+
+Le détail est dans [Les phrases d'exemple](#les-phrases-dexemple).
+
+La version 0.11 **avait donné une phrase d'exemple à 1 887 des 4 000 termes seuls** du
+glossaire fourni. Ces termes n'avaient pas de phrase à eux.
+
+- **1 887 termes seuls avaient alors leur phrase**, en français et en arabe :
   - tout le vocabulaire juridique général (928 termes) : 356 adjectifs (« protégé »),
     246 verbes (« abroger »), 190 adverbes, prépositions et conjonctions (« de plein droit »,
     « conformément à ») et 136 noms (« protection ») ;
   - les noms de trois domaines (959 termes) : droit civil (355), justice et procédure (277),
     droit pénal (327).
-- **2 113 termes seuls n'ont pas encore leur phrase.** Ce sont les noms des autres domaines :
+- **2 113 termes seuls n'avaient pas encore leur phrase.** C'étaient les noms des autres domaines :
   droit des affaires, droit de la famille, droit du travail… Pour 139 d'entre eux, la
   contextualisation affiche la phrase d'une autre entrée qui emploie le terme. Les 1 974
   autres n'affichent rien : leur cercle reste gris. Ils recevront leur phrase ensuite.
@@ -34,8 +59,8 @@ fourni. Ces termes n'avaient pas de phrase à eux. Pour 3 690 d'entre eux, le ce
   en évidence : « protégées » pour « protégé », « a abrogé » pour « abroger », « ألغت » pour
   « ألغى ». Les phrases montrent le verbe au passé dans les deux langues, parce que le
   glossaire écrit le verbe arabe au passé.
-- La traduction d'un texte ne change pas. Un seul cas est nouveau : une phrase du texte
-  identique à l'une de ces 1 887 phrases reçoit sa traduction, comme pour les autres exemples.
+- La traduction d'un texte ne changeait pas. Un seul cas était nouveau : une phrase du texte
+  identique à l'une de ces 1 887 phrases recevait sa traduction, comme pour les autres exemples.
 
 ![Le terme « protégé », cercle « Contextualisation » ouvert : sa phrase d'exemple, puis celle d'une autre entrée](docs/apercu-terme-seul.png)
 
@@ -207,7 +232,7 @@ l'ancienne fiche, à cinq colonnes.*
 | Contextes cherchés dans tout le glossaire | Fait. |
 | Une phrase d'exemple pour chacune des 1 000 premières entrées du glossaire fourni | Fait (version 0.5). 969 phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
 | Glossaire fourni porté à 5 000 entrées | Fait (version 0.9) : 1 000 entrées complètes et 4 000 termes seuls. Les termes seuls n'ont pas de définition, et **restent à vérifier** : voir [Les termes seuls](#les-termes-seuls). |
-| Une phrase d'exemple pour chaque terme seul | **En cours (version 0.11) : 1 887 termes sur 4 000.** Il en reste 2 113 : les noms de dix domaines (droit des affaires, droit de la famille, droit du travail…). Les phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les phrases d'exemple](#les-phrases-dexemple). |
+| Une phrase d'exemple pour chaque terme seul | **En cours (version 0.12) : 3 095 termes sur 4 000.** Il en reste 905 : les noms de quatre domaines (fiscalité, droit international, foncier, propriété intellectuelle…). Les phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les phrases d'exemple](#les-phrases-dexemple). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
 | Liaison avec un service d'intelligence artificielle en ligne | Essayée dans la version 0.6, **retirée dans la version 0.7** : voir [L'essai d'un service d'IA (version 0.6)](#lessai-dun-service-dia-version-06). L'application ne se connecte à rien. |
 | Installeur pour Windows (fichier `.msi`) | Fait (version 0.5.3) : voir [Installation](#installation). Il est fabriqué et essayé automatiquement sur une machine Windows. **Personne ne l'a encore installé à la main** : voir les [limites connues](#limites-connues). |
@@ -224,7 +249,7 @@ Il y a deux façons d'installer l'application :
 1. Ouvrir la page
    [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
    du dépôt. Sous la version la plus récente, dans « Assets », télécharger le fichier dont le
-   nom finit par `.msi`, par exemple `Traducteur-juridique-0.11.0.msi`.
+   nom finit par `.msi`, par exemple `Traducteur-juridique-0.12.0.msi`.
 2. Double-cliquer sur le fichier téléchargé.
 3. Cliquer sur **Suivant**, puis sur **Installer**, puis sur **Terminer**. L'application s'ouvre.
 
@@ -416,7 +441,7 @@ glossaire : voir [Corriger le glossaire](#corriger-le-glossaire).
   du glossaire fourni : « À vérifier · équivalent d'exemple ». Un terme sans définition dont
   la colonne `source_definition` est vide s'affiche sans mention.
 - Dans la contextualisation, elle signale une phrase d'exemple dont la colonne `source_contexte`
-  commence par « à vérifier » : c'est le cas de 2 856 des 2 889 phrases d'exemple du glossaire
+  commence par « à vérifier » : c'est le cas de 4 064 des 4 097 phrases d'exemple du glossaire
   fourni. Elle signale aussi une définition sans source, quand cette définition sert de
   contexte à un autre terme. Une phrase d'exemple dont la colonne `source_contexte` est vide
   s'affiche sans source et sans mention.
@@ -682,7 +707,7 @@ Il est fait de trois parties :
 | --- | --- | --- |
 | n° 1 à 40 | Entrées complètes des premières versions | 40 |
 | n° 41 à 1 000 | Entrées complètes : définition dans les deux langues, phrase d'exemple | 960 |
-| n° 1 001 à 5 000 | Termes seuls : pas de définition ; une phrase d'exemple pour 1 887 d'entre eux | 4 000 |
+| n° 1 001 à 5 000 | Termes seuls : pas de définition ; une phrase d'exemple pour 3 095 d'entre eux | 4 000 |
 
 L'objectif de 5 000 entrées est atteint. Quatre entrées sur cinq sont des termes seuls.
 
@@ -783,12 +808,14 @@ spécialiste. **Chaque équivalent est à vérifier.**
   langues, le domaine, les termes associés, les ouvrages et les textes à consulter ; pour 244
   noms, le pluriel ; pour certaines entrées, des synonymes. Elle n'a **pas de définition** :
   dans le menu « Plus de détails », le cercle « Définition » est gris.
-- **Phrase d'exemple (version 0.11).** 1 887 termes seuls ont une phrase d'exemple : tous les
-  adjectifs, les verbes et les locutions, les 136 noms du vocabulaire général, et les 959 noms
-  du droit civil, de la justice et de la procédure, et du droit pénal. Les 2 113 autres
-  n'en ont pas encore : leur cercle « Contextualisation » est gris, sauf si une autre entrée
-  les emploie dans sa phrase. Voir [Les phrases d'exemple](#les-phrases-dexemple). La capture
-  du terme « protégé » est au [début de cette page](#lapplication-version-011).
+- **Phrase d'exemple (version 0.12).** 3 095 termes seuls ont une phrase d'exemple : tous les
+  adjectifs, les verbes et les locutions, les 136 noms du vocabulaire général, et les noms de
+  neuf domaines (droit civil, justice et procédure, droit pénal, droit des affaires, droit
+  constitutionnel, droit administratif, droit de la famille, droit du travail et sécurité
+  sociale, droit maritime et nationalité). Les 905 autres n'en ont pas encore : leur cercle
+  « Contextualisation » est gris, sauf si une autre entrée les emploie dans sa phrase. Voir
+  [Les phrases d'exemple](#les-phrases-dexemple). La capture du terme « protégé » est plus
+  haut, dans la partie consacrée à la version 0.11.
 - **La mention « À vérifier ».** La colonne `source_definition` de ces entrées contient
   « à vérifier (équivalent d'exemple) ». L'application affiche cette mention dans la fiche, au
   pied de l'équivalent. Sur l'écran « Texte », l'infobulle de la case du terme la rappelle.
@@ -859,17 +886,17 @@ spécialiste. **Chaque équivalent est à vérifier.**
 
 #### Les phrases d'exemple
 
-Le glossaire contient 2 889 phrases d'exemple :
+Le glossaire contient 4 097 phrases d'exemple :
 
 - 1 002 pour les 1 000 entrées complètes : une par entrée, deux pour « contrat » et « équité » ;
-- 1 887 pour des termes seuls, depuis la version 0.11 : une par terme.
+- 3 095 pour des termes seuls, depuis les versions 0.11 et 0.12 : une par terme.
 
-Les 2 113 autres termes seuls n'ont pas encore de phrase à eux.
+Les 905 autres termes seuls n'ont pas encore de phrase à eux.
 
 - **33 phrases citent le Code civil**, dans 31 des 40 premières entrées. Leur source est le
   numéro de l'article, ou l'intitulé du code. Elles sont décrites plus haut.
-- **2 856 phrases ont été rédigées par un assistant d'intelligence artificielle**, de mémoire,
-  pour montrer l'emploi du terme : 969 pour les entrées complètes, 1 887 pour les termes seuls.
+- **4 064 phrases ont été rédigées par un assistant d'intelligence artificielle**, de mémoire,
+  pour montrer l'emploi du terme : 969 pour les entrées complètes, 3 095 pour les termes seuls.
   Leur source dans le glossaire est « à vérifier (phrase d'exemple) », et l'application affiche
   la mention **À vérifier**.
   - Chaque phrase est courte (122 caractères au plus en français) et emploie le terme en
@@ -896,7 +923,7 @@ Les 2 113 autres termes seuls n'ont pas encore de phrase à eux.
   | Adjectifs et locutions adjectivales | 356 | 356 | « Le logiciel est **protégé** par le droit d'auteur. » |
   | Verbes et locutions verbales | 246 | 246 | « La loi nouvelle **a abrogé** toutes les dispositions contraires. » |
   | Adverbes, prépositions, conjonctions et leurs locutions | 190 | 190 | « Le contrat est exécuté **conformément à** ses clauses. » |
-  | Noms et groupes nominaux | 3 208 | 1 095 | « La loi assure la **protection** des données personnelles. » |
+  | Noms et groupes nominaux | 3 208 | 2 303 | « La loi assure la **protection** des données personnelles. » |
 
   Les noms, par fichier de termes :
 
@@ -906,16 +933,16 @@ Les 2 113 autres termes seuls n'ont pas encore de phrase à eux.
   | n° 45 : droit civil | 355 | 355 | « Le vendeur est tenu de la **garantie des vices cachés**. » |
   | n° 46 : justice et procédure | 277 | 277 | « Le tribunal désigne un **expert** pour évaluer le dommage. » |
   | n° 47 : droit pénal | 327 | 327 | « Le juge relaxe le prévenu au bénéfice du **doute**. » |
-  | n° 48 : droit des affaires | 355 | 0 | |
-  | n° 49 : droit constitutionnel | 183 | 0 | |
-  | n° 50 : droit administratif | 247 | 0 | |
-  | n° 51 : droit de la famille | 153 | 0 | |
-  | n° 52 : droit du travail | 188 | 0 | |
+  | n° 48 : droit des affaires | 355 | 355 | « Le **dirigeant social** engage la société. » |
+  | n° 49 : droit constitutionnel | 183 | 183 | « Le **corps électoral** compte plus de vingt millions de personnes. » |
+  | n° 50 : droit administratif | 247 | 247 | « Le **guichet unique** reçoit les demandes. » |
+  | n° 51 : droit de la famille | 153 | 153 | « L'**intérêt supérieur de l'enfant** guide toute décision. » |
+  | n° 52 : droit du travail | 188 | 188 | « Le **préavis de grève** est déposé trois jours avant. » |
   | n° 53 : fiscalité, finances, douanes | 241 | 0 | |
   | n° 54 : droit international | 324 | 0 | |
   | n° 55 : foncier, urbanisme, environnement | 163 | 0 | |
   | n° 56 : propriété intellectuelle, consommation, numérique | 177 | 0 | |
-  | n° 57 : droit maritime, nationalité | 82 | 0 | |
+  | n° 57 : droit maritime, nationalité | 82 | 82 | « Le **journal de bord** est tenu par le capitaine. » |
 
   - **Un adjectif s'accorde** avec le nom que la phrase lui donne, dans les deux langues :
     « une clause **abusive** », « الشروط **التعسفية** ».
@@ -966,21 +993,34 @@ Les 2 113 autres termes seuls n'ont pas encore de phrase à eux.
     arabe.
   - **Ces relectures ont été faites de mémoire, sans les textes. D'autres erreurs restent
     possibles.**
+- **Les 1 208 phrases des termes seuls (version 0.12).** Elles portent sur les noms de six
+  domaines : droit des affaires (355), droit constitutionnel (183), droit administratif (247),
+  droit de la famille (153), droit du travail et sécurité sociale (188), droit maritime,
+  nationalité et condition des étrangers (82). Ce sont des noms : la phrase décrit une scène ou
+  une règle courte, et le verbe qui l'anime n'est pas mis en évidence. Ces phrases ne portent
+  ni délai légal, ni montant, ni numéro d'article ; quelques-unes énoncent tout de même une
+  règle générale (« Le travail des enfants est interdit. »).
+  - **Le script a signalé 295 phrases sur 1 208** où un autre terme du glossaire figure en
+    français sans que son équivalent apparaisse en arabe. L'assistant les a parcourues : le
+    plus souvent, le verbe arabe est au présent (le script ne reconnaît que le passé), ou la
+    phrase arabe paraphrase le mot (« cour » pour « tribunal », « matériel » pour « مادي »).
+    Il a récrit les deux phrases où l'équivalent manquait vraiment : « contrôleur » et « agent
+    contractuel ». Il en reste 293 dans la liste.
+  - **Deux phrases étaient identiques à une phrase déjà présente**, en français et en arabe :
+    elles ont été remplacées.
+  - **Aucun juriste n'a relu ces 1 208 phrases.** Elles portent la mention « À vérifier ».
 - **Ce qu'affiche la contextualisation.**
-  - Entrées complètes : 393 affichent une phrase et 607 en affichent deux. Pour 605 entrées, la
-    seconde phrase vient d'une autre entrée qui emploie le terme : 558 fois son exemple (17
-    citent le Code civil, 541 sont à vérifier) et 47 fois sa définition (toutes à vérifier).
-  - Termes seuls : 1 887 affichent leur phrase, et 474 d'entre eux affichent en plus la phrase
-    d'une autre entrée. 139 termes sans phrase à eux affichent celle d'une autre entrée (une ou
-    deux). **1 974 termes seuls n'affichent aucune phrase.**
+  - Entrées complètes : 351 affichent une phrase et 649 en affichent deux. Pour 647 entrées, la
+    seconde phrase vient d'une autre entrée qui emploie le terme : 616 fois son exemple (17
+    citent le Code civil, 599 sont à vérifier) et 31 fois sa définition (toutes à vérifier).
+  - Termes seuls : 3 095 affichent leur phrase, et 650 d'entre eux affichent en plus la phrase
+    d'une autre entrée. 58 termes sans phrase à eux affichent celle d'une autre entrée (une ou
+    deux). **847 termes seuls n'affichent aucune phrase.**
 - **Traduction d'un texte.** Une phrase du texte identique à un exemple reçoit la traduction de
-  cet exemple. Les 2 856 phrases rédigées servent donc aussi de traductions toutes faites :
-  l'application le signale (étape 5 et étiquette de résultat, au survol). La version 0.11 ne
-  change rien d'autre : un programme a traduit les 1 000 définitions et les 1 002 phrases des
-  entrées complètes, dans les deux langues, et cinq phrases d'essai, avec la version 0.10 puis
-  avec la version 0.11. Le texte des 4 009 traductions est le même. Dans quatre d'entre elles,
-  un équivalent est mieux mis en évidence : « سؤالا كتابيا » (« question écrite ») est
-  maintenant en bleu en entier.
+  cet exemple. Les 4 064 phrases rédigées servent donc aussi de traductions toutes faites :
+  l'application le signale (étape 5 et étiquette de résultat, au survol). La version 0.12 ne
+  change pas la façon dont un texte est traduit : seules les phrases identiques à l'un des
+  1 208 nouveaux exemples reçoivent désormais sa traduction.
 - Dans quatre citations du Code civil, le terme de l'entrée n'est pas mis en évidence dans une
   des deux langues, parce que l'article emploie un autre mot ou une autre forme : « exécution
   du contrat », « réparation » et « capacité » en français, « consentement » en arabe.
@@ -1125,9 +1165,9 @@ Ces tests demandent que chacune des 1 000 premières entrées du glossaire fourn
 phrase d'exemple, et que chaque phrase ait une source ou la mention « à vérifier ». Pour les
 termes seuls, ils demandent la mention « à vérifier (équivalent d'exemple) », et qu'aucun nom
 seul ne s'écrive comme un autre nom. Depuis la version 0.11, ils demandent aussi que chaque
-adjectif, chaque verbe et chaque locution ait sa phrase, et qu'au moins 1 887 termes seuls en
-aient une : ce nombre est écrit dans `tests/conftest.py`, il est à relever quand d'autres
-termes reçoivent leur phrase. Ils ne comptent pas les phrases « à
+adjectif, chaque verbe et chaque locution ait sa phrase, et qu'au moins 3 095 termes seuls en
+aient une (1 887 jusqu'à la version 0.11) : ce nombre est écrit dans `tests/conftest.py`, il
+est à relever quand d'autres termes reçoivent leur phrase. Ils ne comptent pas les phrases « à
 vérifier » : écrire la source d'une phrase dans le fichier CSV ne les fait pas échouer. Une
 phrase qui garde la mention doit contenir le terme en français et son équivalent en arabe.
 
@@ -1165,7 +1205,7 @@ toute seule quand l'application ou l'installeur change :
 
 - sur la branche `main`, l'installeur est publié sur la page
   [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
-  comme version `v0.11.0`, puis `v0.11.1`… ;
+  comme version `v0.12.0`, puis `v0.12.1`… ;
 - sur une branche de travail (`arena/…`), il est publié comme **version d'essai**, remplacée à
   chaque fabrication. Elle sert à essayer un travail avant de le fusionner dans `main` ; elle
   est retirée quand ce travail est fusionné.
@@ -1349,23 +1389,23 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   n'est vérifié que par un fichier construit pour les tests.
 - **Recherche d'un terme.** Les suggestions affichées pendant la saisie tiennent compte des
   accents ; la recherche lancée avec Entrée, non.
-- **Phrases d'exemple du glossaire fourni.** 2 856 phrases sur 2 889 ont été rédigées par un
+- **Phrases d'exemple du glossaire fourni.** 4 064 phrases sur 4 097 ont été rédigées par un
   assistant d'intelligence artificielle et n'ont été relues par aucun juriste. Elles peuvent
   contenir une erreur de droit, un chiffre faux ou périmé, ou une tournure arabe maladroite.
   L'application les marque « À vérifier » ; elle ne les vérifie pas. Voir
   [Les phrases d'exemple](#les-phrases-dexemple).
-- **Contextualisation : 1 974 termes n'affichent encore aucune phrase.** La version 0.11 a
-  donné une phrase à 1 887 termes seuls sur 4 000. Les 2 113 autres sont des noms de dix
-  domaines. 139 d'entre eux affichent la phrase d'une autre entrée ; pour les 1 974 autres, le
-  cercle « Contextualisation » reste gris.
+- **Contextualisation : 847 termes n'affichent encore aucune phrase.** Les versions 0.11 et
+  0.12 ont donné une phrase à 3 095 termes seuls sur 4 000. Les 905 autres sont des noms de
+  quatre domaines. 58 d'entre eux affichent la phrase d'une autre entrée ; pour les 847
+  autres, le cercle « Contextualisation » reste gris.
 - **Termes seuls du glossaire fourni.** Les 4 000 entrées ajoutées dans les versions 0.8 et 0.9
   ont été écrites de mémoire par un assistant d'intelligence artificielle. Elles n'ont pas de
   définition qui aiderait à les contrôler, et aucun juriste ne les a relues. Un
   équivalent peut être faux, vieilli, ou étranger à l'usage algérien. L'application les marque
   « À vérifier » ; elle ne les vérifie pas. Voir [Les termes seuls](#les-termes-seuls).
 - **5 000 entrées, dont 1 000 complètes.** L'objectif de 5 000 entrées est atteint avec des
-  termes seuls : quatre entrées sur cinq n'ont pas de définition, et trois sur cinq n'ont pas
-  de phrase d'exemple.
+  termes seuls : quatre entrées sur cinq n'ont pas de définition, et une sur cinq n'a pas de
+  phrase d'exemple.
 - **Adjectifs, verbes et locutions.** Ils ont une fiche, mais la traduction d'un texte ne les
   remplace pas. Un adjectif n'est écrit qu'au masculin singulier, un verbe qu'à l'infinitif :
   pour « protégés » ou « exécutoires », l'écran « Terme » ne trouve pas la fiche et propose
