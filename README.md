@@ -999,13 +999,13 @@ Les 987 autres termes seuls n'ont pas encore de phrase à eux.
         commerce ». Il reste 54 paires de phrases proches : le plus souvent, deux termes
         voisins sont décrits par la même tournure (« L'assurance incendie est une assurance de
         dommages. », « L'assurance sur la vie est une assurance de personnes. ») ;
-      - 14 énonçaient une règle fausse, douteuse, incomplète ou trop générale. Par exemple,
+      - les 22 autres contenaient une règle ou un exemple faux, douteux, incomplet ou trop
+        général, ou bien une tournure maladroite, en arabe ou en français. Par exemple,
         « Après le vol de son sac, le client forme une opposition au paiement du chèque » : de
         mémoire, le Code de commerce algérien n'admet cette opposition que si le chèque est
         perdu ou si le porteur est en faillite ; la phrase parle maintenant d'un chéquier
         perdu. Ou « Le faible d'esprit n'a qu'une capacité limitée » : l'assistant n'est pas
-        sûr de la règle ; la phrase dit maintenant qu'un tuteur le représente ;
-      - 8 avaient une tournure maladroite, en arabe ou en français.
+        sûr de la règle ; la phrase dit maintenant qu'un tuteur le représente.
     - Comme à la seconde étape, les phrases décrivent le plus souvent une scène ou donnent un
       exemple (« Le retard de l'ambulance est une faute de service. »). Elles n'énoncent ni
       délai, ni montant, ni numéro d'article.
