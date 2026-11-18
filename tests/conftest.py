@@ -25,10 +25,11 @@ GLOSSAIRE_FOURNI = RACINE / "donnees" / "glossaire_juridique.csv"
 #: domaine.
 NOMBRE_D_ENTREES = 5000
 ENTREES_COMPLETES = 1000
-#: Termes seuls qui ont déjà leur phrase d'exemple (version 0.11 : le vocabulaire général, puis le droit civil,
-#: la justice et la procédure, le droit pénal). Ce nombre ne peut que monter : les termes des autres domaines
-#: reçoivent leur phrase par étapes.
-TERMES_SEULS_AVEC_EXEMPLE = 1887
+#: Termes seuls qui ont déjà leur phrase d'exemple. Version 0.11 : le vocabulaire général, puis le droit civil,
+#: la justice et la procédure, le droit pénal (1 887). Version 0.12 : le droit des affaires, le droit
+#: constitutionnel, le droit administratif, le droit de la famille et le droit du travail (1 126 de plus). Ce
+#: nombre ne peut que monter : les termes des autres domaines reçoivent leur phrase par étapes.
+TERMES_SEULS_AVEC_EXEMPLE = 3013
 #: Petit glossaire réservé aux tests : 40 entrées de droit civil. La plupart des tests l'utilisent,
 #: pour que leurs résultats ne changent pas quand le glossaire fourni est enrichi ou remplacé.
 GLOSSAIRE_D_ESSAI = RACINE / "tests" / "donnees" / "glossaire_essai.csv"

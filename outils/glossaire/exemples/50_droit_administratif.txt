@@ -1,0 +1,248 @@
+# Phrases d'exemple de termes/50_droit_administratif.txt : terme | phrase française | phrase arabe
+acte administratif unilatéral | L'acte administratif unilatéral s'impose aux personnes sans leur consentement. | يفرض القرار الإداري الانفرادي على الأشخاص دون رضاهم.
+acte réglementaire | L'acte réglementaire pose une règle générale et impersonnelle. | يضع القرار التنظيمي قاعدة عامة ومجردة.
+acte individuel | La nomination d'un fonctionnaire est un acte individuel. | تعيين موظف قرار فردي.
+acte de gouvernement | Le juge administratif ne contrôle pas l'acte de gouvernement. | لا يراقب القاضي الإداري عمل السيادة.
+mesure d'ordre intérieur | La répartition des bureaux entre les agents est une mesure d'ordre intérieur. | يعد توزيع المكاتب على الأعوان من قبيل إجراء التنظيم الداخلي.
+décision implicite | Une décision implicite résulte du silence de l'administration sur une demande. | ينتج قرار ضمني عن سكوت الإدارة عن طلب.
+décision explicite | L'administration répond à la demande par une décision explicite. | ترد الإدارة على الطلب بقرار صريح.
+décision de rejet | Le demandeur conteste la décision de rejet devant le tribunal administratif. | ينازع المدعي في قرار الرفض أمام المحكمة الإدارية.
+silence de l'administration | Passé le délai, le silence de l'administration vaut rejet de la demande. | بعد انقضاء الأجل، يعد سكوت الإدارة رفضا للطلب.
+motivation des actes administratifs | La motivation des actes administratifs indique à l'intéressé les raisons de la décision. | يبين تسبيب القرارات الإدارية للمعني بالأمر أسباب القرار.
+retrait de l'acte administratif | Le retrait de l'acte administratif l'efface pour le passé comme pour l'avenir. | يزيل سحب القرار الإداري آثاره في الماضي والمستقبل.
+annulation de l'acte administratif | Le requérant sollicite l'annulation de l'acte administratif devant le juge. | يلتمس الطاعن إلغاء القرار الإداري أمام القاضي.
+exécution d'office | L'administration procède à l'exécution d'office de la décision de démolition. | تقوم الإدارة بتنفيذ مباشر لقرار الهدم.
+caractère exécutoire | Le caractère exécutoire de la décision permet à l'administration d'agir sans passer d'abord par le juge. | يسمح الطابع التنفيذي للقرار للإدارة بالتصرف دون المرور أولا على القاضي.
+présomption de légalité | L'acte administratif bénéficie d'une présomption de légalité. | يتمتع القرار الإداري بقرينة المشروعية.
+principe de légalité | Le principe de légalité soumet l'administration au droit. | يخضع مبدأ المشروعية الإدارة للقانون.
+compétence liée | En cas de compétence liée, l'administration doit délivrer l'autorisation dès que les conditions sont remplies. | في حالة اختصاص مقيد، يجب على الإدارة أن تسلم الترخيص متى توفرت الشروط.
+vice d'incompétence | La décision prise par une autorité sans pouvoir est entachée d'un vice d'incompétence. | القرار الصادر عن سلطة لا صلاحية لها مشوب بعيب عدم الاختصاص.
+erreur manifeste d'appréciation | Le juge annule la décision pour erreur manifeste d'appréciation. | يلغي القاضي القرار لخطأ ظاهر في التقدير.
+inexactitude matérielle des faits | Le requérant soutient l'inexactitude matérielle des faits retenus contre lui. | يدفع الطاعن بعدم صحة الوقائع المادية المنسوبة إليه.
+illégalité externe | Le vice de forme relève de l'illégalité externe. | يدخل العيب في الشكل في عدم المشروعية الخارجية.
+illégalité interne | Le détournement de pouvoir relève de l'illégalité interne. | يدخل الانحراف بالسلطة في عدم المشروعية الداخلية.
+circulaire interprétative | La circulaire interprétative explique la loi aux agents sans créer de règle nouvelle. | يشرح المنشور التفسيري القانون للأعوان دون إنشاء قاعدة جديدة.
+instruction ministérielle | L'instruction ministérielle indique aux agents la conduite à tenir. | تبين التعليمة الوزارية للأعوان السلوك الواجب اتباعه.
+note de service | Le directeur annonce les nouveaux horaires par une note de service. | يعلن المدير أوقات العمل الجديدة بمذكرة مصلحية.
+arrêté du wali | L'arrêté du wali paraît au recueil des actes administratifs de la wilaya. | يصدر قرار الوالي في مدونة القرارات الإدارية للولاية.
+arrêté communal | Le président de l'assemblée populaire communale réglemente le stationnement par un arrêté communal. | ينظم رئيس المجلس الشعبي البلدي الوقوف بقرار بلدي.
+délégation de signature | Le ministre consent une délégation de signature à son directeur. | يمنح الوزير تفويض الإمضاء لمديره.
+délégation de pouvoir | La délégation de pouvoir transfère la compétence à une autre autorité. | ينقل تفويض السلطة الاختصاص إلى سلطة أخرى.
+sécurité publique | La police administrative protège la sécurité publique. | يحمي الضبط الإداري الأمن العمومي.
+tranquillité publique | Le bruit nocturne trouble la tranquillité publique. | يخل الضجيج الليلي بالسكينة العمومية.
+salubrité publique | La commune veille à la salubrité publique par le ramassage des ordures. | تسهر البلدية على النظافة العمومية بجمع القمامة.
+santé publique | La fermeture du restaurant insalubre protège la santé publique. | يحمي غلق المطعم غير النظيف الصحة العمومية.
+police générale | Le wali exerce la police générale dans la wilaya. | يمارس الوالي الضبط الإداري العام في الولاية.
+police spéciale | La police de la chasse est une police spéciale. | ضبط الصيد ضبط إداري خاص.
+mesure de police administrative | L'interdiction d'une manifestation est une mesure de police administrative. | يعد منع مظاهرة تدبيرا من تدابير الضبط الإداري.
+autorité de police administrative | Le président de l'assemblée populaire communale est l'autorité de police administrative de sa commune. | رئيس المجلس الشعبي البلدي هو سلطة الضبط الإداري في بلديته.
+maintien de l'ordre | La gendarmerie participe au maintien de l'ordre. | يشارك الدرك في حفظ النظام.
+maintien de l'ordre public | Le wali est responsable du maintien de l'ordre public. | الوالي مسؤول عن حفظ النظام العام.
+continuité du service public | Le service minimum assure la continuité du service public pendant la grève. | يضمن حد أدنى من الخدمة استمرارية المرفق العام خلال الإضراب.
+égalité devant le service public | L'égalité devant le service public exclut toute faveur entre usagers. | تستبعد المساواة أمام المرفق العام كل محاباة بين المرتفقين.
+neutralité du service public | La neutralité du service public impose à l'agent de ne pas afficher ses opinions. | يفرض حياد المرفق العام على العون ألا يظهر آراءه.
+service public administratif | L'état civil est un service public administratif. | الحالة المدنية مرفق عام إداري.
+service public industriel et commercial | La distribution de l'eau est un service public industriel et commercial. | توزيع الماء مرفق عام صناعي وتجاري.
+régie directe | La commune gère la cantine scolaire en régie directe. | تسير البلدية المطعم المدرسي عن طريق استغلال مباشر.
+gestion déléguée | Une entreprise privée collecte les déchets dans le cadre d'une gestion déléguée. | تجمع مؤسسة خاصة النفايات في إطار تسيير مفوض.
+affermage | Dans l'affermage, la collectivité finance les ouvrages et le fermier les exploite. | في إيجار المرفق العام، تمول الجماعة المنشآت ويستغلها المستأجر.
+établissement public à caractère administratif | L'hôpital public est un établissement public à caractère administratif. | المستشفى العمومي مؤسسة عمومية ذات طابع إداري.
+établissement public à caractère industriel et commercial | L'office de promotion et de gestion immobilière est un établissement public à caractère industriel et commercial. | ديوان الترقية والتسيير العقاري مؤسسة عمومية ذات طابع صناعي وتجاري.
+autorité administrative indépendante | Le Conseil de la concurrence est une autorité administrative indépendante. | مجلس المنافسة سلطة إدارية مستقلة.
+autorité de régulation | L'autorité de régulation veille à la concurrence entre les opérateurs de téléphonie. | تسهر سلطة الضبط على المنافسة بين متعاملي الهاتف.
+usager du service public | L'usager du service public paie une redevance pour l'eau qu'il consomme. | يدفع مستعمل المرفق العام إتاوة عن الماء الذي يستهلكه.
+administration centrale | L'administration centrale du ministère prépare les projets de textes. | تحضر الإدارة المركزية للوزارة مشاريع النصوص.
+administration locale | L'administration locale est proche des habitants. | الإدارة المحلية قريبة من السكان.
+services extérieurs de l'État | Le wali coordonne les services extérieurs de l'État dans la wilaya. | ينسق الوالي المصالح الخارجية للدولة في الولاية.
+services déconcentrés | Les services déconcentrés exécutent dans les wilayas les décisions du ministère. | تنفذ المصالح غير الممركزة في الولايات قرارات الوزارة.
+direction générale | La direction générale des impôts dépend du ministère des finances. | تتبع المديرية العامة للضرائب وزارة المالية.
+direction de wilaya | La direction de wilaya de l'éducation gère les écoles. | تسير المديرية الولائية للتربية المدارس.
+circonscription administrative | Un wali délégué dirige la circonscription administrative. | يسير الوالي المنتدب المقاطعة الإدارية.
+organigramme | L'organigramme montre les directions et les bureaux de l'administration. | يبين الهيكل التنظيمي مديريات الإدارة ومكاتبها.
+simplification des procédures administratives | La simplification des procédures administratives réduit le nombre de pièces à fournir. | يقلص تبسيط الإجراءات الإدارية عدد الوثائق المطلوبة.
+guichet unique | L'investisseur accomplit toutes ses démarches au guichet unique. | ينجز المستثمر كل إجراءاته في الشباك الوحيد.
+administration électronique | Grâce à l'administration électronique, le citoyen retire ses documents en ligne. | بفضل الإدارة الإلكترونية، يستخرج المواطن وثائقه عبر الإنترنت.
+accès aux documents administratifs | La loi garantit au citoyen l'accès aux documents administratifs. | يضمن القانون للمواطن الاطلاع على الوثائق الإدارية.
+médiateur de la République | Le médiateur de la République reçoit les réclamations des citoyens contre l'administration. | يتلقى وسيط الجمهورية شكاوى المواطنين ضد الإدارة.
+réclamation administrative | Le citoyen adresse une réclamation administrative à l'autorité qui a pris la décision. | يوجه المواطن تظلما إداريا إلى السلطة التي أصدرت القرار.
+code communal | Le code communal énumère les attributions de l'assemblée populaire communale. | يعدد قانون البلدية صلاحيات المجلس الشعبي البلدي.
+code de wilaya | Le code de wilaya définit les pouvoirs du wali. | يبين قانون الولاية سلطات الوالي.
+exécutif communal | Le président et ses adjoints forment l'exécutif communal. | يشكل الرئيس ونوابه الهيئة التنفيذية للبلدية.
+élu local | L'élu local représente les habitants de sa commune. | يمثل المنتخب المحلي سكان بلديته.
+vice-président de l'assemblée populaire communale | Le vice-président de l'assemblée populaire communale signe les actes d'état civil par délégation du président. | يوقع نائب رئيس المجلس الشعبي البلدي وثائق الحالة المدنية بتفويض من الرئيس.
+président de l'assemblée populaire de wilaya | Le président de l'assemblée populaire de wilaya dirige les débats de l'assemblée. | يدير رئيس المجلس الشعبي الولائي مناقشات المجلس.
+secrétaire général de la commune | Le secrétaire général de la commune prépare les réunions de l'assemblée. | يحضر الأمين العام للبلدية اجتماعات المجلس.
+chef de daïra | Le chef de daïra assiste le wali dans plusieurs communes. | يساعد رئيس الدائرة الوالي في عدة بلديات.
+wali délégué | Le wali délégué agit sous l'autorité du wali. | يعمل الوالي المنتدب تحت سلطة الوالي.
+délégation communale | Les habitants du quartier s'adressent à la délégation communale. | يتوجه سكان الحي إلى المندوبية البلدية.
+antenne administrative | L'antenne administrative délivre les documents d'état civil. | تسلم الملحقة الإدارية وثائق الحالة المدنية.
+approbation de la délibération | L'approbation de la délibération sur le budget revient au wali. | تعود المصادقة على المداولة الخاصة بالميزانية إلى الوالي.
+contrôle de légalité | Le wali exerce un contrôle de légalité sur les actes de la commune. | يمارس الوالي رقابة المشروعية على قرارات البلدية.
+pouvoir de substitution | Le wali use de son pouvoir de substitution quand la commune n'agit pas. | يستعمل الوالي سلطة الحلول عندما لا تتحرك البلدية.
+dissolution de l'assemblée populaire communale | La dissolution de l'assemblée populaire communale intervient par décret présidentiel. | يتم حل المجلس الشعبي البلدي بمرسوم رئاسي.
+intercommunalité | Deux communes gèrent ensemble une décharge grâce à l'intercommunalité. | تسير بلديتان معا مفرغة بفضل تعاون مشترك بين البلديات.
+budget communal | Le budget communal comprend une section de fonctionnement et une section d'équipement et d'investissement. | تشتمل ميزانية البلدية على قسم التسيير وقسم التجهيز والاستثمار.
+finances locales | Les finances locales reposent sur la fiscalité et les subventions de l'État. | تقوم المالية المحلية على الجباية وإعانات الدولة.
+fiscalité locale | La fiscalité locale alimente le budget des communes. | تغذي الجباية المحلية ميزانية البلديات.
+patrimoine communal | Le marché couvert appartient au patrimoine communal. | تنتمي السوق المغطاة إلى أملاك البلدية.
+démocratie locale | La consultation des habitants renforce la démocratie locale. | تعزز استشارة السكان الديمقراطية المحلية.
+participation citoyenne | Le budget participatif est un outil de participation citoyenne. | الميزانية التشاركية أداة لمشاركة المواطنين.
+autonomie financière | La commune jouit de la personnalité morale et de l'autonomie financière. | تتمتع البلدية بالشخصية المعنوية والاستقلال المالي.
+personne morale de droit public | La wilaya est une personne morale de droit public. | الولاية شخص معنوي خاضع للقانون العام.
+chef-lieu de wilaya | Le tribunal administratif siège au chef-lieu de wilaya. | يوجد مقر المحكمة الإدارية في مقر الولاية.
+limites territoriales | La loi trace les limites territoriales de chaque commune. | يرسم القانون الحدود الإقليمية لكل بلدية.
+wilaya déléguée | La wilaya déléguée rapproche l'administration des habitants du Sud. | تقرب الولاية المنتدبة الإدارة من سكان الجنوب.
+statut général de la fonction publique | Le statut général de la fonction publique s'applique aux fonctionnaires des administrations. | يطبق القانون الأساسي العام للوظيفة العمومية على موظفي الإدارات.
+statut particulier | Chaque corps de fonctionnaires a son statut particulier. | لكل سلك من أسلاك الموظفين قانون أساسي خاص.
+corps de fonctionnaires | Les deux inspecteurs appartiennent au même corps de fonctionnaires. | ينتمي المفتشان إلى سلك الموظفين نفسه.
+poste supérieur | La fonction de chef de bureau est un poste supérieur. | وظيفة رئيس المكتب منصب عال.
+fonction supérieure de l'État | Le wali exerce une fonction supérieure de l'État. | يمارس الوالي وظيفة عليا في الدولة.
+poste budgétaire | Le recrutement suppose un poste budgétaire vacant. | يتطلب التوظيف منصبا ماليا شاغرا.
+emploi vacant | L'administration publie la liste des emplois vacants. | تنشر الإدارة قائمة المناصب الشاغرة.
+recrutement | Le recrutement des fonctionnaires repose sur l'égal accès aux emplois publics. | يقوم توظيف الموظفين على التساوي في الالتحاق بالوظائف العمومية.
+concours sur épreuves | Le candidat réussit le concours sur épreuves et rejoint l'administration. | ينجح المترشح في المسابقة على أساس الاختبارات ويلتحق بالإدارة.
+concours sur titres | Le concours sur titres classe les candidats d'après leurs diplômes. | ترتب المسابقة على أساس الشهادات المترشحين حسب شهاداتهم.
+examen professionnel | L'agent accède au grade supérieur par un examen professionnel. | يرتقي العون إلى الرتبة الأعلى عن طريق امتحان مهني.
+période de stage | Pendant la période de stage, le nouvel agent a la qualité de stagiaire. | خلال فترة التربص، تكون للعون الجديد صفة متربص.
+agent contractuel | L'agent contractuel est lié à l'administration par un contrat. | يرتبط العون المتعاقد بالإدارة بموجب عقد.
+classification des grades | La classification des grades détermine le traitement du fonctionnaire. | يحدد تصنيف الرتب راتب الموظف.
+avancement d'échelon | L'avancement d'échelon dépend de l'ancienneté. | تتوقف الترقية في الدرجة على الأقدمية.
+avancement de grade | L'avancement de grade élève le fonctionnaire au grade supérieur. | ترفع الترقية في الرتبة الموظف إلى الرتبة الأعلى.
+promotion | La promotion récompense le mérite du fonctionnaire. | تكافئ الترقية استحقاق الموظف.
+tableau d'avancement | L'administration porte le nom des fonctionnaires méritants sur le tableau d'avancement. | تدرج الإدارة أسماء الموظفين المستحقين في جدول الترقية.
+notation | La notation du fonctionnaire a lieu chaque année. | يتم تنقيط الموظف كل سنة.
+évaluation du fonctionnaire | L'évaluation du fonctionnaire porte sur sa manière de servir. | ينصب تقييم الموظف على طريقة أدائه لمهامه.
+indice de traitement | Le traitement se calcule à partir de l'indice de traitement. | يحسب الراتب انطلاقا من الرقم الاستدلالي.
+traitement de base | Le traitement de base correspond à l'indice du grade. | يوافق الراتب الأساسي الرقم الاستدلالي للرتبة.
+régime indemnitaire | Le régime indemnitaire ajoute des indemnités au traitement. | يضيف النظام التعويضي تعويضات إلى الراتب.
+prime de rendement | La prime de rendement varie selon le travail fourni. | تتغير منحة المردودية حسب العمل المنجز.
+position d'activité | Le fonctionnaire en position d'activité exerce les fonctions de son grade. | يمارس الموظف في وضعية القيام بالخدمة مهام رتبته.
+mise en disponibilité | La mise en disponibilité suspend le traitement du fonctionnaire. | توقف الإحالة على الاستيداع راتب الموظف.
+position hors cadre | La paie du fonctionnaire en position hors cadre est à la charge de l'organisme d'accueil. | يكون راتب الموظف في وضعية خارج الإطار على عاتق الهيئة المستقبلة.
+service national | Le fonctionnaire appelé au service national retrouve son poste à son retour. | يستعيد الموظف المستدعى للخدمة الوطنية منصبه عند عودته.
+mutation d'office | La mutation d'office est décidée quand les besoins de l'administration l'exigent. | يقرر النقل الإجباري عندما تقتضيه حاجات الإدارة.
+mouvement de mutation | Le mouvement de mutation des enseignants a lieu chaque été. | تجري حركة النقل الخاصة بالأساتذة كل صيف.
+mise à la retraite | La mise à la retraite met fin à la carrière du fonctionnaire. | تنهي الإحالة على التقاعد المسار المهني للموظف.
+cessation de fonctions | Le décret de cessation de fonctions du directeur paraît au Journal officiel. | يصدر مرسوم إنهاء المهام الخاص بالمدير في الجريدة الرسمية.
+abandon de poste | L'absence prolongée sans justification constitue un abandon de poste. | يعد الغياب الطويل دون مبرر من قبيل إهمال المنصب.
+devoir d'obéissance | Le devoir d'obéissance cesse devant un ordre manifestement illégal. | يزول واجب الطاعة أمام أمر غير قانوني بشكل ظاهر.
+cumul d'emplois | Le statut limite le cumul d'emplois des fonctionnaires. | يقيد القانون الأساسي الجمع بين الوظائف لدى الموظفين.
+conseil de discipline | Le fonctionnaire comparaît devant le conseil de discipline avec son défenseur. | يمثل الموظف أمام المجلس التأديبي رفقة مدافعه.
+commission administrative paritaire | La commission administrative paritaire se réunit aussi en conseil de discipline. | تجتمع اللجنة الإدارية المتساوية الأعضاء أيضا كمجلس تأديبي.
+commission de recours | Le fonctionnaire conteste sa sanction disciplinaire devant la commission de recours. | ينازع الموظف في العقوبة التأديبية أمام لجنة الطعن.
+suspension de fonctions | La faute grave entraîne la suspension de fonctions. | يترتب على الخطأ الجسيم التوقيف عن المهام.
+rétrogradation | La rétrogradation place le fonctionnaire dans le grade inférieur. | يضع التنزيل في الرتبة الموظف في الرتبة السفلى.
+radiation du tableau d'avancement | La radiation du tableau d'avancement prive le fonctionnaire d'une promotion cette année. | يحرم الشطب من قائمة التأهيل الموظف من الترقية هذه السنة.
+dossier administratif | Le fonctionnaire consulte le dossier administratif avant la réunion du conseil de discipline. | يطلع الموظف على الملف الإداري قبل انعقاد المجلس التأديبي.
+droit syndical | Le fonctionnaire exerce le droit syndical dans le cadre de la loi. | يمارس الموظف الحق النقابي في إطار القانون.
+protection fonctionnelle | La protection fonctionnelle couvre l'agent insulté par un usager. | تشمل حماية الموظف العون الذي أهانه مرتفق.
+autorité investie du pouvoir de nomination | L'autorité investie du pouvoir de nomination signe la décision de titularisation. | توقع سلطة لها صلاحيات التعيين قرار الترسيم.
+supérieur hiérarchique | Le fonctionnaire exécute les ordres du supérieur hiérarchique. | ينفذ الموظف أوامر الرئيس السلمي.
+déontologie professionnelle | Le médecin public respecte la déontologie professionnelle. | يحترم الطبيب العمومي أخلاقيات المهنة.
+commande publique | La commande publique représente une part importante de la dépense de l'État. | يمثل الطلب العمومي جزءا هاما من نفقات الدولة.
+marché de travaux | La commune passe un marché de travaux pour la construction d'une école. | تبرم البلدية صفقة الأشغال لبناء مدرسة.
+marché de fournitures | L'hôpital conclut un marché de fournitures pour l'achat de médicaments. | يبرم المستشفى صفقة اللوازم لشراء الأدوية.
+marché de services | Le nettoyage des bureaux est confié à une entreprise par un marché de services. | يسند تنظيف المكاتب إلى مؤسسة بموجب صفقة الخدمات.
+marché d'études | Le marché d'études précède la réalisation du barrage. | تسبق صفقة الدراسات إنجاز السد.
+appel d'offres ouvert | Tout candidat qualifié peut répondre à l'appel d'offres ouvert. | يستطيع كل مترشح مؤهل أن يشارك في طلب العروض المفتوح.
+appel d'offres restreint | Seuls les candidats présélectionnés participent à l'appel d'offres restreint. | لا يشارك في طلب العروض المحدود إلا المترشحون المنتقون من قبل.
+procédure de gré à gré | La loi limite la procédure de gré à gré à des cas précis. | يحصر القانون إجراء التراضي في حالات محددة.
+négociation directe | Face à un danger imminent, le service contractant recourt à la négociation directe. | أمام خطر وشيك، تلجأ المصلحة المتعاقدة إلى التفاوض المباشر.
+avis d'appel d'offres | L'avis d'appel d'offres paraît dans la presse et sur le portail des marchés publics. | ينشر إعلان طلب العروض في الصحافة وفي بوابة الصفقات العمومية.
+dossier de consultation des entreprises | Les candidats retirent le dossier de consultation des entreprises auprès du service contractant. | يسحب المترشحون ملف استشارة المؤسسات من المصلحة المتعاقدة.
+offre technique | L'offre technique décrit les moyens humains et les équipements de l'entreprise. | يصف العرض التقني الوسائل البشرية والتجهيزات لدى المؤسسة.
+offre financière | L'offre financière indique le prix proposé par le soumissionnaire. | يبين العرض المالي الثمن الذي يقترحه المتعهد.
+ouverture des plis | L'ouverture des plis a lieu en présence des soumissionnaires. | يتم فتح الأظرفة بحضور المتعهدين.
+évaluation des offres | L'évaluation des offres suit les critères du cahier des charges. | يتبع تقييم العروض معايير دفتر الشروط.
+commission d'ouverture des plis et d'évaluation des offres | La commission d'ouverture des plis et d'évaluation des offres classe les soumissions. | ترتب لجنة فتح الأظرفة وتقييم العروض التعهدات.
+commission des marchés publics | Le service contractant soumet le projet de marché public à la commission des marchés publics. | تعرض المصلحة المتعاقدة مشروع الصفقة العمومية على لجنة الصفقات العمومية.
+attribution provisoire | L'avis d'attribution provisoire paraît dans les mêmes journaux que l'appel d'offres. | يصدر إعلان المنح المؤقت في الجرائد نفسها التي صدر فيها طلب العروض.
+attributaire du marché public | L'attributaire du marché public signe le contrat avec le service contractant. | يوقع صاحب الصفقة العمومية العقد مع المصلحة المتعاقدة.
+partenaire cocontractant | Le partenaire cocontractant exécute les travaux dans le délai du contrat. | ينفذ المتعامل المتعاقد الأشغال في أجل العقد.
+opérateur économique | Tout opérateur économique peut consulter l'avis d'appel d'offres. | يستطيع كل متعامل اقتصادي الاطلاع على إعلان طلب العروض.
+offre anormalement basse | Le service contractant peut rejeter une offre anormalement basse après explications. | يجوز للمصلحة المتعاقدة رفض العرض المنخفض بشكل غير عادي بعد طلب توضيحات.
+infructuosité | L'infructuosité de l'appel d'offres oblige à relancer la procédure. | يلزم عدم الجدوى في طلب العروض بإعادة الإجراء.
+caution de soumission | Le candidat joint à son dossier une caution de soumission. | يرفق المترشح بملفه كفالة التعهد.
+caution de bonne exécution | L'entreprise retenue fournit une caution de bonne exécution. | تقدم المؤسسة المختارة كفالة حسن التنفيذ.
+avance forfaitaire | Le service contractant verse une avance forfaitaire au début des travaux. | تدفع المصلحة المتعاقدة تسبيقا جزافيا عند بداية الأشغال.
+ordre de service | Les travaux commencent à la réception de l'ordre de service. | تبدأ الأشغال عند استلام الأمر بالخدمة.
+délai d'exécution | Le délai d'exécution court à compter de l'ordre de service. | يسري أجل التنفيذ ابتداء من الأمر بالخدمة.
+décompte général et définitif | Le décompte général et définitif arrête le montant dû à l'entreprise. | يضبط كشف عام ونهائي المبلغ المستحق للمؤسسة.
+groupement momentané d'entreprises | Trois sociétés répondent ensemble en groupement momentané d'entreprises. | تشارك ثلاث شركات معا في تجمع مؤقت لمؤسسات.
+résiliation unilatérale | Le service contractant décide la résiliation unilatérale après une mise en demeure restée sans effet. | تقرر المصلحة المتعاقدة فسخا من جانب واحد بعد إعذار بقي دون أثر.
+nantissement du marché public | L'entreprise obtient un crédit grâce au nantissement du marché public. | تحصل المؤسسة على قرض بفضل رهن حيازي للصفقة العمومية.
+contrôle externe | La commission des marchés publics exerce un contrôle externe avant la signature. | تمارس لجنة الصفقات العمومية رقابة خارجية قبل التوقيع.
+contrôle interne | Le contrôle interne s'exerce au sein même du service contractant. | تمارس الرقابة الداخلية داخل المصلحة المتعاقدة نفسها.
+visa de la commission des marchés | Le contrat reçoit le visa de la commission des marchés avant son exécution. | يحصل العقد على تأشيرة لجنة الصفقات قبل تنفيذه.
+marge de préférence nationale | La marge de préférence nationale avantage les produits fabriqués en Algérie. | يفضل هامش الأفضلية الوطنية المنتجات المصنوعة في الجزائر.
+partenariat public-privé | L'autoroute est réalisée dans le cadre d'un partenariat public-privé. | ينجز الطريق السيار في إطار شراكة بين القطاعين العام والخاص.
+concession de service public | La concession de service public charge une société d'exploiter le réseau à ses frais. | يكلف امتياز المرفق العام شركة باستغلال الشبكة على نفقتها.
+convention de délégation | La convention de délégation énonce les obligations du délégataire. | تبين اتفاقية التفويض التزامات المفوض له.
+portail des marchés publics | Les entreprises s'inscrivent sur le portail des marchés publics. | تسجل المؤسسات في بوابة الصفقات العمومية.
+liberté d'accès à la commande publique | La liberté d'accès à la commande publique profite à toutes les entreprises. | تستفيد كل المؤسسات من حرية الوصول للطلبات العمومية.
+égalité de traitement des candidats | L'égalité de traitement des candidats s'impose à chaque étape de la procédure. | تفرض المساواة في معاملة المرشحين في كل مرحلة من الإجراء.
+transparence des procédures | La publicité des avis garantit la transparence des procédures. | يضمن إشهار الإعلانات شفافية الإجراءات.
+domaine national | Le domaine national comprend les biens de l'État, de la wilaya et de la commune. | تشمل الأملاك الوطنية أملاك الدولة والولاية والبلدية.
+domaine public naturel | Le rivage de la mer appartient au domaine public naturel. | ينتمي شاطئ البحر إلى الأملاك العمومية الطبيعية.
+domaine public artificiel | Les routes et les ports relèvent du domaine public artificiel. | تدخل الطرق والموانئ في الأملاك العمومية الاصطناعية.
+domaine public maritime | La plage relève du domaine public maritime. | يدخل الشاطئ في الأملاك العمومية البحرية.
+domaine public hydraulique | Les oueds et les barrages relèvent du domaine public hydraulique. | تدخل الوديان والسدود في الأملاك العمومية المائية.
+biens de l'État | Les biens de l'État sont recensés dans un inventaire général. | تحصى أملاك الدولة في جرد عام.
+administration des domaines | L'administration des domaines évalue le terrain avant sa vente. | تقيم إدارة أملاك الدولة قطعة الأرض قبل بيعها.
+acte d'affectation | Par un acte d'affectation, l'immeuble est remis au ministère pour ses besoins. | بموجب قرار التخصيص، يسلم العقار إلى الوزارة لحاجاتها.
+désaffectation | La désaffectation retire l'immeuble à l'administration qui l'utilisait. | يسحب إلغاء التخصيص العقار من الإدارة التي كانت تستعمله.
+acte de classement | L'acte de classement fait entrer la route dans le domaine public. | يدخل قرار التصنيف الطريق في الأملاك الوطنية العمومية.
+déclassement | Le déclassement fait sortir le bien du domaine public. | يخرج إلغاء التصنيف المال من الأملاك الوطنية العمومية.
+inaliénabilité | L'inaliénabilité empêche la vente des biens du domaine public. | تمنع عدم القابلية للتصرف بيع أموال الأملاك الوطنية العمومية.
+imprescriptibilité | L'imprescriptibilité exclut qu'une longue possession donne la propriété d'un bien du domaine public. | تستبعد عدم القابلية للتقادم أن تمنح حيازة طويلة ملكية مال من الأملاك الوطنية العمومية.
+occupation temporaire | Le café obtient une occupation temporaire du trottoir pour sa terrasse. | يحصل المقهى على شغل مؤقت للرصيف من أجل شرفته.
+autorisation d'occupation du domaine public | Le kiosque est installé en vertu d'une autorisation d'occupation du domaine public. | يقام الكشك بمقتضى رخصة شغل الأملاك العمومية.
+permission de voirie | La pose d'une canalisation sous la chaussée exige une permission de voirie. | يتطلب وضع قناة تحت الطريق رخصة الطريق.
+redevance domaniale | L'occupant du domaine public paie une redevance domaniale. | يدفع شاغل الأملاك الوطنية العمومية إتاوة الأملاك الوطنية.
+contravention de voirie | L'abandon de gravats sur la route est une contravention de voirie. | يعد ترك الردم على الطريق من قبيل مخالفة الطرق.
+expropriation pour cause d'utilité publique | L'expropriation pour cause d'utilité publique est un mode exceptionnel d'acquisition des immeubles. | نزع الملكية من أجل المنفعة العمومية طريقة استثنائية لاكتساب العقارات.
+déclaration d'utilité publique | La déclaration d'utilité publique ouvre la procédure d'expropriation. | يفتح التصريح بالمنفعة العمومية إجراء نزع الملكية.
+enquête préalable | Une enquête préalable vérifie l'utilité publique du projet. | يتحقق تحقيق مسبق من المنفعة العمومية للمشروع.
+commissaire enquêteur | Le commissaire enquêteur recueille les observations des habitants. | يجمع المحافظ المحقق ملاحظات السكان.
+arrêté de cessibilité | L'arrêté de cessibilité dresse la liste des terrains concernés par l'expropriation. | يضبط قرار قابلية التنازل قائمة الأراضي المعنية بنزع الملكية.
+enquête parcellaire | L'enquête parcellaire identifie les propriétaires de chaque parcelle. | يحدد التحقيق الجزئي ملاك كل قطعة أرض.
+indemnité d'expropriation | Le juge arrête l'indemnité d'expropriation en cas de désaccord. | يضبط القاضي التعويض عن نزع الملكية في حالة الخلاف.
+indemnité juste et équitable | Le propriétaire exproprié reçoit une indemnité juste et équitable. | يحصل المالك المنزوع ملكيته على تعويض عادل ومنصف.
+exproprié | L'exproprié conteste le montant de l'indemnité devant le tribunal. | ينازع المنزوع ملكيته في مبلغ التعويض أمام المحكمة.
+expropriant | L'expropriant consigne l'indemnité au Trésor public. | يودع نازع الملكية التعويض لدى الخزينة العمومية.
+nationalisation | La nationalisation transfère une entreprise privée à l'État. | ينقل التأميم مؤسسة خاصة إلى الدولة.
+privatisation | La privatisation cède une entreprise publique à des investisseurs privés. | تحول الخوصصة مؤسسة عمومية إلى مستثمرين من القطاع الخاص.
+ouvrage public | Le pont est un ouvrage public. | الجسر منشأة عمومية.
+dommage de travaux publics | La fissure causée par le chantier du métro est un dommage de travaux publics. | يعد الشق الذي سببته ورشة المترو من قبيل ضرر الأشغال العمومية.
+servitude d'utilité publique | Le passage d'une ligne électrique crée une servitude d'utilité publique sur le terrain. | ينشئ مرور خط كهربائي ارتفاق المنفعة العمومية على الأرض.
+juge administratif | Le juge administratif contrôle la légalité des décisions de l'administration. | يراقب القاضي الإداري مشروعية قرارات الإدارة.
+juridiction administrative | Le Conseil d'État est la plus haute juridiction administrative. | مجلس الدولة أعلى جهة قضائية إدارية.
+recours de pleine juridiction | Par le recours de pleine juridiction, la victime réclame une indemnité à l'administration. | بدعوى القضاء الكامل، تطالب الضحية الإدارة بتعويض.
+recours en appréciation de légalité | Le recours en appréciation de légalité invite le juge à dire si l'acte est légal. | تدعو دعوى تقدير المشروعية القاضي إلى بيان ما إذا كان القرار مشروعا.
+recours administratif préalable | Le fonctionnaire forme un recours administratif préalable avant de s'adresser au juge. | يقدم الموظف تظلما إداريا مسبقا قبل اللجوء إلى القاضي.
+décision préalable | Devant le juge administratif français, la demande d'indemnité suppose une décision préalable de l'administration. | أمام القاضي الإداري الفرنسي، يفترض طلب التعويض قرارا مسبقا من الإدارة.
+délai de recours contentieux | Le délai de recours contentieux court à compter de la notification de la décision. | يسري أجل الطعن القضائي ابتداء من تبليغ القرار.
+sursis à exécution de la décision administrative | Le juge accorde le sursis à exécution de la décision administrative en cas de doute sérieux. | يمنح القاضي وقف تنفيذ القرار الإداري في حالة شك جدي.
+référé administratif | Le référé administratif permet d'obtenir une mesure rapide du juge. | يسمح الاستعجال الإداري بالحصول على تدبير سريع من القاضي.
+référé-liberté | Le référé-liberté fait cesser une atteinte grave à une liberté fondamentale. | يوقف الاستعجال في مادة الحريات الأساسية مساسا جسيما بحرية أساسية.
+référé précontractuel | L'entreprise évincée engage un référé précontractuel avant la signature du contrat. | ترفع المؤسسة المقصاة دعوى استعجال في مادة إبرام العقود والصفقات قبل توقيع العقد.
+référé-constat | Par le référé-constat, le juge désigne un expert pour décrire les lieux. | في الاستعجال في مادة إثبات الحالة، يعين القاضي خبيرا لوصف الأماكن.
+référé-provision | Le référé-provision accorde une avance au créancier dont la créance n'est pas contestable. | يمنح الاستعجال في مادة التسبيق المالي تسبيقا للدائن الذي لا نزاع في دينه.
+annulation pour excès de pouvoir | L'annulation pour excès de pouvoir fait disparaître la décision illégale. | يزيل الإلغاء لتجاوز السلطة القرار غير القانوني.
+annulation partielle | Le juge prononce une annulation partielle quand un seul article est illégal. | ينطق القاضي بإلغاء جزئي عندما تكون مادة واحدة غير قانونية.
+effet rétroactif de l'annulation | Par l'effet rétroactif de l'annulation, l'acte est réputé n'avoir jamais existé. | بموجب الأثر الرجعي للإلغاء، يعد القرار كأنه لم يوجد أبدا.
+plein contentieux | En plein contentieux, le juge a le pouvoir de réformer la décision. | في القضاء الكامل، يملك القاضي سلطة تعديل القرار.
+contentieux de l'annulation | Le contentieux de l'annulation porte sur la légalité de l'acte. | ينصب قضاء الإلغاء على مشروعية القرار.
+contentieux de la responsabilité | Le contentieux de la responsabilité tend à la réparation du dommage. | يرمي قضاء التعويض إلى تعويض الضرر.
+responsabilité pour risque | La responsabilité pour risque joue même sans faute de l'administration. | تقوم المسؤولية على أساس المخاطر حتى دون خطأ من الإدارة.
+faute de service | Le retard de l'ambulance est une faute de service. | تأخر سيارة الإسعاف خطأ مرفقي.
+faute personnelle | L'agent qui frappe un usager commet une faute personnelle. | العون الذي يضرب مرتفقا يرتكب خطأ شخصيا.
+rupture de l'égalité devant les charges publiques | La rupture de l'égalité devant les charges publiques ouvre droit à réparation sans faute. | يفتح الإخلال بالمساواة أمام الأعباء العامة الحق في التعويض دون خطأ.
+injonction à l'administration | Le juge adresse une injonction à l'administration pour qu'elle exécute le jugement. | يصدر القاضي أمرا موجها للإدارة لكي تنفذ الحكم.
+exécution des décisions de la justice administrative | L'astreinte assure l'exécution des décisions de la justice administrative. | تضمن الغرامة التهديدية تنفيذ أحكام القضاء الإداري.
+conflit de compétence | Le tribunal des conflits tranche le conflit de compétence. | تفصل محكمة التنازع في تنازع الاختصاص.
+décision attaquée | Le requérant joint à sa requête une copie de la décision attaquée. | يرفق الطاعن بعريضته نسخة من القرار المطعون فيه.
+substitution de motifs | Le juge admet la substitution de motifs proposée par l'administration. | يقبل القاضي استبدال الأسباب الذي تقترحه الإدارة.
+exception d'illégalité | Le requérant soulève une exception d'illégalité contre le règlement. | يثير الطاعن دفعا بعدم المشروعية ضد التنظيم.
+question préjudicielle | Le juge civil renvoie la question préjudicielle au juge administratif. | يحيل القاضي المدني المسألة الأولية على القاضي الإداري.
+dualité de juridictions | La dualité de juridictions sépare les tribunaux ordinaires des tribunaux administratifs. | تفصل ازدواجية القضاء المحاكم العادية عن المحاكم الإدارية.

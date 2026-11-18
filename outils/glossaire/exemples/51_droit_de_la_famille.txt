@@ -1,0 +1,154 @@
+# Phrases d'exemple de termes/51_droit_de_la_famille.txt : terme | phrase française | phrase arabe
+conclusion du mariage | La conclusion du mariage a lieu devant le notaire ou l'officier de l'état civil. | يتم إبرام عقد الزواج أمام الموثق أو ضابط الحالة المدنية.
+conditions du mariage | La capacité, la dot et la présence de deux témoins comptent parmi les conditions du mariage. | الأهلية والصداق وحضور شاهدين من شروط الزواج.
+éléments constitutifs du mariage | Le contrat qui ne réunit pas les éléments constitutifs du mariage est nul. | العقد الذي لا تتوفر فيه أركان الزواج باطل.
+consentement des époux | Le mariage repose sur le consentement des époux. | يقوم الزواج على رضا الزوجين.
+capacité matrimoniale | La capacité matrimoniale suppose que les futurs époux aient atteint l'âge légal. | تفترض أهلية الزواج بلوغ الزوجين السن القانونية.
+âge du mariage | Le juge peut accorder une dispense avant l'âge du mariage pour un motif sérieux. | يجوز للقاضي منح إعفاء قبل سن الزواج لسبب جدي.
+tuteur matrimonial | La femme conclut son mariage en présence du tuteur matrimonial. | تعقد المرأة زواجها بحضور ولي الزواج.
+témoins du mariage | Les témoins du mariage signent l'acte avec les époux. | يوقع شاهدا الزواج العقد مع الزوجين.
+certificat médical prénuptial | Chaque futur époux remet au notaire un certificat médical prénuptial. | يسلم كل من الزوجين للموثق شهادة طبية قبل الزواج.
+transcription du mariage | L'officier de l'état civil procède à la transcription du mariage sur le registre de l'état civil. | يقوم ضابط الحالة المدنية بتسجيل عقد الزواج في سجل الحالة المدنية.
+preuve du mariage | La preuve du mariage résulte d'un extrait du registre de l'état civil. | يتم إثبات الزواج بمستخرج من سجل الحالة المدنية.
+mariage coutumier | Le mariage coutumier, célébré sans acte officiel, doit être validé par un jugement. | الزواج العرفي الذي تم دون عقد رسمي يجب تثبيته بحكم.
+jugement de validation du mariage | Le jugement de validation du mariage est transcrit à l'état civil à la demande du ministère public. | يسجل الحكم بتثبيت الزواج في الحالة المدنية بطلب من النيابة العامة.
+mariage nul | Le mariage célébré malgré un empêchement légal est un mariage nul. | الزواج الذي تم مع وجود مانع شرعي زواج باطل.
+mariage vicié | Le mariage vicié, célébré sans dot, se consolide après la consommation par la dot de parité. | الزواج الفاسد الذي تم دون صداق يثبت بعد الدخول بصداق المثل.
+mariage mixte | Le mariage mixte unit un Algérien et une étrangère, ou une Algérienne et un étranger. | يجمع الزواج المختلط بين جزائري وأجنبية أو بين جزائرية وأجنبي.
+consommation du mariage | La consommation du mariage ouvre à l'épouse le droit à la totalité de sa dot. | يثبت الدخول بالزوجة حقها في الصداق كاملا.
+dot à terme | La dot à terme est versée à l'épouse à une date ultérieure. | يدفع الصداق المؤجل للزوجة في تاريخ لاحق.
+dot payable d'avance | La dot payable d'avance est remise à l'épouse le jour de l'acte de mariage. | يسلم الصداق المعجل للزوجة يوم عقد الزواج.
+dot de parité | Si l'acte ne précise pas la dot, l'épouse reçoit la dot de parité. | إذا لم يبين العقد الصداق، تستحق الزوجة صداق المثل.
+cadeaux de fiançailles | Les cadeaux de fiançailles sont rendus au fiancé si la fiancée renonce au mariage. | ترد هدايا الخطبة إلى الخاطب إذا عدلت المخطوبة عن الزواج.
+rupture des fiançailles | La rupture des fiançailles peut donner lieu à réparation en cas de préjudice. | قد يترتب على العدول عن الخطبة تعويض في حالة الضرر.
+fiancée | La fiancée conserve les cadeaux si le fiancé renonce au mariage. | تحتفظ المخطوبة بالهدايا إذا عدل الخاطب عن الزواج.
+empêchements absolus | La parenté et l'alliance créent des empêchements absolus au mariage. | تنشئ القرابة والمصاهرة موانع مؤبدة للزواج.
+empêchements temporaires | La retraite légale de la femme figure parmi les empêchements temporaires. | عدة المرأة من بين الموانع المؤقتة.
+parenté par allaitement | La parenté par allaitement empêche le mariage comme la parenté par le sang. | تمنع قرابة الرضاع الزواج كما تمنعه قرابة النسب.
+degré de parenté | Le degré de parenté entre le père et le fils est le premier. | درجة القرابة بين الأب والابن هي الأولى.
+parenté en ligne directe | La parenté en ligne directe unit le grand-père, le père et le fils. | تربط القرابة المباشرة بين الجد والأب والابن.
+parenté en ligne collatérale | La parenté en ligne collatérale unit les frères, les sœurs et les cousins. | تربط قرابة الحواشي بين الإخوة والأخوات وأبناء العم.
+collatéraux | Les oncles et les cousins sont des collatéraux. | الأعمام وأبناء العم من أقارب الحواشي.
+conjoint survivant | Le conjoint survivant figure parmi les héritiers de son époux. | كل زوج باق على قيد الحياة من ورثة زوجه.
+droits et obligations des époux | La loi sur la famille énonce les droits et obligations des époux. | يبين قانون الأسرة حقوق وواجبات الزوجين.
+devoir de cohabitation | Le devoir de cohabitation impose aux époux de vivre sous le même toit. | يفرض واجب المساكنة على الزوجين العيش تحت سقف واحد.
+devoir de fidélité | L'adultère viole le devoir de fidélité. | يخل الزنا بواجب الإخلاص.
+entretien de l'épouse | Le mari doit l'entretien de l'épouse dès le début de la vie conjugale. | يلتزم الزوج بنفقة الزوجة منذ بداية الحياة الزوجية.
+entretien des enfants | L'entretien des enfants incombe d'abord au père. | تجب نفقة الأولاد على الأب أولا.
+domicile conjugal | Les époux vivent ensemble au domicile conjugal. | يعيش الزوجان معا في مسكن الزوجية.
+abandon du domicile conjugal | L'abandon du domicile conjugal sans motif sérieux peut justifier le divorce. | قد يبرر ترك مقر الزوجية دون سبب جدي الطلاق.
+séparation des biens | Sous la séparation des biens, chaque époux reste seul propriétaire de ce qu'il possède. | في ظل استقلال الذمة المالية، يبقى كل زوج المالك الوحيد لما يملكه.
+biens communs des époux | Un acte notarié précise la part de chacun dans les biens communs des époux. | يبين عقد توثيقي نصيب كل واحد في الأموال المشتركة بين الزوجين.
+clause du contrat de mariage | Par une clause du contrat de mariage, l'épouse conserve le droit de travailler. | بموجب شرط في عقد الزواج، تحتفظ الزوجة بحقها في العمل.
+autorisation de polygamie | Le président du tribunal ne donne l'autorisation de polygamie qu'après avoir vérifié le consentement de l'épouse et de la future épouse. | لا يمنح رئيس المحكمة الترخيص بالتعدد إلا بعد التأكد من رضا الزوجة والزوجة المقبلة.
+coépouse | Le mari ne doit pas favoriser une coépouse au détriment d'une autre. | لا يجوز للزوج أن يفضل ضرة على أخرى.
+nouchouz | Le juge constate le nouchouz de l'époux qui quitte le foyer sans raison. | يثبت القاضي نشوز الزوج الذي يغادر البيت دون سبب.
+conciliation entre époux | Le juge tente plusieurs fois la conciliation entre époux avant de rendre son jugement. | يحاول القاضي عدة مرات الصلح بين الزوجين قبل إصدار حكمه.
+arbitrage familial | L'arbitrage familial confie à deux proches des époux la mission de les réconcilier. | يسند التحكيم بين الزوجين إلى حكمين من أهلهما مهمة الإصلاح بينهما.
+divorce par volonté unilatérale de l'époux | Le divorce par volonté unilatérale de l'époux passe toujours par un jugement. | لا يثبت الطلاق بالإرادة المنفردة للزوج إلا بحكم.
+divorce à la demande de l'épouse | Le divorce à la demande de l'épouse suppose une cause que la loi énumère. | يفترض التطليق سببا من الأسباب التي يعددها القانون.
+divorce pour préjudice | L'épouse maltraitée obtient le divorce pour préjudice. | تحصل الزوجة التي أسيئت معاملتها على التطليق للضرر.
+divorce abusif | Le juge retient le divorce abusif si le mari divorce sans motif sérieux. | يحكم القاضي بوجود طلاق تعسفي إذا طلق الزوج دون سبب جدي.
+divorce révocable | Selon le droit musulman, le mari peut reprendre son épouse pendant la retraite légale après un divorce révocable. | حسب الشريعة الإسلامية، يجوز للزوج أن يراجع زوجته خلال العدة بعد طلاق رجعي.
+divorce irrévocable | Après un divorce irrévocable, les époux ne se remettent ensemble que par un nouveau contrat. | بعد طلاق بائن، لا يعود الزوجان إلى بعضهما إلا بعقد جديد.
+reprise de l'épouse | La reprise de l'épouse avant le jugement n'exige pas de nouvel acte. | لا تحتاج مراجعة الزوجة قبل صدور الحكم إلى عقد جديد.
+jugement de divorce | Le jugement de divorce statue aussi sur la garde des enfants et la pension alimentaire. | يفصل حكم الطلاق أيضا في حضانة الأولاد والنفقة.
+transcription du jugement de divorce | Le ministère public veille à la transcription du jugement de divorce à l'état civil. | تسهر النيابة العامة على تسجيل حكم الطلاق في الحالة المدنية.
+effets du divorce | La retraite légale et la garde des enfants comptent parmi les effets du divorce. | العدة وحضانة الأولاد من آثار الطلاق.
+réparation du divorce abusif | Le juge accorde à l'épouse la réparation du divorce abusif. | يمنح القاضي للزوجة تعويضا عن الطلاق التعسفي.
+pension de la retraite légale | Après le divorce, la femme reçoit la pension de la retraite légale. | بعد الطلاق، تستحق المرأة نفقة العدة.
+compensation du khol'â | Si les époux ne s'entendent pas, le juge arrête la compensation du khol'â. | إذا لم يتفق الزوجان، يحدد القاضي مقابل الخلع.
+délai de viduité | La veuve observe le délai de viduité avant de se remarier. | تلتزم الأرملة بعدة الوفاة قبل أن تتزوج من جديد.
+épouse divorcée | L'épouse divorcée reste au domicile conjugal pendant la retraite légale. | تبقى الزوجة المطلقة في مسكن الزوجية خلال العدة.
+veuve | La veuve hérite d'une part des biens de son mari. | ترث الأرملة نصيبا من أموال زوجها.
+logement de la gardienne | Le père assure le logement de la gardienne ou en paie le loyer. | يوفر الأب سكن الحاضنة أو يدفع بدل الإيجار.
+attribution de la garde | L'attribution de la garde profite d'abord à la mère, puis au père. | يكون إسناد الحضانة للأم أولا ثم للأب.
+déchéance du droit de garde | Le juge prononce la déchéance du droit de garde si la santé de l'enfant est négligée. | يحكم القاضي بسقوط الحضانة إذا أهملت صحة الولد.
+gardien de l'enfant | Le gardien de l'enfant veille à sa scolarité et à sa santé. | يسهر الحاضن على تمدرس الولد وصحته.
+enfant gardé | L'enfant gardé vit chez celui de ses parents qui en a la garde. | يعيش المحضون عند من له الحضانة من والديه.
+intérêt supérieur de l'enfant | Le juge décide selon l'intérêt supérieur de l'enfant. | يقرر القاضي وفق مصلحة الطفل الفضلى.
+fonds de la pension alimentaire | Le fonds de la pension alimentaire verse les sommes que le père ne paie pas. | يدفع صندوق النفقة المبالغ التي لا يدفعها الأب.
+droit d'hébergement | Le père exerce son droit d'hébergement pendant les vacances scolaires. | يمارس الأب حق الاستضافة خلال العطل المدرسية.
+remariage | Le remariage de la mère peut lui coûter la garde de l'enfant. | قد تفقد الأم حضانة الولد بسبب إعادة الزواج.
+serment d'anathème | Par le serment d'anathème, le mari conteste être le père de l'enfant. | باللعان، ينفي الزوج أن يكون أبا للولد.
+établissement de la filiation | L'établissement de la filiation résulte d'abord du mariage valide. | يتم إثبات النسب أولا بالزواج الصحيح.
+reconnaissance de filiation | La reconnaissance de filiation rattache un enfant de parents inconnus à celui qui la déclare. | يلحق الإقرار بالنسب ولدا مجهول الأبوين بمن أقر به.
+reconnaissance de maternité | La reconnaissance de maternité émane de la femme qui déclare être la mère. | يصدر الإقرار بالأمومة عن المرأة التي تصرح بأنها الأم.
+présomption de paternité | La présomption de paternité désigne le mari comme père de l'enfant né pendant le mariage. | تجعل قرينة الأبوة الزوج أبا للولد الذي ولد خلال الزواج.
+durée minimale de la grossesse | La loi indique la durée minimale de la grossesse pour rattacher l'enfant au mari. | يبين القانون أقل مدة الحمل لإلحاق الولد بالزوج.
+durée maximale de la grossesse | L'enfant né après la durée maximale de la grossesse n'est pas rattaché à l'ancien mari. | لا يلحق الولد الذي ولد بعد أقصى مدة الحمل بالزوج السابق.
+insémination artificielle | L'insémination artificielle n'est admise qu'entre époux et avec leur consentement. | لا يجوز التلقيح الاصطناعي إلا بين الزوجين وبرضاهما.
+preuve scientifique de la filiation | Le juge peut recourir à la preuve scientifique de la filiation, comme l'analyse génétique. | يجوز للقاضي اللجوء إلى الطرق العلمية لإثبات النسب، كالتحليل الجيني.
+paternité | Le mari conteste sa paternité devant le juge. | ينازع الزوج في أبوته أمام القاضي.
+maternité | La maternité se prouve par l'accouchement. | تثبت الأمومة بالولادة.
+enfant légitime | L'enfant légitime porte le nom de son père. | يحمل الولد الشرعي اسم أبيه.
+enfant naturel | L'enfant naturel est rattaché à sa mère. | ينسب الولد غير الشرعي إلى أمه.
+enfant trouvé | L'officier de l'état civil choisit lui-même un prénom pour l'enfant trouvé. | يختار ضابط الحالة المدنية بنفسه اسما شخصيا للقيط.
+enfant de filiation inconnue | Un enfant de filiation inconnue peut être confié à une famille par la kafala. | يمكن أن يسند مجهول النسب إلى أسرة عن طريق الكفالة.
+orphelin | Le tuteur gère les biens de l'orphelin encore mineur. | يدير الولي أموال اليتيم القاصر.
+pupille de l'État | Le pupille de l'État est élevé dans un établissement public ou confié à une famille. | يربى الطفل المسعف في مؤسسة عمومية أو يسند إلى أسرة.
+enfance assistée | Les foyers pour l'enfance assistée accueillent les enfants sans famille. | تستقبل دور الطفولة المسعفة الأولاد الذين لا أسرة لهم.
+titulaire du recueil légal | Le titulaire du recueil légal élève l'enfant comme le ferait un père. | يربي الكافل الولد كما يفعل الأب.
+enfant recueilli | L'enfant recueilli conserve sa filiation d'origine. | يحتفظ الطفل المكفول بنسبه الأصلي.
+puissance paternelle | La puissance paternelle est une notion ancienne qui désigne l'autorité du père sur ses enfants mineurs. | السلطة الأبوية مفهوم قديم يقصد به سلطة الأب على أولاده القصر.
+autorité parentale | Le droit français confie l'autorité parentale au père et à la mère. | يسند القانون الفرنسي سلطة الوالدين إلى الأب والأم.
+tutelle sur la personne | La tutelle sur la personne porte sur l'éducation et la santé du mineur. | تنصب الولاية على النفس على تربية القاصر وصحته.
+tutelle sur les biens | La tutelle sur les biens concerne tout ce que possède le mineur. | تتعلق الولاية على المال بكل ما يملكه القاصر.
+allaitement | L'allaitement de l'enfant par une autre femme crée une parenté. | ينشئ إرضاع الولد من امرأة أخرى قرابة.
+éducation de l'enfant | Les deux parents veillent ensemble à l'éducation de l'enfant. | يسهر الوالدان معا على تربية الطفل.
+protection de l'enfance | La loi sur la protection de l'enfance réprime les mauvais traitements infligés aux enfants. | يعاقب قانون حماية الطفولة على سوء معاملة الأولاد.
+délégué national à la protection de l'enfance | Le délégué national à la protection de l'enfance reçoit les signalements concernant tout enfant en danger. | يتلقى المفوض الوطني لحماية الطفولة الإخطارات المتعلقة بكل طفل في خطر.
+mineur doué de discernement | Le mineur doué de discernement accomplit seul les actes qui lui sont purement profitables. | يباشر القاصر المميز وحده التصرفات النافعة له نفعا محضا.
+mineur non doué de discernement | Les actes du mineur non doué de discernement sont nuls. | تصرفات القاصر غير المميز باطلة.
+âge de discernement | Avant l'âge de discernement, les actes de l'enfant sont sans valeur. | قبل سن التمييز، لا قيمة لتصرفات الولد.
+tutelle légale | Le père exerce la tutelle légale sur ses enfants mineurs. | يمارس الأب الولاية الشرعية على أولاده القصر.
+tutelle testamentaire | La tutelle testamentaire est organisée par le père pour le temps qui suivra son décès. | ينظم الأب الوصاية على القاصر للفترة التي تلي وفاته.
+gestion des biens du mineur | Le juge contrôle la gestion des biens du mineur par le tuteur. | يراقب القاضي إدارة أموال القاصر من طرف الولي.
+actes soumis à autorisation | La vente d'un immeuble du mineur figure parmi les actes soumis à autorisation du juge. | بيع عقار القاصر من التصرفات الخاضعة للإذن من القاضي.
+compte de tutelle | À la fin de sa mission, le tuteur testamentaire présente le compte de tutelle. | عند انتهاء مهمته، يقدم الوصي حساب الوصاية.
+fin de la tutelle | La majorité de l'enfant entraîne la fin de la tutelle. | يترتب على بلوغ الولد سن الرشد انتهاء الولاية.
+déchéance de la tutelle | Le juge prononce la déchéance de la tutelle contre le père qui dilapide les biens du mineur. | يحكم القاضي بإسقاط الولاية عن الأب الذي يبدد أموال القاصر.
+personne interdite | Les actes accomplis par la personne interdite après le jugement sont nuls. | تصرفات الشخص المحجور عليه بعد الحكم باطلة.
+mainlevée de l'interdiction judiciaire | Le tribunal prononce la mainlevée de l'interdiction judiciaire quand sa cause n'existe plus. | تحكم المحكمة برفع الحجر عند زوال سببه.
+imbécillité | L'imbécillité est une cause d'interdiction judiciaire. | العته سبب من أسباب الحجر.
+faible d'esprit | Un tuteur représente le faible d'esprit dans ses actes. | ينوب ولي عن المعتوه في تصرفاته.
+prodigalité | La prodigalité conduit le juge à placer le majeur sous interdiction judiciaire. | يدفع السفه القاضي إلى وضع الراشد تحت الحجر.
+prodigue | Le prodigue dépense sa fortune sans mesure. | ينفق السفيه ماله دون حساب.
+altération des facultés mentales | Un médecin constate l'altération des facultés mentales avant le jugement d'interdiction judiciaire. | يثبت طبيب اختلال القوى العقلية قبل الحكم بالحجر.
+personne âgée | Les descendants doivent aide et entretien à la personne âgée. | يلتزم الفروع بمساعدة الشخص المسن والإنفاق عليه.
+personne handicapée | La personne handicapée reçoit une carte qui atteste son handicap. | يحصل الشخص المعاق على بطاقة تثبت إعاقته.
+assistant judiciaire | Le tribunal nomme un assistant judiciaire à la personne sourde-muette qui ne peut exprimer sa volonté. | تعين المحكمة مساعدا قضائيا للشخص الأصم الأبكم الذي لا يستطيع التعبير عن إرادته.
+vocation successorale | La vocation successorale suppose que l'héritier soit vivant au décès du défunt. | يشترط في استحقاق الإرث أن يكون الوارث حيا عند وفاة المورث.
+causes de la succession | La parenté et le mariage sont les causes de la succession. | القرابة والزواج هما أسباب الإرث.
+empêchements à la succession | Les empêchements à la succession écartent, par exemple, l'héritier qui a tué le défunt. | تستبعد موانع الإرث، مثلا، الوارث الذي قتل المورث.
+actif successoral | L'actif successoral comprend les biens laissés par le défunt. | تشمل أصول التركة الأموال التي تركها المورث.
+passif successoral | Le passif successoral passe avant le partage entre les héritiers. | تقدم ديون التركة على القسمة بين الورثة.
+liquidation de la succession | La liquidation de la succession précède la remise des biens aux héritiers. | تسبق تصفية التركة تسليم الأموال إلى الورثة.
+inventaire de la succession | Le notaire dresse l'inventaire de la succession en présence des héritiers. | يحرر الموثق جرد التركة بحضور الورثة.
+frais funéraires | Les frais funéraires sont prélevés en premier sur les biens du défunt. | تؤخذ مصاريف التجهيز والدفن أولا من أموال المورث.
+cognats | Les cognats héritent lorsqu'il n'existe aucun héritier plus proche. | يرث ذوو الأرحام إذا لم يوجد أي وارث أقرب.
+éviction successorale | L'éviction successorale écarte un héritier ou diminue ce qu'il reçoit, à cause d'un parent plus proche. | يبعد الحجب عن الميراث وارثا أو ينقص ما يأخذه بسبب وجود قريب أقرب.
+éviction totale | Par l'éviction totale, le fils écarte le frère du défunt. | في حجب الحرمان، يحجب الابن أخا المورث.
+éviction partielle | Par l'éviction partielle, la présence d'un enfant réduit ce que reçoit le conjoint. | في حجب النقصان، ينقص وجود ولد ما يأخذه الزوج.
+réduction proportionnelle des parts | La réduction proportionnelle des parts s'applique quand le total des fractions dépasse l'unité. | يطبق العول عندما يزيد مجموع السهام على الواحد.
+accroissement par restitution | L'accroissement par restitution distribue le reste des biens entre les héritiers à fraction fixe, en proportion de ce qu'ils reçoivent. | يوزع باقي الأموال بالرد على ذوي الفروض من الورثة بنسبة ما يأخذونه.
+part successorale | Chaque héritier reçoit une part successorale que la loi détermine. | يأخذ كل وارث نصيبا في التركة يبينه القانون.
+succession vacante | La succession vacante est celle qu'aucun héritier ne réclame. | التركة الشاغرة هي التي لا يطالب بها أي وارث.
+succession en déshérence | Une succession en déshérence revient au Trésor public. | تؤول إلى الخزينة العمومية كل تركة لا وارث لها.
+indivision successorale | L'indivision successorale dure jusqu'au partage des biens entre les héritiers. | يستمر الشيوع في التركة إلى غاية قسمة الأموال بين الورثة.
+cohéritier | Tout cohéritier peut demander le partage. | يجوز لكل شريك في الميراث طلب القسمة.
+différence de religion | Selon le droit musulman, la différence de religion est un obstacle à l'héritage. | حسب الشريعة الإسلامية، اختلاف الدين مانع من الميراث.
+testament olographe | Le droit français admet le testament olographe, écrit et daté de la main du testateur. | يجيز القانون الفرنسي الوصية بخط اليد، المكتوبة والمؤرخة بيد الموصي.
+tiers disponible | Le testament ne peut porter que sur le tiers disponible. | لا تجوز الوصية إلا في حدود ثلث التركة.
+legs excédant le tiers | Le legs excédant le tiers ne s'exécute qu'avec le consentement des héritiers. | لا تنفذ الوصية بما زاد عن الثلث إلا برضا الورثة.
+révocation du testament | La révocation du testament reste possible jusqu'au décès du testateur. | يبقى الرجوع عن الوصية ممكنا إلى غاية وفاة الموصي.
+exécuteur testamentaire | L'exécuteur testamentaire remet le bien au légataire. | يسلم منفذ الوصية المال إلى الموصى له.
+legs universel | Par un legs universel, le testateur laisse tous ses biens à une seule personne. | بالوصية بكامل التركة، يترك الموصي كل أمواله لشخص واحد.
+legs particulier | Le legs particulier porte sur un bien précis, par exemple une maison. | تنصب الوصية بمال معين على مال محدد، كمنزل مثلا.
+donation entre vifs | La donation entre vifs transfère le bien du vivant du donateur. | تنقل الهبة بين الأحياء المال في حياة الواهب.
+révocation de la donation | La révocation de la donation est ouverte, en principe, aux père et mère du donataire. | يجوز مبدئيا الرجوع في الهبة لأبوي الموهوب له.
+prise de possession du bien donné | La donation devient parfaite par la prise de possession du bien donné. | تتم الهبة بحيازة الموهوب.
+donation en maladie de mort | La donation en maladie de mort est traitée comme un legs. | تعتبر الهبة في مرض الموت وصية.
+maladie de la mort | La vente à un héritier pendant la maladie de la mort ne vaut que si les autres héritiers l'approuvent. | البيع لوارث في مرض الموت لا ينفذ إلا إذا أقره باقي الورثة.
+wakf familial | Le wakf familial profite d'abord à la descendance de celui qui l'établit. | ينتفع بالوقف الخاص أولا عقب من أوقفه.
+wakf public | Le wakf public sert à la bienfaisance, par exemple une mosquée ou une école. | يخدم الوقف العام أعمال الخير، كمسجد أو مدرسة.
