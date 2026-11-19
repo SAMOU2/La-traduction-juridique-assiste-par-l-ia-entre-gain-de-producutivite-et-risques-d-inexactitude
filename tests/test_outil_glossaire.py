@@ -76,7 +76,8 @@ def test_les_lots_et_les_exemples_fournis_sont_acceptes(outil, glossaire_fourni,
     assert code == 0 and "ERREUR" not in sortie, sortie
     seuls = NOMBRE_D_ENTREES - ENTREES_COMPLETES
     assert f"40 entrées d'origine + 960 entrées des lots + {seuls} termes seuls = {NOMBRE_D_ENTREES}" in sortie
-    # Chaque entrée d'un lot a sa phrase d'exemple ; les termes seuls reçoivent la leur par étapes (version 0.11).
+    # Chaque entrée d'un lot a sa phrase d'exemple ; les termes seuls reçoivent la leur par étapes (versions 0.11
+    # et 0.12).
     pourvus = sum(1 for entree in glossaire_fourni.entrees[ENTREES_COMPLETES:] if entree.contextes)
     assert pourvus >= TERMES_SEULS_AVEC_EXEMPLE
     assert f"phrases d'exemple : 960 sur 960 entrées des lots, {pourvus} sur {seuls} termes seuls" in sortie

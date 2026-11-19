@@ -10,7 +10,8 @@ Le nombre d'entrées est écrit dans ``conftest.py``.
 
 Depuis la version 0.8, le fichier a deux parties : 1 000 entrées complètes (définition et
 phrase d'exemple), puis des « termes seuls » (terme, équivalent, catégorie, domaine). Depuis
-la version 0.11, les termes seuls reçoivent à leur tour une phrase d'exemple, par étapes.
+la version 0.11, les termes seuls reçoivent à leur tour une phrase d'exemple, par étapes (trois étapes sur
+quatre sont faites dans la version 0.12).
 """
 
 from collections import Counter
@@ -95,7 +96,8 @@ def test_les_termes_seuls(glossaire_fourni):
 
     Elles n'ont pas de définition. Depuis la version 0.11, une partie d'entre elles ont une phrase d'exemple : tous
     les adjectifs, les verbes et les locutions, et une partie des noms (vocabulaire général, droit civil, justice
-    et procédure, droit pénal). Aucune forme d'un nom seul ne désigne
+    et procédure, droit pénal ; depuis la version 0.12, droit des affaires, droit constitutionnel, droit
+    administratif, droit de la famille et droit du travail). Aucune forme d'un nom seul ne désigne
     un autre nom : la traduction d'un texte n'aurait rien pour choisir entre les deux. Un adjectif, un verbe ou
     une locution peut partager une forme avec une autre entrée (« منع » : « interdiction » et « interdire »),
     puisque la traduction d'un texte ne le remplace pas.
@@ -135,7 +137,8 @@ def test_les_termes_seuls(glossaire_fourni):
 def test_les_phrases_d_exemple(glossaire_fourni):
     """Chaque entrée complète a sa phrase d'exemple. Une phrase « à vérifier » est courte et emploie le terme.
 
-    Les phrases des termes seuls (version 0.11) sont du nombre : un adjectif y est accordé, un verbe y est au passé.
+    Les phrases des termes seuls (versions 0.11 et 0.12) sont du nombre : un adjectif y est accordé, un verbe y
+    est au passé.
 
     Dans la version 0.5, 969 phrases sur 1 002 portent la mention « à vérifier » : elles ont été rédigées pour
     le glossaire. Le test ne compte pas ces phrases : leur nombre baisse à mesure que le glossaire est relu

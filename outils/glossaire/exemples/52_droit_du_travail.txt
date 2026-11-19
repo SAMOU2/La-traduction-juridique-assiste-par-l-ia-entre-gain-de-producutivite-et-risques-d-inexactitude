@@ -1,0 +1,189 @@
+# Phrases d'exemple de termes/52_droit_du_travail.txt : terme | phrase française | phrase arabe
+législation du travail | La législation du travail protège le travailleur contre le licenciement abusif. | يحمي تشريع العمل العامل من التسريح التعسفي.
+relations individuelles de travail | Le contrat de travail régit les relations individuelles de travail entre l'employeur et le salarié. | ينظم عقد العمل علاقات العمل الفردية بين المستخدم والعامل.
+relations collectives de travail | La convention collective organise les relations collectives de travail dans l'entreprise. | تنظم الاتفاقية الجماعية علاقات العمل الجماعية في المؤسسة.
+marché du travail | Les jeunes diplômés arrivent chaque année sur le marché du travail. | يدخل الشباب حاملو الشهادات سوق العمل كل سنة.
+politique de l'emploi | La politique de l'emploi encourage le recrutement des jeunes sans expérience. | تشجع سياسة التشغيل توظيف الشباب عديمي الخبرة.
+agence nationale de l'emploi | L'agence nationale de l'emploi reçoit le demandeur d'emploi et lui propose des postes. | تستقبل الوكالة الوطنية للتشغيل طالب العمل وتقترح عليه مناصب.
+demandeur d'emploi | Le demandeur d'emploi dépose son dossier à l'agence de l'emploi de sa commune. | يودع طالب العمل ملفه لدى وكالة التشغيل في بلديته.
+offre d'emploi | L'entreprise publie une offre d'emploi pour un poste de comptable. | تنشر المؤسسة عرض عمل لمنصب محاسب.
+promesse d'embauche | La promesse d'embauche précise le poste proposé et la date d'entrée en fonction. | يبين الوعد بالتشغيل المنصب المقترح وتاريخ الالتحاق بالعمل.
+poste de travail | Le travailleur occupe le même poste de travail depuis dix ans. | يشغل العامل منصب العمل نفسه منذ عشر سنوات.
+lieu de travail | Le contrat indique le lieu de travail du salarié. | يبين العقد مكان العمل الخاص بالعامل.
+organisme employeur | L'organisme employeur verse le salaire à la fin du mois. | تدفع الهيئة المستخدمة الأجر في نهاية الشهر.
+travailleur étranger | Le travailleur étranger présente son permis de travail à l'inspecteur du travail. | يقدم العامل الأجنبي رخصة العمل لمفتش العمل.
+permis de travail | Le permis de travail est délivré pour un poste et un employeur précis. | تسلم رخصة العمل لمنصب معين ولمستخدم معين.
+travailleur à domicile | Le travailleur à domicile exécute chez lui le travail que lui confie l'employeur. | ينجز العامل في المنزل في بيته العمل الذي يسنده إليه المستخدم.
+travail à temps partiel | Le travail à temps partiel donne droit à un salaire calculé d'après les heures accomplies. | يخول العمل بالتوقيت الجزئي الحق في أجر يحسب حسب الساعات المنجزة.
+travail à temps plein | Le salarié passe du travail à temps partiel au travail à temps plein quand un poste se libère. | ينتقل العامل من العمل بالتوقيت الجزئي إلى العمل بالتوقيت الكامل عندما يشغر منصب.
+travail temporaire | Le travail temporaire répond à un surcroît passager d'activité. | يستجيب العمل المؤقت لزيادة عابرة في النشاط.
+travail saisonnier | La cueillette des dattes est un travail saisonnier. | جني التمور عمل موسمي.
+travail de nuit | Le travail de nuit ouvre des droits que précise la convention collective. | يخول العمل الليلي حقوقا تبينها الاتفاقية الجماعية.
+travail posté | À l'usine, le travail posté fait se succéder trois équipes par jour. | في المصنع، يجعل العمل التناوبي ثلاث فرق تتعاقب في اليوم.
+télétravail | Le télétravail permet au salarié d'accomplir ses tâches hors de l'entreprise. | يسمح العمل عن بعد للعامل بإنجاز مهامه خارج المؤسسة.
+travail dissimulé | L'emploi d'un salarié sans déclaration à la sécurité sociale est un travail dissimulé. | تشغيل عامل دون التصريح به لدى الضمان الاجتماعي عمل غير مصرح به.
+travail des enfants | La loi réprime le travail des enfants. | يعاقب القانون على عمل الأطفال.
+travail forcé | Le travail forcé est contraire à la dignité humaine. | العمل القسري مخالف للكرامة الإنسانية.
+apprentissage | L'apprentissage associe une formation théorique et un travail en entreprise. | يجمع التمهين بين تكوين نظري وعمل في المؤسسة.
+apprenti | L'apprenti apprend son métier auprès d'un artisan. | يتعلم المتمهن حرفته لدى حرفي.
+contrat d'apprentissage | Le contrat d'apprentissage lie le jeune à l'employeur pendant sa formation. | يربط عقد التمهين الشاب بالمستخدم خلال تكوينه.
+formation professionnelle | La formation professionnelle prépare les jeunes à un métier. | يهيئ التكوين المهني الشباب لمهنة.
+qualification professionnelle | Le poste exige une qualification professionnelle que confirme un diplôme. | يتطلب المنصب تأهيلا مهنيا تؤكده شهادة.
+classification professionnelle | La convention collective établit la classification professionnelle des postes. | تضع الاتفاقية الجماعية التصنيف المهني للمناصب.
+ancienneté | L'ancienneté du travailleur se calcule depuis son entrée dans l'entreprise. | تحسب أقدمية العامل منذ دخوله المؤسسة.
+confirmation du travailleur | La confirmation du travailleur intervient à la fin de la période d'essai. | يتم تثبيت العامل عند نهاية فترة التجربة.
+modification du contrat de travail | La modification du contrat de travail exige l'accord du travailleur et de l'employeur. | يتطلب تعديل عقد العمل اتفاق العامل والمستخدم.
+suspension de la relation de travail | Le congé de maladie entraîne la suspension de la relation de travail. | يترتب على العطلة المرضية تعليق علاقة العمل.
+cessation de la relation de travail | La démission est une cause de cessation de la relation de travail. | الاستقالة سبب من أسباب انتهاء علاقة العمل.
+rupture du contrat de travail | La rupture du contrat de travail pendant la période d'essai n'exige aucun préavis. | لا يتطلب إنهاء عقد العمل خلال فترة التجربة أي إشعار مسبق.
+renouvellement du contrat à durée déterminée | Le renouvellement du contrat à durée déterminée prolonge la relation de travail pour une nouvelle période. | يمدد تجديد العقد المحدد المدة علاقة العمل لفترة جديدة.
+requalification du contrat à durée déterminée | Le salarié obtient du juge la requalification du contrat à durée déterminée qui le lie à l'entreprise. | يحصل العامل من القاضي على إعادة تكييف العقد المحدد المدة الذي يربطه بالمؤسسة.
+clause de mobilité | La clause de mobilité permet à l'employeur de changer le lieu de travail du salarié. | يسمح شرط التنقل للمستخدم بتغيير مكان العمل الخاص بالعامل.
+obligation de loyauté | L'obligation de loyauté impose au salarié de ne pas agir contre l'entreprise qui l'emploie. | يفرض الالتزام بالولاء على العامل ألا يعمل ضد المؤسسة التي تشغله.
+pouvoir disciplinaire | L'employeur exerce son pouvoir disciplinaire dans les limites du règlement intérieur. | يمارس المستخدم السلطة التأديبية في حدود النظام الداخلي.
+faute professionnelle grave | Le vol dans l'atelier constitue une faute professionnelle grave. | تعد السرقة في الورشة خطأ مهنيا جسيما.
+procédure disciplinaire | La procédure disciplinaire permet au travailleur de s'expliquer avant toute sanction. | يسمح الإجراء التأديبي للعامل بتقديم توضيحاته قبل أي جزاء.
+mise à pied | La mise à pied prive le salarié de son salaire pendant quelques jours. | يحرم التوقيف عن العمل العامل من أجره لبضعة أيام.
+licenciement disciplinaire | Le licenciement disciplinaire répond à une faute grave du travailleur. | يأتي التسريح التأديبي ردا على خطأ جسيم من العامل.
+licenciement pour motif économique | Le licenciement pour motif économique touche plusieurs salariés à la fois. | يمس التسريح لأسباب اقتصادية عدة عمال في آن واحد.
+compression d'effectifs | La compression d'effectifs n'intervient qu'après des mesures destinées à éviter le licenciement. | لا يتم تقليص عدد العمال إلا بعد تدابير ترمي إلى تفادي التسريح.
+volet social | Le volet social comporte le départ volontaire et la retraite anticipée. | يتضمن الجانب الاجتماعي الذهاب الإرادي والتقاعد المسبق.
+indemnité de licenciement | Le salarié touché par une compression d'effectifs reçoit une indemnité de licenciement. | يحصل العامل الذي تشمله عملية تقليص عدد العمال على تعويض عن التسريح.
+réintégration du travailleur | L'employeur qui s'oppose à la réintégration du travailleur lui verse une indemnité. | يدفع المستخدم الذي يعترض على إعادة إدماج العامل تعويضا له.
+départ volontaire | Le salarié qui choisit le départ volontaire reçoit une indemnité de l'entreprise. | يحصل العامل الذي يختار الذهاب الإرادي على تعويض من المؤسسة.
+retraite anticipée | La retraite anticipée permet au salarié de cesser son activité avant l'âge légal. | يسمح التقاعد المسبق للعامل بالتوقف عن نشاطه قبل السن القانونية.
+reçu pour solde de tout compte | À son départ, le salarié signe le reçu pour solde de tout compte. | عند مغادرته، يوقع العامل وصل تصفية كل الحساب.
+salaire de base | Le salaire de base découle de la classification professionnelle du poste. | ينتج الأجر القاعدي عن التصنيف المهني للمنصب.
+salaire de poste | Le salaire de poste ajoute au salaire de base les indemnités liées au poste. | يضيف أجر المنصب إلى الأجر القاعدي التعويضات المرتبطة بالمنصب.
+salaire brut | Les cotisations de sécurité sociale se calculent sur le salaire brut. | تحسب اشتراكات الضمان الاجتماعي على الأجر الخام.
+salaire net | Le salaire net est la somme que le travailleur reçoit après les retenues. | الأجر الصافي هو المبلغ الذي يتقاضاه العامل بعد الاقتطاعات.
+bulletin de paie | Le bulletin de paie détaille le salaire de base, les indemnités et les retenues. | يفصل كشف الراتب الأجر القاعدي والتعويضات والاقتطاعات.
+paiement du salaire | Le paiement du salaire intervient à la fin de chaque période de travail. | يتم دفع الأجر عند نهاية كل فترة عمل.
+retenue sur salaire | L'absence injustifiée donne lieu à une retenue sur salaire. | يترتب على الغياب غير المبرر اقتطاع من الأجر.
+saisie sur salaire | Le créancier d'aliments obtient une saisie sur salaire contre le débiteur. | يحصل دائن النفقة على حجز على الأجر ضد المدين.
+privilège des salaires | Le privilège des salaires place les travailleurs avant les autres créanciers de l'entreprise. | يضع امتياز الأجور العمال قبل الدائنين الآخرين للمؤسسة.
+prime d'ancienneté | La prime d'ancienneté augmente avec les années passées dans l'entreprise. | يرتفع تعويض الأقدمية مع السنوات المقضية في المؤسسة.
+prime de panier | La prime de panier couvre le repas pris sur le lieu de travail. | تغطي منحة السلة الوجبة المتناولة في مكان العمل.
+prime de transport | La prime de transport compense les frais du trajet quotidien du salarié. | تعوض منحة النقل مصاريف التنقل اليومي للعامل.
+indemnité de zone | L'indemnité de zone est versée aux salariés qui travaillent dans le Sud. | يدفع تعويض المنطقة للعمال الذين يعملون في الجنوب.
+avantages en nature | Le logement et le véhicule de fonction sont des avantages en nature. | السكن وسيارة الخدمة مزايا عينية.
+égalité de rémunération | L'égalité de rémunération s'applique à tout travail de valeur égale. | تطبق المساواة في الأجور على كل عمل متساوي القيمة.
+grille des salaires | La grille des salaires classe les postes par niveau de rémunération. | ترتب شبكة الأجور المناصب حسب مستوى الأجر.
+masse salariale | La masse salariale représente le total des salaires versés par l'entreprise. | تمثل كتلة الأجور مجموع الأجور التي تدفعها المؤسسة.
+durée légale du travail | Les heures accomplies au-delà de la durée légale du travail sont des heures supplémentaires. | الساعات المنجزة فوق المدة القانونية للعمل هي الساعات الإضافية.
+temps de travail effectif | Le temps de travail effectif est celui que le salarié consacre réellement à ses tâches. | وقت العمل الفعلي هو الوقت الذي يخصصه العامل فعلا لمهامه.
+horaire de travail | L'horaire de travail est affiché dans les ateliers. | يعلق توقيت العمل في الورشات.
+repos hebdomadaire | Le repos hebdomadaire tombe en principe le vendredi. | تكون الراحة الأسبوعية مبدئيا يوم الجمعة.
+repos compensateur | Le salarié qui travaille un jour de repos légal a droit à un repos compensateur. | للعامل الذي يشتغل في يوم الراحة القانونية الحق في راحة تعويضية.
+jour de repos légal | Le travail accompli un jour de repos légal donne droit à une majoration de salaire. | يخول العمل المنجز في يوم الراحة القانونية الحق في زيادة في الأجر.
+congé de maladie | Pendant le congé de maladie, le salarié perçoit des indemnités de la sécurité sociale. | خلال العطلة المرضية، يتقاضى العامل تعويضات من الضمان الاجتماعي.
+congé de maternité | La travailleuse enceinte bénéficie d'un congé de maternité. | تستفيد العاملة الحامل من عطلة الأمومة.
+congé sans solde | L'employeur peut accorder un congé sans solde au salarié qui le sollicite. | يجوز للمستخدم منح عطلة غير مدفوعة الأجر للعامل الذي يلتمسها.
+congé exceptionnel | Le mariage du salarié lui ouvre droit à un congé exceptionnel. | يخول زواج العامل له الحق في عطلة استثنائية.
+absence autorisée | L'absence autorisée pour un examen ne réduit pas le salaire. | لا ينقص الغياب المرخص به لإجراء امتحان من الأجر.
+absence injustifiée | L'absence injustifiée expose le salarié à une sanction disciplinaire. | يعرض الغياب غير المبرر العامل لعقوبة تأديبية.
+indemnité de congé payé | L'indemnité de congé payé se calcule sur la rémunération de l'année écoulée. | يحسب تعويض العطلة السنوية على أساس أجر السنة المنقضية.
+liberté syndicale | La liberté syndicale permet à tout travailleur de rejoindre le syndicat de son choix. | تسمح الحرية النقابية لكل عامل بالالتحاق بالنقابة التي يختارها.
+exercice du droit syndical | L'employeur ne peut pas faire obstacle à l'exercice du droit syndical. | لا يجوز للمستخدم أن يعرقل ممارسة الحق النقابي.
+organisation syndicale représentative | L'organisation syndicale représentative négocie la convention collective. | تتفاوض المنظمة النقابية التمثيلية على الاتفاقية الجماعية.
+représentativité syndicale | La représentativité syndicale se mesure au nombre d'adhérents. | تقاس التمثيلية النقابية بعدد المنخرطين.
+section syndicale | Le syndicat installe une section syndicale dans l'entreprise. | تنصب النقابة فرعا نقابيا في المؤسسة.
+délégué syndical | Le délégué syndical représente la section syndicale auprès de l'employeur. | يمثل المندوب النقابي الفرع النقابي لدى المستخدم.
+union de syndicats | Plusieurs syndicats du même secteur forment une union de syndicats. | تشكل عدة نقابات من القطاع نفسه اتحاد النقابات.
+confédération syndicale | La confédération syndicale regroupe des fédérations de plusieurs secteurs. | تضم الكنفدرالية النقابية اتحاديات من عدة قطاعات.
+organisation patronale | L'organisation patronale représente les employeurs dans la négociation collective. | تمثل منظمة أرباب العمل المستخدمين في التفاوض الجماعي.
+comité de participation | Le comité de participation donne son avis sur le règlement intérieur. | تبدي لجنة المشاركة رأيها في النظام الداخلي.
+représentants des travailleurs | Les représentants des travailleurs siègent au comité de participation. | يجلس ممثلو العمال في لجنة المشاركة.
+négociation collective | La négociation collective aboutit à la signature d'un accord collectif. | ينتهي التفاوض الجماعي بتوقيع اتفاق جماعي.
+accord collectif | L'accord collectif traite d'un point précis des conditions de travail. | يعالج الاتفاق الجماعي نقطة محددة من ظروف العمل.
+convention de branche | La convention de branche s'applique à toutes les entreprises du même secteur d'activité. | تطبق اتفاقية القطاع على كل المؤسسات في قطاع النشاط نفسه.
+dénonciation de la convention collective | La dénonciation de la convention collective est suivie d'une nouvelle négociation. | يتبع نقض الاتفاقية الجماعية تفاوض جديد.
+partenaires sociaux | Les partenaires sociaux discutent du salaire minimum avec le gouvernement. | يناقش الشركاء الاجتماعيون الأجر الأدنى مع الحكومة.
+dialogue social | Le dialogue social apaise les tensions dans l'entreprise. | يخفف الحوار الاجتماعي التوترات داخل المؤسسة.
+conflit collectif de travail | L'inspection du travail tente une conciliation dans le conflit collectif de travail. | تحاول مفتشية العمل إجراء مصالحة في النزاع الجماعي في العمل.
+conflit individuel de travail | Le conflit individuel de travail passe par le bureau de conciliation avant le tribunal. | يمر النزاع الفردي في العمل على مكتب المصالحة قبل المحكمة.
+préavis de grève | Le préavis de grève est remis à l'employeur et à l'inspection du travail. | يسلم الإشعار المسبق بالإضراب للمستخدم ولمفتشية العمل.
+service minimum | Pendant la grève, l'hôpital maintient un service minimum. | خلال الإضراب، يبقي المستشفى على حد أدنى من الخدمة.
+ordre de réquisition | L'ordre de réquisition oblige des grévistes à reprendre leur poste. | يلزم أمر التسخير عمالا مضربين بالعودة إلى مناصبهم.
+grève illicite | Prendre part à une grève illicite constitue une faute professionnelle grave. | تعد المشاركة في الإضراب غير المشروع خطأ مهنيا جسيما.
+travailleur gréviste | Le travailleur gréviste ne perçoit pas de salaire pour les jours de grève. | لا يتقاضى العامل المضرب أجرا عن أيام الإضراب.
+lock-out | Le lock-out prive de travail et de salaire tous les salariés pendant le conflit. | يحرم غلق أماكن العمل كل العمال من العمل والأجر خلال النزاع.
+occupation des lieux de travail | Le juge ordonne l'évacuation en cas d'occupation des lieux de travail par les grévistes. | يأمر القاضي بالإخلاء في حالة احتلال أماكن العمل من قبل المضربين.
+entrave à la liberté du travail | Empêcher les non-grévistes d'entrer dans l'atelier est une entrave à la liberté du travail. | يعد منع غير المضربين من دخول الورشة من قبيل عرقلة حرية العمل.
+arbitrage obligatoire | L'arbitrage obligatoire met fin à la grève qui paralyse un service essentiel. | ينهي التحكيم الإجباري الإضراب الذي يشل خدمة أساسية.
+commission nationale d'arbitrage | La commission nationale d'arbitrage tranche le conflit collectif de travail que le ministre lui transmet. | تفصل اللجنة الوطنية للتحكيم في النزاع الجماعي في العمل الذي يحيله عليها الوزير.
+procès-verbal de non-conciliation | Muni du procès-verbal de non-conciliation, le salarié porte l'affaire devant le tribunal. | يرفع العامل القضية أمام المحكمة ومعه محضر عدم الصلح.
+procès-verbal de conciliation | Le procès-verbal de conciliation constate l'accord des deux parties. | يثبت محضر الصلح اتفاق الطرفين.
+hygiène et sécurité | Les règles d'hygiène et sécurité protègent la santé des travailleurs. | تحمي قواعد وقاية صحية وأمن صحة العمال.
+médecine du travail | La médecine du travail surveille la santé des salariés. | يراقب طب العمل صحة العمال.
+médecin du travail | Le médecin du travail examine le salarié avant son embauche. | يفحص طبيب العمل العامل قبل تشغيله.
+comité d'hygiène et de sécurité | Le comité d'hygiène et de sécurité inspecte les ateliers de l'entreprise. | تتفقد لجنة الوقاية الصحية والأمن ورشات المؤسسة.
+risque professionnel | Le bruit des machines est un risque professionnel. | ضجيج الآلات خطر مهني.
+prévention des risques professionnels | La prévention des risques professionnels commence par la formation des salariés. | تبدأ الوقاية من الأخطار المهنية بتكوين العمال.
+équipement de protection individuelle | Le casque est l'équipement de protection individuelle que fournit l'employeur sur le chantier. | الخوذة هي تجهيز الحماية الفردية الذي يوفره المستخدم في الورشة.
+conditions de travail | L'inspecteur du travail vérifie les conditions de travail dans l'usine. | يتحقق مفتش العمل من ظروف العمل في المصنع.
+discrimination à l'embauche | Écarter un candidat en raison de son origine est une discrimination à l'embauche. | استبعاد مترشح بسبب أصله تمييز في التشغيل.
+égalité professionnelle | L'égalité professionnelle garantit aux femmes le même accès aux postes de responsabilité. | تضمن المساواة المهنية للنساء الوصول نفسه إلى مناصب المسؤولية.
+protection de la maternité | La protection de la maternité comprend le congé de maternité et des facilités pour l'allaitement. | تشمل حماية الأمومة عطلة الأمومة وتسهيلات للإرضاع.
+travailleur handicapé | L'entreprise aménage le poste du travailleur handicapé. | تهيئ المؤسسة منصب العامل المعاق.
+travailleur mineur | La loi tient le travailleur mineur à l'écart des travaux dangereux. | يبعد القانون العامل القاصر عن الأشغال الخطيرة.
+âge minimum d'admission à l'emploi | L'âge minimum d'admission à l'emploi protège la scolarité des enfants. | يحمي السن الأدنى للتشغيل تمدرس الأولاد.
+procès-verbal d'infraction | L'inspecteur du travail dresse un procès-verbal d'infraction contre l'employeur. | يحرر مفتش العمل محضر مخالفة ضد المستخدم.
+mise en demeure de l'inspecteur du travail | Après la mise en demeure de l'inspecteur du travail, l'entreprise répare la machine dangereuse. | بعد إعذار مفتش العمل، تصلح المؤسسة الآلة الخطيرة.
+visite d'inspection | La visite d'inspection a lieu sans avertissement préalable. | تتم زيارة التفتيش دون إنذار مسبق.
+registre du personnel | Le registre du personnel mentionne la date d'embauche de chaque salarié. | يبين سجل المستخدمين تاريخ تشغيل كل عامل.
+livre de paie | L'employeur présente le livre de paie à l'inspecteur du travail. | يقدم المستخدم دفتر الأجور لمفتش العمل.
+régime de sécurité sociale | Le régime de sécurité sociale est financé par les cotisations prélevées sur les salaires. | يمول نظام الضمان الاجتماعي من الاشتراكات المقتطعة من الأجور.
+caisse de sécurité sociale | La caisse de sécurité sociale verse les prestations à l'assuré social. | يدفع صندوق الضمان الاجتماعي الأداءات للمؤمن له اجتماعيا.
+Caisse nationale des assurances sociales | La Caisse nationale des assurances sociales couvre les travailleurs salariés. | يغطي الصندوق الوطني للتأمينات الاجتماعية العمال الأجراء.
+Caisse nationale des retraites | La Caisse nationale des retraites instruit le dossier du salarié qui cesse son activité. | يدرس الصندوق الوطني للتقاعد ملف العامل الذي يتوقف عن نشاطه.
+Caisse nationale d'assurance chômage | La Caisse nationale d'assurance chômage indemnise le salarié qui perd son emploi pour raison économique. | يعوض الصندوق الوطني للتأمين عن البطالة العامل الذي يفقد منصبه لسبب اقتصادي.
+Caisse nationale de sécurité sociale des non-salariés | Le commerçant est affilié à la Caisse nationale de sécurité sociale des non-salariés. | ينتسب التاجر إلى الصندوق الوطني للضمان الاجتماعي لغير الأجراء.
+assurances sociales | Les assurances sociales couvrent la maladie, la maternité, l'invalidité et le décès. | تغطي التأمينات الاجتماعية المرض والأمومة والعجز والوفاة.
+assurance maternité | L'assurance maternité couvre les frais de l'accouchement. | يغطي التأمين على الأمومة مصاريف الولادة.
+assurance invalidité | L'assurance invalidité protège l'assuré que la maladie rend durablement inapte au travail. | يحمي التأمين على العجز المؤمن له الذي يجعله المرض غير قادر على العمل بصفة دائمة.
+assurance chômage | L'assurance chômage garantit un revenu de remplacement au salarié qui a perdu son emploi. | يضمن التأمين عن البطالة دخلا بديلا للعامل الذي فقد منصبه.
+affiliation | L'affiliation à la sécurité sociale est obligatoire pour tout travailleur. | الانتساب إلى الضمان الاجتماعي إلزامي لكل عامل.
+immatriculation à la sécurité sociale | L'immatriculation à la sécurité sociale donne à l'assuré un numéro personnel. | يمنح التسجيل لدى الضمان الاجتماعي المؤمن له رقما شخصيا.
+numéro de sécurité sociale | Le numéro de sécurité sociale figure sur le bulletin de paie. | يظهر رقم الضمان الاجتماعي في كشف الراتب.
+carte d'assuré social | Le malade présente sa carte d'assuré social à l'hôpital. | يقدم المريض بطاقة المؤمن له اجتماعيا في المستشفى.
+carte Chifa | La carte Chifa dispense le malade d'avancer le prix de ses médicaments à la pharmacie. | تعفي بطاقة الشفاء المريض من دفع ثمن أدويته مسبقا في الصيدلية.
+déclaration des salaires | L'employeur adresse chaque année la déclaration des salaires à la caisse. | يرسل المستخدم كل سنة التصريح بالأجور إلى الصندوق.
+assiette des cotisations | L'assiette des cotisations exclut les indemnités qui remboursent des frais. | لا يشمل وعاء الاشتراكات التعويضات التي تغطي مصاريف.
+taux de cotisation | Le taux de cotisation s'applique au salaire soumis à cotisation. | تطبق نسبة الاشتراك على الأجر الخاضع للاشتراك.
+part patronale | La part patronale de la cotisation reste à la charge de l'entreprise. | تبقى حصة صاحب العمل من الاشتراك على عاتق المؤسسة.
+part salariale | La part salariale est retenue sur le salaire avant son versement. | تقتطع حصة العامل من الأجر قبل دفعه.
+majoration de retard | Le paiement tardif des cotisations entraîne une majoration de retard. | يترتب على الدفع المتأخر للاشتراكات زيادة التأخير.
+prestations en nature | Les prestations en nature couvrent les soins et les médicaments. | تغطي الأداءات العينية العلاج والأدوية.
+prestations en espèces | Les prestations en espèces remplacent le salaire perdu pendant la maladie. | تعوض الأداءات النقدية الأجر المفقود خلال المرض.
+indemnité journalière | L'indemnité journalière est versée au salarié pendant son arrêt de travail. | تدفع التعويضة اليومية للعامل خلال التوقف عن العمل.
+remboursement des frais médicaux | L'assuré obtient le remboursement des frais médicaux en remettant sa feuille de soins à la caisse. | يحصل المؤمن له على تعويض المصاريف الطبية بتسليم ورقة العلاج إلى الصندوق.
+tiers payant | Grâce au tiers payant, la caisse paie directement le pharmacien. | بفضل الدفع من قبل الغير، يدفع الصندوق مباشرة للصيدلي.
+arrêt de travail | Le salarié malade justifie son arrêt de travail auprès de l'employeur. | يبرر العامل المريض التوقف عن العمل لدى المستخدم.
+certificat médical | Le salarié absent remet un certificat médical à l'employeur. | يسلم العامل الغائب شهادة طبية للمستخدم.
+contrôle médical | La caisse convoque l'assuré malade à un contrôle médical. | يستدعي الصندوق المؤمن له المريض إلى مراقبة طبية.
+médecin-conseil | Le médecin-conseil de la caisse examine l'assuré et donne son avis. | يفحص الطبيب المستشار للصندوق المؤمن له ويبدي رأيه.
+incapacité permanente partielle | L'ouvrier amputé d'un doigt conserve une incapacité permanente partielle. | يبقى العامل الذي بترت إصبعه مصابا بعجز جزئي دائم.
+pension d'invalidité | La pension d'invalidité revient à l'assuré dont la maladie a fortement réduit l'aptitude au travail. | يعود معاش العجز إلى المؤمن له الذي أضعف المرض قدرته على العمل كثيرا.
+rente d'accident du travail | La victime reçoit une rente d'accident du travail selon son taux d'incapacité. | تحصل الضحية على ريع حادث العمل حسب نسبة العجز.
+accident de trajet | L'accident de trajet survient entre le lieu de travail et la résidence du salarié. | يقع حادث المسار بين مكان العمل ومحل إقامة العامل.
+déclaration d'accident du travail | L'employeur adresse la déclaration d'accident du travail à la caisse. | يرسل المستخدم التصريح بحادث العمل إلى الصندوق.
+faute inexcusable de l'employeur | La faute inexcusable de l'employeur permet à la victime d'obtenir une réparation complémentaire. | يسمح الخطأ غير المعذور لصاحب العمل للضحية بالحصول على تعويض تكميلي.
+tableau des maladies professionnelles | La surdité liée au bruit des machines figure au tableau des maladies professionnelles. | يرد الصمم المرتبط بضجيج الآلات في جدول الأمراض المهنية.
+âge légal de la retraite | Le salarié peut demander sa pension dès l'âge légal de la retraite. | يستطيع العامل أن يطلب معاشه عند بلوغ السن القانونية للتقاعد.
+années de cotisation | Le montant de la pension dépend des années de cotisation. | يتوقف مبلغ المعاش على سنوات الاشتراك.
+pension de réversion | La veuve de l'assuré perçoit une pension de réversion. | تتقاضى أرملة المؤمن له معاشا منقولا.
+allocation de retraite | L'allocation de retraite est servie au salarié qui n'a pas assez cotisé pour une pension. | تصرف منحة التقاعد للعامل الذي لم يشترك مدة كافية للحصول على معاش.
+allocations familiales | Les allocations familiales sont versées au salarié qui a des enfants à charge. | تدفع المنح العائلية للعامل الذي له أولاد يعولهم.
+allocation chômage | L'allocation chômage aide le demandeur d'emploi pendant sa recherche d'un premier poste. | تساعد منحة البطالة طالب العمل خلال بحثه عن أول منصب.
+contentieux de la sécurité sociale | Le contentieux de la sécurité sociale comprend le contentieux général, médical et technique. | تشمل منازعات الضمان الاجتماعي المنازعات العامة والطبية والتقنية.
+contentieux général | Le contentieux général oppose l'assuré à la caisse au sujet d'une prestation. | تقوم المنازعات العامة بين المؤمن له والصندوق حول أداء من الأداءات.
+contentieux médical | Le contentieux médical porte sur la maladie ou l'aptitude au travail de l'assuré. | تتعلق المنازعات الطبية بمرض المؤمن له أو بقدرته على العمل.
+contentieux technique | Le contentieux technique oppose la caisse aux médecins et aux pharmaciens au sujet de leur activité. | تقوم المنازعات التقنية بين الصندوق والأطباء والصيادلة حول نشاطهم.
+commission de recours préalable | L'assuré s'adresse à la commission de recours préalable avant d'aller devant le tribunal. | يتوجه المؤمن له إلى لجنة الطعن المسبق قبل اللجوء إلى المحكمة.
+expertise médicale | L'expertise médicale départage le médecin traitant et le médecin-conseil. | تفصل الخبرة الطبية بين الطبيب المعالج والطبيب المستشار.
+mutuelle sociale | La mutuelle sociale complète les remboursements de la sécurité sociale. | تكمل التعاضدية الاجتماعية تعويضات الضمان الاجتماعي.
+régime des non-salariés | L'artisan relève du régime des non-salariés. | يخضع الحرفي إلى نظام غير الأجراء.
+travailleur indépendant | Le travailleur indépendant paie lui-même ses cotisations. | يدفع العامل غير الأجير الاشتراكات بنفسه.
+recouvrement forcé des cotisations | La caisse engage le recouvrement forcé des cotisations contre l'employeur défaillant. | يباشر الصندوق التحصيل الجبري للاشتراكات ضد المستخدم المتخلف.
+défaut d'affiliation | En cas de défaut d'affiliation, l'employeur encourt une amende pour chaque salarié. | في حالة عدم الانتساب، يتعرض المستخدم لغرامة عن كل عامل.

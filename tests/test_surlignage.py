@@ -237,7 +237,7 @@ def test_les_phrases_des_termes_seuls_du_glossaire_fourni(glossaire_fourni):
             for langue in (FR, AR):
                 assert positions_du_terme(contexte.texte(langue), entree, langue), (entree.terme_fr, langue)
     # Tous les adjectifs, les verbes et les locutions invariables du glossaire ont leur phrase.
-    assert (natures[ADJECTIF], natures[VERBE], natures[INVARIABLE]) == (356, 246, 190) and natures[NOM] >= 1095
+    assert (natures[ADJECTIF], natures[VERBE], natures[INVARIABLE]) == (356, 246, 190) and natures[NOM] >= 2221
 
 
 def test_exemples_du_glossaire_en_arabe(glossaire):
