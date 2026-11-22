@@ -229,11 +229,11 @@ on voit le bureau ou la fenêtre qui se trouve derrière :
 *Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
 l'autre. Les captures des écrans « Terme », « Texte », « Paramètres » et du centre d'aide sont
 celles de la version 0.10 ; celle du terme « protégé » avec sa phrase est de la version 0.11,
-celle du terme « chèque barré » de la version 0.12, celle du terme « protégé » avec sa
-définition de la version 0.13. Celle de l'écran
-de démarrage date de la version 0.5.2 : cet écran n'a pas changé depuis. L'adresse affichée dans le centre d'aide est un exemple. La capture de
-l'[installation](#installation) a été faite sous Windows, avec la version 0.5.3 : elle montre
-l'ancienne fiche, à cinq colonnes.*
+celle du terme « chèque barré » de la version 0.12, celles des termes « protégé » et
+« diversité biologique » avec leur définition de la version 0.13. Celle de l'écran de
+démarrage date de la version 0.5.2 : cet écran n'a pas changé depuis. L'adresse affichée dans
+le centre d'aide est un exemple. La capture de l'[installation](#installation) a été faite
+sous Windows, avec la version 0.5.3 : elle montre l'ancienne fiche, à cinq colonnes.*
 
 ### Ce qui est fait, ce qui reste à faire
 
@@ -1217,8 +1217,8 @@ Les 987 autres termes seuls n'ont pas encore de phrase à eux.
     vérifier) et 72 fois sa définition (toutes à vérifier).
   - Termes seuls : 3 013 affichent leur phrase, et 819 d'entre eux affichent en plus un texte
     d'une autre entrée, phrase d'exemple ou définition (688 dans la version 0.12). 100 termes
-    sans phrase à eux affichent celui d'une autre entrée (un ou deux) : ils étaient 69 dans la
-    version 0.12. **887 termes seuls n'affichent aucune phrase.**
+    sans phrase à eux affichent celui d'une autre entrée (un ou deux) : ils étaient 68 dans la
+    version 0.12. **887 termes seuls n'affichent aucune phrase** (919 dans la version 0.12).
   - Depuis la version 0.13, la définition d'un terme seul peut donc servir de contexte à un
     autre terme qu'elle emploie. Elle s'affiche alors sous la mention « À vérifier ·
     définition d'exemple ».
