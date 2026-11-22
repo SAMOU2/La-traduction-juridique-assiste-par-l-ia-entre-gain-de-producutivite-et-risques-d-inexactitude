@@ -13,7 +13,7 @@ phrase d'exemple), puis des « termes seuls » (terme, équivalent, catégorie, 
 la version 0.11, les termes seuls reçoivent à leur tour une phrase d'exemple, par étapes : la quatrième et
 dernière est faite dans la version 0.14, et chaque terme seul a sa phrase. Depuis la version 0.13, chaque terme
 seul a aussi sa définition, dans les deux langues, et des synonymes quand il en existe : le vocabulaire général,
-puis les treize domaines du droit.
+puis les treize domaines du droit. La version 0.15 complète les synonymes des 1 000 entrées complètes.
 """
 
 from collections import Counter
@@ -189,6 +189,65 @@ def test_les_definitions_des_termes_seuls(glossaire_fourni):
     assert {"protéger", "protection"} <= {entree.terme_fr for entree in seuls}
 
 
+#: Version 0.15 : entrées complètes qui ont au moins un synonyme ; celles qui en ont en français ; en arabe.
+ENTREES_COMPLETES_AVEC_SYNONYMES = (462, 223, 358)
+#: Synonymes d'une entrée complète qui sont aussi le terme, le pluriel ou un synonyme d'une autre entrée. Tous sont
+#: antérieurs à la version 0.15 (« traite » s'écrit, à l'accent près, comme « traité »).
+SYNONYMES_PARTAGES = [
+    ("contrat", "convention"), ("contrat", "accord"), ("contrat", "اتفاق"), ("coutume", "usage"), ("usage", "coutume"),
+    ("décision", "مقرر"), ("paiement", "دفع"), ("victime", "مضرور"), ("nantissement", "gage"), ("époux", "conjoint"),
+    ("lettre de change", "traite"), ("crédit", "قرض"),
+]
+
+
+def test_les_synonymes_des_entrees_completes(glossaire_fourni):
+    """Version 0.15 : 381 des 1 000 entrées complètes reçoivent 550 synonymes, en français et en arabe.
+
+    Ce sont d'autres noms de la même chose (« acquéreur », « charia »), des formes courtes (« huissier »,
+    « pourvoi »), des sigles (« OPJ », « PV ») et, en arabe, les mots d'autres pays (« كراء », « عقد الشغل »).
+    Dans un texte à traduire, le synonyme d'un nom est remplacé comme ce nom.
+    """
+    completes = glossaire_fourni.entrees[:ENTREES_COMPLETES]
+    avec = [entree for entree in completes if entree.synonymes_fr or entree.synonymes_ar]
+    assert (len(avec), sum(1 for entree in avec if entree.synonymes_fr),
+            sum(1 for entree in avec if entree.synonymes_ar)) == ENTREES_COMPLETES_AVEC_SYNONYMES
+    assert sum(len(entree.synonymes_fr) + len(entree.synonymes_ar) for entree in completes) == 271 + 427
+    # Un synonyme n'est ni le terme, ni son pluriel, ni un synonyme déjà donné.
+    porteurs = {}
+    for entree in glossaire_fourni.entrees:
+        for langue in (FR, AR):
+            for forme in (*entree.formes(langue), *entree.synonymes(langue)):
+                porteurs.setdefault((langue, cle_souple(forme)), set()).add(entree.numero)
+    partages = []
+    for entree in completes:
+        for langue in (FR, AR):
+            formes = {cle_souple(forme) for forme in entree.formes(langue)}
+            synonymes = [cle_souple(synonyme) for synonyme in entree.synonymes(langue)]
+            assert len(synonymes) == len(set(synonymes)) and not formes & set(synonymes), entree.terme_fr
+            # Il n'appartient qu'à une entrée : sinon la recherche de ce mot, et la traduction d'un texte,
+            # hésiteraient entre deux fiches. Les douze cas connus sont plus anciens.
+            partages += [(entree.terme_fr, synonyme) for synonyme in entree.synonymes(langue)
+                         if porteurs[langue, cle_souple(synonyme)] != {entree.numero}]
+    assert partages == SYNONYMES_PARTAGES
+    # La recherche d'un synonyme ouvre la fiche de son terme, dans les deux langues.
+    for langue, synonyme, terme in [
+            (FR, "huissier", "huissier de justice"), (FR, "charia", "droit musulman"), (FR, "acquéreur", "acheteur"),
+            (FR, "opj", "officier de police judiciaire"), (FR, "mise en examen", "inculpation"),
+            (FR, "pacta sunt servanda", "force obligatoire du contrat"),
+            (AR, "كراء", "bail"), (AR, "عقد الشغل", "contrat de travail"), (AR, "كاتب عدل", "notaire"),
+            (AR, "الحراسة النظرية", "garde à vue"), (AR, "مذكرة توقيف", "mandat d'arrêt")]:
+        assert glossaire_fourni.chercher(synonyme, langue)[0].terme_fr == terme, synonyme
+    # Des synonymes ont été écartés après les essais. « JO » et « AG » : deux lettres, par lesquelles beaucoup de
+    # termes commencent. « الجمارك » : « قانون الجمارك » n'est pas la loi de l'administration des douanes.
+    # « résolution du contrat », « حق الشفعة » : les deux noms se traduisaient déjà un par un.
+    for terme, langue, ecarte in [
+            ("Journal officiel", FR, "JO"), ("assemblée générale", FR, "AG"),
+            ("administration des douanes", AR, "الجمارك"), ("résolution", FR, "résolution du contrat"),
+            ("préemption", AR, "حق الشفعة")]:
+        entrees = [entree for entree in completes if entree.terme_fr == terme]
+        assert entrees and all(ecarte not in entree.synonymes(langue) for entree in entrees), ecarte
+
+
 def test_les_phrases_d_exemple(glossaire_fourni):
     """Chaque entrée complète a sa phrase d'exemple. Une phrase « à vérifier » est courte et emploie le terme.
 
@@ -329,6 +388,18 @@ def test_recherche_dans_le_glossaire_fourni(glossaire_fourni):
         # « nomination » est donné comme synonyme de « désignation » (تعيين).
         ("La nomination des fonctionnaires et la désignation d'un expert.",
          "[تعيين] [الموظفون] {et} [التعيين] {d'}[خبير]."),
+        # Version 0.15, les synonymes des entrées complètes : une forme courte (« huissier »), un autre nom
+        # (« acquéreur », « charia », « municipalité »), des sigles (« OPJ », « PV »).
+        ("L'huissier signifie le jugement à l'acquéreur.", "[المحضر القضائي] {signifie} [الحكم] {à} [المشتري]."),
+        ("La charia et la municipalité.", "[الشريعة الإسلامية] {et} [البلدية]."),
+        ("L'OPJ rédige le PV de la garde à vue.", "[ضابط الشرطة القضائية] {rédige} [محضر] [التوقيف للنظر]."),
+        # « résolution du contrat » n'a pas été donné comme synonyme de « résolution » : les deux noms se
+        # traduisaient déjà un par un, et le synonyme aurait fait perdre « العقد ».
+        ("La résolution du contrat est prononcée par le juge.", "[فسخ] [العقد] {est} {prononcée} {par} [القاضي]."),
+        # Le nom complet du Journal officiel compte neuf mots : plus qu'une expression du glossaire n'en lit. Un
+        # synonyme plus court en aurait avalé le début, et laissé « démocratique et populaire » seuls.
+        ("Le Journal officiel de la République algérienne démocratique et populaire.",
+         "[الجريدة الرسمية] [للجمهورية] {algérienne} {démocratique} {et} {populaire}."),
     ],
 )
 def test_du_francais_vers_l_arabe(traducteur, texte, attendu):
@@ -360,6 +431,19 @@ def test_du_francais_vers_l_arabe(traducteur, texte, attendu):
         ("صدر حكم الطلاق بالتراضي.", "{صدر} [le jugement] [du divorce par consentement mutuel]."),
         ("يحدد مكتب المجلس الشعبي الوطني جدول الأعمال.",
          "{يحدد} [le bureau] [de l’Assemblée populaire nationale] [l’ordre du jour]."),
+        # Version 0.15 : les mots d'autres pays arabes sont donnés comme synonymes (« عقد الشغل », « عقد الكراء »,
+        # « الحراسة النظرية », « مذكرة توقيف », « كاتب عدل », « مفوض قضائي »).
+        ("عقد الشغل وعقد الكراء.", "[Le contrat de travail] {و} [le contrat de bail]."),
+        ("الحراسة النظرية ومذكرة التوقيف.", "[La garde à vue] {و} [le mandat d'arrêt]."),
+        # « huissier » a un « h » muet (« l'huissier »), « huis clos » un « h » aspiré (« le huis clos »).
+        ("حضر كاتب العدل والمفوض القضائي.", "{حضر} [le notaire] {و} [l’huissier de justice]."),
+        ("أتعاب المحضر القضائي.", "[Les honoraires] [de l’huissier de justice]."),
+        ("تنعقد الجلسة السرية.", "{تنعقد} [le huis clos]."),
+        # Le nom arabe complet du Journal officiel compte six mots : il est donné comme synonyme.
+        ("ينشر القانون في الجريدة الرسمية للجمهورية الجزائرية الديمقراطية الشعبية.",
+         "{ينشر} [la loi] {في} [le Journal officiel]."),
+        # « الجمارك » n'a pas été donné comme synonyme de « إدارة الجمارك » : « قانون الجمارك » est un code.
+        ("قانون الجمارك.", "[Loi] {الجمارك}."),
     ],
 )
 def test_de_l_arabe_vers_le_francais(traducteur, texte, attendu):
