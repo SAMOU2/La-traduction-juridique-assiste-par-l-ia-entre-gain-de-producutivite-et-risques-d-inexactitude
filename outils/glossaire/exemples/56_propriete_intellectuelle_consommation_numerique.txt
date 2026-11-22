@@ -1,0 +1,178 @@
+# Phrases d'exemple de termes/56_propriete_intellectuelle_consommation_numerique.txt : terme | phrase française | phrase arabe
+propriété littéraire et artistique | Les droits de l'écrivain et du peintre forment la propriété littéraire et artistique. | تشكل حقوق الكاتب والرسام ملكية أدبية وفنية.
+droits voisins | Le chanteur touche des droits voisins quand la radio passe son disque. | يتقاضى المغني حقوقا مجاورة عندما تبث الإذاعة أسطوانته.
+droit moral | Par le droit moral, l'auteur fait figurer son nom sur le livre. | بموجب الحق المعنوي، يضع المؤلف اسمه على الكتاب.
+droits patrimoniaux | Les droits patrimoniaux rapportent à l'auteur une somme sur chaque exemplaire. | تدر الحقوق المادية على المؤلف مبلغا عن كل نسخة.
+droit de reproduction | Photocopier tout le livre viole le droit de reproduction de l'auteur. | ينتهك تصوير الكتاب كله حق الاستنساخ العائد للمؤلف.
+droit de divulgation | Le peintre exerce son droit de divulgation quand il expose sa toile. | يمارس الرسام حق الكشف عن المصنف عندما يعرض لوحته.
+droit de paternité | Le droit de paternité impose le nom du photographe sous l'image. | يفرض حق الأبوة ذكر اسم المصور تحت الصورة.
+droit au respect de l'œuvre | L'auteur invoque son droit au respect de l'œuvre contre le film qui déforme son roman. | يتمسك المؤلف بحق احترام سلامة المصنف ضد الفيلم الذي يشوه روايته.
+œuvre littéraire | Le roman est une œuvre littéraire. | الرواية مصنف أدبي.
+œuvre artistique | La sculpture du jardin public est une œuvre artistique. | منحوتة الحديقة العامة مصنف فني.
+œuvre originale | La loi protège l'œuvre originale, non la simple copie. | يحمي القانون المصنف الأصلي لا النسخة البسيطة.
+œuvre dérivée | La traduction d'un roman est une œuvre dérivée. | ترجمة رواية مصنف مشتق.
+œuvre de collaboration | La chanson écrite par un poète et un musicien est une œuvre de collaboration. | الأغنية التي كتبها شاعر وموسيقي مصنف مشترك.
+œuvre collective | Le dictionnaire est une œuvre collective. | القاموس مصنف جماعي.
+œuvre audiovisuelle | Le feuilleton du ramadan est une œuvre audiovisuelle. | مسلسل رمضان مصنف سمعي بصري.
+programme d'ordinateur | L'ingénieur écrit un programme d'ordinateur pour la banque. | يكتب المهندس برنامج حاسوب للبنك.
+base de données | L'hôpital range les dossiers des malades dans une base de données. | يحفظ المستشفى ملفات المرضى في قاعدة بيانات.
+durée de protection | La durée de protection continue cinquante ans après le décès de l'auteur. | تستمر مدة الحماية خمسين سنة بعد وفاة المؤلف.
+cession des droits d'auteur | La cession des droits d'auteur se fait par écrit. | يتم التنازل عن حقوق المؤلف كتابة.
+contrat d'édition | La romancière signe un contrat d'édition pour trois livres. | توقع الروائية عقد النشر لثلاثة كتب.
+éditeur | L'éditeur imprime deux mille exemplaires du roman. | يطبع الناشر ألفي نسخة من الرواية.
+artiste interprète | L'artiste interprète chante la chanson d'un autre. | يغني الفنان المؤدي أغنية كتبها غيره.
+producteur de phonogrammes | Le producteur de phonogrammes finance l'enregistrement du disque. | يمول منتج التسجيلات السمعية تسجيل الأسطوانة.
+organisme de radiodiffusion | L'organisme de radiodiffusion paie pour diffuser le match. | تدفع هيئة البث الإذاعي مقابل بث المباراة.
+gestion collective des droits | Grâce à la gestion collective des droits, l'auteur reçoit son argent sans démarche. | بفضل التسيير الجماعي للحقوق، يتلقى المؤلف ماله دون أي مسعى.
+Office national des droits d'auteur et des droits voisins | L'Office national des droits d'auteur et des droits voisins saisit des disques copiés sans autorisation. | يحجز الديوان الوطني لحقوق المؤلف والحقوق المجاورة أسطوانات منسوخة دون ترخيص.
+copie privée | L'étudiant qui enregistre un film pour lui seul fait une copie privée. | الطالب الذي يسجل فيلما لنفسه فقط ينجز نسخة خاصة.
+piratage informatique | Le piratage informatique vide les comptes de la banque en une nuit. | تفرغ القرصنة المعلوماتية حسابات البنك في ليلة واحدة.
+plagiat | L'université annule la thèse pour plagiat. | تلغي الجامعة الأطروحة بسبب سرقة أدبية.
+brevetabilité | L'institut examine la brevetabilité de la nouvelle machine. | يدرس المعهد قابلية الحصول على البراءة للآلة الجديدة.
+activité inventive | Une simple amélioration évidente manque d'activité inventive. | يفتقر تحسين بسيط بديهي إلى نشاط اختراعي.
+application industrielle | Une idée abstraite sans application industrielle ne reçoit pas de brevet. | لا تحصل فكرة مجردة بلا تطبيق صناعي على براءة.
+inventeur | L'inventeur présente sa pompe solaire au salon. | يعرض المخترع مضخته الشمسية في المعرض.
+demande de brevet | La demande de brevet décrit l'invention dans tous ses détails. | يصف طلب البراءة الاختراع بكل تفاصيله.
+titulaire du brevet | Le titulaire du brevet autorise une usine à fabriquer son moteur. | يرخص صاحب البراءة لمصنع بصنع محركه.
+délivrance du brevet | L'inventeur attend la délivrance du brevet depuis deux ans. | ينتظر المخترع تسليم البراءة منذ سنتين.
+revendications du brevet | Les revendications du brevet délimitent ce que l'inventeur protège. | تحدد مطالبات البراءة ما يحميه المخترع.
+licence contractuelle | Par une licence contractuelle, le laboratoire laisse une usine fabriquer son médicament. | بموجب رخصة تعاقدية، يسمح المخبر لمصنع بصنع دوائه.
+licence obligatoire | L'État accorde une licence obligatoire pour produire un médicament vital. | تمنح الدولة رخصة إجبارية لإنتاج دواء حيوي.
+déchéance du brevet | Le non-paiement de la taxe annuelle entraîne la déchéance du brevet. | يترتب على عدم دفع الرسم السنوي سقوط البراءة.
+invention de service | L'invention de service appartient à l'employeur de l'ingénieur. | يعود اختراع الخدمة إلى مستخدم المهندس.
+certificat d'addition | L'inventeur obtient un certificat d'addition pour l'amélioration de sa machine. | يحصل المخترع على شهادة الإضافة عن تحسين آلته.
+Institut national algérien de la propriété industrielle | L'Institut national algérien de la propriété industrielle tient le registre des marques. | يمسك المعهد الوطني الجزائري للملكية الصناعية سجل العلامات.
+marque de fabrique | La marque de fabrique figure sur chaque boîte de biscuits. | تظهر علامة المصنع على كل علبة بسكويت.
+marque de commerce | Le supermarché vend du lait sous sa propre marque de commerce. | يبيع المتجر الكبير الحليب تحت علامة تجارية خاصة به.
+marque de service | La compagnie de taxis protège sa marque de service. | تحمي شركة سيارات الأجرة علامة الخدمة الخاصة بها.
+marque collective | Les producteurs d'huile d'olive de la région emploient une marque collective. | يستعمل منتجو زيت الزيتون في المنطقة علامة جماعية.
+marque notoire | Une marque notoire reste protégée même sans enregistrement dans le pays. | تبقى علامة مشهورة محمية ولو بدون تسجيل في البلد.
+enregistrement de la marque | L'enregistrement de la marque vaut pour dix ans. | يسري تسجيل العلامة لمدة عشر سنوات.
+dépôt de la marque | Le dépôt de la marque a lieu à l'institut, avec le dessin du logo. | يتم إيداع العلامة لدى المعهد مع رسم الشعار.
+titulaire de la marque | Le titulaire de la marque poursuit le fabricant de copies. | يتابع صاحب العلامة صانع النسخ.
+renouvellement de l'enregistrement | Le renouvellement de l'enregistrement prolonge la protection de dix ans. | يمدد تجديد التسجيل الحماية عشر سنوات.
+contrefaçon de marque | La vente de fausses chaussures de sport est une contrefaçon de marque. | يعد بيع أحذية رياضية مزيفة تقليدا للعلامة.
+dessin ou modèle industriel | La forme nouvelle d'une bouteille est protégée comme dessin ou modèle industriel. | الشكل الجديد لقارورة محمي بوصفه رسما أو نموذجا صناعيا.
+appellation d'origine | Le fromage de Roquefort porte une appellation d'origine. | يحمل جبن روكفور تسمية المنشأ.
+indication géographique | L'indication géographique rattache le tapis à sa région. | يربط البيان الجغرافي الزربية بمنطقتها.
+schéma de configuration de circuits intégrés | Le fabricant de puces dépose un schéma de configuration de circuits intégrés. | يودع صانع الرقائق تصميما شكليا للدوائر المتكاملة.
+savoir-faire | Le fromager protège son savoir-faire par le secret. | يحمي صانع الجبن المعرفة الفنية بالكتمان.
+transfert de technologie | Le contrat avec le constructeur de voitures prévoit un transfert de technologie. | ينص العقد مع صانع السيارات على نقل التكنولوجيا.
+action en contrefaçon | Le parfumeur engage une action en contrefaçon contre le vendeur de faux flacons. | يرفع صانع العطور دعوى التقليد ضد بائع القوارير المزيفة.
+saisie-contrefaçon | Le juge autorise une saisie-contrefaçon dans l'entrepôt. | يأذن القاضي بحجز التقليد في المستودع.
+marchandise contrefaite | La douane brûle la marchandise contrefaite. | تحرق الجمارك البضاعة المقلدة.
+droit de la consommation | Le droit de la consommation protège l'acheteur contre le vendeur malhonnête. | يحمي قانون الاستهلاك المشتري من البائع غير النزيه.
+intervenant | Chaque intervenant répond de la sécurité du yaourt, de l'usine à l'épicerie. | يسأل كل متدخل عن سلامة الياغورت من المصنع إلى البقالة.
+produit alimentaire | L'étiquette d'un produit alimentaire indique sa composition. | تبين ملصقة مادة غذائية تركيبتها.
+produit défectueux | Le fabricant reprend le produit défectueux. | يسترجع الصانع المنتوج المعيب.
+bien de consommation | Le réfrigérateur est un bien de consommation. | الثلاجة سلعة استهلاكية.
+sécurité des produits | La sécurité des produits impose un bouchon spécial sur l'eau de Javel. | يفرض أمن المنتوجات سدادة خاصة على ماء جافيل.
+conformité des produits | Le laboratoire vérifie la conformité des produits avant leur vente. | يتحقق المخبر من مطابقة المنتوجات قبل بيعها.
+obligation d'information du consommateur | L'obligation d'information du consommateur impose une notice en arabe. | يفرض الالتزام بإعلام المستهلك دليل استعمال بالعربية.
+garantie du produit | La garantie du produit couvre la panne du téléviseur neuf. | يغطي ضمان المنتوج عطل التلفاز الجديد.
+service après-vente | Le service après-vente remet en marche la machine à laver. | تعيد خدمة ما بعد البيع تشغيل آلة الغسيل.
+certificat de garantie | Le vendeur remet un certificat de garantie avec le téléphone. | يسلم البائع شهادة الضمان مع الهاتف.
+date de péremption | La cliente vérifie la date de péremption du lait. | تتحقق الزبونة من تاريخ نهاية الصلاحية للحليب.
+salubrité des denrées alimentaires | La chaîne du froid assure la salubrité des denrées alimentaires. | تضمن سلسلة التبريد سلامة المواد الغذائية.
+affichage des prix | L'affichage des prix manque dans la vitrine du boucher. | ينعدم الإعلام بالأسعار في واجهة الجزار.
+vente à distance | La vente à distance laisse à l'acheteur un délai pour changer d'avis. | يترك البيع عن بعد للمشتري أجلا لتغيير رأيه.
+vente à domicile | La vente à domicile surprend la personne âgée chez elle. | يفاجئ البيع في المنزل الشخص المسن في بيته.
+vente promotionnelle | Le magasin annonce une vente promotionnelle pour le ramadan. | يعلن المتجر عن بيع ترويجي بمناسبة رمضان.
+vente en solde | La vente en solde commence en janvier. | يبدأ البيع بالتخفيض في شهر جانفي.
+vente avec prime | Un verre gratuit avec la bouteille est une vente avec prime. | كأس مجانية مع القارورة بيع بالمكافأة.
+crédit à la consommation | Le couple achète une voiture avec un crédit à la consommation. | يشتري الزوجان سيارة بقرض موجه للاستهلاك.
+fraude sur la marchandise | Le lait coupé d'eau est une fraude sur la marchandise. | الحليب المخلوط بالماء غش في البضاعة.
+répression des fraudes | La répression des fraudes ferme la boucherie pour viande avariée. | تغلق مصالح قمع الغش الملحمة بسبب لحم فاسد.
+agent de la répression des fraudes | L'agent de la répression des fraudes vérifie la balance de l'épicier. | يتحقق عون قمع الغش من ميزان البقال.
+prélèvement d'échantillons | Le prélèvement d'échantillons a lieu devant le commerçant. | يتم اقتطاع العينات بحضور التاجر.
+analyse de laboratoire | L'analyse de laboratoire révèle un colorant dangereux dans les bonbons. | يكشف التحليل المخبري ملونا خطيرا في الحلوى.
+retrait du produit | Le ministère ordonne le retrait du produit des rayons. | تأمر الوزارة بسحب المنتوج من الرفوف.
+rappel du produit | Le constructeur annonce le rappel du produit pour un défaut de frein. | يعلن الصانع استرجاع المنتوج بسبب خلل في المكابح.
+association de consommateurs | L'association de consommateurs dénonce la hausse du prix du pain. | تندد جمعية المستهلكين بارتفاع ثمن الخبز.
+Conseil national de protection des consommateurs | Le Conseil national de protection des consommateurs donne son avis sur le projet de loi. | يبدي المجلس الوطني لحماية المستهلكين رأيه في مشروع القانون.
+intérêt collectif des consommateurs | L'association agit devant le juge pour l'intérêt collectif des consommateurs. | تتقاضى الجمعية أمام القاضي دفاعا عن المصلحة المشتركة للمستهلكين.
+amende transactionnelle | Le commerçant paie une amende transactionnelle et évite le procès. | يدفع التاجر غرامة الصلح ويتجنب المحاكمة.
+droit de la concurrence | Le droit de la concurrence punit les accords cachés sur les prix. | يعاقب قانون المنافسة على الاتفاقات الخفية حول الأثمان.
+libre concurrence | La libre concurrence fait baisser le prix du téléphone. | تخفض المنافسة الحرة ثمن الهاتف.
+liberté des prix | La liberté des prix ne joue pas pour le pain et le lait. | لا تسري حرية الأسعار على الخبز والحليب.
+marché pertinent | Le Conseil de la concurrence délimite d'abord le marché pertinent. | يحدد مجلس المنافسة أولا السوق المعنية.
+position dominante | L'opérateur historique occupe une position dominante sur le téléphone fixe. | يحتل المتعامل التاريخي وضعية الهيمنة في الهاتف الثابت.
+part de marché | La société détient une part de marché de soixante pour cent. | تملك الشركة حصة في السوق تبلغ ستين بالمئة.
+pratique anticoncurrentielle | La répartition des clients entre deux rivaux est une pratique anticoncurrentielle. | توزيع الزبائن بين متنافسين ممارسة مقيدة للمنافسة.
+pratique concertée | Les trois cimenteries montent leurs prix le même jour par une pratique concertée. | ترفع مصانع الإسمنت الثلاثة أثمانها في اليوم نفسه بممارسة مدبرة.
+abus de dépendance économique | Le supermarché qui écrase son petit fournisseur commet un abus de dépendance économique. | يرتكب المتجر الكبير الذي يضغط على مورده الصغير تعسفا في استغلال وضعية التبعية الاقتصادية.
+prix abusivement bas | La grande chaîne pratique un prix abusivement bas pour ruiner l'épicier du quartier. | تطبق السلسلة الكبرى سعرا منخفضا بشكل تعسفي لإفلاس بقال الحي.
+prix imposé | Le fabricant ne peut pas dicter un prix imposé à ses revendeurs. | لا يجوز للصانع أن يملي سعرا مفروضا على باعته.
+vente à perte | La vente à perte du sucre attire les clients vers le magasin. | يجذب البيع بالخسارة للسكر الزبائن إلى المتجر.
+refus de vente | Le grossiste oppose un refus de vente au petit commerçant. | يواجه تاجر الجملة التاجر الصغير برفض البيع.
+vente liée | L'achat forcé d'huile avec la semoule est une vente liée. | الشراء الجبري للزيت مع السميد بيع متلازم.
+pratique discriminatoire | Un tarif plus élevé pour un seul client, sans raison, est une pratique discriminatoire. | تعريفة أعلى لزبون واحد دون سبب ممارسة تمييزية.
+concentration économique | La fusion des deux brasseries est une concentration économique. | اندماج مصنعي المشروبات تجميع اقتصادي.
+contrôle des concentrations | Le contrôle des concentrations empêche la formation d'un monopole. | تمنع مراقبة التجميعات الاقتصادية تشكل احتكار.
+notification de la concentration | Les deux banques adressent la notification de la concentration avant leur fusion. | يوجه البنكان الإخطار بالتجميع قبل اندماجهما.
+autorisation de concentration | Le Conseil de la concurrence accorde l'autorisation de concentration sous conditions. | يمنح مجلس المنافسة الترخيص بالتجميع بشروط.
+attestation négative | Les deux sociétés obtiennent une attestation négative pour leur accord de distribution. | تحصل الشركتان على تصريح بعدم التدخل بخصوص اتفاق التوزيع بينهما.
+aide d'État | L'aide d'État sauve la compagnie de transport de la faillite. | تنقذ إعانة الدولة شركة النقل من الإفلاس.
+entreprise en position dominante | Une entreprise en position dominante a des devoirs envers ses rivaux. | على مؤسسة مهيمنة واجبات تجاه منافسيها.
+dénigrement | Dire que le pain du voisin est sale relève du dénigrement. | القول إن خبز الجار وسخ يدخل في تشويه سمعة المنافس.
+pratiques commerciales | La loi encadre les pratiques commerciales des grandes surfaces. | يؤطر القانون الممارسات التجارية للمساحات الكبرى.
+pratiques commerciales déloyales | L'imitation de l'emballage d'un rival compte parmi les pratiques commerciales déloyales. | يعد تقليد غلاف منافس من الممارسات التجارية غير النزيهة.
+transparence des pratiques commerciales | La transparence des pratiques commerciales commence par une facture pour chaque vente. | تبدأ شفافية الممارسات التجارية بفاتورة عن كل بيع.
+facturation | La facturation est obligatoire entre le grossiste et le détaillant. | الفوترة إلزامية بين تاجر الجملة وتاجر التجزئة.
+défaut de facturation | L'agent du commerce relève un défaut de facturation chez le grossiste. | يسجل عون التجارة عدم الفوترة لدى تاجر الجملة.
+pratique de prix illicites | La vente du lait au-dessus du prix officiel est une pratique de prix illicites. | بيع الحليب بأكثر من الثمن الرسمي ممارسة أسعار غير شرعية.
+plafonnement des prix | Le plafonnement des prix protège les familles modestes pendant le ramadan. | يحمي تسقيف الأسعار الأسر البسيطة خلال رمضان.
+marge bénéficiaire | L'État limite la marge bénéficiaire du pharmacien sur les médicaments. | تحدد الدولة هامش الربح للصيدلي في الأدوية.
+saisine du Conseil de la concurrence | La saisine du Conseil de la concurrence vient d'une association de consommateurs. | يصدر إخطار مجلس المنافسة عن جمعية المستهلكين.
+enquête de concurrence | L'enquête de concurrence commence par une visite surprise dans les bureaux. | يبدأ التحقيق في مجال المنافسة بزيارة مفاجئة للمكاتب.
+sanction pécuniaire | Le Conseil de la concurrence inflige une sanction pécuniaire aux trois sociétés. | يسلط مجلس المنافسة عقوبة مالية على الشركات الثلاث.
+régulation économique | La régulation économique du secteur de l'électricité revient à une autorité indépendante. | يعود الضبط الاقتصادي لقطاع الكهرباء إلى سلطة مستقلة.
+protection des données à caractère personnel | La protection des données à caractère personnel s'impose à l'hôpital comme à la banque. | تفرض حماية المعطيات ذات الطابع الشخصي على المستشفى كما على البنك.
+personne concernée | La personne concernée sait qui détient son adresse. | يعرف الشخص المعني من يحوز عنوانه.
+consentement de la personne concernée | Le site recueille le consentement de la personne concernée avant tout envoi de publicité. | يحصل الموقع على موافقة الشخص المعني قبل أي إرسال للإشهار.
+finalité du traitement | La finalité du traitement figure sur le formulaire. | تذكر غاية المعالجة في الاستمارة.
+données sensibles | La religion d'un salarié compte parmi les données sensibles. | يعد دين العامل من المعطيات الحساسة.
+données de santé | Le médecin protège les données de santé de ses malades. | يحمي الطبيب المعطيات الصحية لمرضاه.
+données biométriques | Le passeport contient des données biométriques, comme l'empreinte du doigt. | يحتوي جواز السفر على معطيات بيومترية مثل بصمة الإصبع.
+fichier de données | L'école tient un fichier de données sur ses élèves. | تمسك المدرسة ملف المعطيات الخاص بتلاميذها.
+collecte des données | La collecte des données se limite au nom et au numéro de téléphone. | يقتصر جمع المعطيات على الاسم ورقم الهاتف.
+conservation des données | La conservation des données cesse à la fin du contrat. | ينتهي حفظ المعطيات عند نهاية العقد.
+transfert de données vers l'étranger | Le transfert de données vers l'étranger exige une autorisation de l'autorité nationale. | يتطلب تحويل المعطيات نحو الخارج ترخيصا من السلطة الوطنية.
+droit d'accès | Le client exerce son droit d'accès et reçoit la copie de son dossier. | يمارس الزبون حق الولوج ويتلقى نسخة من ملفه.
+droit de rectification | La cliente invoque son droit de rectification pour corriger sa date de naissance. | تتمسك الزبونة بحق التصحيح لتصويب تاريخ ميلادها.
+droit d'opposition | L'abonné exerce son droit d'opposition contre les messages publicitaires. | يمارس المشترك حق الاعتراض ضد الرسائل الإشهارية.
+droit à l'oubli | Le citoyen invoque son droit à l'oubli pour faire effacer une vieille photo. | يتمسك المواطن بالحق في النسيان لمحو صورة قديمة.
+déclaration préalable | Le magasin adresse une déclaration préalable avant de créer son fichier de clients. | يوجه المتجر تصريحا مسبقا قبل إنشاء ملف زبائنه.
+autorisation préalable | Le traitement des données de santé exige une autorisation préalable. | تتطلب معالجة المعطيات الصحية ترخيصا مسبقا.
+Autorité nationale de protection des données à caractère personnel | L'Autorité nationale de protection des données à caractère personnel reçoit la plainte du client. | تتلقى السلطة الوطنية لحماية المعطيات ذات الطابع الشخصي شكوى الزبون.
+sécurité des données | Un mot de passe solide renforce la sécurité des données. | تعزز كلمة سر قوية أمن المعطيات.
+violation de données | La banque signale une violation de données après le vol de ses fichiers. | يبلغ البنك عن انتهاك المعطيات بعد سرقة ملفاته.
+confidentialité des données | L'employé de la banque respecte la confidentialité des données des clients. | يحترم موظف البنك سرية المعطيات الخاصة بالزبائن.
+vidéosurveillance | Un panneau signale la vidéosurveillance à l'entrée du magasin. | تنبه لافتة إلى المراقبة بالفيديو عند مدخل المتجر.
+prospection directe | La prospection directe par message suppose le consentement de l'abonné. | يفترض الاستكشاف المباشر بالرسائل القصيرة رضا المشترك.
+fournisseur électronique | Le fournisseur électronique affiche son adresse sur le site. | يعرض المورد الإلكتروني عنوانه في الموقع.
+consommateur électronique | Le consommateur électronique suit sa commande sur son téléphone. | يتابع المستهلك الإلكتروني طلبيته على هاتفه.
+transaction électronique | Une transaction électronique laisse une trace écrite. | تترك معاملة إلكترونية أثرا مكتوبا.
+plate-forme de paiement électronique | Le client paie par carte sur la plate-forme de paiement électronique. | يدفع الزبون بالبطاقة عبر منصة الدفع الإلكتروني.
+offre commerciale électronique | L'offre commerciale électronique indique le prix toutes taxes comprises. | يبين العرض التجاري الإلكتروني الثمن مع احتساب كل الرسوم.
+commande électronique | La commande électronique devient ferme après le clic de validation. | تصبح الطلبية الإلكترونية نهائية بعد نقرة التأكيد.
+publicité électronique | La publicité électronique porte clairement le nom de l'annonceur. | يحمل الإشهار الإلكتروني بوضوح اسم المعلن.
+nom de domaine | La société achète un nom de domaine pour son site. | تشتري الشركة اسم النطاق لموقعها.
+fournisseur d'hébergement | Le fournisseur d'hébergement retire la vidéo illégale dès qu'il la connaît. | يسحب مقدم خدمة الاستضافة الفيديو غير القانوني فور علمه به.
+fournisseur d'accès à internet | Le fournisseur d'accès à internet relie le village au réseau. | يربط مقدم خدمة الوصول إلى الإنترنت القرية بالشبكة.
+communications électroniques | La loi encadre les communications électroniques, du téléphone au courriel. | يؤطر القانون الاتصالات الإلكترونية من الهاتف إلى البريد الإلكتروني.
+opérateur de télécommunications | L'opérateur de télécommunications couvre le Sud du pays. | يغطي متعامل الاتصالات جنوب البلد.
+certification électronique | La certification électronique confirme l'identité du signataire. | يؤكد التصديق الإلكتروني هوية الموقع.
+certificat électronique | Le notaire signe avec un certificat électronique. | يوقع الموثق بشهادة إلكترونية.
+prestataire de services de certification électronique | Le prestataire de services de certification électronique délivre les clés de signature. | يسلم مؤدي خدمات التصديق الإلكتروني مفاتيح التوقيع.
+signature électronique qualifiée | Une signature électronique qualifiée vaut une signature à la main. | يعادل توقيع إلكتروني موصوف التوقيع باليد.
+écrit électronique | Le juge admet l'écrit électronique comme preuve du contrat. | يقبل القاضي الكتابة في الشكل الإلكتروني دليلا على العقد.
+document électronique | L'administration accepte un document électronique à la place du papier. | تقبل الإدارة وثيقة إلكترونية بدل الورق.
+archivage électronique | L'archivage électronique conserve les factures pendant dix ans. | تحفظ الأرشفة الإلكترونية الفواتير لمدة عشر سنوات.
+preuve électronique | Un courriel sert de preuve électronique devant le tribunal. | يستعمل بريد إلكتروني إثباتا إلكترونيا أمام المحكمة.
+identité numérique | Le citoyen protège son identité numérique par un mot de passe. | يحمي المواطن الهوية الرقمية بكلمة سر.
+système de traitement automatisé de données | Le pirate entre dans le système de traitement automatisé de données de la mairie. | يدخل القرصان إلى نظام المعالجة الآلية للمعطيات التابع للبلدية.
+atteinte à l'intégrité des données | Effacer les notes des étudiants est une atteinte à l'intégrité des données. | محو علامات الطلبة مساس بسلامة المعطيات.
+cybersécurité | La banque recrute des ingénieurs en cybersécurité. | يوظف البنك مهندسين في الأمن السيبراني.
+intelligence artificielle | L'intelligence artificielle aide le médecin à lire une radio. | يساعد الذكاء الاصطناعي الطبيب على قراءة صورة الأشعة.
+numérisation | La numérisation de l'état civil raccourcit les files d'attente. | تقلص رقمنة الحالة المدنية طوابير الانتظار.
