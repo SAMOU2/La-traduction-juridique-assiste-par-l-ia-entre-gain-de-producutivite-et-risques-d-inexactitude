@@ -1,0 +1,242 @@
+# Phrases d'exemple de termes/53_fiscal_finances_douanes.txt : terme | phrase française | phrase arabe
+droit fiscal | Le droit fiscal détermine qui doit l'impôt et comment l'administration le calcule. | يبين القانون الجبائي من يدين بالضريبة وكيف تحسبها الإدارة.
+système fiscal | Un système fiscal simple encourage les entreprises à s'installer dans le pays. | يشجع النظام الجبائي البسيط المؤسسات على الاستقرار في البلد.
+législation fiscale | La législation fiscale change souvent avec la loi de finances. | يتغير التشريع الجبائي كثيرا مع قانون المالية.
+fiscalité | La fiscalité procure à l'État la plus grande part de ses ressources. | توفر الجباية للدولة القسم الأكبر من مواردها.
+pression fiscale | Une pression fiscale trop forte pousse le commerçant vers le marché informel. | يدفع الضغط الجبائي المرتفع جدا التاجر نحو السوق غير المنظمة.
+impôt direct | L'impôt sur le revenu est un impôt direct : le salarié le supporte lui-même. | الضريبة على الدخل ضريبة مباشرة: يتحملها العامل بنفسه.
+impôt indirect | La TVA est un impôt indirect que le client paie en achetant un produit. | الرسم على القيمة المضافة ضريبة غير مباشرة يدفعها الزبون عند شراء منتوج.
+impôt sur les bénéfices des sociétés | La société verse chaque année l'impôt sur les bénéfices des sociétés. | تدفع الشركة كل سنة الضريبة على أرباح الشركات.
+impôt forfaitaire unique | Le petit commerçant relève de l'impôt forfaitaire unique. | يخضع التاجر الصغير للضريبة الجزافية الوحيدة.
+impôt sur la fortune | L'impôt sur la fortune ne concerne que les plus riches. | لا تخص الضريبة على الثروة إلا الأكثر ثراء.
+taxe foncière | Le propriétaire d'une maison paie la taxe foncière chaque année. | يدفع مالك المنزل الرسم العقاري كل سنة.
+taxe d'enlèvement des ordures ménagères | La commune réclame la taxe d'enlèvement des ordures ménagères à chaque foyer. | تطالب البلدية كل أسرة برسم رفع القمامات المنزلية.
+taxe sur l'activité professionnelle | La taxe sur l'activité professionnelle alimentait le budget des communes. | كان الرسم على النشاط المهني يغذي ميزانية البلديات.
+taxe intérieure de consommation | Le tabac supporte une taxe intérieure de consommation en plus de la TVA. | يتحمل التبغ رسما داخليا على الاستهلاك زيادة على الرسم على القيمة المضافة.
+taxe sur les produits pétroliers | Le prix de l'essence comprend la taxe sur les produits pétroliers. | يشمل ثمن البنزين الرسم على المنتوجات البترولية.
+droit de timbre | Le voyageur paie un droit de timbre pour obtenir son passeport. | يدفع المسافر حق الطابع للحصول على جواز السفر.
+droits d'enregistrement | L'acheteur d'un appartement verse les droits d'enregistrement chez le notaire. | يدفع مشتري الشقة حقوق التسجيل لدى الموثق.
+taxe de publicité foncière | La conservation foncière perçoit la taxe de publicité foncière sur chaque acte de vente. | تقبض المحافظة العقارية رسم الإشهار العقاري عن كل عقد بيع.
+vignette automobile | L'automobiliste colle la vignette automobile sur le pare-brise de sa voiture. | يلصق صاحب السيارة قسيمة السيارات على الزجاج الأمامي لمركبته.
+taxe parafiscale | La chambre de commerce reçoit le produit d'une taxe parafiscale. | تتلقى غرفة التجارة حصيلة رسم شبه جبائي.
+prélèvement obligatoire | L'impôt est un prélèvement obligatoire que la loi seule peut créer. | الضريبة اقتطاع إجباري لا ينشئه إلا القانون.
+retenue à la source | L'employeur opère une retenue à la source sur le salaire de chaque travailleur. | يجري المستخدم اقتطاعا من المصدر على أجر كل عامل.
+acompte provisionnel | L'entreprise verse un acompte provisionnel avant la fin de l'année. | تدفع المؤسسة تسبيقا على الحساب قبل نهاية السنة.
+matière imposable | Le revenu du salarié forme la matière imposable. | يشكل دخل العامل المادة الخاضعة للضريبة.
+fait générateur de l'impôt | La livraison de la marchandise est le fait générateur de l'impôt. | تسليم البضاعة هو الحدث المنشئ للضريبة.
+exigibilité de l'impôt | L'exigibilité de l'impôt commence le jour où le client paie la facture. | يبدأ استحقاق الضريبة يوم يدفع الزبون الفاتورة.
+base imposable | L'inspecteur applique le taux à la base imposable. | يطبق المفتش النسبة على الأساس الخاضع للضريبة.
+revenu imposable | Le barème s'applique au revenu imposable du foyer. | يطبق الجدول على الدخل الخاضع للضريبة للأسرة.
+revenu brut | Le revenu brut du médecin comprend toutes les sommes reçues de ses patients. | يشمل الدخل الخام للطبيب كل المبالغ التي تلقاها من مرضاه.
+revenu net | Le revenu net sert de base au calcul de l'impôt. | يستعمل الدخل الصافي أساسا لحساب الضريبة.
+bénéfice imposable | Le comptable calcule le bénéfice imposable à la clôture des comptes. | يحسب المحاسب الربح الخاضع للضريبة عند إقفال الحسابات.
+bénéfices industriels et commerciaux | Le boulanger réalise des bénéfices industriels et commerciaux qu'il déclare chaque année. | يحقق الخباز أرباحا صناعية وتجارية يصرح بها كل سنة.
+bénéfices des professions non commerciales | L'avocat déclare ses gains parmi les bénéfices des professions non commerciales. | يصرح المحامي بمكاسبه ضمن أرباح المهن غير التجارية.
+revenus fonciers | Le loyer d'un appartement entre dans les revenus fonciers. | يدخل بدل إيجار الشقة ضمن المداخيل العقارية.
+revenus agricoles | La vente de la récolte procure à l'agriculteur des revenus agricoles. | يوفر بيع المحصول للفلاح مداخيل فلاحية.
+traitements et salaires | Les revenus du fonctionnaire sont des traitements et salaires. | مداخيل الموظف مرتبات وأجور.
+revenus des capitaux mobiliers | Le dividende d'une action entre dans les revenus des capitaux mobiliers. | يدخل ربح السهم ضمن مداخيل رؤوس الأموال المنقولة.
+plus-value de cession | Le vendeur d'un terrain déclare la plus-value de cession qu'il réalise. | يصرح بائع قطعة أرض بفائض قيمة التنازل الذي يحققه.
+barème progressif | Avec le barème progressif, le taux monte en même temps que le revenu. | مع الجدول التصاعدي، ترتفع النسبة كلما ارتفع الدخل.
+tranche d'imposition | Chaque tranche d'imposition supporte un taux différent. | تخضع كل شريحة دخل لنسبة مختلفة.
+abattement fiscal | Le retraité bénéficie d'un abattement fiscal sur sa pension. | يستفيد المتقاعد من تخفيض جبائي على معاشه.
+crédit d'impôt | Le crédit d'impôt vient en diminution de la somme que doit l'entreprise. | يخصم القرض الضريبي من المبلغ الذي تدين به المؤسسة.
+droit à déduction | Le commerçant exerce son droit à déduction sur la TVA de ses achats. | يمارس التاجر حق الخصم على الرسم على القيمة المضافة لمشترياته.
+charges déductibles | Le loyer du magasin figure parmi les charges déductibles. | يندرج بدل إيجار المحل ضمن الأعباء القابلة للخصم.
+amortissement | L'amortissement d'un camion s'étale sur plusieurs années. | يمتد اهتلاك شاحنة على عدة سنوات.
+déficit fiscal | La société déclare un déficit fiscal après une année difficile. | تصرح الشركة بعجز جبائي بعد سنة صعبة.
+report déficitaire | Grâce au report déficitaire, la perte de cette année réduit l'impôt des années suivantes. | بفضل ترحيل العجز، تخفض خسارة هذه السنة ضريبة السنوات الموالية.
+avantage fiscal | La loi accorde un avantage fiscal à l'entreprise qui s'installe dans le Sud. | يمنح القانون امتيازا جبائيا للمؤسسة التي تستقر في الجنوب.
+incitation fiscale | L'incitation fiscale pousse les jeunes à créer leur entreprise. | يدفع التحفيز الجبائي الشباب إلى إنشاء مؤسستهم.
+franchise de TVA | L'exportateur achète ses matières premières en franchise de TVA. | يشتري المصدر مواده الأولية بإعفاء من الرسم على القيمة المضافة.
+assujetti à la TVA | Tout assujetti à la TVA remet une facture à son client. | يسلم كل خاضع للرسم على القيمة المضافة فاتورة لزبونه.
+redevable de l'impôt | Le redevable de l'impôt reçoit un rappel quand il tarde. | يتلقى المدين بالضريبة تذكيرا عندما يتأخر.
+domicile fiscal | Le domicile fiscal du contribuable désigne l'inspection qui suit son dossier. | يحدد الموطن الجبائي للمكلف بالضريبة المفتشية التي تتابع ملفه.
+résident fiscal | Le résident fiscal paie l'impôt sur tout son revenu, même gagné à l'étranger. | يدفع المقيم الجبائي الضريبة على كل دخله، ولو كسبه في الخارج.
+établissement stable | La société étrangère paie l'impôt sur les gains de son établissement stable. | تدفع الشركة الأجنبية الضريبة على مكاسب المؤسسة المستقرة التابعة لها.
+double imposition | La double imposition pénalise le travailleur qui vit dans un pays et travaille dans un autre. | يضر الازدواج الضريبي بالعامل الذي يعيش في بلد ويعمل في بلد آخر.
+convention fiscale | Les deux pays signent une convention fiscale pour éviter la double imposition. | يوقع البلدان اتفاقية جبائية لتفادي الازدواج الضريبي.
+prix de transfert | L'administration fiscale contrôle le prix de transfert entre la société mère et sa filiale. | تراقب الإدارة الجبائية سعر التحويل بين الشركة الأم والشركة التابعة لها.
+paradis fiscal | Le fraudeur cache son argent dans un paradis fiscal. | يخفي الغشاش ماله في ملاذ ضريبي.
+évasion fiscale | L'évasion fiscale prive l'État de ressources importantes. | يحرم التهرب الضريبي الدولة من موارد هامة.
+numéro d'identification fiscale | L'administration fiscale attribue un numéro d'identification fiscale à chaque nouvelle société. | تمنح الإدارة الجبائية رقم التعريف الجبائي لكل شركة جديدة.
+régime du réel | L'entreprise soumise au régime du réel tient une comptabilité complète. | تمسك المؤسسة الخاضعة لنظام الربح الحقيقي محاسبة كاملة.
+régime du forfait | Le régime du forfait dispense l'artisan de tenir une comptabilité détaillée. | يعفي النظام الجزافي الحرفي من مسك محاسبة مفصلة.
+exercice fiscal | L'exercice fiscal se termine le 31 décembre. | تنتهي السنة الجبائية في 31 ديسمبر.
+année d'imposition | Le contribuable vérifie l'année d'imposition portée sur le document. | يتحقق المكلف بالضريبة من سنة فرض الضريبة المدونة على الوثيقة.
+inspection des impôts | Le commerçant dépose sa déclaration à l'inspection des impôts de son quartier. | يودع التاجر تصريحه لدى مفتشية الضرائب في حيه.
+recette des impôts | Le contribuable verse la somme due à la recette des impôts. | يدفع المكلف بالضريبة المبلغ المستحق لدى قباضة الضرائب.
+centre des impôts | Le médecin relève du centre des impôts de sa wilaya. | يتبع الطبيب مركز الضرائب في ولايته.
+direction des grandes entreprises | La société pétrolière dépose ses déclarations à la direction des grandes entreprises. | تودع الشركة البترولية تصريحاتها لدى مديرية كبريات المؤسسات.
+receveur des impôts | Le receveur des impôts délivre une quittance au contribuable. | يسلم قابض الضرائب مخالصة للمكلف بالضريبة.
+inspecteur des impôts | L'inspecteur des impôts examine la déclaration du commerçant. | يفحص مفتش الضرائب تصريح التاجر.
+agent vérificateur | L'agent vérificateur examine les livres de l'entreprise pendant trois semaines. | يفحص العون المحقق دفاتر المؤسسة مدة ثلاثة أسابيع.
+déclaration annuelle des revenus | Le médecin remplit sa déclaration annuelle des revenus au mois d'avril. | يملأ الطبيب التصريح السنوي بالمداخيل في شهر أفريل.
+déclaration d'existence | La nouvelle société dépose une déclaration d'existence auprès de l'inspection. | تودع الشركة الجديدة تصريحا بالوجود لدى المفتشية.
+déclaration mensuelle | Le grossiste calcule la TVA du mois sur sa déclaration mensuelle. | يحسب تاجر الجملة الرسم على القيمة المضافة للشهر في التصريح الشهري.
+télédéclaration | La télédéclaration évite au comptable de se déplacer. | يغني التصريح عن بعد المحاسب عن التنقل.
+défaut de déclaration | Le défaut de déclaration expose le commerçant à une taxation d'office. | يعرض عدم التصريح التاجر لفرض تلقائي للضريبة.
+déclaration tardive | Une déclaration tardive entraîne une majoration de l'impôt. | يترتب على تصريح متأخر زيادة في الضريبة.
+avis d'imposition | L'avis d'imposition indique la somme à verser et la date limite. | يبين الإشعار بالضريبة المبلغ الواجب دفعه والتاريخ الأقصى.
+mise en recouvrement | La mise en recouvrement ouvre le délai de paiement de l'impôt. | يفتح الإدراج في التحصيل مهلة دفع الضريبة.
+titre de perception | Le débiteur de l'amende reçoit un titre de perception par la poste. | يتلقى المدين بالغرامة سند التحصيل عن طريق البريد.
+recouvrement amiable | Le recouvrement amiable commence par une simple lettre de rappel. | يبدأ التحصيل الودي برسالة تذكير بسيطة.
+recouvrement forcé | Le receveur engage le recouvrement forcé contre le contribuable qui ne paie pas. | يباشر القابض التحصيل الجبري ضد المكلف بالضريبة الذي لا يدفع.
+pénalité fiscale | Une pénalité fiscale s'ajoute à l'impôt quand la déclaration arrive en retard. | تضاف عقوبة جبائية إلى الضريبة عندما يصل التصريح بعد الأوان.
+amende fiscale | Le commerçant qui ne remet pas de facture encourt une amende fiscale. | يتعرض التاجر الذي لا يسلم فاتورة لغرامة جبائية.
+contrôle fiscal | Le commerçant prépare ses factures avant le contrôle fiscal. | يحضر التاجر الفواتير قبل الرقابة الجبائية.
+vérification de comptabilité | La vérification de comptabilité se déroule dans les bureaux de l'entreprise. | يجري التحقيق في المحاسبة في مكاتب المؤسسة.
+vérification approfondie de la situation fiscale d'ensemble | L'administration engage une vérification approfondie de la situation fiscale d'ensemble du gérant. | تباشر الإدارة تحقيقا معمقا في مجمل الوضعية الجبائية للمسير.
+contrôle sur pièces | Le contrôle sur pièces a lieu à l'inspection, sans visite chez le commerçant. | تجري المراقبة على الوثائق في المفتشية، دون زيارة التاجر.
+avis de vérification | L'avis de vérification laisse au contribuable le temps de préparer ses livres. | يترك الإشعار بالتحقيق للمكلف بالضريبة الوقت لتحضير دفاتره.
+droit de communication | L'administration fiscale exerce son droit de communication auprès de la banque. | تمارس الإدارة الجبائية حق الاطلاع لدى البنك.
+droit de reprise | Le droit de reprise de l'administration s'éteint après quelques années. | ينقضي حق الاستدراك المخول للإدارة بعد بضع سنوات.
+prescription fiscale | La prescription fiscale protège le contribuable contre un contrôle trop ancien. | يحمي التقادم الجبائي المكلف بالضريبة من مراقبة قديمة جدا.
+redressement fiscal | Le redressement fiscal augmente de moitié l'impôt du commerçant. | يرفع التقويم الجبائي ضريبة التاجر بالنصف.
+notification de redressement | Le contribuable répond à la notification de redressement dans le délai indiqué. | يرد المكلف بالضريبة على الإشعار بالتقويم في الأجل المبين.
+taxation d'office | La taxation d'office frappe le contribuable qui ne dépose aucune déclaration. | يطبق الفرض التلقائي للضريبة على المكلف بالضريبة الذي لا يودع أي تصريح.
+évaluation d'office | L'opposition au contrôle entraîne une évaluation d'office du bénéfice. | يترتب على معارضة المراقبة تقييم تلقائي للربح.
+rejet de comptabilité | Une fausse facture justifie le rejet de comptabilité. | تبرر فاتورة مزورة رفض المحاسبة.
+abus de droit fiscal | L'administration invoque l'abus de droit fiscal devant un montage sans réalité. | تتمسك الإدارة بالتعسف في استعمال الحق الجبائي أمام تركيب لا حقيقة له.
+dissimulation de revenus | Le train de vie du gérant révèle une dissimulation de revenus. | يكشف مستوى معيشة المسير عن إخفاء المداخيل.
+réclamation contentieuse | Le contribuable adresse une réclamation contentieuse au directeur des impôts de la wilaya. | يوجه المكلف بالضريبة شكوى نزاعية إلى مدير الضرائب بالولاية.
+commission de recours des impôts directs | La commission de recours des impôts directs examine le dossier du commerçant. | تدرس لجنة الطعن للضرائب المباشرة ملف التاجر.
+sursis légal de paiement | Le contribuable qui conteste l'impôt peut obtenir un sursis légal de paiement. | يمكن للمكلف بالضريبة الذي ينازع في الضريبة أن يحصل على تأجيل قانوني للدفع.
+dégrèvement d'office | L'administration prononce un dégrèvement d'office quand elle découvre son erreur. | تقرر الإدارة تخفيضا تلقائيا حين تكتشف غلطها.
+restitution de l'impôt | Le salarié obtient la restitution de l'impôt versé en trop. | يحصل العامل على استرداد الضريبة المدفوعة زيادة.
+remboursement de crédit de TVA | L'exportateur sollicite le remboursement de crédit de TVA. | يلتمس المصدر استرجاع قرض الرسم على القيمة المضافة.
+avis à tiers détenteur | Le receveur envoie un avis à tiers détenteur à la banque du contribuable. | يرسل القابض إشعارا للغير الحائز إلى بنك المكلف بالضريبة.
+fermeture temporaire du local | L'administration fiscale décide la fermeture temporaire du local du commerçant qui ne paie pas. | تقرر الإدارة الجبائية الغلق المؤقت للمحل ضد التاجر الذي لا يدفع.
+solidarité fiscale | Par la solidarité fiscale, le receveur réclame tout l'impôt à un seul des deux associés. | بموجب التضامن الجبائي، يطالب القابض أحد الشريكين بالضريبة كلها.
+extrait de rôle | La banque réclame un extrait de rôle à l'emprunteur. | يطالب البنك المقترض بمستخرج من جدول الضرائب.
+loi de finances de l'année | Le Parlement adopte la loi de finances de l'année avant le 31 décembre. | يصادق البرلمان على قانون المالية للسنة قبل 31 ديسمبر.
+loi de finances rectificative | Une loi de finances rectificative corrige les prévisions quand le prix du pétrole chute. | يصحح قانون المالية التصحيحي التوقعات عندما ينخفض ثمن البترول.
+loi de règlement budgétaire | La loi de règlement budgétaire arrête les comptes d'une année passée. | يضبط قانون تسوية الميزانية حسابات سنة ماضية.
+projet de loi de finances | Le projet de loi de finances arrive au Parlement en automne. | يصل مشروع قانون المالية إلى البرلمان في الخريف.
+budget général de l'État | Le budget général de l'État prévoit les dépenses de chaque ministère. | تتوقع الميزانية العامة للدولة نفقات كل وزارة.
+budget annexe | Un budget annexe retrace les opérations d'une activité que l'État exploite lui-même. | تسجل ميزانية ملحقة عمليات نشاط تستغله الدولة بنفسها.
+comptes spéciaux du Trésor | Un prêt de l'État à une entreprise passe par les comptes spéciaux du Trésor. | يمر قرض تمنحه الدولة لمؤسسة عبر الحسابات الخاصة للخزينة.
+compte d'affectation spéciale | Le produit de la taxe alimente un compte d'affectation spéciale. | تغذي حصيلة الرسم حساب التخصيص الخاص.
+principe de l'annualité budgétaire | Selon le principe de l'annualité budgétaire, le Parlement adopte le budget pour une seule année. | حسب مبدأ سنوية الميزانية، يصادق البرلمان على الميزانية لسنة واحدة.
+principe de l'unité budgétaire | Le principe de l'unité budgétaire réunit toutes les recettes et les dépenses dans un seul document. | يجمع مبدأ وحدة الميزانية كل الإيرادات والنفقات في وثيقة واحدة.
+principe de l'universalité budgétaire | Le principe de l'universalité budgétaire ne permet pas de réserver une recette à une dépense précise. | لا يسمح مبدأ شمولية الميزانية بتخصيص إيراد لنفقة بعينها.
+principe de la spécialité budgétaire | Le principe de la spécialité budgétaire attache chaque somme à une dépense précise. | يربط مبدأ تخصيص الاعتمادات كل مبلغ بنفقة محددة.
+sincérité budgétaire | La sincérité budgétaire exige des prévisions de recettes réalistes. | يقتضي صدق الميزانية توقعات واقعية للإيرادات.
+équilibre budgétaire | Le gouvernement cherche l'équilibre budgétaire par la baisse des dépenses. | تسعى الحكومة إلى توازن الميزانية بتخفيض النفقات.
+déficit budgétaire | La chute des recettes pétrolières creuse le déficit budgétaire. | يعمق تراجع الإيرادات البترولية عجز الميزانية.
+excédent budgétaire | Le pays connaît un excédent budgétaire quand le prix du pétrole monte. | يعرف البلد فائض الميزانية عندما يرتفع ثمن البترول.
+dette publique | La dette publique augmente quand l'État emprunte pour couvrir ses dépenses. | يرتفع الدين العمومي عندما تقترض الدولة لتغطية نفقاتها.
+emprunt public | L'État lance un emprunt public auprès des épargnants. | تطرح الدولة قرضا عموميا لدى المدخرين.
+ressources de l'État | Les ressources de l'État dépendent encore du prix du pétrole. | ما زالت موارد الدولة مرتبطة بثمن البترول.
+charges de l'État | Le salaire des fonctionnaires pèse lourd dans les charges de l'État. | يشكل أجر الموظفين حصة كبيرة من أعباء الدولة.
+recettes fiscales | Les recettes fiscales progressent avec l'activité du pays. | ترتفع الإيرادات الجبائية مع نشاط البلد.
+recettes non fiscales | Le revenu des participations de l'État compte parmi les recettes non fiscales. | يعد دخل مساهمات الدولة من الإيرادات غير الجبائية.
+fiscalité pétrolière | La fiscalité pétrolière fournit une grande part des recettes du budget. | توفر الجباية البترولية قسما كبيرا من إيرادات الميزانية.
+dépenses de fonctionnement | Les fournitures de bureau entrent dans les dépenses de fonctionnement. | تدخل لوازم المكتب ضمن نفقات التسيير.
+dépenses d'investissement | La construction d'un hôpital relève des dépenses d'investissement. | يندرج بناء مستشفى ضمن نفقات الاستثمار.
+dépenses de personnel | Le recrutement de mille enseignants augmente les dépenses de personnel. | يرفع توظيف ألف معلم نفقات المستخدمين.
+crédits budgétaires | Le ministère consomme ses crédits budgétaires avant la fin de l'année. | تستهلك الوزارة الاعتمادات المالية المخصصة لها قبل نهاية السنة.
+ouverture de crédits | La loi de finances décide l'ouverture de crédits pour chaque programme. | يقرر قانون المالية فتح الاعتمادات لكل برنامج.
+autorisation d'engagement | L'autorisation d'engagement couvre un chantier qui dure trois ans. | تغطي رخصة الالتزام ورشة تدوم ثلاث سنوات.
+crédit de paiement | Le crédit de paiement limite ce que le ministère peut verser dans l'année. | يحدد اعتماد الدفع ما يمكن للوزارة دفعه خلال السنة.
+transfert de crédits | Un décret opère un transfert de crédits entre deux ministères. | يجري مرسوم تحويل الاعتمادات بين وزارتين.
+virement de crédits | Un virement de crédits finance l'achat urgent d'ambulances. | يمول نقل الاعتمادات الشراء المستعجل لسيارات الإسعاف.
+annulation de crédits | Le gouvernement procède à une annulation de crédits pour réduire la dépense. | تقوم الحكومة بإلغاء الاعتمادات لتقليص النفقة.
+programme budgétaire | Chaque programme budgétaire a un responsable et des objectifs. | لكل برنامج ميزانياتي مسؤول وأهداف.
+portefeuille de programmes | Le ministre de la santé gère un portefeuille de programmes. | يسير وزير الصحة حافظة برامج.
+exécution du budget | L'exécution du budget commence le premier janvier. | يبدأ تنفيذ الميزانية في أول جانفي.
+subvention | L'association reçoit une subvention de la commune. | تتلقى الجمعية إعانة من البلدية.
+dotation budgétaire | L'université reçoit une dotation budgétaire chaque année. | تتلقى الجامعة تخصيصا ميزانياتيا كل سنة.
+fonds de régulation des recettes | Le fonds de régulation des recettes couvre une fraction du déficit. | يغطي صندوق ضبط الإيرادات جزءا من العجز.
+comptabilité publique | La comptabilité publique sépare celui qui décide la dépense de celui qui la paie. | تفصل المحاسبة العمومية بين من يقرر النفقة ومن يدفعها.
+ordonnateur | L'ordonnateur signe l'ordre de paiement et le transmet au comptable. | يوقع الآمر بالصرف أمر الدفع ويحيله على المحاسب.
+ordonnateur principal | Le ministre est l'ordonnateur principal du budget de son ministère. | الوزير هو الآمر بالصرف الرئيسي لميزانية وزارته.
+ordonnateur secondaire | Le directeur de la santé de la wilaya agit comme ordonnateur secondaire. | يتصرف مدير الصحة بالولاية بصفته آمرا بالصرف ثانويا.
+séparation des ordonnateurs et des comptables | La séparation des ordonnateurs et des comptables protège l'argent de l'État. | يحمي الفصل بين الآمرين بالصرف والمحاسبين مال الدولة.
+comptable assignataire | L'ordonnateur adresse chaque mandat de paiement au comptable assignataire. | يوجه الآمر بالصرف كل حوالة دفع إلى المحاسب المخصص.
+agent comptable | L'agent comptable de l'université tient la caisse de l'établissement. | يمسك العون المحاسب للجامعة صندوق المؤسسة.
+régie d'avances | La régie d'avances paie les petites dépenses urgentes. | تدفع وكالة التسبيقات النفقات الصغيرة المستعجلة.
+régie de recettes | La régie de recettes du musée encaisse le prix des billets. | تقبض وكالة الإيرادات بالمتحف ثمن التذاكر.
+engagement de la dépense | La signature du marché public vaut engagement de la dépense. | يعد توقيع الصفقة العمومية التزاما بالنفقة العمومية.
+liquidation de la dépense publique | La liquidation de la dépense publique vérifie que le fournisseur a bien livré la commande. | تتحقق تصفية النفقة العمومية من أن المورد سلم الطلبية فعلا.
+ordonnancement de la dépense | L'ordonnancement de la dépense suit la vérification de la facture. | يلي الأمر بصرف النفقة التحقق من الفاتورة.
+mandat de paiement | Le comptable public vise le mandat de paiement avant de verser la somme. | يؤشر المحاسب العمومي على حوالة الدفع قبل دفع المبلغ.
+paiement de la dépense publique | Le paiement de la dépense publique passe par un virement sur le compte du créancier. | يتم دفع النفقة العمومية بتحويل إلى حساب الدائن.
+émission du titre de recette | L'émission du titre de recette précède l'encaissement de la somme. | يسبق إصدار سند الإيراد قبض المبلغ.
+contrôle financier | Le contrôle financier s'exerce avant la signature du contrat. | تمارس الرقابة المالية قبل توقيع العقد.
+contrôle budgétaire | Le contrôle budgétaire vérifie que la somme existe dans le programme. | تتحقق الرقابة الميزانياتية من وجود المبلغ في البرنامج.
+contrôleur financier | Le contrôleur financier refuse son visa à une dépense irrégulière. | يرفض المراقب المالي منح تأشيرته لنفقة غير نظامية.
+contrôleur budgétaire | Le contrôleur budgétaire suit les dépenses du ministère mois par mois. | يتابع المراقب الميزانياتي نفقات الوزارة شهرا بشهر.
+visa du contrôleur | Sans le visa du contrôleur, le comptable ne paie pas la dépense. | بدون تأشيرة المراقب، لا يدفع المحاسب النفقة.
+Inspection générale des finances | L'Inspection générale des finances contrôle la gestion de l'entreprise publique. | تراقب المفتشية العامة للمالية تسيير المؤسسة العمومية.
+compte de gestion | Le comptable public dépose son compte de gestion à la Cour des comptes. | يودع المحاسب العمومي حساب التسيير لدى مجلس المحاسبة.
+compte administratif | L'assemblée populaire communale examine le compte administratif de l'année. | يدرس المجلس الشعبي البلدي الحساب الإداري للسنة.
+reddition des comptes | La reddition des comptes s'impose à tout comptable public. | يفرض تقديم الحسابات على كل محاسب عمومي.
+apurement des comptes | L'apurement des comptes décharge le comptable de sa responsabilité. | تبرئ تصفية الحسابات المحاسب من مسؤوليته.
+responsabilité personnelle et pécuniaire | Le comptable public engage sa responsabilité personnelle et pécuniaire sur chaque paiement. | يتحمل المحاسب العمومي مسؤولية شخصية ومالية عن كل دفع.
+gestion de fait | L'agent qui encaisse sans titre les recettes de la commune commet une gestion de fait. | يرتكب العون الذي يقبض دون سند إيرادات البلدية تسييرا فعليا.
+comptable de fait | La Cour des comptes déclare comptable de fait celui qui manie sans titre l'argent de l'État. | يصرح مجلس المحاسبة بأن من يتداول دون سند مال الدولة محاسب فعلي.
+discipline budgétaire et financière | La chambre de discipline budgétaire et financière inflige une amende au gestionnaire fautif. | تسلط غرفة الانضباط في مجال تسيير الميزانية والمالية غرامة على المسير المخطئ.
+magistrat de la Cour des comptes | Le magistrat de la Cour des comptes examine les pièces du comptable. | يفحص قاضي مجلس المحاسبة وثائق المحاسب.
+rapport annuel de la Cour des comptes | Le rapport annuel de la Cour des comptes relève des dépenses inutiles. | يسجل التقرير السنوي لمجلس المحاسبة نفقات لا فائدة منها.
+deniers publics | Le comptable répond des deniers publics qu'il manie. | يسأل المحاسب عن الأموال العمومية التي يتداولها.
+trésorier de wilaya | Le trésorier de wilaya paie le salaire des fonctionnaires de l'État. | يدفع أمين خزينة الولاية أجر موظفي الدولة.
+bon du Trésor | La banque achète un bon du Trésor à un an. | يشتري البنك سند خزينة لمدة سنة.
+législation douanière | La législation douanière encadre l'entrée des marchandises dans le pays. | يؤطر التشريع الجمركي دخول البضائع إلى البلد.
+territoire douanier | Le navire entre dans le territoire douanier quand il franchit la limite des eaux du pays. | تدخل السفينة الإقليم الجمركي عندما تتجاوز حد مياه البلد.
+rayon des douanes | Les agents surveillent les routes du rayon des douanes. | يراقب الأعوان طرق النطاق الجمركي.
+bureau de douane | Le camion s'arrête au bureau de douane de la frontière. | تتوقف الشاحنة عند مكتب الجمارك على الحدود.
+agent des douanes | L'agent des douanes ouvre le conteneur et compte les colis. | يفتح عون الجمارك الحاوية ويعد الطرود.
+receveur des douanes | Le receveur des douanes encaisse les droits avant la sortie de la marchandise. | يقبض قابض الجمارك الحقوق قبل خروج البضاعة.
+contrôle douanier | Le contrôle douanier retarde la livraison de deux jours. | تؤخر المراقبة الجمركية التسليم يومين.
+visite des marchandises | La visite des marchandises révèle des téléphones cachés dans les cartons. | يكشف فحص البضائع هواتف مخبأة في العلب.
+conduite en douane | La conduite en douane oblige le transporteur à présenter sa cargaison au premier bureau. | يلزم إحضار البضائع أمام الجمارك الناقل بتقديم حمولته إلى أول مكتب.
+dédouanement | Le dédouanement d'une voiture prend plusieurs jours. | تستغرق جمركة سيارة عدة أيام.
+déclaration en douane | L'importateur dépose une déclaration en douane pour chaque conteneur. | يودع المستورد تصريحا جمركيا عن كل حاوية.
+déclaration en détail | La déclaration en détail indique le poids, la valeur et le pays d'origine de la marchandise. | يبين التصريح المفصل وزن البضاعة وقيمتها وبلد منشئها.
+déclarant en douane | Le déclarant en douane répond de l'exactitude des chiffres. | يسأل المصرح لدى الجمارك عن صحة الأرقام.
+commissionnaire en douane | L'importateur confie ses démarches à un commissionnaire en douane. | يسند المستورد إجراءاته إلى وكيل معتمد لدى الجمارك.
+tarif douanier | Le tarif douanier classe les marchandises et donne le taux de chacune. | تصنف التعريفة الجمركية البضائع وتبين نسبة كل منها.
+position tarifaire | Une erreur de position tarifaire change le montant des droits. | يغير غلط في البند التعريفي مبلغ الحقوق.
+espèce tarifaire | L'agent vérifie l'espèce tarifaire que le déclarant indique. | يتحقق العون من النوع التعريفي الذي يبينه المصرح.
+origine des marchandises | L'origine des marchandises commande le taux des droits de douane. | يتوقف معدل الحقوق الجمركية على منشأ البضائع.
+certificat d'origine | L'exportateur joint un certificat d'origine à la facture. | يرفق المصدر شهادة المنشأ بالفاتورة.
+valeur en douane | La valeur en douane comprend le prix du transport et de l'assurance. | تشمل القيمة لدى الجمارك ثمن النقل والتأمين.
+liquidation des droits | La liquidation des droits suit la vérification de la déclaration. | تلي تصفية الحقوق التحقق من التصريح.
+mainlevée des marchandises | L'importateur obtient la mainlevée des marchandises après le versement des droits. | يحصل المستورد على رفع اليد عن البضائع بعد دفع الحقوق.
+régime douanier | Le déclarant choisit le régime douanier de la marchandise. | يختار المصرح النظام الجمركي للبضاعة.
+régimes douaniers économiques | Les régimes douaniers économiques aident les usines qui travaillent pour l'exportation. | تساعد الأنظمة الجمركية الاقتصادية المصانع التي تعمل للتصدير.
+mise à la consommation | La mise à la consommation oblige l'importateur à verser les droits de douane. | يلزم الوضع للاستهلاك المستورد بدفع الحقوق الجمركية.
+transit douanier | Le camion traverse le pays sous le régime du transit douanier. | تعبر الشاحنة البلد تحت نظام العبور الجمركي.
+entrepôt de douane | La marchandise attend son acheteur dans un entrepôt de douane. | تنتظر البضاعة المشتري في مستودع جمركي.
+admission temporaire | L'engin de chantier entre sous le régime de l'admission temporaire. | تدخل آلة الورشة تحت نظام القبول المؤقت.
+exportation temporaire | Le tableau quitte le pays en exportation temporaire pour une exposition. | تغادر اللوحة البلد في إطار تصدير مؤقت للمشاركة في معرض.
+réexportation | La réexportation de la machine met fin à l'admission temporaire. | تنهي إعادة تصدير الآلة القبول المؤقت.
+drawback | L'usine qui exporte ses produits sollicite le drawback. | يلتمس المصنع الذي يصدر منتجاته استرداد الرسوم الجمركية.
+zone franche | L'usine s'installe dans une zone franche près du port. | يستقر المصنع في منطقة حرة قرب الميناء.
+franchise douanière | Le voyageur rapporte ses effets personnels en franchise douanière. | يجلب المسافر أمتعته الشخصية بإعفاء جمركي.
+magasin et aire de dédouanement | Le conteneur reste trois semaines dans un magasin et aire de dédouanement. | تبقى الحاوية ثلاثة أسابيع في مخزن ومساحة الإيداع المؤقت.
+marchandise prohibée | L'arme de guerre est une marchandise prohibée. | سلاح الحرب بضاعة محظورة.
+marchandise sensible à la fraude | Le tabac est une marchandise sensible à la fraude. | التبغ بضاعة حساسة للغش.
+restriction à l'importation | Une restriction à l'importation protège les producteurs du pays. | يحمي تقييد الاستيراد منتجي البلد.
+licence d'importation | Le concessionnaire attend sa licence d'importation de véhicules. | ينتظر صاحب الامتياز رخصة استيراد المركبات.
+contingent tarifaire | Le contingent tarifaire de viande est épuisé dès le mois de mars. | تستنفد الحصة التعريفية للحوم منذ شهر مارس.
+droits et taxes | Les droits et taxes s'ajoutent au prix de la voiture qui arrive au port. | تضاف حقوق ورسوم إلى ثمن السيارة التي تصل إلى الميناء.
+droit additionnel provisoire de sauvegarde | Le droit additionnel provisoire de sauvegarde renchérit plusieurs produits fabriqués à l'étranger. | يرفع الرسم الإضافي المؤقت الوقائي ثمن عدة منتجات مصنوعة في الخارج.
+droit antidumping | Un droit antidumping frappe l'acier qu'un producteur étranger vend à perte. | يفرض رسم مضاد للإغراق على الفولاذ الذي يبيعه منتج أجنبي بخسارة.
+dumping | Le dumping ruine les usines du pays qui reçoit la marchandise. | يخرب الإغراق مصانع البلد الذي يستقبل البضاعة.
+mesures de sauvegarde | Le gouvernement prend des mesures de sauvegarde pour défendre la production nationale. | تتخذ الحكومة تدابير وقائية للدفاع عن الإنتاج الوطني.
+délit douanier | Le tribunal condamne le chauffeur pour un délit douanier. | تدين المحكمة السائق من أجل جنحة جمركية.
+importation sans déclaration | Les agents constatent une importation sans déclaration de pièces détachées. | يعاين الأعوان استيرادا بدون تصريح لقطع الغيار.
+saisie douanière | La saisie douanière porte sur la marchandise et sur le camion. | يشمل الحجز الجمركي البضاعة والشاحنة.
+amende douanière | Le voyageur paie une amende douanière pour trois cartouches de cigarettes. | يدفع المسافر غرامة جمركية عن ثلاث خراطيش سجائر.
+transaction douanière | Une transaction douanière met fin à la poursuite contre l'importateur. | تنهي مصالحة جمركية المتابعة ضد المستورد.
+détenteur de la marchandise | Le détenteur de la marchandise répond de la fraude. | يسأل حائز البضاعة عن الغش.
+intéressé à la fraude | Le commerçant qui finance le trafic est un intéressé à la fraude. | التاجر الذي يمول التهريب مستفيد من الغش.
+coopération douanière | La coopération douanière aide les deux pays à lutter contre la contrebande. | يساعد التعاون الجمركي البلدين على مكافحة التهريب.
+opérateur économique agréé | L'opérateur économique agréé passe la frontière avec des contrôles réduits. | يعبر المتعامل الاقتصادي المعتمد الحدود بمراقبة مخففة.
+contrôle des changes | Le contrôle des changes limite les sommes que le voyageur emporte. | تحد مراقبة الصرف من المبالغ التي يحملها المسافر.
+infraction à la législation des changes | La loi punit de prison et d'amende l'infraction à la législation des changes. | يعاقب القانون على مخالفة تشريع الصرف بالحبس والغرامة.
+mouvements de capitaux | La banque centrale surveille les mouvements de capitaux. | يراقب البنك المركزي حركة رؤوس الأموال.
+domiciliation bancaire | L'importateur ouvre une domiciliation bancaire avant l'arrivée de la marchandise. | يفتح المستورد توطينا بنكيا قبل وصول البضاعة.
+rapatriement des devises | L'exportateur justifie le rapatriement des devises auprès de sa banque. | يثبت المصدر استرجاع العملة الصعبة لدى بنكه.

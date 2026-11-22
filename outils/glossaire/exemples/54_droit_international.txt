@@ -1,0 +1,325 @@
+# Phrases d'exemple de termes/54_droit_international.txt : terme | phrase française | phrase arabe
+sujet de droit international | L'État est le premier sujet de droit international. | الدولة هي أول شخص من أشخاص القانون الدولي.
+communauté internationale | La communauté internationale condamne l'attaque contre les civils. | يدين المجتمع الدولي الهجوم على المدنيين.
+coutume internationale | La coutume internationale lie les États même sans traité écrit. | يلزم العرف الدولي الدول ولو بدون معاهدة مكتوبة.
+jus cogens | L'interdiction de la torture relève du jus cogens. | يندرج حظر التعذيب ضمن القواعد الآمرة في القانون الدولي.
+traité bilatéral | L'Algérie et la Tunisie signent un traité bilatéral sur leur frontière. | توقع الجزائر وتونس معاهدة ثنائية حول حدودهما.
+traité multilatéral | Plus de cent États adhèrent au traité multilatéral sur le climat. | تنضم أكثر من مئة دولة إلى المعاهدة المتعددة الأطراف حول المناخ.
+accord international | Le président de la République ratifie l'accord international après le vote du Parlement. | يصادق رئيس الجمهورية على الاتفاق الدولي بعد تصويت البرلمان.
+accord de coopération | Les deux ministres signent un accord de coopération dans le domaine de la santé. | يوقع الوزيران اتفاق تعاون في مجال الصحة.
+accord de siège | L'accord de siège protège les bâtiments de l'organisation internationale. | يحمي اتفاق المقر مباني المنظمة الدولية.
+mémorandum d'entente | Les deux gouvernements signent un mémorandum d'entente sur l'énergie. | توقع الحكومتان مذكرة تفاهم حول الطاقة.
+échange de lettres | Un simple échange de lettres suffit pour prolonger l'accord. | يكفي تبادل الرسائل لتمديد الاتفاق.
+charte | Chaque État membre respecte la charte de l'organisation. | تحترم كل دولة عضو ميثاق المنظمة.
+pacte international | L'avocat appuie sa défense sur un pacte international que l'Algérie a ratifié. | يبني المحامي دفاعه على عهد دولي صادقت عليه الجزائر.
+négociation du traité | La négociation du traité dure deux ans. | يدوم التفاوض بشأن المعاهدة سنتين.
+pleins pouvoirs | L'ambassadeur présente ses pleins pouvoirs avant la signature. | يقدم السفير وثيقة التفويض الكامل قبل التوقيع.
+représentant plénipotentiaire | Le représentant plénipotentiaire signe le traité au nom de son pays. | يوقع الممثل المفوض المعاهدة باسم بلده.
+signature du traité | La signature du traité a lieu à Alger. | يجري توقيع المعاهدة في الجزائر العاصمة.
+approbation du traité | L'approbation du traité relève du gouvernement. | ترجع الموافقة على المعاهدة إلى الحكومة.
+instrument de ratification | Le président de la République signe l'instrument de ratification. | يوقع رئيس الجمهورية وثيقة التصديق.
+dépôt des instruments de ratification | Le dépôt des instruments de ratification a lieu auprès du Secrétaire général des Nations Unies. | يتم إيداع وثائق التصديق لدى الأمين العام للأمم المتحدة.
+dépositaire du traité | Le dépositaire du traité informe les États de chaque nouvelle adhésion. | يعلم وديع المعاهدة الدول بكل انضمام جديد.
+État partie | Chaque État partie remet un rapport périodique au comité de Genève. | تقدم كل دولة طرف تقريرا دوريا إلى لجنة جنيف.
+État signataire | L'État signataire attend le vote de son Parlement pour être lié. | تنتظر الدولة الموقعة تصويت برلمانها لتصبح ملزمة.
+État tiers | Le traité ne crée aucune obligation pour un État tiers. | لا تنشئ المعاهدة أي التزام على دولة من الغير.
+entrée en vigueur du traité | L'entrée en vigueur du traité exige soixante ratifications. | يتطلب بدء نفاذ المعاهدة ستين تصديقا.
+application provisoire | Les États décident l'application provisoire de l'accord dès sa signature. | تقرر الدول التطبيق المؤقت للاتفاق منذ توقيعه.
+enregistrement du traité | L'enregistrement du traité auprès des Nations Unies permet à chacun de le lire. | يسمح تسجيل المعاهدة لدى الأمم المتحدة لكل واحد بقراءتها.
+déclaration interprétative | L'État joint une déclaration interprétative à sa ratification. | ترفق الدولة إعلانا تفسيريا بتصديقها.
+objection à une réserve | Un État partie formule une objection à une réserve qu'il trouve trop large. | تقدم دولة طرف اعتراضا على تحفظ تراه واسعا جدا.
+retrait de la réserve | Le retrait de la réserve rend tout le traité applicable à l'État. | يجعل سحب التحفظ المعاهدة كلها واجبة التطبيق على الدولة.
+amendement du traité | L'amendement du traité ne lie que les États qui l'approuvent. | لا يلزم تعديل المعاهدة إلا الدول التي توافق عليه.
+dénonciation du traité | La dénonciation du traité prend effet après un préavis. | يسري نقض المعاهدة بعد إشعار مسبق.
+retrait du traité | Le pays annonce son retrait du traité. | يعلن البلد الانسحاب من المعاهدة.
+suspension de l'application du traité | La guerre entraîne la suspension de l'application du traité de commerce. | تؤدي الحرب إلى إيقاف العمل بالمعاهدة التجارية.
+extinction du traité | L'extinction du traité libère les deux États de leurs engagements. | يحرر انقضاء المعاهدة الدولتين من تعهداتهما.
+nullité du traité | La menace contre le négociateur entraîne la nullité du traité. | يترتب على تهديد المفاوض بطلان المعاهدة.
+changement fondamental de circonstances | L'État invoque un changement fondamental de circonstances pour quitter le traité. | تتمسك الدولة بتغير جوهري في الظروف للخروج من المعاهدة.
+primauté du droit international | Le juge applique la primauté du droit international sur la loi du pays. | يعمل القاضي بسمو القانون الدولي على قانون البلد.
+réception du traité en droit interne | La publication au Journal officiel achève la réception du traité en droit interne. | يكمل النشر في الجريدة الرسمية إدماج المعاهدة في القانون الداخلي.
+droit interne | Un État n'échappe pas à un traité en s'abritant derrière son droit interne. | لا تتخلص الدولة من معاهدة بالاحتماء بالقانون الداخلي.
+effet direct | Le citoyen invoque devant le juge l'effet direct de la convention. | يتمسك المواطن أمام القاضي بالأثر المباشر للاتفاقية.
+clause de la nation la plus favorisée | La clause de la nation la plus favorisée étend à tous les partenaires la baisse des droits de douane. | يمد شرط الدولة الأولى بالرعاية تخفيض الحقوق الجمركية إلى كل الشركاء.
+traitement national | Le traitement national assure à l'investisseur étranger le même régime qu'à l'investisseur du pays. | تضمن المعاملة الوطنية للمستثمر الأجنبي النظام نفسه المطبق على مستثمر البلد.
+principe de réciprocité | Chaque pays dispense de visa les citoyens de l'autre selon le principe de réciprocité. | يعفي كل بلد مواطني البلد الآخر من التأشيرة حسب مبدأ المعاملة بالمثل.
+reconnaissance d'État | La reconnaissance d'État ouvre la voie à l'envoi d'un ambassadeur. | يفتح الاعتراف بالدولة الطريق أمام إرسال سفير.
+reconnaissance de gouvernement | Après la prise du pouvoir par l'armée, plusieurs pays refusent la reconnaissance de gouvernement. | بعد استيلاء الجيش على السلطة، ترفض عدة بلدان الاعتراف بالحكومة.
+succession d'États | La succession d'États pose la question de la dette de l'ancien pays. | تطرح خلافة الدول مسألة دين البلد السابق.
+égalité souveraine des États | L'égalité souveraine des États donne une voix à chaque pays, grand ou petit. | تمنح المساواة في السيادة بين الدول صوتا لكل بلد، كبيرا كان أو صغيرا.
+non-ingérence dans les affaires intérieures | L'Algérie défend la non-ingérence dans les affaires intérieures des autres pays. | تدافع الجزائر عن عدم التدخل في الشؤون الداخلية للبلدان الأخرى.
+droit des peuples à disposer d'eux-mêmes | La Charte des Nations Unies proclame le droit des peuples à disposer d'eux-mêmes. | يعلن ميثاق الأمم المتحدة حق الشعوب في تقرير مصيرها.
+autodétermination | Le peuple choisit l'indépendance par un référendum d'autodétermination. | يختار الشعب الاستقلال في استفتاء تقرير المصير.
+frontière internationale | Une frontière internationale sépare les deux villages. | تفصل حدود دولية بين القريتين.
+délimitation des frontières | Un traité arrête la délimitation des frontières entre les deux voisins. | تضبط معاهدة تعيين الحدود بين الجارين.
+démarcation des frontières | La démarcation des frontières place des bornes dans le désert. | يضع ترسيم الحدود معالم في الصحراء.
+poste frontalier | Le voyageur présente son passeport au poste frontalier. | يقدم المسافر جواز السفر في المركز الحدودي.
+litige frontalier | Les deux États portent leur litige frontalier devant la Cour internationale de Justice. | ترفع الدولتان النزاع الحدودي بينهما إلى محكمة العدل الدولية.
+territoire national | L'armée défend le territoire national. | يدافع الجيش عن الإقليم الوطني.
+espace aérien | Un avion militaire d'un autre pays ne survole pas l'espace aérien sans autorisation. | لا تحلق طائرة عسكرية تابعة لبلد آخر في المجال الجوي دون ترخيص.
+mer territoriale | Le navire de pêche espagnol quitte la mer territoriale algérienne. | تغادر سفينة الصيد الإسبانية البحر الإقليمي الجزائري.
+eaux intérieures | Le port appartient aux eaux intérieures de l'État. | ينتمي الميناء إلى المياه الداخلية للدولة.
+eaux territoriales | La marine intercepte un bateau de migrants dans les eaux territoriales. | تعترض البحرية قاربا للمهاجرين في المياه الإقليمية.
+zone contiguë | L'administration des douanes contrôle un cargo dans la zone contiguë. | تراقب إدارة الجمارك سفينة شحن في المنطقة المتاخمة.
+zone économique exclusive | L'État riverain décide qui peut pêcher dans la zone économique exclusive. | تقرر الدولة الساحلية من يجوز له الصيد في المنطقة الاقتصادية الخالصة.
+plateau continental | La compagnie cherche du gaz sous le plateau continental. | تبحث الشركة عن الغاز تحت الجرف القاري.
+haute mer | En haute mer, le navire relève en principe du seul État dont il porte le pavillon. | في أعالي البحار، تخضع السفينة مبدئيا للدولة التي ترفع علمها وحدها.
+fonds marins | Les métaux des fonds marins attirent les grandes compagnies minières. | تجذب معادن قاع البحار شركات التعدين الكبرى.
+droit de passage inoffensif | Le pétrolier grec exerce son droit de passage inoffensif le long de la côte. | تمارس ناقلة النفط اليونانية حق المرور البريء على طول الساحل.
+liberté de navigation | La liberté de navigation profite au commerce de tous les pays. | تفيد حرية الملاحة تجارة كل البلدان.
+détroit international | Des milliers de navires traversent chaque année ce détroit international. | تعبر آلاف السفن كل سنة هذا المضيق الدولي.
+piraterie maritime | La piraterie maritime met en danger les cargos au large de la Somalie. | تعرض القرصنة البحرية سفن الشحن للخطر قبالة سواحل الصومال.
+droit de poursuite en mer | La marine exerce son droit de poursuite en mer contre le chalutier en fuite. | تمارس البحرية حق المطاردة الحثيثة ضد سفينة الصيد الهاربة.
+espace extra-atmosphérique | Aucun État ne peut s'approprier l'espace extra-atmosphérique. | لا يجوز لأي دولة تملك الفضاء الخارجي.
+patrimoine commun de l'humanité | La Lune appartient au patrimoine commun de l'humanité. | ينتمي القمر إلى التراث المشترك للإنسانية.
+compétence universelle | Le juge espagnol poursuit le tortionnaire au nom de la compétence universelle. | يتابع القاضي الإسباني الجلاد باسم الاختصاص العالمي.
+immunité de juridiction | L'ambassadeur oppose son immunité de juridiction au tribunal. | يحتج السفير بالحصانة القضائية أمام المحكمة.
+immunité d'exécution | L'immunité d'exécution empêche la saisie des comptes de l'ambassade. | تمنع الحصانة من التنفيذ حجز حسابات السفارة.
+immunité de l'État | Le tribunal écarte la demande contre un autre pays à cause de l'immunité de l'État. | تستبعد المحكمة الطلب ضد بلد آخر بسبب حصانة الدولة.
+protection diplomatique | Le pêcheur retenu à l'étranger sollicite la protection diplomatique de son pays. | يلتمس الصياد المحتجز في الخارج الحماية الدبلوماسية من بلده.
+épuisement des voies de recours internes | Le Comité exige l'épuisement des voies de recours internes avant d'examiner la plainte. | تشترط اللجنة استنفاد طرق الطعن الداخلية قبل دراسة الشكوى.
+responsabilité internationale de l'État | Le bombardement d'un hôpital engage la responsabilité internationale de l'État. | يرتب قصف مستشفى المسؤولية الدولية للدولة.
+fait internationalement illicite | La violation d'un traité est un fait internationalement illicite. | انتهاك معاهدة فعل غير مشروع دوليا.
+contre-mesures | L'État lésé prend des contre-mesures proportionnées au dommage. | تتخذ الدولة المتضررة تدابير مضادة متناسبة مع الضرر.
+représailles | Le droit humanitaire prohibe les représailles contre les civils. | يحرم القانون الإنساني الأعمال الانتقامية ضد المدنيين.
+rétorsion | L'expulsion d'un diplomate est une mesure de rétorsion. | طرد دبلوماسي تدبير من تدابير الرد بالمثل.
+sanctions internationales | Les sanctions internationales gèlent les avoirs du régime. | تجمد العقوبات الدولية أموال النظام.
+embargo | L'embargo prive le pays de médicaments. | يحرم الحظر الاقتصادي البلد من الأدوية.
+recours à la force | Le Conseil de sécurité autorise le recours à la force pour défendre la ville. | يأذن مجلس الأمن باستخدام القوة للدفاع عن المدينة.
+interdiction du recours à la force | L'interdiction du recours à la force est au cœur de la Charte des Nations Unies. | حظر استخدام القوة هو أساس ميثاق الأمم المتحدة.
+agression armée | L'État victime d'une agression armée a le droit de se défendre. | للدولة ضحية عدوان مسلح الحق في الدفاع عن نفسها.
+occupation militaire | L'occupation militaire ne donne aucun titre sur le territoire. | لا يمنح الاحتلال العسكري أي سند على الإقليم.
+annexion de territoire | La communauté internationale rejette l'annexion de territoire par la force. | يرفض المجتمع الدولي ضم الإقليم بالقوة.
+maintien de la paix | Le maintien de la paix est la première mission des Nations Unies. | حفظ السلام هو المهمة الأولى للأمم المتحدة.
+opération de maintien de la paix | L'Algérie envoie des officiers dans une opération de maintien de la paix. | ترسل الجزائر ضباطا للمشاركة في عملية حفظ السلام.
+sécurité collective | La sécurité collective repose sur la solidarité des États. | يقوم الأمن الجماعي على تضامن الدول.
+désarmement | La conférence sur le désarmement se tient à Genève. | ينعقد المؤتمر حول نزع السلاح في جنيف.
+non-prolifération des armes nucléaires | Le traité sur la non-prolifération des armes nucléaires prévoit des inspections. | تنص المعاهدة حول عدم انتشار الأسلحة النووية على عمليات تفتيش.
+neutralité permanente | La Suisse est connue pour sa neutralité permanente. | تعرف سويسرا بالحياد الدائم.
+Assemblée générale des Nations Unies | L'Assemblée générale des Nations Unies se réunit chaque année en septembre. | تجتمع الجمعية العامة للأمم المتحدة كل سنة في شهر سبتمبر.
+Secrétaire général des Nations Unies | Le Secrétaire général des Nations Unies appelle les deux armées au cessez-le-feu. | يدعو الأمين العام للأمم المتحدة الجيشين إلى وقف إطلاق النار.
+Conseil économique et social | Le Conseil économique et social examine le rapport sur la pauvreté. | يدرس المجلس الاقتصادي والاجتماعي التقرير حول الفقر.
+institution spécialisée | L'Organisation mondiale de la santé est une institution spécialisée des Nations Unies. | منظمة الصحة العالمية وكالة متخصصة تابعة للأمم المتحدة.
+résolution du Conseil de sécurité | La résolution du Conseil de sécurité exige un cessez-le-feu immédiat. | يطالب قرار مجلس الأمن بوقف إطلاق النار الفوري.
+recommandation | La recommandation de l'Assemblée n'oblige pas les États. | لا تلزم توصية الجمعية الدول.
+droit de veto | Un seul membre permanent bloque le texte par son droit de veto. | يعطل عضو دائم واحد النص بحق النقض.
+membre permanent | La Chine est membre permanent du Conseil de sécurité. | الصين عضو دائم في مجلس الأمن.
+État membre | Chaque État membre verse une contribution au budget de l'organisation. | تدفع كل دولة عضو مساهمة في ميزانية المنظمة.
+État observateur | La Palestine siège comme État observateur aux Nations Unies. | تشارك فلسطين بصفة دولة مراقبة في الأمم المتحدة.
+Union africaine | L'Union africaine a son siège à Addis-Abeba. | يوجد مقر الاتحاد الإفريقي في أديس أبابا.
+Ligue des États arabes | La Ligue des États arabes tient son sommet à Alger. | تعقد جامعة الدول العربية قمتها في الجزائر العاصمة.
+Union du Maghreb arabe | L'Union du Maghreb arabe réunit cinq pays d'Afrique du Nord. | يجمع اتحاد المغرب العربي خمسة بلدان من شمال إفريقيا.
+Organisation de la coopération islamique | L'Organisation de la coopération islamique a son siège à Djeddah. | يوجد مقر منظمة التعاون الإسلامي في جدة.
+Organisation mondiale du commerce | L'Algérie négocie son entrée à l'Organisation mondiale du commerce. | تتفاوض الجزائر حول دخولها إلى المنظمة العالمية للتجارة.
+Organisation internationale du travail | L'Organisation internationale du travail adopte une convention sur le travail des enfants. | تعتمد منظمة العمل الدولية اتفاقية حول عمل الأطفال.
+Organisation mondiale de la santé | L'Organisation mondiale de la santé déclare la fin de l'épidémie. | تعلن منظمة الصحة العالمية نهاية الوباء.
+Fonds monétaire international | Le Fonds monétaire international accorde un prêt au pays en crise. | يمنح صندوق النقد الدولي قرضا للبلد الذي يمر بأزمة.
+Banque mondiale | La Banque mondiale finance la construction d'un barrage. | يمول البنك العالمي بناء سد.
+Cour pénale internationale | La Cour pénale internationale délivre un mandat d'arrêt contre le chef de guerre. | تصدر المحكمة الجنائية الدولية أمرا بالقبض ضد قائد الحرب.
+Cour africaine des droits de l'homme et des peuples | La Cour africaine des droits de l'homme et des peuples est installée à Arusha, en Tanzanie. | يوجد مقر المحكمة الإفريقية لحقوق الإنسان والشعوب في أروشا بتنزانيا.
+Tribunal international du droit de la mer | Le Tribunal international du droit de la mer ordonne la libération du navire retenu. | تأمر المحكمة الدولية لقانون البحار بالإفراج عن السفينة المحتجزة.
+fonctionnaire international | Le fonctionnaire international travaille pour l'organisation, non pour son pays. | يعمل الموظف الدولي لصالح المنظمة لا لصالح بلده.
+personnalité juridique internationale | L'organisation jouit de la personnalité juridique internationale et signe des accords. | تتمتع المنظمة بالشخصية القانونية الدولية وتوقع اتفاقات.
+différend international | Les deux pays confient leur différend international à un arbitre. | يعهد البلدان بالنزاع الدولي القائم بينهما إلى محكم.
+règlement pacifique des différends | La Charte des Nations Unies impose le règlement pacifique des différends. | يفرض ميثاق الأمم المتحدة التسوية السلمية للنزاعات.
+bons offices | Les bons offices de l'Algérie mettent fin à la crise entre les deux voisins. | تنهي المساعي الحميدة للجزائر الأزمة بين الجارين.
+négociation diplomatique | La négociation diplomatique évite la guerre entre les deux voisins. | يجنب التفاوض الدبلوماسي الجارين الحرب.
+enquête internationale | Une enquête internationale établit les faits après l'attaque du village. | يثبت تحقيق دولي الوقائع بعد الهجوم على القرية.
+conciliation internationale | La conciliation internationale propose une solution que les États restent libres de refuser. | يقترح التوفيق الدولي حلا تبقى الدول حرة في رفضه.
+arbitrage international | Les deux États règlent leur litige frontalier par un arbitrage international. | تسوي الدولتان النزاع الحدودي بينهما عن طريق تحكيم دولي.
+clause facultative de juridiction obligatoire | Par la clause facultative de juridiction obligatoire, l'État accepte d'avance le juge international. | بموجب الشرط الاختياري للولاية الإجبارية، تقبل الدولة مسبقا القاضي الدولي.
+avis consultatif | La Cour internationale de Justice rend un avis consultatif sur la construction du mur. | تصدر محكمة العدل الدولية رأيا استشاريا حول بناء الجدار.
+arrêt de la Cour internationale de Justice | L'arrêt de la Cour internationale de Justice fixe la frontière entre les deux pays. | يحدد حكم محكمة العدل الدولية الحدود بين البلدين.
+relations diplomatiques | Les deux pays établissent des relations diplomatiques après l'indépendance. | يقيم البلدان علاقات دبلوماسية بعد الاستقلال.
+relations consulaires | Les relations consulaires facilitent la vie des citoyens installés à l'étranger. | تسهل العلاقات القنصلية حياة المواطنين المقيمين في الخارج.
+mission diplomatique | La mission diplomatique compte dix personnes. | تضم البعثة الدبلوماسية عشرة أشخاص.
+chef de mission | Le chef de mission reçoit les journalistes à l'ambassade. | يستقبل رئيس البعثة الصحفيين في السفارة.
+chef de mission diplomatique | Le chef de mission diplomatique remet un message au ministre. | يسلم رئيس البعثة الدبلوماسية رسالة إلى الوزير.
+agent diplomatique | La police du pays d'accueil ne peut pas retenir l'agent diplomatique. | لا يمكن لشرطة بلد الاستقبال احتجاز المبعوث الدبلوماسي.
+corps diplomatique | Le président de la République reçoit le corps diplomatique pour le nouvel an. | يستقبل رئيس الجمهورية السلك الدبلوماسي بمناسبة السنة الجديدة.
+chargé d'affaires | Le chargé d'affaires dirige l'ambassade pendant l'absence de l'ambassadeur. | يسير القائم بالأعمال السفارة أثناء غياب السفير.
+consul | Le consul rend visite à un citoyen en prison. | يزور القنصل مواطنا في السجن.
+consul général | Le consul général d'Algérie à Marseille signe les passeports. | يوقع القنصل العام للجزائر في مرسيليا جوازات السفر.
+consul honoraire | Un commerçant de la ville sert de consul honoraire. | يقوم تاجر من المدينة بمهام قنصل فخري.
+attaché culturel | L'attaché culturel organise une semaine du film algérien. | ينظم الملحق الثقافي أسبوعا للفيلم الجزائري.
+attaché militaire | L'attaché militaire assiste au défilé de l'armée. | يحضر الملحق العسكري استعراض الجيش.
+lettres de créance | Le nouvel ambassadeur remet ses lettres de créance au président de la République. | يسلم السفير الجديد أوراق الاعتماد إلى رئيس الجمهورية.
+État accréditant | L'État accréditant rappelle son ambassadeur pendant la crise. | تستدعي الدولة المعتمدة سفيرها أثناء الأزمة.
+État accréditaire | L'État accréditaire protège les bâtiments de l'ambassade. | تحمي الدولة المعتمد لديها مباني السفارة.
+persona non grata | Le pays d'accueil déclare le diplomate persona non grata et lui donne deux jours pour partir. | يعلن بلد الاستقبال الدبلوماسي شخصا غير مرغوب فيه ويمنحه يومين للمغادرة.
+rupture des relations diplomatiques | La rupture des relations diplomatiques entraîne la fermeture des deux ambassades. | يترتب على قطع العلاقات الدبلوماسية غلق السفارتين.
+locaux de la mission | Les locaux de la mission comprennent aussi la maison de l'ambassadeur. | يشمل مقر البعثة أيضا بيت السفير.
+inviolabilité des locaux diplomatiques | L'inviolabilité des locaux diplomatiques ne permet pas à la police d'entrer dans l'ambassade. | لا تسمح حرمة المقرات الدبلوماسية للشرطة بدخول السفارة.
+valise diplomatique | Les agents de l'aéroport n'ouvrent pas la valise diplomatique. | لا يفتح أعوان المطار الحقيبة الدبلوماسية.
+privilèges et immunités | La convention de Vienne énumère les privilèges et immunités des diplomates. | تعدد اتفاقية فيينا امتيازات وحصانات الدبلوماسيين.
+immunité consulaire | L'immunité consulaire ne joue pas pour les achats personnels du consul. | لا تسري الحصانة القنصلية على المشتريات الشخصية للقنصل.
+fonctions consulaires | La délivrance des passeports compte parmi les fonctions consulaires. | يعد تسليم جوازات السفر من المهام القنصلية.
+protection consulaire | Le touriste victime d'un accident sollicite la protection consulaire de son pays. | يلتمس السائح ضحية حادث الحماية القنصلية من بلده.
+immatriculation consulaire | L'immatriculation consulaire permet au citoyen d'obtenir un passeport à l'étranger. | يسمح التسجيل القنصلي للمواطن بالحصول على جواز السفر في الخارج.
+légalisation consulaire | L'université exige la légalisation consulaire du diplôme obtenu dans un autre pays. | تشترط الجامعة التصديق القنصلي على الشهادة المحصل عليها في بلد آخر.
+passeport diplomatique | Le ministre voyage avec un passeport diplomatique. | يسافر الوزير بجواز سفر دبلوماسي.
+note verbale | L'ambassade adresse une note verbale au ministère. | توجه السفارة مذكرة شفوية إلى الوزارة.
+asile diplomatique | L'opposant obtient l'asile diplomatique dans une ambassade. | يحصل المعارض على اللجوء الدبلوماسي في سفارة.
+asile politique | Le journaliste en danger sollicite l'asile politique. | يلتمس الصحفي المعرض للخطر اللجوء السياسي.
+droit d'asile | Le droit d'asile protège la personne persécutée pour ses idées. | يحمي حق اللجوء السياسي الشخص المضطهد بسبب أفكاره.
+conférence internationale | Alger accueille une conférence internationale sur l'eau. | تحتضن الجزائر العاصمة مؤتمرا دوليا حول الماء.
+représentation permanente | La représentation permanente de l'Algérie à New York suit les débats des Nations Unies. | تتابع الممثلية الدائمة للجزائر في نيويورك مناقشات الأمم المتحدة.
+État d'envoi | L'État d'envoi nomme le consul. | تعين الدولة الموفدة القنصل.
+État de résidence | Le consul respecte les lois de l'État de résidence. | يحترم القنصل قوانين دولة الإقامة.
+conflit armé international | La guerre entre les deux pays est un conflit armé international. | الحرب بين البلدين نزاع مسلح دولي.
+conflit armé non international | Les combats entre l'armée et les rebelles forment un conflit armé non international. | تشكل المعارك بين الجيش والمتمردين نزاعا مسلحا غير دولي.
+lois et coutumes de la guerre | Le soldat apprend les lois et coutumes de la guerre pendant sa formation. | يتعلم الجندي قوانين الحرب وأعرافها أثناء تكوينه.
+belligérant | Chaque belligérant laisse passer les secours. | يترك كل طرف محارب الإغاثة تمر.
+combattant | Le combattant qui se rend ne peut plus être attaqué. | لا يجوز الهجوم على المقاتل الذي يستسلم.
+population civile | La population civile quitte la ville avant les combats. | يغادر السكان المدنيون المدينة قبل المعارك.
+personne protégée | Le médecin militaire est une personne protégée. | الطبيب العسكري شخص محمي.
+prisonnier de guerre | Le prisonnier de guerre écrit à sa famille par la Croix-Rouge. | يكتب أسير الحرب إلى أسرته عن طريق الصليب الأحمر.
+blessés et malades | Le médecin soigne des blessés et malades des deux camps. | يعالج الطبيب جرحى ومرضى من المعسكرين.
+personnel sanitaire | Le personnel sanitaire porte un brassard blanc à croix rouge. | يحمل أفراد الخدمات الطبية شارة بيضاء عليها صليب أحمر.
+bien de caractère civil | L'école du village est un bien de caractère civil que l'armée doit épargner. | مدرسة القرية عين مدنية على الجيش أن يتجنب إصابتها.
+objectif militaire | La caserne est un objectif militaire. | الثكنة هدف عسكري.
+principe de distinction | Le principe de distinction ne permet pas de tirer sur un marché. | لا يسمح مبدأ التمييز بإطلاق النار على سوق.
+principe de proportionnalité | Le principe de proportionnalité ne permet pas de raser un quartier pour toucher un seul soldat. | لا يسمح مبدأ التناسب بتسوية حي كامل بالأرض لإصابة جندي واحد.
+nécessité militaire | La nécessité militaire ne justifie jamais la torture. | لا تبرر الضرورة العسكرية التعذيب أبدا.
+attaque indiscriminée | Le bombardement d'une ville entière est une attaque indiscriminée. | قصف مدينة كاملة هجوم عشوائي.
+arme prohibée | Le gaz toxique est une arme prohibée. | الغاز السام سلاح محظور.
+armes de destruction massive | Les inspecteurs cherchent des armes de destruction massive dans l'usine. | يبحث المفتشون عن أسلحة الدمار الشامل في المصنع.
+mines antipersonnel | Les mines antipersonnel blessent des paysans longtemps après la guerre. | تصيب الألغام المضادة للأفراد فلاحين بعد الحرب بزمن طويل.
+puissance occupante | La puissance occupante assure la nourriture des habitants. | تضمن الدولة القائمة بالاحتلال غذاء السكان.
+territoire occupé | Les habitants du territoire occupé gardent leurs maisons. | يحتفظ سكان الإقليم المحتل ببيوتهم.
+puissance protectrice | La puissance protectrice visite les camps de prisonniers. | تزور الدولة الحامية معسكرات الأسرى.
+Comité international de la Croix-Rouge | Le Comité international de la Croix-Rouge visite les prisonniers de guerre. | تزور اللجنة الدولية للصليب الأحمر أسرى الحرب.
+emblème protecteur | L'ambulance porte l'emblème protecteur du croissant rouge. | تحمل سيارة الإسعاف الشارة الحامية للهلال الأحمر.
+infractions graves aux Conventions de Genève | La torture des prisonniers figure parmi les infractions graves aux Conventions de Genève. | يعد تعذيب الأسرى من المخالفات الجسيمة لاتفاقيات جنيف.
+crime d'agression | Le crime d'agression vise le dirigeant qui ordonne l'invasion. | تخص جريمة العدوان القائد الذي يأمر بالغزو.
+nettoyage ethnique | Le nettoyage ethnique vide la région de ses habitants. | يفرغ التطهير العرقي المنطقة من سكانها.
+déportation | La déportation des habitants est un crime contre l'humanité. | الترحيل القسري للسكان جريمة ضد الإنسانية.
+transfert forcé de population | Le transfert forcé de population vide les villages de la frontière. | يفرغ النقل القسري للسكان قرى الحدود.
+disparition forcée | La mère d'une victime de disparition forcée cherche son fils depuis vingt ans. | تبحث أم ضحية اختفاء قسري عن ابنها منذ عشرين سنة.
+exécution extrajudiciaire | Le rapport dénonce une exécution extrajudiciaire commise par la police. | يندد التقرير بإعدام خارج نطاق القضاء ارتكبته الشرطة.
+enfant soldat | L'ancien enfant soldat retourne à l'école. | يعود الطفل الجندي السابق إلى المدرسة.
+mercenaire | Le mercenaire se bat pour de l'argent, non pour son pays. | يقاتل المرتزق من أجل المال لا من أجل بلده.
+imprescriptibilité des crimes de guerre | Grâce à l'imprescriptibilité des crimes de guerre, le procès a lieu quarante ans après les faits. | بفضل عدم تقادم جرائم الحرب، تجري المحاكمة بعد أربعين سنة من الوقائع.
+justice transitionnelle | La justice transitionnelle aide le pays à tourner la page de la dictature. | تساعد العدالة الانتقالية البلد على طي صفحة الدكتاتورية.
+commission de vérité | La commission de vérité entend les victimes devant les caméras. | تستمع لجنة الحقيقة إلى الضحايا أمام الكاميرات.
+cessez-le-feu | Le cessez-le-feu commence à minuit. | يبدأ وقف إطلاق النار عند منتصف الليل.
+armistice | Les deux armées signent un armistice. | يوقع الجيشان هدنة.
+traité de paix | Le traité de paix met fin à dix ans de guerre. | تنهي معاهدة السلام عشر سنوات من الحرب.
+demandeur d'asile | Le demandeur d'asile attend la réponse depuis six mois. | ينتظر طالب اللجوء الرد منذ ستة أشهر.
+statut de réfugié | La famille syrienne obtient le statut de réfugié. | تحصل الأسرة السورية على صفة اللاجئ.
+principe de non-refoulement | Le principe de non-refoulement protège le réfugié contre un retour forcé vers le danger. | يحمي مبدأ عدم الإعادة القسرية اللاجئ من عودة قسرية نحو الخطر.
+déplacé interne | Le déplacé interne vit dans un camp loin de son village. | يعيش النازح الداخلي في مخيم بعيدا عن قريته.
+apatridie | L'apatridie laisse la personne sans la protection d'aucun pays. | يترك انعدام الجنسية الشخص دون حماية أي بلد.
+rapatriement volontaire | Le rapatriement volontaire commence après le retour de la paix. | تبدأ العودة الطوعية إلى الوطن بعد رجوع السلام.
+Haut-Commissariat des Nations Unies pour les réfugiés | Le Haut-Commissariat des Nations Unies pour les réfugiés installe des tentes à la frontière. | تنصب مفوضية الأمم المتحدة السامية لشؤون اللاجئين خياما على الحدود.
+droits civils et politiques | Le pacte international garantit des droits civils et politiques à chaque personne. | يضمن العهد الدولي حقوقا مدنية وسياسية لكل شخص.
+droits économiques, sociaux et culturels | La Constitution reconnaît des droits économiques, sociaux et culturels, comme le droit à l'éducation. | يعترف الدستور بحقوق اقتصادية واجتماعية وثقافية، مثل الحق في التعليم.
+droit à la vie | La peine de mort pose la question du droit à la vie. | تطرح عقوبة الإعدام مسألة الحق في الحياة.
+droit à la liberté et à la sûreté | Enfermer une personne sans décision du juge viole le droit à la liberté et à la sûreté. | ينتهك حبس شخص دون قرار القاضي الحق في الحرية والأمان.
+droit à un procès équitable | L'accusé sans avocat invoque son droit à un procès équitable. | يتمسك المتهم الذي لا محامي له بالحق في محاكمة عادلة.
+droit à un recours effectif | Sans juge pour l'écouter, la victime perd son droit à un recours effectif. | بدون قاض يستمع إليها، تفقد الضحية الحق في سبيل انتصاف فعال.
+respect de la vie privée | Le respect de la vie privée s'impose aussi aux journalistes. | يفرض احترام الحياة الخاصة على الصحفيين أيضا.
+droit à l'éducation | Le droit à l'éducation ouvre l'école à tous les enfants du pays. | يفتح الحق في التعليم المدرسة أمام كل أولاد البلد.
+droit à la santé | Le droit à la santé suppose un hôpital à une distance raisonnable. | يفترض الحق في الصحة وجود مستشفى على مسافة معقولة.
+droit au travail | La Constitution proclame le droit au travail. | يعلن الدستور الحق في العمل.
+droit au logement | La famille sans toit invoque le droit au logement. | تتمسك الأسرة التي لا مأوى لها بالحق في السكن.
+droit à un environnement sain | Les habitants du quartier défendent leur droit à un environnement sain contre l'usine. | يدافع سكان الحي عن الحق في بيئة سليمة ضد المصنع.
+droit de pétition | Les habitants exercent leur droit de pétition auprès de l'assemblée populaire de wilaya. | يمارس السكان حق تقديم العرائض لدى المجلس الشعبي الولائي.
+liberté de réunion | La liberté de réunion permet aux habitants de débattre dans une salle. | تسمح حرية الاجتماع للسكان بالنقاش في قاعة.
+liberté d'association | La liberté d'association permet aux jeunes du quartier de fonder un club sportif. | تسمح حرية إنشاء الجمعيات لشباب الحي بتأسيس ناد رياضي.
+liberté de manifestation pacifique | Les étudiants défilent au nom de la liberté de manifestation pacifique. | يسير الطلبة في الشارع باسم حرية التظاهر السلمي.
+liberté de conscience | La liberté de conscience laisse chacun libre de ses convictions. | تترك حرية المعتقد كل شخص حرا في قناعاته.
+liberté de culte | La liberté de culte permet aux fidèles de prier ensemble. | تسمح حرية ممارسة العبادات للمؤمنين بالصلاة جماعة.
+liberté d'opinion | La liberté d'opinion protège celui qui critique le gouvernement. | تحمي حرية الرأي من ينتقد الحكومة.
+liberté de la presse | La liberté de la presse permet au journal de révéler un scandale. | تسمح حرية الصحافة للجريدة بكشف فضيحة.
+droit d'accès à l'information | Le citoyen invoque son droit d'accès à l'information pour lire le budget de la commune. | يتمسك المواطن بحق الحصول على المعلومات للاطلاع على ميزانية البلدية.
+liberté individuelle | Le juge veille sur la liberté individuelle. | يسهر القاضي على الحرية الفردية.
+libertés publiques | L'état d'urgence limite les libertés publiques. | تحد حالة الطوارئ من الحريات العامة.
+inviolabilité du domicile | L'inviolabilité du domicile oblige la police à présenter un mandat de perquisition. | تلزم حرمة المسكن الشرطة بتقديم إذن بالتفتيش.
+secret des correspondances | Le secret des correspondances protège aussi les messages du téléphone. | تحمي سرية المراسلات رسائل الهاتف أيضا.
+esclavage | L'esclavage traite l'être humain comme une marchandise. | يعامل الاسترقاق الإنسان معاملة البضاعة.
+interdiction de l'esclavage | L'interdiction de l'esclavage vaut en temps de paix comme en temps de guerre. | يسري حظر الرق في زمن السلم كما في زمن الحرب.
+traitements cruels, inhumains ou dégradants | Le prisonnier laissé sans soins subit des traitements cruels, inhumains ou dégradants. | يتعرض السجين المتروك دون علاج لمعاملة قاسية أو لاإنسانية أو مهينة.
+détention arbitraire | L'opposant enfermé sans jugement est victime d'une détention arbitraire. | المعارض المحبوس دون حكم ضحية اعتقال تعسفي.
+égalité des sexes | L'égalité des sexes impose le même salaire pour le même travail. | تفرض المساواة بين الجنسين الأجر نفسه عن العمل نفسه.
+discrimination à l'égard des femmes | Refuser un poste à une ingénieure parce qu'elle est enceinte est une discrimination à l'égard des femmes. | رفض منح منصب لمهندسة بسبب حملها تمييز ضد المرأة.
+droits de l'enfant | Les droits de l'enfant comprennent le droit de jouer. | تشمل حقوق الطفل الحق في اللعب.
+droits de la femme | L'association défend les droits de la femme dans les campagnes. | تدافع الجمعية عن حقوق المرأة في الأرياف.
+droits des personnes handicapées | Une rampe à l'entrée de la mairie respecte les droits des personnes handicapées. | يحترم منحدر عند مدخل البلدية حقوق الأشخاص ذوي الإعاقة.
+droits des minorités | Les droits des minorités protègent la langue de chaque groupe. | تحمي حقوق الأقليات لغة كل مجموعة.
+minorité nationale | Une minorité nationale conserve ses écoles et sa langue. | تحتفظ أقلية قومية بمدارسها ولغتها.
+peuples autochtones | Les peuples autochtones d'Amazonie défendent leur forêt. | تدافع الشعوب الأصلية في الأمازون عن غابتها.
+défenseur des droits de l'homme | Le défenseur des droits de l'homme visite les prisons. | يزور المدافع عن حقوق الإنسان السجون.
+violation des droits de l'homme | Le rapport signale une violation des droits de l'homme dans le camp. | يسجل التقرير انتهاك حقوق الإنسان في المخيم.
+universalité des droits de l'homme | L'universalité des droits de l'homme vaut pour toutes les cultures. | تسري عالمية حقوق الإنسان على كل الثقافات.
+restriction des droits | La restriction des droits reste limitée à la durée de l'état d'urgence. | يبقى تقييد الحقوق محصورا في مدة حالة الطوارئ.
+Conseil des droits de l'homme | Le Conseil des droits de l'homme se réunit à Genève. | يجتمع مجلس حقوق الإنسان في جنيف.
+Haut-Commissariat aux droits de l'homme | Le Haut-Commissariat aux droits de l'homme envoie des observateurs dans la région. | ترسل المفوضية السامية لحقوق الإنسان مراقبين إلى المنطقة.
+Comité des droits de l'homme | Le Comité des droits de l'homme examine le rapport de l'Algérie. | تدرس اللجنة المعنية بحقوق الإنسان تقرير الجزائر.
+examen périodique universel | L'examen périodique universel passe en revue chaque pays tous les quatre à cinq ans. | يتناول الاستعراض الدوري الشامل وضع كل بلد كل أربع إلى خمس سنوات.
+rapporteur spécial | Le rapporteur spécial sur la torture remet son rapport aux Nations Unies. | يقدم المقرر الخاص المعني بالتعذيب تقريره إلى الأمم المتحدة.
+communication individuelle | Le prisonnier adresse une communication individuelle au comité de Genève. | يوجه السجين بلاغا فرديا إلى لجنة جنيف.
+Charte africaine des droits de l'homme et des peuples | L'Algérie a ratifié la Charte africaine des droits de l'homme et des peuples. | صادقت الجزائر على الميثاق الإفريقي لحقوق الإنسان والشعوب.
+Charte arabe des droits de l'homme | La Charte arabe des droits de l'homme date de 2004. | يعود الميثاق العربي لحقوق الإنسان إلى سنة 2004.
+Convention relative aux droits de l'enfant | La Convention relative aux droits de l'enfant protège toute personne de moins de dix-huit ans. | تحمي اتفاقية حقوق الطفل كل شخص يقل عمره عن ثماني عشرة سنة.
+règle de conflit | La règle de conflit indique au juge la loi qui gouverne le mariage. | تبين قاعدة الإسناد للقاضي القانون الذي يحكم الزواج.
+facteur de rattachement | Pour le divorce, la nationalité du mari est le facteur de rattachement. | في الطلاق، جنسية الزوج هي ضابط الإسناد.
+loi du for | La loi du for gouverne la procédure. | يحكم قانون القاضي الإجراءات.
+loi personnelle | La capacité de l'étudiant tunisien dépend de sa loi personnelle. | تخضع أهلية الطالب التونسي للقانون الشخصي.
+loi du domicile | Le juge applique la loi du domicile à la personne sans nationalité. | يطبق القاضي قانون الموطن على الشخص عديم الجنسية.
+loi du lieu de situation du bien | La vente d'une villa à Oran suit la loi du lieu de situation du bien. | يخضع بيع فيلا في وهران لقانون موقع المال.
+loi du lieu de conclusion | La forme du contrat passé à Rome suit la loi du lieu de conclusion. | يخضع شكل العقد المبرم في روما لقانون محل الإبرام.
+loi d'autonomie | Les deux sociétés choisissent le droit suisse comme loi d'autonomie. | تختار الشركتان القانون السويسري بوصفه قانون الإرادة.
+lois de police | Le juge applique les lois de police de son pays malgré le choix des parties. | يطبق القاضي القواعد ذات التطبيق الضروري في بلده رغم اختيار الأطراف.
+statut personnel | Le mariage et la filiation relèvent du statut personnel. | يندرج الزواج والنسب ضمن الأحوال الشخصية.
+statut réel | La propriété d'une maison relève du statut réel. | تندرج ملكية بيت ضمن الأحوال العينية.
+ordre public international | Le juge écarte la loi étrangère contraire à l'ordre public international. | يستبعد القاضي القانون الأجنبي المخالف للنظام العام الدولي.
+fraude à la loi | L'époux qui change de nationalité pour obtenir un divorce rapide commet une fraude à la loi. | يرتكب الزوج الذي يغير جنسيته للحصول على طلاق سريع غشا نحو القانون.
+conflit de juridictions | Un accident survenu à l'étranger soulève un conflit de juridictions. | يثير حادث وقع في الخارج تنازع الاختصاص القضائي الدولي.
+compétence internationale | Le tribunal d'Alger vérifie sa compétence internationale avant d'examiner le divorce. | تتحقق محكمة الجزائر من الاختصاص القضائي الدولي قبل دراسة الطلاق.
+reconnaissance des jugements étrangers | La convention entre les deux pays facilite la reconnaissance des jugements étrangers. | تسهل الاتفاقية بين البلدين الاعتراف بالأحكام الأجنبية.
+exécution des jugements étrangers | L'exécution des jugements étrangers passe par l'exequatur. | يمر تنفيذ الأحكام الأجنبية عبر الأمر بالتنفيذ.
+acte authentique étranger | Le testament reçu par un notaire à Madrid est un acte authentique étranger. | الوصية التي حررها موثق في مدريد سند رسمي أجنبي.
+condition des étrangers | La loi sur la condition des étrangers organise leur entrée dans le pays. | ينظم القانون المتعلق بمركز الأجانب دخولهم إلى البلد.
+double nationalité | La double nationalité permet au joueur de choisir entre deux équipes nationales. | يسمح ازدواج الجنسية للاعب بالاختيار بين منتخبين وطنيين.
+conflit de nationalités | Le juge tranche le conflit de nationalités en retenant la nationalité algérienne. | يفصل القاضي في تنازع الجنسيات بالأخذ بالجنسية الجزائرية.
+élément d'extranéité | Le domicile du vendeur à Tunis donne au contrat un élément d'extranéité. | يضفي موطن البائع في تونس على العقد عنصرا أجنبيا.
+contrat international | Les parties à un contrat international choisissent la loi qui le gouverne. | يختار أطراف عقد دولي القانون الذي يحكمه.
+commission rogatoire internationale | Le juge d'instruction envoie une commission rogatoire internationale en Italie. | يرسل قاضي التحقيق إنابة قضائية دولية إلى إيطاليا.
+entraide judiciaire internationale | Grâce à l'entraide judiciaire internationale, le juge reçoit le témoignage d'une personne établie à l'étranger. | بفضل التعاون القضائي الدولي، يتلقى القاضي شهادة شخص مقيم في الخارج.
+notification à l'étranger | La notification à l'étranger allonge le délai de la procédure. | يطيل التبليغ في الخارج أجل الإجراءات.
+légalisation des actes | La légalisation des actes permet de les présenter dans un autre pays. | يسمح التصديق على الوثائق بتقديمها في بلد آخر.
+preuve de la loi étrangère | La preuve de la loi étrangère passe parfois par la consultation d'un spécialiste. | يمر إثبات القانون الأجنبي أحيانا عبر استشارة مختص.
+application de la loi étrangère | L'application de la loi étrangère cesse devant l'ordre public. | يتوقف تطبيق القانون الأجنبي أمام النظام العام.
+modes alternatifs de règlement des litiges | Les modes alternatifs de règlement des litiges évitent un long procès. | تجنب الطرق البديلة لحل النزاعات محاكمة طويلة.
+arbitrage commercial international | Le contrat de vente de gaz prévoit un arbitrage commercial international à Genève. | ينص عقد بيع الغاز على تحكيم تجاري دولي في جنيف.
+arbitrage interne | Deux sociétés algériennes règlent leur litige par un arbitrage interne. | تسوي شركتان جزائريتان النزاع بينهما عن طريق تحكيم داخلي.
+arbitrage institutionnel | L'arbitrage institutionnel suit les règles du centre choisi. | يتبع التحكيم المؤسسي قواعد المركز المختار.
+arbitrage ad hoc | Dans un arbitrage ad hoc, les parties organisent elles-mêmes la procédure. | في تحكيم حر، ينظم الأطراف الإجراءات بأنفسهم.
+centre d'arbitrage | Le centre d'arbitrage d'Alger propose une liste d'arbitres. | يقترح مركز التحكيم بالجزائر قائمة محكمين.
+règlement d'arbitrage | Le règlement d'arbitrage fixe le délai de la réponse. | يحدد نظام التحكيم أجل الرد.
+compromis d'arbitrage | Après l'accident, les deux sociétés signent un compromis d'arbitrage. | بعد الحادث، توقع الشركتان اتفاق التحكيم.
+arbitrabilité | L'arbitrabilité manque quand le litige porte sur la filiation. | تنتفي قابلية النزاع للتحكيم عندما يتعلق الأمر بالنسب.
+constitution du tribunal arbitral | La constitution du tribunal arbitral prend un mois. | يستغرق تشكيل محكمة التحكيم شهرا.
+désignation de l'arbitre | Chaque partie procède à la désignation de l'arbitre de son choix. | يقوم كل طرف بتعيين المحكم الذي يختاره.
+arbitre unique | Un arbitre unique suffit pour un petit litige. | يكفي محكم فرد في نزاع صغير.
+président du tribunal arbitral | Le président du tribunal arbitral dirige l'audience. | يسير رئيس محكمة التحكيم الجلسة.
+récusation de l'arbitre | La société sollicite la récusation de l'arbitre qui a travaillé pour son adversaire. | تلتمس الشركة رد المحكم الذي عمل لدى خصمها.
+acte de mission | Les arbitres et les parties signent l'acte de mission au début de la procédure. | يوقع المحكمون والأطراف وثيقة المهمة في بداية الإجراءات.
+siège de l'arbitrage | Les parties placent le siège de l'arbitrage à Tunis. | يجعل الأطراف مقر التحكيم في تونس.
+langue de l'arbitrage | Le contrat retient le français comme langue de l'arbitrage. | يعتمد العقد الفرنسية بوصفها لغة التحكيم.
+procédure arbitrale | La procédure arbitrale dure moins longtemps qu'un procès. | تدوم إجراءات التحكيم أقل من المحاكمة.
+amiable compositeur | L'amiable compositeur tranche le litige selon l'équité. | يفصل المحكم المفوض بالصلح في النزاع حسب قواعد الإنصاف.
+sentence partielle | Une sentence partielle tranche d'abord la question de la compétence. | يفصل حكم تحكيمي جزئي أولا في مسألة الاختصاص.
+sentence définitive | La sentence définitive condamne le vendeur à payer un million de dinars. | يلزم الحكم التحكيمي النهائي البائع بدفع مليون دينار.
+recours en annulation de la sentence | La société perdante forme un recours en annulation de la sentence. | ترفع الشركة الخاسرة طعنا ببطلان حكم التحكيم.
+reconnaissance de la sentence arbitrale | Le juge accorde la reconnaissance de la sentence arbitrale rendue à Londres. | يمنح القاضي الاعتراف بحكم التحكيم الصادر في لندن.
+exécution de la sentence arbitrale | L'exécution de la sentence arbitrale suppose l'exequatur du juge. | يفترض تنفيذ حكم التحكيم الأمر بالتنفيذ من القاضي.
+frais d'arbitrage | Les deux parties avancent les frais d'arbitrage par moitié. | يسبق الطرفان مصاريف التحكيم مناصفة.
+honoraires des arbitres | Le centre calcule les honoraires des arbitres selon la valeur du litige. | يحسب المركز أتعاب المحكمين حسب قيمة النزاع.
+confidentialité de l'arbitrage | La confidentialité de l'arbitrage protège les secrets de l'entreprise. | تحمي سرية التحكيم أسرار المؤسسة.
+accord de médiation | Les deux voisins signent un accord de médiation plutôt que d'aller au tribunal. | يوقع الجاران اتفاق الوساطة بدل الذهاب إلى المحكمة.
+médiation judiciaire | Le juge propose une médiation judiciaire aux deux associés. | يقترح القاضي وساطة قضائية على الشريكين.
+médiation conventionnelle | Le bailleur et le locataire tentent une médiation conventionnelle avant tout procès. | يحاول المؤجر والمستأجر وساطة اتفاقية قبل أي محاكمة.
+procès-verbal d'accord | Le médiateur rédige le procès-verbal d'accord que les parties signent. | يحرر الوسيط محضر الاتفاق الذي يوقعه الأطراف.
+homologation de l'accord | L'homologation de l'accord par le juge lui donne la valeur d'un titre exécutoire. | تمنح المصادقة على الاتفاق من طرف القاضي هذا الاتفاق قيمة سند تنفيذي.

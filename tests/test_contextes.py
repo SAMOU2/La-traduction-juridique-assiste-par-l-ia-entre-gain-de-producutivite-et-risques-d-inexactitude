@@ -278,18 +278,18 @@ def test_contextes_du_glossaire_fourni(glossaire_fourni):
 
 
 def test_contextes_des_termes_seuls(glossaire_fourni):
-    """Un terme seul a sa phrase d'exemple, ou bien les phrases d'autres entrées qui l'emploient.
+    """Un terme seul a sa phrase d'exemple ; les phrases d'autres entrées qui l'emploient viennent ensuite.
 
     Depuis la version 0.11, les termes du vocabulaire général ont leur phrase (noms, adjectifs, verbes et
     locutions), ainsi que les noms de trois domaines : droit civil, justice et procédure, droit pénal. La version
     0.12 ajoute cinq domaines : droit des affaires, droit constitutionnel, droit administratif, droit de la famille
-    et droit du travail. Les termes des autres domaines la recevront ensuite ; en attendant, la contextualisation
-    leur prête les phrases d'autres entrées. Le test porte sur un terme seul sur vingt, pour rester rapide :
-    chaque recherche parcourt tout le glossaire.
+    et droit du travail. La version 0.14 ajoute les derniers : fiscalité, droit international, foncier, propriété
+    intellectuelle, droit maritime… Plus aucun terme seul n'est sans phrase. Le test porte sur un terme seul sur
+    vingt, pour rester rapide : chaque recherche parcourt tout le glossaire.
     """
     seuls = glossaire_fourni.entrees[ENTREES_COMPLETES:]
     pourvus = [element for element in seuls if element.contextes]
-    assert len(pourvus) >= TERMES_SEULS_AVEC_EXEMPLE
+    assert len(pourvus) == len(seuls) == TERMES_SEULS_AVEC_EXEMPLE
     # Une seule phrase par terme, rédigée pour le glossaire : elle porte la mention « à vérifier ».
     assert all(len(element.contextes) == 1 and element.contextes[0].a_verifier for element in pourvus)
     for element in seuls[::20]:
@@ -313,9 +313,12 @@ def test_contextes_des_termes_seuls(glossaire_fourni):
     doute = entree(glossaire_fourni, "doute")
     assert doute.numero > ENTREES_COMPLETES and doute.domaines[0] == "Procédure pénale"
     assert [emploi.origine for emploi in emplois(glossaire_fourni, doute)] == [PROPRE, EXEMPLE]
-    # Un terme d'un domaine qui n'a pas encore sa phrase : celle d'une autre entrée, ou rien.
-    sans_phrase = next(element for element in seuls if not element.contextes)
-    assert all(emploi.origine != PROPRE for emploi in emplois(glossaire_fourni, sans_phrase))
+    # Un nom d'un des derniers domaines (droit maritime), qui a reçu sa phrase dans la version 0.14 : la
+    # contextualisation n'a plus à lui prêter celle d'une autre entrée, elle affiche d'abord la sienne.
+    pavillon = entree(glossaire_fourni, "pavillon du navire")
+    assert pavillon.numero > ENTREES_COMPLETES and pavillon.domaines[0] == "Droit maritime"
+    assert pavillon.contextes[0].fr == "Le pavillon du navire indique le pays dont il suit la loi."
+    assert emplois(glossaire_fourni, pavillon)[0].origine == PROPRE
 
 
 def test_les_deux_sens_d_action_ont_chacun_leurs_contextes(glossaire_fourni):

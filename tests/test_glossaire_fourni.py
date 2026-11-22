@@ -10,9 +10,10 @@ Le nombre d'entrées est écrit dans ``conftest.py``.
 
 Depuis la version 0.8, le fichier a deux parties : 1 000 entrées complètes (définition et
 phrase d'exemple), puis des « termes seuls » (terme, équivalent, catégorie, domaine). Depuis
-la version 0.11, les termes seuls reçoivent à leur tour une phrase d'exemple, par étapes (trois étapes sur
-quatre sont faites dans la version 0.12). Depuis la version 0.13, chaque terme seul a aussi sa définition, dans
-les deux langues, et des synonymes quand il en existe : le vocabulaire général, puis les treize domaines du droit.
+la version 0.11, les termes seuls reçoivent à leur tour une phrase d'exemple, par étapes : la quatrième et
+dernière est faite dans la version 0.14, et chaque terme seul a sa phrase. Depuis la version 0.13, chaque terme
+seul a aussi sa définition, dans les deux langues, et des synonymes quand il en existe : le vocabulaire général,
+puis les treize domaines du droit.
 """
 
 from collections import Counter
@@ -104,10 +105,11 @@ def test_chaque_entree_est_complete(glossaire_fourni):
 def test_les_termes_seuls(glossaire_fourni):
     """Les entrées suivantes (versions 0.8 et 0.9) : terme, équivalent, catégorie, domaine et ressources.
 
-    Depuis la version 0.11, une partie d'entre elles ont une phrase d'exemple : tous les adjectifs, les verbes et
+    Depuis la version 0.11, elles reçoivent une phrase d'exemple : d'abord tous les adjectifs, les verbes et
     les locutions, et une partie des noms (vocabulaire général, droit civil, justice et procédure, droit pénal ;
-    depuis la version 0.12, droit des affaires, droit constitutionnel, droit administratif, droit de la famille et
-    droit du travail). Depuis la version 0.13, elles ont toutes une définition, dans les deux langues : les
+    dans la version 0.12, droit des affaires, droit constitutionnel, droit administratif, droit de la famille et
+    droit du travail). Depuis la version 0.14, elles ont toutes la leur : les noms des derniers domaines l'ont
+    reçue. Depuis la version 0.13, elles ont toutes une définition, dans les deux langues : les
     termes du vocabulaire général et ceux des domaines du droit. Aucune forme d'un nom seul ne désigne
     un autre nom : la traduction d'un texte n'aurait rien pour choisir entre les deux. Un adjectif, un verbe ou
     une locution peut partager une forme avec une autre entrée (« منع » : « interdiction » et « interdire »),
@@ -132,15 +134,15 @@ def test_les_termes_seuls(glossaire_fourni):
         else:
             assert mention_a_verifier(entree.source_definition) == "équivalent d’exemple", nom
             assert definition_a_verifier(entree) is None, nom
-        # Au plus une phrase d'exemple, dans les deux langues, rédigée pour le glossaire : « à vérifier ».
-        assert len(entree.contextes) <= 1, nom
+        # Une phrase d'exemple, et une seule, dans les deux langues, rédigée pour le glossaire : « à vérifier ».
+        assert len(entree.contextes) == 1, nom
         for contexte in entree.contextes:
             assert contexte.fr and contient_arabe(contexte.ar) and not contient_arabe(contexte.fr), nom
             assert mention_a_verifier(contexte.source) == "phrase d’exemple", nom
         assert entree.pluriel_fr or not entree.pluriel_ar, nom
         if entree.categorie_fr in AUTRES_MOTS:
-            # Chaque adjectif, chaque verbe et chaque locution a sa phrase et, depuis la version 0.13, sa définition.
-            assert entree.contextes and entree.definition_fr, nom
+            # Chaque adjectif, chaque verbe et chaque locution a sa définition (version 0.13), comme les noms.
+            assert entree.definition_fr, nom
             assert not entree.pluriel_fr and not entree.pluriel_ar, nom
             assert not se_remplace_dans_un_texte(entree), nom
             continue
@@ -150,10 +152,10 @@ def test_les_termes_seuls(glossaire_fourni):
                 assert [autre for autre, _ in noms.reconnaitre(forme, langue)] == [entree], (nom, forme)
     # Les mots qui ne sont pas des noms se trouvent tous dans cette seconde partie.
     assert all(se_remplace_dans_un_texte(entree) for entree in glossaire_fourni.entrees[:ENTREES_COMPLETES])
-    # Le nombre de termes seuls qui ont leur phrase ne baisse pas d'une version à l'autre. Chaque terme seul a sa
-    # définition : le nombre attendu est celui des termes seuls.
-    assert sum(1 for entree in seuls if entree.contextes) >= TERMES_SEULS_AVEC_EXEMPLE
-    assert sum(1 for entree in seuls if entree.definition_fr) >= TERMES_SEULS_AVEC_DEFINITION
+    # Chaque terme seul a sa phrase (version 0.14) et sa définition (version 0.13) : les deux nombres attendus
+    # sont celui des termes seuls.
+    assert sum(1 for entree in seuls if entree.contextes) == len(seuls) == TERMES_SEULS_AVEC_EXEMPLE
+    assert sum(1 for entree in seuls if entree.definition_fr) == len(seuls) == TERMES_SEULS_AVEC_DEFINITION
 
 
 def test_les_definitions_des_termes_seuls(glossaire_fourni):
@@ -190,8 +192,8 @@ def test_les_definitions_des_termes_seuls(glossaire_fourni):
 def test_les_phrases_d_exemple(glossaire_fourni):
     """Chaque entrée complète a sa phrase d'exemple. Une phrase « à vérifier » est courte et emploie le terme.
 
-    Les phrases des termes seuls (versions 0.11 et 0.12) sont du nombre : un adjectif y est accordé, un verbe y
-    est au passé.
+    Les phrases des termes seuls (versions 0.11, 0.12 et 0.14) sont du nombre : un adjectif y est accordé, un
+    verbe y est au passé.
 
     Dans la version 0.5, 969 phrases sur 1 002 portent la mention « à vérifier » : elles ont été rédigées pour
     le glossaire. Le test ne compte pas ces phrases : leur nombre baisse à mesure que le glossaire est relu
@@ -491,7 +493,7 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
 
 
 def test_la_fiche_d_un_terme_seul_avec_le_glossaire_fourni(fenetre_fournie, application):
-    """Un des 4 000 termes seuls : la fiche donne l'équivalent, « à vérifier » ; le menu dit ce qui manque."""
+    """Un des 4 000 termes seuls : la fiche donne l'équivalent, « à vérifier » ; le menu donne le reste."""
     page = fenetre_fournie.page
     details = page.details
     page.rechercher("protege")  # saisi sans accent
@@ -520,13 +522,17 @@ def test_la_fiche_d_un_terme_seul_avec_le_glossaire_fourni(fenetre_fournie, appl
     assert puces(details.colonne_synonymes.corps) == ["sauvegardé"]
     assert "مصون" in textes(page.fiche.colonne_equivalent.corps)
     # Chaque terme seul a sa définition, y compris les noms des domaines du droit. Un nom se trouve aussi par son
-    # synonyme : « biodiversité », saisi sans accent, ouvre la fiche de « diversité biologique ». Elle n'a pas
-    # encore de phrase d'exemple : seul ce cercle reste gris.
+    # synonyme : « biodiversité », saisi sans accent, ouvre la fiche de « diversité biologique ». Depuis la version
+    # 0.14, elle a aussi sa phrase d'exemple, comme toutes les entrées : le cercle « Contextualisation » est coloré.
     assert all(element.definition_fr and element.definition_ar for element in page.glossaire.entrees)
+    assert all(element.contextes for element in page.glossaire.entrees)
     page.rechercher("biodiversite")
     application.processEvents()
     nom = page.entree
-    assert nom.terme_fr == "diversité biologique" and nom.numero > ENTREES_COMPLETES and not nom.contextes
+    assert nom.terme_fr == "diversité biologique" and nom.numero > ENTREES_COMPLETES
+    assert [(contexte.fr, contexte.ar) for contexte in nom.contextes] == [
+        ("La forêt de cèdres abrite une riche diversité biologique.", "تؤوي غابة الأرز تنوعا بيولوجيا غنيا.")]
+    assert details.etats()["contexte"][0] and "contexte" in details.renseignes()
     assert (nom.synonymes_fr, nom.synonymes_ar) == (["biodiversité"], ["تنوع حيوي", "تنوع أحيائي"])
     assert details.etats()["definition"] == (True, 0) and "definition" in details.renseignes()
     assert textes(page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalent d’exemple"]

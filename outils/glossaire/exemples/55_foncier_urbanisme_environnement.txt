@@ -1,0 +1,164 @@
+# Phrases d'exemple de termes/55_foncier_urbanisme_environnement.txt : terme | phrase française | phrase arabe
+régime foncier | Le régime foncier du pays distingue les terres de l'État et les terres privées. | يميز النظام العقاري للبلد بين أراضي الدولة والأراضي الخاصة.
+propriété foncière | Le livret foncier prouve la propriété foncière. | يثبت الدفتر العقاري الملكية العقارية.
+propriété foncière privée | La Constitution garantit la propriété foncière privée. | يضمن الدستور الملكية العقارية الخاصة.
+orientation foncière | La loi d'orientation foncière classe les terres, notamment en agricoles, urbanisées et urbanisables. | يصنف قانون التوجيه العقاري الأراضي، لا سيما إلى فلاحية وعامرة وقابلة للتعمير.
+établissement du cadastre général | L'établissement du cadastre général avance commune par commune. | يتقدم إعداد مسح الأراضي العام بلدية بعد بلدية.
+opérations cadastrales | Les opérations cadastrales commencent par une visite des terrains. | تبدأ عمليات المسح بزيارة الأراضي.
+plan cadastral | Le plan cadastral montre les limites de chaque terrain. | يبين مخطط مسح الأراضي حدود كل أرض.
+section cadastrale | Le terrain se trouve dans la section cadastrale numéro 12. | تقع الأرض في القسم المساحي رقم 12.
+îlot de propriété | L'îlot de propriété regroupe trois terrains voisins du même propriétaire. | تضم مجموعة الملكية ثلاث أراض متجاورة للمالك نفسه.
+parcelle | L'agriculteur cultive une parcelle de deux hectares. | يزرع الفلاح قطعة أرض مساحتها هكتاران.
+unité foncière | Les deux terrains voisins forment une seule unité foncière. | تشكل الأرضان المتجاورتان وحدة عقارية واحدة.
+immatriculation foncière | L'immatriculation foncière donne un numéro à chaque immeuble. | يمنح الترقيم العقاري رقما لكل عقار.
+immatriculation provisoire | Le possesseur sans titre obtient d'abord une immatriculation provisoire. | يحصل الحائز بدون سند أولا على ترقيم مؤقت.
+immatriculation définitive | L'immatriculation définitive ouvre droit au livret foncier. | يخول الترقيم النهائي الحق في الدفتر العقاري.
+document d'arpentage | Le géomètre-expert foncier joint un document d'arpentage à l'acte de partage. | يرفق المهندس الخبير العقاري وثيقة القياس بعقد القسمة.
+géomètre-expert foncier | Le géomètre-expert foncier mesure le terrain avant la vente. | يقيس المهندس الخبير العقاري الأرض قبل البيع.
+fichier immobilier | Le conservateur foncier tient le fichier immobilier de la commune. | يمسك المحافظ العقاري مجموعة البطاقات العقارية للبلدية.
+fiche d'immeuble | La fiche d'immeuble indique le nom du propriétaire et la surface de la maison. | تبين البطاقة العقارية اسم المالك ومساحة البيت.
+formalité de publicité | Le notaire accomplit la formalité de publicité après la vente. | يتم الموثق إجراء الشهر بعد البيع.
+dépôt des actes | Le dépôt des actes à la conservation foncière a lieu dans le délai légal. | يتم إيداع العقود بالمحافظة العقارية في الأجل القانوني.
+refus de dépôt | Le conservateur foncier notifie un refus de dépôt pour dossier incomplet. | يبلغ المحافظ العقاري رفض الإيداع بسبب نقص الملف.
+rejet de la formalité | Une erreur dans le nom du vendeur entraîne le rejet de la formalité. | يترتب على غلط في اسم البائع رفض الإجراء.
+effet relatif de la publicité | Par l'effet relatif de la publicité, le notaire vérifie d'abord le titre du vendeur. | بموجب الأثر النسبي للشهر، يتحقق الموثق أولا من سند البائع.
+acte authentique translatif de propriété | La vente d'un appartement exige un acte authentique translatif de propriété. | يستلزم بيع شقة عقدا رسميا ناقلا للملكية.
+enquête foncière | L'enquête foncière entend les voisins du terrain. | يستمع التحقيق العقاري إلى جيران الأرض.
+constatation du droit de propriété | La constatation du droit de propriété profite à celui qui cultive la terre depuis de longues années. | تفيد معاينة حق الملكية من يزرع الأرض منذ سنوات طويلة.
+terres archs | Les terres archs appartenaient à toute la tribu. | كانت أراضي العرش ملكا للقبيلة كلها.
+terres melk | Les terres melk passent du père à ses héritiers. | تنتقل أراضي الملك من الأب إلى ورثته.
+terre de parcours | Les éleveurs mènent leurs moutons sur une terre de parcours. | يسوق المربون أغنامهم إلى أرض رعوية.
+terre alfatière | La terre alfatière couvre de vastes surfaces de la steppe. | تغطي الأرض الحلفائية مساحات شاسعة من السهوب.
+terre saharienne | Le jeune agriculteur reçoit une terre saharienne à mettre en culture. | يستلم الفلاح الشاب أرضا صحراوية لزراعتها.
+terre à vocation forestière | La commune replante des pins sur une terre à vocation forestière. | تعيد البلدية غرس الصنوبر في أرض ذات وجهة غابية.
+terre urbanisée | Le centre de la ville est une terre urbanisée. | وسط المدينة أرض عامرة.
+terre urbanisable | Le plan classe ce champ en terre urbanisable. | يصنف المخطط هذا الحقل أرضا قابلة للتعمير.
+exploitation agricole | L'exploitation agricole emploie dix ouvriers pendant la récolte. | تشغل المستثمرة الفلاحية عشرة عمال أثناء الجني.
+exploitation agricole collective | Cinq agriculteurs cultivent ensemble une exploitation agricole collective. | يزرع خمسة فلاحين معا مستثمرة فلاحية جماعية.
+concession agricole | La concession agricole dure quarante ans. | يدوم الامتياز الفلاحي أربعين سنة.
+mise en valeur des terres | La mise en valeur des terres passe par le forage d'un puits. | يمر استصلاح الأراضي عبر حفر بئر.
+accession à la propriété foncière agricole | L'accession à la propriété foncière agricole récompense celui qui a rendu la terre cultivable. | تكافئ حيازة الملكية العقارية الفلاحية من جعل الأرض صالحة للزراعة.
+droit de jouissance perpétuelle | La loi de 2010 remplace le droit de jouissance perpétuelle par la concession. | يعوض قانون 2010 حق الانتفاع الدائم بالامتياز.
+non-exploitation des terres agricoles | La non-exploitation des terres agricoles peut coûter son droit à l'agriculteur. | قد يكلف عدم استغلال الأراضي الفلاحية الفلاح حقه.
+morcellement des terres | Le partage entre dix héritiers aggrave le morcellement des terres. | تزيد القسمة بين عشرة ورثة من تفتيت الأراضي.
+réserve foncière | La commune prend sur sa réserve foncière le terrain de la nouvelle école. | تأخذ البلدية من الاحتياط العقاري أرض المدرسة الجديدة.
+agence foncière | L'agence foncière de la wilaya vend des terrains aux particuliers. | تبيع الوكالة العقارية للولاية أراضي للخواص.
+transaction foncière | L'agence immobilière prépare la transaction foncière entre le vendeur et l'acheteur. | تحضر الوكالة العقارية المعاملة العقارية بين البائع والمشتري.
+marché foncier | Le marché foncier s'envole près de la capitale. | ترتفع السوق العقارية كثيرا قرب العاصمة.
+spéculation foncière | La spéculation foncière fait monter le prix des terrains. | ترفع المضاربة العقارية ثمن الأراضي.
+assiette foncière | La wilaya cherche une assiette foncière pour le nouvel hôpital. | تبحث الولاية عن وعاء عقاري للمستشفى الجديد.
+foncier industriel | L'investisseur sollicite un terrain du foncier industriel. | يلتمس المستثمر أرضا من العقار الصناعي.
+zone industrielle | L'usine de ciment s'installe dans la zone industrielle. | يستقر مصنع الإسمنت في المنطقة الصناعية.
+régularisation foncière | La régularisation foncière donne enfin un titre à la famille. | تمنح التسوية العقارية أخيرا سندا للأسرة.
+aménagement du territoire | L'aménagement du territoire cherche à développer les villes du Sud. | تسعى تهيئة الإقليم إلى تنمية مدن الجنوب.
+plan directeur d'aménagement et d'urbanisme | Le plan directeur d'aménagement et d'urbanisme divise la commune en secteurs. | يقسم المخطط التوجيهي للتهيئة والتعمير البلدية إلى قطاعات.
+plan d'occupation des sols | Le plan d'occupation des sols limite les maisons du quartier à deux étages. | يحدد مخطط شغل الأراضي علو بيوت الحي بطابقين.
+schéma national d'aménagement du territoire | Le schéma national d'aménagement du territoire trace les grands axes pour vingt ans. | يرسم المخطط الوطني لتهيئة الإقليم المحاور الكبرى لعشرين سنة.
+instruments d'urbanisme | Le permis de construire respecte les instruments d'urbanisme de la commune. | تحترم رخصة البناء أدوات التعمير في البلدية.
+règles générales d'aménagement et d'urbanisme | Sans plan, la commune applique les règles générales d'aménagement et d'urbanisme. | في غياب مخطط، تطبق البلدية القواعد العامة للتهيئة والتعمير.
+secteur urbanisé | Le vieux centre appartient au secteur urbanisé. | ينتمي الوسط القديم إلى القطاع المعمر.
+secteur à urbaniser | Les champs au nord de la ville forment le secteur à urbaniser. | تشكل الحقول الواقعة شمال المدينة القطاع المبرمج للتعمير.
+secteur non urbanisable | La forêt est classée en secteur non urbanisable. | تصنف الغابة قطاعا غير قابل للتعمير.
+coefficient d'occupation du sol | Le coefficient d'occupation du sol limite la surface des planchers. | يحدد معامل شغل الأرض مساحة الأرضيات.
+coefficient d'emprise au sol | Le coefficient d'emprise au sol laisse la moitié du terrain en jardin. | يترك معامل ما يؤخذ من الأرض نصف القطعة حديقة.
+certificat d'urbanisme | L'acheteur sollicite un certificat d'urbanisme avant la vente. | يلتمس المشتري شهادة التعمير قبل البيع.
+certificat de morcellement | Les deux frères obtiennent un certificat de morcellement pour le partage de la maison. | يحصل الأخوان على شهادة التقسيم من أجل قسمة البيت.
+permis de lotir | Le propriétaire obtient un permis de lotir pour diviser son champ en vingt terrains. | يحصل المالك على رخصة التجزئة لتقسيم حقله إلى عشرين قطعة.
+certificat de viabilité | Le certificat de viabilité atteste que les routes du lotissement sont terminées. | تثبت شهادة قابلية الاستغلال أن طرق التجزئة قد اكتملت.
+acte d'urbanisme | Le permis de construire est un acte d'urbanisme. | رخصة البناء عقد من عقود التعمير.
+demande de permis de construire | L'architecte signe les plans de la demande de permis de construire. | يوقع المهندس المعماري مخططات طلب رخصة البناء.
+instruction de la demande | L'instruction de la demande dure vingt jours. | تدوم دراسة الطلب عشرين يوما.
+terrain à bâtir | Le couple achète un terrain à bâtir au bord de la ville. | يشتري الزوجان قطعة أرض صالحة للبناء في طرف المدينة.
+constructibilité | Le certificat d'urbanisme renseigne sur la constructibilité du terrain. | تفيد شهادة التعمير بمعلومات عن قابلية البناء في الأرض.
+hauteur des constructions | Le plan fixe la hauteur des constructions à douze mètres. | يحدد المخطط علو البنايات باثني عشر مترا.
+densité de construction | La densité de construction reste faible près de la plage. | تبقى كثافة البناء ضعيفة قرب الشاطئ.
+construction illicite | La commune recense chaque construction illicite du quartier. | تحصي البلدية كل بناء فوضوي في الحي.
+mise en conformité des constructions | La mise en conformité des constructions concerne la maison bâtie sans permis. | تخص مطابقة البنايات البيت المبني بدون رخصة.
+achèvement des constructions | La loi impose l'achèvement des constructions, façade comprise. | يفرض القانون إتمام إنجاز البنايات بما فيها الواجهة.
+démolition | La démolition du vieux hangar prend une journée. | يستغرق هدم المستودع القديم يوما واحدا.
+arrêté de démolition | Le président de l'assemblée populaire communale signe un arrêté de démolition. | يوقع رئيس المجلس الشعبي البلدي قرار الهدم.
+interruption des travaux | L'inspecteur ordonne l'interruption des travaux du chantier sans permis. | يأمر المفتش بوقف الأشغال في الورشة التي لا رخصة لها.
+police de l'urbanisme | La police de l'urbanisme photographie le mur bâti sur le trottoir. | تصور شرطة العمران الجدار المبني على الرصيف.
+inspecteur de l'urbanisme | L'inspecteur de l'urbanisme visite le chantier et dresse un procès-verbal. | يزور مفتش التعمير الورشة ويحرر محضرا.
+infraction d'urbanisme | L'inspecteur relève une infraction d'urbanisme pour un étage de trop. | يسجل المفتش مخالفة التعمير بسبب طابق زائد.
+habitat précaire | L'habitat précaire s'étend au bord de l'oued. | ينتشر السكن الهش على ضفة الوادي.
+résorption de l'habitat précaire | La résorption de l'habitat précaire reloge deux cents familles. | يسمح امتصاص السكن الهش بإعادة إسكان مئتي أسرة.
+logement social | La famille obtient un logement social après dix ans d'attente. | تحصل الأسرة على سكن اجتماعي بعد عشر سنوات من الانتظار.
+logement promotionnel | Le cadre achète un logement promotionnel avec un prêt de la banque. | يشتري الإطار سكنا ترقويا بقرض من البنك.
+promoteur immobilier | Le promoteur immobilier livre les appartements avec un an de retard. | يسلم المرقي العقاري الشقق بتأخر سنة.
+contrat de vente sur plans | Le contrat de vente sur plans indique la date de livraison de l'appartement. | يبين عقد البيع على التصاميم تاريخ تسليم الشقة.
+contrat de réservation | L'acheteur verse une avance à la signature du contrat de réservation. | يدفع المشتري تسبيقا عند توقيع عقد حفظ الحق.
+ville nouvelle | La ville nouvelle de Sidi Abdellah accueille des milliers de familles. | تستقبل المدينة الجديدة سيدي عبد الله آلاف الأسر.
+rénovation urbaine | La rénovation urbaine remplace les vieux immeubles par des logements neufs. | يعوض التجديد العمراني العمارات القديمة بمساكن جديدة.
+réhabilitation urbaine | La réhabilitation urbaine répare les façades de la vieille ville. | تصلح إعادة التأهيل العمراني واجهات المدينة القديمة.
+espace vert | Les enfants jouent dans l'espace vert du quartier. | يلعب الأولاد في المساحة الخضراء للحي.
+site archéologique | Le site archéologique de Timgad attire les visiteurs. | يجذب الموقع الأثري بتيمقاد الزوار.
+patrimoine culturel | La Casbah d'Alger appartient au patrimoine culturel du pays. | تنتمي قصبة الجزائر إلى التراث الثقافي للبلد.
+monument historique | La mosquée ancienne est classée monument historique. | صنف المسجد العتيق معلما تاريخيا.
+secteur sauvegardé | La vieille médina forme un secteur sauvegardé. | تشكل المدينة العتيقة قطاعا محفوظا.
+droit de l'environnement | Le droit de l'environnement oblige l'usine à filtrer ses fumées. | يلزم قانون البيئة المصنع بتصفية دخانه.
+principe de précaution | Au nom du principe de précaution, le ministre suspend la vente du pesticide. | باسم مبدأ الحيطة، يعلق الوزير بيع المبيد.
+principe d'action préventive | Le principe d'action préventive conduit l'usine à poser un filtre avant tout rejet. | يدفع مبدأ النشاط الوقائي المصنع إلى تركيب مصفاة قبل أي تصريف.
+principe du pollueur-payeur | Selon le principe du pollueur-payeur, l'usine paie le nettoyage de la rivière. | حسب مبدأ الملوث الدافع، يدفع المصنع تكاليف تنظيف النهر.
+principe d'information et de participation | Le principe d'information et de participation donne la parole aux habitants avant le projet. | يمنح مبدأ الإعلام والمشاركة الكلمة للسكان قبل المشروع.
+principe de non-dégradation des ressources naturelles | Le principe de non-dégradation des ressources naturelles protège l'eau et le sol. | يحمي مبدأ عدم تدهور الموارد الطبيعية الماء والتربة.
+principe de substitution | Par le principe de substitution, l'usine remplace un solvant toxique par un autre plus sûr. | عملا بمبدأ الاستبدال، يعوض المصنع مذيبا ساما بآخر أكثر أمانا.
+principe d'intégration | Le principe d'intégration fait entrer la nature dans chaque plan de la commune. | يدخل مبدأ الإدماج الطبيعة في كل مخطط للبلدية.
+notice d'impact | Le petit atelier dépose une notice d'impact à la wilaya. | تودع الورشة الصغيرة موجز التأثير لدى الولاية.
+étude de danger | L'étude de danger décrit l'explosion possible dans la raffinerie. | تصف دراسة الخطر الانفجار المحتمل في المصفاة.
+enquête publique | Pendant l'enquête publique, les habitants écrivent leurs remarques sur un registre. | أثناء التحقيق العمومي، يكتب السكان ملاحظاتهم في سجل.
+installation classée | La raffinerie est une installation classée. | المصفاة منشأة مصنفة.
+autorisation d'exploitation | L'usine attend son autorisation d'exploitation avant de démarrer. | ينتظر المصنع رخصة الاستغلال قبل الانطلاق.
+exploitant | L'exploitant de la carrière arrose les pistes contre la poussière. | يرش مستغل المحجرة المسالك ضد الغبار.
+audit environnemental | Un audit environnemental mesure les rejets de l'usine. | يقيس تدقيق بيئي تصريفات المصنع.
+délégué pour l'environnement | Le délégué pour l'environnement forme les ouvriers au tri des déchets. | يكون مندوب البيئة العمال على فرز النفايات.
+pollution atmosphérique | La pollution atmosphérique augmente avec le nombre de voitures. | يزداد التلوث الجوي بازدياد عدد السيارات.
+pollution des eaux | La pollution des eaux tue les poissons de la rivière. | يقتل تلوث المياه أسماك النهر.
+pollution marine | Une fuite du pétrolier provoque une pollution marine. | يتسبب تسرب من ناقلة النفط في تلوث بحري.
+nuisances sonores | Les habitants se plaignent des nuisances sonores de l'aéroport. | يشتكي السكان من الأضرار السمعية للمطار.
+rejet d'effluents liquides | Le rejet d'effluents liquides dans la rivière exige une autorisation. | يتطلب تصريف النفايات السائلة في النهر ترخيصا.
+émission de gaz | Le filtre réduit l'émission de gaz de la cimenterie. | تقلص المصفاة انبعاث الغازات من مصنع الإسمنت.
+gaz à effet de serre | Le charbon dégage beaucoup de gaz à effet de serre. | يطلق الفحم كثيرا من غازات الدفيئة.
+changement climatique | Le changement climatique allonge les périodes de sécheresse. | يطيل التغير المناخي فترات الجفاف.
+déchet | Chaque déchet va dans la poubelle de sa couleur. | توضع كل نفاية في الحاوية ذات اللون المخصص لها.
+déchets ménagers | La commune ramasse les déchets ménagers trois fois par semaine. | تجمع البلدية النفايات المنزلية ثلاث مرات في الأسبوع.
+déchets spéciaux dangereux | L'hôpital confie ses déchets spéciaux dangereux à une entreprise spécialisée. | يسلم المستشفى النفايات الخاصة الخطرة إلى مؤسسة متخصصة.
+déchets inertes | Le chantier évacue ses déchets inertes vers une carrière fermée. | تنقل الورشة النفايات الهامدة إلى محجرة مغلقة.
+gestion des déchets | La gestion des déchets coûte cher à la commune. | يكلف تسيير النفايات البلدية كثيرا.
+élimination des déchets | L'élimination des déchets par le feu dégage des fumées toxiques. | تطلق إزالة النفايات بالحرق دخانا ساما.
+valorisation des déchets | La valorisation des déchets produit de l'électricité. | ينتج تثمين النفايات الكهرباء.
+recyclage | Le recyclage du plastique crée des emplois. | تخلق رسكلة البلاستيك مناصب شغل.
+décharge publique | La wilaya ferme la décharge publique trop proche des maisons. | تغلق الولاية المفرغة العمومية القريبة جدا من البيوت.
+centre d'enfouissement technique | Le centre d'enfouissement technique reçoit les ordures de cinq communes. | يستقبل مركز الردم التقني قمامة خمس بلديات.
+substance dangereuse | L'étiquette signale une substance dangereuse. | تنبه الملصقة إلى مادة خطرة.
+produit chimique | L'agriculteur range chaque produit chimique loin du puits. | يضع الفلاح كل مادة كيميائية بعيدا عن البئر.
+risque majeur | Le séisme est un risque majeur dans le nord du pays. | الزلزال خطر كبير في شمال البلد.
+risque technologique | Le transport du chlore par camion présente un risque technologique. | يشكل نقل الكلور بالشاحنة خطرا تكنولوجيا.
+catastrophe naturelle | L'inondation de Bab El Oued, en novembre 2001, est une catastrophe naturelle. | فيضان باب الوادي في نوفمبر 2001 كارثة طبيعية.
+plan d'intervention | Le wali déclenche le plan d'intervention après le séisme. | يفعل الوالي مخطط التدخل بعد الزلزال.
+ressources naturelles | Le gaz et le pétrole sont les grandes ressources naturelles du pays. | الغاز والبترول أهم الموارد الطبيعية للبلد.
+ressources en eau | Le barrage augmente les ressources en eau de la région. | يزيد السد في الموارد المائية للمنطقة.
+diversité biologique | La forêt de cèdres abrite une riche diversité biologique. | تؤوي غابة الأرز تنوعا بيولوجيا غنيا.
+espèce protégée | La gazelle du désert est une espèce protégée. | غزال الصحراء صنف محمي.
+aire protégée | La chasse reste fermée dans l'aire protégée. | يبقى الصيد مغلقا في المجال المحمي.
+parc national | Le parc national du Djurdjura accueille des randonneurs. | تستقبل الحظيرة الوطنية لجرجرة هواة المشي.
+réserve naturelle | Les oiseaux migrateurs se reposent dans la réserve naturelle du lac. | تستريح الطيور المهاجرة في المحمية الطبيعية للبحيرة.
+littoral | Le littoral algérien s'étend sur plus de mille kilomètres. | يمتد الساحل الجزائري على أكثر من ألف كيلومتر.
+protection du littoral | La protection du littoral éloigne les hôtels de la plage. | تبعد حماية الساحل الفنادق عن الشاطئ.
+domaine forestier national | Le domaine forestier national ne se vend pas. | لا تباع الأملاك الغابية الوطنية.
+déboisement | Le déboisement accélère l'érosion des collines. | تسرع إزالة الغابات انجراف التلال.
+désertification | La désertification gagne les terres de la steppe. | يزحف التصحر على أراضي السهوب.
+lutte contre la désertification | Le barrage vert sert la lutte contre la désertification. | يخدم السد الأخضر مكافحة التصحر.
+énergies renouvelables | Le pays investit dans les énergies renouvelables, surtout le soleil. | يستثمر البلد في الطاقات المتجددة، خاصة الشمس.
+efficacité énergétique | L'isolation des murs améliore l'efficacité énergétique de la maison. | يحسن عزل الجدران النجاعة الطاقوية للبيت.
+taxe écologique | L'usine paie une taxe écologique sur ses fumées. | يدفع المصنع رسما بيئيا على دخانه.
+fiscalité environnementale | La fiscalité environnementale pousse les usines à réduire leurs rejets. | تدفع الجباية البيئية المصانع إلى تقليص تصريفاتها.
+dommage écologique | La marée noire provoque un dommage écologique immense. | تحدث البقعة النفطية ضررا بيئيا كبيرا.
+réparation du dommage écologique | Le juge ordonne la réparation du dommage écologique aux frais du pollueur. | يأمر القاضي بإصلاح الضرر البيئي على نفقة الملوث.
+remise en état des lieux | L'exploitant de la carrière doit la remise en état des lieux à la fin des travaux. | يلتزم مستغل المحجرة بإعادة الأماكن إلى حالتها عند نهاية الأشغال.
+infraction environnementale | Le rejet d'huile dans la mer est une infraction environnementale. | تصريف الزيت في البحر جريمة بيئية.
+police de l'environnement | La police de l'environnement prélève de l'eau à la sortie de l'usine. | تأخذ شرطة البيئة عينة من الماء عند مخرج المصنع.
+inspecteur de l'environnement | L'inspecteur de l'environnement visite la tannerie sans prévenir. | يزور مفتش البيئة المدبغة دون سابق إعلام.
+association de protection de l'environnement | L'association de protection de l'environnement attaque l'usine devant le tribunal. | تقاضي جمعية حماية البيئة المصنع أمام المحكمة.
+information environnementale | Le citoyen obtient de la wilaya une information environnementale sur l'air de son quartier. | يحصل المواطن من الولاية على إعلام بيئي حول هواء حيه.
+éducation environnementale | L'école primaire consacre une heure par semaine à l'éducation environnementale. | تخصص المدرسة الابتدائية ساعة في الأسبوع للتربية البيئية.

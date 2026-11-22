@@ -25,11 +25,13 @@ GLOSSAIRE_FOURNI = RACINE / "donnees" / "glossaire_juridique.csv"
 #: domaine.
 NOMBRE_D_ENTREES = 5000
 ENTREES_COMPLETES = 1000
-#: Termes seuls qui ont déjà leur phrase d'exemple. Version 0.11 : le vocabulaire général, puis le droit civil,
+#: Termes seuls qui ont leur phrase d'exemple. Version 0.11 : le vocabulaire général, puis le droit civil,
 #: la justice et la procédure, le droit pénal (1 887). Version 0.12 : le droit des affaires, le droit
-#: constitutionnel, le droit administratif, le droit de la famille et le droit du travail (1 126 de plus). Ce
-#: nombre ne peut que monter : les termes des autres domaines reçoivent leur phrase par étapes.
-TERMES_SEULS_AVEC_EXEMPLE = 3013
+#: constitutionnel, le droit administratif, le droit de la famille et le droit du travail (1 126 de plus).
+#: Version 0.14 : les derniers domaines, c'est-à-dire la fiscalité, les finances publiques et les douanes, le droit
+#: international, le foncier, l'urbanisme et l'environnement, la propriété intellectuelle, la consommation, la
+#: concurrence et le numérique, le droit maritime et la nationalité (987 de plus). Chaque terme seul a sa phrase.
+TERMES_SEULS_AVEC_EXEMPLE = 4000
 #: Termes seuls qui ont leur définition, dans les deux langues. Version 0.13 : tous, c'est-à-dire le vocabulaire
 #: général (noms, adjectifs, verbes et locutions : 928), puis les treize domaines du droit (3 072).
 TERMES_SEULS_AVEC_DEFINITION = 4000
