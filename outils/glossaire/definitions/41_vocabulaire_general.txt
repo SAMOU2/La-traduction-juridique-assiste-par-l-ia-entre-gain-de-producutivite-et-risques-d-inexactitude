@@ -1,0 +1,120 @@
+# Définitions des termes de termes/41_vocabulaire_general.txt : terme | définition française | définition arabe | options (sf=, sa=)
+protection | Ensemble des mesures et des règles qui mettent une personne, un bien ou un droit à l'abri d'une atteinte. | مجموع التدابير والقواعد التي تجعل شخصا أو مالا أو حقا في مأمن من المساس.
+sauvegarde | Fait de préserver un droit ou un bien d'un danger imminent. | حفظ حق أو مال من خطر محدق. | sf=préservation
+interdiction | Règle ou décision qui défend de faire quelque chose. | قاعدة أو قرار ينهى عن فعل شيء.
+prohibition | Interdiction absolue posée par la loi, le plus souvent pour la protection de l'ordre public. | حظر مطلق يضعه القانون، غالبا لحماية النظام العام.
+restriction | Limite apportée à un droit ou à une liberté. | حد يوضع لحق أو حرية.
+tolérance | Fait, pour une autorité ou un propriétaire, de laisser faire ce qu'il pourrait interdire, sans que cela crée un droit. | أن تترك سلطة أو مالك ما يمكنه أن يمنعه، دون أن ينشأ عن ذلك حق.
+prérogatives | Pouvoirs ou avantages attachés à une fonction ou à un droit. | سلطات أو مزايا مرتبطة بوظيفة أو حق.
+titulaire du droit | Personne à qui un droit appartient et qui peut l'exercer. | الشخص الذي يملك حقا ويمكنه أن يمارسه.
+intérêt légitime | Avantage qu'une personne peut défendre devant le juge, parce que le droit le protège. | منفعة يجوز للشخص أن يدافع عنها أمام القاضي لأن القانون يحميها.
+jouissance des droits | Aptitude d'une personne à avoir des droits. | صلاحية الشخص لأن تكون له حقوق.
+exercice des droits | Fait d'user soi-même de ses droits. | أن يباشر الشخص حقوقه بنفسه.
+droit acquis | Droit entré définitivement dans le patrimoine d'une personne, qu'une loi nouvelle ne peut pas lui retirer. | حق دخل بصفة نهائية في الذمة المالية لشخص، ولا يجوز لقانون جديد أن يسحبه منه.
+droit fondamental | Droit essentiel de la personne, garanti par la Constitution ou par un traité. | حق جوهري للشخص يضمنه الدستور أو معاهدة.
+abus | Emploi excessif d'un droit ou d'un pouvoir, qui nuit à autrui. | استعمال مفرط لحق أو سلطة يضر بالغير. | sa=إساءة استعمال
+atteinte | Préjudice porté à un droit, à un bien ou à une personne. | إلحاق ضرر بحق أو مال أو شخص.
+violation | Fait d'agir contre une règle ou un droit. | التصرف ضد قاعدة أو حق.
+manquement | Fait de ne pas remplir une obligation ou un devoir. | عدم أداء التزام أو واجب.
+respect de la loi | Conduite de celui qui obéit à ce que la loi ordonne ou interdit. | سلوك من يمتثل لما يأمر به القانون أو يمنعه.
+validité du contrat | Qualité du contrat qui réunit toutes les conditions que la loi exige. | صفة العقد الذي تجتمع فيه كل الشروط التي يتطلبها القانون.
+illégalité | Caractère de ce qui est contraire à la loi. | حال ما هو مخالف للقانون.
+opposabilité aux tiers | Aptitude d'un acte ou d'un droit à produire ses effets à l'égard des personnes qui n'y sont pas parties. | صلاحية تصرف أو حق لأن ينتج آثاره تجاه الأشخاص الذين ليسوا أطرافا فيه.
+inopposabilité | Situation d'un acte dont les tiers peuvent ignorer les effets. | حالة تصرف يجوز للغير أن يتجاهل آثاره.
+inexistence | Absence totale d'un acte, auquel manque un élément essentiel. | غياب تام لتصرف ينقصه عنصر جوهري.
+efficacité | Aptitude d'un acte ou d'une règle à produire l'effet attendu. | قدرة تصرف أو قاعدة على إنتاج الأثر المنتظر.
+applicabilité | Possibilité d'appliquer une règle à une situation ou à une personne. | إمكان أن تطبق قاعدة على حالة أو شخص.
+conformité | Fait, pour un acte ou une chose, de respecter la règle ou le modèle qui s'impose. | أن يحترم تصرف أو شيء القاعدة أو النموذج الواجب.
+compatibilité | Possibilité pour deux règles, deux fonctions ou deux situations d'exister ensemble. | إمكان أن توجد قاعدتان أو وظيفتان أو حالتان معا.
+incompatibilité | Impossibilité légale de cumuler deux fonctions ou deux situations. | استحالة قانونية للجمع بين وظيفتين أو حالتين.
+effet juridique | Conséquence que le droit attache à un acte ou à un fait. | نتيجة يرتبها القانون على تصرف أو واقعة.
+effet rétroactif | Conséquence d'un acte qui remonte à une date antérieure à cet acte. | نتيجة تصرف ترجع إلى تاريخ سابق له.
+effet immédiat | Conséquence qui se produit dès que l'acte ou la loi entre en vigueur. | نتيجة تقع حالما يدخل التصرف أو القانون حيز التنفيذ.
+champ d'application | Ensemble des personnes, des lieux et des situations auxquels une règle s'applique. | مجموع الأشخاص والأماكن والحالات التي تسري عليها قاعدة.
+application de la loi | Emploi de la loi dans les cas qu'elle vise, pour qu'elle y produise ses effets. | إعمال القانون في الحالات التي يقصدها لينتج فيها آثاره.
+entrée en application | Moment à partir duquel un texte commence à produire ses effets. | اللحظة التي يبدأ فيها نص إنتاج آثاره.
+prise d'effet | Moment où un acte ou un contrat devient applicable. | اللحظة التي يصير فيها تصرف أو عقد قابلا للتطبيق.
+date d'effet | Jour à partir duquel un acte produit ses effets. | اليوم الذي يبدأ منه تصرف إنتاج آثاره.
+acte unilatéral | Acte par lequel une seule personne exprime sa volonté de produire un effet de droit. | عمل يعبر به شخص واحد عن إرادته في إنتاج أثر في القانون.
+acte d'administration | Acte de gestion courante d'un bien, qui en conserve la valeur sans en transférer la propriété. | تصرف يدخل في التسيير العادي لمال، يحفظ قيمته دون أن ينقل ملكيته.
+acte de disposition | Acte qui fait sortir un bien du patrimoine ou en diminue la valeur : vente, donation, hypothèque. | عمل يخرج مالا من الذمة المالية أو ينقص قيمته: بيع أو هبة أو رهن رسمي.
+document | Écrit ou support qui contient une information et peut servir de preuve. | محرر أو دعامة تتضمن معلومة ويمكن أن تصلح دليلا. | sa=مستند
+pièce justificative | Document produit pour prouver un fait ou un droit. | وثيقة تقدم ليثبت بها واقعة أو حق. | sf=justificatif
+duplicata | Second exemplaire d'un acte, qui a la même valeur que le premier. | نظير آخر لمحرر له قيمة النظير الأول نفسها.
+ampliation | Copie d'un acte administratif certifiée par l'autorité qui l'a signé. | نسخة من قرار إداري تصدق عليها السلطة التي وقعته.
+extrait | Copie d'un passage seulement d'un acte ou d'un registre. | نسخة من مقطع فحسب من محرر أو سجل.
+récépissé de dépôt | Écrit remis à une personne pour attester qu'elle a déposé un document ou une somme. | محرر يسلم لشخص إشهادا بأنه أودع وثيقة أو مبلغا.
+accusé de réception | Écrit par lequel le destinataire reconnaît avoir reçu un envoi. | محرر يقر به المرسل إليه أنه تسلم إرسالا.
+formulaire | Imprimé comportant des rubriques à remplir. | مطبوع يتضمن خانات تملأ.
+répertoire | Registre où des actes ou des noms sont inscrits dans un ordre donné. | سجل تكون فيه المحررات أو الأسماء مقيدة بترتيب معين.
+archives | Ensemble des documents conservés par une personne ou une administration. | مجموع الوثائق التي يحفظها شخص أو إدارة.
+sceau de l'État | Marque officielle apposée sur les actes les plus solennels de l'État. | علامة رسمية توضع على أهم محررات الدولة.
+paraphe | Signature abrégée, faite des initiales, mise au bas de chaque page d'un acte. | توقيع مختصر يوضع أسفل كل صفحة من محرر.
+mention marginale | Note portée en marge d'un acte pour le compléter ou le modifier. | ملاحظة تكتب في حاشية محرر لتتممه أو تعدله.
+délai légal | Délai fixé par la loi. | أجل يحدده القانون.
+délai de grâce | Délai supplémentaire que le juge accorde au débiteur pour payer. | أجل إضافي يمنحه القاضي للمدين ليدفع.
+délai raisonnable | Durée qui n'est pas excessive, compte tenu de la difficulté de l'affaire. | مدة غير مفرطة بالنظر إلى صعوبة القضية.
+délai de rigueur | Délai qui ne peut être ni prolongé ni dépassé. | أجل لا يجوز تمديده ولا تجاوزه.
+prorogation | Allongement de la durée d'un délai, d'un contrat ou d'une fonction. | إطالة مدة أجل أو عقد أو وظيفة. | sf=prolongation
+report | Décision de remettre un acte ou une audience à une date postérieure. | قرار بإرجاء تصرف أو جلسة إلى تاريخ لاحق. | sf=ajournement | sa=إرجاء
+expiration | Fin d'un délai ou de la durée d'un contrat. | نهاية أجل أو مدة عقد.
+point de départ du délai | Jour à partir duquel un délai commence à courir. | اليوم الذي يبدأ منه حساب أجل.
+computation des délais | Manière de compter les jours d'un délai. | طريقة عد أيام أجل.
+jour ouvrable | Jour où l'on travaille normalement, à la différence du jour de repos hebdomadaire et du jour férié. | يوم يعمل فيه عادة، خلافا ليوم الراحة الأسبوعية ويوم عطلة.
+jour férié | Jour de fête légale où le travail est suspendu. | يوم عيد قانوني يوقف فيه العمل.
+antériorité | Fait d'être venu avant, dans le temps. | أن يكون الشيء قد جاء قبل غيره في الزمن.
+durée | Temps pendant lequel un contrat, un droit ou une situation existe. | الزمن الذي يوجد خلاله عقد أو حق أو وضع.
+tacite reconduction | Renouvellement d'un contrat arrivé à sa fin, parce que les parties continuent de l'exécuter. | تجديد عقد بلغ نهايته لأن الأطراف ما زالوا ينفذونه.
+suspension | Mise en sommeil, pour un temps, d'un délai, d'un contrat ou d'une fonction. | إيقاف مؤقت للأجل أو للعقد أو للوظيفة.
+interruption | Événement qui efface le temps déjà écoulé d'un délai, lequel repart de zéro. | حادث يزيل ما مضى من أجل، فيبدأ الأجل من جديد.
+qualification juridique | Opération qui range un fait ou un acte dans une catégorie du droit pour lui appliquer ses règles. | عملية تدرج واقعة أو تصرفا في صنف من أصناف القانون لتطبق عليه قواعده.
+fondement juridique | Règle ou principe sur lequel repose un droit, une demande ou une décision. | قاعدة أو مبدأ يستند إليه حق أو طلب أو قرار.
+base légale | Texte qui autorise une décision ou lui sert d'appui. | نص يرخص بقرار أو يدعمه.
+critère | Élément qui permet de distinguer ou de classer. | عنصر يسمح بالتمييز أو بالتصنيف. | sa=مقياس
+hypothèse | Situation que l'on suppose pour raisonner, ou cas visé par une règle. | حالة تفترض للاستدلال، أو حالة تقصدها قاعدة.
+condition de fond | Condition qui touche au contenu même d'un acte : consentement, capacité, objet. | شرط يتصل بمضمون التصرف ذاته: الرضا والأهلية والمحل.
+condition de forme | Condition qui touche à la manière de faire un acte : écrit, signature, publicité. | شرط يتصل بطريقة إبرام التصرف: الكتابة والتوقيع والشهر.
+élément constitutif | Chacune des conditions sans lesquelles un acte ou une infraction n'existe pas. | كل شرط من الشروط التي لا يقوم دونها تصرف أو جريمة.
+situation juridique | Ensemble des droits et des obligations d'une personne à un moment donné. | مجموع حقوق شخص والتزاماته في وقت معين.
+statut juridique | Ensemble des règles qui s'appliquent à une catégorie de personnes ou de biens. | مجموع القواعد التي تسري على صنف من الأشخاص أو الأموال.
+régime juridique | Ensemble des règles qui gouvernent une institution, un contrat ou un bien. | مجموع القواعد التي تضبط مؤسسة أو عقدا أو مالا.
+définition légale | Sens qu'un texte de loi donne lui-même à un mot. | المعنى الذي يعطيه نص القانون نفسه للفظ.
+assimilation | Fait de traiter une situation comme une autre pour lui appliquer les mêmes règles. | معاملة حالة كأنها حالة أخرى لتطبق عليها القواعد نفسها.
+argument | Raison que l'on donne pour convaincre le juge ou son contradicteur. | سبب يقدم لإقناع القاضي أو الخصم.
+contradiction | Désaccord entre deux règles, deux motifs ou deux affirmations qui ne peuvent être vrais ensemble. | تعارض بين قاعدتين أو سببين أو قولين لا يصحان معا.
+lacune | Absence de règle pour un cas que le législateur n'a pas prévu. | غياب قاعدة لحالة لم ينص عليها المشرع.
+ambiguïté | Défaut d'un texte qui peut se comprendre de plusieurs façons. | عيب نص يحتمل أكثر من فهم.
+intéressé | Personne que concerne directement un acte, une décision ou une procédure. | الشخص الذي يخصه مباشرة تصرف أو قرار أو إجراء.
+ayant cause à titre universel | Personne qui reçoit tout le patrimoine d'une autre, ou une fraction de celui-ci : l'héritier. | شخص يتلقى كل الذمة المالية لشخص آخر أو حصة منها، كالوارث.
+ayant cause à titre particulier | Personne qui reçoit d'une autre un bien ou un droit déterminé : l'acheteur. | شخص يتلقى من شخص آخر مالا أو حقا معينا، كالمشتري.
+auteur de l'acte | Personne dont émane un acte juridique. | الشخص الذي يصدر عنه تصرف قانوني.
+destinataire | Personne à qui un envoi, un acte ou une décision est adressé. | الشخص الذي يوجه إليه إرسال أو محرر أو قرار.
+partie signataire | Partie qui a signé l'acte et qui est liée par lui. | طرف وقع المحرر وصار مقيدا به.
+usager | Personne qui utilise un service public. | شخص يستعمل مرفقا عاما.
+rapport de droit | Lien entre deux personnes, que le droit organise et sanctionne. | رابطة بين شخصين ينظمها القانون ويرتب عليها جزاء.
+lien juridique | Rapport qui unit deux personnes et crée entre elles des droits et des obligations. | علاقة تجمع شخصين وتنشئ بينهما حقوقا والتزامات.
+réciprocité | Principe selon lequel un État accorde à un autre les avantages qu'il reçoit de lui. | مبدأ تمنح بموجبه دولة لدولة أخرى المزايا التي تتلقاها منها.
+égalité | Principe selon lequel tous sont soumis aux mêmes règles et ont les mêmes droits. | مبدأ يخضع بموجبه الجميع للقواعد نفسها ولهم الحقوق نفسها.
+discrimination raciale | Différence de traitement qui repose sur l'origine ou la couleur de la peau, et que la loi interdit. | فرق في المعاملة يقوم على الأصل أو لون البشرة، ويمنعه القانون.
+transparence | Obligation de rendre les informations et les décisions accessibles à tous. | التزام بجعل المعلومات والقرارات في متناول الجميع.
+secret professionnel | Obligation, pour un médecin, un avocat ou un autre professionnel, de taire ce qu'il apprend dans son métier. | التزام الطبيب أو المحامي أو أي مهني آخر بكتمان ما يعلمه في عمله.
+loyauté | Obligation d'agir avec droiture et sans tromperie envers l'autre partie. | التزام بالتصرف باستقامة ودون خداع نحو الطرف الآخر.
+diligence | Soin et rapidité que l'on apporte à l'exécution d'une tâche ou d'une obligation. | الاهتمام والسرعة في تنفيذ مهمة أو التزام.
+vigilance | Attention soutenue portée à un risque ou à une obligation de surveillance. | انتباه متواصل لخطر أو لالتزام بالمراقبة.
+prudence | Attitude de celui qui réfléchit aux conséquences de ses actes pour éviter un dommage. | سلوك من يفكر في نتائج أفعاله ليتفادى ضررا. | sf=précaution
+mesure provisoire | Décision prise pour un temps, en attendant le jugement sur le fond. | قرار يتخذ لمدة، في انتظار الحكم في الموضوع.
+mesure d'urgence | Décision prise sans attendre pour éviter un dommage imminent. | قرار يتخذ دون انتظار لتفادي ضرر وشيك.
+injonction | Ordre donné par le juge de faire ou de ne pas faire quelque chose. | ما يفرضه القاضي من فعل شيء أو الامتناع عنه.
+avertissement | Sanction légère qui rappelle à une personne ses obligations. | جزاء يسير يذكر شخصا بالتزاماته. | sf=mise en garde
+blâme | Sanction disciplinaire qui réprouve la conduite d'un agent. | عقوبة تأديبية تستنكر سلوك عون. | sa=لوم
+pénalité de retard | Somme due par celui qui exécute son obligation après la date convenue. | مبلغ مستحق على من ينفذ التزامه بعد التاريخ الذي اتفق عليه.
+restitution | Fait de rendre une chose à celui qui y a droit. | إعادة شيء إلى من له حق فيه.
+remise en état | Fait de replacer une chose ou un lieu dans la situation où il se trouvait avant le dommage. | إرجاع شيء أو مكان إلى الوضع الذي كان فيه قبل الضرر.
+régularisation | Opération qui rend conforme à la règle une situation qui ne l'était pas. | عملية تجعل حالة لم تكن مطابقة للقاعدة مطابقة لها.
+rectification | Correction d'une erreur dans un acte ou un registre. | تقويم غلط في محرر أو سجل. | sf=correction | sa=تصويب
+retrait | Fait de reprendre un acte, un droit ou une autorisation. | استرجاع تصرف أو حق أو ترخيص.
+interdiction d'exercer | Sanction qui défend à une personne de pratiquer une profession ou une activité. | جزاء يحظر على شخص مزاولة مهنة أو نشاط.
+fermeture | Sanction qui oblige un établissement à cesser son activité, pour un temps ou pour toujours. | جزاء يلزم مؤسسة بوقف نشاطها، لمدة أو نهائيا. | sa=إغلاق
+exclusion | Fait d'écarter une personne d'un groupe, d'une procédure ou d'un marché public. | إبعاد شخص عن مجموعة أو إجراء أو صفقة عمومية. | sa=استبعاد
+privation de droits | Peine qui retire à un condamné l'exercice de droits civiques, civils ou de famille. | عقوبة تسحب من المحكوم عليه ممارسة حقوق وطنية أو مدنية أو حقوق الأسرة.
+nullité de plein droit | Nullité qui résulte de la loi elle-même, sans que le juge ait à l'apprécier. | بطلان ينتج عن القانون ذاته، دون أن يقدره القاضي.

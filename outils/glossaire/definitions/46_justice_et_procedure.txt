@@ -1,0 +1,278 @@
+# Définitions des termes de termes/46_justice_et_procedure.txt : terme | définition française | définition arabe | options (sf=, sa=)
+ordre judiciaire | Ensemble des juridictions qui jugent les litiges civils et pénaux, avec la Cour suprême à leur tête. | مجموع الجهات القضائية التي تفصل في النزاعات المدنية والجزائية، وعلى رأسها المحكمة العليا.
+ordre administratif | Ensemble des juridictions qui jugent les litiges avec l'administration, avec le Conseil d'État à leur tête. | مجموع الجهات القضائية التي تفصل في النزاعات مع الإدارة، وعلى رأسها مجلس الدولة.
+juridiction de droit commun | Juridiction qui connaît de toutes les affaires que la loi ne confie pas à une autre. | جهة قضائية تنظر في كل القضايا التي لا يسندها القانون إلى جهة أخرى.
+juridiction d'exception | Juridiction qui ne connaît que des affaires que la loi lui confie expressément. | جهة قضائية لا تنظر إلا في القضايا التي يسندها إليها القانون صراحة.
+juridiction spécialisée | Juridiction chargée d'une seule catégorie de litiges, comme ceux du commerce ou du travail. | جهة قضائية تختص بصنف واحد من النزاعات، كنزاعات التجارة أو العمل.
+juridiction du premier degré | Juridiction qui examine une affaire pour la première fois. | جهة قضائية تنظر في قضية أول مرة.
+juridiction d'appel | Juridiction qui examine de nouveau une affaire déjà jugée par un tribunal. | جهة قضائية تعيد النظر في قضية سبق أن حكمت فيها محكمة. | sf=juridiction du second degré
+juridiction de renvoi | Juridiction à laquelle la Cour suprême envoie une affaire après avoir cassé la décision. | جهة قضائية ترسل إليها المحكمة العليا قضية بعد أن تنقض القرار.
+juge unique | Juge qui décide seul, sans siéger avec d'autres. | قاض يقرر وحده، دون أن يجلس مع قضاة آخرين.
+formation collégiale | Groupe de plusieurs juges qui examinent une affaire et décident ensemble. | مجموعة من عدة قضاة ينظرون في قضية ويقررون معا.
+composition du tribunal | Liste des juges et des autres personnes qui siègent pour juger une affaire. | قائمة القضاة وغيرهم من الأشخاص الذين يجلسون ليحكموا في قضية.
+carte judiciaire | Répartition des tribunaux et des cours sur le territoire, avec le ressort de chacun. | توزيع المحاكم والمجالس القضائية على الإقليم، مع دائرة الاختصاص لكل واحدة منها.
+section civile | Section du tribunal qui tranche les litiges de droit civil. | قسم في المحكمة يفصل في نزاعات القانون المدني.
+section commerciale | Section du tribunal qui tranche les litiges entre commerçants. | قسم في المحكمة يفصل في النزاعات بين التجار.
+section foncière | Section du tribunal qui tranche les litiges sur la propriété des terres et des bâtiments. | قسم في المحكمة يفصل في النزاعات حول ملكية الأراضي والبنايات.
+section des référés | Section du tribunal qui ordonne sans attendre les mesures que l'urgence commande. | قسم في المحكمة يأمر دون انتظار بالتدابير التي تتطلبها حالة العجلة.
+section pénale | Section du tribunal qui se prononce sur les délits. | قسم في المحكمة يفصل في الجنح.
+section des mineurs | Section du tribunal qui se prononce sur les infractions commises par des mineurs. | قسم في المحكمة يفصل في الجرائم التي يرتكبها قاصرون.
+section maritime | Section du tribunal qui tranche les litiges du commerce par mer et de la navigation. | قسم في المحكمة يفصل في نزاعات التجارة عبر البحر والملاحة.
+chambre civile | Chambre de la cour ou de la Cour suprême qui examine les affaires de droit civil. | غرفة في المجلس القضائي أو في المحكمة العليا تنظر في قضايا القانون المدني.
+chambre pénale | Chambre de la cour ou de la Cour suprême qui examine les affaires de droit pénal. | غرفة في المجلس القضائي أو في المحكمة العليا تنظر في قضايا القانون الجنائي.
+chambre commerciale et maritime | Chambre qui examine les affaires du commerce et de la navigation. | غرفة تنظر في قضايا التجارة والملاحة.
+chambre sociale | Chambre qui examine les affaires du travail et de la sécurité sociale. | غرفة تنظر في قضايا العمل والضمان الاجتماعي.
+chambre foncière | Chambre qui examine les affaires relatives à la propriété des terres et des bâtiments. | غرفة تنظر في القضايا المتعلقة بملكية الأراضي والبنايات.
+chambre administrative | Chambre qui examine les litiges entre une personne et l'administration. | غرفة تنظر في النزاعات بين شخص والإدارة.
+chambre des mineurs | Chambre de la cour qui examine de nouveau les affaires où un mineur est poursuivi. | غرفة في المجلس القضائي تعيد النظر في القضايا التي يتابع فيها قاصر.
+chambres réunies | Formation où siègent ensemble plusieurs chambres de la Cour suprême, pour les questions les plus importantes. | تشكيلة تجلس فيها معا عدة غرف من المحكمة العليا، للمسائل الأكثر أهمية.
+chambre mixte | Formation qui réunit des juges de plusieurs chambres de la Cour suprême, quand une question les concerne toutes. | تشكيلة تجمع قضاة من عدة غرف من المحكمة العليا، إذا كانت مسألة تهمها كلها.
+président de chambre | Juge qui est à la tête d'une chambre et conduit ses audiences. | قاض يرأس غرفة ويدير جلساتها.
+président de section | Juge qui est à la tête d'une section du tribunal et conduit ses audiences. | قاض يرأس قسما في المحكمة ويدير جلساته.
+président de la cour | Juge placé à la tête d'une cour ; il en organise le travail et préside ses formations. | قاض على رأس مجلس قضائي، ينظم العمل فيه ويرأس تشكيلاته.
+premier président | Juge placé à la tête de la Cour suprême. | القاضي الذي يوجد على رأس المحكمة العليا.
+vice-président | Juge qui seconde le président d'une juridiction et le remplace quand il est empêché. | قاض يساعد رئيس جهة قضائية ويقوم مقامه إذا حصل له مانع.
+conseiller rapporteur | Conseiller chargé d'étudier un dossier et de l'exposer à la formation qui jugera. | مستشار يكلف بدراسة ملف وعرضه على التشكيلة التي تحكم فيه.
+juge rapporteur | Juge chargé de suivre une affaire, de la préparer et d'en faire l'exposé. | قاض يكلف بمتابعة قضية وتحضيرها وعرضها.
+commissaire d'État | Magistrat qui, devant les juridictions administratives, donne son avis en toute indépendance sur la solution du litige. | قاض يبدي أمام الجهات القضائية الإدارية رأيه في حل النزاع بكل استقلال.
+substitut du procureur | Magistrat du ministère public qui seconde le procureur de la République et agit en son nom. | قاض من النيابة العامة يساعد وكيل الجمهورية ويتصرف باسمه. | sf=procureur de la République adjoint, procureur adjoint
+avocat général | Magistrat du ministère public près une cour ou près la Cour suprême. | قاض من النيابة العامة لدى مجلس قضائي أو لدى المحكمة العليا.
+doyen des juges d'instruction | Le plus ancien des juges chargés des enquêtes dans un tribunal ; il répartit les dossiers entre eux. | أقدم القضاة المكلفين بالتحقيق في محكمة، يوزع الملفات بينهم.
+corps de la magistrature | Ensemble des juges et des magistrats du ministère public. | مجموع قضاة الحكم وقضاة النيابة العامة.
+statut de la magistrature | Loi qui fixe les droits, les devoirs et la carrière des magistrats. | قانون يحدد الحقوق والواجبات والمسار المهني للقضاة.
+serment du magistrat | Promesse que fait le juge, avant de prendre sa charge, de rendre la justice avec loyauté. | وعد يقطعه القاضي قبل أن يتولى مهامه بأن يقيم العدل بنزاهة.
+devoir de réserve | Obligation, pour un juge ou un fonctionnaire, de mesurer la manière dont il exprime ses opinions. | التزام القاضي أو الموظف بأن يزن طريقة تعبيره عن آرائه.
+secret des délibérations | Interdiction, pour les juges, de révéler ce qui s'est dit entre eux avant la décision. | حظر على القضاة أن يكشفوا ما قيل بينهم قبل القرار.
+discipline des magistrats | Règles et sanctions qui répondent aux manquements d'un juge aux devoirs de sa charge. | قواعد وجزاءات تواجه إخلال قاض بواجبات منصبه.
+prise à partie | Action exceptionnelle contre un juge auquel on reproche un dol, une fraude ou un refus de juger. | دعوى استثنائية ضد قاض ينسب إليه تدليس أو غش أو رفض أن يحكم.
+école supérieure de la magistrature | Établissement public qui forme les futurs magistrats. | مؤسسة عمومية تكون قضاة المستقبل.
+greffier en chef | Fonctionnaire qui est à la tête du greffe d'une juridiction. | موظف يرأس أمانة الضبط في جهة قضائية.
+rôle des affaires | Liste des affaires portées devant une juridiction, dans l'ordre où elles seront appelées. | قائمة القضايا المرفوعة أمام جهة قضائية، بالترتيب الذي تنادى به.
+registre d'audience | Livre où le greffier note ce qui se passe à chaque audience. | دفتر يدون فيه أمين الضبط ما يجري في كل جلسة.
+minute du jugement | Original du jugement, signé par le juge et le greffier et conservé au greffe. | النسخة الأولى للحكم، وقعها القاضي وأمين الضبط وتحفظ بأمانة الضبط.
+expédition du jugement | Copie conforme du jugement que le greffe remet aux parties. | نسخة مطابقة لأصل الحكم تسلمها أمانة الضبط للأطراف.
+conseil de l'ordre | Organe élu par les avocats, qui administre le barreau et veille au respect des règles. | هيئة ينتخبها المحامون، تدير منظمة المحامين وتسهر على احترام القواعد.
+avocat stagiaire | Avocat débutant qui se forme pendant le temps que la loi fixe, sous le contrôle du barreau. | محام مبتدئ يتكون خلال المدة التي يحددها القانون، تحت رقابة منظمة المحامين.
+avocat agréé près la Cour suprême | Avocat qui a le droit de plaider devant la Cour suprême et le Conseil d'État. | محام له الحق في أن يرافع أمام المحكمة العليا ومجلس الدولة.
+cabinet d'avocat | Lieu où un avocat reçoit ses clients et prépare ses dossiers. | المكان الذي يستقبل فيه محام زبائنه ويحضر ملفاته.
+constitution d'avocat | Désignation par une partie de l'avocat qui la représentera au procès. | تعيين طرف المحامي الذي يمثله في المحاكمة.
+avocat commis d'office | Avocat que le bâtonnier ou le juge désigne pour défendre une personne qui n'en a pas. | محام يعينه نقيب المحامين أو القاضي ليدافع عن شخص ليس له محام.
+honoraires d'avocat | Somme que le client verse à son avocat pour son travail. | مبلغ يدفعه الزبون للمحامي مقابل عمله.
+chambre nationale des notaires | Organe qui représente la profession de notaire et veille à ses règles. | هيئة تمثل مهنة الموثق وتسهر على قواعدها.
+étude notariale | Bureau où un notaire reçoit les parties et conserve ses actes. | مكتب يستقبل فيه موثق الأطراف ويحفظ محرراته.
+chambre nationale des huissiers de justice | Organe qui représente la profession d'huissier de justice et veille à ses règles. | هيئة تمثل مهنة المحضر القضائي وتسهر على قواعدها.
+office d'huissier | Bureau où un huissier de justice exerce sa charge. | مكتب يمارس فيه محضر قضائي مهامه.
+expert | Spécialiste que le juge charge d'examiner une question technique et de lui donner son avis. | مختص يكلفه القاضي بفحص مسألة تقنية وبإبداء رأيه فيها.
+liste des experts | Tableau des spécialistes agréés auprès d'une cour, parmi lesquels le juge choisit. | جدول المختصين المعتمدين لدى مجلس قضائي، يختار القاضي من بينهم.
+interprète | Personne qui traduit de vive voix, à l'audience, les paroles d'une partie ou d'un témoin. | شخص يترجم شفاهة في الجلسة أقوال طرف أو شاهد.
+traducteur assermenté | Traducteur qui a prêté serment et dont les traductions font foi devant les tribunaux et l'administration. | مترجم أدى اليمين وتعتمد ترجماته أمام المحاكم والإدارة. | sf=traducteur juré
+conciliateur | Personne chargée de rapprocher les parties pour qu'elles mettent fin elles-mêmes à leur litige. | شخص يكلف بتقريب الطرفين لينهيا نزاعهما بنفسيهما.
+bureau d'assistance judiciaire | Bureau du tribunal qui décide si une personne sans ressources sera dispensée des frais du procès. | مكتب في المحكمة يقرر هل يعفى شخص معوز من مصاريف المحاكمة.
+palais de justice | Bâtiment où siègent les tribunaux et la cour. | البناية التي تجلس فيها المحاكم والمجلس القضائي.
+salle d'audience | Pièce où les juges siègent et entendent les parties. | قاعة يجلس فيها القضاة ويسمعون الأطراف.
+vacances judiciaires | Période de l'été pendant laquelle les juridictions ne traitent que les affaires urgentes. | فترة من الصيف لا تنظر فيها الجهات القضائية إلا في القضايا المستعجلة.
+année judiciaire | Période de travail des juridictions, de la rentrée d'automne à la veille de l'été. | فترة عمل الجهات القضائية، من افتتاح الخريف إلى بداية الصيف.
+inspection générale | Organe du ministère chargé de contrôler le fonctionnement des juridictions. | هيئة في الوزارة تراقب سير الجهات القضائية.
+ministère de la Justice | Administration de l'État chargée de l'organisation et du fonctionnement des tribunaux. | إدارة من الدولة مكلفة بتنظيم المحاكم وسيرها.
+garde des Sceaux | Titre que porte le ministre de la Justice. | اللقب الذي يحمله وزير العدل.
+droit d'agir | Droit de s'adresser à un juge pour qu'il dise si une prétention est fondée. | حق اللجوء إلى قاض ليقول هل الادعاء مؤسس.
+intérêt à agir | Avantage personnel et légitime que le demandeur attend de son action ; sans lui, la demande est irrecevable. | منفعة شخصية ومشروعة ينتظرها المدعي من الدعوى، وبدونها يكون الطلب غير مقبول.
+qualité pour agir | Titre qui donne à une personne le pouvoir de porter une prétention devant le juge. | صفة تخول شخصا سلطة عرض ادعاء على القاضي.
+capacité d'ester en justice | Aptitude d'une personne à agir elle-même devant un tribunal, comme demandeur ou comme défendeur. | قدرة شخص على أن يتصرف بنفسه أمام محكمة، بصفة المدعي أو المدعى عليه.
+défaut de qualité | Situation de celui qui agit sans avoir le titre que la loi veut pour cette action. | حالة من يرفع دعوى دون أن تكون له الصفة التي يشترطها القانون لها.
+défaut d'intérêt | Situation de celui qui agit sans pouvoir tirer aucun avantage de la décision qu'il sollicite. | حالة من يرفع دعوى دون أن يجني أي منفعة من القرار الذي يلتمسه.
+introduction de l'instance | Acte par lequel le demandeur porte son litige devant le juge, le plus souvent par une requête. | تصرف يعرض به المدعي نزاعه على القاضي، غالبا بعريضة.
+enrôlement | Inscription d'une affaire sur le registre du greffe, qui lui donne un numéro et une date d'audience. | تسجيل قضية في سجل أمانة الضبط، فيعطى لها رقم وتاريخ جلسة. | sf=mise au rôle
+objet du litige | Ce que les parties demandent au juge, tel que leurs écritures le fixent. | ما يطلبه الأطراف من القاضي، كما تحدده مذكراتهم.
+moyen de droit | Raison tirée d'une règle juridique, qu'une partie avance pour soutenir sa demande. | حجة مستمدة من قاعدة قانونية، يقدمها طرف لتأييد طلبه.
+moyen de fait | Raison tirée des circonstances de l'affaire, qu'une partie avance pour soutenir sa demande. | حجة مستمدة من ظروف القضية، يقدمها طرف لتأييد طلبه.
+moyen nouveau | Raison qu'une partie présente pour la première fois devant la juridiction qui examine le recours. | حجة يقدمها طرف أول مرة أمام الجهة القضائية التي تنظر في الطعن.
+moyen d'ordre public | Raison que le juge doit relever lui-même, même si aucune partie ne l'avance. | حجة يجب على القاضي أن يثيرها بنفسه ولو لم يقدمها أي طرف.
+mémoire en réponse | Écrit par lequel le défendeur répond aux arguments du demandeur. | محرر يرد به المدعى عليه على حجج المدعي.
+mémoire en réplique | Écrit par lequel le demandeur répond à son tour au défendeur. | محرر يرد به المدعي بدوره على المدعى عليه.
+mémoire ampliatif | Écrit qui développe les raisons d'un recours déjà formé. | محرر يفصل أسباب طعن سبق رفعه.
+échange des mémoires | Remise par chaque partie à l'autre de ses écrits, pour que chacune puisse y répondre. | تسليم كل طرف محرراته للطرف الآخر، ليتمكن كل واحد من الرد عليها.
+communication des pièces | Remise à l'adversaire des documents sur lesquels une partie appuie sa demande. | تسليم الخصم الوثائق التي يستند إليها طرف في طلبه.
+bordereau de pièces | Liste des documents qu'une partie remet au juge et à son adversaire. | قائمة الوثائق التي يسلمها طرف للقاضي ولخصمه.
+demande principale | Demande qui ouvre le procès et en trace le cadre. | طلب يفتتح المحاكمة ويرسم إطارها.
+demande incidente | Demande formée au cours d'un procès déjà ouvert. | طلب يقدم خلال محاكمة سبق افتتاحها.
+demande subsidiaire | Demande que le juge n'examine que s'il rejette la demande principale. | طلب لا ينظر فيه القاضي إلا إذا رفض الطلب الأصلي.
+demande nouvelle | Demande présentée pour la première fois en appel ; elle est en principe irrecevable. | طلب يقدم أول مرة في الاستئناف، وهو مبدئيا غير مقبول.
+demande en intervention | Demande par laquelle un tiers entre dans un procès, ou y est amené par une partie. | طلب يدخل به شخص من الغير في محاكمة، أو يجلبه به طرف إليها.
+intervention volontaire | Entrée d'un tiers dans un procès, de sa propre initiative, pour défendre ses intérêts. | دخول شخص من الغير في محاكمة بمبادرة منه ليدافع عن مصالحه.
+intervention forcée | Entrée d'un tiers dans un procès où une partie l'amène, pour que le jugement vaille aussi contre lui. | دخول شخص من الغير في محاكمة يجلبه إليها طرف، ليسري الحكم عليه أيضا.
+appel en garantie | Demande par laquelle une partie fait entrer dans le procès celui qui doit supporter le jugement à sa place. | طلب يدخل به طرف في المحاكمة من يجب أن يتحمل الحكم عنه.
+mise en cause | Acte par lequel une partie fait entrer un tiers dans un procès déjà ouvert. | تصرف يدخل به طرف شخصا من الغير في محاكمة سبق افتتاحها.
+exception d'incompétence | Moyen par lequel une partie soutient que le juge auquel l'affaire est soumise n'est pas celui que la loi désigne. | وسيلة يدعي بها طرف أن القاضي الذي عرضت عليه القضية ليس هو الذي يعينه القانون.
+exception de litispendance | Moyen par lequel une partie fait valoir que le même litige est déjà porté devant un autre juge. | وسيلة يدفع بها طرف بأن النزاع نفسه معروض من قبل على قاض آخر.
+exception de connexité | Moyen par lequel une partie obtient que deux affaires liées soient jugées ensemble. | وسيلة يحصل بها طرف على أن يحكم في قضيتين مرتبطتين معا.
+exception de nullité | Moyen par lequel une partie soutient qu'un acte de la procédure est nul. | وسيلة يدعي بها طرف أن إجراء من الإجراءات باطل.
+exception dilatoire | Moyen par lequel une partie prie le juge d'attendre avant de statuer. | وسيلة يلتمس بها طرف من القاضي أن ينتظر قبل أن يفصل.
+litispendance | Situation où le même litige est porté devant plus d'une juridiction à la fois. | حالة يعرض فيها النزاع نفسه على أكثر من جهة قضائية في وقت واحد.
+connexité | Lien étroit entre deux affaires, qui rend utile de les juger ensemble. | صلة وثيقة بين قضيتين تجعل من المفيد أن يحكم فيهما معا.
+incident d'instance | Événement qui suspend, interrompt ou éteint le procès avant le jugement. | حادث يوقف المحاكمة أو يقطعها أو ينهيها قبل الحكم.
+suspension de l'instance | Mise en attente du procès, pour un temps, que le juge décide ou que la loi impose. | تعليق المحاكمة مدة من الزمن، يقرره القاضي أو يفرضه القانون.
+interruption de l'instance | Coupure du procès provoquée par un événement qui touche une partie, comme son décès. | توقف المحاكمة بسبب حادث يمس أحد الأطراف، كوفاته.
+reprise d'instance | Remise en marche d'un procès interrompu ou suspendu. | العودة إلى سير محاكمة قطعت أو أوقفت.
+extinction de l'instance | Fin du procès sans jugement sur le fond, par désistement, péremption ou accord des parties. | نهاية المحاكمة دون حكم في أصل النزاع، بالتنازل أو بسقوط الخصومة أو باتفاق الأطراف.
+acquiescement | Acte par lequel une partie reconnaît que la demande de son adversaire est fondée. | تصرف يعترف به طرف بأن طلب خصمه مؤسس.
+désistement d'action | Renonciation du demandeur au droit même qu'il faisait valoir. | تنازل المدعي عن الحق نفسه الذي كان يطالب به.
+disjonction d'instances | Décision de juger séparément des demandes d'abord réunies dans un même procès. | قرار بأن يحكم على حدة في طلبات جمعت أولا في محاكمة واحدة.
+partie défaillante | Partie qui ne se présente pas à l'audience ou n'accomplit pas un acte dans le délai. | طرف لا يحضر الجلسة أو لا يقوم بإجراء في الأجل.
+défaut de comparution | Situation d'une partie convoquée qui ne se présente pas devant le juge. | حالة طرف استدعي فلم يحضر أمام القاضي.
+représentation en justice | Pouvoir donné à une personne d'accomplir les actes du procès pour une partie. | سلطة تعطى لشخص ليقوم بإجراءات المحاكمة عن طرف.
+ministère d'avocat | Obligation, devant les juridictions que la loi désigne, de se faire représenter par un avocat. | التزام الطرف، أمام الجهات القضائية التي يعينها القانون، بأن يمثله محام.
+partie succombante | Partie qui perd le procès ; elle supporte en principe les dépens. | طرف يخسر المحاكمة، ويتحمل مبدئيا المصاريف القضائية. | sf=partie perdante
+partie gagnante | Partie à laquelle le juge donne raison. | طرف يحكم القاضي لصالحه.
+colitigant | Personne qui plaide aux côtés d'une autre, dans le même camp. | شخص يترافع إلى جانب شخص آخر في الصف نفسه.
+tiers intervenant | Personne qui n'était pas partie au procès et qui y entre pour défendre ses droits. | شخص لم يكن طرفا في المحاكمة فيدخل فيها ليدافع عن حقوقه.
+appelé en garantie | Personne qu'une partie fait entrer dans le procès pour qu'elle supporte à sa place ce que le juge décidera. | شخص يدخله طرف في المحاكمة ليتحمل عنه ما يقضي به القاضي.
+mise en état | Préparation d'une affaire avant l'audience : remise des écrits et des pièces sous le contrôle du juge. | تحضير قضية قبل الجلسة: تسليم المحررات والوثائق تحت رقابة القاضي.
+clôture de l'instruction | Décision par laquelle le juge déclare que le dossier est complet et qu'aucune pièce nouvelle ne sera reçue. | قرار يعلن به القاضي أن الملف مكتمل وأنه لن يقبل أي وثيقة جديدة.
+réouverture des débats | Décision de reprendre la discussion d'une affaire que les juges examinaient déjà entre eux. | قرار بالعودة إلى مناقشة قضية كان القضاة قد شرعوا في التداول فيها.
+police de l'audience | Pouvoir du président de maintenir l'ordre pendant les débats. | سلطة الرئيس في حفظ النظام أثناء المرافعات.
+publicité des débats | Règle selon laquelle toute personne peut entrer dans la salle et suivre les audiences. | قاعدة تسمح لكل شخص بأن يدخل القاعة ويتابع الجلسات.
+audience publique | Audience à laquelle toute personne peut entrer. | جلسة يجوز لكل شخص أن يدخلها.
+audience de conciliation | Audience où le juge essaie d'amener les parties à un accord. | جلسة يحاول فيها القاضي أن يوصل الطرفين إلى اتفاق.
+tentative de conciliation | Effort du juge ou d'un tiers pour amener les parties à un accord avant tout jugement. | سعي القاضي أو شخص من الغير إلى أن يوصل الطرفين إلى اتفاق قبل أي حكم.
+mise en délibéré | Moment où les débats sont clos et où les juges se retirent pour décider. | اللحظة التي تختتم فيها المرافعات وينسحب القضاة ليقرروا.
+prononcé du jugement | Lecture de la décision par le juge, en audience publique. | قراءة القاضي القرار في جلسة علنية.
+date du prononcé | Jour où le juge lit sa décision en audience. | اليوم الذي يقرأ فيه القاضي قراره في الجلسة.
+rédaction du jugement | Mise par écrit de la décision, avec ses motifs et son dispositif. | كتابة القرار مع أسبابه ومنطوقه.
+motifs du jugement | Raisons, tirées des faits et de la loi, par lesquelles le juge justifie sa décision. | الحجج المستمدة من الوقائع ومن القانون التي يبرر بها القاضي قراره.
+défaut de motifs | Vice d'une décision qui ne dit pas pourquoi le juge a statué ainsi. | عيب في قرار لا يبين لماذا فصل القاضي على هذا النحو.
+insuffisance de motifs | Vice d'une décision dont les raisons sont trop brèves pour qu'on puisse la contrôler. | عيب في قرار حججه موجزة إلى حد لا يسمح بأن يراقب.
+contradiction de motifs | Vice d'une décision dont les raisons se combattent l'une l'autre. | عيب في قرار تتعارض حججه بعضها مع بعض.
+défaut de base légale | Vice d'une décision dont les constatations ne suffisent pas pour vérifier que la loi a été bien appliquée. | عيب في قرار لا تكفي معايناته للتحقق من أن القانون طبق تطبيقا سليما.
+dénaturation | Erreur du juge qui prête à un écrit clair un sens qu'il n'a pas. | غلط من القاضي ينسب إلى محرر واضح معنى ليس له.
+omission de statuer | Oubli par le juge de répondre à l'une des demandes des parties. | نسيان القاضي الرد على أحد طلبات الأطراف.
+ultra petita | Vice d'une décision qui donne à une partie plus que ce qu'elle voulait obtenir. | عيب في قرار يعطي طرفا أكثر مما كان يريد الحصول عليه.
+erreur matérielle | Faute de frappe ou de calcul dans une décision, que le juge peut corriger lui-même. | خطأ في الكتابة أو في الحساب يرد في قرار، يجوز للقاضي أن يصححه بنفسه.
+rectification du jugement | Correction d'une erreur matérielle par le juge qui a rendu la décision. | تصويب خطأ مادي من القاضي الذي أصدر القرار.
+interprétation du jugement | Explication, par le juge qui l'a rendue, d'une décision dont le sens est obscur. | شرح يقدمه القاضي الذي أصدر قرارا غامض المعنى.
+jugement au fond | Jugement qui tranche la question principale du litige, et non un simple incident. | حكم يفصل في المسألة الأصلية للنزاع، لا في مجرد عارض.
+jugement en premier ressort | Jugement contre lequel un appel est possible. | حكم يجوز استئنافه.
+jugement réputé contradictoire | Jugement rendu en l'absence d'une partie qui avait reçu elle-même la convocation ; l'opposition lui est fermée. | حكم يصدر في غياب طرف تسلم الاستدعاء بنفسه، ولا تقبل فيه المعارضة.
+jugement déclaratif | Jugement qui constate un droit ou une situation qui existait déjà. | حكم يعاين حقا أو وضعا كان موجودا من قبل.
+jugement constitutif | Jugement qui crée une situation juridique nouvelle, comme le divorce. | حكم ينشئ وضعية قانونية جديدة، كالطلاق.
+jugement d'expédient | Jugement qui reprend l'accord auquel les parties sont parvenues. | حكم يثبت الاتفاق الذي توصل إليه الطرفان.
+jugement étranger | Jugement rendu par un tribunal d'un autre État. | حكم تصدره محكمة دولة أخرى.
+décision de justice | Acte par lequel un juge tranche une question qui lui est soumise. | تصرف يفصل به قاض في مسألة عرضت عليه. | sf=décision judiciaire
+décision gracieuse | Décision prise sans litige, à la demande d'une seule personne. | قرار يتخذ دون نزاع، بطلب من شخص واحد.
+matière gracieuse | Domaine des demandes que le juge examine sans adversaire ni litige. | مجال الطلبات التي ينظر فيها القاضي دون خصم ولا نزاع.
+matière contentieuse | Domaine des affaires où deux parties s'opposent devant le juge. | مجال القضايا التي يتواجه فيها طرفان أمام القاضي.
+trouble manifestement illicite | Atteinte évidente à un droit, que le juge des référés fait cesser sans attendre. | مساس واضح بحق، يوقفه قاضي الاستعجال دون انتظار.
+dommage imminent | Dommage qui va se produire très bientôt si rien n'est fait. | ضرر سيقع قريبا جدا إن لم يتخذ أي تدبير.
+contestation sérieuse | Désaccord véritable sur le fond du droit, qui empêche le juge des référés de trancher. | خلاف حقيقي على أصل الحق يمنع قاضي الاستعجال من الفصل.
+provision ad litem | Somme que le juge donne d'avance à une partie pour payer les frais du procès. | مبلغ يعطيه القاضي مسبقا لطرف ليدفع مصاريف المحاكمة.
+condamnation aux dépens | Décision qui fait supporter les frais du procès à la partie perdante. | قرار يحمل الطرف الخاسر مصاريف المحاكمة.
+amende civile | Somme que le juge civil impose, au profit du Trésor, à celui qui a agi de manière abusive dans un procès. | مبلغ يفرضه القاضي المدني لفائدة الخزينة على من تصرف بصفة تعسفية في محاكمة.
+frais irrépétibles | Dépenses du procès, comme les honoraires, qui ne sont pas comprises dans les dépens. | مصاريف المحاكمة، كالأتعاب، التي لا تدخل في المصاريف القضائية.
+liquidation des dépens | Calcul du montant exact des frais que la partie perdante doit rembourser. | حساب المبلغ الدقيق للمصاريف التي يجب أن يسددها الطرف الخاسر.
+signification du jugement | Remise officielle du jugement à une partie par un huissier de justice. | تسليم رسمي للحكم إلى طرف بواسطة محضر قضائي.
+notification à personne | Remise d'un acte au destinataire lui-même. | تسليم محرر إلى المرسل إليه نفسه.
+notification à domicile | Remise d'un acte au domicile du destinataire, à une personne qui s'y trouve. | تسليم محرر في موطن المرسل إليه إلى شخص يوجد فيه.
+notification par voie d'affichage | Remise d'un acte par son exposition au tribunal ou à la commune, quand le destinataire est introuvable. | تسليم محرر بعرضه في المحكمة أو البلدية، إذا تعذر العثور على المرسل إليه.
+procès-verbal de notification | Écrit par lequel l'huissier atteste qu'il a remis un acte et dit à qui. | محرر يشهد فيه المحضر القضائي بأنه سلم محررا ويذكر لمن سلمه.
+acte d'huissier | Écrit rédigé et remis par un huissier de justice : convocation, sommation, constat. | محرر يكتبه ويسلمه محضر قضائي: استدعاء أو إنذار رسمي أو معاينة.
+exploit | Acte par lequel un huissier de justice informe officiellement une personne d'un événement. | محرر يعلم به محضر قضائي شخصا بحادث رسميا. | sf=exploit d'huissier
+convocation | Écrit qui invite une personne à se présenter devant le juge à une date précise. | محرر يدعو شخصا إلى الحضور أمام القاضي في تاريخ معين.
+élection de domicile | Choix d'une adresse, souvent celle de l'avocat, où les actes du procès pourront être remis. | اختيار عنوان، غالبا عنوان المحامي، تسلم فيه محررات المحاكمة.
+administration de la preuve | Manière dont une partie apporte au juge les éléments qui appuient ses dires. | الكيفية التي يقدم بها طرف للقاضي العناصر التي تسند أقواله.
+preuve littérale | Preuve que fournit un texte écrit et signé, comme un contrat ou une lettre. | دليل يقدمه نص مكتوب وقعه صاحبه، كعقد أو رسالة. | sf=preuve écrite
+preuve testimoniale | Preuve qui résulte des déclarations de témoins. | دليل مستمد من أقوال شهود. | sf=preuve par témoins
+preuve par présomption | Preuve tirée d'un fait connu, d'où le juge conclut à un fait inconnu. | دليل مستمد من واقعة معلومة يستخلص منها القاضي واقعة مجهولة.
+preuve contraire | Preuve qui renverse une présomption ou les éléments de l'adversaire. | دليل يهدم قرينة أو عناصر الخصم.
+élément de preuve | Tout ce qui aide à établir un fait : écrit, témoignage, indice, aveu. | كل ما يساعد على إثبات واقعة: محرر أو شهادة أو أمارة أو إقرار.
+présomption simple | Présomption que la preuve contraire peut renverser. | قرينة يجوز أن يهدمها دليل عكسي. | sf=présomption réfragable
+présomption irréfragable | Présomption contre laquelle aucune preuve n'est admise. | قرينة لا يقبل ضدها أي دليل. | sf=présomption absolue
+présomption de fait | Présomption que le juge tire lui-même des circonstances de l'affaire. | قرينة يستخلصها القاضي بنفسه من ظروف القضية.
+aveu judiciaire | Aveu exprimé devant le juge pendant le procès ; il lie celui dont il vient. | إقرار يصدر أمام القاضي أثناء المحاكمة، ويلزم صاحبه.
+aveu extrajudiciaire | Aveu fait hors du procès, dans une lettre ou une conversation. | إقرار يصدر خارج المحاكمة، في رسالة أو حديث.
+serment supplétoire | Serment que le juge impose à une partie pour compléter des preuves insuffisantes. | يمين يفرضها القاضي على طرف ليتمم أدلة غير كافية.
+délation du serment | Acte par lequel une partie invite l'autre à jurer que son affirmation est vraie. | تصرف يدعو به طرف الطرف الآخر إلى أن يحلف على صحة قوله.
+refus de serment | Attitude de la partie qui ne veut pas jurer ; elle perd alors sur le point concerné. | موقف الطرف الذي لا يريد أن يحلف، فيخسر في النقطة المعنية.
+audition des témoins | Séance où le juge reçoit les déclarations des témoins. | حصة يتلقى فيها القاضي أقوال الشهود.
+reproche de témoin | Moyen par lequel une partie écarte un témoin dont elle craint le parti pris. | وسيلة يستبعد بها طرف شاهدا يخشى تحيزه.
+déposition | Déclaration d'un témoin devant le juge ou l'enquêteur. | تصريح شاهد أمام القاضي أو المحقق.
+comparution personnelle | Présence d'une partie elle-même devant le juge, qui veut l'entendre. | حضور الطرف بنفسه أمام القاضي الذي يريد أن يسمعه.
+descente sur les lieux | Déplacement du juge à l'endroit du litige pour voir les choses lui-même. | تنقل القاضي إلى مكان النزاع ليرى الأشياء بنفسه.
+transport sur les lieux | Déplacement du juge ou de l'enquêteur là où les faits ont eu lieu. | تنقل القاضي أو المحقق إلى حيث وقعت الوقائع.
+rapport d'expertise | Écrit où l'expert expose ses constatations et son avis. | محرر يعرض فيه الخبير معايناته ورأيه.
+contre-expertise | Nouvelle expertise demandée pour vérifier ou contredire la première. | خبرة جديدة تطلب للتحقق من الخبرة الأولى أو لمعارضتها.
+complément d'expertise | Travail supplémentaire que le juge confie à l'expert sur un point resté obscur. | عمل إضافي يسنده القاضي إلى الخبير في نقطة بقيت غامضة.
+mission d'expertise | Liste des questions que le juge pose à l'expert. | قائمة الأسئلة التي يطرحها القاضي على الخبير.
+récusation de l'expert | Demande d'une partie pour écarter un expert dont elle met en doute l'impartialité. | طلب طرف استبعاد خبير له شك في حياده.
+consultation | Avis qu'un spécialiste donne sur une question, à la demande du juge ou d'un client. | رأي يبديه مختص في مسألة، بطلب من القاضي أو من زبون.
+constat d'huissier | Écrit où un huissier de justice décrit ce qu'il a vu lui-même. | محرر يصف فيه محضر قضائي ما رآه بنفسه. | sf=procès-verbal de constat
+faux incident | Procédure par laquelle une partie soutient, au cours d'un procès, qu'une pièce versée au dossier est fausse. | إجراء يدعي به طرف خلال محاكمة أن وثيقة أودعت في الملف مزورة.
+faux principal | Action distincte ouverte pour faire juger qu'un écrit est faux. | دعوى مستقلة ترفع ليحكم بأن محررا مزور.
+production forcée de pièces | Ordre du juge qui oblige une partie ou un tiers à remettre un document. | أمر من القاضي يلزم طرفا أو شخصا من الغير بتسليم وثيقة.
+secret des affaires | Protection des informations commerciales qu'une entreprise tient cachées de ses concurrents. | حماية المعلومات التجارية التي تخفيها مؤسسة عن منافسيها.
+voie de recours ordinaire | Recours ouvert dans tous les cas : l'appel et l'opposition. | طعن مفتوح في كل الحالات: الاستئناف والمعارضة.
+voie de recours extraordinaire | Recours ouvert seulement dans les cas que la loi énumère, comme le pourvoi en cassation. | طعن لا يفتح إلا في الحالات التي يعددها القانون، كالطعن بالنقض.
+délai d'appel | Temps pendant lequel une partie peut faire appel d'un jugement. | المدة التي يجوز فيها لطرف أن يستأنف حكما.
+délai de pourvoi | Temps pendant lequel une partie peut porter une décision devant la Cour suprême. | المدة التي يجوز فيها لطرف أن يعرض قرارا على المحكمة العليا.
+appel principal | Appel formé le premier contre un jugement. | استئناف يرفع أولا ضد حكم.
+appel incident | Appel formé en réponse par la partie contre laquelle l'autre a déjà fait appel. | استئناف يرفعه ردا الطرف الذي استأنف ضده الطرف الآخر.
+appel abusif | Appel formé sans raison sérieuse, pour gagner du temps ou gêner l'adversaire. | استئناف يرفع دون سبب جدي، لربح الوقت أو لمضايقة الخصم.
+acte d'appel | Écrit par lequel une partie déclare faire appel et dit ce qu'elle reproche au jugement. | محرر يعلن به طرف أنه يستأنف ويبين ما يعيبه على الحكم.
+arrêt confirmatif | Arrêt qui approuve le jugement attaqué. | قرار يوافق على الحكم المطعون فيه.
+arrêt infirmatif | Arrêt qui réforme ou annule le jugement attaqué. | قرار يعدل الحكم المطعون فيه أو يبطله.
+arrêt de cassation | Arrêt par lequel la Cour suprême annule une décision contraire à la loi. | قرار تبطل به المحكمة العليا قرارا مخالفا للقانون.
+arrêt de rejet | Arrêt par lequel la Cour suprême écarte le recours et maintient la décision attaquée. | قرار ترد به المحكمة العليا الطعن وتبقي القرار المطعون فيه.
+arrêt de renvoi | Arrêt qui envoie l'affaire devant une autre juridiction pour qu'elle soit examinée de nouveau. | قرار يرسل القضية إلى جهة قضائية أخرى ليعاد النظر فيها.
+arrêt de principe | Arrêt qui pose une règle générale que les juges suivront dans les affaires semblables. | قرار يضع قاعدة عامة يتبعها القضاة في القضايا المماثلة.
+cassation sans renvoi | Annulation d'une décision par la Cour suprême, qui met elle-même fin au litige. | إبطال قرار من المحكمة العليا التي تنهي النزاع بنفسها.
+cassation partielle | Annulation qui ne touche qu'une fraction de la décision attaquée. | إبطال لا يمس إلا جزءا من القرار المطعون فيه.
+moyen de cassation | Reproche de droit adressé à la décision que l'on porte devant la Cour suprême. | مأخذ قانوني يوجه إلى القرار الذي يعرض على المحكمة العليا.
+violation de la loi | Erreur du juge qui applique mal une règle ou refuse de l'appliquer. | غلط من القاضي الذي يسيء تطبيق قاعدة أو يرفض أن يطبقها.
+vice de forme | Défaut d'un acte qui ne suit pas la présentation que la loi impose. | خلل في محرر لا يتبع الصورة التي يفرضها القانون.
+vice de procédure | Défaut qui tient à l'oubli d'une formalité ou d'un délai pendant le procès. | خلل ناتج عن إغفال شكلية أو أجل أثناء المحاكمة.
+demandeur au pourvoi | Partie qui porte une décision devant la Cour suprême. | الطرف الذي يعرض قرارا على المحكمة العليا.
+défendeur au pourvoi | Partie contre laquelle une décision est portée devant la Cour suprême. | الطرف الذي يعرض ضده قرار على المحكمة العليا.
+opposant | Partie jugée par défaut qui prie le même juge d'examiner de nouveau l'affaire. | طرف حكم عليه غيابيا فيلتمس من القاضي نفسه أن يعيد النظر في القضية.
+tiers opposant | Personne étrangère au procès qui attaque un jugement qui lui fait tort. | شخص أجنبي عن المحاكمة يطعن في حكم يضر به.
+recours en interprétation | Recours par lequel une partie prie le juge d'expliquer le sens d'une décision. | طعن يلتمس به طرف من القاضي أن يشرح معنى قرار.
+effet non suspensif | Caractère d'un recours qui n'empêche pas l'exécution de la décision attaquée. | صفة طعن لا يمنع تنفيذ القرار المطعون فيه.
+défense à exécution | Demande faite au juge d'appel de faire cesser l'exécution provisoire d'un jugement. | طلب يقدم إلى قاضي الاستئناف ليوقف النفاذ المعجل لحكم.
+déchéance du pourvoi | Extinction du droit de porter une décision devant la Cour suprême, quand un délai ou une formalité a été oublié. | انقضاء الحق في عرض قرار على المحكمة العليا، إذا أغفل أجل أو شكلية.
+désistement du pourvoi | Renonciation d'une partie au recours qu'elle avait formé devant la Cour suprême. | تنازل طرف عن الطعن الذي رفعه أمام المحكمة العليا.
+irrecevabilité de l'appel | Rejet d'un appel sans examen du fond, parce qu'une condition de présentation manque. | رفض استئناف دون فحص أصل النزاع، لتخلف شرط من شروط تقديمه.
+chose jugée | Ce que le juge a définitivement décidé et qui ne peut plus être discuté entre les mêmes parties. | ما قرره القاضي نهائيا ولا يجوز أن يناقش من جديد بين الطرفين نفسيهما.
+identité de parties | Condition de la chose jugée : les deux procès opposent les mêmes personnes, agissant au même titre. | شرط للشيء المقضي فيه: أن تجمع المحاكمتان الأشخاص أنفسهم بالصفة نفسها.
+identité d'objet | Condition de la chose jugée : les deux procès portent sur la même demande. | شرط للشيء المقضي فيه: أن تنصب المحاكمتان على الطلب نفسه.
+identité de cause | Condition de la chose jugée : les deux demandes reposent sur le même fondement. | شرط للشيء المقضي فيه: أن يقوم الطلبان على الأساس نفسه.
+exécution volontaire du jugement | Accomplissement par la partie condamnée, de son plein gré, de ce que le jugement ordonne. | قيام الطرف الذي حكم عليه، برضاه، بما يأمر به الحكم.
+difficulté d'exécution | Obstacle juridique ou matériel qui surgit quand on veut exécuter un jugement, et que le juge tranche vite. | عائق قانوني أو مادي يظهر عند السعي إلى أن ينفذ حكم، ويفصل فيه القاضي بسرعة.
+agent d'exécution | Personne chargée de mettre à exécution les décisions des juges, le plus souvent l'huissier. | شخص يكلف بتنفيذ قرارات القضاة، وهو غالبا المحضر القضائي.
+sommation | Acte d'huissier qui ordonne à une personne de payer ou d'agir, avant toute poursuite. | محرر المحضر القضائي الذي يأمر شخصا بأن يدفع أو يتصرف، قبل أي متابعة.
+procès-verbal de saisie | Écrit où l'huissier décrit les biens qu'il saisit. | محرر يصف فيه المحضر القضائي الأموال التي يحجزها.
+procès-verbal de carence | Écrit où l'huissier constate que le débiteur n'a aucun bien saisissable. | محرر يعاين فيه المحضر القضائي أن المدين ليس له أي مال قابل للحجز.
+débiteur saisi | Débiteur dont les biens sont saisis par ses créanciers. | مدين حجز الدائنون على أمواله.
+biens saisis | Biens du débiteur placés sous le contrôle du juge en attendant leur vente. | أموال المدين الموضوعة تحت رقابة القاضي في انتظار بيعها.
+gardien des biens saisis | Personne chargée de conserver les biens saisis jusqu'à leur vente. | شخص يكلف بحفظ الأموال المحجوزة إلى غاية بيعها.
+saisie mobilière | Saisie des meubles du débiteur pour les faire vendre. | حجز منقولات المدين لتباع.
+saisie des rémunérations | Saisie d'une fraction du salaire du débiteur entre les mains de son employeur. | حجز جزء من أجر المدين بين يدي مستخدمه.
+saisie-revendication | Saisie d'un meuble par celui qui s'en dit propriétaire, pour empêcher qu'il disparaisse. | حجز منقول يطلبه من يدعي أنه مالكه، لمنع اختفائه.
+saisie-gagerie | Saisie par le bailleur des meubles du locataire qui ne paie pas son loyer. | حجز يوقعه المؤجر على أثاث المستأجر الذي لا يدفع بدل الإيجار.
+saisie foraine | Saisie des biens d'un débiteur de passage, qui n'a pas de domicile fixe dans le lieu. | حجز أموال مدين عابر ليس له موطن ثابت في المكان.
+validation de la saisie | Décision du juge qui confirme une saisie conservatoire et ouvre la voie à la vente. | قرار القاضي الذي يثبت حجزا تحفظيا ويفتح الطريق إلى البيع.
+conversion de la saisie | Passage d'une saisie conservatoire à une saisie qui mène à la vente des biens. | الانتقال من حجز تحفظي إلى حجز يؤدي إلى بيع الأموال.
+cahier des conditions de vente | Document qui décrit le bien saisi et fixe les règles de sa vente aux enchères. | وثيقة تصف المال الذي حجز وتحدد قواعد البيع بالمزاد العلني.
+mise à prix | Somme à partir de laquelle les enchères commencent. | المبلغ الذي تبدأ منه المزايدة.
+enchère | Proposition d'un prix plus élevé que le dernier annoncé, dans une vente publique. | اقتراح ثمن أعلى من آخر ثمن أعلن، في بيع عمومي.
+surenchère | Proposition, après l'adjudication, d'un prix plus élevé qui oblige à remettre le bien en vente. | اقتراح ثمن أعلى بعد رسو المزاد، يوجب عرض المال للبيع من جديد.
+folle enchère | Nouvelle vente du bien quand l'adjudicataire ne paie pas le prix. | بيع المال من جديد إذا لم يدفع الراسي عليه المزاد الثمن.
+jugement d'adjudication | Jugement qui attribue le bien saisi au dernier enchérisseur. | حكم يسند المال الذي حجز إلى آخر مزايد.
+enchérisseur | Personne qui propose un prix dans une vente aux enchères. | شخص يقترح ثمنا في البيع بالمزاد العلني.
+distribution des deniers | Répartition entre les créanciers de l'argent que rapporte la vente des biens saisis. | تقسيم النقود الناتجة عن بيع الأموال المحجوزة بين الدائنين.
+ordre entre créanciers | Classement des créanciers d'après leur rang, pour le paiement sur le prix d'un immeuble. | تصنيف الدائنين بحسب مراتبهم، للوفاء لهم من ثمن عقار.
+créancier poursuivant | Créancier qui a engagé la saisie et la mène. | الدائن الذي بدأ الحجز ويسيره.
+créancier inscrit | Créancier dont la sûreté figure sur le registre foncier. | دائن يظهر تأمينه في السجل العقاري.
+délai de paiement | Temps supplémentaire que le juge donne au débiteur pour payer sa dette. | مدة إضافية يعطيها القاضي للمدين ليدفع دينه.
+concours de la force publique | Aide de la police ou de la gendarmerie pour faire exécuter une décision. | عون تقدمه الشرطة أو الدرك لينفذ قرار.
+expulsion locative | Mesure qui oblige un locataire à quitter le logement, en vertu d'une décision de justice. | تدبير يلزم مستأجرا بمغادرة المسكن، بمقتضى مقرر قضائي.
+liquidation de l'astreinte | Calcul par le juge de la somme définitive que doit celui qui a tardé à obéir. | حساب القاضي المبلغ النهائي الذي يجب على من تأخر في الامتثال.
+exécution sur minute | Exécution d'une ordonnance sur la seule présentation de son original, vu l'urgence. | تنفيذ أمر بمجرد تقديم أصله، نظرا لحالة العجلة.
+titre exécutoire étranger | Jugement ou acte d'un autre État, qui ne peut être exécuté en Algérie qu'avec la permission d'un juge algérien. | حكم أو محرر من دولة أخرى، لا ينفذ في الجزائر إلا بإذن من قاض جزائري.

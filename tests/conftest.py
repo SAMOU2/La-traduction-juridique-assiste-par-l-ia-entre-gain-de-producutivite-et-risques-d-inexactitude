@@ -30,6 +30,9 @@ ENTREES_COMPLETES = 1000
 #: constitutionnel, le droit administratif, le droit de la famille et le droit du travail (1 126 de plus). Ce
 #: nombre ne peut que monter : les termes des autres domaines reçoivent leur phrase par étapes.
 TERMES_SEULS_AVEC_EXEMPLE = 3013
+#: Termes seuls qui ont leur définition, dans les deux langues. Version 0.13 : tous, c'est-à-dire le vocabulaire
+#: général (noms, adjectifs, verbes et locutions : 928), puis les treize domaines du droit (3 072).
+TERMES_SEULS_AVEC_DEFINITION = 4000
 #: Petit glossaire réservé aux tests : 40 entrées de droit civil. La plupart des tests l'utilisent,
 #: pour que leurs résultats ne changent pas quand le glossaire fourni est enrichi ou remplacé.
 GLOSSAIRE_D_ESSAI = RACINE / "tests" / "donnees" / "glossaire_essai.csv"

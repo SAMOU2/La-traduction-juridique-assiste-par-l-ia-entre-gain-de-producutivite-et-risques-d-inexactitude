@@ -1,0 +1,189 @@
+# Définitions des termes de termes/52_droit_du_travail.txt : terme | définition française | définition arabe | options (sf=, sa=)
+législation du travail | Ensemble des lois et des règlements qui encadrent les rapports entre employeurs et travailleurs. | مجموع القوانين والتنظيمات التي تؤطر العلاقات بين المستخدمين والعمال.
+relations individuelles de travail | Rapports entre un employeur et chacun de ses travailleurs, issus du contrat de travail. | الروابط بين مستخدم وكل عامل عنده، الناتجة عن عقد العمل.
+relations collectives de travail | Rapports entre l'employeur et l'ensemble des travailleurs, représentés par leurs syndicats. | الروابط بين المستخدم ومجموع العمال الذين تمثلهم النقابات.
+marché du travail | Rencontre entre les personnes qui cherchent un emploi et les entreprises qui en proposent. | التقاء الأشخاص الذين يبحثون عن منصب بالمؤسسات التي تقترحه.
+politique de l'emploi | Ensemble des mesures de l'État pour créer des emplois et réduire le chômage. | مجموع تدابير الدولة لإنشاء مناصب وتقليل البطالة.
+agence nationale de l'emploi | Organisme de l'État qui met en relation les entreprises et les personnes à la recherche d'un emploi. | هيئة تابعة للدولة تربط بين المؤسسات والأشخاص الباحثين عن منصب. | sf=ANEM
+demandeur d'emploi | Personne sans travail, inscrite auprès de l'agence de l'emploi pour en trouver un. | شخص بلا عمل، مسجل لدى وكالة التشغيل ليجد عملا.
+offre d'emploi | Annonce par laquelle une entreprise informe qu'elle veut recruter. | إعلان تخبر به مؤسسة أنها تريد أن توظف شخصا.
+promesse d'embauche | Engagement écrit de l'employeur de recruter une personne à une date et pour un poste précis. | التزام مكتوب من المستخدم بأن يوظف شخصا في تاريخ ومنصب محددين.
+poste de travail | Ensemble des tâches confiées à un travailleur dans l'entreprise. | مجموع المهام التي يعهد بها إلى عامل في المؤسسة.
+lieu de travail | Endroit où le travailleur exécute ses tâches. | الموضع الذي ينفذ فيه العامل مهامه.
+organisme employeur | Entreprise ou administration qui emploie des travailleurs et leur verse un salaire. | مؤسسة أو إدارة تشغل عمالا وتدفع لهم أجرا.
+travailleur étranger | Personne qui n'a pas la nationalité algérienne et travaille en Algérie avec une autorisation. | شخص ليست له الجنسية الجزائرية ويعمل في الجزائر بترخيص.
+permis de travail | Document que l'administration délivre à un étranger pour qu'il puisse occuper un emploi. | وثيقة تسلمها الإدارة لأجنبي ليستطيع أن يشغل منصبا.
+travailleur à domicile | Personne qui exécute chez elle, pour un employeur, un travail payé. | شخص ينفذ في بيته، لحساب مستخدم، عملا يدفع له مقابله.
+travail à temps partiel | Travail dont la durée est inférieure à la durée légale, sans descendre sous la moitié. | عمل مدته أقل من المدة القانونية دون أن تنزل عن نصفها.
+travail à temps plein | Travail accompli pendant toute la durée légale, soit quarante heures par semaine. | عمل ينجز خلال كل المدة القانونية، أي أربعين ساعة في الأسبوع.
+travail temporaire | Travail d'une durée limitée, pour remplacer un absent ou faire face à un surcroît d'activité. | عمل لمدة محدودة، ليخلف غائبا أو لمواجهة زيادة في النشاط.
+travail saisonnier | Travail qui revient chaque année à la même période, comme les récoltes ou le tourisme d'été. | عمل يعود كل سنة في الفترة نفسها، كجني المحاصيل أو سياحة الصيف.
+travail de nuit | Travail exécuté entre vingt et une heures et cinq heures. | عمل ينفذ بين الساعة التاسعة ليلا والخامسة صباحا.
+travail posté | Mode de travail où des équipes se relaient au même poste pour que l'activité ne s'arrête pas. | طريقة عمل تتعاقب فيها فرق على المنصب نفسه حتى لا يتوقف النشاط. | sf=travail par équipes | sa=عمل بالتناوب
+télétravail | Travail accompli loin de l'entreprise, au moyen de l'ordinateur et d'internet. | عمل ينجز بعيدا عن المؤسسة بواسطة الحاسوب والإنترنت. | sf=travail à distance
+travail dissimulé | Emploi d'un travailleur que l'employeur ne déclare pas à la sécurité sociale. | تشغيل عامل لا يصرح به المستخدم لدى الضمان الاجتماعي. | sf=travail au noir, travail non déclaré
+travail des enfants | Emploi de mineurs qui n'ont pas atteint l'âge que la loi fixe, soit seize ans. | تشغيل قاصرين لم يبلغوا السن التي يحددها القانون، أي ست عشرة سنة.
+travail forcé | Travail obtenu d'une personne par la menace ou la violence, contre sa volonté. | عمل يؤخذ من شخص بالتهديد أو الإكراه، ضد إرادته.
+apprentissage | Formation d'un jeune à un métier, à la fois dans une entreprise et dans un centre de formation. | تكوين شاب في حرفة، في مؤسسة وفي مركز تكوين معا.
+apprenti | Jeune qui apprend un métier en travaillant chez un employeur. | شاب يتعلم حرفة وهو يعمل عند مستخدم.
+contrat d'apprentissage | Contrat par lequel un employeur s'engage à former un jeune à un métier, contre un présalaire. | عقد يلتزم به مستخدم بأن يكون شابا في حرفة مقابل أجر مسبق.
+formation professionnelle | Enseignement qui prépare à l'exercice d'un métier. | تعليم يحضر لممارسة حرفة.
+qualification professionnelle | Niveau de connaissances et d'expérience qu'un travailleur possède dans son métier. | مستوى المعارف والخبرة الذي يملكه عامل في حرفته.
+classification professionnelle | Rangement de chaque poste de travail dans un niveau, qui sert à calculer le salaire. | ترتيب كل منصب عمل في مستوى، ويحسب به الأجر.
+ancienneté | Temps passé par un travailleur au service du même employeur. | المدة التي قضاها عامل في خدمة المستخدم نفسه.
+confirmation du travailleur | Décision de maintenir définitivement le travailleur à son poste à la fin de la période d'essai. | قرار إبقاء العامل نهائيا في منصبه عند نهاية فترة التجربة.
+modification du contrat de travail | Changement du poste, du salaire ou du lieu d'activité, qui ne peut se faire sans le consentement du travailleur. | تغيير المنصب أو الأجر أو مكان النشاط، لا يتم دون رضا العامل.
+suspension de la relation de travail | Interruption provisoire du travail et du salaire sans que le contrat prenne fin, comme pendant une maladie. | انقطاع مؤقت للعمل والأجر دون أن ينتهي العقد، كما في حالة المرض.
+cessation de la relation de travail | Fin du lien entre l'employeur et le travailleur : démission, licenciement, retraite, décès ou terme du contrat. | نهاية الرابطة بين المستخدم والعامل: استقالة أو تسريح أو تقاعد أو وفاة أو أجل العقد.
+rupture du contrat de travail | Décision de l'employeur ou du travailleur de mettre fin au contrat qui les lie. | قرار المستخدم أو العامل بأن ينهي العقد الذي يربطهما.
+renouvellement du contrat à durée déterminée | Conclusion d'un nouveau contrat limité dans le temps, à la suite du premier. | إبرام عقد جديد محدود في الزمن بعد الأول.
+requalification du contrat à durée déterminée | Décision du juge qui transforme en contrat sans limite de durée un contrat limité conclu hors des cas que la loi admet. | قرار القاضي الذي يحول إلى عقد غير محدود المدة عقدا محدودا أبرم خارج الحالات التي يقبلها القانون.
+clause de mobilité | Clause par laquelle le travailleur accepte d'avance de changer de lieu de travail. | بند يقبل به العامل مسبقا أن يغير مكان العمل.
+obligation de loyauté | Devoir du travailleur de ne rien faire contre l'intérêt de son employeur, par exemple révéler ses secrets. | واجب العامل ألا يفعل شيئا ضد مصلحة المستخدم، كأن يفشي أسراره.
+pouvoir disciplinaire | Droit de l'employeur de sanctionner le travailleur qui commet une faute. | حق المستخدم في أن يعاقب العامل الذي يرتكب خطأ.
+faute professionnelle grave | Faute du travailleur assez lourde pour justifier un licenciement sans préavis ni indemnité. | خطأ من العامل يبلغ من الجسامة ما يبرر تسريحا دون إشعار مسبق ولا تعويض.
+procédure disciplinaire | Étapes que l'employeur doit suivre avant de sanctionner : convoquer le travailleur, l'entendre, puis l'informer par écrit. | مراحل يجب على المستخدم أن يتبعها قبل أن يعاقب: يستدعي العامل ويسمعه ثم يخبره كتابة.
+mise à pied | Sanction qui écarte le travailleur de son poste pendant quelques jours, sans salaire. | جزاء يبعد العامل عن منصبه بضعة أيام دون أجر.
+licenciement disciplinaire | Licenciement que l'employeur décide après une faute grave du travailleur. | تسريح يقرره المستخدم بعد خطأ جسيم من العامل.
+licenciement pour motif économique | Licenciement qui ne tient pas à la conduite du travailleur mais aux difficultés de l'entreprise. | تسريح لا يرجع إلى سلوك العامل بل إلى صعوبات المؤسسة. | sf=licenciement économique
+compression d'effectifs | Réduction du nombre de travailleurs d'une entreprise, par un licenciement collectif. | تخفيض عدد عمال مؤسسة بتسريح جماعي.
+volet social | Mesures que l'employeur doit prendre pour éviter ou limiter les licenciements, comme la formation ou le départ à la retraite. | تدابير يجب على المستخدم أن يتخذها ليتفادى التسريح أو يحد منه، كالتكوين أو الخروج إلى التقاعد. | sf=plan social
+indemnité de licenciement | Somme que l'employeur verse au travailleur quand il met fin au contrat sans faute de celui-ci. | مبلغ يدفعه المستخدم للعامل إذا أنهى العقد دون خطأ منه.
+réintégration du travailleur | Retour du travailleur à son poste, ordonné par le juge quand le licenciement n'a pas respecté la loi. | رجوع العامل إلى منصبه، يأمر به القاضي إذا لم يحترم التسريح القانون.
+départ volontaire | Sortie de l'entreprise que le travailleur accepte, contre une somme d'argent, lors d'une réduction des emplois. | خروج من المؤسسة يقبله العامل مقابل مبلغ من النقود عند تخفيض المناصب.
+retraite anticipée | Retraite prise avant l'âge légal, dans les cas que la loi admet. | تقاعد يؤخذ قبل السن القانونية، في الحالات التي يقبلها القانون.
+reçu pour solde de tout compte | Écrit par lequel le travailleur reconnaît avoir touché toutes les sommes que l'employeur lui devait à son départ. | محرر يعترف به العامل بأنه قبض كل المبالغ التي كان المستخدم مدينا له بها عند خروجه. | sf=solde de tout compte
+salaire de base | Salaire fixé pour un poste d'après la classification, avant les indemnités et les suppléments. | أجر يحدد لمنصب بحسب التصنيف، قبل التعويضات والزيادات.
+salaire de poste | Salaire de base augmenté des indemnités liées au poste, comme l'ancienneté ou les heures supplémentaires. | الأجر القاعدي مضافا إليه التعويضات المرتبطة بالمنصب، كالأقدمية أو الساعات الإضافية.
+salaire brut | Salaire total avant le retrait des cotisations sociales et de l'impôt. | الأجر الكلي قبل سحب الاشتراكات الاجتماعية والضريبة.
+salaire net | Somme que le travailleur touche réellement, une fois les cotisations et l'impôt retirés. | المبلغ الذي يقبضه العامل فعلا بعد أن تسحب الاشتراكات والضريبة.
+bulletin de paie | Document remis chaque mois au travailleur, qui détaille son salaire et les retenues. | وثيقة تسلم كل شهر للعامل وتفصل أجره والاقتطاعات. | sf=fiche de paie, bulletin de salaire | sa=قسيمة الأجر، كشف الأجر
+paiement du salaire | Versement au travailleur, à date fixe, de l'argent qui lui est dû pour son travail. | دفع النقود المستحقة للعامل عن عمله في تاريخ ثابت.
+retenue sur salaire | Somme que l'employeur prélève sur la paie, pour les cotisations, l'impôt ou une dette du travailleur. | مبلغ يأخذه المستخدم من الراتب، للاشتراكات أو الضريبة أو دين على العامل.
+saisie sur salaire | Saisie par laquelle l'employeur paie directement au créancier une fraction du salaire de son débiteur, dans la limite que la loi fixe. | حجز يدفع به المستخدم مباشرة للدائن جزءا من أجر مدينه، في الحد الذي يحدده القانون.
+privilège des salaires | Droit des travailleurs d'être payés avant les autres créanciers de l'employeur. | حق العمال في أن يدفع لهم قبل الدائنين الآخرين للمستخدم.
+prime d'ancienneté | Supplément de salaire qui augmente avec les années passées chez l'employeur. | زيادة في الأجر ترتفع مع السنوات التي قضاها العامل عند المستخدم.
+prime de panier | Somme versée au travailleur pour le repas qu'il prend sur son lieu de travail. | مبلغ يدفع للعامل عن الوجبة التي يتناولها في مكان العمل.
+prime de transport | Somme versée au travailleur pour ses déplacements entre son domicile et son lieu de travail. | مبلغ يدفع للعامل عن تنقلاته بين موطنه ومكان العمل.
+indemnité de zone | Supplément de salaire versé au travailleur nommé dans une région éloignée ou difficile, comme le Sud. | زيادة في الأجر تدفع للعامل الذي يعين في منطقة بعيدة أو صعبة، كالجنوب.
+avantages en nature | Biens ou services que l'employeur fournit au travailleur en plus de l'argent, comme un logement ou une voiture. | أموال أو خدمات يوفرها المستخدم للعامل زيادة على النقود، كسكن أو سيارة.
+égalité de rémunération | Règle selon laquelle un même travail donne droit au même salaire, pour l'homme comme pour la femme. | قاعدة تقضي بأن العمل نفسه يعطي الحق في الأجر نفسه، للرجل كما للمرأة.
+grille des salaires | Tableau qui indique le salaire correspondant à chaque niveau de poste. | جدول يبين الأجر الموافق لكل مستوى من المناصب.
+masse salariale | Total des salaires et des charges sociales qu'une entreprise paie pendant une année. | مجموع ما تدفعه مؤسسة خلال سنة من أجر وأعباء اجتماعية.
+durée légale du travail | Nombre d'heures que la loi fixe pour une semaine normale, soit quarante heures. | عدد الساعات الذي يحدده القانون لأسبوع عادي، أي أربعون ساعة.
+temps de travail effectif | Temps pendant lequel le travailleur exécute son travail sous les ordres de l'employeur. | الوقت الذي ينفذ فيه العامل عمله تحت أوامر المستخدم.
+horaire de travail | Heures de début et de fin de la journée, que l'employeur fixe et affiche. | ساعات بداية اليوم ونهايته التي يحددها المستخدم ويعلقها.
+repos hebdomadaire | Journée entière sans travail à laquelle le travailleur a droit chaque semaine, en principe le vendredi. | يوم كامل دون عمل للعامل الحق فيه كل أسبوع، وهو مبدئيا الجمعة.
+repos compensateur | Temps libre donné au travailleur qui a travaillé un jour de repos ou fait des heures supplémentaires. | وقت حر يعطى للعامل الذي عمل يوم راحة أو أنجز الساعات الإضافية.
+jour de repos légal | Jour où le travail s'arrête en vertu de la loi : vendredi, fête nationale ou fête religieuse. | يوم يتوقف فيه العمل بمقتضى القانون: الجمعة أو عيد وطني أو عيد ديني.
+congé de maladie | Interruption du travail prescrite par un médecin au travailleur malade. | انقطاع عن العمل يصفه طبيب للعامل المريض. | sf=congé maladie, arrêt maladie
+congé de maternité | Repos de quatorze semaines auquel la travailleuse a droit autour de son accouchement. | راحة مدتها أربعة عشر أسبوعا للعاملة الحق فيها حول ولادتها. | sf=congé maternité
+congé sans solde | Interruption du travail accordée par l'employeur, pendant laquelle aucun salaire n'est versé. | انقطاع عن العمل يمنحه المستخدم ولا يدفع خلاله أي أجر.
+congé exceptionnel | Quelques jours payés accordés pour un événement familial, comme un mariage, une naissance ou un décès. | بضعة أيام يدفع أجرها تمنح لحدث عائلي، كزواج أو ولادة أو وفاة.
+absence autorisée | Absence que l'employeur a permise d'avance au travailleur. | غياب أجازه المستخدم مسبقا للعامل.
+absence injustifiée | Absence du travailleur qui n'a ni autorisation ni raison acceptable. | غياب العامل الذي ليس له ترخيص ولا سبب مقبول.
+indemnité de congé payé | Salaire que le travailleur continue de recevoir pendant son congé annuel. | الأجر الذي يستمر العامل في قبضه خلال العطلة السنوية.
+liberté syndicale | Droit de tout travailleur de créer un syndicat, d'y entrer ou de ne pas y entrer. | حق كل عامل في أن ينشئ نقابة وأن يدخلها أو ألا يدخلها.
+exercice du droit syndical | Activités qu'un syndicat peut mener dans l'entreprise : réunions, affichage, collecte des cotisations. | أنشطة يجوز لنقابة أن تقوم بها في المؤسسة: اجتماعات وتعليق إعلانات وجمع الاشتراكات.
+organisation syndicale représentative | Syndicat qui regroupe assez de travailleurs, selon le seuil de la loi, pour négocier en leur nom. | نقابة تجمع من العمال ما يكفي، بحسب العتبة التي يضعها القانون، لتتفاوض باسمهم.
+représentativité syndicale | Aptitude d'un syndicat à parler au nom des travailleurs, mesurée par le nombre de ses adhérents. | صلاحية نقابة لأن تتكلم باسم العمال، تقاس بعدد المنخرطين فيها.
+section syndicale | Groupe des adhérents d'un syndicat dans une même entreprise. | مجموعة المنخرطين في نقابة داخل المؤسسة نفسها.
+délégué syndical | Travailleur désigné par son syndicat pour le représenter auprès de l'employeur. | عامل تعينه نقابته ليمثلها لدى المستخدم.
+union de syndicats | Regroupement de plusieurs syndicats d'une même région ou d'un même secteur. | تجمع عدة نقابات من المنطقة نفسها أو القطاع نفسه.
+confédération syndicale | Regroupement national de syndicats de professions différentes. | تجمع وطني لنقابات من مهن مختلفة.
+organisation patronale | Association qui défend l'intérêt des employeurs. | جمعية تدافع عن مصلحة المستخدمين. | sf=organisation d'employeurs, syndicat patronal
+comité de participation | Organe formé des représentants que les travailleurs élisent, et que l'employeur informe et consulte sur la vie de l'entreprise. | هيئة تتألف من الممثلين الذين ينتخبهم العمال، ويخبرها المستخدم ويستشيرها في حياة المؤسسة.
+représentants des travailleurs | Personnes élues ou désignées pour parler au nom des travailleurs devant l'employeur. | أشخاص ينتخبون أو يعينون ليتكلموا باسم العمال أمام المستخدم.
+négociation collective | Discussion entre l'employeur et les syndicats pour fixer ensemble les salaires et les conditions de travail. | نقاش بين المستخدم والنقابات ليحددوا معا الأجر وظروف العمل.
+accord collectif | Texte signé par l'employeur et les syndicats sur un point précis, comme le salaire ou la durée du travail. | نص يوقعه المستخدم والنقابات في نقطة محددة، كالأجر أو مدة العمل.
+convention de branche | Convention collective qui s'applique à toutes les entreprises d'un même secteur d'activité. | اتفاقية جماعية تطبق على كل المؤسسات في قطاع النشاط نفسه.
+dénonciation de la convention collective | Décision de l'une des parties de mettre fin à la convention collective, après un préavis. | قرار أحد الطرفين بأن ينهي الاتفاقية الجماعية بعد إشعار مسبق.
+partenaires sociaux | Représentants des employeurs et des travailleurs qui discutent ensemble des questions du travail. | ممثلون عن المستخدمين والعمال يناقشون معا مسائل العمل.
+dialogue social | Discussions suivies entre le gouvernement, les employeurs et les syndicats sur l'emploi et le salaire. | نقاش متواصل بين الحكومة والمستخدمين والنقابات حول التشغيل والأجر.
+conflit collectif de travail | Désaccord entre l'employeur et l'ensemble des travailleurs sur le salaire ou les conditions de travail. | خلاف بين المستخدم ومجموع العمال حول الأجر أو ظروف العمل.
+conflit individuel de travail | Désaccord entre un travailleur et son employeur sur l'exécution du contrat de travail. | خلاف بين عامل ومستخدمه حول تنفيذ عقد العمل.
+préavis de grève | Information écrite donnée à l'employeur quelques jours avant le début d'une grève. | إعلام مكتوب يعطى للمستخدم بضعة أيام قبل بداية إضراب.
+service minimum | Activité réduite que les grévistes doivent maintenir dans les secteurs vitaux, comme les hôpitaux ou les transports. | نشاط مخفض يجب على المضربين أن يبقوا عليه في القطاعات الحيوية، كالمستشفيات أو النقل.
+ordre de réquisition | Ordre de l'autorité qui oblige des travailleurs en grève à reprendre leur poste pour un besoin vital. | أمر من السلطة يلزم عمالا في إضراب بأن يعودوا إلى مناصبهم لحاجة حيوية.
+grève illicite | Grève déclenchée sans suivre les étapes que la loi impose, comme la conciliation et le préavis. | إضراب يبدأ دون اتباع المراحل التي يفرضها القانون، كالمصالحة والإشعار المسبق.
+travailleur gréviste | Travailleur qui cesse le travail avec d'autres pour appuyer une réclamation commune. | عامل يتوقف عن العمل مع غيره ليدعم مطلبا مشتركا.
+lock-out | Fermeture de l'entreprise par l'employeur pour faire pression sur les travailleurs pendant un conflit. | إغلاق المستخدم المؤسسة ليضغط على العمال خلال نزاع.
+occupation des lieux de travail | Présence des grévistes dans l'entreprise, qui empêche les autres de travailler. | وجود المضربين في المؤسسة، يمنع غيرهم من أن يعملوا.
+entrave à la liberté du travail | Infraction de celui qui empêche, par la menace ou la violence, un travailleur de rejoindre son poste. | جريمة من يمنع، بالتهديد أو الإكراه، عاملا من أن يلتحق بمنصبه.
+arbitrage obligatoire | Arbitrage imposé quand la loi interdit la grève ou que celle-ci dure trop longtemps. | تحكيم يفرض إذا منع القانون الإضراب أو طال كثيرا.
+commission nationale d'arbitrage | Commission présidée par un magistrat, qui tranche les conflits collectifs que les autres voies n'ont pas résolus. | لجنة يرأسها قاض تفصل في النزاعات الجماعية التي لم تحلها الطرق الأخرى.
+procès-verbal de non-conciliation | Document de l'inspecteur du travail ou du bureau de conciliation qui constate que les parties n'ont pas trouvé de solution. | وثيقة من مفتش العمل أو مكتب المصالحة تعاين أن الطرفين لم يجدا حلا.
+procès-verbal de conciliation | Document qui constate l'entente trouvée entre les parties et qui a la force d'un engagement. | وثيقة تعاين التفاهم الحاصل بين الطرفين ولها قوة الالتزام.
+hygiène et sécurité | Règles qui protègent la santé et la vie des travailleurs sur les lieux où ils travaillent. | قواعد تحمي صحة العمال وحياتهم في الأماكن التي يعملون فيها.
+médecine du travail | Branche de la médecine qui surveille la santé des travailleurs et prévient les maladies que leur métier provoque. | فرع من الطب يراقب صحة العمال ويقي من الأمراض التي تسببها حرفتهم.
+médecin du travail | Médecin qui examine les travailleurs et conseille l'employeur sur la santé dans l'entreprise. | طبيب يفحص العمال وينصح المستخدم في شأن الصحة في المؤسسة.
+comité d'hygiène et de sécurité | Commission de l'entreprise, formée de représentants de l'employeur et des travailleurs, qui veille à la prévention des accidents. | لجنة في المؤسسة تتألف من ممثلين عن المستخدم والعمال وتسهر على الوقاية من الحوادث. | sf=commission d'hygiène et de sécurité
+risque professionnel | Danger pour la santé ou la vie auquel le travail expose celui qui l'exécute. | خطر على الصحة أو الحياة يعرض له العمل من ينفذه.
+prévention des risques professionnels | Mesures prises pour éviter l'accident du travail et la maladie professionnelle. | تدابير تتخذ لتفادي حادث العمل والمرض المهني.
+équipement de protection individuelle | Vêtement ou outil que le travailleur porte pour se protéger, comme un casque, des gants ou des lunettes. | لباس أو أداة يحملها العامل ليحمي نفسه، كخوذة أو قفازات أو نظارات.
+conditions de travail | Cadre dans lequel le travail s'exécute : heures, lieux, rythme, sécurité, ambiance. | الإطار الذي ينفذ فيه العمل: الساعات والأماكن والوتيرة والأمن والجو.
+discrimination à l'embauche | Refus de recruter une personne en raison de son sexe, de son origine, de ses opinions ou de son handicap. | رفض مستخدم أن يوظف شخصا بسبب جنسه أو أصله أو آرائه أو إعاقته.
+égalité professionnelle | Règle selon laquelle hommes et femmes ont les mêmes droits pour l'emploi, la formation, la promotion et le salaire. | قاعدة تقضي بأن للرجال والنساء الحقوق نفسها في التشغيل والتكوين والترقية والأجر.
+protection de la maternité | Règles qui protègent la travailleuse enceinte ou qui vient d'accoucher : repos, interdiction du licenciement, heures d'allaitement. | قواعد تحمي العاملة الحامل أو التي وضعت حديثا: الراحة ومنع التسريح وساعات الإرضاع.
+travailleur handicapé | Travailleur dont les possibilités sont réduites par une infirmité et à qui l'employeur doit un poste adapté. | عامل تنقص عاهة من إمكاناته ويجب على المستخدم أن يوفر له منصبا مكيفا.
+travailleur mineur | Travailleur de seize à dix-neuf ans, que la loi protège contre les travaux dangereux et la nuit. | عامل سنه بين ست عشرة وتسع عشرة سنة، يحميه القانون من الأشغال الخطيرة ومن الليل.
+âge minimum d'admission à l'emploi | Âge au-dessous duquel la loi interdit de recruter : seize ans, sauf pour l'apprentissage. | السن التي يمنع القانون أن يوظف من هو دونها: ست عشرة سنة، إلا في التمهين.
+procès-verbal d'infraction | Document dans lequel l'inspecteur du travail constate que l'employeur n'a pas suivi la loi. | وثيقة يعاين فيها مفتش العمل أن المستخدم لم يتبع القانون.
+mise en demeure de l'inspecteur du travail | Ordre écrit de l'inspecteur du travail à l'employeur de corriger un manquement dans un délai. | أمر مكتوب من مفتش العمل إلى المستخدم بأن يصحح إخلالا في أجل.
+visite d'inspection | Passage de l'inspecteur du travail dans une entreprise pour vérifier que la loi y est suivie. | مرور مفتش العمل بمؤسسة ليتحقق من أن القانون متبع فيها.
+registre du personnel | Registre où l'employeur note le nom, le poste et la date d'entrée de chaque travailleur. | سجل يكتب فيه المستخدم اسم كل عامل ومنصبه وتاريخ دخوله.
+livre de paie | Registre où l'employeur reporte, mois après mois, le salaire versé à chaque travailleur. | سجل ينقل فيه المستخدم، شهرا بعد شهر، الأجر المدفوع لكل عامل.
+régime de sécurité sociale | Ensemble des règles qui protègent une catégorie de personnes contre la maladie, l'accident, la vieillesse et le chômage. | مجموع القواعد التي تحمي فئة من الأشخاص من المرض والحادث والشيخوخة والبطالة.
+caisse de sécurité sociale | Organisme qui encaisse les cotisations et verse les prestations à chaque assuré. | هيئة تقبض الاشتراكات وتدفع الأداءات لكل مؤمن له.
+Caisse nationale des assurances sociales | Caisse qui couvre les salariés pour la maladie, la maternité, l'invalidité, le décès et l'accident du travail. | صندوق يغطي العمال الأجراء في المرض والأمومة والعجز والوفاة وحادث العمل.
+Caisse nationale des retraites | Caisse qui verse leur pension aux anciens salariés. | صندوق يدفع المعاش للعمال الأجراء السابقين.
+Caisse nationale d'assurance chômage | Caisse qui indemnise les salariés ayant perdu leur emploi pour une raison économique. | صندوق يعوض العمال الذين فقدوا منصبهم لسبب اقتصادي.
+Caisse nationale de sécurité sociale des non-salariés | Caisse qui couvre ceux qui travaillent pour leur compte, comme le commerçant, l'artisan ou l'agriculteur. | صندوق يغطي من يعملون لحسابهم، كالتاجر والحرفي والفلاح.
+assurances sociales | Protection qui couvre la maladie, la maternité, l'invalidité et le décès de l'assuré. | حماية تغطي مرض المؤمن له وأمومته وعجزه ووفاته.
+assurance maternité | Protection qui rembourse les soins de la grossesse et de l'accouchement et verse une indemnité pendant le repos de la mère. | حماية تعوض علاج الحمل والولادة وتدفع تعويضا خلال راحة الأم.
+assurance invalidité | Protection qui verse une pension à l'assuré dont la maladie a réduit durablement la force de travail. | حماية تدفع معاشا للمؤمن له الذي نقص المرض قوة عمله بصفة دائمة.
+assurance chômage | Protection qui verse un revenu, pendant un temps limité, au travailleur ayant perdu son emploi malgré lui. | حماية تدفع دخلا، لمدة محدودة، للعامل الذي فقد منصبه رغما عنه.
+affiliation | Rattachement d'un travailleur à une caisse de sécurité sociale. | ربط عامل بصندوق الضمان الاجتماعي.
+immatriculation à la sécurité sociale | Opération qui attribue à l'assuré un numéro personnel et le fait entrer dans les fichiers de la caisse. | عملية تسند إلى المؤمن له رقما شخصيا وتدخله في ملفات الصندوق.
+numéro de sécurité sociale | Suite de chiffres propre à chaque assuré, qui sert à suivre son dossier pendant toute sa vie. | سلسلة أرقام خاصة بكل مؤمن له تستعمل لمتابعة ملفه طوال حياته.
+carte d'assuré social | Carte qui prouve qu'une personne est couverte par la sécurité sociale. | بطاقة تثبت أن شخصا يغطيه الضمان الاجتماعي.
+carte Chifa | Carte à puce de l'assuré, avec laquelle il obtient ses médicaments sans avancer l'argent. | بطاقة إلكترونية للمؤمن له يحصل بها على أدويته دون أن يدفع النقود مسبقا.
+déclaration des salaires | Document annuel par lequel l'employeur indique à la caisse le salaire versé à chaque travailleur. | وثيقة سنوية يبين بها المستخدم للصندوق الأجر المدفوع لكل عامل.
+assiette des cotisations | Fraction du salaire sur laquelle la cotisation est calculée. | جزء الأجر الذي يحسب عليه الاشتراك.
+taux de cotisation | Pourcentage du salaire versé à la sécurité sociale. | النسبة المئوية من الأجر التي تدفع للضمان الاجتماعي.
+part patronale | Fraction de la cotisation que l'employeur paie lui-même, en plus du salaire. | جزء الاشتراك الذي يدفعه المستخدم نفسه زيادة على الأجر. | sf=cotisation patronale
+part salariale | Fraction de la cotisation retenue sur le salaire du travailleur. | جزء الاشتراك الذي يقتطع من أجر العامل. | sf=cotisation salariale
+majoration de retard | Somme ajoutée à la cotisation quand l'employeur la paie après la date limite. | مبلغ يضاف إلى الاشتراك إذا دفعه المستخدم بعد التاريخ الأقصى.
+prestations en nature | Remboursement des soins, des médicaments et des séjours à l'hôpital. | تعويض مصاريف العلاج والأدوية والإقامة في المستشفى.
+prestations en espèces | Sommes versées à l'assuré pour remplacer le salaire qu'il perd pendant sa maladie ou son repos. | مبالغ تدفع للمؤمن له مكان الأجر الذي يفقده خلال مرضه أو راحته.
+indemnité journalière | Somme versée pour chaque jour où l'assuré malade ne peut pas travailler. | مبلغ يدفع عن كل يوم لا يستطيع فيه المؤمن له المريض أن يعمل.
+remboursement des frais médicaux | Versement à l'assuré, par la caisse, d'une fraction de ce qu'il a payé au médecin ou au pharmacien. | دفع الصندوق للمؤمن له جزءا مما دفعه للطبيب أو الصيدلي.
+tiers payant | Système où la caisse paie directement le médecin ou le pharmacien à la place de l'assuré. | نظام يدفع فيه الصندوق مباشرة للطبيب أو الصيدلي مكان المؤمن له.
+arrêt de travail | Interruption de l'activité du travailleur pour maladie ou accident, justifiée par un médecin. | انقطاع نشاط العامل لمرض أو حادث، يبرره طبيب.
+certificat médical | Document dans lequel un médecin décrit ce qu'il a constaté sur la santé d'une personne. | وثيقة يصف فيها طبيب ما عاينه في صحة شخص.
+contrôle médical | Vérification, par le médecin de la caisse, que l'interruption du travail ou les soins sont justifiés. | تحقق طبيب الصندوق من أن الانقطاع عن العمل أو العلاج مبرر.
+médecin-conseil | Médecin de la caisse qui donne son opinion sur la santé de l'assuré et sur ses droits. | طبيب الصندوق الذي يبدي رأيه في صحة المؤمن له وفي حقوقه.
+incapacité permanente partielle | Diminution durable de la force de travail d'une victime, mesurée par un pourcentage. | نقص دائم في قوة عمل الضحية، يقاس بنسبة مئوية.
+pension d'invalidité | Revenu versé à l'assuré qui a perdu au moins la moitié de sa force de travail. | دخل يدفع للمؤمن له الذي فقد نصف قوة عمله على الأقل.
+rente d'accident du travail | Revenu versé à la victime d'un accident du travail qui en conserve des séquelles durables. | دخل يدفع لضحية حادث العمل الذي بقيت به آثار دائمة.
+accident de trajet | Accident survenu sur le chemin entre le domicile du travailleur et son lieu de travail. | حادث يقع في الطريق بين موطن العامل ومكان العمل.
+déclaration d'accident du travail | Information que l'employeur doit adresser à la caisse dans les quarante-huit heures qui suivent l'accident. | إعلام يجب على المستخدم أن يوجهه إلى الصندوق خلال ثمان وأربعين ساعة بعد الحادث.
+faute inexcusable de l'employeur | Faute très grave de l'employeur qui connaissait le danger et n'a rien fait pour protéger le travailleur. | خطأ جسيم جدا من المستخدم الذي كان يعلم الخطر ولم يفعل شيئا ليحمي العامل.
+tableau des maladies professionnelles | Liste officielle des maladies que l'on tient pour causées par le travail, avec les travaux qui les provoquent. | قائمة رسمية بالأمراض التي تعد ناتجة عن العمل، مع الأشغال التي تسببها.
+âge légal de la retraite | Âge à partir duquel le travailleur peut cesser son activité et toucher sa pension : en principe soixante ans. | السن التي يستطيع العامل ابتداء منها أن يوقف نشاطه ويقبض معاشه: مبدئيا ستون سنة.
+années de cotisation | Nombre d'années pendant lesquelles le travailleur a cotisé, qui sert à calculer sa pension. | عدد السنوات التي دفع فيها العامل اشتراكه، ويحسب به معاشه.
+pension de réversion | Fraction de la pension d'un retraité décédé, versée à sa veuve et à ses enfants. | جزء من معاش متقاعد مات، يدفع للأرملة والأولاد.
+allocation de retraite | Somme versée au travailleur âgé qui n'a pas cotisé assez longtemps pour une pension complète. | مبلغ يدفع للعامل المسن الذي لم يدفع اشتراكه مدة كافية لمعاش كامل.
+allocations familiales | Sommes versées chaque mois au travailleur pour les enfants qu'il élève. | مبالغ تدفع كل شهر للعامل عن الأولاد الذين يربيهم.
+allocation chômage | Somme versée chaque mois à la personne sans emploi qui remplit les conditions de la loi. | مبلغ يدفع كل شهر للشخص الذي لا منصب له ويستوفي شروط القانون.
+contentieux de la sécurité sociale | Ensemble des litiges entre une caisse et un assuré ou un employeur. | مجموع النزاعات بين صندوق ومؤمن له أو مستخدم.
+contentieux général | Litiges sur l'application de la loi : affiliation, cotisations, droit aux prestations. | نزاعات حول تطبيق القانون: الانتساب والاشتراكات والحق في الأداءات.
+contentieux médical | Litiges sur la santé de l'assuré : maladie, taux d'incapacité, date de guérison. | نزاعات حول صحة المؤمن له: المرض ونسبة العجز وتاريخ الشفاء.
+contentieux technique | Litiges sur la faute ou l'abus d'un médecin ou d'un pharmacien dans ses rapports avec la caisse. | نزاعات حول خطأ أو تعسف من طبيب أو صيدلي في علاقته بالصندوق.
+commission de recours préalable | Commission de la caisse à laquelle il faut s'adresser avant d'aller devant le tribunal. | لجنة في الصندوق يجب التوجه إليها قبل اللجوء إلى المحكمة.
+expertise médicale | Examen confié à un médecin indépendant pour trancher un désaccord sur la santé de l'assuré. | فحص يعهد به إلى طبيب مستقل ليفصل في خلاف حول صحة المؤمن له.
+mutuelle sociale | Association sans but lucratif qui complète les remboursements de la sécurité sociale pour ses adhérents. | جمعية ليس لها هدف ربحي تكمل تعويضات الضمان الاجتماعي للمنخرطين فيها.
+régime des non-salariés | Règles de sécurité sociale qui s'appliquent à ceux qui travaillent pour leur compte. | قواعد الضمان الاجتماعي التي تطبق على من يعملون لحسابهم.
+travailleur indépendant | Personne qui travaille pour son compte, sans patron ni salaire, comme un commerçant ou un artisan. | شخص يعمل لحسابه، دون رب عمل ولا أجر، كتاجر أو حرفي. | sf=travailleur non salarié
+recouvrement forcé des cotisations | Procédure par laquelle la caisse oblige l'employeur à payer ce qu'il lui doit, au besoin par une saisie. | إجراء يلزم به الصندوق المستخدم بأن يدفع ما عليه، وعند الحاجة بحجز.
+défaut d'affiliation | Situation de l'employeur qui n'a pas déclaré un travailleur à la sécurité sociale ; elle est punie d'une amende. | حالة المستخدم الذي لم يصرح بعامل لدى الضمان الاجتماعي، ويعاقب عليها بغرامة.

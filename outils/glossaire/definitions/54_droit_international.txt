@@ -1,0 +1,325 @@
+# Définitions des termes de termes/54_droit_international.txt : terme | définition française | définition arabe | options (sf=, sa=)
+sujet de droit international | Entité qui a des droits et des devoirs dans l'ordre international, comme un État ou une organisation internationale. | كيان له حقوق وواجبات في النظام الدولي، كدولة أو منظمة دولية.
+communauté internationale | Ensemble des États et des organisations internationales, vus comme un tout. | مجموع الدول والمنظمات الدولية، منظورا إليها ككل.
+coutume internationale | Règle non écrite que les États suivent de façon constante en la tenant pour obligatoire. | قاعدة غير مكتوبة تتبعها الدول باستمرار وتعدها إلزامية.
+jus cogens | Règles supérieures du droit international qu'aucun traité ne peut écarter, comme l'interdiction du génocide. | قواعد عليا في القانون الدولي لا يجوز لأي معاهدة أن تستبعدها، كمنع الإبادة الجماعية.
+traité bilatéral | Traité conclu entre deux États seulement. | معاهدة تبرم بين دولتين فقط.
+traité multilatéral | Traité conclu entre trois États ou plus. | معاهدة تبرم بين ثلاث دول أو أكثر.
+accord international | Texte écrit par lequel des États ou des organisations internationales s'engagent les uns envers les autres. | نص مكتوب تلتزم به دول أو منظمات دولية بعضها نحو بعض.
+accord de coopération | Accord par lequel deux États décident de travailler ensemble dans un domaine, comme la santé ou l'enseignement. | اتفاق تقرر به دولتان أن تعملا معا في مجال، كالصحة أو التعليم.
+accord de siège | Accord entre une organisation internationale et l'État qui l'accueille, sur son installation et son immunité. | اتفاق بين منظمة دولية والدولة التي تستقبلها حول إقامتها وما لها من حصانة.
+mémorandum d'entente | Document qui note les intentions communes de deux États, le plus souvent sans force obligatoire. | وثيقة تدون النوايا المشتركة لدولتين، وهي غالبا دون قوة إلزامية.
+échange de lettres | Accord simple formé par deux lettres de même contenu envoyées entre deux États. | اتفاق بسيط يتكون من رسالتين بالمضمون نفسه بين دولتين.
+charte | Texte solennel qui fonde une organisation ou proclame des droits. | نص رسمي يؤسس منظمة أو يعلن حقوقا.
+pacte international | Traité par lequel les États s'engagent à respecter une liste de droits de la personne. | معاهدة تلتزم بها الدول بأن تحترم قائمة من حقوق الشخص.
+négociation du traité | Discussion entre les représentants des États pour fixer le contenu du texte. | نقاش بين ممثلي الدول ليحددوا مضمون النص.
+pleins pouvoirs | Document par lequel un État désigne la personne chargée de négocier ou de signer un traité en son nom. | وثيقة تعين بها دولة الشخص المكلف بأن يتفاوض على معاهدة أو يوقعها باسمها.
+représentant plénipotentiaire | Personne qui a reçu de son État le pouvoir de négocier et de signer un traité. | شخص تلقى من دولته سلطة أن يتفاوض على معاهدة وأن يوقعها.
+signature du traité | Acte par lequel le représentant d'un État approuve le texte, sans que l'État soit encore lié définitivement. | تصرف يوافق به ممثل دولة على النص دون أن ترتبط الدولة به نهائيا بعد.
+approbation du traité | Acte par lequel le gouvernement accepte un traité qui n'a pas besoin de passer devant le Parlement. | تصرف تقبل به الحكومة معاهدة لا تحتاج إلى المرور أمام البرلمان.
+instrument de ratification | Document officiel par lequel un État annonce qu'il accepte d'être lié par un traité. | وثيقة رسمية تعلن بها دولة أنها تقبل أن ترتبط بمعاهدة.
+dépôt des instruments de ratification | Remise du document de ratification à l'État ou à l'organisation chargée de conserver le traité. | تسليم وثيقة التصديق إلى الدولة أو المنظمة المكلفة بحفظ المعاهدة.
+dépositaire du traité | État ou organisation qui conserve le texte original d'un traité et reçoit chaque ratification. | دولة أو منظمة تحفظ النص الأصلي لمعاهدة وتتلقى كل تصديق عليها.
+État partie | État qui a accepté d'être lié par un traité qui s'applique déjà. | دولة قبلت أن ترتبط بمعاهدة تطبق فعلا.
+État signataire | État qui a signé un traité sans avoir encore accepté d'être lié par lui. | دولة وقعت معاهدة دون أن تقبل بعد أن ترتبط بها.
+État tiers | État qui n'est pas lié par un traité et auquel ce traité ne crée ni droit ni obligation. | دولة لا ترتبط بمعاهدة ولا تنشئ لها هذه المعاهدة حقا ولا التزاما.
+entrée en vigueur du traité | Date à partir de laquelle un traité devient obligatoire pour les États qui l'ont accepté. | التاريخ الذي تصير المعاهدة ابتداء منه إلزامية للدول التي قبلتها.
+application provisoire | Exécution d'un traité avant qu'il devienne obligatoire, quand les États l'ont décidé ainsi. | تنفيذ معاهدة قبل أن تصير إلزامية، إذا قررت الدول ذلك.
+enregistrement du traité | Transmission d'un traité au Secrétariat des Nations Unies, qui le publie. | إرسال معاهدة إلى أمانة منظمة الأمم المتحدة التي تنشرها.
+déclaration interprétative | Texte par lequel un État précise le sens qu'il donne à un article d'un traité, sans en écarter l'effet. | نص توضح به دولة المعنى الذي تعطيه لمادة من معاهدة دون أن تستبعد أثرها.
+objection à une réserve | Refus, par un État, de la réserve qu'un autre État a formulée sur un traité. | رفض دولة التحفظ الذي أبدته دولة أخرى على معاهدة.
+retrait de la réserve | Décision d'un État d'abandonner la réserve qu'il avait formulée, pour appliquer tout le traité. | قرار دولة بأن تترك التحفظ الذي أبدته لتطبق المعاهدة كلها.
+amendement du traité | Changement apporté au texte d'un traité avec le consentement des États liés. | تغيير يدخل على نص معاهدة برضا الدول المرتبطة بها.
+dénonciation du traité | Acte par lequel un État annonce qu'il cesse d'être lié par un traité. | تصرف تعلن به دولة أنها لم تعد مرتبطة بمعاهدة.
+retrait du traité | Sortie d'un État d'un traité multilatéral, qui continue entre les autres. | خروج دولة من معاهدة متعددة الأطراف تبقى قائمة بين الدول الأخرى.
+suspension de l'application du traité | Interruption provisoire des effets d'un traité, qui reprend ensuite. | انقطاع مؤقت لآثار معاهدة ثم تعود.
+extinction du traité | Fin définitive d'un traité, par son terme, son exécution ou la volonté des États. | نهاية نهائية لمعاهدة، بحلول أجلها أو تنفيذها أو إرادة الدول.
+nullité du traité | Défaut qui efface un traité, comme la violence contre un État ou la violation d'une règle supérieure. | عيب يمحو معاهدة، كإكراه دولة أو انتهاك قاعدة عليا.
+changement fondamental de circonstances | Bouleversement imprévu de la situation, qu'un État peut invoquer pour sortir d'un traité. | انقلاب غير متوقع في الوضع يجوز لدولة أن تتمسك به لتخرج من معاهدة.
+primauté du droit international | Principe selon lequel un traité, après sa ratification, l'emporte sur la loi du pays. | مبدأ يقضي بأن المعاهدة، بعد التصديق عليها، تعلو على قانون البلد.
+réception du traité en droit interne | Opération qui amène les juges du pays à appliquer un traité, par sa ratification et sa publication. | عملية تجعل القضاة في البلد يطبقون معاهدة، بالتصديق عليها ونشرها.
+droit interne | Ensemble des règles qu'un État se donne pour son propre territoire. | مجموع القواعد التي تضعها دولة لإقليمها الخاص.
+effet direct | Aptitude d'un traité à créer des droits que chacun peut invoquer devant le juge de son pays. | صلاحية معاهدة لأن تنشئ حقوقا يجوز لكل واحد أن يتمسك بها أمام قاضي بلده.
+clause de la nation la plus favorisée | Clause par laquelle un État promet à un autre tout avantage qu'il accordera à un État tiers. | بند تعد به دولة دولة أخرى بكل مزية تمنحها إلى دولة من الغير.
+traitement national | Règle qui oblige un État à traiter les produits et toute entreprise d'un autre État comme les siens. | قاعدة تلزم دولة بأن تعامل المنتجات وكل مؤسسة من دولة أخرى مثل ما لها.
+principe de réciprocité | Principe selon lequel un État accorde à un autre ce que celui-ci lui accorde. | مبدأ يقضي بأن تمنح دولة لأخرى ما تمنحه هذه لها.
+reconnaissance d'État | Acte par lequel un État déclare qu'une nouvelle entité est un État et accepte de traiter avec elle. | تصرف تصرح به دولة بأن كيانا جديدا هو دولة وتقبل أن تتعامل معه.
+reconnaissance de gouvernement | Acte par lequel un État accepte de traiter avec les nouvelles autorités d'un autre pays. | تصرف تقبل به دولة أن تتعامل مع السلطات الجديدة لبلد آخر.
+succession d'États | Remplacement d'un État par un autre dans la responsabilité d'un territoire, par exemple après l'indépendance. | حلول دولة محل أخرى في مسؤولية إقليم، مثلا بعد الاستقلال.
+égalité souveraine des États | Principe selon lequel tous les États ont les mêmes droits, quelle que soit leur taille ou leur puissance. | مبدأ يقضي بأن لكل الدول الحقوق نفسها مهما كان حجمها أو قوتها.
+non-ingérence dans les affaires intérieures | Principe qui interdit à un État d'intervenir dans ce qui relève d'un autre État. | مبدأ يمنع دولة من أن تتدخل في ما يخص دولة أخرى. | sf=non-ingérence, principe de non-ingérence
+droit des peuples à disposer d'eux-mêmes | Droit de chaque peuple de choisir librement son régime et son avenir. | حق كل شعب في أن يختار بحرية نظامه ومستقبله. | sf=droit à l'autodétermination
+autodétermination | Choix libre, par un peuple, de devenir indépendant ou de rester attaché à un État. | اختيار شعب بحرية أن يصير مستقلا أو أن يبقى مرتبطا بدولة.
+frontière internationale | Ligne qui sépare le territoire de deux États. | الخط الذي يفصل إقليم دولة عن إقليم دولة أخرى.
+délimitation des frontières | Opération juridique qui fixe par un traité le tracé de la ligne entre deux États. | عملية قانونية تحدد بمعاهدة مسار الخط بين دولتين.
+démarcation des frontières | Opération qui matérialise sur le terrain, par des bornes, la ligne séparant deux États. | عملية تجسد في الميدان، بواسطة معالم، الخط الفاصل بين دولتين.
+poste frontalier | Lieu de passage surveillé où la police et l'administration des douanes contrôlent les entrées et les sorties. | مكان عبور مراقب تراقب فيه الشرطة وإدارة الجمارك الدخول والخروج.
+litige frontalier | Désaccord entre deux États sur le tracé de la ligne qui les sépare. | خلاف بين دولتين على مسار الخط الذي يفصل بينهما.
+territoire national | Espace de terre, d'eau et d'air sur lequel un État exerce sa souveraineté. | مجال من البر والماء والجو تمارس عليه دولة سيادتها.
+espace aérien | Air situé au-dessus du sol et des eaux d'un État, qui en surveille le survol. | الجو الواقع فوق أرض دولة ومياهها، وتراقب الدولة التحليق فيه.
+mer territoriale | Bande de mer large de douze milles le long des côtes, placée sous la souveraineté de l'État. | شريط من البحر عرضه اثنا عشر ميلا على طول السواحل، يوضع تحت سيادة الدولة.
+eaux intérieures | Eaux situées en deçà de la ligne de base, comme un port, une baie ou un fleuve. | المياه الواقعة قبل خط الأساس، كالميناء والخليج والنهر.
+eaux territoriales | Eaux proches des côtes placées sous la souveraineté de l'État riverain. | المياه القريبة من السواحل الموضوعة تحت سيادة الدولة الساحلية.
+zone contiguë | Bande de mer au-delà de la mer territoriale, jusqu'à vingt-quatre milles, où l'État surveille les marchandises, la santé et l'immigration. | شريط من البحر بعد البحر الإقليمي، إلى غاية أربعة وعشرين ميلا، تراقب فيه الدولة البضاعة والصحة والهجرة.
+zone économique exclusive | Zone de mer large de deux cents milles où l'État riverain a seul le droit d'exploiter la pêche et les richesses du fond. | منطقة من البحر عرضها مائتا ميل للدولة الساحلية وحدها فيها حق استغلال الصيد وثروات القاع.
+plateau continental | Prolongement du territoire sous la mer, dont l'État riverain exploite seul le sol et le sous-sol. | امتداد الإقليم تحت البحر، تستغل الدولة الساحلية وحدها أرضه وباطنه.
+haute mer | Espace de mer qui n'appartient à aucun État et où la navigation est libre pour tous. | مجال من البحر لا تملكه أي دولة والملاحة فيه حرة للجميع.
+fonds marins | Sol et sous-sol de la mer au-delà des zones des États, dont les richesses reviennent à l'humanité. | أرض البحر وباطنه بعد مناطق الدول، وتعود ثرواته للإنسانية.
+droit de passage inoffensif | Droit d'un navire d'un autre pays de traverser la mer territoriale sans faire halte ni menacer l'État riverain. | حق سفينة من بلد آخر في أن تعبر البحر الإقليمي دون أن تقف ولا أن تهدد الدولة الساحلية.
+liberté de navigation | Droit de tout navire de circuler en haute mer sans être gêné par un autre État que le sien. | حق كل سفينة في أن تتنقل في أعالي البحار دون أن تعرقلها دولة غير دولتها.
+détroit international | Passage étroit entre deux mers, ouvert au transit de tout navire, quel que soit son pays. | ممر ضيق بين بحرين مفتوح لعبور كل سفينة من أي بلد.
+piraterie maritime | Attaque d'un navire en haute mer par des personnes qui n'agissent pas pour un État, pour s'emparer de ses biens ou prendre des otages. | هجوم أشخاص لا يتصرفون لحساب دولة على سفينة في أعالي البحار ليستولوا على أموالها أو ليأخذوا رهائن.
+droit de poursuite en mer | Droit d'un État de pourchasser jusqu'en haute mer un navire d'un autre pays qui a violé ses lois dans ses eaux. | حق دولة في أن تطارد إلى أعالي البحار سفينة من بلد آخر خرقت قوانينها في مياهها.
+espace extra-atmosphérique | Espace situé au-delà de l'atmosphère, qu'aucun État ne peut s'approprier. | الفضاء الواقع بعد الغلاف الجوي، ولا يجوز لأي دولة أن تتملكه.
+patrimoine commun de l'humanité | Richesses qui appartiennent à tout peuple et qu'aucun État ne peut prendre pour lui seul. | ثروات تعود لكل شعب ولا يجوز لأي دولة أن تأخذها لنفسها وحدها.
+compétence universelle | Pouvoir des juges d'un État de poursuivre des crimes comme le génocide ou la torture, quel que soit le lieu ou la nationalité de l'auteur. | سلطة قضاة دولة في أن يتابعوا جنايات كالإبادة الجماعية أو التعذيب مهما كان المكان أو جنسية الفاعل.
+immunité de juridiction | Règle qui interdit de porter une action contre un État ou son représentant devant le tribunal d'un autre État. | قاعدة تمنع رفع دعوى ضد دولة أو ممثلها أمام محكمة دولة أخرى.
+immunité d'exécution | Règle qui interdit de saisir, dans un pays, les biens d'un autre État pour le forcer à exécuter un jugement. | قاعدة تمنع أن تحجز في بلد أموال دولة أخرى لإجبارها على أن تنفذ حكما.
+immunité de l'État | Protection qui met un État à l'abri des juges et des saisies d'un autre État. | حماية تجعل دولة في مأمن من قضاة دولة أخرى ومن حجزها.
+protection diplomatique | Démarche d'un État qui prend la défense de l'un de ses citoyens lésé par un autre État. | مسعى دولة تتولى الدفاع عن مواطن لها متضرر من دولة أخرى.
+épuisement des voies de recours internes | Obligation d'utiliser tous les recours ouverts devant les juges du pays avant de s'adresser à un organe international. | التزام باستعمال كل طعن مفتوح أمام قضاة البلد قبل التوجه إلى هيئة دولية.
+responsabilité internationale de l'État | Obligation d'un État de fournir une réparation pour le dommage causé à un autre par un acte opposé au droit international. | التزام دولة بأن تقدم تعويضا عن الضرر الذي سببته لأخرى بعمل مخالف للقانون الدولي.
+fait internationalement illicite | Comportement d'un État qui viole une obligation internationale. | سلوك دولة تخرق به التزاما دوليا عليها.
+contre-mesures | Mesures qu'un État lésé prend contre l'État fautif pour l'amener à respecter ses obligations. | تدابير تتخذها دولة متضررة ضد الدولة المخطئة لتحملها على أن تحترم ما عليها من التزام.
+représailles | Actes en principe illicites par lesquels un État répond à un acte illicite d'un autre État. | أعمال غير مشروعة مبدئيا ترد بها دولة على عمل غير مشروع من دولة أخرى.
+rétorsion | Mesure inamicale mais licite par laquelle un État répond à un acte d'un autre État, comme l'expulsion d'un diplomate. | تدبير غير ودي لكنه جائز ترد به دولة على عمل من دولة أخرى، كطرد دبلوماسي.
+sanctions internationales | Mesures décidées contre un État qui met la paix en danger, comme le gel de ses avoirs. | تدابير تقرر ضد دولة تعرض السلم للخطر، كتجميد أرصدتها.
+embargo | Interdiction de vendre des marchandises à un État ou de lui en acheter. | منع أن تباع بضاعة لدولة أو أن تشترى منها.
+recours à la force | Emploi des armes par un État contre un autre. | استعمال دولة السلاح ضد دولة أخرى.
+interdiction du recours à la force | Règle de la Charte des Nations Unies qui interdit aux États d'employer les armes, sauf pour se défendre ou sur décision du Conseil de sécurité. | قاعدة في ميثاق منظمة الأمم المتحدة تمنع الدول من أن تستعمل السلاح، إلا لتدافع عن نفسها أو بقرار من مجلس الأمن.
+agression armée | Attaque militaire d'un État contre le territoire ou l'indépendance d'un autre. | هجوم عسكري من دولة على إقليم دولة أخرى أو استقلالها.
+occupation militaire | Présence de l'armée d'un État sur le territoire d'un autre, qu'elle administre sans en acquérir la souveraineté. | وجود جيش دولة في إقليم دولة أخرى يديره دون أن يكتسب السيادة عليه.
+annexion de territoire | Rattachement par la force d'un territoire étranger à un État ; le droit international l'interdit. | إلحاق إقليم أجنبي بدولة بالقوة، ويمنعه القانون الدولي.
+maintien de la paix | Effort des Nations Unies pour empêcher la reprise des combats après un conflit. | سعي منظمة الأمم المتحدة إلى أن تمنع عودة القتال بعد نزاع.
+opération de maintien de la paix | Envoi de soldats et de civils sous le drapeau des Nations Unies pour surveiller un cessez-le-feu ou protéger la population. | إرسال جنود ومدنيين تحت راية منظمة الأمم المتحدة ليراقبوا وقف إطلاق النار أو ليحموا السكان. | sf=mission de maintien de la paix
+sécurité collective | Système où tous les États s'engagent à réagir ensemble contre celui qui attaque l'un d'eux. | نظام تلتزم فيه كل الدول بأن ترد معا على من يهاجم إحداها.
+désarmement | Réduction ou suppression des armes d'un État, décidée par un traité. | تخفيض سلاح دولة أو إزالته، يقرر بمعاهدة.
+non-prolifération des armes nucléaires | Règle qui interdit aux États sans bombe atomique d'en fabriquer ou d'en acquérir. | قاعدة تمنع الدول التي لا تملك القنبلة الذرية من أن تصنعها أو تكتسبها.
+neutralité permanente | Engagement d'un État de ne jamais participer à une guerre ni entrer dans un bloc militaire. | التزام دولة بألا تشارك أبدا في حرب ولا أن تدخل في حلف عسكري.
+Assemblée générale des Nations Unies | Organe des Nations Unies où siège chaque État membre, avec une voix, et qui débat de toutes les questions. | هيئة من منظمة الأمم المتحدة تجلس فيها كل دولة عضو، بصوت واحد، وتناقش كل المسائل. | sf=Assemblée générale de l'ONU
+Secrétaire général des Nations Unies | Plus haut fonctionnaire des Nations Unies, nommé par l'Assemblée générale sur recommandation du Conseil de sécurité. | أعلى موظف في منظمة الأمم المتحدة، تعينه الجمعية العامة بتوصية من مجلس الأمن. | sf=Secrétaire général de l'ONU
+Conseil économique et social | Organe des Nations Unies qui coordonne le travail sur le développement, la santé et l'éducation. | هيئة من منظمة الأمم المتحدة تنسق العمل في التنمية والصحة والتعليم.
+institution spécialisée | Organisation internationale rattachée aux Nations Unies et chargée d'un domaine, comme la santé ou le travail. | منظمة دولية مرتبطة بمنظمة الأمم المتحدة ومكلفة بمجال، كالصحة أو العمل.
+résolution du Conseil de sécurité | Décision du Conseil de sécurité, qui peut être obligatoire pour tous les États. | قرار من مجلس الأمن قد يكون إلزاميا لكل الدول.
+recommandation | Texte par lequel une organisation invite les États à agir d'une façon, sans les y obliger. | نص تدعو به منظمة الدول إلى أن تتصرف بطريقة دون أن تلزمها بها.
+droit de veto | Pouvoir de chaque membre permanent du Conseil de sécurité de bloquer une décision par son seul vote. | سلطة كل عضو دائم في مجلس الأمن في أن يعطل قرارا بتصويته وحده.
+membre permanent | État qui siège sans limite de durée au Conseil de sécurité ; ils sont cinq. | دولة تجلس دون حد للمدة في مجلس الأمن، وعددها خمس.
+État membre | État qui appartient à une organisation internationale et en accepte les règles. | دولة تنتمي إلى منظمة دولية وتقبل قواعدها.
+État observateur | État admis à suivre les travaux d'une organisation sans avoir le droit de vote. | دولة يقبل أن تتابع أشغال منظمة دون أن يكون لها حق التصويت.
+Union africaine | Organisation qui réunit les États d'Afrique pour la paix, l'unité et le développement du continent. | منظمة تجمع دول إفريقيا من أجل السلم والوحدة وتنمية القارة. | sf=UA
+Ligue des États arabes | Organisation qui réunit les États arabes pour coordonner leurs positions et leur coopération. | منظمة تجمع الدول العربية لتنسق مواقفها وتعاونها. | sf=Ligue arabe | sa=الجامعة العربية
+Union du Maghreb arabe | Organisation créée en 1989 entre l'Algérie, la Libye, le Maroc, la Mauritanie et la Tunisie. | منظمة أنشئت سنة 1989 بين الجزائر وليبيا والمغرب وموريتانيا وتونس. | sf=UMA
+Organisation de la coopération islamique | Organisation qui réunit les États musulmans pour défendre leur intérêt commun. | منظمة تجمع الدول الإسلامية لتدافع عن مصلحة مشتركة بينها. | sf=OCI
+Organisation mondiale du commerce | Organisation qui fixe les règles du commerce entre les États et tranche tout différend commercial entre eux. | منظمة تحدد قواعد التجارة بين الدول وتفصل في كل نزاع تجاري بينها.
+Organisation internationale du travail | Institution des Nations Unies qui adopte des conventions sur les droits des travailleurs. | وكالة من منظمة الأمم المتحدة تقر اتفاقيات حول حقوق العمال.
+Organisation mondiale de la santé | Institution des Nations Unies chargée de la santé dans le monde et de la lutte contre les épidémies. | وكالة من منظمة الأمم المتحدة مكلفة بالصحة في العالم وبمكافحة الأوبئة.
+Fonds monétaire international | Organisation qui avance de l'argent aux États en difficulté et surveille la stabilité de chaque monnaie. | منظمة تسلف النقود للدول التي تمر بصعوبة وتراقب استقرار كل عملة.
+Banque mondiale | Organisation qui finance les projets de développement des pays pauvres par un prêt de longue durée. | منظمة تمول مشاريع التنمية في البلدان الفقيرة بقرض طويل المدة.
+Cour pénale internationale | Juridiction permanente qui poursuit l'auteur d'un génocide, d'un crime de guerre ou d'un crime contre l'humanité. | جهة قضائية دائمة تتابع الفاعل في إبادة جماعية أو جريمة الحرب أو الجريمة ضد الإنسانية.
+Cour africaine des droits de l'homme et des peuples | Juridiction de l'Union africaine qui examine toute plainte pour violation des droits de l'homme en Afrique. | جهة قضائية تابعة للاتحاد الإفريقي تنظر في كل شكوى عن انتهاك حقوق الإنسان في إفريقيا.
+Tribunal international du droit de la mer | Juridiction établie à Hambourg qui tranche tout litige entre États sur l'emploi des mers. | جهة قضائية مقرها هامبورغ تفصل في كل نزاع بين الدول حول استعمال البحار. | sf=TIDM
+fonctionnaire international | Agent employé par une organisation internationale, qui ne reçoit d'ordres d'aucun État. | عون تستخدمه منظمة دولية ولا يتلقى أوامر من أي دولة.
+personnalité juridique internationale | Aptitude à avoir des droits et des obligations dans l'ordre international et à conclure un traité. | صلاحية لأن تكون للكيان حقوق وعليه التزام في النظام الدولي ولأن يبرم معاهدة.
+différend international | Désaccord entre deux États sur une règle juridique ou sur des faits. | خلاف بين دولتين على قاعدة قانونية أو على وقائع.
+règlement pacifique des différends | Obligation des États de résoudre leurs désaccords sans employer la force : négociation, médiation, arbitrage ou juge. | التزام الدول بأن تحل خلافاتها دون استعمال القوة: تفاوض أو وساطة أو تحكيم أو قاض.
+bons offices | Intervention d'un État ou d'une personnalité qui rapproche deux États en conflit sans proposer de solution. | تدخل دولة أو شخصية تقرب بين دولتين في نزاع دون أن تقترح حلا.
+négociation diplomatique | Discussion directe entre le représentant d'un État et celui d'un autre pour trouver une entente. | نقاش مباشر بين ممثل دولة وممثل أخرى للتوصل إلى تفاهم.
+enquête internationale | Recherche des faits confiée à une commission neutre pour éclairer un désaccord entre États. | بحث عن الوقائع يعهد به إلى لجنة محايدة لتوضيح خلاف بين دول.
+conciliation internationale | Procédure où une commission examine le désaccord et propose aux États une solution qu'ils sont libres d'accepter. | إجراء تدرس فيه لجنة الخلاف وتقترح على الدول حلا، وكل دولة حرة في أن تقبله.
+arbitrage international | Procédure où des États confient leur désaccord à des arbitres qu'ils choisissent et dont la décision les lie. | إجراء تعهد فيه دول بخلافها إلى محكمين تختارهم ويلزمها قرارهم.
+clause facultative de juridiction obligatoire | Déclaration par laquelle un État accepte d'avance que la Cour internationale de Justice tranche ses désaccords avec les États qui ont agi de même. | إعلان تقبل به دولة مسبقا أن تفصل محكمة العدل الدولية في خلافاتها مع الدول التي فعلت مثلها.
+avis consultatif | Réponse de la Cour internationale de Justice à une question juridique posée par un organe des Nations Unies ; elle n'oblige pas. | جواب محكمة العدل الدولية عن مسألة قانونية تطرحها هيئة من منظمة الأمم المتحدة، وهو لا يلزم.
+arrêt de la Cour internationale de Justice | Décision par laquelle la Cour internationale de Justice tranche un différend entre États ; elle est obligatoire et sans appel. | قرار تفصل به محكمة العدل الدولية في نزاع بين دول، وهو إلزامي ولا استئناف فيه.
+relations diplomatiques | Rapports officiels entre deux États, entretenus par l'ambassade de chacun auprès de l'autre. | الروابط الرسمية بين دولتين عن طريق سفارة كل واحدة لدى الأخرى.
+relations consulaires | Rapports entre deux États destinés à aider le citoyen de chacun installé chez l'autre. | روابط بين دولتين غايتها مساعدة مواطن كل واحدة المقيم عند الأخرى.
+mission diplomatique | Ensemble des diplomates qu'un État envoie auprès d'un autre pour le représenter. | مجموع الدبلوماسيين الذين ترسلهم دولة إلى أخرى ليمثلوها.
+chef de mission | Personne qui dirige une ambassade. | شخص يسير سفارة.
+chef de mission diplomatique | Ambassadeur ou chargé d'affaires qui représente son État auprès d'un autre. | سفير أو قائم بالأعمال يمثل دولته لدى دولة أخرى.
+agent diplomatique | Membre d'une ambassade qui a la qualité de diplomate. | عضو في سفارة له صفة الدبلوماسي.
+corps diplomatique | Ensemble des diplomates de chaque pays étranger en poste dans une même capitale. | مجموع الدبلوماسيين من كل بلد أجنبي العاملين في العاصمة نفسها.
+chargé d'affaires | Diplomate qui dirige l'ambassade quand il n'y a pas d'ambassadeur ou pendant son absence. | دبلوماسي يسير السفارة إذا لم يوجد سفير أو خلال غيابه.
+consul | Agent qu'un État envoie dans une ville étrangère pour aider chacun de ses citoyens et délivrer des documents. | عون ترسله دولة إلى مدينة أجنبية ليساعد كل مواطن لها ويسلم وثائق.
+consul général | Consul du rang le plus élevé, placé à la tête d'un grand consulat. | قنصل من أعلى مرتبة يوضع على رأس قنصلية كبيرة.
+consul honoraire | Personne du pays d'accueil, non fonctionnaire, qui remplit bénévolement quelques tâches de consul. | شخص من بلد الاستقبال، ليس موظفا، يقوم تطوعا ببعض مهام القنصل.
+attaché culturel | Diplomate chargé des relations dans l'enseignement, les arts et la langue. | دبلوماسي مكلف بالعلاقات في التعليم والفنون واللغة.
+attaché militaire | Officier placé dans une ambassade pour suivre les questions de défense. | ضابط يوضع في سفارة ليتابع مسائل الدفاع.
+lettres de créance | Document par lequel un chef d'État présente son ambassadeur au chef de l'État d'accueil. | وثيقة يقدم بها رئيس الدولة سفيره إلى رئيس دولة الاستقبال.
+État accréditant | État qui envoie une mission diplomatique auprès d'un autre. | الدولة التي ترسل بعثة دبلوماسية إلى دولة أخرى.
+État accréditaire | État qui reçoit sur son territoire la mission diplomatique d'un autre. | الدولة التي تستقبل في إقليمها بعثة دبلوماسية من دولة أخرى.
+persona non grata | Diplomate que l'État d'accueil déclare indésirable et qui doit quitter le pays. | دبلوماسي تصرح دولة الاستقبال بأنه غير مقبول ويجب أن يغادر البلد.
+rupture des relations diplomatiques | Décision d'un État de fermer son ambassade et de cesser tout rapport officiel avec un autre État. | قرار دولة بأن تغلق سفارتها وتوقف كل رابطة رسمية مع دولة أخرى.
+locaux de la mission | Bâtiments et terrains employés par une ambassade, y compris la résidence de son chef. | المباني والأراضي التي تستعملها سفارة، ومنها إقامة رئيسها.
+inviolabilité des locaux diplomatiques | Règle qui interdit aux autorités du pays d'entrer dans une ambassade sans la permission de son chef. | قاعدة تمنع سلطات البلد من أن تدخل سفارة دون إذن من رئيسها.
+valise diplomatique | Colis officiel d'une ambassade, qui ne peut être ni ouvert ni retenu. | طرد رسمي لسفارة لا يجوز فتحه ولا حجزه.
+privilèges et immunités | Avantages et protections reconnus aux diplomates pour qu'ils travaillent librement. | مزايا وحماية يعترف بها للدبلوماسيين ليعملوا بحرية.
+immunité consulaire | Protection du consul contre les poursuites, limitée aux actes de sa fonction. | حماية القنصل من المتابعة، وهي مقصورة على أعمال وظيفته.
+fonctions consulaires | Tâches d'un consulat : aider le citoyen, délivrer le passeport et le visa, tenir l'état civil. | أعمال قنصلية: مساعدة المواطن وتسليم جواز السفر والتأشيرة ومسك الحالة المدنية.
+protection consulaire | Aide qu'un consulat apporte à un citoyen en prison, malade ou en danger dans le pays. | مساعدة تقدمها قنصلية لمواطن في السجن أو مريض أو في خطر في البلد.
+immatriculation consulaire | Enregistrement d'un citoyen établi dans un autre pays sur le registre de son consulat. | تسجيل مواطن مقيم في بلد آخر في سجل قنصليته.
+légalisation consulaire | Attestation par un consulat que la signature portée sur un document est vraie. | شهادة من قنصلية بأن التوقيع الموجود على وثيقة صحيح.
+passeport diplomatique | Passeport remis aux diplomates et aux hauts responsables pour leurs missions. | جواز سفر يسلم للدبلوماسيين وكبار المسؤولين لمهامهم.
+note verbale | Message écrit, sans signature, qu'une ambassade adresse à l'administration du pays d'accueil. | رسالة مكتوبة دون توقيع توجهها سفارة إلى إدارة بلد الاستقبال.
+asile diplomatique | Refuge donné dans une ambassade à une personne que les autorités du pays poursuivent. | ملجأ يعطى في سفارة لشخص تتابعه سلطات البلد.
+asile politique | Accueil et protection donnés par un État à un étranger persécuté pour ses idées. | استقبال وحماية تعطيهما دولة لأجنبي يضطهد بسبب أفكاره.
+droit d'asile | Droit d'une personne persécutée de demander refuge à un autre État. | حق شخص مضطهد في أن يطلب ملجأ من دولة أخرى.
+conférence internationale | Réunion des représentants de plusieurs États pour discuter d'un problème ou préparer un traité. | اجتماع ممثلين عن عدة دول ليناقشوا مشكلة أو يحضروا معاهدة.
+représentation permanente | Mission qu'un État installe auprès d'une organisation internationale. | بعثة تقيمها دولة لدى منظمة دولية.
+État d'envoi | État qui envoie un consul dans un autre pays. | الدولة التي ترسل قنصلا إلى بلد آخر.
+État de résidence | État sur le territoire duquel un consul exerce ses fonctions. | الدولة التي يمارس قنصل وظائفه في إقليمها.
+conflit armé international | Guerre entre deux États ou plus. | حرب بين دولتين أو أكثر.
+conflit armé non international | Combats, à l'intérieur d'un État, entre l'armée et des groupes armés ou entre ces groupes. | قتال داخل دولة بين الجيش وجماعات مسلحة أو بين هذه الجماعات.
+lois et coutumes de la guerre | Règles qui limitent les moyens de combattre et protègent ceux qui ne se battent pas. | قواعد تحد من وسائل القتال وتحمي من لا يقاتل.
+belligérant | État ou groupe armé qui prend part à une guerre. | دولة أو جماعة مسلحة تشارك في حرب.
+combattant | Membre d'une force armée, qui a le droit de se battre et peut être attaqué. | عضو في قوة مسلحة له الحق في أن يقاتل ويجوز أن يهاجم.
+population civile | Ensemble des personnes qui ne participent pas aux combats et qu'il est interdit d'attaquer. | مجموع الأشخاص الذين لا يشاركون في القتال ويمنع أن يهاجموا.
+personne protégée | Personne à qui les Conventions de Genève accordent une protection, comme le prisonnier ou le civil. | شخص تمنحه اتفاقيات جنيف حماية، كالأسير أو المدني.
+prisonnier de guerre | Combattant tombé aux mains de l'ennemi, qui a droit à un traitement humain. | مقاتل وقع في يد العدو وله الحق في معاملة إنسانية.
+blessés et malades | Personnes, militaires ou civiles, qui ont besoin de soins et ne prennent plus part aux combats. | أشخاص، من العسكريين أو المدنيين، يحتاجون إلى علاج ولم يعودوا يشاركون في القتال.
+personnel sanitaire | Médecins, infirmiers et brancardiers chargés de soigner ceux que les combats ont atteints, et qu'il est interdit d'attaquer. | أطباء وممرضون وحاملو نقالات مكلفون بعلاج من أصابهم القتال، ويمنع أن يهاجموا.
+bien de caractère civil | Bâtiment ou chose qui ne sert pas à la guerre, comme une maison, une école ou un hôpital. | مبنى أو شيء لا يستعمل في الحرب، كدار أو مدرسة أو مستشفى.
+objectif militaire | Lieu ou chose dont la destruction donne un avantage dans la guerre et que l'on peut attaquer. | مكان أو شيء يعطي تدميره مزية في الحرب ويجوز أن يهاجم.
+principe de distinction | Règle qui oblige à séparer toujours les combattants des civils et à ne viser que les premiers. | قاعدة تلزم بأن يفرق دائما بين المقاتلين والمدنيين وألا يستهدف إلا الأولون.
+principe de proportionnalité | Règle qui interdit une attaque dont les dégâts pour les civils dépasseraient l'avantage militaire attendu. | قاعدة تمنع هجوما تتجاوز أضراره على المدنيين المزية العسكرية المنتظرة.
+nécessité militaire | Raison qui justifie l'emploi de la force dans la seule mesure utile pour vaincre l'ennemi. | سبب يبرر استعمال القوة بالقدر اللازم فقط للتغلب على العدو.
+attaque indiscriminée | Attaque qui frappe sans distinction les combattants et les civils. | هجوم يصيب المقاتلين والمدنيين دون تفريق.
+arme prohibée | Arme que les traités interdisent d'employer, comme les gaz toxiques. | سلاح تمنع المعاهدات استعماله، كالغازات السامة.
+armes de destruction massive | Armes nucléaires, chimiques ou biologiques, qui tuent un très grand nombre de personnes. | أسلحة نووية أو كيميائية أو بيولوجية تقتل عددا كبيرا جدا من الأشخاص.
+mines antipersonnel | Engins cachés dans le sol qui explosent au passage d'une personne ; un traité de 1997 les interdit. | أجهزة تخفى في الأرض تنفجر عند مرور شخص، وتمنعها معاهدة لسنة 1997.
+puissance occupante | État dont l'armée tient le territoire d'un autre et qui doit y protéger la population. | دولة يمسك جيشها إقليم دولة أخرى ويجب عليها أن تحمي سكانه.
+territoire occupé | Territoire placé sous l'autorité de l'armée d'un État ennemi. | إقليم موضوع تحت سلطة جيش دولة عدوة.
+puissance protectrice | État neutre chargé de veiller au sort des prisonniers et des civils d'un pays en guerre. | دولة محايدة مكلفة بالسهر على مصير الأسرى والمدنيين من بلد في حرب.
+Comité international de la Croix-Rouge | Organisation neutre établie à Genève, qui secourt chaque victime de la guerre et visite les prisonniers. | منظمة محايدة مقرها جنيف تغيث كل ضحية للحرب وتزور الأسرى.
+emblème protecteur | Signe, comme la croix rouge ou le croissant rouge, qui désigne les personnes et les lieux à épargner. | علامة، كالصليب الأحمر أو الهلال الأحمر، تعين الأشخاص والأماكن التي يجب تجنبها.
+infractions graves aux Conventions de Genève | Actes très graves commis en temps de guerre, comme le meurtre de prisonniers ou la torture, que tout État doit punir. | أفعال جسيمة جدا ترتكب وقت الحرب، كقتل الأسرى أو التعذيب، ويجب على كل دولة أن تعاقب عليها.
+crime d'agression | Crime du dirigeant qui décide ou conduit l'attaque armée d'un État contre un autre. | جناية المسؤول الذي يقرر أو يقود هجوما مسلحا من دولة على أخرى.
+nettoyage ethnique | Expulsion par la terreur d'un groupe hors de la région où il vit, en raison de son origine. | طرد جماعة بالترهيب من المنطقة التي تعيش فيها بسبب أصلها.
+déportation | Déplacement forcé de personnes hors des frontières de leur pays. | نقل جبري لأشخاص خارج حدود بلدهم.
+transfert forcé de population | Déplacement forcé d'habitants d'une région vers une autre du même pays. | تحويل جبري لسكان من منطقة إلى أخرى في البلد نفسه.
+disparition forcée | Arrestation d'une personne par des agents de l'État, qui nient ensuite la détenir et cachent son sort. | إلقاء القبض على شخص من أعوان الدولة الذين ينكرون بعد ذلك أنهم يحبسونه ويخفون مصيره.
+exécution extrajudiciaire | Mise à mort d'une personne par des agents de l'État sans jugement d'un tribunal. | قتل شخص على يد أعوان الدولة دون حكم من محكمة.
+enfant soldat | Mineur enrôlé dans une armée ou un groupe armé ; l'enrôler avant quinze ans est un crime de guerre. | قاصر يجند في جيش أو جماعة مسلحة، وتجنيده قبل خمس عشرة سنة يعد جريمة حرب.
+mercenaire | Personne étrangère au conflit qui se bat pour de l'argent. | شخص أجنبي عن النزاع يقاتل من أجل النقود.
+imprescriptibilité des crimes de guerre | Règle selon laquelle l'auteur d'un tel crime peut être poursuivi sans limite de temps. | قاعدة تقضي بأن الفاعل في مثل هذه الجناية يجوز أن يتابع دون حد زمني.
+justice transitionnelle | Ensemble des moyens employés après une guerre ou une dictature pour établir la vérité, punir le coupable et indemniser la victime. | مجموع الوسائل التي تستعمل بعد حرب أو دكتاتورية ليظهر المجتمع الحقيقة ويعاقب المذنب ويعوض الضحية.
+commission de vérité | Commission chargée d'établir ce qui s'est passé pendant une période de violations graves et d'entendre chaque victime. | لجنة مكلفة بأن تبين ما وقع خلال فترة انتهاك خطير وبأن تسمع كل ضحية.
+cessez-le-feu | Interruption des combats convenue entre les deux camps. | انقطاع القتال الذي اتفق عليه المعسكران.
+armistice | Accord militaire qui suspend la guerre sur tout le front en attendant la paix. | اتفاق عسكري يعلق الحرب في كل الجبهة في انتظار السلم.
+traité de paix | Traité qui met fin à la guerre et fixe les conditions du retour à des rapports normaux. | معاهدة تنهي الحرب وتحدد شروط العودة إلى روابط عادية.
+demandeur d'asile | Étranger qui sollicite d'un État la qualité de réfugié et attend la réponse. | أجنبي يلتمس من دولة صفة لاجئ وينتظر الجواب.
+statut de réfugié | Protection qu'un État accorde à la personne qui craint avec raison d'être persécutée dans son pays. | حماية تمنحها دولة للشخص الذي يخشى عن حق أن يضطهد في بلده.
+principe de non-refoulement | Règle qui interdit de reconduire une personne vers un pays où sa vie ou sa liberté est en danger. | قاعدة تمنع أن يرجع شخص إلى بلد تكون فيه حياته أو حريته في خطر.
+déplacé interne | Personne qui a fui sa maison en raison d'une guerre ou d'une catastrophe sans quitter son pays. | شخص فر من بيته بسبب حرب أو كارثة دون أن يغادر بلده.
+apatridie | Situation de la personne qu'aucun État ne reconnaît comme son citoyen. | حالة الشخص الذي لا تعترف به أي دولة مواطنا لها.
+rapatriement volontaire | Retour d'un réfugié dans son pays, décidé librement. | رجوع لاجئ إلى بلده بقرار حر منه.
+Haut-Commissariat des Nations Unies pour les réfugiés | Organe des Nations Unies qui protège le réfugié et l'aide à trouver une solution durable. | هيئة من منظمة الأمم المتحدة تحمي اللاجئ وتساعده على أن يجد حلا دائما.
+droits civils et politiques | Droits qui protègent la liberté de la personne et sa participation à la vie de la cité : vie, expression, vote, procès équitable. | حقوق تحمي حرية الشخص ومشاركته في حياة المدينة: الحياة والتعبير والتصويت والمحاكمة العادلة.
+droits économiques, sociaux et culturels | Droits qui obligent l'État à agir pour le bien-être de chacun : travail, santé, éducation, logement. | حقوق تلزم الدولة بأن تعمل لرفاه كل واحد: العمل والصحة والتعليم والسكن.
+droit à la vie | Droit de toute personne de ne pas être tuée arbitrairement. | حق كل شخص في ألا يقتل تحكما.
+droit à la liberté et à la sûreté | Droit de ne pas être privé de liberté hors des cas et des formes que la loi fixe. | حق الشخص في ألا يحرم من حريته خارج الحالات والأشكال التي يحددها القانون.
+droit à un procès équitable | Droit de comparaître devant un tribunal indépendant, dans un délai raisonnable, avec les moyens de se défendre. | حق الشخص في أن يمثل أمام محكمة مستقلة، في أجل معقول، مع وسائل ليدافع عن نفسه. | sf=droit au procès équitable
+droit à un recours effectif | Droit de toute personne dont un droit a été violé de s'adresser à un juge qui puisse y remédier. | حق كل شخص خرق له حق في أن يتوجه إلى قاض يستطيع أن يصلح ذلك.
+respect de la vie privée | Protection de l'intimité d'une personne : son domicile, sa famille, ses communications et son image. | حماية خصوصية الشخص: موطنه وأسرته واتصالاته وصورته.
+droit à l'éducation | Droit de chaque enfant de recevoir un enseignement, gratuit et obligatoire au premier niveau. | حق كل ولد في أن يتلقى تعليما، مجانيا وإلزاميا في المستوى الأول.
+droit à la santé | Droit de chacun d'accéder aux soins et de vivre dans un milieu sain. | حق كل واحد في أن يصل إلى العلاج وأن يعيش في وسط سليم.
+droit au travail | Droit de chacun de gagner sa vie par un emploi librement choisi. | حق كل واحد في أن يكسب عيشه بمنصب يختاره بحرية.
+droit au logement | Droit de chacun d'avoir un toit convenable. | حق كل واحد في أن يكون له مأوى لائق.
+droit à un environnement sain | Droit de vivre dans une nature préservée de la pollution. | حق العيش في طبيعة محفوظة من التلوث.
+droit de pétition | Droit d'adresser par écrit une plainte ou un vœu aux autorités. | حق توجيه شكوى أو رغبة كتابة إلى السلطات.
+liberté de réunion | Droit de se rassembler pacifiquement avec d'autres dans un lieu pour discuter. | حق التجمع سلميا مع الغير في مكان للنقاش.
+liberté d'association | Droit de créer une association avec d'autres ou d'en devenir membre. | حق إنشاء جمعية مع الغير أو العضوية فيها.
+liberté de manifestation pacifique | Droit de défiler ou de se rassembler sur la voie publique, sans armes, pour exprimer une opinion. | حق السير أو التجمع في الطريق العام، دون سلاح، للتعبير عن رأي.
+liberté de conscience | Droit de chacun de croire ce qu'il veut ou de ne pas croire. | حق كل واحد في أن يعتقد ما يشاء أو ألا يعتقد.
+liberté de culte | Droit de pratiquer sa religion, seul ou avec d'autres, dans le respect de la loi. | حق الشخص في أن يمارس دينه، وحده أو مع غيره، في احترام القانون.
+liberté d'opinion | Droit d'avoir ses idées sans être inquiété pour elles. | حق الشخص في أن تكون له أفكاره دون أن يضايق بسببها.
+liberté de la presse | Droit des journaux et des autres médias de publier des informations sans censure préalable. | حق الجرائد وباقي وسائل الإعلام في أن تنشر معلومات دون رقابة مسبقة.
+droit d'accès à l'information | Droit de chacun d'obtenir les informations que détiennent les administrations. | حق كل واحد في أن ينال ما تمسكه الإدارات من معلومات.
+liberté individuelle | Droit de chacun d'aller et venir et de ne pas être détenu sans raison légale. | حق كل واحد في أن يتنقل وألا يحبس دون سبب قانوني.
+libertés publiques | Libertés que la Constitution reconnaît à tout citoyen et que l'État doit protéger. | حريات يعترف بها الدستور لكل مواطن ويجب على الدولة أن تحميها.
+inviolabilité du domicile | Règle qui interdit d'entrer chez une personne sans son consentement ou sans ordre écrit du juge. | قاعدة تمنع الدخول إلى بيت شخص دون رضاه أو دون أمر مكتوب من القاضي.
+secret des correspondances | Règle qui interdit d'ouvrir les lettres et les messages d'autrui ou d'écouter ses conversations au téléphone. | قاعدة تمنع فتح رسائل الغير أو التنصت على محادثاته في الهاتف.
+esclavage | Situation d'une personne traitée comme la propriété d'une autre. | حالة شخص يعامل كأنه ملكية لشخص آخر.
+interdiction de l'esclavage | Règle absolue qui interdit de traiter une personne comme une chose ou de la vendre. | قاعدة مطلقة تمنع أن يعامل شخص كشيء أو أن يباع.
+traitements cruels, inhumains ou dégradants | Actes qui infligent une forte souffrance ou humilient une personne, sans atteindre le degré de la torture. | أفعال تلحق ألما شديدا بشخص أو تذله دون أن تبلغ درجة التعذيب. | sf=traitements inhumains ou dégradants
+détention arbitraire | Enfermement d'une personne décidé sans base légale ou sans contrôle d'un juge. | حبس شخص يقرر دون سند قانوني أو دون مراقبة قاض.
+égalité des sexes | Principe selon lequel l'homme et la femme ont les mêmes droits et les mêmes devoirs. | مبدأ يقضي بأن للرجل والمرأة الحقوق نفسها والواجبات نفسها.
+discrimination à l'égard des femmes | Toute différence de traitement qui prive une femme d'un droit parce qu'elle est femme. | كل اختلاف في المعاملة يحرم امرأة من حق لأنها امرأة. | sf=discrimination contre les femmes
+droits de l'enfant | Droits propres aux personnes de moins de dix-huit ans : protection, éducation, santé, écoute. | حقوق خاصة بالأشخاص دون ثماني عشرة سنة: الحماية والتعليم والصحة والإصغاء.
+droits de la femme | Droits qui donnent à la femme la même place que l'homme dans la famille, le travail et la vie de la cité. | حقوق تعطي المرأة المكانة نفسها التي للرجل في الأسرة والعمل وحياة المدينة.
+droits des personnes handicapées | Droits qui permettent à la personne handicapée de vivre, d'étudier et de travailler comme les autres. | حقوق تجيز لكل شخص معاق أن يعيش ويدرس ويعمل مثل غيره.
+droits des minorités | Droits d'un groupe peu nombreux de conserver sa langue, sa religion et sa culture. | حقوق جماعة قليلة العدد في أن تحفظ لغتها ودينها وثقافتها.
+minorité nationale | Groupe de citoyens qui se distingue de la majorité par son origine, sa langue ou sa religion. | جماعة من المواطنين تختلف عن الأغلبية بأصلها أو لغتها أو دينها.
+peuples autochtones | Peuples qui vivaient sur une terre avant l'arrivée d'autres populations et ont conservé leur mode de vie. | شعوب كانت تعيش في أرض قبل قدوم سكان آخرين وحفظت طريقة عيشها.
+défenseur des droits de l'homme | Personne qui agit, seule ou dans une association, pour faire respecter les droits de l'homme. | شخص يعمل، وحده أو في جمعية، لكي تحترم حقوق الإنسان.
+violation des droits de l'homme | Acte d'une autorité qui porte atteinte à un droit fondamental d'une personne. | عمل من سلطة فيه مساس بحق أساسي لشخص.
+universalité des droits de l'homme | Idée que ces droits appartiennent à tout être humain, partout et sans distinction. | فكرة أن هذه الحقوق تعود لكل إنسان في كل مكان ودون تفريق.
+restriction des droits | Limite que la loi peut apporter à une liberté pour protéger l'ordre public ou les droits d'autrui. | حد يجوز للقانون أن يضعه لحرية ليحمي النظام العام أو حقوق الغير.
+Conseil des droits de l'homme | Organe des Nations Unies, formé de quarante-sept États, qui examine le respect des droits de l'homme dans le monde. | هيئة من منظمة الأمم المتحدة تتألف من سبع وأربعين دولة تفحص احترام حقوق الإنسان في العالم.
+Haut-Commissariat aux droits de l'homme | Bureau des Nations Unies qui encourage et surveille le respect des droits de l'homme. | مكتب من منظمة الأمم المتحدة يشجع احترام حقوق الإنسان ويراقبه. | sf=HCDH
+Comité des droits de l'homme | Organe qui vérifie que les États appliquent le Pacte sur les droits civils et politiques. | هيئة تتحقق من أن الدول تطبق العهد الخاص بما للإنسان من حقوق مدنية وسياسية.
+examen périodique universel | Procédure par laquelle la situation des droits de l'homme dans chaque État est passée en revue tous les quatre à cinq ans. | إجراء يستعرض به وضع حقوق الإنسان في كل دولة كل أربع إلى خمس سنوات.
+rapporteur spécial | Expert indépendant chargé par les Nations Unies d'enquêter sur un pays ou sur un thème. | خبير مستقل تكلفه منظمة الأمم المتحدة بأن يحقق في بلد أو في موضوع.
+communication individuelle | Plainte qu'une personne adresse à un comité international contre un État qui aurait violé ses droits. | شكوى يوجهها شخص إلى لجنة دولية ضد دولة يدعي أنها خرقت حقوقه.
+Charte africaine des droits de l'homme et des peuples | Traité adopté en 1981 par les États d'Afrique, qui protège les droits des individus et ceux de chaque peuple. | معاهدة أقرتها دول إفريقيا سنة 1981 تحمي حقوق الأفراد وحقوق كل شعب.
+Charte arabe des droits de l'homme | Traité adopté en 2004 par la Ligue des États arabes pour protéger les droits de l'homme dans ses États. | معاهدة أقرتها جامعة الدول العربية سنة 2004 لتحمي حقوق الإنسان في دولها.
+Convention relative aux droits de l'enfant | Traité de 1989 qui énumère les droits de toute personne de moins de dix-huit ans. | معاهدة لسنة 1989 تعدد حقوق كل شخص دون ثماني عشرة سنة. | sf=Convention internationale des droits de l'enfant, CIDE
+règle de conflit | Règle qui désigne la loi nationale à appliquer quand une situation touche plusieurs pays. | قاعدة تعين القانون الوطني الذي يطبق إذا مست حالة عدة بلدان.
+facteur de rattachement | Élément qui relie une situation à un pays, comme la nationalité, le domicile ou le lieu du bien. | عنصر يربط حالة ببلد، كالجنسية أو الموطن أو مكان المال.
+loi du for | Loi du pays du juge devant lequel l'affaire est portée. | قانون بلد القاضي الذي تعرض عليه القضية.
+loi personnelle | Loi qui suit la personne où qu'elle aille, en principe celle de sa nationalité. | قانون يتبع الشخص حيثما ذهب، وهو مبدئيا قانون جنسيته.
+loi du domicile | Loi du pays où une personne est établie. | قانون البلد الذي يقيم فيه الشخص.
+loi du lieu de situation du bien | Loi du pays où se trouve un immeuble ou un meuble, qui gouverne les droits sur ce bien. | قانون البلد الذي يوجد فيه عقار أو منقول، ويحكم الحقوق على هذا المال.
+loi du lieu de conclusion | Loi du pays où un acte a été passé, qui en gouverne la forme. | قانون البلد الذي أبرم فيه تصرف، ويحكم شكله.
+loi d'autonomie | Loi que les parties choisissent elles-mêmes pour gouverner leur contrat. | القانون الذي يتم اختياره من الطرفين ليحكم العقد بينهما.
+lois de police | Règles d'un pays si importantes que le juge les applique même quand le contrat relève d'une loi étrangère. | قواعد بلد بلغت من الأهمية أن القاضي يطبقها ولو خضع العقد لقانون أجنبي.
+statut personnel | Ensemble des règles sur la personne et la famille : nom, capacité, mariage, filiation, succession. | مجموع القواعد الخاصة بالشخص والأسرة: الاسم والأهلية والزواج والنسب والتركة.
+statut réel | Ensemble des règles sur les biens et les droits qui portent sur eux. | مجموع القواعد الخاصة بالأموال والحقوق التي ترد عليها.
+ordre public international | Valeurs essentielles d'un pays, au nom desquelles le juge écarte une loi étrangère choquante. | قيم أساسية لبلد يستبعد القاضي باسمها قانونا أجنبيا صادما.
+fraude à la loi | Manœuvre qui change artificiellement un rattachement, comme la nationalité, pour échapper à la loi qui devait s'appliquer. | مناورة تغير بصفة مصطنعة رابطة، كالجنسية، للإفلات من القانون الذي كان يجب أن يطبق.
+conflit de juridictions | Question de savoir de quel pays le tribunal peut connaître d'un litige qui touche plusieurs États. | مسألة معرفة أي بلد تستطيع محكمته أن تنظر في نزاع يمس عدة دول.
+compétence internationale | Pouvoir du tribunal d'un pays de statuer sur un litige qui comporte un élément étranger. | سلطة محكمة بلد في أن تفصل في نزاع فيه عنصر أجنبي.
+reconnaissance des jugements étrangers | Admission, dans un pays, des effets d'une décision rendue par le juge d'un autre pays. | قبول آثار قرار أصدره قاضي بلد آخر داخل بلد.
+exécution des jugements étrangers | Application par la force, dans un pays, d'une décision rendue ailleurs, après l'exequatur. | تطبيق قرار صدر في بلد آخر بالقوة داخل بلد، بعد الأمر بالتنفيذ.
+acte authentique étranger | Document dressé par un notaire ou une autorité d'un autre pays, qui peut être exécuté après contrôle du juge. | وثيقة حررها موثق أو سلطة من بلد آخر يجوز أن تنفذ بعد مراقبة القاضي.
+condition des étrangers | Ensemble des droits et des obligations des personnes qui n'ont pas la nationalité du pays où elles vivent. | مجموع الحقوق وما على الأشخاص من التزام إذا لم تكن لهم جنسية البلد الذي يعيشون فيه.
+double nationalité | Situation d'une personne qui a en même temps la nationalité de deux États. | حالة شخص له في الوقت نفسه جنسية دولتين.
+conflit de nationalités | Difficulté à savoir quelle nationalité retenir quand une personne en a plusieurs ou n'en a aucune. | صعوبة معرفة أي جنسية يؤخذ بها إذا كانت لشخص عدة جنسيات أو لم تكن له أي واحدة.
+élément d'extranéité | Lien d'une situation avec un autre pays, comme la nationalité d'une partie ou le lieu du contrat. | رابطة حالة ببلد آخر، كجنسية طرف أو مكان العقد.
+contrat international | Contrat lié à plusieurs pays par le lieu d'établissement des parties ou le déplacement des biens. | عقد يرتبط بعدة بلدان بمكان إقامة الطرفين أو بتنقل الأموال.
+commission rogatoire internationale | Demande par laquelle un juge prie un juge d'un autre pays d'accomplir un acte d'enquête à sa place. | طلب يلتمس به قاض من قاض في بلد آخر أن يقوم بعمل تحقيق مكانه.
+entraide judiciaire internationale | Aide mutuelle des juges de deux États pour notifier un acte, entendre un témoin ou remettre une preuve. | مساعدة متبادلة بين قضاة دولتين غايتها أن تبلغ وثيقة أو يسمع شاهد أو يسلم دليل.
+notification à l'étranger | Remise d'un acte du procès à une personne qui vit dans un autre pays. | تسليم وثيقة من وثائق المحاكمة لشخص يعيش في بلد آخر.
+légalisation des actes | Formalité qui atteste la signature d'un document pour qu'il soit accepté dans un autre pays. | شكلية تشهد بصحة التوقيع على وثيقة لتقبل في بلد آخر.
+preuve de la loi étrangère | Démonstration, devant le juge, du contenu d'une loi d'un autre pays. | التدليل أمام القاضي على مضمون قانون بلد آخر.
+application de la loi étrangère | Emploi, par le juge, de la loi d'un autre pays quand la règle de conflit la désigne. | استعمال القاضي قانون بلد آخر إذا عينته قاعدة الإسناد.
+modes alternatifs de règlement des litiges | Moyens de résoudre un litige sans procès : conciliation, médiation, arbitrage. | وسائل لحل نزاع دون محاكمة: المصالحة والوساطة والتحكيم. | sf=modes alternatifs de règlement des différends, MARL, MARD
+arbitrage commercial international | Arbitrage d'un litige issu d'un contrat entre des entreprises de pays différents. | تحكيم في نزاع ناتج عن عقد بين مؤسسات من بلدان مختلفة.
+arbitrage interne | Arbitrage d'un litige dont tous les éléments se rattachent à un seul pays. | تحكيم في نزاع ترتبط كل عناصره ببلد واحد.
+arbitrage institutionnel | Arbitrage organisé par un centre permanent, selon ses propres règles. | تحكيم ينظمه مركز دائم وفق قواعده الخاصة.
+arbitrage ad hoc | Arbitrage que les parties organisent elles-mêmes, sans passer par un centre. | تحكيم يتم تنظيمه من الطرفين نفسيهما دون المرور بمركز.
+centre d'arbitrage | Organisme qui administre des arbitrages : il aide à nommer chaque arbitre et suit la procédure. | هيئة تدير عمليات تحكيم: تساعد على أن يعين كل محكم وتتابع الإجراء.
+règlement d'arbitrage | Texte d'un centre qui fixe les étapes de l'arbitrage et leur délai. | نص مركز يحدد مراحل التحكيم وأجل كل مرحلة.
+compromis d'arbitrage | Accord par lequel les parties soumettent à des arbitres un litige déjà survenu. | اتفاق بين الطرفين يعرضان به على محكمين نزاعا وقع فعلا.
+arbitrabilité | Aptitude d'un litige à être tranché par un arbitre ; les questions d'ordre public et de statut personnel en sont exclues. | صلاحية نزاع لأن يفصل فيه محكم، وتستثنى منها مسائل النظام العام والأحوال الشخصية.
+constitution du tribunal arbitral | Choix des arbitres qui vont trancher le litige, en nombre impair. | اختيار المحكمين الذين سيفصلون في النزاع، بعدد فردي.
+désignation de l'arbitre | Choix d'un arbitre par une partie, par les deux ensemble ou, s'il le faut, par le juge. | اختيار محكم من طرف، أو من الطرفين معا، أو من القاضي عند الحاجة.
+arbitre unique | Arbitre qui tranche seul le litige. | محكم يفصل وحده في النزاع.
+président du tribunal arbitral | Arbitre choisi par les deux autres, ou par le centre, pour diriger les débats. | محكم يختاره المحكمان الآخران، أو المركز، ليسير المناقشات.
+récusation de l'arbitre | Demande d'écarter un arbitre dont l'indépendance ou l'impartialité est contestée. | طلب إبعاد محكم ينازع في استقلاله أو حياده.
+acte de mission | Document signé au début de l'arbitrage, qui résume les demandes des parties et les points à trancher. | وثيقة توقع في بداية التحكيم تلخص طلبات الطرفين والنقاط التي يفصل فيها.
+siège de l'arbitrage | Lieu juridique de l'arbitrage, qui détermine la loi de procédure et le juge du recours. | المكان القانوني للتحكيم، ويحدد قانون الإجراء وقاضي الطعن.
+langue de l'arbitrage | Langue dans laquelle les écrits sont déposés et les débats conduits. | اللغة التي تودع بها المحررات وتجري بها المناقشات.
+procédure arbitrale | Suite des étapes de l'arbitrage : demande, réponse, audiences, sentence. | تتابع مراحل التحكيم: الطلب والجواب والجلسات والحكم.
+amiable compositeur | Arbitre que les parties autorisent à statuer selon l'équité, sans appliquer strictement la loi. | محكم رخص له من الطرفين بأن يفصل وفق الإنصاف دون أن يطبق القانون بصرامة.
+sentence partielle | Décision des arbitres qui tranche une fraction seulement du litige. | قرار المحكمين الذي يفصل في جزء فقط من النزاع.
+sentence définitive | Décision des arbitres qui tranche tout le litige et termine leur mission. | قرار المحكمين الذي يفصل في كل النزاع ويختم مهمتهم.
+recours en annulation de la sentence | Recours porté devant le juge pour faire effacer la décision des arbitres, dans les cas limités par la loi. | طعن يرفع أمام القاضي لمحو قرار المحكمين، في الحالات التي يحصرها القانون.
+reconnaissance de la sentence arbitrale | Admission par le juge que la décision des arbitres existe et produit ses effets dans le pays. | قبول القاضي بأن قرار المحكمين موجود وينتج آثاره في البلد.
+exécution de la sentence arbitrale | Application de la décision des arbitres, au besoin par la force après l'exequatur du juge. | تطبيق قرار المحكمين، وبالقوة عند الحاجة بعد الأمر بالتنفيذ من القاضي.
+frais d'arbitrage | Sommes dues pour l'arbitrage : rémunération des arbitres, dépenses du centre et de chaque expert. | المبالغ المستحقة عن التحكيم: أجر المحكمين ومصاريف المركز وكل خبير.
+honoraires des arbitres | Somme payée aux arbitres pour leur travail, répartie entre les parties. | مبلغ يدفع للمحكمين عن عملهم ويوزع بين الطرفين.
+confidentialité de l'arbitrage | Règle selon laquelle les débats, les pièces et la décision ne sont pas révélés aux tiers. | قاعدة تقضي بأن المناقشات والوثائق والقرار لا تكشف للغير.
+accord de médiation | Texte par lequel les parties décident de confier leur litige à un médiateur. | نص يتضمن قرار الطرفين بأن يعهد بالنزاع بينهما إلى وسيط.
+médiation judiciaire | Médiation que le juge propose aux parties pendant le procès et confie à un médiateur. | وساطة يقترحها القاضي على الطرفين خلال المحاكمة ويعهد بها إلى وسيط.
+médiation conventionnelle | Médiation que les parties organisent elles-mêmes, en dehors de tout procès. | وساطة يتم تنظيمها من الطرفين نفسيهما خارج كل محاكمة.
+procès-verbal d'accord | Document signé par les parties et le médiateur, qui constate l'entente trouvée. | وثيقة يوقعها كل من الطرفين والوسيط تعاين التفاهم الحاصل.
+homologation de l'accord | Décision du juge qui donne à l'entente des parties la force d'un jugement. | قرار القاضي الذي يعطي تفاهم الطرفين قوة الحكم.

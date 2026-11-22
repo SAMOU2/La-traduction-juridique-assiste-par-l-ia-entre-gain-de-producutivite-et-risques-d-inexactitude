@@ -28,7 +28,7 @@ from PySide6.QtWidgets import (
 )
 
 from ..contextes import DEFINITION, PROPRE, Emploi, emplois
-from ..glossaire import Entree, Glossaire, mention_a_verifier
+from ..glossaire import Entree, Glossaire, definition_a_verifier, equivalent_a_verifier
 from ..langues import AR, FR, NOM_EN_FRANCAIS, autre_langue, deviner_langue
 from ..surlignage import positions_du_terme
 from . import icones, theme
@@ -88,18 +88,6 @@ def categorie_et_pluriel(entree: Entree, langue: str) -> str:
     if langue == AR:
         return "، ".join(morceau for morceau in (categorie, f"ج. {pluriel}" if pluriel else "") if morceau)
     return " · ".join(morceau for morceau in (categorie, f"pl. {pluriel}" if pluriel else "") if morceau)
-
-
-def equivalent_a_verifier(entree: Entree) -> str | None:
-    """Détail de la mention « à vérifier » qui porte sur l'équivalent d'une entrée ; ``None`` sans mention.
-
-    Sans définition, une mention « à vérifier » écrite dans la colonne « source_definition » porte
-    sur l'équivalent : c'est le cas des termes seuls du glossaire fourni, marqués « à vérifier
-    (équivalent d'exemple) ». Le détail rendu est alors « équivalent d'exemple ».
-    """
-    if entree.definition_fr or entree.definition_ar:
-        return None
-    return mention_a_verifier(entree.source_definition)
 
 
 def _categorie_en_html(entree: Entree, langue: str) -> str:
@@ -527,7 +515,7 @@ class ColonneDefinition(Colonne):
         # Pied : la source de la définition, ou la mention « À vérifier » (une définition sans source
         # citée est à vérifier).
         if entree.source_definition:
-            detail = mention_a_verifier(entree.source_definition)
+            detail = definition_a_verifier(entree)
             explication = "Cette définition n’est pas reprise d’un texte officiel : vérifiez-la avant de la citer."
         else:
             detail = "source non indiquée"

@@ -114,6 +114,54 @@ def mention_a_verifier(source: str) -> str | None:
     return source[len(_A_VERIFIER):].strip(" :·,;-–—()")
 
 
+#: Détail d'une mention « à vérifier » qui porte à la fois sur l'équivalent et sur la définition :
+#: « équivalent et définition d'exemple ». Chaque champ de l'écran en affiche sa part.
+_DEUX_MENTIONS = regex.compile(r"(?P<equivalent>[ée]quivalent)\s+et\s+(?P<definition>d[ée]finition)\s+(?P<suite>.+)",
+                               regex.IGNORECASE)
+
+
+def _mention_partagee(detail: str) -> tuple[str, str] | None:
+    """(« équivalent d'exemple », « définition d'exemple ») pour « équivalent et définition d'exemple »."""
+    trouve = _DEUX_MENTIONS.fullmatch(detail)
+    if trouve is None:
+        return None
+    return f"{trouve['equivalent']} {trouve['suite']}", f"{trouve['definition']} {trouve['suite']}"
+
+
+def equivalent_a_verifier(entree: Entree) -> str | None:
+    """Détail de la mention « à vérifier » qui porte sur l'équivalent d'une entrée ; ``None`` sans mention.
+
+    Sans définition, une mention « à vérifier » écrite dans la colonne « source_definition » porte
+    sur l'équivalent : c'était le cas des termes seuls du glossaire fourni avant la version 0.13,
+    marqués « à vérifier (équivalent d'exemple) ». Le détail rendu est « équivalent d'exemple ».
+
+    Avec une définition, la mention porte sur la définition, sauf si elle nomme les deux : « à vérifier
+    (équivalent et définition d'exemple) » est la mention des termes seuls qui ont reçu une définition.
+    Le détail rendu est alors, là encore, « équivalent d'exemple ».
+    """
+    detail = mention_a_verifier(entree.source_definition)
+    if detail is None:
+        return None
+    if not entree.definition_fr and not entree.definition_ar:
+        return detail
+    partage = _mention_partagee(detail)
+    return partage[0] if partage is not None else None
+
+
+def definition_a_verifier(entree: Entree) -> str | None:
+    """Détail de la mention « à vérifier » qui porte sur la définition d'une entrée ; ``None`` sans mention.
+
+    « définition d'exemple » pour « à vérifier (définition d'exemple) » comme pour « à vérifier (équivalent
+    et définition d'exemple) » : la part de l'équivalent s'affiche sous l'équivalent. Sans définition, la
+    mention ne porte que sur l'équivalent (voir ``equivalent_a_verifier``).
+    """
+    detail = mention_a_verifier(entree.source_definition)
+    if detail is None or (not entree.definition_fr and not entree.definition_ar):
+        return None
+    partage = _mention_partagee(detail)
+    return partage[1] if partage is not None else detail
+
+
 @dataclass(frozen=True)
 class Contexte:
     """Un exemple d'emploi du terme, dans les deux langues, avec sa source."""

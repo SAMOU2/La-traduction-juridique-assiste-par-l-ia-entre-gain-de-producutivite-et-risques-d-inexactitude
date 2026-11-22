@@ -1,0 +1,242 @@
+# Définitions des termes de termes/53_fiscal_finances_douanes.txt : terme | définition française | définition arabe | options (sf=, sa=)
+droit fiscal | Branche du droit consacrée à l'impôt : qui le doit, sur quoi, combien et comment il est perçu. | فرع من القانون يتناول الضريبة: من يدين بها وعلى ماذا وكم وكيف تقبض.
+système fiscal | Ensemble des impôts et des taxes d'un pays et des règles qui les organisent. | مجموع الضرائب والرسوم في بلد والقواعد التي تنظمها.
+législation fiscale | Ensemble des lois qui créent les impôts et fixent leur calcul. | مجموع القوانين التي تنشئ الضرائب وتحدد حسابها.
+fiscalité | Ensemble des prélèvements que l'État et les collectivités opèrent sur le revenu, les biens et les dépenses. | مجموع الاقتطاعات التي تأخذها الدولة والجماعات من الدخل والأموال والمصاريف.
+pression fiscale | Poids des impôts et des cotisations comparé à la richesse produite dans le pays. | ثقل الضرائب والاشتراكات مقارنا بالثروة المنتجة في البلد.
+impôt direct | Impôt que le contribuable paie lui-même à l'État sur son revenu ou sa fortune. | ضريبة يدفعها المكلف بالضريبة نفسه للدولة عن دخله أو ثروته. | sf=contribution directe
+impôt indirect | Impôt compris dans le prix d'un bien ou d'un service, que le vendeur collecte et reverse à l'État. | ضريبة تدخل في ثمن مال أو خدمة، يجمعها البائع ويسلمها للدولة. | sf=contribution indirecte
+impôt sur les bénéfices des sociétés | Impôt annuel calculé sur le bénéfice que réalise une société. | ضريبة سنوية تحسب على الربح الذي تحققه شركة.
+impôt forfaitaire unique | Impôt simplifié du petit commerçant et de l'artisan, calculé sur le chiffre d'affaires, qui remplace plusieurs impôts. | ضريبة مبسطة للتاجر الصغير والحرفي تحسب على رقم الأعمال وتحل محل عدة ضرائب.
+impôt sur la fortune | Impôt annuel que paient les personnes dont le patrimoine dépasse un seuil que la loi fixe. | ضريبة سنوية يدفعها الأشخاص الذين لهم ذمة مالية تتجاوز عتبة يحددها القانون. | sf=impôt sur le patrimoine | sa=ضريبة على الأملاك
+taxe foncière | Taxe annuelle que paie le propriétaire d'une construction ou d'un terrain. | رسم سنوي يدفعه مالك بناء أو أرض.
+taxe d'enlèvement des ordures ménagères | Taxe annuelle perçue par la commune pour financer le ramassage des déchets des habitants. | رسم سنوي تقبضه البلدية لتمويل جمع نفايات السكان. | sf=TEOM
+taxe sur l'activité professionnelle | Taxe calculée sur le chiffre d'affaires des entreprises au profit des communes et des wilayas. | رسم يحسب على رقم الأعمال الذي تحققه المؤسسات لفائدة البلديات والولايات.
+taxe intérieure de consommation | Taxe perçue sur quelques produits, comme le tabac ou les bières, en plus de la TVA. | رسم يقبض على بعض المنتجات، كالتبغ أو الجعة، زيادة على الرسم على القيمة المضافة.
+taxe sur les produits pétroliers | Taxe perçue sur l'essence, le gasoil et les autres carburants. | رسم يقبض على البنزين والمازوت وسائر أنواع الوقود. | sf=TPP
+droit de timbre | Impôt payé par l'achat d'un timbre que l'on colle sur un document, comme un passeport ou un permis. | ضريبة تدفع بشراء طابع يلصق على وثيقة، كجواز السفر أو رخصة.
+droits d'enregistrement | Impôt perçu lors de l'enregistrement d'un acte, comme une vente d'immeuble ou un bail. | ضريبة تقبض عند تسجيل تصرف، كبيع عقار أو إيجار.
+taxe de publicité foncière | Taxe perçue quand un acte sur un immeuble est publié à la conservation foncière. | رسم يقبض عندما ينشر تصرف في عقار لدى المحافظة العقارية.
+vignette automobile | Taxe annuelle sur les véhicules, payée par l'achat d'un timbre collé sur le pare-brise. | رسم سنوي على المركبات يدفع بشراء طابع يلصق على الزجاج الأمامي.
+taxe parafiscale | Prélèvement obligatoire perçu au profit d'un organisme autre que l'État, comme une chambre de commerce. | اقتطاع إجباري يقبض لفائدة هيئة غير الدولة، كغرفة تجارة.
+prélèvement obligatoire | Somme que la loi oblige à verser à l'État ou à la sécurité sociale : impôt, taxe ou cotisation. | مبلغ يلزم القانون بتسليمه للدولة أو للضمان الاجتماعي: ضريبة أو رسم أو اشتراك.
+retenue à la source | Impôt que celui qui verse un revenu, comme l'employeur, retire lui-même et remet à l'État. | ضريبة يسحبها بنفسه من يسلم دخلا، كالمستخدم، ويسلمها للدولة.
+acompte provisionnel | Versement effectué pendant l'année et retranché de l'impôt qui sera calculé à la fin. | دفعة تقدم خلال السنة وتطرح من الضريبة التي تحسب في النهاية.
+matière imposable | Ce sur quoi l'impôt porte : un revenu, un bien, une dépense ou une opération. | ما تقع عليه الضريبة: دخل أو مال أو مصروف أو عملية.
+fait générateur de l'impôt | Événement qui crée l'obligation de payer l'impôt, comme une vente ou l'encaissement d'un revenu. | واقعة تنشئ الالتزام بأن يدفع الشخص الضريبة، كبيع أو قبض دخل.
+exigibilité de l'impôt | Moment à partir duquel l'administration peut réclamer le versement de l'impôt. | الوقت الذي يجوز للإدارة ابتداء منه أن تطالب بتسديد الضريبة.
+base imposable | Montant sur lequel on applique le taux pour calculer l'impôt. | المبلغ الذي تطبق عليه النسبة لحساب الضريبة.
+revenu imposable | Revenu qui reste après les déductions admises et qui sert à calculer l'impôt. | الدخل الذي يبقى بعد الخصوم المقبولة وتحسب به الضريبة.
+revenu brut | Total des sommes reçues avant toute déduction de charges. | مجموع المبالغ المقبوضة قبل أي خصم للأعباء.
+revenu net | Revenu qui reste une fois retirées les charges supportées pour l'obtenir. | الدخل الذي يبقى بعد أن تسحب الأعباء التي تحملها صاحبه ليحصل عليه.
+bénéfice imposable | Bénéfice de l'entreprise corrigé selon les règles de l'impôt, sur lequel celui-ci est calculé. | ربح المؤسسة بعد تصحيحه وفق قواعد الضريبة، وعليه تحسب.
+bénéfices industriels et commerciaux | Catégorie de revenus qui regroupe les gains du commerçant, de l'industriel et de l'artisan. | صنف من الدخل يجمع ما يكسبه التاجر والصناعي والحرفي.
+bénéfices des professions non commerciales | Catégorie de revenus qui regroupe les gains des professions libérales, comme le médecin ou l'avocat. | صنف من الدخل يجمع ما تكسبه المهن الحرة، كالطبيب أو المحامي.
+revenus fonciers | Loyers que le propriétaire reçoit pour un immeuble ou un terrain qu'il possède. | بدل الإيجار الذي يقبضه المالك عن عقار أو أرض يملكها.
+revenus agricoles | Gains que procurent la culture de la terre et l'élevage. | ما تدره زراعة الأرض وتربية المواشي من كسب.
+traitements et salaires | Catégorie de revenus qui regroupe ce que touchent le fonctionnaire et le salarié pour leur travail. | صنف من الدخل يجمع ما يقبضه الموظف والعامل عن عملهما.
+revenus des capitaux mobiliers | Gains que rapportent une action, une part sociale ou un placement d'argent. | ما يدره السهم وحصة الشريك وتوظيف النقود من كسب.
+plus-value de cession | Gain réalisé quand un bien est vendu plus cher qu'il n'a été acheté. | كسب يتحقق عندما يباع مال بأكثر مما اشتري به.
+barème progressif | Tableau de taux qui montent à mesure que le revenu augmente. | جدول نسب ترتفع كلما زاد الدخل.
+tranche d'imposition | Portion du revenu à laquelle s'applique un même taux du barème. | جزء من الدخل تطبق عليه نسبة واحدة من الجدول.
+abattement fiscal | Somme ou pourcentage retranché de la base avant le calcul de l'impôt. | مبلغ أو نسبة تطرح من الأساس قبل حساب الضريبة.
+crédit d'impôt | Somme qui vient en diminution de l'impôt à payer et que l'administration rend si elle le dépasse. | مبلغ ينقص من الضريبة التي تدفع، وترده الإدارة إذا تجاوزها.
+droit à déduction | Droit de l'entreprise de retrancher de la TVA qu'elle doit celle qu'elle a payée sur ses achats. | حق المؤسسة في أن تطرح من الرسم على القيمة المضافة الذي تدين به ما دفعته منه عند الشراء.
+charges déductibles | Dépenses que la loi permet de retrancher du revenu ou du bénéfice avant le calcul de l'impôt. | مصاريف يجيز القانون أن تطرح من الدخل أو الربح قبل حساب الضريبة.
+amortissement | Constatation, chaque année, de la baisse de valeur d'un équipement sous l'effet de l'emploi et du temps. | معاينة سنوية لانخفاض قيمة تجهيز بفعل الاستعمال والزمن.
+déficit fiscal | Résultat négatif d'une entreprise, dont les charges dépassent les recettes de l'année. | نتيجة سالبة لمؤسسة تتجاوز أعباؤها إيرادات السنة.
+report déficitaire | Droit de retrancher le résultat négatif d'une année du bénéfice des années suivantes. | حق طرح النتيجة السالبة لسنة من ربح السنوات التالية.
+avantage fiscal | Allègement d'impôt que la loi accorde pour une activité ou une opération. | تخفيف في الضريبة يمنحه القانون لنشاط أو عملية.
+incitation fiscale | Allègement d'impôt destiné à encourager un comportement, comme investir ou embaucher. | تخفيف في الضريبة يراد به تشجيع سلوك، كأن يستثمر الشخص أو يشغل غيره.
+franchise de TVA | Régime qui dispense une entreprise de facturer la TVA, pour une opération ou un secteur que la loi désigne. | نظام يعفي مؤسسة من أن تفوتر الرسم على القيمة المضافة، في عملية أو قطاع يعينه القانون.
+assujetti à la TVA | Personne qui vend des biens ou des services de façon habituelle et doit facturer la TVA. | شخص يبيع أموالا أو خدمات بصفة معتادة ويجب أن يفوتر الرسم على القيمة المضافة.
+redevable de l'impôt | Personne tenue de verser l'impôt au Trésor public. | شخص ملزم بتسليم الضريبة للخزينة العمومية.
+domicile fiscal | Lieu où une personne est considérée comme installée pour le calcul de ses impôts. | المكان الذي يعد الشخص مقيما فيه لحساب ضرائبه.
+résident fiscal | Personne qui a son foyer ou son activité principale dans un pays et y paie l'impôt sur tout son revenu. | شخص له بيته أو نشاطه الرئيسي في بلد ويدفع فيه الضريبة عن كل دخله.
+établissement stable | Installation fixe par laquelle une entreprise étrangère exerce son activité dans un pays et y paie l'impôt. | منشأة ثابتة تمارس بها مؤسسة أجنبية نشاطها في بلد وتدفع فيه الضريبة.
+double imposition | Situation où le même revenu est frappé par l'impôt dans deux pays. | حالة يخضع فيها الدخل نفسه للضريبة في بلدين.
+convention fiscale | Accord entre deux États qui répartit le droit d'imposer et évite la double imposition. | اتفاق بين دولتين يوزع حق فرض الضريبة ويمنع الازدواج الضريبي.
+prix de transfert | Prix auquel les sociétés d'un même groupe se vendent des biens ou des services entre elles. | الثمن الذي تبيع به شركات المجموعة الواحدة أموالا أو خدمات فيما بينها.
+paradis fiscal | Pays où l'impôt est très faible et où le secret protège les comptes de tout étranger. | بلد تكون فيه الضريبة ضعيفة جدا ويحمي فيه السر حسابات كل أجنبي.
+évasion fiscale | Manœuvre qui exploite les failles de la loi pour payer moins d'impôt, sans la violer ouvertement. | مناورة تستغل ثغرات القانون ليدفع الشخص ضريبة أقل، دون خرقه صراحة.
+numéro d'identification fiscale | Numéro unique que l'administration fiscale attribue à chaque contribuable. | رقم وحيد تسنده الإدارة الجبائية إلى كل مكلف بالضريبة.
+régime du réel | Régime où l'impôt est calculé sur le bénéfice exact que montre la comptabilité. | نظام تحسب فيه الضريبة على الربح الدقيق الذي تبينه المحاسبة.
+régime du forfait | Régime simplifié où l'impôt est calculé par un taux unique sur le chiffre d'affaires. | نظام مبسط تحسب فيه الضريبة بنسبة واحدة على رقم الأعمال.
+exercice fiscal | Période de douze mois à la fin de laquelle l'entreprise clôt ses comptes et calcule son impôt. | فترة من اثني عشر شهرا تقفل المؤسسة في نهايتها حساباتها وتحسب ضريبتها.
+année d'imposition | Année pour laquelle l'impôt est calculé ; c'est le plus souvent celle qui suit l'encaissement du revenu. | السنة التي تحسب عنها الضريبة، وهي غالبا السنة التي تلي قبض الدخل.
+inspection des impôts | Bureau de l'administration fiscale qui tient le dossier de chaque contribuable et calcule ses impôts. | مكتب من الإدارة الجبائية يمسك ملف كل مكلف بالضريبة ويحسب ضرائبه.
+recette des impôts | Bureau de l'administration fiscale qui encaisse les impôts et poursuit ceux qui ne paient pas. | مكتب من الإدارة الجبائية يقبض الضرائب ويتابع من لا يدفع.
+centre des impôts | Bureau unique qui gère les impôts des entreprises moyennes et des professions libérales. | مكتب واحد يسير ضرائب المؤسسات المتوسطة والمهن الحرة.
+direction des grandes entreprises | Direction de l'administration fiscale chargée des sociétés les plus importantes et des sociétés pétrolières. | مديرية من الإدارة الجبائية مكلفة بأهم الشركات وبالشركات البترولية.
+receveur des impôts | Comptable public chargé d'encaisser les impôts d'un secteur. | محاسب عمومي مكلف بقبض ضرائب قطاع.
+inspecteur des impôts | Fonctionnaire qui contrôle la déclaration de chaque contribuable et calcule l'impôt. | موظف يراقب تصريح كل مكلف بالضريبة ويحسب الضريبة.
+agent vérificateur | Fonctionnaire de l'administration fiscale qui examine sur place les comptes d'une entreprise. | موظف من الإدارة الجبائية يفحص في عين المكان حسابات مؤسسة.
+déclaration annuelle des revenus | Document par lequel le contribuable indique chaque année à l'administration ce qu'il a gagné. | وثيقة يبين بها المكلف بالضريبة كل سنة للإدارة ما كسبه.
+déclaration d'existence | Document par lequel une nouvelle entreprise se fait connaître de l'administration fiscale dans les trente jours de son début. | وثيقة تعرف بها مؤسسة جديدة نفسها لدى الإدارة الجبائية خلال ثلاثين يوما من بدايتها.
+déclaration mensuelle | Document déposé chaque mois, sur lequel l'entreprise calcule et paie la TVA et les autres impôts du mois. | وثيقة تودع كل شهر تحسب فيها المؤسسة وتدفع الرسم على القيمة المضافة وباقي ضرائب الشهر.
+télédéclaration | Envoi des déclarations d'impôt par internet, sur le site de l'administration. | إرسال تصريحات الضريبة عن طريق الإنترنت في موقع الإدارة.
+défaut de déclaration | Manquement du contribuable qui ne dépose pas sa déclaration ; il entraîne une taxation d'office. | إخلال المكلف بالضريبة الذي لا يودع تصريحه، وينتج عنه فرض تلقائي للضريبة.
+déclaration tardive | Déclaration déposée après la date limite ; elle entraîne une majoration de l'impôt. | تصريح يودع بعد التاريخ الأقصى، وينتج عنه زيادة في الضريبة.
+avis d'imposition | Document envoyé au contribuable, qui indique le montant de l'impôt et la date limite pour le payer. | وثيقة ترسل إلى المكلف بالضريبة تبين مبلغ الضريبة والتاريخ الأقصى ليدفعها.
+mise en recouvrement | Décision de l'administration qui lance la perception de l'impôt auprès du contribuable. | قرار الإدارة الذي يبدأ به قبض الضريبة من المكلف بالضريبة.
+titre de perception | Document officiel qui donne à l'administration le droit de réclamer une somme, au besoin par la force. | وثيقة رسمية تعطي الإدارة الحق في أن تطالب بمبلغ، وبالقوة عند الحاجة.
+recouvrement amiable | Perception de l'impôt que le contribuable paie de lui-même après un simple rappel. | قبض الضريبة التي يدفعها المكلف بالضريبة من تلقاء نفسه بعد تذكير بسيط.
+recouvrement forcé | Perception de l'impôt par la force, au moyen d'une saisie et d'une vente. | قبض الضريبة بالقوة، بواسطة حجز وبيع.
+pénalité fiscale | Supplément d'impôt infligé au contribuable qui déclare en retard, mal ou pas du tout. | زيادة في الضريبة توقع على المكلف بالضريبة الذي يصرح متأخرا أو خطأ أو لا يصرح أصلا.
+amende fiscale | Somme fixe que le contribuable paie pour un manquement, comme l'oubli d'un document. | مبلغ ثابت يدفعه المكلف بالضريبة عن إخلال، كنسيان وثيقة.
+contrôle fiscal | Vérification, par l'administration, que les déclarations du contribuable sont exactes et complètes. | تحقق الإدارة من أن تصريحات المكلف بالضريبة صحيحة وكاملة.
+vérification de comptabilité | Examen sur place des livres et des pièces d'une entreprise pour vérifier ses déclarations. | فحص في عين المكان لدفاتر مؤسسة ووثائقها للتحقق من تصريحاتها.
+vérification approfondie de la situation fiscale d'ensemble | Contrôle qui compare le revenu déclaré par une personne avec son patrimoine et son train de vie. | مراقبة تقارن الدخل الذي صرح به شخص مع ما له من ذمة مالية ومع مستوى معيشته.
+contrôle sur pièces | Examen du dossier du contribuable que l'administration fait chez elle, sans se déplacer. | فحص تقوم به الإدارة عندها لملف المكلف بالضريبة دون أن تتنقل.
+avis de vérification | Lettre qui prévient le contribuable qu'un contrôle va commencer et qu'il peut se faire assister. | رسالة تخبر المكلف بالضريبة بأن مراقبة ستبدأ وأن له أن يستعين بمن يساعده.
+droit de communication | Droit de l'administration fiscale d'obtenir des documents auprès d'une banque, d'une entreprise ou d'une autre administration. | حق الإدارة الجبائية في أن تحصل على وثائق من بنك أو مؤسسة أو إدارة أخرى.
+droit de reprise | Droit de l'administration de corriger un impôt pendant quatre ans après l'année concernée. | حق الإدارة في أن تصحح ضريبة خلال أربع سنوات بعد السنة المعنية.
+prescription fiscale | Délai après lequel l'administration ne peut plus réclamer un impôt, en principe quatre ans. | أجل لا تستطيع الإدارة بعده أن تطالب بضريبة، وهو مبدئيا أربع سنوات.
+redressement fiscal | Correction, par l'administration, d'une déclaration inexacte ou incomplète, avec un supplément d'impôt. | تصحيح الإدارة تصريحا غير دقيق أو ناقصا، مع زيادة في الضريبة.
+notification de redressement | Lettre qui expose au contribuable les corrections proposées et lui donne un délai pour répondre. | رسالة تعرض على المكلف بالضريبة التصحيحات المقترحة وتعطيه أجلا ليرد.
+taxation d'office | Calcul de l'impôt par l'administration seule, quand le contribuable n'a pas déposé sa déclaration. | حساب الإدارة وحدها الضريبة إذا لم يودع المكلف بالضريبة تصريحه. | sf=imposition d'office
+évaluation d'office | Estimation de la base de l'impôt par l'administration, quand le contribuable ne répond pas ou s'oppose au contrôle. | تقدير الإدارة أساس الضريبة إذا لم يرد المكلف بالضريبة أو عارض المراقبة.
+rejet de comptabilité | Décision de l'administration d'écarter des comptes qu'elle estime inexacts ou mal tenus et de calculer elle-même le bénéfice. | قرار الإدارة بأن تستبعد حسابات تراها غير دقيقة أو سيئة المسك وتحسب الربح بنفسها.
+abus de droit fiscal | Montage dont le seul but est d'échapper à l'impôt et que l'administration peut écarter. | تركيب غايته الوحيدة الإفلات من الضريبة، ويجوز للإدارة أن تستبعده.
+dissimulation de revenus | Manœuvre du contribuable qui cache à l'administration une fraction de ce qu'il gagne. | مناورة المكلف بالضريبة الذي يخفي عن الإدارة جزءا مما يكسبه.
+réclamation contentieuse | Demande écrite par laquelle le contribuable conteste un impôt devant l'administration avant d'aller au tribunal. | طلب مكتوب يعترض به المكلف بالضريبة على ضريبة أمام الإدارة قبل اللجوء إلى المحكمة.
+commission de recours des impôts directs | Commission à laquelle le contribuable peut s'adresser quand l'administration a rejeté sa réclamation. | لجنة يجوز للمكلف بالضريبة أن يتوجه إليها إذا رفضت الإدارة شكواه.
+sursis légal de paiement | Droit du contribuable qui conteste un impôt d'en retarder le règlement en fournissant une garantie. | حق المكلف بالضريبة الذي يعترض على ضريبة في أن يؤخر تسديدها إذا قدم ضمانا.
+dégrèvement d'office | Réduction ou suppression d'un impôt que l'administration décide d'elle-même, quand elle découvre son erreur. | تخفيض ضريبة أو حذفها تقرره الإدارة من تلقاء نفسها إذا اكتشفت غلطها.
+restitution de l'impôt | Remboursement au contribuable d'une somme qu'il a payée en trop. | رد مبلغ إلى المكلف بالضريبة دفعه زيادة.
+remboursement de crédit de TVA | Versement à l'entreprise de la TVA qu'elle a payée en plus de celle qu'elle a facturée. | تسليم الإدارة للمؤسسة الرسم على القيمة المضافة الذي دفعته زيادة على ما فوترته.
+avis à tiers détenteur | Ordre donné par le receveur à une banque ou à un employeur de lui verser l'argent qu'il doit au contribuable. | أمر يعطيه القابض لبنك أو لمستخدم بأن يسلمه النقود التي يدين بها للمكلف بالضريبة.
+fermeture temporaire du local | Sanction qui ferme pour six mois au plus le commerce du contribuable qui ne paie pas ses impôts. | جزاء يغلق لمدة ستة أشهر على الأكثر متجر المكلف بالضريبة الذي لا يدفع ضرائبه.
+solidarité fiscale | Règle qui permet de réclamer tout l'impôt à l'une quelconque de plusieurs personnes, comme deux époux ou deux associés. | قاعدة تجيز أن يطالب بكل الضريبة أي واحد من عدة أشخاص، كزوجين أو شريكين.
+extrait de rôle | Document qui indique les impôts dus par un contribuable et ceux qu'il a payés. | وثيقة تبين الضرائب المستحقة على المكلف بالضريبة والتي دفعها.
+loi de finances de l'année | Loi votée chaque année qui prévoit et autorise les recettes et les dépenses de l'État. | قانون يصوت عليه كل سنة يتوقع إيرادات الدولة ومصاريفها ويرخص بها.
+loi de finances rectificative | Loi qui modifie pendant l'année les prévisions du budget. | قانون يعدل خلال السنة توقعات الميزانية.
+loi de règlement budgétaire | Loi qui constate, après la fin de l'année, les recettes et les dépenses réellement exécutées. | قانون يعاين بعد نهاية السنة الإيرادات والمصاريف التي نفذت فعلا.
+projet de loi de finances | Texte préparé par le gouvernement et soumis au Parlement avant le début de l'année. | نص تحضره الحكومة وتعرضه على البرلمان قبل بداية السنة.
+budget général de l'État | Document qui regroupe les recettes et les dépenses de l'État pour une année. | وثيقة تجمع إيرادات الدولة ومصاريفها لسنة.
+budget annexe | Budget séparé d'une activité de l'État qui vend des biens ou des services, voté avec la loi de finances. | ميزانية منفصلة لنشاط من الدولة يبيع أموالا أو خدمات، يصوت عليها مع قانون المالية.
+comptes spéciaux du Trésor | Comptes ouverts hors du budget général pour suivre des opérations particulières, comme un prêt de l'État. | حسابات تفتح خارج الميزانية العامة لمتابعة عمليات خاصة، كقرض تمنحه الدولة.
+compte d'affectation spéciale | Compte où une recette précise est affectée à une dépense précise. | حساب يخصص فيه إيراد معين لمصروف معين.
+principe de l'annualité budgétaire | Principe selon lequel le budget est voté pour un an et exécuté dans l'année. | مبدأ يقضي بأن يصوت على الميزانية لسنة واحدة وأن تنفذ خلال السنة.
+principe de l'unité budgétaire | Principe selon lequel toutes les recettes et les dépenses figurent dans un seul document. | مبدأ يقضي بأن تظهر كل الإيرادات والمصاريف في وثيقة واحدة.
+principe de l'universalité budgétaire | Principe selon lequel l'ensemble des recettes couvre l'ensemble des dépenses, sans compensation entre elles. | مبدأ يقضي بأن يغطي مجموع الإيرادات مجموع المصاريف دون مقاصة بينها.
+principe de la spécialité budgétaire | Principe selon lequel chaque somme ne peut servir qu'à la dépense pour laquelle elle a été votée. | مبدأ يقضي بأن كل مبلغ لا يستعمل إلا في المصروف الذي صوت عليه من أجله.
+sincérité budgétaire | Exigence selon laquelle les prévisions du budget doivent être honnêtes et complètes. | مطلب يقضي بأن تكون توقعات الميزانية نزيهة وكاملة.
+équilibre budgétaire | Situation où les recettes de l'État couvrent ses dépenses. | حالة تغطي فيها إيرادات الدولة مصاريفها.
+déficit budgétaire | Situation où les dépenses de l'État dépassent ses recettes. | حالة تتجاوز فيها مصاريف الدولة إيراداتها.
+excédent budgétaire | Situation où les recettes de l'État dépassent ses dépenses. | حالة تتجاوز فيها إيرادات الدولة مصاريفها.
+dette publique | Total des sommes que l'État a empruntées et qu'il doit encore rembourser. | مجموع المبالغ التي اقترضتها الدولة وما زال عليها أن تسددها.
+emprunt public | Argent que l'État emprunte aux banques ou aux citoyens pour financer ses dépenses. | نقود تقترضها الدولة من بنك أو مواطن لتمويل مصاريفها.
+ressources de l'État | Ensemble de l'argent que l'État reçoit : impôts, revenu du pétrole, emprunts. | مجموع النقود التي تقبضها الدولة: الضرائب ودخل البترول والاقتراض.
+charges de l'État | Ensemble des dépenses que l'État doit supporter pendant l'année. | مجموع المصاريف التي يجب على الدولة أن تتحملها خلال السنة.
+recettes fiscales | Argent que les impôts et les taxes rapportent à l'État. | النقود التي تدرها الضرائب والرسوم على الدولة.
+recettes non fiscales | Argent que l'État reçoit en dehors de l'impôt, comme le revenu de ses biens ou les amendes. | النقود التي تقبضها الدولة خارج الضريبة، كدخل أموالها أو الغرامات.
+fiscalité pétrolière | Impôts et redevances que paient les sociétés qui exploitent le pétrole et le gaz. | ضرائب وإتاوات تدفعها الشركات التي تستغل البترول والغاز.
+dépenses de fonctionnement | Dépenses courantes de l'État : salaires, fournitures, entretien. | مصاريف الدولة الجارية: الأجر واللوازم والصيانة.
+dépenses d'investissement | Dépenses qui créent des équipements durables, comme les routes, les écoles ou les hôpitaux. | مصاريف تنشئ تجهيزات دائمة، كالطرق والمدارس والمستشفيات.
+dépenses de personnel | Dépenses consacrées aux salaires et aux cotisations sociales des agents de l'État. | مصاريف ترصد للأجر والاشتراكات الاجتماعية لأعوان الدولة.
+crédits budgétaires | Sommes que la loi de finances autorise un ministère à dépenser. | مبالغ يرخص قانون المالية لوزارة بأن تصرفها.
+ouverture de crédits | Décision qui met une somme entre les mains d'une administration pour ses dépenses. | قرار يضع مبلغا بين يدي إدارة لمصاريفها.
+autorisation d'engagement | Plafond des dépenses qu'un ministère peut décider pour un programme, même si le règlement s'étale sur plusieurs années. | الحد الأقصى للمصاريف التي يجوز لوزارة أن تقررها لبرنامج، ولو امتد تسديدها على عدة سنوات.
+crédit de paiement | Plafond des sommes qui peuvent être réellement versées pendant l'année. | الحد الأقصى للمبالغ التي يجوز أن تسلم فعلا خلال السنة.
+transfert de crédits | Déplacement d'une somme votée d'un ministère vers un autre, sans changer sa destination. | نقل مبلغ صوت عليه من وزارة إلى أخرى دون تغيير وجهته.
+virement de crédits | Déplacement d'une somme votée d'un programme vers un autre du même ministère. | نقل مبلغ صوت عليه من برنامج إلى آخر في الوزارة نفسها.
+annulation de crédits | Suppression d'une somme votée qui n'a plus de raison d'être. | حذف مبلغ صوت عليه لم يعد له مبرر.
+programme budgétaire | Ensemble de moyens financiers réunis pour une même mission de l'État, sous la responsabilité d'un gestionnaire. | مجموع وسائل مالية تجمع لمهمة واحدة من مهام الدولة تحت مسؤولية مسير.
+portefeuille de programmes | Ensemble des programmes placés sous l'autorité d'un même ministre. | مجموع البرامج الموضوعة تحت سلطة وزير واحد.
+exécution du budget | Encaissement des recettes et réalisation des dépenses que la loi de finances autorise. | قبض الإيرادات وإنجاز المصاريف التي يرخص بها قانون المالية.
+subvention | Aide en argent que l'État verse à un organisme ou à une entreprise sans rien recevoir en retour. | مساعدة مالية تسلمها الدولة لهيئة أو مؤسسة دون أن تأخذ شيئا في المقابل.
+dotation budgétaire | Somme inscrite au budget pour un organisme ou pour une dépense. | مبلغ مقيد في الميزانية لهيئة أو لمصروف.
+fonds de régulation des recettes | Compte du Trésor où l'État met de côté le surplus du revenu du pétrole pour les années difficiles. | حساب في الخزينة تدخر فيه الدولة فائض دخل البترول للسنوات الصعبة. | sf=FRR
+comptabilité publique | Ensemble des règles qui organisent l'encaissement, la conservation et l'emploi de l'argent de l'État. | مجموع القواعد التي تنظم قبض نقود الدولة وحفظها واستعمالها.
+ordonnateur | Responsable d'une administration qui décide les dépenses et donne l'ordre de les payer. | مسؤول في إدارة يقرر المصاريف ويعطي الأمر بأن تدفع.
+ordonnateur principal | Ordonnateur qui reçoit directement les sommes du budget, comme un ministre ou un wali. | آمر بالصرف يتلقى مباشرة مبالغ الميزانية، كوزير أو وال.
+ordonnateur secondaire | Ordonnateur qui reçoit ses sommes d'un ordonnateur principal, comme un directeur de wilaya. | آمر بالصرف يتلقى مبالغه من آمر بالصرف رئيسي، كمدير في ولاية.
+séparation des ordonnateurs et des comptables | Règle selon laquelle celui qui décide une dépense ne peut pas être celui qui la paie. | قاعدة تقضي بأن من يقرر مصروفا لا يجوز أن يكون هو من يدفعه.
+comptable assignataire | Comptable public désigné pour payer les dépenses d'un ordonnateur donné. | محاسب عمومي يعين ليدفع مصاريف آمر بالصرف معين.
+agent comptable | Comptable public placé auprès d'un établissement public pour tenir ses comptes et manier son argent. | محاسب عمومي يوضع لدى مؤسسة عمومية ليمسك حساباتها ويتداول نقودها.
+régie d'avances | Petite caisse confiée à un agent pour payer sans attendre des dépenses urgentes de faible montant. | صندوق صغير يعهد به إلى عون ليدفع دون انتظار مصاريف مستعجلة قليلة المبلغ.
+régie de recettes | Petite caisse confiée à un agent pour encaisser des sommes au nom du comptable public. | صندوق صغير يعهد به إلى عون ليقبض مبالغ باسم المحاسب العمومي.
+engagement de la dépense | Acte par lequel l'administration crée une dette à sa charge, comme la signature d'un contrat. | تصرف تنشئ به الإدارة دينا عليها، كتوقيع عقد.
+liquidation de la dépense publique | Vérification que le service a bien été rendu et calcul de la somme exacte à payer. | تحقق من أن الخدمة أديت فعلا وحساب المبلغ الدقيق الذي يدفع.
+ordonnancement de la dépense | Ordre écrit que l'ordonnateur donne au comptable de payer une dépense. | أمر مكتوب يعطيه الآمر بالصرف للمحاسب بأن يدفع مصروفا.
+mandat de paiement | Document par lequel l'ordonnateur ordonne au comptable de verser une somme à un créancier. | وثيقة يأمر بها الآمر بالصرف المحاسب بأن يسلم مبلغا لدائن.
+paiement de la dépense publique | Versement de la somme au créancier par le comptable, après ses contrôles. | تسليم المحاسب المبلغ للدائن بعد مراقباته.
+émission du titre de recette | Établissement, par l'ordonnateur, du document qui permet au comptable d'encaisser une somme. | تحرير الآمر بالصرف الوثيقة التي تجيز للمحاسب أن يقبض مبلغا.
+contrôle financier | Vérification d'une dépense avant qu'elle soit décidée, pour vérifier qu'elle suit la loi et le budget. | فحص مصروف قبل أن يقرر، للتحقق من أنه يتبع القانون والميزانية.
+contrôle budgétaire | Vérification que la dépense projetée entre dans les sommes votées pour le programme. | تحقق من أن المصروف المزمع يدخل في المبالغ التي صوت عليها للبرنامج.
+contrôleur financier | Fonctionnaire du ministère des finances qui vise les projets de dépense avant leur signature. | موظف من وزارة المالية يؤشر على مشاريع المصاريف قبل توقيعها.
+contrôleur budgétaire | Fonctionnaire qui vérifie, auprès d'un ministère, que les dépenses respectent le budget voté. | موظف يتحقق لدى وزارة من أن المصاريف تحترم الميزانية التي صوت عليها.
+visa du contrôleur | Approbation écrite sans laquelle une dépense ne peut pas être décidée. | موافقة مكتوبة دونها لا يجوز أن يقرر مصروف.
+Inspection générale des finances | Organe du ministère des finances qui contrôle la gestion des administrations et des entreprises publiques. | هيئة من وزارة المالية تراقب تسيير الإدارات والمؤسسات العمومية.
+compte de gestion | Document annuel où le comptable public retrace toutes les opérations qu'il a exécutées. | وثيقة سنوية يبين فيها المحاسب العمومي كل العمليات التي نفذها.
+compte administratif | Document annuel où l'ordonnateur retrace les recettes et les dépenses qu'il a décidées. | وثيقة سنوية يبين فيها الآمر بالصرف الإيرادات والمصاريف التي قررها.
+reddition des comptes | Obligation du comptable de présenter ses comptes à la Cour des comptes. | التزام المحاسب بأن يقدم حساباته إلى مجلس المحاسبة.
+apurement des comptes | Examen des comptes d'un comptable par la Cour des comptes, qui le décharge ou le déclare débiteur. | فحص مجلس المحاسبة حسابات محاسب، فيبرئه أو يصرح بأنه مدين.
+responsabilité personnelle et pécuniaire | Obligation du comptable public de rembourser de son propre argent les sommes qui manquent dans sa caisse. | التزام المحاسب العمومي بأن يسدد من نقوده الخاصة المبالغ الناقصة في صندوقه.
+gestion de fait | Maniement de l'argent de l'État par une personne qui n'est pas comptable public. | تداول نقود الدولة من شخص ليس محاسبا عموميا.
+comptable de fait | Personne qui manie l'argent de l'État sans y être habilitée et qui en répond comme un comptable. | شخص يتداول نقود الدولة دون أن يكون مؤهلا لذلك ويسأل عنها مثل محاسب.
+discipline budgétaire et financière | Ensemble des règles dont la violation par un gestionnaire est punie d'une amende par la Cour des comptes. | مجموع القواعد التي يعاقب مجلس المحاسبة بغرامة على انتهاك مسير لها.
+magistrat de la Cour des comptes | Juge chargé de contrôler les comptes et la gestion de l'argent de l'État. | قاض مكلف بأن يراقب الحسابات وتسيير نقود الدولة.
+rapport annuel de la Cour des comptes | Document remis chaque année au Président de la République, qui expose les constats de la Cour des comptes. | وثيقة تسلم كل سنة إلى رئيس الجمهورية تعرض معاينات مجلس المحاسبة.
+deniers publics | Argent qui appartient à l'État, aux collectivités ou aux établissements publics. | نقود تملكها الدولة أو الجماعات أو مؤسسة عمومية.
+trésorier de wilaya | Comptable public qui paie les dépenses et encaisse les recettes de l'État dans la wilaya. | محاسب عمومي يدفع مصاريف الدولة ويقبض إيراداتها في الولاية.
+bon du Trésor | Titre que l'État vend pour emprunter de l'argent sur une courte durée. | سند تبيعه الدولة لتقترض نقودا لمدة قصيرة.
+législation douanière | Ensemble des lois qui encadrent l'entrée et la sortie des marchandises du pays. | مجموع القوانين التي تؤطر دخول البضاعة إلى البلد وخروجها منه.
+territoire douanier | Espace où s'applique la loi douanière : terre, eaux et air du pays. | المجال الذي يطبق فيه القانون الجمركي: أرض البلد ومياهه وجوه.
+rayon des douanes | Bande de terre et de mer le long des frontières, où la surveillance est renforcée. | شريط من البر والبحر على طول الحدود تشدد فيه المراقبة.
+bureau de douane | Lieu où les marchandises sont déclarées et contrôlées. | المكان الذي يصرح فيه بالبضاعة وتراقب.
+agent des douanes | Fonctionnaire chargé de contrôler les marchandises et de percevoir les droits aux frontières. | موظف مكلف بأن يراقب البضاعة وأن يقبض الحقوق عند الحدود.
+receveur des douanes | Comptable public qui encaisse les droits et taxes dans un bureau. | محاسب عمومي يقبض ما يسلم من حقوق ورسوم في مكتب.
+contrôle douanier | Ensemble des vérifications faites sur les marchandises, les documents et les moyens de transport. | مجموع عمليات التحقق من البضاعة والوثائق ووسائل النقل.
+visite des marchandises | Examen des colis par un agent pour vérifier qu'ils correspondent à la déclaration. | فحص عون الطرود ليتحقق من أنها توافق التصريح.
+conduite en douane | Obligation de présenter toute marchandise qui entre dans le pays au bureau le plus proche de la frontière. | التزام بتقديم كل بضاعة تدخل البلد إلى أقرب مكتب من الحدود.
+dédouanement | Ensemble des démarches qui libèrent une marchandise après la déclaration et le versement des droits. | مجموع المساعي التي تحرر بضاعة بعد التصريح وتسديد الحقوق.
+déclaration en douane | Document par lequel on indique la nature, la quantité et la valeur d'une marchandise et le régime choisi. | وثيقة يبين فيها نوع البضاعة وكميتها وقيمتها والنظام المختار.
+déclaration en détail | Déclaration complète qui donne tous les éléments utiles au calcul des droits. | تصريح كامل يعطي كل العناصر اللازمة لحساب الحقوق.
+déclarant en douane | Personne qui signe la déclaration d'une marchandise et répond de son exactitude. | شخص يوقع تصريح بضاعة ويسأل عن صحته.
+commissionnaire en douane | Personne agréée qui accomplit les démarches à la place de l'importateur ou de l'exportateur. | شخص معتمد يقوم بالمساعي مكان المستورد أو المصدر.
+tarif douanier | Tableau qui classe toutes les marchandises et indique le taux des droits pour chacune. | جدول يرتب كل البضائع ويبين نسبة الحقوق لكل بضاعة.
+position tarifaire | Numéro qui désigne une catégorie de marchandises dans le tarif. | رقم يعين صنفا من البضاعة في التعريفة.
+espèce tarifaire | Nom exact sous lequel une marchandise est classée dans le tarif. | الاسم الدقيق الذي ترتب به بضاعة في التعريفة.
+origine des marchandises | Pays où une marchandise a été produite ou a reçu sa dernière transformation importante. | البلد الذي أنتجت فيه بضاعة أو تلقت فيه آخر تحويل مهم.
+certificat d'origine | Document qui indique le pays où une marchandise a été produite. | وثيقة تبين البلد الذي أنتجت فيه بضاعة.
+valeur en douane | Prix d'une marchandise retenu pour calculer les droits, transport et assurance compris. | ثمن بضاعة يؤخذ به لحساب الحقوق، ومعه النقل والتأمين.
+liquidation des droits | Calcul des sommes à payer sur une marchandise d'après son espèce, son origine et sa valeur. | حساب المبالغ التي تدفع عن بضاعة بحسب نوعها ومنشئها وقيمتها.
+mainlevée des marchandises | Permission de retirer les marchandises une fois les démarches accomplies et les droits payés. | إذن بأن تسحب البضاعة بعد إتمام المساعي وبعد أن تدفع الحقوق.
+régime douanier | Situation juridique donnée à une marchandise, qui dit ce qu'on peut en faire et quels droits elle paie. | وضعية قانونية تعطى لبضاعة تبين ما يجوز فعله بها وما تدفعه من حقوق.
+régimes douaniers économiques | Régimes qui suspendent les droits sur une marchandise stockée, transformée ou seulement de passage. | أنظمة تعلق الحقوق على بضاعة مخزنة أو محولة أو عابرة فقط.
+mise à la consommation | Régime qui laisse une marchandise venue d'un autre pays entrer librement sur le marché après versement des droits. | نظام يترك بضاعة قادمة من بلد آخر تدخل السوق بحرية بعد تسديد الحقوق.
+transit douanier | Régime qui laisse une marchandise circuler d'un bureau à un autre sans payer les droits. | نظام يترك بضاعة تتنقل من مكتب إلى آخر دون أن تدفع الحقوق.
+entrepôt de douane | Lieu surveillé où une marchandise est stockée sans payer les droits jusqu'à sa sortie. | مكان مراقب تخزن فيه بضاعة دون أن تدفع الحقوق إلى غاية خروجها.
+admission temporaire | Régime qui laisse entrer sans droits une marchandise destinée à ressortir, comme un engin de chantier. | نظام يترك بضاعة تدخل دون حقوق لتخرج فيما بعد، كآلة ورشة.
+exportation temporaire | Régime qui laisse sortir une marchandise destinée à revenir, par exemple après une exposition. | نظام يترك بضاعة تخرج لتعود فيما بعد، مثلا بعد معرض.
+réexportation | Sortie du pays d'une marchandise qui y était entrée sans avoir été mise sur le marché. | خروج بضاعة من البلد كانت قد دخلته دون أن توضع في السوق.
+drawback | Remboursement des droits payés à l'entrée d'une marchandise, quand elle est exportée après transformation. | رد الحقوق التي دفعت عند دخول بضاعة إذا صدرت بعد تحويلها.
+zone franche | Espace délimité où les marchandises entrent, sont transformées et ressortent sans droits. | مجال محدد تدخل فيه البضاعة وتحول وتخرج دون حقوق.
+franchise douanière | Dispense des droits accordée à quelques marchandises, comme les effets personnels du voyageur. | إعفاء من الحقوق يمنح لبعض البضاعة، كالأمتعة الشخصية للمسافر.
+magasin et aire de dédouanement | Lieux agréés où les marchandises attendent, pour un temps limité, leur déclaration. | أماكن معتمدة تنتظر فيها البضاعة، لمدة محدودة، تصريحها.
+marchandise prohibée | Marchandise dont la loi interdit l'entrée ou la sortie, comme les stupéfiants ou les explosifs. | بضاعة يمنع القانون دخولها أو خروجها، كالمخدرات أو المتفجرات.
+marchandise sensible à la fraude | Marchandise souvent passée en contrebande, que l'administration surveille de près. | بضاعة يكثر فيها التهريب، تراقبها الإدارة عن قرب.
+restriction à l'importation | Mesure qui limite l'entrée d'une marchandise par une quantité, une autorisation ou une norme. | تدبير يحد من دخول بضاعة بكمية أو ترخيص أو معيار.
+licence d'importation | Autorisation de l'administration sans laquelle une marchandise ne peut pas être importée. | ترخيص من الإدارة دونه لا تستورد بضاعة.
+contingent tarifaire | Quantité d'une marchandise qui peut entrer avec des droits réduits ; au-delà, le taux normal revient. | كمية من بضاعة يجوز أن تدخل بحقوق مخفضة، وما زاد عليها يخضع للنسبة العادية.
+droits et taxes | Ensemble des sommes perçues sur une marchandise à l'importation : droits de douane, TVA et autres. | مجموع المبالغ التي تقبض على بضاعة عند الاستيراد: الحقوق الجمركية والرسم على القيمة المضافة وغيرها.
+droit additionnel provisoire de sauvegarde | Taxe ajoutée pour un temps aux droits de douane afin de protéger la production nationale. | رسم يضاف لمدة إلى الحقوق الجمركية ليحمي الإنتاج الوطني. | sf=DAPS
+droit antidumping | Taxe appliquée à une marchandise qu'un étranger vend au-dessous de son prix normal. | رسم يطبق على بضاعة يبيعها أجنبي بأقل من ثمنها العادي.
+dumping | Vente d'une marchandise dans un autre pays à un prix inférieur à celui du pays d'origine. | بيع بضاعة في بلد آخر بثمن أقل من ثمنها في بلد المنشأ.
+mesures de sauvegarde | Limites temporaires à l'importation, prises quand une hausse brutale des arrivées met en danger un secteur national. | حدود مؤقتة للاستيراد تتخذ إذا عرضت زيادة مفاجئة في الواردات قطاعا وطنيا للخطر.
+délit douanier | Infraction grave à la loi douanière, comme la contrebande, punie de prison et d'amende. | جريمة خطيرة ضد القانون الجمركي، كالتهريب، يعاقب عليها بالحبس والغرامة.
+importation sans déclaration | Entrée d'une marchandise par un bureau sans la déclarer ou en la déclarant faussement. | إدخال بضاعة عن طريق مكتب دون أن يصرح بها أو بأن يصرح بها كذبا.
+saisie douanière | Saisie d'une marchandise et du véhicule qui la transporte, quand les agents constatent une infraction. | حجز بضاعة والمركبة التي تنقلها إذا عاين الأعوان جريمة.
+amende douanière | Somme d'argent infligée pour une infraction, calculée d'après la valeur de la marchandise. | مبلغ من النقود يوقع عن جريمة، يحسب بحسب قيمة البضاعة.
+transaction douanière | Arrangement par lequel l'administration abandonne les poursuites contre le versement d'une somme. | تسوية تترك بها الإدارة المتابعة مقابل تسديد مبلغ.
+détenteur de la marchandise | Personne qui a une marchandise entre les mains et répond de la fraude, même si elle n'en est pas propriétaire. | شخص تكون بضاعة بين يديه ويسأل عن الغش ولو لم يكن مالكها.
+intéressé à la fraude | Personne qui a financé une fraude, l'a organisée ou en a profité, et qui est punie comme l'auteur. | شخص مول غشا أو نظمه أو استفاد منه، ويعاقب مثل الفاعل.
+coopération douanière | Transmission de renseignements et entraide entre les administrations des douanes de plusieurs pays. | إرسال معلومات ومساعدة متبادلة بين إدارة الجمارك في عدة بلدان.
+opérateur économique agréé | Entreprise que l'administration des douanes reconnaît fiable et qui bénéficie de contrôles allégés. | مؤسسة تعترف إدارة الجمارك بأنها موثوقة، فتستفيد من مراقبة مخففة.
+contrôle des changes | Règles qui soumettent à autorisation l'achat de devises et les versements vers d'autres pays. | قواعد تخضع للترخيص شراء عملة أجنبية وإرسال النقود نحو بلدان أخرى.
+infraction à la législation des changes | Infraction de celui qui fait sortir ou entrer de l'argent sans respecter les règles sur les devises. | جريمة من يخرج أو يدخل نقودا دون أن يحترم القواعد الخاصة بكل عملة أجنبية.
+mouvements de capitaux | Entrées et sorties d'argent entre un pays et les autres : investissements, prêts, placements. | دخول النقود وخروجها بين بلد وغيره: استثمار وقرض وتوظيف.
+domiciliation bancaire | Démarche qui rattache une opération d'importation ou d'exportation à une banque chargée d'en suivre le règlement. | مسعى يربط عملية استيراد أو تصدير ببنك مكلف بمتابعة تسديدها.
+rapatriement des devises | Obligation de l'exportateur de faire rentrer dans le pays l'argent de chaque vente. | التزام المصدر بأن يدخل إلى البلد نقود كل بيع قام به.

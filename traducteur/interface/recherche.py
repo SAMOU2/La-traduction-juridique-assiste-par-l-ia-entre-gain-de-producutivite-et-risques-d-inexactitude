@@ -27,7 +27,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from ..glossaire import Entree, Glossaire
+from ..glossaire import Entree, Glossaire, equivalent_a_verifier
 from ..langues import AR, FR, NOM_EN_FRANCAIS, autre_langue, cle_souple, deviner_langue
 from . import icones, theme
 from .composants import (
@@ -632,10 +632,13 @@ class PageRecherche(QWidget):
         """Quelques entrées prises à intervalles réguliers dans le glossaire, sans terme répété.
 
         Elles sont prises parmi les entrées qui ont une définition, s'il y en a : le terme proposé en
-        exemple a ainsi de quoi remplir le menu « Plus de détails », et non son seul équivalent.
+        exemple a ainsi de quoi remplir le menu « Plus de détails », et non son seul équivalent. Parmi
+        elles, celles dont l'équivalent n'est pas « à vérifier » passent d'abord : ce sont les entrées
+        les plus sûres du glossaire.
         """
         entrees = self.glossaire.entrees if self.glossaire is not None else []
-        entrees = [entree for entree in entrees if entree.definition_fr or entree.definition_ar] or entrees
+        definies = [entree for entree in entrees if entree.definition_fr or entree.definition_ar]
+        entrees = [entree for entree in definies if equivalent_a_verifier(entree) is None] or definies or entrees
         pas = max(1, len(entrees) // NOMBRE_EXEMPLES)
         exemples: list[Entree] = []
         for entree in entrees[::pas] + entrees:

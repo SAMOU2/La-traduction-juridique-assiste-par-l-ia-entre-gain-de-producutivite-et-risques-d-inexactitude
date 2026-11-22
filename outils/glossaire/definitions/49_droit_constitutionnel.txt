@@ -1,0 +1,184 @@
+# Définitions des termes de termes/49_droit_constitutionnel.txt : terme | définition française | définition arabe | options (sf=, sa=)
+régime politique | Manière dont le pouvoir est organisé et exercé dans un État. | الطريقة التي تنظم بها السلطة وتمارس في دولة.
+régime présidentiel | Régime où le chef de l'État, élu par le peuple, tient seul le pouvoir exécutif et ne peut pas dissoudre le Parlement. | نظام يتولى فيه رئيس الدولة، الذي ينتخبه الشعب، السلطة التنفيذية وحده ولا يجوز له أن يحل البرلمان.
+régime parlementaire | Régime où le gouvernement est responsable devant le Parlement, qui peut le renverser. | نظام تكون فيه الحكومة مسؤولة أمام البرلمان الذي يجوز له أن يسقطها.
+régime semi-présidentiel | Régime qui réunit un président élu par le peuple et un gouvernement responsable devant le Parlement. | نظام يجمع بين رئيس ينتخبه الشعب وحكومة مسؤولة أمام البرلمان.
+forme de l'État | Manière dont le pouvoir est réparti sur le territoire : État unitaire ou État fédéral. | الطريقة التي توزع بها السلطة على الإقليم: دولة موحدة أو دولة اتحادية.
+État unitaire | État qui n'a qu'un seul centre de décision politique et une seule Constitution. | دولة لها مركز واحد للقرار السياسي ودستور واحد.
+État fédéral | État composé de plusieurs États membres qui ont chacun leurs lois et leurs juges. | دولة مؤلفة من عدة دول أعضاء لكل واحدة منها قوانينها وقضاتها.
+souveraineté nationale | Pouvoir suprême qui appartient à la nation et s'exerce par les représentants qu'elle a élus. | السلطة العليا التي تعود للأمة وتمارس بواسطة ممثلين تنتخبهم.
+souveraineté populaire | Pouvoir suprême qui appartient au peuple et qu'il exerce par le vote et le référendum. | السلطة العليا التي تعود للشعب ويمارسها بالتصويت والاستفتاء.
+intégrité territoriale | Principe selon lequel aucune portion du territoire de l'État ne peut en être détachée. | مبدأ يقضي بأنه لا يجوز أن يفصل أي جزء من إقليم الدولة عنها.
+unité nationale | Cohésion du peuple et du territoire, que la Constitution protège. | تماسك الشعب والإقليم الذي يحميه الدستور.
+emblème national | Drapeau de l'État, tel que la Constitution le décrit. | راية الدولة كما يصفها الدستور.
+hymne national | Chant officiel de l'État. | النشيد الرسمي للدولة.
+langue nationale et officielle | Langue que la Constitution reconnaît comme celle de la nation et des actes de l'État. | لغة يعترف بها الدستور لغة للأمة ولأعمال الدولة.
+institutions de l'État | Corps que la Constitution crée pour exercer le pouvoir : présidence, gouvernement, Parlement, tribunaux. | الأجهزة التي ينشئها الدستور لممارسة السلطة: الرئاسة والحكومة والبرلمان والمحاكم.
+pouvoirs publics | Ensemble des autorités qui gouvernent et administrent l'État. | مجموع السلطات التي تحكم الدولة وتديرها.
+équilibre des pouvoirs | Organisation où chaque pouvoir limite les autres, pour qu'aucun ne domine. | تنظيم تحد فيه كل سلطة من السلطات الأخرى حتى لا تهيمن واحدة.
+chef du gouvernement | Personne qui conduit le gouvernement quand la majorité du Parlement n'est pas celle du Président. | الشخص الذي يقود الحكومة إذا كانت أغلبية البرلمان غير أغلبية الرئيس.
+membre du gouvernement | Ministre ou autre personne nommée pour diriger un secteur de l'activité de l'État. | وزير أو شخص آخر يعين ليسير قطاعا من نشاط الدولة.
+ministre d'État | Ministre auquel ce titre donne un rang supérieur à celui des autres ministres. | وزير يعطيه هذا اللقب مرتبة أعلى من مرتبة الوزراء الآخرين.
+ministre délégué | Ministre placé auprès d'un autre ministre pour une fraction de ses attributions. | وزير يوضع لدى وزير آخر ليتولى جزءا من صلاحياته.
+secrétaire d'État | Membre du gouvernement placé auprès d'un ministre, pour un domaine précis. | عضو الحكومة الذي يوضع لدى وزير ليتولى مجالا معينا.
+secrétaire général du gouvernement | Haut fonctionnaire qui coordonne le travail du gouvernement et prépare la publication des textes. | موظف سام ينسق عمل الحكومة ويحضر نشر النصوص.
+portefeuille ministériel | Secteur qu'un ministre est chargé de conduire. | القطاع الذي يكلف وزير بقيادته.
+remaniement ministériel | Changement de quelques ministres sans changement de tout le gouvernement. | تغيير بعض الوزراء دون تغيير الحكومة كلها. | sf=remaniement gouvernemental
+programme du gouvernement | Document où le gouvernement expose ce qu'il compte faire, soumis au Parlement. | وثيقة تعرض فيها الحكومة ما تعتزم فعله، وتعرض على البرلمان.
+plan d'action du gouvernement | Document par lequel le Premier ministre présente à l'Assemblée la manière d'appliquer le programme du Président. | وثيقة يعرض بها الوزير الأول على المجلس الطريقة التي يطبق بها برنامج الرئيس.
+déclaration de politique générale | Exposé annuel du gouvernement devant l'Assemblée sur l'exécution de son programme. | عرض سنوي تقدمه الحكومة أمام المجلس عن تنفيذ برنامجها.
+vote de confiance | Vote par lequel l'Assemblée dit si elle soutient le gouvernement. | تصويت يبين به المجلس هل يساند الحكومة.
+démission du gouvernement | Départ de tous les ministres, présenté par leur chef au Président de la République. | رحيل كل الوزراء، يقدمه رئيسهم إلى رئيس الجمهورية.
+vacance de la présidence de la République | Situation où la fonction de Président n'est plus occupée, par décès, démission ou empêchement définitif. | حالة لا يشغل فيها منصب الرئيس أحد، بسبب وفاة أو استقالة أو مانع نهائي.
+état d'empêchement | Situation du Président qu'une maladie grave et durable empêche d'exercer ses fonctions. | حالة الرئيس الذي يمنعه مرض خطير ومزمن من ممارسة مهامه.
+intérim de la présidence | Exercice provisoire des fonctions du Président par une autre autorité, en attendant une élection. | ممارسة مؤقتة لمهام الرئيس من سلطة أخرى في انتظار انتخاب.
+serment constitutionnel | Serment que le Président prête devant le peuple avant de prendre ses fonctions. | يمين يؤديها الرئيس أمام الشعب قبل أن يتولى مهامه.
+mandat présidentiel | Durée de cinq ans pour laquelle le Président est élu ; elle n'est renouvelable qu'une fois. | مدة خمس سنوات ينتخب لها الرئيس، ولا تجدد إلا مرة واحدة.
+pouvoir de nomination | Pouvoir du Président ou d'un ministre de désigner les personnes qui occuperont les emplois de l'État. | سلطة الرئيس أو الوزير في أن يعين الأشخاص الذين يشغلون وظائف الدولة.
+pouvoirs exceptionnels | Pouvoirs élargis que le Président exerce quand le pays court un danger pressant. | سلطات موسعة يمارسها الرئيس إذا كان البلد مهددا بخطر داهم.
+haute trahison | Manquement très grave du Président à ses devoirs, jugé par la Haute Cour de l'État. | إخلال جسيم جدا من الرئيس بواجباته، تحكم فيه المحكمة العليا للدولة.
+Haute Cour de l'État | Juridiction chargée de juger le Président pour haute trahison et le Premier ministre pour les crimes et délits de sa fonction. | جهة قضائية تحكم على الرئيس في الخيانة العظمى وعلى الوزير الأول في جنايات وظيفته وجنحها.
+Haut Conseil de sécurité | Organe présidé par le Président de la République, qui donne son avis sur la sécurité nationale. | هيئة يرأسها رئيس الجمهورية، تبدي رأيها في الأمن الوطني. | sf=HCS
+Haut Conseil islamique | Organe consultatif qui encourage la réflexion religieuse et donne son avis sur les questions qui lui sont soumises. | هيئة استشارية تشجع الاجتهاد الديني وتبدي رأيها في المسائل التي تعرض عليها. | sf=HCI
+Conseil national économique, social et environnemental | Organe consultatif où les acteurs économiques et sociaux donnent leur avis sur les choix de l'État. | هيئة استشارية يبدي فيها الفاعلون الاقتصاديون والاجتماعيون رأيهم في اختيارات الدولة. | sf=CNESE
+Conseil national des droits de l'homme | Organe qui surveille le respect des droits de l'homme et alerte les autorités. | هيئة تراقب احترام حقوق الإنسان وتنبه السلطات. | sf=CNDH
+Haute Autorité de transparence, de prévention et de lutte contre la corruption | Institution indépendante chargée de prévenir la corruption et de veiller à la transparence de la vie publique. | مؤسسة مستقلة مكلفة بالوقاية من الفساد وبالسهر على شفافية الحياة العامة.
+Observatoire national de la société civile | Organe consultatif qui suit l'activité des associations et propose des moyens de les soutenir. | هيئة استشارية تتابع نشاط الجمعيات وتقترح وسائل لدعمها.
+Conseil supérieur de la jeunesse | Organe consultatif qui donne son avis sur les questions qui touchent les jeunes. | هيئة استشارية تبدي رأيها في المسائل التي تهم الشباب.
+institution consultative | Organe qui donne des avis sans pouvoir décider lui-même. | هيئة تبدي آراء دون أن تكون لها سلطة القرار.
+institution de contrôle | Organe chargé de vérifier que les autorités suivent la Constitution et la loi. | هيئة مكلفة بالتحقق من أن السلطات تتبع الدستور والقانون.
+autorité indépendante | Organe de l'État qui décide sans recevoir d'ordre du gouvernement. | هيئة من الدولة تقرر دون أن تتلقى أمرا من الحكومة.
+défense nationale | Ensemble des moyens par lesquels l'État protège son territoire et sa population contre une attaque. | مجموع الوسائل التي تحمي بها الدولة إقليمها وسكانها من هجوم.
+Armée nationale populaire | Forces armées de la République, chargées de défendre la souveraineté et le territoire. | القوات المسلحة للجمهورية، مكلفة بالدفاع عن السيادة والإقليم. | sf=ANP
+mobilisation générale | Rassemblement de tous les moyens humains et matériels du pays face à un danger grave. | حشد كل الوسائل البشرية والمادية للبلد لمواجهة خطر جسيم.
+déclaration de guerre | Acte par lequel le Président, après avis des institutions que la Constitution désigne, annonce que le pays entre en guerre. | تصرف يعلن به الرئيس، بعد استشارة المؤسسات التي يعينها الدستور، أن البلد يدخل الحرب.
+état de guerre | Situation où la Constitution est suspendue et où le Président exerce tous les pouvoirs. | حالة يعلق فيها العمل بالدستور ويتولى الرئيس كل السلطات.
+chambre du Parlement | L'une des deux assemblées qui forment le Parlement : l'Assemblée populaire nationale ou le Conseil de la Nation. | أحد المجلسين اللذين يتكون منهما البرلمان: المجلس الشعبي الوطني أو مجلس الأمة.
+bicamérisme | Organisation d'un Parlement en deux assemblées. | تنظيم برلمان في مجلسين. | sf=bicaméralisme
+membre du Conseil de la Nation | Personne élue par les assemblées locales ou désignée par le Président pour siéger à la seconde chambre. | شخص تنتخبه المجالس المحلية أو يعينه الرئيس ليجلس في الغرفة الثانية. | sf=sénateur
+président de l'Assemblée populaire nationale | Député élu par ses collègues pour diriger les travaux de la première chambre. | نائب ينتخبه زملاؤه ليسير أشغال الغرفة الأولى.
+président du Conseil de la Nation | Membre de la seconde chambre élu pour en diriger les travaux ; il remplace le Président si la présidence devient vacante. | عضو في الغرفة الثانية ينتخب ليسير أشغالها، ويخلف الرئيس إذا صارت الرئاسة شاغرة.
+commission permanente | Groupe de parlementaires chargé d'étudier les textes d'un domaine avant leur vote. | مجموعة برلمانيين تكلف بدراسة نصوص مجال معين قبل التصويت عليها.
+commission d'enquête parlementaire | Groupe de parlementaires chargé de s'informer sur une affaire d'intérêt général. | مجموعة برلمانيين تكلف بالاستعلام عن قضية من المصلحة العامة.
+commission paritaire | Groupe formé d'autant de membres de chaque chambre, chargé de trouver un texte commun. | مجموعة تتألف من عدد متساو من أعضاء كل غرفة، تكلف بإيجاد نص مشترك.
+groupe parlementaire | Réunion de députés de la même tendance politique. | تجمع نواب من الاتجاه السياسي نفسه.
+opposition parlementaire | Parlementaires qui ne soutiennent pas le gouvernement et auxquels la Constitution reconnaît des droits. | برلمانيون لا يساندون الحكومة ويعترف لهم الدستور بحقوق.
+majorité parlementaire | Ensemble des députés qui soutiennent le gouvernement et forment plus de la moitié de l'Assemblée. | مجموع النواب الذين يساندون الحكومة ويشكلون أكثر من نصف المجلس.
+majorité présidentielle | Majorité de députés qui soutient le programme du Président de la République. | أغلبية من النواب تساند برنامج رئيس الجمهورية.
+majorité simple | Majorité obtenue par le plus grand nombre de voix parmi les votants. | أغلبية تتحقق بأكبر عدد من الأصوات بين المصوتين.
+majorité relative | Majorité de celui qui a plus de voix que chacun des autres, même sans atteindre la moitié. | أغلبية من له أصوات أكثر من كل واحد من الآخرين ولو لم يبلغ النصف.
+législature | Durée pour laquelle une assemblée est élue. | المدة التي ينتخب لها مجلس.
+session ordinaire | Période de l'année pendant laquelle le Parlement se réunit de plein droit. | فترة من السنة يجتمع فيها البرلمان بقوة القانون.
+session extraordinaire | Réunion du Parlement hors de la période habituelle, sur un ordre du jour précis. | اجتماع البرلمان خارج الفترة المعتادة، للنظر في جدول الأعمال محدد.
+séance plénière | Réunion de tous les membres d'une assemblée pour débattre et voter. | اجتماع كل أعضاء مجلس ليناقشوا ويصوتوا.
+initiative législative | Droit de présenter un texte de loi, qui appartient au gouvernement et aux parlementaires. | حق تقديم نص قانون، وهو للحكومة وللبرلمانيين.
+procédure législative | Suite des étapes par lesquelles un texte devient une loi : présentation, examen, vote, promulgation. | تتابع المراحل التي يصير بها نص قانونا: التقديم والدراسة والتصويت والإصدار.
+seconde délibération | Nouvel examen d'une loi votée, que le Président peut obtenir du Parlement. | دراسة جديدة لقانون صوت عليه، يجوز للرئيس أن يحصل عليها من البرلمان.
+législation par ordonnance | Pouvoir du Président de prendre, quand le Parlement ne siège pas, des textes qui ont la force de la loi. | سلطة الرئيس في أن يتخذ، حين لا يجتمع البرلمان، نصوصا لها قوة القانون.
+contrôle parlementaire | Ensemble des moyens par lesquels le Parlement surveille l'activité du gouvernement. | مجموع الوسائل التي يراقب بها البرلمان نشاط الحكومة.
+question orale | Question qu'un parlementaire pose à un ministre en séance, et à laquelle le ministre répond de vive voix. | سؤال يطرحه برلماني على وزير في الجلسة، ويجيب عنه الوزير شفاهة.
+question écrite | Question qu'un parlementaire adresse par écrit à un ministre, qui doit répondre dans un délai. | سؤال يوجهه برلماني كتابة إلى وزير، ويجب أن يجيب عنه في أجل.
+interpellation du gouvernement | Explication qu'un groupe de parlementaires réclame au gouvernement sur une question d'actualité. | توضيح تطالب به مجموعة برلمانيين الحكومة في مسألة من مسائل الساعة.
+débat général | Discussion ouverte à tous les membres d'une assemblée sur un sujet, sans vote d'un texte. | نقاش مفتوح لكل أعضاء مجلس في موضوع، دون تصويت على نص.
+dissolution de l'Assemblée populaire nationale | Décision du Président de mettre fin aux fonctions des députés avant la date normale. | قرار الرئيس بأن ينهي مهام النواب قبل التاريخ العادي.
+élections législatives anticipées | Élection des députés organisée avant la fin normale de la législature. | انتخاب النواب الذي ينظم قبل النهاية العادية للفترة التشريعية.
+mandat parlementaire | Fonction de représentation que les électeurs confient à un parlementaire pour la durée de la législature. | مهمة التمثيل التي يسندها الناخبون إلى برلماني لمدة الفترة التشريعية.
+cumul des mandats | Exercice par une même personne de plusieurs fonctions électives en même temps. | ممارسة شخص واحد عدة مهام انتخابية في وقت واحد.
+cas d'incompatibilité | Situation où un parlementaire occupe une autre fonction que la loi lui interdit de conserver. | حالة يشغل فيها برلماني وظيفة أخرى يمنعه القانون من الاحتفاظ بها.
+déchéance du mandat parlementaire | Retrait de son siège au parlementaire qui ne remplit plus les conditions ou a manqué à ses devoirs de façon grave. | سحب المقعد من برلماني لم يعد يستوفي الشروط أو أخل بواجباته إخلالا جسيما.
+levée de l'immunité parlementaire | Décision qui laisse les juges poursuivre un parlementaire. | قرار يترك القضاة يتابعون برلمانيا.
+nomadisme politique | Changement de parti par un parlementaire pendant sa fonction ; la Constitution le sanctionne par la privation du siège. | تغيير برلماني حزبه أثناء مهمته، ويعاقب عليه الدستور بالحرمان من المقعد. | sf=transhumance politique
+indemnité parlementaire | Somme versée chaque mois au parlementaire pour l'exercice de sa fonction. | مبلغ يدفع كل شهر للبرلماني عن ممارسة مهمته.
+tiers présidentiel | Tiers des membres du Conseil de la Nation, que le Président de la République désigne. | ثلث أعضاء مجلس الأمة، يعينه رئيس الجمهورية.
+régime électoral | Ensemble des règles qui organisent les élections et la manière de compter les voix. | مجموع القواعد التي تنظم الانتخابات وطريقة حساب الأصوات.
+loi électorale | Loi organique qui fixe les conditions du vote, de la candidature et du dépouillement. | قانون عضوي يحدد شروط التصويت والترشح والفرز.
+corps électoral | Ensemble des citoyens qui ont le droit de voter. | مجموع المواطنين الذين لهم الحق في أن يصوتوا.
+convocation du corps électoral | Décret par lequel le Président invite les électeurs à voter à une date donnée. | مرسوم يدعو به الرئيس الناخبين إلى أن يصوتوا في تاريخ معين.
+circonscription électorale | Portion du territoire dont les électeurs élisent un ou plusieurs représentants. | جزء من الإقليم ينتخب الناخبون فيه ممثلا واحدا أو أكثر.
+découpage électoral | Division du territoire en zones de vote pour une élection. | تقسيم الإقليم إلى مناطق تصويت من أجل انتخاب.
+carte d'électeur | Document qui prouve l'inscription d'un citoyen sur la liste électorale. | وثيقة تثبت تسجيل مواطن في القائمة الانتخابية.
+inscription sur les listes électorales | Démarche par laquelle un citoyen se fait enregistrer pour pouvoir voter. | مسعى يسجل به مواطن نفسه ليتمكن من أن يصوت.
+révision des listes électorales | Mise à jour annuelle des listes : ajout des nouveaux électeurs, suppression des noms des morts et de ceux qui sont partis. | تحيين سنوي للقوائم: إضافة الناخبين الجدد وحذف أسماء المتوفين والراحلين.
+déclaration de candidature | Acte par lequel une personne ou une liste fait savoir qu'elle se présente à une élection. | تصرف يعلن به شخص أو قائمة أنه يتقدم إلى انتخاب.
+candidature | Démarche de celui qui se présente aux suffrages des électeurs. | مسعى من يتقدم إلى أصوات الناخبين.
+liste de candidats | Groupe de candidats qui se présentent ensemble dans une même zone de vote. | مجموعة مترشحين يتقدمون معا في منطقة تصويت واحدة.
+candidat indépendant | Candidat qui se présente sans le soutien d'un parti politique. | مترشح يتقدم دون دعم من حزب سياسي.
+collecte des signatures | Recueil des soutiens écrits d'électeurs que la loi exige pour valider une candidature. | جمع تأييدات مكتوبة من ناخبين يشترطها القانون لقبول ترشح.
+campagne électorale | Période pendant laquelle les candidats présentent leur programme aux électeurs. | فترة يعرض فيها المترشحون برامجهم على الناخبين.
+financement de la campagne électorale | Origine et emploi de l'argent dépensé par un candidat, que la loi encadre et plafonne. | مصدر المال الذي ينفقه مترشح وطريقة استعماله، والقانون ينظمهما ويضع لهما سقفا.
+compte de campagne | Document où le candidat retrace toutes ses recettes et ses dépenses de campagne. | وثيقة يبين فيها المترشح كل إيراداته ومصاريفه في الحملة.
+silence électoral | Période, peu avant le vote, pendant laquelle toute propagande est interdite. | فترة قبيل التصويت يحظر فيها كل دعاية.
+bureau de vote | Lieu où les électeurs déposent leur bulletin dans l'urne. | المكان الذي يضع فيه الناخبون أوراقهم في صندوق الاقتراع.
+centre de vote | Ensemble de plusieurs salles de vote installées dans un même bâtiment. | مجموعة من عدة قاعات تصويت في بناية واحدة.
+urne | Boîte fermée où les électeurs glissent leur bulletin. | علبة مغلقة يضع فيها الناخبون أوراقهم.
+bulletin de vote | Papier sur lequel l'électeur exprime son choix. | ورقة يعبر بها الناخب عن اختياره.
+bulletin nul | Bulletin qui ne compte pas parce qu'il est déchiré, annoté ou irrégulier. | ورقة لا تحسب لأنها ممزقة أو عليها كتابة أو غير نظامية.
+bulletin blanc | Bulletin ou enveloppe vide par lequel l'électeur ne choisit aucun candidat. | ورقة أو ظرف فارغ لا يختار به الناخب أي مترشح.
+vote par procuration | Vote d'un électeur absent, exprimé par une autre personne qu'il a chargée de le faire. | تصويت ناخب غائب، يعبر عنه شخص آخر كلفه بذلك.
+scrutin secret | Vote organisé de sorte qu'aucune personne ne sache le choix de l'électeur. | تصويت ينظم بحيث لا يعلم أي شخص اختيار الناخب.
+suffrage direct | Vote par lequel les électeurs choisissent eux-mêmes leurs représentants. | تصويت يختار به الناخبون الممثلين بأنفسهم.
+suffrage indirect | Vote par lequel les représentants sont choisis par de grands électeurs, et non par tous les citoyens. | تصويت يختار فيه الممثلين ناخبون كبار، لا كل المواطنين.
+suffrages exprimés | Voix valables, sans compter les bulletins blancs et nuls. | الأصوات الصحيحة دون حساب الأوراق البيضاء والباطلة.
+voix prépondérante | Voix du président qui l'emporte quand il y a autant de voix pour que de voix contre. | صوت الرئيس الذي يغلب إذا كان عدد الأصوات المؤيدة مثل عدد الأصوات المعارضة.
+dépouillement du scrutin | Ouverture des urnes et comptage des bulletins après la fin du vote. | فتح صندوق الاقتراع وعد الأوراق بعد نهاية التصويت. | sf=dépouillement des votes
+procès-verbal de dépouillement | Écrit qui consigne les résultats du comptage dans un bureau de vote. | محرر تدون فيه نتائج العد في مكتب التصويت.
+proclamation des résultats | Annonce officielle des résultats d'une élection par l'autorité compétente. | إعلام رسمي بنتائج انتخاب من السلطة المختصة.
+résultats provisoires | Résultats annoncés avant l'examen des recours. | نتائج تعلن قبل دراسة الطعون.
+résultats définitifs | Résultats proclamés par la Cour constitutionnelle après l'examen des recours. | نتائج تعلنها المحكمة الدستورية بعد دراسة الطعون.
+taux de participation | Proportion des électeurs de la liste qui ont voté. | نسبة من صوت من ناخبي القائمة.
+abstention électorale | Choix de l'électeur de ne pas aller voter. | اختيار الناخب ألا يذهب ليصوت.
+scrutin de liste | Mode de vote où l'électeur choisit une liste de candidats et non une personne. | طريقة تصويت يختار فيها الناخب قائمة المترشحين لا شخصا.
+scrutin majoritaire | Mode de vote où le siège revient au candidat ou à la liste qui a le plus de voix. | طريقة تصويت يعود فيها المقعد للمترشح أو القائمة التي لها أكبر عدد من الأصوات.
+scrutin uninominal | Mode de vote où l'électeur choisit un seul candidat. | طريقة تصويت يختار فيها الناخب مترشحا واحدا.
+représentation proportionnelle | Mode de vote qui donne à chaque liste un nombre de sièges en rapport avec ses voix. | طريقة تصويت تعطي كل قائمة عددا من المقاعد يناسب أصواتها. | sf=scrutin proportionnel | sa=اقتراع نسبي
+second tour | Nouveau vote organisé quand aucun candidat n'a obtenu la majorité voulue au premier. | تصويت جديد ينظم إذا لم يحصل أي مترشح على الأغلبية المطلوبة في الدور الأول. | sf=deuxième tour | sa=جولة ثانية
+seuil électoral | Pourcentage minimum de voix qu'une liste doit atteindre pour obtenir des sièges. | النسبة الدنيا من الأصوات التي يجب أن تبلغها قائمة لتحصل على مقاعد.
+répartition des sièges | Attribution des sièges aux listes d'après leurs voix. | إسناد المقاعد إلى القوائم بحسب أصواتها.
+siège vacant | Siège qui n'est plus occupé, par décès, démission ou exclusion de celui qui l'occupait. | مقعد لم يعد يشغله أحد، بسبب وفاة شاغله أو استقالته أو إقصائه.
+élection présidentielle | Élection du Président de la République par tous les électeurs. | انتخاب رئيس الجمهورية من كل الناخبين.
+élections législatives | Élection des députés de l'Assemblée populaire nationale. | انتخاب نواب المجلس الشعبي الوطني.
+élections locales | Élection des assemblées de la commune et de la wilaya. | انتخاب مجالس البلدية والولاية.
+élection partielle | Élection organisée pour pourvoir un siège devenu vacant. | انتخاب ينظم لملء مقعد صار شاغرا.
+contentieux électoral | Litiges sur la validité des listes, des candidatures ou des résultats d'une élection. | نزاعات حول صحة القوائم أو الترشح أو نتائج انتخاب.
+recours électoral | Recours formé contre une opération ou un résultat de l'élection. | طعن يرفع ضد عملية من عمليات الانتخاب أو ضد نتيجة منه.
+fraude électorale | Manœuvre qui fausse le vote ou ses résultats, comme le bourrage des urnes. | مناورة تحرف التصويت أو نتائجه، كحشو صندوق الاقتراع.
+observateur des élections | Personne chargée de suivre le vote et de signaler ce qui n'est pas régulier. | شخص يكلف بمتابعة التصويت والتبليغ عما ليس نظاميا.
+éligibilité | Aptitude d'une personne à se présenter à une élection et à être élue. | قدرة شخص على أن يتقدم إلى انتخاب وعلى أن ينتخب.
+inéligibilité | Situation d'une personne que la loi empêche de se présenter à une élection. | حالة شخص يمنعه القانون من أن يتقدم إلى انتخاب.
+consultation référendaire | Vote par lequel le peuple répond lui-même à une question que le Président lui pose. | تصويت يجيب به الشعب نفسه عن سؤال يطرحه عليه الرئيس.
+suprématie de la Constitution | Principe selon lequel la Constitution l'emporte sur toutes les autres règles de l'État. | مبدأ يقضي بأن الدستور يعلو كل قواعد الدولة الأخرى.
+bloc de constitutionnalité | Ensemble des textes et des principes auxquels une loi doit se plier. | مجموع النصوص والمبادئ التي يجب أن يخضع لها قانون.
+membre de la Cour constitutionnelle | L'une des douze personnes, nommées ou élues, qui composent la Cour constitutionnelle. | أحد الاثني عشر شخصا، ممن عين أو انتخب، الذين تتكون منهم المحكمة الدستورية.
+président de la Cour constitutionnelle | Membre de la Cour constitutionnelle que le Président de la République désigne pour la diriger. | عضو المحكمة الدستورية الذي يعينه رئيس الجمهورية ليسيرها.
+contrôle a priori | Examen d'un texte par la Cour constitutionnelle avant sa promulgation. | فحص المحكمة الدستورية نصا قبل إصداره.
+contrôle a posteriori | Examen par la Cour constitutionnelle d'une loi déjà appliquée. | فحص المحكمة الدستورية قانونا سبق أن طبق.
+contrôle de conformité | Vérification qu'une loi organique suit la Constitution, avant sa promulgation. | تحقق من أن قانونا عضويا يتبع الدستور، قبل إصداره.
+décision de la Cour constitutionnelle | Acte par lequel la Cour constitutionnelle tranche une question ; il s'impose à toutes les autorités. | تصرف تفصل به المحكمة الدستورية في مسألة، ويلزم كل السلطات.
+déclaration d'inconstitutionnalité | Décision qui tient un texte pour contraire à la Constitution et l'écarte. | قرار يعد نصا مخالفا للدستور ويستبعده.
+inconstitutionnalité | Défaut d'un texte qui ne suit pas la Constitution. | عيب نص لا يتبع الدستور.
+réserve d'interprétation | Précision par laquelle la Cour constitutionnelle dit dans quel sens un texte doit être compris pour rester valable. | توضيح تبين به المحكمة الدستورية المعنى الذي يجب أن يفهم به نص ليبقى صحيحا.
+renvoi à la Cour constitutionnelle | Transmission à la Cour constitutionnelle, par la Cour suprême ou le Conseil d'État, d'une question soulevée devant un juge. | إرسال المحكمة العليا أو مجلس الدولة إلى المحكمة الدستورية مسألة أثيرت أمام قاض.
+interprétation de la Constitution | Explication du sens d'un article de la Constitution, donnée par la Cour constitutionnelle. | شرح معنى مادة من الدستور، تقدمه المحكمة الدستورية.
+conflit entre les pouvoirs constitutionnels | Désaccord entre deux institutions sur leur compétence, que la Cour constitutionnelle tranche. | خلاف بين مؤسستين على الاختصاص، تفصل فيه المحكمة الدستورية.
+initiative de la révision constitutionnelle | Droit de proposer un changement de la Constitution, qui appartient au Président et aux trois quarts des parlementaires. | حق اقتراح تغيير في الدستور، وهو للرئيس ولثلاثة أرباع البرلمانيين.
+projet de révision constitutionnelle | Texte qui propose de modifier la Constitution, soumis au Parlement puis au référendum. | نص يقترح أن يعدل الدستور، يعرض على البرلمان ثم على الاستفتاء.
+constitution rigide | Constitution qui ne peut être modifiée que par une procédure plus lourde que celle des lois. | دستور لا يعدل إلا بإجراء أثقل من إجراء القوانين.
+constitution souple | Constitution qui peut être modifiée comme une loi ordinaire. | دستور يجوز أن يعدل مثل قانون عادي.
+constitution écrite | Constitution réunie dans un texte solennel. | دستور مجموع في نص رسمي.
+constitution coutumière | Constitution faite de pratiques et de règles non écrites, suivies depuis longtemps. | دستور مكون من ممارسات وقواعد غير مكتوبة تتبع منذ زمن طويل.
+pouvoir constituant originaire | Pouvoir de donner au pays sa première Constitution ou une Constitution entièrement nouvelle. | سلطة وضع أول دستور للبلد أو دستور جديد تماما.
+pouvoir constituant dérivé | Pouvoir de modifier la Constitution selon les règles qu'elle pose elle-même. | سلطة أن يعدل الدستور وفق القواعد التي يضعها هو نفسه.
+assemblée constituante | Assemblée élue pour rédiger une Constitution. | مجلس ينتخب ليحرر دستورا.
+alternance au pouvoir | Passage pacifique, à la tête de l'État, d'une majorité à une autre, par le vote. | انتقال سلمي على رأس الدولة من أغلبية إلى أخرى عن طريق التصويت.
+pluralisme politique | Liberté laissée à plusieurs courants d'opinion de s'exprimer et de concourir aux élections. | حرية تترك لعدة تيارات فكرية لتعبر عن نفسها وتتنافس في الانتخابات.
+multipartisme | Existence de plusieurs partis politiques qui peuvent se former librement. | وجود عدة أحزاب سياسية يجوز أن تتكون بحرية.
+organisations de la société civile | Associations et groupes de citoyens qui agissent pour l'intérêt général, hors de l'État et des partis. | جمعيات ومجموعات مواطنين تعمل للمصلحة العامة خارج الدولة والأحزاب.
+opposition politique | Partis qui critiquent le gouvernement et proposent d'autres choix. | أحزاب تنتقد الحكومة وتقترح اختيارات أخرى.
+création d'un parti politique | Démarche des fondateurs qui déclarent le parti et obtiennent son agrément du ministère. | مسعى المؤسسين الذين يصرحون بالحزب ويحصلون على اعتماده من الوزارة.
+financement des partis politiques | Ressources d'un parti : cotisations, dons et aide de l'État, que la loi contrôle. | موارد حزب: الاشتراكات والهبات وإعانة الدولة، ويراقبها القانون.
+mouvement associatif | Ensemble des associations d'un pays et de leur activité. | مجموع جمعيات بلد ونشاطها.
+démocratie participative | Démocratie où les citoyens prennent part aux décisions, surtout dans la commune. | ديمقراطية يشارك فيها المواطنون في القرارات، خاصة في البلدية.
+démocratie représentative | Démocratie où le peuple gouverne par les représentants qu'il élit. | ديمقراطية يحكم فيها الشعب بواسطة ممثلين ينتخبهم.
+bonne gouvernance | Manière de gouverner fondée sur la transparence, la responsabilité et le respect de la loi. | طريقة في الحكم مؤسسة على الشفافية والمسؤولية واحترام القانون.
+responsabilité politique | Obligation du gouvernement de quitter ses fonctions quand le Parlement lui retire sa confiance. | التزام الحكومة بأن تترك مهامها إذا سحب البرلمان ثقته منها.
+moralisation de la vie publique | Ensemble des règles qui luttent contre la corruption et contre le mélange des intérêts privés et publics chez les responsables. | مجموع القواعد التي تكافح الفساد واختلاط المصالح الخاصة بالمصالح العمومية عند المسؤولين.

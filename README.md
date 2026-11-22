@@ -12,27 +12,58 @@ Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont p
 [proposition d'interface](#la-proposition-dinterface) et la
 [première maquette](#maquette-de-lapplication-de-bureau).
 
-## L'application (version 0.12)
+## L'application (version 0.13)
 
-La version 0.12 **donne une phrase d'exemple à 1 126 termes seuls de plus**. Sur les 4 000
-termes seuls du glossaire fourni, 3 013 ont maintenant leur phrase. Seul le glossaire change :
-le programme est celui de la version 0.11.
+La version 0.13 **donne une définition à chacun des 4 000 termes seuls**, et des synonymes à
+ceux qui en ont. Avant elle, aucun terme seul du glossaire fourni n'avait de définition, et
+peu avaient des synonymes. C'était le cas de « protégé » : son cercle « Définition » était
+gris. Maintenant, les 5 000 entrées du glossaire ont une définition dans les deux langues.
 
-- **1 126 nouvelles phrases**, en français et en arabe, pour les noms de cinq domaines :
-  droit des affaires (355), droit constitutionnel (183), droit administratif (247), droit de
-  la famille (153) et droit du travail (188). Par exemple, pour « chèque barré » : « Le chèque
-  barré s'encaisse par l'intermédiaire d'une banque. », « يحصل الشيك المسطر بواسطة بنك. ».
-- **Ces phrases ont été écrites de mémoire par un assistant d'intelligence artificielle. Aucun
-  juriste et aucun traducteur ne les a relues.** L'application les affiche sous la mention
-  **À vérifier**.
-- **987 termes seuls n'ont pas encore leur phrase.** Ce sont les noms des derniers domaines :
-  fiscalité, finances publiques et douanes ; droit international ; foncier, urbanisme et
-  environnement ; propriété intellectuelle, consommation et numérique ; droit maritime et
-  nationalité. Pour 68 d'entre eux, la contextualisation affiche la phrase d'une autre entrée
-  qui emploie le terme. Les 919 autres n'affichent rien : leur cercle « Contextualisation »
-  reste gris. Ils recevront leur phrase à la dernière étape.
-- La traduction d'un texte ne change pas. Comme pour les autres exemples, une phrase du texte
-  identique à l'une de ces phrases reçoit sa traduction.
+- **4 000 définitions, en français et en arabe.** 928 pour le vocabulaire juridique général
+  (356 adjectifs, 246 verbes, 190 adverbes, prépositions et conjonctions, 136 noms), et 3 072
+  pour les noms des treize domaines du droit. Par exemple, pour « protégé » : « Qui bénéficie
+  d'une protection que la loi organise ou que le juge accorde. », « الذي يستفيد من حماية
+  ينظمها القانون أو يمنحها القاضي. ». Pour « chèque barré » : « Chèque qui porte deux traits
+  parallèles et ne peut être payé qu'à une banque. », « شيك عليه خطان متوازيان، لا يدفع إلا
+  لبنك. ».
+- **707 synonymes de plus**, pour 531 termes : 443 en français, 264 en arabe. « protégé »
+  reçoit « préservé » et « sauvegardé » en français, « مصون » en arabe ; « diversité
+  biologique » reçoit « biodiversité ». **3 338 termes seuls n'ont aucun synonyme** : un
+  synonyme n'a été écrit que là où un autre mot dit la même chose. C'est rare pour les noms
+  composés des domaines (« garantie décennale », « question écrite ») : 192 de ces 3 072
+  noms en ont reçu.
+- **Ces définitions et ces synonymes ont été écrits de mémoire par un assistant
+  d'intelligence artificielle. Aucun juriste et aucun traducteur ne les a relus.**
+  L'application affiche la définition sous la mention **À vérifier**. Une définition peut
+  être incomplète ou fausse. Environ 70 définitions donnent un chiffre (un délai, un âge, une
+  durée) : il a été écrit de mémoire, lui aussi. Les synonymes n'ont pas de mention à eux :
+  celle de l'équivalent, dans la fiche, vaut pour toute l'entrée.
+- **Ce qui reste à faire.** 987 termes seuls n'ont pas encore de phrase d'exemple : les noms
+  des cinq derniers fichiers de termes. Les synonymes des 1 000 entrées complètes n'ont pas
+  été complétés.
+- La traduction d'un texte change peu. Elle ne remplace que les noms, et 267 des nouveaux
+  synonymes sont ceux d'un nom : « prolongation » est maintenant rendu par « تمديد », comme
+  « prorogation », et « biodiversité » par « تنوع بيولوجي », comme « diversité biologique ».
+
+![Le terme « protégé », cercle « Définition » ouvert : sa définition dans les deux langues, sous la mention « À vérifier »](docs/apercu-protege-definition.png)
+
+![Le terme « diversité biologique », trouvé par son synonyme « biodiversité » : sa définition dans les deux langues, sous la mention « À vérifier »](docs/apercu-biodiversite-definition.png)
+
+Le détail est dans [Les termes seuls](#les-termes-seuls).
+
+La version 0.12 avait donné **une phrase d'exemple à 1 126 termes seuls de plus** : les noms
+de cinq domaines (droit des affaires, droit constitutionnel, droit administratif, droit de la
+famille, droit du travail). Par exemple, pour « chèque barré » : « Le chèque barré s'encaisse
+par l'intermédiaire d'une banque. », « يحصل الشيك المسطر بواسطة بنك. ». Sur les 4 000 termes
+seuls, 3 013 ont leur phrase. **987 n'ont pas encore la leur** : les noms des derniers
+domaines (fiscalité, finances publiques et douanes ; droit international ; foncier, urbanisme
+et environnement ; propriété intellectuelle, consommation et numérique ; droit maritime et
+nationalité). Pour 100 d'entre eux, la contextualisation affiche un texte d'une autre entrée
+qui emploie le terme : sa phrase d'exemple ou, depuis la version 0.13, sa définition. Les 887
+autres n'affichent rien : leur cercle « Contextualisation »
+reste gris. Ces phrases ont été écrites de mémoire par un assistant d'intelligence
+artificielle, et personne ne les a relues : l'application les affiche sous la mention
+**À vérifier**.
 
 ![Le terme « chèque barré », cercle « Contextualisation » ouvert : sa phrase d'exemple, sous la mention « À vérifier »](docs/apercu-cheque-barre.png)
 
@@ -197,8 +228,9 @@ on voit le bureau ou la fenêtre qui se trouve derrière :
 
 *Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
 l'autre. Les captures des écrans « Terme », « Texte », « Paramètres » et du centre d'aide sont
-celles de la version 0.10 ; celle du terme « protégé » est de la version 0.11, celle du terme
-« chèque barré » de la version 0.12. Celle de l'écran
+celles de la version 0.10 ; celle du terme « protégé » avec sa phrase est de la version 0.11,
+celle du terme « chèque barré » de la version 0.12, celle du terme « protégé » avec sa
+définition de la version 0.13. Celle de l'écran
 de démarrage date de la version 0.5.2 : cet écran n'a pas changé depuis. L'adresse affichée dans le centre d'aide est un exemple. La capture de
 l'[installation](#installation) a été faite sous Windows, avec la version 0.5.3 : elle montre
 l'ancienne fiche, à cinq colonnes.*
@@ -216,7 +248,8 @@ l'ancienne fiche, à cinq colonnes.*
 | Écrans « Terme » et « Texte » allégés | Fait (version 0.10). Vérifiés sur des captures faites sans écran : **ils restent à regarder sur un écran réel**. Voir les [limites connues](#limites-connues). |
 | Contextes cherchés dans tout le glossaire | Fait. |
 | Une phrase d'exemple pour chacune des 1 000 premières entrées du glossaire fourni | Fait (version 0.5). 969 phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
-| Glossaire fourni porté à 5 000 entrées | Fait (version 0.9) : 1 000 entrées complètes et 4 000 termes seuls. Les termes seuls n'ont pas de définition, et **restent à vérifier** : voir [Les termes seuls](#les-termes-seuls). |
+| Glossaire fourni porté à 5 000 entrées | Fait (version 0.9) : 1 000 entrées complètes et 4 000 termes seuls. Les termes seuls **restent à vérifier** : voir [Les termes seuls](#les-termes-seuls). |
+| Une définition et des synonymes pour chaque terme seul | **Fait (version 0.13) : les 4 000 termes seuls ont une définition** dans les deux langues, et 662 ont au moins un synonyme. Les définitions et les synonymes sont rédigés par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les termes seuls](#les-termes-seuls). |
 | Une phrase d'exemple pour chaque terme seul | **En cours (version 0.12) : 3 013 termes sur 4 000.** Il en reste 987 : les noms des derniers domaines (fiscalité, droit international, foncier, propriété intellectuelle, droit maritime…). Les phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les phrases d'exemple](#les-phrases-dexemple). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
 | Liaison avec un service d'intelligence artificielle en ligne | Essayée dans la version 0.6, **retirée dans la version 0.7** : voir [L'essai d'un service d'IA (version 0.6)](#lessai-dun-service-dia-version-06). L'application ne se connecte à rien. |
@@ -234,7 +267,7 @@ Il y a deux façons d'installer l'application :
 1. Ouvrir la page
    [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
    du dépôt. Sous la version la plus récente, dans « Assets », télécharger le fichier dont le
-   nom finit par `.msi`, par exemple `Traducteur-juridique-0.12.0.msi`.
+   nom finit par `.msi`, par exemple `Traducteur-juridique-0.13.0.msi`.
 2. Double-cliquer sur le fichier téléchargé.
 3. Cliquer sur **Suivant**, puis sur **Installer**, puis sur **Terminer**. L'application s'ouvre.
 
@@ -419,12 +452,16 @@ glossaire : voir [Corriger le glossaire](#corriger-le-glossaire).
 **La mention « À vérifier ».** Elle est écrite en orange, à côté d'un point d'exclamation.
 
 - Sous la définition, elle signale une définition sans source : la colonne
-  `source_definition` est vide, ou commence par « à vérifier ». C'est le cas de 993 des 1 000
-  définitions du glossaire fourni.
-- Dans la fiche, au pied de l'équivalent, elle signale un terme sans définition dont la
-  colonne `source_definition` commence par « à vérifier ». C'est le cas des 4 000 termes seuls
-  du glossaire fourni : « À vérifier · équivalent d'exemple ». Un terme sans définition dont
-  la colonne `source_definition` est vide s'affiche sans mention.
+  `source_definition` est vide, ou commence par « à vérifier ». C'est le cas de 4 993 des
+  5 000 définitions du glossaire fourni : 993 des 1 000 entrées complètes, et les 4 000
+  définitions des termes seuls.
+- Dans la fiche, au pied de l'équivalent, elle signale un équivalent à vérifier. C'est le cas
+  d'un terme sans définition dont la colonne `source_definition` commence par « à vérifier »,
+  et d'un terme dont cette colonne dit « à vérifier (équivalent et définition d'exemple) ».
+  Les 4 000 termes seuls du glossaire fourni sont dans le second cas : « À vérifier ·
+  équivalent d'exemple » au pied de l'équivalent, et « À vérifier · définition d'exemple »
+  sous la définition. Un terme sans définition dont la colonne `source_definition` est vide
+  s'affiche sans mention.
 - Dans la contextualisation, elle signale une phrase d'exemple dont la colonne `source_contexte`
   commence par « à vérifier » : c'est le cas de 3 982 des 4 015 phrases d'exemple du glossaire
   fourni. Elle signale aussi une définition sans source, quand cette définition sert de
@@ -658,7 +695,7 @@ colonnes du tableau sont obligatoires.
 | `domaine` | Domaine, sous le terme | — |
 | `synonymes_fr`, `synonymes_ar` | Ceux de la langue source : cercle « Synonymes ». Ceux de la langue cible : « Autres équivalents », sous l'équivalent. Ils servent aussi à la recherche. | Un synonyme trouvé dans le texte est traduit comme le terme |
 | `termes_associes` | Cercle « Termes associés » | Choix entre deux entrées de même forme |
-| `definition_fr`, `definition_ar`, `source_definition` | Cercle « Définition ». Si `source_definition` est vide ou commence par « à vérifier », la définition porte la mention « À vérifier ». Sans définition, la mention ne s'affiche que si `source_definition` commence par « à vérifier » : elle porte alors sur l'équivalent, et s'affiche dans la fiche. | Sans définition et avec la mention : l'infobulle de la case du terme signale un équivalent à vérifier |
+| `definition_fr`, `definition_ar`, `source_definition` | Cercle « Définition ». Si `source_definition` est vide ou commence par « à vérifier », la définition porte la mention « À vérifier ». Sans définition, la mention ne s'affiche que si `source_definition` commence par « à vérifier » : elle porte alors sur l'équivalent, et s'affiche dans la fiche. Avec une définition, « à vérifier (équivalent et définition d'exemple) » porte sur les deux : la mention s'affiche dans la fiche et sous la définition (version 0.13). | Quand la mention porte sur l'équivalent : l'infobulle de la case du terme signale un équivalent à vérifier |
 | `contexte_fr`, `contexte_ar`, `source_contexte` | Cercle « Contextualisation ». Ces phrases servent aussi de contexte aux autres termes qu'elles emploient. Si `source_contexte` commence par « à vérifier », la phrase porte la mention « À vérifier ». | Une phrase du texte identique à un exemple reçoit la traduction de cet exemple |
 | `ressources` | Cercle « Ressources » | — |
 
@@ -692,7 +729,7 @@ Il est fait de trois parties :
 | --- | --- | --- |
 | n° 1 à 40 | Entrées complètes des premières versions | 40 |
 | n° 41 à 1 000 | Entrées complètes : définition dans les deux langues, phrase d'exemple | 960 |
-| n° 1 001 à 5 000 | Termes seuls : pas de définition ; une phrase d'exemple pour 3 013 d'entre eux | 4 000 |
+| n° 1 001 à 5 000 | Termes seuls : une définition pour chacun (version 0.13), une phrase d'exemple pour 3 013 | 4 000 |
 
 L'objectif de 5 000 entrées est atteint. Quatre entrées sur cinq sont des termes seuls.
 
@@ -787,25 +824,161 @@ contenu est à vérifier.
 Les entrées n° 1 001 à 3 182 ont été ajoutées dans la version 0.8, les entrées n° 3 183 à
 5 000 dans la version 0.9. Comme les précédentes, elles ont été **écrites de mémoire par un
 assistant d'intelligence artificielle**, sans dictionnaire juridique et sans relecture par un
-spécialiste. **Chaque équivalent est à vérifier.**
+spécialiste. **Chaque équivalent est à vérifier**, et chaque définition aussi.
 
 - **Ce qu'une entrée contient.** Le terme français, le terme arabe, la catégorie dans les deux
   langues, le domaine, les termes associés, les ouvrages et les textes à consulter ; pour 244
-  noms, le pluriel ; pour certaines entrées, des synonymes. Elle n'a **pas de définition** :
-  dans le menu « Plus de détails », le cercle « Définition » est gris.
+  noms, le pluriel ; pour 662 entrées, des synonymes. Depuis la version 0.13, chaque entrée a
+  une **définition** dans les deux langues : dans le menu « Plus de détails », le cercle
+  « Définition » est coloré pour tous les termes.
+- **Définitions (version 0.13).** Les 4 000 termes seuls ont la leur. Elles ont été écrites
+  en deux étapes :
+  1. le vocabulaire juridique général : 928 définitions, pour 356 adjectifs, 246 verbes, 190
+     adverbes, prépositions et conjonctions, et 136 noms ;
+  2. les noms des treize domaines : 3 072 définitions.
+
+  | Fichier de termes | Définitions |
+  | --- | --- |
+  | n° 41 à 44, 58 et 59 : vocabulaire général | 928 |
+  | n° 45 : droit civil | 355 |
+  | n° 46 : justice et procédure | 277 |
+  | n° 47 : droit pénal | 327 |
+  | n° 48 : droit des affaires | 355 |
+  | n° 49 : droit constitutionnel | 183 |
+  | n° 50 : droit administratif | 247 |
+  | n° 51 : droit de la famille | 153 |
+  | n° 52 : droit du travail | 188 |
+  | n° 53 : fiscalité, finances, douanes | 241 |
+  | n° 54 : droit international | 324 |
+  | n° 55 : foncier, urbanisme, environnement | 163 |
+  | n° 56 : propriété intellectuelle, consommation, concurrence, numérique | 177 |
+  | n° 57 : droit maritime, nationalité, condition des étrangers | 82 |
+
+  - **Forme.** Une phrase courte, en mots simples : de 18 à 146 caractères en français, de 9 à
+    110 en arabe. Un adjectif est défini par « Qui … » ou « Relatif à … » (« ما … », « متعلق
+    ب… » en arabe), un verbe par un verbe à l'infinitif (au passé en arabe, comme le terme),
+    un nom par un groupe nominal (« Contrat qui … », « Droit de … », « Personne qui … »). Un
+    mot de liaison est décrit par son rôle : « toutefois », « Mot qui introduit une réserve
+    ou une exception à ce qui précède. ».
+
+    | Terme | Définition |
+    | --- | --- |
+    | protégé = محمي | « Qui bénéficie d'une protection que la loi organise ou que le juge accorde. » — « الذي يستفيد من حماية ينظمها القانون أو يمنحها القاضي. » |
+    | abroger = ألغى | « Mettre fin pour l'avenir à l'application d'une loi ou d'un règlement. » — « أنهى تطبيق قانون أو تنظيم بالنسبة إلى المستقبل. » |
+    | de plein droit = بقوة القانون | « Par le seul effet de la loi, sans qu'une décision ou une formalité soit nécessaire. » — « بأثر القانون وحده، دون أن يلزم قرار أو شكلية. » |
+    | protection = حماية | « Ensemble des mesures et des règles qui mettent une personne, un bien ou un droit à l'abri d'une atteinte. » — « مجموع التدابير والقواعد التي تجعل شخصا أو مالا أو حقا في مأمن من المساس. » |
+    | chèque barré = شيك مسطر | « Chèque qui porte deux traits parallèles et ne peut être payé qu'à une banque. » — « شيك عليه خطان متوازيان، لا يدفع إلا لبنك. » |
+    | question écrite = سؤال كتابي | « Question qu'un parlementaire adresse par écrit à un ministre, qui doit répondre dans un délai. » — « سؤال يوجهه برلماني كتابة إلى وزير، ويجب أن يجيب عنه في أجل. » |
+    | taxe foncière = رسم عقاري | « Taxe annuelle que paie le propriétaire d'une construction ou d'un terrain. » — « رسم سنوي يدفعه مالك بناء أو أرض. » |
+    | diversité biologique = تنوع بيولوجي | « Variété des animaux, des plantes et des milieux naturels d'une région. » — « تعدد الحيوانات والنباتات والأوساط الطبيعية في منطقة. » |
+
+  - **Ce qui a été contrôlé par programme** (script `construire.py`, tests). Chaque
+    définition existe dans les deux langues, finit par un point et ne dépasse pas 200
+    caractères. Elle ne contient pas le terme qu'elle définit. Deux exceptions, en arabe,
+    sont des mots de même écriture : « البلدية » (la commune) dans la définition de « بلدي »
+    (communal), « الجمهورية » (la République) dans celle de « جمهوري » (républicain). Aucune
+    de ces définitions n'est celle d'une autre entrée. Quand la définition française emploie
+    un autre terme du glossaire, la définition arabe emploie son équivalent ou un de ses
+    synonymes. Environ 400 lignes ont été récrites après ces contrôles : 84 à la première
+    étape, environ 320 à la seconde.
+  - **Des chiffres écrits de mémoire.** Environ 70 définitions des domaines donnent un
+    chiffre : un délai, un âge, une durée, un seuil, une année. Par exemple, « garantie
+    décennale » : dix ans ; « congé de maternité » : quatorze semaines ; « âge légal de la
+    retraite » : en principe soixante ans ; « mer territoriale » : douze milles. **Aucun de
+    ces chiffres n'a été comparé à un texte officiel**, et un texte a pu être modifié depuis.
+  - **Ce qui n'a pas été fait.** **Aucun juriste et aucun traducteur n'a relu ces
+    définitions.** Elles ont été écrites de mémoire, sans dictionnaire juridique et sans les
+    textes de loi. Une définition donne le sens général du terme : elle peut être incomplète,
+    trop large, ou inexacte en droit algérien. Quelques notions viennent du droit français
+    (« référé-liberté », « composition pénale ») : leur définition décrit la notion, sans
+    dire si le droit algérien la connaît. La tournure arabe peut être maladroite. Les
+    contrôles ci-dessus portent sur la forme. **Ils ne disent pas si une définition est
+    juste.**
+- **Synonymes (version 0.13).** 662 termes seuls ont au moins un synonyme : 546 en ont en
+  français, 296 en arabe. Ils étaient 196 dans la version 0.12 (161 en français, 39 en arabe).
+  La version 0.13 ajoute 707 synonymes à 531 termes, en deux étapes.
+  - **Première étape : le vocabulaire général.** 456 synonymes pour 339 termes : 269 pour des
+    adjectifs, 93 pour des verbes, 78 pour des adverbes, des prépositions et des
+    conjonctions, 16 pour des noms. Par exemple : « protégé » — « préservé », « sauvegardé »,
+    « مصون » ; « protéger » — « préserver », « sauvegarder », « صان » ; « illicite » —
+    « prohibé », « illégal », « interdit », « محظور ».
+  - **Seconde étape : les noms des domaines.** 251 synonymes pour 192 noms : 222 en français,
+    29 en arabe. Ce sont d'autres noms de la même chose (« biodiversité » pour « diversité
+    biologique », « fiche de paie » pour « bulletin de paie », « leasing » pour
+    « crédit-bail », « سجين » pour « شخص محبوس »), des sigles (« COSOB », « ANEM », « GES »)
+    et des variantes d'écriture (« congé maternité » pour « congé de maternité »).
+  - **Tous les termes n'ont pas de synonyme.** 3 338 termes seuls n'en ont aucun : 485 des 928
+    termes du vocabulaire général, et 2 853 des 3 072 noms des domaines. Un synonyme n'a été
+    écrit que là où un autre mot dit la même chose : « exécutoire » n'en a pas en français,
+    « lu et approuvé » n'en a dans aucune langue. Un nom composé du droit a rarement un autre
+    nom : « garantie décennale », « question écrite » et « permis de travail » n'en ont pas.
+  - **Ces synonymes ont été écrits de mémoire, et personne ne les a relus.** Beaucoup sont
+    des mots de sens voisin, que le droit distingue parfois : « illégal » et « illicite » ne
+    se recouvrent pas tout à fait. Les synonymes écrits avant la version 0.13 n'ont pas été
+    revus à la lumière des définitions. Certains sont discutables : « résoudre » pour
+    « résilier », « authentique » pour « officiel ».
+  - **À quoi sert un synonyme.** Sur l'écran « Terme », il s'affiche dans le cercle
+    « Synonymes » (langue du terme) ou sous l'équivalent, comme « autre équivalent » (autre
+    langue), et sa recherche ouvre la fiche du terme. Dans la traduction d'un texte, le
+    synonyme d'un nom est remplacé comme ce nom : voir plus bas.
+  - **Les 1 000 entrées complètes** gardent leurs synonymes : 132 en ont. Ils n'ont pas été
+    complétés.
+  - **Effet sur la traduction d'un texte.** Un programme a traduit 17 994 textes avec la
+    version 0.12 puis avec la version 0.13 : toutes les définitions et toutes les phrases
+    d'exemple des deux versions, dans les deux langues. 31 traductions changent : chaque
+    fois, un nom est maintenant remplacé parce qu'il est le synonyme d'une entrée. 14
+    viennent de la première étape : « précaution » est rendu par « حيطة », « correction »
+    par « تصحيح », « estimation » par « تقييم ». 17 viennent de la seconde : « juridiction
+    du second degré » est rendu par « جهة الاستئناف », « partie perdante » par « الخصم
+    الخاسر », « actes de terrorisme » par « أعمال إرهابية », « monnaie étrangère » par
+    « العملة الأجنبية », « drogue » par « مخدرات », « gendarmerie » par « الدرك الوطني »,
+    « dernière maladie » par « مرض الموت ». Les 707 synonymes ont aussi été traduits un par
+    un. Les 267 synonymes de noms donnent maintenant l'équivalent du nom : « prolongation »
+    donne « تمديد », « mise en garde » donne « إنذار » (la version 0.12 écrivait « mise en
+    حضانة »), « arrêt maladie » donne « عطلة مرضية » (la version 0.12 écrivait « قرار
+    maladie »). 7 synonymes de locutions
+    sont maintenant reconnus en entier et, comme toute locution, restent dans la langue du
+    texte : « à juste titre », « sous peine de nullité », « sauf texte contraire », « من حيث
+    المبدأ », « على وجه التضامن », « انتهاكا ل », « بناء على طلب ». Le nom qu'ils contiennent
+    n'est plus traduit à part : « sous peine de nullité » ne devient plus « sous peine de
+    بطلان », et « à juste titre » ne devient plus « à سند صحيح ».
+  - **Effet sur la recherche d'un terme.** Chacun des 456 synonymes de la première étape a été
+    cherché avec la
+    version 0.12 puis avec la version 0.13. 304 ne trouvaient rien. Maintenant, 377 ouvrent
+    la fiche de leur terme. Les 79 autres ouvrent d'abord une autre entrée, qui porte ce mot
+    comme terme ou comme synonyme : « illicite », donné comme synonyme de « illégal », ouvre
+    sa propre fiche, et « illégal » vient ensuite. (Un cas à part : « d'ordre public »,
+    synonyme de « impératif », ouvre « ordre public ».) **29 synonymes ont été retirés après cet
+    essai**, parce qu'ils détournaient la recherche d'un mot courant. « garanti » ouvrait
+    « protégé » avant « garantie » et « garantir ». « volontaire » ouvrait « spontané »
+    avant « intentionnel ». En arabe, « بين » (manifeste) s'écrit comme « بين » (entre), et
+    « دون » (codifier) comme « دون » (sans).
+    Les 251 synonymes de la seconde étape ont été cherchés de la même façon. 232 ne
+    trouvaient rien, et 7 ouvraient une autre entrée : « GES » ouvrait « gestion », « SAV »
+    ouvrait « savoir-faire ». Maintenant, tous ouvrent la fiche de leur terme. **6 synonymes
+    ont été retirés après la comparaison des traductions**, parce qu'ils disaient plus que
+    leur terme, ou autre chose : « budget de l'État » (pour « budget général de l'État »),
+    « géomètre », « piratage », « aide publique », « sursis à exécution », « marché de gré à
+    gré ».
 - **Phrase d'exemple (versions 0.11 et 0.12).** 3 013 termes seuls ont une phrase d'exemple :
   tous les adjectifs, les verbes et les locutions, les 136 noms du vocabulaire général, et les
   2 085 noms de huit domaines : droit civil, justice et procédure, droit pénal, droit des
   affaires, droit constitutionnel, droit administratif, droit de la famille et droit du
   travail. Les 987 autres n'en ont pas encore : leur cercle « Contextualisation » est gris,
   sauf si une autre entrée les emploie dans sa phrase. Voir
-  [Les phrases d'exemple](#les-phrases-dexemple). La capture du terme « protégé » est au
-  [début de cette page](#lapplication-version-012).
-- **La mention « À vérifier ».** La colonne `source_definition` de ces entrées contient
-  « à vérifier (équivalent d'exemple) ». L'application affiche cette mention dans la fiche, au
-  pied de l'équivalent. Sur l'écran « Texte », l'infobulle de la case du terme la rappelle.
-  Après le contrôle d'un équivalent, écrire dans cette colonne l'ouvrage ou le texte qui le
-  confirme : la mention disparaît.
+  [Les phrases d'exemple](#les-phrases-dexemple). Les captures du terme « protégé » sont au
+  [début de cette page](#lapplication-version-013).
+- **La mention « À vérifier ».** Elle est écrite dans la colonne `source_definition`.
+  - Les 4 000 termes seuls ont une définition : la colonne dit « à vérifier (équivalent et
+    définition d'exemple) ». L'application affiche « À vérifier · équivalent d'exemple » au
+    pied de l'équivalent, et « À vérifier · définition d'exemple » sous la définition. Après
+    le contrôle des deux, écrire la source dans cette colonne : les deux mentions
+    disparaissent. Si seul l'équivalent a été contrôlé, écrire « à vérifier (définition
+    d'exemple) » : il ne reste que la mention de la définition.
+  - Un terme sans définition (le glossaire fourni n'en a plus) porte « à vérifier
+    (équivalent d'exemple) ». L'application affiche « À vérifier · équivalent d'exemple » au
+    pied de l'équivalent, et son cercle « Définition » est gris.
+  - Sur l'écran « Texte », l'infobulle de la case du terme rappelle la mention.
 - **Ce qu'elles couvrent.**
 
   | Catégorie | Entrées | Exemples |
@@ -829,10 +1002,12 @@ spécialiste. **Chaque équivalent est à vérifier.**
 - **Dans la traduction d'un texte**, seuls les noms sont remplacés : voir
   [Comment le texte est traduit](#comment-le-texte-est-traduit).
 - **Un nom seul ne s'écrit jamais comme un autre nom du glossaire**, ni en français ni en
-  arabe : sans définition, la traduction d'un texte n'aurait presque rien pour choisir entre
-  les deux. Un adjectif, un verbe ou une locution peut s'écrire comme un nom (« حكم » : les
-  noms « disposition » et « jugement », le verbe « juger »). L'écran « Terme » affiche alors un
-  onglet pour chaque entrée ; la traduction d'un texte ne retient que les noms.
+  arabe. La règle date des versions où un terme seul n'avait ni définition ni exemple : la
+  traduction d'un texte n'avait rien pour choisir entre les deux. Le script `construire.py`
+  l'applique toujours. Un adjectif, un verbe ou une locution peut s'écrire comme un nom
+  (« حكم » : les noms « disposition » et « jugement », le verbe « juger »). L'écran « Terme »
+  affiche alors un onglet pour chaque entrée ; la traduction d'un texte ne retient que les
+  noms.
 - **Ce qui a été écarté.** Plus de cent termes prévus n'ont pas été gardés.
   - Les uns sont déjà le synonyme français d'une entrée : « préjudice » (« dommage »),
     « prévenu » et « accusé » (« inculpé »), « meurtre » (« homicide volontaire »).
@@ -1035,13 +1210,18 @@ Les 987 autres termes seuls n'ont pas encore de phrase à eux.
   - **Ces relectures ont été faites de mémoire, sans les textes. D'autres erreurs restent
     possibles.**
 - **Ce qu'affiche la contextualisation.**
-  - Entrées complètes : 333 affichent une phrase et 667 en affichent deux (607 dans la version
-    0.11 : les nouvelles phrases servent aussi aux autres entrées). Pour 665 entrées, la
-    seconde phrase vient d'une autre entrée qui emploie le terme : 635 fois son exemple (17
-    citent le Code civil, 618 sont à vérifier) et 30 fois sa définition (toutes à vérifier).
-  - Termes seuls : 3 013 affichent leur phrase, et 688 d'entre eux affichent en plus la phrase
-    d'une autre entrée. 68 termes sans phrase à eux affichent celle d'une autre entrée (une ou
-    deux). **919 termes seuls n'affichent aucune phrase.**
+  - Entrées complètes : 291 affichent une phrase et 709 en affichent deux (667 dans la version
+    0.12, 607 dans la version 0.11 : les nouvelles phrases, puis les nouvelles définitions,
+    servent aussi aux autres entrées). Pour 707 entrées, la seconde phrase vient d'une autre
+    entrée qui emploie le terme : 635 fois son exemple (17 citent le Code civil, 618 sont à
+    vérifier) et 72 fois sa définition (toutes à vérifier).
+  - Termes seuls : 3 013 affichent leur phrase, et 819 d'entre eux affichent en plus un texte
+    d'une autre entrée, phrase d'exemple ou définition (688 dans la version 0.12). 100 termes
+    sans phrase à eux affichent celui d'une autre entrée (un ou deux) : ils étaient 69 dans la
+    version 0.12. **887 termes seuls n'affichent aucune phrase.**
+  - Depuis la version 0.13, la définition d'un terme seul peut donc servir de contexte à un
+    autre terme qu'elle emploie. Elle s'affiche alors sous la mention « À vérifier ·
+    définition d'exemple ».
 - **Traduction d'un texte.** Une phrase du texte identique à un exemple reçoit la traduction de
   cet exemple. Les 3 982 phrases rédigées servent donc aussi de traductions toutes faites :
   l'application le signale (étape 5 et étiquette de résultat, au survol). Les versions 0.11 et
@@ -1074,6 +1254,12 @@ Le plus simple est de modifier `donnees/glossaire_juridique.csv` dans un tableur
 de texte, puis de le recharger dans l'application : « Paramètres », bouton **Recharger** (ou
 F5).
 
+Pour corriger la définition d'un terme, modifier les colonnes `definition_fr` et
+`definition_ar` de sa ligne ; pour ses synonymes, les colonnes `synonymes_fr` et
+`synonymes_ar` (plusieurs synonymes sont séparés par ` | `). Une fois la définition vérifiée,
+remplacer la mention de la colonne `source_definition` par sa source : voir
+[Les termes seuls](#les-termes-seuls).
+
 Pour corriger la phrase d'un terme, modifier les colonnes `contexte_fr` et `contexte_ar` de sa
 ligne. La phrase française doit contenir le terme, et la phrase arabe son équivalent. Une fois
 la phrase vérifiée, remplacer « à vérifier (phrase d'exemple) » par sa source dans la colonne
@@ -1088,15 +1274,21 @@ Le dossier `outils/glossaire/` garde ce qui a servi à écrire les entrées n° 
   `terme français | phrase française | phrase arabe` ;
 - `termes/` : les termes seuls, un par ligne (19 fichiers texte) :
   `terme français | terme arabe | codes | pluriel arabe | options` ;
+- `definitions/` : les définitions et les synonymes des termes seuls, une ligne par terme,
+  dans un fichier du même nom que le fichier de termes (19 fichiers texte, version 0.13) :
+  `terme français | définition française | définition arabe | sf=synonymes français | sa=synonymes arabes` ;
 - `construire.py` : le script qui vérifie ces fichiers et les assemble.
 
 ```
-python outils/glossaire/construire.py               vérifie les lots, les exemples et les termes seuls,
-                                                    sans rien écrire ;
+python outils/glossaire/construire.py               vérifie les lots, les exemples, les termes seuls
+                                                    et les définitions, sans rien écrire ;
                                                     dit si le fichier CSV leur correspond
 python outils/glossaire/construire.py --ecrire      récrit le fichier CSV
-python outils/glossaire/construire.py --manquants   liste les entrées qui n'ont pas de phrase d'exemple
+python outils/glossaire/construire.py --manquants   liste les termes qui n'ont pas de phrase d'exemple,
+                                                    puis ceux qui n'ont pas de définition
 python outils/glossaire/construire.py --coherence   liste les phrases à relire (voir ci-dessous)
+python outils/glossaire/construire.py --coherence-definitions
+                                                    liste les définitions à relire (même contrôle)
 ```
 
 Le script refuse une phrase d'exemple qui ne contient pas le terme dans les deux langues, qui
@@ -1109,13 +1301,21 @@ L'option `--coherence` liste les phrases où un autre terme du glossaire figure 
 sans que son équivalent figure en arabe : ce n'est pas toujours une erreur, chaque phrase
 listée est à relire.
 
+Pour la définition d'un terme seul, le script refuse une définition qui manque dans une des
+deux langues, qui ne finit pas par un point, qui dépasse 200 caractères, qui contient le
+terme défini ou qui sert déjà à une autre entrée. Il refuse aussi un synonyme répété, ou
+identique au terme. Un terme seul peut ne pas avoir de définition. L'option
+`--coherence-definitions` fait pour les définitions ce que `--coherence` fait pour les
+phrases. Une erreur dans un fichier de définitions est signalée avec son dossier et sa ligne :
+`definitions/42_adjectifs.txt:57`.
+
 Le script refuse aussi un nom seul dont une forme (terme, pluriel ou synonyme) désigne déjà un
 autre nom, en français ou en arabe, et un nom d'un seul mot qui est aussi un mot courant.
 
 **Attention :** ce script garde les 40 premières entrées du CSV et récrit toutes les
-suivantes à partir des lots, des exemples et des termes seuls. Une correction faite à la main dans le CSV après
+suivantes à partir des lots, des exemples, des termes seuls et des définitions. Une correction faite à la main dans le CSV après
 la 40e entrée est donc perdue si on le relance. Il faut choisir : corriger le CSV et ne plus
-utiliser le script, ou corriger les fichiers de `lots/`, `exemples/` et `termes/` et relancer le script. Le format des
+utiliser le script, ou corriger les fichiers de `lots/`, `exemples/`, `termes/` et `definitions/` et relancer le script. Le format des
 fichiers est décrit au début de `construire.py`.
 
 ### Organisation du code
@@ -1153,7 +1353,8 @@ traducteur/
     icones.py                icônes
 outils/
   aide_installation/         script qui dessine les images de docs/aide-installation
-  glossaire/                 construction du glossaire d'exemple : script, lots de termes, phrases d'exemple
+  glossaire/                 construction du glossaire d'exemple : script, lots de termes, phrases d'exemple,
+                             définitions des termes seuls
   installeur/                fabrication de l'installeur Windows
     construire.py            enchaîne toutes les étapes, puis essaie l'installeur
     icone.py                 icône de l'application au format de Windows
@@ -1186,7 +1387,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 703 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 725 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (5 000 entrées, 70 résultats pour « contrat ») à mettre
@@ -1194,17 +1395,25 @@ dernier : ils contiennent des nombres (5 000 entrées, 70 résultats pour « con
 
 Ces tests demandent que chacune des 1 000 premières entrées du glossaire fourni ait une
 phrase d'exemple, et que chaque phrase ait une source ou la mention « à vérifier ». Pour les
-termes seuls, ils demandent la mention « à vérifier (équivalent d'exemple) », et qu'aucun nom
-seul ne s'écrive comme un autre nom. Depuis la version 0.11, ils demandent aussi que chaque
+termes seuls, ils demandent une mention « à vérifier » qui porte sur l'équivalent,
+et qu'aucun nom seul ne s'écrive comme un autre nom. Depuis la version 0.11, ils demandent aussi que chaque
 adjectif, chaque verbe et chaque locution ait sa phrase, et qu'au moins 3 013 termes seuls en
 aient une : ce nombre est écrit dans `tests/conftest.py`, il est à relever quand d'autres
 termes reçoivent leur phrase. Ils ne comptent pas les phrases « à
 vérifier » : écrire la source d'une phrase dans le fichier CSV ne les fait pas échouer. Une
 phrase qui garde la mention doit contenir le terme en français et son équivalent en arabe.
 
+Depuis la version 0.13, ils demandent aussi que les 4 000 termes seuls aient une définition
+dans les deux langues (nombre écrit dans `tests/conftest.py`), qu'aucune de ces définitions ne
+contienne son terme ni ne serve à une autre entrée, et qu'un synonyme ne répète ni le terme ni
+un autre synonyme. Un terme seul qui a une définition doit porter la mention « à vérifier
+(équivalent et définition d'exemple) » : ce test est à adapter quand une source remplace la
+mention.
+
 Les tests de `tests/test_outil_glossaire.py` lancent le script
-`outils/glossaire/construire.py` sur des copies des fichiers : il doit accepter les lots et
-les phrases d'exemple fournis, et refuser une phrase d'exemple mal écrite.
+`outils/glossaire/construire.py` sur des copies des fichiers : il doit accepter les lots, les
+phrases d'exemple et les définitions fournis, et refuser une phrase d'exemple ou une
+définition mal écrite.
 
 Les tests de l'interface vérifient ce que chaque écran affiche et ce que fait chaque commande.
 Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des captures (voir les
@@ -1236,7 +1445,7 @@ toute seule quand l'application ou l'installeur change :
 
 - sur la branche `main`, l'installeur est publié sur la page
   [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
-  comme version `v0.12.0`, puis `v0.12.1`… ;
+  comme version `v0.13.0`, puis `v0.13.1`… ;
 - sur une branche de travail (`arena/…`), il est publié comme **version d'essai**, remplacée à
   chaque fabrication. Elle sert à essayer un travail avant de le fusionner dans `main` ; elle
   est retirée quand ce travail est fusionné.
@@ -1425,19 +1634,32 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   contenir une erreur de droit, un chiffre faux ou périmé, ou une tournure arabe maladroite.
   L'application les marque « À vérifier » ; elle ne les vérifie pas. Voir
   [Les phrases d'exemple](#les-phrases-dexemple).
-- **Contextualisation : 919 termes n'affichent encore aucune phrase.** Les versions 0.11 et
+- **Contextualisation : 887 termes n'affichent encore aucune phrase.** Les versions 0.11 et
   0.12 ont donné une phrase à 3 013 termes seuls sur 4 000. Les 987 autres sont les noms des
   derniers domaines (fiscalité, droit international, foncier, propriété intellectuelle, droit
-  maritime…). 68 d'entre eux affichent la phrase d'une autre entrée ; pour les 919 autres, le
-  cercle « Contextualisation » reste gris.
+  maritime…). 100 d'entre eux affichent la phrase ou la définition d'une autre entrée ; pour
+  les 887 autres, le cercle « Contextualisation » reste gris.
+- **Les 4 000 définitions de la version 0.13 n'ont été relues par personne.** Un assistant
+  d'intelligence artificielle les a écrites de mémoire, sans dictionnaire juridique et sans
+  les textes de loi. Une définition peut être incomplète, trop large ou inexacte en droit
+  algérien, et sa tournure arabe peut être maladroite. Environ 70 définitions donnent un
+  chiffre (un délai, un âge, une durée, un seuil, une année) : il n'a été comparé à aucun
+  texte officiel. L'application marque ces définitions « À vérifier » ; elle ne les vérifie
+  pas.
+- **Synonymes.** Ceux de la version 0.13 (707, pour 531 termes) ont été écrits de la même
+  façon. Beaucoup sont des mots de sens voisin plutôt que des synonymes exacts, et le droit
+  distingue parfois les deux mots. 3 338 termes seuls n'ont aucun synonyme : c'est le cas de
+  2 853 des 3 072 noms des domaines. Les synonymes écrits avant la version 0.13 n'ont pas été
+  revus, et ceux des 1 000 entrées complètes n'ont pas été complétés. L'application n'affiche
+  pas de mention propre aux synonymes : celle de l'équivalent vaut pour toute l'entrée.
 - **Termes seuls du glossaire fourni.** Les 4 000 entrées ajoutées dans les versions 0.8 et 0.9
-  ont été écrites de mémoire par un assistant d'intelligence artificielle. Elles n'ont pas de
-  définition qui aiderait à les contrôler, et aucun juriste ne les a relues. Un
+  ont été écrites de mémoire par un assistant d'intelligence artificielle, et aucun juriste
+  ne les a relues. Un
   équivalent peut être faux, vieilli, ou étranger à l'usage algérien. L'application les marque
   « À vérifier » ; elle ne les vérifie pas. Voir [Les termes seuls](#les-termes-seuls).
 - **5 000 entrées, dont 1 000 complètes.** L'objectif de 5 000 entrées est atteint avec des
-  termes seuls : quatre entrées sur cinq n'ont pas de définition, et trois sur cinq n'ont pas
-  de phrase d'exemple.
+  termes seuls. Depuis la version 0.13, chaque entrée a une définition, mais 4 993 définitions
+  sur 5 000 sont à vérifier, et 987 termes seuls n'ont pas de phrase d'exemple.
 - **Adjectifs, verbes et locutions.** Ils ont une fiche, mais la traduction d'un texte ne les
   remplace pas. Un adjectif n'est écrit qu'au masculin singulier, un verbe qu'à l'infinitif :
   pour « protégés » ou « exécutoires », l'écran « Terme » ne trouve pas la fiche et propose
@@ -1609,7 +1831,7 @@ partie de l'application.
 ## Maquette de l'application de bureau
 
 Maquette SVG des deux écrans du prototype (version 0.1). Les deux écrans sont programmés (voir
-[L'application](#lapplication-version-012)). L'application actuelle ne ressemble plus à cette
+[L'application](#lapplication-version-013)). L'application actuelle ne ressemble plus à cette
 maquette : elle est gardée pour mémoire.
 
 ### Écran 1 — Recherche d'un terme

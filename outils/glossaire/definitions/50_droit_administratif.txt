@@ -1,0 +1,248 @@
+# Définitions des termes de termes/50_droit_administratif.txt : terme | définition française | définition arabe | options (sf=, sa=)
+acte administratif unilatéral | Décision que l'administration prend seule et qui s'impose aux personnes sans leur consentement. | قرار تتخذه الإدارة وحدها ويلزم الأشخاص دون رضاهم.
+acte réglementaire | Acte administratif qui pose une règle générale, appliquée à tous ceux qui se trouvent dans la même situation. | قرار إداري يضع قاعدة عامة تطبق على كل من يوجد في الوضع نفسه.
+acte individuel | Acte administratif qui vise une ou plusieurs personnes citées par leur nom. | قرار إداري يخص شخصا أو أكثر يذكرهم بأسمائهم.
+acte de gouvernement | Acte du pouvoir exécutif que les juges refusent de contrôler, comme ceux qui touchent les relations avec d'autres États. | عمل من السلطة التنفيذية يرفض القضاة أن يراقبوه، كالأعمال التي تمس العلاقات مع دول أخرى.
+mesure d'ordre intérieur | Décision de faible portée qui organise la vie interne d'une administration et que le juge n'examine pas. | قرار قليل الأهمية ينظم الحياة الداخلية لإدارة ولا ينظر فيه القاضي.
+décision implicite | Décision qui résulte du silence gardé par l'administration pendant un délai. | قرار ينتج عن سكوت الإدارة خلال أجل.
+décision explicite | Décision que l'administration exprime par un écrit. | قرار تعبر عنه الإدارة بمحرر.
+décision de rejet | Décision par laquelle l'administration refuse ce qu'une personne lui a demandé. | قرار ترفض به الإدارة ما طلبه منها شخص.
+silence de l'administration | Attitude de l'administration qui ne répond pas à une demande ; après un délai, elle vaut le plus souvent refus. | موقف الإدارة التي لا ترد على طلب، ويعد غالبا رفضا بعد أجل.
+motivation des actes administratifs | Obligation pour l'administration d'écrire, dans sa décision, les raisons tirées des faits et de la loi qui la fondent. | التزام الإدارة بأن تكتب في قرارها الأسباب المستمدة من الوقائع ومن القانون التي يقوم عليها.
+retrait de l'acte administratif | Effacement d'une décision par l'administration elle-même, avec effet sur le passé. | محو الإدارة نفسها قرارا لها، بأثر على الماضي.
+annulation de l'acte administratif | Effacement d'une décision illégale par le juge ; elle est réputée n'avoir jamais existé. | محو القاضي قرارا غير مشروع، فيعد كأنه لم يوجد قط.
+exécution d'office | Pouvoir de l'administration de faire appliquer elle-même sa décision, sans passer par le juge. | سلطة الإدارة في أن تطبق قرارها بنفسها، دون المرور بالقاضي.
+caractère exécutoire | Qualité d'une décision administrative qui s'applique tout de suite, même si un recours est formé. | صفة قرار إداري يطبق في الحال ولو رفع ضده طعن.
+présomption de légalité | Règle selon laquelle une décision administrative est tenue pour régulière tant que le juge ne l'a pas annulée. | قاعدة تقضي بأن القرار الإداري يعد نظاميا ما دام القاضي لم يبطله.
+principe de légalité | Principe selon lequel l'administration doit toujours agir en suivant la loi. | مبدأ يقضي بأن على الإدارة أن تتصرف دائما وفق القانون.
+compétence liée | Situation où la loi dicte à l'administration la décision à prendre, sans lui laisser de choix. | حالة يملي فيها القانون على الإدارة القرار الذي تتخذه دون أن يترك لها اختيارا.
+vice d'incompétence | Défaut d'une décision prise par une autorité qui n'en avait pas le pouvoir. | عيب قرار اتخذته سلطة لم تكن لها صلاحية اتخاذه.
+erreur manifeste d'appréciation | Erreur grossière de l'administration dans l'évaluation des faits, que le juge sanctionne. | غلط فادح من الإدارة في تقييم الوقائع، يعاقب عليه القاضي.
+inexactitude matérielle des faits | Défaut d'une décision fondée sur des faits qui n'ont pas eu lieu. | عيب قرار مؤسس على وقائع لم تقع.
+illégalité externe | Défaut qui touche la compétence, la forme ou la procédure d'une décision. | عيب يمس الاختصاص أو الشكل أو الإجراء في قرار.
+illégalité interne | Défaut qui touche le contenu, les motifs ou le but d'une décision. | عيب يمس مضمون قرار أو أسبابه أو غايته.
+circulaire interprétative | Circulaire qui explique un texte aux agents sans ajouter de règle nouvelle. | منشور يشرح نصا للأعوان دون أن يضيف قاعدة جديدة.
+instruction ministérielle | Texte par lequel un ministre dit à son administration comment appliquer une loi. | نص يبين به وزير لإدارته كيف تطبق قانونا.
+note de service | Écrit par lequel un chef donne à ses agents une consigne ou une information. | محرر يعطي به رئيس لأعوانه تعليمة أو معلومة.
+arrêté du wali | Décision écrite du wali, générale ou individuelle. | قرار مكتوب يتخذه الوالي، عام أو فردي.
+arrêté communal | Décision écrite du président de l'assemblée populaire communale. | قرار مكتوب يتخذه رئيس المجلس الشعبي البلدي.
+délégation de signature | Permission donnée à un subordonné de signer des actes au nom de son chef, qui en reste responsable. | إذن يعطى لمرؤوس بأن يوقع قرارات باسم رئيسه الذي يبقى مسؤولا عنها.
+délégation de pouvoir | Transfert à une autre autorité du pouvoir de décider dans un domaine précis. | نقل صلاحية القرار في مجال معين إلى سلطة أخرى.
+sécurité publique | Protection des personnes et des biens contre les dangers et les violences. | حماية الأشخاص والأموال من الأخطار وأعمال العنف.
+tranquillité publique | Calme de la vie des habitants, sans bruits ni désordres. | هدوء حياة السكان، دون ضجيج ولا اضطراب.
+salubrité publique | Propreté des lieux, de l'eau et des aliments, que l'autorité doit préserver. | نظافة الأماكن والماء والأغذية التي يجب على السلطة أن تحفظها.
+santé publique | Protection de la santé de la population par la prévention et les soins. | حماية صحة السكان بالوقاية والعلاج.
+police générale | Police administrative qui protège l'ordre public dans son ensemble sur un territoire. | الضبط الإداري الذي يحمي النظام العام كله في إقليم.
+police spéciale | Police administrative limitée à une activité ou à un lieu, comme celle des gares ou de la chasse. | الضبط الإداري المقصور على نشاط أو مكان، كضبط المحطات أو الصيد.
+mesure de police administrative | Décision qui limite une liberté pour prévenir un trouble à l'ordre public. | قرار يقيد حرية لمنع إخلال بالنظام العام.
+autorité de police administrative | Autorité chargée de prévenir les troubles à l'ordre public : Premier ministre, wali, président de l'assemblée populaire communale. | سلطة مكلفة بمنع الإخلال بالنظام العام: الوزير الأول والوالي ورئيس المجلس الشعبي البلدي.
+maintien de l'ordre | Opérations des forces de sécurité pour empêcher ou faire cesser les désordres dans la rue. | عمليات قوات الأمن لمنع الاضطرابات في الطريق أو لإيقافها.
+maintien de l'ordre public | Mission de l'administration qui consiste à préserver la sécurité, la tranquillité et la salubrité. | مهمة الإدارة في أن تحفظ الأمن والسكينة والنظافة.
+continuité du service public | Principe selon lequel un service public doit fonctionner sans coupure. | مبدأ يقضي بأن يشتغل المرفق العام دون انقطاع.
+égalité devant le service public | Principe selon lequel tous les usagers ont droit au même traitement. | مبدأ يقضي بأن لكل المرتفقين الحق في المعاملة نفسها.
+neutralité du service public | Principe selon lequel un service public ne favorise aucune opinion politique ou religieuse. | مبدأ يقضي بأن المرفق العام لا يفضل أي رأي سياسي أو ديني.
+service public administratif | Service public géré selon les règles du droit administratif, comme l'état civil ou l'enseignement. | مرفق عام يسير وفق قواعد القانون الإداري، كالحالة المدنية أو التعليم.
+service public industriel et commercial | Service public qui vend des biens ou des services comme une entreprise, comme l'eau ou l'électricité. | مرفق عام يبيع أموالا أو خدمات مثل مؤسسة، كالماء أو الكهرباء.
+régie directe | Gestion d'un service public par l'administration elle-même, avec ses agents et son budget. | تسيير الإدارة نفسها مرفقا عاما بأعوانها وميزانيتها.
+gestion déléguée | Gestion d'un service public confiée par l'administration à une entreprise, par contrat. | تسيير مرفق عام تسنده الإدارة بعقد إلى مؤسسة.
+affermage | Contrat par lequel une entreprise exploite un service public dont l'administration a payé les équipements, et lui verse une redevance. | عقد تستغل به مؤسسة مرفقا عاما دفعت الإدارة ثمن تجهيزاته، وتدفع لها إتاوة.
+établissement public à caractère administratif | Établissement public chargé d'un service public administratif, soumis au droit public. | مؤسسة عمومية مكلفة بمرفق عام إداري، تخضع للقانون العام.
+établissement public à caractère industriel et commercial | Établissement public qui produit ou vend comme une entreprise et relève pour l'essentiel du droit privé. | مؤسسة عمومية تنتج أو تبيع مثل مؤسسة خاصة وتخضع أساسا للقانون الخاص.
+autorité administrative indépendante | Organe de l'État qui surveille un secteur sans recevoir d'ordre du gouvernement. | هيئة من الدولة تراقب قطاعا دون أن تتلقى أمرا من الحكومة.
+autorité de régulation | Organe chargé de surveiller un secteur économique et d'y faire respecter les règles de la concurrence. | هيئة مكلفة بمراقبة قطاع اقتصادي وبالسهر على أن تحترم فيه قواعد المنافسة.
+usager du service public | Personne qui bénéficie des prestations d'un service public. | شخص يستفيد من أداء مرفق عام.
+administration centrale | Ensemble des ministères et de leurs directions, installés dans la capitale. | مجموع الوزارات ومديرياتها الموجودة في العاصمة.
+administration locale | Ensemble des autorités qui administrent la wilaya et la commune. | مجموع السلطات التي تدير الولاية والبلدية.
+services extérieurs de l'État | Directions des ministères installées dans les wilayas. | مديريات الوزارات الموجودة في الولايات.
+services déconcentrés | Administrations de l'État placées dans les wilayas, sous l'autorité du wali et des ministres. | إدارات الدولة الموضوعة في الولايات تحت سلطة الوالي والوزراء.
+direction générale | Grande division d'un ministère, placée sous l'autorité d'un directeur général. | قسم كبير من وزارة يوضع تحت سلطة مدير عام.
+direction de wilaya | Administration qui représente un ministère dans une wilaya. | إدارة تمثل وزارة في ولاية.
+circonscription administrative | Portion du territoire placée sous l'autorité d'un représentant de l'État. | جزء من الإقليم يوضع تحت سلطة ممثل للدولة.
+organigramme | Schéma qui montre les divisions d'une administration et les liens entre elles. | مخطط يبين أقسام إدارة والروابط بينها.
+simplification des procédures administratives | Réduction du nombre de documents et d'étapes que l'administration réclame aux citoyens. | تقليل عدد الوثائق والمراحل التي تطالب بها الإدارة المواطنين.
+guichet unique | Lieu unique où le citoyen accomplit toutes les démarches d'une même opération. | مكان واحد يقوم فيه المواطن بكل مساعي عملية واحدة.
+administration électronique | Emploi d'internet par l'administration pour informer les citoyens et traiter leurs demandes. | استعمال الإدارة الإنترنت لإعلام المواطنين ومعالجة طلباتهم. | sf=e-administration, administration numérique
+accès aux documents administratifs | Droit de toute personne de consulter les documents que l'administration détient. | حق كل شخص في أن يطلع على الوثائق التي تمسكها الإدارة.
+médiateur de la République | Autorité qui reçoit toute plainte d'un citoyen contre l'administration et cherche une solution amiable. | سلطة تتلقى كل شكوى من مواطن ضد الإدارة وتبحث عن حل ودي.
+réclamation administrative | Demande adressée à l'administration pour qu'elle revienne sur une décision. | طلب يوجه إلى الإدارة لتتراجع عن قرار.
+code communal | Loi qui organise la commune et dit ce qu'elle peut faire. | قانون ينظم البلدية ويبين ما يجوز لها أن تفعله.
+code de wilaya | Loi qui organise la wilaya et dit ce qu'elle peut faire. | قانون ينظم الولاية ويبين ما يجوز لها أن تفعله.
+exécutif communal | Président de l'assemblée populaire communale et ses adjoints, qui appliquent les décisions de l'assemblée. | رئيس المجلس الشعبي البلدي ونوابه الذين يطبقون قرارات المجلس.
+élu local | Membre d'une assemblée de commune ou de wilaya, choisi par les électeurs. | عضو في مجلس بلدية أو ولاية يختاره الناخبون.
+vice-président de l'assemblée populaire communale | Membre de l'assemblée qui seconde le président de l'assemblée populaire communale et le remplace au besoin. | عضو في المجلس يساعد رئيس المجلس الشعبي البلدي ويخلفه عند الحاجة.
+président de l'assemblée populaire de wilaya | Membre de l'assemblée populaire de wilaya élu par ses collègues pour la diriger. | عضو في المجلس الشعبي الولائي ينتخبه زملاؤه ليسيره.
+secrétaire général de la commune | Fonctionnaire qui conduit l'administration de la commune sous l'autorité du président de l'assemblée. | موظف يقود إدارة البلدية تحت سلطة رئيس المجلس.
+chef de daïra | Représentant de l'État dans la daïra, placé sous l'autorité du wali. | ممثل الدولة في الدائرة، يوضع تحت سلطة الوالي.
+wali délégué | Représentant de l'État placé à la tête d'une circonscription administrative, sous l'autorité du wali. | ممثل للدولة يوضع على رأس مقاطعة إدارية تحت سلطة الوالي.
+délégation communale | Division d'une grande commune, animée par un membre de l'assemblée. | قسم من بلدية كبيرة، يشرف عليه عضو من المجلس.
+antenne administrative | Bureau de la commune installé dans un quartier pour rapprocher les démarches des habitants. | مكتب تابع للبلدية يقام في حي لتقريب المساعي من السكان.
+approbation de la délibération | Décision du wali d'accepter une délibération, sans laquelle elle ne s'applique pas. | قرار الوالي بأن يقبل مداولة، ودونه لا تطبق.
+contrôle de légalité | Vérification par le wali que les actes de la commune suivent la loi. | تحقق الوالي من أن قرارات البلدية تتبع القانون.
+pouvoir de substitution | Pouvoir du wali d'agir à la place d'une commune qui ne prend pas une mesure obligatoire. | سلطة الوالي في أن يتصرف مكان بلدية لا تتخذ تدبيرا إلزاميا.
+dissolution de l'assemblée populaire communale | Décision qui met fin à l'assemblée d'une commune avant la fin normale de ses fonctions. | قرار ينهي مجلس بلدية قبل النهاية العادية لمهامه.
+intercommunalité | Entente de plusieurs communes pour gérer ensemble un équipement ou une activité. | تفاهم عدة بلديات لتسير معا تجهيزا أو نشاطا. | sf=coopération intercommunale
+budget communal | Tableau annuel des recettes et des dépenses de la commune, voté par son assemblée. | جدول سنوي لإيرادات البلدية ومصاريفها، يصوت عليه مجلسها.
+finances locales | Recettes et dépenses des communes et des wilayas. | إيرادات البلديات والولايات ومصاريفها.
+fiscalité locale | Impôts et taxes dont le produit revient aux communes et aux wilayas. | ضرائب ورسوم يعود ناتجها للبلديات والولايات.
+patrimoine communal | Ensemble des biens qui appartiennent à la commune. | مجموع الأموال التي تملكها البلدية.
+démocratie locale | Participation des habitants au choix de leurs représentants et aux décisions de leur commune. | مشاركة السكان في اختيار الممثلين وفي قرارات بلديتهم.
+participation citoyenne | Contribution des habitants à la préparation des décisions qui les concernent. | مساهمة السكان في تحضير القرارات التي تهمهم.
+autonomie financière | Pouvoir d'une collectivité ou d'un établissement d'avoir son budget et de le gérer. | سلطة جماعة أو مؤسسة في أن تكون لها ميزانيتها وأن تسيرها.
+personne morale de droit public | Personne morale chargée d'un intérêt général : État, wilaya, commune, établissement public. | شخص معنوي مكلف بمصلحة عامة: الدولة والولاية والبلدية والمؤسسة العمومية.
+chef-lieu de wilaya | Ville où siègent le wali et les administrations de la wilaya. | المدينة التي يوجد فيها مقر الوالي وإدارات الولاية.
+limites territoriales | Lignes qui séparent le territoire d'une commune ou d'une wilaya de celui des voisines. | الخطوط التي تفصل إقليم بلدية أو ولاية عن إقليم جاراتها.
+wilaya déléguée | Circonscription administrative créée à l'intérieur d'une wilaya et dirigée par un wali délégué. | مقاطعة إدارية تنشأ داخل ولاية ويسيرها وال منتدب.
+statut général de la fonction publique | Texte qui fixe les droits, les devoirs et la carrière de tous les fonctionnaires. | نص يحدد الحقوق والواجبات والمسار المهني لكل الموظفين.
+statut particulier | Texte qui adapte les règles générales à un corps de fonctionnaires. | نص يكيف القواعد العامة مع سلك الموظفين المعني.
+corps de fonctionnaires | Ensemble des fonctionnaires soumis au même statut particulier. | مجموع الموظفين الخاضعين للقانون الأساسي الخاص نفسه.
+poste supérieur | Emploi de direction ou d'encadrement confié à un fonctionnaire en plus de son grade. | منصب إدارة أو تأطير يسند إلى موظف زيادة على رتبته.
+fonction supérieure de l'État | Emploi de haute responsabilité auquel on est nommé par décret. | منصب مسؤولية عالية يعين فيه بمرسوم.
+poste budgétaire | Emploi que le budget d'une administration finance. | منصب تموله ميزانية إدارة.
+emploi vacant | Emploi qui n'est occupé par aucun fonctionnaire. | منصب لا يشغله أي موظف.
+recrutement | Entrée d'une personne dans la fonction publique ou dans une entreprise. | دخول شخص الوظيفة العمومية أو مؤسسة.
+concours sur épreuves | Recrutement qui classe les candidats d'après les notes de leurs examens. | توظيف يرتب المترشحين بحسب علامات امتحاناتهم.
+concours sur titres | Recrutement qui classe les candidats d'après leurs diplômes et leur expérience. | توظيف يرتب المترشحين بحسب شهاداتهم وخبرتهم.
+examen professionnel | Épreuve réservée aux fonctionnaires qui veulent monter de grade. | اختبار خاص بالموظفين الذين يريدون الارتقاء في الرتبة.
+période de stage | Temps d'essai que le nouveau fonctionnaire accomplit avant sa titularisation. | مدة تجربة يقضيها الموظف الجديد قبل ترسيمه.
+agent contractuel | Personne employée par l'administration en vertu d'un contrat, sans être fonctionnaire. | شخص تستخدمه الإدارة بمقتضى عقد دون أن يكون موظفا.
+classification des grades | Rangement de chaque grade dans un groupe et une catégorie, d'après le niveau d'études. | ترتيب كل رتبة في فوج وصنف بحسب مستوى الدراسة.
+avancement d'échelon | Passage à l'échelon supérieur du même grade, avec une hausse de traitement. | الانتقال إلى الدرجة الأعلى في الرتبة نفسها مع زيادة في الراتب.
+avancement de grade | Passage d'un fonctionnaire au grade supérieur. | انتقال موظف إلى الرتبة الأعلى.
+promotion | Passage d'un fonctionnaire ou d'un salarié à un grade ou à un poste plus élevé. | انتقال موظف أو عامل إلى رتبة أو منصب أعلى.
+tableau d'avancement | Liste annuelle des fonctionnaires qui peuvent monter de grade. | قائمة سنوية بالموظفين الذين يجوز أن يرتقوا في الرتبة.
+notation | Note chiffrée que le supérieur donne chaque année au fonctionnaire. | علامة بالأرقام يعطيها الرئيس كل سنة للموظف.
+évaluation du fonctionnaire | Appréciation périodique du travail et de la conduite d'un fonctionnaire. | تقدير دوري لعمل موظف وسلوكه.
+indice de traitement | Nombre qui sert à calculer le salaire de base d'un fonctionnaire. | عدد يحسب به الأجر القاعدي لموظف.
+traitement de base | Salaire du fonctionnaire calculé d'après son indice, avant les indemnités. | أجر الموظف الذي يحسب بحسب رقمه الاستدلالي، قبل التعويضات.
+régime indemnitaire | Ensemble des indemnités qui s'ajoutent au salaire de base. | مجموع التعويضات التي تضاف إلى الأجر القاعدي.
+prime de rendement | Somme versée au fonctionnaire d'après les résultats de son travail. | مبلغ يدفع للموظف بحسب نتائج عمله.
+position d'activité | Situation du fonctionnaire qui exerce réellement les fonctions de son grade. | وضعية الموظف الذي يمارس فعلا مهام رتبته.
+mise en disponibilité | Situation du fonctionnaire qui cesse de travailler pour un temps, sans salaire ni avancement. | وضعية الموظف الذي يتوقف عن العمل مدة من الزمن دون أجر ولا ترقية.
+position hors cadre | Situation du fonctionnaire qui travaille durablement pour un autre organisme et sort de son corps d'origine. | وضعية الموظف الذي يعمل بصفة دائمة لهيئة أخرى ويخرج من سلكه الأصلي.
+service national | Obligation, pour les jeunes citoyens, de servir un temps dans l'armée. | التزام المواطنين الشباب بأن يخدموا مدة في الجيش. | sf=service militaire | sa=خدمة عسكرية
+mutation d'office | Changement de poste décidé par l'administration sans demande du fonctionnaire. | تغيير منصب تقرره الإدارة دون طلب من الموظف.
+mouvement de mutation | Opération annuelle par laquelle l'administration change les postes de plusieurs fonctionnaires. | عملية سنوية تغير بها الإدارة مناصب عدة موظفين.
+mise à la retraite | Décision qui clôt la carrière du fonctionnaire arrivé à l'âge voulu et lui ouvre un revenu de retraite. | قرار يختم مسار الموظف الذي بلغ السن المطلوبة ويفتح له دخل التقاعد. | sf=admission à la retraite
+cessation de fonctions | Fin de l'activité d'un fonctionnaire : retraite, démission, licenciement ou révocation. | نهاية نشاط موظف: تقاعد أو استقالة أو تسريح أو عزل.
+abandon de poste | Absence du fonctionnaire qui ne vient plus travailler, sans autorisation ni justification. | غياب الموظف الذي لم يعد يأتي إلى عمله، دون ترخيص ولا مبرر.
+devoir d'obéissance | Obligation du fonctionnaire d'exécuter les ordres de son supérieur, sauf s'ils sont clairement illégaux. | التزام الموظف بأن ينفذ أوامر رئيسه، إلا إذا كانت غير قانونية بوضوح.
+cumul d'emplois | Exercice, par un fonctionnaire, d'une autre activité rémunérée, que la loi interdit en principe. | ممارسة موظف نشاطا آخر مأجورا، ويمنعها القانون مبدئيا.
+conseil de discipline | Commission qui donne son avis avant qu'une sanction grave soit infligée à un fonctionnaire. | لجنة تبدي رأيها قبل أن يوقع جزاء خطير على موظف.
+commission administrative paritaire | Commission formée d'autant de représentants de l'administration que de fonctionnaires, consultée sur les carrières. | لجنة تتألف من عدد متساو من ممثلي الإدارة والموظفين، تستشار في المسارات المهنية.
+commission de recours | Commission devant laquelle un fonctionnaire conteste une sanction grave. | لجنة يعترض أمامها موظف على جزاء خطير.
+suspension de fonctions | Mesure provisoire qui écarte un fonctionnaire de son poste en attendant une décision disciplinaire. | تدبير مؤقت يبعد موظفا عن منصبه في انتظار قرار تأديبي.
+rétrogradation | Sanction qui place le fonctionnaire dans un grade inférieur. | جزاء يضع الموظف في رتبة أدنى.
+radiation du tableau d'avancement | Sanction qui retire le fonctionnaire de la liste de ceux qui peuvent monter de grade. | جزاء يسحب الموظف من قائمة من يجوز أن يرتقوا في الرتبة.
+dossier administratif | Ensemble des pièces qui retracent la carrière d'un fonctionnaire. | مجموع الوثائق التي تبين المسار المهني لموظف.
+droit syndical | Droit de créer un syndicat, d'en devenir membre et d'y agir. | حق إنشاء نقابة والعضوية فيها والعمل فيها.
+protection fonctionnelle | Protection que l'administration doit au fonctionnaire attaqué ou poursuivi à cause de son travail. | حماية يجب على الإدارة أن تقدمها للموظف الذي يهاجم أو يتابع بسبب عمله.
+autorité investie du pouvoir de nomination | Autorité qui a le droit de recruter les fonctionnaires, de les nommer et de les sanctionner. | سلطة لها الحق في أن توظف الموظفين وتعينهم وتعاقبهم.
+supérieur hiérarchique | Personne qui, dans une administration, donne des ordres à un agent et répond de son travail. | شخص يعطي في إدارة أوامر لعون ويسأل عن عمله. | sf=chef hiérarchique
+déontologie professionnelle | Ensemble des devoirs de conduite que les membres d'une profession doivent suivre. | مجموع واجبات السلوك التي يجب أن يتبعها أعضاء مهنة.
+commande publique | Ensemble des achats de travaux, de biens et de services que font les administrations. | مجموع ما تشتريه الإدارات من أشغال وأموال وخدمات.
+marché de travaux | Marché public qui porte sur la construction ou la rénovation d'un ouvrage. | صفقة عمومية تتعلق ببناء منشأة أو تجديدها.
+marché de fournitures | Marché public qui porte sur l'achat d'équipements ou de produits. | صفقة عمومية تتعلق بشراء تجهيزات أو منتجات.
+marché de services | Marché public qui porte sur une prestation, comme le nettoyage ou le transport. | صفقة عمومية تتعلق بأداء، كالتنظيف أو النقل.
+marché d'études | Marché public qui porte sur un travail de conception ou de recherche. | صفقة عمومية تتعلق بعمل تصميم أو بحث.
+appel d'offres ouvert | Appel d'offres auquel toute entreprise peut répondre. | طلب العروض الذي يجوز لكل مؤسسة أن ترد عليه.
+appel d'offres restreint | Appel d'offres réservé aux entreprises qui remplissent des conditions fixées à l'avance. | طلب العروض المقصور على المؤسسات التي تستوفي شروطا تحدد مسبقا.
+procédure de gré à gré | Attribution d'un marché public à une entreprise sans mise en concurrence, dans les cas que la loi admet. | إسناد صفقة عمومية إلى مؤسسة دون منافسة، في الحالات التي يقبلها القانون.
+négociation directe | Discussion du contrat entre l'administration et une entreprise qu'elle a choisie. | مناقشة العقد بين الإدارة ومؤسسة اختارتها.
+avis d'appel d'offres | Annonce publiée par l'administration pour inviter les entreprises à présenter leurs propositions. | إعلام تنشره الإدارة لتدعو المؤسسات إلى تقديم اقتراحاتها.
+dossier de consultation des entreprises | Ensemble des documents qui décrivent le besoin de l'administration et les règles de la compétition. | مجموع الوثائق التي تصف حاجة الإدارة وقواعد التنافس.
+offre technique | Document où l'entreprise décrit ses moyens et sa manière d'exécuter le marché public. | وثيقة تصف فيها المؤسسة وسائلها وطريقتها في أن تنفذ الصفقة العمومية.
+offre financière | Document où l'entreprise indique le prix qu'elle propose. | وثيقة تبين فيها المؤسسة الثمن الذي تقترحه.
+ouverture des plis | Séance où une commission ouvre les enveloppes des soumissionnaires. | حصة تفتح فيها لجنة ظروف المتعهدين.
+évaluation des offres | Comparaison des propositions d'après chaque critère annoncé, pour choisir la meilleure. | مقارنة الاقتراحات بحسب كل معيار أعلن، لاختيار أحسنها.
+commission d'ouverture des plis et d'évaluation des offres | Commission qui ouvre les enveloppes, examine les propositions et les classe. | لجنة تفتح الظروف وتدرس الاقتراحات وترتبها.
+commission des marchés publics | Commission qui contrôle un projet de marché public avant sa signature. | لجنة تراقب مشروع صفقة عمومية قبل توقيعه.
+attribution provisoire | Décision qui désigne l'entreprise retenue, avant l'expiration du délai de recours. | قرار يعين المؤسسة المختارة قبل انقضاء أجل الطعن.
+attributaire du marché public | Entreprise à laquelle l'administration a confié le marché public. | المؤسسة التي أسندت إليها الإدارة الصفقة العمومية.
+partenaire cocontractant | Entreprise qui a signé un marché public avec l'administration. | مؤسسة وقعت صفقة عمومية مع الإدارة.
+opérateur économique | Entreprise ou personne qui propose des biens, des travaux ou des services. | مؤسسة أو شخص يقترح أموالا أو أشغالا أو خدمات.
+offre anormalement basse | Proposition dont le prix est si faible qu'il fait douter de la bonne exécution du contrat. | اقتراح ثمنه منخفض إلى حد يثير الشك في حسن تنفيذ العقد.
+infructuosité | Situation où aucun soumissionnaire convenable n'a répondu à l'appel d'offres. | حالة لم يرد فيها أي متعهد مناسب على طلب العروض.
+caution de soumission | Garantie que l'entreprise fournit avec sa proposition pour prouver qu'elle est sérieuse. | ضمان تقدمه المؤسسة مع اقتراحها لتثبت جديتها. | sf=garantie de soumission
+caution de bonne exécution | Garantie que l'entreprise fournit pour répondre de la bonne exécution du marché public. | ضمان تقدمه المؤسسة لتسأل عن حسن تنفيذ الصفقة العمومية.
+avance forfaitaire | Somme versée à l'entreprise avant le début des travaux, sans justification de dépenses. | مبلغ يدفع للمؤسسة قبل بداية الأشغال دون تبرير مصاريف.
+ordre de service | Écrit par lequel l'administration ordonne à l'entreprise de commencer les travaux ou de les modifier. | محرر تأمر به الإدارة المؤسسة بأن تبدأ الأشغال أو أن تعدلها.
+délai d'exécution | Temps que le contrat donne à l'entreprise pour achever sa prestation. | المدة التي يعطيها العقد للمؤسسة لتتم أداءها.
+décompte général et définitif | Document qui arrête la somme finale que l'administration doit à l'entreprise. | وثيقة تضبط المبلغ الأخير الذي تدين به الإدارة للمؤسسة.
+groupement momentané d'entreprises | Entente de plusieurs entreprises pour répondre ensemble à un marché public. | تفاهم عدة مؤسسات لترد معا على صفقة عمومية.
+résiliation unilatérale | Fin du contrat décidée par l'administration seule, pour faute de l'entreprise ou pour l'intérêt général. | نهاية العقد تقررها الإدارة وحدها، لخطأ من المؤسسة أو للمصلحة العامة.
+nantissement du marché public | Sûreté par laquelle l'entreprise affecte à sa banque les sommes que l'administration lui doit. | تأمين تخصص به المؤسسة لبنكها المبالغ التي تدين لها بها الإدارة.
+contrôle externe | Vérification d'un marché public par une commission qui ne dépend pas du service contractant. | تحقق لجنة لا تتبع المصلحة المتعاقدة من صفقة عمومية.
+contrôle interne | Vérification d'un marché public par les commissions du service contractant lui-même. | تحقق لجان المصلحة المتعاقدة نفسها من صفقة عمومية.
+visa de la commission des marchés | Approbation écrite de la commission, sans laquelle le marché public ne peut pas être exécuté. | موافقة مكتوبة من اللجنة، دونها لا تنفذ الصفقة العمومية.
+marge de préférence nationale | Avantage de prix donné aux produits et aux entreprises du pays dans la comparaison des propositions. | مزية في الثمن تعطى لمنتجات البلد ومؤسساته عند مقارنة الاقتراحات.
+partenariat public-privé | Contrat de longue durée par lequel une entreprise finance, construit et exploite un équipement pour l'administration. | عقد طويل المدة تمول به مؤسسة تجهيزا وتبنيه وتستغله لحساب الإدارة. | sf=PPP
+concession de service public | Contrat par lequel l'administration confie à une entreprise l'exploitation d'un service public, contre la redevance que paient les usagers. | عقد تسند به الإدارة إلى مؤسسة استغلال مرفق عام، مقابل الإتاوة التي يدفعها المرتفقون.
+convention de délégation | Contrat qui fixe les droits et les devoirs de l'entreprise chargée d'un service public. | عقد يحدد الحقوق والواجبات للمؤسسة المكلفة بمرفق عام.
+portail des marchés publics | Site internet où sont publiés l'annonce et le résultat de chaque appel d'offres. | موقع إنترنت ينشر فيه إعلان طلب العروض ونتيجته.
+liberté d'accès à la commande publique | Principe selon lequel toute entreprise peut se porter candidate à un marché public. | مبدأ يقضي بأن لكل مؤسسة أن تترشح لصفقة عمومية.
+égalité de traitement des candidats | Principe selon lequel l'administration applique les mêmes règles à toutes les entreprises en compétition. | مبدأ يقضي بأن تطبق الإدارة القواعد نفسها على كل المؤسسات المتنافسة.
+transparence des procédures | Principe selon lequel les règles et les résultats d'un marché public sont connus de tous. | مبدأ يقضي بأن يعلم الجميع قواعد صفقة عمومية ونتائجها.
+domaine national | Ensemble des biens qui appartiennent à l'État, aux wilayas et aux communes. | مجموع الأموال التي تملكها الدولة والولايات والبلديات.
+domaine public naturel | Biens publics formés par la nature : rivages, rivières, richesses du sous-sol. | أموال عمومية كونتها الطبيعة: السواحل والأنهار وثروات باطن الأرض.
+domaine public artificiel | Biens publics créés par l'homme : routes, ports, voies ferrées, bâtiments d'un service public. | أموال عمومية أنشأها الإنسان: الطرق والموانئ والسكك الحديدية ومباني مرفق عام.
+domaine public maritime | Rivage de la mer, fonds marins et eaux proches des côtes, qui appartiennent à l'État. | ساحل البحر وقاع البحار والمياه القريبة من الشواطئ، وهي ملك للدولة.
+domaine public hydraulique | Eaux de surface et eaux souterraines, avec les ouvrages qui servent à les capter. | المياه السطحية والجوفية مع المنشآت التي تستعمل لجمعها.
+biens de l'État | Meubles et immeubles qui appartiennent à l'État. | المنقولات والعقارات التي تملكها الدولة.
+administration des domaines | Administration qui gère les biens de l'État et tient leur inventaire. | إدارة تسير أملاك الدولة وتمسك جردها.
+acte d'affectation | Décision qui destine un bien public à une administration ou à l'emploi de tous. | قرار يرصد مالا عموميا لإدارة أو لاستعمال الجميع.
+désaffectation | Décision qui retire à un bien public la destination qu'il avait reçue. | قرار ينزع عن مال عمومي الوجهة التي أعطيت له.
+acte de classement | Décision qui fait entrer un bien dans le domaine public. | قرار يدخل مالا في الأملاك الوطنية العمومية.
+déclassement | Décision qui fait sortir un bien du domaine public. | قرار يخرج مالا من الأملاك الوطنية العمومية.
+inaliénabilité | Règle qui interdit de vendre ou de donner un bien du domaine public. | قاعدة تمنع أن يباع أو يوهب مال من الأملاك الوطنية العمومية.
+imprescriptibilité | Règle selon laquelle un bien du domaine public ne peut pas être acquis par une longue possession. | قاعدة تقضي بأن مالا من الأملاك الوطنية العمومية لا يكتسب بحيازة طويلة.
+occupation temporaire | Emploi privatif d'une portion du domaine public, accepté pour un temps et contre une redevance. | استعمال خاص لجزء من الأملاك الوطنية العمومية، يقبل لمدة ومقابل إتاوة.
+autorisation d'occupation du domaine public | Permission écrite d'installer un commerce ou un ouvrage sur le domaine public. | إذن مكتوب بإقامة متجر أو منشأة على الأملاك الوطنية العمومية.
+permission de voirie | Permission d'installer un ouvrage attaché au sol de la voie publique. | إذن بإقامة منشأة مثبتة في أرض الطريق العام.
+redevance domaniale | Somme payée à l'administration pour l'emploi privatif d'un bien public. | مبلغ يدفع للإدارة عن الاستعمال الخاص لمال عمومي.
+contravention de voirie | Infraction qui abîme la voie publique ou gêne la circulation. | جريمة تتلف الطريق العام أو تعرقل السير.
+expropriation pour cause d'utilité publique | Procédure par laquelle l'administration oblige un propriétaire à lui céder son immeuble, contre une indemnité. | إجراء تلزم به الإدارة مالكا بأن يتنازل لها عن عقاره مقابل تعويض. | sf=expropriation pour utilité publique
+déclaration d'utilité publique | Acte qui constate qu'une opération sert l'intérêt général et ouvre la voie à l'expropriation. | قرار يعاين أن عملية تخدم المصلحة العامة ويفتح الطريق إلى نزع الملكية.
+enquête préalable | Enquête qui recueille l'opinion des habitants avant la déclaration d'utilité publique. | تحقيق يجمع رأي السكان قبل التصريح بالمنفعة العمومية.
+commissaire enquêteur | Personne chargée de conduire l'enquête et de donner ses conclusions. | شخص يكلف بقيادة التحقيق وبتقديم خلاصاته.
+arrêté de cessibilité | Décision du wali qui désigne les immeubles à prendre et leurs propriétaires. | قرار الوالي الذي يعين العقارات التي تؤخذ وملاكها.
+enquête parcellaire | Enquête qui recherche chaque parcelle concernée par l'opération et son propriétaire. | تحقيق يبحث عن كل قطعة أرض معنية بالعملية وعن مالكها.
+indemnité d'expropriation | Somme versée au propriétaire pour le dommage que lui inflige la privation de son bien. | مبلغ يدفع للمالك عن الضرر الذي يلحقه به حرمانه من ماله.
+indemnité juste et équitable | Somme qui couvre tout le dommage de l'exproprié, fixée d'après la valeur véritable du bien. | مبلغ يغطي كل ضرر منزوع ملكيته، يحدد بحسب القيمة الحقيقية للمال.
+exproprié | Propriétaire auquel l'administration prend son immeuble pour l'utilité publique. | مالك تأخذ منه الإدارة عقاره من أجل المنفعة العمومية.
+expropriant | Autorité ou organisme pour lequel l'expropriation est réalisée. | السلطة أو الهيئة التي يتم نزع الملكية من أجلها.
+nationalisation | Transfert à l'État, par une loi, de la propriété d'entreprises privées. | نقل ملكية مؤسسات خاصة إلى الدولة بقانون.
+privatisation | Transfert de la propriété d'une entreprise de l'État à des personnes du secteur privé. | نقل ملكية مؤسسة تابعة للدولة إلى أشخاص من القطاع الخاص.
+ouvrage public | Construction destinée à l'intérêt général, comme un pont, une route ou un barrage. | بناء مخصص للمصلحة العامة، كجسر أو طريق أو سد.
+dommage de travaux publics | Dommage qu'une personne subit à cause de travaux ou d'un ouvrage de l'administration. | ضرر يصيب شخصا بسبب أشغال الإدارة أو منشأة لها.
+servitude d'utilité publique | Charge imposée à une propriété privée dans l'intérêt général, comme le passage d'une ligne électrique. | عبء يفرض على ملكية خاصة للمصلحة العامة، كمرور خط كهربائي.
+juge administratif | Juge chargé des litiges entre l'administration et les personnes. | قاض مكلف بالنزاعات بين الإدارة والأشخاص.
+juridiction administrative | Tribunal administratif, tribunal administratif d'appel ou Conseil d'État. | محكمة إدارية أو محكمة إدارية للاستئناف أو مجلس الدولة.
+recours de pleine juridiction | Recours où le juge peut annuler une décision, la modifier et condamner l'administration à payer. | طعن يجوز فيه للقاضي أن يبطل قرارا وأن يعدله وأن يحكم على الإدارة بأن تدفع.
+recours en appréciation de légalité | Recours par lequel on prie le juge administratif de dire si un acte est légal. | طعن يلتمس به من القاضي الإداري أن يقول هل قرار قانوني.
+recours administratif préalable | Réclamation adressée à l'administration avant d'aller devant le juge. | تظلم يوجه إلى الإدارة قبل اللجوء إلى القاضي.
+décision préalable | Décision de l'administration qu'il faut obtenir avant de pouvoir aller devant le juge. | قرار من الإدارة يجب الحصول عليه قبل التمكن من اللجوء إلى القاضي.
+délai de recours contentieux | Temps pendant lequel une décision administrative peut être attaquée devant le juge. | المدة التي يجوز فيها الطعن في قرار إداري أمام القاضي.
+sursis à exécution de la décision administrative | Décision du juge qui suspend l'application d'un acte en attendant le jugement. | قرار القاضي الذي يوقف تطبيق قرار إداري في انتظار الحكم.
+référé administratif | Procédure rapide par laquelle le juge administratif ordonne une mesure urgente. | إجراء سريع يأمر به القاضي الإداري بتدبير مستعجل.
+référé-liberté | Référé par lequel le juge fait cesser en quarante-huit heures une atteinte grave à une liberté. | استعجال يوقف به القاضي في ثمان وأربعين ساعة مساسا خطيرا بحرية.
+référé précontractuel | Référé qui sanctionne, avant la signature d'un marché public, un manquement aux règles de publicité et de concurrence. | استعجال يعاقب، قبل توقيع صفقة عمومية، على إخلال بقواعد الإشهار والمنافسة.
+référé-constat | Référé par lequel le juge désigne un expert pour constater des faits sans attendre. | استعجال يعين به القاضي خبيرا ليعاين وقائع دون انتظار.
+référé-provision | Référé par lequel le juge donne une avance au créancier dont le droit n'est pas sérieusement discuté. | استعجال يعطي به القاضي تسبيقا للدائن الذي لا ينازع في حقه بجدية.
+annulation pour excès de pouvoir | Effacement par le juge d'une décision administrative illégale. | محو القاضي قرارا إداريا غير مشروع.
+annulation partielle | Effacement par le juge d'une fraction seulement de la décision attaquée. | محو القاضي جزءا فقط من القرار المطعون فيه.
+effet rétroactif de l'annulation | Conséquence de l'annulation : la décision est effacée depuis le jour où elle a été prise. | نتيجة الإبطال: يمحى القرار منذ يوم اتخاذه.
+plein contentieux | Domaine où le juge administratif a les pouvoirs les plus larges et peut mettre sa décision à la place de celle de l'administration. | مجال يملك فيه القاضي الإداري أوسع السلطات ويجوز له أن يضع قراره مكان قرار الإدارة. | sf=contentieux de pleine juridiction, pleine juridiction | sa=قضاء شامل
+contentieux de l'annulation | Domaine des recours qui tendent à faire effacer une décision illégale. | مجال الطعون التي ترمي إلى محو قرار غير مشروع.
+contentieux de la responsabilité | Domaine des recours par lesquels une victime réclame de l'argent à l'administration pour un dommage. | مجال الطعون التي تطالب بها ضحية الإدارة بمال عن ضرر.
+responsabilité pour risque | Responsabilité de l'administration qui existe sans faute, parce que son activité crée un danger. | مسؤولية الإدارة التي تقوم دون خطأ لأن نشاطها ينشئ خطرا.
+faute de service | Faute commise par un agent dans son travail, dont l'administration répond. | خطأ يرتكبه عون في عمله وتسأل عنه الإدارة.
+faute personnelle | Faute de l'agent sans lien avec son travail, ou d'une gravité telle qu'il en répond lui-même. | خطأ من العون لا صلة له بعمله، أو بلغ من الجسامة حدا يسأل عنه هو نفسه.
+rupture de l'égalité devant les charges publiques | Situation où une personne supporte, pour l'intérêt général, un dommage anormal que les autres ne subissent pas. | حالة يتحمل فيها شخص من أجل المصلحة العامة ضررا غير عادي لا يصيب غيره.
+injonction à l'administration | Ordre du juge à l'administration de prendre une mesure précise dans un délai. | أمر من القاضي إلى الإدارة بأن تتخذ تدبيرا معينا في أجل.
+exécution des décisions de la justice administrative | Obligation de l'administration d'appliquer les jugements rendus contre elle. | التزام الإدارة بأن تطبق الأحكام التي صدرت ضدها.
+conflit de compétence | Désaccord entre les juges ordinaires et administratifs sur celui qui doit juger une affaire. | خلاف بين القضاة العاديين والإداريين على من يحكم في قضية.
+décision attaquée | Décision contre laquelle un recours est formé. | قرار رفع ضده طعن.
+substitution de motifs | Remplacement, par le juge, d'un motif erroné de la décision par un motif exact. | وضع القاضي سببا صحيحا مكان سبب خاطئ في القرار.
+exception d'illégalité | Moyen par lequel une partie soutient, au cours d'un procès, qu'un texte de l'administration est illégal. | وسيلة يدعي بها طرف خلال محاكمة أن نصا للإدارة غير قانوني.
+question préjudicielle | Question qu'un juge doit faire trancher par un autre juge avant de statuer lui-même. | مسألة يجب أن يعرضها قاض على قاض آخر قبل أن يفصل هو.
+dualité de juridictions | Existence de deux ordres de juges : l'un pour les litiges privés, l'autre pour ceux de l'administration. | وجود نظامين من القضاة: واحد للنزاعات الخاصة وآخر لنزاعات الإدارة.

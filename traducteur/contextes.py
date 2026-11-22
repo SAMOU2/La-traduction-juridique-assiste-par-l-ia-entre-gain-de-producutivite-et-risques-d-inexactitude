@@ -21,7 +21,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from .glossaire import Entree, Glossaire, mention_a_verifier
+from .glossaire import Entree, Glossaire, definition_a_verifier, mention_a_verifier
 from .langues import AR, FR
 from .surlignage import motif_du_terme
 
@@ -63,8 +63,9 @@ class Emploi:
     @property
     def detail_a_verifier(self) -> str:
         """Ce que le glossaire précise après « à vérifier » : « phrase d'exemple », « définition d'exemple »."""
-        source = self.entree.source_definition if self.origine == DEFINITION else self.source
-        return mention_a_verifier(source) or ""
+        if self.origine == DEFINITION:
+            return definition_a_verifier(self.entree) or ""
+        return mention_a_verifier(self.source) or ""
 
     def provenance(self, langue: str = FR) -> str:
         """D'où vient la phrase, en clair : la source citée, ou l'entrée qui la contient.

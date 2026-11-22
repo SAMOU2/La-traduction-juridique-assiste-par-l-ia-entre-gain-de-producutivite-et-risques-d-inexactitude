@@ -304,7 +304,7 @@ def test_contextes_des_termes_seuls(glossaire_fourni):
             assert positions_du_terme(emploi.ar, element, AR), (element.terme_fr, emploi.ar)
     # « protection » : absente du glossaire jusqu'à la version 0.7. Sa phrase, puis celle d'une autre entrée.
     protection = entree(glossaire_fourni, "protection")
-    assert protection.numero > ENTREES_COMPLETES and not protection.definition_fr
+    assert protection.numero > ENTREES_COMPLETES
     assert [emploi.origine for emploi in emplois(glossaire_fourni, protection)] == [PROPRE, EXEMPLE]
     # Un verbe : la phrase l'emploie au passé dans les deux langues, et le verbe y est repéré.
     proteger, = entree(glossaire_fourni, "protéger").contextes

@@ -3,19 +3,20 @@
 
 Emploi, depuis le dossier du projet :
 
-    python outils/glossaire/construire.py            vérifie les lots et les exemples, sans rien écrire ;
-                                                     dit si le fichier CSV leur correspond
+    python outils/glossaire/construire.py            vérifie les lots, les exemples et les définitions, sans rien
+                                                     écrire ; dit si le fichier CSV leur correspond
     python outils/glossaire/construire.py --ecrire   récrit le fichier CSV
 
 Les 40 premières entrées du CSV sont gardées telles quelles. Toutes les suivantes sont récrites à partir des
-lots, des exemples et des termes seuls : une correction faite à la main dans le CSV après la 40e entrée est
-perdue. Pour la conserver, la faire dans le lot, dans le fichier d'exemples ou dans le fichier de termes seuls,
-ou ne plus utiliser ce script.
+lots, des exemples, des termes seuls et de leurs définitions : une correction faite à la main dans le CSV après
+la 40e entrée est perdue. Pour la conserver, la faire dans le lot, dans le fichier d'exemples, dans le fichier de
+termes seuls ou dans le fichier de définitions, ou ne plus utiliser ce script.
 
 Options d'affichage : --pluriels (pluriels français calculés pour les termes de plusieurs mots), --homonymes
 (termes qui désignent plusieurs entrées), --domaines (nombre d'entrées nouvelles par domaine), --manquants
-(entrées qui n'ont pas encore de phrase d'exemple), --coherence (phrases d'exemple où un autre terme du
-glossaire figure en français sans que son équivalent figure en arabe : à relire une par une).
+(entrées qui n'ont pas encore de phrase d'exemple, termes seuls qui n'ont pas encore de définition),
+--coherence (phrases d'exemple où un autre terme du glossaire figure en français sans que son équivalent figure
+en arabe : à relire une par une), --coherence-definitions (la même liste pour les définitions des termes seuls).
 
 Format d'un lot (fichier texte, UTF-8) :
 
@@ -55,6 +56,21 @@ prep (préposition ou locution prépositive), conj (conjonction ou locution conj
 remplace pas ces mots dans la traduction d'un texte : il faudrait les accorder ou les conjuguer. Ils ont leur
 fiche, et une locution de plusieurs mots reconnue dans un texte y reste entière (« de plein droit »).
 
+Format d'un fichier de définitions (dossier definitions/, à partir de la version 0.13) : la définition d'un
+terme seul, dans les deux langues, et ses synonymes s'il en a. Le fichier porte le nom du fichier de termes
+seuls qu'il complète. Un terme seul peut ne pas avoir de définition.
+
+    terme français | définition française | définition arabe | options…
+    terme français = terme arabe | définition française | définition arabe | options…
+
+Options : sf= synonymes français (séparés par « , »), sa= synonymes arabes (séparés par « ، »). Ils s'ajoutent
+à ceux du fichier de termes. La définition ne reprend pas le terme lui-même : le script le refuse, en français
+comme en arabe. Il refuse aussi deux définitions identiques, et une définition de plus de 200 caractères.
+L'option homographe=ar (ou homographe=fr) lève le premier refus quand la définition emploie un autre mot qui
+s'écrit comme le terme : « البلدية » (la commune) dans la définition de l'adjectif « بلدي » (communal).
+Un synonyme est un autre nom de la même notion. Le synonyme d'un nom est remplacé comme lui dans la traduction
+d'un texte : il ne doit désigner aucun autre nom du glossaire.
+
 Le script refuse un nom seul dont une forme (terme, pluriel ou synonyme) désigne déjà un autre nom, en français
 ou en arabe : l'application n'aurait ni définition ni exemple pour choisir entre les deux. Il refuse aussi un
 nom d'un seul mot qui est un mot courant de la langue (« or », « est », « قبل ») : la traduction d'un texte le
@@ -78,6 +94,8 @@ LOTS = pathlib.Path(__file__).parent / "lots"
 EXEMPLES = pathlib.Path(__file__).parent / "exemples"
 #: Termes seuls : terme, équivalent, catégorie, pluriel et domaine, sans définition.
 TERMES = pathlib.Path(__file__).parent / "termes"
+#: Définitions et synonymes des termes seuls (à partir de la version 0.13) : un fichier par fichier de termes.
+DEFINITIONS = pathlib.Path(__file__).parent / "definitions"
 #: Nombre d'entrées placées au début du CSV et écrites à la main : le script n'y touche pas.
 ENTREES_D_ORIGINE = 40
 SOURCE = "à vérifier (définition d’exemple)"
@@ -86,15 +104,20 @@ SOURCE_EXEMPLE = "à vérifier (phrase d’exemple)"
 #: Mention écrite dans la colonne « source_definition » d'un terme seul : il n'a pas de définition, la mention
 #: porte sur son équivalent. L'application l'affiche dans la fiche du terme, au pied de l'équivalent.
 SOURCE_SEUL = "à vérifier (équivalent d’exemple)"
+#: Mention d'un terme seul qui a reçu une définition : son équivalent et sa définition sont tous deux à vérifier.
+#: L'application l'affiche au pied de l'équivalent et au pied de la définition.
+SOURCE_SEUL_DEFINI = "à vérifier (équivalent et définition d’exemple)"
 #: Longueur maximale d'une phrase d'exemple, pour qu'elle reste courte à l'écran (« Contextualisation »).
 LONGUEUR_EXEMPLE = 170
+#: Longueur maximale de la définition d'un terme seul. La plus longue définition des lots compte 175 caractères.
+LONGUEUR_DEFINITION = 200
 OBJECTIF = 5000
 
 sys.path.insert(0, str(DEPOT))
 from traducteur.glossaire import Entree  # noqa: E402
 from traducteur.langues import AR, FR, cle_souple, cles_de_recherche  # noqa: E402
 from traducteur.segmentation import segmenter_en_phrases  # noqa: E402
-from traducteur.surlignage import motif_du_terme  # noqa: E402
+from traducteur.surlignage import VERBE, motif_du_terme, nature_du_terme  # noqa: E402
 from traducteur.traduction import cle_phrase  # noqa: E402
 
 JO = "Journal officiel (JORADP), www.joradp.dz"
@@ -360,6 +383,11 @@ class Erreurs(list):
         self.append(f"{lot}:{numero}: {message}")
 
 
+def lieu_du_synonyme(entree: dict, synonyme: str) -> tuple[str, int]:
+    """Fichier et ligne où un synonyme est écrit : le lot ou le fichier de termes, ou le fichier de définitions."""
+    return entree.get("origine_des_synonymes", {}).get(cle_souple(synonyme), (entree["lot"], entree["numero"]))
+
+
 def lire_les_lots(erreurs: Erreurs, dossier: pathlib.Path | None = None, seuls: bool = False) -> list[dict]:
     """Lit les lots du dossier ``lots/`` ou, avec ``seuls``, les termes seuls du dossier ``termes/``."""
     dossier = dossier or (TERMES if seuls else LOTS)
@@ -457,22 +485,40 @@ def verifier(entree: dict, erreurs: Erreurs) -> None:
                 if len(mot.split()) == 1 and cle_souple(mot) in _MOTS_COURANTS[langue]:
                     signaler(f"« {mot} » est aussi un mot courant : la traduction d'un texte le remplacerait partout")
     else:
-        texte = entree["def_fr"]
-        if not texte or _ARABE.search(texte) or not texte[0].isupper() or not texte.endswith("."):
-            signaler("définition française : vide, arabe, sans majuscule ou sans point final")
-        if "  " in texte or " ," in texte or " ." in texte:
-            signaler("définition française : espace mal placée")
-        texte = entree["def_ar"]
-        if not texte or _LATIN.search(texte) or not texte.endswith(".") or not _TEXTE_ARABE.fullmatch(texte):
-            signaler(f"définition arabe : vide, lettres latines, signe inattendu ou sans point final : {texte}")
-        if "  " in texte or " ،" in texte or " ." in texte or "," in texte or ";" in texte:
-            signaler("définition arabe : ponctuation ou espace mal placée")
+        verifier_le_texte_de_la_definition(entree, signaler)
+
+    def signaler_le_synonyme(synonyme: str, message: str) -> None:
+        # Un synonyme ajouté par un fichier de définitions est signalé à sa ligne dans ce fichier.
+        erreurs.signaler(*lieu_du_synonyme(entree, synonyme), f"« {entree['fr']} » : {message} : {synonyme}")
+
     for synonyme in entree["sa"]:
         if not _TERME_ARABE.fullmatch(synonyme):
-            signaler(f"synonyme arabe inattendu : {synonyme}")
+            signaler_le_synonyme(synonyme, "synonyme arabe inattendu")
     for synonyme in (*entree["sf"], *entree["va"]):
         if _ARABE.search(synonyme) or "’" in synonyme:
-            signaler(f"synonyme ou terme associé inattendu : {synonyme}")
+            signaler_le_synonyme(synonyme, "synonyme ou terme associé inattendu")
+    # Un synonyme n'est ni le terme lui-même, ni son pluriel, ni un synonyme déjà donné.
+    for formes, synonymes in (((fr, pluriel_francais(entree)), entree["sf"]),
+                              ((ar, entree["pluriel_ar"]), entree["sa"])):
+        vus = {cle_souple(forme) for forme in formes if forme}
+        for synonyme in synonymes:
+            if cle_souple(synonyme) in vus:
+                signaler_le_synonyme(synonyme, "synonyme répété, ou identique au terme")
+            vus.add(cle_souple(synonyme))
+
+
+def verifier_le_texte_de_la_definition(entree: dict, signaler) -> None:
+    """Écriture et ponctuation d'une définition, dans les deux langues."""
+    texte = entree["def_fr"]
+    if not texte or _ARABE.search(texte) or not texte[0].isupper() or not texte.endswith("."):
+        signaler("définition française : vide, arabe, sans majuscule ou sans point final")
+    if "  " in texte or " ," in texte or " ." in texte:
+        signaler("définition française : espace mal placée")
+    texte = entree["def_ar"]
+    if not texte or _LATIN.search(texte) or not texte.endswith(".") or not _TEXTE_ARABE.fullmatch(texte):
+        signaler(f"définition arabe : vide, lettres latines, signe inattendu ou sans point final : {texte}")
+    if "  " in texte or " ،" in texte or " ." in texte or "," in texte or ";" in texte:
+        signaler("définition arabe : ponctuation ou espace mal placée")
 
 
 def pluriel_francais(entree: dict) -> str:
@@ -562,10 +608,128 @@ def verifier_l_exemple(entree: dict, erreurs: Erreurs) -> None:
             signaler(f"la phrase {nom} ne contient pas « {lue.terme(langue)} » : {phrase}")
 
 
-def incoherences(anciennes: list[dict], nouvelles: list[dict]) -> list[str]:
+def lire_les_definitions(entrees: list[dict], erreurs: Erreurs) -> None:
+    """Lit les fichiers de définitions des termes seuls : la définition et les synonymes de chaque terme.
+
+    Un fichier de définitions porte le nom du fichier de termes seuls qu'il complète, et ne définit que les
+    termes de ce fichier. La définition remplit les clés « def_fr » et « def_ar » de l'entrée ; les synonymes
+    s'ajoutent à ceux que donne le fichier de termes.
+    """
+    if not DEFINITIONS.is_dir():
+        return
+    par_terme: dict[tuple[str, str], list[dict]] = collections.defaultdict(list)
+    for entree in entrees:
+        if entree["seul"]:
+            par_terme[entree["lot"], cle_souple(entree["fr"])].append(entree)
+    fichiers_de_termes = {entree["lot"] for entree in entrees if entree["seul"]}
+    for fichier in sorted(DEFINITIONS.glob("*.txt")):
+        # Le fichier porte le nom d'un fichier de termes : les erreurs le nomment avec son dossier.
+        nom_du_fichier = f"{DEFINITIONS.name}/{fichier.name}"
+        if fichier.name not in fichiers_de_termes:
+            erreurs.signaler(nom_du_fichier, 0, "aucun fichier de termes seuls ne porte ce nom")
+            continue
+        for numero, ligne in enumerate(fichier.read_text(encoding="utf-8").splitlines(), 1):
+            ligne = unicodedata.normalize("NFC", ligne.strip())
+            if not ligne or ligne.startswith("#"):
+                continue
+            champs = [champ.strip() for champ in ligne.split(" | ")]
+            if len(champs) < 3:
+                erreurs.signaler(nom_du_fichier, numero, f"{len(champs)} champs au lieu de 3 au moins : {ligne[:60]}")
+                continue
+            cle, def_fr, def_ar, *options = champs
+            fr, _, ar = (morceau.strip() for morceau in cle.partition(" = "))
+            candidates = par_terme.get((fichier.name, cle_souple(fr)), [])
+            if ar:
+                candidates = [entree for entree in candidates if cle_souple(entree["ar"]) == cle_souple(ar)]
+            if not candidates:
+                erreurs.signaler(nom_du_fichier, numero,
+                                 f"définition d'un terme absent de {TERMES.name}/{fichier.name} : {cle}")
+                continue
+            if len(candidates) > 1:
+                choix = " ou ".join(f"« {fr} = {entree['ar']} »" for entree in candidates)
+                erreurs.signaler(nom_du_fichier, numero, f"« {fr} » désigne plusieurs entrées : écrire {choix}")
+                continue
+            entree = candidates[0]
+            if "origine_definition" in entree:
+                erreurs.signaler(nom_du_fichier, numero, f"« {cle} » a déjà une définition")
+                continue
+            entree["def_fr"], entree["def_ar"] = def_fr, def_ar
+            entree["origine_definition"] = f"{nom_du_fichier}:{numero}"
+            for option in options:
+                nom, egal, valeur = option.partition("=")
+                if nom == "homographe" and valeur.strip() in (FR, AR):
+                    entree.setdefault("homographes", set()).add(valeur.strip())
+                    continue
+                if not egal or nom not in ("sf", "sa"):
+                    erreurs.signaler(nom_du_fichier, numero, f"option inconnue : {option[:40]}")
+                    continue
+                separateur = "،" if nom == "sa" else ","
+                ajoutes = [synonyme.strip() for synonyme in valeur.split(separateur) if synonyme.strip()]
+                entree[nom] = [*entree[nom], *ajoutes]
+                for synonyme in ajoutes:
+                    entree.setdefault("origine_des_synonymes", {})[cle_souple(synonyme)] = (nom_du_fichier, numero)
+
+
+def verifier_la_definition(entree: dict, erreurs: Erreurs) -> None:
+    """La définition d'un terme seul : écriture, longueur, et absence du terme lui-même dans les deux langues."""
+    fichier, _, numero = entree["origine_definition"].partition(":")
+
+    def signaler(message: str) -> None:
+        erreurs.signaler(fichier, int(numero), f"« {entree['fr']} » : {message}")
+
+    verifier_le_texte_de_la_definition(entree, signaler)
+    def_fr, def_ar = entree["def_fr"], entree["def_ar"]
+    if "|" in def_fr or "’" in def_fr or "ـ" in def_ar:
+        signaler("définition : barre verticale, apostrophe courbe ou trait d'allongement")
+    for langue, texte in (("française", def_fr), ("arabe", def_ar)):
+        if len(texte) > LONGUEUR_DEFINITION:
+            signaler(f"définition {langue} trop longue : {len(texte)} caractères (maximum {LONGUEUR_DEFINITION})")
+    # Une définition ne reprend pas le mot qu'elle définit. Le terme y est cherché avec la règle de l'application :
+    # un adjectif accordé, un verbe au participe passé et un nom au pluriel comptent aussi.
+    lue = modele(entree)
+    for langue, nom, texte in ((FR, "française", def_fr), (AR, "arabe", def_ar)):
+        motif = motif_du_terme(lue, langue)
+        contient = motif is not None and motif.search(texte) is not None
+        if contient and langue not in entree.get("homographes", ()):
+            signaler(f"la définition {nom} contient le terme « {lue.terme(langue)} » : {texte}")
+        elif not contient and langue in entree.get("homographes", ()):
+            signaler(f"option homographe={langue} inutile : la définition {nom} ne contient pas le terme")
+
+
+def motif_du_present(verbe_arabe: str) -> regex.Pattern | None:
+    """Motif du présent d'un verbe arabe écrit au passé : « منح » dans « يمنحها », « أبرم » dans « يبرم ».
+
+    Sert à relire les définitions, qui sont au présent (« حماية يمنحها القانون ») alors que le glossaire écrit le
+    verbe au passé. La règle est courte : préfixe du présent, « أ » initial retiré (« ألغى », « يلغي »), voyelle
+    longue changée (« أجاز », « يجيز »), « و » initial tombé (« وقع », « يقع »). Elle ne connaît pas les autres
+    verbes irréguliers ; la suite d'une locution verbale n'est pas cherchée.
+    """
+    premier = verbe_arabe.split()[0] if verbe_arabe.split() else ""
+    if len(premier) < 2:
+        return None
+    radical = premier[1:] if premier[0] in "أإاآ" and len(premier) >= 4 else premier
+    morceaux = []
+    for rang, lettre in enumerate(radical):
+        dernier = rang == len(radical) - 1
+        if rang == 0 and lettre == "و" and len(radical) == 3:
+            morceaux.append("و?")
+        elif lettre in "اىي" and dernier:
+            morceaux.append("[اىيو]?")
+        elif lettre == "ا" and rang:
+            morceaux.append("[اوي]")
+        elif lettre in "أإؤئء":
+            morceaux.append("[أإؤئءا]")  # « أنشأ », « ينشئ »
+        else:
+            morceaux.append(regex.escape(lettre))
+    return regex.compile(r"(?<![\p{L}\p{M}\p{N}])[وفلس]{0,2}[يتنأ]" + "".join(morceaux)
+                         + r"\p{Arabic}{0,3}(?![\p{L}\p{M}\p{N}])")
+
+
+def incoherences(anciennes: list[dict], nouvelles: list[dict], des_definitions: bool = False) -> list[str]:
     """Phrases d'exemple où un autre terme du glossaire figure en français, mais pas son équivalent en arabe.
 
     Ce n'est pas toujours une erreur : un mot peut avoir un autre sens dans la phrase. La liste sert à relire.
+    Avec ``des_definitions``, la liste porte sur les définitions des termes seuls, et non sur les phrases.
     """
     # Pour chaque terme du glossaire : le terme français, l'entrée qui sert de modèle, ses synonymes arabes.
     modeles: list[tuple[str, Entree, list[str]]] = []
@@ -582,12 +746,20 @@ def incoherences(anciennes: list[dict], nouvelles: list[dict]) -> list[str]:
         arabes = [motif_du_terme(lue, AR)] + [
             motif_du_terme(Entree(numero=0, terme_fr=terme, terme_ar=synonyme, categorie_fr=lue.categorie_fr), AR)
             for synonyme in synonymes]
+        if des_definitions and nature_du_terme(lue) == VERBE:
+            # Une définition est au présent : « accordée par la loi », « يمنحها القانون ».
+            arabes += [motif_du_present(arabe) for arabe in (lue.terme_ar, *synonymes)]
         motifs.append((terme, lue.terme_ar, motif_du_terme(lue, FR), [m for m in arabes if m is not None]))
     remarques = []
     for entree in nouvelles:
-        if "exemple" not in entree:
+        if des_definitions:
+            if "origine_definition" not in entree:
+                continue
+            phrase_fr, phrase_ar, origine = entree["def_fr"], entree["def_ar"], entree["origine_definition"]
+        elif "exemple" in entree:
+            (phrase_fr, phrase_ar), origine = entree["exemple"], entree["origine_exemple"]
+        else:
             continue
-        phrase_fr, phrase_ar = entree["exemple"]
         # Chaque terme du glossaire trouvé dans la phrase française : (début, fin, terme, équivalent, présent en arabe).
         trouves = []
         couverts = []  # passages occupés par le terme de l'entrée, ou par un terme dont l'équivalent est présent
@@ -612,7 +784,7 @@ def incoherences(anciennes: list[dict], nouvelles: list[dict]) -> list[str]:
                 absents[cle_souple(terme)].append(f"{terme} = {arabe}")
         manques = [" / ".join(choix) for choix in absents.values()]
         if manques:
-            remarques.append(f"{entree['origine_exemple']} « {entree['fr']} » : {' ; '.join(manques)}\n"
+            remarques.append(f"{origine} « {entree['fr']} » : {' ; '.join(manques)}\n"
                              f"      {phrase_fr}\n      {phrase_ar}")
     return remarques
 
@@ -644,13 +816,13 @@ def formes_partagees(anciennes: list[dict], nouvelles: list[dict], erreurs: Erre
     texte ne le remplace pas, elle n'a donc pas à choisir. « عقد » est ainsi le nom « contrat » et le verbe
     « conclure » ; l'écran « Terme » propose les deux fiches.
     """
-    porteurs: dict[tuple[str, str], list[tuple[int, str, dict | None]]] = collections.defaultdict(list)
+    porteurs: dict[tuple[str, str], list[tuple[int, str, dict | None, str]]] = collections.defaultdict(list)
 
     def noter(rang: int, libelle: str, entree: dict | None, langue: str, formes: list[str]) -> None:
         for forme in formes:
             for cle in cles_de_recherche(forme, langue) if forme else ():
-                if all(autre != rang for autre, _, _ in porteurs[langue, cle]):
-                    porteurs[langue, cle].append((rang, libelle, entree))
+                if all(autre != rang for autre, _, _, _ in porteurs[langue, cle]):
+                    porteurs[langue, cle].append((rang, libelle, entree, forme))
 
     for rang, ancienne in enumerate(anciennes):
         libelle = f"{ancienne['terme_fr']} / {ancienne['terme_ar']}"
@@ -668,12 +840,14 @@ def formes_partagees(anciennes: list[dict], nouvelles: list[dict], erreurs: Erre
     for (_, cle), liste in porteurs.items():
         if len(liste) < 2:
             continue
-        for rang, _, entree in liste:
-            autres = [(autre, libelle) for autre, libelle, _ in liste if autre != rang]
+        for rang, _, entree, forme in liste:
+            autres = [(autre, libelle) for autre, libelle, _, _ in liste if autre != rang]
             if entree is None or all((min(rang, autre), max(rang, autre)) in deja for autre, _ in autres):
                 continue
             deja.update((min(rang, autre), max(rang, autre)) for autre, _ in autres)
-            erreurs.signaler(entree["lot"], entree["numero"],
+            # La forme est le terme, son pluriel ou un synonyme : un synonyme venu d'un fichier de définitions est
+            # signalé à sa ligne dans ce fichier.
+            erreurs.signaler(*lieu_du_synonyme(entree, forme),
                              f"« {entree['fr']} » : la forme « {cle} » désigne aussi "
                              + " ; ".join(f"« {libelle} »" for _, libelle in autres))
 
@@ -695,9 +869,27 @@ def construire() -> int:
     completes = lire_les_lots(erreurs)
     seuls = lire_les_lots(erreurs, seuls=True)
     nouvelles = completes + seuls
+    lire_les_definitions(nouvelles, erreurs)
     for entree in nouvelles:
         verifier(entree, erreurs)
     lire_les_exemples(nouvelles, erreurs)
+    # Une définition ne sert qu'une fois : deux termes qui auraient la même définition ne seraient pas distingués.
+    definitions: dict[tuple[str, str], str] = {}
+    for ancienne in anciennes:
+        for langue, colonne in ((FR, "definition_fr"), (AR, "definition_ar")):
+            if cle_phrase(ancienne[colonne]):
+                definitions[langue, cle_phrase(ancienne[colonne])] = ancienne["terme_fr"]
+    for entree in nouvelles:
+        if "origine_definition" in entree:
+            verifier_la_definition(entree, erreurs)
+        if not entree["def_fr"]:
+            continue
+        for langue, texte in ((FR, entree["def_fr"]), (AR, entree["def_ar"])):
+            cle = (langue, cle_phrase(texte))
+            if cle in definitions and "origine_definition" in entree:
+                fichier, ligne = entree["origine_definition"].split(":")[:2]
+                erreurs.signaler(fichier, int(ligne), f"même définition que « {definitions[cle]} » : {texte}")
+            definitions.setdefault(cle, entree["fr"])
     # Une phrase ne sert qu'une fois, en français comme en arabe : dans l'application, une phrase du texte
     # identique à un exemple reçoit la traduction de cet exemple. Les exemples des entrées d'origine comptent.
     phrases: dict[tuple[str, str], str] = {}
@@ -779,7 +971,8 @@ def construire() -> int:
             "domaine": entree["domaine"], "synonymes_fr": " | ".join(entree["sf"]),
             "synonymes_ar": " | ".join(entree["sa"]), "termes_associes": " | ".join(entree["associes"]),
             "definition_fr": entree["def_fr"].replace("'", "’"), "definition_ar": entree["def_ar"],
-            "source_definition": SOURCE if entree["def_fr"] else SOURCE_SEUL,
+            "source_definition": (SOURCE if not entree["seul"]
+                                  else SOURCE_SEUL_DEFINI if entree["def_fr"] else SOURCE_SEUL),
             "contexte_fr": phrase_fr.replace("'", "’"), "contexte_ar": phrase_ar,
             "source_contexte": SOURCE_EXEMPLE if phrase_fr else "",
             "ressources": " | ".join(ressources),
@@ -800,13 +993,26 @@ def construire() -> int:
     if seuls:
         print("termes seuls : " + ", ".join(f"{nombre} × {nature}" for nature, nombre in natures.most_common())
               + f" ; {sum(1 for entree in seuls if entree['pluriel_ar'])} avec un pluriel arabe")
+        sans_definition = [entree for entree in seuls if not entree["def_fr"]]
+        print(f"définitions : {len(seuls) - len(sans_definition)} sur {len(seuls)} termes seuls"
+              + (f" ; il en manque {len(sans_definition)} (--manquants pour la liste)" if sans_definition else ""))
+        print(f"termes seuls avec des synonymes : {sum(1 for entree in seuls if entree['sf'])} en français, "
+              f"{sum(1 for entree in seuls if entree['sa'])} en arabe")
     if "--coherence" in sys.argv:
         remarques = incoherences(anciennes, nouvelles)
         print(f"\n{len(remarques)} phrase(s) à relire (terme français sans son équivalent arabe) :")
         print("\n".join(remarques))
+    if "--coherence-definitions" in sys.argv:
+        remarques = incoherences(anciennes, nouvelles, des_definitions=True)
+        print(f"\n{len(remarques)} définition(s) à relire (terme français sans son équivalent arabe) :")
+        print("\n".join(remarques))
     if "--manquants" in sys.argv:
         for lot, membres in collections.Counter(entree["lot"] for entree in sans_exemple).items():
             print(f"{membres:4d}  {lot}")
+        if seuls:
+            print("termes seuls sans définition :")
+            for lot, membres in collections.Counter(entree["lot"] for entree in sans_definition).items():
+                print(f"{membres:4d}  {lot}")
     if "--pluriels" in sys.argv:
         print("\n".join(pluriels_composes))
     if "--homonymes" in sys.argv:
@@ -835,11 +1041,11 @@ def construire() -> int:
         CSV.write_bytes(b"\xef\xbb\xbf" + sortie.getvalue().encode("utf-8"))
         print(f"écrit : {CSV} ({differentes} ligne(s) modifiée(s))")
     elif differentes:
-        print(f"\nLe fichier CSV diffère des lots et des exemples : {differentes} ligne(s). L'option --ecrire le "
-              f"récrit ;\nune correction faite à la main dans le CSV après la {ENTREES_D_ORIGINE}e entrée serait "
-              "alors perdue.")
+        print(f"\nLe fichier CSV diffère des lots, des exemples et des définitions : {differentes} ligne(s). "
+              f"L'option --ecrire le récrit ;\nune correction faite à la main dans le CSV après la "
+              f"{ENTREES_D_ORIGINE}e entrée serait alors perdue.")
     else:
-        print("Le fichier CSV correspond aux lots et aux exemples.")
+        print("Le fichier CSV correspond aux lots, aux exemples et aux définitions.")
     return 0
 
 

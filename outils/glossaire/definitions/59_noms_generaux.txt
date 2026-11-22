@@ -1,0 +1,23 @@
+# Définitions des termes de termes/59_noms_generaux.txt : terme | définition française | définition arabe | options (sf=, sa=)
+exécution | Fait d'accomplir ce qu'impose une obligation, un contrat ou une décision. | إنجاز ما يفرضه التزام أو عقد أو قرار.
+mise en vigueur | Fait de rendre un texte applicable. | جعل نص قابلا للتطبيق.
+désignation | Choix d'une personne pour une fonction ou une mission. | اختيار شخص لوظيفة أو مهمة.
+acquisition | Fait de devenir propriétaire d'un bien ou d'obtenir un droit. | أن يصير الشخص مالكا لمال أو أن يحصل على حق.
+gestion | Ensemble des actes par lesquels on administre un bien ou une entreprise. | مجموع الأعمال التي يدار بها مال أو مؤسسة.
+enregistrement | Inscription d'un acte ou d'un fait sur un registre officiel. | تدوين تصرف أو واقعة في سجل رسمي.
+évaluation | Estimation de la valeur d'un bien, d'un dommage ou d'un travail. | تقدير قيمة مال أو ضرر أو عمل. | sf=estimation
+négociation | Discussion entre des parties en vue de parvenir à un accord. | نقاش بين أطراف قصد التوصل إلى اتفاق.
+libertés | Droits qui permettent à chacun d'agir, de penser et de s'exprimer sans entrave de l'État. | حقوق تسمح لكل واحد بأن يتصرف ويفكر ويعبر دون عائق من الدولة.
+immunité | Protection qui met une personne ou un État à l'abri de poursuites ou d'une obligation. | حماية تجعل شخصا أو دولة في مأمن من متابعات أو من التزام.
+bureau | Organe qui dirige les travaux d'une assemblée ; pièce où l'on travaille. | هيئة تدير أعمال مجلس، أو غرفة يعمل فيها.
+bureau d'études | Entreprise qui réalise des études techniques pour un client. | مؤسسة تنجز دراسات تقنية لزبون.
+exécution du jugement | Fait de donner effet, au besoin par la force, à ce que le jugement ordonne. | إعمال ما يأمر به الحكم، ولو بالقوة عند الحاجة.
+exécution des décisions de justice | Ensemble des moyens qui obligent une partie à faire ce qu'un juge a décidé. | مجموع الوسائل التي تلزم طرفا بأن يفعل ما قرره قاض.
+modes d'acquisition de la propriété | Moyens par lesquels une personne devient propriétaire : contrat, succession, possession prolongée. | الوسائل التي يصير بها شخص مالكا: العقد والتركة والحيازة الطويلة.
+enregistrement des actes | Formalité fiscale qui consiste à présenter un acte à l'administration et à payer un droit. | شكلية جبائية يقدم فيها محرر للإدارة ويدفع عنه حق.
+placement de fonds | Emploi d'une somme d'argent dans une opération qui doit rapporter un revenu. | استعمال مبلغ من النقود في عملية يرجى منها دخل.
+pour cause de | En raison d'un fait ou d'un motif précis. | بسبب واقعة أو داع معين.
+de la part de | Venant d'une personne, ou envoyé par elle. | صادرا عن شخص، أو مرسلا منه.
+selon le cas | D'une manière qui change avec la situation. | على نحو يتغير بتغير الوضع.
+en vigueur | En application, en parlant d'un texte. | في التطبيق، ويقال للنص.
+en cours d'exécution | Qui a commencé à être accompli mais n'est pas achevé. | ما بدأ إنجازه ولم يكتمل.
