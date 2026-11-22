@@ -1,0 +1,231 @@
+# Définitions des termes de termes/43_verbes.txt : terme | définition française | définition arabe | options (sf=, sa=)
+# Le verbe arabe du glossaire est au passé : sa définition aussi.
+protéger | Mettre une personne, un bien ou un droit à l'abri d'une atteinte. | جعل شخصا أو مالا أو حقا في مأمن من المساس. | sf=préserver, sauvegarder | sa=صان
+garantir | Promettre qu'une chose aura lieu ou qu'un droit sera respecté, et en répondre. | وعد بأن شيئا سيتحقق أو بأن حقا سيحترم، وتحمل تبعة ذلك. | sa=كفل
+légiférer | Faire des lois, en parlant du pouvoir qui en a la charge. | وضع القوانين، ويقال للسلطة المكلفة بذلك.
+promulguer | Constater l'existence d'une loi votée et en ordonner l'exécution, en parlant du chef de l'État. | عاين وجود قانون صوت عليه وأمر بتنفيذه، ويقال لرئيس الدولة.
+publier | Porter un texte à la connaissance de tous, notamment par le Journal officiel. | أعلم الجميع بنص، ولا سيما عن طريق الجريدة الرسمية.
+abroger | Mettre fin pour l'avenir à l'application d'une loi ou d'un règlement. | أنهى تطبيق قانون أو تنظيم بالنسبة إلى المستقبل. | sa=نسخ
+modifier | Changer en partie le contenu d'un texte ou d'un contrat. | غير جزئيا مضمون نص أو عقد.
+compléter | Ajouter à un texte ce qui lui manque. | أضاف إلى نص ما ينقصه.
+réviser | Examiner de nouveau un texte ou une décision pour le corriger ou l'adapter. | أعاد النظر في نص أو قرار لتصحيحه أو تكييفه. | sa=نقح
+codifier | Réunir dans un seul recueil méthodique les règles d'une même matière. | جمع في مدونة واحدة مرتبة قواعد مادة واحدة.
+réglementer | Soumettre une activité à des règles fixées par l'autorité. | أخضع نشاطا لقواعد تحددها السلطة.
+édicter | Poser une règle par un acte d'autorité. | وضع قاعدة بعمل من أعمال السلطة.
+ratifier | Approuver un traité ou un acte pour le rendre obligatoire. | وافق على معاهدة أو عمل ليصير إلزاميا.
+adopter | Décider par un vote d'accepter un texte. | قرر بتصويت أن يقبل نصا.
+approuver | Déclarer qu'on accepte un acte ou une décision. | صرح بأنه يقبل عملا أو قرارا.
+voter | Exprimer son choix dans une élection ou une délibération. | عبر عن اختياره في انتخاب أو مداولة. | sa=اقترع
+délibérer | Examiner une question à plusieurs avant de décider. | بحث مسألة بحثا جماعيا قبل اتخاذ القرار.
+entrer en vigueur | Commencer à s'appliquer, en parlant d'un texte. | بدأ يطبق، ويقال للنص.
+déroger à | S'écarter d'une règle dans un cas que le droit admet. | حاد عن قاعدة في حالة يقبلها القانون.
+interpréter | Dégager le sens d'un texte ou d'un acte. | استخرج معنى نص أو تصرف.
+appliquer | Faire jouer une règle dans un cas concret. | أعمل قاعدة في حالة واقعية.
+exécuter | Accomplir ce qu'impose une obligation, un contrat ou une décision. | أنجز ما يفرضه التزام أو عقد أو قرار.
+respecter | Se conformer à une règle, à un droit ou à un engagement. | امتثل لقاعدة أو حق أو تعهد. | sa=راعى
+violer | Agir contre une règle, un droit ou un engagement. | تصرف ضد قاعدة أو حق أو تعهد. | sf=transgresser | sa=خرق
+enfreindre | Ne pas respecter une règle ou une interdiction. | لم يحترم قاعدة أو حظرا.
+manquer à | Ne pas remplir un devoir ou une obligation. | لم يؤد واجبا أو التزاما.
+interdire | Ordonner de ne pas faire quelque chose. | أمر بعدم فعل شيء. | sf=défendre
+prohiber | Interdire par une règle de droit. | منع بقاعدة قانونية. | sa=حظر
+autoriser | Donner à quelqu'un le droit ou la permission de faire quelque chose. | أعطى شخصا الحق أو الإذن في فعل شيء.
+permettre | Laisser à quelqu'un la liberté de faire quelque chose. | ترك لشخص حرية فعل شيء.
+habiliter | Donner à une personne le pouvoir légal d'accomplir un acte. | أعطى شخصا السلطة القانونية للقيام بعمل.
+imposer | Rendre obligatoire ; soumettre aussi à l'impôt. | جعل الشيء إلزاميا، وأخضع أيضا للضريبة. | sa=أوجب
+obliger | Mettre quelqu'un dans la nécessité juridique de faire ou de ne pas faire quelque chose. | وضع شخصا في ضرورة قانونية تقضي بأن يفعل شيئا أو يمتنع عنه.
+contraindre | Forcer quelqu'un à agir contre sa volonté. | أكره شخصا على التصرف ضد إرادته. | sf=forcer | sa=أكره
+dispenser | Décharger quelqu'un d'une obligation. | أسقط عن شخص التزاما.
+prévoir | Énoncer à l'avance, dans un texte ou un contrat, ce qui devra se faire. | ذكر مسبقا في نص أو عقد ما يجب أن يتم.
+stipuler | Énoncer en toutes lettres dans un contrat. | ذكر بلفظ واضح في عقد.
+définir | Préciser le sens d'un mot ou le contenu d'une notion. | بين معنى لفظ أو مضمون مفهوم.
+fixer | Établir de façon précise une date, un montant ou une règle. | ضبط بدقة تاريخا أو مبلغا أو قاعدة.
+désigner | Choisir une personne pour une fonction ou une mission. | اختار شخصا لوظيفة أو مهمة.
+instituer | Mettre en place une institution, une règle ou un droit nouveau. | أوجد مؤسسة أو قاعدة أو حقا جديدا. | sa=أحدث
+supprimer | Faire disparaître une règle, un organe ou un droit. | أزال قاعدة أو هيئة أو حقا. | sf=abolir
+conférer | Donner à quelqu'un un droit ou un pouvoir. | أعطى شخصا حقا أو سلطة.
+attribuer | Remettre à une personne ce qui lui revient : un bien, une compétence, un marché public. | سلم شخصا ما يعود له: مالا أو اختصاصا أو صفقة عمومية.
+reconnaître | Admettre l'existence d'un fait, d'un droit ou d'une situation. | أقر بوجود واقعة أو حق أو وضع. | sa=أقر ب
+priver de | Retirer à quelqu'un un droit ou un avantage. | سحب من شخص حقا أو منفعة.
+restreindre | Réduire la portée d'un droit ou d'une liberté. | قلص مدى حق أو حرية. | sa=حد من
+étendre | Appliquer une règle ou un droit à des cas ou à des personnes de plus. | طبق قاعدة أو حقا على حالات أو أشخاص آخرين.
+conclure | Former un contrat par l'accord des parties. | أنشأ عقدا باتفاق الأطراف.
+contracter | S'engager par un contrat. | التزم بعقد.
+négocier | Discuter les conditions d'un accord avant de le conclure. | ناقش شروط اتفاق قبل أن يبرمه.
+convenir | Se mettre d'accord sur quelque chose. | توصل إلى اتفاق على شيء. | sf=s'accorder
+consentir | Accepter librement un acte ou une obligation. | قبل بحرية تصرفا أو التزاما.
+accepter | Dire oui à une offre ou à une proposition. | وافق على إيجاب أو اقتراح.
+refuser | Ne pas accepter une offre, une demande ou un acte. | لم يقبل إيجابا أو طلبا أو تصرفا. | sf=rejeter
+offrir | Proposer à quelqu'un de conclure un contrat ou de recevoir une chose. | اقترح على شخص أن يبرم عقدا أو أن يتسلم شيئا. | sf=proposer
+promettre | S'engager à faire ou à donner quelque chose plus tard. | التزم بأن يفعل شيئا أو يعطيه فيما بعد.
+s'engager | Prendre sur soi une obligation. | حمل نفسه التزاما. | sf=s'obliger
+signer | Apposer sa signature au bas d'un acte pour l'approuver. | وضع توقيعه أسفل محرر ليوافق عليه.
+résilier | Mettre fin à un contrat pour l'avenir. | أنهى عقدا بالنسبة إلى المستقبل.
+mettre fin à | Faire cesser un contrat, une situation ou une fonction. | وضع حدا لعقد أو وضع أو وظيفة. | sa=وضع حدا ل
+annuler | Effacer un acte et tous ses effets, comme s'il n'avait jamais existé. | محا تصرفا وكل آثاره، كأنه لم يوجد قط.
+rétracter | Revenir sur ce que l'on a dit ou promis. | عدل عما قاله أو وعد به.
+renouveler | Conclure de nouveau un contrat arrivé à sa fin, ou en allonger la durée. | أبرم من جديد عقدا بلغ نهايته، أو أطال مدته.
+proroger | Repousser la fin d'un délai ou d'un contrat. | أخر نهاية أجل أو عقد.
+céder | Transmettre à une autre personne un droit ou un bien. | نقل إلى شخص آخر حقا أو مالا.
+renoncer à | Abandonner de soi-même un droit. | ترك حقا بإرادته.
+transférer | Faire passer un droit ou un bien d'une personne à une autre. | جعل حقا أو مالا ينتقل من شخص إلى آخر. | sa=حول
+aliéner | Céder à autrui la propriété d'un bien, par vente ou par donation. | تنازل لغيره عن ملكية مال ببيع أو هبة.
+acquérir | Devenir propriétaire d'un bien ou obtenir un droit. | صار مالكا لمال أو حصل على حق. | sa=تملك
+posséder | Avoir une chose entre ses mains et s'en servir comme un propriétaire. | كان الشيء في يده واستعمله استعمال المالك.
+vendre | Céder un bien contre un prix. | تنازل عن مال مقابل ثمن.
+acheter | Acquérir un bien contre un prix. | اكتسب مالا مقابل ثمن. | sa=ابتاع
+donner à bail | Remettre un bien à un locataire pour qu'il s'en serve, contre un loyer. | سلم مالا لمستأجر لينتفع به، مقابل بدل الإيجار.
+prendre à bail | Recevoir un bien pour s'en servir, contre un loyer. | تسلم مالا لينتفع به، مقابل بدل الإيجار.
+prêter | Remettre une chose ou une somme à quelqu'un, qui devra la rendre. | سلم شيئا أو مبلغا لشخص يلزمه رده.
+emprunter | Recevoir une chose ou une somme que l'on devra rendre. | تسلم شيئا أو مبلغا يلزمه رده. | sa=استدان
+faire donation | Donner un bien à quelqu'un, de son vivant et sans contrepartie. | أعطى مالا لشخص في حياته ودون مقابل.
+léguer | Donner un bien par testament, pour après sa mort. | أعطى مالا بوصية، لما بعد وفاته.
+hériter | Recevoir les biens d'une personne décédée. | تلقى أموال شخص توفي.
+cautionner | S'engager à payer la dette d'un autre s'il ne la paie pas. | التزم بأن يدفع دين غيره إذا لم يدفعه. | sf=se porter caution
+hypothéquer | Affecter un immeuble à la garantie d'une dette, sans s'en dessaisir. | خصص عقارا لضمان دين، دون أن يتخلى عن حيازته.
+livrer | Mettre la chose vendue entre les mains de l'acheteur. | وضع المبيع في يد المشتري.
+payer | Exécuter une obligation, le plus souvent en versant une somme d'argent. | نفذ التزاما، غالبا بتسليم مبلغ من النقود. | sa=أدى
+rembourser | Rendre à quelqu'un l'argent qu'il a prêté ou avancé. | رد لشخص النقود التي أقرضها أو قدمها مسبقا.
+indemniser | Verser à la victime une somme qui compense son dommage. | دفع للضحية مبلغا يجبر ضررها.
+réparer le préjudice | Compenser le dommage subi par la victime, en nature ou en argent. | أزال الضرر الذي لحق الضحية، عينا أو نقدا. | sf=réparer le dommage
+restituer | Rendre à son propriétaire ce que l'on détient sans droit ou ce que l'on a reçu. | أعاد إلى المالك ما يحوزه دون حق أو ما تسلمه. | sf=rendre | sa=أعاد
+réclamer | Demander avec insistance ce à quoi l'on estime avoir droit. | طلب بإلحاح ما يرى أنه حقه. | sf=revendiquer
+exiger | Demander comme une chose due ou nécessaire. | طلب الشيء باعتباره مستحقا أو ضروريا. | sa=اقتضى
+mettre en demeure | Sommer le débiteur d'exécuter son obligation. | أنذر المدين بأن ينفذ التزامه. | sf=sommer | sa=أنذر
+déléguer | Charger une personne d'exercer un pouvoir à sa place. | كلف شخصا بأن يمارس سلطة مكانه.
+mandater | Donner à quelqu'un le pouvoir d'agir en son nom. | أعطى شخصا سلطة التصرف باسمه. | sf=donner mandat | sa=أناب
+représenter | Agir au nom d'une autre personne et à sa place. | تصرف باسم شخص آخر ومكانه. | sa=ناب عن
+substituer | Mettre une personne ou une chose à la place d'une autre. | وضع شخصا أو شيئا مكان آخر.
+confirmer | Déclarer qu'un acte ou une décision reste valable. | صرح بأن تصرفا أو قرارا يبقى صحيحا. | sf=valider | sa=أكد
+se porter garant | S'engager à répondre de la dette ou de la conduite d'un autre. | التزم بأن يتحمل دين غيره أو تبعة سلوكه.
+se porter fort | Promettre qu'un tiers fera ou acceptera quelque chose. | وعد بأن شخصا من الغير سيفعل شيئا أو سيقبله.
+agir en justice | S'adresser à un tribunal pour obtenir la reconnaissance ou la protection d'un droit. | لجأ إلى محكمة للحصول على الاعتراف بحق أو على حمايته.
+assigner | Appeler une personne devant un tribunal par un acte d'huissier. | دعا شخصا إلى المثول أمام محكمة بمحرر المحضر القضائي.
+saisir | Faire placer un bien du débiteur sous le contrôle du juge, pour garantir ou obtenir un paiement. | وضع مالا للمدين تحت رقابة القاضي ليضمن الوفاء أو ليحصل عليه.
+saisir le juge | Porter une demande ou un litige devant le juge. | رفع طلبا أو نزاعا إلى القاضي.
+comparaître | Se présenter devant un juge ou un tribunal. | مثل أمام قاض أو محكمة. | sa=مثل
+plaider | Exposer oralement devant le juge les arguments d'une partie. | عرض شفويا أمام القاضي حجج طرف. | sa=ترافع
+invoquer | S'appuyer sur une règle, un fait ou un droit pour soutenir sa demande. | استند إلى قاعدة أو واقعة أو حق لتأييد طلبه.
+alléguer | Affirmer un fait devant le juge, sans l'avoir encore prouvé. | أكد واقعة أمام القاضي دون أن يثبتها بعد. | sa=زعم
+contester | Refuser d'admettre un fait, un droit ou une décision. | رفض التسليم بواقعة أو حق أو قرار.
+prouver | Montrer au juge qu'un fait est vrai. | بين للقاضي أن واقعة صحيحة. | sa=برهن على
+témoigner | Dire au juge ce que l'on a vu ou entendu. | أخبر القاضي بما رآه أو سمعه. | sf=déposer | sa=أدلى بشهادة
+prêter serment | Promettre solennellement de dire la vérité ou de bien remplir sa fonction. | وعد وعدا رسميا بأن يقول الحقيقة أو بأن يقوم بوظيفته بأمانة.
+avouer | Admettre soi-même les faits que l'on vous reproche. | أقر بنفسه بالوقائع المنسوبة إليه. | sa=أقر
+nier | Affirmer qu'un fait n'est pas vrai ou qu'on ne l'a pas commis. | أكد أن واقعة غير صحيحة أو أنه لم يرتكبها. | sa=جحد
+statuer | Rendre une décision sur une demande ou un litige. | أصدر قرارا في طلب أو نزاع. | sa=بت في
+juger | Examiner une affaire et la trancher par une décision. | نظر في قضية وبت فيها بقرار. | sa=قضى
+condamner | Déclarer une personne coupable et lui infliger une peine, ou l'obliger à payer. | أدان شخصا وأنزل به عقوبة، أو ألزمه بأن يدفع.
+déclarer coupable | Dire, après examen des preuves, qu'une personne a commis l'infraction. | قال بعد فحص الأدلة إن شخصا ارتكب الجريمة.
+acquitter l'accusé | Déclarer que la personne poursuivie n'est pas coupable. | صرح بأن الشخص الذي يتابع ليس مذنبا.
+débouter | Rejeter la demande d'un plaideur parce qu'elle n'est pas fondée. | رد طلب خصم لأنه غير مؤسس.
+ordonner | Prescrire une mesure par une décision qui s'impose. | فرض تدبيرا بقرار ملزم.
+prononcer | Rendre publiquement une décision. | أعلن قرارا علنيا.
+rendre un jugement | Trancher un litige par une décision de justice. | فصل في نزاع بمقرر قضائي.
+motiver | Exposer les raisons, tirées des faits et du droit, qui fondent une décision. | عرض الأسباب المستمدة من الوقائع والقانون التي يقوم عليها قرار.
+notifier | Porter un acte ou une décision à la connaissance d'une personne, dans les formes légales. | أعلم شخصا بمحرر أو قرار وفق الأشكال التي يقررها القانون. | sa=أعلن
+faire appel | Demander à la cour de juger de nouveau une affaire déjà jugée. | طلب من المجلس القضائي أن يحكم من جديد في قضية سبق الحكم فيها.
+se pourvoir en cassation | Demander à la Cour suprême de vérifier qu'une décision respecte le droit. | طلب من المحكمة العليا أن تتحقق من أن قرارا يحترم القانون.
+former opposition | Demander au même tribunal de juger de nouveau une affaire jugée en son absence. | طلب من المحكمة نفسها أن تحكم من جديد في قضية فصل فيها في غيابه.
+casser | Annuler une décision qui a mal appliqué le droit, en parlant de la Cour suprême. | أبطل قرارا طبق القانون تطبيقا خاطئا، ويقال للمحكمة العليا.
+infirmer | Annuler ou réformer en appel la décision du premier juge. | أبطل أو عدل في الاستئناف قرار القاضي الأول.
+renvoyer | Envoyer une affaire devant une autre juridiction, ou la remettre à une autre audience. | أرسل قضية إلى جهة قضائية أخرى، أو أخرها إلى جلسة أخرى.
+surseoir à statuer | Suspendre le jugement d'une affaire en attendant un événement ou une autre décision. | أوقف الحكم في قضية في انتظار حادث أو قرار آخر.
+ajourner | Remettre à une date postérieure. | أخر إلى تاريخ لاحق. | sa=أرجأ
+suspendre | Faire cesser pour un temps l'effet d'un acte ou le déroulement d'une procédure. | عطل لمدة أثر تصرف أو سير إجراء.
+interrompre | Effacer le temps déjà écoulé d'un délai, qui repart alors de zéro. | أزال ما مضى من أجل، فيبدأ الأجل من جديد.
+radier | Rayer une inscription d'un registre, ou une affaire du rôle. | حذف قيدا من سجل، أو قضية من الجدول.
+récuser | Demander qu'un juge soit écarté d'une affaire parce qu'on doute de son impartialité. | طلب إبعاد قاض عن قضية للشك في حياده.
+se désister | Renoncer à l'instance que l'on a engagée. | تخلى عن الخصومة التي بدأها.
+transiger | Mettre fin à un litige par un accord où chacun abandonne une part de ses prétentions. | أنهى نزاعا باتفاق يتخلى فيه كل طرف عن بعض مطالبه.
+concilier | Rapprocher les parties pour qu'elles trouvent un accord. | قرب بين الأطراف ليتوصلوا إلى اتفاق.
+recouvrer | Obtenir le paiement d'une somme due. | نال الوفاء بمبلغ مستحق.
+liquider | Calculer ce qui est dû, vendre les biens et payer les dettes pour clore une situation. | حسب ما هو مستحق وباع الأموال ودفع الديون لإنهاء وضع.
+constater | Relever l'existence d'un fait après l'avoir vérifié soi-même. | دون وجود واقعة بعد أن تحقق منها بنفسه.
+expertiser | Examiner une chose ou une question en qualité d'expert. | فحص شيئا أو مسألة بصفة خبير.
+enquêter | Rechercher les preuves d'une infraction et ses auteurs. | بحث عن أدلة جريمة وعن الفاعلين. | sa=تحرى
+entendre | Recueillir les déclarations d'une personne. | تلقى أقوال شخص.
+interroger | Poser des questions à une personne soupçonnée ou poursuivie. | طرح أسئلة على شخص مشتبه فيه أو شخص يتابع.
+perquisitionner | Fouiller un lieu pour y chercher des preuves. | نقب في مكان بحثا عن أدلة.
+arrêter | Appréhender une personne pour la conduire devant l'autorité. | أمسك بشخص لاقتياده أمام السلطة. | sf=appréhender | sa=اعتقل
+placer en garde à vue | Retenir un suspect dans les bureaux de la police pour les besoins de l'enquête. | أبقى مشتبها فيه في مكاتب الشرطة لحاجات التحقيق.
+incarcérer | Enfermer une personne dans une prison. | حبس شخصا في مؤسسة عقابية. | sa=حبس
+libérer | Rendre la liberté à une personne détenue. | أعاد الحرية لشخص محبوس. | sf=relâcher | sa=أطلق سراح
+inculper | Reprocher une infraction à une personne, au cours d'une procédure pénale. | نسب جريمة إلى شخص خلال إجراء جزائي.
+poursuivre | Engager une procédure contre une personne devant un tribunal. | باشر إجراء ضد شخص أمام محكمة. | sa=لاحق
+porter plainte | Signaler une infraction à l'autorité pour qu'elle en poursuive l'auteur. | أبلغ السلطة بجريمة لتتابع الفاعل. | sf=déposer plainte | sa=اشتكى
+dénoncer | Faire connaître à l'autorité une infraction ou son auteur. | أعلم السلطة بجريمة أو بالفاعل.
+classer sans suite | Décider de ne pas poursuivre après une plainte ou une enquête. | قرر ألا يتابع بعد شكوى أو تحقيق.
+extrader | Remettre une personne à un autre État qui la réclame pour un procès ou pour une peine. | سلم شخصا إلى دولة أخرى تطالب به لمحاكمة أو لعقوبة.
+expulser | Obliger un étranger à quitter le territoire ; faire sortir un occupant d'un lieu. | ألزم أجنبيا بمغادرة الإقليم، أو أخرج شاغلا من مكان. | sa=أبعد
+gracier | Dispenser un condamné d'exécuter sa peine, en parlant du chef de l'État. | أعفى محكوما عليه من أن ينفذ عقوبته، ويقال لرئيس الدولة.
+sanctionner | Infliger une peine ou une mesure à l'auteur d'une faute. | أنزل عقوبة أو تدبيرا بفاعل الخطأ.
+commettre | Accomplir un acte que la loi interdit. | قام بفعل يمنعه القانون. | sa=اقترف
+voler | Prendre la chose d'autrui sans sa permission, pour se l'approprier. | أخذ شيء الغير دون إذنه ليتملكه. | sf=dérober
+tuer | Donner la mort à une personne. | أزهق روح شخص.
+blesser | Porter atteinte au corps d'une personne. | ألحق مساسا بجسم شخص.
+frauder | Tromper pour obtenir un avantage ou échapper à une règle. | خدع للحصول على منفعة أو للتهرب من قاعدة.
+falsifier | Altérer un document ou une chose pour tromper. | حرف وثيقة أو شيئا بقصد الخداع. | sa=زيف
+corrompre | Offrir un avantage à un agent pour qu'il agisse contre son devoir. | عرض منفعة على عون ليتصرف ضد واجبه.
+détourner | S'approprier des biens ou des fonds que l'on avait reçus pour un autre emploi. | استولى على أموال تسلمها لغرض آخر. | sa=بدد
+escroquer | Obtenir un bien d'une personne en la trompant par des manœuvres. | حصل على مال من شخص بخداعه بحيل.
+menacer | Annoncer à quelqu'un qu'on lui fera du mal. | أخبر شخصا بأنه سيلحق به أذى. | sa=توعد
+diffamer | Imputer à une personne un fait précis qui salit son honneur. | نسب إلى شخص واقعة معينة تمس بشرفه. | sa=شهر ب
+injurier | Adresser à quelqu'un des paroles outrageantes qui ne lui imputent aucun fait précis. | وجه إلى شخص ألفاظا مهينة لا تنسب إليه واقعة معينة. | sa=شتم
+receler | Détenir ou cacher une chose que l'on sait provenir d'une infraction. | حاز أو ستر شيئا يعلم أنه ناتج عن جريمة.
+nuire à | Causer du tort à une personne ou à ses intérêts. | ألحق أذى بشخص أو بمصالحه.
+causer un dommage | Être à l'origine d'une atteinte aux biens, au corps ou aux droits d'autrui. | كان سببا في مساس بأموال الغير أو جسمه أو حقوقه.
+endommager | Abîmer une chose et en diminuer la valeur. | أفسد شيئا ونقص من قيمته.
+détruire | Faire disparaître une chose ou la rendre inutilisable. | أزال شيئا أو جعله غير صالح للاستعمال. | sa=خرب
+usurper | Prendre sans droit un nom, une fonction ou une identité. | اتخذ دون حق اسما أو وظيفة أو هوية. | sa=اغتصب
+abuser de | Se servir à tort d'un droit, d'un pouvoir ou de la confiance d'autrui. | استخدم بغير وجه حق حقا أو سلطة أو ثقة الغير.
+séquestrer | Retenir une personne enfermée contre sa volonté et sans droit. | أبقى شخصا محبوسا ضد إرادته ودون حق.
+enlever | Emmener une personne de force ou par ruse. | أخذ شخصا بالقوة أو بالحيلة. | sf=kidnapper | sa=خطف
+administrer | Prendre soin des biens ou des intérêts d'une personne ou d'une entreprise, et décider pour eux. | تولى شؤون أموال أو مصالح شخص أو مؤسسة وقرر بشأنها.
+diriger | Être à la tête d'un organisme et en conduire l'activité. | كان على رأس هيئة وقاد نشاطها.
+contrôler | Vérifier qu'une activité ou un acte est conforme aux règles. | تحقق من أن نشاطا أو عملا مطابق للقواعد.
+inspecter | Examiner sur place le fonctionnement d'un organisme ou d'un établissement. | فحص في عين المكان سير هيئة أو مؤسسة. | sa=فتش
+révoquer | Retirer à quelqu'un sa fonction ; reprendre un acte que l'on avait accompli. | سحب من شخص وظيفته، أو رجع في تصرف قام به.
+licencier | Mettre fin au contrat de travail d'un salarié, à l'initiative de l'employeur. | أنهى عقد العمل الذي يربط عاملا، بمبادرة من المستخدم.
+démissionner | Quitter son emploi ou sa fonction de sa propre volonté. | ترك منصبه أو وظيفته بإرادته.
+recruter | Engager une personne pour un emploi. | ألحق شخصا بمنصب عمل.
+titulariser | Nommer définitivement un agent dans son emploi à la fin de son stage. | عين عونا بصفة نهائية في منصبه عند نهاية تربصه. | sa=ثبت
+enregistrer | Porter un acte ou un fait sur un registre officiel. | دون تصرفا أو واقعة في دفتر رسمي. | sa=قيد
+certifier | Attester par écrit qu'un fait est exact ou qu'une copie est conforme. | شهد كتابة بأن واقعة صحيحة أو بأن نسخة مطابقة.
+authentifier | Donner à un acte la force d'un acte dressé par un officier public. | أعطى محررا قوة المحرر الذي يحرره ضابط عمومي.
+déclarer | Informer une autorité d'un fait, comme la loi l'exige. | أعلم سلطة بواقعة كما يوجب القانون.
+convoquer | Demander à une personne de se présenter à une date et en un lieu donnés. | طلب من شخص أن يحضر في تاريخ ومكان معينين.
+requérir | Demander à une autorité une mesure ou une décision. | التمس من سلطة تدبيرا أو قرارا. | sa=التمس
+réquisitionner | Obliger une personne ou une entreprise à fournir un bien ou un service à l'autorité. | ألزم شخصا أو مؤسسة بتقديم مال أو خدمة للسلطة.
+exproprier | Obliger un propriétaire à céder son bien à l'administration, contre une indemnité. | ألزم مالكا بأن يتنازل عن ماله للإدارة مقابل تعويض.
+accorder | Donner à quelqu'un ce qu'il sollicite ou ce à quoi il a droit. | أعطى شخصا ما يطلبه أو ما له حق فيه.
+retirer | Reprendre un acte, un droit ou une autorisation que l'on avait donnés. | استرجع تصرفا أو حقا أو ترخيصا كان قد منحه.
+subventionner | Verser une aide financière publique à une activité ou à un organisme. | دفع إعانة مالية عمومية لنشاط أو هيئة. | sa=أعان
+percevoir | Recevoir une somme d'argent qui est due. | تسلم مبلغا من النقود مستحقا.
+déduire | Retrancher une somme d'un total. | طرح مبلغا من مجموع. | sa=اقتطع
+soumissionner | Proposer son prix et ses conditions pour obtenir un marché public. | اقترح ثمنه وشروطه للحصول على صفقة عمومية.
+naître | Venir au monde ; commencer d'exister, en parlant d'un droit. | جاء إلى الدنيا، ويقال للحق إذا بدأ وجوده.
+décéder | Mourir, en parlant d'une personne. | مات، ويقال للشخص. | sf=mourir | sa=مات
+se marier | S'unir à une personne par le mariage. | ارتبط بشخص بعقد الزواج.
+divorcer | Mettre fin à son mariage selon les formes que la loi fixe. | أنهى زواجه وفق الأشكال التي يحددها القانون.
+émanciper | Donner à un mineur, avant l'âge fixé par la loi, la capacité d'agir seul. | منح قاصرا، قبل السن التي يحددها القانون، أهلية التصرف وحده.
+frapper d'interdiction | Retirer à une personne, par jugement, le droit de gérer seule ses biens. | سحب من شخص بحكم حق تسيير أمواله وحده.
+assister | Aider une personne dans un acte ou devant un juge, sans agir à sa place. | أعان شخصا في تصرف أو أمام قاض، دون أن يتصرف مكانه. | sf=aider | sa=عاون
+succéder à | Prendre la place d'une personne dans ses droits ou dans sa fonction. | أخذ مكان شخص في حقوقه أو في وظيفته.
+partager | Diviser un bien ou une masse de biens entre plusieurs personnes. | جزأ مالا أو مجموعة أموال بين عدة أشخاص. | sf=diviser
+résider | Habiter de façon habituelle en un lieu. | سكن في مكان بصفة معتادة.
+naturaliser | Accorder la nationalité à un étranger qui la sollicite. | منح الجنسية لأجنبي يطلبها.
+constituer | Créer une société, une association ou un dossier en réunissant ses éléments. | أنشأ شركة أو جمعية أو ملفا بجمع عناصره.
+dissoudre | Mettre fin à l'existence d'une société, d'une association ou d'une assemblée. | أنهى وجود شركة أو جمعية أو مجلس.
+fusionner | S'unir à une autre société pour n'en former qu'une seule. | اتحد مع شركة أخرى لتصيرا شركة واحدة.
+souscrire | S'engager à prendre des actions ou à payer une somme, en signant un acte. | التزم بأن يأخذ أسهما أو بأن يدفع مبلغا، بتوقيعه محررا.
+distribuer | Remettre à chacun sa part du bénéfice ou des biens. | سلم كل واحد حصته من الربح أو الأموال.
+faire faillite | Ne plus pouvoir payer ses dettes, en parlant d'un commerçant. | لم يعد يستطيع أن يدفع ديونه، ويقال للتاجر.
+cesser ses paiements | Ne plus régler ses dettes arrivées à échéance. | لم يعد يسدد ديونه التي حل أجل الاستحقاق فيها.
+endosser | Transmettre un chèque ou une lettre de change en signant au dos. | نقل شيكا أو سفتجة بالتوقيع على الوجه الخلفي.
+facturer | Établir la facture d'une vente ou d'un service. | أعد فاتورة بيع أو خدمة.
+importer | Faire entrer une marchandise dans le pays. | أدخل بضاعة إلى البلد.
+exporter | Faire sortir une marchandise du pays. | أخرج بضاعة من البلد.
+dédouaner | Accomplir les formalités de douane et payer les droits pour retirer une marchandise. | أتم شكليات إدارة الجمارك ودفع الحقوق ليسحب بضاعة.
+assurer | Garantir une personne contre un risque, moyennant une prime. | ضمن شخصا من خطر مقابل قسط.
+investir | Placer de l'argent dans une activité pour en tirer un revenu. | وظف نقودا في نشاط ليجني منه دخلا.
+concurrencer | Offrir les mêmes produits ou les mêmes services qu'une autre entreprise pour attirer ses clients. | عرض المنتجات أو الخدمات نفسها التي تعرضها مؤسسة أخرى ليجلب زبائنها.

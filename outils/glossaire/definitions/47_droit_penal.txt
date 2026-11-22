@@ -1,0 +1,328 @@
+# Définitions des termes de termes/47_droit_penal.txt : terme | définition française | définition arabe | options (sf=, sa=)
+loi pénale | Texte qui définit les infractions et fixe les peines. | نص يعرف الجرائم ويحدد العقوبات.
+application de la loi pénale dans le temps | Règle qui dit si une loi pénale nouvelle vaut pour les actes commis avant elle. | قاعدة تبين هل يسري قانون جزائي جديد على الأفعال التي ارتكبت قبله.
+application de la loi pénale dans l'espace | Règle qui dit quelle loi pénale vaut pour une infraction, d'après le lieu où elle a été commise. | قاعدة تبين أي قانون جزائي يسري على جريمة، بحسب المكان الذي ارتكبت فيه.
+principe de territorialité | Principe selon lequel la loi d'un État s'applique à toute infraction commise sur son territoire. | مبدأ يقضي بأن قانون الدولة يطبق على كل جريمة ترتكب في إقليمها.
+interprétation stricte | Règle qui interdit au juge d'appliquer un texte pénal à des cas qu'il ne vise pas. | قاعدة تمنع القاضي من أن يطبق نصا جزائيا على حالات لا يقصدها.
+loi pénale plus douce | Loi nouvelle qui efface une infraction ou allège une peine ; elle profite aux actes commis avant elle. | قانون جديد يمحو جريمة أو يخفف عقوبة، وتستفيد منه الأفعال التي ارتكبت قبله.
+incrimination | Décision de la loi de faire d'un comportement une infraction. | قرار القانون بأن يجعل من سلوك جريمة.
+dépénalisation | Décision de la loi de ne plus punir un comportement. | قرار القانون بألا يعاقب على سلوك بعد الآن.
+fait incriminé | Comportement que la loi définit comme une infraction. | سلوك يعرفه القانون بأنه جريمة.
+acte préparatoire | Acte qui prépare une infraction sans encore la commencer ; il n'est pas puni en principe. | عمل يهيئ لجريمة دون أن يشرع فيها، ولا يعاقب عليه مبدئيا.
+commencement d'exécution | Acte qui tend sans détour à commettre l'infraction et qui caractérise la tentative. | فعل يؤدي مباشرة إلى أن ترتكب الجريمة، وبه يتحقق الشروع.
+désistement volontaire | Renonciation de l'auteur à son infraction, de lui-même, avant qu'elle soit accomplie ; il échappe alors à la peine. | تنازل فاعل الجريمة عنها من تلقاء نفسه قبل أن تتم، فيفلت من العقوبة.
+infraction tentée | Infraction que son auteur a commencé à exécuter mais qui a manqué son effet pour une raison qui ne dépend pas de sa volonté. | جريمة بدأ فاعلها ينفذها لكنها لم تحقق أثرها لسبب لا يتوقف على إرادته.
+infraction consommée | Infraction dont tous les éléments sont réunis. | جريمة اجتمعت كل عناصرها.
+infraction impossible | Infraction qui ne pouvait pas réussir, par exemple parce que l'arme n'était pas chargée. | جريمة لم يكن ممكنا أن تتم، كأن يكون السلاح غير محشو.
+infraction intentionnelle | Infraction que son auteur a voulue, en sachant ce qu'il faisait. | جريمة أرادها فاعلها وهو يعلم ما يفعل.
+infraction non intentionnelle | Infraction commise par imprudence ou négligence, dont l'auteur n'a pas voulu le résultat. | جريمة ترتكب عن عدم احتياط أو إهمال، ولم يرد فاعلها النتيجة.
+infraction continue | Infraction qui se prolonge dans le temps tant que son auteur le veut, comme le recel. | جريمة تمتد في الزمن ما دام فاعلها يريد ذلك، كإخفاء الأشياء المسروقة.
+infraction instantanée | Infraction qui s'accomplit en un seul moment, comme le vol. | جريمة تتم في لحظة واحدة، كالسرقة.
+infraction d'habitude | Infraction qui n'existe que si le même acte est répété plusieurs fois. | جريمة لا تقوم إلا إذا تكرر الفعل نفسه عدة مرات.
+infraction politique | Infraction qui vise l'organisation ou le fonctionnement de l'État. | جريمة تستهدف تنظيم الدولة أو طريقة عملها.
+infraction militaire | Infraction aux devoirs de l'armée, jugée par les tribunaux militaires. | جريمة تخل بواجبات الجيش، تحكم فيها المحاكم العسكرية.
+infraction de droit commun | Infraction ordinaire, à la différence des infractions politiques ou militaires. | جريمة عادية، خلافا للجرائم السياسية أو العسكرية.
+infraction flagrante | Infraction qui est en train de se commettre ou qui vient de se commettre. | جريمة ترتكب في الحال أو ارتكبت منذ لحظات.
+concours d'infractions | Situation de celui qui a commis plusieurs infractions avant tout jugement définitif pour l'une d'elles. | حالة من ارتكب عدة جرائم قبل أي حكم نهائي في إحداها.
+cumul des peines | Addition des peines prononcées pour plusieurs infractions. | ضم العقوبات التي نطق بها في عدة جرائم بعضها إلى بعض.
+confusion des peines | Règle qui fait exécuter seulement la peine la plus forte quand plusieurs peines sont prononcées. | قاعدة تقضي بأن تنفذ العقوبة الأشد وحدها إذا نطق بعدة عقوبات.
+dol général | Volonté de commettre un acte que l'on sait interdit par la loi. | إرادة أن يرتكب المرء فعلا يعلم أن القانون يحظره.
+dol spécial | Volonté d'obtenir un résultat précis, que la loi exige pour des infractions données. | إرادة بلوغ نتيجة معينة، يشترطها القانون في جرائم معينة.
+mobile | Raison personnelle qui pousse une personne à commettre l'infraction. | سبب شخصي يدفع شخصا إلى أن يرتكب الجريمة.
+culpabilité | Situation de celui qui a commis une infraction et peut en être tenu pour responsable. | حالة من ارتكب جريمة ويجوز أن يعد مسؤولا عنها.
+coauteur | Personne qui commet l'infraction avec une autre, en accomplissant elle-même les actes qui la constituent. | شخص يرتكب الجريمة مع شخص آخر، فيقوم بنفسه بالأفعال التي تكونها.
+instigateur | Personne qui pousse une autre à commettre une infraction. | شخص يدفع غيره إلى أن يرتكب جريمة.
+provocation | Acte qui pousse une personne à commettre une infraction, par un don, une promesse ou une menace. | فعل يدفع شخصا إلى أن يرتكب جريمة، بهبة أو وعد أو تهديد.
+aide et assistance | Soutien apporté à l'auteur d'une infraction pour la préparer ou la commettre ; il fait de celui qui l'apporte un complice. | عون يقدم لفاعل جريمة ليهيئ لها أو ليرتكبها، ويجعل من مقدمه شريكا.
+auteur principal | Personne qui commet elle-même les actes de l'infraction. | الشخص الذي يرتكب بنفسه أفعال الجريمة.
+auteur moral | Personne qui fait commettre l'infraction par une autre, sans agir elle-même. | شخص يجعل غيره يرتكب الجريمة دون أن يتصرف بنفسه.
+personne morale pénalement responsable | Société ou association qui répond des infractions commises pour elle par l'un de ses représentants. | شركة أو جمعية تسأل عن الجرائم التي يرتكبها من أجلها ممثل لها.
+cause d'irresponsabilité | Circonstance qui empêche de punir l'auteur d'un acte, comme la démence ou le très jeune âge. | ظرف يمنع من معاقبة فاعل فعل، كالجنون أو صغر السن.
+démence | Trouble mental qui ôte à une personne la maîtrise de ses actes ; elle échappe alors à la peine. | اضطراب عقلي يفقد الشخص التحكم في أفعاله، فلا تطبق عليه العقوبة. | sf=aliénation mentale
+contrainte irrésistible | Force à laquelle une personne n'a pas pu résister et qui l'a poussée à commettre l'acte. | قوة لم يستطع شخص مقاومتها فدفعته إلى أن يرتكب الفعل.
+minorité pénale | Jeune âge au-dessous duquel un enfant ne peut pas recevoir de peine. | سن صغيرة لا يجوز دونها أن توقع عقوبة على ولد.
+excuse légale | Circonstance que la loi énumère et qui efface la peine ou la réduit. | ظرف ينص عليه القانون فيمحو العقوبة أو يخفضها.
+excuse atténuante | Circonstance que la loi énumère et qui oblige le juge à réduire la peine. | ظرف ينص عليه القانون فيوجب على القاضي تخفيض العقوبة.
+excuse absolutoire | Circonstance que la loi énumère et qui entraîne une dispense de peine pour le coupable. | ظرف ينص عليه القانون ويترتب عليه إعفاء من العقوبة للمذنب.
+excuse de provocation | Réduction de peine pour celui qui a réagi sous le coup d'une attaque ou d'une offense grave. | تخفيض العقوبة لمن رد تحت تأثير هجوم أو إهانة جسيمة.
+ordre de la loi | Acte que la loi commande d'accomplir ; il ne peut pas être une infraction. | فعل يأمر القانون بالقيام به، فلا يمكن أن يكون جريمة.
+commandement de l'autorité légitime | Ordre donné par une autorité compétente, qui justifie l'acte de celui qui obéit. | أمر تصدره سلطة مختصة، فيبرر فعل من يطيعه.
+permission de la loi | Autorisation qu'un texte donne d'accomplir un acte qui serait sans cela une infraction. | ترخيص يعطيه نص للقيام بفعل كان سيعد جريمة لولاه.
+consentement de la victime | Acceptation de l'acte par la personne lésée ; elle n'efface l'infraction que dans les rares cas où la loi le dit. | قبول الشخص المتضرر الفعل، ولا يمحو الجريمة إلا في الحالات النادرة التي يذكرها القانون.
+proportionnalité de la défense | Condition de la légitime défense : la riposte ne doit pas dépasser ce que l'attaque rend nécessaire. | شرط للدفاع المشروع: ألا يتجاوز الرد ما يجعله الهجوم لازما.
+peine principale | Peine que le juge peut prononcer seule : réclusion, emprisonnement ou amende. | عقوبة يجوز للقاضي أن ينطق بها وحدها: السجن أو الحبس أو الغرامة.
+peine criminelle | Peine attachée aux crimes : la réclusion ou la peine de mort. | عقوبة مقررة للجنايات: السجن أو عقوبة الإعدام.
+peine délictuelle | Peine attachée aux délits : l'emprisonnement et l'amende. | عقوبة مقررة للجنح: الحبس والغرامة.
+peine privative de liberté | Peine qui consiste à enfermer le condamné dans une prison. | عقوبة تتمثل في حبس المحكوم عليه في مؤسسة عقابية.
+réclusion à temps | Réclusion prononcée pour une durée limitée, et non à vie. | سجن ينطق به لمدة محدودة، لا مدى الحياة.
+peine d'amende | Peine qui consiste à payer une somme d'argent au Trésor. | عقوبة تتمثل في دفع مبلغ من النقود للخزينة.
+jour-amende | Amende calculée par jour : le condamné verse une somme fixe pendant un nombre de jours donné. | غرامة تحسب باليوم: يدفع المحكوم عليه مبلغا ثابتا خلال عدد معين من الأيام.
+peine alternative | Peine qui remplace l'emprisonnement, comme le travail d'intérêt général. | عقوبة تقوم مقام الحبس، كالعمل للنفع العام.
+placement sous surveillance électronique | Mesure qui oblige une personne à rester chez elle ou dans un périmètre, sous le contrôle d'un appareil. | تدبير يلزم شخصا بالبقاء في بيته أو في محيط معين، تحت رقابة جهاز.
+bracelet électronique | Appareil attaché à la cheville ou au poignet, qui signale où se trouve la personne surveillée. | جهاز يشد إلى الكاحل أو المعصم ويدل على مكان الشخص المراقب.
+interdiction de séjour | Interdiction, pour un condamné, de paraître dans les lieux que le juge désigne. | حظر على المحكوم عليه أن يظهر في الأماكن التي يعينها القاضي.
+assignation à résidence | Obligation, pour une personne, de demeurer dans le lieu que le juge ou l'administration désigne. | التزام شخص بأن يقيم في المكان الذي يعينه القاضي أو الإدارة.
+interdiction légale | Privation, pendant la peine criminelle, du droit de gérer soi-même ses biens. | حرمان المحكوم عليه، خلال العقوبة الجنائية، من حق تسيير أمواله بنفسه.
+dégradation civique | Privation des droits civils et politiques, comme celui de voter ou d'occuper une fonction publique. | حرمان من حقوق مدنية وسياسية، كالحق في أن يصوت الشخص أو يتولى وظيفة عمومية.
+interdiction d'exercer une profession | Peine qui interdit au condamné de pratiquer le métier dont il a abusé. | عقوبة تحظر على المحكوم عليه مزاولة الحرفة التي أساء استعمالها.
+fermeture d'établissement | Peine qui ordonne de fermer le lieu où l'infraction a été commise. | عقوبة تأمر بغلق المكان الذي ارتكبت فيه الجريمة.
+exclusion des marchés publics | Peine qui interdit à une entreprise d'obtenir un marché public. | عقوبة تمنع مؤسسة من الحصول على صفقة عمومية.
+retrait du permis de conduire | Peine qui prive un conducteur du droit de conduire. | عقوبة تحرم سائقا من حق السياقة.
+publication de la condamnation | Peine qui porte la décision rendue contre le condamné à la connaissance de tous. | عقوبة تعلم الجميع بالقرار الذي صدر ضد المحكوم عليه.
+confiscation générale | Transfert à l'État de tous les biens du condamné. | نقل كل أموال المحكوم عليه إلى الدولة.
+confiscation spéciale | Transfert à l'État d'un bien précis : l'instrument de l'infraction ou ce qu'elle a rapporté. | نقل مال معين إلى الدولة: أداة الجريمة أو ما نتج عنها.
+internement judiciaire | Placement, sur décision du juge, d'une personne qui souffre de troubles mentaux dans un hôpital spécialisé. | وضع شخص يعاني اضطرابات عقلية في مستشفى متخصص، بقرار من القاضي.
+placement en établissement thérapeutique | Mesure qui confie à un centre de soins une personne dépendante de la drogue ou de l'alcool. | تدبير يعهد بشخص مدمن على المخدرات أو الكحول إلى مركز علاج.
+individualisation de la peine | Adaptation de la peine à la personnalité du condamné et aux circonstances de l'infraction. | تكييف العقوبة بحسب شخصية المحكوم عليه وظروف الجريمة.
+aggravation de la peine | Élévation de la peine quand la loi retient une circonstance aggravante. | رفع العقوبة إذا أخذ القانون بظرف مشدد.
+atténuation de la peine | Abaissement de la peine en raison de circonstances favorables au condamné. | تخفيض العقوبة بسبب ظروف في صالح المحكوم عليه.
+maximum de la peine | Limite la plus haute que la loi pose pour la peine d'une infraction. | أعلى حد يضعه القانون لعقوبة جريمة.
+minimum de la peine | Limite la plus basse que la loi pose pour la peine d'une infraction. | أدنى حد يضعه القانون لعقوبة جريمة.
+période de sûreté | Temps pendant lequel le condamné ne peut obtenir ni sortie ni libération conditionnelle. | مدة لا يجوز فيها للمحكوم عليه أن يحصل على خروج ولا على الإفراج المشروط.
+sursis simple | Dispense d'exécuter la peine, qui devient définitive si le condamné ne commet pas de nouvelle infraction pendant un délai. | إعفاء من أن تنفذ العقوبة، يصير نهائيا إذا لم يرتكب المحكوم عليه جريمة جديدة خلال أجل.
+sursis avec mise à l'épreuve | Sursis assorti d'obligations que le condamné doit suivre sous le contrôle du juge. | وقف التنفيذ مقرونا بالتزامات يجب على المحكوم عليه أن يتبعها تحت رقابة القاضي.
+révocation du sursis | Décision qui met fin au sursis et fait exécuter la peine, après une nouvelle condamnation. | قرار ينهي وقف التنفيذ فتنفذ العقوبة، بعد إدانة جديدة.
+dispense de peine | Décision du juge de déclarer une personne coupable sans lui infliger de peine. | قرار القاضي بأن يدين شخصا دون أن يوقع عليه عقوبة.
+prescription de la peine | Extinction de la peine qui n'a pas été exécutée pendant le temps que la loi fixe. | انقضاء العقوبة التي لم تنفذ خلال المدة التي يحددها القانون.
+extinction de la peine | Fin de la peine, par son exécution, par la grâce, par l'amnistie ou par la prescription. | نهاية العقوبة بتنفيذها أو بالعفو أو بالعفو الشامل أو بالتقادم.
+réhabilitation légale | Effacement de la condamnation, de plein droit, après un délai sans nouvelle peine. | محو الإدانة بقوة القانون، بعد أجل لم توقع فيه عقوبة جديدة.
+réhabilitation judiciaire | Effacement de la condamnation par une décision de la chambre d'accusation, à la demande du condamné. | محو الإدانة بقرار من غرفة الاتهام، بطلب من المحكوم عليه.
+antécédents judiciaires | Toute condamnation déjà prononcée contre une personne. | كل إدانة سبق أن نطق بها ضد شخص.
+récidiviste | Personne qui commet une nouvelle infraction après une condamnation définitive. | شخص يرتكب جريمة جديدة بعد إدانة نهائية.
+délinquant primaire | Personne poursuivie pour la première fois, sans condamnation antérieure. | شخص يتابع أول مرة، دون إدانة سابقة.
+mineur délinquant | Mineur qui a commis une infraction ; il relève de juges et de mesures qui lui sont réservés. | قاصر ارتكب جريمة، ويخضع لقضاة وتدابير مخصصة له.
+enfant en danger | Enfant dont la santé, la moralité ou l'éducation courent un risque sérieux. | ولد يهدد خطر جدي صحته أو أخلاقه أو تربيته.
+assassinat | Meurtre commis avec préméditation ou guet-apens. | قتل عمد يرتكب مع سبق الإصرار أو الترصد.
+guet-apens | Attente d'une personne, pendant quelque temps, pour la tuer ou la frapper. | انتظار شخص مدة من الزمن ليقتل أو ليضرب.
+parricide | Meurtre du père, de la mère ou d'un autre ascendant. | قتل الأب أو الأم أو أحد الأصول الآخرين عمدا.
+infanticide | Meurtre d'un enfant qui vient de naître. | قتل ولد حديث العهد بالولادة عمدا.
+empoisonnement | Atteinte à la vie d'une personne par des substances qui peuvent donner la mort. | مساس بحياة شخص بمواد يمكن أن تسبب الموت.
+violences | Actes qui portent atteinte au corps ou à l'esprit d'une personne, avec ou sans blessure. | أفعال فيها مساس بجسم شخص أو بنفسه، مع جرح أو دونه.
+blessures involontaires | Atteinte au corps d'autrui causée par imprudence ou négligence. | مساس بجسم الغير ناتج عن عدم احتياط أو إهمال.
+incapacité totale de travail | Période pendant laquelle la victime ne peut accomplir aucune activité ; sa durée sert à qualifier l'infraction. | فترة لا تستطيع فيها الضحية القيام بأي نشاط، وبمدتها تكيف الجريمة.
+infirmité permanente | Atteinte définitive à un membre, à un sens ou à une fonction du corps. | مساس نهائي بعضو أو بحاسة أو بوظيفة من وظائف الجسم.
+mutilation | Ablation d'un membre du corps, ou blessure qui le rend inutilisable. | قطع عضو من الجسم، أو جرح يجعله غير صالح للاستعمال.
+mise en danger d'autrui | Exposition d'une personne à un risque grave de mort ou de blessure, par la violation d'une règle de prudence. | تعريض شخص لخطر جسيم بالموت أو الجرح، بانتهاك قاعدة حيطة.
+non-assistance à personne en danger | Refus d'aider une personne en péril quand on pouvait le faire sans risque. | رفض مساعدة شخص في خطر مع إمكان ذلك دون خطر.
+omission de porter secours | Abstention de celui qui n'aide pas une personne en péril ni n'appelle les secours. | امتناع من لا يساعد شخصا في خطر ولا يستدعي النجدة.
+avortement | Fin provoquée de la grossesse, punie hors des cas que la loi admet. | إنهاء الحمل عمدا، ويعاقب عليه خارج الحالات التي يقبلها القانون.
+délaissement d'enfant | Abandon d'un enfant dans un lieu, sans aucune personne pour s'en occuper. | ترك ولد في مكان دون أي شخص يعتني به.
+abandon de l'enfant | Acte du père ou de la mère qui cesse de s'occuper de son enfant et de pourvoir à ses besoins. | فعل الأب أو الأم الذي يكف عن رعاية ولده وعن سد حاجاته.
+non-représentation d'enfant | Refus de remettre un enfant à la personne qui a le droit de le réclamer en vertu d'une décision de justice. | رفض تسليم ولد إلى الشخص الذي له الحق في أن يطالب به بمقتضى مقرر قضائي.
+non-paiement de la pension alimentaire | Infraction de celui qui reste plus de deux mois sans payer la pension alimentaire fixée par le juge. | جريمة من يبقى أكثر من شهرين دون أن يدفع النفقة التي حددها القاضي.
+détournement de mineur | Acte de celui qui emmène un mineur loin de ceux qui veillent sur lui, même sans employer la force. | فعل من يأخذ قاصرا بعيدا عمن يرعونه، ولو دون استعمال القوة.
+séquestration | Acte de retenir une personne enfermée contre sa volonté, sans ordre de l'autorité. | فعل من يبقي شخصا محبوسا رغم إرادته، دون أمر من السلطة.
+prise d'otages | Capture de personnes pour obliger un tiers à payer ou à accomplir un acte. | احتجاز أشخاص ليلزم طرف آخر بأن يدفع أو بأن يقوم بفعل.
+otage | Personne retenue de force pour faire pression sur un tiers. | شخص يحتجز بالقوة للضغط على طرف آخر.
+trafic d'organes | Commerce illégal de reins, de cornées ou d'autres éléments prélevés sur le corps humain. | تجارة غير قانونية بالكلى أو القرنيات أو غيرها مما ينزع من جسم الإنسان.
+trafic de migrants | Organisation, contre de l'argent, de l'entrée ou de la sortie illégale de personnes d'un pays. | تنظيم دخول أشخاص إلى بلد أو خروجهم منه بصفة غير قانونية، مقابل مال. | sf=trafic illicite de migrants
+attentat à la pudeur | Acte sexuel imposé à une personne, qui n'est pas un viol. | فعل جنسي يفرض على شخص ولا يبلغ حد الاغتصاب.
+outrage public à la pudeur | Acte indécent accompli dans un lieu où d'autres peuvent le voir. | فعل فاضح يقع في مكان يمكن أن يراه فيه الغير.
+agression sexuelle | Atteinte sexuelle commise avec violence, menace ou surprise. | مساس جنسي يرتكب بإكراه أو تهديد أو مباغتة.
+inceste | Relations sexuelles entre proches parents que la loi défend de se marier. | علاقات جنسية بين أقارب يحظر القانون أن يتزوج أحدهم الآخر.
+adultère | Relations sexuelles d'une personne mariée avec une autre que son conjoint ; il n'est poursuivi que sur plainte de l'époux offensé. | علاقات جنسية لشخص متزوج مع غير زوجه، ولا يتابع إلا بشكوى من الزوج المضرور.
+proxénétisme | Activité de celui qui aide la prostitution d'autrui ou en tire de l'argent. | نشاط من يساعد على دعارة الغير أو يجني منها مالا.
+prostitution | Activité d'une personne qui se livre à des relations sexuelles contre de l'argent. | نشاط شخص يقيم علاقات جنسية مقابل مال.
+incitation à la débauche | Acte de pousser une personne, surtout un mineur, à des conduites sexuelles dégradantes. | فعل من يدفع شخصا، وخاصة قاصرا، إلى سلوك جنسي مشين.
+harcèlement moral | Agissements répétés qui rendent pénible la vie ou le travail d'une personne. | أفعال متكررة تجعل حياة شخص أو عمله شاقا.
+violence conjugale | Coups, menaces ou humiliations qu'un époux inflige à l'autre. | ضرب أو تهديد أو إهانة يلحقها زوج بالزوج الآخر. | sf=violences conjugales
+dénonciation calomnieuse | Acte de signaler aux autorités un fait que l'on sait faux, pour faire punir une personne innocente. | فعل من يبلغ السلطات واقعة يعلم أنها كاذبة، ليعاقب شخص بريء.
+atteinte à l'honneur | Propos ou acte qui abaisse une personne dans l'estime des autres. | قول أو فعل يحط من قدر شخص في نظر الغير.
+atteinte à la considération | Propos ou acte qui abîme la réputation professionnelle ou sociale d'une personne. | قول أو فعل يسيء إلى السمعة المهنية أو الاجتماعية لشخص.
+violation du secret professionnel | Révélation, par un médecin, un avocat ou un autre professionnel, de ce qu'il a appris dans son métier. | كشف طبيب أو محام أو مهني آخر ما علمه في حرفته.
+violation du secret des correspondances | Ouverture ou détournement d'une lettre ou d'un message destiné à une autre personne. | فتح أو اختلاس رسالة أو خطاب موجه إلى شخص آخر.
+discours de haine | Propos qui appellent à l'hostilité ou au mépris contre un groupe, à cause de son origine ou de sa religion. | أقوال تدعو إلى العداء أو الاحتقار ضد جماعة بسبب أصلها أو ديانتها.
+discrimination | Différence de traitement entre des personnes, fondée sur le sexe, l'origine, la religion ou le handicap. | فرق في المعاملة بين أشخاص مؤسس على الجنس أو الأصل أو الديانة أو الإعاقة.
+menace de mort | Annonce, à une personne, qu'on va la tuer. | إعلام شخص بأنه سيقتل.
+chantage | Acte d'obtenir de l'argent ou un avantage en menaçant de révéler un secret. | فعل من يحصل على مال أو منفعة بالتهديد بكشف سر.
+vol simple | Vol commis sans aucune circonstance aggravante. | سرقة ترتكب دون أي ظرف مشدد.
+vol qualifié | Vol que ses circonstances, comme la nuit, l'effraction ou les armes, font juger comme un crime. | سرقة تجعلها ظروفها، كالليل أو الكسر أو السلاح، يحكم فيها بوصفها جناية.
+vol aggravé | Vol puni plus sévèrement à cause des circonstances où il a été commis. | سرقة يعاقب عليها بشدة أكبر بسبب الظروف التي ارتكبت فيها.
+vol avec violence | Vol commis en frappant la victime ou en lui faisant peur. | سرقة ترتكب بضرب الضحية أو بتخويفها.
+vol à main armée | Vol commis par une personne qui porte une arme, que l'on voie cette arme ou non. | سرقة يرتكبها شخص يحمل سلاحا، سواء رئي السلاح أم لا.
+vol avec effraction | Vol commis en forçant une porte, une fenêtre ou une serrure. | سرقة ترتكب بخلع باب أو نافذة أو قفل.
+effraction | Bris d'une clôture, d'une porte ou d'une serrure pour entrer dans un lieu. | تحطيم سياج أو باب أو قفل لدخول مكان.
+escalade | Entrée dans un lieu par-dessus un mur, une clôture ou un toit. | دخول مكان من فوق جدار أو سياج أو سطح.
+fausses clés | Clés imitées ou volées, ou crochets, qui servent à ouvrir une serrure sans droit. | مفاتيح قلدت أو سرقت، أو كلاليب، تستعمل لفتح قفل دون حق.
+extorsion | Acte d'obtenir par la force ou la menace une signature, une somme ou un bien. | فعل من يحصل بالقوة أو بالتهديد على توقيع أو مبلغ أو مال. | sf=extorsion de fonds
+détournement | Acte de s'approprier un bien ou de l'argent que l'on avait reçu pour un emploi précis. | فعل من يستولي على مال أو نقود تسلمها لغرض معين.
+abus de biens sociaux | Emploi des biens d'une société par ses dirigeants, dans leur intérêt personnel et contre celui de la société. | استعمال المسيرين أموال شركة لمصلحتهم الشخصية وضد مصلحة الشركة.
+abus de faiblesse | Acte de profiter de l'âge, de la maladie ou de l'ignorance d'une personne pour lui faire accomplir un acte qui lui nuit. | فعل من يستغل سن شخص أو مرضه أو جهله ليجعله يقوم بتصرف يضر به.
+abus de blanc-seing | Acte d'écrire, au-dessus d'une signature donnée d'avance, autre chose que ce qui était convenu. | فعل من يكتب فوق توقيع أعطي مسبقا شيئا غير ما اتفق عليه.
+destruction de biens | Acte de démolir ou de rendre inutilisable un bien qui appartient à autrui. | فعل من يهدم مالا يملكه الغير أو يجعله غير صالح للاستعمال.
+dégradation | Dommage causé volontairement à un bien, sans le détruire entièrement. | ضرر يلحق عمدا بمال دون أن يدمره كليا.
+incendie volontaire | Acte de mettre le feu, volontairement, à un bien. | فعل من يضرم النار عمدا في مال. | sf=incendie criminel
+contrefaçon de monnaie | Fabrication de pièces ou de billets imités de la monnaie légale. | صنع قطع أو أوراق تقلد العملة القانونية.
+fausse monnaie | Pièces ou billets fabriqués sans droit, qui imitent la vraie monnaie. | قطع أو أوراق تصنع دون حق وتقلد العملة الصحيحة.
+faux en écriture publique | Altération de la vérité dans un acte rédigé par un officier public. | تغيير الحقيقة في محرر يكتبه ضابط عمومي.
+faux en écriture privée | Altération de la vérité dans un écrit qui ne vient pas d'un officier public. | تغيير الحقيقة في محرر لم يصدر عن ضابط عمومي.
+faux en écriture de commerce | Altération de la vérité dans un document commercial ou bancaire, comme une facture ou un chèque. | تغيير الحقيقة في وثيقة تجارية أو مصرفية، كفاتورة أو شيك.
+faux matériel | Faux qui touche le support de l'écrit : grattage, ajout, signature imitée. | تزوير يمس المحرر نفسه: حك أو إضافة أو توقيع مقلد.
+faux intellectuel | Faux qui touche le contenu de l'écrit : il énonce comme vrai un fait qui ne l'est pas. | تزوير يمس مضمون المحرر: يذكر واقعة غير صحيحة على أنها صحيحة.
+falsification | Modification d'un document, d'un produit ou d'une monnaie pour tromper. | تغيير وثيقة أو منتوج أو عملة قصد الخداع.
+usurpation d'identité | Emploi du nom ou des données d'une autre personne pour se faire passer pour elle. | استعمال اسم شخص آخر أو معطياته للظهور بمظهره.
+usurpation de fonctions | Acte d'accomplir les actes d'une fonction publique sans y avoir été nommé. | فعل من يقوم بأعمال وظيفة عمومية دون أن يكون قد عين فيها.
+usurpation de titre | Emploi, sans droit, d'un titre, d'un diplôme ou d'une qualité que la loi protège. | استعمال لقب أو شهادة أو صفة يحميها القانون، دون حق.
+fausse déclaration | Affirmation mensongère adressée à une autorité pour obtenir un avantage ou échapper à une obligation. | قول كاذب يوجه إلى سلطة للحصول على منفعة أو للتهرب من التزام.
+faux serment | Mensonge de celui qui jure, devant le juge civil, un fait qu'il sait inexact. | كذب من يحلف أمام القاضي المدني على واقعة يعلم أنها غير صحيحة.
+subornation de témoin | Pression, promesse ou don pour obtenir d'un témoin une déclaration mensongère. | ضغط أو وعد أو هبة للحصول من شاهد على تصريح كاذب.
+tromperie | Acte d'induire en erreur l'acheteur sur la nature, la qualité ou la quantité d'une marchandise. | فعل من يوقع المشتري في غلط حول طبيعة بضاعة أو صفتها أو كميتها.
+falsification de denrées | Altération d'aliments destinés à la vente, en y ajoutant ou en y ôtant un composant. | تغيير أغذية معدة للبيع، بإضافة مكون إليها أو بنزعه منها.
+spéculation illicite | Manœuvre qui fait monter ou baisser artificiellement le prix d'une marchandise. | مناورة ترفع ثمن بضاعة أو تخفضه بصفة مصطنعة.
+usure | Prêt d'argent à un taux d'intérêt qui dépasse le maximum que la loi tolère. | قرض نقود بسعر فائدة يتجاوز الحد الأقصى الذي يسمح به القانون.
+jeu de hasard | Jeu où le gain dépend surtout de la chance et non de l'adresse. | لعبة يتوقف فيها الكسب على الصدفة أساسا لا على المهارة.
+loterie | Jeu où des gains sont répartis par tirage au sort entre ceux qui ont acheté un billet. | لعبة توزع فيها أرباح بالقرعة على من اشترى ورقة.
+atteinte à la sûreté de l'État | Infraction qui met en péril l'existence, les institutions ou la défense du pays. | جريمة تعرض للخطر وجود البلد أو مؤسساته أو الدفاع عنه.
+trahison | Crime du citoyen qui aide une puissance étrangère contre son propre pays. | جناية المواطن الذي يساعد قوة أجنبية ضد بلده.
+espionnage | Crime de l'étranger qui recueille des secrets de défense pour une autre puissance. | جناية الأجنبي الذي يجمع أسرار الدفاع لقوة أخرى.
+complot | Décision prise ensemble par plusieurs personnes de commettre un crime contre l'État. | قرار يتخذه عدة أشخاص معا بأن يرتكبوا جناية ضد الدولة.
+attentat | Attaque menée contre l'État, ses institutions ou la vie de personnes. | هجوم موجه ضد الدولة أو مؤسساتها أو حياة أشخاص.
+rébellion | Résistance violente à un agent de l'autorité qui exécute la loi ou une décision. | مقاومة عنيفة لعون من أعوان السلطة ينفذ القانون أو قرارا.
+attroupement | Rassemblement de personnes sur la voie publique, qui peut troubler l'ordre. | تجمع أشخاص في الطريق العام قد يخل بالنظام.
+acte terroriste | Acte violent qui vise à répandre la peur dans la population ou à atteindre la sécurité de l'État. | فعل عنيف يهدف إلى بث الرعب في السكان أو إلى المساس بأمن الدولة. | sf=acte de terrorisme
+apologie du terrorisme | Propos qui présentent sous un jour favorable des actes de terrorisme ou ceux qui les commettent. | أقوال تظهر أفعال الإرهاب أو من يرتكبونها في صورة حسنة.
+financement du terrorisme | Fourniture ou collecte d'argent pour commettre des actes de terrorisme. | تقديم مال أو جمعه لترتكب به أفعال إرهاب.
+organisation terroriste | Groupe structuré qui prépare ou commet des actes de terrorisme. | جماعة منظمة تحضر أفعال إرهاب أو ترتكبها.
+crime organisé | Infractions graves commises par un groupe structuré, pour en tirer de l'argent ou du pouvoir. | جرائم خطيرة ترتكبها جماعة مهيكلة لتجني منها مالا أو سلطة. | sf=criminalité organisée
+groupe criminel organisé | Groupe de trois personnes au moins, qui dure dans le temps et agit de concert pour commettre des infractions graves. | جماعة من ثلاثة أشخاص على الأقل، تدوم في الزمن وتعمل معا لترتكب جرائم خطيرة.
+criminalité transnationale | Infractions préparées ou commises dans plusieurs États. | جرائم تحضر أو ترتكب في عدة دول.
+détention d'arme | Acte d'avoir une arme chez soi ou sur soi sans l'autorisation que la loi impose. | فعل من يكون عنده سلاح في بيته أو معه دون الترخيص الذي يفرضه القانون.
+port d'arme prohibée | Acte de porter sur soi, hors de chez soi, une arme que la loi défend. | فعل من يحمل معه خارج بيته سلاحا ينهى عنه القانون.
+arme à feu | Arme qui lance un projectile par l'explosion d'une poudre. | سلاح يقذف مقذوفا بانفجار بارود.
+arme blanche | Arme qui blesse par sa lame ou sa pointe, comme un couteau. | سلاح يجرح بنصله أو برأسه، كالسكين.
+munitions | Cartouches et projectiles destinés aux armes à feu. | خراطيش ومقذوفات معدة للأسلحة النارية.
+explosifs | Substances qui peuvent produire une explosion. | مواد يمكن أن تحدث انفجارا.
+stupéfiants | Substances qui agissent sur le cerveau et créent une dépendance ; la loi en interdit le commerce. | مواد تؤثر في الدماغ وتسبب الإدمان، ويحظر القانون التجارة فيها. | sf=drogues, drogue
+substances psychotropes | Médicaments qui modifient l'activité mentale et dont l'emploi est contrôlé. | أدوية تغير النشاط العقلي ويراقب استعمالها. | sf=psychotropes
+consommation de stupéfiants | Emploi personnel d'une drogue interdite. | استعمال شخصي لمخدر يحظره القانون.
+détention de stupéfiants | Acte d'avoir sur soi ou chez soi une drogue interdite. | فعل من يكون معه أو في بيته مخدر يحظره القانون.
+outrage à magistrat | Parole, geste ou écrit qui porte atteinte à l'honneur d'un juge dans ses fonctions. | قول أو إشارة أو كتابة فيها مساس بالشرف لقاض وهو يؤدي مهامه.
+outrage à agent public | Parole, geste ou écrit qui manque de respect à un fonctionnaire dans ses fonctions. | قول أو إشارة أو كتابة تخل بالاحترام الواجب لموظف وهو يؤدي مهامه.
+violences contre un agent public | Coups portés à un fonctionnaire dans ses fonctions. | ضرب يلحق بموظف وهو يؤدي مهامه.
+évasion | Acte d'un détenu qui s'échappe du lieu où il est enfermé. | فعل محبوس يفر من المكان الذي حبس فيه.
+bris de scellés | Destruction des cachets posés par l'autorité sur une porte ou sur une chose. | إتلاف الأختام التي وضعتها السلطة على باب أو على شيء.
+entrave à la justice | Acte qui gêne la recherche de la vérité, comme la pression sur un témoin ou la destruction d'une preuve. | فعل يعيق البحث عن الحقيقة، كالضغط على شاهد أو إتلاف دليل.
+non-dénonciation de crime | Silence de celui qui connaît un crime et n'en avertit pas les autorités. | سكوت من يعلم بجناية ولا يخبر بها السلطات.
+recel de malfaiteur | Aide donnée à l'auteur d'un crime pour qu'il échappe aux recherches. | عون يقدم لفاعل جناية ليفلت من البحث.
+concussion | Infraction du fonctionnaire qui perçoit une somme à laquelle il sait n'avoir aucun droit. | جريمة الموظف الذي يقبض مبلغا يعلم أنه لا حق له فيه.
+prise illégale d'intérêts | Infraction du fonctionnaire qui prend un intérêt dans une opération qu'il est chargé de surveiller. | جريمة الموظف الذي يأخذ مصلحة في عملية كلف بمراقبتها.
+octroi d'avantages injustifiés | Infraction de celui qui attribue un marché public sans suivre les règles d'égalité entre les candidats. | جريمة من يسند صفقة عمومية دون اتباع قواعد المساواة بين المترشحين.
+corruption active | Acte de proposer un avantage à un fonctionnaire pour qu'il accomplisse ou n'accomplisse pas un acte de sa fonction. | فعل من يعرض منفعة على موظف ليقوم بعمل من أعمال وظيفته أو ليمتنع عنه.
+corruption passive | Acte du fonctionnaire qui sollicite ou reçoit un avantage pour accomplir ou ne pas accomplir un acte de sa fonction. | فعل الموظف الذي يلتمس أو يأخذ منفعة ليقوم بعمل من أعمال وظيفته أو ليمتنع عنه.
+corrupteur | Personne qui propose ou donne un avantage à un fonctionnaire pour l'acheter. | شخص يعرض منفعة على موظف أو يعطيها له ليشتري ذمته.
+corrompu | Fonctionnaire qui reçoit un avantage pour trahir les devoirs de sa charge. | موظف يأخذ منفعة ليخون واجبات منصبه.
+pot-de-vin | Somme d'argent remise en secret pour obtenir une faveur. | مبلغ من النقود يسلم خفية للحصول على حظوة.
+cadeau | Bien donné sans rien attendre en retour ; un fonctionnaire ne peut pas en accepter d'une personne qui a un dossier devant lui. | مال يعطى دون انتظار مقابل، ولا يجوز لموظف أن يقبله من شخص له ملف عنده.
+conflit d'intérêts | Situation où l'intérêt personnel d'un fonctionnaire peut peser sur la manière dont il remplit sa mission. | حالة يمكن أن تؤثر فيها المصلحة الشخصية لموظف على طريقة قيامه بمهمته. | sf=conflit d'intérêt
+déclaration de patrimoine | Liste de ses biens qu'un responsable public remet à l'autorité, au début et à la fin de ses fonctions. | قائمة أمواله يسلمها مسؤول عمومي للسلطة عند بداية مهامه وعند نهايتها.
+lanceur d'alerte | Personne qui signale, de bonne foi, une infraction ou un danger dont elle a eu connaissance. | شخص يبلغ بحسن نية عن جريمة أو خطر علم به.
+dilapidation | Dépense désordonnée de biens publics par celui qui en est chargé. | إنفاق أموال عمومية دون ضابط ممن كلف بها.
+gaspillage | Emploi inutile ou excessif de biens ou d'argent. | استعمال غير مفيد أو مفرط لأموال أو نقود.
+cybercriminalité | Infractions commises au moyen d'un ordinateur ou d'un réseau, ou qui les visent. | جرائم ترتكب بواسطة حاسوب أو شبكة، أو تستهدفهما. | sf=criminalité informatique, cybercrime | sa=جريمة إلكترونية، جريمة سيبرانية
+accès frauduleux | Entrée sans droit dans un système informatique. | دخول دون حق إلى نظام معلوماتي.
+atteinte aux systèmes de traitement automatisé de données | Acte de fausser, de bloquer ou d'effacer les données d'un système informatique. | فعل من يحرف معطيات نظام معلوماتي أو يعطلها أو يمحوها.
+migration clandestine | Entrée ou sortie d'un pays en dehors des passages et des documents que la loi impose. | دخول بلد أو الخروج منه خارج المعابر والوثائق التي يفرضها القانون. | sf=émigration clandestine, immigration clandestine, migration irrégulière, migration illégale | sa=هجرة سرية، هجرة غير نظامية
+infraction de change | Infraction aux règles sur la monnaie étrangère et sur les mouvements d'argent avec l'extérieur. | جريمة تخالف القواعد الخاصة بالعملة الأجنبية وبحركة الأموال مع الخارج.
+infraction douanière | Infraction aux lois sur l'entrée et la sortie des marchandises, comme la contrebande. | جريمة تخالف القوانين الخاصة بدخول البضائع وخروجها، كالتهريب.
+infraction économique | Infraction qui nuit à l'économie, au commerce ou aux finances publiques. | جريمة تضر بالاقتصاد أو بالتجارة أو بالمالية العمومية.
+infraction routière | Manquement aux règles de la circulation des véhicules. | إخلال بقواعد سير المركبات. | sf=infraction au code de la route
+conduite en état d'ivresse | Acte de conduire un véhicule après avoir bu de l'alcool au-delà du taux que la loi tolère. | فعل من يسوق مركبة بعد أن شرب الكحول فوق النسبة التي يسمح بها القانون.
+délit de fuite | Délit du conducteur qui, après un accident, continue sa route pour échapper à sa responsabilité. | جنحة السائق الذي يواصل طريقه بعد حادث ليتهرب من مسؤوليته.
+mise en mouvement de l'action publique | Premier acte qui porte une infraction devant le juge pénal, accompli par le ministère public ou par la victime. | أول إجراء يعرض جريمة على القاضي الجزائي، تقوم به النيابة العامة أو الضحية.
+exercice de l'action publique | Conduite de l'accusation par le ministère public, depuis les poursuites et pendant tout le procès. | تولي النيابة العامة الاتهام منذ المتابعة وطوال المحاكمة.
+extinction de l'action publique | Fin du droit de poursuivre : décès de l'auteur, prescription, amnistie ou jugement définitif. | نهاية الحق في أن يتابع الفاعل: وفاته أو التقادم أو العفو الشامل أو حكم نهائي.
+opportunité des poursuites | Pouvoir du procureur de la République de décider s'il poursuit une infraction ou classe l'affaire. | سلطة وكيل الجمهورية في أن يقرر هل يتابع جريمة أو يحفظ القضية.
+réquisitoire introductif | Acte par lequel le procureur de la République charge le juge d'instruction d'enquêter sur des faits. | محرر يكلف به وكيل الجمهورية قاضي التحقيق بأن يحقق في وقائع.
+réquisitoire définitif | Écrit où le procureur de la République donne son avis sur la suite de l'affaire, à la fin de l'instruction. | محرر يبدي فيه وكيل الجمهورية رأيه في مآل القضية عند نهاية التحقيق القضائي.
+réquisitions | Demandes que le ministère public adresse au juge, par écrit ou à l'audience. | طلبات توجهها النيابة العامة إلى القاضي، كتابة أو في الجلسة.
+plainte avec constitution de partie civile | Plainte adressée au juge d'instruction par la victime, qui réclame en même temps réparation. | شكوى توجهها الضحية إلى قاضي التحقيق، وتطالب معها بالتعويض.
+retrait de plainte | Décision de la victime de renoncer à la plainte qu'elle avait déposée. | قرار الضحية بأن تتخلى عن الشكوى التي قدمتها.
+agent de police judiciaire | Policier ou gendarme qui seconde les officiers de police judiciaire dans les enquêtes. | شرطي أو دركي يساعد ضباط الشرطة القضائية في التحقيقات.
+gendarmerie nationale | Force militaire chargée de la sécurité et de la police judiciaire, surtout hors des villes. | قوة عسكرية مكلفة بالأمن وبالشرطة القضائية، خاصة خارج المدن. | sf=gendarmerie
+sûreté nationale | Police civile de l'État, chargée de l'ordre et de la police judiciaire dans les villes. | شرطة مدنية تابعة للدولة، مكلفة بالنظام وبالشرطة القضائية في المدن. | sf=police nationale
+enquête de flagrance | Enquête menée tout de suite après une infraction qui vient de se commettre, avec des pouvoirs élargis. | تحقيق يجرى فور وقوع جريمة ارتكبت منذ لحظات، بسلطات موسعة.
+scène de crime | Lieu où l'infraction a été commise et où l'on relève les traces. | المكان الذي ارتكبت فيه الجريمة وتجمع فيه الآثار.
+indices graves et concordants | Éléments sérieux qui se recoupent et rendent vraisemblable qu'une personne a participé à l'infraction. | عناصر جدية يؤيد بعضها بعضا وتجعل من المحتمل أن شخصا شارك في الجريمة.
+saisie des objets | Acte par lequel l'enquêteur prend et conserve les choses utiles à la preuve. | إجراء يأخذ به المحقق الأشياء المفيدة في الإثبات ويحفظها.
+scellés | Enveloppes ou cachets qui ferment une chose saisie pour qu'aucune personne n'y touche. | أظرفة أو أختام تغلق شيئا حجز حتى لا يمسه أي شخص.
+visite domiciliaire | Entrée de l'enquêteur dans un logement pour y chercher des preuves. | دخول المحقق مسكنا ليبحث فيه عن أدلة.
+mandat de perquisition | Écrit du procureur ou du juge qui autorise l'enquêteur à fouiller un lieu. | محرر من وكيل الجمهورية أو من القاضي يسمح للمحقق بأن يفتش مكانا.
+interception des correspondances | Captation, sur autorisation du juge, des messages qu'une personne envoie ou reçoit. | التقاط الرسائل التي يرسلها شخص أو يتلقاها، بترخيص من القاضي.
+écoute téléphonique | Enregistrement des conversations téléphoniques d'une personne, sur autorisation du juge. | تسجيل المحادثات الهاتفية لشخص، بترخيص من القاضي. | sf=écoutes téléphoniques
+infiltration | Opération où un enquêteur se fait passer pour un complice afin de surveiller un groupe de malfaiteurs. | عملية يتظاهر فيها محقق بأنه شريك ليراقب جماعة أشرار.
+livraison surveillée | Méthode qui laisse circuler une marchandise illicite, sous surveillance, pour identifier tous les trafiquants. | طريقة تترك بها بضاعة غير مشروعة تتنقل تحت المراقبة، لكشف كل المهربين.
+prélèvement biologique | Recueil de sang, de salive ou de cheveux sur une personne, pour une analyse. | أخذ دم أو لعاب أو شعر من شخص لتحليله.
+expertise médico-légale | Examen pratiqué par un médecin à la demande du juge, pour décrire des blessures ou la cause d'une mort. | فحص يجريه طبيب بطلب من القاضي ليصف جروحا أو سبب موت.
+autopsie | Examen d'un corps après la mort pour en trouver la cause. | فحص جثة بعد الموت لمعرفة سببه.
+médecin légiste | Médecin spécialisé qui examine les victimes et les corps à la demande du juge. | طبيب متخصص يفحص الضحايا والجثث بطلب من القاضي.
+empreintes digitales | Traces laissées par les doigts, différentes pour chaque personne, qui servent à l'identifier. | آثار تتركها الأصابع، تختلف من شخص إلى آخر، تفيد في التعرف عليه.
+empreinte génétique | Profil établi à partir de l'ADN d'une personne, qui sert à l'identifier. | صورة مستخرجة من الحمض النووي لشخص، تفيد في التعرف عليه. | sf=empreinte ADN | sa=بصمة الحمض النووي
+identification | Opération qui établit qui est une personne, à l'aide de ses papiers, de ses empreintes ou de témoins. | عملية تبين من هو الشخص، بوثائقه أو بصماته أو بشهود.
+contrôle d'identité | Vérification par un policier des papiers d'une personne, pour savoir qui elle est. | تحقق شرطي من وثائق شخص ليعرف من هو.
+interpellation | Acte d'un policier qui retient une personne dans la rue pour l'interroger. | فعل شرطي يوقف شخصا في الطريق ليستجوبه.
+arrestation | Acte de la force publique qui appréhende une personne pour la conduire devant l'autorité. | فعل القوة العمومية التي تمسك شخصا لتقوده أمام السلطة.
+prolongation de la garde à vue | Décision du procureur d'allonger la garde à vue au-delà de quarante-huit heures. | قرار وكيل الجمهورية بأن يطيل التوقيف للنظر أكثر من ثمان وأربعين ساعة.
+droits de la personne gardée à vue | Garanties de la personne retenue par la police : prévenir sa famille, voir un médecin, recevoir un avocat. | ضمانات الشخص الذي تحتجزه الشرطة: إخبار أسرته، ورؤية طبيب، واستقبال محام.
+examen médical | Visite d'un médecin qui constate la santé d'une personne, par exemple à la fin de la garde à vue. | فحص يجريه طبيب ليعاين صحة شخص، مثلا عند نهاية التوقيف للنظر.
+présentation devant le procureur | Conduite d'une personne retenue par la police devant le procureur de la République, qui décide des suites. | اقتياد شخص تحتجزه الشرطة إلى وكيل الجمهورية الذي يقرر ما يتبع.
+procès-verbal d'audition | Écrit où l'enquêteur consigne les déclarations d'un témoin ou d'un suspect. | محرر يدون فيه المحقق أقوال شاهد أو المشتبه فيه.
+procès-verbal d'interrogatoire | Écrit où le juge d'instruction consigne les questions posées à l'inculpé et ses réponses. | محرر يدون فيه قاضي التحقيق الأسئلة التي طرحت على المتهم وأجوبته.
+aveux | Déclarations par lesquelles une personne reconnaît avoir commis l'infraction. | أقوال يقر بها شخص بأنه ارتكب الجريمة.
+ouverture d'une information | Décision de confier une affaire pénale à un juge d'instruction. | قرار بإسناد قضية جزائية إلى قاضي التحقيق.
+interrogatoire de première comparution | Première audition de l'inculpé par le juge d'instruction, qui lui fait connaître les faits reprochés. | أول سماع للمتهم من قاضي التحقيق الذي يعلمه بالوقائع المنسوبة إليه.
+reconstitution des faits | Opération où l'on refait, sur les lieux, les gestes de l'infraction pour vérifier les déclarations. | عملية تعاد فيها، في المكان نفسه، حركات الجريمة للتحقق من الأقوال.
+témoin assisté | Personne soupçonnée mais non inculpée, entendue avec l'aide d'un avocat. | شخص تحوم حوله شبهات ولم يتهم، يسمع بحضور محام.
+mandat de comparution | Ordre du juge d'instruction à une personne de se présenter devant lui à une date précise. | أمر من قاضي التحقيق إلى شخص بأن يمثل أمامه في تاريخ معين.
+mandat d'arrêt international | Mandat d'arrêt diffusé dans d'autres États pour retrouver une personne en fuite. | الأمر بالقبض الذي ينشر في دول أخرى للعثور على شخص هارب.
+ordonnance de mise en détention | Décision du juge d'instruction de placer l'inculpé en détention provisoire. | قرار قاضي التحقيق بأن يودع المتهم الحبس المؤقت.
+ordonnance de mise en liberté | Décision du juge de libérer une personne détenue, avec ou sans conditions. | قرار القاضي بأن يفرج عن شخص محبوس، بشروط أو دونها.
+cautionnement pénal | Somme que l'inculpé dépose pour garantir qu'il se présentera devant le juge. | مبلغ يودعه المتهم ليضمن أنه سيمثل أمام القاضي.
+ordonnance de règlement | Décision par laquelle le juge d'instruction clôt son enquête : renvoi devant le tribunal ou fin des poursuites. | قرار ينهي به قاضي التحقيق تحقيقه: إحالة على المحكمة أو نهاية المتابعة.
+ordonnance de transmission des pièces | Décision du juge d'instruction d'envoyer le dossier d'un crime au procureur général. | قرار قاضي التحقيق بأن يرسل ملف جناية إلى النائب العام.
+arrêt de mise en accusation | Arrêt de la chambre d'accusation qui envoie l'accusé devant le tribunal criminel. | قرار من غرفة الاتهام يرسل المتهم إلى محكمة الجنايات.
+charges suffisantes | Éléments assez sérieux pour renvoyer une personne devant la juridiction qui la jugera. | عناصر جدية بما يكفي ليحال شخص على الجهة القضائية التي تحكم عليه.
+personne détenue | Personne enfermée dans une prison, avant ou après son jugement. | شخص محتجز في مؤسسة عقابية، قبل الحكم عليه أو بعده. | sa=سجين
+jugement de condamnation | Jugement qui déclare une personne coupable et lui inflige une peine. | حكم يصرح بأن شخصا مذنب ويوقع عليه عقوبة.
+jugement de relaxe | Jugement qui déclare qu'une personne n'est pas coupable du délit ou de la contravention reprochés. | حكم يصرح بأن شخصا غير مذنب بالجنحة أو المخالفة المنسوبة إليه.
+déclaration de culpabilité | Décision qui reconnaît qu'une personne a commis l'infraction. | قرار يقر بأن شخصا ارتكب الجريمة.
+verdict | Réponse du tribunal criminel aux questions sur la culpabilité de l'accusé. | أجوبة محكمة الجنايات عن الأسئلة المتعلقة بإذناب المتهم.
+doute | Incertitude sur les faits ; elle profite à la personne poursuivie. | عدم يقين في الوقائع، ويستفيد منه الشخص الذي يتابع.
+jugement par contumace | Jugement d'une personne accusée d'un crime, rendu sans elle parce qu'elle est en fuite. | حكم يصدر على شخص متهم بجناية دون حضوره لأنه هارب.
+opposition au jugement par défaut | Recours de la personne jugée par défaut, qui fait examiner de nouveau l'affaire devant le même tribunal. | طعن الشخص الذي حكم عليه غيابيا، فيعاد النظر في القضية أمام المحكمة نفسها.
+appel correctionnel | Appel d'un jugement rendu en matière de délits. | استئناف حكم صدر في مادة الجنح.
+appel criminel | Appel d'un jugement du tribunal criminel. | استئناف حكم صدر عن محكمة الجنايات.
+tribunal criminel d'appel | Juridiction qui examine de nouveau, en appel, les affaires de crimes. | جهة قضائية تعيد النظر، في الاستئناف، في قضايا الجنايات.
+audience correctionnelle | Audience où sont jugés les délits. | جلسة يحكم فيها في الجنح.
+ordonnance pénale | Décision rendue sans audience pour une infraction légère, sur la seule lecture du dossier. | قرار يصدر دون جلسة في جريمة يسيرة، بمجرد الاطلاع على الملف.
+composition pénale | Mesure que le procureur propose à l'auteur d'une infraction qui reconnaît les faits, à la place d'un procès. | تدبير يعرضه وكيل الجمهورية على فاعل جريمة يعترف بالوقائع، بدلا من محاكمة.
+comparution sur reconnaissance préalable de culpabilité | Procédure où la personne qui avoue accepte la peine que le procureur propose, sous le contrôle du juge. | إجراء يقبل فيه الشخص الذي يعترف العقوبة التي يعرضها وكيل الجمهورية، تحت رقابة القاضي.
+amende forfaitaire | Amende d'un montant fixe, payée sans procès pour une contravention. | غرامة مبلغها ثابت، تدفع دون محاكمة عن مخالفة.
+révision du procès pénal | Recours qui fait examiner de nouveau une condamnation définitive quand un fait nouveau fait douter de la culpabilité. | طعن يعاد به فحص إدانة نهائية إذا ظهرت واقعة جديدة تثير الشك في الإذناب.
+erreur judiciaire | Condamnation d'une personne innocente. | إدانة شخص بريء.
+indemnisation de la détention injustifiée | Somme versée par l'État à la personne détenue puis déclarée innocente. | مبلغ تدفعه الدولة لشخص محبوس صرح بعد ذلك بأنه بريء.
+protection des témoins | Mesures qui cachent l'identité d'un témoin ou veillent à sa sécurité quand il est menacé. | تدابير تخفي هوية شاهد أو تسهر على سلامته إذا هدد.
+témoin protégé | Témoin dont l'identité est tenue secrète parce que sa déposition le met en danger. | شاهد تبقى هويته سرية لأن إفادته تعرضه للخطر.
+exécution des peines | Ensemble des opérations par lesquelles les peines prononcées sont subies ou payées. | مجموع العمليات التي تقضى بها العقوبات التي نطق بها أو تدفع.
+administration pénitentiaire | Administration chargée des prisons et de la réinsertion des détenus. | إدارة مكلفة بالمؤسسات العقابية وبإعادة إدماج المحبوسين.
+établissement de prévention | Prison qui reçoit les personnes en détention provisoire et le condamné à une courte peine. | مؤسسة عقابية تستقبل الشخص الموجود في الحبس المؤقت والمحكوم عليه بعقوبة قصيرة.
+établissement de rééducation | Prison qui reçoit le condamné à une peine de durée moyenne. | مؤسسة عقابية تستقبل المحكوم عليه بعقوبة متوسطة المدة.
+établissement de réadaptation | Prison qui reçoit le condamné à une longue peine et le récidiviste. | مؤسسة عقابية تستقبل المحكوم عليه بعقوبة طويلة والعائد إلى الجريمة.
+centre spécialisé pour mineurs | Établissement qui reçoit le mineur privé de liberté et veille à son éducation. | مؤسسة تستقبل القاصر الذي حرم من الحرية وتتولى تربيته.
+écrou | Inscription d'une personne sur le registre de la prison, qui ouvre sa détention. | تسجيل شخص في سجل المؤسسة العقابية، وبه يبدأ حبسه.
+levée d'écrou | Formalité qui constate la sortie d'un détenu et met fin à sa détention. | شكلية تعاين خروج محبوس وتنهي حبسه.
+régime de détention | Règles de vie imposées au détenu : collectif, individuel, semi-liberté. | قواعد العيش التي تفرض على المحبوس: جماعي أو فردي أو حرية نصفية.
+isolement | Mesure qui sépare un détenu des autres, pour sa sécurité ou comme sanction. | تدبير يفصل محبوسا عن غيره، حفاظا على أمنه أو جزاء له.
+permission de sortie | Autorisation donnée à un condamné de quitter la prison pour quelques jours. | ترخيص يعطى للمحكوم عليه بمغادرة المؤسسة العقابية بضعة أيام. | sf=permission de sortir
+semi-liberté | Régime qui laisse le condamné sortir le jour pour travailler et l'oblige à rentrer le soir. | نظام يترك المحكوم عليه يخرج نهارا ليعمل ويلزمه بالعودة مساء.
+chantier extérieur | Travail de détenus hors de la prison, sous surveillance, pour une collectivité ou une entreprise. | عمل محبوسين خارج المؤسسة العقابية تحت المراقبة، لجماعة محلية أو مؤسسة.
+milieu ouvert | Mode d'exécution de la peine hors des murs de la prison, avec un suivi. | طريقة لتنفيذ العقوبة خارج جدران المؤسسة العقابية، مع مرافقة.
+milieu fermé | Mode d'exécution de la peine à l'intérieur de la prison. | طريقة لتنفيذ العقوبة داخل المؤسسة العقابية.
+réinsertion sociale | Retour du condamné à une vie normale parmi les autres, préparé pendant et après la peine. | عودة المحكوم عليه إلى حياة عادية بين الناس، تهيأ أثناء العقوبة وبعدها.
+rééducation | Effort qui vise à corriger le comportement du détenu par le travail et l'enseignement. | سعي إلى تقويم سلوك المحبوس بالعمل والتعليم.
+remise de peine | Réduction de la durée de la peine, donnée au condamné qui se conduit bien. | إنقاص مدة العقوبة، يستفيد منه المحكوم عليه الحسن السلوك.
+suspension de la peine | Pause dans l'exécution de la peine, pour un temps, pour une raison grave comme une maladie. | وقف تنفيذ العقوبة مدة من الزمن لسبب خطير، كالمرض.
+commission de l'application des peines | Organe de la prison qui donne son avis sur les sorties, la semi-liberté et la libération conditionnelle. | هيئة في المؤسسة العقابية تبدي رأيها في الخروج والحرية النصفية والإفراج المشروط.
+libéré conditionnel | Condamné sorti de prison avant la fin de sa peine, à condition de suivre des obligations. | المحكوم عليه الذي يخرج من المؤسسة العقابية قبل نهاية عقوبته، بشرط أن يتبع التزامات.
+assistance post-pénale | Aide apportée au condamné après sa sortie pour qu'il trouve un logement et un travail. | عون يقدم للمحكوم عليه بعد خروجه ليجد مسكنا وعملا.
+transfèrement | Déplacement d'un détenu d'une prison à une autre. | نقل محبوس من مؤسسة عقابية إلى أخرى.
+surpopulation carcérale | Situation d'une prison qui reçoit plus de détenus qu'elle n'a de places. | حالة مؤسسة عقابية تستقبل من المحبوسين أكثر مما فيها من أماكن. | sf=surpeuplement carcéral, surpopulation pénitentiaire

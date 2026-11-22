@@ -1,0 +1,356 @@
+# Définitions des termes de termes/45_droit_civil.txt : terme | définition française | définition arabe | options (sf=, sa=)
+contrat-cadre | Contrat qui fixe les règles générales que suivront des contrats passés plus tard entre les mêmes parties. | عقد يحدد القواعد العامة التي تتبعها عقود تبرم لاحقا بين الطرفين نفسيهما.
+contrat-type | Modèle de contrat rédigé à l'avance, que les parties reprennent en le complétant. | نموذج عقد يحرر مسبقا، يأخذ به الطرفان مع إتمامه.
+contrat nommé | Contrat auquel la loi donne un nom et dont elle fixe les règles, comme la vente ou le bail. | عقد يعطيه القانون اسما ويحدد القواعد التي تحكمه، كالبيع والإيجار.
+contrat innommé | Contrat que la loi n'organise pas sous un nom propre et que les parties créent librement. | عقد لا ينظمه القانون تحت اسم خاص به وينشئه الطرفان بحرية.
+contrat à exécution successive | Contrat dont les prestations s'échelonnent dans le temps, comme le bail ou le contrat de travail. | عقد يتوزع أداء التزاماته على الزمن، كالإيجار أو عقد العمل.
+contrat à exécution instantanée | Contrat dont les obligations s'accomplissent en une seule fois. | عقد تنجز التزاماته دفعة واحدة.
+contrat commutatif | Contrat où chaque partie sait, dès le départ, ce qu'elle donne et ce qu'elle reçoit. | عقد يعرف فيه كل طرف منذ البداية ما يعطيه وما يأخذه.
+contrat réel | Contrat qui ne se forme que par la remise de la chose qui en est l'objet. | عقد لا ينعقد إلا بتسليم الشيء الذي هو محله.
+avant-contrat | Accord qui prépare la conclusion d'un contrat définitif. | اتفاق يمهد لإبرام عقد نهائي.
+contrat préliminaire | Contrat par lequel les parties s'obligent à passer plus tard le contrat définitif, à des conditions déjà connues. | عقد يلتزم فيه الطرفان بأن يبرما لاحقا العقد النهائي، بشروط معلومة مسبقا.
+pacte de préférence | Engagement de proposer d'abord à une personne donnée le contrat que l'on déciderait de passer. | تعهد بأن يعرض على شخص معين أولا العقد الذي قد يقرر صاحبه إبرامه.
+lettre d'intention | Écrit par lequel une personne annonce qu'elle compte passer un contrat ou soutenir un débiteur. | محرر يعلن فيه شخص أنه يعتزم إبرام عقد أو مساندة مدين.
+formation du contrat | Manière dont un contrat se forme : par la rencontre de l'offre et de l'acceptation. | الكيفية التي ينعقد بها عقد: بتلاقي الإيجاب والقبول.
+interprétation du contrat | Recherche de ce que les parties ont réellement voulu, quand les mots de leur accord sont obscurs. | البحث عما أراده الطرفان حقيقة، حين تكون ألفاظ اتفاقهما غامضة.
+révision du contrat | Modification d'un contrat par le juge ou par les parties, quand un événement inattendu en a rompu l'équilibre. | تعديل عقد من القاضي أو من الطرفين، إذا أخل حادث غير منتظر بتوازنه.
+modification du contrat | Changement apporté à un contrat déjà formé, que toutes les parties acceptent. | تغيير يدخل على عقد سبق انعقاده ويقبله كل الأطراف.
+durée du contrat | Temps pendant lequel le contrat lie les parties. | الزمن الذي يربط العقد خلاله الطرفين.
+objet du contrat | Ce sur quoi porte l'engagement des parties : une chose, un travail ou une abstention. | ما يرد عليه تعهد الطرفين: شيء أو عمل أو امتناع عن عمل.
+cause du contrat | Raison pour laquelle chaque partie s'engage ; elle ne doit pas être contraire à la loi ni à l'ordre public. | الباعث الذي يدفع كل طرف إلى التعاقد، ويجب ألا يكون مخالفا للقانون ولا للنظام العام.
+parties au contrat | Personnes qui ont passé le contrat et qu'il oblige. | الأشخاص الذين أبرموا العقد والذين يلزمهم.
+cocontractant | Personne avec laquelle on a passé un contrat. | الشخص الذي أبرم معه العقد.
+tiers de bonne foi | Personne étrangère à un acte, qui a agi sans en connaître les défauts. | شخص أجنبي عن تصرف، تعامل دون أن يعلم بعيوبه.
+échange des consentements | Rencontre des volontés des parties, qui forme le contrat. | تلاقي إرادة الطرفين، وبه ينعقد العقد.
+accord de volontés | Entente des parties sur le contenu du contrat ; elle suffit en principe à le former. | تفاهم الطرفين على مضمون العقد، وهو يكفي مبدئيا لانعقاده.
+manifestation de volonté | Parole, écrit ou comportement par lequel une personne fait connaître ce qu'elle veut. | قول أو كتابة أو سلوك يظهر به شخص ما يريده.
+volonté unilatérale | Décision d'une seule personne, qui suffit à créer une obligation dans les cas que la loi énumère. | قرار شخص واحد، يكفي لإنشاء التزام في الحالات التي يعددها القانون.
+promesse unilatérale | Engagement d'une seule partie de passer un contrat si l'autre le veut, dans un délai convenu. | تعهد طرف واحد بأن يبرم عقدا إذا أراد الطرف الآخر ذلك، في أجل اتفق عليه.
+promesse de récompense | Engagement, annoncé à tous, de donner une récompense à celui qui accomplira un acte précis. | تعهد يعلن للجميع بإعطاء مكافأة لمن يقوم بعمل معين.
+silence | Attitude de celui qui ne répond pas à une offre ; elle ne vaut acceptation que dans les cas que la loi ou l'usage indique. | موقف من لا يرد على إيجاب، ولا يعد قبولا إلا في الحالات التي يبينها القانون أو العرف.
+réticence dolosive | Silence gardé volontairement sur une information qui importait à l'autre partie avant qu'elle s'engage. | سكوت متعمد عن معلومة كانت تهم الطرف الآخر قبل أن يتعاقد.
+manœuvres frauduleuses | Mensonges et mises en scène employés pour tromper une personne et obtenir son consentement. | أكاذيب وحيل تستعمل لخداع شخص والحصول على رضاه.
+erreur sur la substance | Fausse idée que l'on se fait d'une qualité essentielle de la chose, sans laquelle on ne se serait pas engagé. | تصور خاطئ لصفة جوهرية في الشيء، لولاها ما التزم الشخص.
+erreur sur la personne | Fausse idée que l'on se fait de l'identité ou des qualités de son cocontractant. | تصور خاطئ لهوية المتعاقد الآخر أو لصفاته.
+erreur de droit | Fausse idée que l'on se fait d'une règle juridique ou de sa portée. | تصور خاطئ لقاعدة قانونية أو لمداها.
+crainte | Peur qu'une menace inspire à une personne et qui la pousse à s'engager. | خوف يبعثه تهديد في نفس شخص فيدفعه إلى أن يلتزم.
+exploitation | Avantage excessif qu'une partie tire de la faiblesse ou de la passion de l'autre. | فائدة مفرطة يجنيها أحد الطرفين من ضعف الطرف الآخر أو من هواه.
+obligation de faire | Obligation d'accomplir un travail ou de rendre un service. | التزام بإنجاز عمل أو بتقديم خدمة.
+obligation de ne pas faire | Obligation de s'abstenir d'un acte que l'on aurait pu accomplir. | التزام بأن يمتنع المدين عن فعل كان يمكنه القيام به.
+obligation de donner | Obligation de transférer la propriété d'une chose ou un autre droit. | التزام المدين بأن ينقل ملكية شيء أو حقا آخر.
+obligation de garantie | Obligation de couvrir l'autre partie contre un risque : défaut de la chose, trouble ou éviction. | التزام بتأمين الطرف الآخر من خطر: عيب في الشيء أو تعرض أو استحقاق.
+obligation de sécurité | Obligation de ne pas mettre en danger la personne de son cocontractant, par exemple un voyageur. | التزام بعدم تعريض شخص المتعاقد الآخر للخطر، كالمسافر مثلا.
+obligation d'information | Obligation de fournir à l'autre partie les renseignements utiles à sa décision. | التزام بتقديم المعلومات المفيدة للطرف الآخر ليتخذ قراره.
+obligation de conseil | Obligation, pour un professionnel, d'orienter son client vers la solution qui lui convient. | التزام المهني بتوجيه زبونه إلى الحل الذي يناسبه.
+obligation solidaire | Obligation où chaque débiteur peut être poursuivi pour toute la dette, ou chaque créancier en demander le paiement entier. | التزام يجوز فيه أن يتابع كل مدين بكل الدين، أو أن يطلب كل دائن الوفاء به كاملا.
+obligation alternative | Obligation qui porte sur plusieurs choses, dont le débiteur ne devra fournir qu'une seule. | التزام يشمل عدة أشياء، لا يؤدي المدين منها إلا واحدا.
+obligation facultative | Obligation qui porte sur un seul objet, mais dont le paiement peut se faire avec autre chose, au choix du débiteur. | التزام محله شيء واحد، لكن يجوز الوفاء به بشيء آخر إذا اختار المدين ذلك.
+obligation indivisible | Obligation qui ne peut être exécutée que tout entière, à cause de son objet ou de la volonté des parties. | التزام لا يمكن أن ينفذ إلا كاملا، بسبب محله أو بإرادة الطرفين.
+obligation conditionnelle | Obligation dont l'existence dépend d'un événement futur et incertain. | التزام يتوقف وجوده على أمر مستقبل غير محقق الوقوع.
+obligation à terme | Obligation dont l'exécution est reportée à une date future et sûre, ou qui s'éteint à cette date. | التزام يؤجل تنفيذه إلى تاريخ مستقبل مؤكد، أو ينقضي عند حلول هذا التاريخ.
+obligation pécuniaire | Obligation de payer une somme d'argent. | التزام بدفع مبلغ من النقود.
+obligation accessoire | Obligation qui dépend d'une autre et s'éteint avec elle, comme celle de la caution. | التزام يتبع التزاما آخر وينقضي معه، كالتزام الكفيل.
+obligation principale | Obligation qui existe par elle-même et dont d'autres dépendent. | التزام قائم بذاته، تتبعه التزامات أخرى.
+solidarité active | Situation où plusieurs créanciers peuvent chacun demander au débiteur le paiement de toute la dette. | حالة يجوز فيها لكل واحد من عدة دائنين أن يطلب من المدين الوفاء بكل الدين.
+solidarité passive | Situation où plusieurs débiteurs sont tenus chacun de toute la dette envers le créancier. | حالة يكون فيها كل واحد من عدة مدينين ملزما بكل الدين تجاه الدائن.
+indivisibilité | Caractère d'une obligation ou d'un droit qui ne peut pas être fractionné. | صفة التزام أو حق لا يمكن تجزئته.
+source de l'obligation | Fait ou acte qui donne vie à une obligation : contrat, loi, acte dommageable, enrichissement sans cause. | واقعة أو تصرف ينشئ التزاما: العقد، القانون، الفعل الضار، الإثراء بلا سبب.
+extinction de l'obligation | Fin de l'obligation, par le paiement ou par une autre voie comme la prescription. | نهاية الالتزام، بالوفاء أو بطريق آخر كالتقادم.
+exécution de l'obligation | Accomplissement par le débiteur de ce qu'il doit au créancier. | قيام المدين بما يجب عليه للدائن.
+transmission de l'obligation | Passage d'une créance ou d'une dette d'une personne à une autre, par cession ou à la suite d'un décès. | انتقال دين من شخص إلى آخر، بالحوالة أو على إثر وفاة.
+effets de l'obligation | Conséquences de l'obligation : le débiteur doit l'exécuter, et le créancier peut l'y contraindre. | نتائج الالتزام: على المدين أن ينفذه، وللدائن أن يجبره على ذلك.
+exécution volontaire | Accomplissement de l'obligation par le débiteur lui-même, de son plein gré. | قيام المدين بالتزامه من تلقاء نفسه وبرضاه.
+exécution partielle | Accomplissement d'une fraction seulement de ce que doit le débiteur. | القيام بجزء فقط مما يجب على المدين.
+exécution défectueuse | Accomplissement de l'obligation d'une manière qui ne correspond pas à ce qui était convenu. | القيام بالالتزام على وجه لا يطابق ما اتفق عليه.
+exécution tardive | Accomplissement de l'obligation après la date convenue. | القيام بالالتزام بعد التاريخ الذي اتفق عليه.
+retard dans l'exécution | Dépassement de la date à laquelle le débiteur devait remplir son obligation. | تجاوز التاريخ الذي كان على المدين أن يوفي فيه بالتزامه.
+inexécution totale | Situation où le débiteur n'accomplit rien de ce qu'il doit. | حالة لا يقوم فيها المدين بشيء مما يجب عليه.
+impossibilité d'exécution | Situation où l'obligation ne peut plus être accomplie, pour une raison qui ne vient pas du débiteur. | حالة يصبح فيها القيام بالالتزام غير ممكن، لسبب لا يد للمدين فيه.
+cause étrangère | Événement extérieur au débiteur, qu'il ne pouvait pas empêcher, et qui le décharge de sa responsabilité. | حادث خارج عن المدين، لم يكن في وسعه منعه، يعفيه من مسؤوليته.
+fait du tiers | Acte d'une personne étrangère au débiteur et à la victime, qui a provoqué le dommage. | فعل شخص أجنبي عن المدين وعن الضحية، كان سببا في الضرر.
+fait de la victime | Comportement de la personne lésée qui a contribué à son propre dommage. | سلوك الشخص المتضرر الذي ساهم في الضرر الذي أصابه.
+fait du créancier | Comportement du créancier qui empêche le débiteur de remplir son obligation. | سلوك الدائن الذي يمنع المدين من الوفاء بالتزامه.
+dommages-intérêts moratoires | Somme qui compense le tort que le retard du débiteur inflige au créancier. | مبلغ يعوض الدائن عن الأذى الذي يلحقه به تأخر المدين.
+dommages-intérêts compensatoires | Somme qui remplace l'avantage que le créancier attendait d'une obligation restée sans exécution. | مبلغ يقوم مقام المنفعة التي كان الدائن ينتظرها من التزام بقي دون تنفيذ.
+intérêts moratoires | Intérêts que le débiteur d'une somme d'argent doit pour chaque jour de retard. | فوائد يلزم بها مدين بمبلغ من النقود عن كل يوم تأخير. | sf=intérêts de retard
+réparation intégrale | Principe selon lequel la victime doit être replacée dans la situation où elle serait sans le dommage. | مبدأ يقضي بأن تعاد الضحية إلى الحالة التي كانت ستكون عليها لولا الضرر.
+réparation en nature | Remise des choses dans leur situation antérieure, au lieu du versement d'une somme. | إعادة الأشياء إلى حالتها السابقة، بدلا من دفع مبلغ.
+réparation par équivalent | Versement d'une somme d'argent qui compense le dommage, quand la situation antérieure ne peut être rétablie. | دفع مبلغ من النقود يجبر الضرر، إذا تعذرت إعادة الحالة السابقة.
+clause limitative de responsabilité | Clause qui plafonne la somme que le débiteur devra si un dommage survient. | بند يضع حدا أقصى للمبلغ الذي يلزم به المدين إذا وقع ضرر.
+clause exonératoire de responsabilité | Clause par laquelle une partie écarte à l'avance toute obligation de compenser un dommage. | بند يستبعد به أحد الطرفين مسبقا كل التزام بجبر ضرر.
+clause de non-concurrence | Clause qui défend à une partie d'exercer une activité rivale de celle de l'autre, pendant un temps et dans un lieu limités. | بند ينهى أحد الطرفين عن ممارسة نشاط ينافس نشاط الطرف الآخر، لمدة وفي مكان محدودين.
+clause de réserve de propriété | Clause par laquelle le vendeur reste propriétaire de la chose tant que le prix n'est pas entièrement payé. | بند يبقى به البائع مالكا للشيء ما دام الثمن لم يدفع كله.
+clause de confidentialité | Clause qui oblige une partie à taire les informations reçues de l'autre. | بند يلزم أحد الطرفين بكتمان المعلومات التي تلقاها من الطرف الآخر.
+clause d'exclusivité | Clause par laquelle une partie s'engage à ne traiter qu'avec l'autre pour un produit ou un service. | بند يتعهد به أحد الطرفين بألا يتعامل إلا مع الطرف الآخر في منتوج أو خدمة.
+clause attributive de compétence | Clause qui désigne à l'avance le tribunal qui jugera les litiges issus du contrat. | بند يعين مسبقا المحكمة التي تفصل في النزاعات الناتجة عن العقد.
+clause de style | Clause reprise par habitude dans les actes du même genre, sans avoir été discutée. | بند يدرج بحكم العادة في المحررات من النوع نفسه، دون أن يناقش.
+clause léonine | Clause qui attribue à un associé tout le bénéfice ou le décharge de toute perte ; elle est nulle. | بند يخص شريكا بالربح كله أو يعفيه من كل خسارة، وهو باطل.
+paiement partiel | Versement d'une fraction seulement de la somme que doit le débiteur. | دفع جزء فقط من المبلغ الذي على المدين.
+paiement anticipé | Versement fait avant la date où la dette doit être acquittée. | دفع يتم قبل التاريخ الذي يجب فيه أداء الدين.
+paiement par subrogation | Versement fait par un tiers, qui prend alors la place du créancier contre le débiteur. | دفع يقوم به شخص من الغير فيحل محل الدائن في مواجهة المدين.
+offre réelle | Présentation effective de la chose ou de la somme au créancier qui refuse de la recevoir. | تقديم فعلي للشيء أو للمبلغ إلى الدائن الذي يرفض قبضه.
+imputation des paiements | Choix de la dette qu'un versement éteint, quand le débiteur en a plusieurs envers le même créancier. | تعيين الدين الذي ينقضي بدفعة، إذا كان على المدين عدة ديون للدائن نفسه.
+lieu du paiement | Endroit où le débiteur doit remettre ce qu'il doit. | المكان الذي يجب أن يسلم فيه المدين ما عليه.
+date du paiement | Jour où le débiteur doit remettre ce qu'il doit, ou jour où il l'a fait. | اليوم الذي يجب أن يسلم فيه المدين ما عليه، أو اليوم الذي فعل فيه ذلك.
+preuve du paiement | Élément, le plus souvent un reçu, qui montre que la dette est éteinte. | وسيلة، هي غالبا وصل، تبين أن الدين قد انقضى.
+reconnaissance de dette | Écrit par lequel une personne déclare devoir une somme à une autre. | محرر يقر فيه شخص بأنه مدين بمبلغ لشخص آخر.
+délégation de paiement | Opération par laquelle un débiteur charge une autre personne de payer son créancier. | عملية يكلف بها مدين شخصا آخر بأن يدفع لدائنه.
+compensation légale | Extinction de deux dettes réciproques, de plein droit, quand elles réunissent les conditions de la loi. | انقضاء دينين متبادلين بقوة القانون، إذا توفرت فيهما الشروط التي يضعها القانون.
+compensation judiciaire | Extinction de deux dettes réciproques que le juge ordonne, quand le montant de l'une n'est pas encore connu. | انقضاء دينين متبادلين يأمر به القاضي، إذا كان مقدار أحدهما غير معلوم بعد.
+compensation conventionnelle | Extinction de deux dettes réciproques voulue par les parties, quand les conditions de la loi manquent. | انقضاء دينين متبادلين يريده الطرفان، إذا لم تتوفر الشروط التي يضعها القانون.
+délai de prescription | Temps au bout duquel un droit s'éteint ou s'acquiert. | المدة التي ينقضي حق أو يكتسب بانتهائها.
+prescription quinquennale | Prescription qui s'accomplit par cinq ans. | تقادم يتم بمرور خمس سنوات.
+prescription décennale | Prescription qui s'accomplit par dix ans. | تقادم يتم بمرور عشر سنوات.
+renonciation à la prescription | Décision de ne pas se prévaloir d'une prescription déjà accomplie. | قرار بعدم التمسك بتقادم اكتملت مدته.
+débiteur cédé | Débiteur dont la dette passe à un nouveau créancier par l'effet d'une cession de créance. | مدين ينتقل دينه إلى دائن جديد بأثر حوالة حق.
+cédant | Personne qui transmet à une autre un droit ou une créance. | الشخص الذي ينقل إلى غيره حقا أو دينا.
+cessionnaire | Personne qui reçoit le droit ou la créance qu'une autre lui transmet. | الشخص الذي يتلقى الحق أو الدين الذي ينقله إليه غيره.
+subrogation légale | Remplacement du créancier par celui qui l'a payé, dans les cas où la loi le décide elle-même. | حلول من دفع الدين محل الدائن، في الحالات التي يقررها القانون نفسه.
+subrogation conventionnelle | Remplacement du créancier par celui qui l'a payé, en vertu d'un accord. | حلول من دفع الدين محل الدائن، بمقتضى اتفاق.
+subrogé | Personne qui a payé la dette d'autrui et qui prend la place du créancier. | الشخص الذي دفع دين غيره فحل محل الدائن.
+fait dommageable | Acte qui porte tort à autrui et oblige son auteur à le compenser. | فعل يلحق أذى بالغير ويلزم فاعله بجبره.
+fait générateur | Événement qui déclenche la responsabilité : faute, acte d'une chose ou d'une personne dont on répond. | حادث تترتب عليه المسؤولية: خطأ، أو فعل شيء أو شخص يسأل عنه المرء.
+fait personnel | Acte accompli par la personne elle-même, qui engage sa propre responsabilité. | فعل يأتيه الشخص نفسه فتقوم به مسؤوليته هو.
+faute intentionnelle | Faute commise avec la volonté de provoquer le dommage. | خطأ يرتكب بإرادة إحداث الضرر.
+faute non intentionnelle | Faute commise par imprudence ou par négligence, sans vouloir le dommage. | خطأ يرتكب عن عدم احتياط أو بإهمال، دون قصد الضرر.
+faute légère | Faute qu'une personne ordinaire peut commettre, mais qu'une personne très attentive éviterait. | خطأ قد يرتكبه شخص عادي، لكن يتجنبه شخص شديد الانتباه.
+faute inexcusable | Faute d'une très grande gravité, commise en sachant le danger qu'elle crée. | خطأ بالغ الجسامة، يرتكب مع العلم بالخطر الذي ينشئه.
+faute professionnelle | Manquement d'une personne aux règles de son métier. | إخلال شخص بقواعد مهنته.
+faute médicale | Manquement d'un médecin aux soins attentifs que la science de son temps commande. | إخلال طبيب بالعناية اليقظة التي يوجبها علم عصره.
+faute de la victime | Imprudence ou négligence de la personne lésée, qui réduit ou efface son droit à réparation. | عدم احتياط أو إهمال من الشخص المتضرر، ينقص حقه في التعويض أو يسقطه.
+faute commune | Faute à laquelle la victime et l'auteur du dommage ont tous deux pris part. | خطأ ساهم فيه معا الضحية والمسؤول عن الضرر.
+faute présumée | Faute que la loi suppose, tant que le défendeur n'a pas prouvé qu'il ne l'a pas commise. | خطأ يفترضه القانون ما دام المدعى عليه لم يثبت أنه لم يرتكبه.
+préjudice direct | Dommage qui résulte de l'acte lui-même, sans autre événement entre les deux. | ضرر ينتج عن الفعل نفسه، دون حادث آخر بينهما.
+préjudice indirect | Dommage trop éloigné de l'acte pour lui être attribué. | ضرر بعيد جدا عن الفعل فلا يمكن أن يسند إليه.
+préjudice certain | Dommage déjà réalisé, ou dont la réalisation future ne fait aucun doute. | ضرر وقع فعلا، أو لا شك في وقوعه مستقبلا.
+préjudice futur | Dommage qui n'est pas encore survenu mais qui se produira sûrement. | ضرر لم يقع بعد لكنه سيقع حتما.
+préjudice éventuel | Dommage dont la survenance reste incertaine ; il n'ouvre pas droit à réparation. | ضرر يبقى وقوعه غير مؤكد، ولا يعطي حقا في التعويض.
+préjudice par ricochet | Dommage subi par les proches de la victime directe, à cause de ce qui lui est arrivé. | ضرر يصيب أقارب الضحية المباشرة بسبب ما وقع لها.
+perte de chance | Disparition d'une possibilité sérieuse d'obtenir un avantage ou d'éviter un dommage. | فقدان إمكانية جدية للحصول على منفعة أو لتجنب ضرر.
+perte subie | Appauvrissement que le dommage a vraiment infligé à la victime. | افتقار ألحقه الضرر فعلا بالضحية.
+gain manqué | Bénéfice que la victime aurait réalisé sans le dommage. | ربح كانت الضحية ستحققه لولا الضرر. | sf=manque à gagner
+préjudice esthétique | Dommage qui tient à l'altération de l'apparence physique de la victime. | ضرر يتمثل في تشوه المظهر الجسدي للضحية.
+préjudice d'agrément | Dommage qui tient à l'impossibilité de pratiquer les loisirs que la victime avait avant l'accident. | ضرر يتمثل في تعذر ممارسة الهوايات التي كانت للضحية قبل الحادث.
+incapacité permanente | Diminution définitive des aptitudes physiques ou mentales d'une victime. | نقص نهائي في القدرات البدنية أو العقلية لضحية.
+incapacité temporaire | Période pendant laquelle une victime ne peut pas travailler ou vivre normalement, avant sa guérison. | فترة لا تستطيع فيها الضحية أن تعمل أو أن تعيش عيشة عادية، قبل شفائها.
+taux d'incapacité | Pourcentage qui mesure la diminution des aptitudes d'une victime. | نسبة مئوية تقيس نقص قدرات الضحية.
+responsabilité sans faute | Obligation de compenser un dommage même si l'on n'a commis aucune imprudence. | التزام بجبر ضرر ولو لم يرتكب المسؤول أي عدم احتياط.
+responsabilité objective | Responsabilité fondée sur le dommage et sur le risque créé, et non sur le comportement de la personne. | مسؤولية مؤسسة على الضرر وعلى الخطر الذي أنشئ، لا على سلوك الشخص.
+responsabilité pour faute | Responsabilité qui suppose que la victime prouve un manquement de celui qu'elle poursuit. | مسؤولية تفترض أن تثبت الضحية إخلالا ممن تتابعه.
+responsabilité du fait des animaux | Responsabilité de celui qui surveille et dirige un animal, pour les dommages que cet animal provoque. | مسؤولية من يراقب حيوانا ويوجهه عن الأضرار التي يحدثها هذا الحيوان.
+responsabilité du fait des bâtiments | Responsabilité du propriétaire pour les dommages que provoque l'effondrement de sa construction. | مسؤولية المالك عن الأضرار التي يحدثها انهدام بنائه.
+responsabilité du fait des produits | Responsabilité du fabricant pour les dommages que provoque un défaut de sa marchandise. | مسؤولية الصانع عن الأضرار التي يحدثها عيب في بضاعته.
+responsabilité des parents | Responsabilité du père et de la mère pour les dommages que provoque leur enfant mineur qui vit avec eux. | مسؤولية الأب والأم عن الأضرار التي يحدثها ولدهما القاصر الساكن معهما.
+responsabilité du commettant | Responsabilité de celui qui emploie une personne, pour les dommages qu'elle provoque dans son travail. | مسؤولية من يستخدم شخصا عن الأضرار التي يحدثها هذا الشخص في عمله.
+responsabilité solidaire | Responsabilité de plusieurs personnes dont chacune peut être tenue de compenser tout le dommage. | مسؤولية عدة أشخاص يجوز أن يلزم كل واحد منهم بجبر كل الضرر.
+responsabilité médicale | Responsabilité d'un médecin ou d'un hôpital pour le dommage qu'un patient subit lors des soins. | مسؤولية طبيب أو مستشفى عن الضرر الذي يصيب مريضا أثناء العلاج.
+responsabilité professionnelle | Responsabilité d'une personne pour les dommages qu'elle provoque en exerçant son métier. | مسؤولية شخص عن الأضرار التي يحدثها وهو يمارس مهنته.
+responsabilité décennale | Responsabilité de l'architecte et de l'entrepreneur pour les graves défauts d'une construction pendant dix ans. | مسؤولية المهندس المعماري والمقاول عن العيوب الجسيمة في بناء لمدة عشر سنوات.
+partage de responsabilité | Répartition de la charge de la réparation entre plusieurs responsables, ou entre le responsable et la victime. | تقسيم عبء التعويض بين عدة مسؤولين، أو بين المسؤول والضحية.
+exonération de responsabilité | Situation de celui qui échappe à l'obligation de réparer en prouvant que le dommage vient d'une cause qui lui est étrangère. | حالة من يتخلص من الالتزام بالتعويض بأن يثبت أن الضرر ناتج عن سبب أجنبي عنه.
+action en responsabilité | Demande faite au juge contre l'auteur d'un dommage, pour qu'il soit tenu de le compenser. | طلب يقدم إلى القاضي ضد فاعل الضرر ليلزم بجبره.
+action en réparation | Demande faite au juge par la victime pour recevoir une somme qui compense son dommage. | طلب تقدمه الضحية إلى القاضي لتنال مبلغا يجبر ضررها.
+action récursoire | Demande de celui qui a payé la victime contre le véritable responsable ou contre un autre responsable. | طلب يرفعه من دفع للضحية ضد المسؤول الحقيقي أو ضد مسؤول آخر.
+coauteur du dommage | Personne qui a contribué, avec une ou plusieurs autres, à provoquer le même tort. | شخص ساهم مع شخص آخر أو أكثر في وقوع الأذى نفسه.
+garde de la chose | Pouvoir d'user d'une chose, de la diriger et de la surveiller, qui rend responsable des dommages qu'elle provoque. | سلطة من يستعمل شيئا ويسيره ويراقبه، وهي تجعله مسؤولا عن الأضرار التي يحدثها.
+vice de la chose | Défaut qui rend une chose dangereuse ou impropre à son emploi. | خلل يجعل شيئا خطيرا أو غير صالح لما أعد له.
+ruine du bâtiment | Effondrement total ou partiel d'une construction mal soignée ou mal construite. | انهيار كلي أو جزئي لبناء أهملت العناية به أو بني بناء سيئا.
+trouble anormal | Gêne qui dépasse ce que des voisins doivent supporter les uns des autres. | إزعاج يتجاوز ما يجب أن يتحمله الجيران بعضهم من بعض.
+enrichissement | Augmentation du patrimoine d'une personne. | زيادة في الذمة المالية لشخص.
+appauvrissement | Diminution du patrimoine d'une personne. | نقص في الذمة المالية لشخص.
+répétition de l'indu | Droit de se faire rendre ce que l'on a payé par erreur sans le devoir. | حق من دفع غلطا ما ليس واجبا عليه في أن يسترده.
+gérant d'affaires | Personne qui s'occupe volontairement des intérêts d'une autre, sans en avoir reçu la charge. | شخص يتولى عن قصد مصالح غيره دون أن يكون مكلفا بذلك.
+vente à l'essai | Vente qui ne devient définitive que si l'acheteur, après avoir essayé la chose, l'accepte. | بيع لا يصير نهائيا إلا إذا قبل المشتري الشيء بعد أن يجربه.
+vente sur échantillon | Vente où la marchandise livrée doit être pareille au modèle montré à l'acheteur. | بيع يجب أن تكون فيه البضاعة التي تسلم مماثلة للنموذج الذي عرض على المشتري.
+vente à réméré | Vente où le vendeur conserve le droit de reprendre la chose en rendant le prix ; le droit algérien la déclare nulle. | بيع يحتفظ فيه البائع بحق استرجاع الشيء مقابل رد الثمن، ويعده القانون الجزائري باطلا. | sf=vente avec faculté de rachat
+vente en bloc | Vente d'un ensemble de choses pour un prix unique, sans les compter ni les mesurer. | بيع مجموعة أشياء بثمن واحد، دون عدها أو قياسها.
+vente de la chose d'autrui | Vente d'une chose dont le vendeur n'est pas propriétaire ; l'acheteur peut en demander l'annulation. | بيع شيء ليس البائع مالكا له، وللمشتري أن يطلب إبطاله.
+vente d'immeuble | Vente d'un terrain ou d'un bâtiment ; elle doit être passée devant notaire. | بيع أرض أو بناية، ويجب أن يحرر أمام موثق.
+vente amiable | Vente que les parties décident librement, sans enchères ni décision du juge. | بيع يقرره الطرفان بحرية، دون مزايدة ولا قرار من القاضي.
+vente forcée | Vente imposée au propriétaire, le plus souvent à la demande de ses créanciers et sous le contrôle du juge. | بيع يفرض على المالك، غالبا بطلب من الدائنين وتحت رقابة القاضي.
+chose vendue | Chose que le vendeur doit remettre à l'acheteur. | الشيء الذي يجب على البائع أن يسلمه للمشتري.
+prix de vente | Somme d'argent que l'acheteur doit au vendeur en contrepartie de la chose. | مبلغ من النقود يجب على المشتري للبائع مقابل الشيء.
+paiement du prix | Versement par l'acheteur de la somme convenue ; c'est sa principale obligation. | أداء المشتري المبلغ الذي اتفق عليه، وهو التزامه الأصلي.
+obligation de délivrance | Obligation du vendeur de mettre la chose entre les mains de l'acheteur. | التزام البائع بوضع الشيء بين يدي المشتري.
+garantie des vices cachés | Obligation du vendeur de répondre des défauts invisibles qui rendent la chose impropre à son emploi. | التزام البائع بأن يسأل عن العيوب غير المرئية التي تجعل الشيء غير صالح لما أعد له.
+action rédhibitoire | Demande de l'acheteur qui veut rendre la chose défectueuse et reprendre son prix. | طلب المشتري الذي يريد رد الشيء المعيب واسترجاع ثمنه.
+action estimatoire | Demande de l'acheteur qui conserve la chose défectueuse mais veut une baisse du prix. | طلب المشتري الذي يحتفظ بالشيء المعيب لكنه يريد تخفيض الثمن. | sf=action en réduction du prix
+action en garantie | Demande par laquelle une personne appelle celui qui doit la couvrir contre une autre demande ou contre un défaut. | طلب يدعو به شخص من يجب عليه أن يؤمنه من طلب آخر أو من عيب.
+trouble de jouissance | Acte qui empêche le locataire ou l'acheteur de se servir tranquillement de la chose. | فعل يمنع المستأجر أو المشتري من أن ينتفع بالشيء في هدوء.
+garantie conventionnelle | Garantie que les parties ajoutent, dans leur contrat, à celle que la loi impose. | ضمان يضيفه الطرفان في عقدهما إلى الضمان الذي يفرضه القانون.
+garantie légale | Garantie que la loi impose au vendeur ou au bâtisseur, même si le contrat n'en dit rien. | ضمان يفرضه القانون على البائع أو الباني ولو سكت العقد عنه.
+bail d'habitation | Bail d'un logement où le locataire habite. | إيجار مسكن يقيم فيه المستأجر. | sf=bail à usage d'habitation
+bail à usage professionnel | Bail d'un lieu où le locataire exerce son métier. | إيجار مكان يمارس فيه المستأجر مهنته.
+bail rural | Bail d'une terre destinée à la culture ou à l'élevage. | إيجار أرض معدة للزراعة أو لتربية المواشي.
+bail à durée déterminée | Bail qui prend fin à une date fixée dès sa conclusion. | إيجار ينتهي في تاريخ يحدد منذ إبرامه.
+chose louée | Bien dont le bailleur laisse l'emploi au locataire. | المال الذي يترك المؤجر استعماله للمستأجر.
+état des lieux | Description écrite d'un logement, rédigée à l'entrée et à la sortie du locataire. | وصف مكتوب لمسكن، يحرر عند دخول المستأجر وعند خروجه.
+réparations locatives | Petits travaux de remise en ordre qui pèsent sur le locataire. | أشغال إصلاح بسيطة يتحملها المستأجر.
+grosses réparations | Travaux importants, comme ceux des murs et de la toiture, qui pèsent sur le bailleur. | أشغال هامة، كأشغال الجدران والسقف، يتحملها المؤجر.
+charges locatives | Dépenses courantes du logement que le locataire rembourse au bailleur en plus du loyer. | مصاريف جارية للمسكن يردها المستأجر للمؤجر زيادة على بدل الإيجار.
+dépôt de garantie | Somme que le locataire remet au bailleur pour couvrir les dégâts ou les loyers non payés. | مبلغ يسلمه المستأجر للمؤجر لتغطية التلف أو بدل الإيجار الذي لم يدفع.
+congé | Acte par lequel le bailleur ou le locataire annonce à l'autre qu'il met fin au bail. | تصرف يعلم به المؤجر أو المستأجر الطرف الآخر بأنه ينهي الإيجار.
+cession de bail | Opération par laquelle le locataire transmet son bail à une autre personne. | عملية ينقل بها المستأجر إيجاره إلى شخص آخر.
+renouvellement du bail | Conclusion d'un nouveau bail entre les mêmes parties, à la fin du premier. | إبرام إيجار جديد بين الطرفين نفسيهما عند نهاية الإيجار الأول.
+résiliation du bail | Fin du bail avant sa date normale, par la volonté d'une partie ou par décision du juge. | نهاية الإيجار قبل تاريخه العادي، بإرادة أحد الطرفين أو بقرار من القاضي.
+droit au maintien dans les lieux | Droit du locataire de rester dans le logement après la fin de son bail, dans les cas que la loi énumère. | حق المستأجر في أن يبقى في المسكن بعد نهاية إيجاره، في الحالات التي يعددها القانون.
+indemnité d'occupation | Somme que doit celui qui reste dans un lieu sans y avoir droit. | مبلغ يجب على من يبقى في مكان دون أن يكون له حق في ذلك.
+indemnité d'éviction | Somme que le bailleur doit au commerçant locataire auquel il refuse un nouveau bail. | مبلغ يجب على المؤجر للتاجر المستأجر الذي يرفض أن يبرم معه إيجارا جديدا.
+prêt à intérêt | Prêt d'argent que l'emprunteur rembourse avec une somme en plus, calculée d'après la durée. | قرض نقود يرده المقترض مع مبلغ زائد يحسب بحسب المدة.
+dépôt nécessaire | Dépôt fait sous la pression d'un événement soudain, comme un incendie. | وديعة تتم تحت ضغط حادث مفاجئ، كحريق.
+séquestre conventionnel | Remise d'un bien disputé à un tiers choisi par les parties, qui le rendra à celle qui gagnera. | تسليم مال متنازع فيه إلى شخص من الغير يختاره الطرفان، ليرده إلى من يكسب.
+mandat spécial | Mandat donné pour un ou plusieurs actes précis. | وكالة تعطى لتصرف معين أو لعدة تصرفات معينة.
+mandat général | Mandat qui porte sur la gestion de tous les biens du mandant, sans viser un acte précis. | وكالة تشمل تسيير كل أموال الموكل، دون تحديد تصرف بعينه.
+mandat apparent | Situation où un tiers a cru, avec de bonnes raisons, qu'une personne en représentait une autre. | حالة اعتقد فيها شخص من الغير، ولاعتقاده ما يبرره، أن شخصا ينوب عن آخر.
+substitution de mandataire | Remplacement du mandataire par une autre personne qu'il charge d'accomplir sa mission. | إحلال الوكيل شخصا آخر محله يكلفه بإنجاز مهمته.
+révocation du mandat | Décision du mandant de retirer ses pouvoirs au mandataire. | قرار الموكل بسحب السلطات من الوكيل.
+reddition de comptes | Exposé détaillé de sa gestion que le mandataire ou le gérant présente à celui pour qui il a agi. | بيان مفصل يقدمه الوكيل أو المسير عن تسييره لمن عمل لحسابه.
+réception de l'ouvrage | Acte par lequel le client accepte les travaux achevés par l'entrepreneur. | تصرف يقبل به الزبون الأشغال التي أتمها المقاول.
+réception provisoire | Acceptation des travaux à leur achèvement, qui ouvre le délai de garantie. | قبول الأشغال عند انتهائها، وبه يبدأ أجل الضمان.
+réception définitive | Acceptation des travaux à la fin du délai de garantie, qui dégage l'entrepreneur. | قبول الأشغال عند نهاية أجل الضمان، وبه تبرأ ذمة المقاول.
+garantie décennale | Garantie que l'architecte et l'entrepreneur doivent pendant dix ans contre l'effondrement de la construction. | ضمان يلتزم به المهندس المعماري والمقاول عشر سنوات من انهيار البناء.
+malfaçon | Défaut d'un travail mal exécuté. | خلل في عمل نفذ تنفيذا سيئا.
+sous-traitant | Entrepreneur à qui un autre entrepreneur confie une fraction des travaux dont il est chargé. | مقاول يعهد إليه مقاول آخر بجزء من الأشغال التي كلف بها.
+architecte | Professionnel qui conçoit les plans d'une construction et en surveille les travaux. | مهني يضع تصاميم بناء ويراقب أشغاله.
+devis | Document qui décrit des travaux à faire et en annonce le prix. | وثيقة تصف أشغالا مطلوبة وتبين ثمنها.
+contrat de société | Contrat par lequel plusieurs personnes apportent des biens ou leur travail à une activité commune pour en partager le bénéfice. | عقد يقدم به عدة أشخاص أموالا أو عملهم لنشاط مشترك ليقسموا ربحه.
+société civile | Société dont l'activité n'est pas commerciale, par exemple agricole ou libérale. | شركة ليس نشاطها تجاريا، كأن يكون فلاحيا أو مهنة حرة.
+contrat de jeu | Contrat où le gain dépend de l'adresse ou du hasard ; la loi le défend en principe. | عقد يتوقف فيه الكسب على المهارة أو على الحظ، وينهى عنه القانون مبدئيا.
+pari | Contrat où deux personnes d'avis opposés promettent une somme à celle qui aura eu raison. | عقد يعد فيه شخصان مختلفا الرأي بمبلغ لمن يتبين أنه كان على صواب.
+contrat de prestation de services | Contrat par lequel une personne s'engage à accomplir un travail pour une autre, contre un prix et sans lui être subordonnée. | عقد يتعهد به شخص بأن ينجز عملا لشخص آخر مقابل ثمن ودون أن يكون تابعا له.
+contrat de dépôt | Contrat par lequel une personne reçoit la chose d'une autre pour la conserver et la rendre. | عقد يتسلم به شخص شيئا من شخص آخر ليحفظه ثم يرده.
+contrat de mandat | Contrat par lequel une personne charge une autre d'accomplir un acte en son nom. | عقد يكلف به شخص شخصا آخر بأن يقوم بتصرف باسمه.
+contrat de prêt | Contrat par lequel une personne remet à une autre une chose ou une somme que celle-ci devra rendre. | عقد يسلم به شخص لشخص آخر شيئا أو مبلغا يجب أن يرده.
+contrat d'échange | Contrat par lequel chaque partie donne une chose à l'autre et en reçoit une autre, sans prix en argent. | عقد يعطي به كل طرف شيئا للطرف الآخر ويأخذ منه شيئا آخر، دون ثمن نقدي.
+contrat de donation | Contrat par lequel une personne donne un bien à une autre sans rien recevoir en retour. | عقد يعطي به شخص مالا لشخص آخر دون أن يأخذ شيئا في المقابل.
+contrat de cautionnement | Contrat par lequel une personne s'engage envers un créancier à payer la dette du débiteur si celui-ci ne paie pas. | عقد يتعهد به شخص لدائن بأن يدفع دين المدين إذا لم يدفعه هذا الأخير.
+bien corporel | Bien qui a une existence physique et que l'on peut toucher. | مال له وجود محسوس ويمكن لمسه.
+bien incorporel | Bien sans existence physique, comme une créance ou un droit d'auteur. | مال ليس له وجود محسوس، كدين أو حق مؤلف.
+immeuble par nature | Bien attaché au sol et qui ne peut être déplacé sans être abîmé : terrain, bâtiment, plantation. | مال ثابت في الأرض لا يمكن نقله دون تلف: أرض أو بناية أو غراس.
+immeuble par destination | Meuble que le propriétaire a placé sur son fonds pour le service ou l'exploitation de celui-ci. | منقول يضعه المالك في عقار يملكه، رصدا على خدمة هذا العقار أو استغلاله.
+meuble par nature | Bien qui peut être déplacé sans dommage, comme une marchandise ou un véhicule. | مال يمكن نقله دون ضرر، كبضاعة أو مركبة.
+chose consomptible | Chose que le premier emploi fait disparaître, comme les aliments ou l'argent. | شيء يزول بأول استعمال، كالأغذية والنقود.
+chose hors du commerce | Chose qui ne peut faire l'objet d'aucun contrat, par sa nature ou parce que la loi le décide. | شيء لا يصح أن يكون محلا لأي عقد، بطبيعته أو لأن القانون يقرر ذلك.
+chose commune | Chose qui n'appartient à aucune personne et dont tous se servent, comme l'air ou l'eau de la mer. | شيء لا يملكه أي شخص وينتفع به الجميع، كالهواء وماء البحر.
+chose sans maître | Chose qui n'a pas de propriétaire et que le premier venu peut prendre. | شيء ليس له مالك ويجوز لأول من يجده أن يأخذه.
+bien vacant | Bien dont le propriétaire est inconnu ou mort sans héritier ; il revient à l'État. | مال مالكه مجهول أو مات دون وارث، ويؤول إلى الدولة.
+épave | Chose perdue ou laissée sans surveillance, dont le propriétaire n'est pas connu. | شيء ضائع أو متروك دون رقيب، لا يعرف مالكه.
+produits | Ce qu'un bien fournit sans régularité et en diminuant sa substance, comme la pierre d'une carrière. | ما يعطيه مال دون انتظام مع نقص في أصله، كحجارة المحجر.
+fruits naturels | Ce que la terre ou les animaux donnent d'eux-mêmes, sans le travail de l'homme. | ما تعطيه الأرض أو الحيوانات من تلقاء نفسها، دون عمل الإنسان.
+fruits civils | Revenu qu'un bien rapporte en argent à dates fixes, comme les loyers et les intérêts. | دخل يدره مال نقدا في مواعيد ثابتة، كبدل الإيجار والفوائد.
+droit réel principal | Droit qui porte sur une chose et existe par lui-même, comme la propriété ou l'usufruit. | حق يرد على شيء ويقوم بذاته، كالملكية وحق الانتفاع.
+droit réel accessoire | Droit qui porte sur une chose pour garantir une créance, comme l'hypothèque ou le gage. | حق يرد على شيء ليضمن دينا، كالرهن الرسمي والرهن الحيازي.
+démembrement de la propriété | Répartition des pouvoirs du propriétaire entre plusieurs personnes, par exemple entre l'usufruitier et le nu-propriétaire. | توزيع سلطات المالك بين عدة أشخاص، مثلا بين المنتفع ومالك الرقبة.
+attributs du droit de propriété | Pouvoirs du propriétaire : se servir de la chose, en tirer le revenu et en disposer. | صلاحيات المالك: استعمال الشيء، وجني دخله، والتصرف فيه.
+droit de jouir | Pouvoir du propriétaire de recueillir les fruits et le revenu de sa chose. | سلطة المالك في أن يجني ثمار شيئه ودخله.
+droit de disposer | Pouvoir du propriétaire de vendre sa chose, de la donner ou de la transformer. | سلطة المالك في أن يبيع شيئه أو يهبه أو يغير حاله.
+restrictions au droit de propriété | Limites que la loi ou un contrat impose au propriétaire, dans l'intérêt général ou dans celui des voisins. | حدود يفرضها القانون أو عقد على المالك، للمصلحة العامة أو لمصلحة الجيران.
+propriété privée | Propriété qui appartient à une personne ou à une société, et non à l'État. | ملكية تعود لشخص أو لشركة، لا للدولة.
+propriété collective | Propriété qui appartient à un groupe de personnes, sans portion réservée à chacune. | ملكية تعود لمجموعة أشخاص، دون جزء مخصص لكل واحد منهم.
+propriété publique | Propriété de l'État et des collectivités locales, ouverte à tous ou réservée à un service public. | ملكية الدولة والجماعات المحلية، مفتوحة للجميع أو مخصصة لمرفق عام.
+copropriétaire | Personne qui est propriétaire d'un bien avec d'autres, chacune pour une fraction. | شخص هو مالك لمال مع غيره، ولكل واحد منهم جزء فيه.
+parties communes | Éléments d'un bâtiment qui servent à tous les propriétaires : escaliers, toiture, jardin. | عناصر من بناية ينتفع بها كل الملاك: السلالم والسقف والحديقة.
+parties privatives | Éléments d'un bâtiment réservés à un seul propriétaire, comme son appartement. | عناصر من بناية يختص بها مالك واحد، كشقته.
+règlement de copropriété | Texte qui fixe les droits et les obligations des propriétaires d'un bâtiment divisé en appartements. | نص يحدد حقوق ملاك بناية مقسمة إلى شقق والتزاماتهم.
+syndic de copropriété | Personne que les propriétaires chargent de gérer les éléments communs du bâtiment. | شخص يكلفه الملاك بتسيير العناصر المشتركة في البناية.
+assemblée des copropriétaires | Réunion des propriétaires d'un bâtiment, qui décide de ce qui leur est commun. | اجتماع ملاك بناية، يفصل في ما هو مشترك بينهم.
+charges de copropriété | Dépenses que demandent les éléments communs d'un bâtiment, réparties entre les propriétaires. | مصاريف تتطلبها العناصر المشتركة في بناية، توزع بين الملاك.
+mitoyenneté | Copropriété d'un mur ou d'une clôture qui sépare deux terrains voisins. | ملكية مشتركة لجدار أو سياج يفصل بين أرضين متجاورتين.
+mur mitoyen | Mur qui sépare deux terrains et appartient aux deux voisins. | جدار يفصل بين أرضين ويملكه الجاران معا.
+bornage | Opération qui marque par des repères la limite entre deux terrains voisins. | عملية تعين بعلامات الحد الفاصل بين أرضين متجاورتين.
+clôture du fonds | Droit du propriétaire d'entourer son terrain d'un mur ou d'une haie. | حق المالك في أن يحيط أرضه بجدار أو سياج.
+enclave | Situation d'un terrain qui n'a aucun accès suffisant à la voie publique. | حالة أرض ليس لها أي ممر كاف إلى الطريق العام.
+servitude légale | Servitude que la loi impose elle-même, comme le passage que doit laisser le voisin d'un terrain sans accès. | ارتفاق يفرضه القانون نفسه، كالممر الذي يجب أن يتركه جار أرض لا منفذ لها.
+servitude conventionnelle | Servitude créée par un accord entre deux propriétaires. | ارتفاق ينشئه اتفاق بين مالكين.
+servitude de vue | Droit d'avoir des fenêtres qui donnent sur le terrain du voisin, à la distance que la loi fixe. | حق فتح نوافذ تطل على أرض الجار، على المسافة التي يحددها القانون.
+servitude d'écoulement des eaux | Obligation, pour un terrain plus bas, de recevoir les eaux qui descendent naturellement du terrain plus haut. | التزام أرض منخفضة بتلقي المياه التي تنزل طبيعيا من الأرض الأعلى منها.
+servitude d'aqueduc | Droit de faire passer par le terrain d'un voisin l'eau nécessaire à l'irrigation du sien. | حق إمرار الماء اللازم لسقي أرض عبر أرض الجار.
+droit de superficie | Droit d'avoir en propre des constructions ou des plantations sur un terrain qui appartient à une autre personne. | حق شخص في أن تكون له مبان أو غراس على أرض يملكها شخص آخر.
+emphytéose | Bail de très longue durée qui donne au preneur un droit réel sur l'immeuble, contre un loyer modique. | إيجار لمدة طويلة جدا يعطي المستأجر حقا عينيا على العقار، مقابل أجرة زهيدة. | sf=bail emphytéotique
+possession de bonne foi | Possession de celui qui croit sincèrement être le propriétaire de la chose. | حيازة من يعتقد صادقا أنه مالك الشيء.
+possession paisible | Possession acquise et conservée sans violence. | حيازة اكتسبت وبقيت دون إكراه.
+possession continue | Possession exercée sans coupure, comme le ferait un propriétaire. | حيازة تمارس دون توقف، كما يفعل المالك.
+possession publique | Possession exercée ouvertement, sans rien cacher. | حيازة تمارس جهرا، دون إخفاء شيء.
+détention précaire | Pouvoir sur une chose exercé pour le compte du propriétaire, comme celui du locataire ou du dépositaire. | سلطة على شيء تمارس لحساب المالك، كسلطة المستأجر أو المودع لديه.
+détenteur | Personne qui tient une chose entre ses mains sans prétendre en être propriétaire. | شخص يمسك شيئا بين يديه دون أن يدعي أنه مالكه.
+juste titre | Acte qui aurait transféré la propriété s'il était venu du véritable propriétaire. | تصرف كان سينقل الملكية لو صدر عن المالك الحقيقي.
+action en bornage | Demande faite au juge pour qu'il trace la limite entre deux terrains voisins. | طلب يقدم إلى القاضي ليعين الحد الفاصل بين أرضين متجاورتين.
+action confessoire | Demande faite au juge pour faire reconnaître une servitude au profit de son terrain. | طلب يقدم إلى القاضي ليعترف بارتفاق لفائدة أرض الطالب.
+action négatoire | Demande faite au juge pour faire déclarer qu'un terrain ne supporte aucune servitude. | طلب يقدم إلى القاضي ليصرح بأن أرضا لا يثقلها أي ارتفاق.
+complainte | Demande du possesseur d'un immeuble contre celui qui le trouble dans sa possession. | طلب حائز عقار ضد من يتعرض له في حيازته.
+dénonciation de nouvel œuvre | Demande du possesseur au juge de faire cesser des travaux qui menacent sa possession. | طلب الحائز من القاضي أن يوقف أشغالا تهدد حيازته.
+réintégrande | Demande de celui qui a été dépouillé d'un immeuble par la force, pour le reprendre. | طلب من انتزع منه عقار بالقوة ليسترجعه.
+alluvion | Terre que les eaux déposent peu à peu sur une rive et qui agrandit le terrain riverain. | تراب تتركه المياه شيئا فشيئا على ضفة فيزيد في الأرض المجاورة لها.
+construction sur le terrain d'autrui | Bâtiment élevé par une personne sur un sol qui ne lui appartient pas. | بناية يقيمها شخص على أرض ليست ملكا له.
+bonne foi du possesseur | Croyance sincère du possesseur qu'il est le propriétaire de la chose. | اعتقاد الحائز الصادق أنه مالك الشيء.
+indivision forcée | Indivision qui ne peut pas cesser par un partage, comme celle des éléments communs d'un bâtiment. | شيوع لا يمكن أن ينتهي بقسمة، كشيوع العناصر المشتركة في بناية.
+partage amiable | Partage que les propriétaires du bien font eux-mêmes par un accord. | قسمة يجريها ملاك المال أنفسهم باتفاق.
+partage judiciaire | Partage que le juge ordonne quand les propriétaires du bien ne s'entendent pas. | قسمة يأمر بها القاضي إذا لم يتفق ملاك المال.
+partage en nature | Partage où chacun reçoit une portion du bien lui-même, et non une somme d'argent. | قسمة يأخذ فيها كل واحد جزءا من المال نفسه، لا مبلغا من النقود.
+licitation | Vente aux enchères d'un bien indivis qui ne peut pas être divisé commodément. | البيع بالمزاد العلني لمال شائع تعذر تقسيمه بسهولة.
+lot | Portion d'un bien divisé qui revient à l'un des propriétaires. | جزء من مال مقسوم يؤول إلى أحد الملاك.
+soulte | Somme d'argent que verse celui qui a reçu une portion plus forte, pour rétablir l'égalité. | مبلغ من النقود يدفعه من أخذ جزءا أكبر، لإعادة المساواة.
+hypothèque légale | Hypothèque que la loi donne elle-même à des créanciers qu'elle énumère. | رهن رسمي يعطيه القانون نفسه لدائنين يعددهم.
+hypothèque judiciaire | Hypothèque attachée à un jugement rendu contre le débiteur. | رهن رسمي يترتب على حكم صدر ضد المدين.
+hypothèque conventionnelle | Hypothèque créée par un contrat passé devant notaire entre le créancier et le propriétaire de l'immeuble. | رهن رسمي ينشئه عقد يحرر أمام موثق بين الدائن ومالك العقار.
+créancier gagiste | Créancier qui tient entre ses mains un bien du débiteur, en garantie de sa créance. | دائن يمسك بين يديه مالا للمدين، ضمانا لدينه.
+droit d'affectation | Sûreté que le juge donne à un créancier, sur un immeuble du débiteur, en vertu d'un jugement exécutoire. | تأمين يعطيه القاضي لدائن على عقار للمدين، بمقتضى حكم واجب التنفيذ.
+rang de l'hypothèque | Place d'un créancier hypothécaire parmi les autres, d'après la date de son inscription. | مكان دائن مرتهن بين غيره من الدائنين، بحسب تاريخ قيده.
+purge des hypothèques | Procédure qui libère un immeuble de toute hypothèque quand l'acheteur propose son prix aux créanciers. | إجراء يخلص عقارا من كل رهن رسمي إذا عرض المشتري ثمنه على الدائنين.
+radiation de l'inscription | Effacement, sur le registre foncier, de l'inscription d'une hypothèque éteinte. | محو قيد رهن رسمي انقضى من السجل العقاري.
+renouvellement de l'inscription | Démarche qui prolonge l'effet d'une inscription hypothécaire avant qu'elle ne tombe. | مسعى يمدد أثر قيد الرهن قبل أن يسقط.
+tiers détenteur | Personne qui a acquis un immeuble hypothéqué sans être tenue de la dette. | شخص تملك عقارا رهنه مالكه السابق، دون أن يكون ملزما بالدين.
+privilège général | Privilège qui porte sur tous les biens du débiteur. | حق الامتياز الذي يرد على كل أموال المدين.
+privilège spécial | Privilège qui porte sur un bien précis du débiteur. | حق الامتياز الذي يرد على مال معين من أموال المدين.
+privilège du vendeur | Droit de préférence du vendeur qui n'a pas reçu le prix, sur la chose qu'il a vendue. | حق التقدم المقرر للبائع الذي لم يقبض الثمن، على الشيء الذي باعه.
+privilège du bailleur | Droit de préférence du bailleur sur les meubles du locataire, pour le paiement des loyers. | حق التقدم المقرر للمؤجر على منقولات المستأجر، ضمانا للوفاء ببدل الإيجار.
+privilège du Trésor | Privilège de l'État sur les biens du contribuable, pour le recouvrement des impôts. | حق الامتياز المقرر للدولة على أموال المكلف بالضريبة، لتحصيل الضرائب.
+caution solidaire | Caution que le créancier peut poursuivre tout de suite, sans s'adresser d'abord au débiteur. | كفيل يجوز للدائن أن يتابعه في الحال، دون أن يرجع أولا على المدين.
+caution réelle | Personne qui affecte un de ses biens à la garantie de la dette d'autrui, sans s'engager sur ses autres biens. | شخص يخصص مالا من أمواله لضمان دين غيره، دون أن يلتزم في أمواله الأخرى.
+bénéfice de discussion | Droit de la caution de demander que le créancier poursuive d'abord les biens du débiteur. | حق الكفيل في أن يطلب أن ينفذ الدائن أولا على أموال المدين.
+bénéfice de division | Droit de chaque caution de ne payer que sa part quand plusieurs personnes ont cautionné la même dette. | حق كل كفيل في ألا يدفع إلا حصته إذا كفل عدة أشخاص الدين نفسه.
+garantie autonome | Engagement de payer une somme à première demande, sans pouvoir invoquer les moyens de défense du débiteur. | تعهد بدفع مبلغ عند أول طلب، دون أن يتمسك المتعهد بوسائل دفاع المدين.
+lettre de garantie | Écrit par lequel une banque promet de payer une somme si son client manque à son obligation. | محرر يعد فيه بنك بأن يدفع مبلغا إذا أخل زبونه بالتزامه.
+réalisation de la sûreté | Vente du bien donné en garantie, pour payer le créancier sur le prix. | بيع المال المقدم ضمانا، ليدفع للدائن من ثمنه.
+distribution du prix | Répartition entre les créanciers de la somme tirée de la vente forcée d'un bien. | تقسيم المبلغ الناتج عن بيع جبري لمال بين الدائنين.
+existence de la personne | Période pendant laquelle un être humain a des droits : de sa naissance vivante à son décès. | المدة التي تكون فيها للإنسان حقوق: من ولادته حيا إلى وفاته.
+enfant conçu | Être humain encore dans le ventre de sa mère ; il peut déjà recevoir des droits s'il vient au monde vivant. | إنسان ما زال في بطن أمه، ويجوز أن تثبت له حقوق إذا جاء إلى الدنيا حيا.
+identité | Ensemble des éléments qui distinguent une personne des autres : nom, prénom, date et lieu de naissance. | مجموع العناصر التي تميز شخصا عن غيره: اللقب والاسم الشخصي وتاريخ ومكان الميلاد.
+prénom | Nom que la personne reçoit à sa naissance et qui la distingue dans sa famille. | اسم يعطى للشخص عند ولادته ويميزه داخل أسرته.
+changement de nom | Remplacement du nom de famille par un autre, avec la permission de l'autorité compétente. | استبدال اللقب بلقب آخر، بإذن من السلطة المختصة.
+pseudonyme | Nom de fantaisie sous lequel une personne se fait connaître, souvent pour une activité artistique. | اسم مختلق يعرف به شخص، غالبا في نشاط فني. | sf=nom d'emprunt
+sexe | Qualité d'homme ou de femme, portée dans les actes de l'état civil. | صفة الشخص رجلا كان أو امرأة، وتذكر في وثائق الحالة المدنية.
+date de naissance | Jour, mois et année où une personne est venue au monde. | اليوم والشهر والسنة التي جاء فيها شخص إلى الدنيا.
+lieu de naissance | Commune où une personne est venue au monde. | البلدية التي جاء فيها شخص إلى الدنيا.
+filiation légitime | Lien entre un enfant et son père et sa mère unis par le mariage. | رابطة بين ولد وأبيه وأمه اللذين يجمعهما الزواج.
+situation de famille | Position d'une personne quant au mariage : elle dit si la personne est mariée ou non. | وضع الشخص فيما يخص الزواج: يبين هل الشخص متزوج أم لا.
+célibataire | Personne qui n'a jamais été unie à une autre par le mariage. | شخص لم يرتبط قط بشخص آخر بالزواج.
+veuf | Homme dont l'épouse est décédée et qui n'a pas pris une nouvelle épouse. | رجل توفيت زوجته ولم يتخذ زوجة جديدة.
+résidence habituelle | Lieu où une personne vit la plupart du temps. | المكان الذي يعيش فيه شخص معظم الوقت.
+changement de domicile | Installation d'une personne dans un lieu nouveau, pour y vivre de façon stable. | انتقال شخص إلى مكان جديد ليستقر فيه.
+domicile légal | Domicile que la loi fixe elle-même, comme celui du mineur chez la personne qui le représente. | موطن يحدده القانون نفسه، كموطن القاصر عند الشخص الذي ينوب عنه.
+absence | Situation d'une personne éloignée de son domicile, qui ne peut ni revenir ni gérer ses biens. | حالة شخص بعيد عن موطنه، لا يستطيع الرجوع ولا تسيير أمواله.
+disparition | Situation d'une personne dont on ignore où elle se trouve et si elle est encore en vie. | حالة شخص لا يعرف مكانه ولا تعرف حياته من موته.
+jugement déclaratif de décès | Jugement qui tient pour morte une personne dont on est sans nouvelles depuis le temps que la loi fixe. | حكم يعد في حكم الميت شخصا انقطعت أخباره منذ المدة التي يحددها القانون.
+mort civile | Fin de la personnalité que le juge constate sans preuve du décès, comme pour la personne dont on est sans nouvelles. | نهاية الشخصية يعاينها القاضي دون دليل على الوفاة، كما في حالة الشخص الذي انقطعت أخباره.
+registre de l'état civil | Livre officiel où la commune note les naissances, les mariages et les décès. | دفتر رسمي تدون فيه البلدية كل ولادة وكل زواج وكل وفاة.
+extrait d'acte de naissance | Copie partielle de l'écrit rédigé à la naissance d'une personne, que la commune remet. | نسخة جزئية من المحرر الذي يكتب عند ولادة شخص، تسلمها البلدية.
+fiche familiale | Document qui réunit les renseignements d'état civil des membres d'une même famille. | وثيقة تجمع بيانات الحالة المدنية لأفراد أسرة واحدة.
+déclaration de naissance | Annonce d'une naissance à l'officier de l'état civil, dans le délai que la loi fixe. | إعلام ضابط الحالة المدنية بولادة، في الأجل الذي يحدده القانون.
+déclaration de décès | Annonce d'un décès à l'officier de l'état civil, qui en rédige l'acte. | إعلام ضابط الحالة المدنية بوفاة، فيحرر وثيقتها.
+rectification d'acte d'état civil | Correction d'une erreur dans un acte de l'état civil, que le juge ordonne. | تصويب غلط في وثيقة من وثائق الحالة المدنية، يأمر به القاضي.
+transcription | Inscription d'un acte ou d'un jugement sur les registres de l'état civil. | قيد تصرف أو حكم في سجل الحالة المدنية.
+carte nationale d'identité | Document officiel qui prouve l'identité et la nationalité de la personne qui le porte. | وثيقة رسمية تثبت هوية الشخص الذي يحملها وجنسيته. | sf=carte d'identité, CNI | sa=بطاقة الهوية، بطاقة التعريف
+numéro d'identification national | Numéro unique donné à chaque personne dès sa naissance. | رقم وحيد يعطى لكل شخص منذ ولادته.
+droit à l'image | Droit de chacun de refuser que son portrait soit pris ou montré sans son consentement. | حق كل شخص في أن يرفض أخذ صورته أو عرضها دون رضاه.
+droit au nom | Droit de porter son nom et d'empêcher qu'un autre l'emploie sans droit. | حق الشخص في أن يحمل اسمه وفي أن يمنع غيره من استعماله دون حق.
+droit à l'honneur | Droit de chacun à la défense de sa réputation contre les propos qui la salissent. | حق كل شخص في الدفاع عن سمعته من الأقوال التي تسيء إليها.
+intégrité physique | Droit de chacun à ce que son corps ne subisse aucune atteinte. | حق كل شخص في ألا يتعرض جسمه لأي مساس.
+atteinte à la vie privée | Acte qui révèle ou surveille ce qu'une personne veut tenir à l'écart des autres. | فعل يكشف أو يراقب ما يريد شخص أن يبقيه بعيدا عن غيره.
+fondation | Personne morale créée par l'affectation de biens à un but d'intérêt général. | شخص معنوي ينشأ بتخصيص أموال لغاية من المصلحة العامة.
+groupement | Ensemble de personnes ou de sociétés qui s'unissent pour une activité commune. | مجموعة أشخاص أو شركات تتحد من أجل نشاط مشترك.
+objet social | Activité qu'une société se propose d'exercer, telle que ses statuts la décrivent. | النشاط الذي تعتزم شركة ممارسته، كما يصفه القانون الأساسي للشركة.
+dénomination | Nom sous lequel une personne morale est connue et agit. | الاسم الذي يعرف به شخص معنوي ويتصرف به.
+représentant | Personne qui agit au nom et pour le compte d'une autre. | شخص يتصرف باسم شخص آخر ولحسابه.
+organe | Personne ou groupe de personnes qui décide ou agit pour une personne morale. | شخص أو مجموعة أشخاص تقرر أو تتصرف عن شخص معنوي.
+dissolution | Fin de l'existence d'une société ou d'une association, suivie de la liquidation de ses biens. | نهاية وجود شركة أو جمعية، تتبعها تصفية أموالها.

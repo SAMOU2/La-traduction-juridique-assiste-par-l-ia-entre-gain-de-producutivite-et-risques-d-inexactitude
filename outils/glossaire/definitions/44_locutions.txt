@@ -1,0 +1,204 @@
+# Définitions des termes de termes/44_locutions.txt : terme | définition française | définition arabe | options (sf=, sa=)
+de plein droit | Par le seul effet de la loi, sans qu'une décision ou une formalité soit nécessaire. | بأثر القانون وحده، دون أن يلزم قرار أو شكلية. | sf=automatiquement
+légalement | De manière conforme à la loi. | بطريقة مطابقة للقانون. | sa=شرعا
+de fait | Dans la réalité, sans que le droit l'ait prévu ou reconnu. | في الحقيقة، دون أن ينص عليه القانون أو يعترف به. | sa=واقعيا
+en droit | Du point de vue des règles juridiques, et non des faits. | من جهة القواعد القانونية، لا من جهة الوقائع.
+en fait | Du point de vue de ce qui s'est réellement passé, et non des règles. | من جهة ما حدث حقيقة، لا من جهة القواعد.
+en l'espèce | Dans l'affaire dont il est question ici. | في القضية التي يدور حولها الكلام هنا. | sf=dans le cas présent
+en principe | Selon la règle générale, qui peut connaître des exceptions. | وفق القاعدة العامة التي قد ترد عليها استثناءات. | sa=من حيث المبدأ
+illégalement | De manière contraire à la loi. | بطريقة مخالفة للقانون.
+régulièrement | En respectant les règles de fond et de forme. | باحترام القواعد الموضوعية والشكلية.
+valablement | De manière à produire tous ses effets de droit. | على نحو ينتج كل آثاره في القانون.
+dûment | Comme il se doit, dans les formes voulues. | كما ينبغي، وفق الأشكال المطلوبة. | sa=على النحو الواجب
+indûment | Sans y avoir droit. | دون أن يكون له حق في ذلك.
+abusivement | En dépassant les limites de son droit ou de son pouvoir. | بتجاوز حدود حقه أو سلطته.
+arbitrairement | Selon son seul bon plaisir, sans respecter aucune règle. | وفق هواه وحده، دون أن يحترم أي قاعدة.
+à bon droit | Avec raison, conformément au droit. | عن صواب، طبقا للقانون. | sf=à juste titre
+à tort | Sans raison valable, à l'opposé de ce que disent le droit ou les faits. | دون سبب صحيح، على عكس ما يقوله القانون أو الوقائع.
+à l'amiable | Par un accord entre les parties, sans procès. | باتفاق بين الأطراف، دون محاكمة.
+d'office | De sa propre initiative, sans qu'une demande soit nécessaire. | بمبادرة منه، دون أن يلزم طلب.
+de bonne foi | En croyant sincèrement agir conformément au droit. | معتقدا بصدق أنه يتصرف طبقا للقانون.
+de mauvaise foi | En sachant que l'on agit contre le droit ou que l'on trompe autrui. | عالما بأنه يتصرف ضد القانون أو بأنه يخدع غيره.
+de gré à gré | Par accord direct entre les parties, sans mise en concurrence. | باتفاق مباشر بين الأطراف، دون منافسة.
+de plein gré | Librement, sans y être poussé par autrui. | بحرية، دون أن يدفعه غيره إلى ذلك. | sf=librement
+sciemment | En sachant ce que l'on fait. | وهو يعلم ما يفعل.
+intentionnellement | Avec la volonté d'obtenir le résultat. | بإرادة تحقيق النتيجة. | sa=قصدا
+involontairement | Sans avoir voulu le résultat. | دون أن يريد النتيجة. | sa=عن غير قصد
+par négligence | Pour n'avoir pas apporté le soin nécessaire. | لعدم بذل العناية اللازمة.
+par imprudence | Pour avoir agi sans faire attention à un danger évitable. | لتصرفه دون انتباه لخطر كان يمكن تفاديه.
+solidairement | De sorte que chacun peut être tenu de toute la dette. | بحيث يمكن إلزام كل واحد بكل الدين. | sa=على وجه التضامن
+conjointement | Ensemble, à plusieurs, chacun pour sa part. | معا، كل واحد بقدر حصته. | sa=معا
+séparément | L'un sans l'autre, chacun de son côté. | كل واحد دون الآخر، ومن جهته. | sa=على حدة
+personnellement | Soi-même, sans se faire représenter. | بنفسه، دون أن يمثله غيره.
+par écrit | Au moyen d'un texte rédigé sur papier ou sous forme électronique. | بنص محرر على ورق أو في شكل إلكتروني. | sa=كتابيا
+verbalement | De vive voix, sans écrit. | بالكلام، دون محرر. | sa=شفويا
+expressément | En termes clairs et précis. | بألفاظ واضحة ودقيقة. | sf=explicitement
+tacitement | Sans le dire, par son comportement ou son silence. | دون تصريح، بسلوكه أو سكوته.
+exclusivement | Pour cette seule personne ou cette seule chose, et pour aucune autre. | لهذا الشخص أو لهذا الشيء وحده، دون غيره. | sa=دون سواه
+uniquement | Sans rien d'autre. | دون شيء آخر. | sa=فحسب
+notamment | En particulier, parmi d'autres. | على وجه التخصيص، من بين أشياء أخرى. | sf=en particulier
+respectivement | Chacun pour ce qui le concerne, dans l'ordre indiqué. | كل واحد فيما يخصه، بالترتيب المذكور.
+réciproquement | L'un envers l'autre, dans les deux sens. | كل واحد نحو الآخر، في الاتجاهين.
+à titre exceptionnel | Par exception à la règle habituelle. | خروجا عن القاعدة المعتادة. | sf=exceptionnellement
+à titre provisoire | Pour un temps, en attendant une décision définitive. | لمدة، في انتظار قرار نهائي.
+à titre définitif | Une fois pour toutes, sans retour possible. | مرة واحدة وإلى الأبد، دون رجوع ممكن.
+à titre principal | En premier lieu, avant toute autre demande. | في المقام الأول، قبل أي طلب آخر.
+à titre subsidiaire | En second lieu, si la demande principale est rejetée. | في المقام الثاني، إذا رفض الطلب الأصلي.
+à titre accessoire | En complément de l'élément principal. | إضافة إلى العنصر الأصلي.
+à titre gratuit | Sans rien recevoir en retour. | دون تلقي أي شيء في المقابل. | sf=gratuitement
+à titre onéreux | En recevant une contrepartie. | مع تلقي عوض. | sa=بعوض
+à titre conservatoire | Pour sauvegarder un droit en attendant la décision. | لصون حق في انتظار القرار.
+à titre indicatif | Pour simple information, sans valeur obligatoire. | لمجرد الإعلام، دون قيمة إلزامية.
+à titre d'exemple | Pour illustrer, sans donner une liste complète. | للتوضيح، دون ذكر قائمة كاملة. | sf=par exemple | sa=مثلا
+à titre personnel | En son nom propre, et non au nom d'un autre ou d'une fonction. | باسمه هو، لا باسم غيره ولا باسم وظيفة.
+à titre de | Comme ; pour servir de. | بوصفه كذا، أو ليكون بمثابة كذا.
+au titre de | Pour ce qui relève d'une catégorie, d'une période ou d'un droit. | فيما يدخل في صنف أو فترة أو حق.
+en qualité de | Dans le rôle ou la fonction de. | في دور كذا أو وظيفته.
+ès qualités | Dans l'exercice de la fonction que l'on occupe, et non pour soi-même. | أثناء ممارسة الوظيفة التي يشغلها، لا لنفسه.
+immédiatement | Tout de suite, sans attendre. | في الحال، دون انتظار. | sa=حالا
+dans les meilleurs délais | Aussi vite que possible. | بأسرع ما يمكن. | sf=au plus tôt
+à bref délai | Dans peu de temps. | بعد وقت قليل.
+en temps utile | Assez tôt pour que la démarche serve encore. | في وقت مبكر يكفي لتبقى الخطوة نافعة.
+au préalable | Avant toute autre chose. | قبل أي شيء آخر.
+ultérieurement | Plus tard, à une date non encore fixée. | فيما بعد، في تاريخ لم يحدد بعد. | sf=plus tard | sa=فيما بعد
+rétroactivement | En remontant dans le passé. | بالرجوع إلى الماضي.
+à l'avenir | À partir de maintenant. | ابتداء من الآن. | sf=désormais
+au plus tard | Sans dépasser la date indiquée. | دون تجاوز التاريخ المذكور.
+à compter de | Depuis la date indiquée, qui sert de point de départ. | منذ التاريخ المذكور، وهو نقطة البداية. | sa=اعتبارا من
+jusqu'à | Sans dépasser une date, un lieu ou un montant. | دون تجاوز تاريخ أو مكان أو مبلغ. | sa=حتى
+au cours de | Dans le temps que dure une période ou une opération. | في الوقت الذي تستغرقه فترة أو عملية. | sa=أثناء
+dans un délai de | Avant la fin d'une durée fixée. | قبل نهاية مدة حددت.
+à l'expiration de | Au moment où une durée prend fin. | عند نهاية مدة.
+avant l'expiration de | Pendant qu'une durée court encore. | أثناء سريان مدة.
+à l'occasion de | Lors d'un événement et en lien avec lui. | عند وقوع حادث وفي صلة به.
+dans l'exercice de | Pendant que l'on accomplit une fonction ou une mission. | حين يؤدي المرء وظيفة أو مهمة.
+d'urgence | Sans attendre, parce que tout retard entraînerait un dommage. | دون انتظار، لأن كل تأخير يجر ضررا.
+en référé | Par une procédure rapide qui donne une décision provisoire. | بإجراء سريع ينتهي بقرار مؤقت.
+au fond | Sur la question de droit elle-même, et non sur la forme ou la procédure. | في مسألة القانون ذاتها، لا في الشكل ولا في الإجراء.
+en la forme | Du point de vue des règles de présentation et de procédure. | من جهة قواعد التقديم والإجراء.
+avant dire droit | Avant de trancher le litige lui-même. | قبل البت في النزاع ذاته.
+en premier ressort | Par une décision qui peut encore être frappée d'appel. | بقرار ما زال يقبل الاستئناف.
+en dernier ressort | Par une décision qui ne peut plus être frappée d'appel. | بقرار لم يعد يقبل الاستئناف.
+en premier et dernier ressort | Par une décision rendue sans appel possible. | بقرار يصدر دون إمكان الاستئناف.
+contradictoirement | En présence des parties, chacune ayant pu se défendre. | بحضور الأطراف، وقد تمكن كل طرف من الدفاع عن نفسه.
+par défaut | En l'absence d'une partie qui ne s'est pas présentée. | في غياب طرف لم يحضر.
+publiquement | Devant tous, les portes de la salle restant ouvertes. | أمام الجميع، وأبواب القاعة مفتوحة. | sa=علنا
+à huis clos | Sans spectateurs, les portes de la salle étant fermées. | دون حضور الجمهور، وأبواب القاعة مغلقة.
+en chambre du conseil | Dans une salle où les juges siègent sans spectateurs. | في قاعة يجلس فيها القضاة دون جمهور.
+sous serment | Après avoir promis solennellement de dire la vérité. | بعد أن وعد رسميا بقول الحقيقة.
+par procuration | Par l'intermédiaire d'une personne à qui l'on a donné pouvoir. | بواسطة شخص أعطي سلطة التصرف. | sf=par mandataire
+par intérim | Pour un temps, à la place de celui qui occupe la fonction. | لمدة، مكان من يشغل الوظيفة.
+à peine de nullité | Sinon l'acte est nul. | وإلا كان التصرف باطلا. | sf=sous peine de nullité
+à peine d'irrecevabilité | Sinon la demande est irrecevable. | وإلا كان الطلب غير مقبول.
+à peine de déchéance | Sinon le droit est perdu. | وإلا ضاع الحق.
+en tout état de cause | Quelle que soit la situation. | مهما كان الوضع.
+le cas échéant | Si la situation se présente. | إذا عرض الوضع. | sf=éventuellement
+s'il y a lieu | Si cela est nécessaire. | إذا كان ذلك لازما.
+en cas de besoin | Si la nécessité apparaît. | إذا دعت الضرورة.
+par dérogation | En s'écartant de la règle, comme un texte le permet. | بالخروج عن القاعدة، كما يجيزه نص.
+en nature | Par la chose elle-même, et non par une somme d'argent. | بالشيء ذاته، لا بمبلغ من النقود.
+en espèces | En billets et en pièces de monnaie. | بأوراق وقطع النقد.
+à crédit | Avec un paiement remis à plus tard. | مع تأخير الوفاء إلى وقت لاحق.
+à tempérament | Par versements échelonnés. | بدفعات مقسطة.
+au prorata | En proportion de ce qui revient à chacun. | بقدر ما يعود لكل واحد.
+à parts égales | En donnant à chacun la même part. | بإعطاء كل واحد الحصة نفسها.
+en totalité | Sans rien excepter. | دون استثناء شيء. | sa=بالكامل
+en partie | Pour une fraction seulement. | في جزء فحسب.
+en indivision | À plusieurs propriétaires, sans partage matériel du bien. | بين عدة ملاك، دون قسمة مادية للمال.
+en pleine propriété | Avec tous les pouvoirs du propriétaire sur la chose. | بكل سلطات المالك على الشيء.
+en bon père de famille | Avec le soin qu'une personne prudente apporte à ses propres biens. | بالعناية التي يبذلها شخص حذر في أمواله.
+à l'étranger | Hors du territoire national. | خارج الإقليم الوطني.
+sur le territoire national | À l'intérieur des frontières de l'État. | داخل حدود الدولة.
+en vertu de | Par le pouvoir que donne un texte, un acte ou un droit. | بالسلطة التي يعطيها نص أو تصرف أو حق.
+conformément à | En respectant ce que dit un texte ou une règle. | باحترام ما يقوله نص أو قاعدة.
+en application de | Pour donner effet à un texte ou à une décision. | لإعمال نص أو قرار. | sa=عملا ب
+aux termes de | Selon ce qu'énonce un texte ou un contrat. | وفق ما يذكره نص أو عقد. | sf=selon les termes de
+au sens de | Selon la définition que donne un texte. | وفق التعريف الذي يعطيه نص.
+sous réserve de | En tenant compte d'une règle ou d'une condition qui continue de s'appliquer. | مع الأخذ بقاعدة أو شرط يبقى يطبق.
+sans préjudice de | Sans écarter ni réduire l'application d'une autre règle. | دون استبعاد تطبيق قاعدة أخرى ولا تقليصه.
+sous peine de | En s'exposant à une sanction si la règle n'est pas suivie. | مع التعرض لجزاء إذا لم تتبع القاعدة.
+à l'exception de | Sans compter une personne ou une chose que l'on met à part. | دون احتساب شخص أو شيء يوضع جانبا. | sa=ما عدا
+nonobstant | Sans tenir compte d'un obstacle ou d'une règle contraire. | دون اعتداد بعائق أو بقاعدة مخالفة. | sa=رغم
+par dérogation à | En s'écartant de ce que prévoit une règle. | بالخروج عما تنص عليه قاعدة.
+en violation de | Sans respecter une règle ou un droit. | دون أن تحترم قاعدة أو حق. | sa=انتهاكا ل
+dans le cadre de | À l'intérieur des limites fixées par un texte, une mission ou une activité. | داخل الحدود التي يحددها نص أو مهمة أو نشاط. | sa=ضمن
+dans la limite de | Sans dépasser un montant, une durée ou un pouvoir. | دون تجاوز مبلغ أو مدة أو سلطة.
+en matière de | Pour ce qui touche à un domaine du droit ou d'une activité. | فيما يتصل بميدان من القانون أو من نشاط.
+en cas de | Si un événement se produit. | إذا وقع حادث.
+à défaut de | Si une chose ou une personne manque. | إذا لم يوجد شيء أو شخص.
+en l'absence de | Lorsqu'une personne n'est pas là ou qu'une chose manque. | عندما لا يكون شخص حاضرا أو ينقص شيء.
+en présence de | Devant une personne qui est là et qui voit. | أمام شخص موجود ويشاهد. | sa=بمحضر
+au nom de | En agissant à la place d'une autre personne, qui est seule engagée. | بالتصرف مكان شخص آخر يكون وحده ملتزما.
+pour le compte de | Dans l'intérêt d'une autre personne, qui recueille les effets de l'acte. | لمصلحة شخص آخر تعود إليه آثار التصرف.
+au profit de | À l'avantage d'une personne, qui en tire un droit ou un gain. | لمنفعة شخص ينال منه حقا أو كسبا.
+à la charge de | En faisant peser l'obligation ou la dépense sur une personne. | بجعل الالتزام أو النفقة على شخص.
+aux frais de | En faisant payer la dépense par une personne. | بجعل شخص يدفع المصاريف. | sa=على حساب
+à l'encontre de | De manière défavorable à une personne ou à ses intérêts. | على نحو لا يوافق شخصا أو مصالحه. | sa=في مواجهة
+à l'égard de | Dans les rapports avec une personne. | في العلاقات مع شخص.
+à la demande de | Parce qu'une personne l'a sollicité. | لأن شخصا التمسه. | sa=بناء على طلب
+à l'initiative de | Parce qu'une personne a décidé d'agir la première. | لأن شخصا قرر أن يتصرف أولا.
+sur proposition de | Après qu'une autorité a suggéré la mesure. | بعد أن اقترحت سلطة التدبير.
+sur rapport de | Après qu'une autorité a présenté un exposé écrit de la question. | بعد أن قدمت سلطة عرضا مكتوبا للمسألة.
+après avis de | Après avoir recueilli l'opinion d'un organe, sans être tenu de la suivre. | بعد أخذ رأي هيئة، دون إلزام باتباعه.
+avec l'accord de | Avec le consentement d'une personne. | برضا شخص. | sa=برضا
+à l'insu de | Sans qu'une personne le sache. | دون أن يعرف شخص ذلك. | sa=بغير علم
+dans l'intérêt de | Pour le bien ou l'avantage d'une personne. | لخير شخص أو منفعته.
+par l'intermédiaire de | En passant par une personne ou par un moyen. | بالمرور عبر شخص أو وسيلة.
+par voie de | En employant un procédé ou une procédure. | باستعمال أسلوب أو إجراء.
+au vu de | Après avoir examiné un document ou un fait. | بعد فحص وثيقة أو واقعة.
+compte tenu de | En prenant en considération un fait ou une situation. | مع أخذ واقعة أو وضع بعين الاعتبار. | sa=اعتبارا ل
+en raison de | Parce qu'un fait ou une situation l'explique. | لأن واقعة أو وضعا يفسره. | sa=نظرا ل
+par suite de | Comme conséquence d'un fait. | كأثر مترتب على واقعة.
+en vue de | Dans le but d'obtenir un résultat. | بهدف تحقيق نتيجة.
+en contrepartie de | Pour répondre à une prestation ou à un avantage reçu. | ردا على أداء أو منفعة تلقاها. | sa=لقاء
+à concurrence de | Sans dépasser une somme donnée. | دون تجاوز قدر معين من المال.
+en remplacement de | Pour tenir la place d'une personne ou d'une chose. | ليقوم مقام شخص أو شيء. | sa=عوضا عن
+en sus de | En s'ajoutant à ce qui existe déjà. | بالإضافة إلى ما هو موجود. | sa=فضلا عن
+à proportion de | Selon la part ou l'importance de chacun. | وفق حصة كل واحد أو أهميته.
+en fonction de | En variant d'après un élément. | بالتغير تبعا لعنصر. | sa=تبعا ل
+par rapport à | En comparant avec une personne ou une chose. | بالمقارنة مع شخص أو شيء. | sa=مقارنة ب
+quant à | Pour ce qui touche une personne ou une question. | فيما يتصل بشخص أو مسألة. | sa=بخصوص
+par conséquent | Comme suite logique de ce qui précède. | كنتيجة منطقية لما سبق. | sa=لذلك
+toutefois | Mot qui introduit une réserve ou une exception à ce qui précède. | لفظ يدخل تحفظا أو استثناء على ما سبق. | sa=ومع ذلك
+en outre | Mot qui ajoute un élément à ce qui précède. | لفظ يضيف عنصرا إلى ما سبق.
+à cet effet | Pour atteindre le but dont on vient de parler. | لبلوغ الهدف الذي سبق ذكره. | sa=لهذه الغاية
+de ce fait | Parce que ce qui précède s'est produit. | لأن ما سبق قد وقع. | sa=تبعا لذلك
+à ce titre | En raison de la qualité ou de la fonction dont on vient de parler. | بسبب الصفة أو الوظيفة التي سبق ذكرها.
+à condition que | Seulement si un fait se réalise. | لا يكون ذلك إلا إذا تحققت واقعة. | sa=شريطة أن
+à moins que | Sauf dans le cas où un fait se réalise. | إلا في الحالة التي تتحقق فيها واقعة. | sa=إلا إذا
+dès lors que | À partir du moment où une condition est remplie. | منذ اللحظة التي يتوفر فيها شرط.
+lorsque | Au moment où un fait se produit. | في الوقت الذي تقع فيه واقعة. | sa=حين
+tant que | Pendant tout le temps où une situation dure. | طوال الوقت الذي يستمر فيه وضع. | sa=طالما
+jusqu'à ce que | Sans aller au-delà du moment où un fait se produit. | دون تجاوز اللحظة التي تقع فيها واقعة. | sa=حتى
+avant que | Plus tôt que le moment où un fait se produit. | في وقت يسبق وقوع واقعة.
+après que | Plus tard que le moment où un fait s'est produit. | في وقت يلي وقوع واقعة.
+sans que | En l'absence d'un fait qui aurait pu se produire. | في غياب واقعة كان يمكن أن تقع. | sa=من غير أن
+afin que | Dans le but qu'un résultat se réalise. | بهدف أن تتحقق نتيجة. | sa=كي
+de sorte que | D'une manière qui entraîne un résultat. | على نحو يؤدي إلى نتيجة.
+bien que | Sans que ce fait, qui existe pourtant, y fasse obstacle. | دون أن تمنع ذلك واقعة موجودة فعلا. | sa=رغم أن
+alors que | Mot qui oppose deux faits qui existent en même temps. | لفظ يقابل بين واقعتين توجدان في وقت واحد. | sa=بينما
+étant donné que | Mot qui introduit une raison déjà connue. | لفظ يدخل سببا معلوما من قبل. | sa=نظرا إلى أن
+attendu que | Formule qui introduit un motif dans une décision de justice. | صيغة تدخل سببا في مقرر قضائي.
+au cas où | Si jamais un fait se produit. | إن حدث أن وقعت واقعة.
+dans la mesure où | Seulement pour la part où un fait est vrai. | في الحد الذي تصح فيه واقعة فحسب.
+à savoir | Mot qui annonce une précision ou une liste. | لفظ يمهد لتوضيح أو قائمة.
+sauf disposition contraire | Si aucun texte ne décide autrement. | إذا لم يقرر أي نص غير ذلك. | sf=sauf texte contraire
+sauf convention contraire | Si les parties n'ont pas décidé autrement dans leur contrat. | إذا لم يقرر الأطراف غير ذلك في عقدهم.
+sauf preuve contraire | Aussi longtemps que l'inverse n'est pas démontré. | إلى أن يبرهن على خلافه.
+ci-dessus | Plus haut dans le même texte. | في موضع سابق من النص نفسه. | sf=plus haut, supra | sa=آنفا
+ci-dessous | Plus bas dans le même texte. | في موضع لاحق من النص نفسه. | sf=plus bas, infra
+ci-après | Dans la suite du texte. | في بقية النص.
+ci-joint | Attaché au présent document. | ملحق بهذه الوثيقة. | sf=ci-annexé | sa=طيه
+susvisé | Dont il a été question plus haut dans le texte. | ما سبق الكلام عنه في موضع سابق من النص. | sa=المشار إليه أعلاه
+ledit | Dont on vient de parler. | ما سبق الكلام عنه قبل قليل. | sa=المشار إليه
+soussigné | Qui a mis sa signature au bas de l'acte. | من وضع توقيعه أسفل المحرر. | sa=الممضي أسفله
+dénommé | Qui porte le nom indiqué. | من يحمل الاسم المبين. | sa=المدعو
+ci-après dénommé | Qui sera appelé par ce nom dans la suite du texte. | من سيشار إليه بهذا الاسم في بقية النص.
+relatif à | Qui concerne une personne, une chose ou une question. | ما يخص شخصا أو شيئا أو مسألة. | sa=الخاص ب
+prévu par la loi | Que la loi énonce et organise. | ما يذكره القانون وينظمه. | sf=légalement prévu
+fait à | Formule qui indique le lieu où un acte a été rédigé. | صيغة تبين المكان الذي كتب فيه محرر.
+lu et approuvé | Formule par laquelle le signataire déclare avoir pris connaissance de l'acte et l'accepter. | صيغة يصرح بها الموقع أنه اطلع على المحرر وأنه يقبله.
+pour copie conforme | Formule qui atteste qu'une reproduction est identique à l'original. | صيغة تشهد بأن صورة مماثلة للأصل.
+pour valoir ce que de droit | Formule qui clôt une attestation : elle servira à toutes les fins que la loi autorise. | صيغة تختم بها شهادة: تستخدم في كل الأغراض التي يرخص بها القانون.
+bon pour accord | Mention écrite par laquelle une personne dit qu'elle accepte les termes d'un acte. | عبارة مكتوبة يقول بها شخص إنه يقبل بنود محرر.
+dont acte | Formule qui termine un acte : elle constate que ce qui précède a bien été déclaré. | صيغة ينتهي بها محرر: تثبت أن ما سبق قد صرح به فعلا.

@@ -1,0 +1,318 @@
+# Définitions des termes de termes/42_adjectifs.txt : terme | définition française | définition arabe | options (sf=, sa=)
+protégé | Qui bénéficie d'une protection que la loi organise ou que le juge accorde. | الذي يستفيد من حماية ينظمها القانون أو يمنحها القاضي. | sf=préservé, sauvegardé | sa=مصون
+juridique | Qui relève du droit, ou qui produit des effets reconnus par le droit. | ما يتصل بالقانون، أو تترتب عليه آثار يعترف بها القانون.
+illégal | Qui est interdit par la loi, ou qui ne respecte pas la loi. | ما يمنعه القانون، أو ما لا يحترم القانون. | sf=illicite, interdit | sa=غير مشروع
+légitime | Qui repose sur le droit, ou qui est conforme à la justice. | ما يستند إلى القانون، أو ما كان مطابقا للعدل. | sf=justifié | sa=شرعي
+illégitime | Qui ne repose sur aucun droit, ou que la justice réprouve. | ما لا يستند إلى أي حق، أو ما يأباه العدل. | sf=injustifié | sa=غير مشروع
+licite | Que la loi permet ; qui n'est contraire ni à la loi ni à l'ordre public. | ما يجيزه القانون، وليس مخالفا للقانون ولا للنظام العام. | sf=permis | sa=جائز
+illicite | Contraire à la loi, à l'ordre public ou aux bonnes mœurs. | مخالف للقانون أو للنظام العام أو للآداب العامة. | sf=prohibé, illégal, interdit | sa=محظور
+régulier | Conforme aux règles de fond et de forme que la loi impose. | مطابق للقواعد الموضوعية والشكلية التي يفرضها القانون. | sf=en règle | sa=قانوني
+irrégulier | Qui ne respecte pas une règle de fond ou de forme que la loi impose. | ما لا يحترم قاعدة موضوعية أو شكلية يفرضها القانون. | sf=non conforme | sa=غير قانوني
+conforme | Qui respecte ce qu'exige une règle ou un texte de rang supérieur. | ما يحترم ما تقتضيه قاعدة أو نص أعلى درجة. | sa=موافق
+contraire | Qui s'oppose à une règle, à un droit ou à un intérêt. | ما يعارض قاعدة أو حقا أو مصلحة. | sf=opposé | sa=مناف
+compatible | Qui peut exister ou s'exercer en même temps qu'une autre chose, sans la contredire. | ما يمكن أن يوجد أو يمارس مع شيء آخر دون أن يناقضه. | sf=conciliable | sa=منسجم
+incompatible | Qui ne peut pas exister ou s'exercer en même temps qu'une autre chose. | ما لا يمكن أن يوجد أو يمارس مع شيء آخر في وقت واحد. | sf=inconciliable | sa=متعارض
+civil | Relatif aux rapports entre les personnes privées : famille, biens, contrats, responsabilité. | متعلق بالعلاقات بين الأشخاص الخاصة: الأسرة والأموال والعقود والمسؤولية.
+pénal | Relatif aux infractions et aux peines que la loi leur attache. | متعلق بالجرائم وبالعقوبات التي يقررها لها القانون. | sf=répressif
+criminel | Relatif au crime, l'infraction que la loi punit le plus sévèrement. | متعلق بالجناية، وهي الجريمة التي يعاقب عليها القانون بأشد العقوبات.
+correctionnel | Relatif au délit, l'infraction de gravité moyenne. | متعلق بالجنحة، وهي جريمة متوسطة الخطورة.
+commercial | Relatif au commerce, aux commerçants et aux sociétés. | متعلق بالتجارة والتجار والشركات.
+administratif | Relatif à l'administration, à son organisation et à ses rapports avec les citoyens. | متعلق بالإدارة وتنظيمها وعلاقاتها بالمواطنين.
+constitutionnel | Relatif à la Constitution, ou conforme à la Constitution. | متعلق بالدستور، أو مطابق للدستور.
+inconstitutionnel | Contraire à la Constitution. | مخالف للدستور. | sf=anticonstitutionnel
+législatif | Relatif à la loi et au pouvoir de la faire. | متعلق بالقانون وبسلطة وضعه.
+réglementaire | Relatif aux règlements, textes pris par le pouvoir exécutif ou par l'administration. | متعلق بالتنظيمات، وهي نصوص تصدرها السلطة التنفيذية أو الإدارة. | sa=لائحي
+exécutif | Qui assure l'application des lois et la conduite de l'État. | الذي يتولى تطبيق القوانين وتسيير الدولة.
+judiciaire | Relatif aux juges, aux tribunaux et à leurs décisions. | متعلق بالقضاة والمحاكم وقراراتهم.
+extrajudiciaire | Qui se fait en dehors de tout procès et sans le juge. | ما يتم خارج كل محاكمة ودون القاضي.
+arbitral | Relatif à l'arbitrage, ou rendu par un arbitre. | متعلق بالتحكيم، أو صادر عن محكم.
+disciplinaire | Relatif aux manquements aux règles d'une fonction ou d'une profession, et à leurs sanctions. | متعلق بالإخلال بقواعد وظيفة أو مهنة، وبجزاءاته.
+fiscal | Relatif à l'impôt, à son calcul et à son recouvrement. | متعلق بالضريبة وحسابها وتحصيلها.
+douanier | Relatif à la douane et aux droits dus sur les marchandises qui entrent dans le pays ou en sortent. | متعلق بإدارة الجمارك وبالحقوق المستحقة على البضائع الداخلة إلى البلد أو الخارجة منه.
+financier | Relatif à l'argent, aux ressources et aux dépenses d'une personne, d'une entreprise ou de l'État. | متعلق بالنقود وبموارد ونفقات شخص أو مؤسسة أو الدولة. | sf=pécuniaire
+monétaire | Relatif à la monnaie, à son émission et à sa valeur. | متعلق بالنقد وإصداره وقيمته.
+bancaire | Relatif aux banques et à leurs opérations. | متعلق بالبنوك وعملياتها.
+économique | Relatif à la production, à la distribution et à la consommation des richesses. | متعلق بإنتاج الثروات وتوزيعها واستهلاكها.
+social | Relatif au travail, à l'emploi et à la protection des travailleurs. | متعلق بالعمل والتشغيل وحماية العمال.
+professionnel | Relatif à l'exercice d'un métier ou d'une profession. | متعلق بممارسة حرفة أو مهنة.
+syndical | Relatif à un syndicat, ou à la défense des intérêts d'une profession. | متعلق بنقابة، أو بالدفاع عن مصالح مهنة.
+immobilier | Relatif aux immeubles : terrains, constructions et droits qui portent sur eux. | متعلق بالعقارات: الأراضي والمباني والحقوق الواردة عليها.
+mobilier | Relatif aux biens qui peuvent être déplacés d'un lieu à un autre. | متعلق بالأموال التي يمكن نقلها من مكان إلى آخر.
+agricole | Relatif à la culture de la terre et à l'élevage. | متعلق بزراعة الأرض وتربية المواشي.
+urbain | Relatif à la ville et à son aménagement. | متعلق بالمدينة وتهيئتها. | sa=عمراني
+rural | Relatif à la campagne et aux activités agricoles. | متعلق بالريف والنشاطات الفلاحية. | sa=قروي
+maritime | Relatif à la mer, à la navigation et au navire. | متعلق بالبحر والملاحة والسفينة.
+aérien | Relatif à l'air, à l'espace situé au-dessus du sol et au transport par avion. | متعلق بالجو وبالمجال الذي يعلو الأرض وبالنقل بالطائرة.
+terrestre | Relatif à la terre ferme, et non à la mer ni à l'air. | متعلق باليابسة، لا بالبحر ولا بالجو.
+environnemental | Relatif à l'environnement et à sa protection. | متعلق بالبيئة وحمايتها. | sf=écologique
+international | Qui concerne plusieurs États, ou les rapports entre les États. | ما يهم عدة دول، أو العلاقات بين الدول.
+national | Qui concerne un seul État, son territoire ou ses citoyens. | ما يخص دولة واحدة أو إقليمها أو المواطنين التابعين لها. | sf=interne | sa=داخلي
+diplomatique | Relatif aux relations officielles entre les États et à leurs représentants. | متعلق بالعلاقات الرسمية بين الدول وبالممثلين عنها.
+consulaire | Relatif au consul, chargé dans un pays étranger des intérêts des ressortissants de son État. | متعلق بالقنصل، المكلف في بلد أجنبي بمصالح رعايا دولته.
+bilatéral | Qui engage deux parties ou deux États. | ما يلزم طرفين أو دولتين. | sf=bipartite | sa=ثنائي الأطراف
+multilatéral | Qui engage plus de deux parties ou plus de deux États. | ما يلزم أكثر من طرفين أو أكثر من دولتين. | sf=plurilatéral
+humanitaire | Qui vise la protection de l'être humain et le soulagement de la souffrance, surtout en temps de guerre. | ما يهدف إلى حماية الإنسان وتخفيف المعاناة، خاصة زمن الحرب.
+militaire | Relatif à l'armée et à ceux qui y servent. | متعلق بالجيش وبمن يخدمون فيه.
+politique | Relatif à la conduite de l'État et à l'exercice du pouvoir. | متعلق بتسيير الدولة وممارسة السلطة.
+religieux | Relatif à la religion et au culte. | متعلق بالدين والعبادة. | sf=confessionnel
+culturel | Relatif à la culture, aux arts et aux lettres. | متعلق بالثقافة والفنون والآداب.
+médical | Relatif à la médecine et aux soins donnés aux malades. | متعلق بالطب وبالعلاج المقدم للمرضى.
+médico-légal | Relatif à la médecine mise au service de la justice : autopsie, examen des blessures. | متعلق بالطب الموضوع في خدمة العدل: تشريح الجثة وفحص الجروح.
+scientifique | Relatif à la science et à ses méthodes. | متعلق بالعلم ومناهجه.
+technique | Relatif aux procédés et aux connaissances pratiques d'un métier ou d'un art. | متعلق بالأساليب والمعارف العملية لحرفة أو فن. | sa=فني
+numérique | Qui utilise des données codées en chiffres et traitées par ordinateur. | ما يستعمل معطيات مرمزة بالأرقام يعالجها الحاسوب. | sf=digital
+électronique | Qui est réalisé ou transmis au moyen de l'ordinateur et des réseaux. | ما يتم أو ينقل بواسطة الحاسوب والشبكات.
+informatique | Relatif au traitement automatique de l'information par ordinateur. | متعلق بالمعالجة الآلية للمعلومات بواسطة الحاسوب.
+contractuel | Qui naît d'un contrat, ou qui est réglé par un contrat. | ما ينشأ عن عقد، أو ما ينظمه عقد. | sf=conventionnel | sa=عقدي
+extracontractuel | Qui naît en dehors de tout contrat. | ما ينشأ خارج كل عقد. | sf=délictuel | sa=تقصيري
+délictuel | Qui naît d'une faute causant un dommage à autrui, en dehors de tout contrat. | ما ينشأ عن خطأ يسبب ضررا للغير، خارج كل عقد. | sf=extracontractuel
+quasi délictuel | Qui naît d'un dommage que provoque l'imprudence ou la négligence, sans intention de nuire. | ما ينشأ عن ضرر ناتج عن عدم الاحتياط أو الإهمال، دون قصد الإضرار.
+conventionnel | Qui résulte d'un accord entre les parties, et non de la loi. | ما ينتج عن اتفاق بين الأطراف، لا عن القانون. | sf=contractuel | sa=تعاقدي
+statutaire | Prévu par les statuts d'une personne morale, ou par le statut d'une catégorie d'agents. | ما ينص عليه القانون الأساسي لشخص معنوي، أو القانون الأساسي لفئة من الأعوان.
+coutumier | Qui résulte de la coutume, règle issue d'une pratique ancienne et constante. | ما ينتج عن العرف، وهو قاعدة نشأت عن عادة قديمة وثابتة.
+jurisprudentiel | Qui résulte des décisions rendues par les juridictions. | ما ينتج عن القرارات الصادرة عن الجهات القضائية. | sf=prétorien
+doctrinal | Qui résulte des travaux et des opinions des auteurs qui étudient le droit. | ما ينتج عن أعمال وآراء المؤلفين الذين يدرسون القانون.
+impératif | Auquel on ne peut pas déroger par un accord, parce qu'il protège l'ordre public. | ما لا يجوز الاتفاق على مخالفته، لأنه يحمي النظام العام. | sf=d'ordre public
+supplétif | Qui ne s'applique que si les parties n'ont rien prévu d'autre. | ما لا يطبق إلا إذا لم ينص الأطراف على غيره.
+interprétatif | Qui précise le sens d'un texte sans y ajouter de règle nouvelle. | ما يوضح معنى نص دون أن يضيف إليه قاعدة جديدة. | sf=explicatif | sa=توضيحي
+obligatoire | Que la loi ou le contrat impose, et auquel on ne peut pas se soustraire. | ما يفرضه القانون أو العقد، ولا يجوز التملص منه.
+facultatif | Que l'on est libre de faire ou de ne pas faire. | ما يكون المرء حرا في فعله أو تركه. | sf=optionnel | sa=جوازي
+contraignant | Qui lie celui qu'il vise, et dont on peut réclamer le respect. | ما يقيد من يوجه إليه، ويمكن أن يطالب المرء باحترامه. | sf=obligatoire | sa=إلزامي
+exceptionnel | Qui s'écarte de la règle ordinaire, et ne vaut que dans des cas limités. | ما يخرج عن القاعدة العادية، ولا يصح إلا في حالات محدودة. | sf=dérogatoire | sa=غير عادي
+discrétionnaire | Que l'autorité exerce librement, en choisissant elle-même la décision qui convient. | ما تمارسه السلطة بحرية، فتختار بنفسها القرار المناسب.
+arbitraire | Qui dépend de la seule volonté de celui qui décide, sans règle ni justification. | ما يتوقف على إرادة من يقرر وحدها، دون قاعدة ولا مبرر. | sf=injustifié | sa=اعتباطي
+abusif | Qui dépasse les limites d'un droit ou d'un pouvoir, et nuit ainsi à autrui. | ما يتجاوز حدود حق أو سلطة، فيضر بالغير. | sf=excessif
+motivé | Qui énonce les raisons, tirées des faits et du droit, sur lesquelles il repose. | ما يبين الأسباب المستمدة من الوقائع والقانون التي يستند إليها.
+nul | Qui ne produit aucun effet de droit, parce qu'une condition de sa validité manque. | ما لا ينتج أي أثر في القانون، لتخلف شرط من شروط صحته. | sa=لاغ
+annulable | Dont la nullité peut être demandée au juge par la personne que la loi protège. | ما يجوز للشخص الذي يحميه القانون أن يطلب من القاضي بطلانه.
+valable | Qui remplit les conditions que la loi exige, et produit ses effets. | ما يستوفي الشروط التي يتطلبها القانون وينتج آثاره. | sf=valide | sa=صالح
+caduc | Qui était valable, mais perd ses effets parce qu'un élément nécessaire vient à manquer. | ما كان صحيحا ثم فقد آثاره لتخلف عنصر لازم فيما بعد.
+inexistant | Auquel il manque un élément si essentiel qu'il est tenu pour n'avoir jamais existé. | ما ينقصه عنصر جوهري إلى حد اعتباره كأن لم يكن. | sa=معدوم
+résoluble | Qui peut prendre fin par résolution, lorsqu'une partie n'exécute pas son obligation. | ما يمكن أن ينتهي بالفسخ إذا لم ينفذ أحد الطرفين التزامه.
+révocable | Sur lequel on peut revenir par sa seule volonté. | ما يجوز العدول عنه بإرادة صاحبه وحدها.
+irrévocable | Sur lequel on ne peut plus revenir. | ما لم يعد يجوز العدول عنه. | sf=définitif
+rétroactif | Qui produit ses effets dans le passé, avant la date où il intervient. | ما ينتج آثاره في الماضي، قبل تاريخ صدوره.
+suspensif | Qui retarde l'apparition d'un droit ou l'exécution d'une décision. | ما يؤخر نشوء حق أو تنفيذ قرار. | sa=موقف
+résolutoire | Qui met fin à un droit ou à un contrat et efface ses effets. | ما ينهي حقا أو عقدا ويمحو آثاره.
+extinctif | Qui fait disparaître un droit ou une obligation. | ما يزيل حقا أو التزاما.
+acquisitif | Qui fait acquérir un droit. | ما يجعل صاحبه يكتسب حقا.
+déclaratif | Qui constate un droit ou une situation qui existait déjà, sans rien créer. | ما يعاين حقا أو وضعا كان موجودا من قبل، دون أن ينشئ شيئا. | sf=récognitif | sa=مقرر
+constitutif | Qui crée un droit ou une situation juridique nouvelle. | ما ينشئ حقا أو وضعية قانونية جديدة. | sf=créateur
+translatif | Qui fait passer un droit d'une personne à une autre. | ما يجعل حقا ينتقل من شخص إلى آخر.
+translatif de propriété | Qui fait passer la propriété d'un bien d'une personne à une autre. | ما يجعل ملكية مال تنتقل من شخص إلى آخر.
+opposable | Dont on peut se prévaloir contre une personne, qui doit alors en subir les effets. | ما يمكن أن يتمسك به المرء ضد شخص، فيلزمه أن يتحمل آثاره.
+inopposable | Dont on ne peut pas se prévaloir contre une personne, pour qui il reste sans effet. | ما لا يمكن أن يتمسك به المرء ضد شخص، فلا أثر له في حقه.
+exécutoire | Qui peut être mis à exécution, au besoin par la force. | ما يمكن تنفيذه، ولو بالقوة عند الحاجة. | sa=نافذ
+en vigueur | Qui s'applique actuellement : déjà publié et pas encore abrogé. | ما يطبق حاليا: نشر ولم يلغ بعد. | sf=applicable | sa=نافذ
+applicable | Qui doit ou peut être appliqué à une situation donnée. | ما يجب أو يمكن أن يطبق على حالة معينة. | sa=واجب التطبيق
+inapplicable | Qui ne peut pas être appliqué à une situation donnée. | ما لا يمكن أن يطبق على حالة معينة.
+abrogé | Qui ne s'applique plus pour l'avenir, par l'effet d'un texte plus récent. | ما لم يعد يطبق بالنسبة إلى المستقبل، بأثر نص أحدث. | sa=منسوخ
+modifié | Dont le contenu a été changé pour une part par un texte postérieur. | ما غير نص لاحق جزءا من مضمونه. | sf=amendé
+complété | Auquel un texte postérieur a ajouté des dispositions. | ما أضاف إليه نص لاحق أحكاما.
+promulgué | Dont le chef de l'État a constaté le vote et ordonné l'exécution. | ما عاين رئيس الدولة التصويت عليه وأمر بتنفيذه.
+conservatoire | Qui vise à sauvegarder un droit ou un bien en attendant la décision du juge. | ما يهدف إلى صون حق أو مال في انتظار قرار القاضي.
+provisoire | Qui vaut pour un temps, en attendant une décision définitive. | ما يصلح لمدة، في انتظار قرار نهائي. | sf=temporaire, transitoire | sa=وقتي
+définitif | Qui tranche une question une fois pour toutes et sur lequel on ne revient plus. | ما يحسم مسألة بصفة قطعية ولا يرجع فيه. | sf=irrévocable | sa=قطعي
+temporaire | Qui ne dure qu'un temps limité. | ما لا يدوم إلا مدة محدودة. | sf=provisoire, momentané | sa=مؤقت
+permanent | Qui dure de façon continue et sans limite de temps. | ما يستمر بصفة متواصلة ودون حد زمني. | sf=continu, constant | sa=مستمر
+perpétuel | Qui dure toute la vie, ou sans limite dans le temps. | ما يدوم طول العمر، أو دون حد في الزمن. | sa=أبدي
+viager | Qui dure pendant la vie d'une personne et s'éteint à son décès. | ما يدوم طيلة حياة شخص وينقضي بوفاته. | sf=à vie
+immédiat | Qui a lieu tout de suite, sans délai. | ما يقع في الحال، دون أجل. | sf=instantané | sa=آني
+différé | Reporté à une date postérieure. | ما أجل إلى تاريخ لاحق. | sf=reporté, retardé | sa=مؤخر
+échelonné | Réparti en plusieurs versements à des dates successives. | موزع على عدة دفعات في تواريخ متتابعة. | sf=fractionné
+anticipé | Qui a lieu avant son échéance. | ما يقع قبل أجل الاستحقاق.
+tardif | Qui a lieu après l'expiration du délai. | ما يقع بعد انقضاء الأجل. | sf=hors délai
+antérieur | Qui se situe avant, dans le temps. | ما يقع قبل غيره في الزمن. | sf=précédent | sa=متقدم
+postérieur | Qui se situe après, dans le temps. | ما يقع بعد غيره في الزمن. | sf=ultérieur | sa=تال
+préalable | Qui doit avoir lieu avant autre chose. | ما يجب أن يقع قبل شيء آخر. | sf=préliminaire
+successif | Qui se suit dans le temps, l'un après l'autre. | ما يتلو بعضه بعضا في الزمن. | sf=consécutif | sa=متوال
+simultané | Qui a lieu au même moment. | ما يقع في الوقت نفسه. | sf=concomitant
+urgent | Qui ne peut pas attendre sans risque de dommage. | ما لا يحتمل الانتظار دون خطر وقوع ضرر. | sf=pressant
+éventuel | Qui peut se produire ou non, parce qu'il dépend d'un événement incertain. | ما قد يقع أو لا يقع، لتوقفه على حادث غير مؤكد. | sf=possible, hypothétique | sa=ممكن
+conditionnel | Qui dépend de la réalisation d'une condition. | ما يتوقف على تحقق شرط.
+inconditionnel | Qui ne dépend d'aucune condition. | ما لا يتوقف على أي شرط. | sf=absolu | sa=مطلق
+exigible | Dont le créancier peut réclamer le paiement tout de suite, parce que le terme est arrivé. | ما يجوز للدائن أن يطالب بالوفاء به في الحال، لحلول أجله. | sa=واجب الأداء
+échu | Dont la date de paiement est arrivée. | ما حل تاريخ الوفاء به. | sf=arrivé à échéance
+liquide | Dont le montant est connu et chiffré en argent. | ما كان مبلغه معلوما ومقدرا بالنقود.
+certain | Dont l'existence ne fait aucun doute. | ما لا شك في وجوده. | sf=incontestable | sa=ثابت
+dû | Que le débiteur doit au créancier. | ما يجب على المدين للدائن.
+indu | Qui a été versé sans qu'aucune dette existe. | ما دفع دون أن يوجد أي دين. | sf=non dû
+solvable | Dont les biens suffisent au paiement de ses dettes. | من تكفي أمواله للوفاء بديونه.
+insolvable | Dont les biens ne suffisent pas au paiement de ses dettes. | من لا تكفي أمواله للوفاء بديونه.
+solidaire | Tenu avec d'autres de toute la dette, chacun pouvant être poursuivi pour le tout. | الملزم مع غيره بكل الدين، فيجوز أن يتابع كل واحد منهم بالكل.
+commun | Qui appartient à plusieurs personnes, ou qui les concerne ensemble. | ما يملكه عدة أشخاص، أو ما يهمهم جميعا.
+indivis | Qui appartient à plusieurs personnes sans que la part de chacune soit matériellement séparée. | ما يملكه عدة أشخاص دون أن تفرز حصة كل واحد منهم. | sa=مشاع
+indivisible | Qui ne peut pas être exécuté ou partagé par fractions. | ما لا يمكن أن ينفذ أو يقسم أجزاء.
+divisible | Qui peut être exécuté ou partagé par fractions. | ما يمكن أن ينفذ أو يقسم أجزاء.
+fongible | Qui peut être remplacé par une chose de même nature et en même quantité. | ما يمكن أن يقوم مقامه شيء من نوعه وبالمقدار نفسه. | sf=interchangeable
+consomptible | Qui s'épuise ou disparaît dès la première utilisation. | ما ينفد أو يزول بأول استعمال.
+cessible | Que celui à qui il appartient peut transmettre à une autre personne. | ما يجوز لصاحبه أن ينقله إلى شخص آخر. | sf=transférable
+incessible | Qui ne peut pas être transmis à une autre personne. | ما لا يجوز أن ينقل إلى شخص آخر.
+saisissable | Que les créanciers peuvent faire saisir pour obtenir leur paiement. | ما يجوز للدائنين أن يحجزوه للحصول على الوفاء.
+insaisissable | Que la loi interdit de saisir. | ما يمنع القانون أن يحجز.
+aliénable | Que son propriétaire peut vendre, donner ou transmettre. | ما يجوز لمالكه أن يبيعه أو يهبه أو ينقله.
+inaliénable | Qui ne peut être ni vendu ni donné. | ما لا يجوز أن يباع ولا أن يوهب.
+prescriptible | Qui peut s'éteindre ou s'acquérir par l'écoulement du temps. | ما يمكن أن ينقضي أو يكتسب بمرور الزمن.
+imprescriptible | Que l'écoulement du temps ne peut ni éteindre ni faire acquérir. | ما لا يسقطه مرور الزمن ولا يكتسب به.
+transmissible | Qui peut passer à une autre personne, notamment aux héritiers. | ما يمكن أن ينتقل إلى شخص آخر، ولا سيما إلى الورثة.
+intransmissible | Qui reste attaché à la personne et ne passe pas à ses héritiers. | ما يبقى لصيقا بالشخص ولا ينتقل إلى الورثة.
+négociable | Qui peut être transmis par un procédé simple du droit commercial, comme l'endossement. | ما يمكن أن ينقل بطريقة بسيطة من طرق القانون التجاري، كالتظهير.
+endossable | Qui peut être transmis par une mention et une signature au dos du titre. | ما يمكن أن ينقل ببيان وتوقيع على ظهر السند.
+nominatif | Qui porte le nom de son propriétaire. | ما يحمل اسم مالكه.
+au porteur | Qui ne porte pas le nom de son propriétaire et appartient à celui qui le détient. | ما لا يحمل اسم مالكه ويكون لمن يحوزه.
+à ordre | Qui est payable à la personne désignée, ou à celle qu'elle désigne par endossement. | ما يدفع للشخص الذي عين فيه، أو لمن يعينه بالتظهير.
+hypothécaire | Garanti par une hypothèque, ou relatif à une hypothèque. | ما يضمنه رهن رسمي، أو متعلق برهن رسمي.
+privilégié | Qui passe avant les autres créanciers, en vertu d'une préférence que la loi accorde. | ما يتقدم على سائر الدائنين، بموجب أفضلية يمنحها القانون. | sf=prioritaire
+gagé | Remis ou affecté en garantie d'une dette. | ما سلم أو خصص ضمانا لدين. | sf=nanti
+grevé | Sur lequel pèse une charge, une sûreté ou une servitude. | ما يقع عليه عبء أو تأمين أو ارتفاق.
+ordinaire | Qui suit la règle générale, sans privilège ni régime particulier. | ما يخضع للقاعدة العامة، دون حق امتياز ولا نظام خاص. | sf=normal, courant | sa=اعتيادي
+corporel | Relatif au corps humain ; se dit aussi d'une chose que l'on peut toucher. | متعلق بجسم الإنسان، ويقال أيضا للشيء الذي يمكن لمسه. | sf=physique | sa=بدني
+incorporel | Qui n'a pas d'existence physique : un droit, une créance, une œuvre de l'esprit. | ما ليس له وجود محسوس: حق أو دين أو مصنف فكري. | sf=immatériel
+matériel | Qui a une existence physique et peut être touché ou mesuré. | ما له وجود محسوس ويمكن لمسه أو قياسه. | sf=tangible | sa=محسوس
+moral | Qui touche aux sentiments, à l'honneur ou à la réputation, et non aux biens. | ما يمس المشاعر أو الشرف أو السمعة، لا الأموال. | sa=أدبي
+réel | Qui porte directement sur une chose, et non sur une personne. | ما يرد مباشرة على شيء، لا على شخص.
+personnel | Qui est attaché à une personne déterminée, ou qui ne peut être exercé que contre elle. | ما يرتبط بشخص معين، أو ما لا يمارس إلا ضده. | sa=ذاتي
+patrimonial | Qui a une valeur en argent et entre dans le patrimoine. | ما له قيمة نقدية ويدخل في الذمة المالية. | sf=pécuniaire | sa=مالي
+extrapatrimonial | Qui n'a pas de valeur en argent et reste attaché à la personne. | ما ليست له قيمة نقدية ويبقى لصيقا بالشخص.
+contigu | Qui touche un autre terrain ou un autre bâtiment. | ما يلامس أرضا أخرى أو بناية أخرى. | sf=attenant, adjacent
+enclavé | Qui n'a pas d'accès à la voie publique, ou n'en a qu'un accès insuffisant. | ما ليس له منفذ إلى الطريق العمومي، أو له منفذ غير كاف.
+vacant | Qui n'a ni propriétaire ni occupant ; se dit aussi d'un emploi qu'aucun agent n'occupe. | ما ليس له مالك ولا شاغل، ويقال أيضا لمنصب لا يشغله أي عون. | sf=inoccupé | sa=خال
+bâti | Sur lequel une construction a été élevée. | ما أقيمت عليه بناية. | sf=construit
+non bâti | Sur lequel aucune construction n'a été élevée. | ما لم تقم عليه أي بناية. | sf=nu
+constructible | Sur lequel les règles d'urbanisme permettent de construire. | ما تجيز قواعد التعمير أن يبنى عليه. | sf=à bâtir
+unilatéral | Qui émane d'une seule personne, ou n'oblige qu'une seule partie. | ما يصدر عن شخص واحد، أو ما لا يلزم إلا طرفا واحدا. | sa=أحادي الجانب
+synallagmatique | Qui crée des obligations réciproques à la charge des deux parties. | ما ينشئ التزامات متبادلة على عاتق الطرفين. | sf=bilatéral | sa=تبادلي
+onéreux | Qui suppose une contrepartie pour chacune des parties. | ما يقتضي مقابلا لكل واحد من الطرفين. | sf=payant
+gratuit | Qui procure un avantage sans contrepartie. | ما يمنح منفعة دون مقابل. | sa=بلا عوض
+aléatoire | Dont le gain ou la perte dépend d'un événement incertain. | ما يتوقف فيه الربح أو الخسارة على حادث غير مؤكد. | sf=incertain
+formel | Qui n'est valable que si une forme imposée par la loi est respectée. | ما لا يكون صحيحا إلا إذا احترم شكل يفرضه القانون. | sf=solennel
+consensuel | Qui se forme par le seul consentement des parties, sans forme particulière. | ما ينعقد برضا الطرفين وحده، دون شكل خاص.
+tacite | Qui n'est pas exprimé, mais résulte du comportement ou du silence. | ما لم يعبر عنه، وإنما يستنتج من السلوك أو السكوت. | sa=مضمر
+exprès | Qui est énoncé en termes clairs, sans qu'il faille le deviner. | ما ذكر بألفاظ واضحة، دون أن يحتاج إلى تخمين.
+verbal | Qui est dit de vive voix, sans écrit. | ما يقال مشافهة، دون كتابة. | sf=oral | sa=شفهي
+oral | Qui est exprimé par la parole, et non par écrit. | ما يعبر عنه بالقول، لا بالكتابة. | sf=verbal | sa=شفوي
+amiable | Qui se conclut par accord entre les parties, sans recourir au juge. | ما يتم باتفاق بين الأطراف، دون اللجوء إلى القاضي. | sa=حبي
+forcé | Qui est imposé par la loi ou par le juge, contre la volonté de celui qui le subit. | ما يفرضه القانون أو القاضي، ضد إرادة من يقع عليه. | sf=contraint | sa=قسري
+spontané | Que l'on accomplit de soi-même, sans y être obligé ni invité. | ما يقوم به المرء من نفسه، دون أن يلزم به أو يدعى إليه. | sa=عفوي
+réciproque | Que chacun donne ou doit à l'autre. | ما يقدمه كل واحد للآخر أو يجب عليه نحوه.
+principal | Qui existe par lui-même et dont d'autres éléments dépendent. | ما يقوم بذاته وتتوقف عليه عناصر أخرى. | sf=essentiel
+accessoire | Qui dépend d'un élément principal et suit son sort. | ما يتوقف على عنصر أصلي ويتبع مصيره. | sf=secondaire | sa=ثانوي
+subsidiaire | Qui ne joue que si l'élément principal manque. | ما لا يعمل به إلا عند تخلف العنصر الأصلي.
+complémentaire | Qui s'ajoute à autre chose pour la compléter. | ما يضاف إلى شيء آخر ليتممه. | sf=additionnel | sa=إضافي
+alternatif | Qui laisse le choix entre deux prestations, dont une seule suffit. | ما يترك الخيار بين أداءين، يكفي أحدهما.
+exclusif | Qui appartient à une seule personne, et à aucune autre. | ما يكون لشخص واحد دون غيره. | sa=استئثاري
+collectif | Qui concerne un groupe de personnes, ou qui est exercé par ce groupe. | ما يخص مجموعة من الأشخاص، أو ما تمارسه هذه المجموعة.
+individuel | Qui concerne une seule personne, et non un groupe. | ما يخص شخصا واحدا، لا مجموعة. | sf=particulier, personnel
+lucratif | Qui a pour but de réaliser un bénéfice. | ما يهدف إلى تحقيق ربح. | sf=rentable, à but lucratif | sa=مربح
+non lucratif | Qui ne cherche pas à réaliser un bénéfice. | ما لا يسعى إلى تحقيق ربح. | sf=désintéressé, sans but lucratif
+bénévole | Qui est accompli librement et sans rémunération. | ما يتم بحرية ودون أجر. | sf=gratuit
+rémunéré | Qui donne lieu au versement d'un salaire ou d'un prix. | ما يدفع عنه أجر أو ثمن.
+fictif | Qui n'existe qu'en apparence et ne correspond à aucune réalité. | ما لا يوجد إلا في الظاهر ولا يطابق أي حقيقة. | sf=simulé | sa=وهمي
+apparent | Qui se voit, ou qui paraît vrai aux yeux des tiers. | ما يرى، أو ما يبدو صحيحا في نظر الغير. | sf=visible, ostensible
+occulte | Qui est tenu caché des tiers. | ما يخفى عن الغير. | sf=caché, dissimulé | sa=مستتر
+présumé | Que la loi ou le juge tient pour vrai tant que la preuve inverse n'est pas apportée. | ما يعتبره القانون أو القاضي صحيحا ما دام الدليل على عكسه لم يقم. | sf=supposé
+frauduleux | Accompli dans l'intention de tromper ou d'échapper à une règle. | ما يتم بقصد الخداع أو التهرب من قاعدة.
+dolosif | Qui relève du dol, manœuvre destinée à tromper l'autre partie pour obtenir son consentement. | ما يدخل في التدليس، وهو حيلة ترمي إلى خداع الطرف الآخر للحصول على رضاه. | sf=frauduleux
+coupable | Qui a commis une infraction et doit en répondre. | من ارتكب جريمة ويسأل عنها. | sf=fautif
+innocent | Qui n'a pas commis l'infraction dont il est accusé. | من لم يرتكب الجريمة التي هو متهم بها. | sf=non coupable
+responsable | Qui doit répondre de ses actes et de leurs conséquences. | من يجب أن يسأل عن أفعاله ونتائجها.
+irresponsable | Qui ne peut pas être tenu de répondre de ses actes. | من لا يمكن أن يسأل عن أفعاله.
+punissable | Que la loi frappe d'une peine. | ما يقرر له القانون عقوبة. | sf=répréhensible | sa=مستوجب العقاب
+intentionnel | Accompli avec la volonté d'obtenir le résultat que la loi interdit. | ما يتم بإرادة تحقيق النتيجة التي يمنعها القانون. | sa=قصدي
+involontaire | Accompli sans la volonté d'obtenir le résultat dommageable. | ما يتم دون إرادة تحقيق النتيجة الضارة. | sf=non intentionnel | sa=غير مقصود
+prémédité | Décidé et préparé à l'avance. | ما تقرر وأعد مسبقا.
+aggravé | Puni plus sévèrement à cause d'une circonstance que la loi définit. | ما يعاقب عليه بعقوبة أشد بسبب ظرف يحدده القانون.
+atténué | Puni moins sévèrement à cause d'une circonstance que la loi ou le juge retient. | ما يعاقب عليه بعقوبة أخف بسبب ظرف يأخذ به القانون أو القاضي.
+flagrant | Qui est en train de se commettre ou vient de se commettre. | ما يرتكب في الحال أو ارتكب منذ لحظات. | sf=patent | sa=مشهود
+récidiviste | Qui commet une nouvelle infraction après une condamnation définitive. | من يرتكب جريمة جديدة بعد إدانة نهائية.
+fautif | Qui a commis une faute. | من ارتكب خطأ. | sf=coupable
+dommageable | Qui inflige un dommage à autrui. | ما يسبب ضررا للغير. | sf=nuisible, préjudiciable
+préjudiciable | Qui porte atteinte aux intérêts d'une personne. | ما فيه مساس بمصالح شخص. | sf=dommageable, nuisible | sa=ضار
+lésé | Qui a subi un dommage dans sa personne, ses biens ou ses droits. | من لحقه ضرر في شخصه أو أمواله أو حقوقه.
+grave | Dont les conséquences sont lourdes, ou qui manque fortement à un devoir. | ما كانت نتائجه ثقيلة، أو ما فيه إخلال شديد بواجب. | sf=sérieux
+léger | De peu d'importance, ou qui manque faiblement à un devoir. | قليل الأهمية، أو ما فيه إخلال بسيط بواجب. | sf=bénin
+fortuit | Qui arrive par hasard, sans la faute de quiconque. | ما يقع صدفة، دون خطأ من أحد. | sa=طارئ
+prévisible | Que l'on pouvait normalement attendre. | ما كان يمكن انتظاره في العادة.
+imprévisible | Que l'on ne pouvait pas normalement attendre. | ما لم يكن يمكن انتظاره في العادة.
+proportionné | Qui est en rapport avec l'importance des faits ou avec le but recherché. | ما يلائم أهمية الوقائع أو الغاية المقصودة. | sf=adapté
+disproportionné | Qui dépasse nettement ce que l'importance des faits ou le but recherché justifie. | ما يتجاوز بوضوح ما تبرره أهمية الوقائع أو الغاية المقصودة. | sf=démesuré
+raisonnable | Conforme à ce qu'une personne prudente et avisée ferait dans la même situation. | مطابق لما يفعله شخص حذر ومتبصر في الحالة نفسها. | sf=modéré, sensé
+excessif | Qui dépasse la mesure. | ما يتجاوز الحد. | sf=exagéré | sa=مبالغ فيه
+manifeste | Qui se voit tout de suite, sans examen approfondi. | ما يظهر فورا، دون فحص معمق. | sf=évident | sa=واضح
+équitable | Qui donne à chacun ce qui lui revient, en tenant compte de sa situation. | ما يعطي كل واحد ما يعود له، مع مراعاة وضعه. | sf=juste | sa=عادل
+juste | Conforme au droit et à la justice. | مطابق للقانون وللعدل. | sf=équitable | sa=منصف
+injuste | Contraire au droit ou à la justice. | مخالف للقانون أو للعدل. | sf=inique
+litigieux | Qui est l'objet d'un litige. | ما كان محل نزاع. | sf=contesté | sa=محل نزاع
+recevable | Que le juge peut examiner, parce que les conditions de sa présentation sont remplies. | ما يجوز للقاضي أن ينظر فيه، لتوفر شروط تقديمه. | sf=admissible
+irrecevable | Que le juge écarte sans l'examiner au fond, parce qu'une condition de sa présentation manque. | ما يرده القاضي دون أن ينظر في الموضوع، لتخلف شرط من شروط تقديمه. | sf=inadmissible
+fondé | Qui repose sur des raisons de droit et sur des preuves suffisantes. | ما يستند إلى أسباب من القانون وإلى أدلة كافية. | sf=justifié
+infondé | Qui ne repose sur aucune raison de droit ni sur aucune preuve suffisante. | ما لا يستند إلى أي سبب من القانون ولا إلى أي دليل كاف. | sf=mal fondé, injustifié
+compétent | Que la loi désigne pour connaître d'une affaire ou pour prendre une décision. | من يعينه القانون للنظر في قضية أو لاتخاذ قرار.
+incompétent | Que la loi ne désigne pas pour connaître d'une affaire ou pour prendre une décision. | من لا يعينه القانون للنظر في قضية أو لاتخاذ قرار.
+contradictoire | Rendu ou conduit après que chaque partie a pu présenter ses arguments. | ما يصدر أو يجري بعد أن تمكن كل طرف من تقديم حججه. | sa=وجاهي
+réputé contradictoire | Tenu pour contradictoire bien qu'une partie, dûment convoquée, ne se soit pas présentée. | ما يعد حضوريا مع أن طرفا استدعي حسب الأصول ولم يحضر.
+susceptible d'appel | Contre lequel un appel peut être formé. | ما يجوز رفع استئناف ضده.
+insusceptible de recours | Contre lequel aucun recours n'est possible. | ما لا يجوز ضده أي طعن.
+probatoire | Qui sert à établir la preuve d'un fait. | ما يصلح لإقامة الدليل على واقعة.
+probant | Qui suffit à convaincre le juge de la réalité d'un fait. | ما يكفي لإقناع القاضي بحقيقة واقعة. | sf=concluant | sa=مقنع
+décisoire | Dont dépend l'issue du litige. | ما يتوقف عليه مآل النزاع.
+transactionnel | Qui relève de la transaction, accord par lequel les parties mettent fin à leur litige. | ما يدخل في الصلح، وهو اتفاق ينهي به الطرفان نزاعهما.
+impartial | Qui ne favorise aucune des parties. | من لا يحابي أيا من الأطراف. | sf=neutre | sa=نزيه
+neutre | Qui ne prend parti pour aucun camp dans un litige ou un conflit. | من لا ينحاز إلى أي جانب في نزاع أو صراع. | sf=impartial | sa=محايد
+indépendant | Qui ne reçoit aucun ordre et décide librement. | من لا يتلقى أي أمر ويقرر بحرية. | sf=autonome
+confidentiel | Qui doit rester connu des seules personnes autorisées. | ما يجب أن يبقى معلوما لدى الأشخاص الذين يرخص لهم وحدهم.
+officiel | Qui émane d'une autorité publique, ou qui est reconnu par elle. | ما يصدر عن سلطة عمومية، أو ما تعترف به.
+officieux | Qui vient d'une source bien informée, mais sans caractère officiel. | ما يصدر عن مصدر مطلع، لكن دون صفة رسمية. | sf=non officiel
+légalisé | Dont la signature a été attestée par une autorité publique. | ما شهدت سلطة عمومية بصحة التوقيع الذي يحمله. | sf=certifié
+certifié conforme | Dont une autorité atteste qu'il reproduit fidèlement l'original. | ما تشهد سلطة بأنه ينقل الأصل بأمانة.
+enregistré | Inscrit sur un registre tenu par l'administration. | مقيد في سجل تمسكه الإدارة. | sf=inscrit
+inscrit | Porté sur une liste ou un registre officiel. | ما دون في قائمة أو سجل رسمي. | sf=enregistré | sa=مسجل
+publié | Porté à la connaissance de tous, notamment par le Journal officiel. | ما أعلم به الجميع، ولا سيما عن طريق الجريدة الرسمية. | sf=paru
+recommandé | Envoyé par la poste contre la signature du destinataire. | ما يرسل بالبريد مقابل توقيع المرسل إليه.
+public | Qui concerne l'État, les collectivités ou l'ensemble de la population. | ما يخص الدولة أو الجماعات أو مجموع السكان. | sa=عام
+privé | Qui concerne les individus et non l'État ; qui est propre à une personne ou à un cas. | ما يهم الأفراد لا الدولة، أو ما يتعلق بشخص أو بحالة بعينها.
+général | Qui s'applique à tous les cas ou à toutes les personnes, sans distinction. | ما يطبق على كل الحالات أو كل الأشخاص، دون تمييز. | sa=شامل
+électoral | Relatif aux élections et à leur organisation. | متعلق بالانتخابات وتنظيمها.
+éligible | Qui remplit les conditions pour être élu. | من تتوفر فيه شروط أن ينتخب.
+inéligible | Qui ne remplit pas les conditions pour être élu, ou qui a perdu ce droit. | من لا تتوفر فيه شروط أن ينتخب، أو من فقد هذا الحق.
+parlementaire | Relatif au Parlement ou à ses membres. | متعلق بالبرلمان أو بأعضائه. | sa=نيابي
+gouvernemental | Relatif au gouvernement, ou décidé par lui. | متعلق بالحكومة، أو صادر عنها.
+présidentiel | Relatif au président de la République ou à sa fonction. | متعلق برئيس الجمهورية أو بوظيفته.
+ministériel | Relatif à un ministre ou à un ministère. | متعلق بوزير أو بوزارة.
+interministériel | Qui relève de plusieurs ministères à la fois. | ما يتبع عدة وزارات في آن واحد.
+communal | Relatif à la commune, ou décidé par elle. | متعلق بالبلدية، أو صادر عنها. | sf=municipal | homographe=ar
+wilayal | Relatif à la wilaya, ou décidé par elle. | متعلق بالولاية، أو صادر عنها.
+régional | Relatif à une région du territoire national. | متعلق بجهة من الإقليم الوطني.
+local | Relatif à un lieu précis ; qui relève de la commune ou de la wilaya, et non de l'État. | متعلق بمكان معين، أو ما يتبع البلدية أو الولاية لا الدولة.
+territorial | Relatif au territoire, ou limité à une portion du territoire. | متعلق بالإقليم، أو مقصور على جزء من الإقليم. | sa=ترابي
+central | Qui relève des organes de l'État installés dans la capitale. | ما يتبع هيئات الدولة الموجودة في العاصمة.
+décentralisé | Confié à des collectivités autonomes, distinctes de l'État. | ما يسند إلى جماعات مستقلة، متميزة عن الدولة.
+déconcentré | Exercé sur place par des agents de l'État, sous les ordres du pouvoir central. | ما يمارسه أعوان الدولة في عين المكان، تحت إمرة السلطة المركزية.
+hiérarchique | Relatif aux rapports entre un supérieur et ses subordonnés. | متعلق بالعلاقات بين الرئيس ومرؤوسيه.
+souverain | Qui exerce le pouvoir suprême et ne dépend d'aucune autre autorité. | من يمارس السلطة العليا ولا يتبع أي سلطة أخرى.
+titulaire | Nommé de façon définitive dans un emploi permanent de l'administration. | من عين بصفة نهائية في منصب دائم في الإدارة. | sf=titularisé | sa=مثبت
+stagiaire | Qui accomplit un temps d'essai ou de formation avant sa nomination définitive. | من يقضي مدة تجربة أو تكوين قبل تعيينه النهائي.
+intérimaire | Qui exerce une fonction pour un temps, à la place de celui qui l'occupe habituellement. | من يمارس وظيفة لمدة، مكان من يشغلها عادة. | sf=provisoire, par intérim | sa=مؤقت
+suppléant | Désigné pour remplacer une personne empêchée ou absente. | من عين ليحل محل شخص تعذر عليه العمل أو شخص غائب. | sf=remplaçant
+honoraire | Qui conserve le nom et les honneurs d'une fonction sans plus l'exercer. | من يحتفظ بلقب وظيفة وتشريفاتها دون أن يمارسها. | sf=émérite | sa=فخري
+habilité | Qui a reçu de la loi ou d'une autorité le pouvoir d'accomplir un acte. | من تلقى من القانون أو من سلطة صلاحية القيام بعمل. | sa=مخول
+délégué | Chargé par une autorité d'exercer en son nom quelques-uns de ses pouvoirs. | من كلفته سلطة بأن يمارس باسمها بعض صلاحياتها. | sf=mandaté | sa=منتدب
+capable | Que la loi autorise à exercer lui-même ses droits et à contracter. | من يسمح له القانون بأن يباشر حقوقه بنفسه وأن يتعاقد. | sf=apte
+conjugal | Relatif au mariage et aux rapports entre les époux. | متعلق بالزواج وبالعلاقات بين الزوجين. | sf=matrimonial
+familial | Relatif à la famille et aux liens entre ses membres. | متعلق بالأسرة وبالروابط بين أفرادها.
+parental | Relatif au père et à la mère, et à leurs devoirs envers l'enfant. | متعلق بالأب والأم وبواجباتهما نحو الولد.
+paternel | Relatif au père ; du côté du père. | متعلق بالأب، أو من جهة الأب.
+maternel | Relatif à la mère ; du côté de la mère. | متعلق بالأم، أو من جهة الأم.
+héréditaire | Qui passe d'une génération à l'autre au sein d'une famille. | ما ينتقل من جيل إلى آخر داخل الأسرة. | sa=موروث
+successoral | Relatif à la succession d'une personne décédée. | متعلق بتركة شخص توفي.
+naturel | Qui vient de la nature et non de la loi ; se dit de l'être humain, distinct de la personne morale. | ما يصدر عن الطبيعة لا عن القانون، ويقال للإنسان تمييزا له عن الشخص المعنوي.
+binational | Qui possède la nationalité de deux États. | من يحمل جنسية دولتين.
+naturalisé | Qui a obtenu la nationalité d'un État par décision de cet État. | من حصل على جنسية دولة بقرار من هذه الدولة.
+net | Qui reste après déduction des charges, des impôts ou des retenues. | ما يبقى بعد خصم الأعباء أو الضرائب أو الاقتطاعات.
+brut | Compté avant toute déduction. | ما يحسب قبل أي خصم.
+imposable | Sur lequel un impôt est dû. | ما كانت الضريبة مستحقة عنه. | sf=taxable
+exonéré | Dispensé par la loi d'un impôt ou d'une taxe. | من يعفيه القانون من ضريبة أو رسم. | sf=exempté, dispensé
+déductible | Qui peut être retranché du revenu ou du bénéfice soumis à l'impôt. | ما يمكن طرحه من الدخل أو الربح الذي تجب عنه الضريبة.
+forfaitaire | Fixé à l'avance et en bloc, sans calcul détaillé. | ما حدد مسبقا وجملة، دون حساب مفصل.
+proportionnel | Qui varie dans le même rapport qu'une autre quantité. | ما يتغير بالنسبة نفسها التي تتغير بها كمية أخرى.
+progressif | Dont le taux augmente à mesure que la base augmente. | ما يرتفع معدله كلما ارتفع الوعاء. | sf=graduel | sa=تدريجي

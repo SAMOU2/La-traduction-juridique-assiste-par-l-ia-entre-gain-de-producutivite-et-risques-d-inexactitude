@@ -482,6 +482,28 @@ def test_une_definition_sans_source_est_a_verifier(fenetre, tmp_path):
     assert textes(definition.pied) == ["À vérifier", "· source non indiquée"]
 
 
+def test_la_mention_peut_porter_sur_l_equivalent_et_sur_la_definition(fenetre, application, tmp_path):
+    """« à vérifier (équivalent et définition d'exemple) » : chaque champ affiche sa part de la mention."""
+    fenetre.charger_glossaire(ecrire(tmp_path / "definis.csv", (
+        "terme_fr;terme_ar;categorie_fr;definition_fr;definition_ar;source_definition\n"
+        "protégé;محمي;adjectif;Qui bénéficie d’une protection.;الذي يستفيد من حماية.;"
+        "à vérifier (équivalent et définition d’exemple)\n")))
+    page = fenetre.page
+    page.rechercher("protégé")
+    application.processEvents()
+    colonne = page.fiche.colonne_equivalent
+    assert colonne.mention is not None and colonne.mention.isVisible()
+    assert textes(colonne.pied) == ["À vérifier", "· équivalent d’exemple"]
+    definition = page.details.colonne_definition
+    assert page.details.etats()["definition"] == (True, 0)
+    page.details.roue.boutons["definition"].click()
+    assert textes(definition.corps) == [
+        "FRANÇAIS", "Qui bénéficie d’une protection.", "العربية", "الذي يستفيد من حماية."]
+    assert textes(definition.pied) == ["À vérifier", "· définition d’exemple"]
+    mention, = (label for label in definition.pied.findChildren(QLabel) if label.text() == "À vérifier")
+    assert "Cette définition n’est pas reprise d’un texte officiel" in mention.toolTip()
+
+
 def test_un_terme_sans_definition_peut_etre_a_verifier(fenetre, application, tmp_path):
     """Sans définition, la mention « à vérifier » de la colonne « source_definition » porte sur l'équivalent."""
     fenetre.charger_glossaire(ecrire(tmp_path / "seuls.csv", (

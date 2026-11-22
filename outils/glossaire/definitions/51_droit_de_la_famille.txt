@@ -1,0 +1,154 @@
+# Définitions des termes de termes/51_droit_de_la_famille.txt : terme | définition française | définition arabe | options (sf=, sa=)
+conclusion du mariage | Moment où l'homme et la femme échangent leur consentement devant le notaire ou l'officier de l'état civil. | اللحظة التي يتبادل فيها الرجل والمرأة رضاهما أمام الموثق أو ضابط الحالة المدنية.
+conditions du mariage | Exigences que la loi pose pour qu'un mariage soit valable : capacité, dot, tuteur, deux témoins et aucun empêchement. | ما يطلبه القانون ليكون الزواج صحيحا: الأهلية والصداق والولي وحضور شاهدين وانعدام الموانع.
+éléments constitutifs du mariage | Ce sans quoi le mariage n'existe pas ; la loi retient le consentement des deux époux. | ما لا يوجد الزواج دونه، ويأخذ القانون برضا الزوجين.
+consentement des époux | Volonté libre de l'homme et de la femme de s'unir par le mariage. | إرادة حرة من الرجل والمرأة في أن يرتبطا بالزواج.
+capacité matrimoniale | Aptitude d'une personne à se marier, acquise à dix-neuf ans. | صلاحية شخص لأن يتزوج، وتكتسب ببلوغ تسع عشرة سنة.
+âge du mariage | Âge à partir duquel la loi permet de se marier : dix-neuf ans pour l'homme et la femme, sauf dispense du juge. | السن التي يجيز القانون ابتداء منها أن يتزوج الشخص: تسع عشرة سنة للرجل والمرأة، إلا بإعفاء من القاضي.
+tuteur matrimonial | Père ou proche parent qui assiste la femme lors de la conclusion de son mariage. | الأب أو القريب الذي يحضر مع المرأة عند إبرام زواجها.
+témoins du mariage | Deux personnes qui doivent être présentes lors de l'échange des consentements. | شخصان يجب أن يكونا حاضرين عند تبادل الرضا.
+certificat médical prénuptial | Document d'un médecin que l'homme et la femme présentent avant de se marier et qui signale toute maladie présentant un danger pour l'autre. | وثيقة من طبيب يقدمها الرجل والمرأة قبل أن يتزوجا وتبين كل مرض فيه خطر على الآخر.
+transcription du mariage | Écriture de l'acte de mariage dans les registres de l'état civil. | كتابة عقد الزواج في سجلات الحالة المدنية.
+preuve du mariage | Démonstration de l'existence d'un mariage, par un extrait du registre de l'état civil ou, s'il manque, par un jugement. | التدليل على وجود زواج بمستخرج من سجل الحالة المدنية أو بحكم إذا لم يوجد.
+mariage coutumier | Mariage conclu selon la coutume religieuse, sans passer devant le notaire ni l'officier de l'état civil. | زواج يبرم وفق العرف الديني دون المرور أمام الموثق ولا ضابط الحالة المدنية. | sf=mariage par la fatiha | sa=زواج بالفاتحة
+jugement de validation du mariage | Jugement qui reconnaît l'existence d'un mariage non inscrit et ordonne de l'inscrire à l'état civil. | حكم يعترف بوجود زواج غير مسجل ويأمر بتسجيله في الحالة المدنية.
+mariage nul | Mariage qui comporte un empêchement ou auquel le consentement manque ; il est effacé. | زواج فيه مانع أو ينعدم فيه الرضا، فيمحى.
+mariage vicié | Mariage conclu sans témoins, sans dot ou sans tuteur ; il est effacé si les époux n'ont pas encore vécu ensemble, et maintenu sinon. | زواج أبرم دون شاهدين أو دون صداق أو دون ولي، فيمحى إذا لم يعش الزوجان معا بعد، ويبقى في غير ذلك.
+mariage mixte | Mariage entre un Algérien ou une Algérienne et une personne étrangère. | زواج بين جزائري أو جزائرية وشخص أجنبي.
+consommation du mariage | Début de la vie commune des époux après la conclusion du contrat ; l'épouse a alors droit à toute la dot. | بداية الحياة المشتركة للزوجين بعد إبرام العقد، وعندها يكون للزوجة الحق في الصداق كله.
+dot à terme | Fraction de la dot que le mari paiera plus tard, à une date fixée dans le contrat. | جزء من الصداق يدفعه الزوج فيما بعد، في تاريخ يحدده العقد.
+dot payable d'avance | Fraction de la dot que le mari remet à l'épouse au moment du contrat. | جزء من الصداق يسلمه الزوج للزوجة وقت العقد.
+dot de parité | Dot fixée par le juge d'après ce que reçoivent d'habitude les femmes de sa famille, quand le contrat ne dit rien. | صداق يحدده القاضي بحسب ما تأخذه عادة نساء أسرتها إذا سكت العقد.
+cadeaux de fiançailles | Biens que l'homme et la femme s'offrent pendant les fiançailles ; celui qui y met fin rend ce qu'il a reçu. | أموال يتبادلها الرجل والمرأة خلال الخطبة، ومن ينهي هذه الخطبة يرد ما أخذه.
+rupture des fiançailles | Décision de l'homme ou de la femme de ne pas donner suite à la promesse de mariage ; elle est libre, mais oblige parfois à payer une réparation. | قرار الرجل أو المرأة بألا يتم الوعد بالزواج، وهو حر، لكنه يلزم أحيانا بدفع تعويض.
+fiancée | Femme qui a promis de se marier avec un homme, avant la conclusion du contrat. | امرأة وعدت بأن تتزوج رجلا، قبل إبرام العقد.
+empêchements absolus | Situations qui interdisent pour toujours le mariage entre deux personnes : parenté, alliance, allaitement. | حالات تمنع إلى الأبد الزواج بين شخصين: القرابة والمصاهرة والإرضاع.
+empêchements temporaires | Situations qui interdisent le mariage pendant qu'elles durent, comme le mariage actuel de la femme ou sa retraite légale. | حالات تمنع الزواج خلال مدة قيامها، كزواج المرأة الحالي أو وجودها في العدة.
+parenté par allaitement | Lien créé entre l'enfant et la femme qui l'a nourri de son lait ; il interdit le mariage comme la parenté du sang. | رابطة تنشأ بين الولد والمرأة التي غذته بلبنها، وتمنع الزواج مثل القرابة بالدم.
+degré de parenté | Nombre de générations qui séparent deux parents. | عدد الأجيال التي تفصل بين قريبين.
+parenté en ligne directe | Lien entre des personnes qui descendent l'une de l'autre, comme le père et le fils. | رابطة بين أشخاص ينحدر بعضهم من بعض، كالأب والابن.
+parenté en ligne collatérale | Lien entre des personnes qui ont un ancêtre commun sans descendre l'une de l'autre, comme les frères ou les cousins. | رابطة بين أشخاص لهم جد مشترك دون أن ينحدر بعضهم من بعض، كالإخوة أو أبناء العم.
+collatéraux | Parents qui ont un ancêtre commun sans descendre l'un de l'autre : frères, sœurs, oncles, cousins. | أقارب لهم جد مشترك دون أن ينحدر بعضهم من بعض: الإخوة والأخوات والأعمام وأبناء العم.
+conjoint survivant | Époux encore en vie après le décès de l'autre. | الزوج الذي ما زال حيا بعد وفاة الآخر. | sf=époux survivant
+droits et obligations des époux | Ce que le mari et l'épouse se doivent l'un à l'autre : vie commune, respect, entraide et soin des enfants. | ما يجب على الزوج والزوجة كل منهما نحو الآخر: الحياة المشتركة والاحترام والتعاون ورعاية الأولاد.
+devoir de cohabitation | Obligation des époux de vivre ensemble sous le même toit. | التزام الزوجين بأن يعيشا معا تحت سقف واحد.
+devoir de fidélité | Obligation de chaque époux de n'avoir de relations intimes qu'avec son conjoint. | التزام كل زوج بألا تكون له علاقات حميمة إلا مع زوجه.
+entretien de l'épouse | Nourriture, vêtements, soins et logement que le mari doit à sa femme. | الغذاء واللباس والعلاج والسكن التي يجب على الزوج أن يوفرها لامرأته.
+entretien des enfants | Nourriture, vêtements, soins, logement et études que le père doit à ses enfants. | الغذاء واللباس والعلاج والسكن والدراسة التي يجب على الأب أن يوفرها للأولاد.
+domicile conjugal | Logement où les époux vivent ensemble. | السكن الذي يعيش فيه الزوجان معا. | sf=foyer conjugal
+abandon du domicile conjugal | Départ d'un époux qui quitte le logement de la famille sans raison sérieuse. | رحيل زوج يغادر سكن الأسرة دون سبب جدي.
+séparation des biens | Règle selon laquelle chaque époux reste propriétaire de ses biens et les gère seul. | قاعدة تقضي بأن يبقى كل زوج مالكا لأمواله ويسيرها وحده.
+biens communs des époux | Biens acquis pendant le mariage que les époux ont décidé, par écrit, de mettre en commun. | أموال اكتسبت خلال الزواج قرر الزوجان كتابة أن يجعلاها مشتركة.
+clause du contrat de mariage | Condition que les époux ajoutent à l'acte de mariage, comme le refus de la polygamie ou le droit de l'épouse de travailler. | شرط يضيفه الزوجان إلى عقد الزواج، كرفض تعدد الزوجات أو حق الزوجة في أن تعمل.
+autorisation de polygamie | Permission du président du tribunal, sans laquelle un homme ne peut pas prendre une seconde épouse. | إذن من رئيس المحكمة، دونه لا يستطيع رجل أن يتزوج زوجة ثانية.
+coépouse | Autre épouse du même mari, dans un mariage polygame. | زوجة أخرى للزوج نفسه في زواج متعدد.
+nouchouz | Refus d'un époux de remplir ses devoirs conjugaux, constaté par le juge. | رفض زوج أن يقوم بواجباته الزوجية، يعاينه القاضي.
+conciliation entre époux | Effort du juge pour rapprocher les époux avant de prononcer le divorce. | سعي القاضي إلى أن يقرب بين الزوجين قبل أن ينطق بالطلاق.
+arbitrage familial | Mission de deux arbitres, pris dans chaque famille, que le juge charge de réconcilier les époux. | مهمة محكمين اثنين، يؤخذ كل واحد من أسرة، يكلفهما القاضي بأن يصلحا بين الزوجين.
+divorce par volonté unilatérale de l'époux | Fin du mariage que le mari décide seul et que le juge constate. | نهاية الزواج التي يقررها الزوج وحده ويعاينها القاضي.
+divorce à la demande de l'épouse | Fin du mariage que le juge prononce quand la femme la réclame pour l'une des raisons que la loi énumère. | نهاية الزواج التي ينطق بها القاضي إذا طالبت بها المرأة لأحد الأسباب التي يعددها القانون. | sf=tatliq
+divorce pour préjudice | Divorce que l'épouse obtient du juge quand son mari lui fait subir un dommage reconnu par la loi. | طلاق تحصل عليه الزوجة من القاضي إذا ألحق بها زوجها ضررا يعترف به القانون.
+divorce abusif | Divorce que le mari décide sans raison sérieuse ; il doit alors une réparation à l'épouse. | طلاق يقرره الزوج دون سبب جدي، فيلتزم بتعويض للزوجة.
+divorce révocable | Divorce après lequel le mari peut encore reprendre sa femme pendant la retraite légale, sans nouveau contrat. | طلاق يستطيع الزوج بعده أن يرجع امرأته خلال العدة دون عقد جديد.
+divorce irrévocable | Divorce après lequel la vie commune ne peut reprendre qu'avec un nouveau contrat. | طلاق لا تعود بعده الحياة المشتركة إلا بعقد جديد.
+reprise de l'épouse | Retour de la femme auprès de son mari pendant la période de conciliation, sans nouveau contrat. | رجوع المرأة إلى زوجها خلال فترة المصالحة دون عقد جديد.
+jugement de divorce | Décision du tribunal qui met fin au mariage et organise ses conséquences. | قرار المحكمة الذي ينهي الزواج وينظم نتائجه.
+transcription du jugement de divorce | Écriture du divorce dans les registres de l'état civil, demandée par le ministère public. | كتابة الطلاق في سجلات الحالة المدنية بطلب من النيابة العامة.
+effets du divorce | Conséquences de la fin du mariage : retraite légale, garde des enfants, pension alimentaire, logement, réparation. | نتائج نهاية الزواج: العدة وحضانة الأولاد والنفقة والسكن والتعويض.
+réparation du divorce abusif | Somme que le juge accorde à l'épouse quand le mari a mis fin au mariage sans raison sérieuse. | مبلغ يمنحه القاضي للزوجة إذا أنهى الزوج الزواج دون سبب جدي.
+pension de la retraite légale | Somme que le mari verse à son ancienne épouse pour ses besoins pendant le délai d'attente qui suit le divorce. | مبلغ يدفعه الزوج لزوجته السابقة لحاجاتها خلال أجل الانتظار الذي يلي الطلاق.
+compensation du khol'â | Somme que l'épouse verse à son mari pour obtenir la fin du mariage, même s'il refuse. | مبلغ تدفعه الزوجة لزوجها لتحصل على نهاية الزواج ولو رفض.
+délai de viduité | Temps d'attente de quatre mois et dix jours que la veuve observe avant de pouvoir se remarier. | مدة انتظار من أربعة أشهر وعشرة أيام تقضيها الأرملة قبل أن تستطيع الزواج من جديد.
+épouse divorcée | Femme dont le mariage a pris fin par un divorce. | امرأة انتهى زواجها بطلاق.
+veuve | Femme dont le mari est mort et qui ne s'est pas remariée. | امرأة مات زوجها ولم تتزوج من جديد.
+logement de la gardienne | Habitation, ou loyer, que le père doit fournir à la mère qui élève les enfants après le divorce. | مسكن، أو بدل إيجار، يجب على الأب أن يوفره للأم التي تربي الأولاد بعد الطلاق.
+attribution de la garde | Décision du juge qui désigne la personne chargée d'élever l'enfant après le divorce. | قرار القاضي الذي يعين الشخص المكلف بتربية الولد بعد الطلاق.
+déchéance du droit de garde | Retrait du droit d'élever l'enfant, prononcé par le juge quand la personne ne remplit plus les conditions. | سحب حق تربية الولد، ينطق به القاضي إذا لم يعد الشخص يستوفي الشروط.
+gardien de l'enfant | Personne à qui le juge a confié le soin d'élever un enfant. | شخص عهد إليه القاضي برعاية ولد وتربيته.
+enfant gardé | Enfant élevé par la personne que le juge a désignée après le divorce de ses parents. | ولد يربيه الشخص الذي عينه القاضي بعد طلاق والديه.
+intérêt supérieur de l'enfant | Règle selon laquelle toute décision qui touche un enfant doit d'abord chercher ce qui est bon pour lui. | قاعدة تقضي بأن كل قرار يمس ولدا يجب أن يبحث أولا عما ينفعه.
+fonds de la pension alimentaire | Caisse de l'État qui verse la pension alimentaire à la mère quand le père ne la paie pas. | صندوق تابع للدولة يدفع النفقة للأم إذا لم يدفعها الأب.
+droit d'hébergement | Droit du parent qui n'élève pas l'enfant de le recevoir chez lui pendant quelques jours. | حق الوالد الذي لا يربي الولد في أن يستقبله عنده بضعة أيام.
+remariage | Nouveau mariage d'une personne dont le premier mariage a pris fin. | زواج جديد لشخص انتهى زواجه الأول.
+serment d'anathème | Serment par lequel le mari accuse sa femme d'adultère ou nie être le père de son enfant, devant le juge. | يمين يتهم بها الزوج امرأته بالزنا أو ينكر أنه أب ولدها، أمام القاضي. | sf=li'ân
+établissement de la filiation | Démonstration, par le mariage, l'aveu ou la preuve, qu'un enfant est celui d'un homme. | التدليل، بالزواج أو الإقرار أو الدليل، على أن ولدا هو ابن رجل.
+reconnaissance de filiation | Déclaration par laquelle un homme dit qu'un enfant d'origine inconnue est le sien. | تصريح يقول به رجل إن ولدا مجهول الأصل هو ابنه.
+reconnaissance de maternité | Déclaration par laquelle une femme dit qu'un enfant est le sien. | تصريح تقول به امرأة إن ولدا هو ابنها.
+présomption de paternité | Règle selon laquelle l'enfant né pendant le mariage a pour père le mari de sa mère. | قاعدة تقضي بأن أب الولد الذي يولد خلال الزواج هو زوج أمه.
+durée minimale de la grossesse | Temps le plus court, fixé à six mois, entre le mariage et une naissance pour que l'enfant soit rattaché au mari. | أقصر مدة، حددت بستة أشهر، بين الزواج والولادة ليلحق الولد بالزوج.
+durée maximale de la grossesse | Temps le plus long, fixé à dix mois, entre la fin du mariage et une naissance pour que l'enfant soit rattaché à l'ancien mari. | أطول مدة، حددت بعشرة أشهر، بين نهاية الزواج والولادة ليلحق الولد بالزوج السابق.
+insémination artificielle | Technique médicale qui aide un couple marié à avoir un enfant, admise avec le consentement des deux époux et leurs seules cellules. | تقنية طبية تساعد رجلا وامرأة متزوجين على أن يكون لهما ولد، تقبل برضا الزوجين وبخلاياهما وحدهما.
+preuve scientifique de la filiation | Analyse, comme le test génétique, que le juge peut ordonner pour savoir qui est le père d'un enfant. | تحليل، كالفحص الجيني، يجوز للقاضي أن يأمر به ليعلم من هو أب ولد.
+paternité | Lien juridique entre un père et son enfant. | رابطة قانونية بين أب وولده.
+maternité | Lien juridique entre une mère et son enfant. | رابطة قانونية بين أم وولدها.
+enfant légitime | Enfant né de parents mariés. | ولد يولد من أبوين متزوجين.
+enfant naturel | Enfant né de parents qui ne sont pas mariés ensemble. | ولد يولد من أبوين غير متزوجين.
+enfant trouvé | Nourrisson abandonné dans la rue ou un autre lieu, dont on ne connaît pas les parents. | رضيع ترك في الطريق أو في مكان آخر ولا يعرف والداه.
+enfant de filiation inconnue | Enfant dont on ne sait pas qui est le père. | ولد لا يعرف من هو أبوه.
+orphelin | Enfant mineur qui a perdu son père, ou ses deux parents. | ولد قاصر فقد أباه أو والديه معا.
+pupille de l'État | Enfant sans famille que l'État prend en charge et place dans un établissement ou une famille d'accueil. | ولد بلا أسرة تتكفل به الدولة وتضعه في مؤسسة أو أسرة استقبال.
+enfance assistée | Ensemble des enfants sans famille dont l'État s'occupe par ses organismes sociaux. | مجموع الأولاد الذين لا أسرة لهم وتهتم بهم الدولة عن طريق الهيئات الاجتماعية.
+titulaire du recueil légal | Personne qui s'engage devant le juge ou le notaire à élever un enfant mineur comme le ferait un père, sans lui donner sa filiation. | شخص يلتزم أمام القاضي أو الموثق بأن يربي ولدا قاصرا كما يفعل الأب، دون أن يعطيه نسبه.
+enfant recueilli | Enfant mineur qu'une personne élève et entretient en vertu d'une kafala. | ولد قاصر يربيه شخص وينفق عليه بمقتضى كفالة.
+puissance paternelle | Pouvoir du père de diriger la personne et les biens de son enfant mineur. | سلطة الأب في أن يسير شخص ولده القاصر وأمواله.
+autorité parentale | Ensemble des droits et des devoirs du père et de la mère envers leur enfant mineur. | مجموع الحقوق والواجبات للأب والأم نحو ولدهما القاصر.
+tutelle sur la personne | Pouvoir de veiller sur un mineur : son éducation, sa santé, son mariage. | سلطة السهر على قاصر: تربيته وصحته وزواجه.
+tutelle sur les biens | Pouvoir de gérer le patrimoine d'un mineur dans son intérêt. | سلطة تسيير الذمة المالية لقاصر لمصلحته.
+allaitement | Nourriture d'un nourrisson au sein d'une femme ; il interdit le mariage entre ceux qu'il lie. | تغذية رضيع من ثدي امرأة، ويمنع الزواج بين من يربط بينهم.
+éducation de l'enfant | Soins et enseignement que les parents doivent à leur enfant pour le faire grandir. | رعاية وتعليم يجب على الوالدين أن يقدماهما لولدهما لينمو.
+protection de l'enfance | Ensemble des mesures que prennent l'État et le juge pour mettre les enfants à l'abri du danger. | مجموع التدابير التي تتخذها الدولة والقاضي ليكون الأولاد في مأمن من الخطر.
+délégué national à la protection de l'enfance | Autorité placée auprès du Premier ministre, qui veille aux droits des enfants et reçoit les signalements. | سلطة توضع لدى الوزير الأول تسهر على حقوق الأولاد وتتلقى الإخطارات.
+mineur doué de discernement | Mineur de treize ans au moins, qui comprend la portée de ce qu'il fait. | قاصر بلغ ثلاث عشرة سنة على الأقل ويفهم أثر ما يفعله.
+mineur non doué de discernement | Mineur de moins de treize ans, dont tous les actes sont nuls. | قاصر لم يبلغ ثلاث عشرة سنة، وكل تصرفاته باطلة.
+âge de discernement | Âge de treize ans, à partir duquel un enfant comprend la portée de ce qu'il fait. | سن ثلاث عشرة سنة التي يفهم الولد ابتداء منها أثر ما يفعله.
+tutelle légale | Tutelle que la loi donne au père, puis à la mère, sur leur enfant mineur. | ولاية يعطيها القانون للأب ثم للأم على ولدهما القاصر.
+tutelle testamentaire | Mission de la personne que le père ou le grand-père a désignée, avant sa mort, pour s'occuper de l'enfant mineur. | مهمة الشخص الذي عينه الأب أو الجد قبل موته ليهتم بالولد القاصر.
+gestion des biens du mineur | Actes par lesquels le tuteur conserve et fait fructifier le patrimoine de l'enfant. | تصرفات يحفظ بها الولي الذمة المالية للولد وينميها.
+actes soumis à autorisation | Actes graves que le tuteur ne peut faire qu'avec la permission du juge, comme la vente d'un immeuble du mineur. | تصرفات خطيرة لا يقوم بها الولي إلا بإذن من القاضي، كبيع عقار القاصر.
+compte de tutelle | Relevé des recettes et des dépenses que le tuteur présente à la fin de sa mission. | كشف بالإيرادات والمصاريف يقدمه الولي عند نهاية مهمته.
+fin de la tutelle | Moment où la mission du tuteur cesse : majorité de l'enfant, décès, ou décision du juge. | الوقت الذي تتوقف فيه مهمة الولي: رشد الولد أو الوفاة أو قرار القاضي.
+déchéance de la tutelle | Retrait de sa mission au tuteur qui met en danger l'enfant ou ses biens, par décision du juge. | سحب المهمة من الولي الذي يعرض الولد أو أمواله للخطر، بقرار من القاضي.
+personne interdite | Personne à qui le juge a retiré le droit de gérer ses biens, parce qu'elle est démente, faible d'esprit ou prodigue. | شخص سحب منه القاضي حق تسيير أمواله لأنه مجنون أو معتوه أو سفيه.
+mainlevée de l'interdiction judiciaire | Jugement qui rend à une personne le droit de gérer ses biens, quand la raison de la mesure a cessé. | حكم يرد لشخص حق تسيير أمواله إذا زال سبب التدبير.
+imbécillité | Faiblesse durable de l'intelligence qui empêche une personne de bien gérer ses biens. | ضعف دائم في العقل يمنع شخصا من أن يحسن تسيير أمواله.
+faible d'esprit | Personne dont l'intelligence est restée trop faible pour qu'elle gère seule ses biens. | شخص بقي عقله أضعف من أن يسير أمواله وحده.
+prodigalité | Défaut de celui qui gaspille ses biens sans raison. | عيب من يبذر أمواله دون سبب.
+prodigue | Personne qui gaspille ses biens au point de se ruiner. | شخص يبذر أمواله إلى حد أن يفتقر.
+altération des facultés mentales | Trouble de l'esprit qui diminue la compréhension ou la volonté d'une personne. | اضطراب في العقل ينقص فهم شخص أو إرادته.
+personne âgée | Personne de soixante-cinq ans ou plus, que la loi protège. | شخص بلغ خمسا وستين سنة أو أكثر ويحميه القانون.
+personne handicapée | Personne qui souffre d'une infirmité du corps ou de l'esprit limitant sa vie quotidienne. | شخص يعاني من عاهة في الجسم أو العقل تقيد حياته اليومية. | sf=personne en situation de handicap | sa=شخص معوق، شخص ذو إعاقة
+assistant judiciaire | Personne que le tribunal désigne pour aider un sourd-muet, un aveugle ou un autre infirme à accomplir ses actes. | شخص تعينه المحكمة ليساعد أصم أبكم أو أعمى أو صاحب عاهة أخرى على أن يقوم بتصرفاته.
+vocation successorale | Droit d'une personne de recevoir une fraction des biens d'un défunt. | حق شخص في أن يأخذ جزءا من أموال مورث.
+causes de la succession | Liens qui donnent le droit d'hériter : la parenté et le mariage. | الروابط التي تعطي الحق في أن يرث الشخص: القرابة والزواج.
+empêchements à la succession | Raisons qui retirent le droit d'hériter, comme le meurtre du défunt ou la différence de religion. | أسباب تسحب الحق في أن يرث الشخص، كقتل المورث أو اختلاف الدين.
+actif successoral | Biens et droits que le défunt laisse à sa mort. | الأموال والحقوق التي يتركها المورث عند موته.
+passif successoral | Dettes que le défunt laisse et qu'il faut payer avant le partage. | ما يتركه المورث من دين يجب دفعه قبل القسمة.
+liquidation de la succession | Opération qui consiste à payer les dettes du défunt puis à calculer ce qui revient à chaque héritier. | عملية يدفع فيها ما على المورث من دين ثم يحسب ما يعود لكل وارث.
+inventaire de la succession | Liste détaillée des biens et des dettes du défunt. | قائمة مفصلة بأموال المورث وما عليه من دين.
+frais funéraires | Dépenses de l'enterrement du défunt, payées en premier sur ses biens. | مصاريف دفن المورث التي تدفع أولا من أمواله. | sf=frais d'obsèques
+cognats | Parents par les femmes, qui n'héritent que s'il n'existe ni héritier à part fixe ni parent par les hommes. | أقارب من جهة النساء لا يرثون إلا إذا لم يوجد وارث بنصيب محدد ولا قريب من جهة الرجال.
+éviction successorale | Règle par laquelle un héritier plus proche écarte un autre héritier ou réduit sa part. | قاعدة يبعد بها وارث أقرب وارثا آخر أو ينقص نصيبه.
+éviction totale | Situation de l'héritier qui ne reçoit rien parce qu'un parent plus proche du défunt existe. | حالة الوارث الذي لا يأخذ شيئا لوجود قريب أقرب إلى المورث.
+éviction partielle | Situation de l'héritier dont la part diminue parce qu'un autre héritier est présent. | حالة الوارث الذي ينقص نصيبه لأن وارثا آخر حاضر.
+réduction proportionnelle des parts | Diminution de toutes les parts fixes, dans la même proportion, quand leur total dépasse l'héritage. | إنقاص كل الأنصبة المحددة بالنسبة نفسها إذا تجاوز مجموعها الميراث.
+accroissement par restitution | Augmentation des parts fixes quand il reste des biens et qu'aucun parent par les hommes n'existe. | زيادة الأنصبة المحددة إذا بقيت أموال ولم يوجد قريب من جهة الرجال.
+part successorale | Fraction des biens du défunt qui revient à un héritier. | جزء من أموال المورث يعود لوارث.
+succession vacante | Biens d'un défunt qu'aucun héritier ne vient réclamer. | أموال مورث لا يأتي أي وارث ليطالب بها.
+succession en déshérence | Biens d'un défunt sans héritier, qui reviennent au Trésor public. | أموال مورث بلا وارث تعود إلى الخزينة العمومية.
+indivision successorale | Situation des héritiers qui possèdent ensemble les biens du défunt jusqu'au partage. | حالة الورثة الذين يملكون معا أموال المورث إلى غاية القسمة.
+cohéritier | Personne qui hérite d'un même défunt avec d'autres. | شخص يرث مع غيره المورث نفسه.
+différence de religion | Situation où le défunt et son parent n'ont pas la même foi, ce qui empêche l'un d'hériter de l'autre. | حالة لا يكون فيها للمورث وقريبه الإيمان نفسه، فتمنع أحدهما من أن يرث الآخر.
+testament olographe | Testament que le testateur écrit en entier, date et signe de sa main. | وصية يكتبها الموصي كلها ويؤرخها ويوقعها بيده.
+tiers disponible | Fraction d'un tiers de ses biens dont une personne peut disposer par testament. | جزء قدره الثلث من أموال الشخص يجوز له أن يتصرف فيه بوصية.
+legs excédant le tiers | Legs qui dépasse le tiers des biens ; le surplus ne vaut que si les héritiers l'acceptent. | وصية تتجاوز ثلث الأموال، ولا يصح الزائد إلا إذا قبله الورثة.
+révocation du testament | Décision du testateur d'annuler ce qu'il avait décidé pour après sa mort. | قرار الموصي بأن يبطل ما كان قرره لما بعد موته.
+exécuteur testamentaire | Personne que le testateur charge de faire appliquer ses dernières volontés. | شخص يكلفه الموصي بأن يطبق إرادته الأخيرة.
+legs universel | Legs qui porte sur tous les biens du testateur. | وصية تتعلق بكل أموال الموصي.
+legs particulier | Legs qui porte sur un bien précis, comme une maison ou une somme d'argent. | وصية تتعلق بمال محدد، كدار أو مبلغ من النقود.
+donation entre vifs | Donation qui produit son effet du vivant de celui qui donne. | هبة تنتج أثرها في حياة من يعطي.
+révocation de la donation | Reprise du bien donné ; la loi ne la permet qu'au père et à la mère envers leur enfant. | استرداد المال الموهوب، ولا يجيزه القانون إلا للأب والأم نحو ولدهما.
+prise de possession du bien donné | Remise effective de la chose à celui qui reçoit une donation ; elle rend la donation complète. | تسليم الشيء فعلا لمن يأخذ هبة، وبه تتم الهبة.
+donation en maladie de mort | Donation faite par un malade pendant sa dernière maladie ; elle est traitée comme un legs. | هبة يقوم بها مريض خلال مرضه الأخير، وتعامل معاملة الوصية.
+maladie de la mort | Maladie grave qui fait craindre la fin et dont le malade meurt en effet dans l'année. | مرض خطير يخشى منه الهلاك ويموت منه المريض فعلا خلال السنة. | sf=dernière maladie
+wakf familial | Wakf dont les revenus vont d'abord aux descendants du fondateur, puis à la bienfaisance. | وقف تعود مداخيله أولا إلى فروع الواقف ثم إلى أعمال الخير. | sf=wakf privé, habous privé | sa=وقف ذري، وقف أهلي
+wakf public | Wakf dont les revenus vont dès le début à la bienfaisance, comme l'entretien d'une mosquée ou d'une école. | وقف تعود مداخيله منذ البداية إلى أعمال الخير، كصيانة مسجد أو مدرسة. | sf=habous public | sa=وقف خيري

@@ -1,0 +1,39 @@
+# Définitions des termes de termes/58_adjectifs_et_verbes_des_domaines.txt : terme | définition française | définition arabe | options (sf=, sa=)
+budgétaire | Relatif au budget de l'État ou d'une collectivité. | متعلق بميزانية الدولة أو جماعة.
+référendaire | Relatif au référendum, vote direct des citoyens sur un texte. | متعلق بالاستفتاء، وهو تصويت مباشر من المواطنين على نص.
+démocratique | Où le pouvoir vient du peuple et s'exerce avec son consentement. | ما تصدر فيه السلطة عن الشعب وتمارس برضاه.
+républicain | Relatif à la République, où le chef de l'État est élu et non héréditaire. | متعلق بالجمهورية، حيث ينتخب رئيس الدولة وليس منصبه وراثيا. | homographe=ar
+fédéral | Relatif à un État composé de plusieurs États qui conservent une part de leurs pouvoirs. | متعلق بدولة مؤلفة من عدة دول تحتفظ بجزء من سلطاتها.
+consultatif | Qui donne un avis sans pouvoir de décision. | ما يبدي رأيا دون سلطة قرار.
+représentatif | Qui parle et décide au nom de ceux qui l'ont choisi. | من يتكلم ويقرر باسم من اختاروه.
+paritaire | Composé d'un nombre égal de représentants de chaque partie. | مؤلف من عدد متساو من الممثلين عن كل طرف.
+intergouvernemental | Qui réunit les gouvernements de plusieurs États. | ما يجمع حكومات عدة دول.
+non gouvernemental | Qui ne dépend d'aucun gouvernement. | ما لا يتبع أي حكومة.
+transfrontalier | Qui s'étend de part et d'autre d'une frontière. | ما يمتد على جانبي حد فاصل بين دولتين.
+supranational | Qui est placé au-dessus des États et s'impose à eux. | ما يعلو الدول ويفرض عليها.
+foncier | Relatif à la terre et à la propriété des terrains. | متعلق بالأرض وبملكية الأراضي. | sa=أرضي
+cadastral | Relatif au cadastre, registre public qui décrit les terrains et leurs propriétaires. | متعلق بمسح الأراضي، وهو سجل عمومي يصف الأراضي وملاكها.
+portuaire | Relatif au port et à ses activités. | متعلق بالميناء ونشاطاته.
+frontalier | Situé près d'une frontière, ou relatif à la frontière. | واقع قرب حد فاصل بين دولتين، أو متعلق به.
+polluant | Qui dégrade l'air, l'eau ou le sol. | ما يفسد الهواء أو الماء أو التربة. | sa=ملوث للبيئة
+contrefait | Imité sans droit pour tromper sur l'origine. | ما قلد دون حق للخداع في مصدره. | sf=imité | sa=مزيف
+concurrentiel | Où plusieurs entreprises se disputent les mêmes clients. | ما تتنازع فيه عدة مؤسسات الزبائن أنفسهم.
+trompeur | Qui donne une idée fausse de la réalité. | ما يعطي فكرة خاطئة عن الحقيقة. | sf=mensonger | sa=خادع
+défectueux | Qui présente un défaut de fabrication ou de sécurité. | ما فيه خلل في الصنع أو في الأمان. | sf=vicié
+arbitrable | Qui peut être soumis à un arbitre plutôt qu'à un juge. | ما يجوز عرضه على محكم بدل قاض.
+élire | Choisir une personne par un vote. | اختار شخصا بتصويت.
+nommer | Attribuer à une personne un emploi ou une fonction par une décision d'autorité. | أسند إلى شخص منصبا أو وظيفة بقرار من السلطة. | sf=désigner
+promouvoir | Faire monter un agent à un grade ou à un emploi supérieur. | رفع عونا إلى رتبة أو منصب أعلى.
+affecter | Destiner un bien ou une somme à un but précis ; placer un agent dans un poste. | رصد مالا أو مبلغا لغرض معين، أو وضع عونا في منصب.
+taxer | Soumettre une personne, un bien ou une opération à un impôt. | أخضع شخصا أو مالا أو عملية لضريبة.
+nationaliser | Transférer à l'État la propriété d'une entreprise privée. | نقل إلى الدولة ملكية مؤسسة خاصة.
+privatiser | Transférer au secteur privé une entreprise qui appartenait à l'État. | نقل إلى القطاع الخاص مؤسسة كانت للدولة.
+construire | Élever un bâtiment ou un ouvrage. | أقام بناية أو منشأة. | sf=bâtir, édifier
+démolir | Abattre un bâtiment ou un ouvrage. | أسقط بناية أو منشأة. | sf=détruire
+polluer | Dégrader l'air, l'eau ou le sol par des rejets nuisibles. | أفسد الهواء أو الماء أو التربة بنفايات مؤذية.
+contrefaire | Reproduire sans droit une œuvre, une marque ou un produit protégé. | نسخ دون حق مصنفا أو علامة أو منتوجا محميا.
+adhérer | Devenir membre d'un groupement, ou partie à un traité déjà conclu. | صار عضوا في تجمع، أو طرفا في معاهدة سبق أن أبرمت.
+s'abstenir | Ne pas accomplir un acte ; ne pas prendre part à un vote. | لم يقم بفعل، أو لم يشارك في تصويت. | sa=أمسك عن
+embaucher | Engager un salarié par un contrat de travail. | استخدم عاملا بعقد العمل. | sf=recruter | sa=وظف
+faire grève | Cesser le travail ensemble pour appuyer des demandes professionnelles. | توقف مع غيره عن العمل لدعم طلبات مهنية.
+émigrer | Quitter son pays pour s'établir dans un autre. | غادر بلده ليستقر في بلد آخر.

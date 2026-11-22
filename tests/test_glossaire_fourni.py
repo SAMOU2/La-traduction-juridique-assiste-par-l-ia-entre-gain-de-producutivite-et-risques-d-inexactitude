@@ -11,15 +11,22 @@ Le nombre d'entrées est écrit dans ``conftest.py``.
 Depuis la version 0.8, le fichier a deux parties : 1 000 entrées complètes (définition et
 phrase d'exemple), puis des « termes seuls » (terme, équivalent, catégorie, domaine). Depuis
 la version 0.11, les termes seuls reçoivent à leur tour une phrase d'exemple, par étapes (trois étapes sur
-quatre sont faites dans la version 0.12).
+quatre sont faites dans la version 0.12). Depuis la version 0.13, chaque terme seul a aussi sa définition, dans
+les deux langues, et des synonymes quand il en existe : le vocabulaire général, puis les treize domaines du droit.
 """
 
 from collections import Counter
 
 import pytest
-from conftest import ENTREES_COMPLETES, GLOSSAIRE_FOURNI, NOMBRE_D_ENTREES, TERMES_SEULS_AVEC_EXEMPLE
+from conftest import (
+    ENTREES_COMPLETES,
+    GLOSSAIRE_FOURNI,
+    NOMBRE_D_ENTREES,
+    TERMES_SEULS_AVEC_DEFINITION,
+    TERMES_SEULS_AVEC_EXEMPLE,
+)
 
-from traducteur.glossaire import COLONNES, mention_a_verifier
+from traducteur.glossaire import COLONNES, definition_a_verifier, equivalent_a_verifier, mention_a_verifier
 from traducteur.langues import AR, FR, cle_souple, cle_stricte, contient_arabe
 from traducteur.surlignage import positions_du_terme
 from traducteur.traduction import (
@@ -84,6 +91,9 @@ def test_chaque_entree_est_complete(glossaire_fourni):
         assert entree.definition_fr and contient_arabe(entree.definition_ar), nom
         assert not contient_arabe(entree.definition_fr), nom
         assert entree.source_definition and entree.ressources, nom
+        # La mention « à vérifier » d'une entrée complète porte sur sa définition, jamais sur son équivalent.
+        assert equivalent_a_verifier(entree) is None, nom
+        assert definition_a_verifier(entree) in (None, "définition d’exemple"), nom
         assert entree.pluriel_fr or not entree.pluriel_ar, nom  # un pluriel arabe a son pluriel français
         assert entree.contextes, nom  # chaque entrée a sa phrase d'exemple
         for contexte in entree.contextes:
@@ -94,10 +104,11 @@ def test_chaque_entree_est_complete(glossaire_fourni):
 def test_les_termes_seuls(glossaire_fourni):
     """Les entrées suivantes (versions 0.8 et 0.9) : terme, équivalent, catégorie, domaine et ressources.
 
-    Elles n'ont pas de définition. Depuis la version 0.11, une partie d'entre elles ont une phrase d'exemple : tous
-    les adjectifs, les verbes et les locutions, et une partie des noms (vocabulaire général, droit civil, justice
-    et procédure, droit pénal ; depuis la version 0.12, droit des affaires, droit constitutionnel, droit
-    administratif, droit de la famille et droit du travail). Aucune forme d'un nom seul ne désigne
+    Depuis la version 0.11, une partie d'entre elles ont une phrase d'exemple : tous les adjectifs, les verbes et
+    les locutions, et une partie des noms (vocabulaire général, droit civil, justice et procédure, droit pénal ;
+    depuis la version 0.12, droit des affaires, droit constitutionnel, droit administratif, droit de la famille et
+    droit du travail). Depuis la version 0.13, elles ont toutes une définition, dans les deux langues : les
+    termes du vocabulaire général et ceux des domaines du droit. Aucune forme d'un nom seul ne désigne
     un autre nom : la traduction d'un texte n'aurait rien pour choisir entre les deux. Un adjectif, un verbe ou
     une locution peut partager une forme avec une autre entrée (« منع » : « interdiction » et « interdire »),
     puisque la traduction d'un texte ne le remplace pas.
@@ -110,9 +121,17 @@ def test_les_termes_seuls(glossaire_fourni):
         assert entree.terme_fr and not contient_arabe(entree.terme_fr) and contient_arabe(entree.terme_ar), nom
         assert entree.categorie_fr in NOMS | AUTRES_MOTS and contient_arabe(entree.categorie_ar), nom
         assert entree.domaines and entree.ressources, nom
-        assert not entree.definition_fr and not entree.definition_ar, nom
-        # Faute de définition, la mention « à vérifier » porte sur l'équivalent : la fiche l'affiche à son pied.
-        assert mention_a_verifier(entree.source_definition) == "équivalent d’exemple", nom
+        # La mention « à vérifier » porte toujours sur l'équivalent : la fiche l'affiche à son pied. Quand le terme
+        # a sa définition (dans les deux langues, ou pas du tout), la mention porte aussi sur elle.
+        assert equivalent_a_verifier(entree) == "équivalent d’exemple", nom
+        assert bool(entree.definition_fr) == bool(entree.definition_ar), nom
+        if entree.definition_fr:
+            assert contient_arabe(entree.definition_ar) and not contient_arabe(entree.definition_fr), nom
+            assert mention_a_verifier(entree.source_definition) == "équivalent et définition d’exemple", nom
+            assert definition_a_verifier(entree) == "définition d’exemple", nom
+        else:
+            assert mention_a_verifier(entree.source_definition) == "équivalent d’exemple", nom
+            assert definition_a_verifier(entree) is None, nom
         # Au plus une phrase d'exemple, dans les deux langues, rédigée pour le glossaire : « à vérifier ».
         assert len(entree.contextes) <= 1, nom
         for contexte in entree.contextes:
@@ -120,7 +139,8 @@ def test_les_termes_seuls(glossaire_fourni):
             assert mention_a_verifier(contexte.source) == "phrase d’exemple", nom
         assert entree.pluriel_fr or not entree.pluriel_ar, nom
         if entree.categorie_fr in AUTRES_MOTS:
-            assert entree.contextes, nom  # chaque adjectif, chaque verbe et chaque locution a sa phrase
+            # Chaque adjectif, chaque verbe et chaque locution a sa phrase et, depuis la version 0.13, sa définition.
+            assert entree.contextes and entree.definition_fr, nom
             assert not entree.pluriel_fr and not entree.pluriel_ar, nom
             assert not se_remplace_dans_un_texte(entree), nom
             continue
@@ -130,8 +150,41 @@ def test_les_termes_seuls(glossaire_fourni):
                 assert [autre for autre, _ in noms.reconnaitre(forme, langue)] == [entree], (nom, forme)
     # Les mots qui ne sont pas des noms se trouvent tous dans cette seconde partie.
     assert all(se_remplace_dans_un_texte(entree) for entree in glossaire_fourni.entrees[:ENTREES_COMPLETES])
-    # Le nombre de termes seuls qui ont leur phrase ne baisse pas d'une version à l'autre.
+    # Le nombre de termes seuls qui ont leur phrase ne baisse pas d'une version à l'autre. Chaque terme seul a sa
+    # définition : le nombre attendu est celui des termes seuls.
     assert sum(1 for entree in seuls if entree.contextes) >= TERMES_SEULS_AVEC_EXEMPLE
+    assert sum(1 for entree in seuls if entree.definition_fr) >= TERMES_SEULS_AVEC_DEFINITION
+
+
+def test_les_definitions_des_termes_seuls(glossaire_fourni):
+    """Version 0.13 : la définition d'un terme seul est courte, ne reprend pas le terme, et ne sert qu'une fois."""
+    seuls = [entree for entree in glossaire_fourni.entrees[ENTREES_COMPLETES:] if entree.definition_fr]
+    for entree in seuls:
+        nom = f"n° {entree.numero} : {entree.terme_fr}"
+        assert entree.definition_fr[0].isupper() and "'" not in entree.definition_fr, nom  # apostrophes courbes
+        for langue in (FR, AR):
+            definition = entree.definition(langue)
+            assert definition.endswith(".") and len(definition) <= 200, nom
+            # Un synonyme n'est ni le terme, ni un synonyme déjà donné.
+            cles = [cle_souple(forme) for forme in (entree.terme(langue), *entree.synonymes(langue))]
+            assert len(cles) == len(set(cles)), nom
+    # La définition d'un terme seul n'est celle d'aucune autre entrée, complète ou non.
+    for langue in (FR, AR):
+        emplois = Counter(cle_phrase(entree.definition(langue)) for entree in glossaire_fourni.entrees
+                          if entree.definition(langue))
+        assert [entree.terme_fr for entree in seuls if emplois[cle_phrase(entree.definition(langue))] != 1] == []
+    # Le terme défini n'est pas dans sa définition. Deux exceptions, en arabe, sont des mots de même écriture :
+    # « البلدية », la commune, dans la définition de « بلدي » (communal), et « الجمهورية », la République, dans
+    # celle de « جمهوري » (républicain).
+    reprises = [(entree.terme_fr, langue) for entree in seuls for langue in (FR, AR)
+                if positions_du_terme(entree.definition(langue), entree, langue)]
+    assert reprises == [("communal", AR), ("républicain", AR)]
+    # « protégé », « protéger » et « protection » : trois termes seuls, chacun avec sa définition et ses synonymes.
+    protege, = (entree for entree in seuls if entree.terme_fr == "protégé")
+    assert protege.definition_fr == "Qui bénéficie d’une protection que la loi organise ou que le juge accorde."
+    assert protege.definition_ar == "الذي يستفيد من حماية ينظمها القانون أو يمنحها القاضي."
+    assert (protege.synonymes_fr, protege.synonymes_ar) == (["préservé", "sauvegardé"], ["مصون"])
+    assert {"protéger", "protection"} <= {entree.terme_fr for entree in seuls}
 
 
 def test_les_phrases_d_exemple(glossaire_fourni):
@@ -338,7 +391,7 @@ def test_un_mot_courant_peut_etre_pris_pour_un_terme(traducteur):
 pytest.importorskip("PySide6")
 
 from PySide6.QtWidgets import QLabel  # noqa: E402
-from test_interface import textes  # noqa: E402
+from test_interface import puces, textes  # noqa: E402
 
 from traducteur.interface.fiche import LigneDeProvenance  # noqa: E402
 
@@ -445,18 +498,46 @@ def test_la_fiche_d_un_terme_seul_avec_le_glossaire_fourni(fenetre_fournie, appl
     application.processEvents()
     entree = page.entree
     assert entree.terme_fr == "protégé" and entree.numero > ENTREES_COMPLETES
-    assert not entree.definition_fr and len(entree.contextes) == 1
+    assert entree.definition_fr and entree.definition_ar and len(entree.contextes) == 1
     # La fiche : le terme, son équivalent et, au pied de l'équivalent, la mention « À vérifier ».
     assert textes(page.fiche.colonne_terme.corps)[:2] == ["FRANÇAIS · SOURCE", "protégé"]
     assert page.fiche.colonne_equivalent.terme.terme == entree.terme_ar
     assert textes(page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalent d’exemple"]
-    # Le menu : pas de définition (cercle gris) ; l'invitation ne nomme que ce qui existe.
+    # Depuis la version 0.13, le terme a sa définition : le cercle « Définition » est coloré, et la définition
+    # s'affiche dans les deux langues. Au pied, la mention « À vérifier » dit que c'est une définition d'exemple.
     etats = details.etats()
-    assert etats["definition"] == (False, 0) and "definition" not in details.renseignes()
-    assert "définition" not in details.invite.texte.text()
+    assert etats["definition"] == (True, 0) and "definition" in details.renseignes()
     details.roue.boutons["definition"].click()
     assert textes(details.colonne_definition.corps) == [
-        "Aucune définition pour ce terme", "Le glossaire n’en donne pas encore."]
+        "FRANÇAIS", entree.definition_fr, "العربية", entree.definition_ar]
+    assert textes(details.colonne_definition.pied) == ["À vérifier", "· définition d’exemple"]
+    # Ses synonymes : deux en français ; l'arabe « مصون » est donné à côté de l'équivalent. « préservé » n'a pas
+    # d'entrée : sa puce est grise. « sauvegardé » s'écrit, aux accents près, comme le nom « sauvegarde » : sa
+    # puce est bleue, et un clic ouvre cette entrée.
+    assert etats["synonymes"] == (True, 2) and entree.synonymes_fr == ["préservé", "sauvegardé"]
+    details.roue.boutons["synonymes"].click()
+    assert textes(details.colonne_synonymes.corps) == ["préservé"]
+    assert puces(details.colonne_synonymes.corps) == ["sauvegardé"]
+    assert "مصون" in textes(page.fiche.colonne_equivalent.corps)
+    # Chaque terme seul a sa définition, y compris les noms des domaines du droit. Un nom se trouve aussi par son
+    # synonyme : « biodiversité », saisi sans accent, ouvre la fiche de « diversité biologique ». Elle n'a pas
+    # encore de phrase d'exemple : seul ce cercle reste gris.
+    assert all(element.definition_fr and element.definition_ar for element in page.glossaire.entrees)
+    page.rechercher("biodiversite")
+    application.processEvents()
+    nom = page.entree
+    assert nom.terme_fr == "diversité biologique" and nom.numero > ENTREES_COMPLETES and not nom.contextes
+    assert (nom.synonymes_fr, nom.synonymes_ar) == (["biodiversité"], ["تنوع حيوي", "تنوع أحيائي"])
+    assert details.etats()["definition"] == (True, 0) and "definition" in details.renseignes()
+    assert textes(page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalent d’exemple"]
+    details.roue.boutons["definition"].click()
+    assert textes(details.colonne_definition.corps) == [
+        "FRANÇAIS", "Variété des animaux, des plantes et des milieux naturels d’une région.",
+        "العربية", "تعدد الحيوانات والنباتات والأوساط الطبيعية في منطقة."]
+    assert textes(details.colonne_definition.pied) == ["À vérifier", "· définition d’exemple"]
+    page.rechercher("protege")
+    application.processEvents()
+    etats = details.etats()
     # Depuis la version 0.11, le terme a sa phrase d'exemple : le cercle « Contextualisation » est coloré. La
     # phrase porte la mention « À vérifier », et l'adjectif y est mis en évidence, accordé ou non.
     assert etats["contexte"][0] and "contexte" in details.renseignes()

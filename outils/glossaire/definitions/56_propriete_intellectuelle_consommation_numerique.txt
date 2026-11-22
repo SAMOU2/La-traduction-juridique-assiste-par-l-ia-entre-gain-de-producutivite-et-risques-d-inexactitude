@@ -1,0 +1,178 @@
+# Définitions des termes de termes/56_propriete_intellectuelle_consommation_numerique.txt : terme | définition française | définition arabe | options (sf=, sa=)
+propriété littéraire et artistique | Ensemble des droits de l'auteur, de l'artiste et du producteur sur leurs créations. | مجموع حقوق المؤلف والفنان والمنتج على إبداعاتهم.
+droits voisins | Droits reconnus à ceux qui font connaître une œuvre sans en être l'auteur : artiste, producteur de disques, radio et télévision. | حقوق يعترف بها لمن يوصل مصنفا إلى الناس دون أن يكون هو المؤلف: الفنان ومنتج الأسطوانات والإذاعة والتلفزيون. | sf=droits connexes
+droit moral | Droit de l'auteur de décider de la publication de son œuvre, d'y voir son nom et d'en faire respecter l'intégrité ; il ne se vend pas. | حق المؤلف في أن يقرر نشر مصنفه وأن يرى اسمه عليه وأن تحترم سلامته، وهو لا يباع.
+droits patrimoniaux | Droits qui donnent à l'auteur le pouvoir d'exploiter son œuvre et d'en tirer un revenu. | حقوق تعطي المؤلف سلطة أن يستغل مصنفه وأن يحصل منه على دخل.
+droit de reproduction | Droit exclusif de l'auteur de faire ou d'autoriser toute copie de son œuvre. | حق حصري للمؤلف في أن يصنع كل نسخة من مصنفه أو يرخص بها.
+droit de divulgation | Droit de l'auteur de décider seul si son œuvre sera portée à la connaissance de tous, quand et comment. | حق المؤلف في أن يقرر وحده هل يعرف الناس بمصنفه ومتى وكيف.
+droit de paternité | Droit de l'auteur de voir son nom figurer sur chaque exemplaire de son œuvre. | حق المؤلف في أن يظهر اسمه على كل نسخة من مصنفه.
+droit au respect de l'œuvre | Droit de l'auteur de s'opposer à toute modification ou déformation de son œuvre. | حق المؤلف في أن يعترض على كل تعديل أو تشويه لمصنفه.
+œuvre littéraire | Création écrite ou orale, comme un roman, un poème, un essai ou une conférence. | إبداع مكتوب أو شفوي، كرواية أو قصيدة أو بحث أو محاضرة.
+œuvre artistique | Création des arts, comme une peinture, une sculpture, une musique, une photographie ou un film. | إبداع من الفنون، كلوحة أو منحوتة أو موسيقى أو صورة فوتوغرافية أو فيلم.
+œuvre originale | Création qui porte l'empreinte personnelle de son auteur et n'est pas la copie d'une autre. | إبداع يحمل البصمة الشخصية للمؤلف وليس نسخة من غيره.
+œuvre dérivée | Création qui part d'une œuvre existante, comme une traduction, une adaptation ou un arrangement. | إبداع ينطلق من مصنف موجود، كترجمة أو اقتباس أو توزيع موسيقي.
+œuvre de collaboration | Œuvre créée ensemble par plusieurs auteurs, qui ont tous des droits sur elle. | مصنف يبدعه معا عدة مؤلفين، ولكل واحد منهم حقوق عليه.
+œuvre collective | Œuvre créée à l'initiative d'une personne qui la publie sous son nom, et où le travail de chacun se fond dans l'ensemble. | مصنف يبدع بمبادرة من شخص ينشره باسمه ويذوب فيه عمل كل واحد في المجموع.
+œuvre audiovisuelle | Œuvre faite d'images animées, avec ou sans son, comme un film ou une série télévisée. | مصنف يتكون من صور متحركة، بصوت أو دونه، كفيلم أو مسلسل تلفزيوني.
+programme d'ordinateur | Suite de commandes écrites dans un langage que la machine exécute pour accomplir une tâche. | سلسلة أوامر مكتوبة بلغة تنفذها الآلة لتنجز مهمة.
+base de données | Recueil organisé d'informations que l'on peut consulter une à une par un moyen électronique. | مجموعة منظمة من المعلومات يمكن الاطلاع عليها واحدة واحدة بوسيلة إلكترونية. | sf=banque de données
+durée de protection | Temps pendant lequel la loi protège une création : pour l'auteur, toute sa vie et cinquante ans après sa mort. | المدة التي يحمي فيها القانون إبداعا: للمؤلف طوال حياته وخمسين سنة بعد موته.
+cession des droits d'auteur | Contrat écrit par lequel l'auteur transmet à un autre le droit d'exploiter son œuvre, pour un temps et un lieu précis. | عقد مكتوب ينقل به المؤلف إلى غيره حق استغلال مصنفه لمدة ومكان محددين.
+contrat d'édition | Contrat par lequel l'auteur confie à un éditeur le soin de fabriquer des exemplaires de son œuvre et de les vendre. | عقد يعهد به المؤلف إلى ناشر بأن يصنع نسخا من مصنفه وأن يبيعها.
+éditeur | Personne ou société qui fabrique les exemplaires d'une œuvre et les met en vente. | شخص أو شركة تصنع نسخ مصنف وتعرضها للبيع.
+artiste interprète | Acteur, chanteur, musicien ou danseur qui donne vie à une œuvre en la jouant. | ممثل أو مغن أو عازف أو راقص يحيي مصنفا بأدائه.
+producteur de phonogrammes | Personne ou société qui prend l'initiative et la responsabilité du premier enregistrement de sons. | شخص أو شركة تأخذ المبادرة والمسؤولية في أول تسجيل لأصوات.
+organisme de radiodiffusion | Chaîne de radio ou de télévision qui émet des programmes vers les auditeurs et les spectateurs. | قناة إذاعة أو تلفزيون تبث برامج نحو المستمعين والمشاهدين.
+gestion collective des droits | Système où un organisme perçoit, au nom des auteurs, les sommes dues pour l'emploi de leurs œuvres et les leur reverse. | نظام تقبض فيه هيئة، باسم المؤلفين، المبالغ المستحقة عن استعمال مصنفاتهم وتسلمها لهم.
+Office national des droits d'auteur et des droits voisins | Établissement de l'État qui protège les auteurs et les artistes, perçoit leurs droits et les leur reverse. | مؤسسة تابعة للدولة تحمي المؤلفين والفنانين وتقبض حقوقهم وتسلمها لهم.
+copie privée | Reproduction d'une œuvre que chacun peut faire pour lui-même, sans la distribuer. | استنساخ مصنف يجوز لكل واحد أن يقوم به لنفسه دون أن يوزعه.
+piratage informatique | Entrée sans droit dans un ordinateur ou un réseau, ou copie illégale d'un logiciel. | دخول دون حق إلى حاسوب أو شبكة، أو صنع نسخة غير قانونية من برنامج الحاسوب.
+plagiat | Présentation comme sienne de tout ou d'un morceau de l'œuvre d'un autre. | تقديم الشخص مصنف غيره، كله أو جزءا منه، على أنه له.
+brevetabilité | Aptitude d'une invention à recevoir un brevet : elle doit être nouvelle, inventive et applicable dans l'industrie. | صلاحية اختراع لأن ينال براءة الاختراع: يجب أن يكون جديدا ومبتكرا وقابلا للتطبيق في الصناعة.
+activité inventive | Condition du brevet : l'invention ne doit pas être évidente pour un spécialiste du domaine. | شرط في براءة الاختراع: ألا يكون الاختراع بديهيا لمختص في المجال.
+application industrielle | Condition du brevet : l'invention doit pouvoir être fabriquée ou employée dans une industrie. | شرط في براءة الاختراع: أن يمكن صنع الاختراع أو استعماله في صناعة.
+inventeur | Personne qui a trouvé une solution nouvelle à un problème technique. | شخص وجد حلا جديدا لمشكلة تقنية.
+demande de brevet | Dossier remis à l'institut national, qui décrit l'invention et ce que l'on veut protéger. | ملف يسلم إلى المعهد الوطني يصف الاختراع وما يراد أن يحمى.
+titulaire du brevet | Personne à qui le brevet appartient et qui peut seule exploiter l'invention ou l'autoriser. | الشخص الذي يملك براءة الاختراع ويستطيع وحده أن يستغل الاختراع أو يرخص به.
+délivrance du brevet | Décision de l'institut qui accorde le brevet après l'examen du dossier. | قرار المعهد الذي يمنح براءة الاختراع بعد فحص الملف.
+revendications du brevet | Phrases du dossier qui délimitent exactement ce que le brevet protège. | جمل في الملف تحدد بدقة ما تحميه براءة الاختراع.
+licence contractuelle | Contrat par lequel le propriétaire d'un brevet ou d'une marque autorise un autre à l'exploiter, contre une redevance. | عقد يرخص به مالك براءة الاختراع أو علامة لغيره بأن يستغلها مقابل إتاوة.
+licence obligatoire | Autorisation d'exploiter un brevet, donnée par l'autorité contre la volonté de son propriétaire, quand il ne l'exploite pas assez. | ترخيص باستغلال براءة الاختراع تعطيه السلطة ضد إرادة المالك إذا لم يستغلها بما يكفي.
+déchéance du brevet | Fin du brevet avant son terme, quand son propriétaire ne paie pas les taxes annuelles. | نهاية براءة الاختراع قبل أجلها إذا لم يدفع المالك الرسوم السنوية.
+invention de service | Invention trouvée par un salarié dans le cadre de son travail ; elle appartient à l'employeur, sauf accord différent. | اختراع يتوصل إليه عامل في إطار عمله، ويملكه المستخدم إلا إذا وجد اتفاق آخر.
+certificat d'addition | Titre qui protège un perfectionnement apporté à une invention déjà couverte, et qui prend fin avec le premier brevet. | سند يحمي تحسينا أدخل على اختراع سبقت تغطيته، وينتهي مع براءة الاختراع الأولى.
+Institut national algérien de la propriété industrielle | Établissement public qui reçoit toute demande de brevet ou de marque, l'examine et tient les registres. | مؤسسة عمومية تتلقى كل طلب براءة الاختراع أو علامة وتفحصه وتمسك السجلات.
+marque de fabrique | Signe qu'un fabricant appose sur ses marchandises pour les distinguer de celles des autres. | إشارة يضعها صانع على بضاعته ليميزها عن بضاعة غيره.
+marque de commerce | Signe qu'un commerçant emploie pour distinguer les marchandises qu'il vend. | إشارة يستعملها تاجر ليميز البضاعة التي يبيعها.
+marque de service | Signe qu'une entreprise emploie pour distinguer ses services, comme une banque, un hôtel ou un transporteur. | إشارة تستعملها مؤسسة لتميز خدماتها، كبنك أو فندق أو ناقل.
+marque collective | Marque qu'un groupement possède et que ses membres emploient pour garantir l'origine ou la composition de leurs produits. | علامة يملكها تجمع ويستعملها أعضاؤه ليضمنوا منشأ منتجاتهم أو تركيبها.
+marque notoire | Marque connue de presque tout le monde, protégée même pour d'autres produits que les siens. | علامة يعرفها أغلب الناس، تحمى حتى في منتجات غير منتجاتها. | sf=marque notoirement connue
+enregistrement de la marque | Inscription de la marque au registre de l'institut, qui en donne la propriété pour dix ans renouvelables. | قيد العلامة في سجل المعهد، ويعطي ملكيتها لعشر سنوات قابلة للتجديد.
+dépôt de la marque | Remise à l'institut du dossier qui reproduit le signe et énumère les produits ou les services à couvrir. | تسليم المعهد الملف الذي يصور الإشارة ويعدد ما تغطيه من منتجات أو خدمات.
+titulaire de la marque | Personne au nom de laquelle la marque est enregistrée et qui peut seule l'employer. | الشخص الذي سجلت العلامة باسمه ويستطيع وحده أن يستعملها.
+renouvellement de l'enregistrement | Démarche qui prolonge de dix ans la protection d'une marque, contre le paiement d'une taxe. | مسعى يمدد حماية علامة عشر سنوات مقابل دفع رسم.
+contrefaçon de marque | Reproduction ou imitation d'une marque sans la permission de son propriétaire, pour tromper l'acheteur. | استنساخ علامة أو محاكاتها دون إذن المالك لخداع المشتري.
+dessin ou modèle industriel | Aspect extérieur d'une chose fabriquée, par ses lignes, ses couleurs ou sa forme, protégé quand il est nouveau. | المظهر الخارجي لشيء مصنوع، بخطوطه أو ألوانه أو شكله، يحمى إذا كان جديدا. | sf=dessins et modèles industriels, dessins et modèles
+appellation d'origine | Nom d'un lieu qui désigne un produit dont les caractères tiennent à ce lieu, comme une huile, une datte ou un tapis. | اسم مكان يعين منتوجا ترجع خصائصه إلى هذا المكان، كزيت أو تمر أو زربية.
+indication géographique | Mention qui rattache un produit à la région qui fait sa réputation. | بيان يربط منتوجا بالمنطقة التي تصنع سمعته.
+schéma de configuration de circuits intégrés | Dessin en trois dimensions des éléments et des liaisons d'une puce électronique, protégé pendant dix ans. | رسم ثلاثي الأبعاد لعناصر شريحة إلكترونية ووصلاتها، يحمى لمدة عشر سنوات. | sf=topographie de circuits intégrés
+savoir-faire | Connaissances pratiques et secrètes d'une entreprise, sans brevet, qui lui donnent un avantage. | معارف عملية وسرية لمؤسسة، دون براءة الاختراع، تعطيها مزية. | sf=know-how
+transfert de technologie | Contrat par lequel une entreprise fournit à une autre un brevet, un procédé ou une formation pour produire. | عقد توفر به مؤسسة لأخرى براءة الاختراع أو طريقة صنع أو تكوينا لتنتج.
+action en contrefaçon | Action portée devant le juge par le propriétaire d'un brevet, d'une marque ou d'une œuvre contre celui qui l'imite. | دعوى يرفعها أمام القاضي مالك براءة الاختراع أو علامة أو مصنف ضد من يحاكيه.
+saisie-contrefaçon | Mesure ordonnée par le juge pour faire décrire ou saisir les marchandises imitées, qui serviront de preuve. | تدبير يأمر به القاضي لتوصف البضاعة المحاكاة أو تحجز فتكون دليلا.
+marchandise contrefaite | Marchandise qui porte sans droit la marque d'un autre ou imite son modèle. | بضاعة تحمل دون حق علامة الغير أو تحاكي نموذجه.
+droit de la consommation | Branche du droit qui protège le consommateur face au vendeur et au fabricant. | فرع من القانون يحمي المستهلك أمام البائع والصانع.
+intervenant | Toute personne qui participe à la mise d'un produit sur le marché : fabricant, importateur, grossiste, détaillant. | كل شخص يشارك في وضع منتوج في السوق: صانع أو مستورد أو تاجر جملة أو تاجر تجزئة.
+produit alimentaire | Toute matière destinée à être mangée ou bue par l'homme, y compris l'eau et les boissons. | كل مادة معدة لأن يأكلها الإنسان أو يشربها، ومنها الماء والمشروبات.
+produit défectueux | Produit qui ne présente pas la sécurité que l'on peut normalement attendre de lui. | منتوج ليس فيه الأمن الذي ينتظر منه عادة.
+bien de consommation | Chose achetée pour un besoin personnel ou familial, et non pour un métier. | شيء يشترى لحاجة شخصية أو عائلية لا لحرفة.
+sécurité des produits | Situation d'un produit qui ne met en danger ni la santé ni les biens du consommateur quand il est employé normalement. | حالة منتوج لا يعرض صحة المستهلك ولا أمواله للخطر إذا استعمل عاديا.
+conformité des produits | Correspondance d'un produit avec les règles techniques et avec ce que le vendeur a promis. | موافقة منتوج للقواعد التقنية ولما وعد به البائع.
+obligation d'information du consommateur | Devoir du vendeur de faire connaître, par l'étiquetage ou autrement, les caractères du produit et son mode d'emploi. | واجب البائع أن يعرف، عن طريق وسم أو بغيره، بخصائص المنتوج وطريقة استعماله.
+garantie du produit | Engagement du vendeur de réparer ou de remplacer gratuitement le produit qui présente un défaut pendant une période. | التزام البائع بأن يصلح مجانا أو يستبدل المنتوج الذي يظهر فيه عيب خلال فترة.
+service après-vente | Ensemble de ce que le vendeur fournit après l'achat : installation, entretien, remise en marche, pièces de rechange. | مجموع ما يوفره البائع بعد الشراء: التركيب والصيانة وإعادة التشغيل وقطع الغيار. | sf=SAV
+certificat de garantie | Document remis à l'acheteur qui indique la durée de la garantie et ce qu'elle couvre. | وثيقة تسلم للمشتري تبين مدة الضمان وما يغطيه.
+date de péremption | Jour après lequel un produit ne doit plus être vendu ni consommé. | اليوم الذي لا يجوز بعده أن يباع منتوج ولا أن يستهلك. | sf=date limite de consommation, date d'expiration
+salubrité des denrées alimentaires | Situation d'un aliment propre, sain et sans danger pour celui qui le mange. | حالة غذاء نظيف وسليم ولا خطر فيه على من يأكله.
+affichage des prix | Obligation du vendeur d'indiquer de façon visible le prix de ce qu'il vend. | التزام البائع بأن يبين بصفة ظاهرة ثمن ما يبيعه.
+vente à distance | Vente conclue sans que le vendeur et l'acheteur se rencontrent, par téléphone, par courrier ou par internet. | بيع يبرم دون أن يلتقي البائع والمشتري، بالهاتف أو البريد أو الإنترنت.
+vente à domicile | Vente proposée par un vendeur qui se rend chez le client. | بيع يقترحه بائع يذهب إلى بيت الزبون.
+vente promotionnelle | Vente accompagnée, pour un temps limité, d'un avantage comme une baisse de prix ou un cadeau. | بيع يرافقه لمدة محدودة مزية، كتخفيض في الثمن أو هدية.
+vente en solde | Vente à prix réduit des marchandises de fin de saison, autorisée pendant les périodes que l'administration fixe. | بيع بضاعة نهاية الموسم بثمن مخفض، يرخص به خلال الفترات التي تحددها الإدارة. | sf=vente en soldes
+vente avec prime | Vente qui donne gratuitement à l'acheteur un autre bien ou un service ; la loi la limite. | بيع يعطي المشتري مجانا مالا آخر أو خدمة، ويحد منه القانون.
+crédit à la consommation | Prêt accordé à un particulier pour acheter un bien pour ses besoins personnels, remboursé par mensualités. | قرض يمنح لفرد ليشتري مالا لحاجاته الشخصية ويسدد بقسط شهري.
+fraude sur la marchandise | Tromperie sur la nature, la composition, la quantité ou l'origine de ce qui est vendu. | خداع في طبيعة ما يباع أو تركيبه أو كميته أو منشئه.
+répression des fraudes | Travail de l'administration et du juge qui recherchent et punissent celui qui trompe l'acheteur. | عمل الإدارة والقاضي اللذين يبحثان عمن يخدع المشتري ويعاقبانه.
+agent de la répression des fraudes | Fonctionnaire du commerce qui visite les magasins, prélève des échantillons et constate les manquements. | موظف في التجارة يزور المتاجر ويأخذ عينات ويعاين كل إخلال.
+prélèvement d'échantillons | Prise d'une petite quantité d'un produit pour la faire analyser. | أخذ كمية صغيرة من منتوج لتحليلها.
+analyse de laboratoire | Examen scientifique d'un échantillon pour vérifier sa composition et la conformité du produit aux règles. | فحص علمي لعينة للتحقق من تركيبها ومن مطابقة المنتوج للقواعد.
+retrait du produit | Mesure qui interdit de continuer à vendre un produit dangereux ou non conforme et le fait sortir des magasins. | تدبير يمنع أن يستمر التاجر في أن يبيع منتوجا خطيرا أو غير مطابق ويخرجه من المتاجر.
+rappel du produit | Mesure qui invite chaque acheteur à rapporter un produit dangereux déjà vendu. | تدبير يدعو كل مشتر إلى أن يرجع منتوجا خطيرا سبق أن باعه التاجر.
+association de consommateurs | Association qui informe ceux qui achètent, les défend et peut aller devant le juge en leur nom. | جمعية تعلم من يشترون وتدافع عنهم ويجوز لها أن تذهب إلى القاضي باسمهم. | sf=association de protection des consommateurs
+Conseil national de protection des consommateurs | Organe consultatif qui propose des mesures pour protéger la santé et l'argent de ceux qui achètent. | هيئة استشارية تقترح تدابير لتحمي صحة من يشترون ونقودهم. | sf=CNPC
+intérêt collectif des consommateurs | Intérêt commun à tous ceux qui achètent, qu'une association peut défendre devant le juge. | مصلحة مشتركة بين كل من يشترون، يجوز لجمعية أن تدافع عنها أمام القاضي.
+amende transactionnelle | Somme que l'auteur d'un manquement accepte de payer à l'administration pour éviter le procès. | مبلغ يقبل فاعل إخلال أن يدفعه للإدارة ليتفادى المحاكمة.
+droit de la concurrence | Branche du droit qui maintient une rivalité honnête entre les entreprises et punit ce qui la fausse. | فرع من القانون يحفظ تنافسا نزيها بين المؤسسات ويعاقب ما يفسده.
+libre concurrence | Situation où chaque entreprise peut entrer sur un marché et y vendre sans obstacle artificiel. | حالة تستطيع فيها كل مؤسسة أن تدخل سوقا وتبيع فيها دون عائق مصطنع.
+liberté des prix | Principe selon lequel chaque vendeur fixe lui-même son prix, sauf pour les biens que l'État encadre. | مبدأ يقضي بأن كل بائع يحدد بنفسه ثمن ما يبيعه، إلا في الأموال التي تؤطرها الدولة.
+marché pertinent | Ensemble des produits ou des services que l'acheteur tient pour remplaçables entre eux, dans une zone donnée. | مجموع ما يعده المشتري قابلا لأن يحل بعضه محل بعض من منتجات أو خدمات، في منطقة معينة.
+position dominante | Situation d'une entreprise assez puissante sur un marché pour agir sans tenir compte des autres vendeurs ni des clients. | حالة مؤسسة بلغت في سوق من القوة ما يجعلها تتصرف دون اعتبار لغيرها من البائعين ولا للزبائن.
+part de marché | Pourcentage de ce que vend une entreprise dans le total vendu sur un marché. | النسبة المئوية لما تبيعه مؤسسة من مجموع ما يباع في سوق.
+pratique anticoncurrentielle | Comportement d'une ou de plusieurs entreprises qui empêche, limite ou fausse la concurrence. | سلوك مؤسسة أو أكثر يمنع المنافسة أو يحد منها أو يفسدها.
+pratique concertée | Coordination entre des entreprises qui, sans contrat écrit, alignent leurs prix ou se répartissent les clients. | تنسيق بين مؤسسات توحد ثمن ما تبيعه أو تتقاسم الزبائن دون عقد مكتوب.
+abus de dépendance économique | Exploitation abusive, par une entreprise, d'un client ou d'un fournisseur qui n'a pas d'autre solution qu'elle. | استغلال تعسفي من مؤسسة لزبون أو مورد ليس له حل غيرها.
+prix abusivement bas | Prix de vente au consommateur si faible, comparé au coût, qu'il vise à éliminer une entreprise rivale. | ثمن بيع للمستهلك بلغ من الضعف مقارنا بالكلفة أنه يهدف إلى إبعاد مؤسسة منافسة.
+prix imposé | Prix de revente qu'un fabricant oblige chaque distributeur à pratiquer ; la loi l'interdit. | ثمن إعادة البيع الذي يلزم صانع كل موزع بأن يطبقه، ويمنعه القانون.
+vente à perte | Revente d'une marchandise à un prix inférieur à son prix d'achat ; elle est en principe interdite. | إعادة بيع بضاعة بثمن أقل من ثمن شرائها، ويمنعها القانون مبدئيا. | sf=revente à perte
+refus de vente | Refus, sans raison sérieuse, de vendre un bien ou de fournir un service à un client qui veut payer. | رفض بائع، دون سبب جدي، أن يبيع مالا أو يقدم خدمة لزبون يريد أن يدفع.
+vente liée | Vente où l'acheteur est obligé de prendre un second produit ou une quantité minimale pour obtenir celui qu'il veut. | بيع يلزم فيه المشتري بأن يأخذ منتوجا ثانيا أو كمية دنيا لينال ما يريده.
+pratique discriminatoire | Traitement différent de clients placés dans la même situation, sans raison objective. | معاملة مختلفة لزبائن في الوضع نفسه دون سبب موضوعي.
+concentration économique | Opération par laquelle des entreprises fusionnent ou l'une prend la direction de l'autre. | عملية تندمج بها مؤسسات أو تسيطر بها إحداها على الأخرى. | sf=concentration d'entreprises
+contrôle des concentrations | Examen préalable, par le Conseil de la concurrence, des fusions et des rachats qui dépassent quarante pour cent d'un marché. | فحص مسبق من مجلس المنافسة لعمليات الاندماج والشراء التي تتجاوز أربعين في المائة من سوق.
+notification de la concentration | Dossier que les entreprises adressent au Conseil de la concurrence avant de fusionner. | ملف توجهه المؤسسات إلى مجلس المنافسة قبل أن تندمج.
+autorisation de concentration | Décision du Conseil de la concurrence qui accepte une fusion, parfois sous conditions. | قرار مجلس المنافسة الذي يقبل اندماجا، وأحيانا بشروط.
+attestation négative | Document du Conseil de la concurrence qui constate qu'un accord entre entreprises n'est pas interdit. | وثيقة من مجلس المنافسة تعاين أن اتفاقا بين مؤسسات لا يمنعه القانون.
+aide d'État | Avantage en argent que l'État accorde à une entreprise et qui peut fausser la concurrence. | مزية مالية تمنحها الدولة لمؤسسة وقد تفسد المنافسة.
+entreprise en position dominante | Entreprise que sa puissance sur un marché met à l'abri de la pression des autres. | مؤسسة تجعلها قوتها في سوق في مأمن من ضغط غيرها.
+dénigrement | Propos qui rabaissent une entreprise rivale, ses produits ou ses services pour lui prendre ses clients. | كلام يحط من مؤسسة منافسة أو من منتجاتها أو خدماتها ليأخذ زبائنها.
+pratiques commerciales | Façons dont les commerçants proposent, vendent et facturent leurs marchandises. | الطرق التي يعرض بها التجار بضاعتهم ويبيعونها ويفوترونها.
+pratiques commerciales déloyales | Comportements opposés aux habitudes honnêtes du commerce, comme l'imitation d'un rival ou le débauchage de ses employés. | سلوك مخالف للعادات النزيهة في التجارة، كمحاكاة منافس أو إغراء عماله بتركه.
+transparence des pratiques commerciales | Obligation d'afficher le prix, de communiquer les conditions de vente et de remettre une facture. | التزام بتعليق الثمن وبإعلام الزبون بشروط البيع وبتسليم فاتورة.
+facturation | Établissement d'une facture pour chaque vente de biens ou de services entre commerçants. | تحرير فاتورة عن كل بيع لأموال أو خدمات بين التجار.
+défaut de facturation | Manquement du commerçant qui vend sans remettre de facture ou qui en remet une fausse. | إخلال التاجر الذي يبيع دون أن يسلم فاتورة أو يسلم فاتورة كاذبة.
+pratique de prix illicites | Vente à un prix qui dépasse celui que l'État a fixé, ou fausse déclaration du coût pour le gonfler. | بيع بثمن يتجاوز الثمن الذي حددته الدولة، أو تصريح كاذب بالكلفة لرفعها.
+plafonnement des prix | Décision de l'État qui fixe un prix maximal pour un bien de première nécessité. | قرار من الدولة يحدد ثمنا أقصى لمال ضروري.
+marge bénéficiaire | Différence entre le prix de vente et le coût, qui forme le gain du vendeur. | الفرق بين ثمن البيع والكلفة، وهو كسب البائع. | sf=marge de bénéfice
+saisine du Conseil de la concurrence | Acte par lequel une entreprise, une association ou le ministre porte une affaire devant cette autorité. | تصرف تعرض به مؤسسة أو جمعية أو وزير قضية على هذه السلطة.
+enquête de concurrence | Recherches menées par les rapporteurs du Conseil de la concurrence pour établir une pratique interdite. | بحث يجريه مقررو مجلس المنافسة ليثبتوا ممارسة يمنعها القانون.
+sanction pécuniaire | Somme d'argent que le Conseil de la concurrence inflige à une entreprise, jusqu'à douze pour cent de son chiffre d'affaires. | مبلغ من النقود يوقعه مجلس المنافسة على مؤسسة، إلى غاية اثني عشر في المائة من رقم الأعمال.
+régulation économique | Surveillance d'un secteur par une autorité indépendante qui veille à l'équilibre entre les entreprises et les clients. | مراقبة قطاع من سلطة مستقلة تسهر على التوازن بين المؤسسات والزبائن.
+protection des données à caractère personnel | Ensemble des règles qui encadrent la collecte et l'emploi des informations sur les personnes pour respecter leur vie privée. | مجموع القواعد التي تؤطر جمع المعلومات عن الأشخاص واستعمالها حتى تحترم الحياة الخاصة. | sf=protection des données personnelles
+personne concernée | Personne dont les informations personnelles sont collectées ou traitées. | الشخص الذي تجمع معلوماته الشخصية أو تعالج.
+consentement de la personne concernée | Manifestation de volonté libre, précise et éclairée par laquelle une personne accepte que ses informations soient traitées. | تعبير عن إرادة حرة ومحددة ومستنيرة يقبل به شخص أن تعالج معلوماته.
+finalité du traitement | But précis pour lequel des informations sont collectées ; elles ne peuvent pas servir à un autre but. | الهدف المحدد الذي تجمع من أجله معلومات، ولا يجوز أن تستعمل لهدف آخر.
+données sensibles | Informations qui révèlent l'origine, les opinions, la religion, la santé ou l'appartenance syndicale d'une personne. | معلومات تكشف أصل شخص أو آراءه أو دينه أو صحته أو انتماءه النقابي.
+données de santé | Informations sur la santé physique ou mentale d'une personne, y compris les soins qu'elle reçoit. | معلومات عن صحة شخص الجسمية أو العقلية، ومنها العلاج الذي يتلقاه.
+données biométriques | Informations prises sur le corps qui identifient une personne, comme l'empreinte digitale, l'iris ou le visage. | معلومات تؤخذ من الجسم تعرف بشخص، كبصمة الإصبع أو قزحية العين أو الوجه.
+fichier de données | Ensemble organisé d'informations sur des personnes, où l'on peut chercher selon des critères. | مجموعة منظمة من المعلومات عن أشخاص يمكن البحث فيها وفق معايير.
+collecte des données | Opération par laquelle on recueille des informations sur une personne, auprès d'elle ou d'un tiers. | عملية تجمع بها معلومات عن شخص، منه أو من الغير.
+conservation des données | Maintien des informations dans le fichier pendant le temps utile au but recherché, et pas davantage. | إبقاء المعلومات في الملف خلال المدة اللازمة للهدف المقصود دون زيادة.
+transfert de données vers l'étranger | Envoi d'informations personnelles hors du pays, soumis à l'autorisation de l'autorité nationale. | إرسال معلومات شخصية خارج البلد، ويخضع لترخيص من السلطة الوطنية.
+droit d'accès | Droit de toute personne de savoir si des informations la concernant sont traitées et d'en obtenir la copie. | حق كل شخص في أن يعلم هل تعالج معلومات تخصه وأن ينال نسخة منها.
+droit de rectification | Droit de faire corriger ou compléter les informations inexactes que l'on détient sur soi. | حق الشخص في أن تصوب أو تتمم المعلومات غير الدقيقة التي تمسك عنه.
+droit d'opposition | Droit de refuser, pour une raison sérieuse, que ses informations soient traitées, notamment pour la publicité. | حق الشخص في أن يرفض، لسبب جدي، أن تعالج معلوماته، لا سيما لأغراض الإشهار.
+droit à l'oubli | Droit d'obtenir l'effacement des informations anciennes ou devenues inutiles que l'on trouve sur soi. | حق الشخص في أن ينال محو المعلومات القديمة أو التي لم تعد لازمة والموجودة عنه. | sf=droit à l'effacement
+déclaration préalable | Démarche par laquelle celui qui veut créer un fichier en informe l'autorité avant de commencer. | مسعى يخبر به السلطة من يريد أن ينشئ ملفا قبل أن يبدأ.
+autorisation préalable | Permission que l'autorité doit donner avant un traitement risqué, comme celui des données sensibles. | إذن يجب أن تعطيه السلطة قبل معالجة خطيرة، كمعالجة معطيات حساسة.
+Autorité nationale de protection des données à caractère personnel | Organe indépendant, placé auprès du Président de la République, qui autorise les fichiers et reçoit toute plainte. | هيئة مستقلة توضع لدى رئيس الجمهورية ترخص بالملفات وتتلقى كل شكوى. | sf=ANPDP
+sécurité des données | Mesures qui empêchent que les informations soient effacées, égarées ou lues par quelqu'un qui n'y a pas droit. | تدابير تمنع أن تمحى المعلومات أو تضيع أو يقرأها من لا حق له فيها.
+violation de données | Incident où des informations personnelles sont effacées, volées ou révélées sans autorisation. | حادث تمحى فيه معلومات شخصية أو تسرق أو تكشف دون ترخيص. | sf=violation de données à caractère personnel
+confidentialité des données | Obligation de ne communiquer les informations qu'aux personnes qui ont le droit de les connaître. | التزام بألا تبلغ المعلومات إلا للأشخاص الذين لهم الحق في أن يعرفوها.
+vidéosurveillance | Surveillance d'un lieu par des caméras qui filment et enregistrent ; la loi l'encadre pour protéger la vie privée. | مراقبة مكان بكاميرات تصور وتسجل، ويؤطرها القانون لتحمى الحياة الخاصة. | sf=surveillance vidéo, vidéoprotection
+prospection directe | Envoi de messages publicitaires à une personne par courriel, par SMS ou par téléphone ; il faut d'abord son consentement. | إرسال رسائل إشهارية إلى شخص بالبريد الإلكتروني أو الرسائل القصيرة أو الهاتف، ويجب قبله رضاه.
+fournisseur électronique | Personne ou société qui vend des biens ou des services par internet. | شخص أو شركة تبيع أموالا أو خدمات عن طريق الإنترنت. | sf=e-fournisseur
+consommateur électronique | Personne qui achète par internet un bien ou un service pour son besoin personnel. | شخص يشتري عن طريق الإنترنت مالا أو خدمة لحاجته الشخصية. | sf=e-consommateur
+transaction électronique | Opération de vente conclue et exécutée de loin par un moyen électronique. | عملية بيع تبرم وتنفذ من بعيد بوسيلة إلكترونية.
+plate-forme de paiement électronique | Système tenu par une banque ou par la poste, grâce auquel le client paie par carte sur un site marchand. | نظام يمسكه بنك أو البريد يدفع به الزبون بالبطاقة في موقع تجاري.
+offre commerciale électronique | Présentation en ligne d'un bien ou d'un service, avec son prix, ses caractères et les conditions de la vente. | عرض مال أو خدمة على الخط مع ثمنه وخصائصه وشروط البيع.
+commande électronique | Acte par lequel l'acheteur valide en ligne son choix et s'engage à payer. | تصرف يؤكد به المشتري اختياره على الخط ويلتزم بأن يدفع. | sf=commande en ligne
+publicité électronique | Message diffusé par internet pour faire connaître un bien ou un service et pousser à l'acheter. | رسالة تبث عن طريق الإنترنت للتعريف بمال أو خدمة وليشتريه الناس. | sf=publicité en ligne
+nom de domaine | Adresse en lettres qui identifie un site sur internet, plus simple à mémoriser qu'une série de chiffres. | عنوان بالحروف يعرف بموقع على الإنترنت، وهو أسهل حفظا من سلسلة أرقام.
+fournisseur d'hébergement | Entreprise qui loge sur ses serveurs les sites et les contenus de ses clients. | مؤسسة تؤوي في خوادمها مواقع زبائنها ومحتوياتهم. | sf=hébergeur
+fournisseur d'accès à internet | Entreprise qui relie ses abonnés au réseau internet. | مؤسسة تربط مشتركيها بشبكة الإنترنت. | sf=FAI, fournisseur d'accès
+communications électroniques | Transmission de sons, d'images, de textes ou de données par câble, par ondes ou par satellite. | إرسال أصوات أو صور أو نصوص أو بيانات بالسلك أو الأمواج أو القمر الصناعي.
+opérateur de télécommunications | Entreprise autorisée par l'État à exploiter un réseau de téléphone ou d'internet. | مؤسسة رخصت لها الدولة بأن تستغل شبكة هاتف أو إنترنت.
+certification électronique | Opération par laquelle un tiers de confiance atteste qu'une signature électronique appartient bien à une personne. | عملية يشهد بها طرف ثالث موثوق أن كل توقيع إلكتروني يعود فعلا لشخص معين.
+certificat électronique | Document numérique qui relie une personne à sa clé de signature et prouve son identité. | وثيقة رقمية تربط شخصا بمفتاح توقيعه وتثبت هوية صاحبها.
+prestataire de services de certification électronique | Organisme agréé qui délivre les certificats numériques et répond de leur exactitude. | هيئة معتمدة تسلم الشهادات الرقمية وتسأل عن صحتها.
+signature électronique qualifiée | Signature électronique créée par un dispositif sûr et appuyée sur un certificat qualifié ; elle vaut une signature manuscrite. | توقيع إلكتروني ينشأ بجهاز آمن ويستند إلى شهادة موصوفة، وله قيمة التوقيع بخط اليد.
+écrit électronique | Texte enregistré sur un support numérique, admis comme preuve s'il identifie celui dont il émane et reste intact. | نص يسجل على دعامة رقمية، يقبل دليلا إذا عرف بمن صدر عنه وبقي سليما.
+document électronique | Document créé, envoyé ou conservé sous forme numérique. | وثيقة تنشأ أو ترسل أو تحفظ في شكل رقمي.
+archivage électronique | Conservation durable de documents numériques dans un système qui garantit qu'ils ne seront pas modifiés. | حفظ دائم لوثائق رقمية في نظام يضمن أنها لن تعدل.
+preuve électronique | Élément numérique, comme un courriel ou un fichier, présenté au juge pour établir un fait. | عنصر رقمي، كرسالة إلكترونية أو ملف، يقدم للقاضي لإثبات واقعة.
+identité numérique | Ensemble des informations qui désignent une personne sur internet : identifiant, mot de passe, profil. | مجموع المعلومات التي تعين شخصا على الإنترنت: اسم المستخدم وكلمة السر والملف الشخصي.
+système de traitement automatisé de données | Ensemble d'ordinateurs, de programmes et de réseaux qui enregistre et traite des informations. | مجموعة حواسيب وبرامج وشبكات تسجل معلومات وتعالجها.
+atteinte à l'intégrité des données | Infraction de celui qui modifie, efface ou ajoute des informations dans un système sans en avoir le droit. | جريمة من يعدل معلومات في نظام أو يمحوها أو يضيف إليها دون أن يكون له الحق.
+cybersécurité | Ensemble des moyens qui protègent les ordinateurs, les réseaux et les informations contre les attaques. | مجموع الوسائل التي تحمي الحواسيب والشبكات والمعلومات من الهجمات. | sf=sécurité informatique | sa=أمن معلوماتي
+intelligence artificielle | Programmes qui accomplissent des tâches que seul l'esprit humain savait faire, comme comprendre un texte ou identifier une image. | برامج تنجز مهام كان العقل البشري وحده يعرف أن يقوم بها، كفهم نص أو تمييز صورة.
+numérisation | Transformation de documents en papier ou de démarches en version électronique. | تحويل وثائق ورقية أو إجراءات إلى صيغة إلكترونية. | sf=digitalisation

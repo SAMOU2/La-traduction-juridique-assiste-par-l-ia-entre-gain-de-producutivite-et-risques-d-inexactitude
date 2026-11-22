@@ -2,7 +2,16 @@
 
 import pytest
 
-from traducteur.glossaire import COLONNES, ErreurGlossaire, Glossaire, decoder, detecter_separateur
+from traducteur.glossaire import (
+    COLONNES,
+    ErreurGlossaire,
+    Glossaire,
+    decoder,
+    definition_a_verifier,
+    detecter_separateur,
+    equivalent_a_verifier,
+    mention_a_verifier,
+)
 from traducteur.langues import AR, FR
 
 
@@ -324,3 +333,36 @@ def test_la_forme_accentuee_exacte_passe_avant_la_forme_sans_accent():
     assert termes(glossaire.trouver("côte", FR), AR) == ["ساحل"]
     assert termes(glossaire.trouver("cote", FR), AR) == ["تسعيرة"]
     assert termes(glossaire.trouver("COTÉ", FR), AR) == ["ساحل", "تسعيرة"]  # aucune forme exacte : les deux
+
+
+# ------------------------------------------------------------------ la mention « à vérifier »
+@pytest.mark.parametrize(
+    ("definition", "source", "equivalent_attendu", "definition_attendue"),
+    [
+        # Sans définition, la mention porte sur l'équivalent.
+        ("", "à vérifier (équivalent d’exemple)", "équivalent d’exemple", None),
+        ("", "à vérifier", "", None),
+        ("", "", None, None),
+        # Avec une définition, elle porte sur la définition…
+        ("Contrat de location.", "à vérifier (définition d’exemple)", None, "définition d’exemple"),
+        ("Contrat de location.", "À vérifier : définition d'exemple", None, "définition d'exemple"),
+        ("Contrat de location.", "à vérifier", None, ""),
+        # … sauf si elle nomme les deux : chaque champ en reçoit sa part.
+        ("Contrat de location.", "à vérifier (équivalent et définition d’exemple)",
+         "équivalent d’exemple", "définition d’exemple"),
+        ("Contrat de location.", "A verifier (Equivalent et definition à relire par un juriste)",
+         "Equivalent à relire par un juriste", "definition à relire par un juriste"),
+        # Une vraie source, ou pas de source du tout : aucune mention (la page de la définition dit elle-même
+        # qu'une définition sans source est à vérifier).
+        ("Contrat de location.", "Code civil, art. 467", None, None),
+        ("Contrat de location.", "", None, None),
+    ],
+)
+def test_sur_quoi_porte_la_mention_a_verifier(definition, source, equivalent_attendu, definition_attendue):
+    glossaire = Glossaire.depuis_texte(
+        f"terme_fr;terme_ar;definition_fr;source_definition\nbail;إيجار;{definition};{source}\n")
+    entree, = glossaire.entrees
+    assert equivalent_a_verifier(entree) == equivalent_attendu
+    assert definition_a_verifier(entree) == definition_attendue
+    # La mention entière reste lisible telle que le glossaire l'écrit.
+    assert (mention_a_verifier(source) is None) == (not source or source.startswith("Code"))

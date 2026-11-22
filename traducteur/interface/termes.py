@@ -11,7 +11,7 @@ from PySide6.QtCore import QPointF, QRectF, Qt, Signal
 from PySide6.QtGui import QColor, QPainter
 from PySide6.QtWidgets import QHBoxLayout, QSizePolicy, QVBoxLayout, QWidget
 
-from ..glossaire import Entree
+from ..glossaire import Entree, equivalent_a_verifier
 from ..traduction import TermeDetecte, Traduction
 from . import icones, theme
 from .composants import (
@@ -26,7 +26,7 @@ from .composants import (
     separateur,
 )
 from .dessin import abreger, dessiner_ligne, police
-from .fiche import CelluleEntree, GrilleEntrees, equivalent_a_verifier
+from .fiche import CelluleEntree, GrilleEntrees
 
 
 # ====================================================================== la case d'un terme

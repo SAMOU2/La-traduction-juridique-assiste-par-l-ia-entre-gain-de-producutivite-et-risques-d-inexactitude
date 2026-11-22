@@ -1,0 +1,83 @@
+# Définitions des termes de termes/57_maritime_nationalite.txt : terme | définition française | définition arabe | options (sf=, sa=)
+droit maritime | Branche du droit consacrée aux navires, à leur exploitation et au transport par mer. | فرع من القانون يتناول السفن واستغلالها والنقل بحرا.
+navigation maritime | Déplacement des navires sur la mer pour le commerce, la pêche ou la plaisance. | تنقل السفن في البحر للتجارة أو الصيد أو النزهة.
+pavillon du navire | Drapeau qui indique le pays auquel un navire est rattaché et dont il suit la loi. | راية تبين البلد الذي ترتبط به سفينة وتتبع قانونه.
+nationalité du navire | Lien juridique entre un navire et l'État où il est immatriculé, qui le protège et le contrôle. | رابطة قانونية بين سفينة والدولة التي سجلت فيها، فتحميها وتراقبها.
+immatriculation du navire | Inscription d'un navire sur le registre de son port, avec son nom, son numéro et son propriétaire. | قيد سفينة في سجل الميناء باسمها ورقمها واسم المالك.
+registre d'immatriculation des navires | Registre tenu par l'administration maritime où figurent tous les navires du pays et les droits qui pèsent sur eux. | سجل تمسكه الإدارة البحرية تظهر فيه كل سفن البلد والحقوق التي تثقلها.
+port d'attache | Port où un navire est immatriculé et dont le nom est peint sur sa coque. | الميناء الذي سجلت فيه سفينة ويكتب اسمه على هيكلها. | sf=port d'immatriculation
+propriétaire du navire | Personne ou société à qui le navire appartient, d'après le registre. | شخص أو شركة تملك السفينة بحسب السجل.
+équipage | Ensemble des marins qui travaillent à bord d'un navire sous les ordres du capitaine. | مجموع البحارة الذين يعملون على ظهر سفينة تحت أوامر ربان.
+gens de mer | Personnes dont le métier est de travailler à bord des navires. | أشخاص حرفتهم العمل على ظهر السفن.
+pilotage maritime | Aide donnée au capitaine par un pilote qui connaît les lieux pour entrer dans un port ou en sortir. | مساعدة يقدمها لربان مرشد يعرف الأماكن ليدخل ميناء أو يخرج منه.
+remorquage maritime | Opération par laquelle un bateau puissant tire ou pousse un navire qui manœuvre dans un port ou qui est en panne. | عملية يجر بها قارب قوي سفينة تناور في ميناء أو أصابها عطب أو يدفعها.
+consignataire du navire | Représentant de l'armateur dans un port, qui s'occupe du navire, de l'équipage et des démarches. | ممثل مجهز في ميناء يهتم بالسفينة وطاقمها والمساعي الإدارية.
+consignataire de la cargaison | Représentant du destinataire dans un port, qui reçoit les marchandises du navire et les lui remet. | ممثل كل مرسل إليه في ميناء، يستلم البضاعة من السفينة ويسلمها له.
+courtier maritime | Intermédiaire qui met en relation celui qui cherche un navire et celui qui en propose un. | وسيط يربط بين من يبحث عن سفينة ومن يقترحها.
+contrat d'affrètement | Contrat par lequel le propriétaire d'un navire le confie à un autre, contre un prix, pour un voyage ou pour un temps. | عقد يعهد به مالك سفينة بهذه السفينة إلى غيره مقابل ثمن، لرحلة أو لمدة.
+charte-partie | Écrit qui constate le contrat d'affrètement et en fixe chaque condition. | محرر يعاين عقد استئجار السفينة ويحدد كل شرط فيه.
+fréteur | Personne qui confie à une autre, contre un prix, un navire qu'elle possède. | شخص يعهد إلى غيره، مقابل ثمن، بسفينة يملكها.
+affréteur | Personne qui obtient l'emploi d'un navire contre un prix, pour transporter ses marchandises ou celles d'autrui. | شخص ينال استعمال سفينة مقابل ثمن لينقل بضاعته أو بضاعة الغير.
+fret | Prix du transport des marchandises par mer, ou prix de la location du navire. | ثمن نقل البضاعة بحرا، أو ثمن إيجار السفينة.
+transporteur maritime | Personne qui s'engage, par un contrat, à déplacer des marchandises ou des passagers par mer d'un port à un autre. | شخص يلتزم بعقد بأن ينقل بضاعة أو مسافرين بحرا من ميناء إلى آخر.
+chargeur | Personne qui remet des marchandises au transporteur pour qu'il les achemine par mer. | شخص يسلم بضاعة إلى ناقل ليوصلها بحرا.
+cargaison | Ensemble des marchandises chargées à bord d'un navire. | مجموع البضاعة المشحونة على ظهر سفينة.
+déchargement | Opération qui sort les marchandises du navire et les pose à quai. | عملية تخرج البضاعة من السفينة وتضعها على الرصيف.
+manutention portuaire | Opérations de chargement, d'arrimage et de sortie des marchandises dans un port. | عمليات شحن البضاعة ورصها وإخراجها في ميناء.
+avarie commune | Sacrifice ou dépense que le capitaine décide pour sauver le navire et la cargaison, et dont tous supportent ensuite leur fraction. | تضحية أو مصروف يقرره ربان لإنقاذ السفينة والحمولة، ثم يتحمل الجميع نصيبهم منه.
+avarie particulière | Dommage subi par le navire seul ou par une marchandise seule, que son propriétaire supporte. | ضرر يلحق السفينة وحدها أو بضاعة وحدها ويتحمله المالك.
+abordage | Choc entre deux navires, en mer ou dans un port. | اصطدام سفينة بسفينة أخرى في البحر أو في ميناء.
+naufrage | Fin d'un navire qui coule à la suite d'un accident ou d'une tempête. | هلاك سفينة تغوص في الماء بعد حادث أو عاصفة.
+assistance maritime | Secours porté à un navire en danger par un autre navire, qui a droit à une rémunération si le résultat est utile. | نجدة تقدمها سفينة لسفينة في خطر، ولها الحق في أجر إذا كانت النتيجة نافعة.
+sauvetage maritime | Secours porté aux personnes en danger de mort en mer ; il est obligatoire et gratuit. | نجدة تقدم للأشخاص الذين يتهددهم الموت في البحر، وهي إلزامية ومجانية. | sf=sauvetage en mer
+épave maritime | Navire, ou débris de navire, abandonné en mer ou échoué sur la côte. | سفينة أو بقايا سفينة متروكة في البحر أو جانحة على الشاطئ.
+privilège maritime | Droit de quelques créanciers, comme l'équipage, d'être payés avant les autres sur le prix du navire. | حق بعض الدائنين، كأفراد طاقم، في أن يدفع لهم قبل غيرهم من ثمن السفينة.
+hypothèque maritime | Garantie donnée sur un navire à un créancier, inscrite au registre, sans que le propriétaire s'en dessaisisse. | ضمان يعطى لدائن على سفينة، مقيد في السجل، دون أن يتخلى المالك عنها.
+saisie conservatoire du navire | Immobilisation d'un navire dans un port, ordonnée par le juge, pour garantir le paiement d'une créance. | توقيف سفينة في ميناء بأمر من القاضي ليضمن الدائن وفاء دين.
+limitation de responsabilité de l'armateur | Règle qui plafonne la somme que l'armateur doit payer pour un dommage, d'après la taille du navire. | قاعدة تضع حدا أقصى للمبلغ الذي يدفعه مجهز عن ضرر، بحسب حجم السفينة.
+événement de mer | Accident survenu pendant la navigation, comme un abordage, un échouement ou un incendie à bord. | واقعة تحدث خلال الملاحة، كحالة تصادم بحري أو جنوح أو حريق على ظهر السفينة.
+journal de bord | Registre où le capitaine note chaque jour la route, le temps et les faits importants du voyage. | سجل يدون فيه ربان كل يوم المسار والطقس والوقائع المهمة في الرحلة. | sf=livre de bord
+navigabilité | Aptitude d'un navire à prendre la mer sans danger, avec une coque solide, des machines qui marchent et un équipage suffisant. | صلاحية سفينة لأن تبحر دون خطر، بهيكل متين وآلات تشتغل وطاقم كاف.
+cabotage | Navigation commerciale entre les ports d'un même pays. | ملاحة تجارية بين موانئ البلد نفسه. | sf=navigation côtière
+pêche maritime | Capture des poissons et des autres animaux de la mer, soumise à autorisation. | صيد الأسماك وباقي حيوانات البحر، ويخضع لترخيص. | sf=pêche en mer
+autorité portuaire | Établissement qui gère un port, y organise la circulation des navires et entretient les quais. | مؤسسة تسير ميناء وتنظم فيه حركة السفن وتصون الأرصفة.
+garde-côtes | Corps de la marine chargé de surveiller les eaux du pays et de rechercher toute infraction commise en mer. | سلك من البحرية مكلف بحراسة مياه البلد والبحث عن كل جريمة ترتكب في البحر. | sf=garde-côte
+contrat de passage | Contrat par lequel un transporteur s'engage à conduire un voyageur par mer contre le prix du billet. | عقد يلتزم به ناقل بأن يوصل مسافرا بحرا مقابل ثمن التذكرة. | sf=contrat de transport de passagers
+nationalité algérienne | Lien juridique et politique qui rattache une personne à l'État algérien. | رابطة قانونية وسياسية تربط شخصا بالدولة الجزائرية.
+nationalité par filiation | Nationalité que l'enfant reçoit à la naissance parce que son père ou sa mère est algérien. | جنسية يأخذها الولد عند الولادة لأن أباه أو أمه جزائري.
+acquisition de la nationalité | Fait de devenir algérien après la naissance, par le mariage ou par la naturalisation. | صيرورة الشخص جزائريا بعد الولادة، بالزواج أو التجنس.
+nationalité acquise | Nationalité obtenue au cours de la vie, et non reçue à la naissance. | جنسية ينالها الشخص خلال حياته ولم يأخذها عند الولادة.
+acquisition de la nationalité par le mariage | Possibilité pour l'étranger marié depuis trois ans à une Algérienne, ou l'étrangère mariée à un Algérien, de devenir algérien par décret. | إمكان أن يصير جزائريا بمرسوم كل أجنبي متزوج منذ ثلاث سنوات بجزائرية، وكذلك الأجنبية المتزوجة بجزائري.
+perte de la nationalité | Situation de l'Algérien qui cesse de l'être, par exemple en prenant volontairement une autre nationalité avec l'autorisation de l'État. | حالة الجزائري الذي لم يعد جزائريا، مثلا إذا أخذ بإرادته جنسية أخرى بترخيص من الدولة.
+retrait de la nationalité | Décision qui reprend la nationalité à celui qui l'a obtenue par fraude ou sans remplir les conditions. | قرار يسترجع الجنسية ممن نالها بالغش أو دون أن يستوفي الشروط.
+renonciation à la nationalité | Acte par lequel un Algérien abandonne volontairement sa nationalité, avec l'autorisation du gouvernement. | تصرف يترك به جزائري الجنسية بإرادته، بترخيص من الحكومة.
+réintégration dans la nationalité | Retour, par décret, de l'ancien Algérien dans la nationalité qu'il avait perdue, s'il le sollicite. | رجوع الجزائري السابق، بمرسوم، إلى الجنسية التي كان فقدها، إذا التمس ذلك.
+certificat de nationalité | Document officiel, remis en pratique au tribunal, qui atteste qu'une personne est algérienne. | وثيقة رسمية تسلم عمليا في المحكمة وتشهد بأن شخصا جزائري.
+preuve de la nationalité | Démonstration qu'une personne est algérienne, par un certificat ou par la filiation sur deux générations. | التدليل على أن شخصا جزائري، بشهادة أو بالنسب على جيلين.
+contentieux de la nationalité | Litiges sur la question de savoir si une personne est algérienne, tranchés par le tribunal en présence du ministère public. | نزاعات حول معرفة هل شخص جزائري، تفصل فيها المحكمة بحضور النيابة العامة.
+décret de naturalisation | Décret du Président de la République qui accorde la nationalité à un étranger. | مرسوم من رئيس الجمهورية يمنح الجنسية لشخص أجنبي.
+demande de naturalisation | Dossier adressé au ministre de la justice par l'étranger qui réside en Algérie depuis sept ans et veut devenir algérien. | ملف يوجهه إلى وزير العدل كل أجنبي يقيم في الجزائر منذ سبع سنوات ويريد أن يصير جزائريا.
+ressortissant étranger | Personne qui a la nationalité d'un autre État. | شخص له جنسية دولة أخرى.
+entrée sur le territoire | Passage de la frontière vers l'intérieur du pays, avec un passeport et, s'il le faut, un visa. | عبور الحدود نحو داخل البلد بجواز السفر وتأشيرة عند الحاجة.
+sortie du territoire | Passage de la frontière vers un autre pays, après le contrôle de la police. | عبور الحدود نحو بلد آخر بعد مراقبة الشرطة.
+séjour des étrangers | Présence sur le sol national d'une personne venue d'un autre pays, pour la durée de son visa ou de sa carte. | وجود شخص قادم من بلد آخر في التراب الوطني لمدة التأشيرة أو البطاقة.
+carte de résident | Document de deux ans, renouvelable, remis à tout étranger qui s'installe en Algérie pour y vivre et y travailler. | وثيقة لمدة سنتين قابلة للتجديد تسلم لكل أجنبي يستقر في الجزائر ليعيش ويعمل فيها. | sf=carte de séjour
+titre de séjour | Document qui autorise un étranger à rester dans le pays au-delà de la durée de son visa. | وثيقة ترخص لشخص أجنبي بأن يبقى في البلد بعد مدة التأشيرة. | sf=permis de séjour
+résident étranger | Étranger qui a établi sa résidence habituelle en Algérie et détient une carte de résident. | شخص أجنبي جعل الجزائر مكان إقامة اعتيادية له ويملك بطاقة المقيم.
+étranger non résident | Étranger de passage en Algérie pour quatre-vingt-dix jours au plus, sans intention de s'y installer. | شخص أجنبي يمر بالجزائر لتسعين يوما على الأكثر دون نية الاستقرار فيها.
+étranger en situation irrégulière | Étranger entré sans visa ou resté après la fin de son droit de séjour. | شخص أجنبي دخل دون تأشيرة أو بقي بعد نهاية حقه في البقاء. | sf=sans-papiers, étranger en séjour irrégulier
+séjour irrégulier | Présence d'une personne d'un autre pays sur le sol national sans les documents que la loi impose. | وجود شخص من بلد آخر في التراب الوطني دون الوثائق التي يفرضها القانون. | sf=séjour illégal
+migrant | Personne qui quitte son pays pour vivre dans un autre, pour le travail, la famille ou la sécurité. | شخص يغادر بلده ليعيش في بلد آخر، من أجل العمل أو الأسرة أو الأمن.
+visa d'entrée | Autorisation apposée sur le passeport par un consulat, qui donne le droit de se présenter à la frontière. | ترخيص تضعه قنصلية على جواز السفر يعطي الحق في التقدم إلى الحدود.
+visa de transit | Visa de courte durée qui laisse traverser le pays pour se rendre dans un autre. | تأشيرة قصيرة المدة تجيز المرور بالبلد للتوجه إلى بلد آخر.
+prolongation du visa | Décision de l'administration qui allonge la durée pendant laquelle l'étranger peut rester. | قرار من الإدارة يطيل المدة التي يجوز فيها لشخص أجنبي أن يبقى.
+reconduite à la frontière | Mesure par laquelle la police raccompagne hors du pays l'étranger entré ou resté sans droit. | تدبير ترافق به الشرطة إلى خارج البلد كل أجنبي دخل أو بقي دون حق.
+expulsion de l'étranger | Mesure du ministre de l'intérieur qui oblige à quitter le pays l'étranger dont la présence met en danger l'ordre public. | تدبير من وزير الداخلية يلزم بمغادرة البلد كل أجنبي يعرض وجوده النظام العام للخطر.
+arrêté d'expulsion | Décision écrite du ministre de l'intérieur qui ordonne à un étranger de quitter le pays dans un délai. | قرار مكتوب من وزير الداخلية موجه إلى أجنبي يأمره بأن يغادر البلد في أجل.
+interdiction d'entrée sur le territoire | Mesure qui défend à un étranger de revenir dans le pays pendant un temps. | تدبير يمنع على أجنبي أن يعود إلى البلد خلال مدة.
+centre d'attente | Lieu où sont hébergés les étrangers sans droit de séjour en attendant leur retour dans leur pays. | مكان يؤوى فيه الأجانب الذين لا حق لهم في البقاء في انتظار رجوعهم إلى بلدهم.
+regroupement familial | Droit de l'étranger installé dans le pays d'y faire venir son conjoint et ses enfants mineurs. | حق أجنبي مستقر في البلد في أن يستقدم زوجه وأولاده القصر.
+police des frontières | Corps de police chargé de contrôler les voyageurs et leurs documents aux ports, aux aéroports et aux postes terrestres. | سلك من الشرطة مكلف بأن يراقب المسافرين ووثائقهم في الموانئ والمطارات والمراكز البرية. | sf=police aux frontières
+contrôle aux frontières | Vérification de l'identité et des documents de toute personne qui entre dans le pays ou en sort. | تحقق من هوية كل شخص يدخل البلد أو يخرج منه ومن وثائقه.
+document de voyage | Document officiel qui laisse franchir une frontière, comme le passeport ou le laissez-passer. | وثيقة رسمية تجيز عبور الحدود، كجواز السفر أو رخصة مرور. | sf=titre de voyage
+laissez-passer | Document provisoire délivré par un consulat à celui qui a perdu son passeport, pour un seul voyage de retour. | وثيقة مؤقتة تسلمها قنصلية لمن فقد جواز السفر، لرحلة عودة واحدة.

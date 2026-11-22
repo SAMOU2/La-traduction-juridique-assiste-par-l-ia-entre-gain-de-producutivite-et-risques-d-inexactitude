@@ -1,0 +1,164 @@
+# Définitions des termes de termes/55_foncier_urbanisme_environnement.txt : terme | définition française | définition arabe | options (sf=, sa=)
+régime foncier | Ensemble des règles sur la propriété et l'emploi de la terre dans un pays. | مجموع القواعد الخاصة بملكية الأرض واستعمالها في بلد.
+propriété foncière | Propriété d'un terrain et de ce qui y est construit ou planté. | ملكية أرض وما بني عليها أو غرس فيها.
+propriété foncière privée | Terre qui appartient à un particulier ou à une société, et non à l'État ni au wakf. | أرض يملكها فرد أو شركة، لا الدولة ولا الوقف.
+orientation foncière | Choix de l'État qui classe les terres selon leur vocation et encadre leur emploi et leur vente. | اختيار الدولة الذي يرتب الأراضي بحسب وجهتها ويؤطر استعمالها وبيعها.
+établissement du cadastre général | Opération qui mesure et dessine tous les terrains d'une commune et identifie le propriétaire de chacun. | عملية تقيس وترسم كل أراضي بلدية وتعرف مالك كل واحدة.
+opérations cadastrales | Travaux de mesure, de bornage et d'enquête menés sur le terrain pour dresser le cadastre. | أشغال قياس ووضع الحدود وتحقيق تجرى في الميدان لإعداد مسح الأراضي.
+plan cadastral | Carte d'une commune qui montre chaque parcelle avec ses limites et son numéro. | خريطة بلدية تبين كل قطعة أرض بحدودها ورقمها.
+section cadastrale | Division du territoire d'une commune sur le plan du cadastre. | جزء من إقليم بلدية في مخطط مسح الأراضي.
+îlot de propriété | Groupe de terrains voisins qui appartiennent au même propriétaire dans une section. | مجموعة أراض متجاورة يملكها المالك نفسه في قسم واحد.
+parcelle | Morceau de terrain d'un seul tenant, qui a les mêmes limites et le même propriétaire. | جزء متصل من الأرض له الحدود نفسها والمالك نفسه.
+unité foncière | Terrain d'un seul bloc, formé d'un ou de plusieurs morceaux, qui appartient à un seul propriétaire ou à la même indivision. | أرض من كتلة واحدة، تتكون من جزء أو أكثر، يملكها مالك واحد أو هي في شيوع واحد.
+immatriculation foncière | Enregistrement d'un immeuble au fichier de la conservation foncière, avec un numéro et le nom du propriétaire. | تسجيل عقار في بطاقات المحافظة العقارية مع رقم واسم المالك.
+immatriculation provisoire | Inscription d'un immeuble au nom d'un possesseur sans titre, pour quatre mois ou deux ans, le temps que d'autres puissent contester. | قيد عقار باسم حائز بلا سند، لأربعة أشهر أو سنتين، ريثما يتمكن غيره من أن ينازع.
+immatriculation définitive | Inscription d'un immeuble au nom de celui qui prouve sa propriété par un titre ; elle donne droit au livret foncier. | قيد عقار باسم من يثبت ملكيته بسند، ويعطي الحق في الدفتر العقاري.
+document d'arpentage | Plan dressé par un géomètre qui montre la division ou le changement des limites d'une parcelle. | مخطط يعده مهندس مساح يبين تقسيم قطعة أرض أو تغيير حدودها.
+géomètre-expert foncier | Technicien agréé qui mesure les terrains, fixe leurs limites et dresse les plans. | تقني معتمد يقيس الأراضي ويحدد حدودها ويعد المخططات. | sf=géomètre-expert
+fichier immobilier | Ensemble des fiches tenues par la conservation foncière, qui décrit la situation juridique de chaque immeuble. | مجموع البطاقات التي تمسكها المحافظة العقارية وتبين ما لكل عقار من وضعية قانونية.
+fiche d'immeuble | Fiche de la conservation foncière qui regroupe tous les droits et les charges publiés sur un immeuble. | بطاقة في المحافظة العقارية تجمع كل الحقوق والأعباء المنشورة على عقار.
+formalité de publicité | Inscription d'un acte au fichier de la conservation foncière pour que les tiers ne puissent plus l'ignorer. | قيد تصرف في بطاقات المحافظة العقارية حتى لا يستطيع الغير أن يجهله.
+dépôt des actes | Remise à la conservation foncière des actes à publier, par le notaire ou l'autorité qui les a rédigés. | تسليم التصرفات التي تنشر إلى المحافظة العقارية من الموثق أو السلطة التي حررتها.
+refus de dépôt | Décision du conservateur foncier de ne pas recevoir un acte dont le dossier est incomplet. | قرار من محافظ عقاري بألا يستلم تصرفا يكون ملفه ناقصا.
+rejet de la formalité | Décision du conservateur foncier d'écarter un acte déjà déposé, après avoir découvert un défaut à l'examen. | قرار من محافظ عقاري بأن يستبعد تصرفا أودع من قبل، بعد أن اكتشف عيبا عند الفحص.
+effet relatif de la publicité | Règle selon laquelle un acte ne peut être publié que si le titre de celui qui cède le droit l'a déjà été. | قاعدة تقضي بأن تصرفا لا ينشر إلا إذا سبق نشر سند من يتنازل عن الحق.
+acte authentique translatif de propriété | Acte dressé par un notaire qui fait passer la propriété d'un immeuble d'une personne à une autre. | محرر يعده موثق ينقل ملكية عقار من شخص إلى آخر.
+enquête foncière | Recherche menée sur place par un enquêteur pour établir qui possède un immeuble sans titre et depuis quand. | بحث يجريه محقق في عين المكان ليبين من يحوز عقارا بلا سند ومنذ متى.
+constatation du droit de propriété | Procédure qui remet un titre de propriété à celui qui possède un immeuble depuis longtemps, après enquête. | إجراء يسلم سند الملكية لمن يحوز عقارا منذ مدة طويلة، بعد تحقيق.
+terres archs | Terres que les membres d'une tribu exploitaient ensemble selon la coutume, sans titre individuel. | أراض كان أفراد قبيلة يستغلونها معا وفق العرف، بلا سند فردي. | sf=terres arch
+terres melk | Terres qui appartiennent en propre à une personne ou à une famille, avec ou sans titre écrit. | أراض يملكها شخص أو أسرة ملكا خاصا، بسند مكتوب أو دونه.
+terre de parcours | Terre couverte d'herbe naturelle où les troupeaux vont paître. | أرض يغطيها عشب طبيعي ترعى فيها القطعان.
+terre alfatière | Terre de la steppe où pousse l'alfa, plante dont on fait du papier et des cordes. | أرض من السهوب ينبت فيها الحلفاء، وهو نبات يصنع منه الورق والحبال.
+terre saharienne | Terre située dans une région où il tombe moins de cent millimètres de pluie par an. | أرض تقع في منطقة ينزل فيها أقل من مائة مليمتر من المطر في السنة.
+terre à vocation forestière | Terre couverte de bois ou de maquis, ou destinée à être reboisée. | أرض تغطيها أشجار أو أحراش، أو معدة لإعادة التشجير.
+terre urbanisée | Terrain qui porte déjà des constructions groupées, avec leurs rues et leurs réseaux. | أرض عليها فعلا بنايات مجتمعة مع طرقها وشبكاتها.
+terre urbanisable | Terrain que le plan d'urbanisme destine à recevoir des constructions dans un délai donné. | أرض يخصصها مخطط التعمير لأن تستقبل بنايات في أجل معين.
+exploitation agricole | Ensemble de terres, de bâtiments et d'outils réunis pour produire des cultures ou élever des animaux. | مجموع أراض ومبان وأدوات تجمع لإنتاج محاصيل أو تربية حيوانات.
+exploitation agricole collective | Ferme de l'État confiée en 1987 à un groupe d'au moins trois agriculteurs qui la cultivent ensemble. | مزرعة تابعة للدولة عهد بها سنة 1987 إلى مجموعة من ثلاثة فلاحين على الأقل يزرعونها معا. | sf=EAC
+concession agricole | Droit d'exploiter une terre agricole de l'État pendant quarante ans, contre une redevance annuelle. | حق استغلال أرض فلاحية تابعة للدولة لمدة أربعين سنة مقابل إتاوة سنوية.
+mise en valeur des terres | Travaux qui rendent cultivable une terre inculte : défrichement, irrigation, plantation. | أشغال تجعل أرضا بورا صالحة للزراعة: تنقية وسقي وغرس.
+accession à la propriété foncière agricole | Droit de devenir propriétaire d'une terre de l'État, saharienne ou inculte, après l'avoir rendue cultivable. | حق الشخص في أن يصير مالك أرض تابعة للدولة، صحراوية أو بور، بعد أن يجعلها صالحة للزراعة.
+droit de jouissance perpétuelle | Droit sans limite de durée d'exploiter une terre de l'État, accordé aux agriculteurs en 1987 et remplacé en 2010 par la concession. | حق غير محدود المدة في استغلال أرض تابعة للدولة، منح للفلاحين سنة 1987 وحل محله الامتياز سنة 2010.
+non-exploitation des terres agricoles | Situation d'une terre agricole laissée sans culture pendant une saison ; celui qui la tient peut y perdre son droit. | حالة أرض فلاحية تترك دون زراعة خلال موسم، وقد يفقد من يمسكها حقه.
+morcellement des terres | Division d'une terre agricole en morceaux trop petits pour être cultivés avec profit ; la loi la limite. | تقسيم أرض فلاحية إلى أجزاء أصغر من أن تزرع بفائدة، ويحد القانون منه.
+réserve foncière | Terrains que la commune acquiert d'avance pour ses besoins futurs en logements et en équipements. | أراض تكتسبها البلدية مسبقا لحاجاتها المقبلة من السكن والتجهيزات.
+agence foncière | Établissement de la wilaya ou de la commune qui achète des terrains, les aménage et les vend pour la construction. | مؤسسة تابعة للولاية أو البلدية تشتري أراضي وتهيئها وتبيعها للبناء.
+transaction foncière | Opération qui porte sur un terrain, comme une vente, une donation ou un bail. | عملية ترد على أرض، كبيع أو هبة أو إيجار.
+marché foncier | Ensemble des ventes et des achats de terrains dans une région, et le prix qui en résulte. | مجموع عمليات بيع الأراضي وشرائها في منطقة وما ينتج عنها من ثمن.
+spéculation foncière | Achat de terrains dans le seul but de les revendre plus cher, sans rien y construire. | شراء أراض لغاية واحدة هي إعادة بيعها بثمن أعلى دون أن يبني المشتري عليها شيئا.
+assiette foncière | Terrain sur lequel un projet de construction ou d'équipement doit être réalisé. | الأرض التي يجب أن ينجز عليها مشروع بناء أو تجهيز.
+foncier industriel | Terrains aménagés par l'État pour recevoir des usines et d'autres projets d'investissement. | أراض تهيئها الدولة لتستقبل مصانع ومشاريع استثمار أخرى.
+zone industrielle | Espace aménagé à l'écart des habitations, avec routes et réseaux, pour y regrouper des usines. | مجال مهيأ بعيدا عن المساكن، بطرقه وشبكاته، لتجمع فيه المصانع.
+régularisation foncière | Opération qui donne un titre légal à celui qui tient un terrain ou une construction sans papiers valables. | عملية تعطي سندا قانونيا لمن يمسك أرضا أو بناء دون أوراق صحيحة.
+aménagement du territoire | Organisation de la répartition des habitants, des activités et des équipements sur tout le pays. | تنظيم توزيع السكان والأنشطة والتجهيزات على كل البلد.
+plan directeur d'aménagement et d'urbanisme | Plan d'une ou de plusieurs communes qui fixe les grandes orientations et divise le territoire en secteurs. | مخطط لبلدية أو أكثر يحدد التوجهات الكبرى ويقسم الإقليم إلى قطاعات.
+plan d'occupation des sols | Plan détaillé qui fixe, terrain par terrain, ce que l'on peut construire : emploi, hauteur, densité. | مخطط مفصل يحدد، أرضا بأرض، ما يجوز أن يبنى: الاستعمال والعلو والكثافة.
+schéma national d'aménagement du territoire | Document de l'État qui trace pour vingt ans les grandes orientations du développement de tout le pays. | وثيقة من الدولة ترسم لعشرين سنة التوجهات الكبرى لتنمية كل البلد.
+instruments d'urbanisme | Plans qui organisent l'emploi du sol dans les communes : le plan directeur et le plan d'occupation des sols. | مخططات تنظم استعمال الأرض في البلديات: المخطط التوجيهي ومخطط شغل الأراضي.
+règles générales d'aménagement et d'urbanisme | Règles minimales de construction qui s'appliquent dans les communes sans plan d'urbanisme. | قواعد دنيا للبناء تطبق في البلديات التي ليس لها مخطط تعمير.
+secteur urbanisé | Secteur dont les terrains portent déjà des constructions groupées, même sans tous les équipements. | قطاع تحمل أراضيه فعلا بنايات مجتمعة، ولو دون كل التجهيزات.
+secteur à urbaniser | Secteur que le plan directeur destine à être construit dans les dix ans. | قطاع يخصصه المخطط التوجيهي لأن يبنى خلال عشر سنوات.
+secteur non urbanisable | Secteur où la construction est interdite ou très limitée, comme une terre agricole riche ou une forêt. | قطاع يمنع فيه البناء أو يقيد كثيرا، كأرض فلاحية خصبة أو غابة.
+coefficient d'occupation du sol | Rapport entre la surface totale des planchers d'une construction et la surface du terrain. | النسبة بين المساحة الكلية لأرضيات بناء ومساحة الأرض.
+coefficient d'emprise au sol | Rapport entre la surface que la construction couvre au sol et la surface du terrain. | النسبة بين المساحة التي يغطيها البناء على الأرض ومساحة الأرض.
+certificat d'urbanisme | Document de la commune qui indique, pour un terrain donné, ce qu'il est possible d'y construire et toute servitude. | وثيقة من البلدية تبين، لأرض معينة، ما يمكن أن يبنى فيها وكل ارتفاق.
+certificat de morcellement | Document qui autorise à diviser en deux ou plusieurs morceaux un terrain qui porte déjà une construction. | وثيقة ترخص بتقسيم أرض عليها بناء إلى جزأين أو أكثر.
+permis de lotir | Autorisation de diviser un terrain nu en plusieurs terrains plus petits destinés à la construction, avec leurs routes et leurs réseaux. | ترخيص بتقسيم أرض عارية إلى عدة أراض أصغر معدة للبناء، مع طرقها وشبكاتها.
+certificat de viabilité | Document qui atteste que les routes et les réseaux d'un lotissement sont terminés et que les terrains peuvent être vendus. | وثيقة تشهد بأن طرق تجزئة وشبكاتها قد انتهت وأن الأراضي يجوز أن تباع.
+acte d'urbanisme | Document que l'administration remet pour une opération sur un terrain : certificat, permis de lotir ou permis de construire. | وثيقة تسلمها الإدارة لعملية على أرض: شهادة أو رخصة التجزئة أو رخصة البناء.
+demande de permis de construire | Dossier que le propriétaire dépose à la commune, avec les plans d'un architecte, pour obtenir le droit de construire. | ملف يودعه المالك لدى البلدية، مع مخططات يعدها مهندس معماري، لينال الحق في أن يبني.
+instruction de la demande | Examen du dossier par les bureaux de l'urbanisme, qui vérifient que le projet suit les plans et les règles. | فحص مكاتب التعمير الملف لتتحقق من أن المشروع يتبع المخططات والقواعد.
+terrain à bâtir | Terrain que le plan d'urbanisme ouvre à la construction et que les réseaux desservent. | أرض يفتحها مخطط التعمير للبناء وتصلها الشبكات. | sf=terrain constructible
+constructibilité | Aptitude d'un terrain à recevoir une construction d'après les plans d'urbanisme. | صلاحية أرض لأن تستقبل بناء بحسب مخططات التعمير.
+hauteur des constructions | Limite, en mètres ou en étages, que les bâtiments ne peuvent pas dépasser dans un quartier. | حد، بالأمتار أو بالطوابق، لا يجوز للمباني أن تتجاوزه في حي.
+densité de construction | Quantité de planchers que l'on peut construire sur un terrain par rapport à sa taille. | كمية الأرضيات التي يجوز أن تبنى على أرض بالنسبة إلى حجمها.
+construction illicite | Bâtiment élevé sans permis de construire ou sans suivre ce permis. | مبنى يقام دون رخصة البناء أو دون اتباع هذه الرخصة. | sf=construction illégale, construction anarchique
+mise en conformité des constructions | Procédure qui donne un titre légal aux bâtiments élevés sans permis, s'ils respectent les règles de sécurité. | إجراء يعطي سندا قانونيا للمباني التي أقيمت دون رخصة، إذا كانت تحترم قواعد الأمن.
+achèvement des constructions | Obligation de terminer les bâtiments restés inachevés, façade comprise, dans le délai que l'administration fixe. | التزام بإتمام المباني التي بقيت ناقصة، ومعها الواجهة، في أجل تحدده الإدارة.
+démolition | Destruction d'un bâtiment, par la volonté de son propriétaire ou sur ordre de l'autorité. | إزالة مبنى بإرادة المالك أو بأمر من السلطة.
+arrêté de démolition | Décision du président de l'assemblée populaire communale qui ordonne de détruire une construction illicite. | قرار رئيس المجلس الشعبي البلدي الذي يأمر بأن يدمر بناء فوضوي.
+interruption des travaux | Ordre de cesser un chantier ouvert sans permis ou qui ne suit pas le permis. | أمر بأن تتوقف ورشة فتحت دون رخصة أو لا تتبع الرخصة.
+police de l'urbanisme | Corps d'agents chargés de rechercher et de constater ce qui se construit en dehors des règles. | سلك أعوان مكلفين بأن يبحثوا عما يبنى خارج القواعد وأن يعاينوه.
+inspecteur de l'urbanisme | Fonctionnaire qui visite les chantiers et note dans un procès-verbal ce qui ne suit pas le permis. | موظف يزور الورشات ويكتب في محضر ما لا يتبع الرخصة.
+infraction d'urbanisme | Construction, démolition ou lotissement réalisés sans l'autorisation que la loi impose, ou sans la suivre. | بناء أو هدم أو تجزئة تنجز دون ترخيص يفرضه القانون، أو دون اتباعه.
+habitat précaire | Logements de fortune, faits de tôle ou de planches, sans eau ni égouts, comme les bidonvilles. | مساكن مرتجلة من القصدير أو الألواح، دون ماء ولا مجار، كأحياء الصفيح.
+résorption de l'habitat précaire | Programme de l'État qui reloge chaque famille d'un bidonville et démolit son ancien abri. | برنامج من الدولة يعيد إسكان كل أسرة من حي صفيح ويهدم مأواها القديم.
+logement social | Logement construit avec l'argent de l'État et loué pour un loyer faible à une famille au revenu modeste. | سكن يبنى بنقود الدولة ويؤجر ببدل الإيجار المنخفض لأسرة ذات دخل متواضع. | sf=logement public locatif, LPL, logement social locatif | sa=سكن عمومي إيجاري
+logement promotionnel | Logement construit par un promoteur pour être vendu au prix du marché ou avec une aide de l'État. | سكن يبنيه مرق ليباع بثمن السوق أو بمساعدة من الدولة.
+promoteur immobilier | Personne ou société dont le métier est de faire construire des logements pour les vendre ou les louer. | شخص أو شركة حرفتها أن تبني مساكن لتبيعها أو تؤجرها.
+contrat de vente sur plans | Contrat par lequel un promoteur vend un logement avant la fin de sa construction, contre un prix payé par étapes. | عقد يبيع به مرق سكنا قبل نهاية بنائه مقابل ثمن يدفع على مراحل. | sf=vente en l'état futur d'achèvement
+contrat de réservation | Contrat par lequel un promoteur s'engage à garder un logement pour un acheteur, qui verse une avance. | عقد يلتزم به مرق بأن يبقي سكنا لمشتر يدفع تسبيقا.
+ville nouvelle | Ville que l'État crée entièrement sur un site vierge, pour soulager une grande agglomération. | مدينة تنشئها الدولة كاملة في موقع خال لتخفف عن تجمع سكاني كبير.
+rénovation urbaine | Opération qui démolit un vieux quartier pour le reconstruire selon un nouveau plan. | عملية تهدم حيا قديما لتعيد بناءه وفق مخطط جديد.
+réhabilitation urbaine | Opération qui répare et modernise les bâtiments d'un quartier ancien sans les démolir. | عملية تصلح مباني حي قديم وتحدثها دون أن تهدمها.
+espace vert | Terrain planté d'arbres, de gazon ou de fleurs dans une ville, ouvert aux habitants. | أرض مغروسة بالأشجار أو العشب أو الأزهار داخل مدينة، مفتوحة للسكان.
+site archéologique | Lieu qui conserve des traces d'anciennes civilisations et que la loi protège. | مكان يحفظ آثار حضارات قديمة ويحميه القانون.
+patrimoine culturel | Ensemble des biens, des monuments et des traditions hérités du passé, que la nation doit conserver. | مجموع الأموال والمعالم والتقاليد التي ورثت عن الماضي ويجب على الأمة أن تحفظها.
+monument historique | Bâtiment ancien classé pour sa valeur historique ou artistique, qu'il est interdit de modifier sans autorisation. | مبنى قديم مصنف لقيمته التاريخية أو الفنية، يمنع أن يعدل دون ترخيص.
+secteur sauvegardé | Vieux quartier, comme une casbah ou une médina, protégé par un plan qui en préserve l'aspect. | حي قديم، كالقصبة أو المدينة العتيقة، يحميه مخطط يحفظ مظهره.
+droit de l'environnement | Branche du droit qui protège la nature et lutte contre la pollution. | فرع من القانون يحمي الطبيعة ويكافح التلوث.
+principe de précaution | Principe selon lequel le manque de certitude scientifique ne doit pas retarder les mesures contre un dommage grave pour l'environnement. | مبدأ يقضي بأن نقص اليقين العلمي لا يجوز أن يؤخر التدابير ضد ضرر جسيم يلحق بالبيئة.
+principe d'action préventive | Principe selon lequel il vaut mieux empêcher un dommage à la source que le corriger après coup. | مبدأ يقضي بأن منع ضرر عند المصدر أفضل من تصحيحه بعد وقوعه.
+principe du pollueur-payeur | Principe selon lequel celui qui pollue supporte les frais des mesures prises pour éviter la pollution ou la faire cesser. | مبدأ يقضي بأن من يلوث يتحمل مصاريف التدابير التي تتخذ لتفادي التلوث أو إيقافه.
+principe d'information et de participation | Principe selon lequel chacun a le droit de savoir ce qu'il en est de l'environnement et d'être consulté avant toute décision qui le touche. | مبدأ يقضي بأن لكل واحد الحق في أن يعلم وضع البيئة وأن يستشار قبل كل قرار يمسها.
+principe de non-dégradation des ressources naturelles | Principe selon lequel le développement ne doit pas abîmer l'eau, l'air, le sol et le sous-sol. | مبدأ يقضي بأن التنمية لا يجوز أن تتلف الماء والهواء والأرض وباطنها.
+principe de substitution | Principe selon lequel une activité nuisible à l'environnement doit être remplacée par une autre moins dangereuse, même plus chère. | مبدأ يقضي بأن يحل محل نشاط مضر بالبيئة نشاط آخر أقل خطرا ولو كان أغلى.
+principe d'intégration | Principe selon lequel la protection de l'environnement doit entrer dans la préparation de chaque plan et de chaque programme. | مبدأ يقضي بأن تدخل حماية البيئة في تحضير كل مخطط وكل برنامج.
+notice d'impact | Étude simplifiée des effets d'un petit projet sur l'environnement, à fournir quand l'étude d'impact n'est pas obligatoire. | دراسة مبسطة لآثار مشروع صغير على البيئة، تقدم إذا لم تكن دراسة التأثير إلزامية. | sf=notice d'impact sur l'environnement
+étude de danger | Étude qui décrit les accidents possibles dans une installation et les moyens de les éviter ou d'en limiter les effets. | دراسة تصف الحوادث الممكنة في منشأة ووسائل تفاديها أو الحد من آثارها. | sf=étude de dangers
+enquête publique | Période pendant laquelle les habitants consultent le dossier d'un projet et notent leurs remarques sur un registre. | فترة يطلع فيها السكان على ملف مشروع ويدونون ملاحظاتهم في سجل.
+installation classée | Usine, atelier ou entrepôt qui présente un danger pour le voisinage ou la nature et que la loi soumet à autorisation. | مصنع أو ورشة أو مستودع فيه خطر على الجوار أو الطبيعة ويخضعه القانون لترخيص. | sf=installation classée pour la protection de l'environnement, ICPE
+autorisation d'exploitation | Décision de l'administration sans laquelle une installation dangereuse ne peut pas fonctionner. | قرار من الإدارة دونه لا يجوز أن تشتغل منشأة خطرة.
+exploitant | Personne ou société qui fait fonctionner une installation et répond de ses effets. | شخص أو شركة تشغل منشأة وتسأل عن آثارها.
+audit environnemental | Examen complet d'une installation pour mesurer ses effets sur l'environnement et vérifier qu'elle suit la loi. | فحص كامل لمنشأة لقياس آثارها على البيئة والتحقق من أنها تتبع القانون.
+délégué pour l'environnement | Salarié qu'une installation classée désigne pour veiller aux règles de l'environnement. | عامل تعينه منشأة مصنفة ليسهر على قواعد البيئة.
+pollution atmosphérique | Présence dans l'air de gaz, de fumées ou de poussières nuisibles à la santé et à la nature. | وجود غازات أو أدخنة أو غبار في الهواء تضر بالصحة والطبيعة. | sf=pollution de l'air
+pollution des eaux | Introduction dans l'eau de matières qui la rendent dangereuse pour la santé, les animaux ou les plantes. | إدخال مواد في الماء تجعله خطرا على الصحة أو الحيوان أو النبات. | sf=pollution de l'eau
+pollution marine | Déversement dans la mer de pétrole, de déchets ou d'autres matières nuisibles à la vie marine. | صب البترول أو نفايات أو مواد أخرى مضرة بالحياة البحرية في البحر.
+nuisances sonores | Bruits excessifs qui gênent le repos ou la santé des habitants. | ضجيج مفرط يزعج راحة السكان أو صحتهم. | sf=pollution sonore
+rejet d'effluents liquides | Déversement d'eaux sales d'une usine dans la nature ; il est soumis à autorisation et à des limites. | صب مياه قذرة من مصنع في الطبيعة، ويخضع لترخيص ولحدود.
+émission de gaz | Sortie de gaz dans l'air à partir d'une usine, d'un véhicule ou d'un chauffage. | خروج غازات إلى الهواء من مصنع أو مركبة أو جهاز تدفئة.
+gaz à effet de serre | Gaz qui retiennent la chaleur autour de la Terre, comme le gaz carbonique et le méthane. | غازات تحبس الحرارة حول الأرض، كثاني أكسيد الكربون والميثان. | sf=GES
+changement climatique | Modification durable du climat de la planète, que provoquent surtout les gaz rejetés par les activités humaines. | تبدل دائم في مناخ الكوكب تسببه خاصة الغازات التي تطرحها أنشطة الإنسان. | sf=dérèglement climatique
+déchet | Reste d'une production ou d'une consommation dont on veut ou dont on doit se débarrasser. | ما يبقى من إنتاج أو استهلاك ويريد صاحبه أو يجب عليه أن يتخلص منه.
+déchets ménagers | Restes que produit la vie courante d'un foyer : épluchures, emballages, papiers. | ما ينتج عن الحياة اليومية لبيت: قشور وأغلفة وأوراق. | sf=ordures ménagères | sa=قمامة منزلية
+déchets spéciaux dangereux | Restes de l'industrie, des soins ou de l'agriculture qui contiennent des matières toxiques, inflammables ou explosives. | مخلفات الصناعة أو العلاج أو الفلاحة التي تحتوي على مواد سامة أو قابلة للاشتعال أو متفجرة.
+déchets inertes | Restes des chantiers et des carrières, comme les gravats, qui ne se décomposent pas et ne polluent pas. | مخلفات الورشات والمحاجر، كالردم، التي لا تتحلل ولا تلوث.
+gestion des déchets | Ensemble des opérations de collecte, de tri, de transport, de stockage et de traitement des restes. | مجموع عمليات جمع المخلفات وفرزها ونقلها وتخزينها ومعالجتها.
+élimination des déchets | Destruction des restes qui ne peuvent pas être réemployés, par incinération ou enfouissement. | إتلاف المخلفات التي لا يمكن استعمالها من جديد، بالحرق أو الردم.
+valorisation des déchets | Réemploi des restes comme matière première ou comme source d'énergie. | استعمال المخلفات من جديد كمادة أولية أو كمصدر طاقة.
+recyclage | Transformation de restes, comme le verre ou le plastique, en matière pour fabriquer de nouveaux produits. | تحويل مخلفات، كالزجاج أو البلاستيك، إلى مادة تصنع منها منتجات جديدة.
+décharge publique | Terrain où la commune jette les ordures qu'elle ramasse. | أرض ترمي فيها البلدية القمامة التي تجمعها.
+centre d'enfouissement technique | Site aménagé et surveillé où les ordures sont enterrées dans des fosses étanches. | موقع مهيأ ومراقب تدفن فيه القمامة في حفر كتيمة.
+substance dangereuse | Matière dangereuse pour la santé ou la nature parce qu'elle est toxique, corrosive, inflammable ou explosive. | مادة فيها خطر على الصحة أو الطبيعة لأنها سامة أو أكالة أو قابلة للاشتعال أو متفجرة.
+produit chimique | Matière fabriquée ou transformée par la chimie, comme un engrais, un solvant ou un pesticide. | مادة تصنعها أو تحولها الكيمياء، كسماد أو مذيب أو مبيد.
+risque majeur | Danger rare mais très grave pour la population et les biens, comme un séisme, une inondation ou une explosion d'usine. | خطر نادر لكنه جسيم جدا على السكان والأموال، كزلزال أو فيضان أو انفجار مصنع.
+risque technologique | Danger qui vient de l'activité humaine : industrie, nucléaire, transport de matières dangereuses. | خطر مصدره نشاط الإنسان: الصناعة والنووي ونقل المواد الخطرة.
+catastrophe naturelle | Événement brutal de la nature qui tue ou détruit à grande échelle, comme un séisme ou une inondation. | حدث عنيف من الطبيعة يقتل أو يدمر على نطاق واسع، كزلزال أو فيضان.
+plan d'intervention | Document préparé d'avance qui organise les secours en cas de catastrophe : qui fait quoi, avec quels moyens. | وثيقة تحضر مسبقا تنظم الإغاثة في حالة كارثة: من يفعل ماذا وبأي وسائل.
+ressources naturelles | Richesses que la nature fournit : eau, sol, forêts, minerais, pétrole, gaz. | ثروات توفرها الطبيعة: الماء والأرض والغابات والمعادن والبترول والغاز.
+ressources en eau | Eaux de surface et eaux souterraines dont un pays dispose pour boire, irriguer et produire. | المياه السطحية والجوفية التي يتوفر عليها بلد للشرب والسقي والإنتاج.
+diversité biologique | Variété des animaux, des plantes et des milieux naturels d'une région. | تعدد الحيوانات والنباتات والأوساط الطبيعية في منطقة. | sf=biodiversité | sa=تنوع حيوي، تنوع أحيائي
+espèce protégée | Animal ou plante rare qu'il est interdit de chasser, de cueillir ou de vendre. | حيوان أو نبات نادر يمنع أن يصاد أو يقطف أو يباع.
+aire protégée | Territoire délimité où la nature est préservée par des règles spéciales. | إقليم محدد تحفظ فيه الطبيعة بقواعد خاصة.
+parc national | Grand espace naturel que l'État protège pour ses paysages, ses animaux et ses plantes, et qui reste ouvert aux visiteurs. | مجال طبيعي واسع تحميه الدولة لمناظره وحيواناته ونباتاته، ويبقى مفتوحا للزوار.
+réserve naturelle | Espace où toute activité humaine est interdite ou très limitée pour sauver des espèces ou un milieu fragile. | مجال يمنع فيه كل نشاط للإنسان أو يقيد كثيرا لإنقاذ أصناف أو وسط هش.
+littoral | Bande de terre qui longe la mer, avec les îles, les plages et les dunes. | شريط من البر يحاذي البحر، مع الجزر والشواطئ والكثبان.
+protection du littoral | Règles qui limitent la construction près de la mer et y interdisent d'abîmer les plages et les dunes. | قواعد تحد من البناء قرب البحر وتمنع فيه إتلاف الشواطئ والكثبان.
+domaine forestier national | Forêts et terres boisées qui appartiennent à l'État et ne peuvent être ni vendues ni acquises par prescription. | غابات وأراض مشجرة تملكها الدولة ولا يجوز أن تباع ولا أن تكتسب بالتقادم.
+déboisement | Destruction des arbres d'une forêt pour cultiver la terre ou y construire. | إتلاف أشجار غابة لزراعة الأرض أو ليبنى عليها. | sf=déforestation
+désertification | Transformation progressive d'une terre fertile en désert, sous l'effet de la sécheresse et de l'activité humaine. | تحول أرض خصبة تدريجيا إلى صحراء بفعل الجفاف ونشاط الإنسان.
+lutte contre la désertification | Ensemble des mesures prises pour freiner l'avancée du désert, comme le reboisement et la fixation des dunes. | مجموع التدابير التي تتخذ لكبح زحف الصحراء، كإعادة التشجير وتثبيت الكثبان.
+énergies renouvelables | Sources d'énergie qui ne s'épuisent pas, comme le soleil, le vent et l'eau. | مصادر طاقة لا تنضب، كالشمس والريح والماء. | sf=énergie renouvelable
+efficacité énergétique | Obtention du même résultat avec une moindre consommation d'énergie. | الوصول إلى النتيجة نفسها باستهلاك أقل للطاقة.
+taxe écologique | Taxe que paient ceux dont l'activité pollue, calculée d'après les quantités rejetées. | رسم يدفعه من يلوث نشاطهم، يحسب بحسب الكميات المطروحة. | sf=écotaxe
+fiscalité environnementale | Ensemble des taxes et des allègements d'impôt qui poussent à moins polluer. | مجموع الرسوم وتخفيفات الضريبة التي تحث على أن يلوث الناس أقل.
+dommage écologique | Atteinte portée à la nature elle-même : eau, air, sol, animaux, plantes. | مساس بالطبيعة نفسها: الماء والهواء والأرض والحيوان والنبات.
+réparation du dommage écologique | Obligation pour le pollueur de remettre la nature dans sa situation première ou, s'il ne le peut pas, de payer. | التزام الملوث بأن يعيد الطبيعة إلى وضعها الأول أو بأن يدفع إذا لم يستطع.
+remise en état des lieux | Travaux qui rendent à un site son aspect d'avant l'exploitation ou la pollution. | أشغال ترد إلى موقع مظهره السابق على الاستغلال أو التلوث.
+infraction environnementale | Acte que la loi punit parce qu'il abîme la nature, comme le rejet de matières toxiques ou la chasse d'un animal rare. | فعل يعاقب عليه القانون لأنه يتلف الطبيعة، كطرح مواد سامة أو صيد حيوان نادر.
+police de l'environnement | Corps d'agents chargés de surveiller les installations et de constater ce qui abîme la nature. | سلك أعوان مكلفين بحراسة المنشآت وبأن يعاينوا ما يتلف الطبيعة.
+inspecteur de l'environnement | Fonctionnaire de la wilaya qui visite chaque installation classée et note dans un procès-verbal tout manquement. | موظف في الولاية يزور كل منشأة مصنفة ويكتب في محضر كل إخلال.
+association de protection de l'environnement | Association qui défend la nature, informe les habitants et peut aller devant le juge contre celui qui pollue. | جمعية تدافع عن الطبيعة وتعلم السكان ويجوز لها أن تذهب إلى القاضي ضد من يلوث.
+information environnementale | Droit de chacun d'obtenir de l'administration les données sur la situation de l'environnement. | حق كل واحد في أن ينال من الإدارة البيانات عن وضع البيئة.
+éducation environnementale | Enseignement donné à l'école et ailleurs pour apprendre à respecter la nature. | تعليم يقدم في المدرسة وغيرها ليتعلم الناس أن يحترموا الطبيعة.

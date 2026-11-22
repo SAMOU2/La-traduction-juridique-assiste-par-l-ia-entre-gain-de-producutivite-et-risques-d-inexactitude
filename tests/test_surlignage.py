@@ -1,6 +1,7 @@
 """Repérage du terme dans les phrases d'exemple (mise en évidence)."""
 
 import pytest
+from conftest import ENTREES_COMPLETES
 
 from traducteur.glossaire import Entree
 from traducteur.langues import AR, FR
@@ -229,9 +230,7 @@ def test_reperage_des_autres_mots_en_arabe(phrase, champs, attendu):
 def test_les_phrases_des_termes_seuls_du_glossaire_fourni(glossaire_fourni):
     """Version 0.11 : dans sa phrase d'exemple, chaque terme seul est repéré, quelle que soit sa nature."""
     natures = {NOM: 0, ADJECTIF: 0, VERBE: 0, INVARIABLE: 0}
-    for entree in glossaire_fourni.entrees:
-        if entree.definition_fr:
-            continue
+    for entree in glossaire_fourni.entrees[ENTREES_COMPLETES:]:
         for contexte in entree.contextes:
             natures[nature_du_terme(entree)] += 1
             for langue in (FR, AR):
