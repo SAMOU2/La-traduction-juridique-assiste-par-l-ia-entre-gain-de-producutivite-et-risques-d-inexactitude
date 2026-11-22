@@ -54,10 +54,12 @@ en ont** : 223 en français, 358 en arabe.
 - **La traduction d'un texte change peu.** Un programme a traduit 20 004 textes avec le
   glossaire de la version 0.14, puis avec celui de la version 0.15 : toutes les définitions
   et toutes les phrases d'exemple, dans les deux langues, traduites mot à mot. 87
-  traductions changent, chaque fois parce qu'un nouveau synonyme est reconnu : « huissier »
-  dans 10 textes, « الأمم المتحدة » dans 8 (« l'Organisation des Nations Unies » ; la
-  version 0.14 écrivait « les nations المتحدة »). Dans l'application, une phrase d'exemple
-  reçoit la traduction écrite dans le glossaire : 66 traductions changent alors.
+  traductions changent (48 définitions, 39 phrases), chaque fois parce qu'un nouveau
+  synonyme est reconnu : « huissier » dans 10 textes, « الأمم المتحدة » dans 8
+  (« l'Organisation des Nations Unies » ; la version 0.14 écrivait « les nations
+  المتحدة »). Dans l'application, une phrase d'exemple reçoit la traduction écrite dans le
+  glossaire : seules les 48 définitions changent de traduction, et 18 phrases d'exemple
+  changent de mise en évidence.
 - **Une correction.** De l'arabe vers le français, l'application écrivait « le huissier de
   justice ». Elle écrit maintenant « l'huissier de justice ».
 - **Ce qui reste à faire.** Faire relire les équivalents, les définitions, les phrases et
@@ -996,8 +998,10 @@ artificielle**, sans dictionnaire juridique, et **personne ne les a relus**.
   10 000 définitions et les 10 004 phrases d'exemple, dans les deux langues. Dans
   l'application, une phrase d'exemple reçoit la traduction écrite dans le glossaire ; pour
   cet essai, chaque phrase a été traduite mot à mot, comme un texte quelconque. **87
-  traductions changent** (66 quand les phrases d'exemple gardent leur traduction écrite),
-  chaque fois parce qu'un nouveau synonyme est reconnu.
+  traductions changent** : 48 définitions et 39 phrases, chaque fois parce qu'un nouveau
+  synonyme est reconnu. Quand les phrases d'exemple gardent leur traduction écrite, comme
+  dans l'application, les 48 définitions changent de la même façon ; 18 phrases gardent le
+  même texte, et seule la mise en évidence d'un terme y change.
   - Ce qui est mieux traduit : « huissier » est rendu par « محضر قضائي » dans 10 textes, et
     « la charia » par « الشريعة الإسلامية » dans 4 ; la version 0.14 laissait ces mots en
     français. « الأمم المتحدة » est rendu par « l'Organisation des Nations Unies » dans 8
@@ -1025,8 +1029,10 @@ artificielle**, sans dictionnaire juridique, et **personne ne les a relus**.
 - **Une correction faite au passage.** De l'arabe vers le français, l'application écrivait
   « le huissier de justice » et « du huissier de justice » : elle prenait le « h » de
   « huissier » pour celui de « huis clos ». Elle écrit maintenant « l'huissier de justice »
-  et « de l'huissier de justice ». Parmi les 10 002 textes arabes du glossaire, 26
-  traductions changent ainsi.
+  et « de l'huissier de justice ». Parmi les 10 002 textes arabes du glossaire, traduits
+  mot à mot, 26 traductions changent ainsi : 9 définitions et 17 phrases d'exemple. Dans
+  l'application, où les phrases d'exemple gardent leur traduction écrite, ce sont les 9
+  définitions.
 
 #### Les termes seuls
 
