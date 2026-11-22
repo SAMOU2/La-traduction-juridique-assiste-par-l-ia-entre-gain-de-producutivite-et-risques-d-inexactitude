@@ -51,10 +51,11 @@ en ont** : 223 en français, 358 en arabe.
   où un autre nom existe.
 - **La traduction d'un texte change peu.** Un programme a traduit 20 004 textes avec le
   glossaire de la version 0.14, puis avec celui de la version 0.15 : toutes les définitions
-  et toutes les phrases d'exemple, dans les deux langues. 87 traductions changent, chaque
-  fois parce qu'un nouveau synonyme est reconnu : « huissier » dans 10 textes, « الأمم
-  المتحدة » dans 8 (« l'Organisation des Nations Unies » ; la version 0.14 écrivait « les
-  nations المتحدة »).
+  et toutes les phrases d'exemple, dans les deux langues, traduites mot à mot. 87
+  traductions changent, chaque fois parce qu'un nouveau synonyme est reconnu : « huissier »
+  dans 10 textes, « الأمم المتحدة » dans 8 (« l'Organisation des Nations Unies » ; la
+  version 0.14 écrivait « les nations المتحدة »). Dans l'application, une phrase d'exemple
+  reçoit la traduction écrite dans le glossaire : 66 traductions changent alors.
 - **Une correction.** De l'arabe vers le français, l'application écrivait « le huissier de
   justice ». Elle écrit maintenant « l'huissier de justice ».
 - **Ce qui reste à faire.** Faire relire les équivalents, les définitions, les phrases et
@@ -956,8 +957,8 @@ artificielle**, sans dictionnaire juridique, et **personne ne les a relus**.
       الجمارك » (« قانون الجمارك » devenait « La loi de l'administration des douanes »),
       « سلعة » pour « بضاعة », « المؤمن عليه » pour « المؤمن له », « contrat de mariage »
       pour « acte de mariage », « إساءة استعمال السلطة » pour « الانحراف بالسلطة »,
-      « autorité judiciaire » pour « pouvoir judiciaire » (« les autorités judiciaires de
-      différents États » devenait « السلطة القضائية »).
+      « autorité judiciaire » pour « pouvoir judiciaire » (dans « les autorités judiciaires
+      de différents États », « les autorités judiciaires » devenait « السلطة القضائية »).
     - Un synonyme qui coupait une autre expression : « رأس مال الشركة » prenait « شركة »
       dans « رأس مال شركة أخرى » ; avec « droit applicable », « règles de droit
       applicables » n'était plus lu « règles de droit ».
@@ -974,9 +975,9 @@ artificielle**, sans dictionnaire juridique, et **personne ne les a relus**.
 - **Effet sur la recherche d'un terme.** Chacun des 550 synonymes a été cherché avec le
   glossaire de la version 0.14, puis avec celui de la version 0.15. 523 ne trouvaient rien.
   27 trouvaient déjà quelque chose : 10 ouvraient déjà la bonne fiche, parce que le terme
-  commence par eux (« huissier », « pourvoi », « blanchiment ») ; 17 ouvraient une autre
-  fiche (« stipulation » ouvrait « stipulation pour autrui », « flagrance » ouvrait « enquête
-  de flagrance »). Maintenant, les 550 ouvrent d'abord la fiche de leur terme. Les 12 455
+  les contient (« huissier », « pourvoi », « blanchiment ») ; 17 ouvraient une autre fiche
+  (« stipulation » ouvrait « stipulation pour autrui », « flagrance » ouvrait « enquête de
+  flagrance »). Maintenant, les 550 ouvrent d'abord la fiche de leur terme. Les 12 455
   recherches d'un terme, d'un pluriel ou d'un synonyme plus ancien ouvrent la même fiche
   qu'avant.
 - **Effet sur la traduction d'un texte.** Les 1 000 entrées complètes sont des noms : dans un
