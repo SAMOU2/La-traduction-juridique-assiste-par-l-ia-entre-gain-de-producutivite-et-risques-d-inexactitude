@@ -40,13 +40,15 @@ en ont** : 223 en français, 358 en arabe.
   Aucun juriste et aucun traducteur ne les a relus.** Beaucoup sont des mots de sens voisin,
   que le droit distingue parfois : un « extrait de naissance » n'est pas tout à fait un
   « acte de naissance », ni une « saisie-vente » une « saisie-exécution ». Le pays où un mot
-  arabe est en usage n'a pas été vérifié. Les synonymes n'ont pas de mention à eux dans la
-  fiche : celle de l'équivalent vaut pour toute l'entrée.
-- **97 synonymes ont été retirés avant la publication**, sur 646 écrits. 48 étaient déjà le
-  terme, le pluriel ou le synonyme d'une autre entrée. 49 ont été retirés après des essais
-  de traduction et une relecture : par exemple « JO » et « AG » (deux lettres), « الجمارك »
-  (« قانون الجمارك » devenait « la loi de l'administration des douanes »), « résolution du
-  contrat » (les deux noms se traduisaient déjà un par un).
+  arabe est en usage n'a pas été vérifié. **Dans la fiche, rien ne signale que ces synonymes
+  sont à vérifier** : pour une entrée complète, la mention « À vérifier » ne s'affiche que
+  sous la définition et sous la phrase d'exemple.
+- **97 synonymes ont été retirés avant la publication**, sur 646 écrits, et un a été ajouté
+  à la place d'un autre. 48 étaient déjà le terme, le pluriel ou le synonyme d'une autre
+  entrée. 49 ont été retirés après des essais de traduction et une relecture : par exemple
+  « JO » et « AG » (deux lettres), « الجمارك » (« قانون الجمارك » devenait « la loi de
+  l'administration des douanes »), « résolution du contrat » (les deux noms se traduisaient
+  déjà un par un).
 - **538 entrées complètes n'ont toujours aucun synonyme** : un synonyme n'a été écrit que là
   où un autre nom existe.
 - **La traduction d'un texte change peu.** Un programme a traduit 20 004 textes avec le
@@ -940,11 +942,17 @@ artificielle**, sans dictionnaire juridique, et **personne ne les a relus**.
   تمهيدي » pour « jugement avant dire droit » : ces noms désignent des choses proches, pas
   toujours identiques. Un mot arabe d'un autre pays peut y désigner une institution un peu
   différente : le pays où chaque mot est en usage n'a pas été vérifié.
+- **Aucune mention ne les signale dans la fiche.** Pour une entrée complète, la mention
+  « À vérifier » s'affiche sous la définition et sous la phrase d'exemple. Elle ne s'affiche
+  ni dans le cercle « Synonymes », ni sous l'équivalent, où sont écrits les synonymes de
+  l'autre langue. C'était déjà le cas des 148 synonymes plus anciens de ces entrées. Voir
+  la capture du début de cette page.
 - **Tous les termes n'ont pas de synonyme.** 538 entrées complètes n'en ont aucun : « contrat
   de vente », « nullité », « juge », « créancier », « décret exécutif »… Un synonyme n'a été
   écrit que là où un autre nom existe.
 - **Comment ils ont été triés.** 646 synonymes avaient été écrits, pour 425 entrées. 97 ont
-  été retirés, et un a été récrit.
+  été retirés, et un a été ajouté à la place d'un autre : le nom arabe du Journal officiel,
+  plus bas. Il en reste 550, pour 381 entrées.
   - **48 ont été retirés par un programme**, parce qu'ils étaient déjà le terme, le pluriel
     ou le synonyme d'une autre entrée : la recherche de ce mot, et la traduction d'un texte,
     auraient hésité entre deux fiches. « formation du contrat », « effet rétroactif »,
@@ -969,9 +977,11 @@ artificielle**, sans dictionnaire juridique, et **personne ne les a relus**.
   - **Le nom du Journal officiel.** Son nom arabe complet, « الجريدة الرسمية للجمهورية
     الجزائرية الديمقراطية الشعبية », est donné comme synonyme : il compte six mots. Le nom
     français complet en compte neuf, et une expression du glossaire n'est lue dans un texte
-    que jusqu'à huit mots : il n'a pas été donné. Un nom plus court (« Journal officiel de
-    la République algérienne ») avait été essayé : dans un texte, il laissait « démocratique
-    et populaire » seuls après l'équivalent. Il a été retiré.
+    que jusqu'à huit mots : il n'a pas été donné. Un nom plus court avait d'abord été écrit
+    dans les deux langues (« Journal officiel de la République algérienne », « الجريدة
+    الرسمية للجمهورية الجزائرية ») : dans un texte, il laissait la fin du nom (« démocratique
+    et populaire ») seule après l'équivalent. Il a été retiré, et le nom arabe complet a été
+    écrit à sa place.
 - **Effet sur la recherche d'un terme.** Chacun des 550 synonymes a été cherché avec le
   glossaire de la version 0.14, puis avec celui de la version 0.15. 523 ne trouvaient rien.
   27 trouvaient déjà quelque chose : 10 ouvraient déjà la bonne fiche, parce que le terme
@@ -1918,7 +1928,9 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   Beaucoup sont des mots de sens voisin, que le droit distingue parfois (« extrait de
   naissance » et « acte de naissance », « saisie-vente » et « saisie-exécution »). Les mots
   arabes donnés comme en usage dans d'autres pays arabes n'ont été comparés à aucun texte de
-  ces pays. Dans un texte à traduire, un synonyme est remplacé comme le terme : un synonyme
+  ces pays. Dans la fiche d'une entrée complète, rien ne signale qu'un synonyme est à
+  vérifier : la mention « À vérifier » ne s'affiche que sous la définition et sous la phrase
+  d'exemple. Dans un texte à traduire, un synonyme est remplacé comme le terme : un synonyme
   faux donne une traduction fausse, sans mention particulière. Un nom long donne
   l'équivalent court de son entrée : « demande en justice » donne « الطلب », « cotisations
   sociales » donne « الاشتراكات ». Les essais de traduction ont porté sur les définitions et
@@ -1936,7 +1948,9 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   distingue parfois les deux mots. 3 338 termes seuls n'ont aucun synonyme : c'est le cas de
   2 853 des 3 072 noms des domaines. 538 entrées complètes n'en ont pas non plus. Les
   synonymes écrits avant la version 0.13 n'ont pas été revus. L'application n'affiche pas de
-  mention propre aux synonymes : celle de l'équivalent vaut pour toute l'entrée.
+  mention propre aux synonymes. Pour un terme seul, celle de l'équivalent vaut pour toute
+  l'entrée. Pour une entrée complète, l'équivalent n'a pas de mention : rien ne signale que
+  ses synonymes sont à vérifier.
 - **Termes seuls du glossaire fourni.** Les 4 000 entrées ajoutées dans les versions 0.8 et 0.9
   ont été écrites de mémoire par un assistant d'intelligence artificielle, et aucun juriste
   ne les a relues. Un
