@@ -976,12 +976,12 @@ artificielle**, sans dictionnaire juridique, et **personne ne les a relus**.
       « résolution du contrat » donnait « فسخ » au lieu de « فسخ العقد ».
   - **Le nom du Journal officiel.** Son nom arabe complet, « الجريدة الرسمية للجمهورية
     الجزائرية الديمقراطية الشعبية », est donné comme synonyme : il compte six mots. Le nom
-    français complet en compte neuf, et une expression du glossaire n'est lue dans un texte
-    que jusqu'à huit mots : il n'a pas été donné. Un nom plus court avait d'abord été écrit
-    dans les deux langues (« Journal officiel de la République algérienne », « الجريدة
-    الرسمية للجمهورية الجزائرية ») : dans un texte, il laissait la fin du nom (« démocratique
-    et populaire ») seule après l'équivalent. Il a été retiré, et le nom arabe complet a été
-    écrit à sa place.
+    français complet avait été écrit lui aussi. Il compte neuf mots, et une expression du
+    glossaire n'est lue dans un texte que jusqu'à huit mots : il a été retiré. Des noms plus
+    courts ont été essayés dans les deux langues (« Journal officiel de la République
+    algérienne », « الجريدة الرسمية للجمهورية الجزائرية ») : dans un texte, ils laissaient la
+    fin du nom (« démocratique et populaire ») seule après l'équivalent. Ils ont été
+    retirés, et le nom arabe complet a remplacé le nom arabe court.
 - **Effet sur la recherche d'un terme.** Chacun des 550 synonymes a été cherché avec le
   glossaire de la version 0.14, puis avec celui de la version 0.15. 523 ne trouvaient rien.
   27 trouvaient déjà quelque chose : 10 ouvraient déjà la bonne fiche, parce que le terme
