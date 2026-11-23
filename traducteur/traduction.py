@@ -92,9 +92,10 @@ _DETERMINANTS_PLURIELS = frozenset({"les", "des", "aux", "ces", "ses", "leurs", 
 _DETERMINANTS_SINGULIERS = frozenset({"le", "la", "l'", "un", "une", "au", "du", "ce", "cet", "cette", "mon", "ma",
                                       "ton", "ta", "son", "sa", "notre", "votre", "leur", "chaque", "aucun", "aucune"})
 _VOYELLES = frozenset("aàâäeéèêëiîïoôöuùûüyœæ")
-#: Mots à « h » aspiré : pas d'élision (« le huis clos », « la hausse »).
-_H_ASPIRES = ("hausse", "haut", "hasard", "harcèlement", "handicap", "hiérarchie", "honte", "hors", "huis", "huit",
-              "halte", "hameau", "hangar", "héros", "heurt")
+#: Mots à « h » aspiré : pas d'élision (« le huis clos », « la hausse »). « huis clos » est écrit en entier :
+#: « huissier » commence par les mêmes lettres, et son « h » est muet (« l'huissier de justice »).
+_H_ASPIRES = ("hausse", "haut", "hasard", "harcèlement", "handicap", "hiérarchie", "honte", "hors", "huis clos",
+              "huit", "halte", "hameau", "hangar", "héros", "heurt")
 _GENRE_FEMININ = regex.compile(r"fémin|\bfém\b|\bn\.?\s?f\b|\bf\b|\bnf\b")
 _GENRE_MASCULIN = regex.compile(r"mascul|\bmasc\b|\bn\.?\s?m\b|\bm\b|\bnm\b")
 #: Catégories d'un mot qui n'est pas un nom : verbe, adjectif, adverbe, préposition, conjonction, et les

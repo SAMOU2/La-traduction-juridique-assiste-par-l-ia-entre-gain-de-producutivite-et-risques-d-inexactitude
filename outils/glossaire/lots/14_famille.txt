@@ -1,25 +1,25 @@
 ## Droit de la famille ## FAMILLE
-famille | أسرة | ff | أسر | Cellule de base de la société, formée de personnes unies par le mariage et par la parenté. | الخلية الأساسية للمجتمع، تتكون من أشخاص تجمع بينهم صلة الزوجية وصلة القرابة.
+famille | أسرة | ff | أسر | Cellule de base de la société, formée de personnes unies par le mariage et par la parenté. | الخلية الأساسية للمجتمع، تتكون من أشخاص تجمع بينهم صلة الزوجية وصلة القرابة. | sa=عائلة
 parenté | قرابة | ff |  | Lien qui unit des personnes descendant les unes des autres ou d'un ancêtre commun. | الصلة التي تجمع بين أشخاص ينحدر بعضهم من بعض أو من أصل مشترك.
 alliance | مصاهرة | ff |  | Lien que le mariage crée entre un époux et les parents de l'autre. | الصلة التي ينشئها الزواج بين أحد الزوجين وأقارب الآخر.
 ascendants | أصول | mmp |  | Personnes dont une autre descend : père, mère, grands-parents. | الأشخاص الذين ينحدر منهم شخص آخر، كالأب والأم والأجداد.
 descendants | فروع | mmp |  | Personnes qui descendent d'une autre : enfants, petits-enfants. | الأشخاص الذين ينحدرون من شخص آخر، كالأولاد وأولاد الأولاد.
 enfant | ولد | mm | أولاد | Fils ou fille d'une personne ; personne mineure. | ابن الشخص أو ابنته، وكذلك الشخص القاصر. | sa=طفل
 
-mariage | زواج | mm |  | Contrat consensuel passé entre un homme et une femme dans les formes légales, qui a notamment pour but de fonder une famille. | عقد رضائي يتم بين رجل وامرأة على الوجه الشرعي، من أهدافه تكوين أسرة.
-acte de mariage | عقد الزواج | mi | عقود الزواج | Acte qui constate le mariage, dressé par un notaire ou par un officier de l'état civil. | عقد يثبت الزواج يحرره موثق أو ضابط الحالة المدنية.
-fiançailles | خطبة | ffp |  | Promesse de mariage, que chacune des deux parties peut rompre. | وعد بالزواج يجوز لكل من الطرفين العدول عنه.
+mariage | زواج | mm |  | Contrat consensuel passé entre un homme et une femme dans les formes légales, qui a notamment pour but de fonder une famille. | عقد رضائي يتم بين رجل وامرأة على الوجه الشرعي، من أهدافه تكوين أسرة. | sa=نكاح
+acte de mariage | عقد الزواج | mi | عقود الزواج | Acte qui constate le mariage, dressé par un notaire ou par un officier de l'état civil. | عقد يثبت الزواج يحرره موثق أو ضابط الحالة المدنية. | sa=عقد النكاح، عقد القران
+fiançailles | خطبة | ffp |  | Promesse de mariage, que chacune des deux parties peut rompre. | وعد بالزواج يجوز لكل من الطرفين العدول عنه. | sa=خطوبة
 époux | زوج | mm | أزواج | Homme uni à une femme par le mariage ; au pluriel, les deux conjoints. | الرجل المرتبط بامرأة بعقد الزواج، ويطلق بصيغة المثنى على الزوجين معا. | sf=mari, conjoint
 épouse | زوجة | ff | زوجات | Femme unie à un homme par le mariage. | المرأة المرتبطة برجل بعقد الزواج.
-dot | صداق | fm |  | Bien que l'époux verse à l'épouse en raison du mariage et qui lui appartient en propre. | ما يدفعه الزوج للزوجة بمناسبة الزواج، وهو ملك لها. | sa=مهر
+dot | صداق | fm |  | Bien que l'époux verse à l'épouse en raison du mariage et qui lui appartient en propre. | ما يدفعه الزوج للزوجة بمناسبة الزواج، وهو ملك لها. | sf=sadaq, mahr | sa=مهر
 
 régime matrimonial | النظام المالي للزوجين | mc |  | Règles qui fixent le sort des biens des époux ; en droit algérien, chaque époux conserve son propre patrimoine. | القواعد التي تحكم أموال الزوجين، وفي القانون الجزائري لكل من الزوجين ذمة مالية مستقلة.
 polygamie | تعدد الزوجات | fi |  | Fait pour un homme d'être marié à plusieurs épouses, dans les limites et aux conditions fixées par la loi. | زواج الرجل بأكثر من امرأة في الحدود وبالشروط التي يقررها القانون.
 empêchement au mariage | مانع الزواج | mi | موانع الزواج | Situation qui interdit le mariage entre deux personnes, comme la parenté. | حالة تمنع الزواج بين شخصين، كالقرابة.
 
-dissolution du mariage | انحلال الزواج | fi |  | Fin du mariage par le divorce ou par le décès de l'un des époux. | انتهاء الزواج بالطلاق أو بوفاة أحد الزوجين.
+dissolution du mariage | انحلال الزواج | fi |  | Fin du mariage par le divorce ou par le décès de l'un des époux. | انتهاء الزواج بالطلاق أو بوفاة أحد الزوجين. | sa=انحلال الرابطة الزوجية، فك الرابطة الزوجية
 divorce | طلاق | mm |  | Dissolution du mariage par la volonté de l'époux, par consentement mutuel ou à la demande de l'épouse dans les cas prévus par la loi. | حل عقد الزواج بإرادة الزوج أو بتراضي الزوجين أو بطلب من الزوجة في الحالات التي يحددها القانون.
-divorce par consentement mutuel | الطلاق بالتراضي | mc |  | Divorce demandé d'un commun accord par les deux époux. | طلاق يطلبه الزوجان باتفاقهما.
+divorce par consentement mutuel | الطلاق بالتراضي | mc |  | Divorce demandé d'un commun accord par les deux époux. | طلاق يطلبه الزوجان باتفاقهما. | sa=الطلاق الاتفاقي
 khol'â | خلع | mm |  | Séparation que l'épouse obtient sans l'accord de l'époux, moyennant le versement d'une somme. | فراق تحصل عليه الزوجة دون موافقة الزوج مقابل مال تدفعه. | sf=kholâ, khol
 retraite légale | عدة | ff |  | Délai que la femme divorcée ou veuve doit observer avant de pouvoir se remarier. | المدة التي تتربصها المرأة المطلقة أو المتوفى عنها زوجها قبل أن يحل لها الزواج من جديد. | sf=idda
 
@@ -39,15 +39,15 @@ succession | تركة | ff | تركات | Ensemble des biens laissés par une pe
 héritage | ميراث | mm | مواريث | Biens transmis par voie de succession ; droit d'y prendre part. | الأموال المنتقلة بطريق الإرث، والحق في نيل نصيب منها. | sa=إرث
 ouverture de la succession | افتتاح التركة | fi |  | Moment où les biens du défunt sont transmis à ses héritiers : le jour du décès. | الوقت الذي تنتقل فيه أموال المتوفى إلى ورثته، وهو يوم الوفاة.
 partage successoral | قسمة التركة | mi |  | Répartition des biens de la succession entre les héritiers. | توزيع أموال التركة على الورثة.
-frédha | فريضة | ff |  | Acte notarié qui établit la liste des héritiers d'un défunt et la part de chacun. | عقد توثيقي يحصي ورثة المتوفى ويبين نصيب كل منهم.
+frédha | فريضة | ff |  | Acte notarié qui établit la liste des héritiers d'un défunt et la part de chacun. | عقد توثيقي يحصي ورثة المتوفى ويبين نصيب كل منهم. | sf=acte de frédha
 quote-part | نصيب | fm | أنصبة | Part qui revient à chacun dans un partage ou dans une chose commune. | الحصة التي تعود لكل واحد في القسمة أو في الشيء المشترك. | pf=quotes-parts
 
 héritier | وارث | mm | ورثة | Personne que la loi appelle à recueillir la succession d'un défunt. | شخص يدعوه القانون إلى أخذ نصيب من تركة المتوفى.
 défunt | مورث | mm |  | Personne décédée dont la succession est ouverte. | الشخص المتوفى الذي افتتحت تركته. | sf=de cujus
 héritiers réservataires | ذوو الفروض | mip |  | Héritiers dont la part dans la succession est fixée par la loi. | الورثة الذين حددت أنصبتهم في التركة شرعا. | sa=أصحاب الفروض
-héritier universel | عاصب | mm | عصبة | Héritier qui recueille toute la succession s'il est seul, ou ce qui en reste après le prélèvement des parts des héritiers réservataires. | وارث يستحق التركة كلها عند انفراده، أو ما بقي منها بعد أخذ ذوي الفروض حقوقهم.
+héritier universel | عاصب | mm | عصبة | Héritier qui recueille toute la succession s'il est seul, ou ce qui en reste après le prélèvement des parts des héritiers réservataires. | وارث يستحق التركة كلها عند انفراده، أو ما بقي منها بعد أخذ ذوي الفروض حقوقهم. | sf=héritier aceb, aceb
 tanzil | تنزيل | mm |  | Institution qui fait venir les petits-enfants à la succession de leur grand-parent, à la place de leur père ou de leur mère décédé avant lui. | نظام يحل به الأحفاد محل أبيهم أو أمهم المتوفى قبل الجد في تركة هذا الأخير. | sf=héritage par substitution
-indignité successorale | المنع من الميراث | fc |  | Exclusion d'un héritier de la succession en raison d'une faute grave, comme l'homicide du défunt. | حرمان الوارث من التركة بسبب فعل خطير، كقتل المورث.
+indignité successorale | المنع من الميراث | fc |  | Exclusion d'un héritier de la succession en raison d'une faute grave, comme l'homicide du défunt. | حرمان الوارث من التركة بسبب فعل خطير، كقتل المورث. | sa=الحرمان من الميراث
 
 libéralité | تبرع | fm | تبرعات | Acte par lequel une personne procure à une autre un avantage sans contrepartie : donation, testament. | تصرف يمنح به شخص غيره منفعة دون مقابل، كالهبة والوصية.
 testament | وصية | mf | وصايا | Acte par lequel une personne dispose de tout ou partie de ses biens pour le temps qui suivra son décès, dans la limite du tiers. | تصرف يوصي به الشخص بكل أمواله أو بعضها لما بعد وفاته، في حدود الثلث. | sf=legs

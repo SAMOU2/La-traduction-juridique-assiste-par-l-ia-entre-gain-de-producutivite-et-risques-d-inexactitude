@@ -12,15 +12,70 @@ Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont p
 [proposition d'interface](#la-proposition-dinterface) et la
 [première maquette](#maquette-de-lapplication-de-bureau).
 
-## L'application (version 0.14)
+## L'application (version 0.15)
 
-La version 0.14 **donne leur phrase d'exemple aux 987 derniers termes seuls**. Ce sont les
-noms de cinq groupes de domaines : fiscalité, finances publiques et douanes ; droit
+La version 0.15 **complète les synonymes des 1 000 entrées complètes** du glossaire, en
+français et en arabe. Avant elle, 132 de ces entrées avaient un synonyme. Maintenant, **462
+en ont** : 223 en français, 358 en arabe.
+
+- **550 synonymes de plus**, pour 381 entrées : 186 en français, 364 en arabe. Par exemple,
+  « huissier de justice » (« محضر قضائي ») reçoit « huissier » en français, « مفوض قضائي » et
+  « عدل منفذ » en arabe. « droit musulman » reçoit « charia », « acheteur » reçoit
+  « acquéreur », « bail » reçoit « كراء », « garde à vue » reçoit « الحراسة النظرية ».
+- **Ce que sont ces synonymes.** D'autres noms de la même chose (« détention préventive »
+  pour « détention provisoire », « publicité mensongère » pour « publicité trompeuse »). Des
+  formes plus courtes ou plus longues (« pourvoi » pour « pourvoi en cassation », « demande
+  en justice » pour « demande »). 14 sigles (« OPJ », « PV », « APC », « CIJ »). Quelques mots
+  latins (« pacta sunt servanda ») et quelques mots arabes écrits en lettres latines
+  (« sadaq », « mahr »). En arabe, surtout des mots en usage dans d'autres pays arabes :
+  « عقد الشغل » pour « عقد العمل », « كاتب عدل » pour « موثق », « رئيس الوزراء » pour
+  « الوزير الأول ».
+- **À quoi sert un synonyme.** Il s'affiche dans la fiche : dans le cercle « Synonymes »
+  pour la langue du terme, sous l'équivalent pour l'autre langue (« Autres équivalents »).
+  Sa recherche ouvre la fiche du terme. Et dans un texte à traduire, il est remplacé comme
+  le terme : « L'huissier signifie le jugement à l'acquéreur. » donne maintenant « المحضر
+  القضائي signifie الحكم à المشتري. » La version 0.14 laissait « huissier » et « acquéreur »
+  en français.
+- **Ces synonymes ont été écrits de mémoire par un assistant d'intelligence artificielle.
+  Aucun juriste et aucun traducteur ne les a relus.** Beaucoup sont des mots de sens voisin,
+  que le droit distingue parfois : un « extrait de naissance » n'est pas tout à fait un
+  « acte de naissance », ni une « saisie-vente » une « saisie-exécution ». Le pays où un mot
+  arabe est en usage n'a pas été vérifié. **Dans la fiche, rien ne signale que ces synonymes
+  sont à vérifier** : pour une entrée complète, la mention « À vérifier » ne s'affiche que
+  sous la définition et sous la phrase d'exemple.
+- **97 synonymes ont été retirés avant la publication**, sur 646 écrits, et un a été ajouté
+  à la place d'un autre. 48 étaient déjà le terme, le pluriel ou le synonyme d'une autre
+  entrée. 49 ont été retirés après des essais de traduction et une relecture : par exemple
+  « JO » et « AG » (deux lettres), « الجمارك » (« قانون الجمارك » devenait « la loi de
+  l'administration des douanes »), « résolution du contrat » (les deux noms se traduisaient
+  déjà un par un).
+- **538 entrées complètes n'ont toujours aucun synonyme** : un synonyme n'a été écrit que là
+  où un autre nom existe.
+- **La traduction d'un texte change peu.** Un programme a traduit 20 004 textes avec le
+  glossaire de la version 0.14, puis avec celui de la version 0.15 : toutes les définitions
+  et toutes les phrases d'exemple, dans les deux langues, traduites mot à mot. 87
+  traductions changent (48 définitions, 39 phrases), chaque fois parce qu'un nouveau
+  synonyme est reconnu : « huissier » dans 10 textes, « الأمم المتحدة » dans 8
+  (« l'Organisation des Nations Unies » ; la version 0.14 écrivait « les nations
+  المتحدة »). Dans l'application, une phrase d'exemple reçoit la traduction écrite dans le
+  glossaire : seules les 48 définitions changent de traduction, et 18 phrases d'exemple
+  changent de mise en évidence.
+- **Une correction.** De l'arabe vers le français, l'application écrivait « le huissier de
+  justice ». Elle écrit maintenant « l'huissier de justice ».
+- **Ce qui reste à faire.** Faire relire les équivalents, les définitions, les phrases et
+  les synonymes par un juriste et par un traducteur.
+
+![Le terme « huissier de justice », trouvé par son synonyme « huissier » : cercle « Synonymes » ouvert, et les deux autres équivalents arabes sous l'équivalent](docs/apercu-huissier-synonyme.png)
+
+Le détail est dans [Les synonymes (version 0.15)](#les-synonymes-version-015).
+
+La version 0.14 avait **donné leur phrase d'exemple aux 987 derniers termes seuls**. Ce sont
+les noms de cinq groupes de domaines : fiscalité, finances publiques et douanes ; droit
 international ; foncier, urbanisme et environnement ; propriété intellectuelle, consommation,
 concurrence et numérique ; droit maritime, nationalité et condition des étrangers. Avant
 elle, 887 de ces termes n'affichaient aucune phrase : leur cercle « Contextualisation » était
-gris. Maintenant, **les 5 000 entrées du glossaire ont une phrase d'exemple**, comme elles
-ont une définition depuis la version 0.13.
+gris. Depuis, **les 5 000 entrées du glossaire ont une phrase d'exemple**, comme elles ont
+une définition depuis la version 0.13.
 
 - **987 phrases, en français et en arabe.** Une par terme, courte (111 caractères au plus en
   français), au présent. Par exemple, pour « diversité biologique » : « La forêt de cèdres
@@ -33,18 +88,17 @@ ont une définition depuis la version 0.13.
   contrefaite. »). D'autres énoncent une règle de droit, et une vingtaine donnent un chiffre
   ou une date tirés d'un texte : une durée, un âge, l'année d'une loi. Ces règles et ces
   chiffres n'ont été comparés à aucun texte officiel.
-- **Ce que l'application affiche maintenant.** Le cercle « Contextualisation » est coloré
-  pour chaque entrée. 3 294 entrées affichent une phrase, la leur. 1 706 affichent deux
-  textes : pour 1 704, leur phrase, puis la phrase ou la définition d'une autre entrée qui
-  emploie le terme ; « contrat » et « équité » ont deux phrases à eux.
-- **La traduction d'un texte ne change que pour ces phrases.** Une phrase d'un texte
-  identique à un exemple du glossaire reçoit la traduction de cet exemple : c'est maintenant
-  le cas des 987 nouvelles phrases, dans les deux langues. Un programme a traduit 18 035
-  autres textes avec le glossaire de la version 0.13, puis avec celui de la version 0.14 :
-  les traductions sont identiques.
-- **Ce qui reste à faire.** Faire relire les équivalents, les définitions et les phrases par
-  un juriste et par un traducteur. Les synonymes des 1 000 entrées complètes n'ont pas été
-  complétés.
+- **Ce que l'application affiche depuis.** Le cercle « Contextualisation » est coloré pour
+  chaque entrée. 3 294 entrées affichent une phrase, la leur. 1 706 affichent deux textes :
+  pour 1 704, leur phrase, puis la phrase ou la définition d'une autre entrée qui emploie le
+  terme ; « contrat » et « équité » ont deux phrases à eux.
+- **La traduction d'un texte n'avait changé que pour ces phrases.** Une phrase d'un texte
+  identique à un exemple du glossaire reçoit la traduction de cet exemple : c'est le cas des
+  987 phrases, dans les deux langues. Un programme avait traduit 18 035 autres textes avec le
+  glossaire de la version 0.13, puis avec celui de la version 0.14 : les traductions étaient
+  identiques.
+- Il restait alors à compléter les synonymes des 1 000 entrées complètes : la version 0.15
+  l'a fait.
 
 ![Le terme « diversité biologique », cercle « Contextualisation » ouvert : sa phrase d'exemple, sous la mention « À vérifier »](docs/apercu-biodiversite-phrase.png)
 
@@ -261,7 +315,8 @@ l'autre. Les captures des écrans « Terme », « Texte », « Paramètres » et
 celles de la version 0.10 ; celle du terme « protégé » avec sa phrase est de la version 0.11,
 celle du terme « chèque barré » de la version 0.12, celles des termes « protégé » et
 « diversité biologique » avec leur définition de la version 0.13, celle du terme « diversité
-biologique » avec sa phrase de la version 0.14. Celle de l'écran de
+biologique » avec sa phrase de la version 0.14, celle du terme « huissier de justice » avec
+ses synonymes de la version 0.15. Celle de l'écran de
 démarrage date de la version 0.5.2 : cet écran n'a pas changé depuis. L'adresse affichée dans
 le centre d'aide est un exemple. La capture de l'[installation](#installation) a été faite
 sous Windows, avec la version 0.5.3 : elle montre l'ancienne fiche, à cinq colonnes.*
@@ -282,6 +337,7 @@ sous Windows, avec la version 0.5.3 : elle montre l'ancienne fiche, à cinq colo
 | Glossaire fourni porté à 5 000 entrées | Fait (version 0.9) : 1 000 entrées complètes et 4 000 termes seuls. Les termes seuls **restent à vérifier** : voir [Les termes seuls](#les-termes-seuls). |
 | Une définition et des synonymes pour chaque terme seul | **Fait (version 0.13) : les 4 000 termes seuls ont une définition** dans les deux langues, et 662 ont au moins un synonyme. Les définitions et les synonymes sont rédigés par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les termes seuls](#les-termes-seuls). |
 | Une phrase d'exemple pour chaque terme seul | **Fait (version 0.14) : les 4 000 termes seuls ont leur phrase**, dans les deux langues : 1 887 depuis la version 0.11, 1 126 depuis la version 0.12, 987 depuis la version 0.14. Les phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les phrases d'exemple](#les-phrases-dexemple). |
+| Des synonymes pour les 1 000 entrées complètes | **Fait (version 0.15) : 462 entrées complètes ont au moins un synonyme**, contre 132 avant : 223 en ont en français, 358 en arabe. Les 550 nouveaux synonymes sont rédigés par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les synonymes (version 0.15)](#les-synonymes-version-015). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
 | Liaison avec un service d'intelligence artificielle en ligne | Essayée dans la version 0.6, **retirée dans la version 0.7** : voir [L'essai d'un service d'IA (version 0.6)](#lessai-dun-service-dia-version-06). L'application ne se connecte à rien. |
 | Installeur pour Windows (fichier `.msi`) | Fait (version 0.5.3) : voir [Installation](#installation). Il est fabriqué et essayé automatiquement sur une machine Windows. **Personne ne l'a encore installé à la main** : voir les [limites connues](#limites-connues). |
@@ -298,7 +354,7 @@ Il y a deux façons d'installer l'application :
 1. Ouvrir la page
    [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
    du dépôt. Sous la version la plus récente, dans « Assets », télécharger le fichier dont le
-   nom finit par `.msi`, par exemple `Traducteur-juridique-0.14.0.msi`.
+   nom finit par `.msi`, par exemple `Traducteur-juridique-0.15.0.msi`.
 2. Double-cliquer sur le fichier téléchargé.
 3. Cliquer sur **Suivant**, puis sur **Installer**, puis sur **Terminer**. L'application s'ouvre.
 
@@ -815,7 +871,9 @@ d'exemple à neuf d'entre elles ; le reste n'a pas été modifié.
   « conclusion du contrat » est « D'après le Code civil, art. 59 ».
 - **Autre contenu d'illustration.** Les couples de termes, les catégories grammaticales, les
   pluriels, les domaines, les synonymes, les termes associés et les ressources ont été rédigés
-  pour la démonstration.
+  pour la démonstration. Dans la version 0.15, 13 de ces entrées ont reçu 17 synonymes de
+  plus (« acquéreur » pour « acheteur », « كراء » pour « إيجار ») : voir
+  [Les synonymes (version 0.15)](#les-synonymes-version-015).
 - Neuf de ces entrées n'avaient pas d'exemple à elles : « contrat de vente », « contrat de
   bail », « contrat de travail », « conclusion du contrat », « droit », « mauvaise foi »,
   « responsabilité », « article » et « Journal officiel ». Elles ont reçu une phrase rédigée
@@ -848,7 +906,133 @@ contenu est à vérifier.
   officiel) ont été écrites de mémoire. Aucune n'a été comparée au Journal officiel, et un
   texte a pu être modifié ou remplacé depuis.
 - **Catégories, pluriels, synonymes, termes associés.** Rédigés de la même façon. Les termes
-  associés d'une entrée sont ses voisins dans le glossaire.
+  associés d'une entrée sont ses voisins dans le glossaire. Les synonymes ont été complétés
+  dans la version 0.15 : voir la section suivante.
+
+#### Les synonymes (version 0.15)
+
+Jusqu'à la version 0.14, 132 des 1 000 entrées complètes avaient un synonyme : 85 synonymes
+en français, 63 en arabe. La version 0.15 en ajoute **550, pour 381 entrées** : 186 en
+français, 364 en arabe. Maintenant, 462 entrées complètes ont au moins un synonyme : 223 en
+ont en français, 358 en arabe, 119 dans les deux langues. Comme le reste de ces entrées, les
+nouveaux synonymes ont été **écrits de mémoire par un assistant d'intelligence
+artificielle**, sans dictionnaire juridique, et **personne ne les a relus**.
+
+- **Ce qu'ils sont.**
+  - D'autres noms de la même chose : « acquéreur » pour « acheteur », « municipalité » pour
+    « commune », « charia » pour « droit musulman », « détention préventive » pour
+    « détention provisoire », « mise en examen » pour « inculpation », « préjudice moral »
+    pour « dommage moral ».
+  - Des formes plus courtes : « huissier » pour « huissier de justice », « pourvoi » pour
+    « pourvoi en cassation », « blanchiment » pour « blanchiment d'argent ». Et des formes
+    plus longues : « demande en justice » pour « demande », « traité international » pour
+    « traité », « cotisation sociale » pour « cotisation ».
+  - 14 sigles : « ANIE », « APC », « APN », « APW », « CAC », « CIJ », « CSM », « DIH »,
+    « ISTN », « JAP », « JORADP », « OPJ », « PV », « TIG ».
+  - Des mots latins (« pacta sunt servanda », « exceptio non adimpleti contractus ») et des
+    mots arabes écrits en lettres latines (« sadaq », « mahr », « aceb », « chariâa »).
+  - En arabe, souvent le mot en usage dans d'autres pays arabes, ou une autre tournure :
+    « عقد الشغل » pour « عقد العمل », « كراء » pour « إيجار », « كاتب عدل » pour « موثق »,
+    « مفوض قضائي » et « عدل منفذ » pour « محضر قضائي », « الادعاء العام » pour « النيابة
+    العامة », « الحراسة النظرية » pour « التوقيف للنظر », « مذكرة توقيف » pour « الأمر
+    بالقبض », « رئيس الوزراء » pour « الوزير الأول ». Le terme de l'entrée reste celui que
+    l'assistant a retenu pour les textes algériens.
+- **Ce ne sont pas toujours des synonymes exacts.** Beaucoup sont des mots de sens voisin,
+  que le droit distingue parfois. Un « extrait de naissance » est tiré de l'« acte de
+  naissance » : ce n'est pas le même document. « saisie-vente » est donné pour
+  « saisie-exécution », « redressement judiciaire » pour « règlement judiciaire », « حكم
+  تمهيدي » pour « jugement avant dire droit » : ces noms désignent des choses proches, pas
+  toujours identiques. Un mot arabe d'un autre pays peut y désigner une institution un peu
+  différente : le pays où chaque mot est en usage n'a pas été vérifié.
+- **Aucune mention ne les signale dans la fiche.** Pour une entrée complète, la mention
+  « À vérifier » s'affiche sous la définition et sous la phrase d'exemple. Elle ne s'affiche
+  ni dans le cercle « Synonymes », ni sous l'équivalent, où sont écrits les synonymes de
+  l'autre langue. C'était déjà le cas des 148 synonymes plus anciens de ces entrées. Voir
+  la capture du début de cette page.
+- **Tous les termes n'ont pas de synonyme.** 538 entrées complètes n'en ont aucun : « contrat
+  de vente », « nullité », « juge », « créancier », « décret exécutif »… Un synonyme n'a été
+  écrit que là où un autre nom existe.
+- **Comment ils ont été triés.** 646 synonymes avaient été écrits, pour 425 entrées. 97 ont
+  été retirés, et un a été ajouté à la place d'un autre : le nom arabe du Journal officiel,
+  plus bas. Il en reste 550, pour 381 entrées.
+  - **48 ont été retirés par un programme**, parce qu'ils étaient déjà le terme, le pluriel
+    ou le synonyme d'une autre entrée : la recherche de ce mot, et la traduction d'un texte,
+    auraient hésité entre deux fiches. « formation du contrat », « effet rétroactif »,
+    « traducteur assermenté » et « chèque sans provision » ont déjà leur entrée parmi les
+    termes seuls.
+  - **49 ont été retirés après les essais décrits plus bas, et après une relecture.**
+    - Deux lettres : « JO » et « AG ». Beaucoup de termes commencent par ces lettres : la
+      recherche de « AG » trouvait déjà 26 entrées.
+    - Un mot plus large que son terme, ou une autre notion : « الجمارك » pour « إدارة
+      الجمارك » (« قانون الجمارك » devenait « La loi de l'administration des douanes »),
+      « سلعة » pour « بضاعة », « المؤمن عليه » pour « المؤمن له », « contrat de mariage »
+      pour « acte de mariage », « إساءة استعمال السلطة » pour « الانحراف بالسلطة »,
+      « autorité judiciaire » pour « pouvoir judiciaire » (dans « les autorités judiciaires
+      de différents États », « les autorités judiciaires » devenait « السلطة القضائية »).
+    - Un synonyme qui coupait une autre expression : « رأس مال الشركة » prenait « شركة »
+      dans « رأس مال شركة أخرى » ; avec « droit applicable », « règles de droit
+      applicables » n'était plus lu « règles de droit ».
+    - Un nom et son complément que la version 0.14 traduisait déjà un par un : « résolution
+      du contrat », « garde des enfants », « droit de préemption », « capitaine du navire »,
+      « فسخ العقد », « حق الشفعة ». Avec le synonyme, le complément n'était plus écrit :
+      « résolution du contrat » donnait « فسخ » au lieu de « فسخ العقد ».
+  - **Le nom du Journal officiel.** Son nom arabe complet, « الجريدة الرسمية للجمهورية
+    الجزائرية الديمقراطية الشعبية », est donné comme synonyme : il compte six mots. Le nom
+    français complet avait été écrit lui aussi. Il compte neuf mots, et une expression du
+    glossaire n'est lue dans un texte que jusqu'à huit mots : il a été retiré. Des noms plus
+    courts ont été essayés dans les deux langues (« Journal officiel de la République
+    algérienne », « الجريدة الرسمية للجمهورية الجزائرية ») : dans un texte, ils laissaient la
+    fin du nom (« démocratique et populaire ») seule après l'équivalent. Ils ont été
+    retirés, et le nom arabe complet a remplacé le nom arabe court.
+- **Effet sur la recherche d'un terme.** Chacun des 550 synonymes a été cherché avec le
+  glossaire de la version 0.14, puis avec celui de la version 0.15. 523 ne trouvaient rien.
+  27 trouvaient déjà quelque chose : 10 ouvraient déjà la bonne fiche, parce que le terme
+  les contient (« huissier », « pourvoi », « blanchiment ») ; 17 ouvraient une autre fiche
+  (« stipulation » ouvrait « stipulation pour autrui », « flagrance » ouvrait « enquête de
+  flagrance »). Maintenant, les 550 ouvrent d'abord la fiche de leur terme. Les 12 455
+  recherches d'un terme, d'un pluriel ou d'un synonyme plus ancien ouvrent la même fiche
+  qu'avant.
+- **Effet sur la traduction d'un texte.** Les 1 000 entrées complètes sont des noms : dans un
+  texte, un de leurs synonymes est remplacé comme le terme. Un programme a traduit 20 004
+  textes avec le glossaire de la version 0.14, puis avec celui de la version 0.15 : les
+  10 000 définitions et les 10 004 phrases d'exemple, dans les deux langues. Dans
+  l'application, une phrase d'exemple reçoit la traduction écrite dans le glossaire ; pour
+  cet essai, chaque phrase a été traduite mot à mot, comme un texte quelconque. **87
+  traductions changent** : 48 définitions et 39 phrases, chaque fois parce qu'un nouveau
+  synonyme est reconnu. Quand les phrases d'exemple gardent leur traduction écrite, comme
+  dans l'application, les 48 définitions changent de la même façon ; 18 phrases gardent le
+  même texte, et seule la mise en évidence d'un terme y change.
+  - Ce qui est mieux traduit : « huissier » est rendu par « محضر قضائي » dans 10 textes, et
+    « la charia » par « الشريعة الإسلامية » dans 4 ; la version 0.14 laissait ces mots en
+    français. « الأمم المتحدة » est rendu par « l'Organisation des Nations Unies » dans 8
+    textes (avant : « les nations المتحدة »), « محل إقامته » par « sa résidence » (avant :
+    « l'objet de sa résidence »), « Le pourvoi est rejeté » par « الطعن بالنقض est rejeté »,
+    « Le droit humanitaire » par « القانون الدولي الإنساني » (avant : « الحق humanitaire »).
+  - Ce qui est moins précis : un nom long donne l'équivalent court de son entrée, et le mot
+    qui le précisait n'est plus écrit. « demande en justice » donne « الطلب » (avant :
+    « الطلب en عدل »), « cotisations sociales » donne « الاشتراكات » (avant : « الاشتراكات
+    sociales »), « l'âge de la majorité » donne « الرشد » (avant : « l'âge de الرشد »).
+- **Les synonymes traduits un par un.** Chacun des 550 synonymes a aussi été traduit seul.
+  Tous sont reconnus en entier et donnent l'équivalent de leur entrée. Avec la version 0.14,
+  223 n'étaient pas traduits du tout, et 325 l'étaient en partie ou mot à mot : « نقابة
+  المحامين » donnait « Le syndicat des avocats » (maintenant « Le barreau »), « principe de
+  la contradiction » donnait « مبدأ التناقض » (maintenant « مبدأ الوجاهية »). 2 donnent la
+  même traduction qu'avant.
+- **Ce qui n'a pas changé.** Dans le fichier CSV, seules les colonnes `synonymes_fr` et
+  `synonymes_ar` de 381 lignes ont changé : les synonymes déjà écrits sont gardés, les
+  nouveaux les suivent. Les termes seuls gardent leurs synonymes (662 en ont). Le contrôle
+  des phrases (`construire.py --coherence`) donne la même liste qu'avec la version 0.14 : 639
+  phrases à relire.
+- **Où ils sont écrits.** Pour les entrées n° 41 à 1 000 : dans les fichiers de
+  `outils/glossaire/lots/`, à la fin de la ligne de l'entrée (`sf=` pour le français, `sa=`
+  pour l'arabe). Pour 13 des 40 premières entrées : directement dans le fichier CSV.
+- **Une correction faite au passage.** De l'arabe vers le français, l'application écrivait
+  « le huissier de justice » et « du huissier de justice » : elle prenait le « h » de
+  « huissier » pour celui de « huis clos ». Elle écrit maintenant « l'huissier de justice »
+  et « de l'huissier de justice ». Parmi les 10 002 textes arabes du glossaire, traduits
+  mot à mot, 26 traductions changent ainsi : 9 définitions et 17 phrases d'exemple. Dans
+  l'application, où les phrases d'exemple gardent leur traduction écrite, ce sont les 9
+  définitions.
 
 #### Les termes seuls
 
@@ -952,8 +1136,9 @@ spécialiste. **Chaque équivalent est à vérifier**, et chaque définition aus
     « Synonymes » (langue du terme) ou sous l'équivalent, comme « autre équivalent » (autre
     langue), et sa recherche ouvre la fiche du terme. Dans la traduction d'un texte, le
     synonyme d'un nom est remplacé comme ce nom : voir plus bas.
-  - **Les 1 000 entrées complètes** gardent leurs synonymes : 132 en ont. Ils n'ont pas été
-    complétés.
+  - **Les 1 000 entrées complètes** gardaient alors leurs synonymes : 132 en avaient. La
+    version 0.15 les a complétés : voir
+    [Les synonymes (version 0.15)](#les-synonymes-version-015).
   - **Effet sur la traduction d'un texte.** Un programme a traduit 17 994 textes avec la
     version 0.12 puis avec la version 0.13 : toutes les définitions et toutes les phrases
     d'exemple des deux versions, dans les deux langues. 31 traductions changent : chaque
@@ -998,7 +1183,7 @@ spécialiste. **Chaque équivalent est à vérifier**, et chaque définition aus
   urbanisme et environnement, propriété intellectuelle, consommation et numérique, droit
   maritime et nationalité. Le cercle « Contextualisation » est coloré pour tous les termes.
   Voir [Les phrases d'exemple](#les-phrases-dexemple). Les captures du terme « protégé » sont au
-  [début de cette page](#lapplication-version-014).
+  [début de cette page](#lapplication-version-015).
 - **La mention « À vérifier ».** Elle est écrite dans la colonne `source_definition`.
   - Les 4 000 termes seuls ont une définition : la colonne dit « à vérifier (équivalent et
     définition d'exemple) ». L'application affiche « À vérifier · équivalent d'exemple » au
@@ -1485,7 +1670,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 725 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 739 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (5 000 entrées, 70 résultats pour « contrat ») à mettre
@@ -1496,7 +1681,10 @@ phrase d'exemple, et que chaque phrase ait une source ou la mention « à vérif
 termes seuls, ils demandent une mention « à vérifier » qui porte sur l'équivalent,
 et qu'aucun nom seul ne s'écrive comme un autre nom. Depuis la version 0.14, ils demandent aussi
 que chacun des 4 000 termes seuls ait une phrase d'exemple, et une seule : ce nombre est écrit
-dans `tests/conftest.py`. Ils ne comptent pas les phrases « à
+dans `tests/conftest.py`. Depuis la version 0.15, ils comptent les entrées complètes qui ont
+un synonyme (462), et ils demandent qu'aucun de ces synonymes ne soit le terme, le pluriel ou
+le synonyme d'une autre entrée ; douze cas plus anciens sont admis (« convention » pour
+« contrat », « coutume » pour « usage »…). Ils ne comptent pas les phrases « à
 vérifier » : écrire la source d'une phrase dans le fichier CSV ne les fait pas échouer. Une
 phrase qui garde la mention doit contenir le terme en français et son équivalent en arabe.
 
@@ -1542,7 +1730,7 @@ toute seule quand l'application ou l'installeur change :
 
 - sur la branche `main`, l'installeur est publié sur la page
   [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
-  comme version `v0.14.0`, puis `v0.14.1`… ;
+  comme version `v0.15.0`, puis `v0.15.1`… ;
 - sur une branche de travail (`arena/…`), il est publié comme **version d'essai**, remplacée à
   chaque fabrication. Elle sert à essayer un travail avant de le fusionner dans `main` ; elle
   est retirée quand ce travail est fusionné.
@@ -1738,9 +1926,22 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   texte à traduire reçoit sa traduction du glossaire : une erreur dans la phrase arabe passe
   alors dans la traduction. L'application le signale à l'étape 5 et au survol de l'étiquette
   de résultat : elle dit que la phrase est reprise d'un exemple « à vérifier ».
-- **La version 0.14 n'a été regardée sur aucun écran.** La capture du début de cette page a
-  été faite sans écran, sous Linux. Personne n'a regardé les nouvelles phrases dans
-  l'application sous Windows.
+- **Les versions 0.14 et 0.15 n'ont été regardées sur aucun écran.** Les captures du début
+  de cette page ont été faites sans écran, sous Linux. Personne n'a regardé les nouvelles
+  phrases ni les nouveaux synonymes dans l'application sous Windows.
+- **Les 550 synonymes de la version 0.15 n'ont été relus par personne.** Un assistant
+  d'intelligence artificielle les a écrits de mémoire, pour 381 des 1 000 entrées complètes.
+  Beaucoup sont des mots de sens voisin, que le droit distingue parfois (« extrait de
+  naissance » et « acte de naissance », « saisie-vente » et « saisie-exécution »). Les mots
+  arabes donnés comme en usage dans d'autres pays arabes n'ont été comparés à aucun texte de
+  ces pays. Dans la fiche d'une entrée complète, rien ne signale qu'un synonyme est à
+  vérifier : la mention « À vérifier » ne s'affiche que sous la définition et sous la phrase
+  d'exemple. Dans un texte à traduire, un synonyme est remplacé comme le terme : un synonyme
+  faux donne une traduction fausse, sans mention particulière. Un nom long donne
+  l'équivalent court de son entrée : « demande en justice » donne « الطلب », « cotisations
+  sociales » donne « الاشتراكات ». Les essais de traduction ont porté sur les définitions et
+  les phrases du glossaire : un synonyme peut encore couper une expression qu'aucun de ces
+  textes ne contient. Voir [Les synonymes (version 0.15)](#les-synonymes-version-015).
 - **Les 4 000 définitions de la version 0.13 n'ont été relues par personne.** Un assistant
   d'intelligence artificielle les a écrites de mémoire, sans dictionnaire juridique et sans
   les textes de loi. Une définition peut être incomplète, trop large ou inexacte en droit
@@ -1751,9 +1952,11 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
 - **Synonymes.** Ceux de la version 0.13 (707, pour 531 termes) ont été écrits de la même
   façon. Beaucoup sont des mots de sens voisin plutôt que des synonymes exacts, et le droit
   distingue parfois les deux mots. 3 338 termes seuls n'ont aucun synonyme : c'est le cas de
-  2 853 des 3 072 noms des domaines. Les synonymes écrits avant la version 0.13 n'ont pas été
-  revus, et ceux des 1 000 entrées complètes n'ont pas été complétés. L'application n'affiche
-  pas de mention propre aux synonymes : celle de l'équivalent vaut pour toute l'entrée.
+  2 853 des 3 072 noms des domaines. 538 entrées complètes n'en ont pas non plus. Les
+  synonymes écrits avant la version 0.13 n'ont pas été revus. L'application n'affiche pas de
+  mention propre aux synonymes. Pour un terme seul, celle de l'équivalent vaut pour toute
+  l'entrée. Pour une entrée complète, l'équivalent n'a pas de mention : rien ne signale que
+  ses synonymes sont à vérifier.
 - **Termes seuls du glossaire fourni.** Les 4 000 entrées ajoutées dans les versions 0.8 et 0.9
   ont été écrites de mémoire par un assistant d'intelligence artificielle, et aucun juriste
   ne les a relues. Un
@@ -1933,7 +2136,7 @@ partie de l'application.
 ## Maquette de l'application de bureau
 
 Maquette SVG des deux écrans du prototype (version 0.1). Les deux écrans sont programmés (voir
-[L'application](#lapplication-version-014)). L'application actuelle ne ressemble plus à cette
+[L'application](#lapplication-version-015)). L'application actuelle ne ressemble plus à cette
 maquette : elle est gardée pour mémoire.
 
 ### Écran 1 — Recherche d'un terme

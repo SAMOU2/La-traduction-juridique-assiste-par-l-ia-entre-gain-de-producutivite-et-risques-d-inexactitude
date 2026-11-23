@@ -275,6 +275,21 @@ def test_genre_inconnu_pas_d_article_devant_une_consonne():
     assert balise(traducteur.traduire("المحاكم.", AR)) == "{المحاكم}."
 
 
+def test_h_muet_et_h_aspire():
+    """« l’huissier », « l’hypothèque » : le « h » est muet. « le huis clos », « la hausse » : il est aspiré.
+
+    « huissier » commence comme « huis clos » : jusqu'à la version 0.14, l'application écrivait « le huissier ».
+    """
+    traducteur = Traducteur(glossaire_de(
+        "terme_fr;terme_ar;categorie_fr\n"
+        "huissier de justice;محضر قضائي;nom masculin\nhuis clos;جلسة سرية;nom masculin\n"
+        "hypothèque;رهن رسمي;nom féminin\nhausse;ارتفاع;nom féminin\nacte;عقد;nom masculin\n"))
+    assert balise(traducteur.traduire("المحضر القضائي والرهن الرسمي.", AR)) == (
+        "[L’huissier de justice] {و} [l’hypothèque].")
+    assert balise(traducteur.traduire("عقد المحضر القضائي.", AR)) == "[L’acte] [de l’huissier de justice]."
+    assert balise(traducteur.traduire("الجلسة السرية والارتفاع.", AR)) == "[Le huis clos] {و} [la hausse]."
+
+
 def test_pluriel_deduit_quand_la_colonne_est_vide():
     traducteur = Traducteur(glossaire_de(
         "terme_fr;terme_ar;categorie_fr\ntribunal;محكمة;nom masculin\njugement;حكم;nom masculin\n"
