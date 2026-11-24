@@ -45,7 +45,6 @@ _FIN_DE_PARAGRAPHE = re.compile(r"</p>\s*<p[^>]*>|<br\s*/?>")
 
 
 def textes(widget) -> list[str]:
-    """Textes des étiquettes d'un widget : sans balises, sans marque de direction, non abrégés."""
     resultat = []
     for label in widget.findChildren(QLabel):
         texte = label.texte_complet() if isinstance(label, EtiquetteCourte) else label.text()
