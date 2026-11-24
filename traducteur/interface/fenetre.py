@@ -118,22 +118,21 @@ class SelecteurSens(QFrame):
 
 
 class TitreDePage(QWidget):
-    """Titre d'un écran d'information, affiché dans la barre d'outils : un titre et une ligne d'explication."""
+    """Titre d'un écran d'information, affiché dans la barre d'outils à la place des commandes.
+
+    Le titre est seul, au milieu de la hauteur de la barre. Jusqu'à la version 0.15, une ligne grise résumait
+    l'écran sous le titre.
+    """
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
         colonne = QVBoxLayout(self)
-        colonne.setContentsMargins(0, 2, 0, 0)
-        colonne.setSpacing(1)
+        colonne.setContentsMargins(0, 0, 0, 0)
         self.titre = etiquette("", "titrePage")
-        self.sous_titre = EtiquetteCourte("", "sousTitrePage")
-        colonne.addWidget(self.titre)
-        colonne.addWidget(self.sous_titre)
-        colonne.addStretch(1)
+        colonne.addWidget(self.titre, 0, Qt.AlignmentFlag.AlignVCenter)
 
-    def definir(self, titre: str, sous_titre: str) -> None:
+    def definir(self, titre: str) -> None:
         self.titre.setText(titre)
-        self.sous_titre.definir_texte(sous_titre)
 
 
 # ====================================================================== barre d'état
@@ -572,7 +571,7 @@ class FenetrePrincipale(QMainWindow):
         if travail:
             self.sens.afficher(page.source)
         else:
-            self.titre_de_page.definir(page.TITRE, page.SOUS_TITRE)
+            self.titre_de_page.definir(page.TITRE)
         self.rail.definir(mode)
         self.actions_mode[mode].setChecked(True)
         self.action_inverser.setEnabled(travail)

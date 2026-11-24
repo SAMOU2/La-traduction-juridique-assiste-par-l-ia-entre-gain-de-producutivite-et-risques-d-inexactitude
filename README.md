@@ -56,6 +56,13 @@ ni corrigé.
     plus : il les prend dans tout le glossaire.
   - Sous un seul synonyme qui n'a pas de fiche, la légende passe au singulier : « Ce terme n'a
     pas encore d'entrée dans le glossaire ».
+  - « Paramètres » et le centre d'aide affichent moins de texte. Sous le titre de ces deux
+    écrans, et de « Description de la plateforme », la ligne grise qui résumait l'écran n'est
+    plus affichée. Dans « Paramètres » et dans la première carte du centre d'aide, les phrases
+    d'explication ne le sont plus non plus : ce qui explique un réglage ou un bouton se lit
+    dans son infobulle, quand le pointeur s'arrête dessus. Les réglages, les boutons, les
+    questions fréquentes et les raccourcis sont les mêmes. Le détail est
+    [plus bas](#paramètres-description-de-la-plateforme-centre-daide).
 - **Ce qui reste à faire.** Faire relire les équivalents, les définitions, les phrases et les
   synonymes par un juriste et par un traducteur. Les entrées n° 41 à 5 000 ont été écrites de
   mémoire par un assistant d'intelligence artificielle, et **personne n'a relu le glossaire**.
@@ -367,21 +374,21 @@ on voit le bureau ou la fenêtre qui se trouve derrière :
 ![Centre d'aide](docs/apercu-aide.png)
 
 *Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
-l'autre. Les captures des écrans « Texte » et « Paramètres » sont celles de la version 0.10 :
-ces deux écrans n'ont pas changé depuis. Celles de l'écran « Terme » (« contrat »), du terme
-« testament » et du centre d'aide ont été refaites avec la version 0.16, comme celle qui ouvre
-cette page. Les autres captures de l'écran « Terme » montrent la version qui les a apportées :
-celle du terme « protégé » avec sa phrase est de la version 0.11, celle du terme « chèque
-barré » de la version 0.12, celles des termes « protégé » et « diversité biologique » avec leur
-définition de la version 0.13, celle du terme « diversité biologique » avec sa phrase de la
-version 0.14, celle du terme « huissier de justice » trouvé par son synonyme de la
-version 0.15. Elles ne montrent pas ce que la version 0.16 a changé : la mention « À vérifier »
-y manque sous l'équivalent de « huissier de justice » et au-dessus de son synonyme, et elle est
-au singulier sous l'équivalent de « protégé » et de « diversité biologique », qui ont d'autres
-équivalents. Celle de l'écran de démarrage date de la version 0.5.2 : cet écran n'a pas changé
-depuis. L'adresse affichée dans le centre d'aide est un exemple. La capture de
-l'[installation](#installation) a été faite sous Windows, avec la version 0.5.3 : elle montre
-l'ancienne fiche, à cinq colonnes.*
+l'autre. La capture de l'écran « Texte » est celle de la version 0.10 : refaite avec la
+version 0.16, elle est identique. Celles de l'écran « Terme » (« contrat »), du terme
+« testament », de l'écran « Paramètres » et du centre d'aide ont été refaites avec la
+version 0.16, comme celle qui ouvre cette page. Les autres captures de l'écran « Terme »
+montrent la version qui les a apportées : celle du terme « protégé » avec sa phrase est de la
+version 0.11, celle du terme « chèque barré » de la version 0.12, celles des termes « protégé »
+et « diversité biologique » avec leur définition de la version 0.13, celle du terme « diversité
+biologique » avec sa phrase de la version 0.14, celle du terme « huissier de justice » trouvé
+par son synonyme de la version 0.15. Elles ne montrent pas ce que la version 0.16 a changé : la
+mention « À vérifier » y manque sous l'équivalent de « huissier de justice » et au-dessus de
+son synonyme, et elle est au singulier sous l'équivalent de « protégé » et de « diversité
+biologique », qui ont d'autres équivalents. Celle de l'écran de démarrage date de la
+version 0.5.2 : cet écran n'a pas changé depuis. L'adresse affichée dans le centre d'aide est
+un exemple. La capture de l'[installation](#installation) a été faite sous Windows, avec la
+version 0.5.3 : elle montre l'ancienne fiche, à cinq colonnes.*
 
 ### Ce qui est fait, ce qui reste à faire
 
@@ -392,7 +399,7 @@ l'ancienne fiche, à cinq colonnes.*
 | Écran « Texte » : zones de texte, segmentation en phrases, découpage en mots, recherche de chaque mot dans le CSV, règles lexicales, grammaticales et sémantiques, reconstruction du paragraphe | Fait, dans les deux sens. La traduction se limite au contenu du glossaire : voir [Comment le texte est traduit](#comment-le-texte-est-traduit). Depuis la version 0.10 : le texte et sa traduction côte à côte, la liste des termes dessous, et un clic sur un terme ouvre sa fiche. |
 | Import de fichiers `.txt`, `.docx`, `.doc` | Fait |
 | Export de la traduction en `.docx` ou `.txt` | Fait. L'export au format `.doc` n'est pas proposé ; Word ouvre les fichiers `.docx`. |
-| Écran de démarrage, barre latérale, écrans « Paramètres », « Description de la plateforme » et « Centre d'aide » | Fait (version 0.4). Sous Windows, personne ne les a encore regardés : voir les [limites connues](#limites-connues). |
+| Écran de démarrage, barre latérale, écrans « Paramètres », « Description de la plateforme » et « Centre d'aide » | Fait (version 0.4). « Paramètres » et le centre d'aide affichent moins de texte depuis la version 0.16. Sous Windows, personne ne les a encore regardés : voir les [limites connues](#limites-connues). |
 | Écrans « Terme » et « Texte » allégés | Fait (version 0.10). Vérifiés sur des captures faites sans écran : **ils restent à regarder sur un écran réel**. Voir les [limites connues](#limites-connues). |
 | Contextes cherchés dans tout le glossaire | Fait. |
 | Une phrase d'exemple pour chacune des 1 000 premières entrées du glossaire fourni | Fait (version 0.5). 969 phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Le glossaire d'exemple](#le-glossaire-dexemple). |
@@ -687,16 +694,23 @@ Chaque écran garde son propre sens de traduction.
 
 **Paramètres**
 
+Depuis la version 0.16, l'écran ne montre que ce qui se règle : un nom, une valeur, un bouton.
+Ce qui explique un réglage s'affiche dans son **infobulle**, quand le pointeur s'arrête dessus.
+
 - *Glossaire* : le glossaire chargé (« Glossaire juridique » pour le glossaire fourni, le nom
   du fichier pour un autre) et son nombre d'entrées.
   - **Choisir un autre fichier…** charge un autre fichier CSV. L'application le rouvrira au
-    prochain lancement.
+    prochain lancement. L'infobulle du bouton dit où trouver le format du fichier : dans le
+    centre d'aide.
   - **Recharger** relit le fichier après une modification.
   - **Revenir au glossaire fourni** reprend `donnees/glossaire_juridique.csv`.
-- *Affichage* : deux interrupteurs, l'un pour les animations (les cercles du menu « Plus de
-  détails » s'allument l'un après l'autre), l'autre pour l'écran de démarrage.
+- *Affichage* : deux interrupteurs. « Animations » : les cercles du menu « Plus de détails »
+  s'allument l'un après l'autre quand une fiche s'affiche. « Écran de démarrage » : le logo
+  animé s'affiche pendant l'ouverture de l'application. L'écran n'affiche que les deux noms ;
+  l'infobulle de chaque ligne dit ce que fait le réglage.
 - *Service informatique* : l'adresse électronique du service informatique. **Elle est vide à
-  l'installation.** Il faut la saisir une fois, puis cliquer sur **Enregistrer**.
+  l'installation.** Il faut la saisir une fois, puis cliquer sur **Enregistrer**. L'infobulle
+  du champ dit à quoi sert l'adresse : le centre d'aide l'utilise pour préparer un message.
 
 **Description de la plateforme** — ce que fait l'application, la fiche d'un terme (ses deux
 colonnes et les six informations du menu « Plus de détails »), les deux écrans de travail, la
@@ -704,12 +718,15 @@ façon dont un texte est traduit, et ce qu'il faut savoir avant de se fier à un
 
 **Centre d'aide**
 
+- Depuis la version 0.16, la première carte n'affiche que l'adresse du service informatique, à
+  côté de l'enveloppe, et ses boutons.
 - **Écrire au service informatique** ouvre le logiciel de messagerie de l'ordinateur sur un
   message déjà adressé. Le message indique la version de l'application, le système et le
   glossaire utilisés : il reste à décrire le problème. L'application n'envoie rien elle-même.
+  L'infobulle du bouton dit ce que le message contient déjà.
 - Si aucun logiciel de messagerie ne répond, l'adresse est copiée dans le presse-papiers, pour
   écrire depuis une autre messagerie. **Copier l'adresse** la copie directement.
-- Tant que l'adresse n'est pas saisie, le bouton renvoie à « Paramètres ».
+- Tant que l'adresse n'est pas saisie, la carte le dit, et le bouton renvoie à « Paramètres ».
 - Six questions fréquentes, puis la liste des raccourcis du clavier.
 
 ### Comment le texte est traduit
@@ -1766,7 +1783,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 756 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 758 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (5 000 entrées, 70 résultats pour « contrat ») à mettre
@@ -2034,9 +2051,10 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   de résultat : elle dit que la phrase est reprise d'un exemple « à vérifier ».
 - **Les versions 0.14, 0.15 et 0.16 n'ont été regardées sur aucun écran.** Les captures du
   début de cette page ont été faites sans écran, sous Linux. Personne n'a regardé les nouvelles
-  phrases, les nouveaux synonymes ni les nouvelles mentions dans l'application sous Windows. La
-  place de la mention au-dessus des synonymes a été mesurée par les tests et regardée sur des
-  captures, en français et en arabe.
+  phrases, les nouveaux synonymes ni les nouvelles mentions dans l'application sous Windows, ni
+  les écrans « Paramètres » et « Centre d'aide » de la version 0.16. La place de la mention
+  au-dessus des synonymes a été mesurée par les tests et regardée sur des captures, en français
+  et en arabe.
 - **La mention « À vérifier » est sur chaque fiche.** Depuis la version 0.16, les 5 000
   équivalents du glossaire fourni la portent : elle dit vrai, puisque personne ne les a relus,
   mais elle ne distingue plus une entrée d'une autre. Elle redeviendra utile à mesure que des
@@ -2108,6 +2126,12 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
 - **Mention « À vérifier » dans une colonne étroite.** Sur la fiche, quand la place manque à
   côté de l'étiquette *Exemple de « … »*, la mention se réduit à son point d'exclamation
   orange ; le texte s'affiche quand on y laisse le pointeur.
+- **Explications dans les infobulles.** Depuis la version 0.16, sur « Paramètres » et dans la
+  première carte du centre d'aide, ce qui explique un réglage ou un bouton n'est plus écrit
+  dans la fenêtre : il faut laisser le pointeur de la souris dessus pour le lire. En passant
+  d'un réglage à l'autre au clavier, l'infobulle ne s'affiche pas. Rien n'a été essayé sur un
+  écran tactile. L'application déclare aussi le texte de chaque infobulle de ces deux écrans
+  comme description, pour les lecteurs d'écran ; aucun lecteur d'écran n'a été essayé.
 - **Message au service informatique.** L'application demande au système d'ouvrir le logiciel
   de messagerie de l'ordinateur ; elle n'envoie rien elle-même. Cela n'a été essayé avec aucun
   logiciel de messagerie. Si le système répond qu'il ne peut pas ouvrir le message, l'adresse
