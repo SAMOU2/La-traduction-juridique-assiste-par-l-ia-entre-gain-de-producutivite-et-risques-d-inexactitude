@@ -12,11 +12,63 @@ Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont p
 [proposition d'interface](#la-proposition-dinterface) et la
 [première maquette](#maquette-de-lapplication-de-bureau).
 
-## L'application (version 0.15)
+## L'application (version 0.16)
 
-La version 0.15 **complète les synonymes des 1 000 entrées complètes** du glossaire, en
-français et en arabe. Avant elle, 132 de ces entrées avaient un synonyme. Maintenant, **462
-en ont** : 223 en français, 358 en arabe.
+La version 0.16 **écrit la mention « À vérifier » là où elle manquait** : sous l'équivalent des
+1 000 entrées complètes, et au-dessus des synonymes de toutes les entrées. Le glossaire garde
+le contenu de la version 0.15 : aucun terme, aucun équivalent et aucun synonyme n'a été ajouté
+ni corrigé.
+
+- **Sous l'équivalent, pour les 5 000 entrées.** Au pied de l'équivalent, la fiche écrit
+  « À vérifier · équivalent d'exemple ». Jusqu'à la version 0.15, seuls les 4 000 termes seuls
+  portaient cette mention. Les 1 000 entrées complètes (« contrat », « huissier de justice »)
+  ne l'avaient pas, alors que personne n'a relu leurs équivalents non plus.
+- **Au pluriel quand il y a d'autres équivalents.** Sous l'équivalent, la fiche liste les
+  « autres équivalents » : ce sont les synonymes de la langue cible. La mention devient alors
+  « À vérifier · équivalents d'exemple » : elle vaut pour tous. Du français vers l'arabe, 654
+  fiches l'écrivent ainsi ; de l'arabe vers le français, 769.
+- **Au-dessus des synonymes.** Dans le cercle « Synonymes », la fiche écrit « À vérifier ·
+  synonymes d'exemple », ou « synonyme d'exemple » s'il n'y en a qu'un. C'est le cas des 769
+  entrées qui ont un synonyme français et des 654 qui ont un synonyme arabe. Jusqu'à la
+  version 0.15, rien ne signalait un synonyme dans ce cercle.
+- **Ce que dit la mention.** Laisser le pointeur dessus affiche son explication : « Ces
+  synonymes ne sont repris d'aucun texte officiel ni d'aucun dictionnaire : vérifiez-les avant
+  de les employer. Dans un texte à traduire, un synonyme est traduit comme le terme. » **La
+  mention ne vérifie rien** : elle rappelle ce qui reste à contrôler.
+- **Une colonne de plus dans le glossaire : `source_equivalent`.** C'est la troisième, après
+  `terme_ar`. Dans le glossaire fourni, elle dit « à vérifier (équivalent d'exemple) » pour les
+  5 000 entrées. Une fois l'équivalent et les synonymes d'une entrée contrôlés, y écrire la
+  source, par exemple « Code civil, art. 54 » : la fiche affiche alors « Source : Code civil,
+  art. 54 » au pied de l'équivalent, et la mention des synonymes disparaît. Les synonymes n'ont
+  pas de colonne à eux : ils suivent celle de l'équivalent. Un glossaire qui n'a pas cette
+  colonne est lu comme avant.
+- **Sur l'écran « Texte ».** Dans la liste des termes, l'infobulle de chaque case dit
+  « Équivalent à vérifier : il n'est repris d'aucune source citée. » Jusqu'à la version 0.15,
+  seules les cases des termes seuls le disaient. **La traduction ne change pas** : un programme
+  a traduit les 20 004 définitions et phrases d'exemple du glossaire avec la version 0.15, puis
+  avec la version 0.16, telles quelles et mot à mot. Les 40 008 traductions sont identiques.
+- **Le reste.**
+  - Dans le centre d'aide, la réponse à « Que signifie la mention « À vérifier » ? » parle des
+    synonymes et de la nouvelle colonne.
+  - L'écran « Terme », avant toute recherche, propose d'autres termes en exemple : « contrat »,
+    « protection », « incapacité permanente », « endossement pignoratif », « avantage fiscal ».
+    Il les prenait parmi les entrées dont l'équivalent n'était pas à vérifier. Il n'y en a
+    plus : il les prend dans tout le glossaire.
+  - Sous un seul synonyme qui n'a pas de fiche, la légende passe au singulier : « Ce terme n'a
+    pas encore d'entrée dans le glossaire ».
+- **Ce qui reste à faire.** Faire relire les équivalents, les définitions, les phrases et les
+  synonymes par un juriste et par un traducteur. Les entrées n° 41 à 5 000 ont été écrites de
+  mémoire par un assistant d'intelligence artificielle, et **personne n'a relu le glossaire**.
+  Après chaque contrôle, la source s'écrit dans le glossaire, à la place de la mention.
+
+![Le terme « huissier de justice » dans la version 0.16 : la mention « À vérifier » sous l'équivalent et ses deux autres équivalents, et au-dessus du synonyme « huissier »](docs/apercu-huissier-a-verifier.png)
+
+Le détail est plus bas : paragraphe « La mention « À vérifier » » de la partie « Utiliser
+l'écran « Terme » », et [Le glossaire CSV](#le-glossaire-csv).
+
+La version 0.15 avait **complété les synonymes des 1 000 entrées complètes** du glossaire, en
+français et en arabe. Avant elle, 132 de ces entrées avaient un synonyme. Depuis, **462 en
+ont** : 223 en français, 358 en arabe.
 
 - **550 synonymes de plus**, pour 381 entrées : 186 en français, 364 en arabe. Par exemple,
   « huissier de justice » (« محضر قضائي ») reçoit « huissier » en français, « مفوض قضائي » et
@@ -33,16 +85,16 @@ en ont** : 223 en français, 358 en arabe.
 - **À quoi sert un synonyme.** Il s'affiche dans la fiche : dans le cercle « Synonymes »
   pour la langue du terme, sous l'équivalent pour l'autre langue (« Autres équivalents »).
   Sa recherche ouvre la fiche du terme. Et dans un texte à traduire, il est remplacé comme
-  le terme : « L'huissier signifie le jugement à l'acquéreur. » donne maintenant « المحضر
+  le terme : « L'huissier signifie le jugement à l'acquéreur. » donne depuis « المحضر
   القضائي signifie الحكم à المشتري. » La version 0.14 laissait « huissier » et « acquéreur »
   en français.
 - **Ces synonymes ont été écrits de mémoire par un assistant d'intelligence artificielle.
   Aucun juriste et aucun traducteur ne les a relus.** Beaucoup sont des mots de sens voisin,
   que le droit distingue parfois : un « extrait de naissance » n'est pas tout à fait un
   « acte de naissance », ni une « saisie-vente » une « saisie-exécution ». Le pays où un mot
-  arabe est en usage n'a pas été vérifié. **Dans la fiche, rien ne signale que ces synonymes
-  sont à vérifier** : pour une entrée complète, la mention « À vérifier » ne s'affiche que
-  sous la définition et sous la phrase d'exemple.
+  arabe est en usage n'a pas été vérifié. **Dans la fiche de la version 0.15, rien ne
+  signalait que ces synonymes étaient à vérifier** : pour une entrée complète, la mention
+  « À vérifier » ne s'affichait que sous la définition et sous la phrase d'exemple.
 - **97 synonymes ont été retirés avant la publication**, sur 646 écrits, et un a été ajouté
   à la place d'un autre. 48 étaient déjà le terme, le pluriel ou le synonyme d'une autre
   entrée. 49 ont été retirés après des essais de traduction et une relecture : par exemple
@@ -51,21 +103,23 @@ en ont** : 223 en français, 358 en arabe.
   déjà un par un).
 - **538 entrées complètes n'ont toujours aucun synonyme** : un synonyme n'a été écrit que là
   où un autre nom existe.
-- **La traduction d'un texte change peu.** Un programme a traduit 20 004 textes avec le
-  glossaire de la version 0.14, puis avec celui de la version 0.15 : toutes les définitions
-  et toutes les phrases d'exemple, dans les deux langues, traduites mot à mot. 87
-  traductions changent (48 définitions, 39 phrases), chaque fois parce qu'un nouveau
-  synonyme est reconnu : « huissier » dans 10 textes, « الأمم المتحدة » dans 8
+- **La traduction d'un texte avait peu changé.** Un programme avait traduit 20 004 textes
+  avec le glossaire de la version 0.14, puis avec celui de la version 0.15 : toutes les
+  définitions et toutes les phrases d'exemple, dans les deux langues, traduites mot à mot.
+  87 traductions changeaient (48 définitions, 39 phrases), chaque fois parce qu'un nouveau
+  synonyme était reconnu : « huissier » dans 10 textes, « الأمم المتحدة » dans 8
   (« l'Organisation des Nations Unies » ; la version 0.14 écrivait « les nations
   المتحدة »). Dans l'application, une phrase d'exemple reçoit la traduction écrite dans le
-  glossaire : seules les 48 définitions changent de traduction, et 18 phrases d'exemple
-  changent de mise en évidence.
+  glossaire : seules les 48 définitions changeaient de traduction, et 18 phrases d'exemple
+  changeaient de mise en évidence.
 - **Une correction.** De l'arabe vers le français, l'application écrivait « le huissier de
-  justice ». Elle écrit maintenant « l'huissier de justice ».
-- **Ce qui reste à faire.** Faire relire les équivalents, les définitions, les phrases et
-  les synonymes par un juriste et par un traducteur.
+  justice ». Elle écrit depuis « l'huissier de justice ».
+- Il restait alors à signaler ces synonymes dans la fiche : la version 0.16 l'a fait.
 
 ![Le terme « huissier de justice », trouvé par son synonyme « huissier » : cercle « Synonymes » ouvert, et les deux autres équivalents arabes sous l'équivalent](docs/apercu-huissier-synonyme.png)
+
+*Capture de la version 0.15 : la mention « À vérifier » n'y est pas encore, ni sous
+l'équivalent, ni au-dessus du synonyme.*
 
 Le détail est dans [Les synonymes (version 0.15)](#les-synonymes-version-015).
 
@@ -127,8 +181,9 @@ deux langues.
   d'intelligence artificielle. Aucun juriste et aucun traducteur ne les a relus.**
   L'application affiche la définition sous la mention **À vérifier**. Une définition peut
   être incomplète ou fausse. Environ 70 définitions donnent un chiffre (un délai, un âge, une
-  durée) : il a été écrit de mémoire, lui aussi. Les synonymes n'ont pas de mention à eux :
-  celle de l'équivalent, dans la fiche, vaut pour toute l'entrée.
+  durée) : il a été écrit de mémoire, lui aussi. Les synonymes n'avaient pas de mention à
+  eux : celle de l'équivalent, dans la fiche, valait pour toute l'entrée. Ils ont la leur
+  depuis la version 0.16.
 - Il restait alors 987 termes seuls sans phrase d'exemple : les noms des cinq derniers
   fichiers de termes. La version 0.14 la leur a donnée.
 - La traduction d'un texte a peu changé. Elle ne remplace que les noms, et 267 des nouveaux
@@ -258,7 +313,8 @@ comptait alors :
 
 ![Le terme « testament », cercle « Contextualisation » ouvert : sa phrase d'exemple et celle d'une autre entrée, à vérifier](docs/apercu-contexte.png)
 
-*Capture de la version 0.10 : la contextualisation s'ouvre par son cercle.*
+*Capture de la version 0.16 : la contextualisation s'ouvre par son cercle, et l'équivalent
+porte lui aussi la mention « À vérifier ».*
 
 Le détail est dans [Le glossaire d'exemple](#le-glossaire-dexemple).
 
@@ -311,15 +367,21 @@ on voit le bureau ou la fenêtre qui se trouve derrière :
 ![Centre d'aide](docs/apercu-aide.png)
 
 *Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
-l'autre. Les captures des écrans « Terme », « Texte », « Paramètres » et du centre d'aide sont
-celles de la version 0.10 ; celle du terme « protégé » avec sa phrase est de la version 0.11,
-celle du terme « chèque barré » de la version 0.12, celles des termes « protégé » et
-« diversité biologique » avec leur définition de la version 0.13, celle du terme « diversité
-biologique » avec sa phrase de la version 0.14, celle du terme « huissier de justice » avec
-ses synonymes de la version 0.15. Celle de l'écran de
-démarrage date de la version 0.5.2 : cet écran n'a pas changé depuis. L'adresse affichée dans
-le centre d'aide est un exemple. La capture de l'[installation](#installation) a été faite
-sous Windows, avec la version 0.5.3 : elle montre l'ancienne fiche, à cinq colonnes.*
+l'autre. Les captures des écrans « Texte » et « Paramètres » sont celles de la version 0.10 :
+ces deux écrans n'ont pas changé depuis. Celles de l'écran « Terme » (« contrat »), du terme
+« testament » et du centre d'aide ont été refaites avec la version 0.16, comme celle qui ouvre
+cette page. Les autres captures de l'écran « Terme » montrent la version qui les a apportées :
+celle du terme « protégé » avec sa phrase est de la version 0.11, celle du terme « chèque
+barré » de la version 0.12, celles des termes « protégé » et « diversité biologique » avec leur
+définition de la version 0.13, celle du terme « diversité biologique » avec sa phrase de la
+version 0.14, celle du terme « huissier de justice » trouvé par son synonyme de la
+version 0.15. Elles ne montrent pas ce que la version 0.16 a changé : la mention « À vérifier »
+y manque sous l'équivalent de « huissier de justice » et au-dessus de son synonyme, et elle est
+au singulier sous l'équivalent de « protégé » et de « diversité biologique », qui ont d'autres
+équivalents. Celle de l'écran de démarrage date de la version 0.5.2 : cet écran n'a pas changé
+depuis. L'adresse affichée dans le centre d'aide est un exemple. La capture de
+l'[installation](#installation) a été faite sous Windows, avec la version 0.5.3 : elle montre
+l'ancienne fiche, à cinq colonnes.*
 
 ### Ce qui est fait, ce qui reste à faire
 
@@ -338,6 +400,7 @@ sous Windows, avec la version 0.5.3 : elle montre l'ancienne fiche, à cinq colo
 | Une définition et des synonymes pour chaque terme seul | **Fait (version 0.13) : les 4 000 termes seuls ont une définition** dans les deux langues, et 662 ont au moins un synonyme. Les définitions et les synonymes sont rédigés par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les termes seuls](#les-termes-seuls). |
 | Une phrase d'exemple pour chaque terme seul | **Fait (version 0.14) : les 4 000 termes seuls ont leur phrase**, dans les deux langues : 1 887 depuis la version 0.11, 1 126 depuis la version 0.12, 987 depuis la version 0.14. Les phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les phrases d'exemple](#les-phrases-dexemple). |
 | Des synonymes pour les 1 000 entrées complètes | **Fait (version 0.15) : 462 entrées complètes ont au moins un synonyme**, contre 132 avant : 223 en ont en français, 358 en arabe. Les 550 nouveaux synonymes sont rédigés par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les synonymes (version 0.15)](#les-synonymes-version-015). |
+| La mention « À vérifier » sous chaque équivalent et au-dessus des synonymes | **Fait (version 0.16) : la fiche des 5 000 entrées porte la mention sous l'équivalent**, et le cercle « Synonymes » la porte au-dessus des synonymes : 769 entrées ont un synonyme français, 654 un synonyme arabe. La mention signale ce qui est à contrôler : **elle ne vérifie rien**. Voir [Le glossaire CSV](#le-glossaire-csv). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
 | Liaison avec un service d'intelligence artificielle en ligne | Essayée dans la version 0.6, **retirée dans la version 0.7** : voir [L'essai d'un service d'IA (version 0.6)](#lessai-dun-service-dia-version-06). L'application ne se connecte à rien. |
 | Installeur pour Windows (fichier `.msi`) | Fait (version 0.5.3) : voir [Installation](#installation). Il est fabriqué et essayé automatiquement sur une machine Windows. **Personne ne l'a encore installé à la main** : voir les [limites connues](#limites-connues). |
@@ -354,7 +417,7 @@ Il y a deux façons d'installer l'application :
 1. Ouvrir la page
    [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
    du dépôt. Sous la version la plus récente, dans « Assets », télécharger le fichier dont le
-   nom finit par `.msi`, par exemple `Traducteur-juridique-0.15.0.msi`.
+   nom finit par `.msi`, par exemple `Traducteur-juridique-0.16.0.msi`.
 2. Double-cliquer sur le fichier téléchargé.
 3. Cliquer sur **Suivant**, puis sur **Installer**, puis sur **Terminer**. L'application s'ouvre.
 
@@ -467,7 +530,9 @@ L'écran a deux parties : en haut, la **fiche** du terme ; dessous, le menu **Pl
 - La **fiche** a deux colonnes :
   - à gauche, le **terme**, avec sa catégorie grammaticale, son pluriel et son domaine ;
   - à droite, sur fond bleu, son **équivalent**, avec sa catégorie, son pluriel et ses autres
-    équivalents. **Copier l'équivalent** le place dans le presse-papiers.
+    équivalents. Au pied de la colonne : la mention **À vérifier**, ou la source de
+    l'équivalent quand le glossaire en cite une. **Copier l'équivalent** place l'équivalent
+    dans le presse-papiers.
 - Un terme qui a plusieurs sens (« action » : « دعوى » ou « سهم ») a un onglet par sens, en
   haut de la fiche.
 - Les deux flèches placées en bas de la colonne du terme ouvrent l'entrée précédente et
@@ -484,7 +549,7 @@ L'écran a deux parties : en haut, la **fiche** du terme ; dessous, le menu **Pl
 | **Ressources** | Les textes de loi, les ouvrages et les sites à consulter. **Copier les références** les place dans le presse-papiers. Un clic sur l'adresse d'un site l'ouvre dans le navigateur. |
 | **Expressions** | Les autres entrées du glossaire trouvées par la recherche (« contrat de vente » pour « contrat »). Un clic sur une ligne ouvre sa fiche. |
 | **Termes associés** | Les termes qu'on rencontre avec celui-ci. |
-| **Synonymes** | Les synonymes du terme, dans la même langue. |
+| **Synonymes** | Les synonymes du terme, dans la même langue. La mention « À vérifier » les précède quand l'équivalent la porte. |
 
 - Un cercle **coloré** a quelque chose à montrer. Une pastille donne le nombre d'éléments :
   « 2 » phrases, « 69 » expressions.
@@ -538,24 +603,33 @@ glossaire : voir [Corriger le glossaire](#corriger-le-glossaire).
 
 **La mention « À vérifier ».** Elle est écrite en orange, à côté d'un point d'exclamation.
 
-- Sous la définition, elle signale une définition sans source : la colonne
-  `source_definition` est vide, ou commence par « à vérifier ». C'est le cas de 4 993 des
-  5 000 définitions du glossaire fourni : 993 des 1 000 entrées complètes, et les 4 000
-  définitions des termes seuls.
-- Dans la fiche, au pied de l'équivalent, elle signale un équivalent à vérifier. C'est le cas
-  d'un terme sans définition dont la colonne `source_definition` commence par « à vérifier »,
-  et d'un terme dont cette colonne dit « à vérifier (équivalent et définition d'exemple) ».
-  Les 4 000 termes seuls du glossaire fourni sont dans le second cas : « À vérifier ·
-  équivalent d'exemple » au pied de l'équivalent, et « À vérifier · définition d'exemple »
-  sous la définition. Un terme sans définition dont la colonne `source_definition` est vide
-  s'affiche sans mention.
-- Dans la contextualisation, elle signale une phrase d'exemple dont la colonne `source_contexte`
-  commence par « à vérifier » : c'est le cas de 4 969 des 5 002 phrases d'exemple du glossaire
-  fourni. Elle signale aussi une définition sans source, quand cette définition sert de
-  contexte à un autre terme. Une phrase d'exemple dont la colonne `source_contexte` est vide
-  s'affiche sans source et sans mention.
-- Après le contrôle d'une définition ou d'une phrase, écrire sa source dans le glossaire
-  (« Code de la famille, art. 4 ») : la source s'affiche à la place de la mention.
+- Dans la fiche, au pied de l'équivalent, elle signale un équivalent sans source : la colonne
+  `source_equivalent` commence par « à vérifier ». C'est le cas des 5 000 équivalents du
+  glossaire fourni (version 0.16) : la fiche écrit « À vérifier · équivalent d'exemple ». Quand
+  d'autres équivalents suivent l'équivalent, elle écrit « équivalents d'exemple » : la mention
+  vaut aussi pour eux.
+- Dans le cercle « Synonymes », elle précède les synonymes : « À vérifier · synonymes
+  d'exemple », ou « synonyme d'exemple » s'il n'y en a qu'un. Les synonymes n'ont pas de
+  colonne à eux : ils portent la mention quand l'équivalent la porte.
+- Sous la définition, elle signale une définition sans source : la colonne `source_definition`
+  est vide, ou commence par « à vérifier ». C'est le cas de 4 993 des 5 000 définitions du
+  glossaire fourni : 993 des 1 000 entrées complètes, et les 4 000 définitions des termes
+  seuls.
+- Dans la contextualisation, elle signale une phrase d'exemple dont la colonne
+  `source_contexte` commence par « à vérifier » : c'est le cas de 4 969 des 5 002 phrases
+  d'exemple du glossaire fourni. Elle signale aussi une définition sans source, quand cette
+  définition sert de contexte à un autre terme. Une phrase d'exemple dont la colonne
+  `source_contexte` est vide s'affiche sans source et sans mention.
+- Laisser le pointeur sur la mention affiche son explication.
+- Après le contrôle d'un équivalent, d'une définition ou d'une phrase, écrire sa source dans le
+  glossaire (« Code de la famille, art. 4 ») : la source s'affiche à la place de la mention.
+  Pour l'équivalent : « Source : Code de la famille, art. 4 », au pied de la colonne ; la
+  mention des synonymes disparaît en même temps.
+- Quand la colonne `source_equivalent` manque, ou qu'elle est vide pour un terme, l'équivalent
+  est lu comme avant la version 0.16 : sa mention vient de la colonne `source_definition`. Elle
+  s'affiche pour un terme sans définition dont cette colonne commence par « à vérifier », et
+  pour un terme dont cette colonne dit « à vérifier (équivalent et définition d'exemple) ».
+  Dans les autres cas, l'équivalent s'affiche sans mention.
 
 La recherche ne tient pas compte des majuscules, des accents, d'un article placé devant le terme
 (« le contrat », « العقد »), des signes diacritiques arabes ni des variantes d'écriture de la
@@ -587,7 +661,8 @@ termes juridiques du texte.
    - Laisser le pointeur sur une case affiche le nombre d'occurrences du terme dans le texte.
    - Un signe orange précède un terme **ambigu** : le contexte n'a pas permis de choisir entre
      deux sens. L'infobulle donne l'autre sens.
-   - L'infobulle signale aussi un **équivalent à vérifier** (un terme seul du glossaire).
+   - L'infobulle signale aussi un **équivalent à vérifier** : depuis la version 0.16, c'est
+     le cas de tous les termes du glossaire fourni.
    - Quand les termes sont nombreux, la liste défile : elle n'occupe jamais plus du tiers de
      l'écran, environ.
 7. **Un clic sur un terme ouvre sa fiche** sur l'écran « Terme » : un clic sur une case de la
@@ -771,18 +846,19 @@ Le code de cet essai n'est pas perdu : il reste dans l'historique du dépôt
 
 ### Le glossaire CSV
 
-Une ligne par terme ; la première ligne donne le nom des colonnes. Seules les deux premières
-colonnes du tableau sont obligatoires.
+Une ligne par terme ; la première ligne donne le nom des colonnes. Seules les colonnes
+`terme_fr` et `terme_ar` sont obligatoires.
 
 | Colonne | Écran « Terme » | Écran « Texte » |
 | --- | --- | --- |
 | `terme_fr`, `terme_ar` | Le terme et son équivalent, selon le sens de traduction | Mots et expressions cherchés dans le texte, et leur traduction |
+| `source_equivalent` | Au pied de l'équivalent (version 0.16). Si elle commence par « à vérifier », l'équivalent porte la mention « À vérifier », et les synonymes des deux langues aussi : sous l'équivalent pour ceux de la langue cible, dans le cercle « Synonymes » pour ceux de la langue source. Si elle cite une source, cette source s'affiche au pied de l'équivalent (« Source : Code civil, art. 54 »), et les synonymes n'ont pas de mention. Si elle est vide : voir `source_definition`, plus bas. | Si elle commence par « à vérifier » : l'infobulle de la case du terme signale un équivalent à vérifier |
 | `categorie_fr`, `categorie_ar` | Catégorie grammaticale, sous le terme et sous l'équivalent | Si `categorie_fr` contient « masculin » ou « féminin », l'article français est écrit (« le », « la », « un », « une »). Si elle contient « pluriel » (« biens », « droits de l'homme »), le terme est traité comme un pluriel (« les », « des », « ses »). |
 | `pluriel_fr`, `pluriel_ar` | Pluriel, sous le terme et sous l'équivalent ; il sert aussi à la recherche | Reconnaissance et écriture du pluriel |
 | `domaine` | Domaine, sous le terme | — |
 | `synonymes_fr`, `synonymes_ar` | Ceux de la langue source : cercle « Synonymes ». Ceux de la langue cible : « Autres équivalents », sous l'équivalent. Ils servent aussi à la recherche. | Un synonyme trouvé dans le texte est traduit comme le terme |
 | `termes_associes` | Cercle « Termes associés » | Choix entre deux entrées de même forme |
-| `definition_fr`, `definition_ar`, `source_definition` | Cercle « Définition ». Si `source_definition` est vide ou commence par « à vérifier », la définition porte la mention « À vérifier ». Sans définition, la mention ne s'affiche que si `source_definition` commence par « à vérifier » : elle porte alors sur l'équivalent, et s'affiche dans la fiche. Avec une définition, « à vérifier (équivalent et définition d'exemple) » porte sur les deux : la mention s'affiche dans la fiche et sous la définition (version 0.13). | Quand la mention porte sur l'équivalent : l'infobulle de la case du terme signale un équivalent à vérifier |
+| `definition_fr`, `definition_ar`, `source_definition` | Cercle « Définition ». Si `source_definition` est vide ou commence par « à vérifier », la définition porte la mention « À vérifier ». Quand `source_equivalent` est vide ou absente, cette colonne sert aussi pour l'équivalent, comme avant la version 0.16 : sans définition, une mention « à vérifier » porte sur l'équivalent et s'affiche dans la fiche ; avec une définition, « à vérifier (équivalent et définition d'exemple) » porte sur les deux. | Quand la mention porte sur l'équivalent : l'infobulle de la case du terme signale un équivalent à vérifier |
 | `contexte_fr`, `contexte_ar`, `source_contexte` | Cercle « Contextualisation ». Ces phrases servent aussi de contexte aux autres termes qu'elles emploient. Si `source_contexte` commence par « à vérifier », la phrase porte la mention « À vérifier ». | Une phrase du texte identique à un exemple reçoit la traduction de cet exemple |
 | `ressources` | Cercle « Ressources » | — |
 
@@ -793,9 +869,9 @@ colonnes du tableau sont obligatoires.
   `.xlsx` n'est pas lu directement.
 - Le séparateur (point-virgule, virgule ou tabulation) et l'encodage (UTF-8, UTF-16,
   Windows-1256, Windows-1252) sont reconnus automatiquement.
-- D'autres noms de colonnes sont acceptés (« Français », « Arabe », « Définition »…). Un fichier
-  sans ligne d'en-tête fonctionne aussi : la colonne arabe et la colonne française sont
-  repérées d'après leur écriture.
+- D'autres noms de colonnes sont acceptés (« Français », « Arabe », « Définition »,
+  « Source équivalent »…). Un fichier sans ligne d'en-tête fonctionne aussi : la colonne arabe
+  et la colonne française sont repérées d'après leur écriture.
 - Les lignes sans terme français ou sans terme arabe sont ignorées. Leur nombre est indiqué
   quand on choisit le fichier dans « Paramètres ».
 - La liste du cercle « Expressions » ne vient pas d'une colonne : ce sont les autres entrées
@@ -873,7 +949,9 @@ d'exemple à neuf d'entre elles ; le reste n'a pas été modifié.
   pluriels, les domaines, les synonymes, les termes associés et les ressources ont été rédigés
   pour la démonstration. Dans la version 0.15, 13 de ces entrées ont reçu 17 synonymes de
   plus (« acquéreur » pour « acheteur », « كراء » pour « إيجار ») : voir
-  [Les synonymes (version 0.15)](#les-synonymes-version-015).
+  [Les synonymes (version 0.15)](#les-synonymes-version-015). Depuis la version 0.16, la
+  colonne `source_equivalent` de ces 40 entrées dit « à vérifier (équivalent d'exemple) »,
+  comme celle des entrées suivantes : aucun de ces équivalents ne cite une source.
 - Neuf de ces entrées n'avaient pas d'exemple à elles : « contrat de vente », « contrat de
   bail », « contrat de travail », « conclusion du contrat », « droit », « mauvaise foi »,
   « responsabilité », « article » et « Journal officiel ». Elles ont reçu une phrase rédigée
@@ -889,7 +967,8 @@ contenu est à vérifier.
 - **Termes et équivalents.** Ce sont des noms et des groupes nominaux. Les équivalents suivent
   autant que possible le vocabulaire des textes algériens (« cour » : « مجلس قضائي »,
   « lettre de change » : « سفتجة », « wilaya » : « ولاية »). Un autre équivalent en usage est
-  parfois donné comme synonyme (« كمبيالة »).
+  parfois donné comme synonyme (« كمبيالة »). Depuis la version 0.16, chaque équivalent porte
+  la mention « à vérifier (équivalent d'exemple) », dans la colonne `source_equivalent`.
 - **Définitions.** Elles sont courtes, dans les deux langues, et toutes portent la source
   « à vérifier (définition d'exemple) ». Quelques-unes suivent de près la formulation d'un
   code, écrite de mémoire (« droit de propriété », « mariage », « garde », « commerçant »…) :
@@ -907,7 +986,8 @@ contenu est à vérifier.
   texte a pu être modifié ou remplacé depuis.
 - **Catégories, pluriels, synonymes, termes associés.** Rédigés de la même façon. Les termes
   associés d'une entrée sont ses voisins dans le glossaire. Les synonymes ont été complétés
-  dans la version 0.15 : voir la section suivante.
+  dans la version 0.15 : voir la section suivante. Depuis la version 0.16, l'application les
+  affiche sous la mention « À vérifier ».
 
 #### Les synonymes (version 0.15)
 
@@ -944,11 +1024,12 @@ artificielle**, sans dictionnaire juridique, et **personne ne les a relus**.
   تمهيدي » pour « jugement avant dire droit » : ces noms désignent des choses proches, pas
   toujours identiques. Un mot arabe d'un autre pays peut y désigner une institution un peu
   différente : le pays où chaque mot est en usage n'a pas été vérifié.
-- **Aucune mention ne les signale dans la fiche.** Pour une entrée complète, la mention
-  « À vérifier » s'affiche sous la définition et sous la phrase d'exemple. Elle ne s'affiche
-  ni dans le cercle « Synonymes », ni sous l'équivalent, où sont écrits les synonymes de
-  l'autre langue. C'était déjà le cas des 148 synonymes plus anciens de ces entrées. Voir
-  la capture du début de cette page.
+- **La mention qui les signale date de la version 0.16.** Dans la version 0.15, pour une entrée
+  complète, la mention « À vérifier » ne s'affichait que sous la définition et sous la phrase
+  d'exemple. Elle ne s'affichait ni dans le cercle « Synonymes », ni sous l'équivalent, où sont
+  écrits les synonymes de l'autre langue. Depuis la version 0.16, elle s'affiche aux deux
+  endroits, pour ces 550 synonymes comme pour les 148 plus anciens de ces entrées : voir la
+  capture du début de cette page. Elle les signale ; elle ne les vérifie pas.
 - **Tous les termes n'ont pas de synonyme.** 538 entrées complètes n'en ont aucun : « contrat
   de vente », « nullité », « juge », « créancier », « décret exécutif »… Un synonyme n'a été
   écrit que là où un autre nom existe.
@@ -1183,18 +1264,21 @@ spécialiste. **Chaque équivalent est à vérifier**, et chaque définition aus
   urbanisme et environnement, propriété intellectuelle, consommation et numérique, droit
   maritime et nationalité. Le cercle « Contextualisation » est coloré pour tous les termes.
   Voir [Les phrases d'exemple](#les-phrases-dexemple). Les captures du terme « protégé » sont au
-  [début de cette page](#lapplication-version-015).
-- **La mention « À vérifier ».** Elle est écrite dans la colonne `source_definition`.
-  - Les 4 000 termes seuls ont une définition : la colonne dit « à vérifier (équivalent et
-    définition d'exemple) ». L'application affiche « À vérifier · équivalent d'exemple » au
-    pied de l'équivalent, et « À vérifier · définition d'exemple » sous la définition. Après
-    le contrôle des deux, écrire la source dans cette colonne : les deux mentions
-    disparaissent. Si seul l'équivalent a été contrôlé, écrire « à vérifier (définition
-    d'exemple) » : il ne reste que la mention de la définition.
-  - Un terme sans définition (le glossaire fourni n'en a plus) porte « à vérifier
-    (équivalent d'exemple) ». L'application affiche « À vérifier · équivalent d'exemple » au
-    pied de l'équivalent, et son cercle « Définition » est gris.
-  - Sur l'écran « Texte », l'infobulle de la case du terme rappelle la mention.
+  [début de cette page](#lapplication-version-016).
+- **La mention « À vérifier ».** Depuis la version 0.16, elle est écrite dans deux colonnes.
+  - `source_equivalent` dit « à vérifier (équivalent d'exemple) ». L'application affiche
+    « À vérifier · équivalent d'exemple » au pied de l'équivalent (« équivalents d'exemple »
+    quand d'autres équivalents le suivent), et « À vérifier · synonymes d'exemple » dans le
+    cercle « Synonymes ».
+  - `source_definition` dit « à vérifier (définition d'exemple) ». L'application affiche
+    « À vérifier · définition d'exemple » sous la définition.
+  - Après le contrôle de l'équivalent et des synonymes, écrire la source dans
+    `source_equivalent`. Après celui de la définition, l'écrire dans `source_definition`.
+    Chaque mention disparaît à son tour.
+  - Jusqu'à la version 0.15, une seule mention valait pour les deux, dans `source_definition` :
+    « à vérifier (équivalent et définition d'exemple) ». L'application la comprend encore, pour
+    un glossaire qui n'a pas la colonne `source_equivalent`.
+  - Sur l'écran « Texte », l'infobulle de la case du terme rappelle la mention de l'équivalent.
 - **Ce qu'elles couvrent.**
 
   | Catégorie | Entrées | Exemples |
@@ -1536,11 +1620,17 @@ Le plus simple est de modifier `donnees/glossaire_juridique.csv` dans un tableur
 de texte, puis de le recharger dans l'application : « Paramètres », bouton **Recharger** (ou
 F5).
 
+Pour corriger un terme ou son équivalent, modifier les colonnes `terme_fr` et `terme_ar` de sa
+ligne ; pour ses synonymes, les colonnes `synonymes_fr` et `synonymes_ar` (plusieurs synonymes
+sont séparés par ` | `). Une fois l'équivalent et les synonymes vérifiés, remplacer « à
+vérifier (équivalent d'exemple) » par la source dans la colonne `source_equivalent` (par
+exemple « Code civil, art. 54 ») : la fiche affiche cette source au pied de l'équivalent. **La
+mention disparaît alors aussi au-dessus des synonymes, dans les deux langues** : ils n'ont pas
+de colonne à eux. Ne la retirer qu'après les avoir contrôlés eux aussi.
+
 Pour corriger la définition d'un terme, modifier les colonnes `definition_fr` et
-`definition_ar` de sa ligne ; pour ses synonymes, les colonnes `synonymes_fr` et
-`synonymes_ar` (plusieurs synonymes sont séparés par ` | `). Une fois la définition vérifiée,
-remplacer la mention de la colonne `source_definition` par sa source : voir
-[Les termes seuls](#les-termes-seuls).
+`definition_ar` de sa ligne. Une fois la définition vérifiée, remplacer la mention de la
+colonne `source_definition` par sa source : voir [Les termes seuls](#les-termes-seuls).
 
 Pour corriger la phrase d'un terme, modifier les colonnes `contexte_fr` et `contexte_ar` de sa
 ligne. La phrase française doit contenir le terme, et la phrase arabe son équivalent. Une fois
@@ -1595,11 +1685,17 @@ phrases. Une erreur dans un fichier de définitions est signalée avec son dossi
 Le script refuse aussi un nom seul dont une forme (terme, pluriel ou synonyme) désigne déjà un
 autre nom, en français ou en arabe, et un nom d'un seul mot qui est aussi un mot courant.
 
-**Attention :** ce script garde les 40 premières entrées du CSV et récrit toutes les
-suivantes à partir des lots, des exemples, des termes seuls et des définitions. Une correction faite à la main dans le CSV après
-la 40e entrée est donc perdue si on le relance. Il faut choisir : corriger le CSV et ne plus
-utiliser le script, ou corriger les fichiers de `lots/`, `exemples/`, `termes/` et `definitions/` et relancer le script. Le format des
-fichiers est décrit au début de `construire.py`.
+**Attention :** ce script garde les 40 premières entrées du CSV et récrit toutes les suivantes
+à partir des lots, des exemples, des termes seuls et des définitions. Une correction faite à la
+main dans le CSV après la 40e entrée est donc perdue si on le relance. C'est aussi le cas d'une
+source écrite dans la colonne `source_equivalent` : pour chaque entrée qu'il récrit, le script
+y remet « à vérifier (équivalent d'exemple) ». Il faut choisir : corriger le CSV et ne plus
+utiliser le script, ou corriger les fichiers de `lots/`, `exemples/`, `termes/` et
+`definitions/` et relancer le script. Le format des fichiers est décrit au début de
+`construire.py`.
+
+Depuis la version 0.16, le script s'arrête si le fichier CSV n'a pas la colonne
+`source_equivalent`, et il signale une des 40 premières entrées dont cette colonne est vide.
 
 ### Organisation du code
 
@@ -1670,7 +1766,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 739 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 756 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (5 000 entrées, 70 résultats pour « contrat ») à mettre
@@ -1692,13 +1788,23 @@ Depuis la version 0.13, ils demandent aussi que les 4 000 termes seuls aient une
 dans les deux langues (nombre écrit dans `tests/conftest.py`), qu'aucune de ces définitions ne
 contienne son terme ni ne serve à une autre entrée, et qu'un synonyme ne répète ni le terme ni
 un autre synonyme. Un terme seul qui a une définition doit porter la mention « à vérifier
-(équivalent et définition d'exemple) » : ce test est à adapter quand une source remplace la
-mention.
+(définition d'exemple) » dans la colonne `source_definition` : ce test est à adapter quand
+une source remplace la mention.
+
+Depuis la version 0.16, ils demandent que la colonne `source_equivalent` des 5 000 entrées dise
+« à vérifier (équivalent d'exemple) ». Ils comptent les entrées qui ont un synonyme arabe
+(654 : leur fiche écrit la mention au pluriel sous l'équivalent, du français vers l'arabe) et
+celles qui ont un synonyme français (769 : leur cercle « Synonymes » porte la mention). Ce test
+est à adapter, lui aussi, quand une source remplace la mention d'un équivalent. Un autre test
+ouvre la fiche de « huissier de justice » avec le glossaire fourni : la mention doit être
+écrite sous l'équivalent et au-dessus du synonyme, à la hauteur de celle d'une phrase
+d'exemple.
 
 Les tests de `tests/test_outil_glossaire.py` lancent le script
 `outils/glossaire/construire.py` sur des copies des fichiers : il doit accepter les lots, les
 phrases d'exemple et les définitions fournis, et refuser une phrase d'exemple ou une
-définition mal écrite.
+définition mal écrite. Depuis la version 0.16, il doit aussi refuser un fichier CSV qui n'a
+pas la colonne `source_equivalent`.
 
 Les tests de l'interface vérifient ce que chaque écran affiche et ce que fait chaque commande.
 Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des captures (voir les
@@ -1730,7 +1836,7 @@ toute seule quand l'application ou l'installeur change :
 
 - sur la branche `main`, l'installeur est publié sur la page
   [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
-  comme version `v0.15.0`, puis `v0.15.1`… ;
+  comme version `v0.16.0`, puis `v0.16.1`… ;
 - sur une branche de travail (`arena/…`), il est publié comme **version d'essai**, remplacée à
   chaque fabrication. Elle sert à essayer un travail avant de le fusionner dans `main` ; elle
   est retirée quand ce travail est fusionné.
@@ -1926,18 +2032,28 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   texte à traduire reçoit sa traduction du glossaire : une erreur dans la phrase arabe passe
   alors dans la traduction. L'application le signale à l'étape 5 et au survol de l'étiquette
   de résultat : elle dit que la phrase est reprise d'un exemple « à vérifier ».
-- **Les versions 0.14 et 0.15 n'ont été regardées sur aucun écran.** Les captures du début
-  de cette page ont été faites sans écran, sous Linux. Personne n'a regardé les nouvelles
-  phrases ni les nouveaux synonymes dans l'application sous Windows.
+- **Les versions 0.14, 0.15 et 0.16 n'ont été regardées sur aucun écran.** Les captures du
+  début de cette page ont été faites sans écran, sous Linux. Personne n'a regardé les nouvelles
+  phrases, les nouveaux synonymes ni les nouvelles mentions dans l'application sous Windows. La
+  place de la mention au-dessus des synonymes a été mesurée par les tests et regardée sur des
+  captures, en français et en arabe.
+- **La mention « À vérifier » est sur chaque fiche.** Depuis la version 0.16, les 5 000
+  équivalents du glossaire fourni la portent : elle dit vrai, puisque personne ne les a relus,
+  mais elle ne distingue plus une entrée d'une autre. Elle redeviendra utile à mesure que des
+  sources seront écrites dans le glossaire. **Elle ne vérifie rien** : un équivalent faux et un
+  équivalent juste portent la même mention.
+- **Les synonymes n'ont pas de mention à eux dans le glossaire.** Ils suivent la colonne
+  `source_equivalent`. Écrire une source dans cette colonne retire la mention de l'équivalent
+  et celle des synonymes des deux langues, même si ces synonymes n'ont pas été contrôlés.
 - **Les 550 synonymes de la version 0.15 n'ont été relus par personne.** Un assistant
   d'intelligence artificielle les a écrits de mémoire, pour 381 des 1 000 entrées complètes.
   Beaucoup sont des mots de sens voisin, que le droit distingue parfois (« extrait de
   naissance » et « acte de naissance », « saisie-vente » et « saisie-exécution »). Les mots
   arabes donnés comme en usage dans d'autres pays arabes n'ont été comparés à aucun texte de
-  ces pays. Dans la fiche d'une entrée complète, rien ne signale qu'un synonyme est à
-  vérifier : la mention « À vérifier » ne s'affiche que sous la définition et sous la phrase
-  d'exemple. Dans un texte à traduire, un synonyme est remplacé comme le terme : un synonyme
-  faux donne une traduction fausse, sans mention particulière. Un nom long donne
+  ces pays. Depuis la version 0.16, la fiche les signale par la mention « À vérifier », sous
+  l'équivalent et dans le cercle « Synonymes » : elle ne les vérifie pas. Dans un texte à
+  traduire, un synonyme est remplacé comme le terme : un synonyme faux donne une traduction
+  fausse, et rien ne le signale dans la traduction elle-même. Un nom long donne
   l'équivalent court de son entrée : « demande en justice » donne « الطلب », « cotisations
   sociales » donne « الاشتراكات ». Les essais de traduction ont porté sur les définitions et
   les phrases du glossaire : un synonyme peut encore couper une expression qu'aucun de ces
@@ -1953,10 +2069,9 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   façon. Beaucoup sont des mots de sens voisin plutôt que des synonymes exacts, et le droit
   distingue parfois les deux mots. 3 338 termes seuls n'ont aucun synonyme : c'est le cas de
   2 853 des 3 072 noms des domaines. 538 entrées complètes n'en ont pas non plus. Les
-  synonymes écrits avant la version 0.13 n'ont pas été revus. L'application n'affiche pas de
-  mention propre aux synonymes. Pour un terme seul, celle de l'équivalent vaut pour toute
-  l'entrée. Pour une entrée complète, l'équivalent n'a pas de mention : rien ne signale que
-  ses synonymes sont à vérifier.
+  synonymes écrits avant la version 0.13 n'ont pas été revus. Depuis la version 0.16,
+  l'application écrit la mention « À vérifier » au-dessus des synonymes de chaque entrée, et
+  sous l'équivalent quand ils sont écrits là.
 - **Termes seuls du glossaire fourni.** Les 4 000 entrées ajoutées dans les versions 0.8 et 0.9
   ont été écrites de mémoire par un assistant d'intelligence artificielle, et aucun juriste
   ne les a relues. Un
@@ -1964,7 +2079,8 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   « À vérifier » ; elle ne les vérifie pas. Voir [Les termes seuls](#les-termes-seuls).
 - **5 000 entrées, dont 1 000 complètes.** L'objectif de 5 000 entrées est atteint avec des
   termes seuls. Depuis la version 0.14, chaque entrée a une définition et une phrase d'exemple,
-  mais 4 993 définitions sur 5 000 et 4 969 phrases sur 5 002 sont à vérifier.
+  mais 4 993 définitions sur 5 000 et 4 969 phrases sur 5 002 sont à vérifier, comme les
+  5 000 équivalents.
 - **Adjectifs, verbes et locutions.** Ils ont une fiche, mais la traduction d'un texte ne les
   remplace pas. Un adjectif n'est écrit qu'au masculin singulier, un verbe qu'à l'infinitif :
   pour « protégés » ou « exécutoires », l'écran « Terme » ne trouve pas la fiche et propose
@@ -2136,7 +2252,7 @@ partie de l'application.
 ## Maquette de l'application de bureau
 
 Maquette SVG des deux écrans du prototype (version 0.1). Les deux écrans sont programmés (voir
-[L'application](#lapplication-version-015)). L'application actuelle ne ressemble plus à cette
+[L'application](#lapplication-version-016)). L'application actuelle ne ressemble plus à cette
 maquette : elle est gardée pour mémoire.
 
 ### Écran 1 — Recherche d'un terme

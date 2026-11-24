@@ -52,7 +52,8 @@ class CelluleTerme(CelluleEntree):
         #: Avertissement sur les autres sens du terme (vide s'il n'en a qu'un).
         self.alerte = "" if not autres else (f"Ambigu : aussi « {autres} »" if terme.incertain
                                              else f"Autre sens : « {autres} »")
-        #: Vrai si le glossaire donne l'équivalent de ce terme comme « à vérifier ».
+        #: Vrai si le glossaire donne l'équivalent de ce terme comme « à vérifier » : c'est le cas de tous les
+        #: termes du glossaire fourni (colonne « source_equivalent », version 0.16).
         self.a_verifier = equivalent_a_verifier(terme.entree) is not None
         self.retrait = self.LARGEUR_DU_SIGNE if self.incertain else 0
         self.setAccessibleDescription(". ".join(morceau for morceau in (

@@ -95,14 +95,15 @@ QUESTIONS = (
      ("L’application traduit avec le glossaire, et avec lui seul. Un mot absent du glossaire reste dans sa "
       "langue, écrit en gris : il est à traduire à la main.",)),
     ("Que signifie la mention « À vérifier » ?",
-     ("Le glossaire ne cite pas de source pour cet équivalent, cette définition ou cette phrase d’exemple : "
-      "le texte n’est pas repris d’un texte officiel. Contrôlez-le dans un texte de loi ou un dictionnaire "
-      "juridique avant de l’employer.",
-      "Dans le glossaire fourni, la plupart des équivalents, des définitions et des phrases d’exemple portent "
-      "cette mention : ils ont été rédigés par un assistant d’intelligence artificielle et n’ont pas été relus "
-      "par un juriste.",
-      "Après le contrôle, remplacez la mention par la source, dans la colonne source_definition ou "
-      "source_contexte du glossaire : la mention ne s’affiche plus.")),
+     ("Le glossaire ne cite pas de source pour cet équivalent, ces synonymes, cette définition ou cette phrase "
+      "d’exemple : le texte n’est pas repris d’un texte officiel. Contrôlez-le dans un texte de loi ou un "
+      "dictionnaire juridique avant de l’employer.",
+      "Dans le glossaire fourni, tous les équivalents et presque toutes les définitions et les phrases d’exemple "
+      "portent cette mention : ils ont été rédigés par un assistant d’intelligence artificielle et n’ont pas été "
+      "relus par un juriste.",
+      "Après le contrôle, remplacez la mention par la source, dans la colonne source_equivalent, "
+      "source_definition ou source_contexte du glossaire : la mention ne s’affiche plus. Les synonymes suivent "
+      "la mention de l’équivalent.")),
     ("Comment compléter le glossaire ?",
      ("Le glossaire fourni est le fichier glossaire_juridique.csv, dans le dossier « donnees » de "
       "l’application. Faites-en une copie et ouvrez la copie dans un tableur (Excel, LibreOffice).",
@@ -113,9 +114,9 @@ QUESTIONS = (
     ("Comment utiliser un autre glossaire ?",
      ("Dans « Paramètres », choisissez un fichier CSV. Il contient une ligne par terme ; la première ligne "
       "donne le nom des colonnes. Les colonnes terme_fr et terme_ar sont obligatoires.",
-      "Colonnes facultatives : categorie_fr, categorie_ar, pluriel_fr, pluriel_ar, domaine, synonymes_fr, "
-      "synonymes_ar, termes_associes, definition_fr, definition_ar, source_definition, contexte_fr, "
-      "contexte_ar, source_contexte, ressources.",
+      "Colonnes facultatives : source_equivalent, categorie_fr, categorie_ar, pluriel_fr, pluriel_ar, domaine, "
+      "synonymes_fr, synonymes_ar, termes_associes, definition_fr, definition_ar, source_definition, "
+      "contexte_fr, contexte_ar, source_contexte, ressources.",
       "Dans une cellule, plusieurs valeurs se séparent par une barre verticale : convention | accord. Depuis "
       "Excel : Enregistrer sous → « CSV UTF-8 (délimité par des virgules) ».")),
 )
@@ -520,8 +521,8 @@ class PageDescription(PageInformation):
                 "ils sont à traduire à la main.",
                 "Un mot courant qui s’écrit comme un terme juridique est traduit comme ce terme. Chaque terme "
                 "traduit est donc à relire.",
-                "Les définitions et les phrases d’exemple marquées « À vérifier » ne citent pas de source. Les "
-                "équivalents proposés viennent du glossaire : l’application ne les vérifie pas.")):
+                "Les équivalents, les synonymes, les définitions et les phrases d’exemple marqués « À vérifier » "
+                "ne citent pas de source. Ils viennent du glossaire : l’application ne les vérifie pas.")):
             carte.ajouter(self._puce(texte), 12 if rang == 0 else 8)
 
         self.terminer()

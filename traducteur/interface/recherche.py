@@ -634,7 +634,8 @@ class PageRecherche(QWidget):
         Elles sont prises parmi les entrées qui ont une définition, s'il y en a : le terme proposé en
         exemple a ainsi de quoi remplir le menu « Plus de détails », et non son seul équivalent. Parmi
         elles, celles dont l'équivalent n'est pas « à vérifier » passent d'abord : ce sont les entrées
-        les plus sûres du glossaire.
+        les plus sûres du glossaire. Dans le glossaire fourni, tous les équivalents sont à vérifier
+        (version 0.16) : les exemples sont pris dans tout le glossaire.
         """
         entrees = self.glossaire.entrees if self.glossaire is not None else []
         definies = [entree for entree in entrees if entree.definition_fr or entree.definition_ar]

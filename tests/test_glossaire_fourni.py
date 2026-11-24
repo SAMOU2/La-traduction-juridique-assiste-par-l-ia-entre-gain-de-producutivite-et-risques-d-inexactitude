@@ -13,7 +13,9 @@ phrase d'exemple), puis des « termes seuls » (terme, équivalent, catégorie, 
 la version 0.11, les termes seuls reçoivent à leur tour une phrase d'exemple, par étapes : la quatrième et
 dernière est faite dans la version 0.14, et chaque terme seul a sa phrase. Depuis la version 0.13, chaque terme
 seul a aussi sa définition, dans les deux langues, et des synonymes quand il en existe : le vocabulaire général,
-puis les treize domaines du droit. La version 0.15 complète les synonymes des 1 000 entrées complètes.
+puis les treize domaines du droit. La version 0.15 complète les synonymes des 1 000 entrées complètes. La
+version 0.16 écrit la mention « à vérifier » de l'équivalent dans une colonne à elle, « source_equivalent », pour
+les 5 000 entrées : jusque-là, seuls les termes seuls la portaient.
 """
 
 from collections import Counter
@@ -27,7 +29,15 @@ from conftest import (
     TERMES_SEULS_AVEC_EXEMPLE,
 )
 
-from traducteur.glossaire import COLONNES, definition_a_verifier, equivalent_a_verifier, mention_a_verifier
+from traducteur.glossaire import (
+    COLONNES,
+    definition_a_verifier,
+    equivalent_a_verifier,
+    equivalents_a_verifier,
+    mention_a_verifier,
+    source_de_l_equivalent,
+    synonymes_a_verifier,
+)
 from traducteur.langues import AR, FR, cle_souple, cle_stricte, contient_arabe
 from traducteur.surlignage import positions_du_terme
 from traducteur.traduction import (
@@ -92,8 +102,9 @@ def test_chaque_entree_est_complete(glossaire_fourni):
         assert entree.definition_fr and contient_arabe(entree.definition_ar), nom
         assert not contient_arabe(entree.definition_fr), nom
         assert entree.source_definition and entree.ressources, nom
-        # La mention « à vérifier » d'une entrée complète porte sur sa définition, jamais sur son équivalent.
-        assert equivalent_a_verifier(entree) is None, nom
+        # Depuis la version 0.16, l'équivalent d'une entrée complète porte la mention « à vérifier », comme celui
+        # d'un terme seul. Sa définition a sa propre mention, ou sa source.
+        assert equivalent_a_verifier(entree) == "équivalent d’exemple", nom
         assert definition_a_verifier(entree) in (None, "définition d’exemple"), nom
         assert entree.pluriel_fr or not entree.pluriel_ar, nom  # un pluriel arabe a son pluriel français
         assert entree.contextes, nom  # chaque entrée a sa phrase d'exemple
@@ -123,17 +134,18 @@ def test_les_termes_seuls(glossaire_fourni):
         assert entree.terme_fr and not contient_arabe(entree.terme_fr) and contient_arabe(entree.terme_ar), nom
         assert entree.categorie_fr in NOMS | AUTRES_MOTS and contient_arabe(entree.categorie_ar), nom
         assert entree.domaines and entree.ressources, nom
-        # La mention « à vérifier » porte toujours sur l'équivalent : la fiche l'affiche à son pied. Quand le terme
-        # a sa définition (dans les deux langues, ou pas du tout), la mention porte aussi sur elle.
+        # L'équivalent porte toujours la mention « à vérifier » : la fiche l'affiche à son pied. Quand le terme a
+        # sa définition (dans les deux langues, ou pas du tout), elle a sa propre mention, dans la colonne
+        # « source_definition ». Avant la version 0.16, cette colonne portait les deux mentions : « à vérifier
+        # (équivalent et définition d'exemple) ».
         assert equivalent_a_verifier(entree) == "équivalent d’exemple", nom
         assert bool(entree.definition_fr) == bool(entree.definition_ar), nom
         if entree.definition_fr:
             assert contient_arabe(entree.definition_ar) and not contient_arabe(entree.definition_fr), nom
-            assert mention_a_verifier(entree.source_definition) == "équivalent et définition d’exemple", nom
+            assert entree.source_definition == "à vérifier (définition d’exemple)", nom
             assert definition_a_verifier(entree) == "définition d’exemple", nom
         else:
-            assert mention_a_verifier(entree.source_definition) == "équivalent d’exemple", nom
-            assert definition_a_verifier(entree) is None, nom
+            assert entree.source_definition == "" and definition_a_verifier(entree) is None, nom
         # Une phrase d'exemple, et une seule, dans les deux langues, rédigée pour le glossaire : « à vérifier ».
         assert len(entree.contextes) == 1, nom
         for contexte in entree.contextes:
@@ -156,6 +168,39 @@ def test_les_termes_seuls(glossaire_fourni):
     # sont celui des termes seuls.
     assert sum(1 for entree in seuls if entree.contextes) == len(seuls) == TERMES_SEULS_AVEC_EXEMPLE
     assert sum(1 for entree in seuls if entree.definition_fr) == len(seuls) == TERMES_SEULS_AVEC_DEFINITION
+
+
+def test_chaque_equivalent_est_a_verifier(glossaire_fourni):
+    """Version 0.16 : la colonne « source_equivalent » porte la mention « à vérifier » des 5 000 entrées.
+
+    Aucun équivalent du glossaire fourni n'est repris d'une source citée : la mention s'affiche sous chacun.
+    Elle vaut pour les autres équivalents (elle s'écrit alors au pluriel) et pour les synonymes. Les mentions
+    des définitions ne changent pas : sept définitions citent le Code civil, les autres sont à vérifier.
+    """
+    assert glossaire_fourni.colonnes[:3] == ["terme_fr", "terme_ar", "source_equivalent"]
+    avec_d_autres_equivalents = avec_des_synonymes = 0
+    for entree in glossaire_fourni.entrees:
+        nom = f"n° {entree.numero} : {entree.terme_fr}"
+        assert entree.source_equivalent == "à vérifier (équivalent d’exemple)", nom
+        assert equivalent_a_verifier(entree) == "équivalent d’exemple" and source_de_l_equivalent(entree) == "", nom
+        for langue in (FR, AR):
+            # Dans chaque sens de traduction : les synonymes de la langue cible sont les « autres équivalents ».
+            synonymes = len(entree.synonymes(langue))
+            assert equivalents_a_verifier(entree, langue) == (
+                "équivalents d’exemple" if synonymes else "équivalent d’exemple"), nom
+            assert synonymes_a_verifier(entree, langue) == (
+                None, "synonyme d’exemple", "synonymes d’exemple")[min(synonymes, 2)], nom
+        avec_d_autres_equivalents += bool(entree.synonymes_ar)
+        avec_des_synonymes += bool(entree.synonymes_fr)
+    completes = glossaire_fourni.entrees[:ENTREES_COMPLETES]
+    # Du français vers l'arabe : les entrées dont la fiche écrit la mention au pluriel, et celles dont le cercle
+    # « Synonymes » porte la mention.
+    assert sum(1 for entree in completes if entree.synonymes_ar) == 358
+    assert sum(1 for entree in completes if entree.synonymes_fr) == 223
+    assert (avec_d_autres_equivalents, avec_des_synonymes) == (358 + 296, 223 + 546)
+    sources = Counter(entree.source_definition for entree in glossaire_fourni.entrees)
+    assert sources["à vérifier (définition d’exemple)"] == NOMBRE_D_ENTREES - 7 and len(sources) == 6
+    assert all(mention_a_verifier(source) is None for source in sources if not source.startswith("à vérifier"))
 
 
 def test_les_definitions_des_termes_seuls(glossaire_fourni):
@@ -476,6 +521,7 @@ def test_un_mot_courant_peut_etre_pris_pour_un_terme(traducteur):
 # ------------------------------------------------------------------ les deux écrans
 pytest.importorskip("PySide6")
 
+from PySide6.QtCore import QPoint  # noqa: E402
 from PySide6.QtWidgets import QLabel  # noqa: E402
 from test_interface import puces, textes  # noqa: E402
 
@@ -510,9 +556,11 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
 
     page = fenetre_fournie.page
     details = page.details
-    # Les termes proposés à l'accueil sont pris parmi les entrées complètes : leur fiche a une définition.
+    # Les termes proposés à l'accueil sont pris à intervalles réguliers dans tout le glossaire : chaque entrée
+    # a sa définition, et tous les équivalents sont à vérifier (avant la version 0.16, ceux des entrées
+    # complètes ne portaient pas la mention : les cinq termes étaient pris parmi elles).
     assert len(page.accueil.puces) == 5
-    assert [entree.numero for entree in page._exemples()] == [1, 201, 401, 601, 801]
+    assert [entree.numero for entree in page._exemples()] == [1, 1001, 2001, 3001, 4001]
     assert [puce.text() for puce in page.accueil.puces] == [entree.terme_fr for entree in page._exemples()]
     page.rechercher("contrat")
     expressions = EXPRESSIONS_AVEC_CONTRAT
@@ -576,6 +624,51 @@ def test_ecran_terme_avec_le_glossaire_fourni(fenetre_fournie, application, aver
     assert details.colonne_expressions.grille.height() > details.height()  # plus haute que le panneau : elle défile
 
 
+def test_les_mentions_d_une_entree_complete_avec_le_glossaire_fourni(fenetre_fournie, application):
+    """Version 0.16 : l'équivalent et les synonymes d'une entrée complète portent la mention « À vérifier »."""
+    page = fenetre_fournie.page
+    details = page.details
+
+    def haut_de_la_mention(colonne) -> int:
+        """Hauteur, dans le menu « Plus de détails », de la première mention « À vérifier » d'une page."""
+        mots = next(label for label in colonne.corps.findChildren(QLabel) if label.text() == "À vérifier")
+        return mots.parentWidget().mapTo(details, QPoint(0, 0)).y()
+
+    page.rechercher("huissier")
+    application.processEvents()
+    entree = page.entree
+    assert (entree.numero, entree.terme_fr, entree.terme_ar) == (261, "huissier de justice", "محضر قضائي")
+    assert entree.numero <= ENTREES_COMPLETES
+    assert (entree.synonymes_fr, entree.synonymes_ar) == (["huissier"], ["مفوض قضائي", "عدل منفذ"])
+    # Sous l'équivalent et ses deux autres équivalents : la mention, au pluriel. Avant la version 0.16, rien
+    # n'était écrit ici pour une entrée complète.
+    equivalent = page.fiche.colonne_equivalent
+    assert textes(equivalent.corps)[-3:] == ["AUTRES ÉQUIVALENTS", "مفوض قضائي", "عدل منفذ"]
+    assert equivalent.mention is not None and equivalent.mention.isVisible()
+    assert textes(equivalent.pied) == ["À vérifier", "· équivalents d’exemple"]
+    # Dans le cercle « Synonymes » : la mention au-dessus de la puce « huissier », à la hauteur de la mention
+    # d'une phrase d'exemple.
+    details.choisir("synonymes")
+    application.processEvents()
+    assert textes(details.colonne_synonymes.corps) == ["À vérifier", "· synonyme d’exemple", "huissier"]
+    hauteur = haut_de_la_mention(details.colonne_synonymes)
+    details.choisir("contexte")
+    application.processEvents()
+    assert details.colonne_contexte.emplois[0].a_verifier
+    assert haut_de_la_mention(details.colonne_contexte) == hauteur
+    # « contrat » : sa définition cite le Code civil ; son équivalent, lui, reste à vérifier.
+    page.rechercher("contrat")
+    application.processEvents()
+    assert page.entree.numero == 1 and page.entree.synonymes_ar == ["اتفاق"]
+    assert textes(equivalent.pied) == ["À vérifier", "· équivalents d’exemple"]
+    details.choisir("definition")
+    assert textes(details.colonne_definition.pied) == ["Source :", "Code civil, art. 54"]
+    details.choisir("synonymes")
+    application.processEvents()
+    assert textes(details.colonne_synonymes.corps)[:2] == ["À vérifier", "· synonymes d’exemple"]
+    assert page.entree.synonymes_fr == ["convention", "accord"]
+
+
 def test_la_fiche_d_un_terme_seul_avec_le_glossaire_fourni(fenetre_fournie, application):
     """Un des 4 000 termes seuls : la fiche donne l'équivalent, « à vérifier » ; le menu donne le reste."""
     page = fenetre_fournie.page
@@ -588,7 +681,8 @@ def test_la_fiche_d_un_terme_seul_avec_le_glossaire_fourni(fenetre_fournie, appl
     # La fiche : le terme, son équivalent et, au pied de l'équivalent, la mention « À vérifier ».
     assert textes(page.fiche.colonne_terme.corps)[:2] == ["FRANÇAIS · SOURCE", "protégé"]
     assert page.fiche.colonne_equivalent.terme.terme == entree.terme_ar
-    assert textes(page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalent d’exemple"]
+    # L'arabe « مصون » est donné à côté de l'équivalent : la mention s'écrit au pluriel, elle vaut pour les deux.
+    assert textes(page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalents d’exemple"]
     # Depuis la version 0.13, le terme a sa définition : le cercle « Définition » est coloré, et la définition
     # s'affiche dans les deux langues. Au pied, la mention « À vérifier » dit que c'est une définition d'exemple.
     etats = details.etats()
@@ -599,10 +693,10 @@ def test_la_fiche_d_un_terme_seul_avec_le_glossaire_fourni(fenetre_fournie, appl
     assert textes(details.colonne_definition.pied) == ["À vérifier", "· définition d’exemple"]
     # Ses synonymes : deux en français ; l'arabe « مصون » est donné à côté de l'équivalent. « préservé » n'a pas
     # d'entrée : sa puce est grise. « sauvegardé » s'écrit, aux accents près, comme le nom « sauvegarde » : sa
-    # puce est bleue, et un clic ouvre cette entrée.
+    # puce est bleue, et un clic ouvre cette entrée. Au-dessus des puces, la mention « À vérifier » (version 0.16).
     assert etats["synonymes"] == (True, 2) and entree.synonymes_fr == ["préservé", "sauvegardé"]
     details.roue.boutons["synonymes"].click()
-    assert textes(details.colonne_synonymes.corps) == ["préservé"]
+    assert textes(details.colonne_synonymes.corps) == ["À vérifier", "· synonymes d’exemple", "préservé"]
     assert puces(details.colonne_synonymes.corps) == ["sauvegardé"]
     assert "مصون" in textes(page.fiche.colonne_equivalent.corps)
     # Chaque terme seul a sa définition, y compris les noms des domaines du droit. Un nom se trouve aussi par son
@@ -619,7 +713,7 @@ def test_la_fiche_d_un_terme_seul_avec_le_glossaire_fourni(fenetre_fournie, appl
     assert details.etats()["contexte"][0] and "contexte" in details.renseignes()
     assert (nom.synonymes_fr, nom.synonymes_ar) == (["biodiversité"], ["تنوع حيوي", "تنوع أحيائي"])
     assert details.etats()["definition"] == (True, 0) and "definition" in details.renseignes()
-    assert textes(page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalent d’exemple"]
+    assert textes(page.fiche.colonne_equivalent.pied) == ["À vérifier", "· équivalents d’exemple"]
     details.roue.boutons["definition"].click()
     assert textes(details.colonne_definition.corps) == [
         "FRANÇAIS", "Variété des animaux, des plantes et des milieux naturels d’une région.",
@@ -674,8 +768,10 @@ def test_ecran_texte_avec_le_glossaire_fourni(fenetre_fournie, application):
     assert page.termes.nombre.text() == "13" and len(cases) == 13
     assert [case.entree for case in cases] == [terme.entree for terme in traduction.termes]
     assert cases[0].text() == "contrat — عقد"
-    # Ces treize termes sont des entrées complètes : aucun équivalent n'est signalé « à vérifier ».
-    assert not any(case.a_verifier for case in cases)
+    # Ces treize termes sont des entrées complètes. Depuis la version 0.16, leur équivalent est signalé « à
+    # vérifier », comme celui d'un terme seul : l'infobulle de chaque case le dit.
+    assert all(case.a_verifier for case in cases)
+    assert all("Équivalent à vérifier : il n’est repris d’aucune source citée." in case.toolTip() for case in cases)
     assert fenetre_fournie.barre_etat.etat() == "Traduction : 83 mots sur 84 trouvés dans le glossaire."
     # Un clic sur une case ouvre la fiche du terme : sa définition, ses exemples et ses références y sont.
     for case in (cases[0], cases[4], cases[-1]):
