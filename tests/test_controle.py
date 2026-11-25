@@ -94,6 +94,9 @@ def test_le_controle_essaie_l_application_et_ecrit_son_rapport(application, tmp_
     assert rapport["traduction"]["termes_reconnus"] >= 1 and rapport["traduction"]["caracteres"] > 0
     # La fiche d'un terme du texte a été ouverte par un clic sur sa case, puis « Retour au texte » a ramené au texte.
     assert rapport["traduction"]["fiche_ouverte_depuis_le_texte"] == "contrat"
+    # Le pointeur est venu sur le premier terme du texte : il s'est allumé à ses trois occurrences, aux trois
+    # passages de la traduction qui le rendent et sur sa case, puis il s'est éteint.
+    assert rapport["terme_allume"] == {"terme": "contrat", "dans_le_texte": 3, "dans_la_traduction": 3}
     assert rapport["ecrans"] == ["parametres", "description", "aide", "texte", "terme"]
     assert rapport["textes_de_qt"] == {"en_francais": True}
     # Les fichiers annoncés existent : le document Word de la traduction et l'image de la fenêtre.
@@ -181,6 +184,26 @@ def test_des_textes_de_qt_en_anglais_font_echouer_le_controle(application, tmp_p
     rapport = _rapport(tmp_path)
     assert rapport["reussi"] is False and suivi.code == 1
     assert [erreur.split(" : ")[0] for erreur in rapport["erreurs"]] == ["textes_de_qt"]
+    suivi.fenetre.deleteLater()
+    suivi.ecran.deleteLater()
+
+
+def test_un_terme_qui_ne_s_allume_pas_fait_echouer_le_controle(application, tmp_path, demarrage_court, textes_de_qt,
+                                                               monkeypatch):
+    from traducteur.interface.texte import PageTexte
+
+    monkeypatch.setattr(PageTexte, "allumer", lambda self, entree: None)  # le pointeur n'allume plus rien
+    suivi = controle.Controle(application, tmp_path)
+    suivi.demarrer()
+    _attendre_la_fin(suivi)
+
+    rapport = _rapport(tmp_path)
+    assert rapport["reussi"] is False and suivi.code == 1
+    assert rapport["erreurs"] == ["terme_allume : le terme placé sous le pointeur ne s'est pas allumé"]
+    assert "terme_allume" not in rapport
+    # Les autres étapes ont réussi : la traduction, le document, les écrans.
+    assert rapport["traduction"]["fiche_ouverte_depuis_le_texte"] == "contrat"
+    assert rapport["ecrans"] == ["parametres", "description", "aide", "texte", "terme"]
     suivi.fenetre.deleteLater()
     suivi.ecran.deleteLater()
 

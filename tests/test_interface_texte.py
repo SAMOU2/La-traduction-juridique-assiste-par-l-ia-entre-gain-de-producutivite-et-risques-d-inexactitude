@@ -2,7 +2,8 @@
 
 L'écran montre le texte et sa traduction, côte à côte. Dessous, une case par terme juridique du
 texte : un clic sur une case, ou sur un terme coloré de l'un des deux textes, ouvre la fiche du
-terme sur l'écran « Terme » ; le bouton « Retour au texte » ramène ici. Les cinq étapes du
+terme sur l'écran « Terme » ; le bouton « Retour au texte » ramène ici. Le terme que le pointeur
+désigne s'allume dans le texte, dans la traduction et dans la liste. Les cinq étapes du
 traitement ne sont pas affichées en permanence : un clic sur l'état de la traduction les ouvre
 dans une petite fenêtre.
 
@@ -14,10 +15,10 @@ import pytest
 
 pytest.importorskip("PySide6")
 
-from PySide6.QtCore import QPoint, QStandardPaths, Qt
-from PySide6.QtGui import QGuiApplication, QTextCursor
+from PySide6.QtCore import QEvent, QObject, QPoint, QStandardPaths, Qt
+from PySide6.QtGui import QColor, QCursor, QGuiApplication, QTextCursor
 from PySide6.QtTest import QTest
-from PySide6.QtWidgets import QFileDialog, QPushButton
+from PySide6.QtWidgets import QFileDialog, QPushButton, QWidget
 from test_documents import fabriquer_doc
 from test_interface import points_de_couleur, textes
 
@@ -371,7 +372,9 @@ def test_le_pointeur_est_retabli_si_la_traduction_echoue(page, monkeypatch):
 
 def point_du_mot(zone, mot: str) -> QPoint:
     """Le point de la zone où est écrit le milieu d'un mot."""
-    position = zone.toPlainText().index(mot) + len(mot) // 2
+    texte = zone.toPlainText()
+    # Qt compte en unités UTF-16 : un caractère hors du plan de base (une émoticône) en occupe deux.
+    position = len(texte[:texte.index(mot) + len(mot) // 2].encode("utf-16-le")) // 2
     curseur = zone.textCursor()
     curseur.setPosition(position)
     return zone.cursorRect(curseur).center()
@@ -411,6 +414,555 @@ def test_cliquer_sur_un_terme_de_l_un_des_deux_textes_ouvre_sa_fiche(fenetre, pa
     QTest.mouseRelease(page.zone_source.viewport(), Qt.MouseButton.LeftButton,
                        pos=point_du_mot(page.zone_source, "consentement"))
     assert fenetre.mode == MODE_TEXTE
+
+
+# ------------------------------------------------------------------ le terme allumé
+def pointer(application, widget, point: QPoint | None = None) -> None:
+    """Amène le pointeur de la souris sur un widget : au point donné, ou en son milieu."""
+    QTest.mouseMove(widget, point if point is not None else widget.rect().center())
+    application.processEvents()
+
+
+def passages_allumes(zone) -> list[str]:
+    """Le texte de chaque passage d'une zone écrit sur le fond du terme allumé, dans l'ordre du texte."""
+    allumes = [passage for passage in zone.extraSelections()
+               if passage.format.background().style() != Qt.BrushStyle.NoBrush]
+    # Un passage allumé a le fond et la couleur du terme allumé, et rien d'autre.
+    assert all(passage.format.background().color().name().upper() == theme.FOND_TERME_ALLUME
+               and passage.format.foreground().color().name().upper() == theme.TERME_ALLUME for passage in allumes)
+    return [passage.cursor.selectedText() for passage in allumes]
+
+
+def cases_allumees(page) -> list[str]:
+    """Le terme français de chaque case allumée, dans la liste des termes."""
+    return [case.entree.terme_fr for case in page.termes.cellules if case.allumee]
+
+
+def points_allumes(widget) -> int:
+    """Nombre de points d'un widget peints de la couleur de fond du terme allumé."""
+    return points_de_couleur(widget, theme.FOND_TERME_ALLUME, 4)
+
+
+class Peintures(QObject):
+    """Compte les fois où un widget est repeint à l'écran."""
+
+    def __init__(self, widget) -> None:
+        super().__init__()
+        self.nombre = 0
+        widget.installEventFilter(self)
+
+    def eventFilter(self, objet, evenement) -> bool:  # noqa: N802 (nom imposé par Qt)
+        if evenement.type() == QEvent.Type.Paint:
+            self.nombre += 1
+        return False
+
+
+def rien_n_est_allume(page) -> bool:
+    return (page.terme_allume is None and not cases_allumees(page)
+            and not passages_allumes(page.zone_source) and not passages_allumes(page.zone_cible))
+
+
+def contraste(couleur: str, fond: str) -> float:
+    """Rapport de contraste entre deux couleurs (formule des règles d'accessibilité WCAG 2)."""
+    def luminance(nom: str) -> float:
+        parts = [valeur / 255 for valeur in QColor(nom).getRgb()[:3]]
+        rouge, vert, bleu = (part / 12.92 if part <= 0.04045 else ((part + 0.055) / 1.055) ** 2.4 for part in parts)
+        return 0.2126 * rouge + 0.7152 * vert + 0.0722 * bleu
+
+    claire, sombre = sorted((luminance(couleur), luminance(fond)), reverse=True)
+    return (claire + 0.05) / (sombre + 0.05)
+
+
+def test_le_terme_que_le_pointeur_designe_s_allume_partout(page, application):
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    source, cible = page.zone_source, page.zone_cible
+    case = page.termes.cellule_de(page.traduction.termes[0].entree)
+    assert case.entree.terme_fr == "contrat"
+    # Au repos, rien n'est allumé : aucun point de l'écran n'a la couleur de fond du terme allumé. La traduction
+    # ne reçoit aucun passage : ses termes sont écrits en bleu dans son texte.
+    assert rien_n_est_allume(page) and cible.extraSelections() == []
+    assert [points_allumes(widget) for widget in (source.viewport(), cible.viewport(), page.termes)] == [0, 0, 0]
+    assert points_de_couleur(source.viewport(), theme.TERME_ALLUME, 4) == 0
+    # Le pointeur vient sur le premier « contrat » du texte : le terme s'allume à ses trois occurrences, …
+    pointer(application, source.viewport(), point_du_mot(source, "contrat"))
+    assert page.terme_allume is case.entree
+    assert passages_allumes(source) == ["contrat", "contrat", "contrat"]
+    # … aux trois passages de la traduction qui le rendent, et sur sa case. Aucun autre terme n'est allumé :
+    # « contrat de vente » est une autre entrée du glossaire.
+    assert passages_allumes(cible) == ["العقد", "العقد", "العقد"] and len(cible.extraSelections()) == 3
+    assert cases_allumees(page) == ["contrat"]
+    # Les autres termes du texte source gardent leur couleur : le terme allumé a remplacé la sienne, sans rien
+    # retirer ni ajouter.
+    passages = source.extraSelections()
+    assert [passage.cursor.selectedText() for passage in passages] == [
+        occurrence.forme for occurrence in page.traduction.occurrences]
+    assert {passage.format.foreground().color().name().upper() for passage in passages
+            if passage.format.background().style() == Qt.BrushStyle.NoBrush} == {theme.BLEU}
+    # Le fond est peint pour de bon, aux trois endroits, et le terme y est écrit dans sa couleur.
+    assert points_allumes(source.viewport()) > 500 and points_allumes(cible.viewport()) > 500
+    assert points_allumes(case) > 2000
+    assert points_de_couleur(source.viewport(), theme.TERME_ALLUME, 4) > 0
+    assert points_de_couleur(cible.viewport(), theme.TERME_ALLUME, 4) > 0
+    # Le pointeur garde la forme d'une main, et le texte n'a pas changé.
+    assert source.viewport().cursor().shape() == Qt.CursorShape.PointingHandCursor
+    assert page.texte() == EXEMPLES[FR] and texte_traduit(page) == page.traduction.texte
+    # Sur un mot qui n'est pas un terme du glossaire, plus rien n'est allumé.
+    pointer(application, source.viewport(), point_du_mot(source, "mutuel"))
+    assert rien_n_est_allume(page)
+    assert [points_allumes(widget) for widget in (source.viewport(), cible.viewport(), page.termes)] == [0, 0, 0]
+    assert source.viewport().cursor().shape() == Qt.CursorShape.IBeamCursor
+    assert len(source.extraSelections()) == len(page.traduction.occurrences)  # les termes restent colorés
+    assert cible.extraSelections() == []
+
+
+def test_un_terme_de_la_traduction_allume_le_texte_source(page, application):
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    case = next(case for case in page.termes.cellules if case.entree.terme_fr == "loi")
+    peintures = Peintures(case)
+    # « القانون » (loi), dans la traduction : la traduction rend deux des trois « loi » du texte par ce terme.
+    pointer(application, page.zone_cible.viewport(), point_du_mot(page.zone_cible, "القانون"))
+    assert page.terme_allume.terme_fr == "loi"
+    assert passages_allumes(page.zone_source) == ["loi", "loi", "loi"]
+    assert passages_allumes(page.zone_cible) == ["القانون", "للقانون"]
+    assert cases_allumees(page) == ["loi"]
+    # La case, loin du pointeur, est repeinte à l'écran sans attendre.
+    assert peintures.nombre >= 1
+    allumee = peintures.nombre
+    # D'un terme à l'autre, un seul terme est allumé à la fois.
+    pointer(application, page.zone_cible.viewport(), point_du_mot(page.zone_cible, "المشتري"))
+    assert page.terme_allume.terme_fr == "acheteur"
+    assert passages_allumes(page.zone_source) == ["acheteur"] and passages_allumes(page.zone_cible) == ["المشتري"]
+    assert cases_allumees(page) == ["acheteur"]
+    assert peintures.nombre > allumee  # la case de « loi » est repeinte, éteinte
+    # Tant que le pointeur reste sur le même terme, elle n'est pas repeinte.
+    eteinte = peintures.nombre
+    pointer(application, page.zone_cible.viewport(), point_du_mot(page.zone_cible, "المشتري") + QPoint(2, 1))
+    assert page.terme_allume.terme_fr == "acheteur" and peintures.nombre == eteinte
+    # Le pointeur quitte la traduction : tout s'éteint.
+    pointer(application, page.bouton_copier)
+    assert rien_n_est_allume(page)
+
+
+def test_une_case_de_la_liste_allume_son_terme_dans_les_deux_textes(page, application):
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    cases = {case.entree.terme_fr: case for case in page.termes.cellules}
+    # La liste dit quelle case reçoit le pointeur, et quand il la quitte.
+    survols = []
+    page.termes.survol.connect(lambda entree: survols.append(entree.terme_fr if entree is not None else None))
+    pointer(application, cases["bonne foi"])
+    assert survols == ["bonne foi"]
+    assert page.terme_allume is cases["bonne foi"].entree
+    assert passages_allumes(page.zone_source) == ["bonne foi"]
+    assert passages_allumes(page.zone_cible) == ["وبحسن نية"]
+    assert cases_allumees(page) == ["bonne foi"]
+    assert points_allumes(page.zone_source.viewport()) > 200 and points_allumes(page.zone_cible.viewport()) > 200
+    # La case sous le pointeur a le même fond que le terme dans les textes.
+    assert points_allumes(cases["bonne foi"]) > 2000 and points_allumes(cases["usage"]) == 0
+    # D'une case à l'autre.
+    pointer(application, cases["usage"])
+    assert survols == ["bonne foi", None, "usage"]
+    assert page.terme_allume is cases["usage"].entree
+    assert passages_allumes(page.zone_source) == ["usage"] and passages_allumes(page.zone_cible) == ["والعرف"]
+    assert cases_allumees(page) == ["usage"]
+    assert points_allumes(cases["bonne foi"]) == 0 and points_allumes(cases["usage"]) > 2000
+    # Le pointeur quitte la liste : tout s'éteint.
+    pointer(application, page.bouton_effacer)
+    assert survols == ["bonne foi", None, "usage", None]
+    assert rien_n_est_allume(page)
+    assert points_allumes(page.termes) == 0
+
+
+def test_un_terme_que_la_traduction_ne_reprend_pas_ne_s_allume_que_dans_le_texte_et_la_liste(page, application):
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    # La première phrase est reprise d'un exemple du glossaire : sa traduction est celle de l'exemple, qui rend
+    # « des parties » par « المتعاقدين ». Le terme de l'entrée « partie » (« طرف ») n'y est pas écrit.
+    assert page.traduction.phrases[0].attestation is not None
+    pointer(application, page.zone_source.viewport(), point_du_mot(page.zone_source, "parties"))
+    assert page.terme_allume.terme_fr == "partie" and page.terme_allume.terme_ar == "طرف"
+    assert passages_allumes(page.zone_source) == ["parties"]
+    assert passages_allumes(page.zone_cible) == []
+    assert points_allumes(page.zone_cible.viewport()) == 0
+    assert cases_allumees(page) == ["partie"]
+
+
+def test_le_terme_allume_s_eteint_quand_l_ecran_change(fenetre, page, application):
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    entree = page.traduction.termes[0].entree
+    # Le texte est modifié : il ne correspond plus à la traduction, plus rien n'est allumé.
+    page.allumer(entree)
+    assert page.terme_allume is entree and cases_allumees(page) == ["contrat"]
+    page.zone_source.insertPlainText("Suite. ")
+    assert rien_n_est_allume(page) and page.zone_source.extraSelections() == []
+    # Les termes du texte modifié ne sont plus repérés ; ceux de la traduction le sont encore.
+    page.allumer(entree)
+    assert passages_allumes(page.zone_source) == []
+    assert passages_allumes(page.zone_cible) == ["العقد", "العقد", "العقد"] and cases_allumees(page) == ["contrat"]
+    # Une nouvelle traduction : rien n'est allumé, et les termes du texte sont de nouveau colorés.
+    page.traduire()
+    assert rien_n_est_allume(page)
+    assert len(page.zone_source.extraSelections()) == len(page.traduction.occurrences) > 0
+    # Un autre écran s'affiche : le terme s'éteint, et il est éteint quand on revient. (Le pointeur est mis
+    # ailleurs : sinon Qt, en cachant la zone qu'il survole, la préviendrait de son départ.)
+    pointer(application, fenetre.barre_etat)
+    entree = page.traduction.termes[0].entree
+    page.allumer(entree)
+    assert page.terme_allume is entree and passages_allumes(page.zone_source)
+    fenetre.definir_mode(MODE_PARAMETRES)
+    application.processEvents()
+    assert rien_n_est_allume(page)
+    fenetre.definir_mode(MODE_TEXTE)
+    application.processEvents()
+    assert rien_n_est_allume(page)
+    # Le texte est effacé.
+    page.allumer(entree)
+    page.effacer()
+    assert rien_n_est_allume(page) and page.zone_cible.extraSelections() == []
+    # Sans traduction, il n'y a rien à allumer.
+    pointer(application, page.zone_source.viewport(), QPoint(40, 20))
+    assert rien_n_est_allume(page)
+
+
+def test_un_terme_allume_s_ouvre_d_un_clic_et_le_texte_se_selectionne(fenetre, page, application):
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    zone = page.zone_source.viewport()
+    point = point_du_mot(page.zone_source, "consentement")
+    pointer(application, zone, point)
+    assert page.terme_allume.terme_fr == "consentement"
+    # Sélectionner un passage (bouton enfoncé) ne change pas le terme allumé, et n'ouvre aucune fiche.
+    autre = point_du_mot(page.zone_source, "contractant")
+    QTest.mousePress(zone, Qt.MouseButton.LeftButton, pos=point)
+    pointer(application, zone, autre)
+    assert page.terme_allume.terme_fr == "consentement"
+    QTest.mouseRelease(zone, Qt.MouseButton.LeftButton, pos=autre)
+    application.processEvents()
+    assert "mutuel ou pour les causes prévues par la loi." in page.zone_source.textCursor().selectedText()
+    assert fenetre.mode == MODE_TEXTE and page.texte() == EXEMPLES[FR]
+    # Bouton relâché, le terme sous le pointeur s'allume, sans attendre que la souris bouge.
+    assert page.terme_allume.terme_fr == "contractant"
+    assert passages_allumes(page.zone_source) == ["contractant"] and cases_allumees(page) == ["contractant"]
+    # Un clic sur le terme allumé ouvre sa fiche : l'écran « Texte » n'est plus affiché, plus rien n'y est allumé.
+    curseur = page.zone_source.textCursor()
+    curseur.clearSelection()
+    page.zone_source.setTextCursor(curseur)
+    pointer(application, zone, point)
+    QTest.mouseClick(zone, Qt.MouseButton.LeftButton, pos=point)
+    application.processEvents()
+    assert fenetre.mode == MODE_TERME and fenetre.page.entree.terme_fr == "consentement"
+    assert rien_n_est_allume(page)
+    # Retour au texte sans toucher à la souris (raccourci du clavier) : le pointeur est resté à la même place, le
+    # terme qui revient sous lui se rallume. Comme pour une case, que Qt prévient de l'arrivée du pointeur.
+    fenetre.bouton_retour.click()
+    application.processEvents()
+    assert fenetre.mode == MODE_TEXTE and page.terme_allume.terme_fr == "consentement"
+    assert passages_allumes(page.zone_source) == ["consentement"] and cases_allumees(page) == ["consentement"]
+    # Un clic sur une case allumée ouvre aussi sa fiche.
+    case = page.termes.cellule_de(page.traduction.termes[1].entree)
+    pointer(application, case)
+    assert page.terme_allume is case.entree
+    QTest.mouseClick(case, Qt.MouseButton.LeftButton)
+    application.processEvents()
+    assert fenetre.mode == MODE_TERME and fenetre.page.entree is case.entree
+
+
+def haut_du_paragraphe(zone, rang: int) -> int:
+    """Hauteur, dans la zone, du haut d'un paragraphe du texte."""
+    return zone.cursorRect(QTextCursor(zone.document().findBlockByNumber(rang))).top()
+
+
+def test_le_terme_allume_suit_le_pointeur_quand_le_texte_defile(fenetre, page, application):
+    # Trente lignes d'un seul mot, chacun au début de sa ligne : « contrat » et « loi », tour à tour.
+    page.definir_texte("\n".join(["contrat", "loi"] * 15))
+    page.traduire()
+    application.processEvents()
+    zone = page.zone_source
+    barre = zone.verticalScrollBar()
+    pas = haut_du_paragraphe(zone, 1) - haut_du_paragraphe(zone, 0)  # d'une ligne à la suivante
+    assert pas > 0 and barre.maximum() >= 3 * pas  # le texte dépasse de la zone : il défile
+    point = point_du_mot(zone, "con")
+    # Un point plus bas que la zone ne désigne rien, même si le texte continue à cette hauteur, hors de la vue.
+    lignes = zone.viewport().height() // pas + 1
+    assert lignes < 30 and not zone.viewport().rect().contains(point + QPoint(0, lignes * pas))
+    assert page.terme_a(zone, point + QPoint(0, 2 * pas)).terme_fr == "contrat"
+    assert page.terme_a(zone, point + QPoint(0, lignes * pas)) is None
+    pointer(application, zone.viewport(), point)
+    assert page.terme_allume.terme_fr == "contrat"
+    assert passages_allumes(zone) == ["contrat"] * 15 and cases_allumees(page) == ["contrat"]
+    # Le texte défile d'une ligne (molette, clavier) : le pointeur n'a pas bougé, il est maintenant sur « loi ».
+    barre.setValue(pas)
+    assert page.terme_allume.terme_fr == "contrat"  # le pointeur est relu juste après le défilement
+    application.processEvents()
+    assert page.terme_a(zone, point).terme_fr == "loi"
+    assert page.terme_allume.terme_fr == "loi"
+    assert passages_allumes(zone) == ["loi"] * 15 and cases_allumees(page) == ["loi"]
+    assert passages_allumes(page.zone_cible) == ["قانون"] * 15
+    assert zone.viewport().cursor().shape() == Qt.CursorShape.PointingHandCursor
+    # Encore une ligne : de nouveau « contrat ».
+    barre.setValue(2 * pas)
+    application.processEvents()
+    assert page.terme_allume.terme_fr == "contrat" and passages_allumes(zone) == ["contrat"] * 15
+    # Pendant qu'un bouton de la souris est enfoncé, le terme allumé ne change pas, même si le texte défile.
+    QTest.mousePress(zone.viewport(), Qt.MouseButton.LeftButton, pos=point)
+    barre.setValue(3 * pas)
+    application.processEvents()
+    assert page.terme_a(zone, point).terme_fr == "loi" and page.terme_allume.terme_fr == "contrat"
+    # Le bouton relâché, le terme allumé rattrape le pointeur. (Deux lettres affichées sont sélectionnées :
+    # relâcher le bouton n'ouvre alors aucune fiche.)
+    curseur = zone.cursorForPosition(point)
+    curseur.movePosition(QTextCursor.MoveOperation.NextCharacter, QTextCursor.MoveMode.KeepAnchor, 2)
+    zone.setTextCursor(curseur)
+    QTest.mouseRelease(zone.viewport(), Qt.MouseButton.LeftButton, pos=point)
+    application.processEvents()
+    assert barre.value() == 3 * pas and fenetre.mode == MODE_TEXTE
+    assert page.terme_allume.terme_fr == "loi" and passages_allumes(zone) == ["loi"] * 15
+    # L'autre texte défile, loin du pointeur : rien ne change.
+    cible = page.zone_cible
+    cible.verticalScrollBar().setValue(pas)
+    application.processEvents()
+    assert page.terme_allume.terme_fr == "loi" and passages_allumes(zone) == ["loi"] * 15
+    # La traduction défile de la même façon sous le pointeur : « عقد » (contrat), puis « قانون » (loi).
+    cible.verticalScrollBar().setValue(0)
+    pas_de_la_cible = haut_du_paragraphe(cible, 1) - haut_du_paragraphe(cible, 0)
+    assert 0 < pas_de_la_cible <= cible.verticalScrollBar().maximum()
+    pointer(application, cible.viewport(), point_du_mot(cible, "عقد"))
+    assert page.terme_allume.terme_fr == "contrat" and passages_allumes(cible) == ["عقد"] * 15
+    cible.verticalScrollBar().setValue(pas_de_la_cible)
+    application.processEvents()
+    assert page.terme_allume.terme_fr == "loi" and passages_allumes(cible) == ["قانون"] * 15
+    assert passages_allumes(zone) == ["loi"] * 15 and cases_allumees(page) == ["loi"]
+    # Le pointeur parti, un défilement n'allume rien.
+    pointer(application, page.bouton_effacer)
+    assert rien_n_est_allume(page)
+    barre.setValue(0)
+    cible.verticalScrollBar().setValue(0)
+    application.processEvents()
+    assert rien_n_est_allume(page)
+
+
+def test_le_pointeur_n_est_relu_que_s_il_est_vraiment_sur_le_texte(fenetre, page, application, monkeypatch):
+    """Deux précautions : la place du pointeur peut être un vieux souvenir (il a quitté la fenêtre), et autre
+    chose peut recouvrir le texte à cet endroit."""
+    page.definir_texte("\n".join(["contrat", "loi"] * 15))
+    page.traduire()
+    application.processEvents()
+    zone = page.zone_source
+    vue = zone.viewport()
+    barre = zone.verticalScrollBar()
+    pas = haut_du_paragraphe(zone, 1) - haut_du_paragraphe(zone, 0)
+    point = point_du_mot(zone, "con")
+    pointer(application, vue, point)
+    assert page.terme_allume.terme_fr == "contrat" and vue.underMouse()
+    # Le pointeur s'en va. Sa dernière place connue est encore sur le texte (comme sous un système qui ne dit
+    # pas où est le pointeur hors de la fenêtre) : le texte défile, rien ne s'allume.
+    place = QCursor.pos()
+    pointer(application, page.bouton_effacer)
+    assert rien_n_est_allume(page) and not vue.underMouse()
+    with monkeypatch.context() as remplacement:
+        remplacement.setattr(QCursor, "pos", staticmethod(lambda: place))
+        assert fenetre.childAt(fenetre.mapFromGlobal(QCursor.pos())) is vue
+        barre.setValue(pas)
+        application.processEvents()
+        assert rien_n_est_allume(page)
+    # Le pointeur revient sur le texte ; puis un panneau recouvre le texte à cet endroit : le texte peut défiler
+    # dessous, le terme allumé ne change pas.
+    pointer(application, vue, point)
+    assert page.terme_allume.terme_fr == "loi"
+    panneau = QWidget(vue)
+    panneau.setGeometry(vue.rect())
+    panneau.show()
+    application.processEvents()
+    assert fenetre.childAt(fenetre.mapFromGlobal(QCursor.pos())) is panneau and vue.underMouse()
+    assert page.terme_allume.terme_fr == "loi"
+    barre.setValue(2 * pas)
+    application.processEvents()
+    assert page.terme_a(zone, point).terme_fr == "contrat" and page.terme_allume.terme_fr == "loi"
+    # Le panneau retiré, le défilement suivant relit le pointeur.
+    panneau.hide()
+    panneau.deleteLater()
+    barre.setValue(4 * pas)
+    application.processEvents()
+    assert page.terme_allume.terme_fr == "contrat" and passages_allumes(zone) == ["contrat"] * 15
+
+
+def test_le_terme_reste_sous_le_pointeur_se_rallume_apres_une_nouvelle_traduction(page, application):
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    source = page.zone_source
+    pointer(application, source.viewport(), point_du_mot(source, "contrat"))
+    assert page.terme_allume.terme_fr == "contrat"
+    anciennes = list(page.termes.cellules)
+    # Le texte est traduit de nouveau (Ctrl+Entrée) : la liste des termes est refaite, ses cases sont éteintes…
+    page.traduire()
+    assert rien_n_est_allume(page)
+    assert all(nouvelle not in anciennes for nouvelle in page.termes.cellules)
+    # … puis le terme resté sous le pointeur se rallume, sans que la souris ait bougé.
+    application.processEvents()
+    assert page.terme_allume.terme_fr == "contrat"
+    assert passages_allumes(source) == ["contrat"] * 3 and passages_allumes(page.zone_cible) == ["العقد"] * 3
+    assert cases_allumees(page) == ["contrat"]
+    assert source.viewport().cursor().shape() == Qt.CursorShape.PointingHandCursor
+    # Le texte est effacé sous le pointeur : il n'y a plus rien à allumer.
+    page.effacer()
+    application.processEvents()
+    assert rien_n_est_allume(page)
+    assert source.viewport().cursor().shape() == Qt.CursorShape.IBeamCursor
+
+
+def test_la_case_allumee_suit_le_pointeur_quand_la_liste_defile(fenetre, page, application, monkeypatch):
+    fenetre.resize(900, 600)  # dans une petite fenêtre, la liste des termes du texte d'essai défile
+    fenetre.move(300, 40)  # la fenêtre n'est pas dans le coin de l'écran : elle en est à plus d'une case
+    application.processEvents()
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    barre = page.termes.defilement.verticalScrollBar()
+    grille = page.termes.grille
+    assert barre.maximum() > grille.HAUTEUR_DE_LIGNE // 2
+    assert fenetre.mapToGlobal(QPoint(0, 0)).x() >= 300 > page.termes.cellules[0].width()
+    case = page.termes.cellules[0]
+    position = case.mapToGlobal(case.rect().center())  # la place du pointeur à l'écran : elle ne changera pas
+    pointer(application, case)
+    assert page.terme_allume is case.entree and cases_allumees(page) == ["contrat"]
+    # La liste défile sous le pointeur : il désigne maintenant la case de la ligne suivante.
+    barre.setValue(barre.maximum())
+    application.processEvents()
+    dessous = next(autre for autre in page.termes.cellules
+                   if autre.geometry().contains(grille.mapFromGlobal(position)))
+    assert dessous is not case
+    assert page.terme_allume is dessous.entree and cases_allumees(page) == [dessous.entree.terme_fr]
+    assert passages_allumes(page.zone_source) == [
+        occurrence.forme for occurrence in page.traduction.occurrences if occurrence.entree is dessous.entree]
+    # La liste revient en haut : de nouveau la première case.
+    barre.setValue(0)
+    application.processEvents()
+    assert page.terme_allume is case.entree and cases_allumees(page) == ["contrat"]
+    assert passages_allumes(page.zone_source) == ["contrat", "contrat", "contrat"]
+    # Le pointeur n'est plus sur la liste : elle peut défiler, rien ne s'allume. Même si sa dernière place connue
+    # est encore sur une case (comme sous un système qui ne dit pas où est le pointeur hors de la fenêtre).
+    pointer(application, page.bouton_effacer)
+    assert rien_n_est_allume(page) and not page.termes.defilement.viewport().underMouse()
+    barre.setValue(barre.maximum())
+    application.processEvents()
+    assert rien_n_est_allume(page)
+    with monkeypatch.context() as remplacement:
+        remplacement.setattr(QCursor, "pos", staticmethod(lambda: position))
+        assert isinstance(fenetre.childAt(fenetre.mapFromGlobal(QCursor.pos())), type(case))
+        barre.setValue(0)
+        application.processEvents()
+        assert rien_n_est_allume(page)
+
+
+def test_une_case_arrivee_sous_un_pointeur_immobile_s_eteint_quand_il_repart(page, application):
+    """Qt ne prévient pas une case qui arrive sous un pointeur immobile (liste refaite, liste qui défile) : elle
+    ne saurait pas que le pointeur est reparti. Le fond de la liste le dit à sa place."""
+    traduire(page, "Le contrat fait la loi.")  # deux termes : la troisième place de la ligne reste vide
+    application.processEvents()
+    assert termes_detectes(page) == ["contrat", "loi"]
+    grille = page.termes.grille
+    pointer(application, page.termes.cellules[1])
+    assert page.terme_allume.terme_fr == "loi"
+    # Nouvelle traduction : la case est refaite sous le pointeur, et se rallume sans que Qt l'ait prévenue.
+    page.traduire()
+    application.processEvents()
+    case = page.termes.cellules[1]
+    assert page.terme_allume.terme_fr == "loi" and case.allumee and not case.underMouse()
+    # Le pointeur saute à la place vide de la ligne, sans passer par un autre point de la case : elle s'éteint.
+    vide = QPoint(grille.width() - 20, case.geometry().center().y())
+    assert grille.childAt(vide) is None
+    pointer(application, grille, vide)
+    assert rien_n_est_allume(page)
+    # De même quand il saute hors de la liste.
+    pointer(application, case)
+    page.traduire()
+    application.processEvents()
+    case = page.termes.cellules[1]
+    assert page.terme_allume.terme_fr == "loi" and case.allumee and not case.underMouse()
+    pointer(application, page.bouton_effacer)
+    assert rien_n_est_allume(page)
+    # Un bouton enfoncé sur le fond de la liste ne change rien au terme allumé.
+    page.allumer(case.entree)
+    QTest.mousePress(grille, Qt.MouseButton.LeftButton, pos=vide)
+    QTest.mouseMove(grille, vide + QPoint(-3, 1))
+    application.processEvents()
+    assert page.terme_allume is case.entree
+    QTest.mouseRelease(grille, Qt.MouseButton.LeftButton, pos=vide + QPoint(-3, 1))
+    application.processEvents()
+
+
+def test_une_case_allumee_qui_a_le_clavier_garde_son_contour(fenetre, page, application):
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    case = page.termes.cellules[0]
+    # Allumée sans avoir le clavier : un fond, pas de contour.
+    page.allumer(case.entree)
+    assert case.allumee and not case.hasFocus()
+    assert points_allumes(case) > 2000 and points_de_couleur(case, theme.BLEU, 4) == 0
+    # La touche Tab amène le clavier sur la case : son contour se voit sur le fond du terme allumé.
+    fenetre.activateWindow()
+    case.setFocus(Qt.FocusReason.TabFocusReason)
+    application.processEvents()
+    assert case.hasFocus() and case.allumee
+    assert points_de_couleur(case, theme.BLEU, 4) > 200
+    assert contraste(theme.BLEU, theme.FOND_TERME_ALLUME) >= 3  # un contour, pas un texte : 3 suffit (WCAG 2)
+    # Le clavier sur une case n'allume rien : seul le pointeur désigne un terme. La case éteinte garde le
+    # contour clair d'une case qui a le clavier (un trait fin, de la couleur du fond du terme allumé).
+    page.allumer(None)
+    assert case.hasFocus() and rien_n_est_allume(page)
+    assert 0 < points_allumes(case) < 1000 and points_de_couleur(case, theme.BLEU, 4) == 0
+
+
+def test_le_terme_allume_dans_un_texte_arabe(fenetre, page, application):
+    page.definir_sens(AR)
+    page.inserer_un_exemple()
+    page.traduire()
+    application.processEvents()
+    assert (page.source, page.cible) == (AR, FR)
+    pointer(application, page.zone_source.viewport(), point_du_mot(page.zone_source, "القانون"))
+    assert page.terme_allume.terme_fr == "loi"
+    assert passages_allumes(page.zone_source) == ["القانون", "للقانون"]
+    assert passages_allumes(page.zone_cible) == ["loi", "loi"]
+    assert cases_allumees(page) == ["loi"]
+    # Depuis la traduction française : l'article et la préposition écrits avec le terme s'allument avec lui.
+    pointer(application, page.zone_cible.viewport(), point_du_mot(page.zone_cible, "contrat de vente"))
+    assert page.terme_allume.terme_fr == "contrat de vente"
+    assert passages_allumes(page.zone_source) == ["عقد البيع"]
+    assert passages_allumes(page.zone_cible) == ["du contrat de vente"]
+    assert cases_allumees(page) == ["contrat de vente"]
+
+
+def test_le_terme_allume_est_a_sa_place_apres_une_emoticone(page, application):
+    # L'émoticône occupe deux unités UTF-16 : elle décale la place des termes dans les deux zones.
+    traduire(page, "😀 Le contrat de vente et la loi.")
+    application.processEvents()
+    assert texte_traduit(page) == "😀 عقد البيع et القانون."
+    pointer(application, page.zone_source.viewport(), point_du_mot(page.zone_source, "loi"))
+    assert page.terme_allume.terme_fr == "loi"
+    assert passages_allumes(page.zone_source) == ["loi"] and passages_allumes(page.zone_cible) == ["القانون"]
+    pointer(application, page.zone_cible.viewport(), point_du_mot(page.zone_cible, "عقد البيع"))
+    assert page.terme_allume.terme_fr == "contrat de vente"
+    assert passages_allumes(page.zone_source) == ["contrat de vente"]
+    assert passages_allumes(page.zone_cible) == ["عقد البيع"]
+
+
+def test_le_terme_allume_reste_lisible():
+    # Texte courant : un rapport de contraste d'au moins 4,5 (niveau AA des règles d'accessibilité WCAG 2).
+    assert contraste(theme.TERME_ALLUME, theme.FOND_TERME_ALLUME) >= 4.5
+    # Le fond se distingue du blanc du panneau, et de la couleur d'un passage sélectionné.
+    assert theme.FOND_TERME_ALLUME not in (theme.SURFACE, theme.BLEU)
+    assert contraste("#000000", "#FFFFFF") == pytest.approx(21) and contraste("#FFFFFF", "#FFFFFF") == 1
 
 
 def test_un_texte_entierement_reconnu(page):

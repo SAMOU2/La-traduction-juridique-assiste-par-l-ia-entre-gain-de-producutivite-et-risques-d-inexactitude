@@ -1144,12 +1144,20 @@ class CelluleEntree(QAbstractButton):
         self.retrait = 0
         self._francais = self._arabe = ""
         self._necessaire: tuple[tuple, float] | None = None
+        #: Vrai quand l'écran qui contient la case l'a allumée (voir ``definir_allumee``).
+        self.allumee = False
         self.setText(f"{entree.terme_fr} — {entree.terme_ar}")
         self.setCursor(Qt.CursorShape.PointingHandCursor)
         self.setAttribute(Qt.WidgetAttribute.WA_Hover)
 
     def _polices(self) -> tuple[QFont, QFont]:
         return police(self.font(), 13), police(self.font(), 15)
+
+    def definir_allumee(self, allumee: bool) -> None:
+        """Allume ou éteint la case. Allumée, elle prend le fond du terme allumé dans les textes (écran « Texte »)."""
+        if allumee != self.allumee:
+            self.allumee = allumee
+            self.update()
 
     def resizeEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
         super().resizeEvent(evenement)
@@ -1189,10 +1197,12 @@ class CelluleEntree(QAbstractButton):
     def paintEvent(self, evenement) -> None:  # noqa: N802
         peintre = QPainter(self)
         peintre.setRenderHint(QPainter.RenderHint.Antialiasing)
-        survol = self.underMouse() or self.hasFocus()
+        survol = self.underMouse() or self.hasFocus() or self.allumee
         if survol:
-            peintre.setPen(QPen(QColor(theme.BLEU_200), 1) if self.hasFocus() else Qt.PenStyle.NoPen)
-            peintre.setBrush(QColor(theme.BLEU_50))
+            # Le contour signale la case qui a le clavier ; sur le fond d'une case allumée, il est plus foncé.
+            contour = theme.BLEU if self.allumee else theme.BLEU_200
+            peintre.setPen(QPen(QColor(contour), 1) if self.hasFocus() else Qt.PenStyle.NoPen)
+            peintre.setBrush(QColor(theme.FOND_TERME_ALLUME if self.allumee else theme.BLEU_50))
             peintre.drawRoundedRect(QRectF(6.5, 4.5, self.width() - 13, self.height() - 8), 6, 6)
         francais, arabe = self._polices()
         gauche = self.marge_gauche + self.retrait

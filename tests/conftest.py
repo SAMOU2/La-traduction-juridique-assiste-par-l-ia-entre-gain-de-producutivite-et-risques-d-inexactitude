@@ -97,6 +97,20 @@ def fenetres_detruites():
         coeur.QCoreApplication.sendPostedEvents(None, coeur.QEvent.Type.DeferredDelete)
 
 
+@pytest.fixture(autouse=True)
+def pointeur_ecarte():
+    """Avant chaque test, écarte le pointeur de la souris des fenêtres.
+
+    Sans écran, le pointeur reste là où le dernier test l'a amené (``QTest.mouseMove``). La fenêtre du test
+    suivant s'ouvrirait dessous : ce qu'elle affiche à cet endroit se croirait survolé, et le résultat d'un
+    test dépendrait de celui qui l'a précédé.
+    """
+    interface = sys.modules.get("PySide6.QtGui")
+    if (interface is not None and interface.QGuiApplication.instance() is not None
+            and interface.QGuiApplication.platformName() == "offscreen"):
+        interface.QCursor.setPos(-10_000, -10_000)
+
+
 @pytest.fixture(scope="session")
 def application():
     """L'application Qt, avec le style et les couleurs que « traducteur.application » lui donne."""

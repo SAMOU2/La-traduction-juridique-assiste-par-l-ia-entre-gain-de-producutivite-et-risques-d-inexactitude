@@ -3,6 +3,9 @@
 Chaque terme du glossaire relevé dans le texte a une case : le terme français à gauche, le terme
 arabe à droite. Un clic sur une case ouvre la fiche du terme sur l'écran « Terme », où le menu
 « Plus de détails » donne sa définition, ses exemples et ses références.
+
+Une case peut être allumée : l'écran « Texte » allume celle du terme que le pointeur désigne, que
+le pointeur soit sur la case ou sur le terme, dans le texte ou dans sa traduction.
 """
 
 from __future__ import annotations
@@ -38,6 +41,9 @@ class CelluleTerme(CelluleEntree):
     choisir, un signe orange précède le terme.
     """
 
+    #: Le pointeur entre dans la case (le signal porte son entrée du glossaire) ou en sort (``None``).
+    survol = Signal(object)
+
     #: Place du signe orange, devant le terme.
     LARGEUR_DU_SIGNE = 20
 
@@ -71,7 +77,15 @@ class CelluleTerme(CelluleEntree):
             lignes.append("Équivalent à vérifier : il n’est repris d’aucune source citée.")
         self.setToolTip(infobulle(*lignes))
 
-    def paintEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+    def enterEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        super().enterEvent(evenement)
+        self.survol.emit(self.entree)
+
+    def leaveEvent(self, evenement) -> None:  # noqa: N802
+        super().leaveEvent(evenement)
+        self.survol.emit(None)
+
+    def paintEvent(self, evenement) -> None:  # noqa: N802
         super().paintEvent(evenement)
         if self.incertain:
             peintre = QPainter(self)
@@ -121,6 +135,8 @@ class PanneauTermes(Panneau):
 
     #: Demande d'ouverture de la fiche d'une entrée sur l'écran « Terme » (clic sur une case).
     ouverture = Signal(object)
+    #: Le pointeur est entré dans la case d'une entrée (le signal porte l'entrée) ou en est sorti (``None``).
+    survol = Signal(object)
 
     HAUTEUR_DU_TITRE = 42
     #: Hauteur du message affiché quand il n'y a aucun terme à montrer.
@@ -168,6 +184,8 @@ class PanneauTermes(Panneau):
         termes = traduction.termes if traduction is not None else []
         cible = traduction.cible if traduction is not None else ""
         self.grille.definir(termes, lambda terme, parent: CelluleTerme(terme, cible, parent))
+        for cellule in self.grille.cellules:
+            cellule.survol.connect(self.survol)
         if sans_glossaire:
             self.message.definir("Aucun glossaire n’est chargé", "Choisissez un fichier CSV dans « Paramètres ».")
         elif traduction is None:
@@ -190,6 +208,11 @@ class PanneauTermes(Panneau):
 
     def cellule_de(self, entree: Entree) -> CelluleTerme | None:
         return next((cellule for cellule in self.grille.cellules if cellule.entree is entree), None)
+
+    def allumer(self, entree: Entree | None) -> None:
+        """Allume la case d'une entrée et éteint les autres (``None`` : les éteint toutes). Rien ne défile."""
+        for cellule in self.grille.cellules:
+            cellule.definir_allumee(cellule.entree is entree)
 
     # ------------------------------------------------------------------ hauteur
     def hauteur_pour(self, largeur: int, hauteur_de_l_ecran: int) -> int:

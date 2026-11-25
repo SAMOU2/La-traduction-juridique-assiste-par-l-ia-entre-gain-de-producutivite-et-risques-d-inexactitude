@@ -4,6 +4,9 @@ Le texte source et sa traduction sont côte à côte. Dessous, la liste des term
 relevés dans le texte (voir ``termes.py``). Un clic sur un terme, dans la liste ou dans l'un
 des deux textes, ouvre sa fiche sur l'écran « Terme ».
 
+Le terme que le pointeur désigne s'allume partout où il figure : il prend un fond dans le texte,
+dans la traduction et dans la liste (voir ``PageTexte.allumer``).
+
 Les cinq étapes du traitement et leur résultat ne sont pas affichés en permanence : un clic
 sur l'état de la traduction les ouvre dans une petite fenêtre (``VoletEtapes``).
 
@@ -23,6 +26,7 @@ from types import MappingProxyType
 from PySide6.QtCore import QEvent, QPoint, QPointF, QRectF, QSize, QStandardPaths, Qt, QTimer, Signal
 from PySide6.QtGui import (
     QColor,
+    QCursor,
     QGuiApplication,
     QKeySequence,
     QPainter,
@@ -33,6 +37,7 @@ from PySide6.QtGui import (
     QTextCursor,
 )
 from PySide6.QtWidgets import (
+    QApplication,
     QFileDialog,
     QFrame,
     QHBoxLayout,
@@ -78,7 +83,7 @@ from .composants import (
     separateur,
 )
 from .dessin import abreger, dessiner_ligne, dessiner_numero, largeur_du_texte, melanger, police
-from .termes import PanneauTermes
+from .termes import CelluleTerme, PanneauTermes
 
 #: Texte proposé par « Insérer un exemple » : les articles 106 et 107 du Code civil (phrases reprises
 #: des exemples du glossaire fourni), puis une phrase qui n'y figure pas, traduite mot à mot.
@@ -127,6 +132,9 @@ ESPACE_ENTRE_PARAGRAPHES = 8
 #: Couleur des termes du glossaire, et couleur des mots absents du glossaire, dans les deux zones de texte.
 COULEUR_TERME = theme.BLEU
 COULEUR_ABSENT = theme.TEXTE_4
+#: Le terme allumé (celui que le pointeur désigne), dans les deux zones de texte : son fond, sa couleur.
+FOND_ALLUME = theme.FOND_TERME_ALLUME
+COULEUR_ALLUME = theme.TERME_ALLUME
 
 
 def _decompte(phrases: int, mots: int, caracteres: int) -> tuple[str, str, str]:
@@ -148,6 +156,26 @@ def _bouton(texte: str, classe: str, largeur: int, hauteur: int, nom_icone: str 
     if info:
         bouton.setToolTip(info)
     return bouton
+
+
+def _mise_en_forme(couleur: str, fond: str = "") -> QTextCharFormat:
+    """Couleur, et fond s'il y en a un, à donner à un passage d'une zone de texte."""
+    mise_en_forme = QTextCharFormat()
+    mise_en_forme.setForeground(QColor(couleur))
+    if fond:
+        mise_en_forme.setBackground(QColor(fond))
+    return mise_en_forme
+
+
+def _passage(zone: QTextEdit, debut: int, fin: int, mise_en_forme: QTextCharFormat) -> QTextEdit.ExtraSelection:
+    """Passage d'une zone de texte à afficher avec une mise en forme ; le texte lui-même n'est pas modifié."""
+    curseur = QTextCursor(zone.document())
+    curseur.setPosition(debut)
+    curseur.setPosition(fin, QTextCursor.MoveMode.KeepAnchor)
+    passage = QTextEdit.ExtraSelection()
+    passage.cursor = curseur
+    passage.format = mise_en_forme
+    return passage
 
 
 # ====================================================================== zones de texte
@@ -831,6 +859,7 @@ class PageTexte(QWidget):
         # ---------------------------------------------------------- termes du texte, étapes du traitement
         self.termes = PanneauTermes()
         self.termes.ouverture.connect(self.entree_demandee)
+        self.termes.survol.connect(self.allumer)
         # Les étapes ne sont pas affichées en permanence : un clic sur l'état de la traduction les ouvre.
         self.bande = BandeEtapes()
         self.volet_etapes = VoletEtapes(self.bande, self)
@@ -852,9 +881,33 @@ class PageTexte(QWidget):
 
         # Un clic sur un terme coloré, dans l'une ou l'autre zone, ouvre sa fiche sur l'écran « Terme ».
         self._termes_des_zones: dict[ChampTexte, list[tuple[int, int, Entree]]] = {}
+        #: Les passages qui colorent les termes du texte source, dans l'ordre de ``_termes_des_zones``.
+        self._couleurs_de_la_source: list[QTextEdit.ExtraSelection] = []
+        # Le terme que le pointeur désigne est allumé partout où il figure (voir ``allumer``).
+        self._terme_allume: Entree | None = None
+        self._format_terme = _mise_en_forme(COULEUR_TERME)
+        self._format_allume = _mise_en_forme(COULEUR_ALLUME, FOND_ALLUME)
+        # La liste : chaque case dit quand le pointeur y entre et quand il la quitte (signal ``survol``). Mais Qt
+        # ne prévient pas une case arrivée sous un pointeur immobile : elle ne saurait pas qu'il est reparti. Le
+        # fond de la liste le dit à sa place, quand le pointeur y passe ou quitte la liste.
+        self._fonds_de_la_liste = (self.termes.grille, self.termes.defilement.viewport())
+        # Les deux textes et le fond de la liste : le pointeur y est suivi sans qu'un bouton soit enfoncé.
         for zone in (self.zone_source, self.zone_cible):
             zone.viewport().installEventFilter(self)
             zone.viewport().setMouseTracking(True)
+        for fond in self._fonds_de_la_liste:
+            fond.installEventFilter(self)
+            fond.setMouseTracking(True)
+        # Quand un texte ou la liste défile sous un pointeur immobile (molette, clavier), quand le texte est traduit
+        # de nouveau ou quand cet écran s'affiche, le terme désigné n'est plus le même, et Qt ne prévient pas : le
+        # pointeur est relu juste après (voir ``_relire_le_pointeur``).
+        self._relecture_du_pointeur = QTimer(self)
+        self._relecture_du_pointeur.setSingleShot(True)
+        self._relecture_du_pointeur.setInterval(0)
+        self._relecture_du_pointeur.timeout.connect(self._relire_le_pointeur)
+        for barre in (self.zone_source.verticalScrollBar(), self.zone_cible.verticalScrollBar(),
+                      self.termes.defilement.verticalScrollBar()):
+            barre.valueChanged.connect(self._defilement)
 
         raccourci = QShortcut(QKeySequence("Ctrl+Return"), self)
         raccourci.setContext(Qt.ShortcutContext.WidgetWithChildrenShortcut)
@@ -968,9 +1021,13 @@ class PageTexte(QWidget):
             return
         self._actualiser_l_entete_source()
         if self.traduction is not None and self.traduction.texte_source != self.texte():
-            # Le texte ne correspond plus à la traduction affichée : ses termes ne sont plus colorés, ni cliquables.
-            self.zone_source.setExtraSelections([])
+            # Le texte ne correspond plus à la traduction affichée : ses termes ne sont plus colorés, ni cliquables,
+            # et plus aucun terme n'est allumé.
             self._termes_des_zones[self.zone_source] = []
+            self._couleurs_de_la_source = []
+            self._terme_allume = None
+            self.termes.allumer(None)
+            self._peindre_les_termes()
             self.badge.definir("attente", "Texte modifié · traduction à refaire", "Texte modifié",
                                explication=_TEXTE_MODIFIE)
             self._definir_etat(_TEXTE_MODIFIE)
@@ -1019,6 +1076,7 @@ class PageTexte(QWidget):
     def _afficher(self, traduction: Traduction | None) -> None:
         """Affiche une traduction, ou l'état initial si ``traduction`` est vide."""
         self.traduction = traduction
+        self._terme_allume = None  # la liste des termes est refaite : toutes ses cases sont éteintes
         self._afficher_le_decompte_source()
         self._actualiser_l_entete_source()
         self.bande.afficher(traduction)
@@ -1028,7 +1086,6 @@ class PageTexte(QWidget):
         self.bouton_copier.setEnabled(traduction is not None)
         self.bouton_exporter.setEnabled(traduction is not None)
         if traduction is None:
-            self.zone_source.setExtraSelections([])
             self.zone_cible.clear()
             self.decompte_cible.definir_texte("")
             self.legende.definir([])
@@ -1039,12 +1096,13 @@ class PageTexte(QWidget):
                 self.badge.definir("attente")
                 self._definir_etat("")
         else:
-            self._surligner_les_termes(traduction)
             self.zone_cible.setHtml(self._html(traduction))
             self.zone_cible.appliquer_l_interligne()
             self.zone_cible.orienter_les_paragraphes()
             self.decompte_cible.definir_texte(*_decompte(*traduction.decompte_cible()))
             self._afficher_le_bilan(traduction)
+        self._peindre_les_termes()
+        self._relecture_du_pointeur.start()  # le terme resté sous le pointeur se rallume
         self.traduction_changee.emit()
 
     def _afficher_le_bilan(self, traduction: Traduction) -> None:
@@ -1100,32 +1158,91 @@ class PageTexte(QWidget):
         ancre = self.badge if self.badge.isVisible() else self.panneau_cible.nom
         self.volet_etapes.ouvrir_sous(ancre, self.width() - 2 * theme.MARGE)
 
-    def _surligner_les_termes(self, traduction: Traduction) -> None:
-        """Colore, dans le texte source, les termes trouvés dans le glossaire."""
-        texte = traduction.texte_source
-        # Qt compte les positions en unités UTF-16 : un caractère hors du plan de base en occupe deux.
-        decalages = [rang for rang, caractere in enumerate(texte) if ord(caractere) > 0xFFFF]
+    def showEvent(self, evenement) -> None:  # noqa: N802 (nom imposé par Qt)
+        super().showEvent(evenement)
+        self._relecture_du_pointeur.start()  # l'écran s'affiche peut-être sous le pointeur : son terme s'allume
 
-        def position(indice: int) -> int:
-            return indice + sum(1 for rang in decalages if rang < indice)
+    def hideEvent(self, evenement) -> None:  # noqa: N802
+        super().hideEvent(evenement)
+        self.allumer(None)  # l'écran n'est plus affiché : le pointeur ne désigne plus aucun de ses termes
 
-        couleur = QTextCharFormat()
-        couleur.setForeground(QColor(COULEUR_TERME))
-        selections = []
-        for occurrence in traduction.occurrences:
-            curseur = QTextCursor(self.zone_source.document())
-            curseur.setPosition(position(occurrence.debut))
-            curseur.setPosition(position(occurrence.fin), QTextCursor.MoveMode.KeepAnchor)
-            selection = QTextEdit.ExtraSelection()
-            selection.cursor = curseur
-            selection.format = couleur
-            selections.append(selection)
-        self.zone_source.setExtraSelections(selections)
+    # ------------------------------------------------------------------ couleur des termes, terme allumé
+    @property
+    def terme_allume(self) -> Entree | None:
+        """L'entrée du glossaire dont le terme est allumé ; ``None`` si aucun terme n'est allumé."""
+        return self._terme_allume
 
-    # ------------------------------------------------------------------ clic sur un terme du texte
+    def allumer(self, entree: Entree | None) -> None:
+        """Allume un terme partout où il figure ; ``None`` éteint le terme allumé.
+
+        Le terme prend un fond à chacune de ses occurrences dans le texte source, à chacun des
+        passages de la traduction qui le rendent, et sur sa case dans la liste des termes. Un seul
+        terme est allumé à la fois : celui que le pointeur désigne. Rien ne défile : un passage ou
+        une case hors de la vue s'allume sans être montré.
+
+        Le pointeur désigne un terme quand il est sur ce terme dans l'un des deux textes (voir
+        ``eventFilter``), ou sur sa case (signal ``PanneauTermes.survol``).
+        """
+        if entree is self._terme_allume:
+            return
+        self._terme_allume = entree
+        self.termes.allumer(entree)
+        self._peindre_les_termes()
+
+    def _designer(self, zone: ChampTexte, point: QPoint) -> None:
+        """Le pointeur est à ``point`` dans une zone de texte : le terme écrit là s'allume, et le pointeur prend la
+        forme d'une main ; ailleurs que sur un terme, plus rien n'est allumé."""
+        entree = self.terme_a(zone, point)
+        zone.viewport().setCursor(Qt.CursorShape.PointingHandCursor if entree is not None
+                                  else Qt.CursorShape.IBeamCursor)
+        self.allumer(entree)
+
+    def _defilement(self, _valeur: int = 0) -> None:
+        self._relecture_du_pointeur.start()
+
+    def _relire_le_pointeur(self) -> None:
+        """Après un défilement, une nouvelle traduction ou le retour à cet écran : allume le terme qui se trouve
+        maintenant sous le pointeur, s'il est sur un des deux textes ou sur la liste. Ailleurs, rien ne change ;
+        pendant qu'un bouton de la souris est enfoncé non plus.
+
+        Deux précautions. Qt doit avoir annoncé le pointeur sur la zone (``underMouse``) : ce n'est plus le cas
+        quand il a quitté la fenêtre ou qu'une autre fenêtre la recouvre, et la position que Qt donne peut alors
+        être un vieux souvenir. Et la zone doit être ce que la fenêtre affiche à cet endroit (``childAt``).
+        """
+        if not self.isVisible() or QApplication.mouseButtons() != Qt.MouseButton.NoButton:
+            return
+        position = QCursor.pos()
+        fenetre = self.window()
+        dessous = fenetre.childAt(fenetre.mapFromGlobal(position))
+        for zone in (self.zone_source, self.zone_cible):
+            vue = zone.viewport()
+            if dessous is vue and vue.underMouse():
+                self._designer(zone, vue.mapFromGlobal(position))
+                return
+        if self.termes.defilement.viewport().underMouse():
+            # Sur la liste : la case qui se trouve là ; entre deux cases ou sous la dernière ligne, aucune.
+            self.allumer(dessous.entree if isinstance(dessous, CelluleTerme) else None)
+
+    def _peindre_les_termes(self) -> None:
+        """Colore les termes du texte source et donne son fond au terme allumé, dans les deux zones de texte."""
+        for zone in (self.zone_source, self.zone_cible):
+            # Seul le texte source reçoit ici la couleur de ses termes : la traduction l'a déjà (voir ``_html``).
+            passages = list(self._couleurs_de_la_source) if zone is self.zone_source else []
+            if self._terme_allume is not None:
+                for rang, (debut, fin, entree) in enumerate(self._termes_des_zones.get(zone, ())):
+                    if entree is self._terme_allume:
+                        allume = _passage(zone, debut, fin, self._format_allume)
+                        if zone is self.zone_source:
+                            passages[rang] = allume  # à la place de la couleur du terme : un passage, une mise en forme
+                        else:
+                            passages.append(allume)
+            zone.setExtraSelections(passages)
+
+    # ------------------------------------------------------------------ clic sur un terme du texte, pointeur
     def _reperer_les_termes(self, traduction: Traduction | None) -> None:
         """Note la place des termes dans les deux zones, en positions de Qt (unités UTF-16)."""
         self._termes_des_zones = {self.zone_source: [], self.zone_cible: []}
+        self._couleurs_de_la_source = []
         for zone in (self.zone_source, self.zone_cible):
             zone.viewport().setCursor(Qt.CursorShape.IBeamCursor)
         if traduction is None:
@@ -1147,12 +1264,14 @@ class PageTexte(QWidget):
                 self._termes_des_zones[self.zone_cible].append(
                     (dans_la_cible(indice), dans_la_cible(indice + len(morceau.texte)), morceau.entree))
             indice += len(morceau.texte)
+        self._couleurs_de_la_source = [_passage(self.zone_source, debut, fin, self._format_terme)
+                                       for debut, fin, _ in self._termes_des_zones[self.zone_source]]
 
     def terme_a(self, zone: ChampTexte, point) -> Entree | None:
         """L'entrée du glossaire dont le terme est écrit sous ``point``, dans une des deux zones de texte."""
         termes = self._termes_des_zones.get(zone)
-        if not termes:
-            return None
+        if not termes or not zone.viewport().rect().contains(point):
+            return None  # aucun terme repéré, ou un point hors de la partie du texte affichée
         curseur = zone.cursorForPosition(point)
         cadre = zone.cursorRect(curseur)
         # Dans une marge ou après la fin d'une ligne, la position la plus proche est loin du point.
@@ -1162,19 +1281,30 @@ class PageTexte(QWidget):
         return next((entree for debut, fin, entree in termes if debut <= position <= fin), None)
 
     def eventFilter(self, objet, evenement) -> bool:  # noqa: N802 (nom imposé par Qt)
+        if any(objet is fond for fond in self._fonds_de_la_liste):
+            # Le pointeur est sur la liste sans être sur une case, ou il la quitte : aucune case n'est désignée.
+            if (evenement.type() == QEvent.Type.Leave
+                    or (evenement.type() == QEvent.Type.MouseMove and not evenement.buttons())):
+                self.allumer(None)
+            return super().eventFilter(objet, evenement)
         for zone in (self.zone_source, self.zone_cible):
             if objet is not zone.viewport():
                 continue
-            if (evenement.type() == QEvent.Type.MouseButtonRelease
-                    and evenement.button() == Qt.MouseButton.LeftButton and not zone.textCursor().hasSelection()):
-                # Un simple clic sur un terme coloré (et non la sélection d'un passage) ouvre sa fiche.
-                entree = self.terme_a(zone, evenement.position().toPoint())
-                if entree is not None:
-                    self.entree_demandee.emit(entree)
+            if evenement.type() == QEvent.Type.MouseButtonRelease:
+                point = evenement.position().toPoint()
+                if evenement.button() == Qt.MouseButton.LeftButton and not zone.textCursor().hasSelection():
+                    # Un simple clic sur un terme coloré (et non la sélection d'un passage) ouvre sa fiche.
+                    entree = self.terme_a(zone, point)
+                    if entree is not None:
+                        self.entree_demandee.emit(entree)
+                # Tant que le bouton était enfoncé, le terme allumé n'a pas suivi le pointeur : il le rattrape
+                # (sauf si le clic vient d'ouvrir une fiche : cet écran n'est plus affiché).
+                if self.isVisible() and not evenement.buttons():
+                    self._designer(zone, point)
             elif evenement.type() == QEvent.Type.MouseMove and not evenement.buttons():
-                survol = self.terme_a(zone, evenement.position().toPoint()) is not None
-                zone.viewport().setCursor(Qt.CursorShape.PointingHandCursor if survol
-                                          else Qt.CursorShape.IBeamCursor)
+                self._designer(zone, evenement.position().toPoint())
+            elif evenement.type() == QEvent.Type.Leave:
+                self.allumer(None)
         return super().eventFilter(objet, evenement)
 
     def _html(self, traduction: Traduction) -> str:

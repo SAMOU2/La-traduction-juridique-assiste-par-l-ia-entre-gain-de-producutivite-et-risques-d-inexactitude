@@ -12,12 +12,59 @@ Le dépôt contient l'application (Python et PySide6) et les dessins qui l'ont p
 [proposition d'interface](#la-proposition-dinterface) et la
 [première maquette](#maquette-de-lapplication-de-bureau).
 
-## L'application (version 0.16)
+## L'application (version 0.17)
 
-La version 0.16 **écrit la mention « À vérifier » là où elle manquait** : sous l'équivalent des
-1 000 entrées complètes, et au-dessus des synonymes de toutes les entrées. Le glossaire garde
-le contenu de la version 0.15 : aucun terme, aucun équivalent et aucun synonyme n'a été ajouté
-ni corrigé.
+La version 0.17 **allume le terme que le pointeur désigne** sur l'écran « Texte » : dans le
+texte, dans sa traduction et dans la liste des termes, en même temps. Le glossaire et la
+traduction sont ceux de la version 0.16.
+
+- **Ce qui s'allume.** Amener le pointeur de la souris sur un terme écrit en bleu, dans le
+  texte ou dans sa traduction, ou sur sa case dans la liste « Termes juridiques détectés ». Le
+  terme prend un fond bleu clair à trois endroits : à chacune de ses occurrences dans le texte,
+  à chaque passage de la traduction qui le rend, et sur sa case. Un seul terme est allumé à la
+  fois. Il s'éteint quand le pointeur le quitte.
+- **À quoi cela sert.** À voir d'un coup d'œil où un terme figure dans le texte, et comment il
+  a été traduit. Dans le texte d'exemple, le pointeur sur « contrat » allume ses trois
+  occurrences, trois fois « العقد » dans la traduction, et la case « contrat ». « contrat de
+  vente » ne s'allume pas : c'est une autre entrée du glossaire.
+- **Le reste de l'écran ne change pas.** Un clic sur un terme ou sur sa case ouvre toujours sa
+  fiche. Sélectionner un passage à la souris reste possible : tant que le bouton est enfoncé,
+  le terme allumé ne change pas. Rien ne défile tout seul : une occurrence ou une case qui
+  n'est pas affichée s'allume sans être montrée.
+- **Quand le texte ou la liste défile sous le pointeur** (molette, clavier), le terme allumé
+  devient celui qui arrive sous le pointeur. De même après une nouvelle traduction, et au
+  retour sur l'écran « Texte ».
+- **Un terme ne s'allume pas toujours dans la traduction.** Quand une phrase du texte est une
+  phrase d'exemple du glossaire, l'application affiche la traduction écrite dans le glossaire :
+  un terme n'y est repéré que si son équivalent y est écrit. Dans le texte d'exemple,
+  « partie » et « consentement » ne s'allument que dans le texte et dans la liste ; « loi »
+  figure trois fois dans le texte, et s'allume deux fois dans la traduction.
+- **Il faut une souris.** Au clavier, la touche Tab passe d'une case à l'autre sans rien
+  allumer. Rien n'a été essayé sur un écran tactile.
+- **Le contrôle de l'application** (option `--controle`), lancé à chaque fabrication de
+  l'installeur, amène maintenant le pointeur sur le premier terme du texte d'exemple : ce terme
+  doit s'allumer aux trois endroits, puis s'éteindre.
+- **Ce qui n'a pas été fait. Personne n'a essayé cette version avec une vraie souris, sur un
+  écran.** Les tests déplacent un pointeur simulé, et les captures ont été faites sans écran,
+  sous Linux. Les deux couleurs (fond `#C2D3FF`, texte `#1A3FA6`) ont été choisies sur ces
+  captures.
+- **Ce qui reste à faire.** Regarder cet écran sous Windows, avec une souris. Faire relire les
+  équivalents, les définitions, les phrases et les synonymes par un juriste et par un
+  traducteur : les entrées n° 41 à 5 000 ont été écrites de mémoire par un assistant
+  d'intelligence artificielle, et **personne n'a relu le glossaire**. Après chaque contrôle, la
+  source s'écrit dans le glossaire, à la place de la mention « À vérifier ».
+
+![Écran « Texte » de la version 0.17 : le terme « contrat » allumé à ses trois occurrences dans le texte, aux trois « العقد » de la traduction et sur sa case](docs/apercu-texte-terme-allume.png)
+
+*Capture faite sans écran : le pointeur de la souris n'y est pas dessiné. Il est sur le premier
+« contrat » du texte.*
+
+Le mode d'emploi est plus bas : point 7 de la partie « Utiliser l'écran « Texte » ».
+
+La version 0.16 avait **écrit la mention « À vérifier » là où elle manquait** : sous
+l'équivalent des 1 000 entrées complètes, et au-dessus des synonymes de toutes les entrées. Le
+glossaire gardait le contenu de la version 0.15 : aucun terme, aucun équivalent et aucun
+synonyme n'avait été ajouté ni corrigé.
 
 - **Sous l'équivalent, pour les 5 000 entrées.** Au pied de l'équivalent, la fiche écrit
   « À vérifier · équivalent d'exemple ». Jusqu'à la version 0.15, seuls les 4 000 termes seuls
@@ -44,9 +91,10 @@ ni corrigé.
   colonne est lu comme avant.
 - **Sur l'écran « Texte ».** Dans la liste des termes, l'infobulle de chaque case dit
   « Équivalent à vérifier : il n'est repris d'aucune source citée. » Jusqu'à la version 0.15,
-  seules les cases des termes seuls le disaient. **La traduction ne change pas** : un programme
-  a traduit les 20 004 définitions et phrases d'exemple du glossaire avec la version 0.15, puis
-  avec la version 0.16, telles quelles et mot à mot. Les 40 008 traductions sont identiques.
+  seules les cases des termes seuls le disaient. **La traduction n'avait pas changé** : un
+  programme avait traduit les 20 004 définitions et phrases d'exemple du glossaire avec la
+  version 0.15, puis avec la version 0.16, telles quelles et mot à mot. Les 40 008 traductions
+  étaient identiques.
 - **Le reste.**
   - Dans le centre d'aide, la réponse à « Que signifie la mention « À vérifier » ? » parle des
     synonymes et de la nouvelle colonne.
@@ -63,10 +111,6 @@ ni corrigé.
     dans son infobulle, quand le pointeur s'arrête dessus. Les réglages, les boutons, les
     questions fréquentes et les raccourcis sont les mêmes. Le détail est
     [plus bas](#paramètres-description-de-la-plateforme-centre-daide).
-- **Ce qui reste à faire.** Faire relire les équivalents, les définitions, les phrases et les
-  synonymes par un juriste et par un traducteur. Les entrées n° 41 à 5 000 ont été écrites de
-  mémoire par un assistant d'intelligence artificielle, et **personne n'a relu le glossaire**.
-  Après chaque contrôle, la source s'écrit dans le glossaire, à la place de la mention.
 
 ![Le terme « huissier de justice » dans la version 0.16 : la mention « À vérifier » sous l'équivalent et ses deux autres équivalents, et au-dessus du synonyme « huissier »](docs/apercu-huissier-a-verifier.png)
 
@@ -374,21 +418,22 @@ on voit le bureau ou la fenêtre qui se trouve derrière :
 ![Centre d'aide](docs/apercu-aide.png)
 
 *Captures produites sous Linux, sans écran. L'aspect des caractères peut changer d'un système à
-l'autre. La capture de l'écran « Texte » est celle de la version 0.10 : refaite avec la
-version 0.16, elle est identique. Celles de l'écran « Terme » (« contrat »), du terme
-« testament », de l'écran « Paramètres » et du centre d'aide ont été refaites avec la
-version 0.16, comme celle qui ouvre cette page. Les autres captures de l'écran « Terme »
-montrent la version qui les a apportées : celle du terme « protégé » avec sa phrase est de la
-version 0.11, celle du terme « chèque barré » de la version 0.12, celles des termes « protégé »
-et « diversité biologique » avec leur définition de la version 0.13, celle du terme « diversité
-biologique » avec sa phrase de la version 0.14, celle du terme « huissier de justice » trouvé
-par son synonyme de la version 0.15. Elles ne montrent pas ce que la version 0.16 a changé : la
-mention « À vérifier » y manque sous l'équivalent de « huissier de justice » et au-dessus de
-son synonyme, et elle est au singulier sous l'équivalent de « protégé » et de « diversité
-biologique », qui ont d'autres équivalents. Celle de l'écran de démarrage date de la
-version 0.5.2 : cet écran n'a pas changé depuis. L'adresse affichée dans le centre d'aide est
-un exemple. La capture de l'[installation](#installation) a été faite sous Windows, avec la
-version 0.5.3 : elle montre l'ancienne fiche, à cinq colonnes.*
+l'autre. La capture qui ouvre cette page est de la version 0.17. Celle de l'écran « Texte »
+sans terme allumé est de la version 0.10 : refaite avec la version 0.17, elle est identique.
+Celles de l'écran « Terme » (« contrat »), du terme « testament », du terme « huissier de
+justice » avec la mention « À vérifier », de l'écran « Paramètres » et du centre d'aide sont de
+la version 0.16 : refaites avec la version 0.17, elles sont identiques. Les autres captures de
+l'écran « Terme » montrent la version qui les a apportées : celle du terme « protégé » avec sa
+phrase est de la version 0.11, celle du terme « chèque barré » de la version 0.12, celles des
+termes « protégé » et « diversité biologique » avec leur définition de la version 0.13, celle
+du terme « diversité biologique » avec sa phrase de la version 0.14, celle du terme « huissier
+de justice » trouvé par son synonyme de la version 0.15. Elles ne montrent pas ce que la
+version 0.16 a changé : la mention « À vérifier » y manque sous l'équivalent de « huissier de
+justice » et au-dessus de son synonyme, et elle est au singulier sous l'équivalent de
+« protégé » et de « diversité biologique », qui ont d'autres équivalents. Celle de l'écran de
+démarrage date de la version 0.5.2 : cet écran n'a pas changé depuis. L'adresse affichée dans
+le centre d'aide est un exemple. La capture de l'[installation](#installation) a été faite sous
+Windows, avec la version 0.5.3 : elle montre l'ancienne fiche, à cinq colonnes.*
 
 ### Ce qui est fait, ce qui reste à faire
 
@@ -408,6 +453,7 @@ version 0.5.3 : elle montre l'ancienne fiche, à cinq colonnes.*
 | Une phrase d'exemple pour chaque terme seul | **Fait (version 0.14) : les 4 000 termes seuls ont leur phrase**, dans les deux langues : 1 887 depuis la version 0.11, 1 126 depuis la version 0.12, 987 depuis la version 0.14. Les phrases sont rédigées par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les phrases d'exemple](#les-phrases-dexemple). |
 | Des synonymes pour les 1 000 entrées complètes | **Fait (version 0.15) : 462 entrées complètes ont au moins un synonyme**, contre 132 avant : 223 en ont en français, 358 en arabe. Les 550 nouveaux synonymes sont rédigés par un assistant d'intelligence artificielle et **restent à vérifier par un juriste** : voir [Les synonymes (version 0.15)](#les-synonymes-version-015). |
 | La mention « À vérifier » sous chaque équivalent et au-dessus des synonymes | **Fait (version 0.16) : la fiche des 5 000 entrées porte la mention sous l'équivalent**, et le cercle « Synonymes » la porte au-dessus des synonymes : 769 entrées ont un synonyme français, 654 un synonyme arabe. La mention signale ce qui est à contrôler : **elle ne vérifie rien**. Voir [Le glossaire CSV](#le-glossaire-csv). |
+| Écran « Texte » : le terme que le pointeur désigne s'allume dans le texte, dans la traduction et dans la liste des termes | **Fait (version 0.17).** Vérifié par des tests, avec un pointeur simulé, et sur des captures faites sans écran : **personne ne l'a essayé avec une vraie souris**. Voir les [limites connues](#limites-connues). |
 | Message au service informatique | Fait : l'application prépare le message, le logiciel de messagerie de l'ordinateur l'envoie. L'adresse du service est à saisir dans « Paramètres ». |
 | Liaison avec un service d'intelligence artificielle en ligne | Essayée dans la version 0.6, **retirée dans la version 0.7** : voir [L'essai d'un service d'IA (version 0.6)](#lessai-dun-service-dia-version-06). L'application ne se connecte à rien. |
 | Installeur pour Windows (fichier `.msi`) | Fait (version 0.5.3) : voir [Installation](#installation). Il est fabriqué et essayé automatiquement sur une machine Windows. **Personne ne l'a encore installé à la main** : voir les [limites connues](#limites-connues). |
@@ -424,7 +470,7 @@ Il y a deux façons d'installer l'application :
 1. Ouvrir la page
    [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
    du dépôt. Sous la version la plus récente, dans « Assets », télécharger le fichier dont le
-   nom finit par `.msi`, par exemple `Traducteur-juridique-0.16.0.msi`.
+   nom finit par `.msi`, par exemple `Traducteur-juridique-0.17.0.msi`.
 2. Double-cliquer sur le fichier téléchargé.
 3. Cliquer sur **Suivant**, puis sur **Installer**, puis sur **Terminer**. L'application s'ouvre.
 
@@ -672,21 +718,36 @@ termes juridiques du texte.
      le cas de tous les termes du glossaire fourni.
    - Quand les termes sont nombreux, la liste défile : elle n'occupe jamais plus du tiers de
      l'écran, environ.
-7. **Un clic sur un terme ouvre sa fiche** sur l'écran « Terme » : un clic sur une case de la
+7. **Le pointeur sur un terme l'allume partout** (version 0.17). Amener le pointeur de la
+   souris sur un terme écrit en bleu, dans le texte ou dans la traduction, ou sur sa case : le
+   terme prend un fond bleu clair à chacune de ses occurrences dans le texte, à chaque passage
+   de la traduction qui le rend, et sur sa case. Il s'éteint quand le pointeur le quitte.
+   - Un seul terme est allumé à la fois. Les autres gardent leur couleur.
+   - Rien ne défile tout seul : une occurrence ou une case qui n'est pas affichée s'allume sans
+     être montrée.
+   - Quand le texte ou la liste défile sous le pointeur, le terme allumé devient celui qui
+     arrive sous le pointeur. De même après une nouvelle traduction (Ctrl+Entrée).
+   - Un terme peut ne s'allumer que dans le texte et dans la liste. Quand une phrase est
+     reprise d'un exemple du glossaire, sa traduction est celle du glossaire : le terme n'y est
+     repéré que si son équivalent y est écrit.
+   - Dans la traduction, le passage allumé comprend l'article ou les lettres collées au mot :
+     « La nullité » dans une traduction en français, « للقانون » dans une traduction en arabe.
+   - Au clavier, rien ne s'allume : il faut une souris.
+8. **Un clic sur un terme ouvre sa fiche** sur l'écran « Terme » : un clic sur une case de la
    liste, ou sur un terme écrit en bleu dans le texte ou dans la traduction. Sa définition,
    ses phrases d'exemple et ses références sont dans le menu « Plus de détails » : voir
    « Utiliser l'écran « Terme » ».
    - Le bouton **Retour au texte** s'affiche alors à gauche de la barre d'outils. Il ramène à
      l'écran « Texte » : le texte, sa traduction et la liste des termes n'ont pas changé.
    - Ctrl+2 ramène aussi au texte.
-8. **Les cinq étapes du traitement** ne sont pas affichées en permanence. Un clic sur
+9. **Les cinq étapes du traitement** ne sont pas affichées en permanence. Un clic sur
    l'étiquette de résultat, ou la commande *Traduction → Étapes du traitement…*, les ouvre
    dans une petite fenêtre, avec le résultat de chacune (« 83 mots sur 84 » pour la
    recherche). Laisser le pointeur sur une étape affiche le détail : règles appliquées, mots
    non trouvés, phrases reprises d'un exemple du glossaire. Un clic ailleurs referme la
    petite fenêtre.
-9. **Copier** place la traduction dans le presse-papiers. **Exporter** l'enregistre dans un
-   fichier `.docx` ou `.txt`. **Effacer** vide les deux zones.
+10. **Copier** place la traduction dans le presse-papiers. **Exporter** l'enregistre dans un
+    fichier `.docx` ou `.txt`. **Effacer** vide les deux zones.
 
 Chaque écran garde son propre sens de traduction.
 
@@ -1281,7 +1342,7 @@ spécialiste. **Chaque équivalent est à vérifier**, et chaque définition aus
   urbanisme et environnement, propriété intellectuelle, consommation et numérique, droit
   maritime et nationalité. Le cercle « Contextualisation » est coloré pour tous les termes.
   Voir [Les phrases d'exemple](#les-phrases-dexemple). Les captures du terme « protégé » sont au
-  [début de cette page](#lapplication-version-016).
+  [début de cette page](#lapplication-version-017).
 - **La mention « À vérifier ».** Depuis la version 0.16, elle est écrite dans deux colonnes.
   - `source_equivalent` dit « à vérifier (équivalent d'exemple) ». L'application affiche
     « À vérifier · équivalent d'exemple » au pied de l'équivalent (« équivalents d'exemple »
@@ -1738,7 +1799,7 @@ traducteur/
     recherche.py             écran « Terme » : barre de recherche, accueil, terme introuvable
     fiche.py                 fiche d'un terme, contenu de chaque information, listes d'entrées
     details.py               menu « Plus de détails » : les six cercles et l'information choisie
-    texte.py                 écran « Texte » : zones de texte, petite fenêtre des étapes
+    texte.py                 écran « Texte » : zones de texte, terme allumé, petite fenêtre des étapes
     termes.py                écran « Texte » : liste des termes détectés
     pages.py                 écrans « Paramètres », « Description de la plateforme », « Centre d'aide »
     animation.py             allumage progressif des cercles et des étapes
@@ -1783,7 +1844,7 @@ python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
 
-Les 758 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
+Les 774 tests s'exécutent sans ouvrir de fenêtre. La plupart utilisent un petit glossaire de
 40 entrées (`tests/donnees/glossaire_essai.csv`), pour que leurs résultats ne dépendent pas du
 contenu du glossaire fourni. Les tests de `tests/test_glossaire_fourni.py` portent sur ce
 dernier : ils contiennent des nombres (5 000 entrées, 70 résultats pour « contrat ») à mettre
@@ -1827,6 +1888,16 @@ Les tests de l'interface vérifient ce que chaque écran affiche et ce que fait 
 Ils ne vérifient pas l'aspect : celui-ci a été contrôlé à l'œil, sur des captures (voir les
 [limites connues](#limites-connues)).
 
+Depuis la version 0.17, quinze tests de `tests/test_interface_texte.py` portent sur le terme
+allumé de l'écran « Texte ». Ils amènent un pointeur simulé sur un terme du texte, de la
+traduction ou de la liste, font défiler le texte et la liste sous lui, et comptent à l'écran
+les points qui ont la couleur du fond. **Aucune vraie souris n'est déplacée.** Pour éprouver
+ces tests, 58 modifications ont été faites exprès dans le code du terme allumé, une à la fois
+(une ligne retirée, une condition inversée) : chacune a fait échouer au moins un test. Avant
+chaque test, le pointeur simulé est écarté des fenêtres : sans cela, il resterait là où le test
+précédent l'a laissé. Un test de `tests/test_controle.py` vérifie que le contrôle échoue quand
+le terme ne s'allume pas.
+
 Les tests de `tests/test_controle.py` portent sur le contrôle de l'installation (option
 `--controle`) ; l'un d'eux lance l'application entière, comme le fait l'installeur. Ceux de
 `tests/test_installeur.py` portent sur les outils de l'installeur : liste des fichiers, icône,
@@ -1853,7 +1924,7 @@ toute seule quand l'application ou l'installeur change :
 
 - sur la branche `main`, l'installeur est publié sur la page
   [Releases](https://github.com/SAMOU2/La-traduction-juridique-assiste-par-l-ia-entre-gain-de-producutivite-et-risques-d-inexactitude/releases)
-  comme version `v0.16.0`, puis `v0.16.1`… ;
+  comme version `v0.17.0`, puis `v0.17.1`… ;
 - sur une branche de travail (`arena/…`), il est publié comme **version d'essai**, remplacée à
   chaque fabrication. Elle sert à essayer un travail avant de le fusionner dans `main` ; elle
   est retirée quand ce travail est fusionné.
@@ -1876,12 +1947,14 @@ Le script `outils/installeur/construire.py` fait tout le travail, en sept étape
 **Le contrôle (étape 3).** Lancée avec `--controle=dossier`, l'application démarre comme
 d'habitude, avec son écran de démarrage et le glossaire fourni. Puis elle cherche un terme,
 clique sur un cercle du menu « Plus de détails », traduit le texte d'exemple, ouvre la fiche
-d'un terme du texte et revient au texte, enregistre la traduction dans un document Word, le
-relit, affiche ses cinq écrans et vérifie que les menus de Qt sont en français. Elle écrit ce
-qu'elle a constaté dans `dossier/rapport.json`, avec une image de sa fenêtre et une image de
-l'écran de démarrage, puis elle se ferme. Si une étape échoue, la fabrication s'arrête. Ce
-contrôle ne regarde pas l'aspect des écrans. Il fonctionne aussi sans l'installeur :
-`python main.py --controle=dossier`.
+d'un terme du texte et revient au texte, amène le pointeur sur le premier terme du texte
+(depuis la version 0.17 : ce terme doit s'allumer dans le texte, dans la traduction et dans la
+liste, puis s'éteindre), enregistre la traduction dans un document Word, le relit, affiche ses
+cinq écrans et vérifie que les menus de Qt sont en français. Elle écrit ce qu'elle a constaté
+dans `dossier/rapport.json`, avec une image de sa fenêtre et une image de l'écran de démarrage,
+puis elle se ferme. Si une étape échoue, la fabrication s'arrête. Ce contrôle ne regarde pas
+l'aspect des écrans, et il ne déplace pas la souris : l'écran reçoit le message que Qt lui
+enverrait. Il fonctionne aussi sans l'installeur : `python main.py --controle=dossier`.
 
 **L'essai de l'installeur (étape 7).** Il se fait sans afficher les écrans de l'installeur :
 
@@ -2049,12 +2122,12 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   texte à traduire reçoit sa traduction du glossaire : une erreur dans la phrase arabe passe
   alors dans la traduction. L'application le signale à l'étape 5 et au survol de l'étiquette
   de résultat : elle dit que la phrase est reprise d'un exemple « à vérifier ».
-- **Les versions 0.14, 0.15 et 0.16 n'ont été regardées sur aucun écran.** Les captures du
-  début de cette page ont été faites sans écran, sous Linux. Personne n'a regardé les nouvelles
-  phrases, les nouveaux synonymes ni les nouvelles mentions dans l'application sous Windows, ni
-  les écrans « Paramètres » et « Centre d'aide » de la version 0.16. La place de la mention
-  au-dessus des synonymes a été mesurée par les tests et regardée sur des captures, en français
-  et en arabe.
+- **Les versions 0.14 à 0.17 n'ont été regardées sur aucun écran.** Les captures du début de
+  cette page ont été faites sans écran, sous Linux. Personne n'a regardé les nouvelles phrases,
+  les nouveaux synonymes ni les nouvelles mentions dans l'application sous Windows, ni les
+  écrans « Paramètres » et « Centre d'aide » de la version 0.16, ni le terme allumé de la
+  version 0.17. La place de la mention au-dessus des synonymes a été mesurée par les tests et
+  regardée sur des captures, en français et en arabe.
 - **La mention « À vérifier » est sur chaque fiche.** Depuis la version 0.16, les 5 000
   équivalents du glossaire fourni la portent : elle dit vrai, puisque personne ne les a relus,
   mais elle ne distingue plus une entrée d'une autre. Elle redeviendra utile à mesure que des
@@ -2132,6 +2205,15 @@ long. Cette fabrication n'a été faite que sur la machine de GitHub.
   d'un réglage à l'autre au clavier, l'infobulle ne s'affiche pas. Rien n'a été essayé sur un
   écran tactile. L'application déclare aussi le texte de chaque infobulle de ces deux écrans
   comme description, pour les lecteurs d'écran ; aucun lecteur d'écran n'a été essayé.
+- **Terme allumé sous le pointeur (version 0.17).** **Aucune vraie souris n'a été essayée**, ni
+  sous Windows ni ailleurs : le terme s'allume dans les tests, où le pointeur est simulé. Il
+  faut une souris : au clavier, rien ne s'allume, et un lecteur d'écran n'en dit rien. Rien ne
+  défile tout seul : dans un long texte, le passage de la traduction qui s'allume peut être
+  hors de la vue, et faire défiler la traduction demande d'y amener le pointeur, qui quitte
+  alors le terme. Un terme d'une phrase reprise d'un exemple du glossaire peut ne pas s'allumer
+  dans la traduction. Le fond bleu clair se distingue peu du blanc de la page (rapport de
+  contraste : 1,5) : sur un écran pâle, il peut mal se voir. Le terme allumé reste lisible sur
+  ce fond (rapport de 6,1 ; les tests demandent au moins 4,5).
 - **Message au service informatique.** L'application demande au système d'ouvrir le logiciel
   de messagerie de l'ordinateur ; elle n'envoie rien elle-même. Cela n'a été essayé avec aucun
   logiciel de messagerie. Si le système répond qu'il ne peut pas ouvrir le message, l'adresse
@@ -2276,7 +2358,7 @@ partie de l'application.
 ## Maquette de l'application de bureau
 
 Maquette SVG des deux écrans du prototype (version 0.1). Les deux écrans sont programmés (voir
-[L'application](#lapplication-version-016)). L'application actuelle ne ressemble plus à cette
+[L'application](#lapplication-version-017)). L'application actuelle ne ressemble plus à cette
 maquette : elle est gardée pour mémoire.
 
 ### Écran 1 — Recherche d'un terme

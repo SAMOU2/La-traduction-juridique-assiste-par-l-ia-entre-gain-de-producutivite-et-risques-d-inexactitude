@@ -48,6 +48,10 @@ GRIS_200 = "#E6EAF0"
 GRIS_300 = "#CDD3DD"
 #: Colonne « Équivalent » du tableau des termes : teinte au repos.
 TEINTE_TABLEAU = "#F7F9FF"
+#: Écran « Texte » : fond du terme allumé (celui que le pointeur désigne), dans le texte, dans la traduction et
+#: dans la liste des termes ; couleur du terme sur ce fond.
+FOND_TERME_ALLUME = BLEU_200
+TERME_ALLUME = BLEU_FONCE
 #: Menu « Plus de détails » de l'écran « Terme » : une couleur par cercle.
 DETAIL_VERT = "#12B76A"
 DETAIL_ROUGE = "#F04438"

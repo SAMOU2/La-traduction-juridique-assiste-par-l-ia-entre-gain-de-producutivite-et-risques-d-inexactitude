@@ -8,7 +8,8 @@ Emploi :
 Personne n'a besoin d'être devant l'écran. L'application démarre comme d'habitude (écran de
 démarrage, fenêtre, glossaire fourni), puis elle cherche un terme, ouvre une information du menu
 « Plus de détails », traduit le texte d'exemple, ouvre la fiche d'un terme du texte et revient au
-texte, enregistre la traduction dans un document Word, le relit et affiche chaque écran. Elle écrit ce
+texte, amène le pointeur sur un terme du texte (il doit s'allumer dans le texte, dans la traduction et
+dans la liste), enregistre la traduction dans un document Word, le relit et affiche chaque écran. Elle écrit ce
 qu'elle a constaté dans ``<dossier>/rapport.json``, puis elle se ferme : code de sortie 0 si tout a
 fonctionné, 1 sinon. Elle laisse aussi deux images dans le dossier : ``fenetre.png``, sa fenêtre, et
 ``demarrage.png``, l'écran de l'ordinateur à l'endroit de l'écran de démarrage (on y voit si son
@@ -28,8 +29,8 @@ import traceback
 from collections.abc import Callable, Sequence
 from pathlib import Path
 
-from PySide6.QtCore import QCoreApplication, QObject, QSettings, Qt, QTimer, Signal, qVersion
-from PySide6.QtGui import QColor
+from PySide6.QtCore import QCoreApplication, QEvent, QObject, QPointF, QSettings, Qt, QTimer, Signal, qVersion
+from PySide6.QtGui import QColor, QMouseEvent, QTextCursor
 from PySide6.QtWidgets import QApplication
 
 from . import NOM_APPLICATION, __version__
@@ -173,6 +174,7 @@ class Controle(QObject):
         self._etape("glossaire", self._glossaire)
         self._etape("recherche", self._recherche)
         self._etape("traduction", self._traduction)
+        self._etape("terme_allume", self._terme_allume)
         self._etape("document", self._document)
         self._etape("ecrans", self._ecrans)
         self._etape("textes_de_qt", self._textes_de_qt)
@@ -246,6 +248,50 @@ class Controle(QObject):
         return {"sens": f"{traduction.source} -> {traduction.cible}", "caracteres": len(traduction.texte),
                 "termes_reconnus": len(traduction.termes), "mots": traduction.mots,
                 "mots_reconnus": traduction.mots_reconnus, "fiche_ouverte_depuis_le_texte": cellules[0].entree.terme_fr}
+
+    def _terme_allume(self) -> dict:
+        """Le pointeur vient sur le premier terme du texte : ce terme s'allume dans le texte, dans la traduction et
+        dans la liste. Le pointeur s'en va : tout s'éteint.
+
+        La souris n'est pas déplacée : l'écran reçoit les messages que Qt lui enverrait. Entre ces messages, le
+        contrôle ne rend pas la main à Qt : la vraie souris, où qu'elle soit, ne change rien au résultat.
+        """
+        page = self.fenetre.page_texte
+        self._exiger(page.isVisible() and page.traduction is not None, "le texte traduit n'est pas affiché")
+        zone, vue = page.zone_source, page.zone_source.viewport()
+
+        def fonds(champ) -> int:
+            """Nombre de passages d'une zone de texte écrits sur un fond."""
+            return sum(1 for passage in champ.extraSelections()
+                       if passage.format.background().style() != Qt.BrushStyle.NoBrush)
+
+        # Au départ, le pointeur n'est sur aucun terme : rien n'est allumé, et les termes du texte sont colorés.
+        QApplication.sendEvent(vue, QEvent(QEvent.Type.Leave))
+        colores = zone.extraSelections()
+        self._exiger(len(colores) > 0, "aucun terme n'est coloré dans le texte")
+        self._exiger(page.terme_allume is None and fonds(zone) == 0 and fonds(page.zone_cible) == 0,
+                     "un terme est allumé alors que le pointeur n'en désigne aucun")
+        # Le milieu du premier terme coloré, tel qu'il est écrit à l'écran.
+        debut, fin = colores[0].cursor.selectionStart(), colores[0].cursor.selectionEnd()
+        curseur = QTextCursor(zone.document())
+        curseur.setPosition((debut + fin) // 2)
+        point = zone.cursorRect(curseur).center()
+        attendue = page.traduction.occurrences[0].entree
+        QApplication.sendEvent(vue, QMouseEvent(
+            QEvent.Type.MouseMove, QPointF(point), QPointF(vue.mapToGlobal(point)), Qt.MouseButton.NoButton,
+            Qt.MouseButton.NoButton, Qt.KeyboardModifier.NoModifier))
+        self._exiger(page.terme_allume is attendue, "le terme placé sous le pointeur ne s'est pas allumé")
+        case = page.termes.cellule_de(attendue)
+        dans_le_texte, dans_la_traduction = fonds(zone), fonds(page.zone_cible)
+        self._exiger(dans_le_texte >= 1, "le terme allumé n'a reçu aucun fond dans le texte")
+        self._exiger(case is not None and case.allumee, "la case du terme allumé ne s'est pas allumée")
+        self._exiger([autre for autre in page.termes.cellules if autre.allumee] == [case],
+                     "plusieurs cases se sont allumées")
+        QApplication.sendEvent(vue, QEvent(QEvent.Type.Leave))
+        self._exiger(page.terme_allume is None and not case.allumee and fonds(zone) == 0
+                     and fonds(page.zone_cible) == 0, "le terme est resté allumé après le départ du pointeur")
+        self._exiger(len(zone.extraSelections()) == len(colores), "les termes du texte ont perdu leur couleur")
+        return {"terme": attendue.terme_fr, "dans_le_texte": dans_le_texte, "dans_la_traduction": dans_la_traduction}
 
     def _document(self) -> dict:
         from . import documents
