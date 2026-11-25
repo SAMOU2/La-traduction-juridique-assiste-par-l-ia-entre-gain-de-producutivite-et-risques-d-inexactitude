@@ -28,7 +28,14 @@ from PySide6.QtWidgets import (
 )
 
 from ..contextes import DEFINITION, PROPRE, Emploi, emplois
-from ..glossaire import Entree, Glossaire, definition_a_verifier, equivalent_a_verifier
+from ..glossaire import (
+    Entree,
+    Glossaire,
+    definition_a_verifier,
+    equivalents_a_verifier,
+    source_de_l_equivalent,
+    synonymes_a_verifier,
+)
 from ..langues import AR, FR, NOM_EN_FRANCAIS, autre_langue, deviner_langue
 from ..surlignage import positions_du_terme
 from . import icones, theme
@@ -385,6 +392,17 @@ class Colonne(QObject):
         bouton.clicked.connect(lambda _=False, cible=autre: self.entree_demandee.emit(cible))
         return bouton
 
+    def _source_au_pied(self, source: str) -> EtiquetteCourte:
+        """Pied du champ : « Source : », puis la source que cite le glossaire. Renvoie l'étiquette de la source."""
+        mention = QHBoxLayout()
+        mention.setSpacing(4)
+        self.ligne_du_pied.addWidget(icone_fixe("document", theme.TEXTE_3))
+        mention.addWidget(etiquette("Source :", "pied"))
+        cite = EtiquetteCourte(source, "piedFort")
+        mention.addWidget(cite, 1)
+        self.ligne_du_pied.addLayout(mention, 1)
+        return cite
+
     def _vide(self, nom_icone: str, titre: str, texte: str) -> None:
         """Message centré, affiché quand le glossaire ne donne rien pour ce champ."""
         # Les colonnes n'ont pas la même marge haute : ce complément met leurs messages à la même hauteur.
@@ -524,13 +542,7 @@ class ColonneDefinition(Colonne):
         if detail is not None:
             self._pied_a_verifier(detail, explication)
             return
-        mention = QHBoxLayout()
-        mention.setSpacing(4)
-        self.ligne_du_pied.addWidget(icone_fixe("document", theme.TEXTE_3))
-        mention.addWidget(etiquette("Source :", "pied"))
-        self.source_de_la_definition = EtiquetteCourte(entree.source_definition, "piedFort")
-        mention.addWidget(self.source_de_la_definition, 1)
-        self.ligne_du_pied.addLayout(mention, 1)
+        self.source_de_la_definition = self._source_au_pied(entree.source_definition)
 
     def _pied_a_verifier(self, detail: str, explication: str) -> None:
         """Pied du champ : la mention « À vérifier », son détail (« définition d'exemple ») et son infobulle."""
@@ -550,13 +562,16 @@ class ColonneDefinition(Colonne):
 class ColonneEquivalent(Colonne):
     """L'équivalent du terme dans la langue cible, et ses autres équivalents.
 
-    Au pied : la mention « À vérifier » quand le glossaire la porte sur l'équivalent lui-même,
-    puis le lien qui copie l'équivalent.
+    Au pied : la mention « À vérifier » quand le glossaire la porte sur l'équivalent, ou la source
+    qu'il cite pour lui ; puis le lien qui copie l'équivalent. La mention vaut aussi pour les autres
+    équivalents : elle s'écrit alors au pluriel (« équivalents d'exemple »).
     """
 
-    #: Infobulle de la mention « À vérifier ».
+    #: Infobulles de la mention « À vérifier » : pour l'équivalent seul, et quand d'autres équivalents le suivent.
     EXPLICATION = ("Cet équivalent n’est repris d’aucun texte officiel ni d’aucun dictionnaire : "
                    "vérifiez-le avant de l’employer.")
+    EXPLICATION_AVEC_D_AUTRES = ("Ces équivalents ne sont repris d’aucun texte officiel ni d’aucun dictionnaire : "
+                                 "vérifiez-les avant de les employer.")
 
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
         corps = self.disposition
@@ -594,11 +609,15 @@ class ColonneEquivalent(Colonne):
 
         #: La mention « À vérifier », quand le glossaire la porte sur l'équivalent (``None`` sinon).
         self.mention: QWidget | None = None
-        detail = equivalent_a_verifier(entree)
+        #: La source que le glossaire cite pour l'équivalent (``None`` s'il n'en cite pas).
+        self.source_de_l_equivalent: EtiquetteCourte | None = None
+        detail = equivalents_a_verifier(entree, cible)
+        source_citee = source_de_l_equivalent(entree)
         if detail is not None:
-            self.mention = mention_a_controler(self.EXPLICATION, detail)
-        if self.mention is not None:
+            self.mention = mention_a_controler(self.EXPLICATION_AVEC_D_AUTRES if autres else self.EXPLICATION, detail)
             self.ligne_du_pied.addWidget(self.mention, 1)
+        elif source_citee:
+            self.source_de_l_equivalent = self._source_au_pied(source_citee)
         else:
             self.ligne_du_pied.addStretch(1)
         self.bouton_copier = self._lien_du_pied("Copier l’équivalent", copier, "Équivalent copié")
@@ -829,7 +848,11 @@ class ColonneTermesLies(Colonne):
     terme que le glossaire cite sans lui donner d'entrée.
     """
 
-    marge_haute = 20
+    #: La marge haute est celle d'une phrase d'exemple (``ColonneContexte``) : une mention « À vérifier » écrite
+    #: au-dessus des puces est à la même hauteur que celle d'une phrase. Sans mention, les puces commencent un
+    #: peu plus bas.
+    marge_haute = 18
+    HAUT_DES_PUCES = 20
     #: Message affiché quand le glossaire ne donne aucun terme : icône, titre, texte.
     ICONE, TITRE_VIDE, TEXTE_VIDE = "", "", ""
 
@@ -837,20 +860,37 @@ class ColonneTermesLies(Colonne):
         super().__init__(parent)
         #: Les puces affichées, dans l'ordre du glossaire.
         self.puces: list[QWidget] = []
+        #: La mention « À vérifier » écrite au-dessus des puces (``None`` sans mention).
+        self.mention: QWidget | None = None
 
     def afficher(self, glossaire: Glossaire | None, entree: Entree | None, source: str) -> None:
-        self.puces = []
+        self.puces, self.mention = [], None
         super().afficher(glossaire, entree, source)
 
     def termes(self, entree: Entree, source: str) -> list[tuple[str, str | None]]:
         """Les termes à afficher : (terme, langue) ; la langue est ``None`` quand elle est à deviner."""
         raise NotImplementedError
 
+    def mention_des_termes(self, entree: Entree, source: str) -> QWidget | None:
+        """La mention « À vérifier » à écrire au-dessus des puces ; ``None`` quand il n'y a rien à signaler."""
+        return None
+
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
         termes = self.termes(entree, source)
         if not termes:
             self._vide(self.ICONE, self.TITRE_VIDE, self.TEXTE_VIDE)
             return
+        self.mention = self.mention_des_termes(entree, source)
+        if self.mention is not None:
+            # La mention se lit de gauche à droite, même au-dessus de synonymes arabes. Elle est du côté où
+            # commencent les puces : à gauche en français, à droite en arabe.
+            self.mention.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+            a_droite = self.corps.layoutDirection() == Qt.LayoutDirection.RightToLeft
+            self.disposition.addWidget(
+                self.mention, 0, Qt.AlignmentFlag.AlignRight if a_droite else Qt.AlignmentFlag.AlignLeft)
+            self.disposition.addSpacing(10)
+        else:
+            self.disposition.addSpacing(self.HAUT_DES_PUCES - self.marge_haute)
         self.puces = [self._puce_de_terme(texte, langue, grande=True) for texte, langue in termes]
         self._rangee_de_puces(self.puces, espace=8)
         self.disposition.addStretch(1)
@@ -863,6 +903,8 @@ class ColonneTermesLies(Colonne):
         elif ouvrables:
             legende.definir_texte("En bleu : une entrée du glossaire, à ouvrir d’un clic · en gris : un terme "
                                   "sans entrée", "En bleu : une entrée du glossaire, à ouvrir d’un clic", "")
+        elif len(self.puces) == 1:
+            legende.definir_texte("Ce terme n’a pas encore d’entrée dans le glossaire", "")
         else:
             legende.definir_texte("Ces termes n’ont pas encore d’entrée dans le glossaire", "")
         self.ligne_du_pied.addWidget(icone_fixe("information", theme.TEXTE_3))
@@ -870,12 +912,29 @@ class ColonneTermesLies(Colonne):
 
 
 class ColonneSynonymes(ColonneTermesLies):
-    """Les synonymes du terme, dans la langue source."""
+    """Les synonymes du terme, dans la langue source.
+
+    Au-dessus des puces : la mention « À vérifier » quand l'équivalent de l'entrée la porte. Le glossaire
+    n'a pas de colonne pour la source des synonymes : ils sont à vérifier avec l'équivalent.
+    """
 
     ICONE, TITRE_VIDE, TEXTE_VIDE = "equivalence", "Aucun synonyme pour ce terme", "Le glossaire n’en donne pas."
+    #: Infobulles de la mention « À vérifier » : pour plusieurs synonymes, et pour un seul.
+    EXPLICATION = ("Ces synonymes ne sont repris d’aucun texte officiel ni d’aucun dictionnaire : vérifiez-les "
+                   "avant de les employer. Dans un texte à traduire, un synonyme est traduit comme le terme.")
+    EXPLICATION_POUR_UN_SEUL = (
+        "Ce synonyme n’est repris d’aucun texte officiel ni d’aucun dictionnaire : vérifiez-le avant de "
+        "l’employer. Dans un texte à traduire, un synonyme est traduit comme le terme.")
 
     def termes(self, entree: Entree, source: str) -> list[tuple[str, str | None]]:
         return [(synonyme, source) for synonyme in entree.synonymes(source)]
+
+    def mention_des_termes(self, entree: Entree, source: str) -> QWidget | None:
+        detail = synonymes_a_verifier(entree, source)
+        if detail is None:
+            return None
+        seul = len(entree.synonymes(source)) == 1
+        return mention_a_controler(self.EXPLICATION_POUR_UN_SEUL if seul else self.EXPLICATION, detail)
 
     def remplir(self, entree: Entree, source: str, cible: str) -> None:
         # Des synonymes arabes se suivent de droite à gauche.

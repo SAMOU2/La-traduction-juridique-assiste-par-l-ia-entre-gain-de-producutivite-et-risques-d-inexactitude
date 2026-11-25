@@ -135,7 +135,6 @@ QMenu::indicator {{ width: 14px; height: 14px; margin-left: 6px; }}
 /* ---------- Barre d'outils : sens de traduction, titre d'un écran d'information ---------- */
 #sens {{ background: {SURFACE}; border: 1px solid {FILET}; border-radius: 10px; }}
 QLabel[classe="titrePage"] {{ color: {MARINE}; font-size: 19px; font-weight: 600; }}
-QLabel[classe="sousTitrePage"] {{ color: {TEXTE_3}; font-size: 13px; }}
 QLabel[classe="langueSens"] {{ color: {TEXTE}; font-size: 14px; font-weight: 600; }}
 QLabel[classe="langueSens"][arabe="true"] {{ font-size: 16px; }}
 #boutonInverser {{

@@ -10,7 +10,10 @@ from traducteur.glossaire import (
     definition_a_verifier,
     detecter_separateur,
     equivalent_a_verifier,
+    equivalents_a_verifier,
     mention_a_verifier,
+    source_de_l_equivalent,
+    synonymes_a_verifier,
 )
 from traducteur.langues import AR, FR
 
@@ -25,9 +28,12 @@ def test_le_glossaire_d_exemple_se_charge(glossaire):
     assert glossaire.nom == "glossaire_essai.csv"
     assert glossaire.encodage == "UTF-8"
     assert glossaire.separateur == ";"
-    assert glossaire.colonnes == list(COLONNES)  # toutes les colonnes, dans l'ordre documenté
+    # Toutes les colonnes d'avant la version 0.16, dans l'ordre documenté. Ce fichier n'a pas la colonne
+    # « source_equivalent » : un glossaire sans elle se charge comme avant, et aucun équivalent n'y est signalé.
+    assert glossaire.colonnes == [colonne for colonne in COLONNES if colonne != "source_equivalent"]
     assert glossaire.colonnes_ignorees == []
     assert glossaire.lignes_ignorees == 0
+    assert all(entree.source_equivalent == "" and equivalent_a_verifier(entree) is None for entree in glossaire.entrees)
 
 
 def test_les_entrees_d_exemple_sont_completes(glossaire):
@@ -366,3 +372,87 @@ def test_sur_quoi_porte_la_mention_a_verifier(definition, source, equivalent_att
     assert definition_a_verifier(entree) == definition_attendue
     # La mention entière reste lisible telle que le glossaire l'écrit.
     assert (mention_a_verifier(source) is None) == (not source or source.startswith("Code"))
+
+
+@pytest.mark.parametrize(
+    ("source_equivalent", "definition", "source_definition", "mention_attendue", "source_attendue"),
+    [
+        # La colonne « source_equivalent » porte la mention de l'équivalent, avec ou sans définition, que la
+        # définition cite sa source ou non.
+        ("à vérifier (équivalent d’exemple)", "", "", "équivalent d’exemple", ""),
+        ("à vérifier (équivalent d’exemple)", "Contrat de location.", "à vérifier (définition d’exemple)",
+         "équivalent d’exemple", ""),
+        ("à vérifier (équivalent d’exemple)", "Contrat de location.", "Code civil, art. 467",
+         "équivalent d’exemple", ""),
+        ("À vérifier", "Contrat de location.", "", "", ""),
+        # Une source : l'équivalent n'est plus à vérifier, même si l'ancienne mention de « source_definition »
+        # le nomme encore.
+        ("Lexique d’essai, p. 12", "Contrat de location.", "à vérifier (définition d’exemple)",
+         None, "Lexique d’essai, p. 12"),
+        ("Lexique d’essai, p. 12", "Contrat de location.", "à vérifier (équivalent et définition d’exemple)",
+         None, "Lexique d’essai, p. 12"),
+        ("Lexique d’essai, p. 12", "", "à vérifier (équivalent d’exemple)", None, "Lexique d’essai, p. 12"),
+        # Colonne vide : « source_definition » est lue comme avant la version 0.16.
+        ("", "Contrat de location.", "à vérifier (équivalent et définition d’exemple)", "équivalent d’exemple", ""),
+        ("", "", "à vérifier (équivalent d’exemple)", "équivalent d’exemple", ""),
+        ("", "Contrat de location.", "à vérifier (définition d’exemple)", None, ""),
+        ("", "Contrat de location.", "Code civil, art. 467", None, ""),
+        ("", "", "", None, ""),
+    ],
+)
+def test_la_colonne_source_equivalent(source_equivalent, definition, source_definition, mention_attendue,
+                                      source_attendue):
+    """Version 0.16 : la mention de l'équivalent a sa colonne ; elle ne dépend plus de celle de la définition."""
+    glossaire = Glossaire.depuis_texte(
+        "terme_fr;terme_ar;source_equivalent;definition_fr;source_definition\n"
+        f"bail;إيجار;{source_equivalent};{definition};{source_definition}\n")
+    entree, = glossaire.entrees
+    assert glossaire.colonnes == ["terme_fr", "terme_ar", "source_equivalent", "definition_fr", "source_definition"]
+    assert entree.source_equivalent == source_equivalent
+    assert equivalent_a_verifier(entree) == mention_attendue
+    assert source_de_l_equivalent(entree) == source_attendue
+    # La mention de la définition ne dépend pas de la nouvelle colonne.
+    sans_colonne, = Glossaire.depuis_texte(
+        f"terme_fr;terme_ar;definition_fr;source_definition\nbail;إيجار;{definition};{source_definition}\n").entrees
+    assert definition_a_verifier(entree) == definition_a_verifier(sans_colonne)
+
+
+def test_la_mention_de_l_equivalent_vaut_pour_les_autres_equivalents_et_pour_les_synonymes():
+    """Sous l'équivalent, la mention est au pluriel quand d'autres équivalents le suivent ; les synonymes la portent."""
+    glossaire = Glossaire.depuis_texte(
+        "Terme;Équivalent;Source équivalent;synonymes_fr;synonymes_ar\n"
+        "huissier de justice;محضر قضائي;à vérifier (équivalent d’exemple);huissier;مفوض قضائي | عدل منفذ\n"
+        "testament;وصية;à vérifier (équivalent d’exemple);;\n"
+        "bail;إيجار;Lexique d’essai, p. 12;location;كراء\n"
+        "prêt;قرض;A verifier : Equivalent à relire;emprunt;\n"
+        "don;هبة;à vérifier (repris d’un forum);donation;\n"
+        "gage;رهن;à vérifier;nantissement;\n"
+        "dépôt;وديعة;;consignation;\n")
+    # Le nom de la colonne se reconnaît sans son tiret bas, avec ou sans accent.
+    assert glossaire.colonnes == ["terme_fr", "terme_ar", "source_equivalent", "synonymes_fr", "synonymes_ar"]
+    assert glossaire.colonnes_ignorees == []
+    huissier, testament, bail, pret, don, gage, depot = glossaire.entrees
+
+    def mentions(entree):
+        """Les mentions de la fiche, du français vers l'arabe puis de l'arabe vers le français.
+
+        Sous l'équivalent : les synonymes de la langue cible sont les « autres équivalents ». Dans le cercle
+        « Synonymes » : ceux de la langue du terme.
+        """
+        return [(equivalents_a_verifier(entree, cible), synonymes_a_verifier(entree, source))
+                for source, cible in ((FR, AR), (AR, FR))]
+
+    # « huissier de justice » : un synonyme français, deux synonymes arabes. Sous l'équivalent, la mention est au
+    # pluriel dans les deux sens. Dans le cercle, elle est au singulier pour un seul synonyme.
+    assert mentions(huissier) == [("équivalents d’exemple", "synonyme d’exemple"),
+                                  ("équivalents d’exemple", "synonymes d’exemple")]
+    assert mentions(testament) == [("équivalent d’exemple", None)] * 2
+    # Une source citée, ou pas de mention : rien n'est signalé, ni pour l'équivalent ni pour les synonymes.
+    assert mentions(bail) == mentions(depot) == [(None, None)] * 2
+    assert source_de_l_equivalent(bail) == "Lexique d’essai, p. 12" and source_de_l_equivalent(depot) == ""
+    assert source_de_l_equivalent(huissier) == ""
+    # Le détail suit les mots du glossaire : sa majuscule est gardée. Quand il ne commence pas par « équivalent »,
+    # il reste tel quel sous l'équivalent, et il est vide pour les synonymes.
+    assert mentions(pret) == [("Equivalent à relire", "Synonyme à relire"), ("Équivalents à relire", None)]
+    assert mentions(don) == [("repris d’un forum", ""), ("repris d’un forum", None)]
+    assert mentions(gage) == [("", ""), ("", None)]

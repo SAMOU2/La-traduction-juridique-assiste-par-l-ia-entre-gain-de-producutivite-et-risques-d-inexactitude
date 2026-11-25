@@ -529,6 +529,93 @@ def test_un_terme_sans_definition_peut_etre_a_verifier(fenetre, application, tmp
     assert page.fiche.colonne_equivalent.mention is None and textes(page.fiche.colonne_equivalent.pied) == []
 
 
+def test_la_colonne_source_equivalent_porte_la_mention_de_l_equivalent(fenetre, application, tmp_path):
+    """Version 0.16 : la mention de l'équivalent a sa colonne ; elle vaut aussi pour les synonymes."""
+    fenetre.charger_glossaire(ecrire(tmp_path / "equivalents.csv", (
+        "terme_fr;terme_ar;source_equivalent;synonymes_fr;synonymes_ar;definition_fr;source_definition\n"
+        "huissier de justice;محضر قضائي;à vérifier (équivalent d’exemple);huissier;مفوض قضائي | عدل منفذ;"
+        "Officier chargé de signifier les actes.;Code d’essai, art. 1\n"
+        "testament;وصية;à vérifier (équivalent d’exemple);;;;\n"
+        "bail;إيجار;Lexique d’essai, p. 12;location;كراء;;\n")))
+    page = fenetre.page
+    details = page.details
+    colonne, synonymes = page.fiche.colonne_equivalent, details.colonne_synonymes
+
+    def infobulle_de_la_mention(widget) -> str:
+        mots, = (label for label in widget.findChildren(QLabel) if label.text() == "À vérifier")
+        return mots.toolTip()
+
+    def bords(widget) -> tuple[int, int, int]:
+        """Bord gauche, bord droit et haut d'un widget, dans le menu « Plus de détails »."""
+        coin = widget.mapTo(details, QPoint(0, 0))
+        return coin.x(), coin.x() + widget.width(), coin.y()
+
+    # « huissier de justice » : deux autres équivalents suivent l'équivalent. La mention est au pluriel, et elle
+    # ne dépend plus de la définition, qui cite ici sa source.
+    page.rechercher("huissier de justice")
+    application.processEvents()
+    assert textes(colonne.corps)[-3:] == ["AUTRES ÉQUIVALENTS", "مفوض قضائي", "عدل منفذ"]
+    assert colonne.mention is not None and colonne.mention.isVisible() and colonne.source_de_l_equivalent is None
+    assert textes(colonne.pied) == ["À vérifier", "· équivalents d’exemple"]
+    assert "Ces équivalents ne sont repris d’aucun texte officiel" in infobulle_de_la_mention(colonne.pied)
+    details.choisir("definition")
+    assert textes(details.colonne_definition.pied) == ["Source :", "Code d’essai, art. 1"]
+    # Le cercle « Synonymes » : la mention est au-dessus de la puce, à gauche comme elle ; elle est au singulier
+    # pour un seul synonyme.
+    details.choisir("synonymes")
+    application.processEvents()
+    assert textes(synonymes.corps) == ["À vérifier", "· synonyme d’exemple", "huissier"]
+    assert synonymes.mention is not None and synonymes.mention.isVisible()
+    assert "Ce synonyme n’est repris d’aucun texte officiel" in infobulle_de_la_mention(synonymes.corps)
+    assert "un synonyme est traduit comme le terme" in infobulle_de_la_mention(synonymes.corps)
+    assert textes(synonymes.pied) == ["Ce terme n’a pas encore d’entrée dans le glossaire"]  # une seule puce, grise
+    puce, = synonymes.puces
+    assert bords(synonymes.mention)[0] == bords(puce)[0]
+    assert bords(synonymes.mention)[2] + synonymes.mention.height() < bords(puce)[2]
+    haut_de_la_mention = bords(synonymes.mention)[2]
+
+    # De l'arabe vers le français : « huissier » devient l'autre équivalent, et les deux synonymes arabes portent
+    # la mention, au pluriel. Elle se lit de gauche à droite, du côté où commencent les puces : à droite.
+    page.rechercher("محضر قضائي")
+    application.processEvents()
+    assert page.source == AR and details.detail == "synonymes"  # l'information choisie reste ouverte
+    assert textes(colonne.corps)[-2:] == ["AUTRE ÉQUIVALENT", "huissier"]
+    assert textes(colonne.pied) == ["À vérifier", "· équivalents d’exemple"]
+    assert textes(synonymes.corps) == ["À vérifier", "· synonymes d’exemple", "مفوض قضائي", "عدل منفذ"]
+    assert "Ces synonymes ne sont repris d’aucun texte officiel" in infobulle_de_la_mention(synonymes.corps)
+    assert textes(synonymes.pied) == ["Ces termes n’ont pas encore d’entrée dans le glossaire"]
+    assert synonymes.corps.layoutDirection() == Qt.LayoutDirection.RightToLeft
+    assert synonymes.mention.layoutDirection() == Qt.LayoutDirection.LeftToRight
+    premiere, seconde = synonymes.puces
+    assert bords(seconde)[1] < bords(premiere)[0]  # les puces arabes se suivent de droite à gauche
+    assert bords(synonymes.mention)[1] == bords(premiere)[1]
+    assert bords(synonymes.mention)[2] == haut_de_la_mention
+    mots, detail = (label for label in synonymes.mention.findChildren(QLabel) if label.text() != "")
+    assert bords(mots)[1] <= bords(detail)[0]  # « À vérifier », puis « · synonymes d'exemple »
+
+    # « testament » : pas d'autre équivalent, la mention est au singulier ; pas de synonyme, le cercle est gris.
+    page.rechercher("testament")
+    application.processEvents()
+    assert page.source == FR and textes(colonne.pied) == ["À vérifier", "· équivalent d’exemple"]
+    assert "Cet équivalent n’est repris d’aucun texte officiel" in infobulle_de_la_mention(colonne.pied)
+    assert details.etats()["synonymes"] == (False, 0)
+
+    # « bail » : le glossaire cite la source de l'équivalent. Elle s'affiche à la place de la mention, à côté du
+    # lien « Copier l'équivalent », et les synonymes ne portent pas de mention.
+    page.rechercher("bail")
+    application.processEvents()
+    assert colonne.mention is None and textes(colonne.pied) == ["Source :", "Lexique d’essai, p. 12"]
+    assert colonne.source_de_l_equivalent.texte_complet() == "Lexique d’essai, p. 12"
+    assert colonne.source_de_l_equivalent.isVisible() and colonne.bouton_copier.isVisible()
+    details.choisir("synonymes")
+    application.processEvents()
+    assert textes(synonymes.corps) == ["location"] and synonymes.mention is None
+    # Sans mention, la puce est à la hauteur où commencent les puces des termes associés : deux points plus bas
+    # que la mention.
+    puce, = synonymes.puces
+    assert bords(puce)[2] == haut_de_la_mention + 2
+
+
 def test_une_phrase_d_exemple_a_verifier_est_signalee(fenetre, application, tmp_path):
     """Contextualisation : la mention « À vérifier » précède une phrase que le glossaire ne reprend d'aucun texte."""
     fenetre.charger_glossaire(ecrire(tmp_path / "exemples.csv", (

@@ -98,15 +98,17 @@ TERMES = pathlib.Path(__file__).parent / "termes"
 DEFINITIONS = pathlib.Path(__file__).parent / "definitions"
 #: Nombre d'entrées placées au début du CSV et écrites à la main : le script n'y touche pas.
 ENTREES_D_ORIGINE = 40
+#: Mention écrite dans la colonne « source_definition » d'une entrée qui a une définition : cette définition a été
+#: rédigée pour la démonstration, sans texte officiel. L'application l'affiche au pied de la définition.
 SOURCE = "à vérifier (définition d’exemple)"
 #: Source écrite pour les phrases d'exemple : elles ont été rédigées pour la démonstration, sans texte officiel.
 SOURCE_EXEMPLE = "à vérifier (phrase d’exemple)"
-#: Mention écrite dans la colonne « source_definition » d'un terme seul : il n'a pas de définition, la mention
-#: porte sur son équivalent. L'application l'affiche dans la fiche du terme, au pied de l'équivalent.
-SOURCE_SEUL = "à vérifier (équivalent d’exemple)"
-#: Mention d'un terme seul qui a reçu une définition : son équivalent et sa définition sont tous deux à vérifier.
-#: L'application l'affiche au pied de l'équivalent et au pied de la définition.
-SOURCE_SEUL_DEFINI = "à vérifier (équivalent et définition d’exemple)"
+#: Mention écrite dans la colonne « source_equivalent » de chaque entrée (à partir de la version 0.16) : son
+#: équivalent et ses synonymes ont été rédigés pour la démonstration. L'application l'affiche dans la fiche du
+#: terme, au pied de l'équivalent, et au-dessus des synonymes. Avant la version 0.16, seuls les termes seuls
+#: la portaient, dans la colonne « source_definition » : « à vérifier (équivalent d'exemple) » sans définition,
+#: « à vérifier (équivalent et définition d'exemple) » avec une définition.
+SOURCE_EQUIVALENT = "à vérifier (équivalent d’exemple)"
 #: Longueur maximale d'une phrase d'exemple, pour qu'elle reste courte à l'écran (« Contextualisation »).
 LONGUEUR_EXEMPLE = 170
 #: Longueur maximale de la définition d'un terme seul. La plus longue définition des lots compte 175 caractères.
@@ -866,6 +868,14 @@ def construire() -> int:
     anciennes = list(csv.DictReader(io.StringIO(origine, newline=""), delimiter=";"))
     colonnes = list(anciennes[0].keys())
     erreurs = Erreurs()
+    # Les entrées d'origine sont écrites à la main : le script n'y écrit pas la mention de l'équivalent, il
+    # vérifie qu'elle y est (ou une source). Sans la colonne, l'application n'afficherait aucune mention.
+    if "source_equivalent" not in colonnes:
+        sys.exit(f"{CSV} : la colonne « source_equivalent » manque (elle suit « terme_ar » depuis la version 0.16).")
+    for rang, ancienne in enumerate(anciennes, 2):
+        if not ancienne["source_equivalent"].strip():
+            erreurs.signaler(CSV.name, rang, f"« {ancienne['terme_fr']} » : la colonne « source_equivalent » est vide "
+                                             f"(écrire la source de l'équivalent, ou « {SOURCE_EQUIVALENT} »)")
     completes = lire_les_lots(erreurs)
     seuls = lire_les_lots(erreurs, seuls=True)
     nouvelles = completes + seuls
@@ -966,13 +976,13 @@ def construire() -> int:
                 cle not in sans_journal_officiel for cle in entree["cles"]):
             ressources.append(JO)
         valeurs = {
-            "terme_fr": entree["fr"], "terme_ar": entree["ar"], "categorie_fr": categorie_fr,
-            "categorie_ar": categorie_ar, "pluriel_fr": pluriel, "pluriel_ar": entree["pluriel_ar"],
+            "terme_fr": entree["fr"], "terme_ar": entree["ar"], "source_equivalent": SOURCE_EQUIVALENT,
+            "categorie_fr": categorie_fr, "categorie_ar": categorie_ar,
+            "pluriel_fr": pluriel, "pluriel_ar": entree["pluriel_ar"],
             "domaine": entree["domaine"], "synonymes_fr": " | ".join(entree["sf"]),
             "synonymes_ar": " | ".join(entree["sa"]), "termes_associes": " | ".join(entree["associes"]),
             "definition_fr": entree["def_fr"].replace("'", "’"), "definition_ar": entree["def_ar"],
-            "source_definition": (SOURCE if not entree["seul"]
-                                  else SOURCE_SEUL_DEFINI if entree["def_fr"] else SOURCE_SEUL),
+            "source_definition": SOURCE if entree["def_fr"] else "",
             "contexte_fr": phrase_fr.replace("'", "’"), "contexte_ar": phrase_ar,
             "source_contexte": SOURCE_EXEMPLE if phrase_fr else "",
             "ressources": " | ".join(ressources),

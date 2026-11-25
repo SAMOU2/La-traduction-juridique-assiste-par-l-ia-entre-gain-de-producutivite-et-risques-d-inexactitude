@@ -46,6 +46,7 @@ COLONNES: dict[str, tuple[str, ...]] = {
     "terme_fr": ("fr", "français", "terme français", "mot français", "mot_fr", "terme", "mot", "french"),
     "terme_ar": ("ar", "arabe", "terme arabe", "mot arabe", "mot_ar", "équivalent", "équivalent_ar",
                  "traduction", "arabic", "العربية", "عربي", "المصطلح", "المقابل"),
+    "source_equivalent": ("source équivalent", "source_equiv", "source_terme", "source_termes", "source traduction"),
     "categorie_fr": ("catégorie", "catégorie grammaticale", "nature", "nature_fr"),
     "categorie_ar": ("nature_ar", "النوع"),
     "pluriel_fr": ("pluriel",),
@@ -131,14 +132,20 @@ def _mention_partagee(detail: str) -> tuple[str, str] | None:
 def equivalent_a_verifier(entree: Entree) -> str | None:
     """Détail de la mention « à vérifier » qui porte sur l'équivalent d'une entrée ; ``None`` sans mention.
 
-    Sans définition, une mention « à vérifier » écrite dans la colonne « source_definition » porte
-    sur l'équivalent : c'était le cas des termes seuls du glossaire fourni avant la version 0.13,
-    marqués « à vérifier (équivalent d'exemple) ». Le détail rendu est « équivalent d'exemple ».
+    La colonne « source_equivalent » le dit (à partir de la version 0.16) : « à vérifier (équivalent
+    d'exemple) » rend « équivalent d'exemple » ; une vraie source ne rend rien (voir
+    ``source_de_l_equivalent``). La mention vaut pour les termes de l'entrée : l'équivalent, les autres
+    équivalents et les synonymes (voir ``equivalents_a_verifier`` et ``synonymes_a_verifier``).
 
-    Avec une définition, la mention porte sur la définition, sauf si elle nomme les deux : « à vérifier
-    (équivalent et définition d'exemple) » est la mention des termes seuls qui ont reçu une définition.
-    Le détail rendu est alors, là encore, « équivalent d'exemple ».
+    Quand cette colonne est vide ou absente, la colonne « source_definition » est lue comme avant :
+
+    * sans définition, une mention « à vérifier » qui y est écrite porte sur l'équivalent : « à vérifier
+      (équivalent d'exemple) » rend « équivalent d'exemple » ;
+    * avec une définition, la mention porte sur la définition, sauf si elle nomme les deux : « à vérifier
+      (équivalent et définition d'exemple) » rend, là encore, « équivalent d'exemple ».
     """
+    if entree.source_equivalent:
+        return mention_a_verifier(entree.source_equivalent)
     detail = mention_a_verifier(entree.source_definition)
     if detail is None:
         return None
@@ -148,12 +155,66 @@ def equivalent_a_verifier(entree: Entree) -> str | None:
     return partage[0] if partage is not None else None
 
 
+def source_de_l_equivalent(entree: Entree) -> str:
+    """La source que le glossaire cite pour l'équivalent (colonne « source_equivalent ») ; vide sans source.
+
+    Une mention « à vérifier » n'est pas une source : elle n'est pas rendue ici.
+    """
+    source = entree.source_equivalent
+    return source if source and mention_a_verifier(source) is None else ""
+
+
+#: Premier mot d'un détail qui nomme l'équivalent : « équivalent d'exemple », « Equivalents à relire ».
+_NOMME_L_EQUIVALENT = regex.compile(r"[ée]quivalents?(?=\s|$)", regex.IGNORECASE)
+
+
+def _detail_pour(detail: str, mot: str) -> str | None:
+    """Le détail d'une mention, où « équivalent » est remplacé par ``mot`` ; ``None`` s'il ne commence pas ainsi.
+
+    « équivalent d'exemple » devient « équivalents d'exemple », « synonyme d'exemple » ou « synonymes
+    d'exemple ». La majuscule du glossaire est gardée.
+    """
+    trouve = _NOMME_L_EQUIVALENT.match(detail)
+    if trouve is None:
+        return None
+    return (mot.capitalize() if trouve[0][0].isupper() else mot) + detail[trouve.end():]
+
+
+def equivalents_a_verifier(entree: Entree, cible: str) -> str | None:
+    """Détail de la mention à écrire sous l'équivalent d'une entrée, dans la langue ``cible`` ; ``None`` sans mention.
+
+    C'est le détail de ``equivalent_a_verifier``, mis au pluriel quand l'entrée a d'autres équivalents dans
+    cette langue : la mention vaut aussi pour eux. « équivalent d'exemple » devient « équivalents d'exemple ».
+    """
+    detail = equivalent_a_verifier(entree)
+    if detail is None or not entree.synonymes(cible):
+        return detail
+    accorde = _detail_pour(detail, "équivalents")
+    return accorde if accorde is not None else detail
+
+
+def synonymes_a_verifier(entree: Entree, langue: str) -> str | None:
+    """Détail de la mention « à vérifier » qui porte sur les synonymes d'une entrée ; ``None`` sans mention.
+
+    Le glossaire n'a pas de colonne pour la source des synonymes : ils sont à vérifier quand l'équivalent
+    l'est. Le détail reprend celui de l'équivalent : « équivalent d'exemple » donne « synonymes d'exemple »,
+    ou « synonyme d'exemple » quand l'entrée n'a qu'un synonyme dans cette langue. Il est vide quand le
+    détail de l'équivalent ne commence pas par « équivalent ». Sans synonyme dans cette langue, il n'y a
+    rien à signaler.
+    """
+    detail = equivalent_a_verifier(entree)
+    synonymes = entree.synonymes(langue)
+    if detail is None or not synonymes:
+        return None
+    return _detail_pour(detail, "synonyme" if len(synonymes) == 1 else "synonymes") or ""
+
+
 def definition_a_verifier(entree: Entree) -> str | None:
     """Détail de la mention « à vérifier » qui porte sur la définition d'une entrée ; ``None`` sans mention.
 
     « définition d'exemple » pour « à vérifier (définition d'exemple) » comme pour « à vérifier (équivalent
-    et définition d'exemple) » : la part de l'équivalent s'affiche sous l'équivalent. Sans définition, la
-    mention ne porte que sur l'équivalent (voir ``equivalent_a_verifier``).
+    et définition d'exemple) », l'ancienne mention des termes seuls : la part de l'équivalent s'affiche sous
+    l'équivalent. Sans définition, la mention ne porte que sur l'équivalent (voir ``equivalent_a_verifier``).
     """
     detail = mention_a_verifier(entree.source_definition)
     if detail is None or (not entree.definition_fr and not entree.definition_ar):
@@ -186,6 +247,8 @@ class Entree:
     numero: int  # rang de l'entrée dans le glossaire (la première porte le n° 1)
     terme_fr: str
     terme_ar: str
+    #: Source de l'équivalent, ou mention « à vérifier (équivalent d'exemple) » (voir ``equivalent_a_verifier``).
+    source_equivalent: str = ""
     categorie_fr: str = ""
     categorie_ar: str = ""
     pluriel_fr: str = ""
@@ -238,6 +301,7 @@ def _creer_entree(numero: int, valeurs: dict[str, str]) -> Entree:
         numero=numero,
         terme_fr=valeurs["terme_fr"],
         terme_ar=valeurs["terme_ar"],
+        source_equivalent=valeurs["source_equivalent"],
         categorie_fr=valeurs["categorie_fr"],
         categorie_ar=valeurs["categorie_ar"],
         pluriel_fr=valeurs["pluriel_fr"],

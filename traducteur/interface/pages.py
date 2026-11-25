@@ -3,6 +3,10 @@
 Chacun est une colonne de cartes, qui défile si la fenêtre est petite. Ces écrans
 ne font aucun traitement : ils affichent des réglages et des explications, et transmettent
 les demandes de l'utilisateur à la fenêtre par des signaux.
+
+« Paramètres » et la carte du service informatique, dans le centre d'aide, ne montrent que ce qui se règle ou
+se lit : un nom, une valeur, un bouton. Ce qui explique un réglage ou un bouton est dans son infobulle, et
+dans la description donnée aux lecteurs d'écran (version 0.16).
 """
 
 from __future__ import annotations
@@ -38,6 +42,7 @@ from .composants import (
     ZoneDefilante,
     compte,
     etiquette,
+    infobulle,
     paragraphe,
     repeindre,
     rond,
@@ -95,14 +100,15 @@ QUESTIONS = (
      ("L’application traduit avec le glossaire, et avec lui seul. Un mot absent du glossaire reste dans sa "
       "langue, écrit en gris : il est à traduire à la main.",)),
     ("Que signifie la mention « À vérifier » ?",
-     ("Le glossaire ne cite pas de source pour cet équivalent, cette définition ou cette phrase d’exemple : "
-      "le texte n’est pas repris d’un texte officiel. Contrôlez-le dans un texte de loi ou un dictionnaire "
-      "juridique avant de l’employer.",
-      "Dans le glossaire fourni, la plupart des équivalents, des définitions et des phrases d’exemple portent "
-      "cette mention : ils ont été rédigés par un assistant d’intelligence artificielle et n’ont pas été relus "
-      "par un juriste.",
-      "Après le contrôle, remplacez la mention par la source, dans la colonne source_definition ou "
-      "source_contexte du glossaire : la mention ne s’affiche plus.")),
+     ("Le glossaire ne cite pas de source pour cet équivalent, ces synonymes, cette définition ou cette phrase "
+      "d’exemple : le texte n’est pas repris d’un texte officiel. Contrôlez-le dans un texte de loi ou un "
+      "dictionnaire juridique avant de l’employer.",
+      "Dans le glossaire fourni, tous les équivalents et presque toutes les définitions et les phrases d’exemple "
+      "portent cette mention : ils ont été rédigés par un assistant d’intelligence artificielle et n’ont pas été "
+      "relus par un juriste.",
+      "Après le contrôle, remplacez la mention par la source, dans la colonne source_equivalent, "
+      "source_definition ou source_contexte du glossaire : la mention ne s’affiche plus. Les synonymes suivent "
+      "la mention de l’équivalent.")),
     ("Comment compléter le glossaire ?",
      ("Le glossaire fourni est le fichier glossaire_juridique.csv, dans le dossier « donnees » de "
       "l’application. Faites-en une copie et ouvrez la copie dans un tableur (Excel, LibreOffice).",
@@ -113,9 +119,9 @@ QUESTIONS = (
     ("Comment utiliser un autre glossaire ?",
      ("Dans « Paramètres », choisissez un fichier CSV. Il contient une ligne par terme ; la première ligne "
       "donne le nom des colonnes. Les colonnes terme_fr et terme_ar sont obligatoires.",
-      "Colonnes facultatives : categorie_fr, categorie_ar, pluriel_fr, pluriel_ar, domaine, synonymes_fr, "
-      "synonymes_ar, termes_associes, definition_fr, definition_ar, source_definition, contexte_fr, "
-      "contexte_ar, source_contexte, ressources.",
+      "Colonnes facultatives : source_equivalent, categorie_fr, categorie_ar, pluriel_fr, pluriel_ar, domaine, "
+      "synonymes_fr, synonymes_ar, termes_associes, definition_fr, definition_ar, source_definition, "
+      "contexte_fr, contexte_ar, source_contexte, ressources.",
       "Dans une cellule, plusieurs valeurs se séparent par une barre verticale : convention | accord. Depuis "
       "Excel : Enregistrer sous → « CSV UTF-8 (délimité par des virgules) ».")),
 )
@@ -155,7 +161,9 @@ def _bouton(texte: str, classe: str = "contour", nom_icone: str = "", info: str 
     bouton.setCursor(Qt.CursorShape.PointingHandCursor)
     bouton.setSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
     if info:
-        bouton.setToolTip(info)
+        # L'infobulle revient à la ligne quand le texte est long ; un lecteur d'écran reçoit le texte sans balise.
+        bouton.setToolTip(infobulle(info))
+        bouton.setAccessibleDescription(info)
     return bouton
 
 
@@ -248,31 +256,33 @@ class LigneDetail(QWidget):
 
 
 class LigneReglage(QWidget):
-    """Un réglage à deux positions : un titre, une explication, un interrupteur."""
+    """Un réglage à deux positions : son nom et un interrupteur.
 
-    def __init__(self, titre: str, texte: str, parent: QWidget | None = None) -> None:
+    Ce que fait le réglage (``explication``) n'est pas écrit dans la ligne : c'est le texte de son infobulle, et
+    la description donnée aux lecteurs d'écran.
+    """
+
+    def __init__(self, titre: str, explication: str, parent: QWidget | None = None) -> None:
         super().__init__(parent)
         ligne = QHBoxLayout(self)
         ligne.setContentsMargins(0, 0, 0, 0)
         ligne.setSpacing(16)
-        textes = QVBoxLayout()
-        textes.setSpacing(1)
         self.titre = etiquette(titre, "question")
-        self.texte = _texte(texte, "noteCarte", interligne=20)
-        textes.addWidget(self.titre)
-        textes.addWidget(self.texte)
-        ligne.addLayout(textes, 1)
+        ligne.addWidget(self.titre, 1, Qt.AlignmentFlag.AlignVCenter)
         self.interrupteur = Interrupteur()
         self.interrupteur.setAccessibleName(titre)
+        self.interrupteur.setAccessibleDescription(explication)
         ligne.addWidget(self.interrupteur, 0, Qt.AlignmentFlag.AlignVCenter)
+        # L'infobulle est celle de la ligne : elle s'affiche sur le nom comme sur l'interrupteur.
+        self.setToolTip(infobulle(explication))
+        self.setAccessibleDescription(explication)
 
 
 class PageInformation(QWidget):
     """Écran fait de cartes, dans une colonne qui défile, alignée à gauche sous le titre de l'écran."""
 
-    #: Titre et sous-titre de l'écran, affichés par la fenêtre au-dessus de la page.
+    #: Titre de l'écran, affiché par la fenêtre au-dessus de la page.
     TITRE = ""
-    SOUS_TITRE = ""
     LARGEUR_MAXIMALE = 980
 
     #: Message passager à afficher dans la barre d'état.
@@ -315,7 +325,12 @@ class PageParametres(PageInformation):
     """Réglages : le glossaire utilisé, l'affichage, l'adresse du service informatique."""
 
     TITRE = "Paramètres"
-    SOUS_TITRE = "Glossaire, affichage, service informatique"
+    #: Ce que disent les infobulles : à quoi sert chaque réglage.
+    INFO_FORMAT = "Le format du fichier est décrit dans le centre d’aide."
+    INFO_ANIMATIONS = "Les cercles du menu « Plus de détails » s’allument l’un après l’autre quand une fiche s’affiche."
+    INFO_DEMARRAGE = "Le logo animé s’affiche pendant l’ouverture de l’application."
+    INFO_ADRESSE = ("Adresse électronique du service informatique. Le centre d’aide l’utilise pour préparer "
+                    "un message.")
 
     #: Demandes transmises à la fenêtre.
     glossaire_a_choisir = Signal()
@@ -332,8 +347,6 @@ class PageParametres(PageInformation):
 
         # ---------------------------------------------------------- glossaire
         carte = self.carte_glossaire = self.ajouter_carte("Glossaire")
-        carte.ajouter_texte("Le glossaire est chargé automatiquement à l’ouverture de l’application. "
-                            "Il fournit les termes, les définitions, les équivalents, les exemples et les références.")
         cadre = QFrame()
         cadre.setObjectName("cadreGlossaire")
         dans_le_cadre = QHBoxLayout(cadre)
@@ -354,7 +367,7 @@ class PageParametres(PageInformation):
         dans_le_cadre.addWidget(self.taille_du_glossaire, 0, Qt.AlignmentFlag.AlignVCenter)
         carte.ajouter(cadre, 14)
         self.bouton_choisir = _bouton("Choisir un autre fichier…", "contour", "dossier",
-                                      "Ouvrir un autre glossaire : fichier CSV (Ctrl+O)")
+                                      f"Ouvrir un autre glossaire : fichier CSV (Ctrl+O). {self.INFO_FORMAT}")
         self.bouton_recharger = _bouton("Recharger", "contour", "recharger",
                                         "Relire le fichier après l’avoir modifié (F5)")
         self.bouton_fourni = _bouton("Revenir au glossaire fourni", "contour",
@@ -363,16 +376,11 @@ class PageParametres(PageInformation):
         self.bouton_recharger.clicked.connect(self.glossaire_a_recharger)
         self.bouton_fourni.clicked.connect(self.glossaire_fourni_demande)
         carte.ajouter_ligne([self.bouton_choisir, self.bouton_recharger, self.bouton_fourni])
-        carte.ajouter_texte("Le format du fichier est décrit dans le centre d’aide.", "noteCarte", 12)
 
         # ---------------------------------------------------------- affichage
         carte = self.carte_affichage = self.ajouter_carte("Affichage")
-        self.reglage_animations = LigneReglage(
-            "Animations",
-            "Les cercles du menu « Plus de détails » s’allument l’un après l’autre quand une fiche s’affiche.")
-        self.reglage_demarrage = LigneReglage(
-            "Écran de démarrage",
-            "Le logo animé s’affiche pendant l’ouverture de l’application.")
+        self.reglage_animations = LigneReglage("Animations", self.INFO_ANIMATIONS)
+        self.reglage_demarrage = LigneReglage("Écran de démarrage", self.INFO_DEMARRAGE)
         self.interrupteur_animations = self.reglage_animations.interrupteur
         self.interrupteur_demarrage = self.reglage_demarrage.interrupteur
         self.interrupteur_animations.setChecked(self.reglages.value(CLE_ANIMATIONS, True, bool))
@@ -386,13 +394,13 @@ class PageParametres(PageInformation):
 
         # ---------------------------------------------------------- service informatique
         carte = self.carte_service = self.ajouter_carte("Service informatique")
-        carte.ajouter_texte("Adresse électronique du service informatique. Le centre d’aide l’utilise pour "
-                            "préparer un message.")
         self.champ_adresse = QLineEdit(self.reglages.value(CLE_ADRESSE, "", str))
         self.champ_adresse.setObjectName("champAdresse")
         self.champ_adresse.setPlaceholderText("nom@domaine.dz")
         self.champ_adresse.setFixedSize(340, 36)
         self.champ_adresse.setAccessibleName("Adresse du service informatique")
+        self.champ_adresse.setAccessibleDescription(self.INFO_ADRESSE)
+        self.champ_adresse.setToolTip(infobulle(self.INFO_ADRESSE))
         self.champ_adresse.returnPressed.connect(self.enregistrer_l_adresse)
         self.bouton_enregistrer = _bouton("Enregistrer", "principal")
         self.bouton_enregistrer.clicked.connect(self.enregistrer_l_adresse)
@@ -466,7 +474,6 @@ class PageDescription(PageInformation):
     """Présentation de l'application : ce qu'elle fait, comment, et ce qu'il faut savoir."""
 
     TITRE = "Description de la plateforme"
-    SOUS_TITRE = "Ce que fait l’application, et comment"
 
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
@@ -520,8 +527,8 @@ class PageDescription(PageInformation):
                 "ils sont à traduire à la main.",
                 "Un mot courant qui s’écrit comme un terme juridique est traduit comme ce terme. Chaque terme "
                 "traduit est donc à relire.",
-                "Les définitions et les phrases d’exemple marquées « À vérifier » ne citent pas de source. Les "
-                "équivalents proposés viennent du glossaire : l’application ne les vérifie pas.")):
+                "Les équivalents, les synonymes, les définitions et les phrases d’exemple marqués « À vérifier » "
+                "ne citent pas de source. Ils viennent du glossaire : l’application ne les vérifie pas.")):
             carte.ajouter(self._puce(texte), 12 if rang == 0 else 8)
 
         self.terminer()
@@ -571,7 +578,9 @@ class PageAide(PageInformation):
     """Centre d'aide : contact du service informatique, questions fréquentes, raccourcis."""
 
     TITRE = "Centre d’aide"
-    SOUS_TITRE = "Contacter le service informatique, questions fréquentes"
+    #: Ce que dit l'infobulle du bouton « Écrire au service informatique ».
+    INFO_MESSAGE = ("Préparer un message dans votre logiciel de messagerie. Il indique déjà la version de "
+                    "l’application et le système utilisé : il ne reste qu’à décrire le problème.")
 
     #: L'utilisateur veut indiquer l'adresse du service informatique (écran « Paramètres »).
     parametres_demandes = Signal()
@@ -583,29 +592,21 @@ class PageAide(PageInformation):
 
         # ---------------------------------------------------------- contact
         carte = self.carte_contact = self.ajouter_carte("Contacter le service informatique")
+        # L'adresse du service, à côté de l'enveloppe ; sans adresse, la ligne dit qu'elle manque.
         entete = QHBoxLayout()
         entete.setSpacing(16)
-        entete.addWidget(rond("rondContact", 44, "enveloppe", theme.BLEU, 22), 0, Qt.AlignmentFlag.AlignTop)
-        textes = QVBoxLayout()
-        textes.setSpacing(4)
-        textes.addWidget(_texte("Un problème d’installation, d’ouverture de fichier ou d’affichage ? "
-                                "Écrivez au service informatique."))
-        self.etat_adresse = etiquette("", "noteCarte", retour_ligne=True)
-        textes.addWidget(self.etat_adresse)
-        entete.addLayout(textes, 1)
+        entete.addWidget(rond("rondContact", 44, "enveloppe", theme.BLEU, 22), 0, Qt.AlignmentFlag.AlignVCenter)
+        self.etat_adresse = etiquette("", "texteCarte", retour_ligne=True)
+        entete.addWidget(self.etat_adresse, 1, Qt.AlignmentFlag.AlignVCenter)
         carte.disposition.addSpacing(12)
         carte.disposition.addLayout(entete)
-        self.bouton_ecrire = _bouton("Écrire au service informatique", "principal", "enveloppe",
-                                     "Préparer un message dans votre logiciel de messagerie")
+        self.bouton_ecrire = _bouton("Écrire au service informatique", "principal", "enveloppe", self.INFO_MESSAGE)
         self.bouton_copier = _bouton("Copier l’adresse", "contour", "copier")
         self.bouton_parametres = _bouton("Indiquer l’adresse dans Paramètres", "principal", "reglages")
         self.bouton_ecrire.clicked.connect(self.ecrire)
         self.bouton_copier.clicked.connect(self.copier_l_adresse)
         self.bouton_parametres.clicked.connect(self.parametres_demandes)
         carte.ajouter_ligne([self.bouton_ecrire, self.bouton_copier, self.bouton_parametres])
-        self.note_message = carte.ajouter_texte(
-            "Le message est préparé avec la version de l’application et le système utilisé : "
-            "il ne reste qu’à décrire le problème.", "noteCarte", 12)
 
         # ---------------------------------------------------------- questions fréquentes
         carte = self.carte_questions = self.ajouter_carte("Questions fréquentes")
@@ -650,7 +651,6 @@ class PageAide(PageInformation):
                                   else "L’adresse du service informatique n’est pas encore indiquée.")
         self.bouton_ecrire.setVisible(connue)
         self.bouton_copier.setVisible(connue)
-        self.note_message.setVisible(connue)
         self.bouton_parametres.setVisible(not connue)
 
     # ------------------------------------------------------------------ message

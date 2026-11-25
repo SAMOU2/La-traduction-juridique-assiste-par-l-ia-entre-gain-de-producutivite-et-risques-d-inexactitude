@@ -7,7 +7,9 @@ tests travaillent sur des copies du fichier CSV et des dossiers ``exemples/``, `
 ils ne modifient aucun fichier du projet.
 """
 
+import csv
 import importlib.util
+import io
 import shutil
 import sys
 
@@ -98,10 +100,36 @@ def test_les_lots_et_les_exemples_fournis_sont_acceptes(outil, glossaire_fourni,
     en_francais = sum(1 for entree in glossaire_fourni.entrees[ENTREES_COMPLETES:] if entree.synonymes_fr)
     en_arabe = sum(1 for entree in glossaire_fourni.entrees[ENTREES_COMPLETES:] if entree.synonymes_ar)
     assert f"termes seuls avec des synonymes : {en_francais} en français, {en_arabe} en arabe" in sortie
+    # Version 0.16 : chaque entrée porte la mention de son équivalent, dans la colonne « source_equivalent ». Le
+    # script l'écrit pour les entrées des lots et pour les termes seuls ; les 40 premières la portent déjà.
+    assert glossaire_fourni.colonnes[:3] == ["terme_fr", "terme_ar", "source_equivalent"]
+    assert {entree.source_equivalent for entree in glossaire_fourni.entrees} == {outil.SOURCE_EQUIVALENT}
     # Le fichier fourni est bien celui que donnent les lots, les exemples, les termes seuls et leurs définitions.
     assert "Le fichier CSV correspond aux lots, aux exemples et aux définitions." in sortie
     # Sans l'option --ecrire, le fichier CSV n'est pas touché.
     assert outil.CSV.read_bytes() == avant and "écrit :" not in sortie
+
+
+def test_la_colonne_source_equivalent_est_exigee(outil, monkeypatch, capsys):
+    """Version 0.16 : les 40 entrées d'origine, écrites à la main, doivent remplir « source_equivalent »."""
+    lignes = outil.CSV.read_text(encoding="utf-8-sig").splitlines()
+    debut = "contrat;عقد;à vérifier (équivalent d’exemple);"
+    assert lignes[0].startswith("terme_fr;terme_ar;source_equivalent;") and lignes[1].startswith(debut)
+    # Une cellule vide : le script la signale, avec la ligne du fichier CSV, et rend le code 1.
+    vide = [lignes[0], lignes[1].replace(debut, "contrat;عقد;;", 1), *lignes[2:]]
+    outil.CSV.write_text("\n".join(vide) + "\n", encoding="utf-8-sig")
+    code, sortie = lancer(outil, monkeypatch, capsys)
+    assert code == 1 and "1 ERREUR(S) :" in sortie
+    assert ("glossaire.csv:2: « contrat » : la colonne « source_equivalent » est vide (écrire la source de "
+            "l'équivalent, ou « à vérifier (équivalent d’exemple) »)") in sortie
+    # Sans la colonne (un fichier d'avant la version 0.16), le script s'arrête tout de suite : l'application
+    # n'afficherait la mention sous aucun équivalent.
+    rangs = list(csv.reader(io.StringIO("\n".join(lignes) + "\n", newline=""), delimiter=";"))
+    sans_colonne = io.StringIO()
+    csv.writer(sans_colonne, delimiter=";", lineterminator="\n").writerows(rang[:2] + rang[3:] for rang in rangs)
+    outil.CSV.write_text(sans_colonne.getvalue(), encoding="utf-8-sig")
+    with pytest.raises(SystemExit, match="la colonne « source_equivalent » manque"):
+        lancer(outil, monkeypatch, capsys)
 
 
 def test_une_phrase_corrigee_est_ecrite_dans_le_csv(outil, monkeypatch, capsys):
@@ -228,11 +256,13 @@ def test_un_terme_seul_est_ecrit_sans_definition_ni_exemple(outil, monkeypatch, 
     assert satellite.domaines == ["Droit de l'espace", "Satellites"] and satellite.ressources
     assert (orbite.categorie_fr, orbite.synonymes_fr, orbite.synonymes_ar) == (
         "nom féminin", ["trajectoire orbitale"], ["فلك"])
-    # Ni définition, ni exemple. Faute de définition, la mention « à vérifier » porte sur l'équivalent : la fiche
-    # l'affiche au pied de l'équivalent.
+    # Ni définition, ni exemple. La mention « à vérifier » de l'équivalent est écrite dans la colonne
+    # « source_equivalent » (version 0.16) : la fiche l'affiche au pied de l'équivalent. Faute de définition, la
+    # colonne « source_definition » reste vide.
     for entree in (satellite, orbite, orbital, mettre, hors, au_dela):
         assert not entree.definition_fr and not entree.definition_ar
-        assert entree.source_definition == outil.SOURCE_SEUL == "à vérifier (équivalent d’exemple)"
+        assert entree.source_equivalent == outil.SOURCE_EQUIVALENT == "à vérifier (équivalent d’exemple)"
+        assert entree.source_definition == ""
         assert (equivalent_a_verifier(entree), definition_a_verifier(entree)) == ("équivalent d’exemple", None)
         assert entree.contextes == []
     # Les termes associés d'un terme seul sont ses voisins de groupe, comme dans un lot.
@@ -409,11 +439,13 @@ def test_la_definition_d_un_terme_seul(outil, monkeypatch, capsys):
     for terme, entree in seuls.items():
         defini = terme in ("satellite", "orbital", "lancer", "conformément à")
         assert bool(entree.definition_fr) == bool(entree.definition_ar) == defini, terme
-        # La mention « à vérifier » dit sur quoi elle porte : l'équivalent seul, ou l'équivalent et la définition.
-        assert entree.source_definition == (outil.SOURCE_SEUL_DEFINI if defini else outil.SOURCE_SEUL), terme
+        # Chaque mention « à vérifier » a sa colonne : celle de l'équivalent, toujours ; celle de la définition,
+        # quand le terme en a une. (Avant la version 0.16, une seule colonne portait les deux.)
+        assert entree.source_equivalent == outil.SOURCE_EQUIVALENT, terme
+        assert entree.source_definition == (outil.SOURCE if defini else ""), terme
         assert equivalent_a_verifier(entree) == "équivalent d’exemple", terme
         assert definition_a_verifier(entree) == ("définition d’exemple" if defini else None), terme
-    assert outil.SOURCE_SEUL_DEFINI == "à vérifier (équivalent et définition d’exemple)"
+    assert outil.SOURCE == "à vérifier (définition d’exemple)"
 
     # Sans l'option --ecrire, le script dit seulement que le fichier correspond ; --manquants compte ce qui reste.
     code, sortie = lancer(outil, monkeypatch, capsys, "--manquants")

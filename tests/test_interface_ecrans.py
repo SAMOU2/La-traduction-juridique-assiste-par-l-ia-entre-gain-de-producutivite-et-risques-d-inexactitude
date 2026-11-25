@@ -4,6 +4,8 @@
   « Paramètres », « Description de la plateforme » et « Centre d'aide ».
 * « Paramètres » règle le glossaire, l'affichage et l'adresse du service informatique.
 * Le « Centre d'aide » remplace le menu « Aide » : il prépare un message pour le service informatique.
+* Ces écrans n'ont pas de sous-titre, et « Paramètres » n'affiche pas de phrase d'explication (version 0.16) :
+  ce qui explique un réglage ou un bouton est dans son infobulle.
 * Les cercles du menu « Plus de détails » et les étapes du traitement d'un texte s'allument l'un après
   l'autre quand un résultat s'affiche (réglage « Animations »).
 * L'écran de démarrage montre le logo entre deux rangées de tirets animés, et rien d'autre : son fond est transparent.
@@ -13,12 +15,13 @@ import pytest
 
 pytest.importorskip("PySide6")
 
+from html import unescape
 from urllib.parse import parse_qs, unquote, urlsplit
 
-from PySide6.QtCore import QElapsedTimer, QPoint, Qt
-from PySide6.QtGui import QColor, QGuiApplication
+from PySide6.QtCore import QElapsedTimer, QEvent, QPoint, Qt
+from PySide6.QtGui import QAccessible, QColor, QGuiApplication, QHelpEvent
 from PySide6.QtTest import QTest
-from PySide6.QtWidgets import QPushButton
+from PySide6.QtWidgets import QApplication, QFrame, QPushButton, QToolTip, QWidget
 from test_interface import textes
 
 from traducteur import __version__
@@ -52,6 +55,18 @@ class Horloge:
 
     def elapsed(self) -> int:
         return self.temps
+
+
+def infobulle_affichee(widget) -> str:
+    """Infobulle que Qt affiche quand le pointeur s'arrête au milieu de ``widget`` (texte vide : aucune).
+
+    Un widget qui n'a pas d'infobulle laisse la demande à celui qui le contient : c'est ainsi que le nom
+    d'un réglage et son interrupteur montrent l'infobulle de leur ligne.
+    """
+    milieu = widget.rect().center()
+    demande = QHelpEvent(QEvent.Type.ToolTip, milieu, widget.mapToGlobal(milieu))
+    QApplication.sendEvent(widget, demande)
+    return QToolTip.text() if demande.isAccepted() else ""
 
 
 def allumage_a_la_main(nombre: int = 5) -> tuple[Allumage, Horloge]:
@@ -118,19 +133,21 @@ def test_les_raccourcis_des_ecrans(fenetre):
 
 def test_un_ecran_d_information_affiche_son_titre_a_la_place_des_outils(fenetre, application):
     assert fenetre.cadre_sens.isVisible() and fenetre.action_inverser.isEnabled()
-    attendus = {
-        MODE_PARAMETRES: ("Paramètres", "Glossaire, affichage, service informatique"),
-        MODE_DESCRIPTION: ("Description de la plateforme", "Ce que fait l’application, et comment"),
-        MODE_AIDE: ("Centre d’aide", "Contacter le service informatique, questions fréquentes"),
-    }
-    for mode, (titre, sous_titre) in attendus.items():
+    attendus = {MODE_PARAMETRES: "Paramètres", MODE_DESCRIPTION: "Description de la plateforme",
+                MODE_AIDE: "Centre d’aide"}
+    for mode, titre in attendus.items():
         fenetre.definir_mode(mode)
         application.processEvents()
         # Ni sens de traduction ni barre de recherche : le titre de l'écran les remplace.
         assert not fenetre.cadre_sens.isVisible() and not fenetre.page.barre.isVisible()
         assert fenetre.outils.currentWidget() is fenetre.titre_de_page and fenetre.titre_de_page.isVisible()
-        assert fenetre.titre_de_page.titre.text() == titre
-        assert fenetre.titre_de_page.sous_titre.texte_complet() == sous_titre
+        assert fenetre.titre_de_page.titre.text() == titre == fenetre.pages[mode].TITRE
+        # Le titre est seul (version 0.16) : plus de ligne grise qui résume l'écran. Il est au milieu de la
+        # hauteur de la barre.
+        assert textes(fenetre.titre_de_page) == [titre]
+        etiquette = fenetre.titre_de_page.titre
+        milieu = etiquette.mapTo(fenetre.outils, etiquette.rect().center()).y()
+        assert abs(milieu - fenetre.outils.rect().center().y()) <= 1
         assert not fenetre.action_inverser.isEnabled()
         assert fenetre.ecran_de_travail() is None and fenetre.barre_etat.etat() == ""
     fenetre.definir_mode(MODE_TEXTE)
@@ -192,18 +209,85 @@ def test_les_parametres_presentent_le_glossaire_charge(fenetre):
                                          parametres.bouton_fourni)] == [
         "Choisir un autre fichier…", "Recharger", "Revenir au glossaire fourni"]
     assert parametres.bouton_recharger.isEnabled() and not parametres.bouton_fourni.isEnabled()
-    # Le glossaire se charge sans que l'utilisateur ait à le demander : la carte le dit.
-    assert any(texte.startswith("Le glossaire est chargé automatiquement à l’ouverture de l’application.")
-               for texte in textes(parametres.carte_glossaire))
+    # La carte ne montre que le glossaire chargé et ses trois boutons (version 0.16) : plus de phrase qui
+    # explique ce qu'est le glossaire. Où trouver le format du fichier : l'infobulle du bouton le dit.
+    assert textes(parametres.carte_glossaire) == [
+        "Glossaire", "Glossaire juridique", "Fourni avec l’application", "40 entrées"]
+    assert parametres.bouton_choisir.toolTip() == (
+        "<qt>Ouvrir un autre glossaire : fichier CSV (Ctrl+O). Le format du fichier est décrit dans le centre "
+        "d’aide.</qt>")
+
+
+def test_les_parametres_ne_montrent_que_les_reglages(fenetre, application):
+    """Version 0.16 : ni sous-titre, ni phrase d'explication. Chaque carte montre ce qui se règle, rien d'autre."""
+    fenetre.definir_mode(MODE_PARAMETRES)
+    application.processEvents()
+    parametres = fenetre.page_parametres
+    assert textes(parametres) == [
+        "Glossaire", "Glossaire juridique", "Fourni avec l’application", "40 entrées",
+        "Affichage", "Animations", "Écran de démarrage",
+        "Service informatique"]
+    # Ce que les phrases retirées expliquaient est dans les infobulles, et lu par un lecteur d'écran.
+    assert parametres.reglage_animations.toolTip() == f"<qt>{parametres.INFO_ANIMATIONS}</qt>"
+    assert parametres.reglage_demarrage.toolTip() == f"<qt>{parametres.INFO_DEMARRAGE}</qt>"
+    assert parametres.champ_adresse.toolTip() == f"<qt>{parametres.INFO_ADRESSE}</qt>"
+    assert parametres.interrupteur_animations.accessibleDescription() == parametres.INFO_ANIMATIONS
+    assert parametres.interrupteur_demarrage.accessibleDescription() == parametres.INFO_DEMARRAGE
+    assert parametres.champ_adresse.accessibleDescription() == parametres.INFO_ADRESSE
+    # L'infobulle d'un réglage s'affiche où que le pointeur s'arrête sur sa ligne : sur le nom comme sur
+    # l'interrupteur. Le titre d'une carte, lui, n'en a pas.
+    for reglage, explication in ((parametres.reglage_animations, parametres.INFO_ANIMATIONS),
+                                 (parametres.reglage_demarrage, parametres.INFO_DEMARRAGE)):
+        for cible in (reglage, reglage.titre, reglage.interrupteur):
+            assert infobulle_affichee(cible) == f"<qt>{explication}</qt>"
+    assert infobulle_affichee(parametres.champ_adresse) == f"<qt>{parametres.INFO_ADRESSE}</qt>"
+    assert infobulle_affichee(parametres.carte_affichage.titre) == ""
+    assert infobulle_affichee(parametres.carte_service.titre) == ""
+    # Chaque réglage tient sur une ligne : son nom à gauche, son interrupteur à droite, à la même hauteur.
+    for reglage in (parametres.reglage_animations, parametres.reglage_demarrage):
+        assert reglage.height() == reglage.interrupteur.height() == 22
+        assert reglage.titre.x() == 0 and reglage.interrupteur.geometry().right() == reglage.width() - 1
+        assert abs(reglage.titre.geometry().center().y() - reglage.interrupteur.geometry().center().y()) <= 1
+
+
+def test_un_lecteur_d_ecran_recoit_le_texte_des_infobulles_sans_balise(fenetre, application):
+    """Version 0.16 : ce qu'une infobulle explique est aussi la description donnée aux lecteurs d'écran.
+
+    Une infobulle est écrite en texte enrichi, pour revenir à la ligne quand elle est longue. Sans description
+    à part, Qt donne au lecteur d'écran le texte de l'infobulle, balises comprises.
+    """
+    parametres, aide = fenetre.page_parametres, fenetre.page_aide
+    parametres.champ_adresse.setText("informatique@univ-alger.dz")
+    parametres.enregistrer_l_adresse()  # le centre d'aide affiche alors « Écrire au service informatique »
+    decrits = {}
+    for mode in (MODE_PARAMETRES, MODE_DESCRIPTION, MODE_AIDE):
+        fenetre.definir_mode(mode)
+        application.processEvents()
+        for widget in fenetre.pages[mode].findChildren(QWidget):
+            if widget.toolTip():
+                description = QAccessible.queryAccessibleInterface(widget).text(QAccessible.Text.Description)
+                assert unescape(widget.toolTip()) == f"<qt>{description}</qt>"
+                decrits.setdefault(mode, set()).add(description)
+    assert decrits == {
+        MODE_PARAMETRES: {
+            "Ouvrir un autre glossaire : fichier CSV (Ctrl+O). Le format du fichier est décrit dans le centre "
+            "d’aide.",
+            "Relire le fichier après l’avoir modifié (F5)",
+            "Reprendre le glossaire livré avec l’application",
+            parametres.INFO_ANIMATIONS, parametres.INFO_DEMARRAGE, parametres.INFO_ADRESSE},
+        MODE_AIDE: {aide.INFO_MESSAGE},
+    }
 
 
 def test_regler_les_animations(fenetre, reglages, application, avertissements):
     parametres = fenetre.page_parametres
     assert [carte.titre.text() for carte in parametres.cartes][1] == "Affichage"
     assert parametres.reglage_animations.titre.text() == "Animations"
-    assert textes(parametres.reglage_animations) == [
-        "Animations",
-        "Les cercles du menu « Plus de détails » s’allument l’un après l’autre quand une fiche s’affiche."]
+    # Le réglage n'affiche que son nom ; ce qu'il fait est dit dans l'infobulle.
+    assert textes(parametres.reglage_animations) == ["Animations"]
+    assert parametres.INFO_ANIMATIONS == (
+        "Les cercles du menu « Plus de détails » s’allument l’un après l’autre quand une fiche s’affiche.")
+    assert parametres.INFO_ANIMATIONS in parametres.reglage_animations.toolTip()
     assert parametres.interrupteur_animations.accessibleName() == "Animations"
     assert not parametres.interrupteur_animations.isChecked() and not animation.actives()  # réglage des tests
     parametres.interrupteur_animations.click()
@@ -221,6 +305,9 @@ def test_regler_les_animations(fenetre, reglages, application, avertissements):
 
 def test_regler_l_ecran_de_demarrage(fenetre, reglages):
     parametres = fenetre.page_parametres
+    assert textes(parametres.reglage_demarrage) == ["Écran de démarrage"]
+    assert parametres.INFO_DEMARRAGE == "Le logo animé s’affiche pendant l’ouverture de l’application."
+    assert parametres.interrupteur_demarrage.accessibleName() == "Écran de démarrage"
     assert parametres.interrupteur_demarrage.isChecked()  # affiché, sauf réglage contraire
     assert not reglages.contains(CLE_ECRAN_DE_DEMARRAGE)
     parametres.interrupteur_demarrage.click()
@@ -249,6 +336,13 @@ def test_forme_d_une_adresse_electronique(adresse, valide):
 def test_enregistrer_l_adresse_du_service_informatique(fenetre, reglages):
     parametres, aide = fenetre.page_parametres, fenetre.page_aide
     assert parametres.adresse() == "" and aide.adresse == "" and not parametres.retour_adresse.isVisibleTo(parametres)
+    # La carte ne montre que le champ et son bouton : le champ donne la forme attendue, son infobulle dit à quoi
+    # sert l'adresse.
+    assert textes(parametres.carte_service) == ["Service informatique"]
+    assert parametres.champ_adresse.placeholderText() == "nom@domaine.dz"
+    assert parametres.champ_adresse.accessibleName() == "Adresse du service informatique"
+    assert parametres.INFO_ADRESSE == (
+        "Adresse électronique du service informatique. Le centre d’aide l’utilise pour préparer un message.")
 
     # Une adresse incomplète n'est pas enregistrée : un message dit ce qui manque.
     parametres.champ_adresse.setText("informatique@")
@@ -310,6 +404,9 @@ def test_sans_adresse_le_centre_d_aide_renvoie_aux_parametres(fenetre, applicati
     application.processEvents()
     aide = fenetre.page_aide
     assert aide.etat_adresse.text() == "L’adresse du service informatique n’est pas encore indiquée."
+    # La carte ne dit que cela, à côté de l'enveloppe (version 0.16), puis donne le bouton.
+    assert textes(aide.carte_contact) == [
+        "Contacter le service informatique", "L’adresse du service informatique n’est pas encore indiquée."]
     assert aide.bouton_parametres.isVisible() and aide.bouton_parametres.text() == "Indiquer l’adresse dans Paramètres"
     assert not aide.bouton_ecrire.isVisible() and not aide.bouton_copier.isVisible()
     assert aide.ecrire() is False  # rien à ouvrir sans destinataire
@@ -330,6 +427,16 @@ def test_ecrire_au_service_informatique(fenetre, application, monkeypatch):
     assert aide.etat_adresse.text() == "Adresse : informatique@univ-alger.dz"
     assert aide.bouton_ecrire.isVisible() and aide.bouton_copier.isVisible() and not aide.bouton_parametres.isVisible()
     assert aide.bouton_ecrire.text() == "Écrire au service informatique"
+    # La carte ne montre que l'adresse et ses deux boutons (version 0.16). L'adresse est à côté de l'enveloppe,
+    # à la même hauteur. Ce que contient le message est dit dans l'infobulle du bouton.
+    assert textes(aide.carte_contact) == ["Contacter le service informatique", "Adresse : informatique@univ-alger.dz"]
+    enveloppe = aide.carte_contact.findChild(QFrame, "rondContact")
+    assert enveloppe is not None and enveloppe.isVisible()
+    assert abs(enveloppe.geometry().center().y() - aide.etat_adresse.geometry().center().y()) <= 1
+    assert aide.etat_adresse.x() > enveloppe.geometry().right()
+    assert aide.bouton_ecrire.toolTip() == (
+        "<qt>Préparer un message dans votre logiciel de messagerie. Il indique déjà la version de l’application "
+        "et le système utilisé : il ne reste qu’à décrire le problème.</qt>")
 
     # Le message est préparé : destinataire, objet, et ce que le service a besoin de savoir.
     lien = urlsplit(aide.lien_du_message())
